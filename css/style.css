@@ -1,0 +1,294 @@
+/*BODY*/
+body {
+  margin: 0;
+  background-image: url(../img/back_for_site.jpg);
+}
+
+body * {
+  box-sizing: border-box;
+}
+/*--------------*/
+
+/*WRAPPER*/
+.wrapper {
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+/*----------------------------*/
+
+/*HEADER*/
+.header {
+  width: 100%;
+  height: 130px;
+  position: relative;
+  background-color: #434547;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.header a {
+  width: 193px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  background-image: url(../img/logo.png);
+}
+
+.header p {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  line-height: 28px;
+  background-color: rgba(218, 236, 236, 0.59);
+  width: 160px;
+  margin-top: -14px;
+  margin-left: -80px;
+  border-radius: 5px;
+}
+
+/* ---------------------------------- */
+/*CONTENT*/
+.content {
+  padding: 10px 20px;
+  width: 100%;
+  height: 100%;
+  background: url(../img/background_content.jpg) repeat;
+}
+
+.content a {
+  color: rgba(43, 53, 185, 0.88);
+  text-decoration: none;
+}
+
+.content a:hover {
+  color: rgb(8, 22, 216);
+}
+
+.service {
+  float: right;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+p.conditions {
+  text-decoration: underline;
+  margin: 16px 0 5px;
+}
+
+.conditions + ul {
+  color: rgba(43, 53, 185, 0.88);
+  margin: 5px 0;
+}
+
+ol {
+  font-weight: bold;
+}
+
+/*---------------------------------------*/
+
+/*Content Services*/
+h1 {
+  text-align: center;
+}
+
+h1 span {
+  background-color: lightgray;
+  color: darkslategray;
+  text-align: center;
+}
+
+.box {
+  width: 20%;
+  background-color: #9bdaef;
+  padding: 20px;
+  font-size: 13px;
+  margin: 0 0 15px 0;
+  display: inline-block;
+  box-shadow: 20px 20px 20px #333;
+}
+
+.box h4 {
+  text-align: center;
+}
+
+.service-left {
+  float: left;
+}
+
+.service-right {
+  float: right;
+}
+
+/*---------------------------------------*/
+
+/*Content Advices*/
+h2,
+h4 {
+  text-align: center;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.weather {
+  position: relative;
+  left: 50%;
+  margin-left: -100px;
+  margin-bottom: 50px;
+}
+
+.box-advices {
+  line-height: 20px;
+  max-width: 250px;
+  color: rgb(232, 207, 207);
+  background-color: rgba(132, 98, 138, 0.91);
+  padding: 20px;
+  font-size: 13px;
+  margin: 0 8% 4% 8%;
+  box-shadow: 20px 20px 20px #333;
+  display: inline-block;
+}
+
+.box-advices p {
+  text-align: justify;
+}
+
+.service-right {
+  float: right;
+}
+
+.weather ~ p {
+  text-align: justify;
+  color: red;
+  margin: 20px;
+}
+
+/*----------------------*/
+/*FOOTER*/
+.footer {
+  width: 100%;
+  height: 160px;
+  padding: 10px;
+  text-align: center;
+  background-color: #434547;
+  color: lightgray;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.footer a {
+  color: darkgray;
+}
+
+/*-----------------------------------------*/
+/* nav menu */
+.car-menu * {
+  margin: 0;
+  padding: 0;
+}
+
+.car-menu label .fas {
+  padding-right: 10px;
+}
+
+.car-menu > ul {
+  list-style: none;
+  display: flex;
+}
+
+.car-menu > ul li {
+  text-align: center;
+  flex-grow: 1;
+  border-right: 1px solid rgb(52, 82, 180);
+}
+.car-menu i.fas {
+  font-size: 17px;
+  padding-right: 10px;
+}
+.car-menu li a {
+  display: block;
+  background-color: rgba(54, 144, 240, 1);
+  padding: 15px;
+  font-size: 14px;
+  color: #222222;
+  text-decoration: none;
+}
+.car-menu li a:hover {
+  background-color: rgb(46, 123, 206);
+  color: #ffffff;
+  box-shadow: 1px 8px 10px -5px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s ease;
+}
+
+.car-menu [type="checkbox"] {
+  display: none;
+}
+.car-menu label.toggleMenu {
+  background-color: rgb(109, 179, 242); /* Old browsers */
+  display: none;
+  padding: 15px 40px;
+  text-transform: uppercase;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+}
+
+/*==== MEDIA ====*/
+@media all and (max-width: 800px) {
+  .car-menu {
+    overflow: hidden;
+  }
+  .car-menu ul {
+    display: block;
+    max-height: 0;
+    transition: max-height 0.3s;
+  }
+  .car-menu label.toggleMenu {
+    display: block;
+  }
+  input.toggleMenu:checked + label.toggleMenu {
+    background: gray;
+    color: #fff;
+  }
+  input.toggleMenu:checked ~ ul,
+  input.toggleSubmenu:checked ~ ul {
+    display: block;
+    position: relative;
+    max-height: 5000px;
+    transition: max-height 2s ease-in;
+  }
+  .car-menu label.toggleSubmenu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: block;
+  }
+  input.toggleSubmenu:checked ~ a {
+    background: #454547;
+    color: #fff;
+  }
+  .car-menu label.toggleSubmenu .fa:before {
+    content: "\f0d7";
+    color: #454547;
+  }
+  .car-menu label.toggleSubmenu .fa {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+  }
+  .car-menu input.toggleSubmenu:checked ~ label.toggleSubmenu .fa::before {
+    content: "\f0d8";
+    color: #ffffff;
+  }
+}
