@@ -1,0 +1,67 @@
+body {
+  background-color: lavenderblush;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+#navBar {
+  height: 40px;
+  width: 100%;
+  background-color: #2f2f2f;
+  color: antiquewhite;
+  border-bottom: 2.5px #1a53ff solid;
+}
+
+#menuButton {
+  margin: 0;
+  position: absolute;
+  height: 35px;
+  left: 1px;
+  top: 1.5px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+#title {
+  margin: 0;
+  right: 130px;
+  position: relative;
+  text-align: right;
+  font: 20px "Abel";
+}
+
+#team {
+  margin: 0;
+  position: relative;
+  right: 5px;
+  bottom: 6px;
+  text-align: right;
+  font: 15px "Abel";
+}
+
+#menuContainer {
+  background-color: #2f2f2f;
+  position: relative;
+  left: -100%;
+  width: 100%;
+  height: 94vh;
+}
+
+@media only screen and (min-width: 768px) {
+  #title {
+    font-size: 32px;
+    right: 276px;
+    top: 4px;
+  }
+  #team {
+    font-size: 20px;
+    bottom: 26px;
+  }
+
+  #menuContainer {
+    width: 20vw;
+    height: 100vh;
+  }
+}
