@@ -1,12 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <style>
+      #divStyle {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #aaaaaa;
+      }
+    </style>
+    <script>
+      function onDragStart(ev) {
+        console.log("Drag Start");
+        // 데이터 전달 객체에 대상 요소의 id를 추가
+        ev.dataTransfer.setData("text/plain", ev.target.id);
+      }
+
+      function onDrop(ev) {
+        var data = ev.dataTransfer.getData("text");
+        console.log("Drag drop " + data);
+        var child = document.getElementById(data);
+        child.style.color = "blue";
+        ev.target.appendChild(child);
+        ev.preventDefault();
+      }
+
+      function onDragOver(ev) {
+        ev.preventDefault();
+      }
+
+      function onDragEnter(ev) {
+        ev.preventDefault();
+      }
+
+      function onDragLeave(ev) {
+        var data = ev.dataTransfer.getData("text");
+        console.log("Drag Leave " + data);
+      }
+
+      function onDragEnd(ev) {
+        var data = ev.dataTransfer.getData("text");
+        console.log("Drag End " + data);
+      }
+    </script>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div
+      id="divStyle"
+      ondrop="onDrop(event)"
+      ondragover="onDragOver(event)"
+      ondragleave="onDragLeave(event)"
+    >
+      <b> Drop Target </b>
+    </div>
+    <div id="divStyle" ondrop="onDrop(event)"><b> X </b></div>
+
+    <p
+      id="AppleText"
+      draggable="true"
+      ondragstart="onDragStart(event)"
+      ondragenter="onDragEnter(event)"
+      ondragleave="onDragLeave(event)"
+      ondragend="onDragEnd(event)"
+      style="height: auto; width: 100%; border:1px solid gold;"
+    >
+      Apple
+    </p>
+    <p id="OrangeText" draggable="true" ondragstart="onDragStart(event)">
+      Orange
+    </p>
   </body>
 </html>
