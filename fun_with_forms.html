@@ -1,32 +1,27 @@
-<!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
   </head>
 
   <body>
-    <div id="app">
-      <div class="header">
-        <div class="menu">
-          <div class="menu-button selected">Home</div>
-          <a class="menu-button" href="./about_me.html">About Me</a>
-          <div class="menu-button">
-            <a href="./fun_with_forms.html">Fun With Forms</a>
-          </div>
-        </div>
+    <div class="header">
+      <div class="menu">
+        <div class="menu-button"><a href="index.html">Home</a></div>
+        <div class="menu-button"><a href="about_me.html">About Me</a></div>
+        <div class="menu-button selected">Fun With Forms</div>
       </div>
-      <div class="content">
-        <h2>this should be pushed!</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </div>
+    </div>
+    <div class="content">
+      <h2>Fun With Forms</h2>
+      <form id="robot-form">
+        <input
+          type="text"
+          id="robot-text"
+          placeholder="Fluent in 6,000,000 languages"
+        />
+        <input type="submit" value="Beep beep, boop" />
+        <div class="robot-answer"></div>
+      </form>
     </div>
   </body>
   <style>
@@ -35,6 +30,7 @@
       color: #f06291;
       font: 1.2em verdana, sans-serif;
     }
+
     div.header {
       background-image: url(../images/bubbles.jpg);
       height: 150px;
@@ -44,11 +40,13 @@
       color: #ff99bb;
       overflow: hidden;
     }
+
     div.menu {
       position: absolute;
       bottom: -19px;
       left: 10px;
     }
+
     div.menu div.menu-button {
       background-color: #ff99bb;
       display: inline-block;
@@ -58,13 +56,16 @@
       text-align: center;
       border-radius: 20px;
     }
+
     div.menu div.menu-button.selected {
       background-color: #ffeefd;
     }
+
     div.menu div.menu-button a {
       color: #ffeefd;
       text-decoration: none;
     }
+
     div.content {
       width: 718px;
       min-height: 300px;
