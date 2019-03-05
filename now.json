@@ -1,13 +1,17 @@
 {
   "version": 2,
   "files": [
-    "index.html",
-    "fun_with_forms.html",
-    "about_me.html",
-    "404.html",
+    ".index.html",
+    "./static/about_me.html",
+    "./static/fun_with_forms.html",
+    "./static/404.html",
     "package.json"
   ],
   "builds": [
+    {
+      "src": "./static",
+      "use": "@now/static"
+    },
     {
       "src": "./index.html",
       "use": "@now/static"
@@ -15,24 +19,20 @@
   ],
   "routes": [
     {
-      "src": "/",
-      "dest": "./index.html"
-    },
-    {
       "src": "/home",
       "dest": "./index.html"
     },
     {
       "src": "/about",
-      "dest": "./about_me.html"
+      "dest": "./static/about_me.html"
     },
     {
       "src": "/forms",
-      "dest": "./fun_with_forms.html"
+      "dest": "./static/fun_with_forms.html"
     },
     {
       "src": "/*",
-      "dest": "./404.html"
+      "dest": "./static/404.html"
     }
   ]
 }
