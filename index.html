@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>SVG Text Masking</title>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <video autoplay playsinline muted loop preload>
+      <source
+        src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4"
+      />
+      ddd
+    </video>
+
+    <svg height="100%" width="100%">
+      <defs>
+        <mask id="mask" x="0" y="0" height="100%" width="100%">
+          <rect x="0" y="0" height="100%" width="100%" />
+          <text x="50%" y="50%" fill="red" text-anchor="middle">
+            I love SVG
+          </text>
+        </mask>
+      </defs>
+      <rect x="0" y="0" height="100%" width="100%" />
+    </svg>
+
+    <script>
+      let type = document.querySelector("text");
+
+      setTimeout(() => {
+        type.innerHTML = "And Krisitina Too!";
+      }, 4000);
+    </script>
   </body>
 </html>
