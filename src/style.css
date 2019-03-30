@@ -1,0 +1,177 @@
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* Add a black background color to the top navigation bar */
+.topnav2 {
+  overflow: hidden;
+  background-color: #e9e9e9;
+  margin: 20px 0;
+}
+/* Style for navigation  with search bar */
+/* Style the links inside the navigation bar */
+.topnav2 a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav2 a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav2 a.active {
+  background-color: #2196f3;
+  color: white;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav2 input[type="text"] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+/* Style for Fullscreen navigation */
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0); /* Black fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+.burgerbtn {
+  padding: 20px;
+  background-color: #333;
+  color: #f2f2f2;
+}
+.burgerbtn:hover {
+  background-color: #4caf50;
+}
+
+/*Bai tap 1*/
+body {
+  background: linear-gradient(
+      0deg,
+      rgba(8, 7, 95, 0.514),
+      rgba(7, 8, 61, 0.233)
+    ),
+    url("/img/top.jpg");
+  background-size: cover;
+  background-position: 0% 30%;
+}
+.noClass {
+  background: none;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+#logo {
+  margin: 20px 0;
+}
+#headTitle {
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 100px 0 50px 0;
+}
+#headTitle span {
+  text-align: right;
+  width: 100%;
+  font-size: 70px;
+  display: block;
+}
+#headTitle span.greenText {
+  color: rgb(35, 190, 144) !important;
+}
+
+#time {
+  padding: 10px 0;
+}
+.countdown {
+  float: left;
+  width: 25%;
+}
+
+.number {
+  color: white;
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.text {
+  color: rgb(35, 190, 144);
+  font-size: 30px;
+  margin-top: -80px;
+}
