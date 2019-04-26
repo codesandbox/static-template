@@ -1,12 +1,137 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="ui top attached menu" style="width:90%;">
+      <button onclick="link()">link</button>
+      <button class="ui button" id="personBtn">person</button>
+    </div>
+    <div
+      class="ui bottom attched segment pushable"
+      contenteditable
+      style="height:75%; width:90%;"
+      id="editor"
+    >
+      <div class="ui bottom attached segment pushable" id="sideBarSegment">
+        <div class="ui inverted right vertical sidebar menu" id="sideBar">
+          <form class="ui form">
+            <h4 class="ui dividing header">Person Tag Info</h4>
+            <div class="field">
+              <label>Display Text</label>
+              <input type="text" name="personNameTxtBx" id="personNameTxtBx" />
+            </div>
+            <button class="ui button" id="personSaveBtn" type="button">
+              Save
+            </button>
+          </form>
+        </div>
+        <div class="pusher">
+          <div class="ui basic segment" id="editor" contenteditable>
+            <h1>The title of the day</h1>
+            <p>Some text to play with</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.0.min.js"
+      integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="jquery.caret.js"></script>
+    <script>
+      let tempText;
+      function link() {
+        var url = prompt("please enter a url");
+
+        document.execCommand("createLink", true, url);
+      }
+
+      $("#personBtn").on("click", function() {
+        let select = window.getSelection();
+
+        let currentNode = select.focusNode;
+        // console.log(currentNode);
+
+        // if (
+        //   currentNode.parentNode.nodeName != "DIV" &&
+        //   currentNode.parentNode.nodeName != "BODY"
+        // ) {
+        //   let nodeData = currentNode.parentNode.innerHTML;
+
+        //   let position = select.focusOffset;
+
+        //   let dataPt1 = nodeData.substr(0, position);
+        //   let dataPt2 = nodeData.substr(position, nodeData.length - 1);
+
+        //   let newData =
+        //     dataPt1 +
+        //     '<img src="https://img.icons8.com/ios-glyphs/30/008080/human-head.png">' +
+        //     dataPt2;
+
+        //   currentNode.parentNode.innerHTML = newData;
+
+        // } else {
+        //   console.log("needs to be in the editor");
+        // }
+        // $("#personNameTxtBx").val(select.toString());
+        // $("#sideBar")
+        //   .sidebar({
+        //     context: "#sideBarSegment"
+        //   })
+        //   .sidebar("show");
+      });
+
+      $("#personSaveBtn").on("click", function() {
+        person($("#personNameTxtBx").val());
+        $("#personNameTxtBx").val("");
+        $("#sideBar")
+          .sidebar({
+            context: "#sideBarSegment"
+          })
+          .sidebar("hide");
+      });
+
+      function person(text) {
+        // $("#editor").focus();
+
+        var elements = document.getElementsByClassName("ui basic segment");
+        let el = elements.namedItem("editor");
+
+        if (el.childElementCount > 0) {
+          var lastElIndx = el.childNodes.length - 1;
+          var lastEl = el.childNodes[lastElIndx];
+
+          if (lastEl.nodeName == "#text") {
+            while (lastEl.nodeName == "#text") {
+              lastElIndx -= 1;
+              lastEl = el.childNodes[lastElIndx];
+            }
+          }
+
+          addedTag(lastEl, text);
+        } else {
+          addedTag(el, text);
+        }
+      }
+
+      function addedTag(element, text) {
+        let html = element.innerHTML;
+        html =
+          html +
+          '&nbsp;&nbsp;<a class="ui small teal basic label" id="' +
+          text +
+          'PersonTag"><img src="https://img.icons8.com/ios-glyphs/30/008080/human-head.png">' +
+          text +
+          "</a>&nbsp;&nbsp;";
+        element.innerHTML = html;
+      }
+    </script>
   </body>
 </html>

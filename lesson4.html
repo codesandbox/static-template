@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Rock Paper Scissors</title>
+        <!-- Css for Semantic -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <!-- Jquery -->
+        <script
+            src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+        </script>
+        <!-- JS for Semantic -->
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+        
+    </head>
+    <body>
+        
+        <h1 class="ui center aligned header">Welcome To <br/> Rock Paper Scissors</h1>
+        <h3 class="ui center aligned header">Please Choose from the Following:</h3>
+        <div class="ui two column center aligned grid">
+            <!-- <div class="row"> -->
+                <div class="column">
+                    <div class="three ui buttons">
+                        <button class="ui button" name="rockBtn" id="rockBtn" onclick="playerChoice('Rock')">Rock</button>
+                        <button class="ui button" name="paperBtn" id="paperBtn" onclick="playerChoice('Paper')">Paper</button>
+                        <button class="ui button" name="sissorBtn" id="sissorBtn" onclick="playerChoice('Scissors')">Scissors</button>
+                    </div>
+                </div>
+            <!-- </div> -->
+            <div class="center aligned four column row">
+                <div class="column">
+                    <div class="ui big orange label">Players Choice: </div>
+                </div>
+                <div class="column">
+                    <div class="ui big blue label">Computers Choice: </div>
+                </div>
+            </div>
+            <div class="center aligned four column row">
+                    <div class="column">
+                        <div class="ui pointing basic big label" id="playersChoice">Waiting on User</div>
+                    </div>
+                    <div class="column">
+                        <div class="ui pointing basic big label" id="computersChoice">Waiting to Play User</div>
+                    </div>
+            </div>
+            <div class="center aligned row">
+            <div class="column">
+                <div class="ui big green label">Winner: </div>
+            </div>
+        </div>
+        <div class="center aligned row">
+            <div class="column">
+                <div class="ui pointing basic big label" id="winningChoice">???</div>
+            </div>
+        </div>
+        </div>
+    </body>
+    <script>
+        let player;
+        let computer;
+
+        let playerChoiceElmt = document.getElementById('playersChoice');
+        let computerChoiceElmt = document.getElementById('computersChoice');
+        let winnerElmt = document.getElementById('winningChoice');
+
+        function playerChoice(choice){
+            player = choice;
+            playerChoiceElmt.innerText = player;
+
+            computersChoice();
+
+            winnerIs();
+        }
+
+        function computersChoice(){
+            let computersChoiceNumber = Math.floor((Math.random() * 3) + 1);
+
+            if(computersChoiceNumber == 1){
+                computer = "Rock"
+            } else if(computersChoiceNumber == 2){
+                computer = "Paper"
+            } else if(computersChoiceNumber == 3){
+                computer = "Sissors"
+            }
+
+            computerChoiceElmt.innerText = computer;
+        }
+
+        function winnerIs(){
+            if(player == computer){
+                winner = 'Draw';
+            } else if(player == "Paper" && computer == 'Rock'){
+                winner = 'Player'
+            } else if(player == "Paper" && computer == 'Sissors'){
+                winner = 'Computer'
+            } else if(player == "Rock" && computer == 'Paper'){
+                winner = 'Computer'
+            } else if(player == "Rock" && computer == 'Sissors'){
+                winner = 'Player'
+            } else if(player == "Sissors" && computer == 'Paper'){
+                winner = 'Player'
+            } else if(player == "Sissors" && computer == 'Rock'){
+                winner = 'Computer'
+            }
+
+            winnerElmt.innerText = winner; 
+        }
+
+
+    </script>
+</html>

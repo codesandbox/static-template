@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Rock Paper Sissors</title>
+    </head>
+    <body>label
+        <h1>Welcome To</h1>
+        <h1>Rock Paper Sissors</h1>
+        <h3>Please Choose from the Following:</h3>
+        <div>
+            <button name="rockBtn" id="rockBtn" onclick="playerChoice('Rock')">Rock</button>
+            <button name="paperBtn" id="paperBtn" onclick="playerChoice('Paper')">Paper</button>
+            <button name="sissorBtn" id="sissorBtn" onclick="playerChoice('Sissors')">Sissors</button>
+        </div>
+        <div>
+            <label>Players Choice: </label>
+            <label id="playersChoice">Waiting on Choice</label>
+        </div>
+        <div>
+            <label>Computers Choice: </label>
+            <label id="computersChoice"></label>
+        </div>
+        <div>
+            <label>Winner Is: </label>
+            <label id="winningChoice"></label>
+        </div>
+    </body>
+    <script>
+        let player;
+        let computer;
+
+        let playerChoiceElmt = document.getElementById('playersChoice');
+        let computerChoiceElmt = document.getElementById('computersChoice');
+        let winnerElmt = document.getElementById('winningChoice');
+
+        function playerChoice(choice){
+            player = choice;
+            playerChoiceElmt.innerText = player;
+
+            computersChoice();
+
+            winnerIs();
+        }
+
+        function computersChoice(){
+            let computersChoiceNumber = Math.floor((Math.random() * 3) + 1);
+
+            if(computersChoiceNumber == 1){
+                computer = "Rock"
+            } else if(computersChoiceNumber == 2){
+                computer = "Paper"
+            } else if(computersChoiceNumber == 3){
+                computer = "Sissors"
+            }
+
+            computerChoiceElmt.innerText = computer;
+        }
+
+        function winnerIs(){
+            if(player == computer){
+                winner = 'Draw';
+            } else if(player == "Paper" && computer == 'Rock'){
+                winner = 'Player'
+            } else if(player == "Paper" && computer == 'Sissors'){
+                winner = 'Computer'
+            } else if(player == "Rock" && computer == 'Paper'){
+                winner = 'Computer'
+            } else if(player == "Rock" && computer == 'Sissors'){
+                winner = 'Player'
+            } else if(player == "Sissors" && computer == 'Paper'){
+                winner = 'Player'
+            } else if(player == "Sissors" && computer == 'Rock'){
+                winner = 'Computer'
+            }
+
+            winnerElmt.innerText = winner; 
+        }
+
+
+    </script>
+</html>

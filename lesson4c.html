@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Rock Paper Scissors</title>
+        <!-- Css for Semantic -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <!-- Jquery -->
+        <script
+            src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+        </script>
+        <!-- JS for Semantic -->
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+        
+    </head>
+    <body>
+        
+        <h1 class="ui center aligned header">Welcome To <br/> Rock Paper Scissors</h1>
+        <h3 class="ui center aligned header">Please Choose from the Following:</h3>
+        <div class="ui two column center aligned grid">
+            <!-- <div class="row"> -->
+                <div class="column">
+                    <div class="three ui buttons">
+                        <button class="ui button" name="rockBtn" id="rockBtn" onclick="playerChoice('Rock')">Rock</button>
+                        <button class="ui button" name="paperBtn" id="paperBtn" onclick="playerChoice('Paper')">Paper</button>
+                        <button class="ui button" name="sissorBtn" id="sissorBtn" onclick="playerChoice('Scissors')">Scissors</button>
+                    </div>
+                </div>
+            <!-- </div> -->
+            <div class="center aligned four column row">
+                <div class="column">
+                    <div class="ui big orange label">Players Choice: </div>
+                </div>
+                <div class="column">
+                    <div class="ui big blue label">Computers Choice: </div>
+                </div>
+            </div>
+            <div class="center aligned four column row">
+                    <div class="column">
+                        <div class="ui image small" id="playersChoice"><img src="waiting.png"></div>
+                    </div>
+                    <div class="column">
+                        <div class="ui image small" id="computersChoice"><img src="waiting.png"></div>
+                    </div>
+            </div>
+            <div class="center aligned row">
+            <div class="column">
+                <div class="ui big green label">Winner: </div>
+            </div>
+        </div>
+        <div class="center aligned row">
+            <div class="column">
+                <div class="ui pointing basic big label" id="winningChoice">???</div>
+            </div>
+        </div>
+        </div>
+    </body>
+    <script>
+        let player;
+        let computer;
+
+        function playerChoice(choice){
+             player = choice;
+
+            $('#playersChoice').text(choice);
+
+            computersChoice();
+
+            winnerIs();
+        }
+
+        function computersChoice(){
+            let computersChoiceNumber = Math.floor((Math.random() * 3) + 1);
+
+            if(computersChoiceNumber == 1){
+                computer = "Rock"
+            } else if(computersChoiceNumber == 2){
+                computer = "Paper"
+            } else if(computersChoiceNumber == 3){
+                computer = "Scissors"
+            }
+
+            $('#computersChoice').text(computer);
+        }
+
+        function winnerIs(){
+            if(player == computer){
+                winner = 'Draw';
+            } else if(player == "Paper" && computer == 'Rock'){
+                winner = 'Player'
+            } else if(player == "Paper" && computer == 'Scissors'){
+                winner = 'Computer'
+            } else if(player == "Rock" && computer == 'Paper'){
+                winner = 'Computer'
+            } else if(player == "Rock" && computer == 'Scissors'){
+                winner = 'Player'
+            } else if(player == "Scissors" && computer == 'Paper'){
+                winner = 'Player'
+            } else if(player == "Scissors" && computer == 'Rock'){
+                winner = 'Computer'
+            }
+
+            $('#winningChoice').text(winner);
+        }
+
+
+    </script>
+</html>
