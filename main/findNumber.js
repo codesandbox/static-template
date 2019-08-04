@@ -1,12 +1,12 @@
 /**
  * 给出一个数组，和一个数字，在这个数组中找出两个数字相加等于这个数字，如果没有找到返回 null
- * @method findNumber
+ * @method findCouple
  * @param {Array} originArr 数组
  * @param {Number} target 目标数字
  * @returns {Array || null} 返回一个和为target的数组或者null
  */
 
-function findNumber(originArr, target) {
+function findCouple(originArr, target) {
   if (!originArr || !target) {
     return null;
   }
@@ -30,4 +30,4 @@ function findNumber(originArr, target) {
 
 const originArr = [1, 2, 3, 5];
 const target = 6;
-findNumber(originArr, target);
+findCouple(originArr, target);
