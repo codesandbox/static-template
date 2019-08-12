@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>product list</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- 한글 초성 추출  -->
+    <script src="js/getHanF.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>product list</h1>
+    <div class="product-search">
+      <h2>제품검색</h2>
+      <!-- 카테고리 검색 -->
+      <ul class="category-list">
+        <li class="all"><a href="#">전체</a></li>
+        <li class="c1" title="일반의약품"><a href="#">일반의약품</a></li>
+        <li class="c2" title="전문의약품"><a href="#">전문의약품</a></li>
+        <li class="c3" title="건강기능식품"><a href="#">건강기능식품</a></li>
+      </ul>
+      <!-- ㄱㄴㄷ 검색 -->
+      <ul class="sh-list">
+        <li><a href="#">ㄱ</a></li>
+        <li><a href="#">ㄴ</a></li>
+        <li><a href="#">ㄷ</a></li>
+        <li><a href="#">ㄹ</a></li>
+        <li><a href="#">ㅁ</a></li>
+        <li><a href="#">ㅂ</a></li>
+        <li><a href="#">ㅅ</a></li>
+        <li><a href="#">ㅇ</a></li>
+        <li><a href="#">ㅈ</a></li>
+        <li><a href="#">ㅊ</a></li>
+        <li><a href="#">ㅋ</a></li>
+        <li><a href="#">ㅌ</a></li>
+        <li><a href="#">ㅍ</a></li>
+        <li><a href="#">ㅎ</a></li>
+      </ul>
+    </div>
+    <ul class="product_list"></ul>
   </body>
 </html>
