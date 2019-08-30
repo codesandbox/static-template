@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Dice Game</title>
+    <link rel="Stylesheet" type="text/css" href="styles_dicegame.css">
+
+<script>
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+    history.go(1);
+    }
+</script>
+
+<style>
+
+        body{
+            background-image: url("Images/background4.jpg")
+        }
+        
+</style>
+
+</head>
+<body>
+    <div id="header"><h1>Two players each roll a dice...</h1></div>
+    <h3> Player One </h3>
+    <div id="content"><img src="Images/one.png" id="pic1"></div>
+    <h3> Player Two </h3>
+    <div id="content"><img src="Images/two.png" id="pic2"></div>
+
+</br>    
+</br>
+    <button id="buttonOne" type="button" onclick="alert('Both players each roll a dice...')">Roll Dice!</button>
+    <button id="buttonTwo" type="button" onclick="alert('Game reset, the scores have been returned to zero')">Reset Game</button>
+</br>    
+</br>
+    <h1> The total scores for each player are: </h1>
+    <h1 id="scores">0</h1>
+</br>
+    <h2>Games Played</h2>
+    <h1 id="gamesPlayed">0</h1>
+
+
+    <ul>
+            <li><a href="Javascript.html"> Back to Javascript Examples</a></li>
+        </br>
+    </br>
+            <li><a href="index.html"> Back to Home Page </a></li>
+    </ul>
+
+</body>
+
+<script type = "text/javascript" src = "JS/dice.js"></script>
+
+
+</html>
+
