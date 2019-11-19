@@ -8,9 +8,7 @@
     url("https://nomail.com.ua/files/woff2/aa46d234cf405126cdd1c36600e4b978.woff2")
       format("woff2");
 }
-*,
-*:after,
-*:before {
+*, *:after, *:before {
   box-sizing: border-box;
 }
 body {
@@ -81,23 +79,27 @@ body {
   font-size: 14px;
   line-height: 16px;
 }
-.button-play:after {
-  content:none;
+.button-play::after {
+  content: "";
   position: absolute;
   width: 65px;
   height: 65px;
-  background-color: #fff url("img/play.svg") center no-repeat;
+  background: #fff url("img/play.svg") center no-repeat ;
   border-radius: 50%;
-  right: 0;
-  left: 0;
+  right: 200px;
+  left: 200px;
+  top: 0px;
 }
-.button-play:before {
-  content: none;
+.button-play::before {
+  content: "";
   width: 81px;
   height: 81px;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   position: absolute;
-  right: -8px;
-  top: -8px;
+  right: -10px;
+  top: -7px;
+}
+.button-play:focus{
+  outline: none;
 }
