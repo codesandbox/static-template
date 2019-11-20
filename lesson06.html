@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Static Template</title>
+    <style type="text/css">
+      .error {
+        color: red;
+      }
+    </style>
+    <!-- TYPE IN jQUERY HERE! -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("form").submit(function(event) {
+          var regex = /^[a-zA-Z]+$/;
+          var currentValue = $("#firstName").val();
+          if (regex.test(currentValue) == false) {
+            $("#result")
+              .html('<p class="error">Not valid!</p>')
+              .show()
+              .fadeOut(1000);
+            // Preventing form submission
+            event.preventDefault();
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Lesson 06 - Form Validation</h1>
+    <p>
+      <strong>Note:</strong> If try to submit any invalid value. It will produce
+      an error.
+    </p>
+    <form action="/examples/html/action.php" method="post" id="users">
+      <label for="firstName">First Name:</label>
+      <input type="text" name="first-name" id="firstName" />
+      <input type="submit" value="Submit" />
+      <div id="result"></div>
+    </form>
+    <hr />
+    <h6><a href="index.html">Back to Title Page</a></h6>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("form").submit(function(event) {
+      var regex = /^[a-zA-Z]+$/;
+      var currentValue = $("#firstName").val();
+      if (regex.test(currentValue) == false) {
+        $("#result")
+          .html('<p class="error">Not valid!</p>')
+          .show()
+          .fadeOut(1000);
+        // Preventing form submission
+        event.preventDefault();
+      }
+    });
+  });
+</script>

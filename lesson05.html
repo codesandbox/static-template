@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Static Template</title>
+    <style type="text/css">
+      p {
+        padding: 10px;
+        background: lightgreen;
+        display: none;
+      }
+      div {
+        margin: 20px 0;
+      }
+    </style>
+    <!-- TYPE IN jQUERY HERE! -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var i = 0;
+        $('input[type="text"]').keypress(function() {
+          $("span").text((i += 1));
+          $("p")
+            .show()
+            .fadeOut();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Lesson 05 - Key Counter</h1>
+    <input type="text" />
+    <div>Keypress: <span>0</span></div>
+    <div>
+      <strong>Note:</strong> Enter something inside the input box and see the
+      result.
+    </div>
+    <p>Keypress is triggered.</p>
+    <hr />
+    <h6><a href="index.html">Back to Title Page</a></h6>
+  </body>
+</html>
