@@ -8,11 +8,13 @@
     url("https://nomail.com.ua/files/woff2/aa46d234cf405126cdd1c36600e4b978.woff2")
       format("woff2");
 }
-*, *:after, *:before {
+*,
+*:after,
+*:before {
   box-sizing: border-box;
 }
 body {
-  background: #070506 url(img/main-bg.png);
+  background: #070506 url(img/main-bg.png) no-repeat;
   color: #fff;
   font-family: "Roboto", sans-serif;
 }
@@ -84,10 +86,10 @@ body {
   position: absolute;
   width: 65px;
   height: 65px;
-  background: #fff url("img/play.svg") center no-repeat ;
+  background: #fff url("img/play.svg") center no-repeat;
   border-radius: 50%;
   right: 200px;
-  left: 200px;
+  left: 183px;
   top: 0px;
 }
 .button-play::before {
@@ -100,7 +102,29 @@ body {
   right: -10px;
   top: -7px;
 }
-.button-play:focus{
+.button-play:focus {
   outline: none;
 }
-
+.slider{
+display:flex;
+flex-wrap: wrap;
+}
+.slider__item{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+width:250px;
+min-hight:200px;
+margin-right: 20px;
+margin-bottom: 20px;
+padding: 30px;
+background: linear-gradient(0deg, rgba(80, 80, 80, 0.86), rgba(80, 80, 80, 0.86)), url(mIgEWCjkYILzQ4FvUCP7criHXda.jpg);
+box-shadow: 0px 10px 26px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+transition: all 0.2s ease;
+}
+.slider__item:hover{
+  background: linear-gradient(0deg, rgba(64, 101, 255, 0.86), rgba(64, 101, 255, 0.86));
+  box-shadow: 0px 10px 26px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
