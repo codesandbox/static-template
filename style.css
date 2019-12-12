@@ -105,26 +105,42 @@ body {
 .button-play:focus {
   outline: none;
 }
+.episodes{
+  padding: 68px 0; 
+  }
+.episodes__title{
+  font-size: 18px;
+  line-height: 150%;
+  padding-bottom: 24px;
+  }
 .slider{
 display:flex;
 flex-wrap: wrap;
 }
 .slider__item{
+  position: relative;
+  overflow: hidden;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
 width:250px;
-min-hight:200px;
+min-height:200px;
 margin-right: 20px;
 margin-bottom: 20px;
 padding: 30px;
-background: linear-gradient(0deg, rgba(80, 80, 80, 0.86), rgba(80, 80, 80, 0.86)), url(mIgEWCjkYILzQ4FvUCP7criHXda.jpg);
-box-shadow: 0px 10px 26px rgba(0, 0, 0, 0.25);
+background: linear-gradient(0peg,
+rgba(80, 80, 80, 0,86),
+rgba(80, 80, 80, 0,86)
+);
+box-shadow:  0px 10px 26px rgba(0,0,0,0.25);
 border-radius: 10px;
 transition: all 0.2s ease;
 }
 .slider__item:hover{
-  background: linear-gradient(0deg, rgba(64, 101, 255, 0.86), rgba(64, 101, 255, 0.86));
-  box-shadow: 0px 10px 26px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
+  background: linear-gradient(0deg, 
+  rgba(64, 101, 255, 0.86), 
+  rgba(64, 101, 255, 0.86));
+}
+.episode-1{
+background: url("img/card-film.png") center/cover;
 }
