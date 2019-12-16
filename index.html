@@ -1,12 +1,1176 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<html lang="en" xmlns:og="http://ogp.me/ns#">
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <title>Stijn de Vries Portfolio</title>
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="description" content="Design portfolio of Stijn de Vries.">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/typeface-metropolis@0.0.74/files/metropolis-700.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/typeface-metropolis@0.0.74/files/metropolis-500.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/typeface-metropolis@0.0.74/files/metropolis-600.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/typeface-metropolis@0.0.74/files/metropolis-600italic.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" as="script"
+        crossorigin="anonymous">
+    <link rel="preload" href="css/styles.css" as="style">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <style>
+        .anim {
+            visibility: hidden
+        }
+    </style>
+    <style>
+        @font-face {
+            font-family: "Metropolis";
+            src: url('https://cdn.jsdelivr.net/npm/typeface-metropolis@0.0.74/files/metropolis-700.woff2') format('woff2'), url('https://cdn.jsdelivr.net/npm/typeface-metropolis@0.0.74/files/metropolis-700.woff') format('woff');
+            font-weight: 700;
+            font-display: auto
+        }
+
+        @font-face {
+            font-family: "Metropolis";
+            src: url('https://cdn.jsdelivr.net/npm/typeface-metropolis@0.0.74/files/metropolis-500.woff2') format('woff2'), url('https://cdn.jsdelivr.net/npm/typeface-metropolis@0.0.74/files/metropolis-500.woff') format('woff');
+            font-weight: 500;
+            font-display: auto
+        }
+
+        @font-face {
+            font-family: "Metropolis";
+            src: url('https://cdn.jsdelivr.net/npm/typeface-metropolis@0.0.74/files/metropolis-600.woff2') format('woff2'), url('https://cdn.jsdelivr.net/npm/typeface-metropolis@0.0.74/files/metropolis-600.woff') format('woff');
+            font-weight: 600;
+            font-display: auto
+        }
+
+        @font-face {
+            font-family: "Metropolis";
+            src: url('https://cdn.jsdelivr.net/npm/typeface-metropolis@0.0.74/files/metropolis-600italic.woff2') format('woff2'), url('https://cdn.jsdelivr.net/npm/typeface-metropolis@0.0.74/files/metropolis-600italic.woff') format('woff');
+            font-weight: 600;
+            font-style: italic;
+            font-display: auto
+        }
+
+        body,
+        div {
+            font-size: 0
+        }
+
+        p,
+        span,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+            word-spacing: normal;
+            word-wrap: break-word;
+            -ms-word-wrap: break-word;
+            pointer-events: auto
+        }
+
+        sup {
+            font-size: inherit;
+            vertical-align: baseline;
+            position: relative;
+            top: -0.4em
+        }
+
+        sub {
+            font-size: inherit;
+            vertical-align: baseline;
+            position: relative;
+            top: 0.4em
+        }
+
+        ul {
+            display: block;
+            word-spacing: normal;
+            word-wrap: break-word;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            -moz-padding-start: 0;
+            -khtml-padding-start: 0;
+            -webkit-padding-start: 0;
+            -o-padding-start: 0;
+            -padding-start: 0;
+            -webkit-margin-before: 0;
+            -webkit-margin-after: 0
+        }
+
+        li {
+            display: block
+        }
+
+        li p {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none
+        }
+
+        form {
+            display: inline-block
+        }
+
+        a {
+            text-decoration: inherit;
+            color: inherit;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+        }
+
+        textarea {
+            resize: none
+        }
+
+        .shm-l {
+            float: left;
+            clear: left
+        }
+
+        .shm-r {
+            float: right;
+            clear: right
+        }
+
+        .whitespacefix {
+            word-spacing: -1px
+        }
+
+        html {
+            font-family: sans-serif;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%
+        }
+
+        body {
+            margin: 0
+        }
+
+        audio,
+        video {
+            display: inline-block;
+            vertical-align: baseline
+        }
+
+        audio:not([controls]) {
+            display: none;
+            height: 0
+        }
+
+        [hidden],
+        template {
+            display: none
+        }
+
+        a {
+            background: 0 0;
+            outline: 0
+        }
+
+        b,
+        strong {
+            font-weight: 700
+        }
+
+        dfn {
+            font-style: italic
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 1em;
+            line-height: 1;
+            margin: 0em 0
+        }
+
+        img {
+            border: 0
+        }
+
+        svg:not(:root) {
+            overflow: hidden
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            color: inherit;
+            font: inherit;
+            margin: 0
+        }
+
+
+
+
+
+        input {
+            line-height: normal
+        }
+
+
+
+        optgroup {
+            font-weight: 700
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        td,
+        th {
+            padding: 0
+        }
+
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @-webkit-keyframes tada {
+            from {
+                -webkit-transform: scale3d(1, 1, 1)
+            }
+
+            10%,
+            20% {
+                -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
+            }
+
+            30%,
+            50%,
+            70%,
+            90% {
+                -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+            }
+
+            40%,
+            60%,
+            80% {
+                -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+            }
+
+            to {
+                -webkit-transform: scale3d(1, 1, 1)
+            }
+        }
+
+        @keyframes tada {
+            from {
+                transform: scale3d(1, 1, 1)
+            }
+
+            10%,
+            20% {
+                transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
+            }
+
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+            }
+
+            40%,
+            60%,
+            80% {
+                transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+            }
+
+            to {
+                transform: scale3d(1, 1, 1)
+            }
+        }
+
+        .tada {
+            -webkit-animation-name: tada;
+            animation-name: tada
+        }
+
+        .animated {
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both
+        }
+
+        .animated.infinite {
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite
+        }
+
+        @-webkit-keyframes fadeInUp {
+            from {
+                opacity: 0;
+                -webkit-transform: translate3d(0, 100%, 0)
+            }
+
+            to {
+                opacity: 1;
+                -webkit-transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 100%, 0)
+            }
+
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        .fadeInUp {
+            -webkit-animation-name: fadeInUp;
+            animation-name: fadeInUp
+        }
+
+        #b {
+            background-color: #1f1e1d;
+            top: 0
+        }
+
+        .ps27 {
+            position: relative;
+            margin-top: 40px
+        }
+
+        .v4 {
+            display: block;
+            *display: block;
+            zoom: 1;
+        }
+
+        .s27 {
+            pointer-events: none;
+            min-width: 960px;
+            width: 960px;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .v5 {
+            display: inline-block;
+            *display: inline;
+            zoom: 1;
+            vertical-align: top
+        }
+
+        .ps28 {
+            position: relative;
+            margin-left: 5px;
+            margin-top: 0
+        }
+
+        .s28 {
+            min-width: 676px;
+            width: 676px;
+            min-height: 418px
+        }
+
+        .ps29 {
+            position: relative;
+            margin-left: 0;
+            margin-top: 38px
+        }
+
+        .s29 {
+            min-width: 80px;
+            width: 80px;
+            min-height: 31px;
+            height: 31px
+        }
+
+        .c34 {
+            z-index: 42;
+            pointer-events: auto
+        }
+
+        .wrapper {
+            font-size: 15px;
+            line-height: 1.4;
+            height: 31px
+        }
+
+        .wrapper div,
+        .wrapper p,
+        .wrapper a {
+            font-size: 15px;
+            line-height: 1.4
+        }
+
+        .wrapper input {
+            font-size: 15px;
+            line-height: 1.4;
+            margin: 3px 2px 3px 2px
+        }
+
+        .ps30 {
+            position: relative;
+            margin-left: 70px;
+            margin-top: 14px
+        }
+
+        .s30 {
+            min-width: 10px;
+            width: 10px;
+            min-height: 40px;
+            height: 40px
+        }
+
+        .c35 {
+            pointer-events: auto
+        }
+
+        .wrapper2 {
+            font-size: 15px;
+            line-height: 1.4;
+            height: 40px
+        }
+
+        .wrapper2 div,
+        .wrapper2 p,
+        .wrapper2 a {
+            font-size: 15px;
+            line-height: 1.4
+        }
+
+        .wrapper2 input {
+            font-size: 15px;
+            line-height: 1.4;
+            margin: 3px 2px 3px 2px
+        }
+
+        .ps31 {
+            position: relative;
+            margin-left: 115px;
+            margin-top: 0
+        }
+
+        .s31 {
+            min-width: 401px;
+            width: 401px;
+            min-height: 418px;
+            height: 418px
+        }
+
+        .c36 {
+            z-index: 1;
+            pointer-events: auto
+        }
+
+        .i9 {
+            position: absolute;
+            left: 0;
+            min-width: 401px;
+            max-width: 401px;
+            min-height: 401px;
+            max-height: 401px;
+            top: 8px
+        }
+
+        .ps32 {
+            position: relative;
+            margin-left: 0;
+            margin-top: 12px
+        }
+
+        .s32 {
+            min-width: 960px;
+            width: 960px;
+            min-height: 204px
+        }
+
+        .v6 {
+            display: inline-block;
+            *display: inline;
+            zoom: 1;
+            vertical-align: top;
+            overflow: hidden
+        }
+
+        .ps33 {
+            position: relative;
+            margin-left: 0;
+            margin-top: 0
+        }
+
+        .s33 {
+            min-width: 960px;
+            width: 960px;
+            min-height: 164px;
+            height: 164px
+        }
+
+        .c37 {
+            z-index: 2;
+            pointer-events: auto
+        }
+
+        .p2 {
+            padding-top: 0;
+            text-indent: 0;
+            padding-bottom: 0;
+            padding-right: 0;
+            text-align: center
+        }
+
+        .f4 {
+            font-family: Metropolis;
+            font-size: 105px;
+            font-weight: 700;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            color: #fff;
+            background-color: initial;
+            line-height: 147px;
+            letter-spacing: normal;
+            text-shadow: none
+        }
+
+        .ps34 {
+            position: relative;
+            margin-left: 0;
+            margin-top: -32px
+        }
+
+        .s34 {
+            min-width: 960px;
+            width: 960px;
+            min-height: 72px;
+            height: 72px
+        }
+
+        .c38 {
+            z-index: 3;
+            pointer-events: auto
+        }
+
+        .f5 {
+            font-family: Metropolis;
+            font-size: 47px;
+            font-weight: 500;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            color: #cfcfcf;
+            background-color: initial;
+            line-height: 65px;
+            letter-spacing: normal;
+            text-shadow: none
+        }
+
+        .ps35 {
+            margin-top: 79px;
+            top: 0;
+            position: -webkit-sticky;
+            position: -moz-sticky;
+            position: -o-sticky;
+            position: -ms-sticky;
+            position: sticky
+        }
+
+        .s35 {
+            width: 100%;
+            min-width: 960px;
+            min-height: 755px
+        }
+
+        .c39 {
+            z-index: 4;
+            pointer-events: none
+        }
+
+        .ps36 {
+            position: relative;
+            margin-top: 0
+        }
+
+        .c40 {
+            z-index: 5;
+            border: 0;
+            background-color: #ff6a3a;
+            box-shadow: 0 0 40px rgba(0, 0, 0, .20)
+        }
+
+        .s36 {
+            min-width: 960px;
+            width: 960px;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .ps37 {
+            position: relative;
+            margin-left: 181px;
+            margin-top: 0
+        }
+
+        .s37 {
+            min-width: 600px;
+            width: 600px;
+            min-height: 755px
+        }
+
+        .ps38 {
+            position: relative;
+            margin-left: 0;
+            margin-top: 20px
+        }
+
+        .s38 {
+            min-width: 600px;
+            width: 600px;
+            min-height: 93px;
+            height: 93px
+        }
+
+        .c41 {
+            z-index: 6;
+            pointer-events: auto
+        }
+
+        .f6 {
+            font-family: Metropolis;
+            font-size: 38px;
+            font-weight: 600;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            color: #fff;
+            background-color: initial;
+            line-height: 45px;
+            letter-spacing: normal;
+            text-shadow: none
+        }
+
+        .f7 {
+            font-family: Metropolis;
+            font-size: 26px;
+            font-weight: 600;
+            font-style: italic;
+            text-decoration: none;
+            text-transform: none;
+            color: #fff;
+            background-color: initial;
+            line-height: 31px;
+            letter-spacing: normal;
+            text-shadow: none
+        }
+
+        .ps39 {
+            position: relative;
+            margin-left: 86px;
+            margin-top: -113px
+        }
+
+        .s39 {
+            min-width: 426px;
+            width: 426px;
+            min-height: 755px;
+            height: 755px
+        }
+
+        .c42 {
+            z-index: 7;
+            pointer-events: auto
+        }
+
+        .a2 {
+            display: block
+        }
+
+        .i10 {
+            position: absolute;
+            left: 0;
+            min-width: 426px;
+            max-width: 426px;
+            min-height: 138px;
+            max-height: 138px;
+            top: 308px
+        }
+
+        .ps40 {
+            margin-top: 0;
+            top: 0;
+            position: -webkit-sticky;
+            position: -moz-sticky;
+            position: -o-sticky;
+            position: -ms-sticky;
+            position: sticky
+        }
+
+        .s40 {
+            width: 100%;
+            min-width: 960px;
+            min-height: 755px
+        }
+
+        .c43 {
+            z-index: 8;
+            pointer-events: none
+        }
+
+        .c44 {
+            z-index: 9;
+            pointer-events: auto
+        }
+
+        .c45 {
+            z-index: 10;
+            pointer-events: none;
+            border: 0;
+            background-color: #a9c548;
+            box-shadow: 0 0 40px rgba(0, 0, 0, .20)
+        }
+
+        .ps41 {
+            position: relative;
+            margin-left: 225px;
+            margin-top: 0
+        }
+
+        .s41 {
+            min-width: 511px;
+            width: 511px;
+            min-height: 755px;
+            height: 755px
+        }
+
+        .c46 {
+            z-index: 11;
+            pointer-events: auto
+        }
+
+        .i11 {
+            position: absolute;
+            left: 0;
+            min-width: 511px;
+            max-width: 511px;
+            min-height: 141px;
+            max-height: 141px;
+            top: 307px
+        }
+
+        .ps42 {
+            position: relative;
+            margin-left: 0;
+            margin-top: -695px
+        }
+
+        .s42 {
+            min-width: 1px;
+            width: 1px;
+            min-height: 1px
+        }
+
+        @media (max-width:959px) {
+            .ps27 {
+                margin-top: 0
+            }
+
+            .s27 {
+                min-width: 320px;
+                width: 320px
+            }
+
+            .ps28 {
+                margin-left: 0
+            }
+
+            .s28 {
+                min-width: 243px;
+                width: 243px;
+                min-height: 2019px
+            }
+
+            .ps29 {
+                margin-left: 3px;
+                margin-top: 2009px
+            }
+
+            .s29 {
+                min-width: 27px;
+                width: 27px;
+                min-height: 10px;
+                height: 10px
+            }
+
+            .wrapper {
+                height: 10px
+            }
+
+            .ps30 {
+                margin-left: -30px;
+                margin-top: 0
+            }
+
+            .s30 {
+                min-width: 3px;
+                width: 3px;
+                min-height: 13px;
+                height: 13px
+            }
+
+            .wrapper2 {
+                height: 13px
+            }
+
+            .ps31 {
+                margin-left: 74px;
+                margin-top: 26px
+            }
+
+            .s31 {
+                min-width: 166px;
+                width: 166px;
+                min-height: 175px;
+                height: 175px
+            }
+
+            .i9 {
+                min-width: 166px;
+                max-width: 166px;
+                min-height: 166px;
+                max-height: 166px;
+                top: 4px
+            }
+
+            .ps32 {
+                margin-top: -1797px
+            }
+
+            .s32 {
+                min-width: 320px;
+                width: 320px;
+                min-height: 124px
+            }
+
+            .s33 {
+                min-width: 320px;
+                width: 320px;
+                min-height: 61px;
+                height: 61px
+            }
+
+            .f4 {
+                font-size: 42px;
+                line-height: 59px
+            }
+
+            .ps34 {
+                margin-left: 37px;
+                margin-top: 0
+            }
+
+            .s34 {
+                min-width: 246px;
+                width: 246px;
+                min-height: 63px;
+                height: 63px
+            }
+
+            .f5 {
+                font-size: 22px;
+                line-height: 30px
+            }
+
+            .ps35 {
+                margin-top: -1618px
+            }
+
+            .s35 {
+                min-width: 320px;
+                min-height: 377px
+            }
+
+            .s36 {
+                min-width: 320px;
+                width: 320px
+            }
+
+            .ps37 {
+                margin-left: 37px
+            }
+
+            .s37 {
+                min-width: 246px;
+                width: 246px;
+                min-height: 377px
+            }
+
+            .ps38 {
+                margin-left: 23px;
+                margin-top: 322px
+            }
+
+            .s38 {
+                min-width: 200px;
+                width: 200px;
+                min-height: 45px;
+                height: 45px
+            }
+
+            .f6 {
+                font-size: 18px;
+                line-height: 21px
+            }
+
+            .f7 {
+                font-size: 14px;
+                line-height: 16px
+            }
+
+            .ps39 {
+                margin-left: 0;
+                margin-top: -367px
+            }
+
+            .s39 {
+                min-width: 246px;
+                width: 246px;
+                min-height: 377px;
+                height: 377px
+            }
+
+            .i10 {
+                min-width: 246px;
+                max-width: 246px;
+                min-height: 80px;
+                max-height: 80px;
+                top: 148px
+            }
+
+            .s40 {
+                min-width: 320px;
+                min-height: 375px
+            }
+
+            .ps41 {
+                margin-left: 30px
+            }
+
+            .s41 {
+                min-width: 262px;
+                width: 262px;
+                min-height: 375px;
+                height: 375px
+            }
+
+            .i11 {
+                min-width: 262px;
+                max-width: 262px;
+                min-height: 72px;
+                max-height: 72px;
+                top: 152px
+            }
+
+            .ps42 {
+                margin-top: -375px
+            }
+        }
+    </style>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-20190801005513.png">
+    <meta name="msapplication-TileImage" content="mstile-144x144-20190801005513.png">
+    <link rel="mask-icon" href="website-icon-20190801005513.svg" color="rgb(255,147,0)">
+    <meta name="keywords" content="Stijn de Vries, @StijnDV, Design, Portfolio, Stijn">
+    <link as="style" rel="stylesheet" rel="preload" href="css/styles.css"><noscript>
+        <link rel="stylesheet" href="css/styles.css"></noscript>
+    <!--[if lte IE 7]><link rel="stylesheet" href="css/site.20190801005513-lteIE7.css" type="text/css"><![endif]-->
+    <script>!function (e) { var t = !1; try { t = e.document.createElement("link").relList.supports("preload") } catch (e) { } if (!t) for (var n = e.document.getElementsByTagName("link"), l = 0; l < n.length; l++) { var a = n[l]; "preload" === a.rel && "style" === a.getAttribute("as") && function (e) { function t() { e.media = "all" } e.addEventListener("load", t), setTimeout(function () { e.rel = "stylesheet", e.media = "nl x" }), setTimeout(t, 3e3) }(a) } }(this);</script>
+
+    <meta name="robots" content="no-index">
+    <meta name="twitter:card" content="summary">
+    <meta content="StijnDV Portfolio" property="og:title">
+    <meta content="website" property="og:type">
+    <meta property="og:title" content="StijnDV Portfolio">
+    <meta property="og:site_name" content="Stijn de Vries Portfolio">
+    <meta property="og:url" content="https://stijndv.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://stijndv.com/StijnDV-Open-Graph.png">
+    <meta name="twitter:site" content="@StijnDV" />
+    <meta name="twitter:creator" content="@StijnDV" />
+    <meta content="https://stijndv.com/" property="og:url">
+    <script
+        type="application/ld+json">{"@context": "http:\/\/schema.org","@id": "http:\/\/stijndv.com#","@type": "ProfessionalService","url": "http:\/\/stijndv.com","name": "Stijn de Vries","description": "Designer ","image": "http:\/\/stijndv.com\/share\/lb-image-0.jpg"}</script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script
+        type="application/ld+json">{"@context": "http://schema.org","@type": "Person","email": "mailto:mail@stijndv.com","jobTitle": "Designer","name": "Stijn de Vries","url": "https://www.stijndv.com","worksFor": "https://www.spitch.nl"}</script>
+</head>
+
+<body id="b">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <div class="ps27 v4 s27">
+        <div class="v5 ps28 s28 c33">
+            <div class="v5 ps29 s29 c34">
+                <div class="wrapper"></div>
+            </div>
+            <div class="v5 ps30 s30 c35">
+                <div class="wrapper2">
+                    <style>
+                        .trial-banner {
+                            display: none !important;
+                        }
+                    </style>
+                </div>
+            </div>
+            <div class="v5 ps31 s31 c36"><img loading="eager" itemprop="logo" src="images/stijndv-logo.svg"
+                    alt="StijnDV Logo" class="anim tada js i9"></div>
+        </div>
+        <div class="v5 ps32 s32 c33">
+            <div class="anim fadeInUp js2 v6 ps33 s33 c37">
+                <h1 class="p2 f4">Hi! I'm <span itemprop="name">Stijn</span>.</h1>
+            </div>
+            <div class="anim fadeInUp js3 v6 ps34 s34 c38">
+                <h3 class="p2 f5">And l like to make things look nice.</h3>
+            </div>
+        </div>
+    </div>
+    <div class="v4 ps35 s35 c39">
+        <div class="v5 ps36 s35 c40">
+            <div class="ps36 v4 s36">
+                <div class="v5 ps37 s37 c33">
+                    <div class="v6 ps38 s38 c41">
+                        <h2 class="p2 f6">Lines</h2>
+                        <h2 class="p2 f7">Website &amp; Brand Design</h2>
+                    </div>
+                    <div class="v5 ps39 s39 c42"><a class="a2" href="https://spitch.nl/lines-propositie-marketeer/"><img
+                                title="Lines Logo" alt="Lines Logo" class="i10" src="images/lines-logo.svg"></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="v4 ps40 s40 c43">
+        <div class="v5 ps36 s40 c44">
+            <div class="v5 ps36 s40 c45">
+                <div class="ps36 v4 s36">
+                    <div class="v5 ps41 s41 c46"><a class="a2" href="https://spitch.nl" target="_blank"
+                            rel="noopener"><img loading="lazy" title="Logo voor sPitch online marketing."
+                                alt="Logo voor sPitch online marketing" class="i11"
+                                src="images/spitch-online-marketing-logo-design.svg"></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="ps v s">
+            <div class="v2 ps2 s2 c">
+                <h2 class="p f">sPitch</h2>
+                <h2 class="p f2">Website &amp; Logo Redesign</h2>
+            </div>
+        </div>
+    </div><a name="anchor1" class="v5 ps42 s42"></a>
+    <div class="v ps3 s3 c2">
+        <div class="v3 ps4 s4 c3"></div>
+        <div class="ps5 v s">
+            <div class="v3 ps6 s5 c4">
+                <div class="v3 ps7 s6 c5"><img loading="lazy" src="images/kiosk-redesign.svg" alt="" class="i"></div>
+                <div class="v2 ps8 s7 c6">
+                    <h1 class="p f3">NS train station brands fictional redesign</h1>
+                </div>
+            </div>
+        </div>
+    </div><a name="anchor4" class="v3 ps9 s8"></a>
+    <div class="v ps10 s9 c7">
+        <div class="v3 ps4 s9 c8">
+            <div class="ps11 v s">
+                <div class="v3 ps12 s10 c9"><img loading="lazy" src="images/stations-huiskamer-redesign.svg" alt=""
+                        class="i2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="v ps3 s11 c10">
+        <div class="v3 ps4 s11 c11">
+            <div class="ps13 v s">
+                <div class="v3 ps6 s12 c12"><img loading="lazy" src="images/ah-to-go.svg" alt="" class="i3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="v ps3 s13 c13">
+        <div class="v3 ps4 s13 c14">
+            <div class="v3 ps4 s13 c15">
+                <div class="ps14 v s">
+                    <div class="v3 ps15 s14 c16"><img loading="lazy" src="images/group.svg" alt="" class="i4"></div>
+                </div>
+            </div>
+        </div>
+        <div class="ps v s">
+            <div class="v2 ps16 s15 c17">
+                <h2 class="p f">NS +Klas</h2>
+                <h2 class="p f2">ICA Multimedia Campagne</h2>
+            </div>
+        </div>
+    </div><a name="anchor4" class="v3 ps17 s8"></a>
+    <div class="v ps3 s16 c18">
+        <div class="v3 ps4 s16 c19">
+            <div class="v3 ps4 s16 c20">
+                <div class="ps18 v s">
+                    <div class="v3 ps6 s17 c21"><img loading="lazy" src="images/sinister-industries-logo.svg" alt=""
+                            class="i5"></div>
+                </div>
+            </div>
+        </div>
+        <div class="ps v s">
+            <div class="v2 ps2 s18 c22">
+                <h2 class="p f">Sinister Industries</h2>
+                <h2 class="p f2">Logo</h2>
+            </div>
+        </div>
+    </div><a name="anchor5" class="v3 ps19 s8"></a>
+    <div class="v3 ps4 s19 c23">
+        <div class="v3 ps4 s19 c24">
+            <div class="v3 ps4 s19 c25">
+                <div class="ps20 v s">
+                    <div class="v3 ps21 s20 c26"><img loading="lazy" src="images/labda.svg" alt="" class="i6"></div>
+                </div>
+            </div>
+        </div>
+        <div class="ps22 v s21">
+            <div class="v2 ps2 s22 c27">
+                <h2 class="p f">Labda App Icon</h2>
+                <h2 class="p f2">iOS &amp; Android</h2>
+            </div>
+        </div>
+    </div>
+    <div class="anim fadeInUp js4 v3 ps23 s23 c28">
+        <div class="ps4 v s21">
+            <div class="v3 ps24 s24 c29">
+                <div class="v3 ps25 s25 c30"><a class="a" href="http://twitter.com/StijnDV" target="_blank"
+                        rel="noopener"><img src="images/my-twitter-stijndv.svg" alt="" class="i7"></a></div>
+                <div class="v3 ps26 s26 c31"><a class="a" href="javascript:em1();"><img
+                            src="images/email-stijndv-design.svg" alt="" class="i8"></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="c32"></div>
+    <script async defer src="js/index.20190801005513.js"></script>
+    <script async src="js/woolite.js"></script>
+    <script
+        defer>window.jQuery, $.fn.hasAttr = function (n) { var t = $(this).attr(n); return void 0 !== t && !1 !== t }; var lwi = -1; function thresholdPassed() { var n = !1, t = 0; return 960 <= $(window).width() && t++ , lwi != t && (n = !0), lwi = t, n } function em1() { for (var n = "nbjmAtujkoew/dpn", t = "mailto:", i = 0; i < n.length; i++)t += String.fromCharCode(n.charCodeAt(i) - 1); window.location.href = t } $(document).ready(function () { var n = new woolite; n.init(), n.addAnimation($(".js")[0], "2.00s", "3.00s", 1, 0), n.addAnimation($(".js2")[0], "1.00s", "0.00s", 1, 0), n.addAnimation($(".js3")[0], "1.00s", "0.70s", 1, 0), n.addAnimation($(".js4")[0], "0.90s", "1.40s", 1, 0), n.start() });</script>
+    <script
+        async> !function () { var s = 0, n = {}, j = 0, e = function (e) { var o = new XMLHttpRequest; o.open("GET", s[e], !0), o.onload = function () { if (n[e] = o.responseText, 4 == ++j) for (var t in s) { var i = document.createElement("script"); i.textContent = n[t], document.body.appendChild(i) } }, o.send() }; for (var o in s) e(o) }();</script>
+    <script async
+        type="text/javascript">var ver = RegExp(/Mozilla\/5\.0 \(Linux; .; Android ([\d.]+)/).exec(navigator.userAgent); if (ver && parseFloat(ver[1]) < 5) { document.getElementsByTagName('body')[0].className += ' whitespacefix'; }</script>
+</body>
+
 </html>
