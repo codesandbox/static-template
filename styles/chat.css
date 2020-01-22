@@ -1,0 +1,141 @@
+.chats__body {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.chat__screen {
+  background-color: #7bdf62;
+  min-height: 100vh;
+}
+
+.chats__body .header,
+.chats__body .status-bar {
+  padding: 0px 20px;
+}
+
+.chat__screen .chat__messages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  border-top: 1px solid #f7f7f7f7;
+}
+
+.chat__messages .chat__timestamp {
+  background-color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+    rgba(0, 0, 0, 0.024) 0px -6px 16px -6px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.message .message__content {
+  width: 80%;
+  font-size: 14px;
+}
+
+.incoming-message {
+  align-self: flex-start;
+  margin-left: 10px;
+}
+
+.incoming-message .message__content {
+  margin-left: 10px;
+}
+
+.incoming-message .message__author {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.sent-message {
+  align-self: flex-end;
+  margin-right: 10px;
+}
+
+.message.incoming-message .message__bubble {
+  border-bottom-left-radius: 0;
+  background: #b34352; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3180ca,
+    #5dd4e4
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #dd3e54,
+    #6be585
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+}
+
+.message.sent-message .message__bubble {
+  border-bottom-right-radius: 0;
+  background: #12c2e9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ca313b,
+    #943ac2,
+    #1d8896
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2b8d94,
+    #81992b,
+    #1d20d3
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+}
+
+.message .message__bubble {
+  display: block;
+  background-color: white;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.chat__write {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fcfcfc;
+  position: fixed;
+  bottom: 50px;
+  width: 80%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  padding: 0 20px;
+  border-radius: 40px;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+}
+
+.chat__write i {
+  font-size: 20px;
+}
+
+.chat__write-column:nth-child(2) {
+  width: 80%;
+}
+
+.chat__write-column input {
+  padding: 20px 10px;
+  width: 100%;
+}
