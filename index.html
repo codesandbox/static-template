@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Breakout</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+      }
+      #canvas {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <script src="game.js"></script>
   </body>
 </html>
