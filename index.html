@@ -1,12 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="https://friconix.com/cdn/friconix.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <nav class="navdiv">
+      <!-- logo start -->
+      <div class="logo">
+        <img
+          src="https://d33wubrfki0l68.cloudfront.net/ca0061c3c33c88b2b124e64ad341e15e2a17af49/c8765/images/alligator-logo3.svg"
+          alt="logo"
+          width="80"
+          height="80"
+          class="m-logo"
+        />
+
+        <!-- script start -->
+        <script>
+          function myFunction() {
+            var x = document.getElementById("menu");
+            if (x.className === "menu menu-hide") {
+              return (x.className = "menu");
+            } else {
+              return (x.className = "menu menu-hide");
+            }
+          }
+        </script>
+        <!-- script end -->
+        <a class="m-btn" id="show" onclick="myFunction()"
+          ><i class="fi-snsuxl-three-bars"></i
+        ></a>
+      </div>
+      <!-- logo end -->
+      <!-- menu start -->
+      <div class="menu menu-hide" id="menu">
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">Contact</a></li>
+          <li><a href="">About</a></li>
+        </ul>
+      </div>
+      <!-- menu end -->
+
+      <!-- extra option start -->
+      <div class="cart">
+        <ul>
+          <li><i class="fi-xnsuxl-bug-solid"></i>(10)</li>
+          <li><i class="fi-xtluxl-bug-thin"></i>(9)</li>
+        </ul>
+      </div>
+      <!-- extra option end -->
+    </nav>
+    <!-- navigation menu ends here -->
+    <div class="contentbox">
+      <div class="showcase">
+        <h1>Your Presence..</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit.
+        </p>
+        <a href="" class="_btn">Read More...</a>
+      </div>
+      <!-- showcase end -->
+      <div class="pkg1">
+        <h4>Membership</h4>
+        <p>199$</p>
+        <a href="" class="_btn">Buy Now!</a>
+      </div>
+      <div class="pkg2">
+        <h4>Pro Membership</h4>
+        <p>300$</p>
+        <a href="" class="_btn">Buy Now!</a>
+      </div>
+    </div>
   </body>
 </html>
