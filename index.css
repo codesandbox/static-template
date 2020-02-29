@@ -1,0 +1,80 @@
+#todos {
+  font-family: sans-serif;
+  color: #444;
+}
+
+/**
+ * Todo List Input
+ */
+#todos form {
+  display: flex;
+}
+
+#todos form input[type="text"],
+#todos form input[type="submit"] {
+  padding: 5px 10px;
+  border: 1px solid #666;
+  outline: none;
+}
+
+#todos form input[type="text"] {
+  flex: 1;
+}
+
+#todos form input[type="text"]:focus {
+  border-color: #369;
+}
+
+#todos form input[type="submit"] {
+  display: none;
+  text-transform: uppercase;
+}
+
+#todos form input[type="submit"]:active {
+  border-color: #369;
+  background-color: #369;
+  color: #fff;
+}
+
+/*
+By adding a simple "is-valid" class to the
+Todo's FORM - that wraps all the other
+components - then we can easily fix the
+style to display a "ready to sent" UI.
+
+It's Javascript that implements the logic
+to add or remove the "is-valid" class.
+*/
+#todos form.is-valid input[type="submit"] {
+  display: block;
+}
+
+#todos form.is-valid input[type="text"] {
+  margin-right: 10px;
+}
+
+
+
+/**
+ * Todos List
+ */
+
+#todos ul {
+  margin: 10px 0 0 0;
+  padding: 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#todos ul li {
+  padding: 5px 10px;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 500ms ease;
+}
+
+#todos ul li:last-child {
+  border-bottom: none;
+}
+
+#todos ul li:hover {
+  background-color: #cde;
