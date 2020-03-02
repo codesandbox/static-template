@@ -1,0 +1,615 @@
+body {
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  background-repeat: repeat-y;
+  background-size: cover;
+  width: 100%;
+  font-family: "Bree Serif";
+  text-align: left;
+}
+
+.header {
+  width: 100%;
+  min-height: 100px;
+  background-color: #121212;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid #121212;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #121212;
+}
+
+.soccer {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid #121212;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #121212;
+}
+
+.logo i {
+  font-size: 40px;
+  color: white;
+  margin: 0 20px;
+}
+
+#bar {
+  font-size: 30px;
+  color: white;
+  display: none;
+}
+
+strong {
+  color: #3498db;
+  font-weight: bold;
+}
+
+.logo a {
+  color: white;
+  font-family: "Cabin";
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.navbar li {
+  list-style-type: none;
+  padding: 0 20px;
+}
+
+.contact {
+}
+
+.navbar li a {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  font-family: "Ubuntu";
+}
+
+.homepage {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  background-color: transparent;
+  min-height: 690px;
+}
+
+.text {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.text h1 {
+  font-size: 3rem;
+  line-height: 80px;
+  font-weight: bold;
+  display: flex;
+  margin: 0 10px;
+  padding: 20px 0;
+  align-self: flex-start;
+  text-align: left;
+  flex-wrap: wrap;
+  text-transform: none;
+  animation: fade-in 3s;
+  animation-duration: 5s;
+}
+
+.text p {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  flex-wrap: wrap;
+  padding: 10px;
+  font-family: "Cabin";
+
+  animation: fade-in 15s;
+
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 40px;
+  color: whitesmoke;
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  justify-content: center;
+  align-self: center;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    font-weight: bold;
+  }
+}
+
+.image img {
+  width: 80%;
+  object-fit: cover;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-self: flex-start;
+  margin-left: -10px;
+}
+
+.cta {
+  padding: 10px 30px;
+  display: flex;
+  margin: 20px;
+  flex-direction: row;
+  align-self: flex-start;
+  color: white;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 5px;
+  font-family: "Cabin";
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.devices {
+  width: 100%;
+  min-height: 500px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.parent {
+  width: 100%;
+  background-color: transparent;
+  min-height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.box {
+  width: 270px;
+  background-color: #121212;
+  min-height: 250px;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  margin: 30px;
+}
+
+.devices h1 {
+  color: white;
+  padding: 20px;
+}
+
+.box:hover {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  transition: 0.3s linear;
+}
+
+.box i {
+  font-size: 70px;
+  color: white;
+}
+
+.box h2 {
+  color: white;
+  font-family: "Ubuntu";
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sub {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #3498db;
+  color: white;
+  font-family: "Ubuntu";
+}
+
+.sub:hover {
+  background-color: #3498db;
+  transition: 1s linear;
+  border: none;
+}
+
+.about {
+  width: 100%;
+  background-color: transparent;
+  min-height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.aboutus {
+  width: 100%;
+  min-height: 550px;
+  flex-wrap: wrap;
+  display: flex;
+  background-color: #121212;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.aboutus h1 {
+  font-size: 20px;
+  padding: 20px;
+  border-bottom: 2px solid #3498db;
+  margin: 0 10px;
+}
+
+.aboutus p {
+  padding: 50px;
+  line-height: 50px;
+  font-family: "Cabin";
+  z-index: 10000;
+  text-align: left;
+  margin: 0 10px;
+}
+
+.aboutus .sub {
+  background-color: #3498db;
+  font-family: "Bree Serif";
+  margin: 30px 0;
+}
+
+.streams {
+  width: 100%;
+  background-color: transparent;
+  min-height: 550px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.streams h1 {
+  margin: 0 10px;
+  text-align: center;
+}
+
+.streams {
+  padding: 20px 0;
+}
+
+.gallery {
+  width: 100%;
+  min-height: 500px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px 0;
+}
+
+.item {
+  width: 450px;
+  min-height: 300px;
+  background-color: #121212;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 30px;
+  flex-direction: column;
+  border: 3px solid #121212;
+  border-radius: 5px;
+}
+
+.item h2 {
+  font-family: "Ubuntu";
+  font-size: 20px;
+  padding: 20px;
+  font-weight: bold;
+}
+.item img {
+  width: 100%;
+  opacity: 1;
+}
+
+.item img:hover {
+  opacity: 0.7;
+  transition: 2s linear;
+}
+
+.overlay {
+  width: 20%;
+  height: 30%;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background: none;
+  justify-content: center;
+  align-items: center;
+  margin: -50px 0;
+  opacity: 0;
+}
+
+.overlay #play {
+  font-size: 23px;
+  color: white;
+  background-color: #121212;
+  padding: 30px;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.item:hover .overlay {
+  opacity: 1;
+  transition: 1s all ease-in-out;
+}
+
+.download {
+  background-color: transparent;
+  width: 100%;
+  min-height: 550px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.download p {
+  font-family: "Ubuntu";
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.source {
+  width: 100%;
+  min-height: 500px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.down {
+  width: 250px;
+  min-height: 300px;
+  display: flex;
+  margin: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212;
+}
+
+.down h2 {
+  padding: 20px;
+  font-family: "Ubuntu";
+}
+
+.downloadbutton {
+  display: flex;
+  flex-direction: row;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  justify-content: center;
+  align-items: center;
+}
+
+.downloadbutton:hover {
+  background-color: #212121;
+  border: 2px solid white;
+  transition: 0.6s linear;
+}
+
+.downloadbutton i {
+  font-size: 20px !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.downloadbutton h3 {
+  color: white;
+}
+
+.down i {
+  font-size: 60px;
+  color: white;
+}
+
+.footer {
+  width: 100%;
+  min-height: 100px;
+  background-color: #121212;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.left {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 5px;
+  border: 2px solid #121212;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #121212;
+}
+
+.left h1 {
+  color: white;
+  font-size: 16px;
+}
+
+.left a {
+  color: white;
+  font-family: "Cabin";
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+}
+
+.right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.right h1 {
+  color: white;
+  font-size: 15px;
+  letter-spacing:1px;
+  font-family:'Ubuntu';
+}
+
+.left i {
+  color: red;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.right i {
+  color:red;
+
+}
+
+@media only screen and (max-width: 850px) {
+  .navbar {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar li {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar li:hover {
+    background-color: #3498db;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+  }
+
+  .soccer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+
+    margin: 0 -60px;
+    justify-content: center;
+  }
+
+  #bar {
+    display: flex;
+    flex-wrap: wrap;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 -10px;
+  }
+}
