@@ -1,0 +1,248 @@
+/* Tipografía */
+@font-face {
+  font-family: "Everett Light";
+  src: url("/assets/fonts/everett-light.woff2") format("woff2"),
+    url("/assets/fonts/everett-light.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+
+/****************************************
+*    Variables
+*****************************************/
+:root {
+  /* Colors */
+  --background: #ebebeb;
+  --primary: #0047ff;
+  --secondary: #666666;
+  /* Typography */
+  --font-family: "Everett Light";
+}
+
+/* Resets */
+html {
+  box-sizing: border-box;
+}
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+blockquote,
+body,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+li,
+ol,
+pre,
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+button,
+input,
+textarea {
+  border: 1px solid gray;
+}
+button {
+  border-radius: 0;
+  padding: 0.75em 1em;
+  background-color: transparent;
+}
+button * {
+  pointer-events: none;
+}
+embed,
+iframe,
+img,
+object,
+video {
+  display: block;
+  max-width: 100%;
+}
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+[hidden] {
+  display: none;
+}
+noscript {
+  display: block;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+/****************************************
+*    Base - Elements
+*****************************************/
+html {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  min-height: 100%;
+  grid-template-rows: 8vh auto 9vh;
+  color: var(--primary);
+  background: var(--background);
+  font-family: var(--font-family);
+  font-size: 100%;
+  font-size: 1.1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--primary);
+}
+
+/****************************************
+*    Componentes
+*****************************************/
+
+/* Header */
+.header {
+  width: 100vw;
+  padding: 1em 4em 0;
+  border-bottom: 1px solid var(--primary);
+}
+
+.header a {
+  font-size: 1.6em;
+}
+
+/* Main - Inicio */
+.main {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.main svg {
+  padding-right: 3em;
+}
+
+@media (max-width: 40em) {
+  .main {
+    max-width: 100vw;
+  }
+  .main svg {
+    padding: 1em;
+  }
+}
+
+/* Sobre mi */
+.sobre-mi {
+  max-width: 600px;
+  padding: 3vh 5vw;
+}
+
+.sobre-mi p {
+  font-size: 1.1em;
+  line-height: 1.75em;
+}
+
+/* Proyectos */
+.proyectos {
+  display: flex;
+}
+
+.proyectos > * {
+  flex: 1;
+}
+
+.proyectos-title ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.proyectos-title ul li {
+  background-color: var(--secondary);
+  min-height: 3em;
+  padding: 1.1em;
+}
+
+.proyectos-title a {
+  color: white;
+}
+
+.proyectos-image img {
+  width: 100%;
+}
+
+/* Contacto */
+.contacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("/assets/images/contacto-bg.png") center center no-repeat;
+  background-size: 500px;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--primary);
+}
+
+/* Footer - navlinks */
+.footer ul {
+  display: flex;
+  margin: 0 4em;
+}
+
+/* Footer - copyright */
+.footer p {
+  margin: 0 4em;
+}
+
+.footer ul li:nth-child(even) {
+  padding: 0 2em;
+}
+
+/* Footer - mobile */
+@media (max-width: 40em) {
+  .footer {
+    max-width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footer ul {
+    padding-bottom: 0.5em;
+  }
+
+  .footer ul,
+  .footer p {
+    margin: 0;
+  }
+
+  .footer ul li {
+    padding: 0;
+  }
+}
