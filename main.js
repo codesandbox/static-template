@@ -45,5 +45,5 @@ class Cat {
   }
 }
 
-var catSally = new Cat("sally", 10, 25, 10, 10);
+const catSally = new Cat("sally", 10, 60, 10, 10);
 console.log(catSally);
