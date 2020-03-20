@@ -1,12 +1,579 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>IRSSL - Tecnocomp</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/balloon-css/balloon.min.css"
+    />
+    <link rel="shortcut icon" type="image/png" href="images/logoirssl.png" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css"/></noscript>
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header" class="alt">
+        <span class="logo"><img src="images/logoirssl.png" alt=""/></span>
+        <h1>IRSSL</h1>
+        <p>
+          Ferramenta para auxilio de chamados<br />
+          Desenvolvido por
+          <a href="https://www.linkedin.com/in/gabrielhmedeirossantos/"
+            >Gabriel Santos</a
+          >
+          com ❤
+        </p>
+      </header>
+
+      <!-- Nav -->
+      <nav id="nav">
+        <ul>
+          <li><a href="#info" class="active">Informações Gerais</a></li>
+          <li><a href="#ame">AME</a></li>
+          <li><a href="#hgg">HGG</a></li>
+          <li><a href="#hmj">HMJ</a></li>
+          <li><a href="#hrj">HRJ</a></li>
+          <li><a href="#matriz">Matriz</a></li>
+          <li><a href="#slrm">SLRM</a></li>
+          <li><a href="#colaboradores">Colaboradores IRSSL</a></li>
+        </ul>
+      </nav>
+
+      <!-- Main -->
+      <div id="main">
+        <!-- infoduction -->
+        <section id="info" class="main">
+          <div class="spotlight">
+            <div class="content">
+              <header class="major">
+                <h2>Ferramentas</h2>
+              </header>
+              <ul class="tools">
+                <li>
+                  <a
+                    href="https://accs-tecno-03/agentdesktop/"
+                    class="button"
+                    target="_blank"
+                    >Avaya</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://outlook.office365.com/"
+                    class="button"
+                    target="_blank"
+                    >Outlook</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://irssl.tecnocomp.com.br/"
+                    class="button"
+                    target="_blank"
+                    >GLPI</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://suporte.columbiaservicos.com.br/"
+                    class="button"
+                    target="_blank"
+                    >Columbia</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="spotlight">
+            <div class="content">
+              <header class="major">
+                <h2>Acesso da rede</h2>
+              </header>
+              <p>
+                Para mapear a pasta da rede.<br />
+                No executar (Win+R) digite o comando abaixo e clique Enter:<br />
+                <code>\\tc-fs-01\COMUM\Sirio</code><br /><br />
+                Caminho completo da pasta:<br />
+                <code>\\tc-fs-01\COMUM\Sirio</code>
+              </p>
+            </div>
+          </div>
+          <div class="spotlight">
+            <div class="content">
+              <header class="major">
+                <h2>Credenciais Columbia</h2>
+              </header>
+              <p>
+                Login: atendimento.tecnocomp01<br />
+                Senha: 12345678
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ame Section -->
+        <section id="ame" class="main special">
+          <header class="major">
+            <h2>AME</h2>
+          </header>
+          <ul class="features">
+            <li>
+              <span class="icon solid major style1 fas fa-phone-square"></span>
+              <h3>Contatos</h3>
+              <p>
+                Unidade: 056682500<br />
+                Ricardo: 971112549 / 056682528
+              </p>
+            </li>
+            <li>
+              <span class="icon solid major style1 fas fa-server"></span>
+              <h3>Servidores</h3>
+              <div class="dropdown">
+                <button class="button">Servidores</button>
+                <div class="dropdown-content">
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('10.195.4.101')"
+                    >AD</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\ame-printserver')"
+                    >Print Server</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\ame-winad01\\\\aei')"
+                    >Arquivos</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\ame-servmsg')"
+                    >Spark</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\ame-winad01')"
+                    >TSAPP</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\hggwinfs02\\suporte')"
+                    >Softwares</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="icon solid major style1 fas fa-eye"></span>
+              <h3>Conexão Remota</h3>
+              <p>
+                Senha: ame2010<br />
+                Range de IP: 10.196.x.x
+              </p>
+            </li>
+          </ul>
+          <footer class="major">
+            <ul class="actions special"></ul>
+          </footer>
+        </section>
+
+        <!-- hgg Section -->
+        <section id="hgg" class="main special">
+          <header class="major">
+            <h2>HGG</h2>
+          </header>
+          <ul class="features">
+            <li>
+              <span class="icon solid major style2 fas fa-phone-square"></span>
+              <h3>Contatos</h3>
+              <p>
+                Unidade: 035449444<br />
+                Roseli: 947461183 / 035449481
+              </p>
+            </li>
+            <li>
+              <span class="icon solid major style2 fas fa-server"></span>
+              <h3>Servidores</h3>
+              <div class="dropdown">
+                <button class="button">Servidores</button>
+                <div class="dropdown-content">
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('10.195.4.101')"
+                    >AD</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\hggwinprint01')"
+                    >Print Server</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\hggwinfs01')"
+                    >Arquivos</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('10.195.4.45')"
+                    >TSAPP</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('10.195.4.103')"
+                    >TSAPP Alternativo</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\hggwinfs02\\suporte')"
+                    >Softwares</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="icon solid major style2 fas fa-eye"></span>
+              <h3>Conexão Remota</h3>
+              <p>
+                Senha: itilxp / akwvnc / 123456<br />
+                Range de IP: 10.195.x.x
+              </p>
+            </li>
+          </ul>
+          <footer class="major">
+            <ul class="actions special"></ul>
+          </footer>
+        </section>
+
+        <!-- hmj Section -->
+        <section id="hmj" class="main special">
+          <header class="major">
+            <h2>HMJ</h2>
+          </header>
+          <ul class="features">
+            <li>
+              <span class="icon solid major style3 fas fa-phone-square"></span>
+              <h3>Contatos</h3>
+              <p>
+                Unidade: 030160500<br />
+                Raynane: 977801286 / Douglas: 973212932
+              </p>
+            </li>
+            <li>
+              <span class="icon solid major style3 fas fa-server"></span>
+              <h3>Servidores</h3>
+              <div class="dropdown">
+                <button class="button">Servidores</button>
+                <div class="dropdown-content">
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('10.193.4.101')"
+                    >AD</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\hmimjprp1')"
+                    >Print Server</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\hmimjprint01')"
+                    >Print Server Alternativo</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\hmimjfsp1')"
+                    >Arquivos</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\hmjwsfs01')"
+                    >Arquivos Alternativo</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('10.10.0.31')"
+                    >TSAPP</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="icon solid major style3 fas fa-eye"></span>
+              <h3>Conexão Remota</h3>
+              <p>
+                Senha: hmj7461 / irsslhmimj2<br />
+                Range de IP: 10.196.x.x
+              </p>
+            </li>
+          </ul>
+          <footer class="major">
+            <ul class="actions special"></ul>
+          </footer>
+        </section>
+
+        <!-- hrj Section -->
+        <section id="hrj" class="main special">
+          <header class="major">
+            <h2>HRJ</h2>
+          </header>
+          <ul class="features">
+            <li>
+              <span class="icon solid major style4 fas fa-phone-square"></span>
+              <h3>Contatos</h3>
+              <p>
+                Unidade: 001145274700<br />
+                Fernanda: 974353395 / 045274713 / Mariana: 045274845
+              </p>
+            </li>
+            <li>
+              <span class="icon solid major style4 fas fa-server"></span>
+              <h3>Servidores</h3>
+              <div class="dropdown">
+                <button class="button">Servidores</button>
+                <div class="dropdown-content">
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('10.196.4.101')"
+                    >AD</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\\\hrj-srvps02')"
+                    >Print Server</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\hrjprtn2')"
+                    >Print Server - Etiquetas</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\10.196.4.110\\dados')"
+                    >Arquivos</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\10.196.4.101')"
+                    >TSAPP</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="icon solid major style4 fas fa-eye"></span>
+              <h3>Conexão Remota</h3>
+              <p>
+                Senha: hrj2016<br />
+                Range de IP: 10.196.x.x
+              </p>
+            </li>
+          </ul>
+          <footer class="major">
+            <ul class="actions special"></ul>
+          </footer>
+        </section>
+
+        <!-- matriz Section -->
+        <section id="matriz" class="main special">
+          <header class="major">
+            <h2>MATRIZ</h2>
+          </header>
+          <ul class="features">
+            <li>
+              <span class="icon solid major style5 fas fa-phone-square"></span>
+              <h3>Contatos</h3>
+              <p>Unidade: 03394 + Ramal<br /></p>
+            </li>
+            <li>
+              <span class="icon solid major style5 fas fa-server"></span>
+              <h3>Servidores</h3>
+              <div class="dropdown">
+                <button class="button">Servidores</button>
+                <div class="dropdown-content">
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('10.196.4.110')"
+                    >Arquivos</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\HRJFSP1')"
+                    >Arquivos - Alternativo</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="icon solid major style5 fas fa-eye"></span>
+              <h3>Conexão Remota</h3>
+              <p>Indisponível<br /></p>
+            </li>
+          </ul>
+          <footer class="major">
+            <ul class="actions special"></ul>
+          </footer>
+        </section>
+
+        <!-- slrm Section -->
+        <section id="slrm" class="main special">
+          <header class="major">
+            <h2>SLRM</h2>
+          </header>
+          <ul class="features">
+            <li>
+              <span class="icon solid major style6 fas fa-phone-square"></span>
+              <h3>Contatos</h3>
+              <p>
+                Unidade: 001938065192<br />
+                Thiago: 019997140253 / 001938065051 / 001938065192
+              </p>
+            </li>
+            <li>
+              <span class="icon solid major style6 fas fa-server"></span>
+              <h3>Servidores</h3>
+              <div class="dropdown">
+                <button class="button">Servidores</button>
+                <div class="dropdown-content">
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('10.197.4.101')"
+                    >AD</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\10.197.24.')"
+                    >Print Server (final 20 ao 25)</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\ame-winad01\\\\aei')"
+                    >Arquivos</a
+                  >
+                  <a
+                    aria-label="Clique para copiar o endereço do servidor"
+                    data-balloon-pos="right"
+                    onclick="servidores('\\\\10.197.4.101')"
+                    >TSAPP</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="icon solid major style6 fas fa-eye"></span>
+              <h3>Conexão Remota</h3>
+              <p>
+                Senha: SRLM@2020#<br />
+                Range de IP: 10.197.x.x
+              </p>
+            </li>
+          </ul>
+          <footer class="major">
+            <ul class="actions special"></ul>
+          </footer>
+        </section>
+
+        <!-- ramais Section -->
+        <section id="colaboradores" class="main special">
+          <header class="major">
+            <h2>Colaboradores IRSSL</h2>
+          </header>
+          <ul class="features">
+            <li>
+              <span class="icon solid major style7 fas fa-user"></span>
+              <h3>Colaboradores</h3>
+              <p>
+                Eduardo Aihara<br />
+                Renato Henrique Gonçalves Oliveira<br />
+                Matheus Wachtler<br />
+                José Victor da Silva Santos<br />
+                Gabriel Henrique M Santos
+              </p>
+            </li>
+            <li>
+                <span class="icon solid major style7 fas fa-phone-square"></span>
+                <h3>Ramal</h3>
+                <p>
+                  7001<br />
+                  7012<br />
+                  7008<br />
+                  7043<br />
+                  7027
+                </p>
+              </li>
+            <li>
+              <span class="icon solid major style7 fas fa-envelope"></span>
+              <h3>Email</h3>
+              <p>
+                eduardo.aihara@tecnocomp.com.br<br />
+                renato.oliveira@tecnocomp.com.br<br />
+                matheus.wachtler@tecnocomp.com.br<br />
+                jose.santos@tecnocomp.com.br<br />
+                gabriel.santos@tecnocomp.com.br
+              </p>
+            </li>
+          <footer class="major">
+            <ul class="actions special"></ul>
+          </footer>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <section>
+          
+        </section>
+        <section>
+          
+        </section>
+        <p class="copyright">
+          &copy; IRSSL. Design: <a href="https://www.linkedin.com/in/gabrielhmedeirossantos/">Gabriel Santos</a>.
+        </p>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
