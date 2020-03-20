@@ -1,12 +1,43 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CaneleClicker</title>
+    <link rel="icon" href="img/canele-vec.png" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/new.css" />
+    <link rel="shortcut icon" href="img/canele-vec.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Neucha|Pacifico"
+      rel="stylesheet"
+    />
+    <script src="js/script.js" type="text/javascript"></script>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1>Canelés Clicker</h1>
+          <div class="image-cadre">
+            <img src="img/Caneles_stemilion.jpg" />
+          </div>
+          <p class="elem">You have <span id="number">0</span> Canelés.</p>
+        </div>
+        <div class="col-4 elem">
+          <img onclick="bake()" class="clicky" src="img/canele-vec.png" />
+        </div>
+        <div class="col-4 elem">
+          <button
+            class="btn btn-block btn-buy"
+            id="ovenBtn"
+            onclick="buyOven()"
+            disabled="true"
+          >
+            Buy Oven (25)
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
