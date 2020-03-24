@@ -1,12 +1,511 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <script
+      src="https://kit.fontawesome.com/eb9dbc6c64.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Colorado State University Online</title>
+    <!-- Proxima Nova font definition -->
+    <link
+      rel="stylesheet"
+      href="https://static.colostate.edu/fonts/proxima-nova/proxima.css"
+    />
+    <!-- Factoria font definition -->
+    <link
+      rel="stylesheet"
+      href="https://static.colostate.edu/fonts/factoria/factoria.css"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <container>
+      <header>
+        <nav class="desktop-top-nav">
+          <div class="top-nav-left">
+            <div class="tabs current">CSU Online</div>
+            <div class="tabs">CSU Professional Education</div>
+            <div class="tabs">Osher Lifelong Learning Institute</div>
+          </div>
+          <ul class="top-nav-right">
+            <li>My Account</li>
+          </ul>
+        </nav>
+        <div class="top-nav">
+          <div class="logo">
+            <div class="logo-img"></div>
+            <h1 class="title">Online</h1>
+          </div>
+
+          <div class="top-nav-right">
+            <div class="top-buttons">
+              <button class="dark-bg">Request Info</button>
+              <button class="dark-bg">Apply</button>
+            </div>
+            <div class="controls">
+              <div class="search"><i class="fas fa-search"></i></div>
+              <div class="bars"><i class="fas fa-bars"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="menu">
+          <nav class="main-nav">
+            <ul>
+              <li>About</li>
+              <li>Programs</li>
+              <li>Future Rams</li>
+              <li>Current Students</li>
+              <li>Contact</li>
+              <li>My Account</li>
+            </ul>
+            <button class="dark-bg">Request Info</button>
+            <button class="dark-bg">Apply</button>
+          </nav>
+          <hr class="green" />
+          <nav class="sub-nav">
+            <ul>
+              <li>CSU Online</li>
+              <li>CSU Professional Education</li>
+              <li>Osher Lifelong Learning Institute</li>
+            </ul>
+          </nav>
+        </aside>
+
+        <div class="menu-desktop">
+          <nav class="desktop-nav">
+            <ul>
+              <li>About</li>
+              <li>Programs</li>
+              <li>Future Rams</li>
+              <li>Current Students</li>
+              <li>Contact</li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <div class="hero-section">
+        <h1>CSU Rams Online</h1>
+        <div class="explore">
+          I am interested in exploring information about
+          <div class="explore-dropdown">
+            <a href=""
+              ><span class="orange-underline">programs</span>
+              <i class="fas fa-caret-down"></i
+            ></a>
+            <div class="dropdown-content">
+              <a href="">cost</a>
+              <a href="">admission</a>
+              <a href="">future rams</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dot-pattern"></div>
+
+      <div class="mission">
+        <h1>We believe in you.</h1>
+        <p>
+          We know changing the world isn’t easy. But our award-winning faculty
+          members are here to help you thrive, so you can solve society’s
+          greatest challenges. <a href="#">Choose from 200+ programs</a> offered
+          at a distance from a nationally recognized research and engaged
+          university.
+        </p>
+      </div>
+
+      <div class="dot-pattern-vertical"></div>
+
+      <div class="testimonials">
+        <div class="slider">
+          <img class="student-img" src="/images/img-1.jpg" />
+          <div class="quote">
+            <p fade>
+              I am a different learner, I am a different student, I am different
+              from the norm and CSU Online helped me understand that is OK! Now,
+              I am excelling, achieving and thriving.
+            </p>
+            <p class="quote-name">–Lauren Kummerow, CSU Online student</p>
+          </div>
+        </div>
+
+        <div class="slider">
+          <img class="student-img" src="/images/img-2.jpg" />
+          <div class="quote">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Vestibulum condimentum vulputate arcu et varius. Praesent posuere
+              vehicula ex in auctor. Mauris et vehicula nunc, eget venenatis mi.
+              Quisque vestibulum risus at quam feugiat, a imperdiet.
+            </p>
+            <p class="quote-name">–John Smith, CSU Online student</p>
+          </div>
+        </div>
+
+        <div class="slider">
+          <img class="student-img" src="/images/img-3.jpg" />
+          <div class="quote">
+            <p>
+              Uis aliquam tincidunt mi sed dignissim. Nullam mollis, dolor vel
+              convallis fermentum, ex purus finibus justo, cursus maximus tellus
+              elit quis dolor. Vivamus finibus pellentesque mauris, vitae tempor
+              ipsum mollis eget.
+            </p>
+            <p class="quote-name">–Firstname Last, CSU Online student</p>
+          </div>
+        </div>
+
+        <div class="controls">
+          <div class="indicator">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+          <a class="next" onclick="plusSlides(1)"
+            ><i class="far fa-arrow-alt-circle-right"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="why-choose">
+        <div class="why-box">
+          <img src="/images/img-6.jpg">
+          <div class="why-box-inner">
+            <h2>Nationally Ranked</h1>
+            <p>
+            CSU is among the best in the nation and recognized by US News as one
+            of the world’s most prestigious universities.
+            </p>
+            <button class="light-bg">Learn what makes CSU unique</button>
+          </div>
+        </div>
+
+        <div class="why-box">
+          <img src="/images/img-5.jpg">
+          <div class="why-box-inner">
+            <h2>Academic Excellence</h1>
+            <p>
+            CSU Online offers world-class degree programs from wherever you are.
+            All courses are 100% online to fit your schedule.
+            </p>
+            <button class="light-bg">Experience online courses</button>
+          </div>
+        </div>
+
+        <div class="why-box">
+          <img src="/images/img-8.jpg">
+          <div class="why-box-inner">
+            <h2>Top-tier Faculty</h1>
+            <p>
+            CSU’s faculty are the same award-winning faculty who not only teach
+            on-campus but are at the forefront of research and discovery.
+            </p>
+           <button class="light-bg">Read more about CSU's faculty</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-links">
+        <img class="student-img" src="/images/img-4.jpg" alt="" />
+        <div class="quick-links-box">
+          <h1>What's Next?</h1>
+          <p>Lorem Ipsum lorem ipsum lorem ipsum</p>
+
+          <h3><a href="">Programs</a></h2>
+          <p>
+            Explore the programs, schools, centers and faculty that make CSU
+            distinct.
+          </p>
+
+          <h3><a href="">Hear From Our Students</a></h2>
+          <p>
+            Lorem Ipsum lorem ipsum lorem ipsum lorem Ipsum lorem ipsum lorem
+            ipsum
+          </p>
+
+          <h3><a href="">FAQs</a></h2>
+          <p>
+            Lorem Ipsum lorem ipsum lorem ipsum lorem Ipsum lorem ipsum lorem
+            ipsum
+          </p>
+
+          <h3><a href="">Student Services</a></h2>
+          <p>
+            Ipsum lorem ipsum lorem ipsum lorem Ipsum lorem ipsum lorem ipsum
+          </p>
+
+          <h3><a href="">Tuition and Financial Aid</a></h2>
+          <p>
+            Find program to learn about scholarship, grant and loan
+            opportunities.
+          </p>
+
+          <h3><a href="">About Us</a></h2>
+          <p>
+            Learn about CSU’s mission, vision, history, location, outcomes and
+            leadership.
+          </p>
+        </div>
+      </div>
+
+      <div class="dot-pattern-green"></div>
+
+      <div class="blog-title">
+          <h1>Education + Your Life</h1>
+          <h2>A blog by CSU Online</h2>
+        </div>
+        
+      <div class="blog">
+        <div class="dot-pattern-vertical-blog"></div>
+        <div class="blog-slider">
+          <img src="/images/img-5.jpg" alt="" />
+          <div class="blog-box">
+            <h3><a href="">How Online Education Makes Schools Greener</a></h3>
+            <p>
+              Online learning brings with it many benefits—namely, the
+              flexibility for individuals to earn an education from practically
+              [...]
+            </p>
+          </div>
+        </div>
+
+        <div class="blog-slider">
+          <img src="/images/img-6.jpg" alt="" />
+          <div class="blog-box">
+            <h3>
+              <a href="">8 Tips for Staying Productive when Studying at Home</a>
+            </h3>
+            <p>
+              Studying at home can be absolute bliss. You get to wake up, make
+              some coffee, and hang out in your pajamas all day. That is, until
+              [...]
+            </p>
+          </div>
+        </div>
+
+        <div class="blog-slider">
+          <img src="/images/img-7.jpg" alt="" />
+          <div class="blog-box">
+            <h3>
+              <a href=""
+                >7 Time- and Money-Saving Apps Every College Student Needs</a
+              >
+            </h3>
+            <p>
+              Getting your degree is expensive, not to mention time-intensive.
+              If you’re an online and/or nontraditional student, stockpiling
+              [...]
+            </p>
+          </div>
+        </div>
+
+        <div class="blog-controls">
+          <div class="blog-indicator">
+            <span class="blog-dot" onclick="currentBlogSlide(1)"></span>
+            <span class="blog-dot" onclick="currentBlogSlide(2)"></span>
+            <span class="blog-dot" onclick="currentBlogSlide(3)"></span>
+          </div>
+          <a class="blog-next" onclick="plusBlogSlides(1)"
+            ><i class="far fa-arrow-alt-circle-right"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="request-info">
+          <img src="/images/img-8.jpg" class="student-img" alt="" />
+          <div class="info-box">
+            <p class="steps-1">Step 1 of 2</p>
+            <p class="steps-2" id="hidden">Step 2 of 2</p>
+            <h1>Get Started Today</h1>
+
+            <form class="request-info-form" action="">
+              <div class="form-slider">
+                <label for="select">Program Type</label>
+                <select id="select">
+                  <option value>Choose</option>
+                  <option value>Option 1</option>
+                  <option value>Option 2</option>
+                  <option value>Option 3</option>
+                  <option value>Option 4</option>
+                  <option value>Option 5</option>
+                </select>
+
+                <label for="select">Area of Interest</label>
+                <select id="select">
+                  <option value>Choose</option>
+                  <option value>Option 1</option>
+                  <option value>Option 2</option>
+                  <option value>Option 3</option>
+                  <option value>Option 4</option>
+                  <option value>Option 5</option>
+                </select>
+                <button class="light-bg" id="continue-button" type="button">
+                  Continue
+                </button>
+              </div>
+              <div class="form-slider" id="hidden">
+                <label for="input">Name</label>
+                <input id="input" placeholder="Name" />
+
+                <label for="input">Email Address</label>
+                <input id="input" placeholder="Email Address" />
+
+                <label for="input">Phone Number</label>
+                <input id="input" placeholder="Phone Number" />
+                <button class="light-bg" id="submit-button" type="button">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      <div class="dot-pattern"></div>
+
+      <footer>
+        <div class="mobile-footer">
+          <div class="top-footer">
+            <div class="footer-text">
+            <p>CSU Online is dedicated to providing innovative, high-quality online
+            education to Rams at a distance.</p>
+          </div>
+          <div class="social-icons">
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-youtube"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+          </div>
+
+          <div class="footer-nav">
+            <ul class="footer-nav-left">
+              <li><a href="#">Programs</a></li>
+              <li><a href="#">Cost</a></li>
+              <li><a href="#">Admission</a></li>
+             </ul>
+             
+             <ul class="footer-nav-right">
+               <li><a href="#">Future Rams</a></li>
+               <li><a href="#">About</a></li>
+               <li><a href="#">ValuED Blog</a></li>
+             </ul>
+          </div>
+          
+        </div>
+        
+        <hr class="green" />
+
+        <div class="sub-footer-nav">
+          <div class="footer-logo">
+            <img
+              src="../images/csu-linear.svg"
+              alt="Colorado State University Logo"
+            />
+          </div>
+
+          <p>888.555.5080</p>
+          <p>Toll Free 888.555.6589</p>
+          <p><a href="">csuonline@colostate.edu</a></p>
+          <ul class="sub-footer-list">
+            <li><a href="#">Policies</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        </div>
+        
+        <div class="desktop-footer">
+          <div class="desktop-footer-top">  
+            <div class="footer-left">
+              <div class="footer-text">
+            <p>CSU Online is dedicated to providing innovative, high-quality online
+                education to Rams at a distance.</p>
+              </div>
+              <div class="footer-logo">
+                <img src="../images/csu-linear.svg" alt="Colorado State University Logo"/>
+              </div>
+              <div class="footer-contact-info">
+                <p>888.555.5080</p>
+                <p>Toll Free 888.555.6589</p>
+                <p><a href="">csuonline@colostate.edu</a></p>
+              </div>
+              <div class="social-icons">
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+              </div>
+            </div>
+            
+            <div class="footer-nav">
+              <div class="footer-nav-item">  
+                <a href="#" class="footer-nav-title">Programs</a>
+                <a href="#">Link Goes Here</a>
+                <a href="#">Link Goes Here</a>
+                <a href="#">Link Goes Here</a>
+                <a href="#">Link Goes Here</a>
+              </div>
+              <div class="footer-nav-item">  
+                <a href="#" class="footer-nav-title">Cost</a>
+                <a href="#">Link Goes Here</a>
+                <a href="#">Link Goes Here</a>
+                <a href="#">Link Goes Here</a>
+                <a href="#">Link Goes Here</a>
+              </div>
+              <div class="footer-nav-item">  
+                <a href="#" class="footer-nav-title">Admission</a>
+                <a href="#">Link Goes Here</a>
+                <a href="#">Link Goes Here</a>
+                <a href="#">Link Goes Here</a>
+                <a href="#">Link Goes Here</a>
+              </div>
+              <div class="footer-nav-item">  
+                <a href="#" class="footer-nav-title">Future Rams</a>
+                <a href="#">Link Goes Here</a>
+                <a href="#">Link Goes Here</a>
+                <a href="#">Link Goes Here</a>
+                <a href="#">Link Goes Here</a>
+              </div>
+              <div class="footer-nav-item">  
+                <a href="#" class="footer-nav-title">About</a>
+                <a href="#">Link Goes Here</a>
+                <a href="#">Link Goes Here</a>
+                <a href="#">Link Goes Here</a>
+                <a href="#">Link Goes Here</a>
+              </div>
+            </div>
+          </div> 
+          
+          <div class="sub-footer-list">
+              <a href="#">Policies</a>
+              <a href="#">Accessibility</a>
+              <a href="#">Privacy</a>
+              <a href="#">Terms of Use</a>
+              <a href="#">Jobs</a>
+              <a href="#">Contact</a>
+          </div>
+        </div>
+
+      </footer>
+
+      <div class="chat">
+        <i class="far fa-comment-alt"></i>
+      </div>
+
+      <div class="sticky-footer-mobile">
+        <button class="dark-bg">Request Info</button>
+        <button class="dark-bg">Apply</button>
+      </div>
+    </container>
+
+    <script src="js/script.js"></script>
   </body>
 </html>
