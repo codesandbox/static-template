@@ -1,12 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Muli:400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Corben:400,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>FEWD Final Project Starter Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <nav class="mood-nav">
+      <a href="about.html" class="about">About</a>
+    </nav>
+    <header class="mood-header">
+      <div class="mood-title">
+        <h1>Calming Moods</h1>
+      </div>
+    </header>
+    <section class="mood-audio">
+      <div class="audio-container">
+        <div class="audio-selection">
+          <div class="sound-button-play">
+            <a href="javascript:toggleSound('rain')">
+              <img class="icon" src="img/Rain.svg" alt="" id="rain-button" />
+            </a>
+            <p class="sound">Rain</p>
+            <div class="volume-slider">
+              <input
+                type="range"
+                class="volumeslider"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.30"
+              />
+            </div>
+          </div>
+          <audio
+            id="rain"
+            src="https://projectaudio.s3.us-east-2.amazonaws.com/audio+files/7521__abinadimeza__rainfall+(1).ogg"
+            preload="auto"
+            loop
+          ></audio>
+
+          <div class="sound-button-play">
+            <a href="javascript:toggleSound('thunder')">
+              <img
+                class="icon"
+                src="img/Thunder.svg"
+                alt=""
+                id="thunder-button"
+              />
+            </a>
+            <p class="sound">Thunder</p>
+            <div class="volume-slider">
+              <input
+                type="range"
+                class="volumeslider"
+                min="0"
+                max="1"
+                step="0.02"
+                value="0"
+              />
+            </div>
+          </div>
+          <audio
+            id="thunder"
+            src="https://projectaudio.s3.us-east-2.amazonaws.com/audio+files/353274__kangyoutj__thunders-and-heavy-rain.ogg"
+            preload="auto"
+            loop
+          ></audio>
+
+          <div class="sound-button-play">
+            <a href="javascript:toggleSound('waves')">
+              <img class="icon" src="img/Water.svg" alt="" id="waves-button" />
+            </a>
+            <p class="sound">Waves</p>
+            <div class="volume-slider">
+              <input
+                type="range"
+                class="volumeslider"
+                min="0"
+                max="1"
+                step="0.02"
+                value="0"
+              />
+            </div>
+          </div>
+          <audio
+            id="waves"
+            src="https://projectaudio.s3.us-east-2.amazonaws.com/audio+files/234938__lonemonk__ella-beach-april-26-2014.ogg"
+            preload="auto"
+            loop
+          ></audio>
+
+          <div class="sound-button-play">
+            <a href="javascript:toggleSound('fire')">
+              <img class="icon" src="img/Fire.svg" alt="" id="fire-button" />
+            </a>
+            <p class="sound">Fire</p>
+            <div class="volume-slider">
+              <input
+                type="range"
+                class="volumeslider"
+                min="0"
+                max="1"
+                step="0.02"
+                value="0"
+              />
+            </div>
+          </div>
+          <audio
+            id="fire"
+            src="https://projectaudio.s3.us-east-2.amazonaws.com/audio+files/186316__samararaine__nighttime-bonfire-1.wav"
+            preload="auto"
+            loop
+          ></audio>
+
+          <div class="sound-button-play">
+            <a href="javascript:toggleSound('birds')">
+              <img class="icon" src="img/Bird.svg" alt="" id="bird-button" />
+            </a>
+            <p class="sound">Birds</p>
+            <div class="volume-slider">
+              <input
+                type="range"
+                class="volumeslider"
+                min="0"
+                max="1"
+                step="0.02"
+                value="0"
+              />
+            </div>
+          </div>
+          <audio
+            id="birds"
+            src="https://projectaudio.s3.us-east-2.amazonaws.com/audio+files/267491__snudio-records__forest-bird-sounds.ogg"
+            preload="auto"
+            loop
+          ></audio>
+
+          <div class="sound-button-play">
+            <a href="javascript:toggleSound('noise')">
+              <img
+                class="icon"
+                src="img/White_Noise.svg"
+                alt=""
+                id="noise-button"
+              />
+            </a>
+            <p class="sound">White Noise</p>
+            <div class="volume-slider">
+              <input
+                type="range"
+                class="volumeslider"
+                min="0"
+                max="1"
+                step="0.02"
+                value="0"
+              />
+            </div>
+          </div>
+          <audio
+            id="noise"
+            src="https://projectaudio.s3.us-east-2.amazonaws.com/audio+files/105272__inchadney__strong-wind-in-the-forest+(1).wav"
+            preload="auto"
+            loop
+          ></audio>
+
+          <div class="sound-button-play">
+            <a href="javascript:toggleSound('train')">
+              <img class="icon" src="img/Train.svg" alt="" id="train-button" />
+            </a>
+            <p class="sound">Train</p>
+            <div class="volume-slider">
+              <input
+                type="range"
+                class="volumeslider"
+                min="0"
+                max="1"
+                step="0.02"
+                value="0"
+              />
+            </div>
+          </div>
+          <audio
+            id="train"
+            src="https://projectaudio.s3.us-east-2.amazonaws.com/audio+files/170866__yoh__train-wheels-ride-outside-thailand(1).wav"
+            preload="auto"
+            loop
+          ></audio>
+
+          <div class="sound-button-play">
+            <a href="javascript:toggleSound('night')">
+              <img
+                class="icon"
+                src="img/Night.svg"
+                alt=""
+                id="cricket-button"
+              />
+            </a>
+            <p class="sound">Crickets</p>
+            <div class="volume-slider">
+              <input
+                type="range"
+                class="volumeslider"
+                min="0"
+                max="1"
+                step="0.02"
+                value="0"
+              />
+            </div>
+          </div>
+          <audio
+            id="night"
+            src="https://projectaudio.s3.us-east-2.amazonaws.com/audio+files/352514__inspectorj__ambience-night-wildlife-a.wav"
+            preload="auto"
+            loop
+          ></audio>
+        </div>
+      </div>
+    </section>
+    <div class="bottom">
+      <div class="button-container">
+        <button class="random">Randomize</button>
+        <button class="share">Share</button>
+      </div>
+    </div>
+
+    <div class="mask" role="dialog"></div>
+    <div class="modal" role="alert">
+      <button class="close" role="button">X</button>
+      <h4>Share this mix</h4>
+      <div class="modal-contents">
+        <div class="facebook">
+          <a
+            href="https://www.facebook.com/sharer/sharer.php?u=https%3A//4e124.codesandbox.io/"
+          >
+            <img src="img/facebook.svg" alt="" />
+            <p>Facebook</p>
+          </a>
+        </div>
+        <div class="twitter">
+          <a href="">
+            <img src="img/twitter.svg" alt="" />
+            <p>Twitter</p>
+          </a>
+        </div>
+        <div class="reddit">
+          <a href="">
+            <img src="img/reddit.svg" alt="" />
+            <p>Reddit</p>
+          </a>
+        </div>
+        <div class="tumblr">
+          <a href="">
+            <img src="img/tumblr.svg" alt="" />
+            <p>Tumblr</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>
