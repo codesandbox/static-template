@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap");
+
+/* @use postcss-simple-vars; */
+:root {
+  --bg-color: #e4e8ee;
+  --card-bg-color: #f7fafc;
+  --main-color: #5469d4;
+  --link-color: #5469d4;
+  --link-hover-color: #555;
+  background-color: var(--bg-color);
+  font-family: "Roboto", sans-serif;
+}
+.wrapper {
+  min-width: 1024px;
+}
+nav li {
+  padding: 0.75rem;
+}
+
+.sidebar {
+  width: 240px;
+  z-index: 10;
+}
+section.main {
+  padding-left: 240px;
+}
+nav .search {
+  min-width: 250px;
+}
+.top-nav {
+  #background-color: #e4e8ee;
+  z-index: 11;
+}
+
+.card-content {
+  background-color: var(--card-bg-color);
+}
+
+a {
+  color: var(--link-color);
+}
+a:hover {
+  color: var(--link-hover-color);
+}
+a.active {
+  color: var(--link-color);
+  font-weight: 600;
+}
+
+.btn {
+  transition: 0.2s ease-in;
+}
