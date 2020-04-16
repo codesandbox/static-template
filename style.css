@@ -1,0 +1,110 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #ddd;
+  font-family: "Lato Regular", "Segoe UI", Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  margin: 2vh 4vw;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.content {
+  grid-area: content;
+}
+
+header {
+  grid-area: header;
+}
+
+footer {
+  color: #787878;
+  grid-area: footer;
+}
+
+a {
+  color: #2092f3;
+}
+
+.wrapper {
+  background-color: #f5f5f5;
+  color: #444;
+}
+
+.wrapper {
+  display: grid;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 2px #ccc;
+  grid-gap: 1rem;
+  grid-template-areas:
+    "header"
+    "sidebar"
+    "content"
+    "footer";
+}
+
+h1 {
+  color: #787878;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.content,
+.sidebar {
+  padding: 1rem 2rem;
+}
+
+.sidebar {
+  text-align: center;
+}
+
+.logo {
+  max-width: 50%;
+}
+
+@media only screen and (min-width: 500px) {
+  .wrapper {
+    grid-template-columns: 20% auto;
+    grid-template-areas:
+      "header   header"
+      "sidebar  sidebar"
+      "content content"
+      "footer   footer";
+  }
+  header {
+    text-align: center;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .wrapper {
+    grid-gap: 2rem;
+    grid-template-columns: 20rem auto;
+    grid-template-areas:
+      "header  header  header"
+      "sidebar content content"
+      "footer  footer  footer";
+  }
+  .sidebar {
+    font-size: 2rem;
+    text-align: right;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .content,
+  .sidebar {
+    padding: 2rem;
+  }
+
+  .logo {
+    max-width: 100%;
+  }
+}
