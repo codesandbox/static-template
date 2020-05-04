@@ -1,12 +1,362 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>Arcgis Demo</title>
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/3.21/dijit/themes/claro/claro.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/3.21/esri/css/esri.css"
+    />
+
+    <style>
+      html,
+      body,
+      #map {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #search {
+        z-index: 20;
+        margin: auto;
+        height: 95px;
+        width: 400px;
+        margin: auto;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+      }
+
+      #info {
+        top: 100px;
+        color: #444;
+        height: auto;
+        font-family: arial;
+        left: 16px;
+        margin: 2px;
+        padding: 3px;
+        position: absolute;
+        width: 40px;
+        z-index: 40;
+        border: solid 1px #666;
+        border-radius: 4px;
+        background-color: #fff;
+      }
+
+      html,
+      body,
+      #mapDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+      }
+
+      #info button {
+        background-color: white;
+        padding: 2px;
+        text-align: center;
+        margin: 4px 4px;
+        cursor: pointer;
+        border-radius: 4px;
+        width: 30px;
+        border: 1px solid;
+      }
+
+      #info button:hover {
+        padding: 2px;
+        text-align: center;
+        margin: 4px 4px;
+        cursor: pointer;
+        border-radius: 4px;
+        width: 30px;
+        border: 1px solid #1e90ff;
+        color: #1e90ff;
+      }
+    </style>
+
+    <script src="https://js.arcgis.com/3.21/"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+      var map, tb, ctxMenuForGraphics;
+      var selected;
+
+      require([
+        "esri/layers/FeatureLayer",
+        "esri/map",
+        "esri/layers/ArcGISTiledMapServiceLayer",
+        "esri/layers/ArcGISDynamicMapServiceLayer",
+        "dojo/_base/connect",
+        "esri/dijit/BasemapToggle",
+        "esri/toolbars/draw",
+        "esri/geometry/Polygon",
+        "esri/geometry/Polyline",
+        "esri/dijit/Search",
+        "dijit/registry",
+        "esri/dijit/Scalebar",
+        "esri/symbols/SimpleMarkerSymbol",
+        "esri/symbols/SimpleFillSymbol",
+        "esri/symbols/PictureFillSymbol",
+        "esri/symbols/CartographicLineSymbol",
+        "esri/symbols/PictureMarkerSymbol",
+        "esri/geometry/Extent",
+        "esri/SpatialReference",
+        "esri/geometry/Point",
+        "esri/geometry/mathUtils",
+        "esri/geometry/ScreenPoint",
+        "esri/toolbars/edit",
+        "dijit/Menu",
+        "dijit/MenuItem",
+        "dijit/MenuSeparator",
+        "esri/graphic",
+        "esri/layers/GraphicsLayer",
+        "esri/Color",
+        "esri/dijit/Popup",
+        "esri/dijit/PopupTemplate",
+        "esri/InfoTemplate",
+        "esri/symbols/SimpleLineSymbol",
+        "dojo/dom-construct",
+        "dojo/dom",
+        "dojo/on",
+        "dojo/domReady!"
+      ], function(
+        FeatureLayer,
+        Map,
+        ArcGISTiledMapServiceLayer,
+        ArcGISDynamicMapServiceLayer,
+        connect,
+        BasemapToggle,
+        Draw,
+        Polygon,
+        Polyline,
+        Search,
+        registry,
+        Scalebar,
+        SimpleMarkerSymbol,
+        SimpleFillSymbol,
+        PictureFillSymbol,
+        CartographicLineSymbol,
+        PictureMarkerSymbol,
+        Extent,
+        SpatialReference,
+        Point,
+        mathUtils,
+        ScreenPoint,
+        Edit,
+        Menu,
+        MenuItem,
+        MenuSeparator,
+        Graphic,
+        GraphicsLayer,
+        Color,
+        Popup,
+        PopupTemplate,
+        InfoTemplate,
+        SimpleLineSymbol,
+        domConstruct,
+        dom,
+        on,
+        domAttr
+      ) {
+        //创建popup弹出层
+        var popup = new Popup(null, domConstruct.create("div"));
+
+        //地图
+        map = new Map("map", {
+          center: [121.47003707885744, 40.24853148977224],
+          zoom: 7,
+          infoWindow: popup,
+          extent: new Extent(
+            -122.68,
+            45.53,
+            -122.45,
+            45.6,
+            new SpatialReference({ wkid: 4326 })
+          )
+        });
+
+        // //添加地图图层
+        var mapServiceURL =
+          "https://server.arcgisonline.com/ArcGIS/rest/services/ESRI_StreetMap_World_2D/MapServer";
+        map.addLayer(new ArcGISTiledMapServiceLayer(mapServiceURL));
+
+        //初始化比例尺
+        var scalebar = new Scalebar({
+          map: map,
+          attachTo: "bottom-left",
+          scalebarUnit: "dual"
+        });
+
+        //显示比例尺
+        scalebar.show();
+
+        //创建图层
+        var gl = new GraphicsLayer({ id: "draw" });
+        map.addLayer(gl);
+
+        map.on("load", initToolbar);
+
+        /*
+         * 点击鼠标右键，弹出子菜单，操作在图层上绘制的点线面图表信息
+         */
+        createGraphicsMenu();
+        //创建右键菜单
+        function createGraphicsMenu() {
+          ctxMenuForGraphics = new Menu({});
+
+          ctxMenuForGraphics.addChild(
+            new MenuItem({
+              label: "删除",
+              onClick: function() {
+                gl.remove(selected);
+              }
+            })
+          );
+
+          //当鼠标在gl图层的图形上方时绑定该图形的点击事件
+          gl.on("mouse-over", function(evt) {
+            selected = evt.graphic;
+            ctxMenuForGraphics.bindDomNode(
+              evt.graphic.getDojoShape().getNode()
+            );
+          });
+
+          //当鼠标移出gl图层的图形上方时取消绑定该图形的点击事件
+          gl.on("mouse-out", function(evt) {
+            ctxMenuForGraphics.unBindDomNode(
+              evt.graphic.getDojoShape().getNode()
+            );
+          });
+        }
+        //启动右键菜单
+        ctxMenuForGraphics.startup();
+
+        //点击地图响应
+        map.on("click", function(e) {
+          //点击空白处隐藏popup
+          if (e.graphic == undefined) {
+            popup.hide();
+          }
+        });
+
+        //搜索框
+        var search = new Search(
+          {
+            map: map,
+            graphicsLayer: gl
+          },
+          "search"
+        );
+        search.startup();
+
+        //弹出框信息
+        gl.on("click", function(e) {
+          var detailInfo =
+            "图形: " + e.graphic.geometry.cache.geoShape + "<br>";
+          popup.setTitle("图形信息");
+          popup.setContent(detailInfo);
+          popup.show(e.mapPoint);
+        });
+
+        //用来展示点的symbol
+        var markerSymbol = new SimpleMarkerSymbol();
+        markerSymbol.setColor(new Color("#00FFFF"));
+
+        // 用来展示线的symbol
+        var lineSymbol = new CartographicLineSymbol(
+          CartographicLineSymbol.STYLE_SOLID,
+          new Color([255, 0, 0]),
+          2,
+          CartographicLineSymbol.CAP_ROUND,
+          CartographicLineSymbol.JOIN_MITER,
+          5
+        );
+
+        //用来展示面的symbol
+        var fillSymbol = new SimpleFillSymbol(
+          SimpleFillSymbol.STYLE_SOLID,
+          new SimpleLineSymbol(
+            SimpleLineSymbol.STYLE_SOLID,
+            new Color("#000"),
+            1
+          ),
+          new Color([255, 0, 0, 0.1])
+        );
+
+        //初始化工具栏
+        function initToolbar() {
+          tb = new Draw(map);
+          tb.on("draw-end", addGraphic);
+
+          on(dom.byId("info"), "click", function(evt) {
+            if (evt.target.id === "info") {
+              return;
+            }
+            var tool = evt.target.id.toLowerCase();
+            map.disableMapNavigation();
+            tb.activate(tool);
+          });
+        }
+
+        //添加图形
+        function addGraphic(evt) {
+          tb.deactivate();
+          map.enableMapNavigation();
+
+          var symbol;
+          if (
+            evt.geometry.type === "point" ||
+            evt.geometry.type === "multipoint"
+          ) {
+            symbol = markerSymbol;
+          } else if (
+            evt.geometry.type === "line" ||
+            evt.geometry.type === "polyline"
+          ) {
+            symbol = lineSymbol;
+          } else {
+            symbol = fillSymbol;
+          }
+
+          evt.geometry.setCacheValue("geoShape", evt.geometry.type);
+
+          gl.add(new Graphic(evt.geometry, symbol));
+        }
+      });
+    </script>
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+
+  <body class="claro" style="font-size: 0.75em;">
+    <div id="info">
+      <div align="center">绘制</div>
+      <button id="Multipoint">点</button>
+      <button id="Line">直线</button>
+      <button id="Polyline">拆线</button>
+      <button id="FreehandPolyline">曲线</button>
+      <button id="Triangle">三角形</button>
+      <button id="Extent">矩形</button>
+      <button id="Circle">圆形</button>
+      <button id="Ellipse">椭圆</button>
+      <button id="Polygon">多边形</button>
+      <button id="FreehandPolygon">曲线图形</button>
+    </div>
+
+    <div id="search"></div>
+
+    <div
+      id="map"
+      data-dojo-type="dijit/layout/ContentPane"
+      data-dojo-props="region:'center'"
+    ></div>
   </body>
 </html>
