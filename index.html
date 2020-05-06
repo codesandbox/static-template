@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
     <title>Static Template</title>
   </head>
+  <p id="value">50</p>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="cup">
+      <div class="water">
+        <div class="wave"></div>
+      </div>
+    </div>
+    <input type="range" id="vol" name="vol" min="0" max="100" class="slider"
+      oninput="changeWave(this.value)"/>
+    <script type="text/javascript">
+      function changeWave(value) {
+        document.getElementById("value").textContent = value;
+        value = 100 - value;
+        var wave = document.getElementsByClassName("wave")[0];
+        wave.style.top = value + "%";
+        // wave.style.before.textContent = value;
+
+      }
+      
+    </script>
   </body>
 </html>

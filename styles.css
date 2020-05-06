@@ -1,0 +1,126 @@
+:root {
+  --border: #262626;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--border);
+}
+
+.cup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 180px;
+  border: 6px solid var(--border);
+  border-top: 2px solid transparent;
+  border-radius: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 0 0 0 6px #fff, 0 20px 35px rgba(0, 0, 0, 1);
+}
+
+.cup::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 80px;
+  border: 6px solid #fff;
+  right: -68px;
+  top: 30px;
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+}
+
+.water {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  overflow: hidden;
+}
+
+.water .wave {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/images/water.png");
+  animation: waving 1s linear infinite, 
+    filling 1500ms;  
+  top: 0%;
+}
+
+.wave::after {
+  content: "";
+  color: black;
+  position: fixed;
+  top: calc(50% - 8px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+}
+
+@keyframes waving {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 200px;
+  }
+}
+
+@keyframes filling {
+  0% {
+    background-position-y: 50px;
+  }
+  100% {
+    background-position-y: 0px;
+  }
+}
+
+.slider {
+  -webkit-appearance: none;
+  position: fixed;
+  top: calc(50% + 130px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 13px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: transparent;
+  background: rgb(122, 130, 151);
+  cursor: pointer;
+}
+
+#value {
+  color: white;
+  position: fixed;
+  top: calc(50% - 50px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+  z-index: 20;
+}
