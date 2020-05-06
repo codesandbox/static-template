@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="page-wrapper">
+      <div class="header-wrapper">
+        Calculator
+      </div>
+      <div class="content-wrapper">
+        <div class="input-wrapper">
+          <input
+            type="text"
+            class="calc-input"
+            name="input"
+            placeholder="0"
+            id="input-bar"
+          />
+        </div>
+        <div class="alert-wrapper"></div>
+        <div class="number button" id="btn-7">7</div>
+        <div class="number button" id="btn-8">8</div>
+        <div class="number button" id="btn-9">9</div>
+        <div class="oper button" id="btn-divide">&divide</div>
+        <div class="fun button" id="btn-back">&rarr;</div>
+        <div class="number button" id="btn-4">4</div>
+        <div class="number button" id="btn-5">5</div>
+        <div class="number button" id="btn-6">6</div>
+        <div class="oper button" id="btn-times">x</div>
+        <div class="fun button equal-sign" id="btn-equal">=</div>
+
+        <div class="number button" id="btn-1">1</div>
+        <div class="number button" id="btn-2">2</div>
+        <div class="number button" id="btn-3">3</div>
+        <div class="oper button" id="btn-minus">-</div>
+        <div class="fun button" id="btn-clear">C</div>
+        <div class="number button" id="btn-0">0</div>
+        <div class="dec button" id="btn-dec">.</div>
+        <div class="oper button" id="btn-plus">+</div>
+      </div>
+    </div>
+    <script src="scripts.js"></script>
   </body>
 </html>
