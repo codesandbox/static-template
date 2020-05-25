@@ -1,0 +1,99 @@
+body {
+  background: #ffc857;
+  color: #323031;
+  font-size: 2em;
+  font-family: "Permanent Marker", cursive;
+  margin: 0px;
+  padding: 0px;
+}
+* {
+  /* border: 1px dashed white; */
+}
+header {
+  /* border: 1px solid blue; */
+  text-align: center;
+  margin-top: 20px;
+}
+.logo-title {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 2.5em;
+  color: #177e89;
+}
+.logo-image {
+  height: auto;
+  width: 200px;
+  border-radius: 50%;
+  filter: drop-shadow(5px 5px 0 #444) drop-shadow(-5px 5px 0 #444)
+    drop-shadow(5px -5px 0 #444) drop-shadow(-5px -5px 0 #444);
+}
+.good-dogs-brent {
+  font-size: 0.6em;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+nav .nav-item {
+  flex-basis: 20%;
+}
+nav a {
+  text-decoration: none;
+  color: #323031;
+}
+nav a:hover {
+  color: #177e89;
+}
+main {
+  background: #f3de64;
+  /* border: 1px solid green; */
+  display: flex;
+  justify-content: center;
+}
+main p {
+  width: 75%;
+}
+footer {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 10px;
+}
+.footer-div {
+  flex-basis: 30%;
+}
+.footer-div:nth-child(2) {
+  text-align: center;
+}
+.footer-div:last-child {
+  text-align: right;
+}
+footer svg {
+  width: 1.5em;
+  margin: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  /* nav .nav-item {
+    flex-basis: 60%;
+  }
+  .footer-div {
+    flex-basis: 60%;
+  }
+  .footer-div:nth-child(2) {
+    text-align: left;
+  }
+  .footer-div:last-child {
+    text-align: left;
+  } */
+  nav {
+    flex-direction: column;
+  }
+  footer {
+    flex-direction: column;
+  }
+}
