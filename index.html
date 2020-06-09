@@ -1,12 +1,88 @@
+<!-- W3hubs.com - Download Free Responsive Website Layout Templates designed on HTML5 CSS3,Bootstrap,Tailwind CSS which are 100% Mobile friendly. w3Hubs all Layouts are responsive cross browser supported, best quality world class designs. -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Responsive Image Gallery Using HTML And CSS</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap"
+      rel="stylesheet"
+    />
+    <style type="text/css">
+      body {
+        margin: 0;
+        font-family: Nunito Sans;
+      }
+      h1 {
+        text-align: center;
+      }
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+      .content {
+        width: 22%;
+        margin: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        float: left;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .content:hover {
+        box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+      h3 {
+        text-align: center;
+      }
+      @media (max-width: 1000px) {
+        .content {
+          width: 46%;
+        }
+      }
+      @media (max-width: 750px) {
+        .content {
+          width: 100%;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <h1>Responsive Image Gallery Using HTML And CSS</h1>
+    </header>
+    <div class="gallery">
+      <div class="content">
+        <img
+          src="https://unsplash.com/photos/USvLD8EzBtA/download?force=true&w=640"
+        />
+        <h3>Gallery 1</h3>
+      </div>
+      <div class="content">
+        <img
+          src="https://unsplash.com/photos/trELt4tpj7w/download?force=true&w=640"
+        />
+        <h3>Gallery 2</h3>
+      </div>
+      <div class="content">
+        <img
+          src="https://unsplash.com/photos/nY4rJlJoMsY/download?force=true&w=640"
+        />
+        <h3>Gallery 3</h3>
+      </div>
+      <div class="content">
+        <img
+          src="https://unsplash.com/photos/-005LiLDBp8/download?force=true&w=640"
+        />
+        <h3>Gallery 4</h3>
+      </div>
+    </div>
   </body>
 </html>
