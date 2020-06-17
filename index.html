@@ -1,12 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>RFarn</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header class="landing">
+      <div class="landing-top">
+        <div class="landing-intro">
+          <h1>Rachel Farn.</h1>
+          <h2>Product + UX Designer from Palo Alto, CA.</h2>
+          <h2>Design + HCI at Carnegie Mellon University.</h2>
+        </div>
+        <span class="arrow">&#8595;</span>
+      </div>
+    </header>
+    <main class="main-content">
+      <nav>
+        <div class="nav-left">
+          <a href="index.html" class="logo">RFarn</a>
+        </div>
+        <div class="nav-right">
+          <div class="hamburger-icon">
+            <div id="icon-top"></div>
+            <div id="icon-bottom"></div>
+          </div>
+        </div>
+        <div class="desktop-menu">
+          <a href="work.html">Work</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+      <div class="page-content">
+        <div class="desktop-subtitle">
+          <p class="subtitle">
+            <span class="bold-subtitle" id="landing-bold-subtitle">
+              A designer with a passion for user-centered design, a problem
+              solving approach, and a strong growth mindset.
+            </span>
+            <span class="small-subtitle" id="landing-small-subtitle">
+              My intent is to test the boundaries of user interactions and
+              create innovative product experiences.
+            </span>
+          </p>
+        </div>
+        <div class="mobile-project-preview">
+          <div class="preview">
+            <img src="media/impressions.jpg" id="impressions-preview" alt="" />
+            <div class="preview-info">
+              <h1>Impressions</h1>
+              <h2>UI/UX, Service Design</h2>
+            </div>
+          </div>
+          <div class="preview">
+            <img src="media/fca.jpg" alt="" />
+            <div class="preview-info">
+              <h1>Fiat Chrysler AI Concept</h1>
+              <h2>UX Internship, Research, AI</h2>
+            </div>
+          </div>
+          <div class="preview">
+            <img src="media/acclimate.jpg" alt="" />
+            <div class="preview-info">
+              <h1>The Third Space</h1>
+              <h2>Generative Research, Product Concept, UI/UX</h2>
+            </div>
+          </div>
+        </div>
+        <div class="desktop-preview-container">
+          <div class="desktop-project-preview">
+            <div class="sub-preview" id="sub-preview-1">
+              <h1>The Third Space</h1>
+              <h2>Generative Research, Product Concept, UI/UX</h2>
+            </div>
+            <div class="main-preview">
+              <div class="main-preview-image">
+                <img
+                  src="media/impressions.jpg"
+                  alt=""
+                  class="desktop-preview-image"
+                />
+              </div>
+              <div class="main-preview-info">
+                <h1>Impressions</h1>
+                <h2>UI/UX, Service Design</h2>
+              </div>
+            </div>
+            <div class="sub-preview" id="sub-preview-2">
+              <h1>Fiat Chrysler AI Concept</h1>
+              <h2>UX Internship, Research, AI</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="side-menu">
+      <div class="top-nav">
+        <div class="hamburger-icon-close">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="pages">
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-text">
+        <div class="email">
+          <h1>Want to talk design?</h1>
+          <a href="mailto:rachelfarn32@gmail.com">rachelfarn32@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/landing.js"></script>
   </body>
 </html>
