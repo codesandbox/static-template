@@ -1,12 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <style>
+      :root {
+        /* Bright Colors */
+        --White: #fff; /* W */
+        --Salmon: #fcc; /* R */
+        --Banana: #ffc; /* Y */
+        --Money: #cfc; /* G */
+        --Baby-Blue: #cff; /* C */
+        --Cornflower: #ccf; /* B */
+        --Cotton-Candy: #fcf; /* M */
+        --Platinum: #ccc; /* B */
+        /* Major Colors !important */
+        --White: #fff; /* W */
+        --Red: #f00; /* R */
+        --Orange: #f60; /* O */
+        --Yellow: #ff0; /* Y */
+        --Lime: #0f0; /* G */
+        --Olive: #990; /* O */
+        --Green: #090; /* G */
+        --Light-Blue: #69f; /* L */
+
+        --Teal: #099; /* T */
+        --Cyan: #0ff; /* C */
+        --Blue: #00f; /* B */
+        --Megenta: #f0f; /* M */
+        --Purple: #96f; /* P */
+        --Gray: #666; /* G */
+        --Black: #000; /* B */
+        --Brown: #960; /* B */
+
+        /* Dark Colors */
+        --Charcoal: #333; /* W */
+        --Sauce: #300; /* R */
+        --Dirt: #330; /* Y */
+        --Forest-Green: #030; /* G */
+        --Colbalt: #033; /* C */
+        --Navy: #003; /* B */
+        --Grape: #303; /* M */
+        --Black: #000; /* B */
+
+        /* Other Colors */
+        --Apricot: #fc9; /* W */
+        --Pink: #f99; /* R */
+        --Carrot: #f93; /* O */
+        --Pineapple: #fc0; /* Y */
+        --Mint: #3c6; /* G */
+        --Jungle: #690; /* O */
+        --Sea-Foam: #396; /* G */
+        --Ocean-Blue: #9cf; /* L */
+
+        --Midnight: #369; /* T */
+        --Gem: #06f; /* C */
+        --Denim: #06c; /* B */
+        --Ruby: #f06; /* M */
+        --Violet: #c3f; /* P */
+        --Silver: #999; /* G */
+        --Tan: #c90; /* B */
+        --Sand: #996; /* B */
+      }
+      .Mint {
+        background-color: var(--White);
+        color: var(--Tan);
+      }
+      .Megenta {
+        background-color: var(--White);
+        color: var(--Apricot);
+      }
+      #Colors {
+        display: inline-block;
+      }
+      .Round {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 7.5px;
+        border-width: 1px;
+        border-color: #000;
+        border-style: solid;
+        margin: 5px;
+      }
+
+      #White {
+        background-color: var(--White) !important;
+      }
+      #Salmon {
+        background-color: var(--Salmon) !important;
+      }
+      #Banana {
+        background-color: var(--Banana) !important;
+      }
+      #Money {
+        background-color: var(--Money) !important;
+      }
+      #Baby-Blue {
+        background-color: var(--Baby-Blue) !important;
+      }
+      #Cornflower {
+        background-color: var(--Cornflower) !important;
+      }
+      #Cotton-Candy {
+        background-color: var(--Cotton-Candy) !important;
+      }
+      #Platinum {
+        background-color: var(--Platinum) !important;
+      }
+      #Red {
+        background-color: var(--Red) !important;
+      }
+      #Orange{
+        background-color: var(--Orange) !important;
+      }
+      #Yellow {
+        background-color: var(--Yellow) !important;
+      }
+      #Lime {
+        background-color: var(--Lime) !important;
+      }
+      #Green{
+        background-color: var(--Green) !important;
+      }
+      #Olive {
+        background-color: var(--Olive) !important;
+      }
+      #Light-Blue {
+        background-color: var(--Light-Blue) !important;
+      }
+      #Teal {
+        background-color: var(--Teal) !important;
+      }
+      #Cyan {
+        background-color: var(--Cyan) !important;
+      }
+      #Blue{
+        background-color: var(--Blue) !important;
+      }
+      #Megenta {
+        background-color: var(--Megenta) !important;
+      }
+      #Purple {
+        background-color: var(--Purple) !important;
+      }
+      #Black{
+        background-color: var(--Black) !important;
+      }
+      #Gray {
+        background-color: var(--Gray) !important;
+      }
+      #Brown {
+        background-color: var(--Brown) !important;
+      }
+      #Charcoal {
+        background-color: var(--Charcoal) !important;
+      }
+      #Sauce {
+        background-color: var(--Sauce) !important;
+      }
+      #Dirt{
+        background-color: var(--Dirt) !important;
+      }
+      #Forest-Green{
+        background-color: var(--Forest-Green) !important;
+      }
+      #Colbalt {
+        background-color: var(--Colbalt) !important;
+      }
+      #Navy{
+        background-color: var(--Navy) !important;
+      }
+      #Grape {
+        background-color: var(--Grape) !important;
+      }
+      #Apricot {
+        background-color: var(--Apricot) !important;
+      }
+      #Pink {
+        background-color: var(--Pink) !important;
+      }
+      #Carrot{
+        background-color: var(--Carrot) !important;
+      }
+      #Pineapple{
+        background-color: var(--Pineapple) !important;
+      }
+      #Mint {
+        background-color: var(--Mint) !important;
+      }
+      #Jungle{
+        background-color: var(--Jungle) !important;
+      }
+      #Sea-Foam {
+        background-color: var(--Sea-Foam) !important;
+      }
+      #Ocean {
+        background-color: var(--Ocean-Blue) !important;
+      }
+      #Midnight {
+        background-color: var(--Midnight) !important;
+      }
+      #Gem {
+        background-color: var(--Gem) !important;
+      }
+      #Denim{
+        background-color: var(--Denim) !important;
+      }
+      #Ruby{
+        background-color: var(--Ruby) !important;
+      }
+      #Violet {
+        background-color: var(--Violet) !important;
+      }
+      #Silver{
+        background-color: var(--Silver) !important;
+      }
+
+      #Tan {
+        background-color: var(--Tan) !important;
+      }
+      #Sand {
+        background-color: var(--Sand) !important;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <textarea spellcheck="true" class="Mint">Spell Some Text Here</textarea>
+    <textarea spellcheck="true" class="Megenta">Spell Some Text Here</textarea>
+    <p></p>
+    <div id="Colors">
+      <p id="White" class="Round" /></p>
+      <p id="Salmon" class="Round" /></p>
+      <p id="Banana" class="Round" /></p>
+      <p id="Money" class="Round" /></p>
+      <p id="Baby-Blue" class="Round" /></p>
+      <p id="Cornflower" class="Round" /></p>
+      <p id="Cotton-Candy" class="Round" /></p>
+      <p id="Platinum" class="Round" /></p>
+      <p class="space"/>
+      <p id="White" class="Round" /></p>
+      <p id="Red" class="Round" /></p>
+      <p id="Orange" class="Round" /></p>
+      <p id="Yellow" class="Round" /></p>
+      <p id="Lime" class="Round" /></p>
+      <p id="Olive" class="Round" /></p>
+      <p id="Green" class="Round" /></p>
+      <p id="Light-Blue" class="Round" /></p>
+      <p class="space"/>
+      <p id="Teal" class="Round" /></p>
+      <p id="Cyan" class="Round" /></p>
+      <p id="Blue" class="Round" /></p>
+      <p id="Megenta" class="Round" /></p>
+      <p id="Purple" class="Round" /></p>
+      <p id="Gray" class="Round" /></p>
+      <p id="Black" class="Round" /></p>
+      <p id="Brown" class="Round" /></p>
+      <p class="space"/>
+      <p id="Charcoal" class="Round" /></p>
+      <p id="Sauce" class="Round" /></p>
+      <p id="Dirt" class="Round" /></p>
+      <p id="Forest-Green" class="Round" /></p>
+      <p id="Colbalt" class="Round" /></p>
+      <p id="Navy" class="Round" /></p>
+      <p id="Grape" class="Round" /></p>
+      <p id="Black" class="Round" /></p>
+      <p class="space"/>
+      <p id="Apricot" class="Round" /></p>
+      <p id="Pink" class="Round" /></p>
+      <p id="Carrot" class="Round" /></p>
+      <p id="Pineapple" class="Round" /></p> 
+      <p id="Mint" class="Round" /></p>
+      <p id="Jungle" class="Round" /></p>
+      <p id="Sea-Foam" class="Round" /></p>
+      <p id="Ocean" class="Round" /></p>
+      <p class="space"/>
+      <p id="Midnight" class="Round" /></p>
+      <p id="Gem" class="Round" /></p>
+      <p id="Denim" class="Round" /></p>
+      <p id="Ruby" class="Round" /></p>
+      <p id="Violet" class="Round" /></p>
+      <p id="Silver" class="Round" /></p>
+      <p id="Tan" class="Round" /></p>
+      <p  title="Sand" id="Sand" class="Round" /></p>
+      <!- title="COLOR" -->
+    </div>
   </body>
 </html>
