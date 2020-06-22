@@ -1,12 +1,410 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/swiper.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Охотники за привидениями: Наследники</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header class="header">
+      <img class="header__logo logo" src="img/logo.png" alt="film." />
+      <div class="line"></div>
+      <input
+        type="text"
+        class="header__input search-input"
+        placeholder="Поиск по фильмам..."
+      />
+      <nav class="header__navigation navigation">
+        <a href="#" class="navigation__link">Фильмы</a>
+        <a href="#" class="navigation__link">ТВ</a>
+        <a href="#" class="navigation__link">Новости</a>
+        <a href="#" class="navigation__link">О сервисе</a>
+      </nav>
+      <div class="header__buttons button-group">
+        <button class="button-group__button button-sign-up">
+          Регистрация
+        </button>
+        <button class="button-group__button button-login-in">Войти</button>
+      </div>
+      <div class="mobile-buttons">
+        <button class="mobile-buttons__search">
+          <img src="img/search-icon.svg" alt="search" />
+        </button>
+        <button class="mobile-buttons__menu">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </button>
+      </div>
+    </header>
+    <section class="film">
+      <div class="container">
+        <div class="film-wrapper">
+          <div class="film__trailer trailer">
+            <img src="img/poster.jpg" alt="poster" class="trailer__poster" />
+            <a
+              data-fancybox
+              href="https://www.youtube.com/watch?v=o705uydkgew&feature=youtu.be"
+              class="trailer__button trailer-btn"
+            >
+              <img src="img/play.svg" alt="play" class="trailer-btn__icon" />
+              <span class="trailer-btn__text">Посмотреть трейлер</span>
+            </a>
+          </div>
+          <div class="film__about about-film">
+            <h1 class="about-film__title">
+              Охотники за привидениями: <br />
+              Наследники
+            </h1>
+            <span class="about-film__subtitle">Ghostbusters: Afterlife</span>
+            <p class="about-film__description">
+              Мать-одиночка с двумя детьми-подростками селится на старой
+              ферме&nbsp;в Оклахоме, полученной в наследство от отца, которого
+              она не знала. Дети пытаются больше узнать о своем деде и находят
+              автомобиль Ecto-1, принадлежавший знаменитым охотникам за
+              привидениями.
+            </p>
+            <div class="about-film__info about-info">
+              <div class="about-info__column left-column column-info">
+                <span class="column-info">
+                  <strong>Режиссер</strong>
+                  <span>Джейсон Райтман</span>
+                </span>
+                <span class="column-info">
+                  <strong>Сценарий</strong>
+                  <span>Дэн Эйкройд</span>
+                </span>
+                <span class="column-info">
+                  <strong>Премьера</strong>
+                  <span>09.07.2020 (РФ)</span>
+                </span>
+              </div>
+              <!--  -->
+              <div class="about-info__column right-column column-info">
+                <span class="column-info">
+                  <strong>Бюджет</strong>
+                  <span>1 000 000 $</span>
+                </span>
+                <span class="column-info">
+                  <strong>Кинопрокат</strong>
+                  <span>SPPR</span>
+                </span>
+                <span class="column-info">
+                  <strong>Премьера</strong>
+                  <span>09.07.2020 (РФ)</span>
+                </span>
+                <!--  -->
+              </div>
+            </div>
+            <!-- /.about-film -->
+            <div class="film__rating rating-film">
+              <div class="rating-film__counter">92%</div>
+              <div class="rating-film__text">
+                <h3 class="rating-film__title">Рейтинг зрителей</h3>
+                <span class="rating-film__average rating-film__description">
+                  Средняя оценка:
+                  <strong>4,5/5</strong>
+                </span>
+                <span class="rating-film__total rating-film__description">
+                  Всего голосов:
+                  <strong>4 350</strong>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--  /.rating-->
+        </div>
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.main -->
+    <section class="cast">
+      <div class="container">
+        <div class="cast__tabs-titles tabs-titles section-title">
+          <h3 data-target="actors" class="tabs-titles__title tabs-actors active">
+            Актеры
+          </h3>
+          <h3 data-target="creators" class="tabs-titles__title tabs-creaters">
+            Создатели
+          </h3>
+        </div>
+        <!-- tabs -->
+        <div class="cast__actors actors-cards tabs-content visible" id="actors">
+          <div class="card">
+            <img
+              src="img/actors/Coon.png"
+              alt="Carrie Coon"
+              class="card__img"
+            />
+            <div class="card__text">
+              <h3 class="card__name">Кэрри Кун</h3>
+              <span class="card__en-name">Carrie Coon</span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/actors/Murray.png"
+              alt="Bill Murray"
+              class="card__img"
+            />
+            <div class="card__text">
+              <h3 class="card__name">Билл Мюррей</h3>
+              <span class="card__en-name">Bill Murray</span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img src="img/actors/Rudd.png" alt="Paul Rudd" class="card__img" />
+            <div class="card__text">
+              <h3 class="card__name">Пол Радд</h3>
+              <span class="card__en-name">Paul Rudd</span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/actors/Potts.png"
+              alt="Annie Potts"
+              class="card__img"
+            />
+            <div class="card__text">
+              <h3 class="card__name">Энни Поттс</h3>
+              <span class="card__en-name">Annie Potts</span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/actors/Grace.png"
+              alt="Mckenna Grace"
+              class="card__img"
+            />
+            <div class="card__text">
+              <h3 class="card__name">МакКенна Грейс</h3>
+              <span class="card__en-name">Mckenna Grace</span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/actors/Aykroyd.jpg"
+              alt="Dan Aykroyd"
+              class="card__img"
+            />
+            <div class="card__text">
+              <h3 class="card__name">Дэн Эйкройд</h3>
+              <span class="card__en-name">Dan Aykroyd</span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/actors/Hudson.png"
+              alt="Ernie Hudson"
+              class="card__img"
+            />
+            <div class="card__text">
+              <h3 class="card__name">Эрни Хадсон</h3>
+              <span class="card__en-name">Ernie Hudson</span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/actors/Wolfhard.png"
+              alt="Finn Wolfhard"
+              class="card__img"
+            />
+            <div class="card__text">
+              <h3 class="card__name">Финн Вулфард</h3>
+              <span class="card__en-name">Finn Wolfhard</span>
+            </div>
+          </div>
+          <!-- /.card -->
+        </div>
+        <div class="cast__creaters creaters-cards tabs-content" id="creators">
+          <div class="card">
+            <img
+              src="img/creaters/Begg.jpg"
+              alt="Майкл Бегг"
+              class="card__img"
+            />
+            <div class="card__text">
+              <h3 class="card__name">Майкл Бегг</h3>
+              <span class="card__en-name">Michael Beugg</span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/creaters/Cloth.jpg"
+              alt="Джейсон Клот"
+              class="card__img"
+            />
+            <div class="card__text">
+              <h3 class="card__name">Джейсон Клот</h3>
+              <span class="card__en-name">Jason Cloth </span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/creaters/Gil.jpg"
+              alt="
+            Гил Кинан"
+              class="card__img"
+            />
+            <div class="card__text">
+              <h3 class="card__name">
+                Гил Кинан
+              </h3>
+              <span class="card__en-name">Gil Kenan </span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/creaters/Gilbert.jpg"
+              alt="
+              Аарон Л. Гилберт"
+              class="card__img"
+            />
+            <div class="card__text">
+              <h3 class="card__name">
+                Аарон Л. Гилберт
+              </h3>
+              <span class="card__en-name">Aaron L. Gilbert </span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/creaters/Rightman.jpg"
+              alt="Айвен Райтман"
+              class="card__img"
+            />
+            <div class="card__text">
+              <h3 class="card__name">Айвен Райтман</h3>
+              <span class="card__en-name">Ivan Reitman </span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/actors/Aykroyd.jpg"
+              alt="Dan Aykroyd"
+              class="card__img"
+            />
+            <div class="card__text">
+              <h3 class="card__name">Дэн Эйкройд</h3>
+              <span class="card__en-name">Dan Aykroyd</span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/creaters/Raytman.jpg"
+              alt="Джейсон Райтман"
+              class="card__img"
+            />
+            <div class="card__text">
+              <h3 class="card__name">Джейсон Райтман</h3>
+              <span class="card__en-name">Jason Reitman</span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/creaters/Remis.jpg"
+              alt="Харольд Рэмис"
+              class="card__img"
+            />
+            <div class="card__text">
+              <h3 class="card__name">Харольд Рэмис</h3>
+              <span class="card__en-name">Harold Ramis</span>
+            </div>
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+    </section>
+    <section class="news">
+      <div class="container">
+        <h2 class="news__title section-title">Новости по теме</h2>
+        <!-- Slider main container -->
+        <div class="swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="news__card">
+                <span class="news-card__date">31 марта 2020</span>
+                <h3 class="news-card__title">
+                  «Морбиуса» и «Охотников &nbsp;за привидениями» перенесли на
+                  следующий год
+                </h3>
+              </div>
+              <!--news__card -->
+            </div>
+            <!-- /SLIDE-1 -->
+            <div class="swiper-slide">
+              <div class="news__card">
+                <span class="news-card__date">9 декабря 2019</span>
+                <h3 class="news-card__title">
+                  Наследники: Вышел дебютный трейлер новых «Охотников за
+                  привидениями»
+                </h3>
+              </div>
+              <!--news__card -->
+            </div>
+            <!-- /SLIDE-2 -->
+            <div class="swiper-slide">
+              <div class="news__card">
+                <span class="news-card__date">11 ноября 2019</span>
+                <h3 class="news-card__title">
+                  Новые «Охотники за привидениями» обзавелись названием
+                </h3>
+              </div>
+              <!--news__card -->
+            </div>
+            <!-- /SLIDE-3 -->
+            <div class="swiper-slide">
+              <div class="news__card">
+                <span class="news-card__date">19 октября 2019</span>
+                <h3 class="news-card__title">
+                  Завершились съёмки новых «Охотников за привидениями»
+                </h3>
+              </div>
+              <!--news__card -->
+            </div>
+            <!-- /SLIDE-4 -->
+          </div>
+          <!-- <button class="button-slider btn-prev">
+              <img src="img/arrow.svg" alt="prev">
+            </button> -->
+          <button class="button-slider btn-next">
+            <img src="img/arrow.svg" alt="next" />
+          </button>
+        </div>
+      </div>
+    </section>
+    <div class="modal"></div>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
