@@ -1,0 +1,395 @@
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+#page_wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: black;
+}
+
+nav ul {
+  height: 10vh;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  float: center;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: black;
+  font-size: 80px;
+  letter-spacing: 3px;
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h2 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: black;
+  font-size: 40px;
+  letter-spacing: 3px;
+  height: 20em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5rem;
+  animation: flip;
+  animation-duration: 20s;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+body {
+  color: #222;
+  font-size: 1em;
+  font-family: "Oswald", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+ul {
+  list-style-type: none;
+}
+.masthead {
+  padding: 6em 0;
+  background-image: url("https://images.unsplash.com/photo-1474440692490-2e83ae13ba29?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top: solid 1em #333;
+}
+
+.masthead-intro {
+  margin-bottom: 0.1em;
+  font-size: 2.25em;
+  font-family: "Oswald", sans-serif;
+  color: #ffcf33 !important;
+  text-shadow: 1px 1px #333;
+}
+.masthead-heading {
+  margin-top: 0;
+  font-size: 5em;
+  font-family: "Playfair Display";
+  text-shadow: 2px 3px #333;
+}
+.masthead-intro,
+.masthead-heading {
+  text-align: center;
+  color: #fff;
+}
+
+.intro,
+.where,
+.questions {
+  max-width: 38em;
+  margin: 2em auto 0;
+  padding: 0 3em;
+}
+
+.intro > p,
+.where > p,
+.questions p,
+.footer > p {
+  font-size: 1.2em;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+section h1 {
+  font-size: 2em;
+}
+
+.questions h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2em;
+  font-weight: 800;
+  color: #088da5;
+  line-height: 2vh;
+}
+
+.artist {
+  color: #f2b50f;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 500px) {
+  .masthead {
+    padding: 3em 0;
+  }
+  .masthead-heading {
+    font-size: 3em;
+  }
+
+.img {
+  position: relative;
+}
+.container {
+  position: absolute;
+  top: 400px;
+  left: 0;
+  width: 100%;
+}
+.center-text {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.my-element {
+  position: absolute;
+  display: inline-block;
+  margin: 0 0.5rem;
+  color: white;
+  font-size: 70px;
+  animation: hinge; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 20s; /* don't forget to set a duration! */
+}
+
+.block {
+  display: inline-block;
+  position: sticky;
+  margin: 3em 0;
+  padding-left: 100%;
+  color: rebeccapurple;
+  font-size: 10em;
+  font-weight: bold;
+  white-space: nowrap;
+  height: 5px;
+  transform: translate(0, 0);
+  scroll-behavior: smooth;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-100%, 0);
+  }
+}
+.animate {
+  animation: marquee 40s linear infinite;
+}
+.animate.quick {
+  animation-duration: 30s;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  background-color: white;
+}
+a {
+  text-decoration: none;
+  color: black;
+  padding: 3px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  display: block;
+  font-size: 14px;
+}
+
+.header {
+  text-align: center;
+  padding: 40px;
+}
+
+@media only screen and (max-width: 500px) {
+  ul {
+    flex-direction: column;
+  }
+}
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 20px;
+}
+
+.column img {
+  margin-top: 12px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400, 700);
+
+html {
+  background: url("https://images.unsplash.com/photo-1478145971721-10511ecaf005?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=938&q=80")
+    no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+*::-webkit-input-placeholder {
+  color: #000;
+}
+#feedback-page {
+  text-align: center;
+}
+
+#form-main {
+  width: 100%;
+  float: left;
+  padding-top: 0px;
+}
+
+#form-div {
+  background: #fff;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  width: 450px;
+  float: left;
+  left: 50%;
+  position: absolute;
+  margin-top: 30px;
+  margin-left: -260px;
+}
+
+.feedback-input {
+  color: #000;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  border-radius: 0;
+  line-height: 22px;
+  background-color: #fff;
+  padding: 13px 13px 13px 13px;
+  margin-bottom: 10px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0px solid transparent;
+  border-bottom: 1px solid #000;
+}
+
+.feedback-input:focus {
+  background: #fff;
+  box-shadow: 0;
+  color: #000;
+  outline: none;
+  padding: 13px 13px 13px 13px;
+}
+
+.focused {
+  color: #000;
+  border: #30aed6 solid 2px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  line-height: 150%;
+  resize: vertical;
+}
+
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
+  background-color: white;
+}
+
+#button-blue {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  float: left;
+  width: 100%;
+  border: 0px solid transparent;
+  cursor: pointer;
+  background-color: #000;
+  color: white;
+  font-size: 18px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-top: -4px;
+  font-weight: 300;
+}
+
+#button-blue:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.submit:hover {
+  color: #3498db;
+}
+
+.ease {
+  width: 0px;
+  height: 74px;
+  background-color: #fbfbfb;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.submit:hover .ease {
+  width: 100%;
+  background-color: white;
+}
+
+@media only screen and (max-width: 580px) {
+  #form-div {
+    left: 3%;
+    margin-right: 3%;
+    width: 88%;
+    margin-left: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
