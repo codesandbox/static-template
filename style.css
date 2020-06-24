@@ -1,0 +1,57 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url("fonteTelaInicial.otf");
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: myFirstFont;
+  font-size: 16px;
+  text-align: center;
+}
+canvas {
+  display: block;
+}
+
+div {
+  position: absotule;
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes titleFrame {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    margin-top: 1rem;
+  }
+}
+
+.title-div {
+  visibility: visible;
+}
+
+.title {
+  font-size: 72px;
+  color: white;
+  opacity: 0;
+  animation: titleFrame 600ms ease-in-out 2s 1 forwards;
+}
+
+.title-hidden {
+  visibility: hidden;
+}
+.instruction-hidden {
+  visibility: hidden;
+}
+.instruction {
+  visibility: visible;
+  font-size: 36px;
+  color: white;
+}
