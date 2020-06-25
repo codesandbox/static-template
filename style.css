@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: #0d4949;
+}
+
+.main {
+  position: relative;
+  display: grid;
+}
+
+.main .value {
+  grid-column: span 4;
+  height: 100px;
+  text-align: right;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+.main .value2 {
+  grid-column: span 4;
+  height: 30px;
+  text-align: right;
+  padding: 10px;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  font-size: 18px;
+}
+.main span {
+  display: grid;
+  width: 100px;
+  height: 60px;
+  place-items: center;
+  color: white;
+  background: #5a421ec9;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.main span:active {
+  color: #111;
+  background: lightcoral;
+}
+.main span.clear {
+  grid-column: span 2;
+  width: 200px;
+  background: lightseagreen;
+}
+.main span.plus {
+  /* grid-row: span 2; */
+  height: 60px;
+}
+
+.main span.equal,
+span.plus,
+span.minus,
+span.multiply {
+  background: maroon;
+}
+
+.main span.delete,
+span.divide {
+  background-color: lightseagreen;
+}
