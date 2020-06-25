@@ -1,12 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <title>Pagination example</title>
+    <!--required frame works should be loaded here-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="/src/style.css" rel="stylesheet" />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <section class="test-block">
+      <article>
+        <h2 style="text-align: center">UNBXD</h2>
+        <div id="es6Root">
+          <div class="unbxd-header-action-row">
+            <div id="unbxdTxtWrap">
+              <input id="unbxdInput" />
+              <button id="searchBtn">search</button>
+            </div>
+            <div class="unbxd-sort-wrapper" id="sortWrapper"></div>
+            <div id="didYouMeanWrapper"></div>
+            <div id="productViewTypeContainer"></div>
+            <div id="changeNoOfProducts"></div>
+          </div>
+          <div id="breadcrumpContainer"></div>
+          <div id="bannerContainer"></div>
+          <div style="display:flex">
+            <div class="unbxd-left-container">
+              <div id="bucketedFacetWrapper"></div>
+              <div id="facetsWrapper"></div>
+              <div id="rangeFacetWrapper"></div>
+            </div>
+            <div id="searchResultsWrapper" class="unbxd-result-wrapper"></div>
+            <div id="loaderContainer"></div>
+            <div id="noResultWrapper"></div>
+          </div>
+          <div id="paginationContainer"></div>
+        </div>
+      </article>
+    </section>
+    <script type="text/javascript">
+      /* * * CONFIGURATION * * */
+      var UnbxdSiteName = "demo-unbxd700181503576558";
+      (function() {
+        var ubx = document.createElement("script");
+        ubx.type = "text/javascript";
+        ubx.async = true;
+        ubx.src = "//d21gpk1vhmjuf5.cloudfront.net/unbxdAnalytics.js";
+        (
+          document.getElementsByTagName("head")[0] ||
+          document.getElementsByTagName("body")[0]
+        ).appendChild(ubx);
+      })();
+    </script>
+    <script src="/src/unbxdSearch.js"></script>
+    <script>
+      const unbxdCallbackEcma = function(instance, type, data) {
+        console.log(instance, type, data, "unbxdCallbackEcma");
+        document.body.scrollIntoView();
+      };
+      window.addEventListener("load", event => {
+        const es6unbxd = new window.UnbxdSearch({
+          searchBoxSelector: document.getElementById("unbxdInput"),
+          searchTrigger: "click",
+          searchButtonSelector: document.getElementById("searchBtn"),
+          searchResultsSelector: document.getElementById(
+            "searchResultsWrapper"
+          ),
+          facetsSelector: document.getElementById("facetsWrapper"),
+          siteKey: "demo-unbxd700181503576558",
+          apiKey: "fb853e3332f2645fac9d71dc63e09ec1",
+          sdkHostName: "https://search.unbxd.io/",
+          productType: "SEARCH",
+          searchQueryParam: "q",
+          updateUrls: true,
+          productId: "uniqueId",
+          searchResultsTemplate: function(product, idx) {
+            var rowClass =
+              this.viewState.productViewType === "LIST"
+                ? `unbxd-product-row`
+                : ``;
+            const descUI = rowClass
+              ? '<p class="unbxd-desc">' + product.description + "</p>"
+              : "";
+            return [
+              '<div id="' +
+                product.uniqueId +
+                '" data-prank="' +
+                idx +
+                '" data-item="product" class="product-item unbxd-product-item ' +
+                rowClass +
+                '">',
+              '<img class="productImgBlock unbxd-product-img" src="' +
+                product.imageUrl +
+                '"/>',
+              '<div class="unbxd-product-content">',
+              "<h3>" + product.title + "</h3>",
+              descUI,
+              "<strong>" + product.displayPrice + "</strong>",
+              "</div>",
+              "</div>"
+            ].join("");
+          },
+          productItemClass: ".product-item",
+
+          mapping: {
+            title: ""
+          },
+          fields: ["title", "uniqueId", "sortPrice", "sku", "imageUrl"],
+          platform: "IO",
+          callBackFn: unbxdCallbackEcma,
+          selectedFacetTemplate: function(selectedFacet, selectedFacetItem) {
+            return [
+              '<div class="unbxd-facet-row">',
+              '<button class="unbxd-facet-btn unbxd-selected-facet-btn ' +
+                this.selectedFacetClass +
+                '"',
+              'data-facet-name="' + selectedFacet.facetName + '"',
+              'data-facet-action ="deleteFacetValue"',
+              'data-id= "' + selectedFacetItem.dataId + '">',
+              '<i class="fa fa-check-square"></i>',
+              selectedFacetItem.name,
+              "(" + selectedFacetItem.count + ")",
+              "</button>",
+              "</div>"
+            ].join("");
+          },
+          facetTemplate: function(facet, value) {
+            return [
+              '<div class="unbxd-facet-row">',
+              '<button data-facet-name="' + facet.facetName + '"',
+              'data-facet-action="CHANGE_FACET" class="unbxd-facet-btn"',
+              'data-id= "' + value.dataId + '">',
+              '<i class="fa fa-square-o"></i> ' +
+                value.name +
+                " (" +
+                value.count +
+                ")",
+              "</button>",
+              "</div>"
+            ].join("");
+          },
+          facetItemTemplate: function(facet, children) {
+            return [
+              '<div class="unbxd-facet-item-block" id="' +
+                facet.facetName +
+                '">',
+              "<h3>" + facet.displayName + "</h3>",
+              '<button data-facet-action="deleteFacet" class="unbxd-clear-facet" data-facet-name="' +
+                facet.facetName +
+                '"> clear</button>',
+              children,
+              "</div>"
+            ].join("");
+          },
+          facetClass: "select-facets-block",
+          facetAction: "click",
+          selectedFacetClass: "selected-facet",
+          facetMultiSelect: true,
+          facetMultiSelectionMode: true,
+          defaultFilters: null,
+          spellCheck: true,
+          spellCheckTemplate: suggestion => {
+            return "<p>did you mean <strong>" + suggestion + "</strong></p>";
+          },
+          spellCheckSelector: document.getElementById("didYouMeanWrapper"),
+          noResultContainer: document.getElementById("noResultWrapper"),
+          pageSize: 12,
+          /*pagination options*/
+          paginationType: "FIXED_PAGINATION",
+          paginationSelector: document.getElementById("paginationContainer"),
+          paginationTemplate: function(paginationData) {
+            var nextBtn =
+              '<button class="unbxd-page-btn unbxd-next-btn" data-page-action="next">next</button>';
+            var prevBtn =
+              '<button class="unbxd-page-btn unbxd-prev-btn" data-page-action="prev">prev</button>';
+            if (!paginationData.isNext) {
+              nextBtn =
+                '<button disabled class="unbxd-page-btn unbxd-next-btn">next</button>';
+            }
+            if (!paginationData.isPrev) {
+              prevBtn =
+                '<button disabled class="unbxd-page-btn unbxd-prev-btn">prev</button>';
+            }
+            return [
+              '<div class="unbxd-pagination-block">',
+              '<span class="unbxd-page-label unbxd-page-now">' +
+                paginationData.currentPage +
+                "</span>",
+              'of <span class="unbxd-page-label">' +
+                paginationData.noOfPages +
+                "</span>",
+              prevBtn,
+              nextBtn,
+              "</div>"
+            ].join("");
+          },
+          /*pagination options*/
+          pageSizeContainerSelector: document.getElementById(
+            "changeNoOfProducts"
+          ),
+          pageSizeDisplayType: "Dropdown",
+          pageSizeOptions: [6, 8, 12, 16, 20],
+          heightDiffToTriggerNextPage: 100,
+          sortContainerSelector: document.getElementById("sortWrapper"),
+          sortOptions: [
+            {
+              value: "sortPrice desc",
+              text: "Price High to Low"
+            },
+            {
+              value: "sortPrice asc",
+              text: " Price Low to High"
+            } /*,
+                  {
+                      value:"average_rating asc",
+                      text:" Rating Low to High"
+                  },
+                  {
+                      value:"average_rating desc",
+                      text:" Rating High to low"
+                  }*/
+          ],
+          sortTemplate: function(selectedSort) {
+            var sortBtnsUI = "";
+            this.options.sortOptions.forEach(function(item, index) {
+              var selectedCss = "";
+              if (item.value === selectedSort) {
+                selectedCss = "selcted-sort-btn";
+              }
+              sortBtnsUI += [
+                '<button class="btn unbxd-sort-btn ' + selectedCss + '"',
+                'value="' +
+                  item.value +
+                  '" data-action="changeSort"> ' +
+                  item.text +
+                  "</button>"
+              ].join("");
+            });
+            return (
+              "<div>" +
+              sortBtnsUI +
+              '<button data-action="clearSort">clear sort</button></div>'
+            );
+          },
+          sortAction: "click",
+          sortElement: "button",
+          loaderTemplate: () => {
+            return "<div>Loading....</div>";
+          },
+          loaderContainer: document.getElementById("loaderContainer"),
+          showVariants: false,
+          variantMapping: {
+            image_url: "v_image_url"
+          },
+          rangeFacetContainer: document.getElementById("rangeFacetWrapper"),
+          rangeWidgetConfig: {
+            start: 0,
+            end: 100,
+            minLabel: "Min :",
+            maxLabel: "Max :"
+          },
+          facetMultilevel: true,
+          facetMultilevelName: "category",
+          multiLevelFacetSelector: "bucketFacetElem",
+          extraParams: {
+            version: "V2"
+            //"facet.multilevel":"categoryPath",
+            /*"f.categoryPath.displayName":"category",
+                  "f.categoryPath.max.depth":"4",
+                  "f.categoryPath.facet.limit":"100"*/
+          },
+          multiLevelFacetContainer: document.getElementById(
+            "bucketedFacetWrapper"
+          ),
+          facetDepth: 4,
+          breadcrumb: true,
+          breadcrumbContainer: document.getElementById("breadcrumpContainer"),
+          breadcrumbSelectorClass: "bread-crumb",
+          showSwatches: true,
+          swatchMap: {
+            swatchList: "colours",
+            swatchImgs: "variant_metadata",
+            swatchColors: "unbxd_parentcolours"
+          },
+          swatchSelector: "swatchBtn",
+          swatchTemplate: function(swatchData) {
+            return "";
+          },
+          productViewTypes: "GRID",
+          gridCount: 4,
+          productViewTypeSelector: document.getElementById(
+            "productViewTypeContainer"
+          ),
+          productViewTypeAction: "click",
+          productViewTypeTemplate: function(productViewType) {
+            var isDisabled = this.getSearchResults() ? false : true;
+            var listCss = productViewType === "LIST" ? "selected-view" : "";
+            var gridCss = productViewType === "GRID" ? "selected-view" : "";
+            let listBtn = [
+              '<button id="listBtn"',
+              'class="' +
+                listCss +
+                ' fa fa-th-list view-btn " data-view-action="LIST" ></button>'
+            ].join("");
+            var gridBtn = [
+              '<button id="gridBtn" class="' +
+                gridCss +
+                ' fa fa-th-large view-btn"',
+              'data-view-action="GRID" ></button>'
+            ].join("");
+            if (isDisabled) {
+              listBtn = [
+                '<button id="listBtn" disabled',
+                'class="' + listCss + ' fa fa-th-list view-btn disabled-btn"',
+                'data-view-action="LIST" ></button>'
+              ].join("");
+              gridBtn = [
+                '<button id="gridBtn" disabled',
+                'class="' + gridCss + ' fa fa-th-large view-btn disabled-btn"',
+                'data-view-action="GRID" ></button>'
+              ].join("");
+            }
+
+            return [
+              '<div class="product-view-container">',
+              listBtn,
+              gridBtn,
+              "</div>"
+            ].join("");
+          },
+          unbxdAnalytics: true,
+          variantConfig: {
+            variantsCount: 1,
+            variantAttributes: [],
+            variantMapping: {
+              image_url: "v_image_url"
+            },
+            variantsGroupBy: ""
+          },
+          //bannerSelector:document.getElementById('bannerContainer'),
+          applyMultipleFilters: false
+        });
+      });
+    </script>
   </body>
 </html>
