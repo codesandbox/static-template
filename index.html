@@ -4,9 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+
+    <!-- SVG Sprite -->
+    <div style="height: 0; width: 0; position: absolute; visibility: hidden;" aria-hidden="true">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" focusable="false">
+        <symbol id="ripply-scott" viewBox="0 0 100 100">
+          <circle id="ripple-shape" cx="1" cy="1" r="1" />
+        </symbol>
+      </svg>
+    </div>
+    <!-- /end sprite -->
+  
+    <div class="container">
+      <!-- Small-->
+      <h1> Text Checkbox</h1>
+      <div class="row light_mode">
+        <div class="atom">
+          <label id="" class="label_checkbox js-ripple-btn">
+            <input class="checkbox_input" name="alarm" type="checkbox">
+            <svg class="select-ripple ripple-obj js-ripple-obj">
+              <use width="100" height="100" xlink:href="#ripply-scott" class="js-ripple"></use>
+            </svg>
+            <span class="checkbox_text checkbox_light text_desktop">Aprofundamento</span>
+          </label>
+        </div>
+        <div class="atom">
+          <label id="" class="label_checkbox js-ripple-btn">
+            <input class="checkbox_input" name="alarm" type="checkbox">
+            <svg class="select-ripple ripple-obj js-ripple-obj">
+              <use width="100" height="100" xlink:href="#ripply-scott" class="js-ripple"></use>
+            </svg>
+            <span class="checkbox_text checkbox_light text_mobile">Aprofundamento</span>
+          </label>
+        </div>
+      </div>
+      <div class="row dark_mode">
+        <div class="atom">
+          <label id="" class="label_checkbox js-ripple-btn">
+            <input class="checkbox_input" name="alarm" type="checkbox">
+            <svg class="select-ripple ripple-obj js-ripple-obj">
+              <use width="100" height="100" xlink:href="#ripply-scott" class="js-ripple"></use>
+            </svg>
+            <span class="checkbox_text checkbox_dark text_desktop">Aprofundamento</span>
+          </label>
+        </div>
+        <div class="atom">
+          <label id="" class="label_checkbox js-ripple-btn">
+            <input class="checkbox_input" name="alarm" type="checkbox">
+            <svg class="select-ripple ripple-obj js-ripple-obj">
+              <use width="100" height="100" xlink:href="#ripply-scott" class="js-ripple"></use>
+            </svg>
+            <span class="checkbox_text checkbox_dark text_mobile">Aprofundamento</span>
+          </label>
+        </div>
+  
+      </div>
+  
+      <!-- Checkbox-->
+      <h1>Checkbox</h1>
+      <div class="row light_mode">
+        <div class="atom">
+          <input id='checkbox_1' type='checkbox' />
+          <label for='checkbox_1'>
+            <span></span>
+            Text
+          </label>
+        </div>
+  
+      </div>
+  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+      <script src="script.js"></script>
   </body>
 </html>
