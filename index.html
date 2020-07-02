@@ -1,12 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="page.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <title>Tutos-Faciles</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container-fluid">
+      <h1 id="id1" class="class1">
+        TUTOS-FACILES.FR - Les tutoriels pour bien débuter !
+      </h1>
+    </div>
+    <div class="container-fluid row">
+      <!-- Menu latéral -->
+      <div id="menu-nav" class="col-md-2">
+        <ul class="nav flex-column nav-pills nav-tabs">
+          <h5>Menu de navigation</h5>
+          <li class="nav-item">
+            <a href="#" class="nav-link active">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Tutoriels</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Connexion</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Favoris</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Historique</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Création d'article</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"> Modération des articles</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"> Gestion des utilisateurs</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="row col">
+          <!-- Video description site   75% à 2000 et 100% à 1000-->
+          <div class="video embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item"
+              src="https://www.youtube.com/embed/ErCScuVLHoI"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+        </div>
+        <div class="row col text-justify">
+          <!-- Texte description site -->
+          Bienvenue sur notre site de tutoriels. Ici vous trouverez différents
+          tutoriels pour bien prendre en main les nouvelles technologies. Vous
+          pouvez regarder notre petite vidéo de présentation et d'utilisation du
+          site ou vous pouvez entamer une recherche en allant directement dans
+          la barre de recherche en bas de la page ou si vous ne connaissez pas
+          le vocabulaire inforamtique, vous pouvez cliquer sur le bouton
+          "Découvrez le vocabulaire informatique", celui-ci vous emmenra vers
+          une page de lexique.
+          <br />
+          <span class="font-weight-bold">Bonne visite!</span>
+        </div>
+        <div class="row col">
+          <!-- Recherche tutoriel -->
+          <label for="site-search">Recherchez votre tutoriel ici :</label>
+
+          <nav class="navbar navbar-expand-sm bg-red navbar-dark">
+            <form class="form-inline" action="/action_page.php">
+              <input
+                class="form-control mr-sm-2"
+                type="text"
+                placeholder="Search"
+              />
+              <button class="btn btn-success" type="submit">Search</button>
+            </form>
+          </nav>
+        </div>
+
+        <div class="row col">
+          <!-- Decouverte vocabulaire -->
+          Si vous découvrez le monde de l'informatique, cliquez sur ce bouton
+          pour apprendre quelques notions de vocabulaire
+          <button type="button" class="btn btn-danger">
+            Découvrez le vocabulaire
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
