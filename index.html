@@ -18,17 +18,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <title>Tutos-Faciles</title>
   </head>
-  <body>
+  <body onscroll="scroll_fonction(this)">
     <div class="container-fluid">
       <h1 id="id1" class="class1">
         TUTOS-FACILES.FR - Les tutoriels pour bien débuter !
       </h1>
     </div>
-    <div class="container-fluid row">
+    <div class="container-fluid row site-content">
       <!-- Menu latéral -->
       <div id="menu-nav" class="col-md-2">
-        <ul class="nav flex-column nav-pills nav-tabs">
           <h5>Menu de navigation</h5>
+        <ul class="nav flex-column nav-pills nav-tabs">
+
           <li class="nav-item">
             <a href="#" class="nav-link active">Accueil</a>
           </li>
@@ -56,12 +57,12 @@
         </ul>
       </div>
       <div class="col">
-        <div class="row col">
+        <div class="row col video-wrapper">
           <!-- Video description site   75% à 2000 et 100% à 1000-->
           <div class="video embed-responsive embed-responsive-16by9">
             <iframe
               class="embed-responsive-item"
-              src="https://www.youtube.com/embed/ErCScuVLHoI"
+              src="https://www.youtube.com/embed/oDN8Ov-YYlo"
               frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
@@ -69,44 +70,59 @@
             </iframe>
           </div>
         </div>
-        <div class="row col text-justify">
+        <div class="row col text-justify site-description">
           <!-- Texte description site -->
-          Bienvenue sur notre site de tutoriels. Ici vous trouverez différents
-          tutoriels pour bien prendre en main les nouvelles technologies. Vous
-          pouvez regarder notre petite vidéo de présentation et d'utilisation du
-          site ou vous pouvez entamer une recherche en allant directement dans
-          la barre de recherche en bas de la page ou si vous ne connaissez pas
-          le vocabulaire inforamtique, vous pouvez cliquer sur le bouton
-          "Découvrez le vocabulaire informatique", celui-ci vous emmenra vers
-          une page de lexique.
-          <br />
-          <span class="font-weight-bold">Bonne visite!</span>
+          <p>
+            <h5>Cher visiteur, Bienvenue !</h5>
+            
+            <br />
+            Vous débutez dans le vaste monde qu'est l'informatique? Vous ne
+            savez pas comment intéragir avec certains site ou avec votre
+            téléphone dernier cri?
+            <br />
+            Tutos-Faciles.fr est fait pour vous aider ! Vous trouverez un site
+            facile d'utilisation, avec une multitude de guides (tutoriels)
+            classés selon une thématique pour vous aider au mieux selon VOS
+            besoins. Notre volonté est de vous aider, même si vos connaissances
+            dans ce domaine sont faibles.
+            <br />
+            Nous espérons que votre expérience avec nous sera enrichissante pour
+            vous et nous même.
+            <br />
+            <span class="font-weight-bold">Bonne visite parmis nous !</span>
+          </p>
         </div>
+        <hr />
         <div class="row col">
           <!-- Recherche tutoriel -->
-          <label for="site-search">Recherchez votre tutoriel ici :</label>
+          <div class="force-line-break">
+            <p>Recherchez votre tutoriel ici :</p>
+          </div>
+          <!--<nav class="navbar navbar-expand-sm bg-red navbar-dark">
+            <form class="form-inline" action="/action_page.php">-->
+          <input
+            class="form-control mr-sm-2 search-bar"
+            type="text"
+            placeholder="Recherchez des tutoriels par mots clés"
+          />
+          <button class="btn btn-success custom-button" type="submit">Chercher</button>
 
-          <nav class="navbar navbar-expand-sm bg-red navbar-dark">
-            <form class="form-inline" action="/action_page.php">
-              <input
-                class="form-control mr-sm-2"
-                type="text"
-                placeholder="Search"
-              />
-              <button class="btn btn-success" type="submit">Search</button>
-            </form>
-          </nav>
+          <!--</form>
+          </nav>-->
         </div>
 
-        <div class="row col">
+        <div class="row col text-justify force-line-break">
           <!-- Decouverte vocabulaire -->
           Si vous découvrez le monde de l'informatique, cliquez sur ce bouton
           pour apprendre quelques notions de vocabulaire
-          <button type="button" class="btn btn-danger">
+        </div>
+        <div>
+          <button type="button" class="btn btn-danger custom-button">
             Découvrez le vocabulaire
           </button>
         </div>
       </div>
     </div>
+    <script src="page.js"></script>
   </body>
 </html>
