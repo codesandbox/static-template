@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vowels</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <script>
+      function init() {
+        const inputString = "HongJungSam";
+
+        const string = inputString.split("");
+
+        const english = /^[a-zA-Z/\s/gi, '']+$/;
+        const vowels = /^[aeiouAEIOU]+$/;
+        const consonants = /^[b-df-hj-np-tv-zB-DF-HJ-NP-TV-Z]+$/;
+
+        if (!english.test(inputString)) {
+          alert("영문만 입력해 주세요.");
+          return;
+        }
+        const stringVowels = string.filter(v => vowels.test(v));
+        const stringConsonants = string.filter(v => consonants.test(v));
+        const result = [...stringVowels, ...stringConsonants];
+
+        result.map(v => document.write(v + "<br />"));
+      }
+
+      init();
+    </script>
   </body>
 </html>
