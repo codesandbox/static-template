@@ -1,12 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>cardplayer</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <script>
+      // 카드 숫자를 생성한다
+      function getCardNumber() {
+        return Math.floor(Math.random() * (20 - 1));
+      }
+
+      function game(playerNum, cardNum) {
+        if (playerNum <= 1) {
+          alert("최소 두 명의 플레이어를 입력해 주세요");
+          return;
+        }
+        if (cardNum < 1) {
+          alert("최소 한 장 이상의 카드 개수를 입력하세요.");
+          return;
+        }
+
+        const gamePlayer = [];
+        const winnerCheck = [];
+
+        for (let i = 1; i <= playerNum; i++) {
+          let score = 0;
+
+          gamePlayer.push({ name: "player" + i, card: [], totalScore: null });
+
+          for (let j = 1; j <= cardNum; j++) {
+            const cardValue = getCardNumber();
+
+            gamePlayer[i - 1].card.push(cardValue);
+
+            score = score + cardValue;
+          }
+
+          gamePlayer[i - 1].totalScore = score;
+          winnerCheck.push(score);
+        }
+
+        let winner = winnerCheck.reduce((acc, cur, i, arr) => {
+          return cur >= arr[acc] ? i : acc;
+        }, 0);
+
+        console.log("경기 진행 상황\n", gamePlayer);
+        console.log(
+          "경기 결과",
+          "\n승자 : " + gamePlayer[winner].name,
+          "\n점수 : " + gamePlayer[winner].totalScore,
+          "\n보유카드 : " + gamePlayer[winner].card
+        );
+      }
+
+      function init() {
+        // 플레이어의 수와 받을 카드의 수를 순서대로 입력해 주세요.
+        game(10, 10);
+      }
+
+      init();
+    </script>
   </body>
 </html>
