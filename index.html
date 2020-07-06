@@ -1,12 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="pt-br">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Front End Test - Greenthumb</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="logo">
+          Greenthumb
+          <img src="images/hero/logo.svg" alt="Greenthumb" />
+        </h1>
+
+        <h2 class="hero-title">Find your next green friend</h2>
+
+        <ul class="options-list">
+          <li>
+            <img src="images/hero/sun.svg" />
+            <p>1. Set the amount of <strong>sunlight</strong></p>
+            <div class="custom-select">
+              <select class="select">
+                <option selected value="">Select...</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <img src="images/hero/wateringcan.svg" />
+            <p>
+              2. How often do you want to <strong>water</strong> your plant?
+            </p>
+            <div class="custom-select">
+              <select class="select">
+                <option selected value="">Select...</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <img src="images/hero/dog.svg" />
+            <p>3. Do you have pets? Do they <strong>chew</strong> plants?</p>
+            <div class="custom-select">
+              <select class="select">
+                <option selected value="">Select...</option>
+              </select>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results">
+      <div class="results-content">
+        <h2>Our picks for you</h2>
+
+        <ul class="results-list">
+          <li>
+            <div class="card">
+              <img
+                class="card-image"
+                src="images/results/plants/euphorbia-eritrea.jpg"
+              />
+              <h4>Euphoria eritrea</h4>
+              <div class="card-info">
+                <strong class="card-price">$25</strong>
+                <img class="icon" src="images/results/icons/pet.svg" />
+                <img class="icon" src="images/results/icons/sun.svg" />
+                <img class="icon" src="images/results/icons/watering.svg" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img
+                class="card-image"
+                src="images/results/plants/succulent-bowl-large.jpg"
+              />
+              <h4>Succulent bowl</h4>
+              <div class="card-info">
+                <strong class="card-price">$30</strong>
+                <img class="icon" src="images/results/icons/pet.svg" />
+                <img class="icon" src="images/results/icons/sun.svg" />
+                <img class="icon" src="images/results/icons/watering.svg" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img
+                class="card-image"
+                src="images/results/plants/bunny-ears-cacti.jpg"
+              />
+              <h4>Banny ears cacti</h4>
+              <div class="card-info">
+                <strong class="card-price">$20</strong>
+                <img class="icon" src="images/results/icons/pet.svg" />
+                <img class="icon" src="images/results/icons/sun.svg" />
+                <img class="icon" src="images/results/icons/watering.svg" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img
+                class="card-image"
+                src="images/results/plants/ficus-lyrata.jpg"
+              />
+              <h4>Ficus lyrata</h4>
+              <div class="card-info">
+                <strong class="card-price">$25</strong>
+                <img class="icon" src="images/results/icons/pet.svg" />
+                <img class="icon" src="images/results/icons/sun.svg" />
+                <img class="icon" src="images/results/icons/watering.svg" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img
+                class="card-image"
+                src="images/results/plants/lucky-bamboo.jpg"
+              />
+              <h4>Lucky bamboo</h4>
+              <div class="card-info">
+                <strong class="card-price">$15</strong>
+                <img class="icon" src="images/results/icons/pet.svg" />
+                <img class="icon" src="images/results/icons/sun.svg" />
+                <img class="icon" src="images/results/icons/watering.svg" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img
+                class="card-image"
+                src="images/results/plants/ponytail-palm.jpg"
+              />
+              <h4>Ponytail palm</h4>
+              <div class="card-info">
+                <strong class="card-price">$50</strong>
+                <img class="icon" src="images/results/icons/pet.svg" />
+                <img class="icon" src="images/results/icons/sun.svg" />
+                <img class="icon" src="images/results/icons/watering.svg" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img
+                class="card-image"
+                src="images/results/plants/pilea-peperomioides.jpg"
+              />
+              <h4>Pilea peperomioides</h4>
+              <div class="card-info">
+                <strong class="card-price">$50</strong>
+                <img class="icon" src="images/results/icons/pet.svg" />
+                <img class="icon" src="images/results/icons/sun.svg" />
+                <img class="icon" src="images/results/icons/watering.svg" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img
+                class="card-image"
+                src="images/results/plants/calathea-triostar.jpg"
+              />
+              <h4>Calathea triostar</h4>
+              <div class="card-info">
+                <strong class="card-price">$50</strong>
+                <img class="icon" src="images/results/icons/pet.svg" />
+                <img class="icon" src="images/results/icons/sun.svg" />
+                <img class="icon" src="images/results/icons/watering.svg" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <img
+                class="card-image"
+                src="images/results/plants/monstera-deliciosa.png"
+              />
+              <h4>Monstera deliciosa</h4>
+              <div class="card-info">
+                <strong class="card-price">$50</strong>
+                <img class="icon" src="images/results/icons/watering.svg" />
+                <img class="icon" src="images/results/icons/pet.svg" />
+                <img class="icon" src="images/results/icons/sun.svg" />
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <a href="#"><span class="arrow"></span>Back to the top</a>
+      </div>
+    </section>
   </body>
 </html>
