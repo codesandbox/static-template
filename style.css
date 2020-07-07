@@ -1,0 +1,60 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loading {
+  /* border: 1px solid red; */
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.loading span {
+  position: absolute;
+  /* 상위 태그에서 position :relative를 하면 상위 태그를 기준으로 절대적 위치됨 */
+  /* 상위태그에서 상대적이라고 안하면 바디를 기준으로 생각함 */
+  width: 20px;
+  height: 20px;
+  background-color: gray;
+  top: 0;
+  left: 0;
+  animation: loading 1.5s linear infinite;
+}
+
+.loading span:nth-child(1) {
+  animation-delay: 0s;
+  background-color: pink;
+}
+.loading span:nth-child(2) {
+  animation-delay: 0.8s;
+  background-color: orange;
+}
+
+@keyframes loading {
+  0%,
+  100% {
+    top: 0;
+    left: 0;
+    background-color: coral;
+  }
+  25% {
+    top: 0;
+    left: calc(100% - 20px);
+    /* 자기 자신의 부모안에서 100%위치에 있도록 calc로 설정 */
+    /* calc(100% - 자기자신의 너비를 뺌) */
+    background-color: greenyellow;
+  }
+  50% {
+    top: calc(100% - 20px);
+    left: calc(100% - 20px);
+    background-color: pink;
+  }
+  75% {
+    top: calc(100% - 20px);
+    left: 0;
+    background-color: rgb(150, 64, 117);
+  }
+}
