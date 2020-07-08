@@ -32,6 +32,27 @@
         console.log (isEmpty (shedule));
         shedule ['8:30'] = "get up"
         console.log (isEmpty (shedule));
+  
+  
+     let calculator = {
+       sum() {
+        return this.a + this.b;
+       },
+
+       mul() {
+        return this.a * this.b;
+       },
+
+       read() {
+        this.a = console.log ('a');
+        this.b = console.log ('b');
+       }
+      };
+
+  calculator.read();
+  console.log ( calculator.sum() );
+  console.log ( calculator.mul() );
+   
      
 
 
