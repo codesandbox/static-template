@@ -1,0 +1,55 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.box{
+	background-image: url(1.png);
+	width:500px;
+	height: 500px;
+	margin: 50px auto;
+	background-size: cover;
+	background-position:center center;
+	position: relative;
+
+}
+
+.box:before{
+	text-align: center;
+	background: #EC5D24;
+	width: 250px;
+	height:500px;
+	content: "Photo Wondow Effect";
+	display: block;
+	clear: both;
+	position: absolute;
+	top:0;
+	left:0;
+	transition: 2s;
+}
+
+.box:after{
+	text-align: center;
+	background: #EC5D24;
+	width: 250px;
+	height:500px;
+	content: "By Hasibul Polok";
+	display: block;
+	clear: both;
+	position: absolute;
+	top:0;
+	right: 0;
+	transition: 2s;
+}
+
+.box:hover:before{
+	left:-250px;
+	transform: rotateY(180deg);
+	background:#D2713D;
+}
+.box:hover:after{
+	right:-250px;
+	transform: rotateY(180deg);
+	background: #D01C2D;
+
+}
