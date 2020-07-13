@@ -1,0 +1,175 @@
+/* Google font imports */
+/* Work Sans Light 300 - font-family: 'Work Sans', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: #e3a92de5;
+}
+
+#app {
+  height: 600px;
+  width: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 6px 8px 30px 2px rgb(41, 41, 41);
+}
+
+#screen {
+  height: 170px;
+  position: relative;
+}
+
+#display-text {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #efefef;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 90px;
+  text-align: right;
+  padding-right: 24px;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+#buttons {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.button-row {
+  flex-grow: 1;
+  display: flex;
+}
+
+.button-wrapper {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-wrapper button {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+#zero-wrapper {
+  flex-grow: 1;
+}
+
+#num0 {
+  height: 70px;
+  width: 153px;
+  border-radius: 140px;
+  text-align: left;
+  padding-left: 28px;
+}
+
+#decimal {
+  font-size: 40px;
+  padding-bottom: 10px;
+}
+
+.dark-grey {
+  background-color: #3c3c3c;
+  color: #efefef;
+  font-size: 32px;
+}
+
+.light-grey {
+  background-color: #b0b0b0;
+  color: black;
+  font-size: 25px;
+}
+
+.orange {
+  background-color: #e9920f;
+  color: #efefef;
+  font-size: 40px;
+}
+
+.awaiting-input {
+  background-color: #efefef;
+  color: #e9920f;
+  font-size: 40px;
+  transition: background-color 0.2s linear, color 0.2s linear;
+}
+
+.not-awaiting-input {
+  background-color: #e9920f;
+  color: #efefef;
+  font-size: 40px;
+  transition: background-color 0.2s linear, color 0.2s linear;
+}
+
+/* Button onClick effects */
+.orange:active {
+  background-color: #e3b063;
+}
+
+.dark-grey:active {
+  background-color: #747474;
+}
+
+.light-grey:active {
+  background-color: #dadada;
+}
+
+@keyframes dark-grey-button-clicked {
+  0% {
+    background-color: #747474;
+  }
+  100% {
+    background-color: #3c3c3c;
+  }
+}
+
+@keyframes light-grey-button-clicked {
+  0% {
+    background-color: #dadada;
+  }
+  100% {
+    background-color: #b0b0b0;
+  }
+}
+
+@keyframes equals-button-clicked {
+  0% {
+    background-color: #e8be7e;
+  }
+  100% {
+    background-color: #e9920f;
+  }
+}
+
+.dark-grey.animating {
+  animation: dark-grey-button-clicked 1s;
+}
+
+.light-grey.animating {
+  animation: light-grey-button-clicked 1s;
+}
+
+#equals.animating {
+  animation: equals-button-clicked 1s;
+}

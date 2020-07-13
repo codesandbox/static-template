@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <script src="https://unpkg.com/mathjs/dist/math.min.js"></script>
+    <script src="/index.js" type="text/javascript"></script>
+    <title>Calculator</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="app">
+      <div id="screen">
+        <h3 id="display-text">0</h3>
+      </div>
+      <div id="buttons">
+        <div class="button-row">
+          <div class="button-wrapper"><button id="ac" class="light-grey" onclick="acOnClick()">AC</button></div>
+          <div class="button-wrapper"><button id="plus-minus" class="light-grey" onclick="plusMinusOnClick()">+/-</button></div>
+          <div class="button-wrapper"><button id="percent" class="light-grey" onclick="percentOnClick()">%</button></div>
+          <div class="button-wrapper"><button id="divide" class="orange" onclick="divideOnClick()">&divide</button></div>
+        </div>
+        <div class="button-row">
+          <div class="button-wrapper"><button id="num7" class="dark-grey" onclick="numberOnClick(this)">7</button></div>
+          <div class="button-wrapper"><button id="num8" class="dark-grey" onclick="numberOnClick(this)">8</button></div>
+          <div class="button-wrapper"><button id="num9" class="dark-grey" onclick="numberOnClick(this)">9</button></div>
+          <div class="button-wrapper"><button id="multiply" class="orange" onclick="multiplyOnClick()">&times</button></div>
+        </div>
+        <div class="button-row">
+          <div class="button-wrapper"><button id="num4" class="dark-grey" onclick="numberOnClick(this)">4</button></div>
+          <div class="button-wrapper"><button id="num5" class="dark-grey" onclick="numberOnClick(this)">5</button></div>
+          <div class="button-wrapper"><button id="num6" class="dark-grey" onclick="numberOnClick(this)">6</button></div>
+          <div class="button-wrapper"><button id="minus" class="orange" onclick="subtractionOnClick()">&#8722</button></div>
+        </div>
+        <div class="button-row">
+          <div class="button-wrapper"><button id="num1" class="dark-grey" onclick="numberOnClick(this)">1</button></div>
+          <div class="button-wrapper"><button id="num2" class="dark-grey" onclick="numberOnClick(this)">2</button></div>
+          <div class="button-wrapper"><button id="num3" class="dark-grey" onclick="numberOnClick(this)">3</button></div>
+          <div class="button-wrapper"><button id="plus" class="orange" onclick="additionOnClick()">+</button></div>
+        </div>
+        <div class="button-row">
+          <div id="zero-wrapper" class="button-wrapper"><button id="num0" class="dark-grey" onclick="numberOnClick(this)">0</button></div>
+          <div class="button-wrapper"><button id="decimal" class="dark-grey" onclick="decimalOnClick()" >.</button></div>
+          <div class="button-wrapper"><button id="equals" class="orange" onclick="equalsOnClick()">=</button></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
