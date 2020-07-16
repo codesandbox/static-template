@@ -1,12 +1,335 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+  lang="en"
+  prefix="og: http://ogp.me/ns#"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:fb="https://www.facebook.com/2008/fbml"
+>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Buttons API Demo</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div
+      style="position: relative; margin: 20px; width: 700px; height: 500px; "
+    >
+      <iframe
+        id="iframe"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+        src="https://d.vrnet.io/viewd/?model=1/2&d&buttons=api"
+        name="target"
+      ></iframe>
+      <div
+        id="base"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; display: none;"
+      ></div>
+    </div>
+    <script>
+      function Assign(A, B) {
+        for (let P in B)
+          if (Object.prototype.hasOwnProperty.call(B, P)) A[P] = B[P];
+      }
+      function NewDiv(style, text, parent) {
+        let res = document.createElement("div");
+        if (style !== void 0) Assign(res.style, style);
+        if (text !== void 0) res.innerText = text;
+        if (parent !== void 0) parent.appendChild(res);
+        return res;
+      }
+      function PrepareEvent(e) {
+        if (e) {
+          e.preventDefault && e.preventDefault();
+          e.stopPropagation && e.stopPropagation();
+          e.cancelBubble = true;
+          e.returnValue = false;
+        }
+      }
+      function IsLeft(e) {
+        return e.which !== void 0
+          ? e.which === 1
+          : e.button !== void 0
+          ? e.button === 0
+          : false;
+      }
+
+      var ifwin = iframe.contentWindow;
+      var initdone = false;
+
+      var options, actions, logo;
+
+      var mm_list, mm_element, mm_current, mm_current_element;
+
+      var optionsEnabled = true;
+      var movemodeEnabled = true;
+
+      window.addEventListener(
+        "message",
+        function(e) {
+          let d = e.data;
+          //console.log("iframe -> page : " + JSON.stringify(d));
+          if (d.type !== "buttons") return;
+
+          if (d.action === "init") {
+            // Ініціалізація
+            initdone = true; // відмічаємо, що відбулась ініціалізація і більше не треба бомбити переглядач повідомленнями
+            options = d.options;
+            actions = d.actions;
+            logo = d.logo; // зберігаємо отриману інформацію
+            console.log(JSON.stringify(d, void 0, " ")); // виводимо конфігурацію для ініціалізації
+            let SendAction = (name, event) =>
+              ifwin.postMessage(
+                { type: "buttons", action: "action", name: name, event: event },
+                "*"
+              );
+            let base = document.getElementById("base");
+            let rightDiv = NewDiv(
+              {
+                position: "absolute",
+                right: "0px",
+                bottom: "0px",
+                display: "flex",
+                alignItems: "flex-end"
+              },
+              void 0,
+              base
+            );
+            let buttonsStyle = {
+              margin: "5px",
+              padding: "5px",
+              backgroundColor: "rgba(255,255,255,0.5)",
+              pointerEvents: "auto",
+              cursor: "pointer"
+            };
+            //Відправляємо розмір логотипу VRnet
+            ifwin.postMessage(
+              {
+                type: "buttons",
+                action: "logo",
+                fullsize: true,
+                position: "bottomleft",
+                borderX: 15,
+                borderY: 10
+              },
+              "*"
+            );
+            //Додаємо опції
+            for (let i = 0; i < options.length; i++) {
+              let opt = options[i];
+              opt.element = NewDiv(void 0, void 0, rightDiv);
+              opt.element.style.display = opt.visible ? "block" : "none";
+              for (let j = 0; j < opt.variants.length; j++) {
+                let value = opt.variants[j];
+                let B = NewDiv(buttonsStyle, value, opt.element);
+                if (value === opt.current) {
+                  B.style.boxShadow = "inset 0px 0px 0px 4px #88f";
+                  opt.currentElement = B;
+                }
+                let activate = () => {
+                  if (value !== opt.current) {
+                    opt.current = value;
+                    opt.currentElement.style.boxShadow = "";
+                    opt.currentElement = B;
+                    opt.currentElement.style.boxShadow =
+                      "inset 0px 0px 0px 4px #88f";
+                    ifwin.postMessage(
+                      {
+                        type: "buttons",
+                        action: "option",
+                        name: opt.name,
+                        value: value
+                      },
+                      "*"
+                    );
+                  }
+                };
+                B.addEventListener(
+                  "click",
+                  e => {
+                    PrepareEvent(e);
+                    if (optionsEnabled) activate();
+                  },
+                  false
+                );
+                opt.variants[j] = {
+                  value: value,
+                  element: B,
+                  activate: activate
+                };
+              }
+              if (opt.currentElement === void 0)
+                throw new Error(
+                  'Default option "' +
+                    opt.name +
+                    '"" value is not in values list'
+                );
+              //opt.cyclic - чи зміна опцій відбувається циклічно
+            }
+            //Додаємо події
+            let actionsDiv = NewDiv(void 0, void 0, rightDiv);
+            for (let i = 0; i < actions.length; i++) {
+              let action = actions[i];
+              let B = NewDiv(buttonsStyle, action.name, actionsDiv);
+              if (action.hold) {
+                B.addEventListener(
+                  "touchstart",
+                  e => {
+                    PrepareEvent(e);
+                    if (e.changedTouches.length === 1)
+                      SendAction(action.name, "down");
+                  },
+                  true
+                );
+                B.addEventListener(
+                  "mousedown",
+                  e => {
+                    PrepareEvent(e);
+                    if (IsLeft(e)) SendAction(action.name, "down");
+                  },
+                  true
+                );
+                B.addEventListener("touchend", e => {
+                  PrepareEvent(e);
+                  SendAction(action.name, "up");
+                });
+                window.addEventListener("mouseup", e => {
+                  PrepareEvent(e);
+                  if (IsLeft(e)) SendAction(action.name, "up");
+                });
+              } else {
+                B.addEventListener(
+                  "click",
+                  function(e) {
+                    PrepareEvent(e);
+                    SendAction(action.name, "click");
+                  },
+                  false
+                );
+              }
+            }
+            //Додаємо режими пересування
+            {
+              mm_element = NewDiv(
+                {
+                  position: "absolute",
+                  bottom: "10px",
+                  left: logo.left + logo.width + 10 + "px"
+                },
+                void 0,
+                base
+              );
+              mm_current = d.currentmovemode;
+              mm_list = d.movemodes.map(mm => {
+                let element = NewDiv(buttonsStyle, mm.name, mm_element);
+                element.style.display = mm.visible ? "block" : "none";
+                if (mm.name === mm_current) {
+                  element.style.boxShadow = "inset 0px 0px 0px 4px #88f";
+                  mm_current_element = element;
+                }
+                let activate = () => {
+                  if (mm.name !== mm_current) {
+                    mm_current = mm.name;
+                    mm_current_element.style.boxShadow = "";
+                    mm_current_element = element;
+                    mm_current_element.style.boxShadow =
+                      "inset 0px 0px 0px 4px #88f";
+                    ifwin.postMessage(
+                      { type: "buttons", action: "movemode", name: mm.name },
+                      "*"
+                    );
+                  }
+                };
+                element.addEventListener("click", e => {
+                  PrepareEvent(e);
+                  if (movemodeEnabled) activate();
+                });
+                return {
+                  name: mm.name,
+                  visible: mm.visible,
+                  element: element,
+                  activate: activate
+                };
+              });
+              if (mm_current_element === void 0)
+                throw new Error("Default move mode is not in move modes list");
+            }
+          } else if (d.action === "visibility") {
+            // Задання видимості панелі кнопок
+            document.getElementById("base").style.display = d.visible
+              ? "block"
+              : "none";
+          } else if (d.action === "options_enabled") {
+            //Задання доступності опцій для зміни їх значень кліком
+            optionsEnabled = d.enabled;
+          } else if (d.action === "option_visible") {
+            //Задання видимості опції
+            let opt;
+            for (let i = 0; i < options.length; i++)
+              if (options[i].name === d.name) opt = options[i];
+            if (opt === void 0)
+              throw new Error('Option with name "' + d.name + '" not found');
+            opt.visible = d.visible;
+            opt.element.style.display = opt.visible ? "block" : "none";
+          } else if (d.action === "option") {
+            // Задання значення опції
+            let opt;
+            for (let i = 0; i < options.length; i++)
+              if (options[i].name === d.name) opt = options[i];
+            if (opt === void 0)
+              throw new Error('Option with name "' + d.name + '" not found');
+            let value;
+            for (let i = 0; i < opt.variants.length; i++)
+              if (opt.variants[i].value === d.value) value = opt.variants[i];
+            if (value === void 0)
+              throw new Error(
+                'Value "' + d.value + '" not found in option ' + d.name
+              );
+            value.activate();
+          } else if (d.action === "logo_info") {
+            // отримуємо нові розміри та положення логотипу
+            logo = d.info;
+            Assign(mm_element.style, {
+              bottom: "10px",
+              left: logo.left + logo.width + 10 + "px"
+            });
+          } else if (d.action === "movemodes_enabled") {
+            //Задання доступності режимів пересування для їх зміни кліком
+            movemodeEnabled = d.enabled;
+          } else if (d.action === "movemode_visible") {
+            //Задання видимості режимів пересування
+            let mm;
+            for (let i = 0; i < mm_list.length; i++)
+              if (mm_list[i].name === d.name) {
+                mm = mm_list[i];
+                break;
+              }
+            if (mm === void 0)
+              throw new Error('There is no mode with name "' + d.name + '"');
+            mm.visible = d.visible;
+            mm.element.style.display = mm.visible ? "block" : "none";
+          } else if (d.action === "movemode") {
+            //Задання нового режиму пересування
+            let mm;
+            for (let i = 0; i < mm_list.length; i++)
+              if (mm_list[i].name === d.name) {
+                mm = mm_list[i];
+                break;
+              }
+            if (mm === void 0)
+              throw new Error('There is no mode with name "' + d.name + '"');
+            mm.activate();
+          }
+        },
+        false
+      );
+
+      //Шлемо повідомлення, доки не отримаємо першу відповідь
+      let timer = setInterval(() => {
+        if (initdone) {
+          clearInterval(timer);
+        } else {
+          ifwin.postMessage({ type: "buttons", action: "init" }, "*");
+        }
+      }, 100);
+    </script>
   </body>
 </html>
