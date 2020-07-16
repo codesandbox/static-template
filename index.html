@@ -1,12 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <link href="assets/css/bootstrap.css" rel="stylesheet" media="screen" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+      <div class="container" style="margin-bottom: 20px;">
+        <div class="row">
+          <div class="col-xs-6">
+            <form
+            class="form-horizontal"
+            id="frmVoucher"
+            method="post"
+            action="voucherGen.php">
+              <h1>Constroi Pagina do Perfil do Vereador</h1>
+              <button
+              type="submit"
+              class="btn btn-success">
+              GERAR
+              </button>
+            <div class="form-group">
+              <input
+              type="text"
+              name="inBkgImg"
+              class="form-control"
+              placeholder="Backgroud Image">
+            </div>
+            <div class="form-group">
+              <input
+              type="text"
+              name="inEventName"
+              class="form-control"
+              placeholder="Event Name">
+            </div>
+            <div class="form-group">
+              <input
+              type="text"
+              nome="inHeadLine"
+              class="form-control"
+              placeholder="HeadLine">
+            </div>
+            <div class="form-group">
+            <textarea
+             name="inOpening"
+             class="form-control"
+             style="min-height: 130px;"
+             placeholder="Mensagem"></textarea>
+            </div>
+            <div class="form-group">
+              <input
+              type="texto"
+              name="inAttrib"
+              class="form-control"
+              placeholder="Quote attribution">
+            </div>
+            <div class="form-group">
+              <label for="fonts1">Escolha a Fonte para Cabecalho</label>
+              <select name="fonts1">
+                <option value="Sans">Sans</option>
+                <option value="Serif">Serif</option>
+                <option value="Fancy" selected>Fancy</option>
+              </select>
+              <div class="form-group">
+                <label for="fonts2">Escolha a Fonte para Abertura</label>
+                <select name="fonts2">
+                  <option value="Sans" selected>Sans</option>
+                  <option value="Serif">Serif</option>
+                  <option value="Fancy">Fancy</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fonts3">Escolha a Fonte para Abertura</label>
+                <select name="fonts3">
+                  <option value="Sans">Sans</option>
+                  <option value="Serif">Serif</option>
+                  <option value="Fancy" selected>Fancy</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fonts4">Escolha a Fonte para Abertura</label>
+                <select name="fonts4">
+                  <option value="Sans" selected>Sans</option>
+                  <option value="Serif">Serif</option>
+                  <option value="Fancy">Fancy</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="inFrDate">Data esta boa desde</label>
+                <input type="date" name="inFrDate">
+              </div>
+              <div class="form-group">
+                <label for="inToDate">Data Oferta boa ate</label>
+                <input type="date" name="inToDate">
+              </div>
+              <div class="form-group">
+                <textarea
+                  name="inOffer1"
+                  class="form-control"
+                  style="min-height: 130px;"
+                  placeholder="Descricao do Candidato"></textarea>
+              </div>
+              <div class="form-group">
+                <textarea
+                name="inAdditional"
+                class="form-control"
+                style="min-height: 130px;"
+                placeholder="O que o candidato busca"></textarea>
+              </div>
+          </div>
+        </div>
+      </div>   
   </body>
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
 </html>
