@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Static Template</title>
+  </head>
+<body>
+    <h1>involved!</h1>
+<script>
+
+function ask (question, yes, no) {
+if (confirm(question)) yes()
+else no();
+}
+
+ask ("Are you agree?",
+() => console.log ("Deal"),
+() => console.log ("Declined by user")
+);

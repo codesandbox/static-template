@@ -7,6 +7,72 @@
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>involved!</h1>
+<script>
+  let salaries = {
+         John: 100,
+         Ann: 160,
+        Pete: 130
+    };
+
+    let sum = 0;
+     for (let key in salaries) {
+       sum += salaries[key];
+     }
+     console.log(sum);  
+
+
+     let shedule = {}
+        function isEmpty (obj) {
+          for (let key in obj) {
+            return false;
+          }
+            return true;
+        }
+        console.log (isEmpty (shedule));
+        shedule ['8:30'] = "get up"
+        console.log (isEmpty (shedule));
+  
+  
+     let calculator = {
+       sum() {
+        return this.a + this.b;
+       },
+
+       mul() {
+        return this.a * this.b;
+       },
+
+       read() {
+        this.a = console.log ('a');
+        this.b = console.log ('b');
+       }
+      };
+
+  calculator.read();
+  console.log ( calculator.sum() );
+  console.log ( calculator.mul() );
+   
+  
+  function askPassword(ok, fail) {
+ let password = prompt("Password?", '');
+ if (password == "rockstar") ok();
+ else fail;
+ let user = {
+ name: 'Вася',
+ loginOk() {
+  alert(`${this.name} logged in`);
+ },
+ loginFail() {
+ alert(`${this.name} failed to log in`);
+ },
+ };
+};
+askPassword(user.loginOk (), user.loginFail ());
+     
+
+
+</script>
+
   </body>
 </html>
