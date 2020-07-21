@@ -1,12 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script
+      src="https://kit.fontawesome.com/1f8522ae56.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Zetta&family=Roboto+Slab:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Steamlator</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <nav class="header mb-3">
+      <h1 class="text-center">Steamlator</h1>
+    </nav>
+
+    <!-- <h3>A ver cuanto te duele el impuesto país</h3> -->
+    <form class="form-container m-auto text-center  col-md-6 rounded">
+      <label class="mt-3">
+        Ingrese precio del juego:
+      </label>
+
+      <div class="input-group col-lg-6 col-md-6 mb-3 ml-auto mr-auto">
+        <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+        </div>
+        <input type="number" class="form-control" id="price" />
+      </div>
+
+      <input
+        type="button"
+        class="btn btn-secondary col-md-6 mb-3 "
+        onclick="calcular();"
+        value="Calcular"
+      />
+
+      <div id="result" style="visibility: hidden">
+        <p id="numbResult"></p>
+      </div>
+    </form>
+    <script>
+      function calcular() {
+        let price = Number(document.getElementById("price").value);
+        let percent = (price * 29) / 100;
+        let result = price + percent;
+
+        let showTextResult = (document.getElementById(
+          "result"
+        ).style.visibility = "visible");
+        let showResult = (document.getElementById(
+          "numbResult"
+        ).innerHTML = ` El monto final a pagar es de: $ ${result} `);
+        document.getElementById("numbResult").className = "";
+
+        if (price == "" || price == 0) {
+          document.getElementById("numbResult").innerHTML =
+            "Ingrese un monto valido";
+          document.getElementById("numbResult").className = "danger";
+        }
+      }
+    </script>
   </body>
 </html>
