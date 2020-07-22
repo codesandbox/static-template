@@ -1,8 +1,6 @@
-function myFunction() {
-  var x = document.getElementsByClassName("item");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
+let mainNav = document.getElementById("js-menu");
+let navBarToggle = document.getElementById("js-navbar-toggle");
+
+navBarToggle.addEventListener("click", function() {
+  mainNav.classList.toggle("active");
+});
