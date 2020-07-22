@@ -1,12 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Show Hamburger Menu bars on smaller devices -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <nav class="navbar">
+        <h3 class="logo"><a href="index.html">JB Website Solutions</a></h3>
+        <ul>
+          <li class="item"><a href="index.html" class="current">Home</a></li>
+          <li class="item"><a href="about.html">About</a></li>
+          <li class="item"><a href="work.html">Work</a></li>
+          <li class="item"><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars">
+        </a>
+       </nav>
+    </header>
+    <hr />
+    <div class="flex-container">
+      <img src="http://placeimg.com/640/480/nature" alt="Placeholder" />
+      <h1>Welcome to JB Website Solutions</h1>
+      <h2>Where Creativity Becomes Reality</h2>
+      <section>
+        <p>
+          Are you a small business looking to take your brand to the masses?
+        </p>
+        <p>
+          Are you a blogger or artist looking to showcase your work to people?
+        </p>
+        <p>Are you an employer looking to hire a web developer?</p>
+        <p>
+          If you answered "yes" to any of the questions please click the button
+          below.
+        </p>
+        <input type="button" value="Hire Me" />
+      </section>
+    </div>
+    <!-- End content section-->
+    <footer>
+      &copy; 2020 JB Website Solutions
+    </footer>
+    <script src="script.js"></script>
   </body>
 </html>
