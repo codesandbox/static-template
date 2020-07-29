@@ -1,12 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="utf-8" />
+    <title>Enclave Phaser Template</title>
+    <meta name="author" content="Enclave Games" />
+    <meta
+      name="description"
+      content="Mobile template for HTML5 games created using the Phaser game engine."
+    />
+    <meta
+      name="monetization"
+      content="$coil.xrptipbot.com/-CgHpYu7SfeoDmHVugOfrw"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: #ccc url(media/img/main/pattern.png) repeat;
+        overflow: hidden;
+      }
+      #banner {
+        display: none;
+      }
+    </style>
+    <!-- <base href="https://enclavegames.github.io/Enclave-Phaser-Template/" /> -->
+    <meta
+      property="og:image"
+      content="https://enclavegames.github.io/Enclave-Phaser-Template/img/enclave-phaser-template.png"
+    />
+    <meta
+      property="og:url"
+      content="https://enclavegames.github.io/Enclave-Phaser-Template/"
+    />
+    <meta property="og:title" content="Enclave Phaser Template" />
+    <meta
+      property="og:description"
+      content="Mobile template for HTML5 games created using the Phaser game engine."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="manifest" href="ept.webmanifest" />
+    <script src="src/plugins/webfont.js"></script>
+    <script src="src/root/phaser.3.22.min.js"></script>
+    <script src="src/root/utils.js"></script>
+
+    <!-- STORE -->
+    <script src="src/stores/_sprites.js"></script>
+    <script src="src/stores/_const.js"></script>
+    <script src="src/stores/_arrays.js"></script>
+    <script src="src/stores/_initQ.js"></script>
+    <script src="src/stores/_scenes.js"></script>
+    <script src="src/stores/_initResource.js"></script>
+    <script src="src/stores/_preloadMini.js"></script>
+    <script src="src/stores/_initSetting.js"></script>
+
+    <!-- SCENES -->
+    <script src="src/maps/StandardMap.js"></script>
+    <script src="src/maps/MapPlaying.js"></script>
+
+    <script src="src/root/Boot.js"></script>
+    <script src="src/root/Preloader.js"></script>
+    <script src="src/root/MainMenu.js"></script>
+    <script src="src/root/Settings.js"></script>
+
+    <!-- UNITIES -->
+    <script src="src/unities/UBox.js"></script>
+
+    <!-- <script src="src/Story.js"></script> -->
+    <!-- <script src="src/games/_MathGame.js"></script> -->
+    <script src="src/games/CuteGirl.js"></script>
+    <!-- <script src="src/unities/TextButton.js"></script> -->
+    <script src="src/games/Game.js"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <img
+      id="banner"
+      src="media/screens/EPT-MainMenu.png"
+      alt="Enclave Phaser Template"
+    />
+    <script src="src/root/start.js"></script>
   </body>
 </html>
