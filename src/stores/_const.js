@@ -31,7 +31,7 @@ EPT._unities = {
     thickness: 4, 
     bg: 0xe0f2ff, 
     border: 0x0394fc, 
-    alpha: 1,
+    alpha: 0.5,
     width: 356,
     height: 300,
     x: 32,

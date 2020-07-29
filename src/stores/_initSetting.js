@@ -23,14 +23,14 @@ EPT._initSetting = {
     dataUse.pathMedias = [{path:'media/img/human/cute-girl'}, {path:'media/img/scenes/green'}, {path:'media/img/fruits'}];
     dataUse.mediaKeys = ['walk','jump','dead', 'tree1','tree2','tree3','mushroom-1','orange'];
 
-    dataUse.question = {
+    dataUse.questions = {
       howMany: 'how many '
     }
     dataUse.game = {
       state: 1,
       rangeLevel: 0,
       indexLevel: 0,
-      levelCount: 1,
+      levelCount: 5,
       questions:[],
       keySprite: 'button-continue',
       levels: [
@@ -72,7 +72,7 @@ EPT._initSetting = {
         type: 'sprite',
         keyImg: 'orange',
         scale: 0,
-        scaleUp: 1,
+        scaleUp: 0.5,
       },
       configContinue : {
         x: EPT.world.width/2+100,
@@ -127,6 +127,7 @@ EPT._initSetting = {
     dataUse.spritesTableShow = [];
     dataUse.textButtonAnswers = [];
     dataUse.spriteQAShowing = null;
+    dataUse.boardPlate = null;
 
     scene.dataUse =  dataUse;
   },

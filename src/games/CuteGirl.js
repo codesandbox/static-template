@@ -26,6 +26,7 @@ class CuteGirl extends Phaser.Scene {
     
     // T.C_loadWalk();
     // T.C_loadScenes();
+    T.G_initData();
     T.GAME_initData_checkRefesh();
     T.G_initFrame();
     T.G_initUI();
@@ -39,6 +40,19 @@ class CuteGirl extends Phaser.Scene {
     EPT._initResource.resourceFrames(story, story.dataUse.actions);
   }
   
+  G_initData(){
+    d.scenesObjects = [];
+    d.spritesLevel = [];
+    d.textLevel = [];
+    // d.mainSprite = null;
+    // d.welcomeText = null;
+
+    d.buttonAnswers = [];
+    d.spritesTableShow = [];
+    d.textButtonAnswers = [];
+    d.spriteQAShowing = null;
+  }
+
   G_initFunction(){
     var sprites = T.dataUse.sprites;
     
@@ -64,7 +78,7 @@ class CuteGirl extends Phaser.Scene {
     d.buttonContinue = EPT._sprite.addSpriteOption(this, d.sprites.configContinue);
     d.functionCheck = T.GAME_checkAnswer;
 
-    EPT.UBox.plate(T, EPT._unities.plateGreen);
+    d.boardPlate = EPT.UBox.plate(T, EPT._unities.plateGreen, false);
   }
   
   G_startPlay(){
@@ -151,7 +165,14 @@ class CuteGirl extends Phaser.Scene {
     d.buttonAnswers = [];
     d.textButtonAnswers = [];
     d.questionText.destroy();
-    // T.game.questions = [];
+    //T.game.questions = [];
+    var bView = d.textLevel[indexQuestion].boardView;
+    // var childs = bView.getChildren();
+    // for(var i=0;i<childs.length;i++){
+    //   childs[i].destroy();
+    // }
+    bView.clear(true, true);
+    d.boardPlate.alpha = 0;
 
     // console.log('GAME_disposable',indexQuestion)
   }
@@ -186,6 +207,11 @@ class CuteGirl extends Phaser.Scene {
     return T.dataUse.game.questions.length;
   } 
 
+  G_getChoiceLevel(indexChoice){
+    var q = T.dataUse.game.questions[d.game.indexLevel];
+    return q.choices[indexChoice];
+  } 
+
   GAME_initQuestion(numberQ){
     d.game.questions = [];
 
@@ -194,7 +220,7 @@ class CuteGirl extends Phaser.Scene {
     // T.GAME_countDownReset();
     //random question
     for(var i=0;i<numberQ;i++){
-      var qText = d.question.question + 'dot? ('+(i+1)+'/'+numberQ+')';
+      var qText = d.questions.howMany + 'orange? ('+(i+1)+'/'+numberQ+')';
       var arrChoices = EPT._arrays.ranArr(1,10,4);
       var qOb = { 
         question: qText, choices: arrChoices, correct: arrChoices[0], indexAnswer :0, playerAnswer: false
@@ -228,12 +254,14 @@ class CuteGirl extends Phaser.Scene {
       //------ assign
       var textOb = {
         textOb: textAnswer,
-        boardView: EPT._sprite.spritesTable(T, d.sprites.qaShowing, 3),
+        boardView: null,
         xKeep: 0,
         yKeep: 0
       }
       d.textLevel.push(textOb);
     }
+
+    // console.log(d.textLevel)
   }
 
   G_moveNextLevel(indexLevel){
@@ -249,10 +277,14 @@ class CuteGirl extends Phaser.Scene {
     T.G_questionShowIndex(d.game.indexLevel, 2);
     EPT._initQ.initApplyQuestion(this, d.game.indexLevel, d.game.questions);
 
+    //item for board
     var text = d.textLevel[d.game.indexLevel];
     var qaShowing =  d.sprites.qaShowing;
-    T.tweens.add({targets: text.boardView.getChildren(), scale: qaShowing.scaleUp, duration: 200, ease: 'Quartic'});
+    text.boardView = EPT._sprite.spritesTable(T, d.sprites.qaShowing, T.G_getChoiceLevel(0))
+    T.tweens.add({targets: text.boardView.getChildren(), scale: qaShowing.scaleUp, duration: 200, delay: 500, ease: 'Quartic'});
 
+    //show board
+    EPT.UBox.showPlate(T, d.boardPlate)
   }
 
   G_questionShowIndex(index, scale){
