@@ -33,17 +33,9 @@
         target.innerText = sendtext;
         obniz.display.clear(); // 一旦クリアする
         obniz.display.print(sendtext);
-        setInterval(() => {
-          ledonoff();
-        }, 2 * 1000);
-      };
-
-      const ledonoff = async () => {
         //led on
         var led = obniz.wired("LED", { anode: 0, cathode: 1 });
         led.on();
-        await obniz.wait(1000);
-        led.off();
       };
     </script>
     <h1 id="text"></h1>
