@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://obniz.io/js/jquery-3.2.1.min.js"></script>
+    <script src="https://unpkg.com/obniz@latest/obniz.js"></script>
+  </head>
+  <body>
+    <div id="obniz-debug"></div>
+    <img id="image" />
+    <strong id="here">Not online</strong>
+    <label for="name">Name (4 to 8 characters):</label>
+
+    <script>
+      var obniz = new Obniz("OBNIZ_ID_HERE");
+      obniz.onconnect = async function() {
+        $("#here").text("Online");
+        let sss = $("#text").text(
+          "You connect obniz. Please show obniz's display!"
+        );
+        obniz.display.clear(); // 一旦クリアする
+        obniz.display.print("Hello I`m obniz !");
+      };
+    </script>
+    <h1 id="text"></h1>
+  </body>
+</html>
