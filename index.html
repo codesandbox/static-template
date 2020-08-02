@@ -1,12 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HomeWork 2</title>
+    <style>
+      body {
+        margin: 0 150px;
+        padding: 0;
+        background-color: darkcyan;
+      }
+
+      /*Section of header*/
+      .header {
+        display: flex;
+        flex-direction: row;
+        background-color: #792e8c;
+        margin-bottom: 10px;
+      }
+
+      .logo {
+        width: 80px;
+        display: flex;
+        /*background-color: orangered;*/
+      }
+
+      .logo-picture {
+        height: 60px;
+        width: 60px;
+        background-color: brown;
+        margin: 10px;
+        text-align: center;
+      }
+
+      .header-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* background-color: lightgoldenrodyellow; */
+      }
+
+      .title-contacts {
+        display: flex;
+      }
+
+      .title-contacts > div {
+        width: 100%;
+      }
+
+      .title {
+        /* background-color: gold; */
+        justify-content: flex-start;
+      }
+
+      .title > div {
+        margin: 0 10px;
+        color: white;
+        /* background-color: lightpink; */
+      }
+
+      .qcontacts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .qcontacts > div {
+        /* background-color: cyan; */
+        color: white;
+        margin: 0 5px;
+      }
+
+      .header-nav {
+        display: flex;
+      }
+
+      .header-nav > div {
+        justify-content: space-between;
+        width: 100%;
+        margin: 15px;
+        padding: 0px;
+        background-color: pink;
+      }
+
+      .menu {
+        display: flex;
+        height: 120px;
+        /*background-color: #2c853a;*/
+        margin-bottom: 10px;
+      }
+
+      .menu > div {
+        margin: 0 10px;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        background-color: #888db5;
+      }
+
+      /*Section of content*/
+      .content {
+        display: flex;
+        flex-direction: column;
+        /* background-color: #62115a; */
+        height: 500px;
+      }
+
+      .main-content-container {
+        display: flex;
+        height: 300px;
+      }
+
+      .main-content-container > div {
+        padding: 10px;
+        margin: 0 10px;
+      }
+
+      .left-content {
+        background-color: white;
+        width: 55%;
+      }
+
+      .left-content-title {
+        text-align: center;
+        width: 100%;
+        background-color: lightblue;
+      }
+
+      .left-content-text {
+        margin: 5px;
+      }
+      .right-content {
+        background-color: white;
+        width: 45%;
+      }
+
+      .right-content-title {
+        text-align: center;
+        background-color: lightblue;
+        width: 100%;
+      }
+
+      .right-content-picture {
+        text-align: center;
+        height: 80px;
+        background-color: lightsalmon;
+        margin: 10px;
+      }
+
+      .bottom-content {
+        display: flex;
+        /* background-color: grey; */
+        height: 140px;
+      }
+
+      .bottom-content-container {
+        display: flex;
+        background-color: lightcyan;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        margin: 15px;
+      }
+
+      .bottom-content > div {
+        text-align: center;
+      }
+
+      .bottom-figure {
+        background-color: red;
+        width: 75%;
+      }
+
+      .bottom-text {
+        padding: 20px;
+        margin: 15px;
+        width: 100%;
+        height: 100%;
+        /* background-color: green; */
+      }
+
+      /*Section of footer*/
+      .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #c22a4f;
+      }
+
+      .footer-main-items {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: 30px;
+      }
+
+      .footer-main-items > div {
+        background-color: #457d32;
+        margin: 0 5px;
+      }
+
+      .footer-other-items {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        align-items: flex-start;
+        height: 30px;
+      }
+
+      .footer-other-items > div {
+        background-color: #457d32;
+        margin: 0 5px;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!--Section of header-->
+    <div class="header">
+      <div class="logo">
+        <div class="logo-picture">Logo is here</div>
+      </div>
+      <div class="header-container">
+        <div class="title-contacts">
+          <div class="title">
+            <div>OOO "Sloboda-Stroyelectromontag"</div>
+            <div>Electrical company</div>
+          </div>
+          <div class="qcontacts">
+            <div>Phone Number 1</div>
+            <div>Phone Number 2</div>
+          </div>
+        </div>
+        <div class="header-nav">
+          <div>H-Main</div>
+          <div>H-Objects</div>
+          <div>H-Services</div>
+          <div>H-Information</div>
+          <div>H-Contacts</div>
+        </div>
+      </div>
+    </div>
+    <div class="menu">
+      <div>E-works</div>
+      <div>Repair Cabel</div>
+      <div>ETL</div>
+      <div>Projects</div>
+      <div>Documentation</div>
+      <div>Maintenance</div>
+    </div>
+
+    <!--Section of content-->
+    <div class="content">
+      <div class="main-content-container">
+        <div class="left-content">
+          <div class="left-content-title">Title of left content</div>
+          <div class="left-content-text">
+            При оформлении договора на техническое обслуживание с ООО
+            «Слобода-Стройэлектромонтаж» вы получаете: 2-а ответственных лица с
+            5-й группой по электробезопасности до и выше 1000В; список лиц
+            ответственных за электрохозяйство на 1 календарный год
+            (согласованный с начальником отдела надзора в машиностроении и
+            энергетике ГУ Гоструда в Харьковской области); квалифицированный
+            персонал, способный качественно производить обслуживание
+            электроустановки (объем обслуживания оговаривается индивидуально до
+            момента подписания договора); аварийный выезд (в случае
+            возникновения внештатной ситуации наш персонал в кратчайшие сроки
+          </div>
+        </div>
+
+        <div class="right-content">
+          <div class="right-content-title">
+            Photo gallery
+          </div>
+          <div class="right-content-picture">Picture 1</div>
+          <div class="right-content-picture">Picture 2</div>
+          <div class="right-content-picture">Picture 3</div>
+        </div>
+      </div>
+
+      <div class="bottom-content">
+        <div class="bottom-content-container">
+          <div class="bottom-figure">Bottom Content Figure</div>
+          <div class="bottom-text">Bottom Content Text</div>
+        </div>
+      </div>
+    </div>
+
+    <!--Section of footer-->
+    <div class="footer">
+      <div class="footer-main-items">
+        <div>F-Main</div>
+        <div>F-Objects</div>
+        <div>F-Services</div>
+        <div>F-Information</div>
+        <div>F-Contacts</div>
+      </div>
+      <div class="footer-other-items">
+        <div>F-E-works</div>
+        <div>F-ETL</div>
+        <div>F-Projects</div>
+        <div>F-Documentation</div>
+        <div>F-equipment-services</div>
+      </div>
+    </div>
   </body>
 </html>
