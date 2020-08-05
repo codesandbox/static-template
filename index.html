@@ -1,12 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+      integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./css/index.css" />
+
+    <title>Awesome Quiz App</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light"
+      id="bar"
+      data-spy="affix"
+      data-offset-top="400"
+    >
+      <div class="#">
+        <a class="navbar-brand" href="#">
+          <span class="head_size">Awesome Quiz</span>
+        </a>
+      </div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-center"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./AllQuiz/history.html" target="_blank"
+              >History</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./AllQuiz/geography.html" target="_blank"
+              >Geography</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./AllQuiz/space.html" target="_blank"
+              >Space</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./AllQuiz/general.html" target="_blank"
+              >General</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="main">
+      <picture>
+        <img src="images/newback.jpg" class="main-img" />
+      </picture>
+      <div class="main-con">
+        <h3 class="main-text-para">This is Awesome quiz</h3>
+        <p class="text-muted main-text-innerpara">Boost your brain!</p>
+        <div class="text-center">
+          <a
+            href="./AllQuiz/general.html"
+            class="btn btn-primary btn-lg bg-dark"
+            target="_blank"
+          >
+            Try General
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <section class="container mt-4 mb-4">
+      <div class="row mt-4 mb-2">
+        <div class="col-md-3 d-flex mt-2">
+          <div class="card text-white bg-dark flex-fill">
+            <picture>
+              <img
+                src="./images/genral.jpg"
+                class="card-img-top"
+                alt="history"
+              />
+            </picture>
+            <div class="card-body">
+              <h5 class="card-title main-head">General Quiz</h5>
+              <p>
+                A quiz is a form of game or mind sport, attempt to answer
+                questions correctly.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a
+                href="./AllQuiz/general.html"
+                class="btn btn-outline-primary"
+                target="_blank"
+                >Start</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 d-flex mt-2">
+          <div class="card text-white bg-secondary flex-fill">
+            <picture>
+              <img src="./images/geo1.jpg" class="card-img-top" alt="history" />
+            </picture>
+            <div class="card-body">
+              <h5 class="card-title main-head">Geography Quiz</h5>
+              <p>
+                It is a game to test knowledge about a certain subject.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a
+                href="./AllQuiz/geography.html"
+                target="_blank"
+                class="btn btn-primary bg-dark"
+                >Start</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 d-flex mt-2">
+          <div class="card bg-lightgray flex-fill">
+            <picture>
+              <img
+                src="./images/history.jpg"
+                class="card-img-top"
+                alt="history"
+              />
+            </picture>
+            <div class="card-body">
+              <h5 class="card-title main-head">History Quiz</h5>
+              <p>
+                A quiz is a form of game or mind sport, attempt to answer
+                questions correctly.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a
+                href="./AllQuiz/history.html"
+                target="_blank"
+                class="btn btn-outline-primary"
+                >Start</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 d-flex mt-2">
+          <div class="card flex-fill">
+            <picture>
+              <img
+                src="./images/space.jpg"
+                class="card-img-top"
+                alt="history"
+              />
+            </picture>
+            <div class="card-body">
+              <h5 class="card-title main-head">Space Quiz</h5>
+              <p>
+                It is a game to test knowledge about a certain subject.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a
+                href="./AllQuiz/space.html"
+                target="_blank"
+                class="btn btn-outline-primary"
+                >Start</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer tag starts here-->
+    <footer>
+      <div class="footer_para">
+        <p>
+          &copy; Copyright 2020
+          <a href="#top" class="web_link">awesomequiz.io</a> made with
+          &#10084;&#65039;
+        </p>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
+      integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
