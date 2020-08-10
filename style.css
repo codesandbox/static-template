@@ -1,0 +1,236 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(#b53471, #6f1e51);
+}
+.wrapper {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.nav {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0px;
+  background-color: transparent;
+  border-style: none;
+  outline: none;
+  cursor: pointer;
+}
+.nav span {
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  border-radius: 2px;
+  transition: all 0.5s ease;
+}
+.nav span:nth-child(1) {
+  top: 0px;
+  left: 0px;
+}
+.nav span:nth-child(2) {
+  top: 20px;
+  right: 0px;
+}
+.nav span:nth-child(3) {
+  top: 40px;
+  left: 0px;
+}
+.nav.open span:nth-child(2) {
+  animation: span2 1.5s forwards cubic-bezier(0.8, 0.5, 0.2, 1.4);
+}
+@keyframes span2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  20% {
+    width: 5px;
+    border-radius: 50%;
+    transform: translate(0, 0) scale(1);
+  }
+  40% {
+    width: 5px;
+    border-radius: 50%;
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    width: 5px;
+    border-radius: 50%;
+    transform: translate(0, 18px) scale(1);
+  }
+  80% {
+    width: 5px;
+    border-radius: 50%;
+    transform: translate(0, -16px) scale(1);
+  }
+  100% {
+    width: 5px;
+    border-radius: 50%;
+    transform: translate(0, 100px) scale(0);
+  }
+}
+.nav.open span:nth-child(3) {
+  animation: span3 0.8s forwards cubic-bezier(0.8, 0.5, 0.2, 1.4);
+  animation-delay: 0.7s;
+}
+@keyframes span3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  60% {
+    transform: rotate(80deg) translate(-7px, -7px);
+  }
+  100% {
+    transform: rotate(45deg) translate(-7px, -7px);
+  }
+}
+.nav.open span:nth-child(1) {
+  animation: span1 0.8s forwards cubic-bezier(0.8, 0.5, 0.2, 1.4);
+  animation-delay: 1.1s;
+}
+@keyframes span1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  60% {
+    transform: rotate(-110deg) translate(-7px, -7px);
+  }
+  100% {
+    transform: rotate(-45deg) translate(-20px, 20px);
+  }
+}
+.nav span:nth-child(1) {
+  animation: span1_close 0.8s forwards cubic-bezier(0.8, 0.5, 0.2, 1.4);
+}
+@keyframes span1_close {
+  0% {
+    transform: rotate(-45deg) translate(-20px, 20px);
+  }
+  100% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+}
+.nav span:nth-child(2) {
+  animation: span2_close 0.8s forwards cubic-bezier(0.8, 0.5, 0.2, 1.4);
+}
+@keyframes span2_close {
+  0% {
+    transform: translate(0, 40px) scale(0);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+.nav span:nth-child(3) {
+  animation: span3_close 0.8s forwards cubic-bezier(0.8, 0.5, 0.2, 1.4);
+}
+@keyframes span3_close {
+  0% {
+    transform: rotate(45deg) translate(-7px, -7px);
+  }
+  100% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+}
+
+/*  footer   */
+footer {
+  background-color: #222;
+  color: #fff;
+  font-size: 14px;
+  bottom: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 999;
+}
+
+footer p {
+  margin: 10px 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida  Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+footer .fa-heart {
+  color: red;
+}
+footer .fa-dev {
+  color: #fff;
+}
+footer .fa-twitter-square {
+  color: #1da0f1;
+}
+footer .fa-instagram {
+  color: #f0007c;
+}
+fotter .fa-linkedin {
+  color: #0073b1;
+}
+footer .fa-codepen {
+  color: #fff;
+}
+footer a {
+  color: #3c97bf;
+  text-decoration: none;
+  margin-right: 5px;
+}
+.youtubeBtn {
+  position: fixed;
+  left: 50%;
+  transform: translatex(-50%);
+  bottom: 45px;
+  cursor: pointer;
+  transition: all 0.3s;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+}
+.youtubeBtn i {
+  font-size: 20px;
+  float: left;
+}
+.youtubeBtn a {
+  color: #ff0000;
+  animation: youtubeAnim 1000ms linear infinite;
+  float: right;
+}
+.youtubeBtn a:hover {
+  color: #c9110f;
+  transition: all 0.3s ease-in-out;
+}
+.youtubeBtn i:active {
+  transform: scale(0.9);
+  transition: all 0.3s ease-in-out;
+}
+.youtubeBtn span {
+  font-family: "Lato";
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  float: right;
+  line-height: 20px;
+  padding-left: 5px;
+}
+
+@keyframes youtubeAnim {
+  0%,
+  100% {
+    color: #c9110f;
+  }
+  50% {
+    color: #ff0000;
+  }
+}
+/* footer  */
