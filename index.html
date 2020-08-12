@@ -1,12 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+
+<head>
+	<title>Parcel Sandbox</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet"
+		  href="/src/styles.css">
+</head>
+
+<body>
+	<table id="list" class="color_table">
+		<thead>
+			<tr>
+				<th scope="colgroup" colspan="9">Toimingud</th>
+			</tr>
+			<tr>
+				<th></th>
+				<th>Liik</th>
+				<th>Kirjeldus</th>
+				<th>Subjekt</th>
+				<th>Aeg</th>
+				<th><b>Vastutaja</b>/ Tegijad</th>
+				<th>Olek</th>
+				<th></th>
+				<th><img src="/src/img/actions_column.gif" alt="Pilt" title="Tegevused"></th>
+			</tr>
+		</thead>
+		<tbody id="list:tbody_element">
+			<tr id="list:0" data-drop-target="true" draggable="false" class="odd_row">
+				<td><input alt="Peida" title="Peida" type="image" src="src/img/minus.gif"></td>
+				<td>Pereuuringu läbiviimine</td>
+				<td></td>
+				<td>User One</td>
+				<td>10.07.2020 07:23</td>
+				<td><b>User Two</b></td>
+				<td>Planeeritav</td>
+				<td></td>
+				<td>Detailvaade</td>
+			</tr>
+			<tr id="list:1">
+				<td colspan="9">
+					<div data-drop-target="true" id="list:1:drop" class="sub-action-drop-zone">Lohista alamtoiming siia, et teha sellest põhitoiming.</div>
+					<table data-drop-target="true" id="list:1:sub" class="color_table">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Aeg</th>
+								<th>Liik</th>
+								<th>Kirjeldus</th>
+								<th>Subjekt</th>
+								<th>Olek</th>
+								<th></th>
+								<th><img src="/src/img/actions_column.gif" alt="Pilt" title="Tegevused"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="list:1:sub:0" draggable="true" data-drop-target="false" class="odd_row">
+								<td><input id="list:1:sub:0:handle" alt="Liiguta" title="Liiguta" type="image" src="src/img/arrowright.gif">
+								</td>
+								<td>10.07.2020</td>
+								<td>Päringute tegemine</td>
+								<td></td>
+								<td>User One</td>
+								<td>Planeeritav</td>
+								<td></td>
+								<td>Detailvaade</td>
+							</tr>
+							<tr id="list:1:sub:1" draggable="true" data-drop-target="false" class="even_row">
+								<td><input id="list:1:sub:1:handle" alt="Liiguta" title="Peida" type="image" src="/src/img/arrowright.gif">
+								</td>
+								<td>10.07.2020</td>
+								<td>Päringute tegemine</td>
+								<td></td>
+								<td>User One</td>
+								<td>Planeeritav</td>
+								<td></td>
+								<td>Detailvaade</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+			<tr id="list:2" draggable="true" data-drop-target="true" class="even_row">
+				<td><input id="list:2:handle" alt="Liiguta" title="Peida" type="image" src="/src/img/arrowright.gif"></td>
+				<td class="textContent">Nõustamine</td>
+				<td class="textContent">see on siin 10:00</td>
+				<td class="textContent">User One</td>
+				<td class="textContent">10.07.2020 07:00</td>
+				<td class="textContent"><b>User Two</b></td>
+				<td class="textContent">Toimunud</td>
+				<td class="textContent"></td>
+				<td class="textContent">Detailvaade</td>
+			</tr>
+			<tr id="list:3" draggable="true" data-drop-target="true" class="odd_row">
+				<td><input id="list:3:handle" alt="Liiguta" title="Peida" type="image" src="/src/img/arrowright.gif"></td>
+				<td class="textContent">Abinõu rakendamine</td>
+				<td class="textContent">siia kirjutame eesmärgi</td>
+				<td class="textContent">User One</td>
+				<td class="textContent">09.07.2020 10:20</td>
+				<td class="textContent"><b>User Two</b></td>
+				<td class="textContent">Täitmisel</td>
+				<td class="textContent"></td>
+				<td class="textContent">Detailvaade</td>
+			</tr>
+			<tr id="list:4" draggable="true" data-drop-target="true" class="even_row">
+				<td><input id="list:4:handle" alt="Liiguta" title="Peida" type="image" src="/src/img/arrowright.gif"></td>
+				<td class="textContent">Tegevuskava trükise loomine</td>
+				<td class="textContent"></td>
+				<td class="textContent">User One</td>
+				<td class="textContent">09.07.2020 10:12</td>
+				<td class="textContent"><b>User Two</b></td>
+				<td class="textContent">Toimunud</td>
+				<td class="textContent"><img src="/src/img/attachment.png"></td>
+				<td class="textContent">Detailvaade</td>
+			</tr>
+			<tr id="list:5" draggable="true" data-drop-target="true" class="odd_row">
+				<td class="handle-container"><input id="list:5:handle" alt="Liiguta" title="Peida" type="image" src="/src/img/arrowright.gif"></td>
+				<td class="textContent">Eraldatud lapse paigutamine teenusele</td>
+				<td class="textContent">laps paigutatud ah teenusele käopesa leping 1312312</td>
+				<td class="textContent">User One</td>
+				<td class="textContent">09.07.2020 10:00</td>
+				<td><b>User Two</b></td>
+				<td>Toimunud</td>
+				<td></td>
+				<td>Detailvaade</td>
+			</tr>
+			<tr id="list:6" draggable="true" data-drop-target="true" class="even_row">
+				<td><input id="list:6:handle" alt="Liiguta" title="Peida" type="image" src="/src/img/arrowright.gif"></td>
+				<td>Infovahetus/järelpärimiste tegemine</td>
+				<td>Nimekiri kõikide hooldusperedega ja kõigi vastus oli negatiivne Mari ütles et kui tuleb lõplik kohtumäärus
+					siis oleme nõus</td>
+				<td>User One</td>
+				<td>09.07.2020 09:50</td>
+				<td><b>User Two</b></td>
+				<td>Toimunud</td>
+				<td></td>
+				<td>Detailvaade</td>
+			</tr>
+			<tr id="list:7" draggable="true" data-drop-target="true" class="odd_row">
+				<td><input id="list:7:handle" alt="Liiguta" title="Peida" type="image" src="/src/img/arrowright.gif"></td>
+				<td>Juhtumimenetluse algatamine</td>
+				<td></td>
+				<td></td>
+				<td>09.07.2020 09:38</td>
+				<td><b>User Two</b></td>
+				<td>Toimunud</td>
+				<td></td>
+				<td>Detailvaade</td>
+			</tr>
+			<tr id="list:8" draggable="true" data-drop-target="true" class="even_row">
+				<td><input id="list:8:handle" alt="Liiguta" title="Peida" type="image" src="/src/img/arrowright.gif"></td>
+				<td>Pöördumise registreerimine</td>
+				<td></td>
+				<td>User One</td>
+				<td>09.07.2020 09:37</td>
+				<td><b></b>User Two</td>
+				<td>Toimunud</td>
+				<td></td>
+				<td>Detailvaade</td>
+			</tr>
+			<tr id="list:9" draggable="true" data-drop-target="true" class="odd_row">
+				<td><input id="list:9:handle" alt="Liiguta" title="Peida" type="image" src="/src/img/arrowright.gif"></td>
+				<td>Kohtumääruse fikseerimine</td>
+				<td>tsiilasja nr - 12211212 kohtumäärus ja lisatakse ka dokument</td>
+				<td>User One</td>
+				<td>09.07.2020 09:10</td>
+				<td><b>User Two</b></td>
+				<td>Toimunud</td>
+				<td></td>
+				<td>Detailvaade</td>
+			</tr>
+			<tr id="list:10" draggable="true" data-drop-target="true" class="even_row">
+				<td><input id="list:10:handle" alt="Liiguta" title="Peida" type="image" src="/src/img/arrowright.gif"></td>
+				<td>Avaldus esialgse õiguskaitse meetmete kohaldamiseks</td>
+				<td></td>
+				<td>User One</td>
+				<td>09.07.2020 09:00</td>
+				<td><b>User Two</b></td>
+				<td>Toimunud</td>
+				<td></td>
+				<td>Detailvaade</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<script type="text/javascript" src="./src/index.js">
+	</script>
+</body>
+
 </html>
