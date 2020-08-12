@@ -6,11 +6,19 @@
 body{
 height: 100vh;
 padding:0 5% 0 5%;
+background-image: url("bac.jpg");
+background-repeat: no-repeat;
+background-position: align-content;
 }
 a{
-  
   text-decoration: none;
   padding: 15px;
+}
+.quiz-def{
+color: #f5f5f5;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+text-justify: space-between;
+width: 20%;
 }
 .tittle{
 margin: 5% 0 5% 5%;
@@ -20,7 +28,8 @@ margin: 5% 0 5% 5%;
   align-content: center;
   text-transform: uppercase;
   font-family: verdana;
-  font-size: 12em;
+  font-size: 5em;
+  
   font-weight: 700;
   color: #f5f5f5;
   text-shadow: 1px 1px 1px #919191,
@@ -39,6 +48,7 @@ margin: 5% 0 5% 5%;
   1px 30px 60px rgba(16,16,16,0.4);
 }
 .quize-select{
+  padding: 20px;
   height: 60%;
   display: flex;
   flex-direction: row;
@@ -47,19 +57,19 @@ margin: 5% 0 5% 5%;
 }
 .box{
   box-shadow: 0 8px 6px -6px black;
-width: 30%;
+width: 25%;
 height: 100%;
-border: 1px solid black;
+border: 1px solid white;
+box-shadow:
+0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+0 12.5px 10px rgba(0, 0, 0, 0.06),
+0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+0 100px 80px rgba(0, 0, 0, 0.12);
+
 }
-.box:hover{
-  box-shadow:
-  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-  0 12.5px 10px rgba(0, 0, 0, 0.06),
-  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-  0 100px 80px rgba(0, 0, 0, 0.12);
-}
+
 .image{
 widows: 25%;
 height: 60%;
@@ -88,3 +98,12 @@ border-radius:10px;
   font-size: 20px;
   background-image: radial-gradient( circle 422px at -10.3% 110.7%,  rgba(219,76,180,1) 9.5%, rgba(231,119,209,1) 50.8%, rgba(255,180,241,1) 88.5% );
 }
+@media (max-width:900px){
+  .quize-select{
+  flex-direction: column;
+  justify-content:space-between;
+  padding: 20px;
+  height: 60%;
+  width: 100%;
+  }
+  }
