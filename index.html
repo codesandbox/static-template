@@ -7,24 +7,35 @@
     <link rel="fav icon" href="images/cafe.svg" type="image/x-icon" />
     <link rel="stylesheet" href="CSS/styles.css" />
     <title>Coffery Website</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Merriweather:ital,wght@0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="main-container">
-      <nav>
+      <header>
         <div class="logo">
           <img src="images/coffee-logo.png" alt="" class="logo-img" />
+          <span class="logo-text">Coffery</span>
         </div>
-        <ul class="nav-items">
-          <li class="nav-links">
-            <a href="">Home</a>
-            <a href="">Products</a>
-            <a href="">Products/Deliveries</a>
-            <a href="">News</a>
-            <a href="">About</a>
-          </li>
-        </ul>
-        <div class="cta"><button>Click to Order</button></div>
-      </nav>
+
+        <nav class="show-desktop" id="hide-mobile">
+          <ul class="nav-items">
+            <li class="nav-links">
+              <a href="">Home</a>
+              <a href="">Products</a>
+              <a href="">Products/Deliveries</a>
+              <a href="">News</a>
+              <a href="">About</a>
+            </li>
+          </ul>
+          <div class="cta"><button>Click to Order</button></div>
+        </nav>
+        <div class="menu hide-desktop" id="show-mobile">
+          <div class="humberger"></div>
+        </div>
+      </header>
       <h1>
         This is a static template, there is no bundler or bundling involved!
       </h1>
