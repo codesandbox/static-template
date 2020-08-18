@@ -4,6 +4,38 @@
   background-color: #d8e7e7;
   border: 1px dashed #c7d9d0;
 }
+.drag-enter {
+  border: 2px dashed #000 !important;
+}
+
+.color_table.color_table--toimingud tbody tr {
+  user-select: none;
+}
+
+.color_table.color_table--toimingud tbody tr td {
+  user-select: text;
+}
+
+/* font-size: 13px; */
+.color_table.color_table--toimingud td,
+.color_table.color_table--toimingud th {
+  user-select: text;
+  -moz-user-select: text;
+}
+
+.color_table.color_table--toimingud td.handle-container {
+  user-select: none;
+  -moz-user-select: none;
+  cursor: pointer;
+}
+
+/* BELOW just for styling, nothing changed */
+.color_table td,
+.color_table th {
+  border: 1px solid #c7d9d0;
+  padding: 7px 5px 10px 5px;
+  vertical-align: top;
+}
 
 h2 {
   color: #a7a3a4;
@@ -16,9 +48,6 @@ h2 {
   margin: 25px;
   background-color: gainsboro;
   float: left;
-}
-.drag-enter {
-  border: 2px dashed #000 !important;
 }
 .box {
   width: 100px;
@@ -47,21 +76,6 @@ h2 {
   font-family: Verdana, Arial, sans-serif;
   margin-top: 15px;
   border: 1px solid #c7d9d0;
-}
-
-/* font-size: 13px; */
-.color_table td,
-.color_table th {
-  border: 1px solid #c7d9d0;
-  padding: 7px 5px 10px 5px;
-  vertical-align: top;
-  user-select: text;
-  -moz-user-select: text;
-}
-
-.color_table td.handle-container {
-  user-select: all;
-  -moz-user-select: all;
 }
 
 /*	font-size: 14px; */

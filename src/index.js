@@ -1,7 +1,7 @@
+var currentlyDraggedItem = false;
 var currentHoverTargetRow = false;
 var previousHoverTargetRow = false;
 var hoverTargetChanged = false;
-var subActionDropArea = false;
 var isDraggingSubAction = false;
 
 var isIE11 = window.document.documentMode;
@@ -56,6 +56,16 @@ function removeClass(element, className) {
 }
 
 /**
+ * Returns boolean value of the provided element beign equipped with the provided class name
+ * @param {HtmlElement} element
+ * @param {string} className
+ */
+function hasClass(element, className) {
+  var classNames = element.className.split(" ");
+  return includes(classNames, className);
+}
+
+/**
  * Handle the dragstart event of a draggable element
  * @param {HtmlDragStartEvent} e
  */
@@ -77,25 +87,25 @@ function handleDragStart(e) {
    * and we check if the actual drag handle is inside our current target
    * if not, break early
    */
-  var isHandleElement = /:handle/.test(e.target.id);
+  var isHandleElement = /drag-handle/.test(e.target.className);
   if (
     (isHandleElement && !e.target.parentNode.parentNode.draggable) ||
-    (!e.target.querySelector("[id$='handle']") && !isHandleElement)
+    (!e.target.querySelector("[class*='drag-handle']") && !isHandleElement)
   ) {
     breakEarly = true;
   }
 
   if (breakEarly) {
-    e.preventDefault();
     e.stopPropagation();
+    e.preventDefault();
     return false;
   }
 
-  var dragData = e.target.parentNode.parentNode.id;
+  e.dataTransfer.setData("text/plain", e.target.parentNode.parentNode.id);
+  e.dataTransfer.setData("Text", e.target.parentNode.parentNode.id);
 
-  e.dataTransfer.setData("Text", dragData);
-
-  isDraggingSubAction = /:sub:/.test(e.target.id);
+  isDraggingSubAction = /_subs:/.test(e.target.parentNode.parentNode.id);
+  currentlyDraggedItem = e.target.parentNode.parentNode;
 } //end function
 
 /**
@@ -126,20 +136,32 @@ function checkIsHoveringSubActionsTable(evt) {
     /**
      * in FF exclusively we also get event with target of text-content instead of the container
      */
-    containerId = evt.target.parentNode.parentNode.parentNode.parentNode.id;
+    containerId =
+      evt.target.parentNode.parentNode.parentNode.parentNode.className;
   } else if (["TD", "TH"].indexOf(evt.target.nodeName) !== -1) {
-    containerId = evt.target.parentNode.parentNode.parentNode.id;
+    containerId = evt.target.parentNode.parentNode.parentNode.className;
   }
   /**
    * check if we are hovering a sub-action tr
    */
-  var isHoveringOverSubActionTd = /^list:([0-9]+):sub$/.test(containerId);
+  var isHoveringOverSubActionTd = /sub-action/.test(containerId);
   /**
    * check if we are hovering over sub-action table
    */
   var isHoveringOverSubActionTable =
     evt.target.nodeName === "TABLE" &&
-    /^list:([0-9]+):sub$/.test(evt.target.id);
+    /sub-actions-table/.test(evt.target.className);
+  var isHoveringOverSubActionParent = false;
+  if (
+    (evt.target.nodeName === "TD" &&
+      currentlyDraggedItem.id.split("_")[0] ===
+        evt.target.parentNode.id.split("_")[0]) ||
+    (evt.target.nodeName === "#text" &&
+      currentlyDraggedItem.id.split("_")[0] ===
+        evt.target.parentNode.parentNode.id.split("_")[0])
+  ) {
+    isHoveringOverSubActionParent = true;
+  }
 
   var subActionTableElement = false;
   var isDropAreaEnabled = false;
@@ -167,17 +189,18 @@ function checkIsHoveringSubActionsTable(evt) {
     if (evt.target.nodeName === "#text") {
       isDropAreaEnabled = boolify(evt.target.parentNode.dataset.dropTarget);
       subActionTableElement = evt.target.parentNode;
-    } else {
-      isDropAreaEnabled = boolify(evt.target.dataset.dropTarget);
-      subActionTableElement = evt.target;
+    } else if (evt.target.nodeName === "TD") {
+      isDropAreaEnabled = boolify(evt.target.parentNode.dataset.dropTarget);
+      subActionTableElement = evt.target.parentNode;
     }
   }
 
   return {
+    isHoveringParent: isHoveringOverSubActionParent,
     isHoveringTable: isHoveringOverSubActionTable,
     isHoveringTableChild: isHoveringOverSubActionTd,
     tableElement: subActionTableElement,
-    isDropAreaEnabled: isDropAreaEnabled
+    isDropAreaEnabled: isDropAreaEnabled && !isHoveringOverSubActionParent
   };
 }
 
@@ -192,21 +215,22 @@ function checkIsHoveringSubActionsDropArea(evt) {
    */
   var hoverTargetClasses = getHoverTargetClasses(evt);
 
-  if (["#text", "DIV"].indexOf(evt.target.nodeName) !== -1) {
+  if (includes(["#text", "DIV"], evt.target.nodeName)) {
     /**
      * in IE11 we need to use self-made "includes" function
      * in modern browsers we don't need to do this
      */
-    if (isIE11) {
-      return includes(hoverTargetClasses, "sub-action-drop-zone");
-    }
-    return hoverTargetClasses.includes("sub-action-drop-zone");
+    return includes(hoverTargetClasses, "sub-action-drop-zone");
   }
   return false;
 }
 
 function checkIsDropAllowed(evt, subActionTable, isHoveringOverRow) {
-  if (subActionTable.isHoveringTable || subActionTable.isHoveringTableChild) {
+  if (
+    subActionTable.isHoveringParent ||
+    subActionTable.isHoveringTable ||
+    subActionTable.isHoveringTableChild
+  ) {
     return subActionTable.isDropAreaEnabled;
   }
   if (isHoveringOverRow) {
@@ -238,7 +262,7 @@ function setHoverTargets(
        * in FF we need to go one level deeper into the DOM to get our sub-action drop-target
        */
       newHoverTarget = evt.target.parentNode;
-    } else {
+    } else if (evt.target.nodeName === "DIV") {
       newHoverTarget = evt.target;
     }
   } else if (
@@ -255,7 +279,7 @@ function setHoverTargets(
        * in FF we need to go one level deeper into the DOM to get our TR that is draggable
        */
       newHoverTarget = evt.target.parentNode.parentNode;
-    } else {
+    } else if (evt.target.nodeName === "TD") {
       newHoverTarget = evt.target.parentNode;
     }
   } else {
@@ -334,6 +358,35 @@ function handleDragEnter(e) {
   }
 }
 
+/**
+ * These are mock functions, DO NOT create these!
+ */
+// MOCK FUNCTIONS START //
+function cursor_wait() {}
+function oamSubmitForm() {}
+// MOCK FUNCTIONS END //
+
+function submitFunction(childId, parentId) {
+  console.log("SubmitFunction", childId, parentId);
+  cursor_wait();
+  oamSubmitForm("mainForm", "drag", null, [
+    ["parentId", parentId],
+    ["childId", childId]
+  ]);
+  return false;
+}
+
+function resetFunction(childId) {
+  console.log("DEBUG::resetFunction", childId);
+  cursor_wait();
+  oamSubmitForm("mainForm", "reset-drag", null, [["childId", childId]]);
+}
+
+function isTargetSubActionDropZone(target) {
+  var classes = target.className.split(" ");
+  return classes.indexOf("sub-action-drop-zone") !== -1;
+}
+
 //Function handles dragover event eg.. moving your source div over the target div element.
 //If drop event occurs, the function retrieves the draggable elementâs id from the DataTransfer object.
 function handleOverDrop(e) {
@@ -343,44 +396,68 @@ function handleOverDrop(e) {
     return; //Means function will exit if no "drop" event is fired.
   }
   //Stores dragged elements ID in var draggedId
-  var draggedId = e.dataTransfer.getData("text");
+  var draggedId = e.dataTransfer.getData("text/plain");
+  if (isIE11) {
+    draggedId = e.dataTransfer.getData("Text");
+  }
   //Stores referrence to element being dragged in var draggedEl
 
-  if (subActionDropArea) {
-    // removeClass(subActionDropArea, 'show-hidden');
-    subActionDropArea = false;
+  var draggedEl = document.getElementById(draggedId);
+  var targetEl = false;
+
+  if (e.target.nodeName === "#text") {
+    targetEl = e.target.parentNode.parentNode;
+  } else if (e.target.nodeName === "TD") {
+    targetEl = e.target.parentNode;
+  } else if (includes(["DIV", "TR"], e.target.nodeName)) {
+    targetEl = e.target;
   }
 
-  var draggedEl = document.getElementById(draggedId);
+  if (!targetEl) {
+    return;
+  }
 
   //if the event "drop" is fired on the dragged elements original drop target e.i..  it's current parentNode,
   //then set it's css class to ="" which will remove dotted lines around the drop target and exit the function.
-  if (!draggedEl || draggedEl.parentNode === this) {
-    return; //note: when a return is reached a function exits.
+  if (!draggedEl || draggedEl === this) {
+    return;
+  }
+  if (/_drop/.test(e.target.id) && !/_subs/.test(draggedEl.id)) {
+    return;
   }
   //Otherwise if the event "drop" is fired from a different target element, detach the dragged element node from it's
   //current drop target (i.e current perantNode) and append it to the new target element. Also remove dotted css class.
   // draggedEl.parentNode.removeChild(draggedEl);
+  var childId = draggedEl.id.split("_")[0];
+  var parentId = e.target.id.split("_")[0];
 
-  ///////////////////
-  // TODO @jev: Here is where You should call Your API's
-  ///////////////////
+  if (isTargetSubActionDropZone(e.target)) {
+    resetFunction(childId);
+  } else {
+    submitFunction(childId, parentId);
+  }
 
   // this.appendChild(draggedEl); //Note: "this" references to the current target div that is firing the "drop" event.
   // this.className = "";
 } //end Function
 
 function registerDraggableElements() {
-  var draggable = document.querySelectorAll("[draggable]");
+  var draggable = document.querySelectorAll("[class*='_row']");
 
   //Register event listeners for the "dragstart" event on the draggable elements:
   for (var i = 0; i < draggable.length; i++) {
-    if (draggable[i].draggable) {
+    if (hasClass(draggable[i], "draggable")) {
+      draggable[i].setAttribute("draggable", true);
       draggable[i].addEventListener("dragstart", handleDragStart);
+      var cells = draggable[i].querySelectorAll("td");
+      for (var j = 0; j < cells.length; j++) {
+        cells[j].setAttribute("draggable", true);
+        cells[j].addEventListener("dragstart", handleDragStart);
+      }
 
       if (!!isIE11 || !!isFF) {
         draggable[i]
-          .querySelector("[id$=':handle']")
+          .querySelector("[class*='drag-handle']")
           .setAttribute("style", "pointer-events: none; cursor: pointer;");
       }
     } else {
@@ -393,15 +470,15 @@ function registerDraggableElements() {
 }
 
 function registerDropTargets() {
-  var targets = document.querySelectorAll("[data-drop-target]");
+  var targets = document.querySelectorAll(".drop-target");
 
   //Register event listeners for "dragover", "drop", "dragenter" & "dragleave" events on the drop target elements.
   for (var j = 0; j < targets.length; j++) {
-    if (targets[j].dataset.dropTarget) {
-      targets[j].addEventListener("dragover", handleOverDrop);
-      targets[j].addEventListener("drop", handleOverDrop);
-      targets[j].addEventListener("dragenter", handleDragEnter);
-    }
+    targets[j].setAttribute("data-drop-target", "true");
+    targets[j].dataset = { dropTarget: true };
+    targets[j].addEventListener("dragover", handleOverDrop);
+    targets[j].addEventListener("drop", handleOverDrop);
+    targets[j].addEventListener("dragenter", handleDragEnter);
   }
 }
 
@@ -411,4 +488,9 @@ function initDragAndDrop() {
   registerDropTargets();
 }
 
-initDragAndDrop();
+var interval = setInterval(function () {
+  if (document.querySelector(".color_table--toimingud")) {
+    clearInterval(interval);
+    initDragAndDrop();
+  }
+}, 250);
