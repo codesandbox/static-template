@@ -1,0 +1,401 @@
+header {
+  background: linear-gradient(
+      0deg,
+      rgba(44, 44, 44, 0.6),
+      rgba(44, 44, 44, 0.6)
+    ),
+    url("https://cdn.pixabay.com/photo/2019/02/23/15/23/viburnum-4015821_1280.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Montserrat;
+  margin: 0;
+}
+
+h1 {
+  font-size: 56px;
+  color: white;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+a {
+  color: #129daf;
+  text-decoration: none;
+}
+
+/* ABOUT
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 70%;
+  margin: 90px auto 70px auto;
+  padding: 20px;
+  padding-top: 0;
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+}
+
+.about img {
+  border-radius: 50%;
+  width: 150px;
+  margin-top: -30px;
+}
+
+.about p {
+  margin: 0 30px 10px 30px;
+}
+
+/* SKILLS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 70px auto 0 auto;
+  padding: 20px;
+  padding-top: 0;
+}
+
+.skills-content {
+  margin: 0 auto 70px auto;
+  padding: 20px;
+  width: 70%;
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.skills-row {
+  display: flex;
+}
+
+.skills-column {
+  display: flex;
+  flex: 1 1 50%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.progress-container {
+  margin-bottom: 20px;
+  font-size: 18px;
+  position: relative;
+  width: 100%;
+}
+
+.progress-value,
+.progress-badge {
+  color: #0b707e;
+  font-size: 0.8571em;
+  text-transform: uppercase;
+}
+
+.progress-value {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  font-size: 0.8571em;
+}
+
+.progress {
+  margin-top: 14px;
+}
+
+.progress {
+  background: rgba(25, 105, 129, 0.4);
+}
+
+.progress-bar {
+  height: 5px;
+}
+
+.progress-bar {
+  background: #129daf;
+}
+
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline h2 {
+  text-align: center;
+}
+
+.timeline ul {
+  padding: 50px 0;
+}
+
+.timeline ul li {
+  list-style-type: none;
+  position: relative;
+  width: 6px;
+  margin: 0 auto;
+  padding-top: 50px;
+  background: rgba(25, 105, 129, 0.4);
+  color: white;
+}
+
+.timeline ul li::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.timeline .bubble {
+  position: relative;
+  bottom: 0;
+  width: 400px;
+  padding: 15px;
+  background: rgba(18, 157, 175, 0.8);
+  box-sizing: border-box;
+}
+
+.timeline .bubble::before {
+  content: "";
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.timeline ul li:nth-child(odd) .bubble {
+  left: 45px;
+}
+
+.timeline ul li:nth-child(odd) .bubble::before {
+  left: -15px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent rgba(18, 157, 175, 0.8) transparent transparent;
+}
+
+.timeline ul li:nth-child(even) .bubble {
+  left: -439px;
+}
+
+.timeline ul li:nth-child(even) .bubble::before {
+  right: -15px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent rgba(18, 157, 175, 0.8);
+}
+
+time {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.bubble span {
+  font-weight: bold;
+}
+
+/* EFFECTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline ul li::after {
+  transition: background 0.5s ease-in-out;
+}
+
+.timeline ul li.in-view::after {
+  background: rgba(18, 157, 175, 1);
+}
+
+.timeline .bubble {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.timeline ul li:nth-child(odd) .bubble {
+  transform: translate3d(200px, 0, 0);
+}
+
+.timeline ul li:nth-child(even) .bubble {
+  transform: translate3d(-200px, 0, 0);
+}
+
+.timeline ul li.in-view .bubble {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* CONTACT
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 70px auto;
+  width: 60%;
+}
+
+iframe {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+form {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-group {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #d9d9d9;
+  flex-grow: 1;
+}
+
+.form-group:first-of-type {
+  margin-right: 30px;
+}
+
+label {
+  font-size: 16px;
+  color: #999999;
+  padding: 5px;
+}
+
+input {
+  width: 100%;
+  color: #555555;
+  border: none;
+  height: 40px;
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 18px;
+  font-family: Montserrat;
+}
+
+textarea {
+  border: none;
+  min-height: 110px;
+  color: #555555;
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+  font-family: Montserrat;
+  font-size: 18px;
+}
+
+::placeholder {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 0 20px;
+  min-width: 130px;
+  height: 50px;
+  background-color: rgba(18, 157, 175, 1);
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  color: white;
+}
+
+/* MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media screen and (max-width: 900px) {
+  h1 {
+    padding: 10px;
+  }
+  .about {
+    width: 100%;
+    padding: 0;
+    margin: 70px auto;
+  }
+  .about p {
+    padding: 0 15px;
+  }
+
+  .skills-content {
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  .timeline .bubble {
+    width: 250px;
+  }
+  .timeline ul li:nth-child(even) .bubble {
+    left: -289px;
+    /*250+45-6*/
+  }
+  .contact {
+    margin: 30px;
+    width: unset;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 46px;
+  }
+  .progress-value,
+  .progress-badge {
+    font-size: 12px;
+  }
+  .timeline ul li {
+    margin-left: 20px;
+  }
+  .timeline .bubble {
+    width: calc(100vw - 91px);
+  }
+  .timeline ul li:nth-child(even) .bubble {
+    left: 45px;
+  }
+  .timeline ul li:nth-child(even) .bubble::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent rgba(18, 157, 175, 0.8) transparent transparent;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .form-group:first-of-type {
+    margin-right: 0;
+  }
+}
