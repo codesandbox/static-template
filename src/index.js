@@ -433,7 +433,10 @@ function handleOverDrop(e) {
 
   if (e.target.nodeName === "#text") {
     targetEl = e.target.parentNode.parentNode;
-  } else if (e.target.nodeName === "IMG") {
+  } else if (
+    e.target.nodeName === "IMG" &&
+    e.target.parentNode.nodeName === "TD"
+  ) {
     targetEl = e.target.parentNode.parentNode;
   } else if (e.target.nodeName === "TD") {
     targetEl = e.target.parentNode;
@@ -464,6 +467,8 @@ function handleOverDrop(e) {
     childId = draggedEl.id.split("_")[0].split(":")[1];
   }
   var parentId = targetEl.id.split("_")[0].split(":")[1];
+  console.log("DEBUG::parentId", parentId);
+  console.log("DEBUG::childId", childId);
 
   if (isTargetSubActionDropZone(e.target)) {
     resetFunction(childId);
@@ -526,9 +531,4 @@ function initDragAndDrop() {
   registerDropTargets();
 }
 
-var interval = setInterval(function () {
-  if (document.querySelector(".color_table--toimingud")) {
-    clearInterval(interval);
-    initDragAndDrop();
-  }
-}, 250);
+initDragAndDrop();
