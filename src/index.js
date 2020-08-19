@@ -385,7 +385,7 @@ function handleDragEnter(e) {
 }
 
 function submitFunction(childId, parentId) {
-  console.log("DEBUG::submitFunction", childId, parentId);
+  console.log("SubmitFunction", childId, parentId);
   if (!childId || !parentId) {
     return false;
   }
@@ -398,7 +398,7 @@ function submitFunction(childId, parentId) {
 }
 
 function resetFunction(childId) {
-  console.log("DEBUG::submitFunction", childId);
+  console.log("DEBUG::resetFunction", childId);
   if (!childId) {
     return false;
   }
@@ -433,7 +433,10 @@ function handleOverDrop(e) {
 
   if (e.target.nodeName === "#text") {
     targetEl = e.target.parentNode.parentNode;
-  } else if (e.target.nodeName === "IMG") {
+  } else if (
+    e.target.nodeName === "IMG" &&
+    e.target.parentNode.nodeName === "TD"
+  ) {
     targetEl = e.target.parentNode.parentNode;
   } else if (e.target.nodeName === "TD") {
     targetEl = e.target.parentNode;
@@ -464,6 +467,8 @@ function handleOverDrop(e) {
     childId = draggedEl.id.split("_")[0].split(":")[1];
   }
   var parentId = targetEl.id.split("_")[0].split(":")[1];
+  console.log("DEBUG::parentId", parentId);
+  console.log("DEBUG::childId", childId);
 
   if (isTargetSubActionDropZone(e.target)) {
     resetFunction(childId);
@@ -487,16 +492,6 @@ function registerDraggableElements() {
       for (var j = 0; j < cells.length; j++) {
         cells[j].setAttribute("draggable", true);
         cells[j].addEventListener("dragstart", handleDragStart);
-      }
-
-      if (isIE11 || isFF) {
-        var dragHandle = draggable[i].querySelector("[class*='drag-handle']");
-        if (dragHandle) {
-          dragHandle.setAttribute(
-            "style",
-            "pointer-events: none; cursor: pointer;"
-          );
-        }
       }
     } else {
       draggable[i].addEventListener("dragstart", function (e) {
@@ -526,9 +521,4 @@ function initDragAndDrop() {
   registerDropTargets();
 }
 
-var interval = setInterval(function () {
-  if (document.querySelector(".color_table--toimingud")) {
-    clearInterval(interval);
-    initDragAndDrop();
-  }
-}, 250);
+initDragAndDrop();
