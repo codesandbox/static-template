@@ -101,11 +101,32 @@ function handleDragStart(e) {
     return false;
   }
 
-  e.dataTransfer.setData("text/plain", e.target.parentNode.parentNode.id);
-  e.dataTransfer.setData("Text", e.target.parentNode.parentNode.id);
+  var dragData = "";
+  if (e.target.nodeName === "#text") {
+    dragData = e.target.parentNode.parentNode.parentNode.id;
+    isDraggingSubAction = /_subs:/.test(
+      e.target.parentNode.parentNode.parentNode.id
+    );
+    currentlyDraggedItem = e.target.parentNode.parentNode.parentNode;
+  } else if (e.target.nodeName === "IMG") {
+    dragData = e.target.parentNode.parentNode.id;
+    isDraggingSubAction = /_subs:/.test(dragData);
+    currentlyDraggedItem = e.target.parentNode.parentNode;
+  } else if (e.target.nodeName === "TD") {
+    dragData = e.target.parentNode.id;
+    isDraggingSubAction = /_subs:/.test(e.target.parentNode.id);
+    currentlyDraggedItem = e.target.parentNode;
+  } else if (e.target.nodeName === "TR") {
+    dragData = e.target.id;
+    isDraggingSubAction = /_subs:/.test(e.target.id);
+    currentlyDraggedItem = e.target;
+  }
 
-  isDraggingSubAction = /_subs:/.test(e.target.parentNode.parentNode.id);
-  currentlyDraggedItem = e.target.parentNode.parentNode;
+  if (isIE11) {
+    e.dataTransfer.setData("Text", dragData);
+  } else {
+    e.dataTransfer.setData("text/plain", dragData);
+  }
 } //end function
 
 /**
@@ -152,13 +173,18 @@ function checkIsHoveringSubActionsTable(evt) {
     evt.target.nodeName === "TABLE" &&
     /sub-actions-table/.test(evt.target.className);
   var isHoveringOverSubActionParent = false;
+  if (!currentlyDraggedItem || !currentlyDraggedItem.id) {
+    currentlyDraggedItem = document.getElementById(
+      evt.dataTransfer.getData(isIE11 ? "Text" : "text/plain")
+    );
+  }
   if (
     (evt.target.nodeName === "TD" &&
       currentlyDraggedItem.id.split("_")[0] ===
-        evt.target.parentNode.id.split("_")[0]) ||
+      evt.target.parentNode.id.split("_")[0]) ||
     (evt.target.nodeName === "#text" &&
       currentlyDraggedItem.id.split("_")[0] ===
-        evt.target.parentNode.parentNode.id.split("_")[0])
+      evt.target.parentNode.parentNode.id.split("_")[0])
   ) {
     isHoveringOverSubActionParent = true;
   }
@@ -358,16 +384,11 @@ function handleDragEnter(e) {
   }
 }
 
-/**
- * These are mock functions, DO NOT create these!
- */
-// MOCK FUNCTIONS START //
-function cursor_wait() {}
-function oamSubmitForm() {}
-// MOCK FUNCTIONS END //
-
 function submitFunction(childId, parentId) {
-  console.log("SubmitFunction", childId, parentId);
+  console.log("DEBUG::submitFunction", childId, parentId);
+  if (!childId || !parentId) {
+    return false;
+  }
   cursor_wait();
   oamSubmitForm("mainForm", "drag", null, [
     ["parentId", parentId],
@@ -377,7 +398,10 @@ function submitFunction(childId, parentId) {
 }
 
 function resetFunction(childId) {
-  console.log("DEBUG::resetFunction", childId);
+  console.log("DEBUG::submitFunction", childId);
+  if (!childId) {
+    return false;
+  }
   cursor_wait();
   oamSubmitForm("mainForm", "reset-drag", null, [["childId", childId]]);
 }
@@ -396,9 +420,11 @@ function handleOverDrop(e) {
     return; //Means function will exit if no "drop" event is fired.
   }
   //Stores dragged elements ID in var draggedId
-  var draggedId = e.dataTransfer.getData("text/plain");
+  var draggedId = "";
   if (isIE11) {
     draggedId = e.dataTransfer.getData("Text");
+  } else {
+    draggedId = e.dataTransfer.getData("text/plain");
   }
   //Stores referrence to element being dragged in var draggedEl
 
@@ -406,6 +432,8 @@ function handleOverDrop(e) {
   var targetEl = false;
 
   if (e.target.nodeName === "#text") {
+    targetEl = e.target.parentNode.parentNode;
+  } else if (e.target.nodeName === "IMG") {
     targetEl = e.target.parentNode.parentNode;
   } else if (e.target.nodeName === "TD") {
     targetEl = e.target.parentNode;
@@ -428,8 +456,14 @@ function handleOverDrop(e) {
   //Otherwise if the event "drop" is fired from a different target element, detach the dragged element node from it's
   //current drop target (i.e current perantNode) and append it to the new target element. Also remove dotted css class.
   // draggedEl.parentNode.removeChild(draggedEl);
-  var childId = draggedEl.id.split("_")[0];
-  var parentId = e.target.id.split("_")[0];
+
+  var childId = "";
+  if (isDraggingSubAction) {
+    childId = draggedEl.id.split("_")[1].split(":")[1];
+  } else {
+    childId = draggedEl.id.split("_")[0].split(":")[1];
+  }
+  var parentId = targetEl.id.split("_")[0].split(":")[1];
 
   if (isTargetSubActionDropZone(e.target)) {
     resetFunction(childId);
@@ -455,10 +489,14 @@ function registerDraggableElements() {
         cells[j].addEventListener("dragstart", handleDragStart);
       }
 
-      if (!!isIE11 || !!isFF) {
-        draggable[i]
-          .querySelector("[class*='drag-handle']")
-          .setAttribute("style", "pointer-events: none; cursor: pointer;");
+      if (isIE11 || isFF) {
+        var dragHandle = draggable[i].querySelector("[class*='drag-handle']");
+        if (dragHandle) {
+          dragHandle.setAttribute(
+            "style",
+            "pointer-events: none; cursor: pointer;"
+          );
+        }
       }
     } else {
       draggable[i].addEventListener("dragstart", function (e) {
