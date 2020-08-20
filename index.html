@@ -1,12 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/f92d7aa325.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header class="title">
+      <div class="logo-container">
+        <h1 class="logo"><span class="at">@</span>Quiz App</h1>
+        <p>Learn from it</p>
+      </div>
+    </header>
+
+    <section class="items-select">
+      <a class="item" href="movie.html">
+        <div class="box card left-transition">
+          <div class="image-container">
+            <img src="movie.svg" alt="movie" width="100%" height="100%" />
+          </div>
+          <div class="description">
+            <p>Movie</p>
+          </div>
+        </div>
+      </a>
+      <a class="item" href="sports.html">
+        <div class="box card top-transition">
+          <div class="image-container">
+            <img src="basketball.svg" alt="sports" width="100%" height="100%" />
+          </div>
+          <div class="description">
+            <p>Sports</p>
+          </div>
+        </div>
+      </a>
+      <a class="item" href="technical.html">
+        <div class="box card right-transition">
+          <div class="image-container">
+            <img src="static.svg" alt="Technical" width="100%" height="100%" />
+          </div>
+          <div class="description">
+            <p>Technical</p>
+          </div>
+        </div>
+      </a>
+    </section>
   </body>
 </html>
