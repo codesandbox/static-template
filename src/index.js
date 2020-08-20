@@ -1,11 +1,10 @@
-var currentlyDraggedItem = false;
-var currentHoverTargetRow = false;
-var previousHoverTargetRow = false;
-var hoverTargetChanged = false;
-var isDraggingSubAction = false;
-
-var isIE11 = window.document.documentMode;
-var isFF = typeof InstallTrigger !== "undefined";
+var currentlyDraggedItem = false,
+  currentHoverTargetRow = false,
+  previousHoverTargetRow = false,
+  hoverTargetChanged = false,
+  isDraggingSubAction = false,
+  isIE11 = window.document.documentMode,
+  isFF = typeof InstallTrigger !== "undefined";
 
 /**
  * Check if array contains value
@@ -30,7 +29,7 @@ function boolify(value) {
 
 /**
  * Add provided class to the provided element, if not already added.
- * @param {HtmlElement} element
+ * @param {HTMLElement} element
  * @param {string} className
  */
 function addClass(element, className) {
@@ -44,7 +43,7 @@ function addClass(element, className) {
 
 /**
  * Remove provided class from the provided element
- * @param {HtmlElement} element
+ * @param {HTMLElement} element
  * @param {string} className
  */
 function removeClass(element, className) {
@@ -57,7 +56,7 @@ function removeClass(element, className) {
 
 /**
  * Returns boolean value of the provided element beign equipped with the provided class name
- * @param {HtmlElement} element
+ * @param {HTMLElement} element
  * @param {string} className
  */
 function hasClass(element, className) {
@@ -67,7 +66,7 @@ function hasClass(element, className) {
 
 /**
  * Handle the dragstart event of a draggable element
- * @param {HtmlDragStartEvent} e
+ * @param {DragEvent} e
  */
 function handleDragStart(e) {
   var breakEarly = false;
@@ -103,23 +102,18 @@ function handleDragStart(e) {
 
   var dragData = "";
   if (e.target.nodeName === "#text") {
-    dragData = e.target.parentNode.parentNode.parentNode.id;
-    isDraggingSubAction = /_subs:/.test(
-      e.target.parentNode.parentNode.parentNode.id
-    );
     currentlyDraggedItem = e.target.parentNode.parentNode.parentNode;
   } else if (e.target.nodeName === "IMG") {
-    dragData = e.target.parentNode.parentNode.id;
-    isDraggingSubAction = /_subs:/.test(dragData);
     currentlyDraggedItem = e.target.parentNode.parentNode;
   } else if (e.target.nodeName === "TD") {
-    dragData = e.target.parentNode.id;
-    isDraggingSubAction = /_subs:/.test(e.target.parentNode.id);
     currentlyDraggedItem = e.target.parentNode;
   } else if (e.target.nodeName === "TR") {
-    dragData = e.target.id;
-    isDraggingSubAction = /_subs:/.test(e.target.id);
     currentlyDraggedItem = e.target;
+  }
+
+  if (currentlyDraggedItem) {
+    dragData = currentlyDraggedItem.id;
+    isDraggingSubAction = /_subs:/.test(dragData);
   }
 
   if (isIE11) {
@@ -131,7 +125,7 @@ function handleDragStart(e) {
 
 /**
  * Retrieve classNames array of event target element
- * @param {HtmlDragEnterEvent} e
+ * @param {DragEvent} e
  */
 function getHoverTargetClasses(e) {
   /**
@@ -145,27 +139,42 @@ function getHoverTargetClasses(e) {
 
 /**
  * Check if user is hovering the sub-actions table
- * @param {HtmlDragEnterEvent} evt
+ * @param {DragEvent} evt
  */
 function checkIsHoveringSubActionsTable(evt) {
-  var containerId = "";
+  var container = false;
+  var row = false;
   /**
    * in FireFox we need to check if we are hovering an element or plain text inside an element
    * here we check if we are hovering the text inside an element, if so, we need to use one higher level parent than on other browsers
    */
-  if (evt.target.nodeName === "#text") {
+  if (
+    evt.target.nodeName === "#text" &&
+    evt.target.parentNode.nodeName === "TD"
+  ) {
     /**
      * in FF exclusively we also get event with target of text-content instead of the container
      */
-    containerId =
-      evt.target.parentNode.parentNode.parentNode.parentNode.className;
+    row = evt.target.parentNode.parentNode;
   } else if (["TD", "TH"].indexOf(evt.target.nodeName) !== -1) {
-    containerId = evt.target.parentNode.parentNode.parentNode.className;
+    row = evt.target.parentNode;
+  }
+  if (row) {
+    container = row.parentNode.parentNode;
   }
   /**
    * check if we are hovering a sub-action tr
    */
-  var isHoveringOverSubActionTd = /sub-action/.test(containerId);
+  var isHoveringOverSubActionTd = includes(
+    container.className.split(" "),
+    "_subs"
+  );
+  console.log(
+    "DEBUG::checkIsHoveringSubActionsTable",
+    isHoveringOverSubActionTd,
+    container.className,
+    row.id
+  );
   /**
    * check if we are hovering over sub-action table
    */
@@ -181,10 +190,10 @@ function checkIsHoveringSubActionsTable(evt) {
   if (
     (evt.target.nodeName === "TD" &&
       currentlyDraggedItem.id.split("_")[0] ===
-      evt.target.parentNode.id.split("_")[0]) ||
+        evt.target.parentNode.id.split("_")[0]) ||
     (evt.target.nodeName === "#text" &&
       currentlyDraggedItem.id.split("_")[0] ===
-      evt.target.parentNode.parentNode.id.split("_")[0])
+        evt.target.parentNode.parentNode.id.split("_")[0])
   ) {
     isHoveringOverSubActionParent = true;
   }
@@ -226,13 +235,13 @@ function checkIsHoveringSubActionsTable(evt) {
     isHoveringTable: isHoveringOverSubActionTable,
     isHoveringTableChild: isHoveringOverSubActionTd,
     tableElement: subActionTableElement,
-    isDropAreaEnabled: isDropAreaEnabled && !isHoveringOverSubActionParent
+    isDropAreaEnabled: isDropAreaEnabled && !isHoveringOverSubActionParent,
   };
 }
 
 /**
  * Check if user is hovering over drop-target of sub-actions
- * @param {HtmlDragEnterEvent} evt
+ * @param {DragEvent} evt
  */
 function checkIsHoveringSubActionsDropArea(evt) {
   /**
@@ -270,9 +279,10 @@ function checkIsDropAllowed(evt, subActionTable, isHoveringOverRow) {
 
 /**
  * Set new currentHoverTarget and previousHoverTarget
- * @param {HtmlDragEnterEvent} evt
+ * @param {DragEvent} evt
  * @param {Object} subActionTable
  * @param {boolean} isHoveringOverRow
+ * @param {boolean} isHoveringOverSubActionDropArea
  */
 function setHoverTargets(
   evt,
@@ -321,9 +331,14 @@ function setHoverTargets(
 
 /**
  * Check if current target of pointer is a valid drop-target
- * @param {HtmlDragEnterEvent} e
+ * @param {DragEvent} e
  */
 function isHoveringOverEnabledDropArea(e) {
+  console.log(
+    "DEBUG::isHoveringOverEnabledDropArea",
+    e.target.nodeName,
+    e.target.parentNode.nodeName
+  );
   /**
    * check if user is hovering a tr
    */
@@ -334,17 +349,26 @@ function isHoveringOverEnabledDropArea(e) {
    * also get table element and id already extracted
    */
   var subActionTable = checkIsHoveringSubActionsTable(e);
-
+  console.log(
+    "DEBUG::isHoveringOverEnabledDropArea.subActionTable",
+    subActionTable
+  );
   /**
    * check if user is hovering sub-action drop-target to make sub-action into main action
    */
   var isHoveringOverSubActionDropArea = checkIsHoveringSubActionsDropArea(e);
-
+  console.log(
+    "DEBUG::isHoveringOverEnabledDropArea.isHoveringOverSubActionDropArea",
+    isHoveringOverSubActionDropArea
+  );
   /**
    * check if user is hovering over drop-target that is enabled and suitable for currently hovered action
    */
   var isDropAllowed = checkIsDropAllowed(e, subActionTable, isHoveringOverRow);
-
+  console.log(
+    "DEBUG::isHoveringOverEnabledDropArea.isDropAllowed",
+    isDropAllowed
+  );
   /**
    * if current target does not allow dropping OR currently dragging main action and hovering over sub-action drop area return false
    */
@@ -370,11 +394,13 @@ function isHoveringOverEnabledDropArea(e) {
 
 /**
  * Handler for "dragenter" event
- * @param {HtmlDragEnterEvent} e
+ * @param {DragEvent} e
  */
 function handleDragEnter(e) {
   if (isHoveringOverEnabledDropArea(e)) {
+    console.log("DEBUG::ishoveringOverEnabledDropArea");
     if (hoverTargetChanged) {
+      console.log("DEBUG::hoverTargetChanged");
       addClass(currentHoverTargetRow, "drag-enter");
       if (previousHoverTargetRow) {
         removeClass(previousHoverTargetRow, "drag-enter");
@@ -392,13 +418,13 @@ function submitFunction(childId, parentId) {
   cursor_wait();
   oamSubmitForm("mainForm", "drag", null, [
     ["parentId", parentId],
-    ["childId", childId]
+    ["childId", childId],
   ]);
   return false;
 }
 
 function resetFunction(childId) {
-  console.log("DEBUG::submitFunction", childId);
+  console.log("DEBUG::resetFunction", childId);
   if (!childId) {
     return false;
   }

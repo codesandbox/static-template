@@ -8,10 +8,14 @@
   </head>
 
   <body>
-    <table id="list" class="color_table color_table--toimingud">
+    <table
+      class="color_table color_table--toimingud drop-target"
+      id="list"
+      data-drop-target="true"
+    >
       <thead>
         <tr>
-          <th scope="colgroup" colspan="9">Toimingud</th>
+          <th colspan="9" scope="colgroup">Toimingud</th>
         </tr>
         <tr>
           <th></th>
@@ -24,331 +28,642 @@
           <th></th>
           <th>
             <img
-              src="/src/img/actions_column.gif"
-              alt="Pilt"
               title="Tegevused"
+              alt="Pilt"
+              src="/src/img/actions_column.gif"
             />
           </th>
         </tr>
       </thead>
       <tbody id="list:tbody_element">
-        <tr id="list:0" class="odd_row drop-target">
-          <td>
-            <img alt="Peida" title="Peida" type="image" src="src/img/minus.gif"
+        <tr
+          class="odd_row draggable drop-target"
+          id="list:24478578"
+          draggable="true"
+          data-drop-target="true"
+        >
+          <td class="handle-container" draggable="true">
+            <img class="drag-handle" src="/src/img/drag-n-drop-hand.png" />
           </td>
-          <td>Pereuuringu läbiviimine</td>
-          <td></td>
-          <td>User One</td>
-          <td>10.07.2020 07:23</td>
-          <td><b>User Two</b></td>
-          <td>Planeeritav</td>
-          <td></td>
-          <td>Detailvaade</td>
+          <td draggable="true">
+            KOV toiming - Hoolduse seadmine puudega isikule
+          </td>
+          <td draggable="true"></td>
+          <td draggable="true">User One</td>
+          <td draggable="true">22.08.2020 13:33</td>
+          <td draggable="true">
+            <b>User Two</b>
+          </td>
+          <td draggable="true">Planeeritav</td>
+          <td draggable="true"></td>
+          <td draggable="true">
+            <span id="list:0:j_id_jsp_270168112_44pc8" style="display: inline;">
+              <a title="Detailvaade" class="inputTableButton" href="#">
+                <img alt="Detailvaade" src="/src/img/more_details.gif" />
+              </a>
+              <input
+                name="list:0:j_id_jsp_270168112_48pc8"
+                title="Lisa uus alamtoiming"
+                class="inputTableButton"
+                id="list:0:j_id_jsp_270168112_48pc8"
+                type="image"
+                alt="Pilt"
+                src="/src/img/add.gif"
+              />
+              <span
+                class="actionDeleteConfirm"
+                id="list:0:j_id_jsp_270168112_50pc8"
+              >
+                <input
+                  name="list:0:j_id_jsp_270168112_51pc8"
+                  title="Kustuta"
+                  class="inputTableButton"
+                  id="list:0:j_id_jsp_270168112_51pc8"
+                  type="image"
+                  alt="Kustuta"
+                  src="/src/img/delete.gif"
+                />
+              </span>
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="even_row draggable drop-target"
+          id="list:24478610"
+          draggable="true"
+          data-drop-target="true"
+        >
+          <td class="handle-container" draggable="true">
+            <input
+              name="list:1:j_id_jsp_270168112_17pc8"
+              title="Peida"
+              id="list:1:j_id_jsp_270168112_17pc8"
+              type="image"
+              alt="Peida"
+              src="/src/img/minus.gif"
+            />
+          </td>
+          <td draggable="true">Eestkoste - Eestkostetava vara hooldus</td>
+          <td draggable="true"></td>
+          <td draggable="true">User One</td>
+          <td draggable="true">21.07.2020 16:22</td>
+          <td draggable="true">
+            <b>User Two</b>
+          </td>
+          <td draggable="true">Toimunud</td>
+          <td draggable="true"></td>
+          <td draggable="true">
+            <span id="list:1:j_id_jsp_270168112_44pc8" style="display: inline;">
+              <a title="Detailvaade" class="inputTableButton" href="#">
+                <img alt="Detailvaade" src="/src/img/more_details.gif" />
+              </a>
+              <input
+                name="list:1:j_id_jsp_270168112_48pc8"
+                title="Lisa uus alamtoiming"
+                class="inputTableButton"
+                id="list:1:j_id_jsp_270168112_48pc8"
+                type="image"
+                alt="Pilt"
+                src="/src/img/add.gif"
+              />
+              <span
+                class="actionDeleteConfirm"
+                id="list:1:j_id_jsp_270168112_50pc8"
+              >
+                <input
+                  name="list:1:j_id_jsp_270168112_51pc8"
+                  title="Kustuta"
+                  class="inputTableButton"
+                  id="list:1:j_id_jsp_270168112_51pc8"
+                  type="image"
+                  alt="Kustuta"
+                  src="/src/img/delete.gif"
+                />
+              </span>
+            </span>
+          </td>
         </tr>
         <tr>
           <td colspan="9">
-            <div id="list:0_drop" class="sub-action-drop-zone drop-target">
-              Lohista alamtoiming siia, et teha sellest põhitoiming.
+            <div class="sub-actions">
+              <div
+                class="sub-action-drop-zone drop-target list:24478610_drop"
+                data-drop-target="true"
+              >
+                Lohista alamtoiming siia, et teha sellest põhitoiming.
+              </div>
+              <table
+                class="color_table list:24478610_subs drop-target"
+                id="list:1:proceedingSubActionsList"
+                data-drop-target="true"
+              >
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Aeg</th>
+                    <th>Liik</th>
+                    <th>Kirjeldus</th>
+                    <th>Subjekt</th>
+                    <th>Olek</th>
+                    <th></th>
+                    <th>
+                      <img
+                        title="Tegevused"
+                        alt="Pilt"
+                        src="/src/img/actions_column.gif"
+                      />
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="list:1:proceedingSubActionsList:tbody_element">
+                  <tr
+                    class="odd_row draggable"
+                    id="list:24478610_subs:24478598"
+                    draggable="true"
+                  >
+                    <td class="handle-container" draggable="true">
+                      <img
+                        class="drag-handle"
+                        src="/src/img/drag-n-drop-hand.png"
+                      />
+                    </td>
+                    <td draggable="true">21.07.2020</td>
+                    <td draggable="true">
+                      Avaldus isiku teovõime laiendamiseks/kitsendamiseks
+                    </td>
+                    <td draggable="true">17:02?</td>
+                    <td draggable="true">User One</td>
+                    <td draggable="true">Toimunud</td>
+                    <td draggable="true"></td>
+                    <td draggable="true">
+                      <span
+                        id="list:1:proceedingSubActionsList:0:j_id_jsp_270168112_81pc8"
+                        style="display: inline;"
+                      >
+                        <a
+                          title="Detailvaade"
+                          class="inputTableButton"
+                          href="#"
+                        >
+                          <img
+                            alt="Detailvaade"
+                            src="/src/img/more_details.gif"
+                          />
+                        </a>
+                        <span
+                          class="actionDeleteConfirm"
+                          id="list:1:proceedingSubActionsList:0:j_id_jsp_270168112_85pc8"
+                        >
+                          <input
+                            name="list:1:proceedingSubActionsList:0:j_id_jsp_270168112_86pc8"
+                            title="Kustuta"
+                            class="inputTableButton"
+                            id="list:1:proceedingSubActionsList:0:j_id_jsp_270168112_86pc8"
+                            type="image"
+                            alt="Kustuta"
+                            src="/src/img/delete.gif"
+                          />
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr
+                    class="even_row draggable"
+                    id="list:24478610_subs:24478596"
+                    draggable="true"
+                  >
+                    <td class="handle-container" draggable="true">
+                      <img
+                        class="drag-handle"
+                        src="/src/img/drag-n-drop-hand.png"
+                      />
+                    </td>
+                    <td draggable="true">21.07.2020</td>
+                    <td draggable="true">Avaldus eestkoste lõpetamiseks</td>
+                    <td draggable="true">17:01?</td>
+                    <td draggable="true">User One</td>
+                    <td draggable="true">Toimunud</td>
+                    <td draggable="true"></td>
+                    <td draggable="true">
+                      <span
+                        id="list:1:proceedingSubActionsList:1:j_id_jsp_270168112_81pc8"
+                        style="display: inline;"
+                      >
+                        <a
+                          title="Detailvaade"
+                          class="inputTableButton"
+                          href="#"
+                        >
+                          <img
+                            alt="Detailvaade"
+                            src="/src/img/more_details.gif"
+                          />
+                        </a>
+                        <span
+                          class="actionDeleteConfirm"
+                          id="list:1:proceedingSubActionsList:1:j_id_jsp_270168112_85pc8"
+                        >
+                          <input
+                            name="list:1:proceedingSubActionsList:1:j_id_jsp_270168112_86pc8"
+                            title="Kustuta"
+                            class="inputTableButton"
+                            id="list:1:proceedingSubActionsList:1:j_id_jsp_270168112_86pc8"
+                            type="image"
+                            alt="Kustuta"
+                            src="/src/img/delete.gif"
+                          />
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr
+                    class="odd_row draggable"
+                    id="list:24478610_subs:24478594"
+                    draggable="true"
+                  >
+                    <td class="handle-container" draggable="true">
+                      <img
+                        class="drag-handle"
+                        src="/src/img/drag-n-drop-hand.png"
+                      />
+                    </td>
+                    <td draggable="true">21.07.2020</td>
+                    <td draggable="true">Avaldus eestkoste seadmiseks</td>
+                    <td draggable="true"></td>
+                    <td draggable="true">User One</td>
+                    <td draggable="true">Toimunud</td>
+                    <td draggable="true"></td>
+                    <td draggable="true">
+                      <span
+                        id="list:1:proceedingSubActionsList:2:j_id_jsp_270168112_81pc8"
+                        style="display: inline;"
+                      >
+                        <a
+                          title="Detailvaade"
+                          class="inputTableButton"
+                          href="#"
+                        >
+                          <img
+                            alt="Detailvaade"
+                            src="/src/img/more_details.gif"
+                          />
+                        </a>
+                        <span
+                          class="actionDeleteConfirm"
+                          id="list:1:proceedingSubActionsList:2:j_id_jsp_270168112_85pc8"
+                        >
+                          <input
+                            name="list:1:proceedingSubActionsList:2:j_id_jsp_270168112_86pc8"
+                            title="Kustuta"
+                            class="inputTableButton"
+                            id="list:1:proceedingSubActionsList:2:j_id_jsp_270168112_86pc8"
+                            type="image"
+                            alt="Kustuta"
+                            src="/src/img/delete.gif"
+                          />
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <table
-              id="list:0_subs"
-              class="color_table color_table--toimingud sub-actions-table drop-target"
-            >
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Aeg</th>
-                  <th>Liik</th>
-                  <th>Kirjeldus</th>
-                  <th>Subjekt</th>
-                  <th>Olek</th>
-                  <th></th>
-                  <th>
-                    <img
-                      src="/src/img/actions_column.gif"
-                      alt="Pilt"
-                      title="Tegevused"
-                    />
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr id="list:0_subs:0" class="odd_row draggable sub-action">
-                  <td class="handle-container">
-                    <img
-                      id="list:0_sub:0_handle"
-                      class="drag-handle"
-                      alt="Liiguta"
-                      title="Liiguta"
-                      src="src/img/drag-n-drop-hand.png"
-                    />
-                  </td>
-                  <td>10.07.2020</td>
-                  <td>Päringute tegemine</td>
-                  <td></td>
-                  <td>User One</td>
-                  <td>Planeeritav</td>
-                  <td></td>
-                  <td>Detailvaade</td>
-                </tr>
-                <tr id="list:0_subs:1" class="even_row draggable sub-action">
-                  <td class="handle-container">
-                    <img
-                      id="list:0_sub:1_handle"
-                      class="drag-handle"
-                      alt="Liiguta"
-                      title="Peida"
-                      src="/src/img/drag-n-drop-hand.png"
-                    />
-                  </td>
-                  <td>10.07.2020</td>
-                  <td>Päringute tegemine</td>
-                  <td></td>
-                  <td>User One</td>
-                  <td>Planeeritav</td>
-                  <td></td>
-                  <td>Detailvaade</td>
-                </tr>
-              </tbody>
-            </table>
           </td>
         </tr>
-        <tr id="list:1" class="even_row drop-target draggable">
-          <td class="handle-container">
-            <img
-              id="list:1_handle"
-              class="drag-handle"
-              alt="Liiguta"
+        <tr
+          class="odd_row draggable drop-target"
+          id="list:24478592"
+          draggable="true"
+          data-drop-target="true"
+        >
+          <td class="handle-container" draggable="true">
+            <input
+              name="list:2:j_id_jsp_270168112_17pc8"
               title="Peida"
-              src="/src/img/drag-n-drop-hand.png"
+              id="list:2:j_id_jsp_270168112_17pc8"
+              type="image"
+              alt="Peida"
+              src="/src/img/minus.gif"
             />
           </td>
-          <td>Nõustamine</td>
-          <td>see on siin 10:00</td>
-          <td>User One</td>
-          <td>10.07.2020 07:00</td>
-          <td><b>User Two</b></td>
-          <td>Toimunud</td>
-          <td></td>
-          <td>Detailvaade</td>
-        </tr>
-        <tr id="list:2" class="odd_row drop-target draggable">
-          <td class="handle-container">
-            <img
-              id="list:2_handle"
-              class="drag-handle"
-              alt="Liiguta"
-              title="Peida"
-              src="/src/img/drag-n-drop-hand.png"
-            />
+          <td draggable="true">
+            Lastekaitse - Eraldatud lapse paigutamine bioloogilisse perekonda
           </td>
-          <td>Abinõu rakendamine</td>
-          <td>siia kirjutame eesmärgi</td>
-          <td>User One</td>
-          <td>09.07.2020 10:20</td>
-          <td><b>User Two</b></td>
-          <td>Täitmisel</td>
-          <td></td>
-          <td>Detailvaade</td>
-        </tr>
-        <tr id="list:3" class="even_row drop-target draggable">
-          <td class="handle-container">
-            <img
-              id="list:3_handle"
-              class="drag-handle"
-              alt="Liiguta"
-              title="Peida"
-              src="/src/img/drag-n-drop-hand.png"
-            />
+          <td draggable="true">16:55?</td>
+          <td draggable="true">User One</td>
+          <td draggable="true">21.07.2020 15:55</td>
+          <td draggable="true">
+            <b>User Two</b>
           </td>
-          <td>Tegevuskava trükise loomine</td>
-          <td></td>
-          <td>User One</td>
-          <td>09.07.2020 10:12</td>
-          <td><b>User Two</b></td>
-          <td>Toimunud</td>
-          <td><img src="/src/img/attachment.png" /></td>
-          <td>Detailvaade</td>
-        </tr>
-        <tr id="list:4" class="odd_row drop-target draggable">
-          <td class="handle-container">
-            <img
-              id="list:4_handle"
-              class="drag-handle"
-              alt="Liiguta"
-              title="Peida"
-              src="/src/img/drag-n-drop-hand.png"
-            />
+          <td draggable="true">Toimunud</td>
+          <td draggable="true"></td>
+          <td draggable="true">
+            <span id="list:2:j_id_jsp_270168112_44pc8" style="display: inline;">
+              <a title="Detailvaade" class="inputTableButton" href="#">
+                <img alt="Detailvaade" src="/src/img/more_details.gif" />
+              </a>
+              <input
+                name="list:2:j_id_jsp_270168112_48pc8"
+                title="Lisa uus alamtoiming"
+                class="inputTableButton"
+                id="list:2:j_id_jsp_270168112_48pc8"
+                type="image"
+                alt="Pilt"
+                src="/src/img/add.gif"
+              />
+              <span
+                class="actionDeleteConfirm"
+                id="list:2:j_id_jsp_270168112_50pc8"
+              >
+                <input
+                  name="list:2:j_id_jsp_270168112_51pc8"
+                  title="Kustuta"
+                  class="inputTableButton"
+                  id="list:2:j_id_jsp_270168112_51pc8"
+                  type="image"
+                  alt="Kustuta"
+                  src="/src/img/delete.gif"
+                />
+              </span>
+            </span>
           </td>
-          <td>Eraldatud lapse paigutamine teenusele</td>
-          <td>
-            laps paigutatud ah teenusele käopesa leping 1312312
-          </td>
-          <td>User One</td>
-          <td>09.07.2020 10:00</td>
-          <td><b>User Two</b></td>
-          <td>Toimunud</td>
-          <td></td>
-          <td>Detailvaade</td>
-        </tr>
-        <tr id="list:5" class="even_row drop-target">
-          <td class="handle-container">
-            <img alt="Peida" title="Peida" type="image" src="src/img/minus.gif"
-          </td>
-          <td>Infovahetus/järelpärimiste tegemine</td>
-          <td>
-            Nimekiri kõikide hooldusperedega
-          </td>
-          <td>User One</td>
-          <td>09.07.2020 09:50</td>
-          <td><b>User Two</b></td>
-          <td>Toimunud</td>
-          <td></td>
-          <td>Detailvaade</td>
         </tr>
         <tr>
           <td colspan="9">
-            <div id="list:5_drop" class="sub-action-drop-zone drop-target">
-              Lohista alamtoiming siia, et teha sellest põhitoiming.
+            <div class="sub-actions">
+              <div
+                class="sub-action-drop-zone drop-target list:24478592_drop"
+                data-drop-target="true"
+              >
+                Lohista alamtoiming siia, et teha sellest põhitoiming.
+              </div>
+              <table
+                class="color_table list:24478592_subs drop-target"
+                id="list:2:proceedingSubActionsList"
+                data-drop-target="true"
+              >
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Aeg</th>
+                    <th>Liik</th>
+                    <th>Kirjeldus</th>
+                    <th>Subjekt</th>
+                    <th>Olek</th>
+                    <th></th>
+                    <th>
+                      <img
+                        title="Tegevused"
+                        alt="Pilt"
+                        src="/src/img/actions_column.gif"
+                      />
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="list:2:proceedingSubActionsList:tbody_element">
+                  <tr
+                    class="odd_row draggable"
+                    id="list:24478592_subs:24478378"
+                    draggable="true"
+                  >
+                    <td class="handle-container" draggable="true">
+                      <img
+                        class="drag-handle"
+                        src="/src/img/drag-n-drop-hand.png"
+                      />
+                    </td>
+                    <td draggable="true">21.07.2020</td>
+                    <td draggable="true">
+                      Kohtuväline suhtlemiskorra kokkulepe
+                    </td>
+                    <td draggable="true"></td>
+                    <td draggable="true">User One</td>
+                    <td draggable="true">Planeeritav</td>
+                    <td draggable="true"></td>
+                    <td draggable="true">
+                      <span
+                        id="list:2:proceedingSubActionsList:0:j_id_jsp_270168112_81pc8"
+                        style="display: inline;"
+                      >
+                        <a
+                          title="Detailvaade"
+                          class="inputTableButton"
+                          href="#"
+                        >
+                          <img
+                            alt="Detailvaade"
+                            src="/src/img/more_details.gif"
+                          />
+                        </a>
+                        <span
+                          class="actionDeleteConfirm"
+                          id="list:2:proceedingSubActionsList:0:j_id_jsp_270168112_85pc8"
+                        >
+                          <input
+                            name="list:2:proceedingSubActionsList:0:j_id_jsp_270168112_86pc8"
+                            title="Kustuta"
+                            class="inputTableButton"
+                            id="list:2:proceedingSubActionsList:0:j_id_jsp_270168112_86pc8"
+                            type="image"
+                            alt="Kustuta"
+                            src="/src/img/delete.gif"
+                          />
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <table
-              id="list:5_subs"
-              class="color_table color_table--toimingud sub-actions-table drop-target"
-            >
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Aeg</th>
-                  <th>Liik</th>
-                  <th>Kirjeldus</th>
-                  <th>Subjekt</th>
-                  <th>Olek</th>
-                  <th></th>
-                  <th>
-                    <img
-                      src="/src/img/actions_column.gif"
-                      alt="Pilt"
-                      title="Tegevused"
-                    />
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr id="list:5_subs:0" class="odd_row draggable sub-action">
-                  <td class="handle-container">
-                    <img
-                      id="list:5_sub:0_handle"
-                      class="drag-handle"
-                      alt="Liiguta"
-                      title="Liiguta"
-                      src="src/img/drag-n-drop-hand.png"
-                    />
-                  </td>
-                  <td>10.07.2020</td>
-                  <td>Päringute tegemine</td>
-                  <td></td>
-                  <td>User One</td>
-                  <td>Planeeritav</td>
-                  <td></td>
-                  <td>Detailvaade</td>
-                </tr>
-                <tr id="list:5_subs:1" class="even_row draggable sub-action">
-                  <td class="handle-container">
-                    <img
-                      id="list:5_sub:1_handle"
-                      class="drag-handle"
-                      alt="Liiguta"
-                      title="Peida"
-                      src="/src/img/drag-n-drop-hand.png"
-                    />
-                  </td>
-                  <td>10.07.2020</td>
-                  <td>Päringute tegemine</td>
-                  <td></td>
-                  <td>User One</td>
-                  <td>Planeeritav</td>
-                  <td></td>
-                  <td>Detailvaade</td>
-                </tr>
-              </tbody>
-            </table>
           </td>
         </tr>
-        <tr id="list:6" class="odd_row drop-target draggable">
-          <td class="handle-container">
-            <img
-              id="list:6_handle"
-              class="drag-handle"
-              alt="Liiguta"
-              title="Peida"
-              src="/src/img/drag-n-drop-hand.png"
-            />
+        <tr
+          class="even_row draggable drop-target"
+          id="list:24471182"
+          draggable="true"
+          data-drop-target="true"
+        >
+          <td class="handle-container" draggable="true">
+            <img class="drag-handle" src="/src/img/drag-n-drop-hand.png" />
           </td>
-          <td>Juhtumimenetluse algatamine</td>
-          <td></td>
-          <td></td>
-          <td>09.07.2020 09:38</td>
-          <td><b>User Two</b></td>
-          <td>Toimunud</td>
-          <td></td>
-          <td>Detailvaade</td>
+          <td draggable="true">Süsteemsed - Pöördumise registreerimine</td>
+          <td draggable="true">Abivajav laps - asd</td>
+          <td draggable="true">User One</td>
+          <td draggable="true">31.03.2020 13:50</td>
+          <td draggable="true"><b> </b>User Two</td>
+          <td draggable="true">Toimunud</td>
+          <td draggable="true"></td>
+          <td draggable="true">
+            <span id="list:3:j_id_jsp_270168112_44pc8" style="display: inline;">
+              <a title="Detailvaade" class="inputTableButton" href="#">
+                <img alt="Detailvaade" src="/src/img/more_details.gif" />
+              </a>
+              <input
+                name="list:3:j_id_jsp_270168112_48pc8"
+                title="Lisa uus alamtoiming"
+                class="inputTableButton"
+                id="list:3:j_id_jsp_270168112_48pc8"
+                type="image"
+                alt="Pilt"
+                src="/src/img/add.gif"
+              />
+              <input
+                name="list:3:j_id_jsp_270168112_53pc8"
+                title="Uus abinõu rakendamine taotluse alusel"
+                class="inputTableButton"
+                id="list:3:j_id_jsp_270168112_53pc8"
+                type="image"
+                alt="Uus abinõu rakendamine taotluse alusel"
+                src="/src/img/arrowright.gif"
+              />
+            </span>
+          </td>
         </tr>
-        <tr id="list:7" class="even_row drop-target draggable">
-          <td class="handle-container">
-            <img
-              id="list:7_handle"
-              class="drag-handle"
-              alt="Liiguta"
+        <tr
+          class="odd_row draggable drop-target"
+          id="list:24473378"
+          draggable="true"
+          data-drop-target="true"
+        >
+          <td class="handle-container" draggable="true">
+            <input
+              name="list:4:j_id_jsp_270168112_17pc8"
               title="Peida"
-              src="/src/img/drag-n-drop-hand.png"
+              id="list:4:j_id_jsp_270168112_17pc8"
+              type="image"
+              alt="Peida"
+              src="/src/img/minus.gif"
             />
           </td>
-          <td>Pöördumise registreerimine</td>
-          <td></td>
-          <td>User One</td>
-          <td>09.07.2020 09:37</td>
-          <td><b></b>User Two</td>
-          <td>Toimunud</td>
-          <td></td>
-          <td>Detailvaade</td>
+          <td draggable="true">
+            Eestkoste - Ametniku esindusõiguse kinnitamine eestkostetava
+            asjaajamisel, volikiri
+          </td>
+          <td draggable="true">sai külas käidud!</td>
+          <td draggable="true">User One</td>
+          <td draggable="true">16.02.2020 10:10</td>
+          <td draggable="true">
+            <b>User Two</b>
+          </td>
+          <td draggable="true">Toimunud</td>
+          <td draggable="true"></td>
+          <td draggable="true">
+            <span id="list:4:j_id_jsp_270168112_44pc8" style="display: inline;">
+              <a title="Detailvaade" class="inputTableButton" href="#">
+                <img alt="Detailvaade" src="/src/img/more_details.gif" />
+              </a>
+              <input
+                name="list:4:j_id_jsp_270168112_48pc8"
+                title="Lisa uus alamtoiming"
+                class="inputTableButton"
+                id="list:4:j_id_jsp_270168112_48pc8"
+                type="image"
+                alt="Pilt"
+                src="/src/img/add.gif"
+              />
+              <span
+                class="actionDeleteConfirm"
+                id="list:4:j_id_jsp_270168112_50pc8"
+              >
+                <input
+                  name="list:4:j_id_jsp_270168112_51pc8"
+                  title="Kustuta"
+                  class="inputTableButton"
+                  id="list:4:j_id_jsp_270168112_51pc8"
+                  type="image"
+                  alt="Kustuta"
+                  src="/src/img/delete.gif"
+                />
+              </span>
+            </span>
+          </td>
         </tr>
-        <tr id="list:8" class="odd_row drop-target draggable">
-          <td class="handle-container">
-            <img
-              id="list:8_handle"
-              class="drag-handle"
-              alt="Liiguta"
-              title="Peida"
-              src="/src/img/drag-n-drop-hand.png"
-            />
+        <tr>
+          <td colspan="9">
+            <div class="sub-actions">
+              <div
+                class="sub-action-drop-zone drop-target list:24473378_drop"
+                data-drop-target="true"
+              >
+                Lohista alamtoiming siia, et teha sellest põhitoiming.
+              </div>
+              <table
+                class="color_table list:24473378_subs drop-target"
+                id="list:4:proceedingSubActionsList"
+                data-drop-target="true"
+              >
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Aeg</th>
+                    <th>Liik</th>
+                    <th>Kirjeldus</th>
+                    <th>Subjekt</th>
+                    <th>Olek</th>
+                    <th></th>
+                    <th>
+                      <img
+                        title="Tegevused"
+                        alt="Pilt"
+                        src="/src/img/actions_column.gif"
+                      />
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="list:4:proceedingSubActionsList:tbody_element">
+                  <tr
+                    class="odd_row draggable"
+                    id="list:24473378_subs:24473986"
+                    draggable="true"
+                  >
+                    <td class="handle-container" draggable="true">
+                      <img
+                        class="drag-handle"
+                        src="/src/img/drag-n-drop-hand.png"
+                      />
+                    </td>
+                    <td draggable="true">19.05.2020</td>
+                    <td draggable="true">Lapsega kohtumise läbiviimine</td>
+                    <td draggable="true">räägitud</td>
+                    <td draggable="true">User One</td>
+                    <td draggable="true">Toimunud</td>
+                    <td draggable="true"></td>
+                    <td draggable="true">
+                      <span
+                        id="list:4:proceedingSubActionsList:0:j_id_jsp_270168112_81pc8"
+                        style="display: inline;"
+                      >
+                        <a
+                          title="Detailvaade"
+                          class="inputTableButton"
+                          href="#"
+                        >
+                          <img
+                            alt="Detailvaade"
+                            src="/src/img/more_details.gif"
+                          />
+                        </a>
+                        <span
+                          class="actionDeleteConfirm"
+                          id="list:4:proceedingSubActionsList:0:j_id_jsp_270168112_85pc8"
+                        >
+                          <input
+                            name="list:4:proceedingSubActionsList:0:j_id_jsp_270168112_86pc8"
+                            title="Kustuta"
+                            class="inputTableButton"
+                            id="list:4:proceedingSubActionsList:0:j_id_jsp_270168112_86pc8"
+                            type="image"
+                            alt="Kustuta"
+                            src="/src/img/delete.gif"
+                          />
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </td>
-          <td>Kohtumääruse fikseerimine</td>
-          <td>tsiilasja nr - 12211212 kohtumäärus ja lisatakse ka dokument</td>
-          <td>User One</td>
-          <td>09.07.2020 09:10</td>
-          <td><b>User Two</b></td>
-          <td>Toimunud</td>
-          <td></td>
-          <td>Detailvaade</td>
-        </tr>
-        <tr id="list:9" class="even_row drop-target draggable">
-          <td class="handle-container">
-            <img
-              id="list:9_handle"
-              class="drag-handle"
-              alt="Liiguta"
-              title="Peida"
-              src="/src/img/drag-n-drop-hand.png"
-            />
-          </td>
-          <td>Avaldus esialgse õiguskaitse meetmete kohaldamiseks</td>
-          <td></td>
-          <td>User One</td>
-          <td>09.07.2020 09:00</td>
-          <td><b>User Two</b></td>
-          <td>Toimunud</td>
-          <td></td>
-          <td>Detailvaade</td>
         </tr>
       </tbody>
     </table>
