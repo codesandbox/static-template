@@ -1,12 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qureka</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&family=Roboto:wght@300&family=Ubuntu+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Bootstrap Scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <section class="colored-section" id="title">
+        <div class="container-fluid">
+          <!-- Nav Bar -->
+
+          <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href=""><span>Q</span>ureka</a>
+
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarTogglerDemo02"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="general_quiz.html">General</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="political_quiz.html">Political</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="sports_quiz.html">Sports</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </section>
+    </header>
+    <!-- Quiz Options -->
+    <section class="white-section" id="content">
+      <div class="d-flex justify-content-around quizes">
+        <div
+          onclick="location.href='general_quiz.html';"
+          style="cursor: pointer;"
+          class="box"
+        >
+          <div class="quiz-image">
+            <img src="general.svg" alt="img for General quiz" />
+          </div>
+          <div class="quiz-title">General Quiz</div>
+        </div>
+        <div
+          onclick="location.href='political_quiz.html';"
+          style="cursor: pointer;"
+          class="box"
+        >
+          <div class="quiz-image">
+            <img src="politics.svg" alt="img for politics quiz" />
+          </div>
+          <div class="quiz-title">Political Quiz</div>
+        </div>
+        <div
+          onclick="location.href='sports_quiz.html';"
+          style="cursor: pointer;"
+          class="box"
+        >
+          <div class="quiz-image">
+            <img src="sports.svg" alt="img for sports quiz" />
+          </div>
+          <div class="quiz-title">Sports Quiz</div>
+        </div>
+      </div>
+    </section>
+    <section class="colored-section">
+      <footer>
+        All rights reserved &copy; 2020
+      </footer>
+    </section>
   </body>
 </html>
