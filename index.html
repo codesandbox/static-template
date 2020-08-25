@@ -1,12 +1,43 @@
+<!----------------------------------------------------------------------------------------------------------------
+--
+#Original Author:                                       #
+#Date Created:                                          #
+#Version:                                                    #
+#Date Last Modified:                                #08/25/2020
+#Modified by:                                           #Joshua Milbourne
+#Modification log:                                    #loaded into codesandbox
+ --
+------------------------------------------------------------------------------------------------------------------>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join Email List</title>
+    <meta name="keywords" content="email list" />
+    <link rel="stylesheet" href="email_list.css" />
+    <script src="email_list.js"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <main>
+      <h1>Please join our email list</h1>
+      <form id="email_form" name="email_form" action="join.html" method="get">
+        <label for="email_address1">Email Address:</label>
+        <input type="text" id="email_address1" name="email_address1" />
+        <span id="email_address1_error">*</span><br />
+
+        <label for="email_address2">Re-enter Email Address:</label>
+        <input type="text" id="email_address2" name="email_address2" />
+        <span id="email_address2_error">*</span><br />
+
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" />
+        <span id="first_name_error">*</span><br />
+
+        <label>&nbsp;</label>
+        <input type="button" id="join_list" value="Join our List" />
+      </form>
+    </main>
   </body>
 </html>
