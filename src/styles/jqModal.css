@@ -1,0 +1,138 @@
+/* jqModal base Styling courtesy of;
+	Brice Burgess <bhb@iceburg.net> */
+/* The Window's CSS z-index value is respected (takes priority). If none is supplied,
+the Window's z-index value will be set to 3000 by default (via jqModal.js). */
+.jqmWindow {
+	display: none;
+	position: fixed;
+	top: 17%;
+	left: 50%;
+	margin-left: -300px;
+	width: 600px;
+	background-color: #EEE;
+	color: #333;
+	border: 1px solid black;
+	padding: 12px;
+}
+
+.jqmOverlay {
+	background-color: #FFF;
+}
+
+/* Background iframe styling for IE6. Prevents ActiveX bleed-through (<select> form elements, etc.) */
+* iframe.jqm {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: expression(this.parentNode.offsetWidth + 'px');
+	height: expression(this.parentNode.offsetHeight + 'px');
+}
+
+/* Fixed posistioning emulation for IE6
+     Star selector used to hide definition from browsers other than IE6
+     For valid CSS, use a conditional include instead */
+* html .jqmWindow {
+	position: absolute;
+	top: expression(( document.documentElement.scrollTop ||
+		document.body.scrollTop) +   Math.round ( 17 *   (
+		document.documentElement.offsetHeight ||   document.body.clientHeight
+		)/ 100 ) +   'px' );
+}
+
+div.jqmConfirm input[type="submit"] {
+	padding: 4px;
+	margin: 10px 30px;
+	background: #000;
+	color: #FFF;
+	border: 1px solid #AAA;
+}
+
+/* jqModal confirm CSS courtesy of;
+   Alexandre Plennevaux <alexandre@pixeline.be>,
+   Brice Burgess <bhb@iceburg.net> */
+div.jqmConfirm { /* contains + positions the alert window */
+	display: none;
+	position: fixed;
+	top: 17%;
+	left: 50%;
+	margin-left: -200px;
+	width: 380px;
+}
+
+/* Fixed posistioning emulation for IE6
+     Star selector used to hide definition from browsers other than IE6
+     For valid CSS, use a conditional include instead */
+* html div.jqmConfirm {
+	position: absolute;
+	top: expression(( document.documentElement.scrollTop ||
+		document.body.scrollTop) +   Math.round ( 17 *   (
+		document.documentElement.offsetHeight ||   document.body.clientHeight
+		)/ 100 ) +   'px' );
+}
+
+div.jqmConfirmWindow {
+	height: auto;
+	width: auto;
+	margin: auto;
+	max-width: 400px;
+	padding: 0 10px 10px;
+	background: #FFF;
+	border: 1px solid #250f10;
+}
+
+.jqmConfirmTitle {
+	margin: 5px 2px;
+	color: #01433c;
+	background: #FFF;
+}
+/*	height: 20px; */
+
+.jqmConfirmTitle h1 {
+	margin: 5px 2px;
+	padding-left: 5px;
+	padding: 0;
+	font-size: 14px;
+	text-transform: capitalize;
+	letter-spacing: -1px;
+	font-weight: bold;
+	color: #01433c;
+	float: left;
+	height: 20px;
+}
+
+div.jqmConfirmContent {
+	border-top: px;
+	color: #01433c;
+	font: 11px/ 14pt arial;
+	padding: 5px 20px 5px;
+	margin: 5px;
+	letter-spacing: 0px;
+}
+
+/*
+  clearing a float without additional markup
+   http://www.positioniseverything.net/easyclearing.html */
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+/* Hides from IE-mac \*/
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+
+p.alert{position: fixed; top: 0; left: 50%; margin: 10px 0 0 -250px; padding: 5px; width: 500px; text-align: center; background: #D8E7E7; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; font-size: 13px; font-weight: bold; color: red;}
+p.error{position: fixed; top: 0; left: 50%; margin: 10px 0 0 -250px; padding: 5px; width: 500px; text-align: center; background: #red; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; font-size: 13px; font-weight: bold; color: #white;}

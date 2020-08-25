@@ -1,0 +1,123 @@
+/*
+ * Style elements for editable popup boxes.
+ */
+#backbox { /* semitransparent background behind editable popup boxes
+  * position:fixed would be preferable but that
+    - doesn't work in IE6
+    - hides the cursor in forms above this div in firefox
+*/
+	z-index: 5;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: white;
+	opacity: 0.8;
+	-moz-opacity: 0.8;
+	filter: alpha(opacity =     80);
+	width: 100%;
+	height: 100%;
+}
+
+.backbox-lvl2 { /*background-repeat: repeat;*/
+	z-index: 15;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: white;
+	opacity: 0.8;
+	-moz-opacity: 0.8;
+	filter: alpha(opacity =     80);
+	width: 100%;
+	height: 100%;
+}
+
+.backbox-lvl3 { /*background-repeat: repeat;*/
+	z-index: 25;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: white;
+	opacity: 0.8;
+	-moz-opacity: 0.8;
+	filter: alpha(opacity =     80);
+	width: 100%;
+	height: 100%;
+}
+
+/* the box, that displays editor above detail form */
+.overbox {
+	position: absolute;
+	text-align: left;
+	z-index: 10;
+	top: 20px;
+	/*	width:780px; */
+	margin-left: -40px;
+}
+
+/* the box, that displays editor above detail form */
+.overbox-lvl2 {
+	position: absolute;
+	text-align: left;
+	z-index: 20;
+	top: 30px;
+}
+
+/* the box, that displays editor above detail form */
+.overbox-lvl3 {
+	position: absolute;
+	text-align: left;
+	z-index: 30;
+	top: 40px;
+}
+
+.overbox_inner {
+	border: 1px solid #250f10;
+	padding: 10px;
+	background: #ffffff;
+}
+
+.closebutton {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-left: 1px solid #250f10;
+	border-bottom: 1px solid #250f10;
+	font-size: 13px;
+	line-height: 16px;
+	padding: 0 4px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.s_popup_window_width_div {
+	width: 250px;
+}
+
+.m_popup_window_width_div {
+	width: 380px;
+}
+
+.popup_window_width_div {
+	width: 580px;
+}
+
+.xl_popup_window_width_div {
+	width: 780px;
+}
+
+.xxl_popup_window_width_div {
+	width: 980px;
+}
+
+.xxxl_popup_window_width_div {
+	width: 990px;
+}
+
+/* title for popup windows to remind the subject of the data being edited */
+.popup_window_subject_title {
+	float: right;
+	font-size: 10px;
+	padding: 0;
+	margin: 0;
+}
