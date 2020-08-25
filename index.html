@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title> Memeory Converter</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>Memory size Convert to Bytes Or GB</h1>
+    <input type="text" id="memory-size" name="memory-size" />
+    <div class="btn-container">
+      <button onclick="convertTOBytes()">In Bytes</button>
+      <button onclick="convertTOGB()">In GB</button>
+    </div>
+    <h5 id="result"></h5>
+    <script src="index.js"></script>
   </body>
+</html> 
 </html>
