@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TIC TAC TOE</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <center><h1>My Tic Tak Toe Game!</h1></center>
+    Player 1 name :
+    <input type="text" id="p1" placeholder="Enter player1's name" name="p1" />
+    <br />
+    <br />
+    Player 2 name :
+    <input type="text" id="p2" placeholder="Enter player2's name" name="p2" />
+
+    <br />
+    <br />
+
+    <center>
+      <button id="game-start" onclick="startGame()">Start Game</button>
+    </center>
+
+    <div id="game-container" class="hide class1 class2">
+      <div id="turn"></div>
+      <div class="row">
+        <div id="00" class="cell" onclick="handleClick(this)"></div>
+        <div id="01" class="cell" onclick="handleClick(this)"></div>
+        <div id="02" class="cell" onclick="handleClick(this)"></div>
+      </div>
+      <div class="row">
+        <div id="10" class="cell" onclick="handleClick(this)"></div>
+        <div id="11" class="cell" onclick="handleClick(this)"></div>
+        <div id="12" class="cell" onclick="handleClick(this)"></div>
+      </div>
+      <div class="row">
+        <div id="20" class="cell" onclick="handleClick(this)"></div>
+        <div id="21" class="cell" onclick="handleClick(this)"></div>
+        <div id="22" class="cell" onclick="handleClick(this)"></div>
+      </div>
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>
