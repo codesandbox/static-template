@@ -1,3 +1,10 @@
+/**
+ * Title: DragAndDrop
+ * Description: Native HTML5 "DragAndDrop" support for STAR web. Specifically for the table "Toimingud"
+ * Author: Iglu OÜ (Tõnis Terasmaa)
+ * Version: 0.13
+ * @type {*[]}
+ */
 var dropEventListeners = [],
 	currentlyDraggedItem = false,
 	currentHoverTargetRow = false,
