@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Data Size Format Converter</title>
+    <script src="index.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>Data size format converter</h1>
+    <div class="cont">
+      <input class="inp-area" type="text" id="inp-area" />
+      <button class="btn btn-secondary" id="btn-1" onclick="convertSize()">
+        Convert
+      </button>
+      <div class="from-to-container item">
+        <div class="frm">
+          <label for="datasizeformat">From:</label>
+          <select name="fromSize" id="fromSize">
+            <option value="bit">Bits(bits)</option>
+            <option value="byte">Bytes(B)</option>
+            <option value="kilobit">Kilobits(Kbits)</option>
+            <option value="kilobyte">Kilobytes(KB)</option>
+            <option value="megabit">Megabits(Mbits)</option>
+            <option value="megabyte">Megabytes(MB)</option>
+            <option value="gigabit">Gigabits(Gbits)</option>
+            <option value="gigabyte">Gigabytes(GB)</option>
+          </select>
+        </div>
+        <div class="to">
+          <label for="datasizeformat">To:</label>
+          <select name="toSize" id="toSize">
+            <option value="bit">Bits(bits)</option>
+            <option value="byte">Bytes(B)</option>
+            <option value="kilobit">Kilobits(Kbits)</option>
+            <option value="kilobyte">Kilobytes(KB)</option>
+            <option value="megabit">Megabits(Mbits)</option>
+            <option value="megabyte">Megabytes(MB)</option>
+            <option value="gigabit">Gigabits(Gbits)</option>
+            <option value="gigabyte">Gigabytes(GB)</option>
+          </select>
+        </div>
+      </div>
+      <p class="result">
+        <span class="res-from filled">___</span>
+        <span class="res-from-unit">bits</span>
+        <span class="equals">=</span>
+        <span class="res-to filled">___</span>
+        <span class="res-to-unit">bits</span>
+      </p>
+    </div>
   </body>
 </html>
