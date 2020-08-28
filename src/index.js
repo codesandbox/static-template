@@ -3,7 +3,6 @@
  * Description: Native HTML5 "DragAndDrop" support for STAR web. Specifically for the table "Toimingud"
  * Author: Iglu OÜ (Tõnis Terasmaa)
  * Version: 0.13
- * @type {*[]}
  */
 var dropEventListeners = [],
 	currentlyDraggedItem = false,
@@ -34,7 +33,7 @@ function boolify(value) {
 
 /**
  * Add provided class to the provided element, if not already added.
- * @param {HTMLElement} element
+ * @param {Element} element
  * @param {string} className
  */
 function addClass(element, className) {
@@ -48,7 +47,7 @@ function addClass(element, className) {
 
 /**
  * Remove provided class from the provided element
- * @param {HTMLElement} element
+ * @param {Element} element
  * @param {string} className
  */
 function removeClass(element, className) {
@@ -61,82 +60,13 @@ function removeClass(element, className) {
 
 /**
  * Returns boolean value of the provided element beign equipped with the provided class name
- * @param {HTMLElement} element
+ * @param {Element} element
  * @param {string} className
  */
 function hasClass(element, className) {
 	var classNames = element.className.split(" ");
 	return includes(classNames, className);
 }
-
-/**
- * Handle the dragstart event of a draggable element
- * @param {DragEvent} e
- */
-function handleDragStart(e) {
-	var breakEarly = false;
-	/**
-	 * check for browser type for better compatibility
-	 * in FF and IE11 the row cannot be dragged via input with type="image"
-	 * and we check if the target is actually draggable="true"
-	 * if not, just break early
-	 */
-	var rowElement = false;
-	var handleElement = false;
-	if (e.target.nodeName === "TR") {
-		rowElement = e.target;
-	} else if (includes(["TD", "TH"], e.target.nodeName) && e.target.parentNode.nodeName === "TR") {
-		rowElement = e.target.parentNode;
-	} else if (e.target.nodeName === "IMG" && e.target.parentNode.parentNode.nodeName === "TR") {
-		rowElement = e.target.parentNode.parentNode;
-	} else {
-		breakEarly = true;
-	}
-	if (!rowElement || !boolify(rowElement.getAttribute("draggable"))) {
-		breakEarly = true;
-	}
-	/**
-	 * our regular DOM layout for this functionality is input(the handle)->td(the table cell)->tr(the draggable row)
-	 * that's why we check if the row is draggable and we are trying to drag by the actual handle
-	 * and we check if the actual drag handle is inside our current target
-	 * if not, break early
-	 */
-	var isHandleElement = /drag-handle/.test(e.target.className);
-	if (
-		(isHandleElement && !boolify(rowElement.getAttribute("draggable"))) ||
-		(!rowElement.querySelector("[class*='drag-handle']") && !isHandleElement)
-	) {
-		breakEarly = true;
-	}
-
-	if (breakEarly) {
-		e.stopPropagation();
-		e.preventDefault();
-		return false;
-	}
-
-	var dragData = "";
-	if (e.target.nodeName === "#text") {
-		currentlyDraggedItem = e.target.parentNode.parentNode.parentNode;
-	} else if (e.target.nodeName === "IMG") {
-		currentlyDraggedItem = e.target.parentNode.parentNode;
-	} else if (includes(["TD", "TH"], e.target.nodeName)) {
-		currentlyDraggedItem = e.target.parentNode;
-	} else if (e.target.nodeName === "TR") {
-		currentlyDraggedItem = e.target;
-	}
-
-	if (currentlyDraggedItem) {
-		dragData = currentlyDraggedItem.id;
-		isDraggingSubAction = /_subs:/.test(dragData);
-	}
-
-	if (isIE11) {
-		e.dataTransfer.setData("Text", dragData);
-	} else {
-		e.dataTransfer.setData("text/plain", dragData);
-	}
-} //end function
 
 /**
  * Retrieve classNames array of event target element
@@ -172,7 +102,7 @@ function isDroppingSubOnTheParent(target, source) {
 function checkIsHoveringSubActionsDropArea(evt) {
 	/**
 	 * get currently hovered drop-target classNames
-	 * @type {HTMLElement|boolean}
+	 * @type {Element|boolean}
 	 */
 	var subActionDropArea = false;
 	if (isFF && evt.target.nodeName === "#text" && evt.target.parentNode.nodeName === "DIV") {
@@ -187,16 +117,37 @@ function checkIsHoveringSubActionsDropArea(evt) {
 }
 
 /**
+ * Fetches Main Action ID from provided string
+ * @param id {string}
+ * @returns {*|string}
+ */
+function getParentActionId(id) {
+	return id.split("_")[0];
+}
+
+/**
+ * Fetches Sub-Action ID from provided string
+ * @param id {string}
+ * @returns {*|string}
+ */
+function getChildActionId(id) {
+	return id.split("_")[1];
+}
+
+/**
  * Check if user is hovering the sub-actions table
  * @param {DragEvent} evt
  */
 function checkIsHoveringSubActionsTable(evt) {
-	var container = false;
-	var row = false;
-
+	var hoverTargetTable = false;
+	var hoverTargetTableId = false;
+	var hoverTargetRow = false;
 	var subActionTableElement = false;
+
 	var isDropAreaEnabled = false;
 	var isHoveringCurrentSubTableDropArea = false;
+	var isHoveringOverSubActionParent = false;
+
 	/**
 	 * in FireFox we need to check if we are hovering an element or plain text inside an element
 	 * here we check if we are hovering the text inside an element, if so, we need to use one higher level parent than on other browsers
@@ -205,48 +156,61 @@ function checkIsHoveringSubActionsTable(evt) {
 		includes(["#text", "IMG"], evt.target.nodeName) &&
 		includes(["TD", "TH"], evt.target.parentNode.nodeName)
 	) {
-		/**
-		 * in FF exclusively we also get event with target of text-content instead of the container
-		 */
-		row = evt.target.parentNode.parentNode;
+		hoverTargetRow = evt.target.parentNode.parentNode;
 	} else if (includes(["TD", "TH"], evt.target.nodeName)) {
-		row = evt.target.parentNode;
+		hoverTargetRow = evt.target.parentNode;
 	}
 
-	if (row) {
-		container = row.parentNode.parentNode;
+	if (hoverTargetRow) {
+		hoverTargetTable = hoverTargetRow.parentNode.parentNode;
+		hoverTargetTableId = hoverTargetTable.className.split(" ").filter(function (className) {
+			return /(^list:[0-9]+_subs$)/.test(className);
+		});
+		if (hoverTargetTableId.length > 0) {
+			hoverTargetTableId = hoverTargetTableId[0];
+		} else {
+			hoverTargetTableId = false;
+		}
 	}
 	/**
 	 * check if we are hovering a sub-action tr
 	 */
-	var isHoveringOverSubActionTd = /_subs:/.test(row.id);
+	var isHoveringOverSubActionTd = /_subs:/.test(hoverTargetRow.id);
 	/**
 	 * check if we are hovering over sub-action table
 	 */
 	var isHoveringOverSubActionTable = false;
-	if (!row.className || !row.id) {
-		isHoveringOverSubActionTable = /(list:[0-9]+_subs)/.test(container.className);
+	/**
+	 * if hovering tr with no CLASSNAME nor ID, then it is a THEAD TR, then reference the hoverTargetTable
+	 */
+	if (!hoverTargetRow.className || !hoverTargetRow.id) {
+		isHoveringOverSubActionTable = /(list:[0-9]+_subs)/.test(hoverTargetTable.className);
 	} else if (evt.target.nodeName === "TABLE") {
 		isHoveringOverSubActionTable = /(list:[0-9]+_subs)/.test(evt.target.className);
 	}
-	var isHoveringOverSubActionParent = false;
+
 	if (!currentlyDraggedItem || !currentlyDraggedItem.id) {
 		currentlyDraggedItem = document.getElementById(
 			evt.dataTransfer.getData(isIE11 ? "Text" : "text/plain")
 		);
 	}
 
-	subActionTableElement = container;
+	subActionTableElement = hoverTargetTable;
 
-	if (subActionTableElement && /_subs/.test(subActionTableElement.className)) {
-		if (
-			(evt.target.nodeName === "TD" &&
-				currentlyDraggedItem.id.split("_")[0] ===
-				evt.target.parentNode.id.split("_")[0]) ||
-			(evt.target.nodeName === "#text" &&
-				currentlyDraggedItem.id.split("_")[0] ===
-				evt.target.parentNode.parentNode.id.split("_")[0])
-		) {
+	if (subActionTableElement && /_subs/.test(subActionTableElement.className) || isDraggingSubAction) {
+		if ((
+			evt.target.nodeName === "TD" &&
+			getParentActionId(currentlyDraggedItem.id) === getParentActionId(evt.target.parentNode.id)
+		) || (
+			includes(["#text", "IMG"], evt.target.nodeName) && evt.target.parentNode.nodeName === "TD" &&
+			getParentActionId(currentlyDraggedItem.id) === getParentActionId(evt.target.parentNode.parentNode.id)
+		) || (
+			evt.target.nodeName === "TH" && hoverTargetTableId &&
+			getParentActionId(currentlyDraggedItem.id) === getParentActionId(hoverTargetTableId)
+		) || (
+			includes(["#text", "IMG"], evt.target.nodeName) && evt.target.parentNode.nodeName === "TH" &&
+			getParentActionId(currentlyDraggedItem.id) === getParentActionId(hoverTargetTableId)
+		)) {
 			isHoveringOverSubActionParent = true;
 		}
 	}
@@ -266,7 +230,7 @@ function checkIsHoveringSubActionsTable(evt) {
 		}
 	}
 
-	if (subActionTableElement) {
+	if (subActionTableElement && !isHoveringOverSubActionParent) {
 		isDropAreaEnabled =
 			subActionTableElement &&
 			boolify(subActionTableElement.getAttribute("data-drop-target"));
@@ -278,7 +242,7 @@ function checkIsHoveringSubActionsTable(evt) {
 		isHoveringTable: isHoveringOverSubActionTable,
 		isHoveringTableChild: isHoveringOverSubActionTd,
 		tableElement: subActionTableElement,
-		isDropAreaEnabled: (isDropAreaEnabled && !isHoveringOverSubActionParent) || isHoveringCurrentSubTableDropArea,
+		isDropAreaEnabled: isDraggingSubAction && isHoveringCurrentSubTableDropArea || isDropAreaEnabled
 	};
 }
 
@@ -433,6 +397,103 @@ function isHoveringOverEnabledDropArea(e) {
 	return isDropAllowed;
 }
 
+function submitFunction(childId, parentId) {
+	if (!childId) {
+		return false;
+	}
+	cursor_wait();
+	var params = [
+		["childId", childId]
+	];
+	if (parentId) {
+		params.push(["parentId", parentId]);
+	}
+	oamSubmitForm("mainForm", "drag", null, params);
+	return false;
+}
+
+function resetTargets() {
+
+	var hoverTargets = document.querySelectorAll('.drag-enter');
+	for (var i = 0; i < hoverTargets.length; i++) {
+		removeClass(hoverTargets[i], 'drag-enter');
+	}
+
+	currentlyDraggedItem = false;
+	currentHoverTargetRow = false;
+	previousHoverTargetRow = false;
+	hoverTargetChanged = false;
+	isDraggingSubAction = false;
+}
+
+/**
+ * Handle the dragstart event of a draggable element
+ * @param {DragEvent} e
+ */
+function handleDragStart(e) {
+	var breakEarly = false;
+	/**
+	 * check for browser type for better compatibility
+	 * in FF and IE11 the row cannot be dragged via input with type="image"
+	 * and we check if the target is actually draggable="true"
+	 * if not, just break early
+	 */
+	var rowElement = false;
+	var handleElement = false;
+	if (e.target.nodeName === "TR") {
+		rowElement = e.target;
+	} else if (includes(["TD", "TH"], e.target.nodeName) && e.target.parentNode.nodeName === "TR") {
+		rowElement = e.target.parentNode;
+	} else if (e.target.nodeName === "IMG" && e.target.parentNode.parentNode.nodeName === "TR") {
+		rowElement = e.target.parentNode.parentNode;
+	} else {
+		breakEarly = true;
+	}
+	if (!rowElement || !boolify(rowElement.getAttribute("draggable"))) {
+		breakEarly = true;
+	}
+	/**
+	 * our regular DOM layout for this functionality is img(the handle)->td(the table cell)->tr(the draggable row)
+	 * that's why we check if the row is draggable and we are trying to drag by the actual handle
+	 * and we check if the actual drag handle is inside our current target
+	 * if not, break early
+	 */
+	var isHandleElement = /drag-handle|handle-container/.test(e.target.className);
+	if (isHandleElement) {
+		breakEarly = !boolify(rowElement.getAttribute("draggable"));
+	} else {
+		breakEarly = true;
+	}
+
+	if (breakEarly) {
+		e.stopPropagation();
+		e.preventDefault();
+		return;
+	}
+
+	var dragData = "";
+	if (e.target.nodeName === "#text") {
+		currentlyDraggedItem = e.target.parentNode.parentNode.parentNode;
+	} else if (e.target.nodeName === "IMG") {
+		currentlyDraggedItem = e.target.parentNode.parentNode;
+	} else if (includes(["TD", "TH"], e.target.nodeName)) {
+		currentlyDraggedItem = e.target.parentNode;
+	} else if (e.target.nodeName === "TR") {
+		currentlyDraggedItem = e.target;
+	}
+
+	if (currentlyDraggedItem) {
+		dragData = currentlyDraggedItem.id;
+		isDraggingSubAction = /_subs:/.test(dragData);
+	}
+
+	if (isIE11) {
+		e.dataTransfer.setData("Text", dragData);
+	} else {
+		e.dataTransfer.setData("text/plain", dragData);
+	}
+} //end function
+
 /**
  * Handler for "dragenter" event
  * @param {DragEvent} e
@@ -449,21 +510,6 @@ function handleDragEnter(e) {
 	}
 }
 
-function submitFunction(childId, parentId) {
-	if (!childId) {
-		return false;
-	}
-	cursor_wait();
-	var params = [
-		["childId", childId],
-	];
-	if (parentId) {
-		params.push(["parentId", parentId]);
-	}
-	oamSubmitForm("mainForm", "drag", null, params);
-	return false;
-}
-
 //Function handles dragover event eg.. moving your source div over the target div element.
 //If drop event occurs, the function retrieves the draggable elements id from the DataTransfer object.
 function handleOverDrop(e) {
@@ -473,6 +519,9 @@ function handleOverDrop(e) {
 	if (e.type !== "drop") {
 		return; //Means function will exit if no "drop" event is fired.
 	}
+
+	resetTargets();
+
 	//Stores dragged elements ID in var draggedId
 	var draggedId = "";
 	if (isIE11) {
@@ -538,28 +587,32 @@ function handleOverDrop(e) {
 	// this.className = "";
 } //end Function
 
-function registerDraggableElements() {
+function setElementDraggable(element) {
+	element.setAttribute("draggable", "true");
+	element.addEventListener("dragstart", handleDragStart);
+	var cells = element.querySelectorAll("td");
+	for (var j = 0; j < cells.length; j++) {
+		cells[j].setAttribute("draggable", "true");
+		cells[j].addEventListener("dragstart", handleDragStart);
+	}
+
+	if (isIE11 || isFF) {
+		var dragHandle = element.querySelector("[class*='drag-handle']");
+		if (dragHandle) {
+			dragHandle.setAttribute(
+				"style",
+				"pointer-events: none; cursor: pointer;"
+			);
+		}
+	}
+}
+
+function registerDraggableElements(element) {
 	var draggable = document.querySelectorAll("[class*='_row']");
 	//Register event listeners for the "dragstart" event on the draggable elements:
 	for (var i = 0; i < draggable.length; i++) {
 		if (hasClass(draggable[i], "draggable")) {
-			draggable[i].setAttribute("draggable", true);
-			draggable[i].addEventListener("dragstart", handleDragStart);
-			var cells = draggable[i].querySelectorAll("td");
-			for (var j = 0; j < cells.length; j++) {
-				cells[j].setAttribute("draggable", true);
-				cells[j].addEventListener("dragstart", handleDragStart);
-			}
-
-			if (isIE11 || isFF) {
-				var dragHandle = draggable[i].querySelector("[class*='drag-handle']");
-				if (dragHandle) {
-					dragHandle.setAttribute(
-						"style",
-						"pointer-events: none; cursor: pointer;"
-					);
-				}
-			}
+			setElementDraggable(draggable[i]);
 		} else {
 			draggable[i].addEventListener("dragstart", function (e) {
 				e.preventDefault();
@@ -581,13 +634,16 @@ function registerDropTargets() {
 			evt.stopPropagation();
 		});
 		targets[j].addEventListener("drop", handleOverDrop);
+		if (targets[j].querySelector('.handle-container')) {
+			addClass(targets[j], 'draggable');
+		}
 	}
 }
 
 function initDragAndDrop() {
 	//Retrieve two groups of elements, those that are draggable and those that are drop targets:
-	registerDraggableElements();
 	registerDropTargets();
+	registerDraggableElements();
 }
 
 initDragAndDrop();
