@@ -163,7 +163,7 @@ function checkIsHoveringSubActionsTable(evt) {
 
 	if (hoverTargetRow) {
 		hoverTargetTable = hoverTargetRow.parentNode.parentNode;
-		hoverTargetTableId = hoverTargetTable.className.split(" ").filter(function (className) {
+		hoverTargetTableId = hoverTargetTable.className.split(" ").filter(function(className) {
 			return /(^list:[0-9]+_subs$)/.test(className);
 		});
 		if (hoverTargetTableId.length > 0) {
@@ -426,6 +426,7 @@ function resetTargets() {
 	isDraggingSubAction = false;
 }
 
+
 /**
  * Handle the dragstart event of a draggable element
  * @param {DragEvent} e
@@ -449,7 +450,7 @@ function handleDragStart(e) {
 	} else {
 		breakEarly = true;
 	}
-	if (!rowElement || !boolify(rowElement.getAttribute("draggable"))) {
+	if (!rowElement || !boolify(hasClass(rowElement, "draggable"))) {
 		breakEarly = true;
 	}
 	/**
@@ -460,15 +461,15 @@ function handleDragStart(e) {
 	 */
 	var isHandleElement = /drag-handle|handle-container/.test(e.target.className);
 	if (isHandleElement) {
-		breakEarly = !boolify(rowElement.getAttribute("draggable"));
+		breakEarly = !boolify(hasClass(rowElement, "draggable"));
 	} else {
 		breakEarly = true;
 	}
 
 	if (breakEarly) {
-		e.stopPropagation();
 		e.preventDefault();
-		return;
+		e.stopPropagation();
+		return false;
 	}
 
 	var dragData = "";
@@ -582,20 +583,14 @@ function handleOverDrop(e) {
 	} else {
 		submitFunction(childId, parentId);
 	}
-
-	// this.appendChild(draggedEl); //Note: "this" references to the current target div that is firing the "drop" event.
-	// this.className = "";
 } //end Function
 
 function setElementDraggable(element) {
-	element.setAttribute("draggable", "true");
-	element.addEventListener("dragstart", handleDragStart);
-	var cells = element.querySelectorAll("td");
-	for (var j = 0; j < cells.length; j++) {
-		cells[j].setAttribute("draggable", "true");
-		cells[j].addEventListener("dragstart", handleDragStart);
+	var handleContainer = element.querySelector(".handle-container");
+	if (handleContainer) {
+		handleContainer.setAttribute("draggable", 'true');
+		handleContainer.addEventListener("dragstart", handleDragStart);
 	}
-
 	if (isIE11 || isFF) {
 		var dragHandle = element.querySelector("[class*='drag-handle']");
 		if (dragHandle) {
