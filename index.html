@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="main">
+      <h1>Tic Tac Toe</h1>
+      <div class="input">
+        <input type="text" id="p1" name="p1" placeholder="Player1" required />
+
+        <b>VS</b>
+
+        <input type="text" id="p2" name="p2" placeholder="Player2" required />
+      </div>
+      <div id="game-container">
+        <input type="number" id="dm" name="dm" placeholder="Dimension" />
+        <br />
+        <br />
+        <button id="btn" onclick="startGame()"><i>Start Game</i></button>
+      </div>
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>
