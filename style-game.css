@@ -1,0 +1,107 @@
+body {
+  height: 100vh;
+  background-image: url(front.jpg);
+}
+.false {
+  height: 5%;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input-container {
+  height: 40%;
+  width: 30%;
+  margin: auto;
+  background: #0f0c29; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+#game-start {
+  transition: transform 0.3s;
+}
+#game-start:hover {
+  background-color: red;
+  color: white;
+  transform: scale(1.1);
+  cursor: pointer;
+  border-radius: 5px;
+}
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-weight: bold;
+  height: 90px;
+  width: 90px;
+  color: maroon;
+  border: 3px solid white;
+  border-radius: 5px;
+  margin: 2px;
+  transition: transform 0.2s;
+  background: #11998e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #38ef7d,
+    #11998e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #38ef7d,
+    #11998e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.hide {
+  display: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+input[type="text"] {
+  width: 160px;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Apple Chancery, cursive;
+}
+span {
+  font-size: 17px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #d9a7c7; /* fallback for old browsers */
+  color: -webkit-linear-gradient(
+    to right,
+    #fffcdc,
+    #d9a7c7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(
+    to right,
+    #fffcdc,
+    #d9a7c7
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+#turn {
+  font-size: 20px;
+  font-family: Apple Chancery, cursive;
+  font-weight: bold;
+  color: darkblue;
+}
+.col:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}

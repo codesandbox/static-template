@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://unpkg.com/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="style-game.css" />
+    <title>Game Page</title>
+  </head>
+  <body>
+    <div class="false"></div>
+    <div class="input-container center">
+      <div class="input1">
+        <span> Player1 : </span>
+        <input type="text" id="p1" name="p1" />
+      </div>
+      <br />
+      <br />
+      <div class="input2">
+        <span> Player2 :</span>
+        <input type="text" id="p2" name="p2" />
+      </div>
+
+      <br />
+      <div>
+        <label for="dimensions"> <span>Choose Dimension : </span></label>
+        <select name="dimensions" id="dimensions">
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+      <br />
+      <button id="game-start" onclick="startGame()">Start Game</button>
+    </div>
+    <br />
+    <div id="game-container" class="center hide">
+      <div id="turn"></div>
+      <br />
+    </div>
+
+    <script src="index.js"></script>
+    <script src="https://unpkg.com/sweetalert.min.js"></script>
+  </body>
+</html>
