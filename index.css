@@ -1,0 +1,124 @@
+body {
+  background-image: linear-gradient(
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  ); /* Standard syntax (must be last) */
+}
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+  width: 70wh;
+}
+#game-container {
+  margin: 10px 10px;
+}
+.input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+
+  animation-name: example;
+  animation-duration: 4s;
+}
+.row {
+  display: flex;
+}
+h1 {
+  animation: rainbow 2.5s linear;
+  animation-iteration-count: infinite;
+}
+i {
+  animation: rainbow 2.5s linear;
+  animation-iteration-count: infinite;
+}
+b {
+  animation: rainbow 2.5s linear;
+  animation-iteration-count: infinite;
+}
+#p1,
+#p2 {
+  animation: rainbow 2.5s linear;
+  animation-iteration-count: infinite;
+  margin-bottom: 10px;
+}
+#dm {
+  animation: rainbow 2.5s linear;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+  0% {
+    background-color: red;
+  }
+  25% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: blue;
+  }
+  100% {
+    background-color: green;
+  }
+}
+#btn {
+  height: 60px;
+  width: 90px;
+
+  background-color: rgb(151, 81, 81);
+}
+@keyframes rainbow {
+  100%,
+  0% {
+    color: rgb(255, 0, 0);
+  }
+  8% {
+    color: rgb(255, 127, 0);
+  }
+  16% {
+    color: rgb(255, 255, 0);
+  }
+  25% {
+    color: rgb(127, 255, 0);
+  }
+  33% {
+    color: rgb(0, 255, 0);
+  }
+  41% {
+    color: rgb(0, 255, 127);
+  }
+  50% {
+    color: rgb(0, 255, 255);
+  }
+  58% {
+    color: rgb(0, 127, 255);
+  }
+  66% {
+    color: rgb(0, 0, 255);
+  }
+  75% {
+    color: rgb(127, 0, 255);
+  }
+  83% {
+    color: rgb(255, 0, 255);
+  }
+  91% {
+    color: rgb(255, 0, 127);
+  }
+}
