@@ -2,7 +2,7 @@
  * Title: DragAndDrop
  * Description: Native HTML5 "DragAndDrop" support for STAR web. Specifically for the table "Toimingud"
  * Author: Iglu OÜ (Tõnis Terasmaa)
- * Version: 0.13
+ * Version: 0.14
  */
 var dropEventListeners = [],
 	currentlyDraggedItem = false,
@@ -163,7 +163,7 @@ function checkIsHoveringSubActionsTable(evt) {
 
 	if (hoverTargetRow) {
 		hoverTargetTable = hoverTargetRow.parentNode.parentNode;
-		hoverTargetTableId = hoverTargetTable.className.split(" ").filter(function(className) {
+		hoverTargetTableId = hoverTargetTable.className.split(" ").filter(function (className) {
 			return /(^list:[0-9]+_subs$)/.test(className);
 		});
 		if (hoverTargetTableId.length > 0) {
@@ -423,7 +423,6 @@ function resetTargets() {
 	currentHoverTargetRow = false;
 	previousHoverTargetRow = false;
 	hoverTargetChanged = false;
-	isDraggingSubAction = false;
 }
 
 
@@ -522,7 +521,6 @@ function handleOverDrop(e) {
 	}
 
 	resetTargets();
-
 	//Stores dragged elements ID in var draggedId
 	var draggedId = "";
 	if (isIE11) {
@@ -583,6 +581,7 @@ function handleOverDrop(e) {
 	} else {
 		submitFunction(childId, parentId);
 	}
+	isDraggingSubAction = false;
 } //end Function
 
 function setElementDraggable(element) {
@@ -622,13 +621,19 @@ function registerDropTargets() {
 
 	//Register event listeners for "dragover", "drop", "dragenter" & "dragleave" events on the drop target elements.
 	for (var j = 0; j < targets.length; j++) {
-		targets[j].setAttribute("data-drop-target", true);
+		targets[j].setAttribute("data-drop-target", "true");
 		targets[j].addEventListener("dragenter", handleDragEnter);
 		targets[j].addEventListener("dragover", function (evt) {
 			evt.preventDefault();
 			evt.stopPropagation();
 		});
-		targets[j].addEventListener("drop", handleOverDrop);
+		if (isIE11) {
+			// targets[j].setAttribute("ondragdrop", "console.log(event); handleOverDrop(event)");
+			targets[j].addEventListener("dragdrop", handleOverDrop);
+		} else {
+			// targets[j].setAttribute("ondrop", "console.log(event); handleOverDrop(event)");
+			targets[j].addEventListener("drop", handleOverDrop);
+		}
 		if (targets[j].querySelector('.handle-container')) {
 			addClass(targets[j], 'draggable');
 		}
@@ -639,6 +644,13 @@ function initDragAndDrop() {
 	//Retrieve two groups of elements, those that are draggable and those that are drop targets:
 	registerDropTargets();
 	registerDraggableElements();
+	var dataTable = document.getElementById("list:tbody_element");
+	for (var i = 0; i < dataTable.childNodes.length; i++) {
+		var node = dataTable.childNodes[i];
+		if (node.nodeName === "TR" && !node.className && node.childNodes[0].childNodes.length === 0) {
+			dataTable.removeChild(node);
+		}
+	}
 }
 
 initDragAndDrop();
