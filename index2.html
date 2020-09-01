@@ -1,0 +1,107 @@
+<html lang="en">
+  <script type="text/javascript">
+    function showElement() {
+      element = document.getElementById("mydiv");
+      element.setAttribute("style", "visibility:visible");
+    }
+  </script>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+
+  <body style="background-color: rgb(143, 118, 64);">
+    <div
+      name="header"
+      id="header"
+      style="text-align: center; background-color: rgb(96, 201, 152);"
+    >
+      <h1 style="font-family: 'Lucida Console';">
+        Lets Have Fun with knowledge
+      </h1>
+      <h2>Quiz</h2>
+    </div>
+    <div style="text-align: center;">
+      <button
+        type="button"
+        class="btn btn-primary"
+        onclick="location.href = 'index.html';"
+        style="height: 50px; width: 200px;"
+      >
+        Home
+      </button>
+
+      <br />
+    </div>
+
+    <div>
+      <form>
+        <b>Q1.What is the value of 2+2 ?</b>
+        <br />
+        A)<input type="radio" value="4" name="Ans1" />4
+        <br />
+        B)<input name="Ans1" type="radio" value="3" />3 <br />
+        C)<input type="radio" value="2" name="Ans1" />2
+        <br />
+        D)<input name="Ans1" type="radio" value="1" />1
+        <br />
+        <b>Q2.What is the value of 2*2 ?</b>
+        <br />
+        A)<input type="radio" value="4" name="Ans2" />4
+        <br />
+        B)<input name="Ans2" type="radio" value="3" />3 <br />
+        C)<input type="radio" value="2" name="Ans2" />2
+        <br />
+        D)<input name="Ans2" type="radio" value="1" />1
+        <br />
+        <b>Q3.What is the value of 3-2 ?</b>
+        <br />
+        A)<input type="radio" value="4" name="Ans3" />4
+        <br />
+        B)<input name="Ans3" type="radio" value="3" />3 <br />
+        C)<input type="radio" value="2" name="Ans3" />2
+        <br />
+        D)<input name="Ans3" type="radio" value="1" />1
+        <br />
+
+        <button type="button" onclick="showElement()">
+          Show Answers
+        </button>
+        <br />
+        <div id="mydiv" style="visibility: hidden;">
+          <b>Q1)A Q2)A Q3)D</b>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <div style="width: 50%; text-align: left; float: left;">
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="location.href = 'index3.html';"
+          style="height: 50px; width: 200px;"
+        >
+          Physics Quiz
+        </button>
+      </div>
+      <div style="text-align: right; width: 50%; float: right;">
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="location.href = 'index4.html';"
+          style="height: 50px; width: 200px;"
+        >
+          Chemistry Quiz
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

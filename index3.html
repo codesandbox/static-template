@@ -1,0 +1,107 @@
+<html lang="en">
+  <script type="text/javascript">
+    function showElement() {
+      element = document.getElementById("mydiv");
+      element.setAttribute("style", "visibility:visible");
+    }
+  </script>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+  <body style="background-color: rgb(143, 118, 64);">
+    <div
+      name="header"
+      id="header"
+      style="text-align: center; background-color: rgb(96, 201, 152);"
+    >
+      <h1 style="font-family: 'Lucida Console';">
+        Lets Have Fun with knowledge
+      </h1>
+      <h2>Quiz</h2>
+    </div>
+    <div style="text-align: center;">
+      <button
+        type="button"
+        class="btn btn-primary"
+        onclick="location.href = 'index.html';"
+        style="height: 50px; width: 200px;"
+      >
+        Home
+      </button>
+
+      <br />
+    </div>
+    <div>
+      <form>
+        <b>Q1.what is newton 3rd law?</b>
+        <br />
+        A)<input type="radio" value="4" name="Ans1" />every action has an equal
+        and opposite reaction
+        <br />
+        B)<input name="Ans1" type="radio" value="3" />lights camera action
+        <br />
+        C)<input type="radio" value="2" name="Ans1" />Eat well become fatty
+        <br />
+        D)<input name="Ans1" type="radio" value="1" />if you Buy a bike give it
+        to gokul
+        <br />
+        <b>Q2.E=?</b>
+        <br />
+        A)<input type="radio" value="4" name="Ans2" />mc^2
+        <br />
+        B)<input name="Ans2" type="radio" value="3" />pubg <br />
+        C)<input type="radio" value="2" name="Ans2" />clash of clans
+        <br />
+        D)<input name="Ans2" type="radio" value="1" />Gta v
+        <br />
+        <b>Q3.Where can we get Iron man suite?</b>
+        <br />
+        A)<input type="radio" value="4" name="Ans3" />Big bazar
+        <br />
+        B)<input name="Ans3" type="radio" value="3" />Reliance mart <br />
+        C)<input type="radio" value="2" name="Ans3" />Amazon
+        <br />
+        D)<input name="Ans3" type="radio" value="1" />Consult Tony Stark
+        <br />
+
+        <button type="button" onclick="showElement()">
+          Show Answers
+        </button>
+        <br />
+        <div id="mydiv" style="visibility: hidden;">
+          <b>Q1)A Q2)A Q3)D</b>
+        </div>
+      </form>
+    </div>
+    <div>
+      <div style="width: 50%; text-align: left; float: left;">
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="location.href = 'index2.html';"
+          style="height: 50px; width: 200px;"
+        >
+          Maths Quiz
+        </button>
+      </div>
+      <div style="text-align: right; width: 50%; float: right;">
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="location.href = 'index4.html';"
+          style="height: 50px; width: 200px;"
+        >
+          Chemistry Quiz
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
