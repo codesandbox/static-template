@@ -2,14 +2,16 @@
   "name": "static",
   "version": "1.0.0",
   "description": "This is a static template with no bundling",
-  "main": "index.html",
+  "private": true,
   "scripts": {
-    "start": "serve",
-    "build": "echo This is a static template, there is no bundler or bundling involved!"
+    "start": "npm run watch",
+    "serve": "hs",
+    "watch": "webpack --watch",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codesandbox-app/static-template.git"
+    "url": "git+https://github.com/tonister/static-template.git"
   },
   "keywords": [
     "static",
@@ -18,11 +20,20 @@
   ],
   "author": "Ives van Hoorne",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/codesandbox-app/static-template/issues"
-  },
-  "homepage": "https://github.com/codesandbox-app/static-template#readme",
   "devDependencies": {
-    "serve": "^11.2.0"
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.2.1",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.2.1",
+    "html-webpack-plugin": "^4.3.0",
+    "lodash-es": "^4.17.15",
+    "prettier": "^2.0.5",
+    "serve": "^11.2.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }

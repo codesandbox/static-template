@@ -1,0 +1,196 @@
+/*
+ * General style definitions
+ */
+html,body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #c9c1c2;
+	text-align: center;
+	color: #01433c;
+	font: 13px/ 16px Verdana, Verdana, sans-serif;
+}
+
+.separator {
+	font-size: 1px;
+	height: 1px;
+	line-height: 1px;
+	width: 100%;
+	clear: both;
+	margin-right: -3px;
+}
+
+a {
+	color: #01433c;
+}
+
+a img {
+	border: none;
+}
+
+form,table {
+	padding: 0px;
+	margin: 0px;
+}
+
+/* box used in list and detail pages */
+.marginbox {
+	margin: 8px 15px 5px 15px;
+}
+
+/* Main page layout components */
+#wrap {
+	width: 974px;
+	margin: 0px auto;
+	padding: 10px 0;
+	text-align: center;
+}
+
+#container {
+	float: left;
+	border: 1px solid #8a6a6b;
+	width: 972px;
+	background: #ffffff;
+	text-align: left;
+	padding: 0px;
+	margin: 0px;
+}
+
+.container_inner {
+	width: 100%;
+	float: left;
+	clear: both;
+	margin-right: -3px;
+}
+
+.content {
+	border-left: 1px solid #8A6A6B;
+	min-height: 400px;
+	float: left;
+	width: 790px;
+	margin: 0 -3px 0 0px;
+	padding: 4px 4px 4px 4px;
+}
+
+/* header */
+#header {
+	height: 117px;
+	clear: both;
+	background: url('../img/bg_header.gif') no-repeat top left;
+	border-bottom: 1px solid #8a6a6b;
+	position: relative;
+}
+
+#header .inputButton {
+	float: right;
+	margin: 8px 8px 0 0;
+}
+
+/* list for displaying error messages in header area */
+.header_message {
+	position: absolute;
+	bottom: 0px;
+	left: 250px;
+	width:500px; /** Max width, before overlaps logout button */
+}
+
+/* right-aligned data header shown above tabs */
+.identdata {
+	float: right;
+	font-size: 14px;
+	padding: 0;
+	margin: 0;
+}
+
+/* paginator style */
+.paginator a {
+	text-decoration: none;
+}
+
+.layout_table {
+	width: 100%;
+}
+
+/* table for displaying many datatables in one row */
+.layout_table td {
+	vertical-align: top;
+	padding-right: 10px;
+}
+
+/* preview body */
+#preview {
+	text-align: left;
+	background: white;
+}
+
+.boldText {
+	font-weight: bold;
+}
+
+.normalText {
+	font-weight: normal;
+}
+
+.simpleList {
+	padding: 0 0 0 10px;
+	margin: 0;
+}
+
+.noBulletsList {
+	padding: 0px;
+	margin: 0;
+	list-style-type: none;
+}
+
+.oneItemList {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.green_background {
+	background: #ddffdd;
+}
+
+.red_background {
+	background: #ffdddd;
+}
+
+.gray_background {
+	background: #f7f7f0;
+}
+
+.disabledTab {
+	color: #AAAAAA;
+}
+.disabled {
+	background: transparent url('../img/btn_left.png') no-repeat scroll top
+	right;
+	/*	display: block;*/
+	float: left; /* required to specify one or another to wrap nicely */
+	/*	position: relative;*/
+	font-size: 12px;
+	text-decoration: none;
+	height: 25px;
+	padding-right: 15px; /* sliding doors padding */
+	margin: 0px 5px 5px 0px;
+	vertical-align: bottom;
+	white-space: nowrap;
+	opacity: 0.65;
+}
+.disabled span {
+	background: transparent url('../img/btn_right.png') no-repeat;
+	display: block;
+	line-height: 15px;
+	padding: 5px 0 5px 15px;
+}
+.startDateMessage{
+	color: red;
+}
+
+select:disabled {
+	background: #cccccc;
+}
