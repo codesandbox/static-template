@@ -39,14 +39,12 @@ for (let i = 11; i < 37; i++) {
 // mataching the pressed key with letter in given word
 //if present it will show on screen
 let letters = document.getElementsByClassName("letter");
-//let zindagi = document.getElementsByClassName("life");
 let k = 100;
 let result = document.getElementById('congo');
 let st ='';
 const handleclick = (key, i) => {
  let flag = false;
   if (gameover === false) {
-//    console.log("clicked");
 let bypass = false;
 let alredy = key.innerHTML;
       if(!absent(alredy)){
@@ -55,11 +53,9 @@ let alredy = key.innerHTML;
         
     for (let j = 0; j < word.length; j++) {
       
-     // break;
 
       if (key.innerHTML === word[j]){
        letters[j].innerHTML = word[j];
-      // console.log(catch);
        flag = true;
        if(!bypass){
        count++;
@@ -72,8 +68,6 @@ let alredy = key.innerHTML;
     if(flag === true){
       let hide = document.getElementById(`${i}`);
       hide.style.opacity = '0.5';
-  //  hide.removeEventListener('click',(event) => handleclick(key, i), {once: true});
-   //   key.removeEventListener('click',(event) => handleclick(key, i));
     }
     if(flag === false){
       lives--;
@@ -83,16 +77,16 @@ let alredy = key.innerHTML;
       score.innerHTML = lives;
     }
     if (count === word.length ) {
-   //  alert("You win");
       congo.innerHTML = 'CONGRATS, YOU SAVED '+lives+' PUPPIES';
-      modal.style.display = "block";
+     setTimeout(function(){
+      modal.style.display = "block"
+     }, 500);
       confetti.start();
       gameover = true;
     }
     if (lives === 0) {
     congo.innerHTML = 'YOU FAILED TO SAVE PUPPIES';
     modal.style.display = "block";
-      //  alert("You lost");
       gameover = true;
     }
   }
