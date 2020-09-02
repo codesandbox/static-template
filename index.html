@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="index.css" />
+    <title>A SIMPLE WEATHER APP</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="appwrap">
+      <header>
+        <input
+          type="text"
+          autocomplete="off"
+          placeholder="search for a city..."
+          id="search"
+        />
+      </header>
+      <main>
+        <section class="location">
+          <div class="city">HIMACHAL PRADESH</div>
+          <div class="date">September 2 Wednesday 2020</div>
+        </section>
+        <div class="current">
+          <div class="temperature">8*<span>C</span></div>
+          <div class="weather">sunny</div>
+          <div class="high-low">6*C/15*c</div>
+        </div>
+      </main>
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>
