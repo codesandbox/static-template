@@ -1,12 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- minify -->
+    <link
+      href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css"
+      rel="stylesheet"
+    />
+    <!-- latest -->
+    <link
+      href="https://unpkg.com/nes.css@latest/css/nes.min.css"
+      rel="stylesheet"
+    />
+    <!-- core style only -->
+    <link
+      href="https://unpkg.com/nes.css/css/nes-core.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="index.css" />
+    <title>hangman</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="nes-container is-rounded is-dark">
+      <header class="nes-text is-success">
+        Hang <span class="nes-text is-error">man</span>
+      </header>
+      <p>Guess the word</p>
+      <br />
+      <div class="crackers hide" id="crackers">
+        <canvas id="canvas"></canvas>
+      </div>
+      <!-- box start -->
+      <div class="box center">
+        <div class="guesstext" id="gtext"></div>
+        <!-- <p id="warning" class="hide">
+          wrong Answer <span id="01"></span><span id="02"></span
+          ><span id="03"></span>
+        </p> -->
+        <i class="nes-icon is-medium heart" id="ic1"></i>
+        <i class="nes-icon is-medium heart" id="ic2"></i>
+        <i class="nes-icon is-medium heart" id="ic3"></i>
+        <i class="nes-icon is-medium heart" id="ic4"></i>
+        <br />
+        <br />
+        <!-- display -->
+        <!-- <div class="display">
+          <p id="display"></p>
+        </div> -->
+        <!-- end display -->
+        <!--  -->
+
+        <div class="letter-bank buttons" id="buttons">
+          <button class="btn nes-btn is-primary" id="A" onclick="get(event)">
+            A
+          </button>
+          <button class="btn nes-btn is-primary" id="B" onclick="get(event)">
+            B
+          </button>
+          <button class="btn nes-btn is-primary" id="C" onclick="get(event)">
+            C
+          </button>
+          <button class="btn nes-btn is-primary" id="D" onclick="get(event)">
+            D
+          </button>
+          <button class="btn nes-btn is-primary" id="E" onclick="get(event)">
+            E
+          </button>
+          <button class="btn nes-btn is-primary" id="F" onclick="get(event)">
+            F
+          </button>
+          <button class="btn nes-btn is-primary" id="G" onclick="get(event)">
+            G
+          </button>
+          <button class="btn nes-btn is-primary" id="H" onclick="get(event)">
+            H
+          </button>
+          <button class="btn nes-btn is-primary" id="I" onclick="get(event)">
+            I
+          </button>
+          <button class="btn nes-btn is-primary" id="J" onclick="get(event)">
+            J
+          </button>
+          <button class="btn nes-btn is-primary" id="K" onclick="get(event)">
+            K
+          </button>
+          <button class="btn nes-btn is-primary" id="L" onclick="get(event)">
+            L
+          </button>
+          <button class="btn nes-btn is-primary" id="M" onclick="get(event)">
+            M
+          </button>
+          <button class="btn nes-btn is-primary" id="N" onclick="get(event)">
+            N
+          </button>
+          <button class="btn nes-btn is-primary" id="O" onclick="get(event)">
+            O
+          </button>
+          <button class="btn nes-btn is-primary" id="P" onclick="get(event)">
+            P
+          </button>
+          <button class="btn nes-btn is-success" id="Q" onclick="get(event)">
+            Q
+          </button>
+          <button class="btn nes-btn is-success" id="R" onclick="get(event)">
+            R
+          </button>
+          <button class="btn nes-btn is-success" id="S" onclick="get(event)">
+            S
+          </button>
+          <button class="btn nes-btn is-success" id="T" onclick="get(event)">
+            T
+          </button>
+          <button class="btn nes-btn is-success" id="U" onclick="get(event)">
+            U
+          </button>
+          <button class="btn nes-btn is-success" id="V" onclick="get(event)">
+            V
+          </button>
+          <button class="btn nes-btn is-success" id="W" onclick="get(event)">
+            W
+          </button>
+          <button class="btn nes-btn is-success" id="X" onclick="get(event)">
+            X
+          </button>
+          <button class="btn nes-btn is-success" id="Y" onclick="get(event)">
+            Y
+          </button>
+          <button class="btn nes-btn is-success" id="Z" onclick="get(event)">
+            Z
+          </button>
+        </div>
+
+        <!--  -->
+        <div class="buttion">
+          <!-- <button class="nes-btn is-success" onclick="guess()" id="btn">
+            Guess
+          </button> -->
+          <button
+            class="nes-btn is-primary hide"
+            id="btn1"
+            onclick="window.location.reload(true)"
+          >
+            play again
+          </button>
+        </div>
+        <br />
+        <h3 id="wintext" class="hide">You Won</h3>
+      </div>
+      <!-- box end -->
+    </div>
+    <script src="index.js"></script>
+    <script src="crackers.js"></script>
   </body>
 </html>
