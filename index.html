@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>THE HANGMAN</title>
   </head>
+  <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="modal.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="head"> THE HANGMAN</div>
+<div class="main-container">
+<div class="content-seperator">
+  <div id="box">
+    <div id="text">Guess the word</div>
+<div class="word" id="word"></div>
+  </div>
+<div class="keyboard" id="keyboard">
+</div>
+</div>
+ <!-- content-seperator ends -->
+ <div class="livescounter" id="livescounter">
+   <div id="lifecard">
+     <div id="get">
+      <div id="lifespan">Lives left: </div>
+  <div id="score"></div>
+     </div>
+   </div>
+  <div class="threat" id="threat">
+  </div>
+ </div>
+
+</div>
+<!-- Main container end -->
+
+
+<!-- MOdal Starts for result -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+     <div id="congo" class="congo">Hey there</div>
+      <!-- <img src="win.svg" height="80%" width="100%"/> -->
+    </div>
+  </div>
+  <!-- MOdal Ends for result-->
+  
+<script src="index.js"></script>
+<script src="modal.js"></script>
+<script src="confetti.js"></script>
+<script src="confetti.min.js"></script>
   </body>
 </html>
