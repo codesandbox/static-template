@@ -1,12 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <script>
+      customElements.define(
+        "dk-number",
+        class extends HTMLElement {
+          constructor(...args) {
+            super(...args);
+          }
+          /*
+            users input field will be hidden and contain the actual value
+            the localeInput field is the shadowDom field, where he can enter numbers that will appear
+            formatted.
+          */
+          connectedCallback() {
+            this.attachShadow({ mode: "open" });
+            this.userInput = this.firstElementChild;
+            this.localeInput = this.userInput.cloneNode(true);
+            this.localeInput.removeAttribute("name");
+            this.shadowRoot.appendChild(this.localeInput);
+            this.localeInput.addEventListener("change", (e) =>
+              this.changeLocaleInput(e, this)
+            );
+            this.localeInput.dispatchEvent(new Event("change"));
+          }
+
+          changeLocaleInput(elem, o) {
+            let rawFloat = this.convertNumber(elem.target.value);
+            let valid = "";
+            if (rawFloat !== null) {
+              o.userInput.setAttribute("value", rawFloat);
+              elem.target.value = new Intl.NumberFormat("da-DK", {
+                minimumFractionDigits: this.attributes.decimals.value || 2
+              }).format(rawFloat);
+              valid = "";
+            } else {
+              //console.log("errorCallback", this.attributes.errorCallback.value);
+              if (typeof this.attributes.errorCallback !== "undefined")
+                valid = window[this.attributes.errorCallback.value](elem, o);
+              else valid = "Not a valid number!";
+            }
+            elem.target.setCustomValidity(valid);
+            elem.target.reportValidity();
+          }
+
+          removeAllButLast(string, token) {
+            var parts = string.split(token);
+            if (parts[1] === undefined) return string;
+            else return parts.slice(0, -1).join("") + token + parts.slice(-1);
+          }
+
+          convertNumber = function (v) {
+            v = String(v).replaceAll(".", "");
+            v = this.removeAllButLast(v, ",");
+            let pow = Math.pow(10, this.attributes.decimals.value || 2);
+            if (v.indexOf(",") > 0) {
+              v = v.replace(",", ".");
+              v = this.removeAllButLast(v, ".");
+              if (!isNaN(v)) return Math.round(v * pow) / pow;
+            } else {
+              if (!isNaN(v)) return Math.round(v * pow) / pow;
+            }
+            return null;
+          };
+        }
+      );
+
+      function myErrorHandler(elem, obj) {
+        console.log("we are inside the myErrorHandler");
+        obj.userInput.value = "result of function";
+        //obj.shadowRoot.appendChild(obj.userInput);
+        return ""; // customValidityMessage
+      }
+    </script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>DK-number</h1>
+    <dk-number decimals="2" errorCallback="myErrorHandler"
+      ><input
+        name="user_number"
+        id="dk_number_input"
+        value="1234"
+        style="text-align: right;"
+    /></dk-number>
   </body>
 </html>
