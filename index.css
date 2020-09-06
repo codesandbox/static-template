@@ -1,0 +1,109 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(230, 13, 211);
+}
+
+.game {
+  height: 90%;
+  width: 30%;
+  background: #8e2de2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px gray;
+}
+
+.target-row {
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+#board {
+  flex-wrap: wrap;
+  background-color: black;
+  height: 60%;
+  border-radius: 10px;
+  margin-bottom: 10%;
+}
+
+#target {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: yellow;
+  margin: 20px;
+  font-size: 40px;
+}
+
+#currentSum {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #303030;
+  margin: 20px;
+  color: white;
+  font-size: 25px;
+}
+
+#score {
+  height: 5%;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+#timer {
+  height: 10%;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  margin: 2px;
+  border-radius: 5px;
+  background-color: #303030;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.selected {
+  background-color: blue;
+}
