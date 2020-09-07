@@ -1,0 +1,186 @@
+*{
+  font-family: 'Roboto Mono', monospace;
+}
+footer{
+  font-size: 15px !important;
+}
+a [href]{
+  color: rgb(61, 43, 226);
+  font-size: 200px;
+}
+.custom-icon{
+color: aqua;
+}
+p{
+  color: rgb(252, 250, 247);
+}
+footer{
+  color: white;
+}
+
+body{
+background: url(backg1.jpg);
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+ol[type] > li{
+padding: 5px;
+}
+.container {
+  top: 50%;
+  left: 50%;
+}
+
+.glitch {
+  color: rgb(8, 232, 248);
+  position: relative;
+  font-size: 9vw;
+  animation: glitch 2s 2s infinite;
+}
+
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: 5px 0 magenta;
+  overflow: hidden;
+  top: 0;
+  animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
+}
+
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -5px 0 lightgreen;
+  overflow: hidden;
+  top: 0;
+  animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
+}
+
+@keyframes glitch {
+  1%{
+    transform: rotateX(10deg) skewX(90deg);
+  }
+  2%{
+    transform: rotateX(0deg) skewX(0deg);
+  }
+}
+
+@keyframes noise-1 {
+  $steps: 30;
+  @for $i from 1 through $steps {
+    #{percentage($i*(1/$steps))} {
+      $top: random(100);
+      $bottom: random(101 - $top);
+      clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+    }
+  }
+}
+
+
+@keyframes noise-2 {
+  $steps: 30;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      $top: random(100);
+      $bottom: random(101 - $top);
+      clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+    }
+  }
+}
+
+.scanlines {
+  overflow: hidden;
+  mix-blend-mode: difference;
+}
+
+.scanlines::before {
+  content: "";
+  
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  );
+
+  animation: fudge 7s ease-in-out alternate infinite;
+}
+
+
+@keyframes fudge {
+  from {
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(0px, 2%);
+  }
+}
+
+.glow {
+  @extend .glitch;
+  text-shadow: 0 0 1000px rgb(0, 103, 110);
+  color: transparent;
+  
+  top: 0;
+}
+
+.subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: .8vw;
+  color: rgba(165, 141, 141, .4);
+  text-transform: uppercase;
+  letter-spacing: 1em;
+  text-align: center;
+  
+  left: 17%;
+  animation: glitch-2 5s 5.02s infinite;
+}
+
+@keyframes glitch-2 {
+  1%{
+    transform: rotateX(10deg) skewX(70deg);
+  }
+  2%{
+    transform: rotateX(0deg) skewX(0deg);
+  }
+}
+ol[type] > li{
+  margin: 3%;
+  width: 30%;
+  background-color: rgb(222, 245, 243);
+  border-radius: 10px;
+  padding: 10px;
+  list-style-type: none;
+}
+
+ol[type]{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+width: 100%;
+}
+ol[type] > li.Correct:hover {
+  background-color: green;
+}
+ol[type] > li:hover {
+  background-color: red;
+}
+
+.Option{
+  padding: 5px;
+  border: 1px solid black;
+  background-color: rgb(30, 255, 0);
+  border-radius: 5px;
+  margin-right: 10px;
+}
+/* <span class="Option">A</span> */
+
+
+
