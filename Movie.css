@@ -1,0 +1,63 @@
+body{
+ background: url(back.jpg);
+  font-family: Sans-Serif;
+}
+.center{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+div > ol > li{
+  margin: 2%;
+  padding: 1%;
+}
+.neons {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.neons h1 {
+ font-size: 5rem;
+ text-align: center;
+  font-weight: bold;
+ -webkit-animation: glow 2s ease-in-out infinite alternate;
+ -moz-animation: glow 2s ease-in-out infinite alternate;
+ animation: glow 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    from {
+     color: #fff;
+   text-shadow: 0 0 10px #e704fc, 0 0 20px #fc04fc, 0 0 30px #ff04ff, 0 0 40px #f801e4, 0 0 50px #fa00fa, 0 0 60px #ff00ff, 0 0 70px #e101ff, 0 0 90px #ff05ea;
+ }
+ 
+ to {
+    color: rgb(255, 148, 8);
+   text-shadow: 0 0 20px #fa04e5, 0 0 30px #f503e1, 0 0 40px #fa05fa, 0 0 50px #fd06f1, 0 0 60px #ff01f2, 0 0 70px #f702ff, 0 0 80px #ff02f2, 0 1 90px #fd04f1;
+ }
+}
+p{
+  color: rgb(19, 1, 1);
+}
+ol[type] > li{
+  margin: 3%;
+  width: 30%;
+  background-color: rgb(255, 222, 180);
+  border-radius: 5px;
+  padding: 10px;
+  list-style-type: none;
+}
+ol[type]{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+width: 100%;
+}
+ol[type] > li.Correct:hover {
+  background-color: green;
+}
+ol[type] > li:hover {
+  background-color: red;
+}
