@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
+
+#headings {
+  background-color: black;
+  min-width: 400px;
+  min-height: 400px;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  margin: 3px;
+  border-radius: 4px;
+  border: 1px solid blue;
+  background-color: #4c5b5c;
+}
+
+svg {
+  max-width: 100%;
+}
+
+h1 {
+  font-size: calc(20px + 18vh);
+  line-height: calc(20px + 20vh);
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+    0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  color: #fff6a9;
+  font-family: "Sacramento", cursive;
+  text-align: center;
+  animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite;
+}
+
+#game-container {
+  margin: 10px;
+}
+
+.box {
+  color: red;
+  background-color: #030321;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  width: 400px;
+  height: 400px;
+  border-radius: 15px;
+  box-shadow: 5px 15px 40px red;
+  margin: 20px 10px;
+}
+.hide {
+  display: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  background-color: rgb(206, 6, 6);
+  border-radius: 8px;
+}
+
+.color1 {
+  background-color: orange;
+}
+.color2 {
+  background-color: darkgreen;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  background: #030321;
+  font-family: Arial;
+}
+
+svg {
+  display: block;
+  font: 10.5em "Montserrat";
+  width: 960px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 5px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1) {
+  stroke: #4d163d;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2) {
+  stroke: #840037;
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3) {
+  stroke: #bd0034;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4) {
+  stroke: #bd0034;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5) {
+  stroke: #fdb731;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}

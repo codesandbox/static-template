@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width-devie-width" />
+    <meta http-equip="X-UA-Capatible" content="ie-edge" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div>
+      <svg viewBox="0 0 960 300">
+        <symbol id="s-text">
+          <text text-anchor="middle" x="50%" y="80%">Tic Tac Toe</text>
+        </symbol>
+
+        <g class="g-ants">
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+        </g>
+      </svg>
+    </div>
+
+    <div class="box">
+      <section id="name" class="">
+        <input type="text" id="p1" name="p1" placeholder="Player 1 Name" />
+        <br />
+        <br />
+
+        <input type="text" id="p2" name="p2" placeholder="Player 2 Name" />
+        <br />
+        <br />
+
+        Choose a dimension :
+        <select id="dimension">
+          <option value="3">3x3</option>
+          <option value="4">4x4</option>
+          <option value="5">5x5</option>
+          <option value="6">6x6</option>
+        </select>
+        <br />
+        <br />
+
+        <button id="game-start" onclick="startGame()">Start Game</button>
+      </section>
+
+      <div id="turn"></div>
+      <div id="game-container" class="hide"></div>
+    </div>
+
+    <script src="index.js"></script>
   </body>
 </html>
