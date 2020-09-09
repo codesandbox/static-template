@@ -1,0 +1,47 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "lato" sans-serif;
+  font-size: 10px;
+  line-height: 1.5;
+  color: #777;
+}
+
+.header {
+  background-color: gold;
+}
+
+.header-container {
+  width: 90%;
+  margin: 0 25px;
+}
+
+.header-container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.header ul {
+  list-style: none;
+}
+.header__logo-box {
+  float: left;
+  padding: 10px;
+}
+
+.header__feature {
+  float: right;
+}
+
+.header__feature-item {
+  display: inline-block;
+  padding: 10px;
+}
