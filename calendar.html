@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!----------------------------------------------------------------------------------------------------------------
+--
+#Original Author:  Michelle Petit                                     #
+#Date Created:     September 6, 2020                                  #
+#Version:          1                                                  #
+#Date Last Modified: September 11, 2020                               #
+#Modified by: Michelle Petit                                          #
+#Modification log: added flowerbox, pasted in base html               #
+                    from shop.html & made adjustments for new page,   #
+                     added Calendar tab to navbar                     #
+#Modification log:  added clock html                                  #
+#Modification Log:  removed table tags                                #
+#Modification Log:  added missing code from calendar lab              #
+ --
+------------------------------------------------------------------------------------------------------------------>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Michelle Petit" />
+    <meta
+      name="keywords"
+      content="used books, eco friendly, reuse, bookstore, bookshop"
+    />
+    <meta
+      name="description"
+      content="The Green Reader Bookshop is an environmentally conscience shop that sells quality used books."
+    />
+    <link
+      rel="icon"
+      href="images/favicon-16x16.png"
+      type="image"
+      sizes="16x16"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/calendar.css" />
+    <script src="js/clock.js"></script>
+    <script src="js/calendar.js"></script>
+    <title>Calendar of Events The Green Reader Bookshop</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html"
+          ><img
+            src="images/store_logo.png"
+            alt="The Green Reader Bookshop"
+            id="store_logo"
+        /></a>
+        <span id="shop_name">The Green Reader Bookshop</span>
+        <ul id="nav_bar">
+          <li class="text" id="nav_home"><a href="index.html">HOME</a></li>
+          <li class="text" id="nav_shop"><a href="shop.html">SHOP</a></li>
+          <li class="text" id="nav_blog"><a href="blog.html">BLOG</a></li>
+          <li class="text" id="nav_calendar">
+            <a href="calendar.html">CALENDAR</a>
+          </li>
+          <li class="text" id="nav_faqs"><a href="faqs.html">FAQS</a></li>
+          <li class="text" id="nav_contact">
+            <a href="contact.html">CONTACT</a>
+          </li>
+          <li class="social_icon" id="instagram_icon">
+            <a href="https://www.instagram.com" target="_blank">
+              <img src="images/instagram.png" alt="Instagram logo"
+            /></a>
+          </li>
+          <li class="social_icon" id="twitter_icon">
+            <a href="https://www.twitter.com" target="_blank">
+              <img src="images/twitter.png" alt="Twitter logo"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="clock">
+        <h1>Current Time</h1>
+        <center>
+          <span id="clock_display">&nbsp;</span>
+        </center>
+      </div>
+
+      <div class="calendar">
+        <h1>Calendar of Events</h1>
+        <div id="calendar_box">
+          <h1><span id="month_year">&nbsp;</span></h1>
+
+          <table id="calendar">
+            <tr>
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy;2020 The Green Reader Bookshop</p>
+    </footer>
+  </body>
+</html>

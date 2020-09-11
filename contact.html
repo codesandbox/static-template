@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!----------------------------------------------------------------------------------------------------------------
+--
+#Original Author:  Michelle Petit                                     #
+#Date Created:     September 2, 2020                                  #
+#Version:          1                                                  #
+#Date Last Modified: September 6, 2020                                #
+#Modified by: Michelle Petit                                          #
+#Modification log: added flowerbox, initialized HTML page, and        #
+#                       added header and footer                       #
+#Modification log: added contact form                                 #
+#Modification Log: fixed flavicon                                     #
+#Modification Log: added tabs for Shop & Calendar to navbar           #
+ --
+------------------------------------------------------------------------------------------------------------------>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Michelle Petit" />
+    <meta
+      name="keywords"
+      content="used books, eco friendly, reuse, bookstore, bookshop"
+    />
+    <meta
+      name="description"
+      content="The Green Reader Bookshop is an environmentally conscience shop that sells quality used books."
+    />
+    <link
+      rel="icon"
+      href="images/favicon-16x16.png"
+      type="image"
+      sizes="16x16"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/contact.css" />
+    <script src="js/contact.js"></script>
+    <title>Contact The Green Reader Bookshop</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html"
+          ><img
+            src="images/store_logo.png"
+            alt="The Green Reader Bookshop"
+            id="store_logo"
+        /></a>
+        <span id="shop_name">The Green Reader Bookshop</span>
+        <ul id="nav_bar">
+          <li class="text" id="nav_home"><a href="index.html">HOME</a></li>
+          <li class="text" id="nav_shop"><a href="shop.html">SHOP</a></li>
+          <li class="text" id="nav_blog"><a href="blog.html">BLOG</a></li>
+          <li class="text" id="nav_calendar">
+            <a href="calendar.html">CALENDAR</a>
+          </li>
+          <li class="text" id="nav_faqs"><a href="faqs.html">FAQS</a></li>
+          <li class="text" id="nav_contact">
+            <a href="contact.html">CONTACT</a>
+          </li>
+          <li class="social_icon" id="instagram_icon">
+            <a href="https://www.instagram.com" target="_blank">
+              <img src="images/instagram.png" alt="Instagram logo"
+            /></a>
+          </li>
+          <li class="social_icon" id="twitter_icon">
+            <a href="https://www.twitter.com" target="_blank">
+              <img src="images/twitter.png" alt="Twitter logo"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Contact Us</h1>
+      <h3>
+        If you have any questions you can send us a message using this form.
+      </h3>
+      <h4>We appreciate your business and will respond as soon as possible.</h4>
+      <section>
+        <form
+          id="contact_form"
+          action="contact.php"
+          method="POST"
+          accept-charset="UTF-8"
+        >
+          <label for="your_name">Your Name:&nbsp;</label>
+          <input type="text" id="your_name" name="your_name" maxlength="128" />
+          <span id="name_error">*</span>
+          <br />
+          <label for="email">Your Email:&nbsp;</label>
+          <input type="email" id="email" name="email" maxlength="128" />
+          <span id="email_error">*</span>
+          <br />
+          <label for="message">Message:&nbsp;</label>
+          <input type="text" id="message" name="message" />
+          <span id="message_error">*</span>
+          <br />
+          <input
+            type="button"
+            id="submit_message"
+            name="submit_message"
+            value="Submit"
+          />
+          <input
+            type="button"
+            id="clear_entries"
+            name="clear_entries"
+            value="Clear Entries"
+          />
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy;2020 The Green Reader Bookshop</p>
+    </footer>
+  </body>
+</html>

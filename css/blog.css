@@ -1,0 +1,169 @@
+/*********************************************************************
+***
+*Original Author: Michelle Petit                                  *
+*Date Created:    September 10, 2020                              *
+*Version: 1                                                       *
+*Date Last Modified: September 11, 2020                           *
+*Modified by:  Michelle Petit                                     *
+*Modification log: added flowerbox and page styles                *
+*Modification log: tweaked nav responsiveness styles              *
+*                                                                 *
+***
+******************************************************************** */
+
+html {
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: #fafaea;
+}
+
+/*general header and footer styles*/
+header,
+footer {
+  color: #50dc4f;
+  background-color: #0a354e;
+  width: 100%;
+}
+/*footer styles*/
+footer {
+  text-align: center;
+}
+/*nav bar styles*/
+nav ul {
+  float: right;
+  margin-right: 2rem;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 5rem;
+  list-style: none;
+  text-align: left;
+  margin: 4rem 2rem 0 0;
+}
+nav img #store_logo {
+  float: left;
+  align-self: center;
+  list-style: none;
+  margin-right: 1rem;
+}
+nav span {
+  font-size: 2rem;
+  color: #894e00;
+  font-family: "Love Ya Like A Sister", cursive;
+}
+nav {
+  padding-left: 2rem;
+}
+ul li.text {
+  font-size: 2rem;
+}
+ul a {
+  text-decoration: none;
+  color: #43991c;
+}
+ul li a:hover {
+  color: whitesmoke;
+}
+
+/* media queries and responsiveness */
+img {
+  max-width: 100%;
+}
+@media (max-width: 688px) {
+  /*new styles added*/
+  body {
+    display: flex;
+  }
+
+  nav {
+    padding-left: 0.25rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0.25rem;
+    text-align: center;
+  }
+  ul {
+    float: none;
+    margin: auto 0.25rem auto 0.25rem;
+  }
+
+  #store_logo {
+    display: none;
+  }
+  #shop_name {
+    font-size: 2.3rem;
+  }
+
+  #nav_home,
+  #nav_shop,
+  #nav_blog,
+  #nav_calendar,
+  #nav_faqs,
+  #nav_contact {
+    line-height: 0;
+    font-size: 1rem;
+  }
+  li.social_icon {
+    margin-bottom: 0;
+    margin-top: 0.5rem; /*new*/
+    margin-right: 0.15rem; /*new*/
+    padding-bottom: 0;
+  }
+  .blog_post {
+    clear: both;
+  }
+}
+
+/* blog styles */
+main {
+  max-width: 600rem;
+  background-color: #fafaea;
+}
+main h1 {
+  font-family: "Love Ya Like A Sister", cursive;
+  font-size: 2.75rem;
+  color: #43991c;
+  border: 3px solid #0a354e;
+  padding: 1rem 1rem;
+  margin: 2rem auto;
+  text-align: center;
+}
+div.blog_post {
+  max-width: 500rem;
+}
+article {
+  margin-top: 2rem;
+}
+.image_container {
+  max-width: 300px;
+  max-height: 250px;
+  display: block;
+  float: left;
+  margin-right: 2rem;
+}
+.blog_post {
+  display: block;
+}
+a.button {
+  background-color: #43991c;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  display: inline-block;
+  position: relative;
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  line-height: 1.5;
+}

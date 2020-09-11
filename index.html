@@ -1,12 +1,104 @@
 <!DOCTYPE html>
+<!-- --------------------------------------------------------------------------------------------------------------
+--
+#Original Author:  Michelle Petit                                     #
+#Date Created:     September 2, 2020                                  #
+#Version:          1                                                  #
+#Date Last Modified: September 6, 2020                                #
+#Modified by: Michelle Petit                                          #
+#Modification log: added flowerbox, initialized HTML page,            #
+                   created header, footer, nav bar                    #
+#Modification Log: created signup form, slideshow, banner, and        #
+#                      search inventory bar                           #
+#Modification Log: fixed flavicon and changed slideshow to static img #
+#Modification Log: added tabs for Shop & Calendar to navbar           #
+ --
+---------------------------------------------------------------------------------------------------------------- -->
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+    <meta name="author" content="Michelle Petit">
+    <meta name="keywords" content="used books, eco friendly, reuse, bookstore, bookshop">
+    <meta name="description" content="The Green Reader Bookshop is an environmentally conscience shop that sells quality used books.">
+    <link rel="icon" href="images/favicon-16x16.png" type="image" sizes="16x16">
+    <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+    <title>The Green Reader Bookstore</title>
+</head>
+<body>
+    <header>      
+        <nav> 
+            <a href="index.html"><img src="images/store_logo.png" alt="The Green Reader Bookshop" id="store_logo"></a>   
+            <span id="shop_name">The Green Reader Bookshop</span>
+                <ul id="nav_bar">
+                    <li class="text" id="nav_home"><a href="index.html">HOME</a></li>
+                    <li class="text" id="nav_shop"><a href="shop.html">SHOP</a></li>
+                    <li class="text" id="nav_blog"><a href="blog.html">BLOG</a></li>
+                    <li class="text" id="nav_calendar"><a href="calendar.html">CALENDAR</a></li>
+                    <li class="text" id="nav_faqs"><a href="faqs.html">FAQS</a></li>
+                    <li class="text" id="nav_contact"><a href="contact.html">CONTACT</a></li>
+                    <li class="social_icon" id="instagram_icon"><a href="https://www.instagram.com" target="_blank">
+                        <img src="images/instagram.png" alt="Instagram logo"></a></li>
+                    <li class="social_icon" id="twitter_icon"><a href="https://www.twitter.com" target="_blank">
+                        <img src="images/twitter.png" alt="Twitter logo"></a></li>
+                </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!--section for banner announcements-->
+        <section class="banner">
+            <h1>A portion of every purchase is donated to the charity <span id="charity"></span><a href="https://www.rainforesttrust.org/about-us/" target="_blank">Rainforest
+                Trust</a></span> to help save the <span id="rainforest">Amazon rainforest</span>.</h1>
+        </section>
+        <!--section for current news-->
+        <section class="news">
+
+        </section>
+        <!--section for slideshow of book titles; right now it will hold one static img-->
+        <section class="slideshow_container">
+            <img src="images/cover2.jpg" alt="table covered with stacks of books">
+        </section>
+        <!--section for book search bar-->
+        <section class="shop" id="shop">
+            <h1>Shop - Search Our Inventory For A Book</h1>
+            <form action="/" method="post" accept-charset="UTF-8" id="search_form">
+                <input type="text" id="search_bar" name="search_bar" maxlength="128" placeholder="title, author, keyword, or ISBN"></label>
+                <input type="button" id="search_bar_button" value="Search">
+            </form>
+        </section>
+        <!--newsletter signup form-->
+        <section class="newsletter">
+            <h1 id="signup_header">Signup for our newsletter!</h2>
+                <p>Be the first to see new arrivals, hear about sales, and get tips on living sustainably.</p>
+            <form id="signup_form" name="signup_form" action="join.html" method="post">
+                <!--prompt for email address-->
+                <label for="email_address1">Email Address:</label>
+                <input type="text" id="email_address1" name="email_address1">
+                <span id="email_address1_error">*</span>
+                <br>
+                <!--prompt to validate email address-->
+                <label for="email_address2">Re-enter Email Address:</label>
+                <input type="text" id="email_address2" name="email_address2">
+                <span id="email_address2_error">*</span>
+                <br>
+                <!--prompt for first name-->
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name">
+                <span id="first_name_error">*</span>
+                <br>
+                <!--submit button-->
+                <label>&nbsp;</label>
+                <input type="button" id="signup_for_newsletter" value="Signup for Newsletter">
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy;2020 The Green Reader Bookshop</p>
+    </footer>
+    
+</body>
 </html>
