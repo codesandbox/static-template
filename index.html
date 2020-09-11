@@ -1,12 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="Teste Frontend VAGAS.com">
+	<link rel="icon" type="image/png" href="./src/images/favicon.png" />
+
+	<title>Teste Frontend VAGAS.com</title>
+	<link rel="stylesheet" href="./src/css/styles.min.css" />
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<div class="header-image"></div>
+			<div class="header-title">
+				<h1>
+					Formulário para compra de <br /><strong>Pacote de Stickers</strong>
+				</h1>
+			</div>
+		</header>
+
+		<main>
+			<form id="form" method="post">
+				<div class="form-content">
+					<div class="form-item">
+						<h2>Quais stickers?</h2>
+						<div id="stickersOptions" class="stickers-options">
+							<div class="stickers-options__item">
+								<input class="sticker" type="checkbox" id="react" name="react" value="react" />
+								<label for="react">React</label>
+							</div>
+							<div class="stickers-options__item">
+								<input class="sticker" type="checkbox" id="vue" name="vue" value="vue" />
+								<label for="vue">Vue</label>
+							</div>
+							<div class="stickers-options__item">
+								<input class="sticker" type="checkbox" id="angular" name="angular" value="angular" />
+								<label for="angular">Angular</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-item">
+						<h2>Quantos stickers de cada?</h2>
+						<div class="stickers-qtd">
+							<label class="label-hidden" for="stickersQtd">Quantos stickers de cada?</label>
+							<div class="stickers-qtn__item">
+								<button id="buttonSub" disabled="true" aria-label="adicionar">
+									<svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
+										<path
+											d="M4.667 0A4.668 4.668 0 0 0 0 4.667v32.666A4.668 4.668 0 0 0 4.667 42h32.666A4.668 4.668 0 0 0 42 37.333V4.667A4.668 4.668 0 0 0 37.333 0H4.667zm28 23.333H9.333v-4.666h23.334v4.666z">
+										</path>
+									</svg>
+								</button>
+
+								<input onchange="stickersQtdValidation()" type="number" name="stickersQtd" id="stickersQtd" placeholder="0" />
+
+								<button id="buttonAdd" aria-label="diminuir">
+									<svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
+										<path
+											d="M4.667 42h32.666A4.668 4.668 0 0 0 42 37.333V4.667A4.668 4.668 0 0 0 37.333 0H4.667A4.668 4.668 0 0 0 0 4.667v32.666A4.668 4.668 0 0 0 4.667 42zm4.666-23.333h9.334V9.333h4.666v9.334h9.334v4.666h-9.334v9.334h-4.666v-9.334H9.333v-4.666z">
+										</path>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-item">
+						<h2>Observações:</h2>
+						<div class="stickers-obs">
+							<textarea name="observacoes" id="observacoes" cols="30"
+								placeholder="Alguma dúvida? Recado?"></textarea>
+							<label class="label-hidden" for="observacoes">Observações</label>
+						</div>
+					</div>
+
+					<div class="form-item">
+						<div class="stickers-send">
+							<div class="stickers-send__item ">
+								<span id="successMsg">Formulário enviado com sucesso!</span>
+							</div>
+							<div class="stickers-send__item">
+								<button type="submit" id="enviar">Enviar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</main>
+	</div>
+	<script type="text/javascript" src="./src/js/script.js"></script>
+</body>
+
 </html>
