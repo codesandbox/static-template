@@ -1,0 +1,211 @@
+/*********************************************************************
+***
+*Original Author: Michelle Petit                                  *
+*Date Created:    September 2, 2020                               *
+*Version: 1                                                       *
+*Date Last Modified: September 11, 2020                           *
+*Modified by:  Michelle Petit                                     *
+*Modification log: added flowerbox and page styles                *
+*Modification log: worked on header                               *
+*Modification log: worked on header responsiveness                *
+*Modification log: tweaked nav responsiveness styles              *
+***
+******************************************************************** */
+
+html {
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: #fafaea;
+}
+
+/*general header and footer styles*/
+header,
+footer {
+  color: #50dc4f;
+  background-color: #0a354e;
+  width: 100%;
+}
+/*footer styles*/
+footer {
+  text-align: center;
+}
+/*nav bar styles*/
+nav ul {
+  float: right;
+  margin-right: 2rem;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 5rem;
+  list-style: none;
+  text-align: left;
+  margin: 4rem 2rem 0 0;
+}
+nav img #store_logo {
+  float: left;
+  align-self: center;
+  list-style: none;
+  margin-right: 1rem;
+}
+nav span {
+  font-size: 2rem;
+  color: #894e00;
+  font-family: "Love Ya Like A Sister", cursive;
+}
+nav {
+  padding-left: 2rem;
+}
+ul li.text {
+  font-size: 2rem;
+}
+ul a {
+  text-decoration: none;
+  color: #43991c;
+}
+ul li a:hover {
+  color: whitesmoke;
+}
+
+/* styles for banner */
+section.banner {
+  width: 60vw;
+  margin: 2rem auto 2rem auto;
+  padding: 1rem;
+  text-align: center;
+  border: 3px solid #0a354e;
+  background-color: #43991c;
+}
+#charity {
+  font-weight: 500;
+}
+h1 a {
+  text-decoration: none;
+  color: orange;
+}
+h1 a:hover {
+  color: white;
+}
+#rainforest {
+  color: #0a354e;
+  font-weight: 600;
+}
+/* styles for slideshow */
+section.slideshow_container {
+  width: 60vw;
+  max-height: 100%;
+  margin: 2rem auto 2rem auto;
+  border: 3px solid #0a354e;
+  padding: 1rem;
+  /*margin: 2rem;*/
+  text-align: center;
+}
+/* styles for search bar */
+#shop {
+  width: 60vw;
+  max-height: 40vw;
+  margin: 2rem auto 2rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+#search_bar {
+  padding: 0.5rem;
+  margin-right: 0;
+  margin-bottom: 1rem;
+  width: 20rem;
+}
+#search_bar_button {
+  background-color: #43991c;
+  color: white;
+  padding: 0.5rem;
+  margin-left: 0;
+}
+/* styles for signup form */
+h1 #signup_header {
+  padding-bottom: 0.5rem;
+}
+label {
+  padding-right: 0.25rem;
+  padding-bottom: 1rem;
+}
+#email_address1,
+#email_address2,
+#first_name,
+#signup_for_newsletter {
+  margin-bottom: 1rem;
+  width: 15rem;
+}
+.newsletter {
+  width: 60vw;
+  max-height: 35vh;
+  border: 3px solid #0a354e;
+  padding: 1rem;
+  margin: 2rem auto 2rem auto;
+  text-align: center;
+}
+span {
+  color: red;
+  font-weight: 300;
+}
+/* button */
+#signup_for_newsletter {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  background-color: #43991c;
+  color: white;
+  padding: 0.25rem;
+}
+/* media queries and responsiveness */
+img {
+  max-width: 100%;
+}
+@media (max-width: 688px) {
+  /*new styles added*/
+  body {
+    display: flex;
+  }
+
+  nav {
+    padding-left: 0.25rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0.25rem;
+    text-align: center;
+  }
+  ul {
+    float: none;
+    margin: auto 0.25rem auto 0.25rem;
+  }
+
+  #store_logo {
+    display: none;
+  }
+  #shop_name {
+    font-size: 2.3rem;
+  }
+
+  #nav_home,
+  #nav_shop,
+  #nav_blog,
+  #nav_calendar,
+  #nav_faqs,
+  #nav_contact {
+    line-height: 0;
+    font-size: 1rem;
+  }
+  li.social_icon {
+    margin-bottom: 0;
+    margin-top: 0.5rem; /*new*/
+    margin-right: 0.15rem; /*new*/
+    padding-bottom: 0;
+  }
+}

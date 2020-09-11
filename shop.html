@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!----------------------------------------------------------------------------------------------------------------
+--
+#Original Author:  Michelle Petit                                     #
+#Date Created:     September 6, 2020                                  #
+#Version:          1                                                  #
+#Date Last Modified: September 9, 2020                                #
+#Modified by: Michelle Petit                                          #
+#Modification log: added flowerbox, pasted in base html               #
+                    from index.html & made adjustments for new page,  #
+                     added Shop & Calendar tabs to navbar             #
+#Modification log:  added html from lab9 and adjusted it to suit my   #
+#                     site's content                                  #
+ --
+------------------------------------------------------------------------------------------------------------------>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Michelle Petit" />
+    <meta
+      name="keywords"
+      content="used books, eco friendly, reuse, bookstore, bookshop"
+    />
+    <meta
+      name="description"
+      content="The Green Reader Bookshop is an environmentally conscience shop that sells quality used books."
+    />
+    <link
+      rel="icon"
+      href="images/favicon-16x16.png"
+      type="image"
+      sizes="16x16"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/shop.css" />
+    <script src="js/shop.js"></script>
+    <title>Shop at The Green Reader Bookshop</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html"
+          ><img
+            src="images/store_logo.png"
+            alt="The Green Reader Bookshop"
+            id="store_logo"
+        /></a>
+        <span id="shop_name">The Green Reader Bookshop</span>
+        <ul id="nav_bar">
+          <li class="text" id="nav_home"><a href="index.html">HOME</a></li>
+          <li class="text" id="nav_shop"><a href="shop.html">SHOP</a></li>
+          <li class="text" id="nav_blog"><a href="blog.html">BLOG</a></li>
+          <li class="text" id="nav_calendar">
+            <a href="calendar.html">CALENDAR</a>
+          </li>
+          <li class="text" id="nav_faqs"><a href="faqs.html">FAQS</a></li>
+          <li class="text" id="nav_contact">
+            <a href="contact.html">CONTACT</a>
+          </li>
+          <li class="social_icon" id="instagram_icon">
+            <a href="https://www.instagram.com" target="_blank">
+              <img src="images/instagram.png" alt="Instagram logo"
+            /></a>
+          </li>
+          <li class="social_icon" id="twitter_icon">
+            <a href="https://www.twitter.com" target="_blank">
+              <img src="images/twitter.png" alt="Twitter logo"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Book Wish List</h1>
+      <h5>
+        (Add <span>favorite!</span> in front of the book title to save as a
+        favorite.)
+      </h5>
+
+      <label for="book">Book</label><br />
+      <input type="book" name="book" id="book" />
+      <br />
+
+      <input type="button" name="add_book" id="add_book" value="Add Book" />
+      <input
+        type="button"
+        name="clear_books"
+        id="clear_books"
+        value="Clear Books"
+      />
+      <br />
+
+      <input
+        type="button"
+        name="delete_book"
+        id="delete_book"
+        value="Delete Book"
+      />
+      <input
+        type="button"
+        name="reverse_order"
+        id="reverse_order"
+        value="Reverse Book Order"
+      /><br />
+
+      <input
+        type="button"
+        name="set_name"
+        id="set_name"
+        value="Set List Name"
+      />
+
+      <input
+        type="button"
+        name="favorite_books"
+        id="favorite_books"
+        value="Favorite Books"
+      /><br />
+
+      <div id="books">
+        <span id="name">&nbsp;</span>Book List<br />
+        <textarea id="book_list" rows="10" cols="50"></textarea>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy;2020 The Green Reader Bookshop</p>
+    </footer>
+  </body>
+</html>

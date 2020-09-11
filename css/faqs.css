@@ -1,0 +1,164 @@
+/*********************************************************************
+***
+*Original Author: Michelle Petit                                  *
+*Date Created:    September 2, 2020                               *
+*Version: 1                                                       *
+*Date Last Modified: September 11, 2020                           *
+*Modified by:  Michelle Petit                                     *
+*Modification log: added flowerbox and page styles                *
+*Modification log: worked on header                               *
+*Modification log: fixed footer issue and nav responsiveness      *
+*Modification log: tweaked nav responsiveness styles              *
+***
+******************************************************************** */
+
+html {
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: #fafaea;
+}
+
+/*general header and footer styles*/
+header,
+footer {
+  color: #50dc4f;
+  background-color: #0a354e;
+  width: 100%;
+}
+/*footer styles*/
+footer {
+  text-align: center;
+}
+/*nav bar styles*/
+nav ul {
+  float: right;
+  margin-right: 2rem;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 5rem;
+  list-style: none;
+  text-align: left;
+  margin: 4rem 2rem 0 0;
+}
+nav img #store_logo {
+  float: left;
+  align-self: center;
+  list-style: none;
+  margin-right: 1rem;
+}
+nav span {
+  font-size: 2rem;
+  color: #894e00;
+  font-family: "Love Ya Like A Sister", cursive;
+}
+nav {
+  padding-left: 2rem;
+}
+ul li.text {
+  font-size: 2rem;
+}
+ul a {
+  text-decoration: none;
+  color: #43991c;
+}
+ul li a:hover {
+  color: whitesmoke;
+}
+
+/*faq section styles*/
+main {
+  max-width: 90vw;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+#page_title {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  font-size: 3rem;
+  color: #43991c;
+}
+h2 a {
+  text-decoration: none;
+  color: black;
+}
+h2 a:focus,
+a:hover {
+  color: #43991c;
+}
+h2 {
+  cursor: pointer;
+  background: url("../images/plus.svg") no-repeat left center;
+  margin-top: 3rem;
+}
+h2.minus {
+  background: url("../images/minus.svg") no-repeat left center;
+}
+p.answer {
+  max-width: 40rem;
+  font-weight: 500;
+  font-size: 1.25rem;
+  padding-left: 1.5rem;
+}
+/* hide content until clicked */
+div {
+  display: none;
+}
+div.open {
+  display: block;
+}
+/* media queries and responsiveness */
+img {
+  max-width: 100%;
+}
+@media (max-width: 688px) {
+  /*new styles added*/
+  body {
+    display: flex;
+  }
+
+  nav {
+    padding-left: 0.25rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0.25rem;
+    text-align: center;
+  }
+  ul {
+    float: none;
+    margin: auto 0.25rem auto 0.25rem;
+  }
+
+  #store_logo {
+    display: none;
+  }
+  #shop_name {
+    font-size: 2.3rem;
+  }
+
+  #nav_home,
+  #nav_shop,
+  #nav_blog,
+  #nav_calendar,
+  #nav_faqs,
+  #nav_contact {
+    line-height: 0;
+    font-size: 1rem;
+  }
+  li.social_icon {
+    margin-bottom: 0;
+    margin-top: 0.5rem; /*new*/
+    margin-right: 0.15rem; /*new*/
+    padding-bottom: 0;
+  }
+}
