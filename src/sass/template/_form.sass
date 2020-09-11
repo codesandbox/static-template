@@ -1,0 +1,218 @@
+form
+	.form-content
+		width: 100%
+		height: 100%
+		border-radius: 8px
+		width: 100%
+		display: flex
+		flex-direction: column
+		justify-content: flex-end
+		align-items: flex-start
+		.form-item:nth-last-child(0n+1)
+			margin-bottom: 0
+		.form-item
+			width: 100%
+			margin-bottom: 30px
+
+			h2
+				font-size: 18px
+				line-height: 22px
+				margin-bottom: 15px
+				padding-left: 30px
+			.label-hidden
+				border: 0
+				clip: rect(0 0 0 0)
+				height: 1px
+				margin: -1px
+				overflow: hidden
+				padding: 0
+				position: absolute
+				width: 1px
+			.stickers-options, .stickers-qtd, .stickers-obs, h3
+				padding: 0 30px 0
+
+				
+
+			.stickers-options
+				width: 100%
+				height: 88px
+				display: flex
+				flex-direction: column
+				justify-content: space-between
+				
+				.stickers-options__item
+					
+					input[type="checkbox"]
+						&:not(:checked), &:checked
+							position: absolute
+							left: -9999px
+
+						&:not(:checked) + label, &:checked + label
+							position: relative
+							padding: 3px 0 0 35px
+							cursor: pointer
+
+						&:not(:checked) + label:before, &:checked + label:before
+							content: ''
+							position: absolute
+							left: 0
+							top: 0
+							width: 25px
+							height: 25px
+							background: $primary
+							border-radius: 4px
+							transition: all .2s
+
+						&:not(:checked) + label:after, &:checked + label:after
+							content: '\2713\0020'
+							position: absolute
+							top: 0
+							left: 3px
+							font-size: 1.3em
+							font-weight: bold
+							line-height: 24px
+							color: #fff
+							transition: all .2s
+
+						&:not(:checked) + label:after
+							opacity: 0
+							transform: scale(0)
+
+						&:checked + label:after
+							opacity: 1
+							transform: scale(1)
+
+						&:disabled
+							&:not(:checked) + label:before
+								box-shadow: none
+								background-color: $disable			
+							&:hover + label:before
+								background: $disable !important
+
+					label:hover:before
+						background: $hover !important
+
+			.stickers-options.error				
+				.stickers-options__item					
+					input[type="checkbox"]
+						&:not(:checked) + label:before, &:checked + label:before
+							content: ''
+							position: absolute
+							left: 0
+							top: 0
+							width: 25px
+							height: 25px
+							border: 1px solid $error !important
+							background: $error !important
+							border-radius: 4px
+							transition: all .2s
+
+			.stickers-qtd
+				.stickers-qtn__item
+					display: flex
+					align-items: center
+					justify-content: space-between
+					width: 160px
+
+					input[type=number]::-webkit-inner-spin-button,
+					input[type=number]::-webkit-outer-spin-button 
+						-webkit-appearance: none
+						-moz-appearance: none
+						appearance: none
+						margin: 0 
+
+					input[type=number], button
+						border-radius: 4px
+						height: 42px						
+						transition: all .2s
+						
+						
+					input[type=number]
+						width: 60px
+						padding: 0
+						outline: none
+						border: 1px solid $primary
+						background-color: $bgInput
+						text-align: center
+						font-size: 20px
+						font-weight: bold										
+					
+					input[type=number].error
+						border: 1px solid $errorBorder
+						background-color: $error
+						outline: none			
+
+					button
+						width: auto
+						padding: 0
+						margin: auto
+						border: 0	
+						cursor: pointer
+						outline: none
+	
+						.button-icon
+							fill: $primary
+							background: $textIcon
+							transition: all .2s
+							&:hover
+								fill: $hover
+						&:disabled
+							.button-icon
+								fill: $disable
+
+			.stickers-obs
+				width: 100%
+				textarea
+					width: 100%
+					height: 141px
+					font-size: 14px
+					line-height: 24px
+					background: $bgInput
+					border: 1px solid $primary
+					border-radius: 4px
+					outline: none
+					padding: 16px
+
+			.stickers-send
+				display: flex
+				justify-content: space-between
+				align-items: center
+			
+				width: 100%
+				height: 100px
+				padding: 0 30px
+				
+				background-color: $bgInput
+				border-radius: 8px
+	
+				.stickers-send__item
+					span#successMsg.success
+						opacity: 1
+					span#successMsg
+						opacity: 0
+						font-weight: bold
+						font-size: 18px
+						line-height: 22px
+						color: $success
+						transition: all .2s
+					button
+						width: 133px
+						height: 37px
+						background-color: $primary
+						border: 2px solid $primary
+						border-radius: 7px
+						font-size: 18px
+						font-weight: bold
+						line-height: 22px
+						text-transform: uppercase
+						color: #fff
+						outline: 0
+						cursor: pointer
+						transition: all .2s
+						&:hover
+							background-color: $hover
+							border-color: $primary
+						&:disabled
+							background-color: $disable
+							border-color: $disableBorder
+							
