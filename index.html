@@ -1,12 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>deck.gl BitmapLayer Example</title>
+    <script src="https://unpkg.com/deck.gl@7.3.3/dist.min.js"></script>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.js"></script>
+    <script src="https://bogdan-regular-bucket.s3.eu-west-3.amazonaws.com/plotty1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/geotiff"></script>
+    <!--<script type="application/javascript" src="./node_modules/geotiff/dist-browser/geotiff.js"></script>-->
+    <style type="text/css">
+      body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+      }
+    </style>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <canvas
+      id="plot"
+      style="image-rendering: pixelated; width: 50%; height: 300px;"
+    ></canvas>
   </body>
+  <script type="application/javascript">
+    var img3 =
+      "https://bogdan-regular-bucket.s3.eu-west-3.amazonaws.com/S5P_OFFL_L2__CH4____20190906T074057_20190906T092226_09831_01_010302_20190912T095216_38.tiff";
+
+    var getImageDate = async () => {
+      return fetch(img3)
+        .then((r) => r.arrayBuffer())
+        .then(async (buffer) => {
+          let tiff = await GeoTIFF.fromArrayBuffer(buffer);
+          let image = await tiff.getImage();
+          return image;
+        });
+    };
+
+    let render = async () => {
+      let { DeckGL, BitmapLayer } = deck;
+      let canvas = document.getElementById("plot");
+
+      const ctx = canvas.getContext("2d");
+      ctx.imageSmoothingEnabled = true;
+
+      let image = await getImageDate();
+      let bbox = image.getBoundingBox();
+      let rasters = await image.readRasters();
+
+      const img = new Image();
+      img.src = canvas.toDataURL("image/png", 1.0).toString();
+      ctx.imageSmoothingEnabled = false;
+
+      img.onload = function () {
+        const w = img.width;
+        const h = img.height;
+        ctx.drawImage(img, 0, 24, w, h);
+        ctx.imageSmoothingEnabled = false;
+        console.log(ctx.imageSmoothingEnabled, " as");
+      };
+      console.log(canvas.imageSmoothingEnabled);
+
+      //Separate the tiff by bands + create a new band based of band0 that will later contain the filtered values
+      let band0 = rasters[0];
+      let band1 = rasters[1];
+      let band2 = rasters[2];
+      let bandF = new Float32Array(band0);
+
+      //Define min/max value of band0 to be used for adjusting the color scale for the Tiff
+      let min = Math.min.apply(
+        null,
+        band0.filter((x) => !isNaN(x))
+      );
+      let max = Math.max.apply(
+        null,
+        band0.filter((x) => !isNaN(x))
+      );
+
+      //Compute bandF based on band1 threshold
+      for (i = 0; i < band0.length; i++) {
+        if (band1[i] < 75) {
+          bandF[i] = NaN;
+        }
+      }
+
+      //Render band0 to a Canvas element using https://github.com/santilland/plotty and Viridis color scale
+      let plot = new plotty.plot({
+        useWebGL: false,
+        canvas,
+        data: band0,
+        width: image.getWidth(),
+        height: image.getHeight(),
+        domain: [min, max],
+        colorScale: "viridis"
+      });
+
+      plot.render();
+
+      // MapBox example : https://docs.mapbox.com/mapbox-gl-js/example/image-on-a-map/
+      new DeckGL({
+        mapboxApiAccessToken:
+          "pk.eyJ1Ijoia2F5cnJvcyIsImEiOiJjam5menEyNDAxOTgxM2tzZjdiZ2w0NzdlIn0.Rt8pCUa3cqFYdvwkKMS7qw",
+        mapStyle: "",
+        initialViewState: {
+          longitude: 60.789,
+          latitude: 63.874,
+          zoom: 5.5,
+          maxZoom: 20
+        },
+        controller: true,
+        layers: [
+          new BitmapLayer({
+            id: "bitmap-layer",
+            bounds: bbox,
+            opacity: 1,
+            image: canvas
+          })
+        ]
+      });
+    };
+    render();
+  </script>
 </html>
