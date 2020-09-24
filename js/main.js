@@ -13,4 +13,5 @@ closeModal.addEventListener("click", function () {
 submitButton.addEventListener("click", function () {
   document.getElementById("results-text").classList.toggle("open");
   document.getElementById("modal-text").classList.toggle("hide");
+  document.body.style.backgroundImage = "url(../img/bobafriends-02.jpg)";
 });
