@@ -1,12 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Find My Boba!</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <nav>
+      <div class="name">Find My Boba!</div>
+      <div class="show-find-modal" aria-haspopup="true" id="search-button">
+        Click here to Search
+      </div>
+    </nav>
+
+    <div class="spacing"></div>
+
+    <aside class="search-modal" id="modal-main">
+      <div id="modal-text">
+        <div class="modal-header">
+          <h1>Find my boba by...</h1>
+          <div class="close" id="close-button">X</div>
+        </div>
+        <h2>Nearby Areas:</h2>
+        <form class="area-list">
+          <label class="checkbox-inline">
+            <input type="checkbox" value="" />Allston / Brighton</label
+          >
+          <label class="checkbox-inline">
+            <input type="checkbox" value="" />Back Bay / Chinatown</label
+          >
+          <label class="checkbox-inline">
+            <input type="checkbox" value="" />Cambridge</label
+          >
+        </form>
+
+        <div class="spacing"></div>
+
+        <h2>Food choices:</h2>
+        <form class="AreaList">
+          <label class="checkbox-inline">
+            <input type="checkbox" value="" />Cafe / coffee</label
+          >
+          <label class="checkbox-inline">
+            <input type="checkbox" value="" />Tea shop only</label
+          >
+          <label class="checkbox-inline">
+            <input type="checkbox" value="" />Restaurant / dessert</label
+          >
+        </form>
+
+        <div class="spacing"></div>
+
+        <h2>Types of Tea:</h2>
+        <form class="AreaList">
+          <label class="checkbox-inline">
+            <input type="checkbox" value="" />Tea Only</label
+          >
+          <label class="checkbox-inline">
+            <input type="checkbox" value="" />With Cheese Foam</label
+          >
+          <label class="checkbox-inline">
+            <input type="checkbox" value="" />With fruitshakes</label
+          >
+        </form>
+      </div>
+      <div class="spacing"></div>
+      <div class="spacing"></div>
+      <div class="spacing"></div>
+      <div class="spacing"></div>
+      <div class="spacing"></div>
+
+      <div class="results-modal" id="results-text">
+        <div class="modal-header">
+          <h1>Here are your results...</h1>
+          <div class="close" id="close-button">X</div>
+        </div>
+        <ul>
+          <li>Name</li>
+          <li>Phone number</li>
+          <li>Address</li>
+          <li>View on Google Maps</li>
+        </ul>
+        <br />
+        <ul>
+          <li>Name</li>
+          <li>Phone number</li>
+          <li>Address</li>
+          <li>View on Google Maps</li>
+        </ul>
+        <br />
+        <ul>
+          <li>Name</li>
+          <li>Phone number</li>
+          <li>Address</li>
+          <li>View on Google Maps</li>
+        </ul>
+      </div>
+
+      <div class="submit" id="submit-button">Submit</div>
+    </aside>
   </body>
+  <script src="js/main.js"></script>
 </html>
