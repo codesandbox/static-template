@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div x-data="{animate: false}">
+      <div x-data="{ open: false }">
+        <button
+          @click="open = true"
+          class="m-2 p-2 text-sm font-medium bg-gray-200 rounded-lg outline-none focus:outline-none"
+        >
+          Open Dropdown
+        </button>
+
+        <ul
+          x-show.transition.origin.top.left="open"
+          @click.away="open = false"
+          class="shadow-sm p-5 rounded max-w-sm ml-2 border border-gray-200"
+        >
+          <li>Dropdown Item 1</li>
+          <li>Dropdown Item 2</li>
+          <li>Dropdown Item 3</li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
