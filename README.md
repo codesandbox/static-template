@@ -1,2 +1,2 @@
 # static-template
-Created with code sandox
+Created with CodeSandbox
