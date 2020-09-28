@@ -1,0 +1,476 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap");
+@import url("/css/reset.css");
+html {
+  font-family: "Kumbh Sans", sans-serif;
+}
+body {
+  background-color: #eee;
+  padding: 2rem;
+}
+a {
+  text-decoration: none;
+}
+.hole-page {
+  background-color: #ea5455;
+  border-radius: 60px;
+  display: flex;
+  min-height: 768px;
+}
+.hole-page > section {
+  width: 100%;
+}
+
+/* aside menu */
+section.aside-menu {
+  padding: 48px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+section.aside-menu .logo {
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+section.aside-menu > a.logo span.alt-logo {
+  font-weight: 700;
+  margin-top: 10px;
+}
+section.aside-menu > a.logo span:not(.alt-logo) {
+  font-weight: normal;
+}
+.svg-logo {
+  width: 32px;
+  color: white;
+}
+ul.menu-bar {
+  padding: 0;
+  flex: 1;
+  margin-top: 2rem;
+}
+ul.menu-bar li > a {
+  color: white;
+  padding: 15px;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 15px;
+  transition: all 70ms linear;
+  font-weight: 600;
+}
+ul.menu-bar li > a > span {
+  display: block;
+  font-size: inherit;
+}
+
+ul.menu-bar li {
+  list-style-type: none;
+  margin-top: 3px;
+}
+ul.menu-bar li:first-child {
+  margin: 0;
+}
+ul.menu-bar a > svg {
+  width: 32px;
+}
+ul.menu-bar li:hover a,
+ul.menu-bar li.active a {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+ul.menu-bar + .logout-btn > svg {
+  width: 26px;
+  color: white;
+}
+
+/* Main Content */
+section.main-content {
+  background-color: #fff;
+  border-radius: 60px;
+  padding: 48px 30px;
+}
+
+section.main-content > header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section.main-content > header .search-form {
+  position: relative;
+}
+section.main-content > header .search-form input {
+  min-width: 350px;
+  border: 0;
+  outline: none;
+  padding: 10px 0 10px 30px;
+  border-bottom: 1px solid #a2a0a0;
+}
+section.main-content > header .search-form .search-svg {
+  width: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+
+section.main-content > header .middle-menu {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+section.main-content > header .gp-link a {
+  color: #505050;
+  margin: 0 10px;
+}
+section.main-content > header .gp-icons a {
+  color: black;
+  position: relative;
+}
+section.main-content > header .gp-icons a.has-notification:before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: red;
+  border-radius: 9999px;
+  right: 0;
+  margin-top: 7px;
+  margin-right: 1px;
+  border: 2px solid white;
+}
+section.main-content > header .gp-icons svg {
+  width: 24px;
+}
+section.main-content > header .user-info {
+  display: flex;
+}
+section.main-content > header .user-info .user-detail {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+section.main-content > header .user-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+section.main-content > header .user-info p {
+  color: gray;
+  font-size: 80%;
+}
+section.main-content > header .user-info img {
+  width: 50px;
+  border-radius: 15px;
+}
+section.main-content > .wrapper {
+  display: flex;
+  margin-top: 20px;
+}
+section.main-content > .wrapper aside {
+  width: 33.3333%;
+}
+section.main-content > .wrapper main {
+  width: 66.66666%;
+}
+section.main-content main h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+section.main-content main .income-content {
+  display: flex;
+  justify-content: space-between;
+}
+section.main-content main .income-content .income-card {
+  width: 30%;
+  padding: 25px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section.main-content main .income-content .income-card:hover {
+  box-shadow: 1px 1px 20px 4px #dedede4a;
+}
+section.main-content main .income-content .text span:last-child {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+section.main-content main .income-content .text span:first-child {
+  display: block;
+  color: gray;
+  font-size: 70%;
+  margin-bottom: 7px;
+}
+section.main-content main .income .icon {
+  width: 50px;
+}
+
+section.main-content main .statistics {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 30px 0;
+}
+section.main-content main .category-exps header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.main-content main .category-exps header .month-selection select {
+  appearance: none;
+  padding: 7px 36px 7px 10px;
+  background-color: #fff;
+  border-color: #eaeaea;
+  border-radius: 20px;
+  outline: none;
+}
+section.main-content main .category-exps header .month-selection {
+  position: relative;
+}
+section.main-content main .category-exps header .month-selection svg {
+  width: 16px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 8px 7px 0 0;
+  transform: rotateZ(90deg);
+  color: #b7b7b7;
+}
+section.main-content main .category-exps .cat-exps-content {
+  margin-top: 15px;
+}
+section.main-content main .category-exps .cat-exps-content ul.price-list {
+  list-style-type: disc;
+}
+section.main-content main .category-exps .cat-exps-content ul.price-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #2f3e46;
+  margin-bottom: 15px;
+}
+section.main-content
+  main
+  .category-exps
+  .cat-exps-content
+  ul.price-list
+  li
+  span:first-child {
+  font-weight: 700;
+}
+section.main-content
+  main
+  .category-exps
+  .cat-exps-content
+  ul.price-list
+  li
+  span:first-child::before {
+  content: "•";
+  margin-right: 7px;
+}
+section.main-content aside {
+  padding-left: 15px;
+}
+section.main-content aside > div.-content {
+  background-color: #2f3e46;
+  padding: 25px;
+  color: white;
+  border-radius: 20px;
+}
+section.main-content aside > div.-content header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.main-content aside > div.-content header h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+section.main-content aside > div.-content header > span {
+  border: 1px solid #26343c;
+  padding: 0 3px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+section.main-content aside > div.-content header > span svg {
+  width: 28px;
+  vertical-align: middle;
+  color: #cecece;
+}
+section.main-content aside .card-content {
+  margin-top: 20px;
+}
+section.main-content aside .card-content .internet-payment {
+  position: relative;
+}
+section.main-content aside .card-content .internet-payment span.progress-bar {
+  position: relative;
+  width: 100%;
+  height: 7px;
+  background: #617782;
+  display: block;
+  border-radius: 25px;
+}
+section.main-content
+  aside
+  .card-content
+  .internet-payment
+  span.progress-bar:after {
+  content: "";
+  height: 7px;
+  width: var(--current-length);
+  background-color: orange;
+  display: block;
+  border-radius: 25px;
+  position: absolute;
+  z-index: 1;
+}
+section.main-content aside .card-content .internet-payment .payment-details {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.main-content
+  aside
+  .card-content
+  .internet-payment
+  .payment-details
+  span {
+  font-size: 12px;
+  color: #617782;
+}
+section.main-content
+  aside
+  .card-content
+  .internet-payment
+  .payment-details
+  span.current-value {
+  color: white;
+}
+section.main-content aside .card-content .send-money-to {
+  margin-top: 15px;
+}
+section.main-content aside .card-content .send-money-to h3,
+section.main-content aside .card-content .spendings header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+section.main-content aside .card-content .send-money-to ul.people {
+  margin-top: 10px;
+  display: flex;
+}
+section.main-content aside .card-content .send-money-to ul.people li {
+  list-style-type: none;
+  margin-right: 15px;
+}
+section.main-content
+  aside
+  .card-content
+  .send-money-to
+  ul.people
+  li.add-people
+  a {
+  font-size: 3rem;
+  color: #a7b9c3;
+  background-color: #617782;
+  width: 48px;
+  height: 48px;
+  display: block;
+  border-radius: 50%;
+  text-align: center;
+  /* line-height: 1; */
+}
+section.main-content aside .card-content .send-money-to ul.people li img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 9999px;
+}
+section.main-content aside .card-content .spendings {
+  margin-top: 15px;
+}
+section.main-content aside .card-content .spendings header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.main-content aside .card-content .spendings header svg {
+  padding: inherit;
+}
+section.main-content aside .card-content .spendings ul.spendings-list {
+  margin-top: 7px;
+}
+section.main-content aside .card-content .spendings ul.spendings-list .disc {
+  flex: 1;
+  margin-left: 15px;
+  color: #a7b9c3;
+}
+section.main-content aside .card-content .spendings ul.spendings-list .disc h4 {
+  font-weight: 600;
+  line-height: 1.4;
+  color: #d8d8d8;
+}
+section.main-content aside .card-content .spendings ul.spendings-list .val {
+  color: white;
+  font-weight: 600;
+}
+section.main-content aside .card-content .spendings ul.spendings-list li {
+  margin-bottom: 7px;
+}
+section.main-content
+  aside
+  .card-content
+  .spendings
+  ul.spendings-list
+  .val
+  + svg {
+  width: 20px;
+  color: #617782;
+  margin-left: 10px;
+}
+section.main-content
+  aside
+  .card-content
+  .spendings
+  ul.spendings-list
+  .disc
+  span {
+  font-size: 0.7rem;
+}
+section.main-content aside .card-content .spendings ul.spendings-list li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.main-content
+  aside
+  .card-content
+  .spendings
+  ul.spendings-list
+  li
+  a
+  .thumbnail
+  img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 9999px;
+}
+/* Media Queries */
+
+@media (min-width: 768px) {
+  .hole-page section.main-content {
+    width: 85%;
+  }
+  .hole-page section.aside-menu {
+    width: 15%;
+  }
+}
