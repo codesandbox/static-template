@@ -1,12 +1,1122 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+
+<html lang="es">
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Avalisto inmobiliarias | Conviértete en partner</title>
+
+        <meta name="description" content="Aumenta tus beneficios, ahorra tiempo y ofrece un servicio de protección del alquiler único en España a tus propietarios con Avalisto">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
+
+        <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico" sizes="16x16">
+
+        <!-- CSS & icons-->
+
+        <link rel="stylesheet" href="src/main.min.css">
+
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+        <!-- UIkit CSS -->
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/css/uikit.min.css" />
+
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105800335-4"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-105800335-4');
+        </script>
+
+        <!-- UIkit JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit-icons.min.js"></script>
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
+   
+
+    </head>
+
+    <body>
+
+        <!-- Menu -->
+
+        <div uk-sticky="animation: uk-animation-slide-top">
+
+            <!-- Sub- Navbar -->
+
+        <nav id="sub-nav"class="uk-navbar-container sub-nav" uk-navbar>
+
+            <div class="uk-navbar-left uk-margin-small-left">
+
+                <div class="icons"><a href="https://instagram.com/avalistospain"><i class="lab la-instagram"></i></a></div>
+
+                <div class="icons"><a href="https://www.facebook.com/avalistospain/"><i class="lab la-facebook"></i></a></div>
+
+                <div class="icons"><a href="https://twitter.com/avalistospain"><i class="lab la-twitter-square"></i></a></div>
+
+                <div class="icons"><a href="https://www.linkedin.com/company/avalisto/"><i class="lab la-linkedin"></i></a></div>
+
+            </div>
+
+            <div class="uk-navbar-right">
+
+             <a class="icons uk-margin-small-right phone-number" href="#call" uk-toggle type="button"><span>&#x1F609; ¿Hablamos?</span></a>
+
+            </div>
+            <div id="call" class="uk-modal-full" uk-modal>
+                <div class="uk-modal-dialog">
+                    <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                    <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+                        <div class="uk-background-cover" style="background-image: url(https://images.unsplash.com/photo-1562664348-1ee6c6c0ce92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=60)" uk-height-viewport></div>
+                        <div class="uk-padding-large">
+                            <h2>Llámanos</h2>
+                            <a href="tel:+34914444499">91 444 44 99</a>
+                            <h2>Te llamamos</h2>
+                           
+                            <script>
+                                hbspt.forms.create({
+                                  portalId: "5623756",
+                                  formId: "ab17716a-ef69-43ad-bea9-8017ddd57fad"
+                              });
+                              </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+
+        <!-- Main- Navbar -->
+
+        <!-- Logo en alta -->
+
+        <nav class="uk-navbar-container menu-main-container" uk-navbar>
+
+            <div class="uk-navbar-left uk-visible@s">
+
+                <ul class="uk-navbar-nav">
+
+                    <li><a class="uk-navbar-item uk-margin-small-left" href="#"><img src="assets/logo-avalisto.svg" width="135px" height="41px" alt="protección-alquiler-inmobiliaria" uk-image></a></li>
+
+                </ul>
+
+            </div>
+
+           <!-- Logo en baja --> 
+
+            <div class="uk-navbar-left uk-visible uk-hidden@s">
+
+                <ul class="uk-navbar-nav">
+
+                    <li><a class="uk-navbar-item uk-margin-small-left" href="#"><img src="assets/logo-avalisto-mobile.svg" alt="protección-alquiler-inmobiliaria" uk-image></a></li>
+
+                </ul>
+
+            </div>
+ 
+
+            <div class="uk-navbar-right uk-margin-right">
+                <ul class="uk-navbar-nav uk-visible@l menu-elements">
+
+                    <li><a class="menu-item" href="#about-us">Descubre Avalisto</a></li>
+                    <li><a class="menu-item" href="#ventajas">Ventajas</a></li>
+                    <li><a class="menu-item" href="#servicio">Servicio</a></li>
+                    <li><a class="menu-item" href="#contact">Contacto</a></li>
+                    <li><a class="menu-item login-item" href="https://www.avalisto.com/users/account/login/?role=Proffesional">Acceso clientes</a></li>
+                    <li><a class="sign-up-btn outline-button uk-padding-small" href="https://www.avalisto.com/users/account/signupwithcoupon?__hstc=97020352.3a9dfa547889428f10297e0cab5b051b.1601461370138.1601461370138.1601461370138.1&__hssc=97020352.1.1601461370138&__hsfp=2460560153" type="button">Crear cuenta</a></li> 
+
+
+                </ul>
+
+                <!-- Mobile navbar -->
+
+                <ul class="uk-navbar-nav uk-hidden@l">
+                    <i class="las la-grip-lines menu-icon uk-margin-right" type="button" uk-toggle="target: #mobile-menu"></i>
+                </ul>
+
+                
+
+                <div id="mobile-menu" uk-offcanvas="mode: push; overlay: true">
+
+                    <div class="uk-offcanvas-bar menu-container">
+
+                        <button class="uk-offcanvas-close" type="button" uk-close></button>
+                        <h2>Menú</h2>
+
+                        <hr class="divider">
+
+                        <div class="mobile-menu-content uk-align-center">
+
+                            <ul class="mobile-menu-list">
+
+                                <li class="uk-margin"><a class="menu-item menu-link" href="#about-us">Descubre Avalisto</a></li>
+                                <li class="uk-margin"><a class="menu-item menu-link" href="#ventajas">Ventajas</a></li>
+                                <li class="uk-margin"><a class="menu-item menu-link" href="#servicio">Servicio</a></li>
+                                <li class="uk-margin"><a class="menu-item menu-link" href="#contact">Contacto</a></li>
+                                <div class="uk-divider mobile-menu-divider"></div>
+                                <li class="uk-margin"><a class="menu-item menu-link login-item" href="https://www.avalisto.com/users/account/login/?role=Proffesional">Acceso clientes</a></li>
+                                <li class="uk-margin"><a class="sign-up-btn outline-button uk-padding" href="https://www.avalisto.com/users/account/signupwithcoupon?__hstc=97020352.3a9dfa547889428f10297e0cab5b051b.1601461370138.1601461370138.1601461370138.1&__hssc=97020352.1.1601461370138&__hsfp=2460560153" type="button">Crear cuenta</a></li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+        </div>
+
+        <!-- Hero -->
+
+        <div id="hero" class="uk-section hero-section uk-padding-top uk-padding-bottom">
+
+            <div class="uk-container">
+
+                <div class="uk-flex-center uk-flex-middle" uk-grid>
+
+                    <div class="uk-width-1-2@m">
+                        
+                        <h1>Garantiza el alquiler de tus propietarios en tiempo real</h1>
+
+                        <ul class="hero-list">
+                            <li>
+                                <div class="hero-list-icon">  <img src="/assets/check.svg" width="16px"><span class="hero-list-text"><span class="hero-list-text"> Aumenta tus beneficios</span>
+                                </div>
+                                
+                            </li>
+                            <li>
+                                <div class="hero-list-icon"> <img src="/assets/check.svg" width="16px"><span class="hero-list-text"> Cierra operaciones al instante</span>
+                                </div>
+                                
+                            </li>                     
+                        </ul>      
+
+
+                        <div class="uk-flex uk-flex-left@m uk-flex-center uk-grid-small uk-row-large" uk-grid>
+                            
+                            <div>
+                                <a class="uk-button uk-button-primary" uk-tooltip="Te lo enseñamos a medida" href="#contact"><img class="btn-emoji" src="assets/rocket_emoji.png" width="20px" height="20px"> Solicita una demo</a> 
+                            </div>
+
+                            <div>
+                                <a class="uk-button uk-button-secondary account-btn" href="https://www.avalisto.com/users/account/signupwithcoupon"><i class="las la-sign-in-alt video-icon"></i> Empieza gratis</a>
+                            </div>
+                        
+                        </div>
+                        <div class="text uk-text-left@m uk-text-center">¡Avalisto no tiene coste para inmobiliarias!</div> 
+                    </div>
+                    
+                    
+                    <div class="uk-width-1-2@m hero-img">            
+                        <div class="hero-card-img-container uk-align-center uk-cover-container">
+                            <img src="assets/avalisto-garantia.jpg" alt="protección-alquiler-inmobiliaria" uk-image uk-cover>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="background-shapes uk-width-1-1 uk-child-width-expand uk-cover-container">
+                <svg width="1500" height="106" viewBox="0 0 1500 106" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="1500" height="106" fill="#EEF2F6"/>
+                    <path d="M0 0C202.313 23.3109 359.621 37.3835 471.922 42.2179C561.466 46.0726 654.158 48 750 48C1026.14 48 1276.14 32 1500 0H0Z" fill="white"/>
+                </svg>                    
+        </div>     
+
+       <!-- <!-- Whatsapp btn 
+
+        <a href="https://api.whatsapp.com/send?phone=34689624167" class="float float-right"><i class="lab la-whatsapp wasp-btn"></i></a> -->
+
+        <!-- Demo btn -->
+
+        <a class="float float-left uk-visible@s" href="#modal-center" uk-toggle><i class="las la-question-circle float-demo"></i><span class="float-label"> Demo</span></a>
+
+        <div id="modal-center" class="uk-flex-top" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+
+                <h2>Te lo enseñamos a medida y sin compromiso</h2>
+
+                    <script>
+
+                        hbspt.forms.create({
+
+                            portalId: "5623756",
+
+                            formId: "30226992-ac2b-40f0-b063-b1eb5a4f435e"
+
+                        });
+
+                    </script> 
+
+            </div>
+        </div>
+
+
+        <!-- Descubre Avalisto -->
+
+        <div id="about-us" class="uk-section about-us-section">
+
+            <div class="uk-container">
+
+                <div class="uk-flex uk-flex-middle" uk-grid>
+
+                    <div class="uk-width-1-3@m">
+
+                        <label class="uk-label-success label-avalisto">Cómo lo hacemos</label>
+
+                        <h2 class="light-header">Somos la plataforma de alquiler seguro más rápida del mercado</h2>
+
+                        <P class="text-light">Nuestra filosofí­a consiste en 4 pilares básicos para ofrecer una herramienta única en España. 
+
+                            <strong>Te presentamos las <span class="enphasis">4T del alquiler</span></strong>&nbsp;<img class="uk-visible@m" src="assets/point-right.png" width="20px" height="20px">
+
+                            <img class="uk-hidden@m"src="assets/point-down.png" width="20px" height="20px"></P>
+
+                    </div>
+                    
+                    
+                    <div class="uk-width-2-3@m">
+                        
+                        <!-- Slider V1 -->  
+
+                        <div class="cards-container" uk-slider="center: true" autoplay="true">
+
+                            <div class="uk-position-relative uk-visible-toggle" tabindex="-1" >
+                                
+                                <div class="cards-shadow">
+
+                                <ul class="uk-slider-items uk-child-width-1-2@s" uk-grid>
+
+                                    <li>
+
+                                        <div class="uk-card uk-card-default card-avalisto-dark">
+
+                                            <div class="uk-card-media-top">
+
+                                                <img class="uk-align-center card-img"src="assets/time.svg" width="48px" height="48px" uk-img="target: .about-us-section">
+
+                                            </div>
+
+                                            <div class="uk-card-body">
+
+                                                <h3 class="uk-card-title">Tiempo</h3>
+
+                                                <p>Nuestras operaciones de alquiler con seguro se realizan en tiempo real. Nada de 24 horas ni de procesos abandonados. Alquilamos al instante</p>
+
+                                            </div>
+
+                                        </div>
+
+                                    </li>
+
+                                    <li>
+
+                                        <div class="uk-card uk-card-default card-avalisto-dark">
+
+                                            <div class="uk-card-media-top">
+
+                                                <img class="uk-align-center card-img"src="assets/tech.svg" width="48px" height="48px" uk-img="target: .about-us-section">
+
+                                            </div>
+
+                                            <div class="uk-card-body">
+
+                                                <h3 class="uk-card-title">Tecnología</h3>
+
+                                                <p>Todas nuestras herramientas son accesibles desde cualquier dispositivo. Tengas un alquiler o cincuenta, Avalisto responde</p>
+
+                                            </div>
+
+                                        </div>
+
+                                    </li>
+
+                                    <li>
+
+                                        <div class="uk-card uk-card-default card-avalisto-dark">
+
+                                            <div class="uk-card-media-top">
+
+                                                <img class="uk-align-center card-img"src="assets/transparency.svg" width="48px" height="48px" uk-img="target: .about-us-section">
+
+                                            </div>
+
+                                            <div class="uk-card-body">
+
+                                                <h3 class="uk-card-title">Transparencia</h3>
+
+                                                <p>Tendrás tu propio usuario y contraseña. Nuestros partners mandan sobre sus alquileres</p>
+
+                                            </div>
+
+                                        </div>
+
+                                    </li>
+
+                                    <li>
+
+                                        <div class="uk-card uk-card-default card-avalisto-dark">
+
+                                            <div class="uk-card-media-top">
+
+                                                <img class="uk-align-center card-img"src="assets/tranquility.svg" width="48px" height="48px" uk-img="target: .about-us-section">
+
+                                            </div>
+
+                                            <div class="uk-card-body">
+
+                                                <h3 class="uk-card-title">Tranquilidad</h3>
+
+                                                <p>Todas nuestras operaciones llevan incluido un seguro de impago de alquiler para prevenir cualquier imprevisto</p>
+
+                                            </div>
+
+                                        </div>
+
+                                    </li>
+
+                                </ul>
+
+                                <a class="uk-position-center-left uk-position-small uk-hidden-hover slider-arrow" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+
+                                <a class="uk-position-center-right uk-position-small uk-hidden-hover slider-arrow" href="#" uk-slidenav-next uk-slider-item="next"></a>
+                             </div>                          
+
+                            </div>
+
+                            <i class="las la-hand-pointer uk-margin-top uk-hidden@m hand-helper helper"></i>
+                            <span class="helper uk-align-center uk-hidden@m">Desliza para ver</span>
+
+                        </div>
+
+                    </div>
+
+                    </div> 
+
+                </div>
+
+            </div> 
+
+        <!-- Ventajas -->
+
+        <div id="ventajas" class="uk-section ventajas-section uk-background-bottom-center">
+
+            <div class="uk-container">
+
+                <div class="uk-flex-middle uk-align-center" uk-grid>
+
+                    <h2 class="center-header uk-text-center">Ventajas de ser partner de Avalisto</h2>
+
+                    <h5 class="subtitle uk-text-center">Fácil para ti y fácil para tus clientes. Alquiles como alquiles, Avalisto te ayuda</h5>
+
+                </div>
+
+                <!-- Ventajas según cliente-->
+
+                <div class="uk-flex-middle switcher benefits-container" uk-grid>
+
+                    <ul class="uk-subnav uk-subnav-pill" uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium">
+
+                        <li><a class="pill-avalisto" href="#">Inmobiliarias</a></li>
+
+                        <li><a class="pill-avalisto" href="#">Propietarios</a></li>
+
+                        <li><a class="pill-avalisto" href="#">Inquilinos</a></li>
+
+                    </ul>
+
+                    
+                    <ul class="uk-switcher uk-margin-top benefit-wrapper">
+
+                        <li>
+
+                            <div class="uk-flex uk-flex-middle uk-flex-wrap" uk-grid>
+
+                                <div class="benefit-wrapper uk-column-1-2@s uk-column-1-4@m">
+
+                                    <div class="uk-card benefit">
+
+                                        <div class="benefit-icon inmobiliaria"><i class="las la-euro-sign icon"></i></div>
+
+                                        <div class="benefit-caption">Gana más comisiones en cada alquiler</div>  
+
+                                    </div>
+
+                                    <div class="uk-card benefit">
+
+                                        <div class="benefit-icon inmobiliaria"><i class="las la-gem"></i></div>
+
+                                        <div class="benefit-caption">Ofrece servicios de alto valor añadido a tus clientes</div>  
+
+                                    </div>
+
+                                    <div class="uk-card benefit">
+
+                                        <div class="benefit-icon inmobiliaria"><i class="las la-mobile"></i></div>
+
+                                        <div class="benefit-caption">Accede a nuestra plataforma de gestión sin coste</div>  
+
+                                    </div>
+
+                                    <div class="uk-card benefit">
+
+                                        <div class="benefit-icon inmobiliaria"><i class="las la-handshake"></i></div>
+
+                                        <div class="benefit-caption">Cierra tus operaciones de aqluiler al instante</div>  
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </li>
+
+                        <li>
+
+                            <div class="uk-flex uk-flex-middle uk-flex-wrap" uk-grid>
+
+                                <div class="benefit-wrapper uk-column-1-2@s uk-column-1-4@m">
+
+                                    <div class="uk-card benefit">
+
+                                        <div class="benefit-icon propietarios"><i class="las la-user-lock icon"></i></div>
+
+                                        <div class="benefit-caption">Protege el cobro de las rentas pase lo que pase</div>  
+
+                                    </div>
+
+                                    <div class="uk-card benefit">
+
+                                        <div class="benefit-icon propietarios"><i class="las la-handshake"></i></div>
+
+                                        <div class="benefit-caption">Garantizamos la solvencia del inquilin@</div>  
+
+                                    </div>
+
+                                    <div class="uk-card benefit">
+
+                                        <div class="benefit-icon propietarios"><i class="las la-business-time"></i></div>
+
+                                        <div class="benefit-caption">Aumenta la rentabilidad al alquilar mucho más rápido</div>  
+
+                                    </div>
+
+                                    <div class="uk-card benefit">
+
+                                        <div class="benefit-icon propietarios"><i class="las la-hard-hat"></i></div>
+
+                                        <div class="benefit-caption">Coberturas adicionales para protegerse en caso de impago</div>  
+
+                                    </div>
+
+                                </div>
+
+                            </div> 
+
+                        </li>
+
+                        <li>
+
+                            <div class="uk-flex uk-flex-middle uk-flex-wrap uk-margin" uk-grid>
+
+                                <div class="benefit-wrapper uk-column-1-2@s uk-column-1-4@m">
+
+                                    <div class="uk-card benefit">
+
+                                        <div class="benefit-icon inquilinos"><i class="las la-user-clock icon"></i></div>
+
+                                        <div class="benefit-caption">Alquila más rápido del inmueble que desea</div>  
+
+                                    </div>
+
+                                    <div class="uk-card benefit">
+
+                                        <div class="benefit-icon inquilinos"><i class="las la-piggy-bank"></i></div>
+
+                                        <div class="benefit-caption">Ahorro al no necesitar desembolsar tantas fianzas</div>  
+
+                                    </div>
+
+                                    <div class="uk-card benefit">
+
+                                        <div class="benefit-icon inquilinos"><i class="las la-magic"></i></div>
+
+                                        <div class="benefit-caption">Análisis de solvencia sin sesgos y sin documentación sensible</div>  
+
+                                    </div>
+
+                                    <div class="uk-card benefit">
+
+                                        <div class="benefit-icon inquilinos"><i class="las la-handshake"></i></div>
+
+                                        <div class="benefit-caption">Alquiler equilibrado que protege también al inquilino</div>  
+
+                                    </div>
+
+                                </div>
+
+                            </div> 
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Image inmob-->
+
+                <div class="svg-container uk-align-center">
+
+                  <img src="/assets/inmobiliarias-gif.gif" uk-img="target: .svg-container">   
+
+                </div>
+
+            </div>
+            
+
+        </div>
+
+
+        <!-- Results -->
+
+        <div class="results uk-container uk-margin-bottom">
+            <h2 class="uk-text-center">Nuestros resultados</h2>
+           <h5 class="subtitle uk-text-center uk-margin">Nada mejor para hablar de nosotros que los datos de nuestro modelo</h5> 
+            <div class="uk-grid-medium uk-child-width-expand@s uk-text-center results-container" uk-grid>
+                    <div>
+                        <div class="uk-card uk-card-default uk-padding">
+                            <div class="results-icon">
+                                <img src="/assets/rentas.svg">
+                            </div>
+                            <div class="results-text uk-margin-top">
+                                +4,5M de euros en rentas garantizados por Avalisto
+                            </div>  
+                        </div>
+                    </div>
+                    <div>
+                            <div class="uk-card uk-card-default uk-padding">
+                                    <div class="results-icon">
+                                        <img src="/assets/agencias.svg">
+                                    </div>
+                                    <div class="results-text uk-margin-top">
+                                        +65 agencias registradas en nuestra plataforma
+                                    </div>  
+                                </div>
+                    </div>
+                    <div>
+                            <div class="uk-card uk-card-default uk-padding">
+                                    <div class="results-icon">
+                                        <img src="/assets/tasa-morosidad.svg">
+                                    </div>
+                                    <div class="results-text uk-margin-top">
+                                        -0,5% de incidencias en los últimos 12 meses
+                                    </div>  
+                                </div>
+                    </div>
+                </div> 
+        </div>
+       
+        <div class="background-shapes uk-width-1-1 uk-child-width-expand uk-cover-container">
+                <svg width="1500" height="106" viewBox="0 0 1500 106" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="1500" height="106" fill="#EEF2F6"/>
+                    <path d="M0 0C202.313 23.3109 359.621 37.3835 471.922 42.2179C561.466 46.0726 654.158 48 750 48C1026.14 48 1276.14 32 1500 0H0Z" fill="white"/>
+                </svg>                    
+        </div>     
+        <!-- Servicios -->
+
+        <div id="servicio" class="uk-section servicio-section" >
+
+            <div class="uk-container">
+
+                <div class="uk-flex-middle" uk-grid>
+
+                     
+
+                    <div class="uk-width-1-2@s">
+
+                        <h2>Descubre la plataforma</h2>
+
+                        <p>Seguro de impago, gestión documental, seguimiento de ventas... Ser partner de Avalisto te permite hacer más con menos esfuerzo</p>
+                      
+                      <span class="enlaces útiles">Enlaces útiles</span>  
+
+                        <div class="uk-link" type="button" uk-toggle="target: #coberturas"><img src="/assets/check.svg" width="14px" uk-img="target: .servicio-section"> Coberturas del seguro</div>
+                      
+                        <div class="uk-link" type="button" href="#cotizador" uk-toggle><img src="/assets/check.svg" width="14px" uk-img="target: .servicio-section"> Cotizador de pólizas</div>
+                      
+
+                    </div>
+
+                    <div class="uk-width-1-2@s mockup-avalisto uk-align-center">
+
+                        <div class="uk-inline uk-dark">
+
+                            <img src="assets/mockup.png" uk-img="target: .servicio-section";>
+
+                            <div class="uk-position-absolute uk-transform-center" style="left: 25%; top:65%" uk-tooltip="FÃ¡cil uso de herramientas con resultados inmediatos" uk-marker></div>
+
+                            <div class="uk-position-absolute uk-transform-center" style="left: 78%; top:42%" uk-tooltip="Ãrea personal para seguimiento de negocios" uk-marker></div>
+
+                            <div class="uk-position-absolute uk-transform-center" style="left: 68%; top:88%" uk-tooltip="Asesoramiento y asistencia tÃ©cnica personalizada" uk-marker></div>
+
+                            <div class="uk-position-absolute uk-transform-center" style="left: 50%; top:20%" uk-tooltip="Accesible desde cualquier dispositivo" uk-marker></div>
+
+                        </div>
+
+                    </div>  
+
+                    <div id="coberturas" uk-offcanvas="mode: push; overlay: true">
+
+                        <div class="uk-offcanvas-bar menu-container">
+
+                    
+
+                            <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                    
+
+                            <h3>Protege a tu propietario</h3>
+
+                    
+
+                            <div class="insurance-covers uk-align-left uk-dark">
+
+                                <ul class="insurance-covers-list">
+
+												<li class="insurance-title">Coberturas del alquiler</li>
+
+                                   <li><img src="/assets/check.svg" width="14px" uk-img="target: .insurance-covers"> Hasta 12 meses de rentas cubiertas vía indemnización</li>
+
+												<li><img src="/assets/check.svg" width="14px" uk-img="target: .insurance-covers"> Coberturas de hasta 3.000€ en caso de vandalismo</li>
+
+												<li><img src="/assets/check.svg" width="14px" uk-img="target: .insurance-covers"> Cambio de cerradura de hasta 350€</li>
+
+												<li><img src="/assets/check.svg" width="14px" uk-img="target: .insurance-covers"> Locales comerciales hasta 3.000€ de renta con 350€ de franquicia</li>
+
+												<li class="insurance-title">Defensa jurídica</li>
+
+                                   <li><img src="/assets/check.svg" width="14px" uk-img="target: .insurance-covers"> Todos los gastos legales cubiertos hasta desahucio (poder notarial, honorarios de abogados, etc.)</li>
+
+												<li><img src="/assets/check.svg" width="14px" uk-img="target: .insurance-covers"> Libre designación: hasta 3.000€</li>
+
+                                </ul>
+
+											<p class="uk-text-center uk-align-center">Aseguramos con:</p>
+
+											<img class="uk-text-center uk-align-center" data-src="assets/logo-asegrup.png" width="150px" height="" alt="logo-asegrup" uk-img="target: .insurance-covers">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div id="cotizador" class="uk-flex-top" uk-modal>
+                            <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical uk-align-center">
+                        
+                                <button class="uk-modal-close-default" type="button" uk-close></button>
+                        
+                                <!-- Code starting here -->
+
+                                <div class="budget-type-selector">
+                                    <ul class="uk-subnav uk-subnav-pill uk-text-center" uk-switcher>
+                                        <li><a href="#"><i class="las la-home"></i> Alquiler residencial</a></li>
+                                        <li><a href="#"><i class="las la-store-alt"></i> Locales comerciales</a></li>
+                                    </ul>
+
+
+                                    <ul class="uk-switcher uk-margin calc-container">
+                                        <li>
+                                        <div class="form-container">
+                                            <form>
+                                                <fieldset class="uk-fieldset">
+                                                    <div class="uk-row uk-padding-small uk-margin-left uk-margin-right">
+                                                        <legend class="uk-legend">Introduce la mensual (€)</legend>
+                                                            <input type="number" id="rent-b2c" class="uk-input uk-form-width-medium input-b2c" placeholder="Por ejemplo: 600">
+                                                    </div>
+                                                    <div class="uk-row uk-padding-small uk-margin-left uk-margin-right">
+                                                        <legend class="uk-legend form-calc-results">Con Avalisto garantizas</legend>
+                                                        <output type="text" id="protect-b2c" class="uk-input output uk-form-width-medium"> 
+                                                    </div>
+
+                                                    <div class="uk-row uk-padding-small uk-margin-left uk-margin-right">
+                                                        <legend class="uk-legend form-calc-results">Por tan sólo</legend>
+                                                        <output type="text" id="cost-b2c" class="uk-input uk-form-width-medium output">
+                                                    </div>
+                                                </fieldset>
+                                            </form>
+                                        </div>  
+                                        </li>
+
+                                    <div class="form-container">
+                                        <form>
+                                            <fieldset class="uk-fieldset">
+                                                <div class="uk-row uk-padding-small uk-margin-left uk-margin-right">
+                                                    <legend class="uk-legend">Introduce la mensual (€)</legend>
+                                                    <input type="number" id="rent-comercial" class="uk-input uk-form-width-medium input-comercial" placeholder="Por ejemplo: 1200">
+                                                </div>
+                                                <div class="uk-row uk-padding-small uk-margin-left uk-margin-right">
+                                                    <legend class="uk-legend form-calc-results">Con Avalisto garantizas</legend>
+                                                    <output type="text" id="protect-comercial" class="uk-input uk-form-width-medium output"> 
+                                                </div>
+                                                <div class="uk-row uk-padding-small uk-margin-left uk-margin-right">
+                                                    <legend class="uk-legend form-calc-results">Por tan sólo</legend>
+                                                    <output type="text" id="cost-comercial" class="uk-input uk-form-width-medium output">
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                        </div>  
+                                        </ul>
+                                    </div>  
+                        
+                            </div>
+                        </div>  
+
+                </div>
+
+                
+                
+            </div>
+
+            <!-- Cómo funciona -->
+
+            <div class="uk-container">
+
+                <div class="uk-flex-inline uk-flex-middle uk-align-center" uk-grid>
+
+                    <h2 class="uk-text-center uk-align-center">Usarla es así de fácil</h2>
+
+                    <div class="uk-grid-small uk-child-width-expand@s uk-text-left uk-margin-bottom uk-margin-top" uk-grid>
+
+                        <div class="uk-card uk-card-default step-card card-1">
+                            <div class="step-card-top">
+                                <div class="step-wrapper">
+                                    1
+                                </div>    
+                            </div>
+                            <div class="step-card-body">Analiza a un inquilino con un breve formulario, sin documentación y con resultado en tiempo real para saber si es viable alquilar el inmueble</div>
+                        </div>
+
+                        <div class="uk-card uk-card-default step-card card-2">
+                            <div class="step-card-top">
+                                <div class="step-wrapper">
+                                    2
+                                </div>    
+                            </div>
+                            <div class="step-card-body">Genera o sube el contrato de arrendamiento, fírmalo y crea el borrador de póliza que protegerá el cobro de las rentas</div>
+                        </div>
+
+                        <div class="uk-card uk-card-default step-card card-3">
+                            <div class="step-card-top">
+                                <div class="step-wrapper">
+                                    3
+                                </div>    
+                            </div>
+                            <div class="step-card-body">¡Eso es todo! Emite la póliza para proteger el inmueble y haz entrega de las llaves</div>
+                        </div>
+
+                </div>
+                <div class="uk-flex-inline uk-flex-center uk-align-center" uk-grid>
+                  <div class="support-card-container uk-padding-small">  
+                    <div class="support-card-icon-wp uk-text-center">
+                        <img class="support-card-img" src="assets/servicio-cliente.svg">
+                    </div>
+                    <div class="support-card-text"> Y si necesitas ayuda, cuentas con soporte
+                    </div>      
+                </div>      
+                </div>      
+            </div>   
+
+        </div>
+        </div>
+        
+        <div class="background-shapes uk-width-1-1 uk-child-width-expand uk-cover-container">
+                <svg width="1500" height="106" viewBox="0 0 1500 106" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="1500" height="106" fill="white"/>
+                    <path d="M0 0C202.313 23.3109 359.621 37.3835 471.922 42.2179C561.466 46.0726 654.158 48 750 48C1026.14 48 1276.14 32 1500 0H0Z" fill="#EEF2F6"/>
+                </svg>
+                                       
+        </div> 
+
+        <!-- Contacto -->
+
+        <div id="contact" class="uk-section uk-container uk-flex contacto-section">
+
+            <div class="uk-flex uk-flex-middle uk-child-width-1-2@s" uk-grid>
+
+                <div class="contact-form">
+
+                    <h2>Solicita tu demo gratuita</h2>
+
+                    <p>No te quedes con la duda. Descubre el servicio que están usando cada vez más inmobiliarias como la tuya</p>
+
+
+                    <script>
+
+                        hbspt.forms.create({
+
+	                        portalId: "5623756",
+
+	                        formId: "30226992-ac2b-40f0-b063-b1eb5a4f435e"
+
+                        });
+
+                    </script> 
+
+                </div>
+
+                <div class="contact-image uk-align-center">
+
+                    <img src="assets/contact-img.png" width="" height="" alt="protección-alquiler-inmobiliaria" uk-img="target: .contacto-section" uk-image>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Showcase de clientes -->
+
+        <div class="uk-container">
+
+            <div class="uk-flex-inline uk-flex-middle uk-align-center" uk-grid>
+
+
+
+                <h2 class="uk-text-center uk-align-center">Mejores gracias a ellos</h2>
+
+                <div class="uk-position-relative uk-visible-toggle showcase-clientes-container" tabindex="-1" uk-slider>
+                   <div class="cards-shadow-wh"> 
+                    <ul class="uk-slider-items uk-child-widht-1-2 uk-child-widht-1-3@s showcase">
+
+                        <li class="uk-padding-large">
+
+                            <img src="assets/gilmar-logo.png" uk-img="target: .showcase-clientes-container">
+
+                        </li>
+
+                        <li class="uk-padding-large">
+
+                            <img src="assets/advancing-logo.png" uk-img="target: .showcase-clientes-container">
+
+                        </li>
+
+                        <li class="uk-padding-large">
+
+                            <img src="assets/tecnocasa-logo.png" uk-img="target: .showcase-clientes-container">
+
+                        </li>
+
+                        <li class="uk-padding-large">
+
+                            <img src="assets/aon-logo.png" uk-img="target: .showcase-clientes-container">
+
+                        </li>
+
+                        <li class="uk-padding-large uk-margin-top">
+
+                            <img src="assets/logo-enfoka.png" uk-img="target: .showcase-clientes-container">
+
+                        </li>
+
+                    </ul>
+                </div>  
+
+                   
+
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+        
+        <div class="uk-section uk-container presencia-medios">
+                <h2 class="uk-text-center uk-align-center">Estamos en los medios</h2>
+        <div class="uk-grid-medium uk-child-width-expand@m uk-text-left uk-margin-bottom uk-margin-top" uk-grid>
+            <div>
+                <div class="uk-card uk-card-default uk-padding">
+                  <a href="https://www.elmundo.es/economia/vivienda/2020/03/01/5e4fb2b921efa0631a8b4575.html" target="_blank">  
+                    <div class="blog-text uk-margin-top">
+                        La 'uberización' del ladrillo: realidad virtual e inteligencia artificial para alquilar tu próximo piso
+                    </div>
+                    <div class="uk-margin-top">
+                        <img src="/assets/logo-mundo.png" width="180px" uk-img="target: .presencia-medios">
+                    </div>
+                </a>     
+                </div>
+            </div>
+            <div>
+                    <div class="uk-card uk-card-default uk-padding">
+                        <a href="https://byzness.elperiodico.com/es/empresarios/20200224/futuro-sector-inmobiliario-parecerse-uber-7856358" target="_blank">  
+                            <div class="blog-text uk-margin-top">
+                                ¿El futuro del sector inmobiliario pasa por parecerse a Uber?
+                            </div>
+                            <div class="uk-margin-top">
+                                <img src="/assets/logo-byzness.png" width="150px" uk-img="target: .presencia-medios">
+                            </div>
+                        </a>   
+                        </div>
+            </div>
+            <div>
+                    <div class="uk-card uk-card-default uk-padding">
+                        <a href="https://future.inese.es/avalisto-protege-a-los-propietarios-frente-a-los-impagos-en-el-alquiler/" target="_blank">  
+                            <div class="blog-text uk-margin-top">
+                                Avalisto protege a los propietarios frente a los impagos en el alquiler
+                            </div>
+                            <div class="uk-margin-top">
+                                <img src="/assets/logo-future.png" width="150px" uk-img="target: .presencia-medios">
+                            </div>
+                        </a>    
+                        </div>
+            </div>
+        </div>
+    </div> 
+    
+    <div class="uk-container last-cta uk-margin-large-bottom">
+
+            <h2 class="uk-text-center uk-align-center">Empieza ahora</h2>
+
+            <p class="uk-text-center uk-margin"> La plataforma de Avalisto es tan fácil de usar que puedes empezar por ti mism@ y solicitar asistencia en cualquier momento si la necesitas. No pierdas la oportunidad de empezar a usar el servicio que ha revolucionado la manera de alquilar con seguro </p>
+
+            <a class="uk-button uk-button-primary uk-width-1-4@s uk-width-1-3@l uk-align-center uk-margin" type="button" href="https://www.avalisto.com/users/account/signup/?returnUrl=%2Frenterorlesseer%2F">Crea tu cuenta ahora</a>
+    </div>    
+
+
+        <!-- Start of HubSpot Embed Code -->
+
+            <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5623756.js"></script>
+
+        <!-- End of HubSpot Embed Code -->
+
+        <!-- Cookie -->
+
+        <div class="cookie-container" id="cookieconsent">
+            <div class="cookie-card-top">
+                <button onclick="cerrarCookies()" class="close-button"><i class="las la-times"></i></button>
+            </div>
+            <div class="cookie-card-body">  
+                <p>&#x1F36A Usamos cookies para mejorar tu experiencia de uso en nuestra web.
+                <a class="cookies-link" href="https://www.avalisto.com/Assets/documents/SeguridadPrivacidad.pdf?__hstc=186891255.5ba672dd27ee88c3a5556188ca4975a7.1599477021625.1599479579596.1599488881160.4&__hssc=186891255.1.1599488881160&__hsfp=2799854523">Saber más</a></p>
+                <button onclick="aceptarCookies()" class="uk-button uk-button-secondary aceptar-cookies"> ¡De acuerdo!</button> 
+                
+                </div>    
+            </div>
+
+
+    </body>
+
+    <footer>
+
+    <!-- Footer -->
+
+        <div class="footer">
+
+            <!-- Desktop & Tablet -->
+
+            <div class="uk-grid-small uk-child-width-expand@s uk-text-left uk-padding" uk-grid>
+
+                <div class="footer-column uk-padding">
+                    <img src="assets/logo-avalisto.svg">
+                    <div class="text">Garantizando el patrimonio inmobiliario desde 2017</div>  
+                </div>     
+
+                <div class="footer-column uk-padding">
+
+                    <ul class="uk-list">
+                    	<li class="footer-column-title">Nosotros</li>
+
+                        <li><a class="footer-link" href="https://www.avalisto.com/" target="_blank">Quiénes somos</a></li>
+
+                        <li><a class="footer-link" href="https://www.avalisto.com/#price" target="_blank">Cotizador de servicio</a></li>
+
+                        <li><a class="footer-link" href="https://blog.avalisto.com" target="_blank">Blog</a></li>
+
+                        <li><a class="footer-link" href="https://blog.avalisto.com/faq" target="_blank">Preguntas frecuentes</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer-column uk-padding">
+
+                    <ul class="uk-list">
+                    	<li class="footer-column-title">Privacidad</li>
+
+                        <li><a class="footer-link" href="https://www.avalisto.com/Assets/documents/SeguridadPrivacidad.pdf" target="_blank">Política de privacidad</a></li>
+
+                        <li><a class="footer-link" href="https://www.avalisto.com/Assets/documents/CondicionesEspeciales.pdf" target="_blank">Aviso legal</a></li>
+
+                        <li><a class="footer-link" href="https://www.avalisto.com/Assets/documents/Pol%C3%ADtica%20de%20Cookies.pdf" target="_blank">Política de cookies</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer-column uk-padding">
+
+                    <ul class="uk-list">
+                    	<li class="footer-column-title">Contacto</li>
+
+                        <li><a class="footer-link" href="#about-us" target="_blank">Calle Alsasua 14-16, Madrid</a></li>
+
+                        <li><a class="footer-link" href="tel:+34914444499" target="_blank">91 444 44 99</a></li>
+
+                        <li><a class="footer-link" href="mailto:pregunta@avalisto.com" target="_blank">Pregúntanos algo</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer-column uk-padding">
+
+                        <ul class="uk-list">
+                            <li class="footer-column-title">Síguenos</li>
+    
+                            <li><a class="footer-link" href="https://instagram.com/avalistospain" target="_blank">Instagram</a></li>
+    
+                            <li><a class="footer-link" href="https://www.facebook.com/avalistospain/" target="_blank">Facebook</a></li>
+    
+                            <li><a class="footer-link" href="https://twitter.com/avalistospain" target="_blank">Twitter</a></li>
+
+                            <li><a class="footer-link" href="https://www.linkedin.com/company/avalisto/" target="_blank">Linkedin</a></li>  
+    
+                        </ul>
+    
+                    </div> 
+
+            </div>
+
+        </div>
+
+			<div class="uk-text-center copyright"><i class="las la-copyright"></i> Avalisto 2020</p>
+
+    </footer>
+    <script type="text/javascript" src="src/main.min.js"></script>
+</body>
 </html>
