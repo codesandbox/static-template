@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "PT Sans", sans-serif;
+}
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 500px;
+  padding: 10px;
+  border-radius: 4px;
+  color: #aaa;
+  background-color: #ddd;
+}
+
+.editor code {
+  font-size: 16px;
+  margin: 0;
+  font-family: "PT Sans", sans-serif;
+}
+
+.editor > .css-block {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.editor > .css-block > textarea {
+  height: 100%;
+  border: none;
+  font-size: 16px;
+  color: #aaa;
+}
+
+.editor > .button-group {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.editor > .button-group > button {
+  padding: 0.4em 0.8em;
+  margin-top: 0.3em;
+  margin-right: 0.3em;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  user-select: none;
+  appearance: none;
+}
+
+.editor .button-group > button.clear-btn {
+  background-color: red;
+}
+
+.editor .button-group > button.leap-back-btn {
+  background-color: blue;
+}
+
+.editor .button-group > button.leap-next-btn {
+  background-color: green;
+}
+
+.pond {
+  width: 500px;
+  height: 500px;
+  border-radius: 4px;
+  background-color: #1f5768;
+  background-image: url(../images/lilypad-green.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 160px 160px;
+}
+
+.pond > .frog-wrapper {
+  width: 160px;
+  height: 160px;
+  /* z-index: 20; */
+}
+
+.pond > .frog-wrapper > .frog {
+  width: 160px;
+  height: 160px;
+  background-image: url(../images/frog-green.svg);
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 60% 60%;
+}

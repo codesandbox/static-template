@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>水平垂直居中</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <script defer type="text/javascript" src="js/index.js"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!-- editor start-->
+    <div class="editor">
+      <code>.pond{ width: 500px; height: 500px; } </code>
+      <code>.frog{ width: 160px; height: 160px; } </code>
+
+      <div class="css-block">
+        <code>.pond{</code>
+        <textarea class="pond-text"></textarea>
+        <code>}</code>
+      </div>
+
+      <div class="css-block">
+        <code>.frog{</code>
+        <textarea class="frog-text"></textarea>
+        <code>}</code>
+      </div>
+
+      <div class="button-group">
+        <button class="clear-btn">clear</button>
+        <button class="leap-back-btn">leap back</button>
+        <button class="leap-next-btn">leap next</button>
+      </div>
+    </div>
+
+    <!-- pond start-->
+    <div class="pond">
+      <div class="frog-wrapper">
+        <div class="frog animated pulse infinite"></div>
+      </div>
+    </div>
   </body>
 </html>
