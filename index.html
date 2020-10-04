@@ -1,12 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>인편단심-INPEN,DANSIM</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+          rel="stylesheet"
+        />
+        <link href="./main.css" rel="stylesheet" />
+        <title>Document</title>
+      </head>
+      <body>
+        <div class="header">
+          <div class="header__coloumn">
+            <div class="logo"></div>
+            <a href="#">oooo</a>
+            <a href="#">ooooo</a>
+          </div>
+          <div class="header__coloumn column-right">
+            <a
+              href="javascript:openWindowPop('login_page.html', 'popup');"
+              class="header__login"
+              >로그인하기</a
+            >
+            <a href="#" class="header__sign-up">회원가입</a>
+          </div>
+        </div>
+        <div class="empty-box cover cover-first">
+          <div class="content-left">
+            <span class="content-text"
+              >육군 공군 해군 해병대 모든 인터넷 편지를 한곳에서 쉽고 간편하게
+              보내세요</span
+            >
+            <div class="start"><a href="#">바로 시작하기</a></div>
+          </div>
+        </div>
+        <div class="empty-box cover cover-second"></div>
+        <div class="empty-box cover cover-third"></div>
+      </body>
+    </html>
+    <script>
+      //javascript
+      function openWindowPop(url, name) {
+        var options =
+          "top=100, left=500, width=420, height=400, status=no, menubar=no, toolbar=no, resizable=no";
+        window.open(url, name, options);
+      }
+    </script>
   </body>
 </html>
