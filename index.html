@@ -1,12 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Test Email Sample</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .wrapper {
+        display: flex;
+      }
+      .divider {
+        border-bottom: 1px solid #c9c7c7;
+        margin: 30px 45px;
+      }
+      .main {
+        height: 100%;
+        width: 100%;
+        max-width: 700px;
+        background-color: #22a1dc;
+        margin: auto;
+      }
+      .header {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+      .header img {
+        margin: 40px 45px -40px 25px;
+        width: 200px;
+      }
+      .pattern {
+        display: flex;
+        height: 532px;
+        background-image: url(./src/pattern.png);
+        background-position: center;
+        background-size: 85%;
+        background-repeat: no-repeat;
+      }
+      .bottom {
+        display: flex;
+        flex-direction: row;
+        width: 600px;
+        margin: 30px auto;
+      }
+      .contact-title {
+        font-family: Montserrat;
+        color: white;
+        font-size: 16px;
+        margin: 0;
+      }
+      .contact-data {
+        font-family: Montserrat;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0;
+      }
+      .bottom-logo {
+        margin: auto 0 auto auto;
+      }
+      .bottom-logo img {
+        width: 200px;
+      }
+
+      @media only screen and (min-width: 320px) and (max-width: 580px) {
+        .wrapper {
+          display: flex;
+        }
+        .main {
+          height: 100%;
+          max-width: 700px;
+          background-color: white;
+          margin: auto;
+        }
+        .header {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+        .header img {
+          margin: 30px;
+          width: 200;
+        }
+      }
+    </style>
+    <div class="wrapper">
+      <div class="main">
+        <div class="header">
+          <img src="./src/logo-boto.png" />
+        </div>
+        <div class="pattern"></div>
+        <div class="bottom">
+          <div class="contact">
+            <p class="contact-title">Entre em contato</p>
+            <p class="contact-data">(81) 3031-3901</p>
+            <p class="contact-data">comercial@consensotec.com.br</p>
+          </div>
+          <div class="bottom-logo">
+            <img src="./src/logo-consenso.png" />
+          </div>
+        </div>
+      </div>
+    </div>
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
 </html>
