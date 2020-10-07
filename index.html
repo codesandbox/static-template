@@ -1,12 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <title>Forms - Acamica</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <section>
+      <div class="container_form">
+        <form>
+          <div class="row">
+            <label for="formaDePago">Forma de Pago:</label>
+            <input type="text" name="formaDePago" class="input_style inline" />
+          </div>
+          <div class="row">
+            <label for="numeroDeTarjeta">Numero de Tarjeta:</label>
+            <input
+              type="text"
+              name="numeroDeTarjeta"
+              class="input_style inline"
+            />
+          </div>
+          <div class="row">
+            <label for="nombreDeImpreso">Nombre Impreso:</label>
+            <input
+              type="text"
+              name="nombreDeImpreso"
+              class="input_style inline"
+            />
+          </div>
+          <div class="row_with">
+            <div class="colum_65">
+              <label for="fechaDeExp">Fecha Exp:</label>
+              <input type="text" name="fechaDeExp" class="input_style colum" />
+            </div>
+            <div class="colum_35">
+              <label for="cvv">CVV:</label>
+              <input type="text" name="cvv" class="input_style column" />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="container_message">
+        <div>
+          <h2>WAYFARER CLASSIC</h2>
+        </div>
+        <div>
+          <h4>GREEN CLASSIC G-15</h4>
+        </div>
+        <div>
+          <img
+            class="img_styles"
+            src="./img/kisspng-ray-ban-wayfarer-ray-ban-new-wayfarer-classic-sung-ray-ban-wayfarer-5b1ec94350fff3.1790748315287442593318.png"
+          />
+        </div>
+        <div>
+          <span>$150</span>
+        </div>
+        <div>
+          <button>COMPRAR</button>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
