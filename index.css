@@ -1,0 +1,100 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(209, 184, 197, 1) 11%,
+    rgba(164, 217, 227, 1) 82%,
+    rgba(148, 227, 233, 1) 100%
+  );
+  height: 100vh;
+  box-sizing: border-box;
+}
+h1 {
+  color: green;
+}
+span {
+  color: purple;
+}
+ol > li {
+  padding: 15px;
+}
+li > p {
+  padding: 15px;
+}
+section > ol > li {
+  margin-top: 1%;
+}
+
+section > ol > ol > li {
+  margin: 1.8%;
+  width: 30%;
+  background-color: orange;
+  border-radius: 10px;
+  padding: 5px;
+  list-style-type: none;
+}
+
+ol[type] > li:hover {
+  background-color: black;
+}
+
+ol[type] > li.correct:hover {
+  background-color: green;
+}
+ol[type] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.option {
+  padding: 5px;
+  border: 1px solid whitesmokes;
+  background-color: aliceblue;
+  color: black;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.blink_me {
+  animation: blinker 2s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.designbox {
+  display: flex;
+  flex-direction: row;
+  margin-left:5% ;
+  width: 70%;
+  height: 10%;
+  justify-content: space-between;-
+}
+.box {
+  background-color: lightgreen;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.25s;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.image-boxspace {
+  width: 100%;
+  height: 85%;
+  padding: 10px;
+}
+.box:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
