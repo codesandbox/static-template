@@ -4,9 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Qschool</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <header class="navbar-student">
+      <nav>
+          <div class="nav-wrapper">
+              <div class="button-menu radius-50 float-button waves-effect menu-button material-icons">menu</div>
+            <p href="#" class="brand-logo">Qschool <span class="Pacifco">Agenda</span></a>
+            <ul class="right ">
+              <li class=""><div data-target='notifications-menu' class="dropdown-trigger button-menu radius-50 float-button waves-effect  menu-button material-icons">notifications</div></li>
+           <li><div class="avatar"><img data-target='profile-menu' src="https://materializecss.com/images/yuna.jpg" alt="" class="circle profile-user pulse dropdown-trigger button-menu radius-50 float-button waves-effect menu-button material-icons"></div></li>
+            </ul>
+          </div>
+        </nav>
+  </header>
+
+ 
+<!-- dialogs and dropdowns -->
+ <ul id='notifications-menu' class='collection dropdown-content notifications-dropdown'>
+    <li class="collection-item avatar  waves-effect">
+        <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
+        <span class="title no-p-t">Hussein neim posted an agenda</span>
+       
+      </li>
+ <hr></hr>
+ <li class="collection-item avatar  waves-effect">
+    <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
+    <span class="title no-p-t">Hussein neim posted an agenda</span>
+   
+  </li>
+ </ul>
+ <ul id='profile-menu' class='collection dropdown-content notifications-dropdown'>
+    <li class="collection-item avatar  waves-effect">
+        <i class="material-icons circle">person</i>
+        <span class="title">Profile</span>
+       
+      </li>
+ <hr></hr>
+ <li class="collection-item avatar waves-effect">
+   <i class="material-icons circle">power_settings_new</i>
+    <span class="title">Logout</span>
+   
+  </li>
+ </ul>
+ <!-- end dialogs and dropdowns -->
+<script>  M.AutoInit();</script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
