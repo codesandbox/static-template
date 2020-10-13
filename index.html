@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>Animals</h1>
+    <script>
+      function light(sw) {
+        var pic;
+        if (sw == 0) {
+          pic = "img/dog.jpg";
+        } else {
+          pic = "img/cat.jpeg";
+        }
+        document.getElementById("myImage").src = pic;
+      }
+    </script>
+
+    <img id="myImage" src="img/dog.jpg" width="180" height="180" />
+
+    <p>
+      <button type="button" onclick="light(1)">Cat</button>
+      <button type="button" onclick="light(0)">Dog</button>
+    </p>
   </body>
 </html>
