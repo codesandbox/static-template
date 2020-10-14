@@ -1,12 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script type="text/javascript" src="qr.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>tam tech QrCode scanner</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="startView d-flex flex-column fixed">
+      <img src="./camera-scan.gif" />
+      <br />
+      <div class="alert">
+        Camera access needed to scan qr code
+      </div>
+    </div>
+    <header class="header">
+      <img src="/logo.png" alt="#" width="150px" />
+    </header>
+
+    <div id="error" class="d-flex fixed">
+      <div class="alert">
+          <img src="/logo.png" alt="#" width="150px" />
+        <h3 class="mb-0 error__h">Permission denied</h3>
+
+        <p class="error__p">
+          Unable to start scanning :
+        </p>
+          <ul class=" error__ul">
+            <li>
+              Allow camera permission <br/>
+              <small><a
+                href="https://www.alphr.com/how-to-allow-chrome-access-to-your-camera/" >
+                How To Allow Chrome Access To Your Camera
+              </a></sub>
+            </li>
+            <li>try refreshing the page </li>
+          </ul> 
+          
+        
+      </div>
+    </div>
+    <div id="qr-reader" class="qr-reader"></div>
+    <div id="qr-content" class="content close">
+      <div class="wrapper">
+        <header class="wrapper-header">
+          <button id="close" class="close-btn">
+            <svg
+              width="25px"
+              height="25px"
+              viewBox="0 0 41.756 41.756"
+              xml:space="preserve"
+            >
+              <path
+                d="M27.948,20.878L40.291,8.536c1.953-1.953,1.953-5.119,0-7.071c-1.951-1.952-5.119-1.952-7.07,0L20.878,13.809L8.535,1.465
+               c-1.951-1.952-5.119-1.952-7.07,0c-1.953,1.953-1.953,5.119,0,7.071l12.342,12.342L1.465,33.22c-1.953,1.953-1.953,5.119,0,7.071
+               C2.44,41.268,3.721,41.755,5,41.755c1.278,0,2.56-0.487,3.535-1.464l12.343-12.342l12.343,12.343
+               c0.976,0.977,2.256,1.464,3.535,1.464s2.56-0.487,3.535-1.464c1.953-1.953,1.953-5.119,0-7.071L27.948,20.878z"
+              />
+            </svg>
+          </button>
+        </header>
+        <h3 class="title">Result</h3>
+        <div class="qt-type d-flex">
+          <img src="/text.png" id="qr-txt" alt="text"  class="ico"/>
+          <img src="/web-browser.png" id="qr-url" alt="url" class="ico" />
+          <img src="/phone-call.png" id="qr-tel" alt="tel"  class="ico"/>
+          <img src="/chat.png" id="qr-sms" alt="sms"  class="ico"/>
+        </div>
+        <h6 class="text-normal">QR code details :</h6>
+        <div id="qr-result"></div>
+      </div>
+    </div>
+    <script type="text/javascript" src="./script.js"></script>
   </body>
 </html>
