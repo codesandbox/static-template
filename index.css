@@ -1,0 +1,233 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-image: url("space.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gameContainer {
+  height: 95%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  border: 5px solid pink;
+}
+.title {
+  height: 10%;
+  width: 100%;
+  background-image: radial-gradient(
+    circle 939px at 94.7% 50%,
+    rgba(0, 178, 169, 1) 0%,
+    rgba(0, 106, 101, 1) 76.9%
+  );
+  font-size: 50px;
+  font-weight: 700;
+  color: white;
+}
+span {
+  width: 100%;
+  height: 100%;
+}
+.timer {
+  height: 5%;
+  width: 100%;
+  background-image: radial-gradient(
+    circle farthest-corner at 14.2% 27.5%,
+    rgba(104, 199, 255, 1) 0%,
+    rgba(181, 126, 255, 1) 90%
+  );
+  font-size: 25px;
+}
+.score {
+  height: 5%;
+  width: 100%;
+  font-size: 25px;
+  background-image: linear-gradient(
+    99deg,
+    rgba(255, 166, 0, 1) 14.7%,
+    rgba(255, 99, 97, 1) 73%
+  );
+}
+.game {
+  height: 80%;
+  width: 100%;
+  background-image: linear-gradient(
+    358.3deg,
+    rgba(255, 82, 168, 1) 12.9%,
+    rgba(177, 118, 240, 1) 134.3%
+  );
+  display: flex;
+  flex-direction: column;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.row {
+  height: 12%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.cell {
+  height: 98%;
+  width: 10%;
+  border: 3px solid rgb(0, 0, 0);
+  margin-left: 0.1%;
+  background-color: gray;
+  border-radius: 5%;
+}
+.bomb {
+  background-color: red;
+}
+
+.notBomb {
+  background-color: lightgrey;
+  border: 3px solid rgb(224, 220, 220);
+  font-weight: bolder;
+  font-size: 24px;
+}
+.one {
+  color: green;
+}
+.two {
+  color: blue;
+}
+.three {
+  color: red;
+}
+.danger {
+  background-image: url("danger.svg");
+  background-position: center;
+  background-size: cover;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0px;
+  top: 0px;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background: rgb(2, 0, 36);
+  background: radial-gradient(
+    circle 1224px at 10.6% 8.8%,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(153, 202, 251, 1) 100.2%
+  );
+  /*  */
+  margin: 20% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  height: 30%;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+.modalText {
+  font-size: 24px;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalBtn {
+  height: 50%;
+  margin-left: 30%;
+  margin-right: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  height: 40%;
+  width: 40%;
+  background-color: rgb(68, 56, 240);
+  color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 22px 26px 51px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 22px 26px 51px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 22px 26px 51px 0px rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    margin: 60% auto;
+    width: 80%;
+  }
+  .modalBtn {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .gameContainer {
+    width: 99%;
+    height: 99%;
+  }
+  .title {
+    font-size: 45px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  .modal-content {
+    margin: 50% auto;
+    width: 80%;
+  }
+  .modalBtn {
+    margin-left: 15%;
+    margin-right: 15%;
+    height: 30%;
+  }
+  .btn {
+    height: 70%;
+    width: 40%;
+    font-size: 40px;
+  }
+  .modalText {
+    font-size: 40px;
+  }
+  .gameContainer {
+    width: 99%;
+    height: 99%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 899px) {
+  .modal-content {
+    margin: 50% auto;
+    width: 80%;
+  }
+  .modalBtn {
+    margin-left: 15%;
+    margin-right: 15%;
+    height: 40%;
+  }
+  .btn {
+    height: 70%;
+    width: 40%;
+    font-size: 16px;
+  }
+  .modalText {
+    font-size: 40px;
+  }
+  .gameContainer {
+    width: 99%;
+  }
+}
