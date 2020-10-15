@@ -1,12 +1,952 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<head>
+	<link rel="icon" type="image/png"
+		href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Globe1.svg/956px-Globe1.svg.png">
+	<link rel="manifest"
+		href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Globe1.svg/956px-Globe1.svg.png">
+	<link rel="mask-icon"
+		href=https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Globe1.svg/956px-Globe1.svg.png" color="black">
+	<link rel="shortcut icon"
+		href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Globe1.svg/956px-Globe1.svg.png">
+	<meta name="apple-mobile-web-app-title" content="Student Zone">
+	<meta name="application-name" content="Student Zone">
+	<meta name="msapplication-TileColor" content="black">
+	<meta name="msapplication-TileImage"
+		content="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Globe1.svg/956px-Globe1.svg.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body onload="myFunction()" style="margin:0;">
+
+	<div id="loader"></div>
+
+	<div style="display:none;" id="myDiv" class="animate-bottom">
+
+	</div>
+
+	<script>
+		var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+	</script>
+	<title>Student Zone | Home</title>
+	<script src="https://cdnres.willyweather.com/widget/warning/loadView.html?id=129602" type="application/javascript">
+	</script>
+	<script>
+		function setCookie(cname,cvalue,exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  var user=getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+     user = prompt("Please enter your name:","");
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
+  }
+}
+	</script>
+	<!--Cooike start-->
+	<script>
+		<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+	</script>
+	<!--Cookie end-->
+	</head>
+	<style>
+		.logo {
+			/* For future use */
+		}
+
+		.searchbtn {
+			border-radius: 25px;
+			border: none;
+			color: black;
+			background-color: white;
+			height: 50px;
+			width: 5%;
+			transition: 1s;
+			postion: absolute;
+			z-index: 0;
+		}
+
+		.searchbtn:hover {
+			background-color: black;
+			color: white;
+			border-radius: 25px;
+			border: none;
+			height: 50px;
+			width: 5%;
+			transition: 1s;
+		}
+
+		.searchbtn:focus {
+			display: none 
+			color: black;
+			background-color: white;
+			color: white;
+			transition: 0s;
+		}
+
+		.searchbar {
+			color: blcak;
+			background-color: white;
+			padding: 25px;
+			height: 10px;
+			width: 40%;
+			border-radius: 25px;
+			border: none;
+			border-color: white;
+			size: 10px;
+			text-align: center;
+			text-size: 10px;
+			transition: 1s;
+		}
+
+		.searchbar:hover {
+			color: White;
+			background-color: black;
+			padding: 50;
+			height: 50px;
+			width: 40%;
+			border-radius: 25px;
+			border: none;
+			border-color: white;
+			size: 20px;
+			text-align: center;
+			text-size: 50px;
+			transition: 1s;
+		}
+
+		.searchbar:focus {
+			color: Black;
+			background-color: white;
+			height: 50px;
+			width: 40%;
+			border-radius: 0px;
+			border: none;
+			border-color: black;
+			size: 20px;
+			text-align: center;
+			text-size: 000000px;
+			text-size: 50px;
+			transition: 1s;
+		}
+
+		.text {
+			background-color: black;
+			color: white;
+			z-index: 50;
+			postion: fixed;
+		}
+
+		.button1 {
+			background-color: black;
+			width: 100%;
+			color: white;
+			float: left;
+			text-align: center;
+			border-color: white;
+			transition: 1s;
+		}
+
+		.button1:hover {
+			background-color: white;
+			width: 100%;
+			color: black;
+			float: left;
+			text-align: center;
+			border-color: black;
+		}
+
+		.button {
+			border-radius: 2px;
+			background-color: black;
+			border: none;
+			color: #FFFFFF;
+			text-align: center;
+			font-size: 10px;
+			padding: 20px;
+			width: 99px;
+			height: px;
+			transition: all 0.5s;
+			cursor: pointer;
+			margin: 10px;
+		}
+
+		.button span {
+			cursor: pointer;
+			display: inline-block;
+			position: relative;
+			transition: 0.5s;
+		}
+
+		.button span:after {
+			content: "";
+			position: absolute;
+			opacity: 0;
+			top: 0;
+			right: -20px;
+			transition: 50s;
+		}
+
+		.button:hover span {
+			padding-right: 25px;
+		}
+
+		.button:hover span:after {
+			opacity: 1;
+			right: 0;
+		}
+
+		#myDiv {
+			display: none;
+			text-align: center;
+		}
+
+		.alert {
+			padding: 20px;
+			background-color: #f44336;
+			color: white;
+			opacity: 1;
+			transition: opacity 0.6s;
+			margin-bottom: 15px;
+		}
+
+		.alert.success {
+			background-color: #4CAF50;
+		}
+
+		.alert.info {
+			background-color: #2196F3;
+		}
+
+		.alert.warning {
+			background-color: #ff9800;
+		}
+
+		.closebtn:hover .iframe:hover {
+			postion: fixed;
+			margin-left: 15px;
+			color: white;
+			float: right;
+			font-size: 22px;
+		}
+
+		.iframe:hover {
+			/* for future purposes*/
+		}
+
+		.closebtn:hover {
+			position: fixed;
+			top: 20px;
+			right: 45px;
+			font-size: 60px;
+		}
+
+		body {
+			font-family: 'Lato', sans-serif;
+		}
+
+
+
+		.topnav .search-container button:hover {
+			background: #ccc;
+		}
+
+		.overlay {
+			height: 0%;
+			width: 100%;
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			background-color: rgb(0, 0, 0);
+			background-color: rgba(0, 0, 0, 0.9);
+			overflow-y: hidden;
+			transition: 0.5s;
+		}
+
+		.overlay-content {
+			position: relative;
+			top: 25%;
+			width: 100%;
+			text-align: center;
+			margin-top: 30px;
+		}
+
+		.overlay a {
+			padding: 8px;
+			text-decoration: none;
+			font-size: 36px;
+			color: #818181;
+			display: block;
+			transition: 0.3s;
+			float: left;
+		}
+
+		.navbutton:hover {
+			padding: -5px;
+			text-decoration: none;
+			font-size: 36px;
+			color: red;
+			display: block;
+			transition: 0.3s;
+			float: left;
+		}
+
+		.overlay a:hover .overlay a:focus {
+			color: #f1f1f1;
+			float: left;
+		}
+
+		.overlay .closebtn {
+			position: absolute;
+			right: 45px;
+			font-size: 40px;
+		}
+
+		.closebtn:hover {
+			position: absolute;
+			right: 45px;
+			font-size: 40px;
+			color: red;
+			transition: 1s;
+		}
+
+		.closebtn:focus {
+			position: absolute;
+			right: 45px;
+			font-size: 40px;
+			color: black;
+			transition: 1s;
+		}
+
+		@media screen and (max-height: 450px) {
+			.overlay {
+				overflow-y: auto;
+			}
+
+			.overlay a {
+				font-size: 20px
+			}
+
+
+		}
+
+		.overlay a {
+			font-size: 20px
+		}
+		body {
+			background-image:
+				url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/1_moraine_lake_pano_2019.jpg/1920px-1_moraine_lake_pano_2019.jpg");
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+
+		.chat-popup1 {
+			min-width: 250px;
+			/* Set a default minimum width */
+			margin-left: -125px;
+			/* Divide value of min-width by 2 */
+			background-color: black;
+			/* Black background color */
+			color: white;
+			/* White text color */
+			text-align: center;
+			/* Centered text */
+			border-radius: 2px;
+			/* Rounded borders */
+			padding: 16px;
+			/* Padding */
+			position: fixed;
+			/* Sit on top of the screen */
+			z-index: 1;
+			/* Add a z-index if needed */
+			left: 50%;
+			/* Center the snackbar */
+			bottom: 30px;
+			/* 30px from the bottom */
+			transition: 0.5s;
+			/* The swipe up and down speed*/
+		}
+
+		.chat-popup11 {
+			background-color: black;
+			color: white;
+			position: fixed;
+			bottom: 0;
+			border: 0px solid #f1f1f1;
+			z-index: -9;
+			text-decoration: none;
+			content: Loading Please Wait;
+		}
+
+		.ad {
+			background-color: black;
+			color: white;
+			position: fixed;
+			bottom: 0;
+			right: 100;
+			border: 0px solid #f1f1f1;
+			z-index: -10;
+			text-decoration: none;
+		}
+
+		chat-popup1:visited {
+			color: white;
+		}
+
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.navbar {
+			background-color: black;
+			overflow: auto;
+			postion: fixed;
+			top: 9999px;
+			bottom: 99px;
+			right: 0;
+			left: 0;
+			line-height: 100%;
+		}
+
+		.navbar a {
+			padding: 12px;
+			color: white;
+			text-decoration: none;
+			font-size: 17px;
+			top: 0;
+		}
+
+		.navbar a:hover {
+			background-color: #000;
+			top: 0;
+		}
+
+		.active {
+			color: Black;
+			float: left;
+		}
+
+		.covid {
+			color: white;
+			float: right;
+			top: 0;
+			transition: 1s;
+		}
+
+		.covid:hover {
+			color: red;
+			transition: 1s;
+		}
+
+		.unactive {
+			float: left;
+			transition: 1s;
+		}
+
+		.unactive:hover {
+			background-color: White;
+			color: Red;
+			float: left;
+			height: auto;
+			transition: 1s;
+		}
+
+		@media screen and (max-width: 500px) {
+			.navbar a {
+				float: none;
+				display: block;
+
+			}
+		}
+
+		.Main Content {
+			text-align: center;
+			float: center;
+			font-size: 17px;
+		}
+
+		/*Weather start*/
+		/* Button used to open the chat form - fixed at the bottom of the page */
+		.open-button {
+			background-color: #555;
+			color: white;
+			padding: 16px 20px;
+			border: none;
+			cursor: pointer;
+			opacity: 0.8;
+			position: fixed;
+			bottom: 23px;
+			width: 280px;
+
+		}
+
+		/* The popup chat - hidden by default */
+		.chat-popup {
+			display: none;
+			position: fixed;
+			bottom: 0;
+			border: 0px solid #f1f1f1;
+			z-index: 7;
+			background-color: white;
+			content: Loading Please Wait;
+		}
+
+		/* Add styles to the form container */
+		.form-container {
+			max-width: 300px;
+			padding: 10px;
+			background-color: white;
+		}
+
+		/* Full-width textarea */
+		.form-container textarea {
+			width: 100%;
+			padding: 15px;
+			margin: 5px 0 22px 0;
+			border: none;
+			background: #f1f1f1;
+			resize: none;
+			min-height: 200px;
+		}
+
+		/* When the textarea gets focus, do something */
+		.form-container textarea:focus {
+			background-color: #ddd;
+			outline: none;
+		}
+
+		/* Set a style for the submit/send button */
+		.form-container .btn {
+			background-color: #4CAF50;
+			color: white;
+			padding: 16px 20px;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+			margin-bottom: 10px;
+			opacity: 0.8;
+		}
+
+		/* Add a red background color to the cancel button */
+		.form-container .cancel {
+			background-color: red;
+		}
+
+		/* Add some hover effects to buttons */
+		.form-container .btn:hover,
+		.open-button:hover {
+			opacity: 1;
+		}
+
+		/*Weather end*/
+		.openbutton {
+			width: 100%;
+		}
+
+		/* The snackbar - position it at the bottom and in the middle of the screen */
+		#snackbar {
+			visibility: hidden;
+			/* Hidden by default. Visible on click */
+			min-width: 250px;
+			/* Set a default minimum width */
+			margin-left: -125px;
+			/* Divide value of min-width by 2 */
+			background-color: #333;
+			/* Black background color */
+			color: #fff;
+			/* White text color */
+			text-align: center;
+			/* Centered text */
+			border-radius: 2px;
+			/* Rounded borders */
+			padding: 16px;
+			/* Padding */
+			position: fixed;
+			/* Sit on top of the screen */
+			z-index: 1;
+			/* Add a z-index if needed */
+			left: 50%;
+			/* Center the snackbar */
+			bottom: 30px;
+			/* 30px from the bottom */
+		}
+
+		/* Show the snackbar when clicking on a button (class added with JavaScript) */
+		#snackbar.show {
+			visibility: visible;
+			/* Show the snackbar */
+			/* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+		However, delay the fade out process for 2.5 seconds */
+			-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+			animation: fadein 0.5s, fadeout 0.5s 2.5s;
+		}
+
+		/* Animations to fade the snackbar in and out */
+		@-webkit-keyframes fadein {
+			from {
+				bottom: 0;
+				opacity: 0;
+			}
+
+			to {
+				bottom: 30px;
+				opacity: 1;
+			}
+		}
+
+		@keyframes fadein {
+			from {
+				bottom: 0;
+				opacity: 0;
+			}
+
+			to {
+				bottom: 30px;
+				opacity: 1;
+			}
+		}
+
+		@-webkit-keyframes fadeout {
+			from {
+				bottom: 30px;
+				opacity: 1;
+			}
+
+			to {
+				bottom: 0;
+				opacity: 0;
+			}
+		}
+
+		@keyframes fadeout {
+			from {
+				bottom: 30px;
+				opacity: 1;
+			}
+
+			to {
+				bottom: 0;
+				opacity: 0;
+			}
+		}
+	</style>
+	</head>
+
+	<body>
+		<!--tezt_end-->
+		</div>
+	</body>
+
+	<body>
+		<div class="navbar">
+			<a class=" unactive" href="javascript:void(0) " onclick="opneNav()">Apps</a>
+			<div id="myNav" class="overlay">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<div class="overlay-content">
+					<a class="navbutton" href="https://www.nvusd.org/">NVUSD.org</a>
+					<a class="navbutton" href="https://acms-nvusd-ca.schoolloop.com/">ACMS.com</a>
+					<a class="navbutton" href="https://quizizz.com">Quizizz</a>
+					<a class="navbutton" href="https://clever.com/in/nvusd/student/portal">Clever</a>
+					<a class="navbutton" href="https://khanacademy.org">Khan Academy</a>
+					<a class="navbutton" href="https://classroom.google.com">Google Classroom</a>
+					<a class="navbutton" href="https://gmail.com">Gmail</a>
+					<a class="navbutton" href="https://drive.google.com">Google Drive</a>
+					<a class="navbutton" href="https://napavallyusd.asp.aeries.net/student/loginparent.aspx">Aeries
+						Student
+						Portal</a>
+					<a class="navbutton" href="https://soraap.com/welcome/login/201252">Sora</a>
+					<a class="navbutton" href="https://student.naviance.com/main">Naviance</a>
+					<a class="navbutton" href="https://quizlet.com/">Quizlet</a>
+					<a class="navbutton" href="https://www.duolingo.com/">Duolingo</a>
+					<a class="navbutton" href="https://kahoot.it/">Kahoot</a>
+					<a class="navbutton" href="https://app.peardeck.com/join">Pear Deck</a>
+					<a class="navbutton" href="https://www.mystudentsquare.com/signin">Student Square</a>
+					<a class="navbutton"
+						href="https://lhh.tutor.com/?ProgramGUID=bb98647e-db6e-4957-8ff1-1f44e0f536f0">Tutor.com</a>
+					<a class="navbutton" href="https://calendar.google.com/">Google Calendar</a>
+					<a class="navbutton"
+						href="https://home.smartmusic.com/?_ga=2.17122873.1686723049.1602034310-1920982105.1602034310">Smart
+						Music</a>
+				</div>
+			</div>
+			<a class="unactive" href="https://newsela.com/signin" onclick="openNav1()">News</a>
+			<div id="myNav1" class="overlay">
+				<div class="overlay-content1">
+					<a href="https://youngzine.org/"><img src="https://iili.io/2RIaY7.gif" alt="loader"><br><a
+							href="">Please Wait, Loading</a></a>
+				</div>
+			</div>
+			<a class="unactive" href="javascript:(0)" onclick="openForm();w()">Weather</a>
+			<div id="myNav3" class="overlay">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+				<div class="overlay-content">
+					<a href="javascript:(0)" onclick=""><iframe class="iframe"
+							src="https://forms.gle/LUtkDARyjxUW7gZaA"></iframe></a>
+					<a class="navbutton" href="javascript:(0)" onclick="closeNav3();openNav4()">Back</a>
+				</div>
+			</div>
+			<a class="unactive" href="javascript:void(0) " onclick="openNav4()">More</a>
+			<div id="myNav4" class="overlay">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav4()">&times;</a>
+				<div class="overlay-content">
+					<a class="navbutton" href="javascript:(0)" onclick="closeNav4();openNav3()">Contact
+						Me</a><br><br><br>
+					<a class="navbutton" href="javascript:(0)" onclick="closeNav4();openNav6()">Suggest A
+						Feature</a><br><br><br>
+					<a class="navbutton" href="javascript:(0)" onclick="closeNav4();openNav7()">Background
+						Credits</a><br><br><br>
+			</div>
+				</div>
+				<div id="myNav6" class="overlay">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNav6();openNav4()">&times;</a>
+					<div class="overlay-content">
+						<a href="javascript:(0)" onclick=""><iframe class="iframe"
+								src="https://forms.gle/HY1MzqxCrxKUTHDG9"></iframe></a>
+						<a class="navbutton" href-"javascript:(0)" onclick="closeNav6();openNav4()">Back</a>
+					</div>
+				</div>
+				<div id="myNav7" class="overlay">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNav7();openNav4()">&times;</a>
+					<div class="overlay-content">
+						<a class="navbutton"
+							href="https://en.wikipedia.org/wiki/Moraine_Lake#/media/File:1_moraine_lake_pano_2019.jpg">Taken
+							At Moran Lake</a><br><br><br>
+						<a class="navbutton"
+							href="https://en.wikipedia.org/wiki/Moraine_Lake#/media/File:1_moraine_lake_pano_2019.jpg">
+							Creator:
+							Chensiyuan</a><br><br><br>
+						<a class="navbutton" href="javascript:(0)" onclick="closeNav7();openNav4()">Back</a>
+					</div>
+				</div>
+				<a class="covid" href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html" onclick="openNav1()">Learn
+					The
+					Facts About Covid 19</a>
+			</div>
+		</div>
+
+		<div id="w" class="chat-popup" id="myForm">
+			<button class="button1" type="button" class="btn cancel" onclick="closeForm()">Close</button>
+
+
+			<div id="w" style="width: 748px;"><iframe class="iframe" style="display: block;"
+					src="https://cdnres.willyweather.com/widget/loadView.html?id=129590" width="748" height="520"
+					frameborder="0" scrolling="no"></iframe><a
+					style="z-index: 1;margin: -20px 0 0 0;display: block;position: relative;text-indent: -9999em;height: 20px"
+					href="https://www.willyweather.com/ca/napa-county/american-canyon.html"
+					rel="nofollow">https://www.willyweather.com/ca/napa-county/american-canyon.html</a></div>
+		</div>
+		</div>
+		</div>
+		<marquee class="text" behavior="scroll" direction="left">Welcome To 🆂🆃🆄🅳🅴🅽🆃 🆉🅾🅽🅴 (Under
+			Construction)| Thanks
+			For
+			Useing The
+			Unoffical
+			NVUSD Landing Page || Wear The Mask, Stop The Spread || Notice: Your Page May Reload To Get Page
+			Updates
+			||
+			News: Social Distanceing Is
+			Still
+			In Place |
+			Check Your Email For Any Anoucments From The District ||</marquee>
+		<script>
+			function w() {
+  document.getElementById("w").style.height = "-100%";
+}
+
+function wc() {
+  document.getElementById("w").style.height = "0%";
+}
+		</script>
+		<script>
+			function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+		</script>
+		<script>
+			function openNav1() {
+  document.getElementById("myNav1").style.height = "100%";
+}
+
+function closeNav1() {
+  document.getElementById("myNav1").style.height = "0%";
+}
+		</script>
+		<script>
+			function openNav2() {
+  document.getElementById("myNav2").style.height = "100%";
+}
+
+function closeNav2() {
+  document.getElementById("myNav2").style.height = "0%";
+}
+		</script>
+		<script>
+			function openNav3() {
+  document.getElementById("myNav3").style.height = "100%";
+}
+
+function closeNav3() {
+  document.getElementById("myNav3").style.height = "0%";
+}
+		</script>
+		<script>
+			function openNav4() {
+  document.getElementById("myNav4").style.height = "100%";
+}
+
+function closeNav4() {
+  document.getElementById("myNav4").style.height = "0%";
+}
+		</script>
+		<script>
+			function openNav5() {
+  document.getElementById("myNav5").style.height = "100%";
+}
+
+function closeNav5() {
+  document.getElementById("myNav5").style.height = "0%";
+}
+		</script>
+		</script>
+		<script>
+			function openNav6() {
+  document.getElementById("myNav6").style.height = "100%";
+}
+
+function closeNav6() {
+  document.getElementById("myNav6").style.height = "0%";
+}
+		</script>
+		<script>
+			function openNav7() {
+  document.getElementById("myNav7").style.height = "100%";
+}
+
+function closeNav7() {
+  document.getElementById("myNav7").style.height = "0%";
+}
+		</script>
+		</div>
+		<div class="Main Content">
+			<style>
+				body {
+					color: Black;
+					text-align: center;
+					width: 100%;
+				}
+			</style>
+			<br>
+			<div class="w3-container w3-center w3-animate-top">
+				<h1>🆂🆃🆄🅳🅴🅽🆃 🆉🅾🅽🅴</h1>
+			</div>
+			<br>
+			<div class="w3-container w3-center w3-animate-bottom">
+				<!--google search-->
+				<link rel="stylesheet"
+					href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+				<form id="search" action="https://www.google.com/search" method="get" name="searchform"">
+<input url=" sitesearch" type="hidden" value="">
+					<input autocomplete="off" required="true" class="searchbar" name="q" placeholder="Google Search"  type="text">
+					<link rel="stylesheet"
+						href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+					<button class="searchbtn" type="submit"><i class="fa fa-search"></i></button>
+				</form>
+				<!--google search ends-->
+			</div>
+		</div>
+		</div>
+		<script>
+			function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+		</script>
+<!--sup made by brandon gillen from acms-->
+		<script>
+			function openForm() {
+ document.getElementById("w").style.height = "100%";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+		</script>
+		<div id="myNav3" class="overlay">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+			<div class="overlay-content1">
+				<a href="javascript:(0)">Set Us As Your Home Page?</a>
+				<a href="javascript:(0)"><img src="https://iili.io/25xL2S.md.png" alt="25xL2S.md.png" border="0"> First Go To chrome://settings/appearance</a><br>
+					<a href="javascript:(0)"><img src="https://iili.io/25xpQj.md.png" alt="25xpQj.md.png" border="0"> Then Set The Following Settings</a>
+			</div>
+		</div>
+		</div>
+		</div>
+		<script>
+			function openNav3() {
+  document.getElementById("myNav3").style.height = "100%";
+}
+		</script>
+		<script>
+			function closeNav3() {
+  document.getElementById("myNav3").style.height = "0%";
+}
+		</script>
+		<script>
+			var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+		<!--Made by Brandon Gillen-->
+	</body>
+
 </html>
