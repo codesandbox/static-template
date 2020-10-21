@@ -1,0 +1,170 @@
+body {
+  background: linear-gradient(to right, #00c3ff, #ffff1c);
+  margin: 0px;
+}
+@font-face {
+  font-family: "Game";
+  src: url("/AllTheWayToTheSun.ttf") format("truetype");
+}
+@font-face {
+  font-family: "BalooTamma";
+  src: url("/BalooTamma2-ExtraBold.ttf") format("truetype");
+  font-weight: 1000;
+}
+@font-face {
+  font-family: "Mosterrat";
+  src: url("/Montserrat-Regular.ttf") format("truetype");
+}
+h1 {
+  padding: 20px;
+  margin: 10px;
+  font-family: "Game";
+  text-align: center;
+  font-size: 15vh;
+  line-height: 0.5em;
+  letter-spacing: 0.1em;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 0.005em;
+  -webkit-text-stroke-color: white;
+  text-shadow: 0.05em 0.05em #ff1f8f, 0.1em 0.1em #000000;
+}
+.btn {
+  font-family: "VideoPhreak", sans-serif;
+  font-weight: 1000;
+  text-align: center;
+  color: rgb(255, 145, 1);
+  font-size: 4.5vh;
+  max-width: 300px;
+  width: 90%;
+  background: linear-gradient(to top, #002a79, #009fff);
+  border-radius: 20px;
+  vertical-align: middle;
+  padding: 20px;
+  transition: 1s;
+}
+.btn:hover {
+  font-size: 5vh;
+  cursor: pointer;
+}
+.hide {
+  display: none !important;
+}
+.abscenter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.center {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.hangman {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.right {
+  width: 500px;
+}
+.left {
+  width: 500px;
+}
+
+.lives {
+  color: rgb(255, 0, 13);
+  font-size: 40px;
+  font-weight: 1000;
+  font-family: "Montserrat";
+  padding: 50px;
+  text-align: center;
+}
+.man {
+  width: 263px;
+}
+.word {
+  justify-content: center;
+  letter-spacing: 0.2em;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  font-size: 40px;
+}
+.letter {
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  border-bottom: 5px solid black;
+}
+.correct {
+  background-color: rgba(0, 255, 0, 0.705) !important;
+}
+.wrong {
+  background-color: rgba(255, 0, 0, 0.705) !important;
+}
+.keyboard {
+  width: 550px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.alphabet {
+  font-family: "Game";
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  width: 40px;
+  border-radius: 15px;
+  border: 2px solid black;
+  background-color: white;
+  margin: 10px;
+  padding: 5px;
+}
+.alphabet:hover {
+  cursor: pointer;
+  background-color: rgba(245, 245, 245, 0.712);
+}
+@media screen and (max-width: 550px) {
+  h1 {
+    font-size: 13vw;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  .hangman {
+    width: 100%;
+  }
+  .lives {
+    font-size: 20px;
+    padding: 20px;
+  }
+  .word {
+    padding: 20px 10px;
+    font-size: 30px;
+  }
+  .letter {
+    text-align: center;
+    padding: 5px;
+    font-weight: 500;
+    margin: 5px;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid black;
+  }
+  .keyboard {
+    width: 100%;
+  }
+  .alphabet {
+    margin: 5px;
+    width: 30px;
+    font-size: 30px;
+    padding: 2px;
+  }
+
+  .man {
+    width: 210px;
+  }
+  .man > img {
+    height: 200px;
+  }
+}
