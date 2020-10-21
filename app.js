@@ -41,7 +41,7 @@ var processoAsObject = {
   isnew: "aditivo de prazo ao contrato nº 068/2019", //contrato, aditivo de prazo ao contrato XYZ, aditivo de valor ao contrato XYZ
   assunto: "PARECER EM ADITIVO DE PRAZO A CONTRATO", //ver cada tipo de fluxograma. Ex: PARECER EM ADITIVO DE PRAZO A CONTRATO
   objeto: "LOCAÇÃO DE VEÍCULOS", //Descrição da Natureza
-  empresa: "R F C CARVALHO ME.",
+  empresa: "R.F.C. CARVALHO ME.",
   valorTotalProcesso: "115.695,12",
   valorTotalSeRefereA:
     "02 Pick-ups ao custo mensal de R$4.820,63 pelo prazo de 12 meses a contar de 08/11/2019", // este valor se refere a .....
