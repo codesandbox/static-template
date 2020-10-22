@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Document</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container" id="container">
+      <div class="qs" id="qs">What is Your Name?</div>
+
+      <div class="options" id="options">
+        <div class="row" id="row">
+          <div class="opt" id="1">Abcd</div>
+          <div class="opt" id="2">abcd</div>
+        </div>
+
+        <div class="row" id="row">
+          <div class="opt" id="3">ABCD</div>
+          <div class="opt" id="4">AbCd</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="func center" id="func">
+      <div class="time center" id="time">10s</div>
+      <div>
+        <button onclick="nxt()" class="next" id="next">Next</button>
+      </div>
+    </div>
+
+    <div id="modal" class="modal center visible">
+      <div class="modal-content">
+        <div id="mcontent" class="mcontent"></div>
+        <button onclick="playagain()" class="play-again" id="play-again">
+          Play Again
+        </button>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
   </body>
 </html>
