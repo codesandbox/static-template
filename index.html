@@ -1,12 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>index</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    <script type="text/javascript">
+      $(function () {
+        $("#nav-toggle").on("click", function () {
+          $("header nav ul").slideToggle();
+        });
+      });
+    </script>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <div id="nav-toggle"></div>
+      <h2>30days トライアル</h2>
+      <nav>
+        <ul id="top">
+          <li><a href="#top">デイトラとは</a></li>
+          <li><a href="#lesson">コース一覧</a></li>
+          <li><a href="#contact"> お問い合わせ </a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="main-top-img" width="100%">
+      <div class="day-try">
+        <h1>1日1題30分で<br />プロのwebエンジニアになろう</h1>
+
+        <p style="padding-top: 30px;">
+          毎日設定された課題を解くだけ！<br />
+          未経験から30日でプログラミングスキルが身につきます。
+        </p>
+      </div>
+    </section>
+
+    <main>
+      <section id="about" class="clearfix">
+        <h2>デイトラとは</h2>
+        <div class="coarse">
+          <img src="./img/about.png" alt="about" />
+          <div class="text">
+            <p>
+              デイトラとは、無料で＊迷わず＊楽しく学べるプログラミング学習アプリです。毎日設定された課題をこなしていくだけで、未経験から30日でプログラミングスキルが身につきます。１日１題30分でプロのwebエンジニアを目指しましょう！
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="lesson" class="clearfix">
+        <h2>コース一覧</h2>
+        <ul class="lesson-wrapper" class="clearfix">
+          <li>
+            <img src="./img/web_first.png" alt="first" width="95%" />
+            <p>HTML /CSS /bootstrap</p>
+          </li>
+          <li>
+            <img src="./img/web_second.png" alt="second" width="95%" />
+            <p>HTML / CSS / JavaScript / jQuery</p>
+          </li>
+          <li>
+            <img src="./img/web_third.png" alt="last" width="95%" />
+            <p>PHP / WordPress</p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="contact" class="clearfix">
+        <h2>お問い合わせ</h2>
+        <div class="lesson-wrapper clearfix" style="text-align: center;">
+          <p style="margin-bottom: 8px;">さあ今日から30日間始めよう！</p>
+          <li>
+            <p>
+              <input type="button" value="メールアドレス" />
+            </p>
+          </li>
+        </div>
+
+        <div class="button" style="text-align: center; margin-top: 20px;">
+          <h3>無料で始める</h3>
+        </div>
+        <br />
+      </section>
+
+      <footer style="border-top: 1px solid gray;">
+        <p style="text-align: right; padding: 10px; font-size: 0.8em;">
+          copyright(C)2020　ayaka kawashima　ALL Rights Reserved
+        </p>
+        <br />
+      </footer>
+    </main>
   </body>
 </html>

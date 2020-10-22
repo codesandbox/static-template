@@ -1,0 +1,371 @@
+/*================================================================
+Chrome/Firefox/Edgeなど、各ブラウザはそれぞれデフォルトで効くCSSを持っています。
+何もしないと見え方が微妙に変わるので、デフォルトのCSSをリセットして
+ブラウザごとの表示の差異をなくすために書くのが「リセットCSS」です。
+================================================================*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+button,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+p {
+  line-height: 1.8;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+li,
+dd {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption,
+th,
+td {
+  font-weight: normal;
+  text-align: left;
+  vertical-align: middle;
+}
+
+q,
+blockquote {
+  quotes: none;
+}
+
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+  content: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+img {
+  border: none;
+  vertical-align: bottom;
+}
+
+header {
+  width: 960px;
+  height: 84px;
+  margin: 0 auto;
+}
+
+header h2 {
+  padding: 25px;
+  float: left;
+}
+
+header ul#top {
+  display: flex;
+  padding: 30px;
+  text-decoration: none;
+  float: right;
+}
+
+header ul li {
+  margin-right: 20px;
+  text-align: center;
+  justify-content: space-around;
+}
+
+header ul li:nth-child(3) {
+  margin-right: 0px;
+}
+
+#nav-toggle {
+  display: none;
+}
+
+.clearfix::after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+section#img-wrappaer {
+  width: 100%;
+  background-image: url(../img/mv.png);
+}
+
+main {
+  clear: both;
+  width: 960px;
+  margin: 0 auto;
+}
+
+#main-top-img {
+  background-image: url(../none.png);
+  height: 450px;
+  background-size: cover;
+}
+
+.day-try {
+  padding-top: 120px;
+  text-align: center;
+}
+
+.day-try h1 {
+  font-size: 40px;
+  line-height: 1;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+section > h2 {
+  text-align: center;
+}
+
+section#about img {
+  width: 45%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  float: left;
+}
+
+section#lesson ul {
+  margin-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+}
+
+section#lesson li {
+  justify-content: space-around;
+}
+
+section#lesson li p {
+  margin-top: 5px;
+}
+
+section#contact h2 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+section#contact ul {
+  text-align: center;
+  font-size: 16px;
+}
+
+.text {
+  width: 49%;
+  margin-top: 50px;
+  float: right;
+}
+
+.button {
+  width: 35%;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: red;
+  border-radius: 5px;
+}
+
+input {
+  width: 50%;
+  padding: 10px;
+  border-radius: 30px;
+  text-align: left;
+  background-color: white;
+  color: gray;
+}
+
+.button h3 {
+  color: white;
+}
+
+@media screen and (max-width: 670px) {
+  /*670px以上で適用する内容*/
+
+  header {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    position: fixed;
+    background-color: #fff;
+  }
+
+  header h2 {
+    float: none;
+    text-align: center;
+  }
+
+  header ul#top {
+    float: none;
+    display: none;
+  }
+
+  #nav-toggle {
+    border-radius: 20px;
+    border: 1px solid;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    display: block;
+  }
+
+  header ul li {
+    width: 100%;
+  }
+
+  main {
+    width: 90%;
+  }
+
+  .coarse,
+  .text {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  section#about img {
+    float: none;
+    width: 100%;
+  }
+
+  .text {
+    float: none;
+  }
+
+  section#lesson ul {
+    display: block;
+  }
+
+  section#lesson li {
+    margin-left: auto;
+    margin-right: -20px;
+  }
+
+  .lesson-wrapper p {
+    width: 100%;
+  }
+
+  input {
+    width: 88%;
+  }
+
+  .button {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 671px) {
+  header ul {
+    display: flex !important;
+  }
+}
