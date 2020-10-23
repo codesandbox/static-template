@@ -9,24 +9,41 @@
 
   <body>
     <div id="app">
-      <button @click="imageRemove">上一張</button>
-      <button @click="imageAdd">下一張</button>
+      <div style="text-align: center; margin: 6px;">
+        <img
+          v-for="(photo, index) in images.data"
+          v-show="index===showIndex"
+          :key="photo.id"
+          :src="photo.webformatURL"
+          :alt="photo.tags"
+          :title="index"
+          style="display: block; margin: 0px auto;"
+        />
+      </div>
+      <div style="text-align: center; margin: 6px;">
+        <button @click="imageRemove">上一張</button>
+        <button @click="imageAdd">下一張</button>
+      </div>
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <script>
-      const { ref, reactive } = Vue;
+      const { reactive, ref } = Vue;
       const App = {
         setup() {
+          const showIndex = ref(0);
+          const images = reactive({ data: [] });
           axios
             .get(
               "https://pixabay.com/api/?key=1016136-1b3773597291dfbcb7826adac&q=cat&image_type=photo&orientation=horizontal"
             )
             .then(function (response) {
               // handle success
-              console.log(response);
+              images.data = response.data.hits;
+              console.log(images.data);
+              console.log("size", images.data.length);
             })
             .catch(function (error) {
               // handle error
@@ -37,16 +54,25 @@
             });
 
           const imageAdd = () => {
-            console.log("下一張");
+            showIndex.value++;
+            if (showIndex.value > images.data.length - 1) {
+              showIndex.value = 0;
+            }
           };
 
           const imageRemove = () => {
+            showIndex.value--;
+            if (showIndex.value < 0) {
+              showIndex.value = images.data.length - 1;
+            }
             console.log("上一張");
           };
 
           return {
             imageRemove,
-            imageAdd
+            imageAdd,
+            images,
+            showIndex
           };
         }
       };
