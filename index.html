@@ -1,12 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" />
+    <title>Document</title>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="app">
+      <button @click="imageRemove">上一張</button>
+      <button @click="imageAdd">下一張</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+      const { ref, reactive } = Vue;
+      const App = {
+        setup() {
+          axios
+            .get(
+              "https://pixabay.com/api/?key=1016136-1b3773597291dfbcb7826adac&q=cat&image_type=photo&orientation=horizontal"
+            )
+            .then(function (response) {
+              // handle success
+              console.log(response);
+            })
+            .catch(function (error) {
+              // handle error
+              console.log(error);
+            })
+            .then(function () {
+              // always executed
+            });
+
+          const imageAdd = () => {
+            console.log("下一張");
+          };
+
+          const imageRemove = () => {
+            console.log("上一張");
+          };
+
+          return {
+            imageRemove,
+            imageAdd
+          };
+        }
+      };
+      Vue.createApp(App).mount("#app");
+    </script>
   </body>
 </html>
