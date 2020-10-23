@@ -1,0 +1,93 @@
+* {
+  font-family: "Quicksand", sans-serif;
+}
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: cyan;
+}
+.game-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.game {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: 25%;
+  background-color: navy;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px gray;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.target-row {
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+#board {
+  flex-wrap: wrap;
+  height: 60%;
+  background-color: black;
+  border-radius: 10px;
+  margin-bottom: 10%;
+}
+
+#target {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: yellow;
+  margin: 20px;
+  font-size: 40px;
+}
+
+#currentSum {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #303030;
+  margin: 20px;
+  font-size: 25px;
+  color: white;
+}
+
+#score {
+  height: 5%;
+  font-weight: 900;
+  font-size: 15px;
+}
+#timer {
+  height: 10%;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  margin: 2px;
+  border-radius: 5px;
+  background-color: gray;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: blue;
+}
