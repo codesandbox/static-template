@@ -1,12 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <style>
+      td,
+      th {
+        width: 100px;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h3>配列の演算</h3>
+    <table border="1">
+      <tr>
+        <th>添字</th>
+        <th>a</th>
+        <th>b</th>
+        <th>a * b</th>
+      </tr>
+      <tr>
+        <th>0</th>
+        <td>5</td>
+        <td>33</td>
+        <td><button onclick="kakezan(0)">計算結果</button></td>
+      </tr>
+      <tr>
+        <th>1</th>
+        <td>12</td>
+        <td>14</td>
+        <td><button onclick="kakezan(1)">計算結果</button></td>
+      </tr>
+      <tr>
+        <th>2</th>
+        <td>18</td>
+        <td>65</td>
+        <td><button onclick="kakezan(2)">計算結果</button></td>
+      </tr>
+    </table>
+    <button onclick="goukei()">計算結果</button>
+    <script>
+      // var a = new Array(3);
+      // var b = new Array(3);
+      // var kai;
+      // a[0] = 5;
+      // a[1] = 12;
+      // a[2] = 18;
+      // b[0] = 33;
+      // b[1] = 14;
+      // b[2] = 65;
+      // function kakezan(i) {
+      //   kai = a[i] * b[i];
+      //   alert("答は" + kai + "です");
+      // }
+      function goukei() {
+        var kai = 0;
+        var bunbo = 2;
+        var a;
+        for (i = 1; i <= 10; i++) {
+          a = i / bunbo;
+          kai = kai + a;
+          bunbo = bunbo * 2;
+        }
+        console.log(kai);
+      }
+    </script>
   </body>
 </html>
