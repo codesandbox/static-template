@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Responsive</title>
+    <style>
+      .wrap {
+        display: flex;
+        flex-flow: column wrap;
+      }
+      .div {
+        margin: 10px 0;
+        text-align: center;
+      }
+      .header,
+      .nav,
+      .footer {
+        height: 50px;
+        background-color: #eee;
+        border: solid 1 px #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .inner-wrap {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        border: solid 1 px #ddd;
+      }
+      .inner-wrap .div {
+        min-height: 400px;
+        background-color: #eee;
+        border: solid 1 px #ddd;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+      }
+      .content {
+        width: 23%;
+      }
+      .main-content {
+        width: 50%;
+      }
+      @media screen and (min-width: 320px) {
+        .inner-wrap .div {
+          width: 100%;
+          min-height: 100px;
+        }
+        .div .nav {
+          background-color: red;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        .inner-wrap .div {
+          width: 100%;
+          min-height: 100px;
+        }
+        .div .nav {
+          background-color: green;
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        .inner-wrap .div {
+          width: 100%;
+          min-height: 100px;
+        }
+        .div .nav {
+          background-color: blue;
+        }
+      }
+    </style>
+  </head>
+  <body></body>
+  <div class="div wrap">
+    <div class="div header">Header</div>
+    <div class="div nav">Nav</div>
+    <div class="inner-wrap">
+      <div class="div content">Content Kiri</div>
+      <div class="div main-content">Main Content</div>
+      <div class="div content">Content Kanan</div>
+    </div>
+    <div class="div footer">Footer</div>
+  </div>
+</html>

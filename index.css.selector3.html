@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CSS Selector</title>
+    <style>
+              *{
+                color:#999;
+              }
+              p::selection{
+                background-color: aqua;
+              }
+              #block{
+                width: 90%
+                margin:0;
+              }
+              .heading{
+                color: blue;
+              }
+              #block, .heading{
+                font-color: black;
+              }
+              p{
+                font-size: 18px;
+              }
+              p,span{
+                font-size: 19px;
+              }
+              div p{
+                color: black;
+              }
+              #block span{
+                text-align: center;
+                display: block;
+              }
+              div > p{
+                text-align: justify;
+              }
+              div > span {
+                color: red;
+              }
+              h1+span+span+span{
+                color: purple;
+              }
+              h1~span{
+                font-size: 55px;
+              }
+              a{
+                color: blue;
+
+              }
+              a:hover{color:orange;}
+              a:active{color: green;}
+              a:visited{color:purple;}
+              ul li:first-child{
+                color: red;
+              }
+              ul li:last-child{
+                color: green;
+              }
+              ul li:nth-child(3){
+                color: blue;
+              }
+              ul li:nth-child(odd){
+                background-color:#ddd;
+              }
+              ul li:nth-child(even){
+                background-color: #aaa;
+              }
+              ul li:nth-child(2n+1){
+                background-color: red;
+              }
+              h1::before        {
+                content: "Halo Sahabat";
+                background-color: red;
+                padding: 5px;
+            }
+            h1::after{
+              content: "Terima Kasih Sabahat";
+              background-color: red;
+            }
+            p::first-letter{
+              color: red;
+              font-size: 30px;
+            }
+            p::first-line   {
+              color: blue;
+              font-size: 25px;
+      background-color: red;
+            }
+    </style>
+  </head>
+  <body>
+    <div id="block">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic dolorem
+        provident minima quidem dignissimos nam delectus, veritatis deserunt
+        ipsa modi. Earum harum, eum tempora modi beatae inventore aperiam ea
+        saepe!
+      </p>
+      <ul>
+        <li>Satu</li>
+        <li>Dua</li>
+        <li>Tiga</li>
+        <li>Empat</li>
+        <li>Lima</li>
+      </ul>
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="google.com">Google</a>
+      <h1 class="heading">
+        This is a static template, there is no bundler or bundling involved!
+      </h1>
+      <span>Lorem ipsum</span>
+      <span>Lorem ipsum</span>
+      <span>Lorem ipsum</span>
+      <span>Lorem ipsum</span>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta
+        sit illo molestias fuga esse blanditiis quas repudiandae necessitatibus
+        magnam accusamus, corporis rem obcaecati, repellat neque assumenda nam
+        quod libero. Aut ipsa dolorum, iste eius nesciunt officiis eum ad at
+        voluptatibus sequi, atque unde ut dolore? Ut quo possimus dolores a
+        illo! Nihil quis voluptas illum ipsa facere in laboriosam, quia aperiam
+        dolorem enim molestiae dignissimos ducimus, ratione, excepturi sit autem
+        ut. Ipsum sit consequatur iste dolore odio aspernatur suscipit cumque
+        accusamus exercitationem minima, necessitatibus enim aut, quos
+        perspiciatis eveniet error optio obcaecati? Delectus sequi odio
+        reprehenderit vero, inventore commodi. Corrupti consequuntur voluptas ad
+        accusamus dignissimos. Minima, natus reprehenderit. Rerum quia officia
+        laborum nobis vel similique minus ipsa, sunt tenetur earum? Perspiciatis
+        minus alias amet dolore sint ipsum quam harum dicta libero provident
+        explicabo eius id impedit, laboriosam aliquid corporis perferendis
+        adipisci facilis, commodi inventore fugit. Veritatis voluptatibus nobis
+        perspiciatis!
+        <span>Lorem ipsum</span>
+      </p>
+      <span>Lorem ipsum</span>
+      <span>Lorem ipsum</span>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic dolorem
+        provident minima quidem dignissimos nam delectus, veritatis deserunt
+        ipsa modi. Earum harum, eum tempora modi beatae inventore aperiam ea
+        saepe!
+      </p>
+      <p>Lorem Ipsum</p>
+      <span>Lorem ipsum</span>
+      <span>Lorem ipsum</span>
+    </div>
+  </body>
+</html>

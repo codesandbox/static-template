@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CSS Essential</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="stylesheet" href="./css/style2.css" />
+    <link rel="stylesheet" href="./css/css2/style3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+  <style>
+    body {
+      background: url(https://images.unsplash.com/photo-1593642533144-3d62aa4783ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)
+        no-repeat center center / cover;
+    }
+    .parent {
+      font-size: 40px;
+      border: solid 1px red;
+      margin: 20px 10px;
+    }
+    .child {
+      font-size: unset;
+    }
+    .inline-block {
+      display: none;
+      width: 200px;
+      height: 200px;
+    }
+    span {
+      color: green;
+    }
+    span {
+      color: red;
+    }
+    #content p {
+      text-align: right;
+    }
+    p {
+      text-align: center;
+    }
+    .inline {
+      color: brown;
+    }
+  </style>
+  <body>
+    <div id="content">
+      <p>Selamat datang!</p>
+    </div>
+    <div class="parent">
+      <p class="child">Kata-kata</p>
+    </div>
+    <h1 id="header" class="header">
+      This is a static template, there is no bundler or bundling involved!
+    </h1>
+    <p class="inline" style="color: blue;">Words</p>
+    <i class="fa fa-search"></i>
+    <span>Halo</span>
+    <span>Halo</span>
+    <span>Halo</span>
+    <span>Halo</span>
+    <span>Halo</span>
+    <p class="inline-block">hey</p>
+    <p>hai</p>
+    <p>hai</p>
+    <!-- <p>hai</p> -->
+  </body>
+</html>
