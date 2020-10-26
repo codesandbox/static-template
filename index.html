@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+    />
     <title>Static Template</title>
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <body ng-app="LunchCheck">
+    <h1>
+      LunchCheck App
+    </h1>
+    <div ng-controller="LunchCheckController">
+      <div>
+        Enter Food Items(Comma Separated):
+        <input type="text" ng-model="food" /><br />
+        <button class="btn btn-info" ng-click="checkLunch()">
+          Check If Too Much
+        </button>
+      </div>
+      <div>
+        <p>{{message}}</p>
+      </div>
+    </div>
   </body>
+  <script src="node_modules/angular"></script>
+  <script src="node_modules/angular-route"></script>
+  <script src="node_modules/angular-ui-router"></script>
+  <script src="node_modules/jquery-ui"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="node_modules/angular-bootstrap"></script>
+  <script src="node_modules/angular-smart-table"></script>
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
 </html>
