@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Hangman</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>Hangman</h1>
+    <h3>Guess the word</h3>
+    <div id="game" class="game-cotainer">
+      <div id="message"></div>
+      <div id="hint" class="hint"></div>
+      <div id="word" class="word-container"></div>
+      <div id="alpha" class="alpha-container">
+        <div id="alpha1" class="row"></div>
+        <div id="alpha2" class="row"></div>
+        <div id="alpha3" class="row"></div>
+      </div>
+      <div id="btn" class="hide">
+        <div class="center">
+          <button id="retry" type="btn" class="btn btn-danger">
+            Try Again
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
   </body>
+  <footer>&copy;Copyrite Alok prasad</footer>
 </html>
