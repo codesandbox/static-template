@@ -59,7 +59,6 @@ body {
 /* Services */
 .services {
   background: #000;
-  height: 300px;
 }
 
 /* Utilities */
@@ -102,4 +101,19 @@ body {
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+
+/*  Media queries */
+@media (max-width: 546px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .about .content {
+    text-align: center;
+    margin-top: 1.8rem;
+  }
+  .showcase .content {
+    margin-top: 20px;
+  }
 }
