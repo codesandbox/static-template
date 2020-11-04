@@ -20,50 +20,77 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="container-fluid text-center">
     <header>
       <nav>
-        <ul class="nav top-nav justify-content-end">
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="https://mail.google.com/mail/?tab=wm&amp;authuser=0&amp;ogbl"
-              >Gmail</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="https://www.google.co.in/imghp?hl=en&amp;tab=wi&amp;authuser=0&amp;ogbl"
-              >Images</a
-            >
-          </li>
-          <li class="nav-item">
-            <img
-              class="nav-link google-apps"
-              src="https://static.thenounproject.com/png/3095017-200.png"
-              title="Google apps"
-            />
-          </li>
-          <li class="nav-item">
-            <img
-              class="avatar"
-              title="Google Account: Bishal Choudhary
-(bishalchoudhary67@gmail.com)"
-              src="https://lh3.googleusercontent.com/ogw/ADGmqu98U9QiHpc5NNDxZr7mWOv1H070LzDtil1MHocsrw=s32-c-mo"
-            />
-          </li>
+        <ul id="navbar" class="nav top-nav d-flex justify-content-between">
+          <div class="d-flex">
+            <li id="navLeft" class="nav-item">
+              <img
+                class="nav-link google-apps"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png"
+                title="Google apps"
+              />
+            </li>
+            <li id="all" class="nav-item">
+              <a
+                class="nav-link"
+                href="https://www.google.co.in/imghp?hl=en&amp;tab=wi&amp;authuser=0&amp;ogbl"
+                >ALL</a
+              >
+            </li>
+            <li id="mobileImage" class="nav-item">
+              <a
+                class="nav-link"
+                href="https://www.google.co.in/imghp?hl=en&amp;tab=wi&amp;authuser=0&amp;ogbl"
+                >IMAGES</a
+              >
+            </li>
+          </div>
+          <div class="d-flex">
+            <li id="gmail" class="nav-item">
+              <a
+                class="nav-link"
+                href="https://mail.google.com/mail/?tab=wm&amp;authuser=0&amp;ogbl"
+                >Gmail</a
+              >
+            </li>
+            <li id="images" class="nav-item">
+              <a
+                class="nav-link"
+                href="https://www.google.co.in/imghp?hl=en&amp;tab=wi&amp;authuser=0&amp;ogbl"
+                >Images</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <img
+                class="nav-link google-apps"
+                src="https://static.thenounproject.com/png/3095017-200.png"
+                title="Google apps"
+              />
+            </li>
+            <li class="nav-item">
+              <img
+                class="avatar"
+                title="Google Account: Bishal Choudhary
+        (bishalchoudhary67@gmail.com)"
+                src="https://lh3.googleusercontent.com/ogw/ADGmqu98U9QiHpc5NNDxZr7mWOv1H070LzDtil1MHocsrw=s32-c-mo"
+              />
+            </li>
+          </div>
         </ul>
       </nav>
     </header>
 
     <main class="wrapper container-fluid">
-      <div class="title">
+      <div id="title" class="title">
         <img
           alt="Google"
-          class="img-responsive"
+          id="googleText"
+          class="img-responsive googleText"
           src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
         />
       </div>
@@ -84,14 +111,49 @@
           /></span>
         </div>
       </div>
-      <div class="d-flex">
+      <div id="twoBtn" class="d-flex">
         <button class="btn">Google Search</button>
         <button class="btn">I'm Feeling Lucky</button>
       </div>
+      <ul id="extraIcons" class="mt-3 mb-5 d-flex justify-content-around">
+        <li class="col">
+          <span title="Weather"
+            ><img
+              class="w-35"
+              src="https://img.icons8.com/color/48/000000/partly-cloudy-day.png"
+          /></span>
+          <span class="small">Weather</span>
+        </li>
+        <li class="col">
+          <span title="Sports"
+            ><img
+              class="w-35"
+              src="https://img.icons8.com/color/48/000000/trophy.png"
+          /></span>
+          <span class="small">Sports</span>
+        </li>
+        <li class="col">
+          <span title="What to watch"
+            ><img
+              class="w-35"
+              src="https://img.icons8.com/dusk/50/000000/video-message.png"
+          /></span>
+          <span class="small">What to watch</span>
+        </li>
+        <li class="col">
+          <span title="Restaurants"
+            ><img
+              class="w-35"
+              src="https://img.icons8.com/color/48/000000/mcdonalds.png"
+          /></span>
+          <span class="small">Restaurants</span>
+        </li>
+      </ul>
+
       <div class="mt-2">
         <div class="d-flex language">
           <div class="fs-small">
-            Google offered in:
+            <span id="languageTitle" class="pb-2">Google offered in:</span>
             <a
               href="https://www.google.com/setprefs?sig=0_OX5lwMX_ULS9Zs2kLSk92YmCSKk%3D&amp;hl=hi&amp;source=homepage&amp;sa=X&amp;ved=0ahUKEwigoubyvObsAhX4wjgGHXg_BdgQ2ZgBCA8"
               >हिन्दी</a
@@ -132,68 +194,67 @@
         </div>
       </div>
     </main>
-      <footer>
-        <div class="container-fluid ">
-          <nav class="footer-nav nav border-top-0">
-            <a class="nav-link" href="#">India</a>
-          </nav>
-          <nav class="footer-nav d-flex justify-content-between">
-            <ul class="footer-nav nav border-top-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://www.google.com/intl/en_in/ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&amp;utm_source=google.com&amp;utm_medium=referral&amp;utm_campaign=google_hpafooter&amp;fg=1"
-                  >Advertising</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&amp;utm_source=google.com&amp;utm_medium=referral&amp;utm_campaign=google_hpbfooter&amp;fg=1"
-                  >Business</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://about.google/?utm_source=google-IN&amp;utm_medium=referral&amp;utm_campaign=hp-footer&amp;fg=1"
-                  >About</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://google.com/search/howsearchworks/?fg=1"
-                  >How Search works</a
-                >
-              </li>
-            </ul>
-            <ul class="footer-nav nav">
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://policies.google.com/privacy?hl=en-IN&amp;fg=1"
-                  >Privacy</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://policies.google.com/terms?hl=en-IN&amp;fg=1"
-                  >Terms</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://www.google.com/preferences?hl=en"
-                  >Settings</a
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </footer>
-    </div>
+    <footer class="container-fluid">
+      <nav class="footer-nav nav border-top-0">
+        <a class="nav-link" href="#">India</a>
+      </nav>
+      <nav
+        id="footerBottomNav"
+        class="footer-nav d-flex justify-content-between"
+      >
+        <ul id="footerNav" class="footer-nav nav border-top-0">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://www.google.com/intl/en_in/ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&amp;utm_source=google.com&amp;utm_medium=referral&amp;utm_campaign=google_hpafooter&amp;fg=1"
+              >Advertising</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&amp;utm_source=google.com&amp;utm_medium=referral&amp;utm_campaign=google_hpbfooter&amp;fg=1"
+              >Business</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://about.google/?utm_source=google-IN&amp;utm_medium=referral&amp;utm_campaign=hp-footer&amp;fg=1"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://google.com/search/howsearchworks/?fg=1"
+              >How Search works</a
+            >
+          </li>
+        </ul>
+        <ul id="" class="footer-nav nav">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://policies.google.com/privacy?hl=en-IN&amp;fg=1"
+              >Privacy</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://policies.google.com/terms?hl=en-IN&amp;fg=1"
+              >Terms</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.google.com/preferences?hl=en"
+              >Settings</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    <script src="app.js"></script>
   </body>
 </html>
