@@ -1,0 +1,236 @@
+body {
+  font-family: arial, sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+}
+footer {
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: #f2f2f2;
+  line-height: 40px;
+  min-width: 980px;
+  border-top: 1px solid #dadce0;
+  min-width: 400px;
+}
+
+.top-nav .nav-item {
+  padding-left: 15px;
+  line-height: 58px;
+}
+.top-nav .nav-link {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 0;
+}
+.top-nav .nav-link:hover {
+  text-decoration: underline;
+}
+.avatar {
+  background-size: 32px 32px;
+  border: 0;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  display: block;
+  margin: -1px;
+  position: relative;
+  height: 32px;
+  width: 32px;
+  z-index: 0;
+  top: 14px;
+}
+.google-apps {
+  background-size: 28px 28px;
+  border: 0;
+  display: block;
+  margin: -1px;
+  position: relative;
+  height: 23px;
+  width: 23px;
+  z-index: 0;
+  top: 19px;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin: 0 auto -155px; */
+}
+.title {
+  padding-top: 109px;
+  width: 272px;
+}
+.microphone-icon {
+  border-radius: 50%;
+  display: block;
+  margin: -1px;
+  position: relative;
+  height: 27px;
+  width: 25px;
+  z-index: 0;
+}
+.search-icon {
+  height: 27px;
+  width: 25px;
+  color: #9aa0a6;
+  line-height: 1.5;
+}
+li {
+  list-style: none;
+}
+.search-engine {
+  border: 1px solid #dfe1e5;
+  width: 582px;
+  box-shadow: none;
+  border-radius: 24px;
+  height: 44px;
+  margin-top: 20px;
+}
+.search-engine:hover {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0);
+}
+.search-engine:focus {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0);
+}
+.input-group-text {
+  background-color: transparent;
+  border: none;
+}
+
+.btn {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  font-family: arial, sans-serif;
+  font-size: 14px;
+  margin: 11px 4px;
+  padding: 0 16px;
+  line-height: 27px;
+  height: 36px;
+  min-width: 54px;
+  text-align: center;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #f8f9fa;
+  border: 1px solid #dadce0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  color: #202124;
+}
+.form-control {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+.form-control:focus {
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+.footer-nav {
+  color: rgba(0, 0, 0, 0.54);
+  background: #f2f2f2;
+  border-top: 1px solid #dadce0;
+  font-size: 14px;
+}
+.nav a {
+  color: rgba(0, 0, 0, 0.54);
+}
+.nav a:hover {
+  text-decoration: underline;
+}
+.footer-nav .nav-link {
+  padding: 0rem 1rem;
+}
+.language a {
+  padding: 0 3px;
+  color: #1a0dab;
+  text-decoration: none;
+  font-size: small;
+}
+.language a:hover {
+  text-decoration: underline;
+}
+.fs-small {
+  font-size: small;
+}
+.hide {
+  display: none !important;
+}
+.floatleft {
+  float: left;
+}
+.floatright {
+  float: right;
+}
+.center {
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+}
+.w-35 {
+  width: 35px;
+}
+.small {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 12px;
+  white-space: nowrap;
+}
+#mobileImage {
+  font-weight: 800;
+}
+#mobileImage a {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.54);
+}
+#all a {
+  color: #007bff;
+  font-size: 15px;
+}
+#all {
+  font-weight: 800;
+  border-bottom: 3px solid #007bff;
+  /* color: #007bff; */
+  padding-right: 15px;
+  margin-left: 16px;
+}
+@media screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .search-engine {
+    width: 100%;
+  }
+  .nav {
+    flex-wrap: wrap;
+  }
+  .language a {
+    padding: 0 10px;
+    color: #007bff;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+}
+/* @media screen and (max-width: 360px) {
+  body {
+    padding-left: 15% !important;
+  }
+} */
+@media screen and (max-width: 321px) {
+  footer {
+    bottom: -140px;
+  }
+  .nav {
+    padding-right: 0;
+  }
+  .language {
+    margin-top: 15px;
+  }
+}
