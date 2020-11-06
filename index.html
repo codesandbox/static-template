@@ -1,12 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css" />
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel="stylesheet" type="text/css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        
+    </head>
+    <body>
+        <section>
+      <div id="img">
+            <img src="hangman.png" width="500" height="700">
+      </div>
+        <div id="hangm">
+
+                <div style="height: 2em; margin-bottom: 3em;">
+                    <div id="hangm_end" class="h"></div>
+                </div>
+
+                <div id="hangm_animation">
+                    <div id="hangm_2" class="h pole_h"></div>
+                    <div id="hangm_1" class="h pole_v"></div>
+
+                    <div id="hangm_3" class="h rope"></div>
+
+                    <div id="hangm_4" class="h man_head"></div>
+                    <div id="hangm_5" class="h man_upper"></div>
+                    <div id="hangm_6" class="h man_lower"></div>
+                </div>
+
+                <div style="height: 2em;">
+                    <div id="hangm_guesses" class="h"></div>
+                </div>
+
+                <form>
+                    <div id="hangm_guessbox" style="height: 8em;" class="h">
+                        <div style="height: 4em;">
+                           <h1> Guess the word:</h1><div id="hangm_word"></div>
+                        </div>
+                        
+                        <input type="text" id="guess" name="value" onkeyup="Hangman.guess(this.value); this.value=''; return false;" class="form-control" placeholder="Enter the Letter" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" id="btn-start" class="btn-lg btn-info" onclick="Hangman.reset(); return false;" >New Game</button>
+                        <h2><i class="fa fa-hand-o-up" style="font-size:48px;color:red"></i> click the button to start</h2>
+                    </div>
+                </form>
+
+        </div>
+        </section>
+       
+    </body>
+    <script type="text/javascript" src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
 </html>
