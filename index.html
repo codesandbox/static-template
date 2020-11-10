@@ -1,12 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <body class="body-container">
+    <!-- <div class="container"> -->
+    <div class="sign">
+      <i
+        ><span class="fast-flicker">T</span>IC<span class="flicker">T</span
+        >AC<span class="fast-flicker">T</span>OE</i
+      >
+    </div>
+    <!-- <section class="section-container"> -->
+    <div class="div-box">
+      <!-- <div class="center"> -->
+      <form>
+        <div class="form-group">
+          <div class="input-div">
+            <label for="formGroupExampleInput label-text" class="label-text"
+              >Player-1 Name</label
+            >
+            <input
+              type="text"
+              class="form-control space"
+              id="p1"
+              name="p1"
+              placeholder="Enter Player-1 Name"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-div">
+            <label for="formGroupExampleInput2" class="label-text"
+              >Player-2 Name</label
+            >
+            <input
+              type="text"
+              class="form-control space"
+              id="p2"
+              name="p2"
+              placeholder="Enter Player-2 Name"
+            />
+          </div>
+        </div>
+      </form>
+      <!-- </div> -->
+      <div class="center">
+        <label for="dimension" class="label-text">Choose a dimension: </label>
+
+        <select name="dimensions" id="dimensions" class="space">
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+      </div>
+      <
+      <div class="center">
+        <button
+          type="button"
+          id="game-start"
+          class="center button label-text"
+          onclick="startGame()"
+        >
+          Start game
+        </button>
+      </div>
+
+      <!-- <div>
+        
+      <!-- </div> -->
+      -->
+      <!-- <div class="center-div">
+            <div id="game-container" class="hide game-div">
+              <div id="turn" class="turn-text"></div>
+            </div>
+          </div> -->
+    </div>
+    <div class="center-div">
+      <div id="game-container" class="hide game-div">
+        <div id="turn" class="turn-text"></div>
+      </div>
+      <!-- <div>
+        <button
+          type="button"
+          id="reset"
+          class="center label-text button-text"
+          onclick="reset()"
+        >
+          Reset
+        </button>
+        <button
+          type="button"
+          id="reload"
+          class="center label-text button-text"
+          onclick="reload()"
+        >
+          New Game
+        </button>
+      </div> -->
+    </div>
+    <!-- </section> -->
+    <!-- </div> -->
+    <script src="index.js"></script>
   </body>
 </html>
