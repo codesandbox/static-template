@@ -1,12 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slate Menu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="content">
+      <div class="main-wrapper">
+        <div class="header-wrapper">
+          <div class="logo">
+            <img src="images/logos/slate-logo-gold.png" alt="" />
+          </div>
+          <div class="navbar">
+            <div class="section-selector">
+              <div class="subnav">
+                <div class="food"><button class="subnavbtn">Food</button></div>
+                <div class="subnav-content">
+                  <a href="#starters">Starters</a>
+                  <a href="#entrees">Entrees</a>
+                  <a href="#sides">Sides</a>
+                </div>
+              </div>
+              <div class="subnav">
+                <div class="bottles">
+                  <button class="subnavbtn">Bottles</button>
+                </div>
+              </div>
+              <div class="subnav">
+                <div class="drinks">
+                  <button class="subnavbtn">Drinks</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="main-content"></div>
+        <div class="food-menu">
+          <div class="starters-menu">
+            <div class="ancor">
+              <span id="starters"></span>
+            </div>
+            <div class="menu-name">Starters</div>
+            <div class="food-name">
+              Crispy Wings <span class="prices">16</span>
+            </div>
+            <div class="food-description">
+              Choice of sweet n' sassy sauce or hot buffalo served with veggie
+              sticks and a side of blue cheese.
+            </div>
+            <div class="food-name">
+              KOREAN CRISPY CAULIFLOWER <span class="prices">13</span>
+            </div>
+            <div class="food-description">
+              Tossed in our house sweet & spicy sauce, scallions.
+            </div>
+            <div class="food-name">
+              SLATE NACHOS <span class="prices">10</span>
+            </div>
+            <div class="food-description">
+              (add grilled chicken <span class="prices">+4</span>)<br />
+              Crispy corn tortillas, melted queso blend, jalapenos, cherry
+              peppers, pico de gallo, sour cream, guac.
+            </div>
+            <div class="food-name">
+              GIANT SOFT PRETZEL <span class="prices">14</span>
+            </div>
+            <div class="food-description">
+              Served with a side of fondue cheese and spicy mustard.
+            </div>
+            <div class="food-name">
+              HUMMUS & PITA <span class="prices">9</span>
+            </div>
+            <div class="food-description">
+              Veggie sticks, extra virgin olive oil.
+            </div>
+          </div>
+          <div class="entree-menu">
+            <div class="ancor">
+              <span id="entrees"></span>
+            </div>
+            <div class="menu-name">Sandwiches</div>
+            <div class="menu-name-more">& More</div>
+            <div class="food-description-more">
+              All sandwiches served with french fries
+            </div>
+            <div class="food-name">
+              THE DOUBLE SMASHED BURGER <span class="prices">16</span>
+            </div>
+            <div class="food-description">
+              (add Nueske's bacon <span class="prices">+4</span>, sunny side up
+              egg <span class="prices">+3)</span><br />
+              Two beef patties, American cheese, comeback sauce, crispy
+              shallots, bread and butter pickles, sesame seed bun.
+            </div>
+            <div class="food-name">
+              PHILLY CHEESESTEAK <span class="prices">15</span>
+            </div>
+            <div class="food-description">
+              Signature cheez whiz, wit' caramelized onions, pickled sweet
+              peppers and a side of hot cherry peppers.
+            </div>
+            <div class="food-name">
+              CRISPY CHICKEN STACK <span class="prices">16</span>
+            </div>
+            <div class="food-description">
+              (add Nueske's bacon <span class="prices">+4</span>, sunny side up
+              egg <span class="prices">+3)</span><br />
+              Bread and butter pickles, hot cherry peppers, Mike's hot honey.
+            </div>
+            <div class="food-name">
+              ARTISAN CAULIFLOWER CRUST PIZZA <span class="prices">14</span>
+            </div>
+            <div class="food-description">
+              (add pepperoni <span class="prices">+3</span>, add grilled chicken
+              <span class="prices">+4</span>)<br />
+              Mozzarella cheese, tomato sauce, fresh basil.
+            </div>
+            <div class="food-name">
+              KALE CAESAR SALAD <span class="prices">12</span>
+            </div>
+            <div class="food-description">
+              (add grilled chicken <span class="prices">+4</span>)<br />
+              Shaved parmesan, croutons, lemon peppercorn dressing.
+            </div>
+            <div class="food-name">
+              POWER SALAD <span class="prices">13</span>
+            </div>
+            <div class="food-description">
+              (add grilled chicken <span class="prices">+4</span>, sunny side up
+              egg <span class="prices">+3</span>) Kale, quinoa, garbanzo beans,
+              sundried cherries, toasted almonds, sunflower seeds, champagne
+              vinaigrette.
+            </div>
+          </div>
+          <div class="side-menu">
+            <div class="ancor">
+              <span id="sides"></span>
+            </div>
+            <div class="menu-name">Sides</div>
+            <div class="food-name-side">
+              BOARDWALK FRIES <span class="prices">7</span>
+            </div>
+            <div class="food-description-side">
+              (add chees, bacon and scallions <span class="prices">+3</span>)
+            </div>
+            <div class="food-name-side">
+              TATER TOTS <span class="prices">8</span>
+            </div>
+            <div class="food-description-side">
+              (add chees, bacon and scallions <span class="prices">+3</span>)
+            </div>
+            <div class="food-name-side">
+              CRISPY BRUSSELS SPROUTS <span class="prices">10</span>
+            </div>
+          </div>
+        </div>
+        <div class="ancor">
+          <span id="bottles"></span>
+        </div>
+      </div>
+      <div class="social-media">
+        <div class="social-media-buttons">
+          <img src="images/logos/insta.png" alt="" />
+        </div>
+        <div class="social-media-buttons">
+          <img src="images/logos/facebook.png" alt="" />
+        </div>
+        <div class="social-media-buttons">
+          <img src="images/logos/twitter.png" alt="" />
+        </div>
+      </div>
+    </div>
   </body>
 </html>
