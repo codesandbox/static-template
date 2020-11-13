@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
+  <link
+  href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+  rel="stylesheet"
+/>
+  <link rel="stylesheet" href="index.css"></link>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+  integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+  crossorigin="anonymous"
+/>
+<style>
+  .Progress-Bar {
+  margin: auto;
+  width: 60%;
+  background: lightcoral;
+}
+#innerbar {
+  background-color: green;
+  width: 1%;
+  color: white;
+}
+</style>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1 class="Heading">Task Manager</h1>
+    <div class="buttonsforserver">
+    <button class="addbtn" >Add Server</button>
+    <button class="removebtn" >Remove Server</button>
+    </div>
+    <div>
+        <form class="form-body">
+        <input id="number" name="input" class="input" type="number"></input>
+        <button class="addtaskbtn" >Add task</button>
+        </form>
+    </div>
+   <
+    <div class="Progress-Bar"><div id="innerbar"class="innerprogressbar">
+      <span id="text">1%</span>
+    </div>
+    <div id="message"></div>
+  </div>
+    <div class="task-container"><ul class="container"></ul></div>
   </body>
+  <script src="index.js"></script>
 </html>
