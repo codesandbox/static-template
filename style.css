@@ -1,0 +1,64 @@
+body {
+  background: greenyellow;
+}
+
+td {
+  border: 1px solid black;
+  height: 30px;
+}
+
+.larger {
+  height: 60px;
+}
+
+img {
+  width: 300px;
+}
+
+img:hover {
+  border: 5px solid black;
+}
+.red {
+  width: 0%;
+  height: 100%;
+  background: rgb(255, 0, 200);
+}
+.toLeft {
+  position: relative;
+}
+.toLeft:hover div {
+  width: 100%;
+  animation: widthEnlarge 2s;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+@keyframes widthEnlarge {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+#field-email {
+  background: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+#field-email:focus {
+  outline: none;
+  background: white;
+}
+#field-password {
+  background: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+#field-password:focus {
+  outline: none;
+  background: white;
+}
