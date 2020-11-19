@@ -1,0 +1,194 @@
+/* .center {
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  cursor: pointer;
+}
+
+.game-container {
+  flex-direction: column;
+  display: none;
+}
+
+.gameover-container {
+  display: none;
+  flex-direction: column;
+} */
+
+* {
+  box-sizing: border-box;
+  color: white;
+}
+body {
+  background-image: linear-gradient(
+    112.1deg,
+    rgba(32, 38, 57, 1) 11.4%,
+    rgba(63, 76, 119, 1) 70.2%
+  );
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 90vh;
+}
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  height: 10%;
+  font-size: 3em;
+  display: flex;
+  flex-direction: column;
+}
+section {
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+}
+input[type] {
+  padding: 10px;
+  border-radius: 20px;
+  margin: 5px 0px 20px 0px;
+  outline: none;
+  color: black;
+  font-size: 2em;
+}
+button {
+  border-radius: 50px;
+  padding: 20px;
+  width: 80%;
+  background-color: #122277;
+  margin: 5px;
+  outline: none;
+}
+.player-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game-container {
+  display: none;
+  flex-direction: column;
+}
+.score {
+  margin: 30px 0px 20px 0px;
+  font-size: 2em;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.cell {
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.gameover-container {
+  display: none;
+  flex-direction: column;
+  width: 80%;
+  height: 80%;
+}
+img {
+  width: 60%;
+  height: 60%;
+}
+#play-again {
+  width: 40%;
+}
+
+@media (max-width: 320px) {
+  header {
+    font-size: 2em;
+  }
+  .cell {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+  input[type] {
+    padding: 10px;
+    width: 200px;
+  }
+  button {
+    font-size: 1em;
+    width: 100%;
+  }
+  #play-again {
+    width: 80%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  input[type] {
+    padding: 15px;
+    width: 80%;
+  }
+  .cell {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  header {
+    font-size: 5em;
+  }
+  label {
+    font-size: 2em;
+  }
+  input[type] {
+    padding: 20px;
+  }
+  button {
+    font-size: 1.5em;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  header {
+    font-size: 5em;
+  }
+  label {
+    font-size: 2em;
+  }
+  input[type] {
+    padding: 20px;
+  }
+  button {
+    font-size: 1.5em;
+    width: 100%;
+  }
+}
