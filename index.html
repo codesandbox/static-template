@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Tic Tac Toe</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <h1 class="glow">Hey,Let's play Tic Tac Toe 😎</h1>
+    </header>
+    <section class="players">
+      <div class="glow1">
+        <h2>
+          <span>Player1 : </span
+          ><input
+            type="text"
+            id="player1"
+            style="width: 200px; height: 30px; font-size: 25px;"
+          />
+        </h2>
+      </div>
+      <div class="glow1">
+        <h2>
+          <span>Player2 : </span
+          ><input
+            type="text"
+            id="player2"
+            style="width: 200px; height: 30px; font-size: 25px;"
+          />
+        </h2>
+      </div>
+      <div class="glow1">
+        <h2>
+          <span>Select Grid Dimensions : </span
+          ><select
+            id="dimension"
+            name="dimensions"
+            style="width: 200px; height: 40px;"
+            onchange="numchange()"
+          >
+            <option value="" selected disabled></option>
+            <option value="3" style="font-size: 25px;">3</option>
+            <option value="4" style="font-size: 25px;">4</option>
+            <option value="5" style="font-size: 25px;">5</option>
+          </select>
+        </h2>
+      </div>
+      <button id="testbutton" class="test" onclick="startGame()">
+        <span> Start </span>
+      </button>
+    </section>
+    <h2 class="grid">The Grid</h2>
+    <h2 class="grid" id="status"></h2>
+    <section id="hid" class="game-text hide">
+      <a href="javascript:location.reload(true)">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Restart The Game
+      </a>
+    </section>
+    <section id="container" class="gamecontainer"></section>
+    <script src="index.js"></script>
   </body>
 </html>
