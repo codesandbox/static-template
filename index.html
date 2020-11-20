@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MineSweeper</title>
+    <link href="index.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header class="center">Bomber Man</header>
+    <section class="center">
+      <div class="player-input-container" id="player-input-container">
+        <label for="player-name">Player Name : </label>
+        <input type="text" name="player-name" id="player-name" />
+        <label for="grid-size">Grid Size : </label>
+        <input type="number" name="grid-size" id="grid-size" min="3" max="10" />
+        <label for="no-of-bombs">No of Bombs : </label>
+        <input
+          type="number"
+          name="no-of-bombs"
+          id="no-of-bombs"
+          min="3"
+          max="10"
+        />
+        <button id="start-game-btn" class="start-game-btn">Start Game</button>
+      </div>
+      <div class="game-container center" id="game-container">
+        <div class="player-container" id="player-container">
+          <div class="player" id="player"></div>
+        </div>
+        <div class="instructions">
+          <h4>Left Click - Sweep</h4>
+          <h4>Right Click - Keep Flag</h4>
+        </div>
+        <div class="score" id="score">Score : 0</div>
+        <div class="grid-container center" id="grid-container"></div>
+      </div>
+      <div class="gameover-container center" id="gameover-container">
+        <img id="image" />
+        <h2 id="status"></h2>
+        <div class="btn-container center">
+          <button id="play-again-btn">Play Again</button>
+          <button id="new-game-btn">New game</button>
+        </div>
+      </div>
+    </section>
+    <script src="index.js"></script>
   </body>
 </html>
