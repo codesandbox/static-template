@@ -1,0 +1,91 @@
+:root {
+  --base-color: #2cbbe6;
+  /* --base-color: #2ecc71; */
+  /* --base-color: #e67e22; */
+  /* --base-color: #e74c3c; */
+  /* --base-color: #34495e; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Yu Gothic UI;
+}
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  position: relative;
+  height: 100vh;
+}
+.show-number {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.show-number span {
+  font-size: 200px;
+  /* font-weight: bold; */
+  color: var(--base-color);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.btn {
+  width: 200px;
+  height: 40px;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--base-color);
+  transition: 0.3s;
+}
+.btn:hover {
+  background: var(--base-color);
+  color: white;
+  cursor: pointer;
+}
+.reset {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 150px;
+}
+.start {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.shuffle {
+  display: none;
+}
+.number-list {
+  /* width: 900px; */
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  width: 750px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  /* margin: 0 auto; */
+}
+.area {
+  /* width: 60px; */
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  color: var(--base-color);
+}
+.out {
+  background: var(--base-color);
+  border: none;
+  color: white;
+  font-weight: bold;
+}
