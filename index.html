@@ -4,9 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Bubble Sorting</title>
   </head>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css"/>
+  <link rel="stylesheet" href="modal.css"/>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="head"> Bubble Sorting Visualiser</div>
+   <div class="input" id='input'>
+      Enter the No. of bars
+      <input type="number" id='num' placeholder="Enter a numeric Value"/>
+      <button class="sub" id="reset" onclick="submit()">Submit</button>
+    </div>
+    <div class="box hide" id="box">
+      
+    </div>
+
+    <button class="oneforall hide" id="start" onclick="BubbleSortingVisual()">Start Sorting</button>
+ 
+
+  <!-- MOdal Starts for Value -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+     <div id="congo" class="congo">Kindly Enter a value greater than 3 for better understanding</div>
+    </div>
+  </div>
+  <!-- MOdal Ends for Value-->
+  <script src='SortingTech.js'></script>
+    <script src='anime.min.js'></script>
+    <script src='sorting.js'></script>
+    <script src='modal.js'></script>
+    <script src="index.js"></script>
   </body>
 </html>
