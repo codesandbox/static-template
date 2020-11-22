@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Next-Gen</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald:700|PT+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="styles/normalize.css" rel="stylesheet" />
+    <link href="styles/inicio.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="hero">
+      <div class="texture"></div>
+
+      <video loop muted autoplay preload="auto">
+        <source src="multimedia/vidprueba.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="caption">
+        <h1>Next-Gen</h1>
+        <button
+          onclick="window.location.href='principal.html'"
+          class="button type3"
+        >
+          Ir
+        </button>
+      </div>
+    </div>
+
+    <script src="js/object-fit-videos.js"></script>
+    <script src="js/inicio.js"></script>
   </body>
 </html>

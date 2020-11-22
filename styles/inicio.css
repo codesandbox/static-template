@@ -1,0 +1,127 @@
+#hero {
+  height:100vh;
+  width:100%;
+  background:black;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+
+
+
+#hero::after {
+width:100%;
+height:100%;
+content: '';
+position:absolute;
+z-index:10;
+top:0;
+left:0;
+background:rgba(0,0,0,0.5)
+}
+
+
+#hero video {
+width:100%;
+height:100%;
+position:absolute;
+top:0;
+left:0;
+z-index:5;
+object-fit:cover;
+font-family:'object-fit: cover';
+}
+
+
+#hero .texture {
+width:100%;
+height:100%;
+position:absolute;
+top:0;
+left:0;
+z-index:15;
+background:url('../texture.png');
+}
+
+
+#hero .caption {
+
+position:relative;
+z-index:20;
+text-align:center;
+color:#ffffff;
+}
+
+
+
+#hero .caption h1 {
+
+text-transform: uppercase;
+font-size:2em;
+font-family: 'Oswald', sans-serif;
+margin-bottom:0.5rem;
+}
+
+#hero .caption h2 {
+font-weight:400;
+font-size:1.5rem;
+margin:0;
+font-family: 'PT Sans', sans-serif;
+}
+
+
+
+
+@media screen and (min-width:768px)
+{
+#hero .caption h1 {
+  font-size:2.5rem;
+}
+
+#hero .caption h2 {
+  font-size:1.75rem;
+}
+}
+
+
+
+
+@media screen and (min-width:992px)
+{
+#hero .caption h1 {
+  font-size:3rem;
+}
+
+#hero .caption h2 {
+  font-size:2rem;
+}
+}
+.button{position:relative;padding:1em 1.5em;border:none;background-color:transparent;cursor:pointer;outline:0;font-size:18px;margin:1em .8em}
+.button.type3{color:#ffffff}
+.button.type3.type3::after,.button.type3.type3::before{content:"";display:block;position:absolute;width:20%;height:20%;border:2px solid;transition:all .6s ease;border-radius:2px}
+.button.type3.type3::after{bottom:0;right:0;border-color:transparent #ffffff #ffffff transparent}
+.button.type3.type3::before{top:0;left:0;border-color:#ffffff transparent transparent #ffffff}
+.button.type3.type3:hover:after,.button.type3.type3:hover:before{border-color:#ffffff;width:100%;height:100%}
+
+@media screen and (min-width:1200px)
+{
+#hero .caption h1 {
+  font-size:4rem;
+}
+
+#hero .caption h2 {
+  font-size:2.5rem;
+}
+}
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
