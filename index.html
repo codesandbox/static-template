@@ -1,12 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>OSMD Raw Javascript Usage Example</title>
+    <!-- <script src="https://unpkg.com/opensheetmusicdisplay@0.8.7/build/opensheetmusicdisplay.min.js"></script> -->
+    <script src="opensheetmusicdisplay.min.js"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <button id="btn_show" onclick="show_cursor()">show</button>
+    <button id="btn_next" onclick="next_cursor()">next</button>
+    <button id="btn_start" onclick="startSong()">start</button>
+    <div id="osmddiv" />
+    <script>
+      var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmddiv", {
+        autoResize: true, // just an example for an option, no option is necessary.
+        backend: "svg",
+        drawTitle: true
+        // put further options here
+      });
+      var loadPromise = osmd.load("182_gesamt_ow.xml");
+      loadPromise.then(function () {
+        osmd.render();
+      });
+      var cursor = osmd.cursor;
+      function show_cursor() {
+        var cursor = osmd.cursor;
+        console.log("show");
+        cursor.show();
+      }
+      function next_cursor() {
+        var cursor = osmd.cursor;
+        console.log("next");
+        cursor.next();
+      }
+      async function startSong() {
+        var cursor = osmd.cursor;
+        cursor.show();
+        var its = osmd.cursor.iterator;
+        var timestamp = new Date().getTime();
+        console.log("before start: ", its.CurrentVisibleVoiceEntries().length);
+
+        while (!its.endReached) {
+          var temptime = new Date().getTime();
+          if (temptime - timestamp > its.currentTimeStamp.realValue * 4000) {
+            console.log(its);
+            console.log(temptime - timestamp);
+            console.log(its.CurrentVisibleVoiceEntries());
+            osmd.cursor.next();
+            await new Promise((r) => setTimeout(r, 125));
+          }
+        }
+      }
+      function playSong() {
+        var allNotes = [];
+        var cursor = osmd.cursor;
+        cursor.show();
+        const iterator = osmd.cursor.Iterator;
+        console.log(iterator);
+        while (!iterator.endReached) {
+          const voices = iterator.currentVoiceEntries;
+          for (var i = 0; i < voices.length; i++) {
+            const v = voices[i];
+            const notes = v.Notes;
+            for (var j = 0; j < notes.length; j++) {
+              const note = notes[j];
+              // make sure our note is not silent
+              if (note != null && note.halfTone != 0) {
+                allNotes.push({
+                  note: note.halfTone + 12, // see issue #224
+                  time: iterator.currentTimeStamp.realValue * 4
+                });
+              }
+            }
+          }
+          iterator.moveToNext();
+        }
+        console.log(allNotes);
+      }
+    </script>
   </body>
 </html>
