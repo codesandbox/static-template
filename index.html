@@ -1,12 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <style>
+      picture {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100px;
+      }
+      picture.is-small {
+        width: 50px;
+      }
+      picture.is-large {
+        width: 200px;
+      }
+      img {
+        box-shadow: 0 0 15px #999;
+        border-radius: 50px;
+        width: 100%;
+      }
+      img.disabled {
+        opacity: 0.3;
+      }
+      i {
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        min-height: 50%;
+        display: block;
+        width: 100%;
+      }
+      div {
+        font-family: "Poppins", sans-serif;
+        font-size: 28px;
+      }
+    </style>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>
+      bundling involved!
+    </h1>
+    <div id="app"></div>
+    <script type="text/babel">
+      const $app = document.getElementById("app");
+      const useState = React.useState;
+
+      const h = React.createElement;
+
+      const Avatar = ({ id, name = "Sin nombre", size }) => {
+        const [enabled, setEnabled] = useState(true);
+
+        const src = `https://randomuser.me/api/portraits/women/${id}.jpg`;
+
+        let pictureClassName = "";
+        if (size === "small") {
+          pictureClassName = "is-small";
+        } else if (size === "large") {
+          pictureClassName = "is-large";
+        }
+
+        const imgclassName = enabled ? "" : "disabled";
+        return (
+          <picture className={pictureClassName}>
+            {id ? (
+              <img
+                onClick={() => setEnabled(!enabled)}
+                className={imgclassName}
+                src={src}
+              />
+            ) : (
+              <i> sin imagen </i>
+            )}
+
+            <strong>{name}</strong>
+          </picture>
+        );
+      };
+
+      function Contador() {
+        const [contadorstate, actualizadorcontador] = useState(33);
+
+        return (
+          <div>
+            <span>{contadorstate}</span>
+            <button
+              onClick={() => {
+                actualizadorcontador(contadorstate + 1);
+              }}
+            >
+              Incrementar +
+            </button>
+            <button
+              onClick={() => {
+                actualizadorcontador(contadorstate - 1);
+              }}
+            >
+              Decrementar -
+            </button>
+          </div>
+        );
+      }
+
+      ReactDOM.render(
+        <div>
+          <Contador />
+        </div>,
+        $app
+      );
+    </script>
   </body>
 </html>
