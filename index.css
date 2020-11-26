@@ -1,0 +1,126 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+body {
+  height: 100vh;
+  background: #6190e8; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #a7bfe8,
+    #6190e8
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #a7bfe8,
+    #6190e8
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+#game-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#game {
+  width: 30%;
+  height: 90%;
+  border-radius: 10px;
+  box-shadow: 6px 6px 50px navy;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #0575e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #021b79,
+    #0575e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+#target-row {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+#target {
+  height: 55%;
+  width: 17%;
+  background-color: yellow;
+  border-radius: 5px;
+  display: flex;
+  font-size: 28px;
+  justify-content: center;
+  align-items: center;
+}
+#current-sum {
+  height: 40%;
+  width: 13%;
+  border-radius: 5px;
+  display: flex;
+  font-size: 24px;
+  background-color: gray;
+  justify-content: center;
+  align-items: center;
+}
+#score {
+  height: 5%;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+#timer {
+  height: 10%;
+  width: 100%;
+}
+#board {
+  height: 65%;
+  width: 100%;
+  border-radius: 10px;
+  background: black;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+.row {
+  width: 100%;
+  height: 15%;
+  /*margin: 4px 2px 0 2px;*/
+  margin: 4px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: space-around;
+}
+.cell {
+  height: 100%;
+  width: 15%;
+  background: #333333;
+  border-radius: 10px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: white;
+}
+
+.fill {
+  background: #a7bfe8;
+  color: #000;
+  cursor: pointer;
+}
+.fill:hover {
+  background-color: springgreen;
+}
+.clicked {
+  background-color: springgreen;
+}
