@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MineSweeper 1</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <script
+      src="https://kit.fontawesome.com/4cd8259aa0.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <link rel="stylesheet" href="index.css" />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1 style="text-align: center;">MineSweeper</h1>
+    <div class="bg-image"></div>
+    <div id="game">
+      <div id="grid"></div>
+    </div>
+    <script src="index.js"></script>
+    <div class="endscreen hidden">
+      <h1 id="gameMsg">Game over</h1>
+      <h3>Your Score: <span class="end-score"> 0 </span></h3>
+      <button class="restart">Restart</button>
+    </div>
   </body>
 </html>
