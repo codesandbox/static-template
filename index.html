@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>Grocery List</h1>
+    <input type="text" id="item-name-input" placeholder="Enter Grocery name" />
+    <input type="number" id="item-price-input" placeholder="Enter price" />
+    <button onclick="insertItem()">Add</button>
+    <!-- <button onclick="Remove()">Remove</button>
+    <button onclick="Clear all()">Clear all</button> -->
+
+    <table id="table">
+      <tr>
+        <th>Sr. No.</th>
+        <th>Title</th>
+        <th>Price</th>
+      </tr>
+    </table>
+    <h3 data-ns-test="grandTotal" id="gtotal">0</h3>
+    <script src="index.js"></script>
   </body>
 </html>
