@@ -1,0 +1,511 @@
+@font-face {
+  font-family: Clip;
+  src: url("https://acupoftee.github.io/fonts/Clip.ttf");
+}
+
+body {
+  background-color: #141114;
+  background-image: linear-gradient(335deg, black 23px, transparent 23px),
+    linear-gradient(155deg, black 23px, transparent 23px),
+    linear-gradient(335deg, black 23px, transparent 23px),
+    linear-gradient(155deg, black 23px, transparent 23px);
+  background-size: 58px 58px;
+  background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+  color: white;
+}
+
+.sign {
+  margin-top: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  background-image: radial-gradient(
+    ellipse 50% 35% at 50% 50%,
+    #6b1839,
+    transparent
+  );
+  transform: translate(-50%, -50%);
+  letter-spacing: 2;
+  left: 50%;
+  top: 40%;
+  margin-left: 13px;
+  font-family: "Clip";
+  text-transform: sentencecase;
+  font-size: 80px;
+  color: #ffe6ff;
+  text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+    -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+    0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  animation: shine 2s forwards, flicker 3s infinite;
+}
+
+.input {
+  border-radius: 8px;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  color: white;
+  outline: none;
+}
+@keyframes blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+  28%,
+  33% {
+    color: #ff65bd;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: #ff2483;
+    text-shadow: none;
+  }
+}
+
+.flicker {
+  animation: shine 2s forwards, blink 3s 2s infinite;
+}
+
+.fast-flicker {
+  animation: shine 2s forwards, blink 10s 1s infinite;
+}
+
+@keyframes shine {
+  0% {
+    color: white;
+    text-shadow: none;
+  }
+  100% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.9;
+  }
+
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  26% {
+    opacity: 0.94;
+  }
+
+  28% {
+    opacity: 0.98;
+  }
+
+  37% {
+    opacity: 0.93;
+  }
+
+  38% {
+    opacity: 0.5;
+  }
+
+  39% {
+    opacity: 0.96;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.95;
+  }
+
+  93% {
+    opacity: 0.93;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  97% {
+    opacity: 0.93;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.pos {
+  background-color: darkgrey;
+  position: relative;
+  color: black;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+  border: 5px solid blue;
+  border-radius: 15px;
+  left: 40%;
+}
+.pos1 {
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+  width: 80%;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.image {
+  padding-top: 5px;
+  padding-bottom: 0px;
+}
+.pos :hover {
+  background-color: white;
+}
+
+.hide {
+  display: none;
+}
+.hide1 {
+  display: none;
+}
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  font-size: 20px;
+}
+.text {
+  font-size: 15px;
+  padding: 5px;
+}
+#game-start:hover {
+  background-color: lightblue;
+  color: black;
+  font-weight: bold;
+}
+
+.class1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 20px;
+}
+#game-container {
+  margin: 30px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  min-height: 80px;
+  min-width: 80px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+@media only screen and (max-width: 700px) {
+  .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    min-height: 50px;
+    min-width: 50px;
+    border: 1px solid white;
+    border-radius: 5px;
+  }
+
+  .sign {
+    margin-top: 100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    background-image: radial-gradient(
+      ellipse 50% 35% at 50% 50%,
+      #6b1839,
+      transparent
+    );
+    transform: translate(-50%, -50%);
+    letter-spacing: 2;
+    left: 50%;
+    top: 40%;
+    margin-left: 13px;
+    font-family: "Clip";
+    text-transform: sentencecase;
+    font-size: 60px;
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+    animation: shine 2s forwards, flicker 3s infinite;
+  }
+
+  @keyframes blink {
+    0%,
+    22%,
+    36%,
+    75% {
+      color: #ffe6ff;
+      text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+        -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+    }
+    28%,
+    33% {
+      color: #ff65bd;
+      text-shadow: none;
+    }
+    82%,
+    97% {
+      color: #ff2483;
+      text-shadow: none;
+    }
+  }
+
+  .flicker {
+    animation: shine 2s forwards, blink 3s 2s infinite;
+  }
+
+  .fast-flicker {
+    animation: shine 2s forwards, blink 10s 1s infinite;
+  }
+
+  @keyframes shine {
+    0% {
+      color: white;
+      text-shadow: none;
+    }
+    100% {
+      color: #ffe6ff;
+      text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+        -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+    }
+  }
+
+  @keyframes flicker {
+    from {
+      opacity: 1;
+    }
+
+    4% {
+      opacity: 0.9;
+    }
+
+    6% {
+      opacity: 0.85;
+    }
+
+    8% {
+      opacity: 0.95;
+    }
+
+    10% {
+      opacity: 0.9;
+    }
+
+    11% {
+      opacity: 0.922;
+    }
+
+    12% {
+      opacity: 0.9;
+    }
+
+    14% {
+      opacity: 0.95;
+    }
+
+    16% {
+      opacity: 0.98;
+    }
+
+    17% {
+      opacity: 0.9;
+    }
+
+    19% {
+      opacity: 0.93;
+    }
+
+    20% {
+      opacity: 0.99;
+    }
+
+    24% {
+      opacity: 1;
+    }
+
+    26% {
+      opacity: 0.94;
+    }
+
+    28% {
+      opacity: 0.98;
+    }
+
+    37% {
+      opacity: 0.93;
+    }
+
+    38% {
+      opacity: 0.5;
+    }
+
+    39% {
+      opacity: 0.96;
+    }
+
+    42% {
+      opacity: 1;
+    }
+
+    44% {
+      opacity: 0.97;
+    }
+
+    46% {
+      opacity: 0.94;
+    }
+
+    56% {
+      opacity: 0.9;
+    }
+
+    58% {
+      opacity: 0.9;
+    }
+
+    60% {
+      opacity: 0.99;
+    }
+
+    68% {
+      opacity: 1;
+    }
+
+    70% {
+      opacity: 0.9;
+    }
+
+    72% {
+      opacity: 0.95;
+    }
+
+    93% {
+      opacity: 0.93;
+    }
+
+    95% {
+      opacity: 0.95;
+    }
+
+    97% {
+      opacity: 0.93;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}

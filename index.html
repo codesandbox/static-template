@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tic tac toe</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="sign">
+      <span class="fast-flicker">T</span>ic <span class="flicker">T</span>ac
+      <span class="fast-flicker">T</span>oe
+    </div>
+    <br />
+    <section class="pos">
+      <button class="pos1"  onclick="play()">Play</button>
+      <button class="pos1"  onclick="restart()"  > Restart</button>
+    </section>
+    <br/>
+    <br/>
+    <div  id="main" class="hide" >
+    <div class=" class1">
+      Player 1:
+      <input type="text" class="input" id="p1" name="p1"></input>
+     <br/>
+      Player 2:
+      <input type="text" class="input" id="p2" name="p2"></input>
+    </div>
+    <br/>
+    <div class="center">
+    <label for="dimension">Choose a dimension:- </label>
+
+    <select name="dimensions" id="dimensions">
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+    </select>
+    
+    </div>
+    <br/>
+    <div class="center">
+    <button onclick="startgame()" id="game-start"  class="text input">Start Game</button>
+    </div>
+  </div>
+    <br/>
+    <div id="turn" class="center"></div>
+    <div id="game-container" class="hide1 class2" >
+            </div>
+    
+    <script src="index.js" ></script>
   </body>
 </html>
+<!-- <div class="row">
+        <div id="00" class="cell" onclick="handleclick(this)"></div>
+        <div id="01" class="cell" onclick="handleclick(this)"></div>
+        <div id="02" class="cell" onclick="handleclick(this)"></div>
+      </div>
+      <div class="row">
+          <div id="10" class="cell" onclick="handleclick(this)"></div>
+          <div id="11" class="cell" onclick="handleclick(this)"></div>
+          <div id="12" class="cell" onclick="handleclick(this)"></div>
+        </div>
+        <div class="row">
+            <div id="20" class="cell" onclick="handleclick(this)"></div>
+            <div id="21" class="cell" onclick="handleclick(this)"></div>
+            <div id="22" class="cell" onclick="handleclick(this)"></div>
+          </div> -->
