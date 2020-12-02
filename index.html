@@ -1,12 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Find My Boba!</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500&display=swap" rel="stylesheet">
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <nav>
+      <!-- <div class="name">Find My Boba!</div> -->
+      <div><img class="logoname" src="../img/Logo-01.png"></div>
+      <div class="show-find-modal" aria-haspopup="true" id="search-button">
+        Click here to Search
+      </div>
+    </nav>
+
+    <div class="spacing"></div>
+
+ 
+    <aside class="search-modal" id="modal-main">
+      <div id="modal-text">
+        <div class="modal-header">
+          <h1>Search for boba by...</h1>
+          <div class="close" id="close-button">X</div>
+        </div>
+
+        <form id="search-form">
+
+        <h2>Nearby Areas:</h2>
+        <!-- <form class="nearby-area"> -->
+         
+            <input type="radio" id="allston" name="nearby-areas" value="allston">
+              <label for="allston" class="radio-inline">Allston / Brighton</label>
+            <input type="radio" id="ctown" name="nearby-areas" value="ctown">
+              <label for="ctown" class="radio-inline">Chinatown / BackBay</label>
+            <input type="radio" id="cambridge" name="nearby-areas" value="cambridge">
+              <label for="cambridge" class="radio-inline">Cambridge</label>
+   
+        <!-- </form> -->
+
+        <div class="spacing"></div>
+
+        <h2>Food choices:</h2>
+        <!-- <form class="food-choices"> -->
+            <input id="tea-shop-only" type="radio" name="food-choices" value="tea-shop-only">  
+              <label for="tea-shop-only" class="radio-inline">Tea Shop Only</label>
+            <input id="cafe" type="radio" name="food-choices" value="cafe">
+              <label for="cafe" class="radio-inline">Cafe / Dessert</label>
+            <input id="restaurant" type="radio" name="food-choices" value="restaurant">
+              <label for="restaurant" class="radio-inline">Restaurant</label>
+        <!-- </form> -->
+
+        <div class="spacing"></div>
+
+        <h2>Types of Tea:</h2>
+        <!-- <form class="types-with"> -->
+            <input id="coffee" type="radio" name="types" value="coffee">
+              <label for="coffee" class="radio-inline">With Coffee</label>
+            <input id="cheese" type="radio" name="types" value="cheese">
+              <label for="cheese" class="radio-inline">With Cheese Foam</label>
+            <input id="fruitshakes" type="radio" name="types" value="fruitshakes">          
+              <label for="fruitshakes" class="radio-inline">With Fruit Shakes</label>
+        <!-- </form> -->
+      </form>
+      </div>
+      <div class="spacing"></div>
+      <div class="spacing"></div>
+      <div class="spacing"></div>
+      <div class="spacing"></div>
+      <div class="spacing"></div>
+
+  <div class="results-modal" id="results-text">
+      <div class="modal-header">
+          <h1>Here are your results...</h1>
+          <div class="close" id="close-button2">X</div>
+        </div>
+
+      <div class="text-overflow">   
+        <div class="hide" id="option-1">
+          <!-- Allston-Tea-coffee -->
+          <ul>
+            <li><span class="bold">Kung Fu Tea</span></li>
+            <li>617-783-3388</li>
+            <li>131 Harvard Ave, Allston MA 02134</li>
+            <li>
+              <a
+                href="https://www.google.com/maps/place/Kung+Fu+Tea/@42.3512429,-71.1269004,17z/data=!4m12!1m6!3m5!1s0x89e379bd74148995:0x7c03cf94766b4034!2sTiger+Sugar!8m2!3d42.3509926!4d-71.1315518!3m4!1s0x89e379c596a9f3b9:0x6890591cec15dc4b!8m2!3d42.3521943!4d-71.132116"
+                >View on Google Maps</a>
+            </li>
+            <br /><br />
+            <li><span class="bold">Gong Cha</span></li>
+            <li>617-208-8561</li>
+            <li>154 Harvard Ave, Allston MA 02134</li>
+            <li>
+              <a
+                href=https://www.google.com/maps/place/Gong+Cha/@42.351705,-71.1328344,17z/data=!3m1!4b1!4m5!3m4!1s0x89e3798f4c45d5a5:0xfc4e4711151a21d9!8m2!3d42.3517027!4d-71.131533"
+                >View on Google Maps</a>
+            </li>
+            <br /><br />
+            <li><span class="bold">Kung Fu Tea</span></li>
+            <li>617-987-0213</li>
+            <li>1 Brighton Ave, Allston MA 02134</li>
+            <li>
+              <a
+                href="https://www.google.com/maps/place/Kung+Fu+Tea/@42.3517245,-71.1394005,15z/data=!4m8!1m2!2m1!1skung+fu+tea!3m4!1s0x89e3791b6060e3f5:0xab75399d67f6e0f7!8m2!3d42.352372!4d-71.1254908"
+                >View on Google Maps</a>
+            </li>
+            <br /><br />
+            <li><span class="bold">Tiger Sugar</span></li>
+            <li>917-818-7661</li>
+            <li>Boston, MA 02134</li>
+            <li>
+              <a
+                href="https://www.google.com/search?rlz=1C1CHBF_enUS921US921&sxsrf=ALeKk02sEexSRbBQRR9PVKsEM48YqjwoUA:1601841406822&q=allston+boba+tea+shop&npsic=0&rflfq=1&rldoc=1&rlha=0&rllag=42352672,-71131989,114&tbm=lcl&sa=X&ved=2ahUKEwjDwKig3JvsAhVOneAKHcK1C3MQjGp6BAgMEFU&biw=2152&bih=1287#https://www.google.com/maps/place/Tiger+Sugar/@42.3509926,-71.1337405,17z/data=!3m1!4b1!4m5!3m4!1s0x89e379bd74148995:0x7c03cf94766b4034!8m2!3d42.3509926!4d-71.1315518"
+                >View on Google Maps</a>
+            </li>
+            <br /><br />
+            <li><span class="bold">LimeRed Teahouse</span></li>
+            <li>617-396-4541</li>
+            <li>1092 Commonwealth Avenue, Boston MA 02215</li>
+            <li>
+              <a
+                href="https://www.google.com/maps/place/LimeRed+Teahouse+(Boston)/@42.1771328,-71.3355907,11z/data=!4m8!1m2!2m1!1sallston+boba+tea+shop!3m4!1s0x89e379c301927595:0x6dfd6db4e5c11452!8m2!3d42.3518397!4d-71.1241295"
+                >View on Google Maps</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hide" id="option-2">
+          <!-- Ctown-tea-cofee -->
+          <ul>
+            <li><span class="bold">KungFu Tea</span></li>
+            <li>617-542-8838</li>
+            <li>66 Kneeland St, Boston MA 02111</li>
+            <li>
+              <a
+                href="https://www.google.com/maps/place/Kung+Fu+Tea/@42.350683,-71.0590505,17.79z/data=!4m8!1m2!2m1!1sboba+tea!3m4!1s0x0:0x7ae240422f2773fe!8m2!3d42.3505346!4d-71.0606539"
+                >View on Google Maps</a>
+            </li>
+            <br /><br />
+            <li><span class="bold">Gong Cha</span></li>
+            <li>617-574-4870</li>
+            <li>40-44 Harrison Ave, Boston MA 02111</li>
+            <li>
+              <a
+                href=https://www.google.com/maps/place/Gong+Cha/@42.350683,-71.0590505,18z/data=!4m8!1m2!2m1!1sboba+tea!3m4!1s0x0:0xfed65fd39a98cd6a!8m2!3d42.3516298!4d-71.0610465"
+                >View on Google Maps</a>
+            </li>
+            <br /><br />
+            <li><span class="bold">Tea Do</span></li>
+            <li>617-988-8002</li>
+            <li>8 Tyler Street, Boston MA 02111</li>
+            <li>
+              <a
+                href="https://www.google.com/maps/place/Kung+Fu+Tea/@42.350683,-71.0590505,17.79z/data=!4m8!1m2!2m1!1sboba+tea!3m4!1s0x0:0x7ae240422f2773fe!8m2!3d42.3505346!4d-71.0606539"
+                >View on Google Maps</a>
+            </li>
+            <br /><br />
+            <li><span class="bold">Pin Ming</span></li>
+            <li>617-457-7854</li>
+            <li>5 Beach St, Boston MA 02111</li>
+            <li>
+              <a
+                href="https://www.google.com/maps/place/Gong+Cha/@42.350683,-71.0590505,18z/data=!4m8!1m2!2m1!1sboba+tea!3m4!1s0x0:0xfed65fd39a98cd6a!8m2!3d42.3516298!4d-71.0610465"
+                >View on Google Maps</a>
+            </li>
+            <br /><br />
+            <li><span class="bold">Chatime Chinatown</span></li>
+            <li>617-982-6928</li>
+            <li>31 Harrison Ave, Boston MA 02111</li>
+            <li>
+              <a
+                href="https://www.google.com/maps/place/Chatime+Chinatown/@42.3509447,-71.0599839,18z/data=!4m8!1m2!2m1!1sboba+tea!3m4!1s0x0:0xbaa90739fa5c07cf!8m2!3d42.3516658!4d-71.0613808"
+                >View on Google Maps</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hide" id="option-3">
+            <!-- Cambridge-tea-coffee -->
+            <ul>
+              <li><span class="bold">KungFu Tea</span></li>
+              <li>617-714-5527</li>
+              <li>1160 Massachusetts Ave, Cambridge MA 02138</li>
+              <li>
+                <a
+                  href="https://www.google.com/maps/place/Kung+Fu+Tea/@42.372195,-71.1074762,15.5z/data=!4m8!1m2!2m1!1scambridge+boba+tea!3m4!1s0x0:0x395567edc60d085e!8m2!3d42.3712889!4d-71.114628"
+                  >View on Google Maps</a>
+              </li>
+              <br /><br />
+              <li><span class="bold">Boston Tea Shop</span></li>
+              <li>617-945-0017</li>
+              <li>54 John F. Kennedy St, Cambridge MA 02138</li>
+              <li>
+                <a
+                  href=https://www.google.com/maps/place/Boston+Tea+Stop/@42.372195,-71.1074762,15.5z/data=!4m8!1m2!2m1!1scambridge+boba+tea!3m4!1s0x89e3775d508cc081:0x2765a92a0bc64cb3!8m2!3d42.3718604!4d-71.1204808"
+                  >View on Google Maps</a>
+              </li>
+              <br /><br />
+              <li><span class="bold">Abide</span></li>
+              <li>510-366-9943</li>
+              <li>317 Massachusetts Ave, Cambridge MA 02139</li>
+              <li>
+                <a
+                  href=https://www.google.com/maps/place/Boston+Tea+Stop/@42.372195,-71.1074762,15.5z/data=!4m8!1m2!2m1!1scambridge+boba+tea!3m4!1s0x89e3775d508cc081:0x2765a92a0bc64cb3!8m2!3d42.3718604!4d-71.1204808"
+                  >View on Google Maps</a>
+              </li>
+            </ul>
+        </div>      
+
+        <div class="hide" id="option-4">
+          <!-- Allston-cafe-coffee -->
+          <ul>
+            <li><span class="bold">TeaMoji</span></li>
+            <li>617-903-3496</li>
+            <li>3 N Beacon St, Boston MA 02134</li>
+            <li>
+              <a
+                href="https://www.google.com/maps/place/TeaMoji/@42.3537694,-71.1375026,15z/data=!4m2!3m1!1s0x0:0xe7dfaeed4c9a3924?sa=X&ved=2ahUKEwiRx_fE157sAhVn1lkKHclXCwsQ_BIwCnoECA8QBQ"
+                >View on Google Maps</a>
+            </li>
+            <br /><br />
+            <li><span class="bold">C Fruit Life</span></li>
+            <li>617-202-5799</li>
+            <li>171 Brighton Ave, Boston MA 02134</li>
+            <li>
+              <a
+                href=https://www.google.com/maps/place/C+Fruit+Life/@42.3533398,-71.1329906,15z/data=!4m2!3m1!1s0x0:0x8cab7f587014a2fa?sa=X&ved=2ahUKEwj-2vOr2J7sAhXhoHIEHWcGBHAQ_BIwCnoECA8QBQ"
+                >View on Google Maps</a>
+            </li>
+          </ul>
+        </div>      
+
+        <div class="hide" id="option-5">
+          <!-- ctown-cafe-coffee -->
+          <ul>
+            <li><span class="bold">丸作 One Zo</span></li>
+            <li>617-888-3541</li>
+            <li>83 Harrison Ave, Boston MA 02111</li>
+            <li>
+              <a
+                href="https://www.google.com/maps/place/%E4%B8%B8%E4%BD%9C+One+Zo/@42.3509341,-71.0615938,15z/data=!4m2!3m1!1s0x0:0x5c2fa0772de5a07b?sa=X&ved=2ahUKEwjd9prR3J7sAhWDZDUKHWoYCvEQ_BIwCnoECBcQBQ"
+                >View on Google Maps</a>
+            </li>
+            <br /><br />
+            <li><span class="bold">Sweet Waffles + Boba</span></li>
+            <li>617-202-5799</li>
+            <li>18 Hudson St, Boston MA 02111</li>
+            <li>
+              <a
+                href=https://www.google.com/maps/place/Sweet+Waffles+%2B+Boba/@42.3505659,-71.0600179,15z/data=!4m2!3m1!1s0x0:0xe9250dd64c813b22?sa=X&ved=2ahUKEwj5mbLz3J7sAhXyj3IEHWc_BzMQ_BIwFHoECA0QBQ"
+                >View on Google Maps</a>
+            </li>
+          </ul>
+        </div>   
+
+        <div class="hide" id="option-6">
+            <!-- cambridge-cafe-coffee -->
+            <ul>
+              <li><span class="bold">Paris Baguettte</span></li>
+              <li>617-714-3062</li>
+              <li>581 Massachusetts Ave, Cambridge MA 02139</li>
+              <li>
+                <a
+                  href="https://www.google.com/maps/place/Paris+Baguette/@42.365075,-71.1026889,15z/data=!4m2!3m1!1s0x0:0xdb8762996ae486c9?sa=X&ved=2ahUKEwi458_O4Z7sAhUcpXIEHVsCCjIQ_BIwEnoECBcQBQ"
+                  >View on Google Maps</a>
+              </li>
+            </ul>
+          </div>   
+
+        <div class="hide" id="option-7">
+              <!-- allston-restaurant-coffee -->
+              <ul>
+                <li><span class="bold">Blue Asia</span></li>
+                <li>617-202-3868</li>
+                <li>113 Brighton Ave #2802, Allston MA 02134</li>
+                <li>
+                  <a
+                    href="https://www.google.com/maps/place/Blue+Asia+Cafe/@42.3530535,-71.1306455,15z/data=!4m2!3m1!1s0x0:0x9562ee4f79b139d8?sa=X&ved=2ahUKEwjamYWw4p7sAhWpl-AKHeAqAd8Q_BIwCnoECBMQBQ"
+                    >View on Google Maps</a>
+                </li>
+                <br /><br />
+                <li><span class="bold">Dolphin Bay</span></li>
+                <li>617-562-1668</li>
+                <li>72 Brighton Ave, Allston MA 02134</li>
+                <li>
+                  <a
+                    href=https://www.google.com/maps/place/Dolphin+Bay/@42.3524356,-71.1287612,15z/data=!4m2!3m1!1s0x0:0xd4ca6d1bf3deefe8?sa=X&ved=2ahUKEwj67LLR4p7sAhXiguAKHQ-eDTkQ_BIwE3oECBAQBQ"
+                    >View on Google Maps</a>
+                </li>
+              </ul>
+          </div>   
+          
+        <div class="hide" id="option-8">
+              <!-- ctown-restaurant-coffee -->
+              <ul>
+                <li><span class="bold">No results available, please search again!</span></li>
+              </ul>
+          </div>  
+          
+        <!-- <div class="hide" id="option-9">
+              <!-- cambridge-restaurant-coffee -->
+              <!-- <ul>
+                <li><span class="bold">No results available, please search again!</span></li>
+              </ul>
+          </div>   --> 
+<!-- 
+        <div class="hide" id="option-10"> -->
+              <!-- allston-teashop-cheese -->
+              <!-- <ul>
+                <li><span class="bold">No results available, please search again!</span></li>
+              </ul>
+          </div>   -->
+        
+        <div class="hide" id="option-11">
+              <!-- ctown-teashop-cheese -->
+              <ul>
+                <li><span class="bold">Royaltea Boston</span></li>
+                <li>617-691-9525</li>
+                <li>23b Tyler St, Boston MA 02111</li>
+                <li>
+                  <a
+                    href="https://www.google.com/maps/place/Royaltea+Boston/@42.3507603,-71.0609702,15z/data=!4m2!3m1!1s0x0:0x261240575e9ce161?sa=X&ved=2ahUKEwjyve3I5Z7sAhX_mHIEHVpOCqoQ_BIwCnoECBIQBQ"
+                    >View on Google Maps</a>
+                </li>
+              </ul>
+            </div>      
+
+        <!-- <div class="hide" id="option-12">
+              <!-- cambridge-teashop-cheese -->
+              <!-- <ul>
+                <li><span class="bold">No results available, please search again!</span></li>
+              </ul>
+          </div>   --> 
+
+        <div class="hide" id="option-13">
+            <!-- allston-teashop-fruit -->
+            <ul>
+              <li><span class="bold">FRUITY</span></li>
+              <li>617-208-8848</li>
+              <li>77 Harvard Ave, Allston MA 02134</li>
+              <li>
+                <a
+                  href="https://www.google.com/maps/place/FRUITY/@42.3536422,-71.1324463,15z/data=!4m5!3m4!1s0x0:0xb6e96ffab66e3b9f!8m2!3d42.3536422!4d-71.1324463"
+                  >View on Google Maps</a>
+              </li>
+            </ul>
+          </div>  
+          
+        <div class="hide" id="option-14">
+            <!-- ctown-teashop-fruit -->
+            <ul>
+              <li><span class="bold">Tsaocaa Tea</span></li>
+              <li>617-988-8155</li>
+              <li>10 Tyler St, Boston MA 02111</li>
+              <li>
+                <a
+                  href="https://www.google.com/maps/place/Tsaocaa+tea/@42.3509785,-71.0604784,15z/data=!4m2!3m1!1s0x0:0x1ac3b3f3cfd6b99b?sa=X&ved=2ahUKEwih5o3imaHsAhUaoHIEHSiADToQ_BIwEnoECBoQBQ"
+                  >View on Google Maps</a>
+              </li>
+            </ul>
+          </div>      
+
+        <!-- <div class="hide" id="option-15">
+            <!-- cambridge-teashop-fruit -->
+            <!-- <ul>
+              <li><span class="bold">No results available, please search again!</span></li>
+            </ul>
+          </div>   --> 
+
+        <!-- <div class="hide" id="option-16">
+          <!-- cambridge-teashop-fruit -->
+          <!-- <ul>
+            <li><span class="bold">No results available, please search again!</span></li>
+          </ul>
+          </div>   --> 
+
+        <div class="hide" id="option-17">
+            <!-- ctown-cafe-cheese -->
+            <ul>
+              <li><span class="bold">Royaltea Boston</span></li>
+              <li>617-691-9525</li>
+              <li>23b Tyler St, Boston MA 02111</li>
+              <li>
+                <a
+                  href="https://www.google.com/maps/place/Royaltea+Boston/@42.3507603,-71.0609702,15z/data=!4m2!3m1!1s0x0:0x261240575e9ce161?sa=X&ved=2ahUKEwjyve3I5Z7sAhX_mHIEHVpOCqoQ_BIwCnoECBIQBQ"
+                  >View on Google Maps</a>
+              </li>
+            </ul>
+        </div>     
+
+        <!-- <div class="hide" id="option-18">
+          <!-- cambridge-cafe-cheese -->
+          <!-- <ul>
+            <li><span class="bold">No results available, please search again!</span></li>
+          </ul>
+          </div>   --> 
+          
+        <div class="hide" id="option-19">
+            <!-- allston-cafe-fruit -->
+            <ul>
+              <li><span class="bold">C Fruit Life</span></li>
+              <li>617-202-5799</li>
+              <li>171 Brighton Ave, Boston MA 02134</li>
+              <li>
+                <a
+                  href=https://www.google.com/maps/place/C+Fruit+Life/@42.3533398,-71.1329906,15z/data=!4m2!3m1!1s0x0:0x8cab7f587014a2fa?sa=X&ved=2ahUKEwj-2vOr2J7sAhXhoHIEHWcGBHAQ_BIwCnoECA8QBQ"
+                  >View on Google Maps</a>
+              </li>
+              <br/> <br/>
+              <li><span class="bold">Sweet Kingdom</span></li>
+              <li>617-782-0968</li>
+              <li>145 Harvard Ave, Allston MA 02134</li>
+              <li>
+                <a
+                  href=https://www.google.com/maps/place/Sweet+Kingdom/@42.3518616,-71.167032,13z/data=!4m8!1m2!2m1!1sboba+allston!3m4!1s0x89e379c59243442f:0x46a91e99637bec92!8m2!3d42.3518616!4d-71.1320131"
+                  >View on Google Maps</a>
+              </li>
+            </ul>
+            </div>
+            
+        <div class="hide" id="option-20">
+              <!-- ctown-cafe-fruit -->
+              <ul>
+                <li><span class="bold">TBaar</span></li>
+                <li>617-728-3688</li>
+                <li>32 Kneeland St, Boston MA 02111</li>
+                <li>
+                  <a
+                    href=https://www.google.com/maps/place/TBaar/@42.3510629,-71.0627487,17.5z/data=!4m8!1m2!2m1!1sboba+chinatown!3m4!1s0x0:0x5a56953b06f9a20f!8m2!3d42.3508414!4d-71.06182"
+                    >View on Google Maps</a>
+                </li>
+              </ul>
+              </div>  
+
+         <!-- <div class="hide" id="option-21">
+                <!-- cambridge-cafe-fruit -->
+                <!-- <ul>
+                  <li><span class="bold">No results available, please search again!</span></li>
+                </ul>
+                </div>    --> 
+                
+        <!-- <div class="hide" id="option-22">
+                  <!-- allston-restaurant-cheese -->
+           <!-- <ul>
+             <li><span class="bold">No results available, please search again!</span></li>
+          </ul>
+           </div>    --> 
+           
+        <!-- <div class="hide" id="option-23">
+            <!-- ctown-restaurant-cheese -->
+        <!-- <ul>
+          <li><span class="bold">No results available, please search again!</span></li>
+        </ul>
+        </div>                --> 
+       
+      <!-- <div class="hide" id="option-24">
+      <!-- cambridge-restaurant-cheese -->
+      <!-- <ul>
+      <li><span class="bold">No results available, please search again!</span></li>
+      </ul>
+      </div>    --> 
+
+      <div class="hide" id="option-25">
+          <!-- allston-rest-fruit -->
+          <ul>
+            <li><span class="bold">Dolphin Bay</span></li>
+            <li>617-562-1668</li>
+            <li>72 Brighton Ave, Allston MA 02134</li>
+            <li>
+              <a
+                href="https://www.google.com/maps/place/Dolphin+Bay/@42.3524356,-71.1287612,15z/data=!4m2!3m1!1s0x0:0xd4ca6d1bf3deefe8?sa=X&ved=2ahUKEwiVs_66qaHsAhXpl3IEHQqZDmIQ_BIwE3oECA0QBQ"
+                >View on Google Maps</a>
+            </li>
+           <br /><br />
+           <li><span class="bold">Blue Asia Cafe</span></li>
+           <li>617-202-3868</li>
+           <li>113 Brighton Ave, Allston MA 02134</li>
+           <li>
+             <a
+               href="https://www.google.com/maps/place/Blue+Asia+Cafe/@42.3530535,-71.1306455,15z/data=!4m5!3m4!1s0x0:0x9562ee4f79b139d8!8m2!3d42.3530535!4d-71.1306455"
+               >View on Google Maps</a>
+           </li> 
+          </ul>
+        </div>  
+      
+      <div class="hide" id="option-26">
+            <!-- ctown-rest-fruit -->
+            <ul>
+              <li><span class="bold">Double Chin Modern Asian Restaurant</span></li>
+              <li>617-482-0682</li>
+              <li>86 Harrison Ave, Boston MA 02111</li>
+              <li>
+                <a
+                  href="google.com/maps/place/Double+Chin+Modern+Asian+Restaurant/@42.3507504,-71.0613492,15z/data=!4m2!3m1!1s0x0:0x28fb75e9bc12cb28?sa=X&ved=2ahUKEwio7pacqqHsAhUPmXIEHX5vAcEQ_BIwG3oECBoQBQ"
+                  >View on Google Maps</a>
+              </li>
+            </ul>
+          </div>  
+
+      <!-- <div class="hide" id="option-27">
+              <!-- cambridge-restaurant-fruit -->
+              <!-- <ul>
+              <li><span class="bold">No results available, please search again!</span></li>
+              </ul>
+              </div>    --> 
+
+
+    </div>
+</div>
+
+      <div class="submit" id="submit-button">Submit</div>
+
+    </aside>
   </body>
+  <script src="js/main.js"></script>
 </html>
+
+
+
+<!-- 1. Allston - teashop - coffee
+2. Crown - teashop - coffee
+3. Cambridge - teashop - coffee
+
+4. Allston - cafe - coffee
+5. Crown - cafe - coffee
+6. Cambridge - cafe - coffee
+
+7. Allston - restaurant - coffee
+8. Crown - restaurant - coffee
+9. Cambridge - restaurant - coffee
+
+10. Allston - teashop - cheese
+11. Crown - teashop - cheese
+12. Cambridge - teashop - cheese
+
+13. Allston - teashop - fruit
+14. Crown - teashop- fruit
+15. Camrbridge - teashop- fruit
+
+16. Allston - cafe - cheese
+17. Crown - cafe - cheese
+18. Cambridge - cafe - cheese
+
+19. Allston - cafe - fruit
+20. Crown - cafe - fruit
+21. Cambridge - cafe - fruit
+
+22. Allston - restaurant - cheese
+23. Crown - restaurant - cheese
+24. Cambridge - restaurant - cheese
+
+25. Allston - restaurant - fruit
+26. Crown - restaurant - fruit
+27. Cambridge - restaurant - fruit -->
