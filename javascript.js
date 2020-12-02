@@ -1,50 +1,91 @@
-let weather = {
-  paris: {
-    temp: 19.7,
-    humidity: 80
-  },
-  tokyo: {
-    temp: 17.3,
-    humidity: 50
-  },
-  lisbon: {
-    temp: 30.2,
-    humidity: 20
-  },
-  "san francisco": {
-    temp: 20.9,
-    humidity: 100
-  },
-  moscow: {
-    temp: -5,
-    humidity: 20
+function fomratDate(date) {
+  // Set Local Time //
+  let currentHour = date.getHours();
+  if (currentHour < 10) {
+    currentHour = `0${currentHour}`;
   }
-};
+  let currentMinutes = date.getMinutes();
+  if (currentMinutes < 10) {
+    currentMinutes = `0${currentMinutes}`;
+  }
+  let currentTime = `${currentHour}:${currentMinutes}`;
 
-let city = prompt("Enter a city for weather forecast");
-city = city.toLocaleLowerCase();
-city = city.trim();
+  let time = document.querySelector("#local-time");
+  time.innerHTML = currentTime;
 
-if (city === "paris") {
-  alert(`It is currently 19.7°C in ${city} with a humidity of 80%`);
-} else {
-  if (city === "moscow") {
-    alert(`It is currently -5°C in ${city} with a humidity of 20%`);
+  //Set Local Date
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+
+  let currentDay = date.getDate();
+  let currentMonth = months[date.getMonth()];
+  let currentYear = date.getFullYear();
+  let descriptor = "st,th";
+
+  if (currentDay === 1) {
+    descriptor = "st";
   } else {
-    if (city === "san fransisco") {
-      alert(`It is currently 20.9°C in ${city} with a humidity of 100%`);
+    if (currentDay === 2) {
+      descriptor = "nd";
     } else {
-      if (city === "tokyo") {
-        alert(`It is currently 17.3°C in ${city} with a humidity of 50%`);
-      } else {
-        if (city === "lisbon") {
-          alert(`It is currently 30.2°C in ${city} with a humidity of 20%`);
-        } else {
-          alert(
-            `Sorry, we don't know the weather for ${city}, try going to https://www.google.com/search?q=weather+${city}`
-          );
-        }
+      if (currentDay === 3) {
+        descriptor = "rd";
       }
+      descriptor = "th";
     }
   }
+
+  return `${currentDay}${descriptor} ${currentMonth} ${currentYear}`;
 }
+
+let localDate = document.querySelector("#date");
+let now = new Date();
+localDate.innerHTML = fomratDate(now);
+
+//Display correct weekdays
+
+//Display City
+function searchCity(event) {
+  event.preventDefault();
+
+  let inputCity = document.querySelector("#input-city");
+  let newCity = document.querySelector("h1");
+  newCity.innerHTML = `${inputCity.value}`;
+}
+
+let form = document.querySelector("#new-city");
+form.addEventListener("submit", searchCity);
+
+//Display Temp
+
+function celsiusTemp(event) {
+  event.preventDefault();
+  let newTemp = document.querySelector("#currentTemp");
+  newTemp.innerHTML = temperature;
+}
+
+let celsius = document.querySelector("#celsius-link");
+celsius.addEventListener("click", celsiusTemp);
+
+function farenheightTemp(event) {
+  event.preventDefault();
+  let newTemp = document.querySelector("#currentTemp");
+  newTemp.innerHTML = (temperature * 9) / 5 + 32;
+}
+
+let currentTemp = document.querySelector("#currentTemp");
+let temperature = currentTemp.innerHTML;
+let farenheight = document.querySelector("#farenheight-link");
+farenheight.addEventListener("click", farenheightTemp);

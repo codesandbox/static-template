@@ -3,8 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/ac64e04e51.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
+
     <title>Weather Forecast</title>
   </head>
   <body>
@@ -15,11 +25,16 @@
             <div class="col-8">
               <h1 class="location">Florence</h1>
               <h2>
-                <span class="currentTemp">It is currently: 19°C</span>
+                It is currently: <span id="currentTemp">19 </span>
+                <span class="tempUnits">
+                  <a href="#" id="celsius-link">°C</a>
+                  |
+                  <a href="#" id="farenheight-link">°F</a>
+                </span>
                 <br />
-                <span class="date">10th November 2020</span>
+                <span id="date">10th November 2020</span>
                 <br />
-                Time: <span class="localTime">16:00 CET</span>
+                Time: <span id="local-time">16:00 CET</span>
               </h2>
             </div>
             <div class="col-4">
@@ -27,28 +42,19 @@
             </div>
           </div>
 
-          <form>
+          <form id="new-city">
             <input
               type="text"
               class="form-control"
-              id="inputCity"
-              placeholder=" Visualize another City"
+              id="input-city"
+              autocomplete="off"
+              placeholder=" Visualize forecast for another City"
             />
             <input
               type="submit"
               class="btn btn-outline-primary mb-2"
               value="Search"
-            />
-
-            <input
-              type="submit"
-              class="btn btn-outline-primary mb-2"
-              value="°C"
-            />
-            <input
-              type="submit"
-              class="btn btn-outline-primary mb-2"
-              value="°F"
+              id="searchButton"
             />
           </form>
           <br />
@@ -133,6 +139,6 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="javascript.js"></script>
+    <script src="javascript.js"></script>
   </body>
 </html>
