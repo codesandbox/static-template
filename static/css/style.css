@@ -1,0 +1,42 @@
+body {
+  background-color: #ad1ed1;
+  margin-bottom: 10px;
+}
+
+.wrapper {
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.helloWorld {
+  color: #00ffff;
+  font-family: monospace;
+  font-size: 25px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid #00ff00;
+  animation: flashing-cursor 0.75s ease infinite, text-input 3s steps(13);
+}
+
+@keyframes flashing-cursor {
+  0% {
+    border-color: #00ff00;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: #00ff00;
+  }
+}
+
+@keyframes text-input {
+  from {
+    width: 0;
+  }
+  to {
+    width: 14ch;
+  }
+}
