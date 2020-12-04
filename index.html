@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Quarantine TV</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="loader" style="z-index: 5000;">
+      <h1 class="loader-text">
+        For a better experience,
+        <br />
+        please rotate your phone
+      </h1>
+      <i class="fas fa-sync fa-2x"></i>
+    </div>
+    <section class="tv">
+      <img id="imagetv" src="tv.png" alt="" />
+    </section>
+    <section class="webcam">
+      <a rel="nofollow" href="http://77.243.103.105:8081/" target="new"
+        ><img
+          id="image0"
+          src="http://77.243.103.105:8081/mjpg/video.mjpg"
+          class="img-responsive img-rounded detailimage"
+          alt=""
+          title="Click here to enter the camera located in Russian Federation, region Moscow City, Nekrasovka"
+      /></a>
+      <script>
+        var ch = 0;
+        var imageurls = new Array();
+        imageurls[0] = new String("http://77.243.103.105:8081/mjpg/video.mjpg");
+      </script>
+    </section>
   </body>
 </html>
