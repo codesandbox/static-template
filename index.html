@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>form validation</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="login-page">
+      <div class="form">
+        <form class="register-form">
+          <input type="text" placeholder="user name" />
+          <input type="text" placeholder="password" />
+          <input type="text" placeholder="email id" /> <button>create</button>
+          <p class="message">Already Registered?<a href="#"></a> login</p>
+        </form>
+        <form class="login-form">
+          <input type="text" placeholder="user name" />
+          <input type="password" placeholder="password" />
+          <button>login</button>
+          <p class="message">Not Registered? <a href="#"> Register </a></p>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      $(".message a").click(function() {
+        $("form").animate({ height: "toggle", opacity: "toggle" }, "slow");
+      });
+    </script>
   </body>
 </html>
