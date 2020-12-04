@@ -1,0 +1,226 @@
+/*--Custom Font--*/
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: "Raleway";
+  font-weight: 500;
+}
+
+.section .content {
+  width: 100%;
+  max-width: 2500px;
+  height: 80%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.section {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 100px;
+  padding: 0 20px;
+}
+
+.indent {
+  padding-left: 40px;
+}
+
+.section.blue {
+  background: #318687;
+  color: white;
+}
+
+.section.hero {
+  -webkit-box-shadow: 1px 2px 47px -16px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 2px 47px -16px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 2px 47px -16px rgba(0, 0, 0, 0.75);
+}
+
+.content h1 {
+  margin-bottom: 15px;
+  font-size: 2.5em;
+}
+
+.content > div {
+  margin-bottom: 10px;
+}
+.section.hero .content h1 {
+  font-size: 3.5em;
+}
+
+.section.hero .content h2 {
+  font-size: 2em;
+}
+
+.learn-button {
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background: #ef753c;
+  padding: 10px;
+  font-size: 1em;
+  margin-top: 20px;
+
+  transition: all 0.5s;
+}
+
+.learn-button:hover {
+  background: #d66835;
+  color: white;
+}
+
+/* -- Icons-- */
+
+.disaster-icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.content.memories {
+  justify-content: space-around;
+}
+
+/*-- 2020 Section --*/
+
+.content.two-columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.content.two-columns div {
+  margin: 0 20px;
+}
+
+.image {
+  width: 100%;
+  max-width: 850px;
+  height: auto;
+}
+
+.image.memories {
+  -webkit-box-shadow: 1px 2px 47px -16px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 2px 47px -16px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 2px 47px -16px rgba(0, 0, 0, 0.75);
+}
+
+.image.shotbox {
+  max-width: 900px;
+  height: auto;
+}
+
+.content.two-columns .text {
+  text-align: left;
+}
+
+.content.two-columns .image-container {
+}
+/*-- Memory Capture System --*/
+
+.section.system {
+  height: 800px;
+}
+
+/*-- Floating Button --*/
+
+.floating-button {
+  position: fixed;
+  right: 46.25%;
+  bottom: 20px;
+}
+
+.bottom-banner {
+  position: fixed;
+  background: #ef753c;
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 20px 0;
+  bottom: 0;
+  font-size: 1.5em;
+  font-family: "Raleway", sans-serif;
+  display: none;
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.close:hover {
+  color: #85828f;
+  cursor: pointer;
+
+  transition: all 0.5s;
+}
+
+/*-- Responsiveness --*/
+
+@media (max-width: 800px) {
+  .icon {
+    width: 70px;
+  }
+
+  .icon-container {
+    width: 95%;
+  }
+
+  .section {
+    height: auto;
+    margin: 0;
+  }
+
+  .content.memories {
+    height: 400px;
+  }
+
+  .section.hero {
+    height: 400px;
+  }
+
+  .content {
+    height: 100%;
+    padding: 50px 0;
+  }
+
+  .content.two-columns {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content.two-columns .text {
+    text-align: center;
+  }
+}

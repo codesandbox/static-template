@@ -1,12 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+      <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+  
+  
+      <div class="section blue hero">
+        <div class="content">
+          <div>
+            <h1>
+              2020 Shotbox Challenge
+            </h1>
+            <h2>
+              Capture your memories. Pass them on.
+            </h2>
+          </div>
+          <button class="learn-button">
+            Learn How
+          </button>
+        </div>
+      </div>
+  
+    <div class="section year">
+        <div class="content two-columns">
+          <div class="text">
+            <h1>
+              2020 is the year to capture your
+            </h1>
+            <h2 class="indent">journals, <br>scrapbooks, <br>images, <br>heirlooms <br>and more....</h2>
+            <h2>which are one</h1>
+            <div class="icon-container">
+                <img src="https://cdn.shopify.com/s/files/1/1579/5087/t/8/assets/flood.png?v=1584742714"  class="disaster-icon" />
+                <img src="https://cdn.shopify.com/s/files/1/1579/5087/t/8/assets/death.png?v=1584742741" class="disaster-icon" />
+                <img src="https://cdn.shopify.com/s/files/1/1579/5087/t/8/assets/fire.png?v=1584742728" class="disaster-icon"/>
+                <img src="https://cdn.shopify.com/s/files/1/1579/5087/t/8/assets/tornado.png?v=1584742749" class="disaster-icon" />
+                <img src="https://cdn.shopify.com/s/files/1/1579/5087/t/8/assets/earthquake.png?v=1584742735" class="disaster-icon" />
+              </div>
+              <h2>from being gone.</h1>
+          </div>
+          <div class="image-container">
+              <img src="https://cdn.shopify.com/s/files/1/1579/5087/t/8/assets/memories.jpg?v=1584743104" class="image memories" />
+          </div>
+        </div>
+      </div>
+  
+      <div class="section">
+        <div class="content memories">
+          <h1>These memories are one</h1>
+          <div class="icon-container">
+            <img src="https://cdn.shopify.com/s/files/1/1579/5087/t/8/assets/flood.png?v=1584742714"  class="disaster-icon" />
+            <img src="https://cdn.shopify.com/s/files/1/1579/5087/t/8/assets/death.png?v=1584742741" class="disaster-icon" />
+            <img src="https://cdn.shopify.com/s/files/1/1579/5087/t/8/assets/fire.png?v=1584742728" class="disaster-icon"/>
+            <img src="https://cdn.shopify.com/s/files/1/1579/5087/t/8/assets/tornado.png?v=1584742749" class="disaster-icon" />
+            <img src="https://cdn.shopify.com/s/files/1/1579/5087/t/8/assets/earthquake.png?v=1584742735" class="disaster-icon" />
+          </div>
+          <h1>from being gone.</h1>
+        </div>
+      </div>
+     
+        <div class="section system">
+            <div class="content">
+              <img src="https://cdn.shopify.com/s/files/1/1579/5087/t/8/assets/shotbox.png?v=1584743091" width="100%"  class="image shotbox" />
+              <div class="text">
+                  <h1>
+                    The SHOTBOX Memory Caputre System has everything you need to get it done.
+                  </h>
+                </div>
+            </div>
+          </div>
+  
+          <div class="section system">
+              <div class="content">
+                <div class="text">
+                    <h1>
+                      Buy Now!
+                    </h>
+                  </div>
+              </div>
+            </div>
+  
+  
+              <div class="bottom-banner">
+                  <div class="bottom-banner-content">
+                      $20 Off! Click Here
+                  </div>
+                    <div class="close">
+                      x
+                    </div>
+                </div>
+          
+      <script>
+  
+        $(document).scroll(() => {
+            //Show element after user scrolls 800px
+            var y = $(this).scrollTop();
+            console.log(y)
+            if (y > 400) {
+            $('.bottom-banner').fadeIn();
+            console.log('here')
+            } else {
+            $('.bottom-banner').fadeOut();
+            }
+        })
+  
+        $('.close').click(() => {
+          setTimeout(() => $('.bottom-banner').toggleClass('hidden'), 1000);
+          $('.bottom-banner').fadeOut();
+        })
+  
+        $('.bottom-banner-content').click(() => {
+          window.location.href = 'https://shotbox.me/products/the-shotbox-memory-capture-system';
+        })
+          
+      </script>
   </body>
 </html>
