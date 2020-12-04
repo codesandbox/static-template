@@ -1,12 +1,400 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<!-- Draft Template -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <title></title>
+    <style type="text/css">
+    </style>
+</head>
+
+<body style="margin:0; padding:0;">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:light,lightitalic,normal,italic,bold,bolditalic" rel="stylesheet"/>
+    
+    <!--PreHeader-->
+    <p class="preHeader" style="display: none !important;">
+        Hola mejor cliente del mundo. A partir de hoy recibirás correos HTML de parte de tu banco favorito.
+    </p>
+    <!--PreHeader Ends Here-->
+    <div style="margin:0; padding:0; background-color:#f9f9f9;">
+        <center>
+            <table class="wrapper" style="max-width: 600px; font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;" border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+                <tbody>
+                    <tr>
+                        <td style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"  align="center" valign="top">
+                            <table class="container" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;" border="0" width="100%" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="brandTopBlock blockSpacer" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #00583c; color: #ffffff; border: 2px solid #00583c; width: 22px; height: 52px;" align="center" valign="middle">&nbsp;</td>
+                                        <!-- Main Logo -->
+                                        <td class="brandTopBlock" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #00583c; color: #ffffff; border: 2px solid #00583c;" rowspan="2" align="center" width="100px">
+                                            <img class="mainLogoFallback mainLogo" style="-ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; width: 198px; height: 63px; margin: 0px 21px 0px 21px;" src="https://lafise-cdn.s3.amazonaws.com/resources/images/emails/brand/BL_Logo%402x.png" alt="Banco Lafise"/> 
+                                        </td>
+                                        <!-- Website -->
+                                        <td class="brandTopBlock" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #00583c; color: #ffffff; border: 2px solid #00583c;" align="right" valign="middle">
+                                            <a class="topBarLink" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1.1em; display: inline-flex; width: min-content; color: #ffffff; padding: 5px 20px 5px 20px; text-decoration: none; font-weight: 300; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-height: 25px;" href="http://www.lafise.com">www.lafise.com</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="brandBottomBlock blockSpacer" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #008866; color: #ffffff; border: 2px solid #008866; width: 22px; height: 52px;" align="center" valign="middle">&nbsp;</td>
+                                        <!-- País y link al sitio web específico -->
+                                        <td class="brandBottomBlock" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #008866; color: #ffffff; border: 2px solid #008866;" align="right" valign="middle">
+                                            <a class="topBarLink" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1.1em; display: inline-flex; width: min-content; color: #ffffff; padding: 5px 20px 5px 20px; text-decoration: none; font-weight: 300; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-height: 25px;" href="{!relatedTo.CMP_Compania__r.CMP_URL__c}">
+                                                {!relatedTo.CMP_Compania__r.CMP_PaisNombre__c}
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Hero Section -->
+                                    <tr>
+                                        <td class="iconBlock brandBottomBlock" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #008866; color: #ffffff; border: 2px solid #008866; padding: 30px 50px 30px 50px;" colspan="3" align="center" valign="middle">
+                                            <!-- Hero Section Image-->
+                                            <img class="mainLogoFallback mainIcon" style="margin-top: 30px; -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; width: 125px; height: 125px;" src="https://lafise-cdn.s3.amazonaws.com/resources/images/emails/icons/hero/ICN_Hero_Documento_01_%402x.png" alt="¡Todo listo para su compra en Internet!" /> 
+                                            <!-- Hero Section Title-->
+                                            <p class="titleBlock brandBottomBlock" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 2.2em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #ffffff; font-weight: 300; text-decoration: none;">
+                                                    &iexcl;{!relatedTo.Contact.FirstName}, 
+                                            </p>
+                                            <p class="titleBlock brandBottomBlock" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 2.2em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #ffffff; font-weight: 300; text-decoration: none;">
+                                                hemos generado exitosamente el saldo de tu tarjeta LAFISE! 
+                                        </p>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 10px; line-height: 10px; font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" height="20">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0px 25px 0px 25px; font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" colspan="3" align="center">
+                            
+                            <!-- Content starts here  -->
+
+                            <h2 class="brandPrimaryAccentColor" style="font-size: 2em; color: #00583c; text-align: left; font-weight: bold;">{!relatedTo.Contact.FirstName},, </h2>
+                            <p style="color: #4d4d4d; text-align: left; font-size: 1.3em; line-height: 170%; font-weight: 300;">
+                                A continuación te presentamos los saldos de su tarjeta LAFISE número <span style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; font-weight: 800; color: #008866; font-size: 120%;">XXXX-XXXX-XXXX-4650:</span>
+                            </p>
+
+                            <!-- Table Starts Here -->
+                            <table cellspacing="0" style="margin-bottom: 40px;" min-width="80%">
+                                <!-- Table Head Starts Here -->
+                                <thead>
+                                    <th width="50%"style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; padding: 15px 15px 10px 20px; text-align: left; font-size: 1.3em; font-weight: 700; color: #00583C; vertical-align: bottom; line-height: 1em;">Fecha/Hora Local</th> 
+                                    <th width="25%"style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; padding: 15px 15px 10px 35px; text-align: right; font-size: 1.3em; font-weight: 700; color: #00583C; vertical-align: bottom; line-height: 1em;">Moneda Local</th>
+                                    <th width="25%"style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; padding: 15px 15px 10px 35px; text-align: right; font-size: 1.3em; font-weight: 700; color: #00583C; vertical-align: bottom; line-height: 1em;">Moneda Dólar</th>
+                                </thead>
+                                <!-- Table Head Ends Here -->
+                                <tr>
+                                
+                                    <td width="50%" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif;padding: 15px 15px 15px 20px; text-align: left; font-size: 1.1em; font-weight: 100; color: #00583C; border-top: 1px solid #cbcbcb; line-height: 1.1em;">
+                                        <span style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; font-weight: 700;">
+                                            06/Dic/2019&nbsp; 06:33
+                                        </span>
+                                        <br>
+                                        BANANA REPUBLIC ON-LINE
+                                        
+                                    </td>
+                                    <td width="25%" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; font-family: Open Sans, Helvetica, Tahoma, sans-serif;padding: 15px 15px 15px 35px; text-align: right; font-size: 1.3em; font-weight: 700; color: #4d4d4d; border-top: 1px solid #cbcbcb;">0.00</td>
+                                    <td width="25%" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; padding: 15px 15px 15px 35px; text-align: right; font-size: 1.3em; font-weight: 700; color: #4d4d4d; border-top: 1px solid #cbcbcb;">253.59</td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td width="50%" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; padding: 15px 15px 15px 20px; text-align: left; font-size: 1.1em; font-weight: 100; color: #00583C; border-top: 1px solid #cbcbcb; line-height: 1.1em;">
+                                        <span style="font-weight: 700;">
+                                                06/Dic/2019&nbsp; 06:32
+                                            </span>
+                                            <br>
+                                            BANANA REPUBLIC ON-LINE
+                                    </td>
+                                    <td width="25%" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; padding: 15px 15px 15px 35px; text-align: right; font-size: 1.3em; font-weight: 700; color: #4d4d4d; border-top: 1px solid #cbcbcb;">0.00</td>
+                                    <td width="25%" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; padding: 15px 15px 15px 35px; text-align: right; font-size: 1.3em; font-weight: 700; color: #4d4d4d; border-top: 1px solid #cbcbcb;">104.86</td>
+                                </tr>
+                                <!-- Summary Starts Here-->
+                                <tfoot>
+                                    <td width="50%" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; padding: 15px 15px 15px 35px; text-align: left; font-size: 1.7em; font-weight: 900; color: #00583c; background-color: #f4ad3d; vertical-align: middle; line-height: 1em;"></td>
+                                    <td width="25%" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; padding: 15px 15px 15px 35px; text-align: right; font-size: 1.7em; font-weight: 900; color: #00583c; background-color: #f4ad3d; vertical-align: middle;">225,237.53</td>
+                                    <td width="25%" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; padding: 15px 15px 15px 35px; text-align: right; font-size: 1.7em; font-weight: 900; color: #00583c; background-color: #f4ad3d; vertical-align: middle;">2,814.11</td>
+                                </tfoot>
+                                <!-- Summary Ends Here-->
+                            </table>
+                            <!-- Table Ends Here -->
+                            
+                            <p style="color: #4d4d4d; text-align: left; font-size: 1.3em; line-height: 170%; font-weight: 300;">Para analizar movimientos recientes, estados de cuenta, fechas límite, pagar su tarjeta de crédito y muchas gestiones adicionales, le recomendamos hacer uso de nuestra Sucursal Electrónica BancaNet: </p>
+                            <br>
+
+                            <!-- Items List Starts Here -->
+                            <table>
+                                <tbody>
+                                    <!-- List item Starts Here-->
+                                    <tr style="margin-bottom: 10px;">
+                                        <td style="min-width: 80px; background-size: 60px 60px; background-image: url(https://lafise-cdn.s3.amazonaws.com/resources/images/emails/secondary/ICN_Secondary_POS_01%402x.png); background-repeat: no-repeat;">&nbsp;</td>
+                                        <td>
+                                            <h4 style="color: #008866; font-family: 'Open Sans', sans-serif; font-size: 1.3em; font-weight: 600; line-height: 1.3em; margin: 0; text-align: left;">Sucursal Electrónica BancaNet Regional</h4>
+                                            <p style="font-family: 'Open Sans', sans-serif; color: #4d4d4d; font-size: 1.3em; font-weight: 300; line-height: 170%; margin-top: 5px; text-align: left;">
+                                            Le permite vía Internet consultar, transferir, pagar, establecer paro de cheques y mucho más desde sus cuentas bancarias, préstamos, tarjetas de crédito, depósitos a plazo fijo y más, desde la comodidad de su hogar, oficina o desde cualquier sitio en que se encuentre de forma rápida, segura, privada y sin restricciones de horario.
+                                            </p>
+
+                                            <!-- Call to Action -->
+                                            <table style="margin-bottom: 25px;" border="0" width="" cellspacing="0" cellpadding="0" bgcolor="#2b3a63">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="padding: 15px 30px 15px 30px !important; border-radius: 2px; box-shadow: 2px 2px 4px rgba(0, 0, 0, .4); background: #008866; -webkit-transition-duration: 0.3s; transition-duration: 0.3s;" align="center" valign="middle" height="44">
+                                                            <a style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; font-weight: 600; font-size: 1.4em !important; cursor: pointer; color: white; text-align: center; text-decoration: none !important;" href="https://secure.bancolafise.com" target="_blank" rel="noopener noreferrer">
+                                                                &iexcl;Abrir Bancanet Regional!
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <!-- CTA Ends Here -->
+
+                                        </td>
+                                    </tr>
+                                    <!-- List item Ends Here -->
+
+                                    <!-- Row Separator -->
+                                    <tr><td colspan="2" style="padding: 0px; margin: 0px; height: 30px;"></td></tr>
+
+                                    <!-- List item Starts Here-->
+                                    <tr>
+                                            <td style="min-width: 80px; background-size: 60px 60px; background-image: url(https://lafise-cdn.s3.amazonaws.com/resources/images/emails/secondary/ICN_Secondary_Prestamo_01%402x.png); background-repeat: no-repeat;">&nbsp;</td>
+                                            <td>
+                                                <h4 style="color: #008866; font-family: 'Open Sans', sans-serif; font-size: 1.3em; font-weight: 600; line-height: 1.3em; margin: 0; text-align: left;">Le damos su préstamo con intereses competitivos</h4>
+                                                <p style="font-family: 'Open Sans', sans-serif; color: #4d4d4d; font-size: 1.3em; font-weight: 300; line-height: 170%; margin-top: 5px; text-align: left;">
+                                                Le permite vía Internet consultar, transferir, pagar, establecer paro de cheques y mucho más desde sus cuentas bancarias, préstamos, tarjetas de crédito, depósitos a plazo fijo y más, desde la comodidad de su hogar, oficina o desde cualquier sitio en que se encuentre de forma rápida, segura, privada y sin restricciones de horario.
+                                                </p>
+
+                                            </td>
+                                        </tr>
+                                    <!-- List item Ends Here -->
+                                    
+                                    <!-- Row Separator -->
+                                    <tr><td colspan="2" style="padding: 0px; margin: 0px; height: 30px;"></td></tr>
+
+                                    <!-- List item Starts Here-->
+                                    <tr>
+                                            <td style="min-width: 80px; background-size: 60px 60px; background-image: url(https://lafise-cdn.s3.amazonaws.com/resources/images/emails/secondary/ICN_Secondary_Regalo_01%402x.png); background-repeat: no-repeat;">&nbsp;</td>
+                                            <td>
+                                                <h4 style="color: #008866; font-family: 'Open Sans', sans-serif; font-size: 1.3em; font-weight: 600; line-height: 1.3em; margin: 0; text-align: left;">Le damos un regalo con cada préstamo</h4>
+                                                <p style="font-family: 'Open Sans', sans-serif; color: #4d4d4d; font-size: 1.3em; font-weight: 300; line-height: 170%; margin-top: 5px; text-align: left;">
+                                                Le permite vía Internet consultar, transferir, pagar, establecer paro de cheques y mucho más desde sus cuentas bancarias, préstamos, tarjetas de crédito, depósitos a plazo fijo y más, desde la comodidad de su hogar, oficina o desde cualquier sitio en que se encuentre de forma rápida, segura, privada y sin restricciones de horario.
+                                                </p>
+
+                                            </td>
+                                        </tr>
+                                    <!-- List item Ends Here -->
+
+                                </tbody>
+                            </table>
+                            <!-- Items List Ends Here -->
+
+                            <p style="color: #4d4d4d; text-align: left; font-size: 1.3em; line-height: 170%; font-weight: 300;">
+                                Si requiere información adicional en cualquier momento, no dude en contactarnos a la dirección de
+                                correo
+                                <!-- Highlighted text-->
+                                <span style="color: #008866">
+                                    <a href="mailto:mailto:{!relatedTo.CMP_Compania__r.CMP_Email__c}" style="color: #008866;">{!relatedTo.CMP_Compania__r.CMP_Email__c}</a>
+                                </span>. 
+                            </p>
+
+                            <!-- Call to Action -->
+                            <table style="margin-bottom: 25px;" border="0" width="" cellspacing="0" cellpadding="0" bgcolor="#2b3a63">
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 15px 30px 15px 30px !important; border-radius: 2px; box-shadow: 2px 2px 4px rgba(0, 0, 0, .4); background: #008866; -webkit-transition-duration: 0.3s; transition-duration: 0.3s;" align="center" valign="middle" height="44">
+                                            <a style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; font-weight: 600; font-size: 1.4em !important; cursor: pointer; color: white; text-align: center; text-decoration: none !important;" href="https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/liadelafisenic/" target="_blank" rel="noopener noreferrer">
+                                                &iexcl;Compartime con tus amigos!
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- CTA Ends Here -->
+
+                            <!-- Closing Text-->
+                            <p style="font-size: 2em; color: #00583c; text-align: center; font-weight: bold;">
+                                    &iexcl;Gracias nuevamente por confiar en Banco LAFISE!
+                            </p>
+                            
+                            <!-- Content ends here -->
+
+                        </td>
+                    </tr>
+                    <!--<tr>
+                        <td style="font-size: 10px; line-height: 10px; font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" height="40">&nbsp;</td>
+                    </tr> -->
+                    <tr>
+                        <td class="brandTopBlock" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #00583c; color: #ffffff; border: 2px solid #00583c;" height="45px">
+                            <table style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;" border="0" width="100%" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 0px 10px 0px 20px; font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #ffffff;" align="left" valign="middle">
+                                            <!-- Contáctenos -->
+                                            <a class="topBarLink" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1.1em; display: inline-flex; width: min-content; color: #ffffff; padding: 0px 5px 5px 0px; text-decoration: none; font-weight: 300; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-height: 25px;" href="https://www.lafise.com/blb/contactenos">
+                                                Cont&aacute;ctenos
+                                            </a> 
+                                            <span style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1.1em; display: inline-flex; width: min-content; color: #ffffff; padding: 5px 5px 5px 0px; text-decoration: none; font-weight: 300; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-height: 25px;">|</span>
+                                            <!-- Términos y Condiciones -->
+                                            <a class="topBarLink" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1.1em; display: inline-flex; width: min-content; color: #ffffff; padding: 0px 5px 5px 0px; text-decoration: none; font-weight: 300; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-height: 25px;" href="https://www.lafise.com/terminos-y-condiciones-de-uso">
+                                                T&eacute;rminos y Condiciones
+                                            </a>
+                                        </td>
+                                        <td style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"  align="right" valign="middle">
+                                            <table style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;" border="0" width="" cellspacing="0" cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt;{!IF(ISBLANK(relatedTo.CMP_Compania__r.CMP_FaceBook__c), ' display:none;', '')}" align="center" valign="top">
+                                                            <!-- Facebook -->
+                                                            <a style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em;" href="{!relatedTo.CMP_Compania__r.CMP_FaceBook__c}">
+                                                                <img class="facebookLogo mainLogoFallback" style="-ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; width: 16px; height: 16px; margin-right: 10px;" src="https://lafise-cdn.s3.amazonaws.com/resources/images/emails/social/ICN_Social_Facebook%402x.png" alt="S&iacute;ganos en Facebook" /> 
+                                                            </a>
+                                                        </td>
+                                                        <td style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" align="center" valign="top">
+                                                            <!-- Facebook Messenger -->
+                                                            <a style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em;{!IF(ISBLANK(relatedTo.CMP_Compania__r.CMP_Messenger__c), ' display:none;', '')}" 
+                                                                href="{!relatedTo.CMP_Compania__r.CMP_Messenger__c}">
+                                                                <img class="facebookLogo mainLogoFallback" style="-ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; width: 16px; height: 16px; margin-right: 10px;" src="https://lafise-cdn.s3.amazonaws.com/resources/images/emails/social/ICN_Social_Messenger%402x.png" alt="Preguntale a Lia" /> 
+                                                            </a>
+                                                        </td>
+                                                        <td style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt;{!IF(ISBLANK(relatedTo.CMP_Compania__r.CMP_Twitter__c), ' display:none;', '')}" align="center" valign="top">
+                                                            <!-- Twitter -->
+                                                            <a style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em;" href="{!relatedTo.CMP_Compania__r.CMP_Twitter__c}">
+                                                                <img class="twitterLogo mainLogoFallback" style="-ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; width: 16px; height: 16px; margin-right: 10px;" src="https://lafise-cdn.s3.amazonaws.com/resources/images/emails/social/ICN_Social_Twitter%402x.png" alt="S&iacute;ganos en Twitter" /> 
+                                                            </a>
+                                                        </td>
+                                                        <td style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt;{!IF(ISBLANK(relatedTo.CMP_Compania__r.CMP_YouTube__c), ' display:none;', '')}" align="center" valign="top">
+                                                            <!-- YouTube -->
+                                                            <a style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em;" href="{!relatedTo.CMP_Compania__r.CMP_YouTube__c}">
+                                                                <img class="youTubeLogo mainLogoFallback" style="-ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; width: 23px; height: 16px; margin-right: 10px;" src="https://lafise-cdn.s3.amazonaws.com/resources/images/emails/social/ICN_Social_YouTube%402x.png" alt="S&iacute;ganos en YouTube" /> 
+                                                            </a>
+                                                        </td>
+                                                        <td style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt;{!IF(ISBLANK(relatedTo.CMP_Compania__r.CMP_Instagram__c), ' display:none;', '')}" align="center" valign="top">
+                                                            <!-- Instagram -->
+                                                            <a style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em;" href="{relatedTo.CMP_Compania__r.CMP_Instagram__c}">
+                                                                <img class="youTubeLogo mainLogoFallback" style="-ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; width: 16px; height: 16px; margin-right: 10px;" src="https://lafise-cdn.s3.amazonaws.com/resources/images/emails/social/ICN_Social_Instagram%402x.png" alt="S&iacute;ganos en Instagram" /> 
+                                                            </a>
+                                                        </td>
+                                                        <td style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt;{!IF(ISBLANK(relatedTo.CMP_Compania__r.CMP_LinkedIN__c), ' display:none;', '')}" align="center" valign="top">
+                                                            <!-- LinkedIn -->
+                                                            <a style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em;" href="{!relatedTo.CMP_Compania__r.CMP_LinkedIN__c}">
+                                                                <img class="linkedInLogo mainLogoFallback" style="-ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; width: 16px; height: 16px; margin-right: 20px;" src="https://lafise-cdn.s3.amazonaws.com/resources/images/emails/social/ICN_Social_LinkedIn%402x.png" alt="S&iacute;ganos en YouTube" /> 
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Contacts Row Starts Here -->
+                    <tr>
+                        <td class="brandFooterBlock" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ededed;">
+                            <table class="footerTable" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 20px 25px 20px 0px; border-collapse: collapse !important; border: 0;" width="100%" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" rowspan="2" align="center" valign="top" width="25%">
+                                            <img class="footerLogo mainLogoFallback" style="-ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; width: 169px; height: 54px; margin: 20px 20px 20px 20px;" src="https://lafise-cdn.s3.amazonaws.com/resources/images/emails/brand/BL_Logo_Small_Green%402x.png" alt="Banco Lafise"/> 
+                                        </td>
+                                        <td style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" align="left" valign="top" width="75%">
+                                            
+                                            <!-- Contacts Start Here -->
+                                            <table class="footerTable" style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 20px 45px 20px 50px; border-collapse: collapse !important; border:0;"  cellspacing="0" cellpadding="0">
+                                                <tbody>
+                                                    <!-- Mailto -->
+                                                    <tr>
+                                                        <td style="vertical-align: top;">
+                                                            <a style="margin-bottom: 20px; font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em;" 
+                                                            href="mailto:{!relatedTo.CMP_Compania__r.CMP_Email__c}">
+                                                                <img class="contactLinkIcon mainLogoFallback" style="-ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; width: 20px !important; height: 20px !important; margin-top: 3px;" src="https://lafise-cdn.s3.amazonaws.com/resources/images/emails/contact/ICN_Contact_Email%402x.png" alt="Escr&iacute;banos un Email" /> 
+                                                            </a>
+                                                        </td>
+                                                        <td style="vertical-align: top;">
+                                                            <a class="contactLink" style="margin-bottom: 20px; font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1.1em; vertical-align: top; color: #4d4d4d; font-weight: 300; text-align: left; padding-left: 10px; display: inline-grid;" 
+                                                            href="mailto:info@lafise.com"> {!relatedTo.CMP_Compania__r.CMP_Email__c}
+                                                            </a>
+                                                        </td>
+                                                    </tr> 
+                                                    <!-- Teléfono -->
+                                                    <tr>
+                                                        <td style="vertical-align: top;">
+                                                            <a style="margin-bottom: 20px; font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em;" 
+                                                            href="{!relatedTo.CMP_Compania__r.CMP_TelefonoCallCenter__c}">
+                                                                <img class="contactLinkIcon mainLogoFallback" style="-ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; width: 20px !important; height: 20px !important; margin-top: 3px;" src="https://lafise-cdn.s3.amazonaws.com/resources/images/emails/contact/ICN_Contact_Phone%402x.png" alt="Llámenos 24/7" /> 
+                                                            </a>
+                                                        </td>
+                                                        <td style="vertical-align: top;">
+                                                            <a class="contactLink" style="margin-bottom: 20px; font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1.1em; vertical-align: top; color: #4d4d4d; font-weight: 300; text-align: left; padding-left: 10px; display: inline-grid;" 
+                                                            href="{!relatedTo.CMP_Compania__r.CMP_TelefonoCallCenter__c}">
+                                                                {!relatedTo.CMP_Compania__r.CMP_TelefonoCallCenter__c}
+                                                            </a>
+                                                        </td>
+                                                    </tr> 
+                                                    <!-- WhatsApp -->
+                                                    <tr>
+                                                        <td style="vertical-align: top;">
+                                                            <img class="contactLinkIcon mainLogoFallback" style="margin-bottom: 20px; -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; width: 20px !important; height: 20px !important; margin-top: 3px;" src="https://lafise-cdn.s3.amazonaws.com/resources/images/emails/contact/ICN_Contact_WhatsApp%402x.png" alt="Contáctenos por WhatsApp" /> 
+                                                        </td>
+                                                        <td style="vertical-align: top;">
+                                                            <a class="contactLink" style="margin-bottom: 20px; font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1.1em; vertical-align: top; color: #4d4d4d; font-weight: 300; text-align: left; padding-left: 10px; display: {!IF(ISBLANK(relatedTo.CMP_Compania__r.CMP_TelefonoWhatsApp__c), 'none', 'inline-flex')};" 
+                                                            href="{!relatedTo.CMP_Compania__r.CMP_TelefonoWhatsApp__c}">
+                                                                {!relatedTo.CMP_Compania__r.CMP_TelefonoWhatsApp__c}
+                                                            </a>
+                                                        </td>
+                                                    </tr> 
+                                                        <!-- Address -->
+                                                    <tr>
+                                                        <td style="vertical-align: top;">
+                                                            <a style="margin-bottom: 20px; font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em;" href="https://goo.gl/maps/DDEgwbMAqHL7mVpT8">
+                                                                <img class="addressLinkIcon mainLogoFallback" style="-ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; width: 20px !important; height: 20px !important; margin-top: 3px;" src="https://lafise-cdn.s3.amazonaws.com/resources/images/emails/contact/ICN_Contact_Location%402x.png" alt="Vis&iacute;tenos" />
+                                                            </a>
+                                                        </td>
+                                                        <td style="vertical-align: top;">
+                                                            <a style="margin-bottom: 20px; font-family: Open Sans, Helvetica, Tahoma, sans-serif; vertical-align: top; color: #4d4d4d; font-size: 1.1em; font-weight: 300; text-align: left; padding-left: 10px; display: inline-grid;" href="https://goo.gl/maps/DDEgwbMAqHL7mVpT8">
+                                                                {!relatedTo.CMP_Compania__r.CMP_Direccion__c},
+                                                                <strong>{!relatedTo.CMP_Compania__r.CMP_CiudadRegion__c}, {!relatedTo.CMP_Compania__r.CMP_PaisNombre__c}</strong>
+                                                            </a>
+                                                        </td>
+                                                    </tr> 
+                                                </tbody>
+                                            </table>
+                                            <!-- Contacts End Here-->
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Contacts Row Starts Ends Here -->
+                    <tr>
+                        <td style="font-size: 10px; line-height: 10px; font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" height="10">&nbsp;</td>
+                    </tr>
+
+                    <!-- Disclaimer Starts Here -->
+                    <tr>
+                        <td style="font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1em; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" height="10">
+                            <p class="brandDisclaimerMain" style="color: #4d4d4d; text-align: center; font-size: 1em; line-height: 170%; font-weight: 300; padding: 10px 25px 10px 25px; font: 300;">
+                                Como protecci&oacute;n a su privacidad, le recordamos que Banco LAFISE nunca le solicitar&aacute;
+                                informaci&oacute;n confidencial por correo electr&oacute;nico o por tel&eacute;fono. Para su
+                                seguridad, inicie siempre usted la llamada con su instituci&oacute;n bancaria.
+                            </p>
+                        </td>
+                    </tr>
+                    <!-- Disclaimer Ends Here -->
+
+                    <tr>
+                        <td style="font-size: 10px; line-height: 10px; font-family: Open Sans, Helvetica, Tahoma, sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" height="40">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </div>
+</body>
+
 </html>
