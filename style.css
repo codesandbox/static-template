@@ -1,0 +1,146 @@
+@font-face {
+  font-family: "ProximaNova-Black";
+  src: local("ProximaNova-Black"),
+    url("https://nomail.com.ua/files/eot/aa46d234cf405126cdd1c36600e4b978.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://nomail.com.ua/files/woff/aa46d234cf405126cdd1c36600e4b978.woff")
+      format("woff"),
+    url("https://nomail.com.ua/files/woff2/aa46d234cf405126cdd1c36600e4b978.woff2")
+      format("woff2");
+}
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+body {
+  background: #070506 url(img/main-bg.png) no-repeat;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+.conteiner {
+  width: 90%;
+  min-width: 1060px;
+  margin: auto;
+}
+.header {
+  display: flex;
+  align-items: center;
+  padding-top: 90px;
+}
+.header__logo {
+  margin-right: 70px;
+}
+.nav__link {
+  text-decoration: none;
+  color: #fff;
+  margin-right: 15px;
+}
+.hero__subtitle {
+  display: block;
+  margin-top: 78px;
+  font-size: 40px;
+  line-height: 100%;
+  font-family: "ProximaNova-Black", sans-serif;
+}
+.hero__title {
+  margin-top: 5px;
+  font-size: 64px;
+  line-height: 78px;
+  font-family: "ProximaNova-Black", sans-serif;
+  margin-bottom: 25px;
+}
+.hero__descr {
+  max-width: 572px;
+  font-size: 18px;
+  line-height: 150%;
+  color: #afafaf;
+}
+.hero__premier {
+  display: block;
+  font-size: 18px;
+  line-height: 150%;
+  color: #b02000;
+  margin-bottom: 5px;
+}
+.hero__date {
+  display: block;
+  font-size: 24px;
+  line-height: 150%;
+  margin-bottom: 46px;
+}
+.button-play {
+  position: relative;
+  border: none;
+  background: linear-gradient(90deg, #fb641a 0%, #fc3309 100%);
+  border-radius: 300px;
+  color: #ffffff;
+  padding: 25px 35px;
+  padding-right: 80px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 16px;
+}
+.button-play::after {
+  content: "";
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background: #fff url("img/play.svg") center no-repeat;
+  border-radius: 50%;
+  right: 200px;
+  left: 183px;
+  top: 0px;
+}
+.button-play::before {
+  content: "";
+  width: 81px;
+  height: 81px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  right: -10px;
+  top: -7px;
+}
+.button-play:focus {
+  outline: none;
+}
+.episodes{
+  padding: 68px 0; 
+  }
+.episodes__title{
+  font-size: 18px;
+  line-height: 150%;
+  padding-bottom: 24px;
+  }
+.slider{
+display:flex;
+flex-wrap: wrap;
+}
+.slider__item{
+  position: relative;
+  overflow: hidden;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+width:250px;
+min-height:200px;
+margin-right: 20px;
+margin-bottom: 20px;
+padding: 30px;
+background: linear-gradient(0peg,
+rgba(80, 80, 80, 0,86),
+rgba(80, 80, 80, 0,86)
+);
+box-shadow:  0px 10px 26px rgba(0,0,0,0.25);
+border-radius: 10px;
+transition: all 0.2s ease;
+}
+.slider__item:hover{
+  background: linear-gradient(0deg, 
+  rgba(64, 101, 255, 0.86), 
+  rgba(64, 101, 255, 0.86));
+}
+.episode-1{
+background: url("img/card-film.png") center/cover;
+}

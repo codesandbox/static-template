@@ -1,12 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Сайт фильма "Звездные воины"</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="conteiner">
+      <header class="header">
+        <img
+          src="img/logo.png"
+          alt="Звездные воины"
+          class="logo header__logo "
+        />
+        <nav class="nav">
+          <a href="#" class="nav__link">Билеты</a>
+          <a href="#" class="nav__link">О фильме</a>
+          <a href="#" class="nav__link">Отзывы</a>
+          <a href="#" class="nav__link">Трейлеры</a>
+        </nav>
+      </header>
+      <main>
+        <div class="hero">
+          <span class="hero__subtitle">Эпизод IX</span>
+          <h1 class="hero__title">Скайуокер. Восход</h1>
+          <p class="hero__descr">
+            Фильм завершает невероятную историю семьи Скайуокеров, длящуюся уже
+            более сорока лет, и обещает дать ответы на все загадки из предыдущих
+            серий. Зрителя ожидают старые и новые герои, уникальные миры,
+            увлекательные путешествия на край Галактики и грандиозный финал
+            фантастической саги
+          </p>
+          <span class="hero__premier">Премьера</span>
+          <span class="hero__date">19 декабря 2019</span>
+          <button class="button-play hero__button-play">
+            Смотреть трейлер
+          </button>
+        </div>
+        <!--/.hero-->
+        <div class="episodes">
+          <h2 class="episodes__title">Предыдущие эпизоды</h2>
+          <div class="slider">
+
+            <div class="slider__item episode-1">
+              <div class="slider__year">1977</div>
+              <h3 class="slider__title">
+                Эпизод IV: <br />
+                Новая надежда
+              </h3>
+              <div class="slider__rating">
+                <span class="slider__rating-label">Рейтинг</span>
+              </div>
+            </div>
+
+            <div class="slider__item episode-2">
+              <div class="slider__year">1980</div>
+              <h3 class="slider__title">
+                Эпизод V: <br />
+                Империя наносит <br />
+                ответный удар
+              </h3>
+              <div class="slider__rating">
+                <span class="slider__rating-label">Рейтинг</span>
+              </div>
+            </div>
+
+            <div class="slider__item episode-3">
+              <div class="slider__year">1983</div>
+              <h3 class="slider__title">
+                Эпизод VI: <br />
+                Возвращение джедая
+              </h3>
+              <div class="slider__rating">
+                <span class="slider__rating-label">Рейтинг</span>
+              </div>
+            </div>
+
+            <div class="slider__item episode-4">
+              <div class="slider__year">1999</div>
+              <h3 class="slider__title">
+                Эпизод I: <br />
+                Скрытая угроза
+              </h3>
+              <div class="slider__rating">
+                <span class="slider__rating-label">Рейтинг</span>
+              </div>
+            </div>
+
+            <div class="slider__item episode-1">
+              <div class="slider__year">2002</div>
+              <h3 class="slider__title">
+                Эпизод II: <br/>
+                Атака клонов 
+              </h3>
+              <div class="slider__rating">
+                <span class="slider__rating-label">Рейтинг</span>
+              </div>
+            </div>
+
+            <div class="slider__item episode-2">
+              <div class="slider__year">2005</div>
+              <h3 class="slider__title">
+                  Эпизод III: <br />
+                  Месть ситхов 
+              </h3>
+              <div class="slider__rating">
+                <span class="slider__rating-label">Рейтинг</span>
+              </div>
+            </div>
+
+            <div class="slider__item episode-3">
+              <div class="slider__year">2015</div>
+              <h3 class="slider__title">
+                Эпизод VII:  <br />
+                Пробуждение Силы 
+              </h3>
+              <div class="slider__rating">
+                <span class="slider__rating-label">Рейтинг</span>
+              </div>
+            </div>
+
+            <div class="slider__item episode-4">
+              <div class="slider__year">2017</div>
+              <h3 class="slider__title">
+                Эпизод VIII:  <br />
+                Последние джедаи 
+              </h3>
+              <div class="slider__rating">
+                <span class="slider__rating-label">Рейтинг</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!--/.episodes-->
+        
+      </main>
+    </div>
   </body>
 </html>
