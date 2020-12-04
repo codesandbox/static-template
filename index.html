@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Сайт фильма Star wars</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="conteiner">
+      <header class="header">
+        <img src="image/logo.png" alt="Зведные войны" class="header__logo" />
+        <nav class="nav">
+          <a href="#" class="nav__link">Билеты</a>
+          <a href="#" class="nav__link">О фильме</a>
+          <a href="#" class="nav__link">Трейлеры</a>
+          <a href="#" class="nav__link">Отзывы</a>
+        </nav>
+      </header>
+      <main>
+        <div class="hero">
+          <span class="hero__subtitle">Эпизод IX</span>
+          <h1 class="hero__title">Скайуокер. Восход</h1>
+          <p class="hero__description">
+            Фильм завершает невероятную историю семьи Скайуокеров, длящуюся уже
+            более сорока лет, и обещает дать ответы на все загадки из предыдущих
+            серий. Зрителя ожидают старые и новые герои, уникальные миры,
+            увлекательные путешествия на край Галактики и грандиозный финал
+            фантастической саги
+          </p>
+          <span class="hero__premier">Премьера</span>
+          <span class="hero__data">19 декабря 2019</span>
+          <button class="button-play" type="button">
+            Смотреть трейлер
+          </button>
+        </div>
+        <!-- /.hero -->
+      </main>
+    </div>
+    <!-- /.conteiner -->
   </body>
 </html>
