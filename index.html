@@ -1,12 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<!--
+## Introduction
+
+MVP for a on e-mail survey-->
+
+<!-- -->
+<!doctype html>
+<html ⚡4email>
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+    .container {
+      max-width: 500px;
+      margin: auto;
+      font-family: sans-serif;
+      padding: 1em;
+      text-align: center;
+    }
+
+    .block {
+      display: block;
+      width: 100%;
+    }
+
+    .m1 {
+      margin: 1em 0;
+    }
+
+    label {
+      margin-bottom: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!--
+      The main content of the email, an image and survey question.
+    -->
+    <div>
+      <amp-img class="m1" width="600" height="314" layout="responsive" src="https://amp.dev/static/img/sharing/default-600x314.png"></amp-img>
+      <p>Gostaríamos de receber seu feedback em relação ao contato e uso do GetNinjas</p>
+    </div>
+
+    <hr>
+
+    
+    <form method="post" action-xhr="https://www.globo.com">
+      
+      <div class="m1">
+        <p>Você contratou o profissional GetNinjas?</p>
+
+        <input type="radio" id="rating1" name="rating" value="3" on="change:step2.show" required>
+        <label for="rating1">Sim</label>
+
+        <input type="radio" id="rating2" name="rating" value="2" on="change:step3.show">
+        <label for="rating2">Negociando</label>
+
+        <input type="radio" id="rating3" name="rating" value="1" on="change:step4.show">
+        <label for="rating3">Não</label>
+      </div>
+      
+      
+      <div class="m1" id="step2" hidden>  
+        <label class="block" for="info">Ótimo, o que mais nos fala sobre a experiência?</label>
+      
+        <p> Recomendario o profissional:
+          
+        <input type="radio" id="rating1.1" name="rating" value="3.1">
+        <label for="rating1.1">Sim</label>
+          
+        <input type="radio" id="rating1.2" name="rating" value="3.2">
+        <label for="rating1.2">Não</label>
+                  
+        </p>
+      </div>
+      
+      <div class="m2" id="step3" hidden>  
+        <label class="block" for="info">Entendemos, quais as principais razões:</label>
+      
+        <input type="radio" id="rating1.1" name="rating" value="3.1">
+        <label for="rating1.1">Acordando preço</label>
+          <br>
+        <input type="radio" id="rating1.2" name="rating" value="3.2">
+        <label for="rating1.2">Aguardando retorno</label>             
+      </div>
+      
+      <input type="submit" value="Send feedback">
+      <input type="reset" value="Clear">
+      
+      <div class="m1" submit-success>
+        Obrigado pela resposta!
+      </div>
+    </form>
+  </div>
+</body>
 </html>
