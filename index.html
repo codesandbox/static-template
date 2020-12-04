@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Input | Number | Quanitiy Selector</title>
+	<link rel="stylesheet" href="/style.css" />
+	<link rel="stylesheet" href="/library/Input.css" />
+</head>
+
+<body>
+	<div class="outer-box">
+		<div class="heading">Input | Number | Quanitiy Selector</div>
+		<div class="inner-box">
+			<div>
+				<!-- design-start 1 -->
+				<div class="heading">Design - 1</div>
+				<div class="s-input design-1">
+					<input type="number" min="1" max="9" name="quantity" value="1" readonly/>
+					<div class="upkey">
+						<img src="/arrow-down.svg" alt="" srcset="" />
+					</div>
+					<div class="downkey">
+						<img src="/arrow-down.svg" alt="" srcset="" />
+					</div>
+				</div>
+				<!-- design-end 1 -->
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="library/Input.js"></script>
+	<script>
+		(function ($, Input) {
+			Input.onChange('quantity', function() {
+				console.log($(this).val());
+			});
+		})(jQuery, window.Input || (window.Input = {}));
+	</script>
+</body>
+
 </html>
