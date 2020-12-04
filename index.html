@@ -1,12 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>IWTracker | Home</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Abel"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400i"
+      rel="stylesheet"
+    />
+    <meta name="theme-color" content="#2f2f2f" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <nav>
+        <div id="navBar">
+          <img
+            src="images/menu.png"
+            alt="menuButton"
+            id="menuButton"
+            onclick="menuToggle()"
+          />
+          <h3 id="title">IWTracker</h3>
+          <h3 id="team">By Christopher Selig & Marcus Toot</h3>
+        </div>
+      </nav>
+      <div id="menuContainer"></div>
+    </div>
+    <script src="JS/titleScript.js"></script>
   </body>
 </html>
