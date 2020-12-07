@@ -1,0 +1,119 @@
+.so-tab2 {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 25px 0;
+}
+.so-tab2 input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.so-tab2-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s;
+}
+/* :checked */
+.so-tab2 input:checked ~ .so-tab2-content {
+  max-height: none;
+}
+/* Icon */
+.so-tab2 label::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  -webkit-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.so-tab2 input[type="checkbox"] + label::after {
+  content: ">";
+}
+.so-tab2 input[type="radio"] + label::after {
+  content: "\25BC";
+}
+.so-tab2 input[type="checkbox"]:checked + label::after {
+  transform: rotate(90deg);
+}
+.so-tab2 input[type="radio"]:checked + label::after {
+  transform: rotateX(180deg);
+}
+.so-tab label {
+  position: relative;
+  display: block;
+  padding: 0 25px 0 0;
+  margin-bottom: 15px;
+  line-height: normal;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.so-tab2 label {
+  position: relative;
+  display: block;
+  padding: 0 25px 0 0;
+  margin-bottom: 15px;
+  line-height: normal;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.so-tab {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 25px 0;
+}
+
+.so-tab input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.so-tab-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s;
+}
+/* :checked */
+.so-tab input:checked ~ .so-tab-content {
+  max-height: none;
+}
+/* Icon */
+.so-tab label::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  -webkit-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+.so-tab input[type="checkbox"] + label::after {
+  content: ">";
+}
+
+.so-tab input[type="radio"] + label::after {
+  content: "\25BC";
+}
+.so-tab input[type="checkbox"]:checked + label::after {
+  transform: rotate(90deg);
+}
+.so-tab input[type="radio"]:checked + label::after {
+  transform: rotateX(180deg);
+}
+<!--
+  POSSIBLE
+  ALTERNATIVE
+  TO
+  CHEVRON
+  .so-tab
+  input[type="checkbox"]
+  + label::after {
+  content: "+";
+}
