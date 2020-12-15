@@ -1,0 +1,29 @@
+main {
+  padding-top: 100px;
+}
+
+.product-collection {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+.product-collection .row {
+  width: 100%;
+  display: flex;
+}
+.product-collection .column {
+  width: 25%;
+}
+.product-collection img {
+  width: 150px;
+}
+
+@media screen and (max-width: 600px) {
+  .product-collection .column {
+    width: 100%;
+  }
+  .product-collection .row {
+    width: 100%;
+    flex-direction: column;
+  }
+}
