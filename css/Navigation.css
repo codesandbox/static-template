@@ -1,0 +1,123 @@
+header {
+  height: 100px;
+  width: 100%;
+  background-color: grey;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+header .header-layout {
+  width: 90%;
+  margin: auto;
+  display: flex;
+}
+header .header-layout .logo-contain {
+  flex: 1;
+}
+header .header-layout .logo-contain h1 {
+  color: #ffffff;
+  font-size: 30px;
+}
+header .header-layout nav {
+  flex: 2;
+}
+header .header-layout nav .material-icons {
+  font-size: 30px;
+  color: #ffffff;
+  display: none;
+  opacity: 0;
+}
+header .header-layout nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+header .header-layout nav ul a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 30px;
+}
+header .header-layout .cart {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+header .header-layout .cart a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 30px;
+}
+header .header-layout .cart a .material-icons {
+  font-size: 30px;
+  padding: 5px;
+}
+header .header-layout .cart a .menu {
+  opacity: 0;
+}
+
+@media screen and (max-width: 600px) {
+  header .header-layout nav {
+    display: none;
+  }
+  header .header-layout nav .material-icons {
+    font-size: 30px;
+    color: #ffffff;
+  }
+  header .header-layout .cart a .menu {
+    opacity: 100%;
+  }
+  header .header-layout nav .material-icons {
+    opacity: 100%;
+  }
+}
+
+.menu-dropdown {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: grey;
+  top: 100px;
+  left: -100%;
+  transition: 0.7s ease-in-out;
+  z-index: 999;
+}
+.menu-dropdown .close {
+  text-decoration: none;
+  color: #ffffff;
+  position: absolute;
+  right: 100px;
+}
+.menu-dropdown .row {
+  width: 90%;
+  margin: auto;
+  display: flex;
+}
+.menu-dropdown .row .column {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.menu-dropdown .row .column h1 {
+  color: #ffffff;
+}
+.menu-dropdown .row .column a {
+  font-size: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.menu-dropdown .row .column a:hover {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .menu-dropdown {
+    position: absolute;
+    height: auto;
+    width: 100%;
+  }
+  .menu-dropdown .row {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+}
