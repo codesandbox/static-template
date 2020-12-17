@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>正規表現の練習</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="output"></div>
+    <script>
+      let regexp = /角野卓造/;
+      //let regexp = /角野卓造.*ものまね/;
+      //let regexp = /角野卓造.*ものがたりね/;
+      //let regexp = /^角野卓造/;
+      //let regexp = /角野卓造$/;
+      //let regexp = new RegExp("角野卓造");
+
+      let text = "えっと角野卓造さんのものまねして";
+
+      if (regexp.test(text)) {
+        console.log("同じ");
+      } else {
+        console.log("違う");
+      }
+    </script>
   </body>
 </html>
