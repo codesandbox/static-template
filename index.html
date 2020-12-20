@@ -1,12 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="br">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Portifólio</title>
+    <link rel="stylesheet" href="estilo.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope&family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <img class="foto" src="https://media-exp1.licdn.com/dms/image/C4E03AQFSozJYXvGfvw/profile-displayphoto-shrink_200_200/0/1607815472915?e=1614211200&v=beta&t=JIkDAJLqARtr6NJYtTJED7YXfPnjGnNNu8K0lMrtVR4" />
+      <div class="dados">
+        <h1><span> Carine dos Santos Morais</span>, 34</h1>
+        <p class="profissao">
+          Em Transição Profissional - Desenvolvedora Front-end em Formação
+        </p>
+      </div>
+    </header>
+    <main>
+      <div class="coluna-menor">
+        <div class="experiencias">
+          <h2>Experiências Profissionais</h2>
+          <div class="linha"></div>
+          <ul>
+              <li>
+                  <img src="data:image/png;base64,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" />
+    
+                  <div class="conteudo">
+                    <h3><b>Estagiaria em TI</b> - BE Defender</h3>
+                    <p class="periodo">De Dezembro de 2020 a Junho de 2021</p>
+                  </div>
+                </li>
+            <li>
+              <img src="https://logo.empregos.com.br/102088_G.jpg" />
+
+              <div class="conteudo">
+                <h3><b>Recuros Humanos</b> - Montreal Informática</h3>
+                <p class="periodo">De Maio de 2018 a Maio de 2020</p>
+              </div>
+            </li>
+
+            <li>
+              <img
+                src="data:image/png;base64,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"
+              />
+
+              <div class="conteudo">
+                <h3><b>Recuros Humanos</b> - Elfe Óleo e Gás</h3>
+                <p class="periodo">De Junho de 2016 a Outubro de 2017</p>
+              </div>
+            </li>
+
+            <li>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtU-hwZH-rjAkMGVpzD2cj7HdKdDAveSKTEA&usqp=CAU"
+              />
+
+              <div class="conteudo">
+                <h3><b>Recuros Humanos</b> - Motiva Maquinas</h3>
+                <p class="periodo">De Junho de 2014 a Março de 2016</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="formação">
+          <h2>Formação Acadêmica</h2>
+          <div class="linha"></div>
+          <ul>
+            <li>
+              <img
+                src="data:image/jpeg;base64,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"
+              />
+
+              <div class="conteudo">
+                <h3>
+                  <b>Analise e Desenvolvimento de Sistema</b> - Centro
+                  Universitario Estácio
+                </h3>
+                <p class="periodo">De Junho 2019 - Atual</p>
+              </div>
+            </li>
+
+            <li>
+              <img
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8NDg0ODRAPDg0ODg4ODg0QDQ8OEA4NFhYiGBcRFhMYHSkhGBomHRcVIjEhJSkrLi4uFyAzODUsNygtLisBCgoKDg0OGxAQGi4mHyUwNzcwMzAyNS0vLzAtKzYwNjY1MS43NTIrKzcvNS0wNzUrNS0tLS03LS4uKy0tLysrNf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAEAAwEBAQEBAAAAAAAAAAAAAQYHBQQDCAL/xABLEAACAgECAwUCBwsHDQEAAAAAAQIDBAURBhIhBxMxQVFhkQgUIjJCcYEjUlVicpShorHB01NzdJKTs9EVFxgzNUNEY2SCg7LDFv/EABkBAQADAQEAAAAAAAAAAAAAAAACAwQFAf/EACURAQADAAEDBAEFAAAAAAAAAAABAgMRBBIhIjFhccEUIzNCUf/aAAwDAQACEQMRAD8A3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEpJdW0l6t7EgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPlk3xrjzS+xebfofU5OVhW2S5pSh7FzNJL08DyZQvMxHhztQtldGxy/k5tLySS3PloGt91tVc/ufhCb/3fsf4v7D3rAltYm4darF89eLi0VqeHKPjKr7L6n+8jDBpN6Wi0NCTBVNC1l0tU3PevwhPdPk9ja+j+wtaZNty1jSOYAAFoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8snIjVHml9i82/QZN8a4uUvsXm36HAyb5WycpfYvJL0I2nhVpp2/b2azL5UPyd/eznHs1SW8ofzUP3njIT7s2k+qXr06G8pr/lT/AE9CpouOirecvyNv0op8uja9G0Sj2UdRHprP2g7+g6w6lGu5/cm2oTf0GvJ/i9fsOAem6G1ND++ld+jlPVOV5pPdDQUwVPQNa7ram5/c/CE3/u/Y/wAX9hbCTrZaxpXmAABaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4vE1V3JCyjr3fNzw2Tbi/pL6tirQ1u1fRqf11t/vNDKnxJoG3Nfjrp42VJe+UV+1GnC1J9N4hzetx0/kzmfmHyzdenCVe1VEt6KZPmg295R328fDqfxDimS8cen7N4nEybOZxfpXVH3RSPiao6fPjzDnW6vXuniy9aDrfxuc4d2q+WPNupb79dvQ4d/GO7aWLW+rW8p77/qjg6fLfb/MTfuaZU9zPbKsXmOGr9VpOVZ58+Vgs4n5v+Exftr5j06hqUlhYdvc46dkshOPdPljtLb5K36b7dSrFqydPsu0/Ta6o803ZP6kpcz3b8kRtSscPM9NLxb6/MORjXXZNkaqq6+eX3sGkl5yb36I0rEqdddcG+ZwhGLl6tLbc8WhaNXh18sflWS27yzbrJ+i9F7DplN5iZ8Q6HTYTnHNveQAEGoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFT4k0Dbmvx108bKkv1or9qK1XWpeM4R/KU/3RZqJU+JNA25r8ddOrsqS98or9qNuG/9bOR1nRcfuUj7h49AojCycu/oe9Fy2Ts3XTfd7xXRbHPp0Kp7b52Iv+//ABaPng2crsf/AE+QvfWzn4WJZkWRqqjzTl7kvNt+SJaxMW92bO9ZpEdvPmf9+FixuEq7HtDNqm9t9q4xk9vX55ctOxe4pqpT5u7go8222+3nseTQtGrwq+WPyrJbd5Zt1k/Rei9h0zHe0y7GGNaRzxxIACDQAAAAAAAAAAAAAAAAAAAAAAAAkgAAAAAPBqut4mEk8zJoxub5vfXQrcvqTfU5X/77Rvwjh/nEALIDmaPxBhZ/eLCyacnuuXvO6sU+Tm32328N9n7jpgAAABx9V4q07Cs7nLzMfHt5VLu7LYwlyvwez8uh1qrFOMZRalGSUoyXg4vqmBXdW4YVs5Tx5Rqc1JTi4vl3a2bW3h4+B0tD0avCr5Y/Ksl/rLWtnL2exew6Rz9Y1zEwFCWbkU40bG4wdtkYc7Xilv4k5vaY4mVNOnzpbuiPLoA+GDmVZFULqJxspsXNCyPWM4+qfmvafcguAAABydX4mwMGca8zLox7JR54wttjCThvtzJPy3T9x0cXIhdXXbVKNlVsI2V2Re8Zwkt1JPzTQH1AAAAAAAAAAAAAAAABIAgAkCASQAK32hcTx0bTr8vZSt6VY8H4TyJ/NT9UknJ+yLLKY58JO2Sw9Oh9GWTbJ+nNGGy/9pAZnwpwxqHFObfZO5traeVmXbz5XL5sYxXi+j2itklHy6GgQ+D7Hb5WpSb89sNJf3hnPBXaFm6HXdVhwxpK+cZzd1dk5bpbJJxmuhY/8+2r/wAlgf2F38QDWuzbs9joDy3HJeT8aVKe9Kq5O75vxnvvz/oLBqvFOnYU+7y8zGot2T7qy+EZqL8G477pFK7IuPs3W/8AKPxqGOniwodSprnDmlPn3T5pPf5iMK4eor1XVao6plOiGVbbLJy5yjFqfK5LrLot5JR9FuB+nP8AODo34RxP7aJ78HibAyKb8ijKptoxk5X2wmpQqjtvvJ+XRNmUx7JeHnslq8m34JZmC9/1S7cOdnGJgYGoYNN99lOo1uFlknU5Ri4OO8GopeEvPcDEu23VcfN1fvsS6vIq+K0w7yuSlHmTlut/XqjfeGOLdNyIYmLRmY9uTKmuKphYnNyjXvJbexJ+4/OPadwtTouofE8edtlfcVW81ri5c0m918lJbdDaeBeyjC0+/C1Oq/KndCvvFXN1d23ZU4tdIp/TfmBctV4s07CtdOXmUUXKKk67LFGXK/B7GbaxVoup6tHP1LWcPIxKUo4+nKShXFLw55OT5k3u30W/ReC2O72gdnWmahk/HtQzbMRyhCpfdseqtqPo5x8evqVCzsu4c2fJrSUtujlmYMkn7Ukt/eBtGlaljZVanh3U31L5KlRZCyEdvo/JfT6j2Nn5b7MtRs0viGrHquVlNmVPBtlB71ZFbk4RsXqt9pJ/4l/+EPxPbRXjabRN1rJhK7JcXs5078sa/wAltS39eVe0DRsvjbSaZOFuoYcZxe0o/Ga5OL9Gk+hODxppeTbCmjOxrbrHywrhapSlL0SMd4B7GIahhU5udk21LIirKqKYwUlW/CUpy38V12S6evpeOHOxzB07Mx8yrIy52Y8+eMZulwb2a2e0E/MDj9svDOJn52PZk6pi6fOGLGEab4tynHnk+dfKXTrt9hpfCePGnTtPqrsjfCrDxq4Xw+ZdGNaSsj7Glv8AaYb8I/8A2nh/0Ff3kzRreIXpPCeHmQSdsNMwYUprdd9OuMYtrzS3329gFr1riXA0/ZZuVRjya3UJ2RU2vVQ8WvsPLpXG+lZk4142djTsk9o1uxVzm/SMZbNv6jA+zXgmfE2Tl5OfkXKqtxd1sWpXX3T32ipSTS2S3b2fktvTr9qPZLTpWG87AuunVVKCvpvcJyUZPlU4SjFeDaTTXnvv0A/QoMy7COK7dRwbsfKm7b8GUIKyT3lPHmnycz82nGS39EjTQAJIAAEgQASBAAAAAAAAAAAGddu2gzztIdlMXKzCtjkuKW7lTs42bfUmpfVBmihrfo+qfl7APzb2J8cYulWZONnvkx8l1zhdyOcaro7raSW72aa6+XL7twhxno0kmtR0/r65VEX7myncTdiGn5dk7cO2zAlN7uuNcbqE/NxrbTj9Slt6JFefwfZ/hOP5i/4oGx6TrOFmc/xLJxsl18vedxdXbyb77c3K+m+z9zM74o7K9G1DIsya8v4pZbJzshXbRKqU31clF9U2/R7ew7XZh2eS4feY5ZKyvjSoXSh08nd834z335/0FF/0fZ/hKP5i/wCKBz+K+yfAwcHJyqtVjOyit2Qrn3O1sl4VraW+78F7Wjq/Bv1W+bz8Oc5TxqoVW1Rk91TNyaaj6KXjt+L9Z818H2fnqcdv6C3/APU03gLgrH0LGlTQ5W22yU78iSUZWyS2SSXzYrrsuviwMR+EJFrW039LCoa9q5pL9zN64U1jGysLClRdVPnxqdoxsg5JqC3i477prZpry2Zxu0Ts6xteVU52SxsqmLhXkRgrE629+ScG1zJPdrqtt36lb4I7HZaTqONnvOjeqHb9yWK63LnrlD53O9vnb+HkBlfH2dZqfEGRVlXKiqOc8KFljfd4uPGzk59umy8ZPw8WXyPYpprSa1fdPzSx9n+sWTjzsfx9WyZ5lGRLDyLdneu6V1VsktudR5ouMn0367Pbw3bZV/8AR9n+Eo/mL/igZ/w5hRxeI8XHhPvIY+rwphZ0+6QhfyqfTp1S3Lt8JLTJrLwMzZ93ZjyxnLyjOE3NJ+1qx/1Wdnh/sPnhZmJl/wCUI2fFsiq91/E3HnUJJ8u/edN9vE1PiHQsbU8azEzId5TZs/HaUJrwnGXlJeoFR7KOMcHJ0vCx/jFVWTi0Qx7ceyyNc/ua5eeKb+VFrZ7r128S7159EmoxuqlJ9FFWwbb9i3MazPg/Rc26NRlGvf5MLMRTlFe2cZpP3I6HCXYtPTc/FzXnxuWPZz918UcOfo1tzd49vH0Aq3wj/wDaeH/QV/eTLfxdp88jgnE7tOUqdP03IaX8nCEed/ZFt/YdLtK7MZa9lU5Ky44yqoVPI8d2uT5nLm351994beRddC0tYmDiYcmrVj4tONKThsrFCCi3yvfZPbw6+IGM/B14gx6fjuDdZCq66dd1HPJRVuy5ZQTf0l8l7eLW/oy4duPEGPj6RkYrsg8nL7uuulSTnyqalKbS8ElF9fVo4/E3YTjZFsrdPyXhxm3J486u+ri35QkpJxXj0e/j5Hh0rsAirIyzM5zqT610Uckpf+SUnt/VYH9fBr0+ca9TypJqqyVFEH99KClKXu54+82s8ej6VRg49WLi1qqiqPLCEfLzbbfVtvdtvq2z2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAAAAAAAABIAgAAASAIBIAgEgCASQAAJAgEgCASQABJAAAkCASAIBIAgEkAASAIBIAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//Z"
+              />
+
+              <div class="conteudo">
+                <h3>
+                  <b>Bacharel em Administração</b> - Centro Universitario
+                  Estácio
+                </h3>
+                <p class="periodo">De Junho de 2016 a Outubro de 2018</p>
+              </div>
+            </li>
+
+            <li>
+              <img
+                src="data:image/jpeg;base64,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"
+              />
+
+              <div class="conteudo">
+                <h3>
+                  <b>Gestão em Recursos Humanos</b> - Centro Universitario
+                  Estácio
+                </h3>
+                <p class="periodo">De Junho 2012 a Dezembro de 2014</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="coluna-maior">
+          <h2>Habilidades</h2>
+        <div class="habilidades">
+          <div class="habilidade">
+        <h3>Front</h3>
+        <ul>
+          <li>
+            <p>HTML5</p>
+            <div class="progresso">
+              <div class="barra"></div>
+              <div class="barra"></div>
+              <div class="barra"></div>
+              <div class="barra incompleto"></div>
+              <div class="barra incompleto"></div>
+          </li>
+          <li>
+              <p>CSS3</p>
+              <div class="progresso">
+                <div class="barra"></div>
+                <div class="barra"></div>
+                <div class="barra"></div>
+                <div class="barra incompleto"></div>
+                <div class="barra incompleto"></div>
+            </li>
+            <li>
+                <p>JavaScript</p>
+                <div class="progresso">
+                  <div class="barra"></div>
+                  <div class="barra"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+              </li>
+              <li>
+                  <p>React</p>
+                  <div class="progresso">
+                    <div class="barra"></div>
+                    <div class="barra incompleto"></div>
+                    <div class="barra incompleto"></div>
+                    <div class="barra incompleto"></div>
+                    <div class="barra incompleto"></div>
+                </li>
+              </ul>
+        
+        
+          </div>
+          <div class="habilidade">
+              <h3>Back</h3>
+              <ul>
+                <li>
+                  <p>Node.js</p>
+                  <div class="progresso">
+                    <div class="barra incompleto"></div>
+                    <div class="barra incompleto"></div>
+                    <div class="barra incompleto"></div>
+                    <div class="barra incompleto"></div>
+                    <div class="barra incompleto"></div>
+                </li>
+                <li>
+                    <p>PostgreSQL</p>
+                    <div class="progresso">
+                      <div class="barra incompleto"></div>
+                      <div class="barra incompleto"></div>
+                      <div class="barra incompleto"></div>
+                      <div class="barra incompleto"></div>
+                      <div class="barra incompleto"></div>
+                  </li>
+                  <li>
+                      <p>Java</p>
+                      <div class="progresso">
+                        <div class="barra"></div>
+                        <div class="barra incompleto"></div>
+                        <div class="barra incompleto"></div>
+                        <div class="barra incompleto"></div>
+                        <div class="barra incompleto"></div>
+                    </li>
+                    <li>
+                        <p>API</p>
+                        <div class="progresso">
+                          <div class="barra"></div>
+                          <div class="barra incompleto"></div>
+                          <div class="barra incompleto"></div>
+                          <div class="barra incompleto"></div>
+                          <div class="barra incompleto"></div>
+                      </li>
+                    </ul>
+          </div>
+
+          <div class="habilidade">
+                      <h3>Soft skills</h3>
+                      <ul>
+                        <li>
+                          <p>Comunicação</p>
+                          <div class="progresso">
+                            <div class="barra"></div>
+                            <div class="barra"></div>
+                            <div class="barra"></div>
+                            <div class="barra"></div>
+                            <div class="barra"></div>
+                        </li>
+                        <li>
+                            <p>Trabalho em Equipe</p>
+                            <div class="progresso">
+                              <div class="barra"></div>
+                              <div class="barra"></div>
+                              <div class="barra"></div>
+                              <div class="barra"></div>
+                              <div class="barra"></div>
+                          </li>
+                          <li>
+                              <p>Gerencamento do Tempo</p>
+                              <div class="progresso">
+                                <div class="barra"></div>
+                                <div class="barra"></div>
+                                <div class="barra"></div>
+                                <div class="barra"></div>
+                                <div class="barra incompleto"></div>
+                            </li>
+                            <li>
+                                <p>Gerenciamento de Conflitos</p>
+                                <div class="progresso">
+                                  <div class="barra"></div>
+                                  <div class="barra"></div>
+                                  <div class="barra"></div>
+                                  <div class="barra"></div>
+                                  <div class="barra"></div>
+                              </li>
+                            </ul>
+          </div>    
+          <div class="habilidade">
+            <h3>Metodologias Ágeis</h3>
+          <ul>
+            <li>
+            <p>Scrum</p>
+          <div class="progresso">
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra incompleto"></div>
+            <div class="barra incompleto"></div>
+            <div class="barra incompleto"></div>
+        </li>
+        <li>
+            <p>Kanban</p>
+            <div class="progresso">
+              <div class="barra "></div>
+              <div class="barra incompleto"></div>
+              <div class="barra incompleto"></div>
+              <div class="barra incompleto"></div>
+              <div class="barra incompleto"></div>
+          </li>
+          <li>
+              <p>ITIL</p>
+              <div class="progresso">
+                <div class="barra"></div>
+                <div class="barra"></div>
+                <div class="barra incompleto"></div>
+                <div class="barra incompleto"></div>
+                <div class="barra incompleto"></div>
+            </li>
+            <li>
+                <p>Framework</p>
+                <div class="progresso">
+                  <div class="barra"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+              </li>
+            </ul>
+          </div>                                     
+          </div>
+
+        <h2>Projetos</h2>
+        <div class="projetos">
+          <div class="projeto">
+            <h3>GisCovid</h3>
+            <p>Protótipo funcional 
+              para mapeamento dos casos de covid no Brasil.</p>
+            <img calss ="informacao" src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv13L58A8_2OH1UiN5mOUTaaWKvLetpzKekg&usqp=CAU"
+            />
+            <a href="http://google.com">Ver Projeto</a>
+          </div>  
+
+            <div class="projeto">
+                <h3>PsiBellHair</h3>
+                <p>Desenvolvimento do site de promoção ao Salão PsiBellHair.</p>
+                <img class ="informacao" src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJyfNa-ur6zqmWb4MNoDeiImJ6LSZ2H-JiPQ&usqp=CAU"
+                />
+                <a href="http://google.com">Ver Projeto</a>
+            
+          </div>
+        </div>   
+      </main>
+
+      <footer> 
+        <strong>Projeto desenvolvimento durante a imersão da Cubos Academy 2020 </strong>       
+      </footer>
   </body>
 </html>
