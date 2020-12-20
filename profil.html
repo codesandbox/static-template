@@ -2,10 +2,51 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Profile</title>
     <link rel="stylesheet" href="asset/css/bootstrap.css" />
-    <link rel="stylesheet" href="asset/css/style.css" />
+    <link rel="stylesheet" href="asset/css/style.css">
+
+    <script src="asset/js/bootstrap.js"></script>
+    <script src="asset/js/jquery-3.5.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      .jumbotron {
+        height: 72px;
+        cursor: pointer;
+      }
+      .h2{
+        width: 54px;
+        height: 36px;
+        text-align: center;
+        animation: mymove 7s;
+        animation-delay: 5s;
+        animation-fill-mode: backwards;
+      }
+      @keyframes mymove {
+        from {
+        top: 0px;
+        background-color: rgb(206, 206, 206);
+        }
+        to {
+        top: 123px;
+        }
+      }
+      .row{
+        position: absolute;
+        padding-right: 3cm;
+        margin: 1cm;
+        padding-top: 7px;
+      }
+    </style>
+
+    <script>
+      $(document).ready(function(){
+  $("button.navbar-toggler").click(function(){
+    $("#navbarNav").slideToggle("slow");
+  });
+});
+      </script>
   </head>
   <body>
       <nav class="navbar fixed-top navbar-dark bg-dark">
@@ -22,7 +63,7 @@
                       <a class="nav-link" href="tentang.html">About</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="hubungi.html">contact</a>
+                      <a class="nav-link" href="hubungi.html">Contact</a>
                     </li>
                   </ul>
                 </div>
@@ -31,50 +72,42 @@
     
       <div class="jumbotron jumbotron-fluid" >
         <div class="container">
-          <h2 class="lead">Hello, I'm <mark>Angel</mark></h2>
+          <h2 class="lead" id="lead">Hello, I'm <mark>Angel</mark></h2>
         </div>
       </div>
-
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
+      <div class="container">
+      <div class="row">
+          <div class="col-sm-4">
             <div class="card">
-              <img src="asset/gambar/wa1.jpeg" class="card-img-top" alt="images">
+              <img src="asset/gambar/wa2.jpeg" class="card-img-top" alt="images">
               <div class="card-body">
                 <h5 class="card-title">🎈</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text">
+                    This is one of the pictures of tourist attractions in Banyuwangi which is famous for its mystique. <p>📌 Alas Purwo</p></p>
               </div>
             </div>
           </div>
-          <div class="col">
+          <div class="col-sm-4">
             <div class="card">
-              <img src="asset/gambar/wa2.jpeg" class="card-img-top" alt="...">
+              <img src="asset/gambar/wa1.jpeg" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">✨</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text">This is when I'm on vacation with my best friend <p>📌 Wedi Ireng</p></p>
               </div>
             </div>
           </div>
-          <div class="col">
+          <div class="col-sm-4">
             <div class="card">
               <img src="asset/gambar/wa4.jpeg" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">📸</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text">That's when I became the committee and followed the closing PHP with my classmates.<p>📌 Marina Boom Beach</p></p>
               </div>
-            </div>
-          </div>
+            </div><br>
+        </div><br>
+        <div class="container text-center">
+            <p>Copyright ©2020 - Angel Grace Riyadi</p>
+        </div>
 
-
-
-
-      <footer>
-          <div class="text-center">
-            <div class="row">
-              <div class="col-sm-12">
-              <p>Copyright ©2020 - Angel Grace Riyadi</p>
-              </div>
-            </div>
-          </div>
-        </footer>
   </body>
 </html>
