@@ -1,12 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Drive - Google Drive By karan Singh</title>
+  <meta name="description" content="This is a clone of Google Drive homepage built pureply with HTML and CSS">
+  <meta name="keywords" content="Pure HTML, CSS, Google Drive  Homepage Clone ">
+  <meta name="author" content="Karan Singh">
+  <link rel="icon" href="Assets\Icon\drive.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;400&family=Roboto&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="container">
+    <div id="navbar">
+      <div class="nav-brand">
+        <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" width="48" height="38" viewBox="0 0 94 94"
+          fill="none" focusable="false">
+          <path
+            d="M10.7219 73.2906L14.4917 79.8021C15.275 81.1729 16.401 82.25 17.7229 83.0333L31.1865 59.7292H4.25937C4.25937 61.2469 4.65104 62.7646 5.43437 64.1354L10.7219 73.2906Z"
+            fill="#0066da"></path>
+          <path
+            d="M47 32.3125L33.5365 9.00833C32.2146 9.79166 31.0885 10.8687 30.3052 12.2396L5.43437 55.3229C4.65104 56.6938 4.25937 58.2115 4.25937 59.7292H31.1865L47 32.3125Z"
+            fill="#00ac47"></path>
+          <path
+            d="M47 32.3125L60.4635 9.00833C59.1416 8.22499 57.6239 7.83333 56.0573 7.83333H37.9427C36.376 7.83333 34.8583 8.27395 33.5364 9.00833L47 32.3125Z"
+            fill="#00832d"></path>
+          <path
+            d="M62.8135 59.7292H31.1864L17.7229 83.0333C19.0448 83.8167 20.5625 84.2083 22.1292 84.2083H71.8708C73.4375 84.2083 74.9552 83.7677 76.2771 83.0333L62.8135 59.7292Z"
+            fill="#2684fc"></path>
+          <path
+            d="M76.2771 83.0333C77.599 82.25 78.725 81.1729 79.5083 79.8021L81.075 77.1094L88.5656 64.1354C89.3489 62.7646 89.7406 61.2469 89.7406 59.7292H62.8625L76.2771 83.0333Z"
+            fill="#ea4335"></path>
+          <path
+            d="M76.1302 33.7813L63.6948 12.2396C62.9115 10.8687 61.7854 9.79166 60.4635 9.00833L47 32.3125L62.8135 59.7292H89.6917C89.6917 58.2115 89.3 56.6938 88.5167 55.3229L76.1302 33.7813Z"
+            fill="#ffba00"></path>
+        </svg>
+        <a href="#" id="brand-name">Drive</a>
+      </div>
+      <div class="search-bar">
+        <button type="submit" class="search-icon">
+          <svg focusable="false" height="23" viewBox="0 0 24 24" width="23" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.49,19l-5.73-5.73C15.53,12.2,16,10.91,16,9.5C16,5.91,13.09,3,9.5,3S3,5.91,3,9.5C3,13.09,5.91,16,9.5,16 c1.41,0,2.7-0.47,3.77-1.24L19,20.49L20.49,19z M5,9.5C5,7.01,7.01,5,9.5,5S14,7.01,14,9.5S11.99,14,9.5,14S5,11.99,5,9.5z"
+              fill="#5f6368"></path>
+            <path d="M0,0h24v24H0V0z" fill="none"></path>
+          </svg>
+        </button>
+        <input type="text" class="search-input" placeholder="Search in Drive" />
+        <button class="dropdown-btn"><svg focusable="false" height="30" viewBox="0 0 24 24" width="30"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 10l5 5 5-5z" fill="#5f6368"></path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+          </svg></button>
+      </div>
+
+      <div class="help">
+        <button class="help_btn"><svg class="wo35tf" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            viewBox="0 0 24 24" fill="#000000" focusable="false">
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path
+              d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
+              fill="#5f6368"></path>
+          </svg></button>
+
+        <button class="settings_btn"><svg xmlns="http://www.w3.org/2000/svg" class=" a-s-fa-Ha-pa" width="24"
+            height="24" viewBox="0 0 24 24" fill="#000000" focusable="false">
+            <path
+              d="M13.85 22.25h-3.7c-.74 0-1.36-.54-1.45-1.27l-.27-1.89c-.27-.14-.53-.29-.79-.46l-1.8.72c-.7.26-1.47-.03-1.81-.65L2.2 15.53c-.35-.66-.2-1.44.36-1.88l1.53-1.19c-.01-.15-.02-.3-.02-.46 0-.15.01-.31.02-.46l-1.52-1.19c-.59-.45-.74-1.26-.37-1.88l1.85-3.19c.34-.62 1.11-.9 1.79-.63l1.81.73c.26-.17.52-.32.78-.46l.27-1.91c.09-.7.71-1.25 1.44-1.25h3.7c.74 0 1.36.54 1.45 1.27l.27 1.89c.27.14.53.29.79.46l1.8-.72c.71-.26 1.48.03 1.82.65l1.84 3.18c.36.66.2 1.44-.36 1.88l-1.52 1.19c.01.15.02.3.02.46s-.01.31-.02.46l1.52 1.19c.56.45.72 1.23.37 1.86l-1.86 3.22c-.34.62-1.11.9-1.8.63l-1.8-.72c-.26.17-.52.32-.78.46l-.27 1.91c-.1.68-.72 1.22-1.46 1.22zm-3.23-2h2.76l.37-2.55.53-.22c.44-.18.88-.44 1.34-.78l.45-.34 2.38.96 1.38-2.4-2.03-1.58.07-.56c.03-.26.06-.51.06-.78s-.03-.53-.06-.78l-.07-.56 2.03-1.58-1.39-2.4-2.39.96-.45-.35c-.42-.32-.87-.58-1.33-.77l-.52-.22-.37-2.55h-2.76l-.37 2.55-.53.21c-.44.19-.88.44-1.34.79l-.45.33-2.38-.95-1.39 2.39 2.03 1.58-.07.56a7 7 0 0 0-.06.79c0 .26.02.53.06.78l.07.56-2.03 1.58 1.38 2.4 2.39-.96.45.35c.43.33.86.58 1.33.77l.53.22.38 2.55z"
+              fill="#5f6368"></path>
+            <circle cx="12" cy="12" r="3.5" fill="#5f6368"></circle>
+          </svg></button>
+      </div>
+
+      <div class="profile">
+        <button class="apps_btn"><svg xmlns="http://www.w3.org/2000/svg" class="gb_8e" focusable="false"
+            viewBox="0 0 24 24" width="24" height="24">
+            <path
+              d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"
+              fill="#5f6368"></path>
+          </svg></button>
+        <button class="profile_btn"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 82 82">
+            <g transform="translate(-358 -227)">
+              <circle cx="41" cy="41" r="41" transform="translate(358 227)" fill="#1d8443" /><text
+                transform="translate(387 286)" fill="#fff" font-size="43" font-family="SegoeUI, Segoe UI">
+                <tspan x="0" y="0">K</tspan>
+              </text>
+            </g>
+          </svg></button>
+      </div>
+
+    </div>
+    <section id="content-section">
+      <div class="sidebar">
+
+        <button class="new-file-btn"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+            viewBox="0 0 194.656 194.656">
+            <g transform="translate(-430 -170)">
+              <g transform="translate(430 170)">
+                <path
+                  d="M510.812,324.25V283.844H430V250.812h80.812V170h33.032v80.812h80.812v33.032h-81.4v80.812H510.812Z"
+                  transform="translate(-430 -170)" fill="#34a853" />
+              </g>
+              <g transform="translate(430 170)">
+                <path d="M430,267.328V250.812h80.812V170h33.032v80.812h80.812v33.032H430Z"
+                  transform="translate(-430 -170)" fill="#ea4435" />
+              </g>
+              <g transform="translate(430 250.812)">
+                <path
+                  d="M430,1556.516V1540h80.812v16.221c0,8.907.177,16.221.472,16.221.236,0,7.727-7.314,16.634-16.221L544.139,1540h80.517v33.032H430Z"
+                  transform="translate(-430 -1540)" fill="#4386f2" />
+              </g>
+              <g transform="translate(430 250.812)">
+                <path d="M430,1556.516V1540h80.753l.177,16.516.177,16.516H430Z" transform="translate(-430 -1540)"
+                  fill="#fbbc07" />
+              </g>
+            </g>
+          </svg><span class="add-label">New<span></button>
+        <div class="sidebar_items">
+
+          <div class="item">
+
+            <div class="item-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                <path
+                  d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H5v-1h14v1zm0-3H5V4h14v13z" />
+                <path
+                  d="M13.121 6H10.88c-.328 0-.608.187-.795.467l-2.944 5.14a.99.99 0 000 .888l1.122 1.963c.14.28.467.467.794.467h5.981c.327 0 .608-.187.795-.467l1.121-1.963a.99.99 0 000-.887l-3.037-5.14c-.14-.281-.467-.468-.795-.468zm-2.943 6.075l1.869-3.178 1.822 3.178h-3.691z" />
+              </svg></div>
+            <div><span class="item-label">My drive</span></div>
+          </div>
+          <div class="item">
+            <div class="item-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path xmlns="http://www.w3.org/2000/svg"
+                  d="M15 8c0-1.42-.5-2.73-1.33-3.76.42-.14.86-.24 1.33-.24 2.21 0 4 1.79 4 4s-1.79 4-4 4c-.43 0-.84-.09-1.23-.21-.03-.01-.06-.02-.1-.03A5.98 5.98 0 0015 8zm1.66 5.13C18.03 14.06 19 15.32 19 17v3h4v-3c0-2.18-3.58-3.47-6.34-3.87zM9 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2m0 9c-2.7 0-5.8 1.29-6 2.01V18h12v-1c-.2-.71-3.3-2-6-2M9 4c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zm0 9c2.67 0 8 1.34 8 4v3H1v-3c0-2.66 5.33-4 8-4z" />
+              </svg></div>
+            <span class="item-label">Shared with me</span>
+          </div>
+          <div class="item">
+            <div class="item-symbol"><svg xmlns="http://www.w3.org/2000/svg" class="a-s-fa-Ha-pa" width="24"
+                height="24">
+                <path
+                  d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+              </svg></div>
+            <span class="item-label">Recent</span>
+          </div>
+          <div class="item">
+            <div class="item-symbol"><svg xmlns="http://www.w3.org/2000/svg" class="a-s-fa-Ha-pa" width="24"
+                height="24">
+                <path
+                  d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z" />
+              </svg></div>
+            <span class="item-label">Starred</span>
+          </div>
+          <div class="item">
+            <div class="item-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="undefined">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path d="M15 4V3H9v1H4v2h1v13c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V6h1V4h-5zm2 15H7V6h10v13z" />
+                <path d="M9 8h2v9H9zm4 0h2v9h-2z" />
+              </svg></div>
+            <span class="item-label">Bin</span>
+          </div>
+          <div class="divider">
+            <hr>
+          </div>
+          <div class="item">
+            <div class="item-symbol"><svg xmlns="http://www.w3.org/2000/svg" class="a-s-fa-Ha-pa" width="24"
+                height="24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path d="M3 20h18v-4H3v4zm2-3h2v2H5v-2zM3 4v4h18V4H3zm4 3H5V5h2v2zm-4 7h18v-4H3v4zm2-3h2v2H5v-2z" />
+              </svg></div>
+            <div class="item-label">Storage</div>
+          </div>
+          <div class="storage-item">
+            <div class="item-symbol"></div>
+            <div class="storage-item-label">10.1 MB of 15GB used</div>
+
+          </div>
+
+          <progress id="storage_bar" value="0" max="15"></progress>
+          <div class="storage-item">
+            <div class="item-symbol"></div>
+            <div class="buy-item-label">Buy Storage</div>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="user_files">
+        <div class="menu">
+          <button class="Mydrive_btn">
+            My Drive<svg xmlns="http://www.w3.org/2000/svg" class="a-s-fa-Ha-pa" width="20" height="20" fill="#979A9D">
+              <path d="M5 8l5 5 5-5z" />
+            </svg>
+          </button>
+          <div class="assesories-btns">
+            <button class="view-changer"><svg xmlns="http://www.w3.org/2000/svg" class="a-s-fa-Ha-pa" width="25"
+                height="25">
+                <path
+                  d="M3 5v14h18V5H3zm4 2v2H5V7h2zm-2 6v-2h2v2H5zm0 2h2v2H5v-2zm14 2H9v-2h10v2zm0-4H9v-2h10v2zm0-4H9V7h10v2z" />
+              </svg></button>
+            <button class="info_btn"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z" />
+              </svg></button>
+          </div>
+        </div>
+        <div class="folder-area">
+
+          <div class="sub-menu">
+            <h5 class="content-section-name">Folders</h5>
+            <span class="name-short">Name<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                viewBox="0 0 48 48" class="a-s-fa-Ha-pa">
+                <path fill="none" d="M0 0h48v48H0V0z" />
+                <path d="M8 24l2.83 2.83L22 15.66V40h4V15.66l11.17 11.17L40 24 24 8 8 24z" />
+              </svg></span>
+          </div>
+
+          <div class="folders">
+            <div class="folder-item">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="#5f6368">
+                <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
+                <path d="M0 0h24v24H0z" fill="none" />
+              </svg>
+              <span class="folder-item-name">Sharing</span>
+            </div>
+            <div class="folder-item">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="#5f6368">
+                <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
+                <path d="M0 0h24v24H0z" fill="none" />
+              </svg>
+              <span class="folder-item-name">work</span>
+            </div>
+            <div class="folder-item">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="#5f6368">
+                <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
+                <path d="M0 0h24v24H0z" fill="none" />
+              </svg>
+              <span class="folder-item-name">school</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+
 </html>
