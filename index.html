@@ -1,12 +1,322 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Javascript Calculator</title>
+    <!-- CSS Code -->
+    <style>
+      body {
+        background-color: #fff;
+        margin: 0px auto;
+      }
+      .calbody {
+        background: red;
+        border: 1px solid #ff0;
+        padding: 10px;
+        margin-left: 450px;
+        min-width: 27.4em;
+        max-width: 27.4em;
+      }
+      h1 {
+        text-align: center;
+        font-size: 40px;
+        color: #003652;
+      }
+
+      #lcd {
+        text-align: right;
+        width: 23em;
+        height: 40px;
+        font-size: 18px;
+      }
+
+      #lcdu {
+        color: grey;
+        text-align: right;
+        width: 27.6em;
+        height: 35px;
+        font-size: 15px;
+      }
+
+      button {
+        background-color: #fff;
+        width: 80px;
+        height: 60px;
+        font-size: 20px;
+        border: 1px solid #097c9b;
+      }
+
+      button:hover {
+        background-color: #509ca9;
+      }
+    </style>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>
+      Javascript Calculator
+    </h1>
+    <div class="calbody">
+      <form name="lcdform">
+        <input id="lcdu" name="lcdsu" type="text" value="" />
+        <input id="lcd" name="lcds" type="text" value="0" />
+      </form>
+      <div id="calbutton">
+        <button id="num1" onclick="numone();">1</button>
+        <button id="num2" onclick="numtwo();">2</button>
+        <button id="num3" onclick="numthree();">3</button>
+        <button id="operationplus" onclick="operationplus();">+</button>
+        <button id="operationraistop" onclick="operationraistop();">^</button>
+        <button id="num4" onclick="numfour();">4</button>
+        <button id="num5" onclick="numfive();">5</button>
+        <button id="num6" onclick="numsix();">6</button>
+        <button id="operationmult" onclick="operationmult();">*</button>
+        <button id="operationsqrt" onclick="sqrots();">Sqrt()</button>
+        <button id="num7" onclick="numseven();">7</button>
+        <button id="num8" onclick="numeight();">8</button>
+        <button id="num9" onclick="numnine();">9</button>
+        <button id="operationminus" onclick="operationminus();">-</button>
+        <button id="clr" onclick="clr();">C</button>
+        <button id="operationperc" onclick="operationperc();">%</button>
+        <button id="num0" onclick="numzero();">0</button>
+        <button id="num00" onclick="numdobuzero();">00</button>
+        <button id="operationdivid" onclick="operationdivid();">/</button>
+        <button id="sumbit" onclick="equalsto();">=</button>
+      </div>
+    </div>
+    <!-- Javascript code -->
+    <script>
+      var firstnumber;
+      var secondnumber;
+      var result;
+      var operations;
+
+      function numone() {
+        if (
+          document.lcdform.lcds.value == "0" ||
+          document.lcdform.lcds.value == result
+        ) {
+          document.lcdform.lcds.value = "1";
+        } //if(document.lcdform.lcds.value != "0")
+        else {
+          documentdocument.lcdform.lcds.value =
+            document.lcdform.lcds.value + "1";
+        }
+      }
+
+      function numtwo() {
+        if (
+          document.lcdform.lcds.value == "0" ||
+          document.lcdform.lcds.value == result
+        ) {
+          document.lcdform.lcds.value = "2";
+        } //if(document.lcdform.lcds.value != "0")
+        else {
+          documentdocument.lcdform.lcds.value =
+            document.lcdform.lcds.value + "2";
+        }
+      }
+
+      function numthree() {
+        if (
+          document.lcdform.lcds.value == "0" ||
+          document.lcdform.lcds.value == result
+        ) {
+          document.lcdform.lcds.value = "3";
+        } //if(document.lcdform.lcds.value != "0")
+        else {
+          documentdocument.lcdform.lcds.value =
+            document.lcdform.lcds.value + "3";
+        }
+      }
+
+      function numfour() {
+        if (
+          document.lcdform.lcds.value == "0" ||
+          document.lcdform.lcds.value == result
+        ) {
+          document.lcdform.lcds.value = "4";
+        } //if(document.lcdform.lcds.value != "0")
+        else {
+          documentdocument.lcdform.lcds.value =
+            document.lcdform.lcds.value + "4";
+        }
+      }
+
+      function numfive() {
+        if (
+          document.lcdform.lcds.value == "0" ||
+          document.lcdform.lcds.value == result
+        ) {
+          document.lcdform.lcds.value = "5";
+        } //if(document.lcdform.lcds.value != "0")
+        else {
+          documentdocument.lcdform.lcds.value =
+            document.lcdform.lcds.value + "5";
+        }
+      }
+
+      function numsix() {
+        if (
+          document.lcdform.lcds.value == "0" ||
+          document.lcdform.lcds.value == result
+        ) {
+          document.lcdform.lcds.value = "6";
+        } //if(document.lcdform.lcds.value != "0")
+        else {
+          documentdocument.lcdform.lcds.value =
+            document.lcdform.lcds.value + "6";
+        }
+      }
+
+      function numseven() {
+        if (
+          document.lcdform.lcds.value == "0" ||
+          document.lcdform.lcds.value == result
+        ) {
+          document.lcdform.lcds.value = "7";
+        } //if(document.lcdform.lcds.value != "0")
+        else {
+          documentdocument.lcdform.lcds.value =
+            document.lcdform.lcds.value + "7";
+        }
+      }
+
+      function numeight() {
+        if (document.lcdform.lcds.value == "0") {
+          document.lcdform.lcds.value = "8";
+        } else if (document.lcdform.lcds.value == result) {
+          document.lcdform.lcds.value = "8";
+        } //if(document.lcdform.lcds.value != "0")
+        else {
+          documentdocument.lcdform.lcds.value =
+            document.lcdform.lcds.value + "8";
+        }
+      }
+
+      function numnine() {
+        if (
+          document.lcdform.lcds.value == "0" ||
+          document.lcdform.lcds.value == result
+        ) {
+          document.lcdform.lcds.value = "9";
+        } //if(document.lcdform.lcds.value != "0")
+        else {
+          documentdocument.lcdform.lcds.value =
+            document.lcdform.lcds.value + "9";
+        }
+      }
+
+      function numzero() {
+        if (document.lcdform.lcds.value == "0") {
+          document.lcdform.lcds.value = "0";
+        } else if (document.lcdform.lcds.value == result) {
+          document.lcdform.lcds.value = "0";
+        } //if(document.lcdform.lcds.value != "0")
+        else {
+          documentdocument.lcdform.lcds.value =
+            document.lcdform.lcds.value + "0";
+        }
+      }
+
+      function numdobuzero() {
+        if (
+          document.lcdform.lcds.value == "0" ||
+          document.lcdform.lcds.value == result
+        ) {
+          return;
+        } //if(document.lcdform.lcds.value != "0")
+        else {
+          documentdocument.lcdform.lcds.value =
+            document.lcdform.lcds.value + "00";
+        }
+      }
+
+      function clr() {
+        document.lcdform.lcds.value = "0";
+        document.lcdform.lcdsu.value = "";
+        return;
+      }
+
+      function operationplus() {
+        operation = "+";
+        firstnumber = parseInt(document.lcdform.lcds.value);
+        document.lcdform.lcds.value = "0";
+        document.lcdform.lcdsu.value = firstnumber + operation;
+        //alert(firstnumber);
+      }
+
+      function operationmult() {
+        operation = "*";
+        firstnumber = parseInt(document.lcdform.lcds.value);
+        document.lcdform.lcds.value = "0";
+        document.lcdform.lcdsu.value = firstnumber + operation;
+      }
+
+      function operationminus() {
+        operation = "-";
+        firstnumber = parseInt(document.lcdform.lcds.value);
+        document.lcdform.lcds.value = "0";
+        document.lcdform.lcdsu.value = firstnumber + operation;
+      }
+
+      function operationdivid() {
+        operation = "/";
+        firstnumber = parseInt(document.lcdform.lcds.value);
+        document.lcdform.lcds.value = "0";
+        document.lcdform.lcdsu.value = firstnumber + operation;
+      }
+
+      function operationperc() {
+        operation = "%";
+        firstnumber = parseInt(document.lcdform.lcds.value);
+        document.lcdform.lcds.value = "0";
+        document.lcdform.lcdsu.value = firstnumber + operation;
+      }
+
+      function equalsto() {
+        secondnumber = parseInt(document.lcdform.lcds.value);
+
+        if (operation == "+") {
+          result = firstnumber + secondnumber;
+        } else if (operation == "*") {
+          result = firstnumber * secondnumber;
+        } else if (operation == "-") {
+          result = firstnumber - secondnumber;
+        } else if (operation == "/") {
+          result = firstnumber / secondnumber;
+        } else if (operation == "%") {
+          if (document.lcdform.lcds.value == "0") {
+            result = firstnumber / 100;
+            document.lcdform.lcdsu.value = firstnumber + operation + "100";
+          } else if (document.lcdform.lcds.value != "0") {
+            result = (firstnumber / secondnumber) * 100;
+            document.lcdform.lcdsu.value =
+              firstnumber + operation + secondnumber + "*100 = " + result;
+          }
+        } else if (operation == "^") {
+          for (var i = 0; i < secondnumber; i++) {
+            result = firstnumber * i;
+          }
+        }
+        document.lcdform.lcds.value = "";
+        document.lcdform.lcds.value = result.toString();
+        document.lcdform.lcdsu.value =
+          firstnumber + operation + secondnumber + " = " + result.toString();
+        return;
+      }
+
+      function sqrots() {
+        firstnumber = document.lcdform.lcds.value;
+        result = Math.sqrt(parseInt(document.lcdform.lcds.value));
+        document.lcdform.lcds.value = result;
+        document.lcdform.lcdsu.value = "sqrt(" + firstnumber + ") = " + result;
+      }
+
+      function operationraistop() {
+        operation = "^";
+        firstnumber = parseInt(document.lcdform.lcds.value);
+        document.lcdform.lcds.value = "0";
+      }
+    </script>
   </body>
 </html>
