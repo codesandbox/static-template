@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="module" src="track.js"></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script src="https://prod.flat-cdn.com/embed-js/v1.3.0/embed.min.js"></script>
+    <script type="module" src="/modules/spotify.js"></script>
+    <link rel="stylesheet" href="track.css" />
+  </head>
+
+  <body>
+    <div
+      style="
+        padding-top: 50px;
+        padding-right: 200px;
+        padding-bottom: 0px;
+        padding-left: 200px;
+      "
+    >
+      <div style="display: flex;" ;>
+        <img
+          style="width: 200px; height: 200px;"
+          id="album-art"
+          src=""
+          alt=""
+        />
+
+        <ul style="list-style: none; padding-left: 50px;">
+          <li>
+            <h1 id="name"></h1>
+          </li>
+          <li>
+            <p id="album-name"></p>
+          </li>
+          <li>
+            <p id="key"></p>
+          </li>
+          <li>
+            <p id="tempo"></p>
+          </li>
+        </ul>
+        <div id="chart_div" style="width: 120px; height: 120px;"></div>
+
+        <p style="display: block; float: right;">release date</p>
+      </div>
+
+      <hr />
+
+      <div id="artists">
+        <!-- artists are filled in here -->
+      </div>
+
+      <div style="height: 350px;" id="embed-container"></div>
+    </div>
+  </body>
+</html>
