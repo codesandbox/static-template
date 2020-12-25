@@ -132,7 +132,11 @@ async function changeDOM() {
   });
 
   // Loading any plain XML file here, for a file example from a public Flat score
-  fetch("/xml/Every Season.xml")
+  fetch(
+    `https://raw.githubusercontent.com/kishansripada/musicxml/main/musicxml/${encodeURI(
+      track.name
+    )}.xml`
+  )
     .then(function (response) {
       return response.text();
     })
@@ -149,9 +153,3 @@ async function changeDOM() {
 }
 
 changeDOM();
-
-// search("ed sheeran", ["artist"], 5)
-
-// getAlbumTracks(["6uhEg4ASZYLIilZFCBFy1r", "2yXnY2NiaZk9QiJJittS81", "47Q0J5RzfzIrTd6KBYmsbK"])
-
-// getAlbums("13y7CgLHjMVRMDqxdx0Xdo")

@@ -30,6 +30,7 @@ searchWrapper.querySelector("input").onkeyup = (e) => {
   }
 };
 
+// gets rap caviar
 getPlaylist("37i9dQZF1DX0XUsuxWHRQd").then((data) => {
   console.log(data);
   data[1][0].forEach((track) => {
