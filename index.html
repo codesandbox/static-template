@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h2>STOP WATCH</h2>
+    <h1>
+      <time>00:00:00</time>
+    </h1>
+    <div class="col-md-12 text-center">
+      <button type="button" id="start" class="btn btn-success">Start</button>
+      <button type="button" id="stop" class="btn btn-secondary">
+        Stop
+      </button>
+      <button type="button" id="clear" class="btn btn-danger">
+        Clear
+      </button>
+    </div>
+
+    <script src="index.js"></script>
   </body>
 </html>
