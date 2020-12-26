@@ -1,0 +1,96 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(to-do.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+header {
+  width: 90vw;
+  margin: auto;
+  text-align: center;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  color: #fff;
+}
+form,
+section {
+  width: 90vw;
+  margin: auto;
+  text-align: center;
+}
+.input-task,
+.input-deadline {
+  padding: 6px 0px;
+}
+::placeholder {
+  color: #003;
+  font-size: 1.2em;
+}
+input {
+  padding: 10px;
+  border: 0;
+  border-radius: 1rem;
+  width: 50vw;
+}
+input:focus {
+  outline: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: 1px solid #fff;
+}
+input:focus::placeholder {
+  color: transparent;
+}
+input[type="text"] {
+  border-bottom: 3px solid black;
+}
+.buttonSubmit {
+  margin-top: 30px;
+  padding: 10px;
+  border: 0;
+  border-radius: 1rem;
+  width: 53vw;
+  font-size: 1em;
+  background: rgba(0, 0, 3, 0.2);
+  color: #fff;
+  cursor: pointer;
+}
+.buttonSubmit:hover {
+  background: rgba(224, 224, 224, 0.7);
+  color: rgba(0, 0, 3, 1);
+  border: 1px solid #000;
+}
+.task {
+  margin: auto;
+}
+a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #fff;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+}
+li {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #fff;
+}
+.time-info {
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-start;
+}
+p {
+  padding: 0 10px;
+  color: #fff;
+}
