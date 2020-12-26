@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
-</html>
+<head>
+  <meta charset="UTF-8" />
+</head>
+<title>Tic TAc TOE</title>
+<link rel="stylesheet" href="tac_n.css" />
+
+<body>
+  <h1 class="h1">TIC TAC TOE</h1>
+  Player 1:
+  <input type="text " id="p1" name="p1" />
+  <br />
+  <br />
+  Player 2:
+  <input type="text " id="p2" name="p2" />
+  <br />
+  <br />
+
+  <label for="dimension">Choose a dimension:</label>
+  <select name="dimensions" id="dimensions">
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+  </select>
+
+  <button id="game-start" onclick="startGame()">Start Game</button>
+  <div id="game-container" class="class1 class2">
+    <div id="turn"></div>
+  </div>
+  <br />
+  <br />
+
+  <button src="index.html" class="btn">Restart</button>
+
+  <script src="toe_n.js"></script>
+</body>
