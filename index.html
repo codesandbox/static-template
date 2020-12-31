@@ -1,12 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Tailwind -->
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <title>Twitter Profile Tailwind</title>
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <body
+    class="relative shadow-lg overflow-hidden"
+    style="max-width: 375px; height: 812px; margin: 40px auto 0;"
+  >
+    <header class="top-0 bg-gray-500 w-full h-28 shadow-sm">
+      <img
+        class="h-full w-full object-cover"
+        src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8bmV3JTIweW9ya3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+        alt=""
+      />
+    </header>
+    <div class="w-full px-4 py-2 -mt-6">
+      <img
+        src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8Z2lybHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+        alt="avatar"
+        class="border-2 border-white h-16 w-16 object-cover rounded-full"
+      />
+      <h3 class="text-gray-800 text-xl font-semibold">
+        Mirin
+      </h3>
+      <p class="text-gray-800 font-normal text-xs mb-2">
+        @miririn
+      </p>
+      <p class="text-gray-800 font-normal text-sm mb-2">
+        ニューヨークに行ってみたいです🛩
+      </p>
+      <p class="text-gray-800 font-normal text-xs mb-2">
+        誕生日 1989年12月31日
+      </p>
+      <p class="text-gray-800 font-normal text-xs">
+        2014年4月からTwitterを利用しています
+      </p>
+      <div class="flex py-2 mb-2">
+        <p class="text-gray-800 text-xs mr-2">
+          <span class="font-bold">188</span> フォロー中
+        </p>
+        <p class="text-gray-800 text-xs">
+          <span class="font-bold">132</span> フォロワー
+        </p>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="grid grid-cols-4 py-2 border-b">
+      <a href="#!" class="text-xs text-gray-800 text-center font-semibold">
+        ツイート
+      </a>
+      <a href="#!" class="text-xs text-gray-800 text-center font-semibold">
+        ツイートと返信
+      </a>
+      <a href="#!" class="text-xs text-gray-800 text-center font-semibold">
+        メディア
+      </a>
+      <a href="#!" class="text-xs text-gray-800 text-center font-semibold">
+        いいね
+      </a>
+    </div>
+
+    <!-- Tweets -->
+    <div class="w-full p-4 flex">
+      <div class="w-10 h-10">
+        <img
+          class="h-full w-full object-cover rounded-full"
+          src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8Z2lybHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+          alt=""
+        />
+      </div>
+      <div class="w-full px-4 flex flex-col">
+        <div class="flex mb-1">
+          <p class="font-bold text-sm mr-1">Mirin</p>
+          <p class="font-normal text-sm text-gray-500">
+            @miririn ・ <span class="text-xs">4時間</span>
+          </p>
+        </div>
+
+        <p class="text-gray-800">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
+          suscipit.
+        </p>
+      </div>
+    </div>
+
+    <div class="w-full p-4 flex">
+      <div class="w-10 h-10">
+        <img
+          class="h-full w-full object-cover rounded-full"
+          src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8Z2lybHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+          alt=""
+        />
+      </div>
+      <div class="w-full px-4 flex flex-col">
+        <div class="flex mb-1">
+          <p class="font-bold text-sm mr-1">Mirin</p>
+          <p class="font-normal text-sm text-gray-500">
+            @miririn ・ <span class="text-xs">4時間</span>
+          </p>
+        </div>
+
+        <p class="text-gray-800">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
+          suscipit.
+        </p>
+      </div>
+    </div>
+
+    <div class="w-full p-4 flex">
+      <div class="w-10 h-10">
+        <img
+          class="h-full w-full object-cover rounded-full"
+          src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8Z2lybHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+          alt=""
+        />
+      </div>
+      <div class="w-full px-4 flex flex-col">
+        <div class="flex mb-1">
+          <p class="font-bold text-sm mr-1">Mirin</p>
+          <p class="font-normal text-sm text-gray-500">
+            @miririn ・ <span class="text-xs">4時間</span>
+          </p>
+        </div>
+
+        <p class="text-gray-800">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
+          suscipit.
+        </p>
+      </div>
+    </div>
+    <footer class="absolute bottom-0 h-20 bg-white border-t w-full">
+      <div class="grid grid-cols-4 items-center col-auto h-full w-full">
+        <span class="inline-block flex items-center justify-center">
+          <i style="color: #1da1f2;" class="material-icons text-gray-400"
+            >home</i
+          >
+        </span>
+
+        <span class="inline-block flex items-center justify-center">
+          <i class="text-gray-500 material-icons text-gray-400">search</i>
+        </span>
+
+        <span class="inline-block flex items-center justify-center">
+          <i class="text-gray-500 material-icons text-gray-400"
+            >notifications</i
+          >
+        </span>
+
+        <span class="inline-block flex items-center justify-center">
+          <i class="text-gray-500 material-icons text-gray-400">email</i>
+        </span>
+      </div>
+    </footer>
   </body>
 </html>
