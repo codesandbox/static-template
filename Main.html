@@ -1,0 +1,71 @@
+<!DOCTYPE >
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Discord mee6</title>
+    <script
+      src="https://kit.fontawesome.com/895a3a13e8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <a
+      onclick="window.open(document.URL, '_blank', 'location=yes,height=580,width=640,scrollbars=yes,status=yes');"
+    >
+      Open
+    </a>
+    <hr />
+    <i class="fas fa-code"></i>
+    <br />
+    <div id="slider">
+      <input
+        class="bar"
+        type="range"
+        id="range-input"
+        min="60"
+        max="120"
+        value="1"
+      />
+      <span class="highlight"></span>
+      <output id="range-value">60</output>
+    </div>
+    <button id="btn" type="submit">Submit</button>
+    <!-----------------------Javascript----------------------->
+    <!--Could not connect external javascript file-->
+    <!--Script for external javascript file:-->
+    <script>
+      (function () {
+        var rangeInput = document.getElementById("range-input");
+        var rangeValue = document.getElementById("range-value");
+        var button = document.getElementById("btn");
+
+        // Show alert message when button clicked
+        button.onclick = confirmplz;
+
+        function confirmplz() {
+          let value = rangeInput.value;
+          if (value > 60 && value < 120) {
+            confirm(value);
+            return true;
+          }
+          confirm(value);
+          return false;
+        }
+
+        // Print the range value to the output
+        rangeInput.oninput = rangeOutput;
+
+        function rangeOutput() {
+          rangeValue.innerText = rangeInput.value;
+        }
+      })();
+    </script>
+  </body>
+</html>
