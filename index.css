@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+}
+
+.slide_box {
+  position: static;
+  width: 100%;
+  overflow-x: hidden; /* 넘어간 사진들을 보이지 않게함 */
+  padding-bottom: 35%;
+}
+
+.slide_content {
+  position: absolute;
+  float: left;
+  width: 100%;
+}
+
+.mainImage {
+  width: 100%;
+}
+
+.slide_btn_box {
+  position: relative;
+  width: 100px;
+  margin: 30px auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr) 141px 74px;
+  grid-template-rows: 80px;
+  text-align: center;
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item {
+  border-right: 1.25px solid #dedcdc;
+  font-size: 18px;
+}
+
+.newsLine {
+  margin-top: 40px;
+}
+
+.container2 {
+  display: grid;
+  grid-template-columns: repeat(4, 276px);
+  grid-template-rows: 50px repeat(2, 307px);
+  column-gap: 32px;
+  row-gap: 34px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.notice {
+  font-weight: bold;
+  font-size: 25px;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.notice2 {
+  font-weight: normal;
+  font-size: 15px;
+}
+
+.item2 {
+  font-weight: bold;
+  font-size: 17.5px;
+}
+
+.item2 img {
+  width: 276px;
+  height: 160px;
+}
+
+.news {
+  font-size: 13px;
+  color: red;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
