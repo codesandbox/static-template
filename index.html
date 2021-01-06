@@ -6,7 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <style>
       input:focus + label {
-        border:1px solid red;
+        border: 1px solid red;
+      }
+
+      table,
+      td {
+        border: 1px solid grey;
       }
     </style>
     <title>Static Template</title>
@@ -15,61 +20,132 @@
     <h1>
       Accessibility best practice for checkbox with label
     </h1>
-      <input aria-label="this is checkbox"  title="checkbox" type="checkbox" /> No label
-    </br>
-
-    <label aria-label="this is checkbox label"  title="label 1">   
-      <input aria-label="this is checkbox" title="checkbox 1" type="checkbox" /> 
-      With label wrapped
-    </label>
-
-    </br>
-
-    <label aria-label="this is checkbox label" title="label 1">   
-      <input aria-label="this is checkbox" title="checkbox 1" type="checkbox" /> 
-      With label wrapped 
-    </label>
-
-    </br>
-
-    <label aria-label="this is checkbox label" title="label 1">
-      <input aria-label="this is checkbox"  title="checkbox 1" type="checkbox" /> 
-      <span>With label wrapped and copy in span </span>
-    </label>
-
-  </br>
-
-  <label title="label 1">
-    <input aria-label="this is checkbox" title="checkbox 1" type="checkbox" /> 
-    <span>With label wrapped and copy in span</span>
-  </label>
-
-    </br>
-
-    <input id="age" title="checkbox 4" type="checkbox" aria-label="this is checkbox label"  />
-    <label title="label 3" for="age" aria-label="this is checkbox"> With label as sibling </label>
-    <a aria-label="this is link" href="#">link</a>
-
-
-  </br>
-  <label aria-label="this is checkbox label" title="label 1">
-    <input aria-label="this is checkbox"  title="checkbox 1" type="checkbox" /> 
-    <span>with label as sibling and link </span>
-    <a aria-label="this is link" href="#">link</a>
-  </label>
-
-</br>
-<label aria-label="this is checkbox label" title="label 1">
-  <input aria-label="this is checkbox"  title="checkbox 1" type="checkbox" /> 
-  <span>with label wrapped with link </span>
-  <a aria-label="this is link" href="#">link</a>
-</label>
-
-</br>
-  <label aria-label="this is checkbox label" title="label 1">
-    <input aria-label="this is checkbox" title="checkbox 1" type="checkbox" /> 
-    <span>With label wrapped and link as superscript </span>
-    <sup><a aria-label="this is link" href="#">link</a></sup>
-  </label>
+    <table>
+      <thead>
+        <th>Checkbox</th>
+        <th>Mac VoiceOver</th>
+      </thead>
+      <tr>
+        <td>
+          <input
+            aria-label="this is checkbox"
+            title="checkbox"
+            type="checkbox"
+          />
+          No label
+        </td>
+        <td>this is checkbox unchecked checkbox</td>
+      </tr>
+      <tr>
+        <td>
+          <label aria-label="this is checkbox label" title="label 1">
+            <input
+              aria-label="this is checkbox"
+              title="checkbox 1"
+              type="checkbox"
+            />
+            With label wrapped
+          </label>
+        </td>
+        <td>
+          this is checkbox unchecked checkbox, this is checkbox label group
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label aria-label="this is checkbox label" title="label 3">
+            <input
+              aria-label="this is checkbox"
+              title="checkbox 3"
+              type="checkbox"
+            />
+            <span>With label wrapped and copy in span </span>
+          </label>
+        </td>
+        <td>
+          this is checkbox unchecked checkbox, this is checkbox label group
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label aria-label="this is checkbox label" title="label 4">
+            <input
+              aria-label="this is checkbox"
+              title="checkbox 4"
+              type="checkbox"
+            />
+            <span>With label wrapped and copy in span</span>
+          </label>
+        </td>
+        <td>
+          this is checkbox unchecked checkbox, this is checkbox label group
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input
+            id="age"
+            title="checkbox 5"
+            type="checkbox"
+            aria-label="this is checkbox "
+          />
+          <label title="label 5" for="age" aria-label="this is checkbox label">
+            With label as sibling
+          </label>
+          <a aria-label="this is link" href="#">link</a>
+        </td>
+        <td>
+          this is checkbox unchecked checkbox, table two columns 8 rows
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label aria-label="this is checkbox label" title="label 6">
+            <input
+              aria-label="this is checkbox"
+              title="checkbox 6"
+              type="checkbox"
+            />
+            <span>with label wrapped and link </span>
+            <a aria-label="this is link" href="#">link</a>
+          </label>
+        </td>
+        <td>
+          this is checkbox unchecked checkbox, this is checkbox label group
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label aria-label="this is checkbox label" title="label 7">
+            <input
+              aria-label="this is checkbox"
+              title="checkbox 7"
+              type="checkbox"
+            />
+            <span>with label wrapped with link </span>
+            <a aria-label="this is link" href="#">link</a>
+          </label>
+        </td>
+        <td>
+          this is checkbox unchecked checkbox, this is checkbox label group
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label aria-label="this is checkbox label" title="label 8">
+            <input
+              aria-label="this is checkbox"
+              title="checkbox 8"
+              type="checkbox"
+            />
+            <span>With label wrapped and link as superscript </span>
+            <sup><a aria-label="this is link" href="#">link</a></sup>
+          </label>
+        </td>
+        <td>
+          this is checkbox unchecked checkbox, this is checkbox label group
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
