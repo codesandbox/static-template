@@ -1,0 +1,173 @@
+/* CSS files add styling rules to your content */
+
+html{background-image: url("https://cdn.glitch.com/8ed59f86-0e7d-4e6e-81e1-8bed843e897d%2Fmarble.jpg?v=1607700453608");
+  background-size: fill;
+  
+  
+}
+
+
+body {
+  font-family: 'Nunito', sans-serif;
+  margin: 2em;
+  
+  
+ 
+}
+.b {background-color: grey;
+  max-width: 700px;
+  margin: auto;
+}
+
+h1 {
+  font-style: bold;
+  color: black;
+  background-color: #fff;
+  text-align: center;
+}
+h2{font-style: bold;
+  color: black;
+ font-size: 20px;
+  text-align: center;}
+nav ul{
+  list-style-type: none;
+  margin: 0;
+  padding:0;
+  
+  
+}
+nav ul li a{
+  text-decoration: none;
+  padding: 10px;
+  line-height:40px;
+  color: #000;
+  
+}
+nav ul li a:hover{
+  background:none;
+  color:white;
+  
+}
+.container{
+  display:grid;
+  grid-template-columns: 210px 700px 320px;
+  grid-template-rows:left middle right;
+  margin: 2em;
+  background-color: #fff; 
+   margin-top: 50px
+}
+.container2{
+  display:grid;
+  grid-template-columns: 210px 220px 220px;
+  grid-template-rows:left middle right;
+  margin: 2em;
+  background-color: #fff;
+   margin-top: 50x;
+  
+}
+.left{
+  grid-column:1;
+  grid-row: 1 / 3;
+  margin: 2em;
+  
+  border-style: double;
+}
+.mid{
+   grid-column:2;
+  grid-row: 1 / 3;
+  margin: 2em;
+  border-style: double;
+  padding: 20px;
+}
+
+.right{
+   grid-column:3;
+  grid-row: 1 / 3;
+  margin: 2em;
+  border-style: double;
+  
+}
+.non a:hover {background:white;
+  
+}
+.non a:link {
+    cursor: default;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #808080;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+      
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+.spin {
+  animation-name: spin;
+  padding: 20px;
+  margin:150px;
+  font-size:50px;
+  text-align: center;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+  /* transform: rotate(3deg); */
+   /* transform: rotate(0.3rad);/ */
+   /* transform: rotate(3grad); */ 
+   /* transform: rotate(.03turn);  */
+}
+
+
+
+
+@keyframes example {
+  0%   {background-color:red;}
+  25%  {background-color:orange;}
+  50%  {background-color:yellow;}
+  75%  {background-color:green;}
+  100% {background-color:blue;}
+}
+
+.ex {
+  animation-name: example;
+  padding: 20px;
+  margin:150px;
+  font-size:50px;
+  text-align: center;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+
+
+
