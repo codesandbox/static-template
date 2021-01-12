@@ -1,12 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Families  -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Show Hamburger Menu bars on smaller devices -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <nav class="navbar">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+          <i class="fas fa-bars"></i>
+        </span>
+        <a href="index.html" class="logo">JB</a>
+        <ul class="main-nav" id="js-menu">
+          <li><a href="index.html" class="current item">Home</a></li>
+          <li><a href="about.html" class="item">About</a></li>
+          <li><a href="work.html" class="item">Work</a></li>
+          <li><a href="contact.html" class="item">Contact</a></li>
+        </ul>
+      </nav>
+      <br />
+    </header>
+    <hr />
+    <br />
+    <div class="flex-container">
+      <h1 class="format" align="center">Welcome to JB Website Solutions</h1>
+      <h3 class="format" align="center">Where Creativity Becomes Reality</h3>
+      <br />
+      <img
+        class="main"
+        src="images/responsive-2440940_640.png"
+        alt="Placeholder"
+      />
+      <br />
+      <br />
+      <section>
+        <p>
+          Are you a small business looking to take your brand to the masses?
+        </p>
+        <br />
+        <p>
+          Are you a blogger or artist looking to showcase your work to people?
+        </p>
+        <br />
+        <p>Are you an employer looking to hire a web developer?</p>
+        <br />
+        <p>
+          If you answered "yes" to any of the questions please click the button
+          below.
+        </p>
+        <br />
+        <input
+          type="button"
+          onclick="contact.html"
+          class="button"
+          value="HIRE ME"
+        />
+      </section>
+    </div>
+    <!-- End content section-->
+    <footer>
+      <p>&copy; 2021 JB Website Solutions</p>
+    </footer>
+    <script src="script.js"></script>
   </body>
 </html>
