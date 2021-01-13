@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  height: 100vh;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.content-side {
+  padding-left: 50px;
+}
+
+header,
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header {
+  height: 70px;
+}
+
+.logo {
+  padding-right: 100px;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 70px;
+  cursor: pointer;
+}
+
+nav li {
+  margin-right: 20px;
+  font-size: 1.3rem;
+  line-height: 70px;
+}
+
+li a {
+  color: rgb(107, 93, 95);
+}
+
+.main,
+.about {
+  padding: 150px 0 0 50px;
+  position: absolute;
+}
+
+.about,
+.skills,
+.contact {
+  opacity: 0;
+}
+
+.main h1,
+.about h1,
+.skills h1,
+.contact h1 {
+  font-size: 3rem;
+  color: black;
+}
+
+h1:nth-child(2) {
+  margin-bottom: 20px;
+}
+
+.main p {
+  font-size: 1.5rem;
+  color: blue;
+  margin-bottom: 40px;
+}
+
+.main a .about a .contact button {
+  color: rgb(190, 168, 168);
+  padding: 10px 30px;
+  display: inline-block;
+  font-size: 1.5rem;
+  border-radius: 50px;
+}
+
+.about h1,
+.skills h1,
+.contact h1 {
+  margin-bottom: 20px;
+}
+
+.about p,
+.skills > p {
+  max-width: 650px;
+  font-size: 1.3rem;
+  color: rgb(190, 168, 168);
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+.skills,
+.contact {
+  padding: 100px 0 0 50px;
+  position: absolute;
+}
+
+form {
+  max-width: 500px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid green;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid yellow;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+button:focus,
+.input:focus,
+textarea:focus {
+  outline: none;
+}
+
+main-animation {
+  animation: animate 1s;
+}
+
+@keyframes animate {
+  from {
+    margin-top: 30px;
+  }
+  to {
+    margin-top: 0;
+  }
+}
+
+@-webkit-keyframes animate {
+  from {
+    margin-top: 30px;
+  }
+  to {
+    margin-top: 0;
+  }
+}
+
+.assets-side {
+  display: grid;
+  grid-template-columns: 1fr 0.15fr;
+}
+
+.img {
+  background-color: grey;
+}
+
+.assets-side img {
+  width: 468px;
+  position: relative;
+  left: 70%;
+  right: 70%;
+  transform: translate(-70%);
+}
+
+.facebook,
+.instagram {
+  height: calc(100% / 3);
+}
+
+.facebook {
+  background-color: blue;
+}
+
+.instagram {
+  background-color: purple;
+}
+
+.links a {
+  writing-mode: vertical-lr;
+  font-size: 1.5rem;
+  color: whitesmoke;
+  height: calc(100% / 3);
+  width: 100%;
+  text-align: center;
+  padding-right: 30px;
+}

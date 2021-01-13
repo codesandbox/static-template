@@ -1,12 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Portfolio</title>
+    <link link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <div class="wrapper">
+        <div class="content-side">
+          <div class="content-side-animation">
+            <header>
+              <span class="logo" id="logo"> JR</span>
+              <nav>
+                <ul>
+                  <li><a href="#" id="linkAbout">About me</a></li>
+                  <li><a href="#" id="linkSkills">Skills&Experience</a></li>
+                  <li><a href="#" id="linkContact">Contact</a></li>
+                </ul>
+              </nav>
+            </header>
+            <section class="main" id="main">
+              <h1 class="main-animation">Hello,</h1>
+              <h1 class="main-animation">Jana Ramuse</h1>
+              <p class="main-animation">Future WEB developer</p>
+              <a href="#" class="main-animation">Contact me</a>
+            </section>
+            <section class="about" id="about">
+              <h1>About me</h1>
+              <p>
+                I am a future WEB developer with experience in project
+                management and marketing. Have a background in music industry
+                and visual desing as well as academic sociological research. I
+                consider me as a "forever student" or eager to both build on my
+                academic foundations in sociology and stay in tune with the
+                latest WEB development strategies through continued coursework
+                and professional development. My ever-eager spirit to learn has
+                led me to starting Masters studies in Hong Kong, developing WEB
+                pages for various Pro bono projects. I believe that mindfulness
+                in the workplace - whether at home or office, is a key to
+                success. That is why I consider my hobies - gardening, reading a
+                good book and painting - my best buddies.
+              </p>
+              <a href="#">Download my CV</a>
+            </section>
+
+            <section class="contact" id="contact">
+              <h1>Contact Me</h1>
+              <form>
+                <input type="text" placeholder="Name" />
+                <input type="text" placeholder="Email" />
+                <textarea cols="30" rows="10" placeholder="Message"></textarea>
+                <button type="submit">Send Message</button>
+              </form>
+            </section>
+          </div>
+
+          <div class="assets-side">
+            <div class="img">
+              <img src="pic1.png" alt="" />
+            </div>
+            <div class="links">
+              <div class="facebook">
+                <a href="#">Facebook</a>
+              </div>
+              <div class="instagram">
+                <a href="#">Instagram</a>
+              </div>
+              <div class="linkedink">
+                <a href="#">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="open-modal">+</div>
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h1>Personal Contact Details</h1>
+        <div class="mail">
+          <img src="mail.svg" alt="" />
+          <p>jana.ramuse@gmail.com</p>
+        </div>
+        <div class="address">
+          <img src="address.svg" alt="" />
+          <p>Dundurzeme, Aumeisteri, Grundzales pag. LV-4713</p>
+        </div>
+        <div class="telephone">
+          <img src="number.svg" alt="" />
+          <p>26382084</p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
