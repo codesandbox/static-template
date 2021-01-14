@@ -1,0 +1,90 @@
+.body {
+  background: #efefef;
+}
+.main {
+  max-width: 960px;
+}
+* {
+  box-sizing: border-box;
+}
+header {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-section {
+  display: flex;
+  flex-direction: column;
+}
+.cards-section .list-items {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-auto-rows: 200px;
+  background: gray;
+  padding: 0;
+}
+
+.button-section button {
+  width: 180px;
+  height: 40px;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #72c3dc;
+  border-bottom-width: 6px;
+  border-color: #72c3dc;
+  cursor: pointer;
+  border-bottom-color: #72c3dc;
+}
+.button-section button ~ button {
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 960px) {
+  [class*="color-"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 4vw;
+    font-weight: 500;
+  }
+  .color-1 {
+    background-color: #6f98a8;
+  }
+  .color-2 {
+    background-color: #2b8ead;
+  }
+  .color-3 {
+    background-color: #2f454e;
+  }
+
+  .color-4 {
+    background-color: #bfbfbf;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  [class*="color-"] {
+    color: #000;
+    font-size: 16px;
+    border-left-width: 6px;
+  }
+  .color-1 {
+    border-left-color: "#6F98A8";
+  }
+  .color-2 {
+    border-left-color: "#2B8EAD";
+  }
+  .color-3 {
+    border-left-color: "#2F454E";
+  }
+
+  .color-4 {
+    border-left-color: "#BFBFBF";
+  }
+}
