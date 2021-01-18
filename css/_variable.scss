@@ -1,0 +1,267 @@
+/* Color */
+$primary:       #b88b55 !default;
+$primaryLight:  #c2a784 !default;
+$warning:       #d1504b !default;
+$warningLight:  #e57773 !default;
+$facebook:      #3B5998 !default;
+$process:       #4ba1d1 !default;
+$processLight:  #73bce5 !default;
+$success:       #4bd169 !default;
+$successLight:  #73e58c !default;
+$darkDark:      #303030 !default;
+$dark:          #424242 !default;
+$darkLight:     #656565 !default;
+$lightDark:     #a6a6a6 !default;
+$light:         #eeeeee !default;
+$lightLight:    #fafafa !default;
+$white:         #ffffff !default;
+$boneDark:      #d9cfc3 !default;
+$bone:          #e5ddd3 !default;
+$boneLight:     #f2ede7 !default;
+
+/* Font */
+@import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+
+// Typography
+$base: 16;
+$spoqa-hans: 'Spoqa Han Sans Neo';
+@mixin tiny12-18{        font:400 12px/18px $spoqa-hans; } 
+@mixin tiny12-18{        font:400 12px/18px $spoqa-hans; } 
+@mixin message14-20{     font:400 14px/20px $spoqa-hans; } 
+@mixin body16-24{        font:400 16px/24px $spoqa-hans; } 
+@mixin subtitle20-24{    font:400 20px/24px $spoqa-hans; } 
+@mixin title32-40{       font:400 32px/40px $spoqa-hans; } 
+@mixin bold-tiny12-18{    font:700 12px/18px $spoqa-hans; } 
+@mixin bold-message14-20{ font:700 14px/20px $spoqa-hans; } 
+@mixin bold-body16-24{    font:700 16px/24px $spoqa-hans; } 
+@mixin bold-subtitle20-24{font:700 20px/24px $spoqa-hans; } 
+@mixin bold-title32-40{   font:700 32px/40px $spoqa-hans; }
+
+.tiny12-18{        font:400 12px/18px $spoqa-hans; } 
+.message14-20{     font:400 14px/20px $spoqa-hans; } 
+.body16-24{        font:400 16px/24px $spoqa-hans; } 
+.subtitle20-24{    font:400 20px/24px $spoqa-hans; } 
+.title32-40{       font:400 32px/40px $spoqa-hans; } 
+.bold-tiny12-18{    font:700 12px/18px $spoqa-hans; } 
+.bold-message14-20{ font:700 14px/20px $spoqa-hans; } 
+.bold-body16-24{    font:700 16px/24px $spoqa-hans; } 
+.bold-subtitle20-24{font:700 20px/24px $spoqa-hans; } 
+.bold-title32-40{   font:700 32px/40px $spoqa-hans; } 
+
+@mixin divider($h) {
+    width: 100%;
+    height: $h;
+    margin: 16px 0;
+    background-color: $light;
+}
+
+.divider-1{
+    @include divider(1px);
+}
+.divider-4{
+    @include divider(4px);
+}
+.divider-8{
+    @include divider(8x);
+}
+.divider-16{
+    @include divider(16px);
+}
+
+/* Button */
+@mixin btn-default($h, $pd ) {
+    height: $h;
+    padding: 0 $pd;
+    margin: 0 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    color: $white;
+    background-color: $primary;
+    border: 1px solid $primary;
+    cursor: pointer;
+    transition-duration: 200ms;
+}
+
+.btn-large{
+    @include btn-default(48px, 24px);
+    @include bold-body16-24();
+   
+}
+.btn-medium{
+    @include btn-default(40px, 16px);
+    @include bold-message14-20();
+   
+}
+.btn-small{
+    @include btn-default(32px, 12px);
+    @include bold-tiny12-18();
+   
+}
+.btn-large-warning{
+    @include btn-default(48px, 24px);
+    @include bold-body16-24();
+    color: $white;
+    background-color:$warning; 
+    border: 1px solid $warning;
+   
+}
+.btn-medium-process{
+    @include btn-default(40px, 16px);
+    @include bold-message14-20();
+    color: $white;
+    background-color:$process; 
+    border: 1px solid $process;
+   
+}
+.btn-small-black{
+    @include btn-default(32px, 12px);
+    @include bold-tiny12-18();
+    color: $white;
+    background-color:$darkDark; 
+    border: 1px solid $darkDark;
+   
+   
+}
+.btn-large-ghost{
+    @include btn-default(48px, 24px);
+    @include bold-body16-24();
+    color: $primary;
+    background-color:$white; 
+}
+.btn-medium-ghost{
+    @include btn-default(40px, 16px);
+    @include bold-message14-20();
+    color: $primary;
+    background-color:$white; 
+   
+}
+.btn-small-ghost{
+    @include btn-default(32px, 12px);
+    @include bold-tiny12-18();
+    color: $primary;
+    background-color:$white; 
+   
+}
+.btn-large-ghost-gnb{
+    @include btn-default(48px, 24px);
+    @include bold-body16-24();
+    color: $primary;
+    background-color:$dark; 
+}
+.btn-medium-ghost-gnb{
+    @include btn-default(40px, 16px);
+    @include bold-message14-20();
+    color: $primary;
+    background-color:$dark; 
+   
+}
+.btn-small-ghost-gnb{
+    @include btn-default(32px, 12px);
+    @include bold-tiny12-18();
+    color: $primary;
+    background-color:$dark; 
+   
+}
+.btn-large-ghost-warning{
+    @include btn-default(48px, 24px);
+    @include bold-body16-24();
+    color: $warning;
+    background-color:$white; 
+    border: 1px solid $warning;
+}
+.btn-medium-ghost-process{
+    @include btn-default(40px, 16px);
+    @include bold-message14-20();
+    color: $process;
+    background-color:$white; 
+    border: 1px solid $process;
+   
+}
+.btn-small-ghost-black{
+    @include btn-default(32px, 12px);
+    @include bold-tiny12-18();
+    color: $darkDark;
+    background-color:$white; 
+    border: 1px solid $darkDark;
+   
+}
+
+.btn-564{
+    @include btn-default(48px, 24px);
+    @include bold-body16-24();
+    width: 564px;
+}
+.btn-320{
+    @include btn-default(48px, 24px);
+    @include bold-body16-24();
+    width: 320px;
+}
+.btn-212{
+    @include btn-default(48px, 24px);
+    @include bold-body16-24();
+    width: 212px;
+}
+
+/* Icon */
+@mixin icon($w, $h, $mg) {
+    width: $w;
+    height: $h;
+    margin: 0 $mg;
+    display: grid;
+    
+}
+
+.icon-large{
+    @include icon(32px, 32px, 8px);
+}
+.icon-medium{
+    @include icon(24px, 24px, 4px);
+}
+.icon-small{
+    @include icon(16px, 16px, 4px);
+}
+
+@mixin box-shadow {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@mixin input-box($w){
+    background: $light;
+    color: $lightDark;
+    width: $w;
+    height: 40px;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    line-height: 24.5px;
+    border: none;
+}
+
+input.login-input{
+    @include input-box(320px)
+}
+input.my-input{
+    @include input-box(485px)
+}
+input.pick-input{
+    @include input-box(474px)
+}
+input.reply-input{
+    @include input-box(444px)
+}
+
+input.login-input-mobile{
+    @include input-box(320px)
+}
+input.my-input-mobile{
+    @include input-box(485px)
+}
+input.pick-input-mobile{
+    @include input-box(474px)
+}
+input.reply-input-mobile{
+    @include input-box(444px)
+}
+
