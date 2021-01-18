@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <script src=""></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- header start -->
+        <header>
+            <div class="gnb">
+                <div class="logo">
+                    <a href="">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALYAAAAxCAYAAAB3RVNkAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFGmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNi4wLWMwMDIgNzkuMTY0MzUyLCAyMDIwLzAxLzMwLTE1OjUwOjM4ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjEuMSAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjAtMDEtMjNUMTI6MzQ6MDErMDk6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIwLTA1LTA2VDEyOjQxOjEwKzA5OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIwLTA1LTA2VDEyOjQxOjEwKzA5OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjVmMTgyZjRkLWJmMWQt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"
+                            alt="" class="logo-symbol" />
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" class="seach-input message14-20" placeholder="검색" />
+                    <button class="search">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search"
+                            class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="buttons">
+                    <button class="unauth btn-small-ghost-gnb">
+                        <span>회원가입</span>
+                    </button>
+                    <div class="profile-image">
+                        <img src="/images/profile/profile-image.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <div class="header-tab-menu">
+                    <ul class="menu">
+                        <li class="menu-item">
+                            <a href="trending.html" class="message14-20">Trending</a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="original.html" class="bold-message14-20 on">Original</a><span class="bottom-bar"></span>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="" class="message14-20">Feed</a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="" class="message14-20">Watchlist</a>
+                        </li>
+
+                        <li class="menu-item"><a href="" class="message14-20">My</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- header end -->
+
+        <!-- section start -->
+        <section>
+            <aside class="filter-setting">
+                <ul class="categoly">
+
+                    <li class="check-list">
+                        <a class="message14-20"><span class="cateName">오피니언</span>
+                            <span class="checkbox">
+                                <input type="checkbox" id="ch_opinion" class="hidden-checkbox">
+                                <label for="ch_opinion" class="checkbox-label">
+                                    <svg aria-hidden="true" focusable="false"
+                                        data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16 "
+                                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                        </path>
+                                    </svg>
+                                </label>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="check-list">
+                        <a class="message14-20"><span class="cateName">투자아이디어</span>
+                            <span class="checkbox">
+                                <input type="checkbox" id="ch_idea" class="hidden-checkbox">
+                                <label for="ch_idea" class="checkbox-label">
+                                    <svg aria-hidden="true" focusable="false"
+                                        data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16 "
+                                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                        </path>
+                                    </svg>
+                                </label>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="check-list">
+                        <a class="message14-20"><span class="cateName">자산배분전략 & ETF</span>
+                            <span class="checkbox">
+                                <input type="checkbox" id="portfolio_strategy_global" class="hidden-checkbox">
+                                <label for="portfolio_strategy_global" class="checkbox-label">
+                                    <svg aria-hidden="true" focusable="false"
+                                        data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16 "
+                                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                        </path>
+                                    </svg>
+                                </label>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="check-list">
+                        <a class="message14-20"><span class="cateName">시장 분석</span>
+                            <span class="checkbox">
+                                <input type="checkbox" id="macro_view" class="hidden-checkbox">
+                                <label for="macro_view" class="checkbox-label">
+                                    <svg aria-hidden="true" focusable="false"
+                                        data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16 "
+                                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                        </path>
+                                    </svg>
+                                </label>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="check-list">
+                        <a class="message14-20"><span class="cateName">경제</span>
+                            <span class="checkbox">
+                                <input type="checkbox" id="economy" class="hidden-checkbox">
+                                <label for="economy" class="checkbox-label">
+                                    <svg aria-hidden="true" focusable="false"
+                                        data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16 "
+                                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                        </path>
+                                    </svg>
+                                </label>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="check-list">
+                        <a class="message14-20"><span class="cateName">부동산</span>
+                            <span class="checkbox">
+                                <input type="checkbox" id="land_sub" class="hidden-checkbox">
+                                <label for="land_sub" class="checkbox-label">
+                                    <svg aria-hidden="true" focusable="false"
+                                        data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16 "
+                                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                        </path>
+                                    </svg>
+                                </label>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="check-list">
+                        <a class="message14-20"><span class="cateName">커리어</span>
+                            <span class="checkbox">
+                                <input type="checkbox" id="career" class="hidden-checkbox">
+                                <label for="career" class="checkbox-label">
+                                    <svg aria-hidden="true" focusable="false"
+                                        data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16 "
+                                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                        </path>
+                                    </svg>
+                                </label>
+                            </span>
+                        </a>
+                    </li>
+                    <div class="divider-1"></div>
+                    <li class="check-list">
+                        <a class="message14-20"><span class="cateName">최신순</span>
+                            <span class="checkbox">
+                                <input type="checkbox" id="all" class="hidden-checkbox">
+                                <label for="all" class="checkbox-label">
+                                    <svg aria-hidden="true" focusable="false"
+                                        data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16 "
+                                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                        </path>
+                                    </svg>
+                                </label>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="check-list">
+                        <a class="message14-20"><span class="cateName">인기순</span>
+                            <span class="checkbox">
+                                <input type="checkbox" id="most" class="hidden-checkbox">
+                                <label for="most" class="checkbox-label">
+                                    <svg aria-hidden="true" focusable="false"
+                                        data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16 "
+                                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                        </path>
+                                    </svg>
+                                </label>
+                            </span>
+                        </a>
+                    </li>
+
+                </ul>
+            </aside>
+            <article class="original-page">
+                <ul class="trending-list">
+                    <a href="https://www.snek.ai/alpha/opinion/115459" target="_blank">
+                        <li class="original-item">
+                            <div class="title-wrap">
+                                <span class="badge-pro bold-tiny12-18" style="display:block;">PRO</span>
+                                <p class="item-title  message14-20" style="text-indent:36px;">마윈, 앤트그룹이 철퇴를 맞은 이유? 루머 팩트체크, 사실은...</p>
+                            </div>
+                            <div class="wrap">
+                                <div class="writer-info">
+                                    <div class="profile-image">
+                                        <img src="/images/profile/profile-image.jpg" alt="" />
+                                    </div>
+                                    <div class="writer-bio">
+                                        <div class="writer-name">
+                                            박서준
+                                        </div>
+                                        <div class="writer-job">
+                                            투자컨설턴트
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="comment tiny12-18">
+                                    <p class="timeago">3달 전</p>
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                        <path
+                                            d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                        </path>
+                                    </svg>
+                                    <p class="comment-quantity">6</p>
+                                </div>
+
+                                <div class="item-image" style="
+                        background-image: url('//cdn.snek.ai/article/2020/10/iuoey26rs9vkz6yfcpcqotv6z29q4kq60l145a9gaquk8qhe.jpg');
+                  "></div>
+                            </div>
+                        </li>
+                    </a>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/link/dd2e163a-2d67-41da-b4f6-e4c75e00c3f3" target="_blank">
+                            <p class="rank subtitle20-14">2</p>
+                            <div class="item-image" style="
+                    background-image: url('https://static.reuters.com/resources/r/?m=02&amp;d=20210113&amp;t=2&amp;i=1547598374&amp;r=LYNXMPEH0C0H0&amp;w=800');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    Geely and Foxconn form partnership to build cars for other automakers
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">2일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">4</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/link/6c148f38-5ff6-4789-a11b-71231bb91fe4" target="_blank">
+                            <p class="rank subtitle20-14">3</p>
+                            <div class="item-image" style="
+                    background-image: url('https://smartcdn.prod.postmedia.digital/financialpost/wp-content/uploads/2021/01/vw0114spacex.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    Cathie Wood’s vision for space ETF sends whole industry soaring
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">8시간 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">2</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/link/fd760b9e-12f1-47b6-acd4-9ddd6b4b7259" target="_blank">
+                            <p class="rank subtitle20-14">4</p>
+                            <div class="item-image" style="
+                    background-image: url('https://img8.yna.co.kr/etc/inner/KR/2021/01/14/AKR20210114041000009_01_i_P4.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    레브친 또 창업 대박…어펌 나스닥 상장 첫날 98% 상승 | 연합뉴스
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">8시간 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">1</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/link/4a21aeab-dad2-4943-bf42-9fce2091a6d9" target="_blank">
+                            <p class="rank subtitle20-14">5</p>
+                            <div class="item-image" style="
+                    background-image: url('https://image.zdnet.co.kr/2021/01/14/8f2beed8a596ec8a134ab08b82e69392.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    애플, 전기차 스타트업 카누 인수 시도했었다
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">8시간 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">1</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/link/73f05d8c-f99f-43a6-9c46-11d9e089bb3f" target="_blank">
+                            <p class="rank subtitle20-14">6</p>
+                            <div class="item-image" style="
+                    background-image: url('https://file.mk.co.kr/meet/yonhap/2021/01/14/image_readtop_2021_46569_0_201711.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    프랑스 정부, 캐나다 기업의 까르푸 인수 반대
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">5시간 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">1</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/116056" target="_blank">
+                            <p class="rank subtitle20-14">7</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/714avtpfxpiwi822ivxuzu71z2joeom46br7u4ia5zkkycgl.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <span class="badge-pro" style="display: block">PRO</span>
+                                <p class="item-title message14-20" style="text-indent: 36px">
+                                    마윈, 앤트그룹이 철퇴를 맞은 이유? 루머 팩트체크, 사실은...
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">하루 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">6</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/link/d5a5a0b2-b861-42b0-95c9-dde17cf36816" target="_blank">
+                            <p class="rank subtitle20-14">8</p>
+                            <div class="item-image" style="
+                    background-image: url('https://imgnews.pstatic.net/image/366/2021/01/13/0000651908_001_20210114102845097.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    넥슨 김정주, 스페이스X에 약 190억원 투자
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">17시간 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">1</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/link/9f76a00e-f442-4bed-9035-39a7a4c302ec" target="_blank">
+                            <p class="rank subtitle20-14">9</p>
+                            <div class="item-image" style="
+                    background-image: url('https://cdn.snek.ai/article/2021/01/a2qdchcp5ixgy2k727oeze70ea49dth8ri5mk54g88anzsmx.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    🌱 제2의 시드머니, 잔돈 재테크 해볼까?
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">9시간 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">1</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/116057" target="_blank">
+                            <p class="rank subtitle20-14">10</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/gdr1pe5823a8kpabn074vut1fwij7xwyfep8ivbc4uz8l5tx.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <span class="badge-pro" style="display: block">PRO</span>
+                                <p class="item-title message14-20" style="text-indent: 36px">
+                                    구제금융, 개발도상국에게 득일까 실일까?
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">하루 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">1</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/link/5da8e3fa-1072-4196-bdc4-84389f2a2fc0" target="_blank">
+                            <p class="rank subtitle20-14">11</p>
+                            <div class="item-image" style="
+                    background-image: url('https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FOzTRw%2FbtqTwWY1OGd%2FHmnSMhygkp5nnfO0CZkmxK%2Fimg.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    [아크 인베스트, ARK Invest] ARKK, ARKW, ARKG, ARKX ETF 총정리 (RyanY의 빌리언스)
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">5시간 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">3</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115952" target="_blank">
+                            <p class="rank subtitle20-14">12</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/4b3pe57pnpgdsqe7bvya22iw1umkzq0zdx0phvcb80saitgq.jpeg');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    한국종합기술 - SoC 예산 증가와 그린뉴딜이 턴어라운드를 가속화 할 예정!
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">12일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">8</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/link/7d0a744f-dedf-4709-8f43-e3204ef15a08" target="_blank">
+                            <p class="rank subtitle20-14">13</p>
+                            <div class="item-image" style="
+                    background-image: url('https://blogimgs.pstatic.net/nblog/mylog/post/og_default_image_160610.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    한국종합기술 자산재평가 결과 공시, 차액 +540억
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">18시간 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">1</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/link/3905430b-b730-4081-ae08-290a347812c4" target="_blank">
+                            <p class="rank subtitle20-14">14</p>
+                            <div class="item-image" style="
+                    background-image: url('https://image.cnbcfm.com/api/v1/image/106797681-1605560148480-gettyimages-1286021465-cz9i6217_2020111634402979.jpeg?v=1605560186');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    Biden's $1.9 trillion Covid relief plan calls for stimulus checks, unemployment support and more
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">7시간 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">2</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115941" target="_blank">
+                            <p class="rank subtitle20-14">15</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/wwy2aswmmk4j9aokfwzgdm1vhjto0bpzxu21unatuu3x6hfr.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <span class="badge-pro" style="display: block">PRO</span>
+                                <p class="item-title message14-20" style="text-indent: 36px">
+                                    Dart 공시를 고급 투자 정보로! - 상장사 CAPA 증설 일정(21년~24년)
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">7시간 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">6</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/link/e0772db2-3595-4481-a605-af6bbbe4596f" target="_blank">
+                            <p class="rank subtitle20-14">16</p>
+                            <div class="item-image" style="
+                    background-image: url('https://cdn.snek.ai/article/2021/01/6jogt2avei5dt8gymsfd9efst5f93btfqqk2aj6898pitcbr.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    🚏 가치와 성장, 금리가 '시장의 방향성'을 제시한다.
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">하루 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">6</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/116032" target="_blank">
+                            <p class="rank subtitle20-14">17</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/1g77pxcvtspf3vde4o0dzr2qbjome687whz9tj8qpdf0cht4.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <span class="badge-pro" style="display: block">PRO</span>
+                                <p class="item-title message14-20" style="text-indent: 36px">
+                                    버블이라 할 수 없는 주식시장: 올해도 우상향이 기대되는 이유
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">4일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">22</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/116058" target="_blank">
+                            <p class="rank subtitle20-14">18</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/yhwzy4uqnnwralbno0cb5kpibk2x3ppdwd9gezfyjtp7bqer.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <span class="badge-pro" style="display: block">PRO</span>
+                                <p class="item-title message14-20" style="text-indent: 36px">
+                                    유명 헤지펀드가 추천하는 '스마트 에너지 저장 업계의 테슬라', 스템(Stem)
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">21시간 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">5</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115517" target="_blank">
+                            <p class="rank subtitle20-14">19</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2020/10/pkc5almp079ph898ti7ipa2g1629dh2w39e1xbm4gm5jq8d7.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    국민연금공단과 한국 투자밸류자산운용이 지속적으로 매입 중인 기업!
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">3달 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">29</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115942" target="_blank">
+                            <p class="rank subtitle20-14">20</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/5vm2mprgb74u2kp17crit84ec1sljujaigds78c3gz7qd71b.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    2021년 성공 투자를 위한 필독! - 주요 기업 실적 예상 및 Valuation! (2021~2022년)
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">12일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">80</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/113039" target="_blank">
+                            <p class="rank subtitle20-14">21</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2019/10/jb23o6sm6lsytxynezxhmr3s5j6uh9p334b1ueii7ph0kcxx.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    최근 BNPL (Buy Now Pay Later) 시장을 주도하는 핀테크 기업들
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">일 년 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">3</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/link/6de36280-25ae-4411-8a7e-c3ae3af275ca" target="_blank">
+                            <p class="rank subtitle20-14">22</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/9ys61ws28r1w0xf107cl29vomdqin1bnri9m257gz18w9tu5.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    삼성의 미래 먹거리, 삼성바이오로직스
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">33분 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">1</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/link/62a047b6-09cf-41f2-b4db-821fb919e5d7" target="_blank">
+                            <p class="rank subtitle20-14">23</p>
+                            <div class="item-image" style="
+                    background-image: url('https://imgnews.pstatic.net/image/008/2021/01/13/0004527602_001_20210113051017916.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    [단독]현대차 디젤엔진 개발 중단, 내연기관 엔진개발 접는다
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">33분 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">1</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/111644" target="_blank">
+                            <p class="rank subtitle20-14">24</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2019/02/43w812kl2z2xp4yfk1wfzk9ocl2ss8n48s0a4gso8wkc5cr0.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    한국주식시장에서 가장 성과가 좋았던 수익성 지표는??
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">일 년 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">3</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115957" target="_blank">
+                            <p class="rank subtitle20-14">25</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/aoek3aocz9u0w3zq87qwzznhvhp8smaq0ezu57zqwptl5chk.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    성장주 vs. 가치주| 7:3 전략 추천! (반도체, 5G, 바이오, 신재생에너지, 전기차)
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">12일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">34</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115283" target="_blank">
+                            <p class="rank subtitle20-14">26</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2020/09/fts3eutxgnuk8uowd1s1wwkcfig9fznquk5npbl9rbefxujc.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    카카오뱅크, 은행 시장의 새로운 흐름
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">4달 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">9</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/114650" target="_blank">
+                            <p class="rank subtitle20-14">27</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2020/05/tm05cyf3ak9qd4bq7fdcyb09qaiuim0tunq51uq6g91dilys.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    카카오뱅크, 내 통장 속에 저장!
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">8달 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">17</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/116046" target="_blank">
+                            <p class="rank subtitle20-14">28</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/4mrcbr53o1el693d6mjcjls5z9tbfacwi6bvdzpeeyuwu519.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <span class="badge-pro" style="display: block">PRO</span>
+                                <p class="item-title message14-20" style="text-indent: 36px">
+                                    쉑쉑버거(Shake Shack, SHAK US), 맥도날드와 비교해 살펴보는 상승여력
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">2일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">1</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115842" target="_blank">
+                            <p class="rank subtitle20-14">29</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2020/12/bvlmwrp1ta5hajozb5aifphkv9g6ehwo6ep4z67icq6hmplq.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    코스피 2021년 얼마까지 상승? '전·반·에', 투자 종목별 상승여력은?
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">한 달 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">20</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115976" target="_blank">
+                            <p class="rank subtitle20-14">30</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/jwwlbjro7fliq8gqtki6yl8jrzwrsws9tjsp51bxbiqp7ebf.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">조선 산업 리뷰</p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">9일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">16</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/116049" target="_blank">
+                            <p class="rank subtitle20-14">31</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/wp043vcwc873smpczr2s9w3ieausl9fj35se7xjgz32pvnr4.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <span class="badge-pro" style="display: block">PRO</span>
+                                <p class="item-title message14-20" style="text-indent: 36px">
+                                    애플카(Apple Car) 테마주로 주목받아 온 '마그나 인터내셔널(Magna International)'
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">2일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">2</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/111143" target="_blank">
+                            <p class="rank subtitle20-14">32</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2018/11/n7hfd2wrcc2vh1a7xsiskgazm0j2dfrag87h9w31v0hjzlgg.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">투자의 빅 픽쳐(2)</p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">2년 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">1</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/116029" target="_blank">
+                            <p class="rank subtitle20-14">33</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/5wbg8lg9sg3kd3whq7vsqsor14f8uma929kms17ai9loaynj.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <span class="badge-pro" style="display: block">PRO</span>
+                                <p class="item-title message14-20" style="text-indent: 36px">
+                                    코로나 시대, 명품 FLEX 열풍 부는 이유는?
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">5일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">4</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115953" target="_blank">
+                            <p class="rank subtitle20-14">34</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/zu25p3fruf4y3fic66w0kdw630esp555zovule2fo0pcmm5g.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    쎄트렉아이[099320]: 2021년은 '확장성'에 '속도'를 더할 원년!
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">12일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">5</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115968" target="_blank">
+                            <p class="rank subtitle20-14">35</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/9svwq9yz3mvktcl7w4jppfdrsg6v5zvh4wxznhp35kds8yai.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    블랙스톤 부회장 Byron Wien이 예상한 2021년 10가지 서프라이즈, 그리고 2020년 리뷰
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">10일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">25</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115613" target="_blank">
+                            <p class="rank subtitle20-14">36</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2020/11/pf6swf3oy3yj4265oz5l776sqbqfnig3hqujzrwrukfuae5p.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">온 힘을 다해 사야할 때!</p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">2달 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">34</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115966" target="_blank">
+                            <p class="rank subtitle20-14">37</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/j61zx3f97hmgp4coo3z86hv4qdlb9d5mghj10ba2rfewldv4.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    유명 MBA 교수, 스캇 갤러웨이의 2021년 예견
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">10일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">35</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/116030" target="_blank">
+                            <p class="rank subtitle20-14">38</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/5mwde8ka10e8tt50i0kjf0durhrr6kc8zl6l3fk5k5vd1y3m.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <span class="badge-pro" style="display: block">PRO</span>
+                                <p class="item-title message14-20" style="text-indent: 36px">
+                                    다만 더 낮은 곳으로 임하소서!
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">4일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">2</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/link/9009f33d-1dd6-4268-9e31-9a8a3b00fccf" target="_blank">
+                            <p class="rank subtitle20-14">39</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/5vm2mprgb74u2kp17crit84ec1sljujaigds78c3gz7qd71b.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    2021년 성공 투자를 위한 필독! - 주요 기업 실적 예상 및 Valuation! (2021~2022년)
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">하루 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">1</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115885" target="_blank">
+                            <p class="rank subtitle20-14">40</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2020/12/tl070dipbcy7nka4bzlb0523jvi7jzm1fzgm1wf1suu4y999.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    '배당 성향'으로 살펴 본 투자전략 업데이트: POSCO와 PI 첨단소재
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">22일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">3</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115872" target="_blank">
+                            <p class="rank subtitle20-14">41</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2020/12/eurxjumbxmnufcywyjc8w1rq4n5kb6n7cxqmzo25zza20hdd.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    Intel을 살려낼 백기사 - 자율주행 업계 리더, 모빌아이(Mobileye)
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">23일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">26</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/116015" target="_blank">
+                            <p class="rank subtitle20-14">42</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/feo3r9b5gkfmgfzvz8elhtylw472hx7wta3g411d4nv1bbu4.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <span class="badge-pro" style="display: block">PRO</span>
+                                <p class="item-title message14-20" style="text-indent: 36px">
+                                    국가별, 업종별 상승여력 점검 - 아직 성장주 매력도가 여전한 구간!
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">5일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">2</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/116018" target="_blank">
+                            <p class="rank subtitle20-14">43</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/vajgbco99noop1icrtb2o8r036k1d7ycmxykz7vnh95qcv45.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <span class="badge-pro" style="display: block">PRO</span>
+                                <p class="item-title message14-20" style="text-indent: 36px">
+                                    삼성에 대든 협력사 ㈜톱텍
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">5일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">5</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/116014" target="_blank">
+                            <p class="rank subtitle20-14">44</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/jit421k8r2efxleipg8teqz5yz9tqg06hvc42l6fmymkf6ay.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <span class="badge-pro" style="display: block">PRO</span>
+                                <p class="item-title message14-20" style="text-indent: 36px">
+                                    현재 글로벌 증시는 거품이 아님 - 2021년 주식 투자, 차익실현 시기는 아직!
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">5일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">21</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/link/e894150a-bceb-4efe-b16b-20d7a1783674" target="_blank">
+                            <p class="rank subtitle20-14">45</p>
+                            <div class="item-image" style="
+                    background-image: url('https://imgnews.pstatic.net/image/008/2021/01/13/0004527602_001_20210113051017916.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    [단독]현대차 디젤엔진 개발 중단, 내연기관 엔진개발 접는다
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">2일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">4</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/link/1e39d31b-3f61-4e7d-8054-177160e15f2f" target="_blank">
+                            <p class="rank subtitle20-14">46</p>
+                            <div class="item-image" style="
+                    background-image: url('https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FVeFCz%2FbtqTkgaSwTN%2F0Uk3T79Fh8jIhckQ6fC6T0%2Fimg.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    엔에스 주가 전망 - 아직 출발하지 않은 유일한 2차 전지 관련주
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">4일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">4</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115944" target="_blank">
+                            <p class="rank subtitle20-14">47</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/eyuhen7cqcm38ep0v3ih9eh62ldsj82k9n40l5dtiwrzcx48.jfif');
+                  "></div>
+                            <div class="title-wrap">
+                                <span class="badge-pro" style="display: block">PRO</span>
+                                <p class="item-title message14-20" style="text-indent: 36px">
+                                    2021년, 새해에는 맨해튼 건물주가 되어보자
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">10일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">11</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115956" target="_blank">
+                            <p class="rank subtitle20-14">48</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/1spj4zue59o18to9t2aahrk1klv6skqpjc3uy5xerzsn4y1n.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    상고 하저의 글로벌 주식 시장 예상 - 아직은 적극적으로 투자를 유지할 시기!
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">12일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">8</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115990" target="_blank">
+                            <p class="rank subtitle20-14">49</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2021/01/hkl50bcdj48t4n4oreubrx4a8aehhdhqph06x48h60b0oj6o.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    마이크로소프트(Microsoft) 대항마로 성장하는 세일즈포스(Salesforce)
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">8일 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">31</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/link/3a6fd56f-26fe-4e5d-aae5-e54999cf2511" target="_blank">
+                            <p class="rank subtitle20-14">50</p>
+                            <div class="item-image" style="
+                    background-image: url('https://static.hankyung.com/img/logo/logo-news-sns.png');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    한경닷컴 | 성공을 부르는 습관
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">14시간 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">1</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="trending-item">
+                        <a href="https://www.snek.ai/alpha/opinion/115819" target="_blank">
+                            <p class="rank subtitle20-14">51</p>
+                            <div class="item-image" style="
+                    background-image: url('//cdn.snek.ai/article/2020/12/ypby97wwz0uwf9e3n5ijzuokh4twq6he1l3e5aa9uhhhpom4.jpg');
+                  "></div>
+                            <div class="title-wrap">
+                                <p class="item-title message14-20">
+                                    다가온 월세 시대! 어떻게 대비할까?
+                                </p>
+                            </div>
+                            <div class="comment tiny12-18">
+                                <p class="timeago">한 달 전</p>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots" role="img" viewBox="0 0 512 512">
+                                    <path
+                                        d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z">
+                                    </path>
+                                </svg>
+                                <p class="comment-quantity">15</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="trending-frame"></div>
+            </article>
+        </section>
+        <!-- section end -->
+
+        <!-- footer start -->
+        <footer class="footer">
+            <div class="inner-footer">
+                <img src="data:image/png;base64,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"
+                    alt="snekLogo" />
+                <span class="tiny12-18">SNEK의 모든 컨텐츠는 저작권법에 의거 보호받고 있습니다.<br /><br />주식회사
+                    익스플레인 | 대표 주은환<br />서울시 강남구 선릉로 428, 12층
+                    112호<br />사업자등록번호 | 551-81-01622<br />통신판매업신고번호 |
+                    2019-서울강남-04936<br /><br />대표번호 | 070-8860-9201<br />고객문의
+                    | contact@explainalpha.com<br /></span>
+            </div>
+        </footer>
+        <!-- footer end -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,423 @@
+@import "reset.css";
+@import "normalize.css";
+@import "common.css";
+.container {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+/* header,
+nav,
+section,
+article,
+aside,
+footer {} */
+
+section {
+  /* border: 1px solid red; */
+  /* background-color: orange; */
+}
+
+article {
+  /* border: 1px solid red; */
+  /* background-color: darkcyan; */
+}
+
+aside {
+  /* border: 1px solid red; */
+  /* background-color: tomato; */
+}
+
+section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  -moz-box-pack: justify;
+  -moz-box-align: center;
+  max-width: 896px;
+  padding: 12px 32px;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+article {
+  width: 620px;
+  box-sizing: border-box;
+  margin-right: 32px;
+}
+
+aside {
+  width: 244px;
+  box-sizing: border-box;
+  margin-top: 14px;
+}
+
+.section-frame {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding-top: 32px;
+  height: calc(100vh - 266px);
+}
+
+/* 로그인창 영역 */
+
+.section-frame .login-frame {
+  position: relative;
+  width: 384px;
+  height: 384px;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.section-frame .login-frame .login-input .input-id,
+.input-pw {
+  margin-bottom: 8px;
+}
+
+.section-frame .login-frame .login-input .tiny12-18 {
+  position: relative;
+  top: 0;
+  left: 38%;
+  color: red;
+}
+
+.section-frame .login-frame .login-status {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.section-frame .login-frame .login-status .message14-20 {
+  margin-left: 6.5px;
+  margin-bottom: 16px;
+}
+
+.section-frame .login-frame .btn-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.section-frame .login-frame .btn-login .btn-medium,
+.section-frame .login-frame .btn-fb-login .btn-medium {
+  width: 320px;
+  margin: 0;
+}
+
+.section-frame .login-frame .btn-login button:hover {
+  color: #b88b55;
+  background-color: #ffffff;
+  border: 1px solid #b88b55;
+}
+
+.section-frame .login-frame .btn-fb-login .btn-medium {
+  background-color: #3b5998;
+  border: 1px solid #3b5998;
+}
+
+.section-frame .login-frame .btn-fb-login button:hover {
+  color: #3b5998;
+  background-color: #ffffff;
+  border: 1px solid #3b5998;
+}
+
+.section-frame .login-frame .find-pw {
+  display: inline-flex;
+  position: relative;
+  margin-top: 18px;
+  left: 38%;
+}
+
+.section-frame .login-frame .find-pw a {
+  color: #303030;
+}
+
+/* 로그인창 영역 */
+
+/* 트렌딩 영역 */
+
+.section-frame .page-title {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-bottom: 1rem;
+}
+
+article.trending-page {
+  order: 1;
+  margin-right: 2rem;
+}
+
+aside.trending-banner {
+  order: 2;
+  margin-right: 2rem;
+}
+
+section article .trending-list {
+}
+
+section article .trending-list .trending-item {
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  margin-bottom: 12px;
+  transition: 150ms;
+}
+
+section article .trending-list .trending-item a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #303030;
+}
+
+section article .trending-list .trending-item a .rank {
+  flex: 0 0 auto;
+  font-size: 2rem;
+  width: 32px;
+  text-align: center;
+  font-style: italic;
+  color: #a8a8a8;
+  margin: 0 12px 0 10px;
+}
+
+section article .trending-list .trending-item a .item-image {
+  flex: 0 0 auto;
+  width: 70px;
+  height: 70px;
+  background-position: center center;
+  background-size: cover;
+}
+
+section article .trending-list .trending-item a .title-wrap {
+  position: relative;
+  display: flex;
+  align-self: flex-start;
+  margin: 8px 16px 0px 12px;
+}
+
+section article .trending-list .trending-item a .title-wrap .item-title {
+  text-indent: 0;
+  max-height: 40px;
+  overflow: hidden;
+}
+
+section article .trending-list .trending-item a .comment {
+  position: absolute;
+  bottom: 4px;
+  right: 12px;
+  display: flex;
+  color: #656565;
+}
+
+section article .trending-list .trending-item a .title-wrap .badge-pro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 3px 4px 1px 4px;
+  margin-right: 4px;
+  border-radius: 4px;
+  color: #ffffff;
+  background-color: #b88b55;
+  line-height: 16px;
+}
+
+section article .trending-list .trending-item a .comment .timeago {
+  width: 100px;
+  position: absolute;
+  top: 0px;
+  right: -10px;
+}
+
+section article .trending-list .trending-item a .comment .comment-quantity {
+  margin-left: 4px;
+}
+
+section article .trending-list .trending-item a .comment .icon {
+  height: 16px;
+  fill: #656565;
+}
+
+/* 트렌딩 영역 */
+
+/* 트렌딩 우측 배너 영역 */
+
+aside {
+  height: 466px;
+}
+
+aside .right-aside-banners {
+  display: flex;
+  flex-direction: column;
+}
+
+aside .right-aside-banners .banner-244-380 {
+  margin-bottom: 1rem;
+  order: 1;
+}
+
+aside .right-aside-banners .banner-244-70 {
+  order: 2;
+}
+
+/* 트렌딩 우측 배너 영역 */
+
+/* 오리지널 영역*/
+
+article.original-page {
+  order: 2;
+  margin-right: 2rem;
+}
+
+aside.filter-setting {
+  order: 1;
+  margin-right: 2rem;
+}
+
+aside.filter-setting ul.categoly {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 8px 0;
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+}
+
+aside.filter-setting ul.categoly .check-list {
+  width: 100%;
+}
+
+aside.filter-setting ul.categoly .check-list a {
+  display: flex;
+  align-items: center;
+  -webkit-box-align: center;
+  height: 40px;
+  padding: 0 12px;
+  transition-duration: 200ms;
+}
+
+aside.filter-setting ul.categoly .check-list .cateName {
+  flex: 1 0 auto;
+  color: #303030;
+}
+
+aside.filter-setting ul.categoly .check-list .checkbox {
+  display: flex;
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-flex: 1;
+  height: 18px;
+  padding: 8px 0;
+}
+
+aside.filter-setting ul.categoly .check-list .checkbox input {
+  display: none;
+}
+
+aside.filter-setting ul.categoly .divider-1 {
+  width: 90%;
+  margin-left: 12px;
+}
+
+aside.filter-setting ul.categoly .check-list .checkbox .checkbox-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  border: 1px solid #303030;
+  margin-right: 8px;
+}
+
+aside.filter-setting
+  ul.categoly
+  .check-list
+  .checkbox
+  .hidden-checkbox:checked
+  + .checkbox-label
+  > * {
+  color: #b88b55;
+}
+
+article.original-page ul.original-list {
+}
+
+article.original-page ul.original-list .original-item {
+}
+
+article.original-page ul.original-list .original-item .title-wrap {
+}
+
+article.original-page ul.original-list .original-item .title-wrap .item-title {
+}
+
+article.original-page ul.original-list .original-item .wrap {
+}
+
+article.original-page ul.original-list .original-item .wrap .writer-info {
+}
+
+article.original-page
+  ul.original-list
+  .original-item
+  .wrap
+  .writer-info
+  .profile-image
+  img {
+}
+
+article.original-page
+  ul.original-list
+  .original-item
+  .wrap
+  .writer-info
+  .writer-bio {
+}
+
+article.original-page
+  ul.original-list
+  .original-item
+  .wrap
+  .writer-info
+  .writer-name {
+}
+
+article.original-page
+  ul.original-list
+  .original-item
+  .wrap
+  .writer-info
+  .writer-job {
+}
+
+article.original-page ul.original-list .original-item .comment {
+}
+
+article.original-page ul.original-list .original-item .timeago {
+}
+
+article.original-page ul.trending-list .original-item .comment .icon {
+  height: 16px;
+  fill: #656565;
+}
+
+article.original-page
+  ul.original-list
+  .original-item
+  .timeago
+  .comment-quantity {
+}
+
+article.original-page ul.original-list .original-item .item-image {
+}
+
+/* 오리지널 영역*/
