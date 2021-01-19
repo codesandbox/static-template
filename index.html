@@ -1,12 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <title>쿠팡 홈페이지</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="wrapper">
+      <header>
+        <!--최상단 메뉴바-->
+        <div class="top-bar">
+          <ui id="subscribeHeader">
+            <li><a href="#"> 즐겨찾기 </a></li>
+            <li id="subscribeMenu">
+              <a href="#">
+                입점신청
+                <i class="ic"></i>
+              </a>
+              <ul id="subHeader">
+                <li><a href="#">오픈마켓</a></li>
+                <li><a href="#">여행·티켓</a></li>
+                <li><a href="#">로켓배송</a></li>
+                <li><a href="#">제휴마케팅</a></li>
+              </ul>
+            </li>
+          </ui>
+
+          <ul id="headerMenu">
+            <li><a href="#"> 로그인 </a></li>
+            <li><a href="#"> 회원가입 </a></li>
+            <li><a href="#"> 고객센터 </a></li>
+          </ul>
+        </div>
+
+        <div class="MainHeader">
+          <div class="categoryButton">
+            <p>카테고리</p>
+          </div>
+          <a href="#" style="position: absolute; top: 30px; left: 140px;"
+            ><img src="header/coupang_logo.png" width="174" height="41" alt="쿠팡로고"
+          /></a>
+
+          <!--검색창-->
+          <div class="searchArea">
+            <div class="searchtype">전체 <i class="ic"></i></div>
+            <input type="text" placeholder=" 찾고 싶은 상품을 검색해보세요!" />
+            <a href="#" class="mic"> </a>
+            <a href="#" class="searchIc"></a>
+          </div>
+
+          <div class="myCoupang">
+            <a href="#" class="myCoupangIc"> </a>
+            <a href="#" class="myCoupang-title">마이쿠팡 </a>
+            <ul class="myCoupangMenu">
+              <li><a href="#">주문목록</a></li>
+              <li><a href="#">취소/반품</a></li>
+              <li><a href="#">찜 리스트</a></li>
+            </ul>
+          </div>
+
+          <div class="myCart">
+            <a href="#" class="myCartIc"></a>
+            <a href="#" class="myCartIc-title">장바구니</a>
+            <a href="#" class="myCartCount">0</a>
+            <ul class="myCartMenu">
+              <li><a href="#"> 장바구니에 담긴 품목이 없습니다. </a></li>
+            </ul>
+          </div>
+          <!-- 헤더 메뉴바 -->
+          <div class="headmenubar">
+            <ul class="headmenubarList">
+              <li class="rocketDelivery"><a href="#">로켓배송</a></li>
+              <li class="rocketFresh newIc"><a href="#">로켓프레시</a></li>
+              <li class="newIc"><a href="#">2021 설날</a></li>
+              <li><a href="#">로켓직구</a></li>
+              <li><a href="#">골드박스</a></li>
+              <li><a href="#">정기배송</a></li>
+              <li><a href="#">이벤트/쿠폰</a></li>
+              <li><a href="#">기획전</a></li>
+              <li><a href="#">여행/티켓</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="headerEnd">
+          쿠팡 홈 > 로켓배송
+        </div>
+      </header>
+      <section>
+        <div class="mainBody">
+
+          <!--검색 필터-->
+          <div class="searchFilter">
+            <ul class="searchFilter-option" style="padding: 10px 10px 8px;">
+              <li>
+                <input type="checkbox" /><span class="rocket-option"><img src="filter/rocket.png" alt="rocket" height= 18px;></span>
+                <ul>
+                  <li>
+                    <input type="checkbox" />
+                      <span class="only-rocket-option">
+                      <img src="filter/rocket_delivery.png" alt="rocket_delivery" height=14px;>
+                      <span style="position:absolute; bottom:1px; width:50px;">만 보기</span>
+                      </span>
+                  </li>
+                  <li>
+                    <input type="checkbox" disabled/>
+                      <span class="rocketDirect-option">
+                      <img src="filter/rocket_direct.png" alt="rocket_direct" height=14px;>
+                      <span style="position:absolute; bottom:1px; width:50px;">만 보기</span>
+                      </span>
+                  </li>
+                </ul>
+                <li>
+                  <input type="checkbox" />
+                  <span class="subscribe-option">                    
+                  </span>
+                </li>
+                <li>
+                  <input type="checkbox" />
+                  <span class="avenue-option">
+                    <a href="#"><img src="filter/c-avenue.svg" alt-"c-avenue" height=18px;/></a>
+                  </span>
+                </li>
+                <li>
+                  <input type="checkbox"/> 무료배송
+                </li>
+              </li>
+            </ul>
+            <hr style="border-top: 1px solid rgb(223, 223, 223);">
+            <h4 style="padding-left:5px;"> 카테고리 </h4>
+            <ul class="searchFilter-category">
+              <li><a href="#">식품</a></li>
+              <li><a href="#">생활용품</a></li>
+              <li><a href="#">뷰티</a></li>
+              <li><a href="#">홈인테리어</a></li>
+              <li><a href="#">가전디지털</a></li>
+              <li><a href="#">주방용품</a></li>
+              <li><a href="#">출산/유아동</a></li>
+              <li><a href="#">반려동물용품</a></li>
+              <li><a href="#">완구/취미</a></li>
+              <li><a href="#">자동차용품</a></li>
+              <li><a href="#">문구/오피스</a></li>
+              <li><a href="#">스포츠/레저</a></li>
+              <li><a href="#">도서/음반/DVD</a></li>
+              <li><a href="#">헬스/건강식품</a></li>
+              <li><a href="#">여성패선</a></li>
+              <li><a href="#">남성패션</a></li>
+              <li><a href="#">여아패선 (3세 이상)</a></li>
+              <li><a href="#">남아패션 (3세 이상)</a></li>
+              <li><a href="#">베이비패션(0~3세)</a></li>           
+            </ul> 
+            <hr style="border-top: 1px solid rgb(223, 223, 223);">
+            <h4 style="padding-left:5px;"> 브랜드 </h4>
+            <ul class="searchFilter-brand">
+              <li><a href="#"><input type="checkbox">앱솔루트</a></li>
+              <li><a href="#"><input type="checkbox">코디</a></li>
+              <li><a href="#"><input type="checkbox">베베숲</a></li>
+              <li><a href="#"><input type="checkbox">깨끗한나라</a></li>
+              <li><a href="#"><input type="checkbox">팸퍼스</a></li>
+              <li><a href="#"><input type="checkbox">앙블랑</a></li>
+              <span style="color:blue;">+ 더보기</span>
+            </ul>
+            <hr style="border-top: 1px solid rgb(223, 223, 223);">
+            <h4 style="padding-left:5px;"> 타입 </h4>
+            <ul class="searchFilter-type">
+                <li><a href="#"><input type="checkbox">캡형</a></li>
+                <li><a href="#"><input type="checkbox">리필형</a></li>
+                <li><a href="#"><input type="checkbox">휴대용</a></li>
+                <li><a href="#"><input type="checkbox">낱개포장</a></li>
+            </ul>
+            <hr style="border-top: 1px solid rgb(223, 223, 223);">
+            <h4 style="padding-left:5px;"> 구성 </h4>
+            <ul class="searchFilter-component">
+              <li><a href="#"><input type="checkbox">리필</a></li>
+              <li><a href="#"><input type="checkbox">본품</a></li>
+              <li><a href="#"><input type="checkbox">본품+리필</a></li>
+            </ul>
+            <hr style="border-top: 1px solid rgb(223, 223, 223);">
+            <h4 style="padding-left:5px;"> 겹 수 </h4>
+            <ul class="searchFilter-layer">
+                <li><a href="#"><input type="checkbox">1겹</a></li>
+                <li><a href="#"><input type="checkbox">2겹</a></li>
+                <li><a href="#"><input type="checkbox">3겹</a></li>
+                <li><a href="#"><input type="checkbox">4겹 이상</a></li>
+            </ul>
+            <hr style="border-top: 1px solid rgb(223, 223, 223);">
+            <h4 style="padding-left:5px;"> 향 유무 </h4>
+            <ul class="searchFilter-isScent">
+                <li><a href="#"><input type="checkbox">무향</a></li>
+                <li><a href="#"><input type="checkbox">유향</a></li>
+            </ul>
+            <hr style="border-top: 1px solid rgb(223, 223, 223);">
+            <h4 style="padding-left:5px;"> 간편/대용식 섭취방법 </h4>
+            <ul class="searchFilter-foodtype">
+                <li><a href="#"><input type="checkbox">즉석섭취음료</a></li>
+                <li><a href="#"><input type="checkbox">즉석섭취식품</a></li>
+                <li><a href="#"><input type="checkbox">즉석완조리식품</a></li>
+                <li><a href="#"><input type="checkbox">즉석반조리식품</a></li>
+                <li><a href="#"><input type="checkbox">신선편의식재료</a></li>
+            </ul>
+            <hr style="border-top: 1px solid rgb(223, 223, 223);">
+            <h4 style="padding-left:5px;"> 무형광 </h4>
+            <ul class="searchFilter-nolight">
+                <li><a href="#"><input type="checkbox">무형광</a></li>
+            </ul>
+            <hr style="border-top: 1px solid rgb(223, 223, 223);">
+            <h4 style="padding-left:5px;"> 용기 타입 </h4>
+            <ul class="searchFilter-container">
+                <li><a href="#"><input type="checkbox">플라스틱병</a></li>
+                <li><a href="#"><input type="checkbox">유리병</a></li>
+                <li><a href="#"><input type="checkbox">캔</a></li>
+                <li><a href="#"><input type="checkbox">파우치</a></li>
+                <li><a href="#"><input type="checkbox">종이팩</a></li>
+            </ul>
+            <hr style="border-top: 1px solid rgb(223, 223, 223);">
+            <h4 style="padding-left:5px;"> 1회 제공량당 열랑 </h4>
+            <ul class="searchFilter-calorie">
+                <li><a href="#"><input type="checkbox">0Kcal</a></li>
+                <li><a href="#"><input type="checkbox">1Kcal 이상 ~ 20Kcal 이하</a></li>
+                <li><a href="#"><input type="checkbox">20Kcal 이상 ~ 40Kcal 이하</a></li>
+                <li><a href="#"><input type="checkbox">40Kcal 이상 ~ 100Kcal 이하</a></li>
+                <li><a href="#"><input type="checkbox">100Kcal 이상 ~ 200Kcal 이하</a></li>
+                <li><a href="#"><input type="checkbox">200Kcal 이상 ~ 300Kcal 이하</a></li>
+                <li><a href="#"><input type="checkbox">300Kcal 이상</a></li>
+            </ul>
+            <hr style="border-top: 1px solid rgb(223, 223, 223);">
+            <h4 style="padding-left:5px;"> 별점 </h4>
+            <h5 style="padding-top:4px; padding-left:10px; color:blue;"> 별점 전체</h5>
+            <ul class="searchFilter-score">
+              <li><a href="#"><span class="starScore" style="background-position:0 -51px; padding-right:10px;"></span>4점 이상</a></li>
+              <li><a href="#"><span class="starScore" style="background-position:0 -34px; padding-right:10px;"></span>3점 이상</a></li>
+              <li><a href="#"><span class="starScore" style="background-position:0 -17px; padding-right:10px;"></span>2점 이상</a></li>
+              <li><a href="#"><span class="starScore" style="background-position:0 0; padding-right:10px;"></span>1점 이상</a></li>
+            </ul>
+            <hr style="border-top: 1px solid rgb(223, 223, 223);">
+            <h4 style="padding-left:5px;"> 가격 </h4>
+            <h5 style="padding-top:4px; padding-left:10px; color:blue;"> 가격 전체</h5> 
+            <ul class="searchFilter-price">
+              <li><a href="#">7천원 이하</a></li>
+              <li><a href="#">7천원~1만 4천원</a></li>
+              <li><a href="#">1만 4천원~2만 1천원</a></li>
+              <li><a href="#">2만 1천원~2만 8천원</a></li>
+              <li><a href="#">2만 8천원 이상</a></li>
+              <div class="priceRange">
+                  <input type="text" class="priceInput"> ~                  
+                  <input type="text" class="priceInput"> 원
+                  <a href="#" class="searchButton">검색</a>
+              </div>
+            </ul>
+          </div>
+
+          <!--메인 창-->
+          <div class="mainUI">
+
+            <!--메인 배너-->
+            <div class="mainBanner">
+              <a href="#"><img src="banner/banner_img.jpg" class="bannerImg"></a>
+              <ul class="bannerList">
+                <li><a href="#"><div class="bannerElement" style="background-image:url(banner/banner_list_1.jpg)"></div></a></li>
+                <li><a href="#"><div class="bannerElement" style="background-image:url(banner/banner_list_2.jpg)"></div></a></li>
+                <li><a href="#"><div class="bannerElement" style="background-image:url(banner/banner_list_3.jpg)"></div></a></li>
+                <li><a href="#"><div class="bannerElement" style="background-image:url(banner/banner_list_4.jpg)"></div></a></li>
+                <li><a href="#"><div class="bannerElement" style="background-image:url(banner/banner_list_5.jpg)"></div></a></li>                
+              </ul>
+              <div class="bannerListControl">
+                <span class="banner-up"></span>
+                <span class="banner-down"></span>
+              </div>
+            </div>
+
+            <!--메인 카테고리-->
+            <div class="categoryTitle"><span style="background-color:white; font-size:30px;width:300px;">&nbsp;&nbsp;CATEGORY&nbsp;&nbsp;</span></div>
+            <div class="category">
+              <div class="categoryItem" onclick="location.href='#';">
+                <img src="category/category_food.png" class="categoryImg" alt="식품">
+                <div class="categoryName">식품</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';">
+                  <img src="category/category_household.png" class="categoryImg" alt="생활용품">
+                  <div class="categoryName">생활용품</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';">
+                  <img src="category/category_beauty.png" class="categoryImg" alt="뷰티">
+                  <div class="categoryName">뷰티</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';">
+                  <img src="category/category_interior.png" class="categoryImg" alt="홈인테리어">
+                  <div class="categoryName">홈인테리어</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';">
+                  <img src="category/category_digital.png" class="categoryImg" alt="가전디지털">
+                  <div class="categoryName">가전디지털</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';">
+                  <img src="category/category_kitchen.png" class="categoryImg" alt="주방용품">
+                  <div class="categoryName">주방용품</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';">
+                  <img src="category/category_infant.png" class="categoryImg" alt="출산/유아동">
+                  <div class="categoryName">출산/유아동</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';">
+                  <img src="category/category_pet.png" class="categoryImg" alt="반려동물용품">
+                  <div class="categoryName">반려동물용품</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';">
+                  <img src="category/category_hobby.png" class="categoryImg" alt="완구/취미">
+                  <div class="categoryName">완구/취미</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';" alt="자동차용품">
+                  <img src="category/category_vehicle.png" class="categoryImg" >
+                  <div class="categoryName">자동차용품</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';" alt="문구/오피스">
+                  <img src="category/category_office.png" class="categoryImg" >
+                  <div class="categoryName">문구/오피스</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';" alt="스포츠/레저">
+                <img src="category/category_sports.png" class="categoryImg" >
+                <div class="categoryName">스포츠/레저</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';" alt="도서/음반/DVD">
+                <img src="category/category_books.png" class="categoryImg" >
+                <div class="categoryName">도서/음반/DVD</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';" alt="헬스/건강식품">
+                <img src="category/category_health.png" class="categoryImg" >
+                <div class="categoryName">헬스/건강식품</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';" alt="여성식품">
+                <img src="category/category_femaleFashion.png" class="categoryImg" >
+                <div class="categoryName">여성패션</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';" alt="남성식품">
+                  <img src="category/category_maleFashion.png" class="categoryImg" >
+                  <div class="categoryName">남성패션</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';" alt="여아패션(3세 이상)">
+                  <img src="category/category_girlFashion.png" class="categoryImg" >
+                  <div class="categoryName">여아패션(3세 이상)</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';" alt="남아패션(3세 이상)">
+                  <img src="category/category_boyFashion.png" class="categoryImg" >
+                  <div class="categoryName">남아패션(3세 이상)</div>
+              </div>
+              <div class="categoryItem" onclick="location.href='#';" alt="베이비패션(0~3세)">
+                  <img src="category/category_babyFashion.png" class="categoryImg" >
+                  <div class="categoryName">여아패션(0~3세)</div>
+              </div>
+          </div>
+                  
+          <h2 style="display:block; position:relative;"> 로켓배송 </h2>
+
+          <!--제품 기준-->
+          <div class="productSort"> 
+            <ul class="sortBy">
+              <li><input type="radio" name="sortBy" id="coupangRanking" checked>
+                <label for="coupangRanking">쿠팡 랭킹순                  
+                  <span class="coupangRanking-help">
+                  <p> 쿠팡 랭킹순은 판매 실적, 사용자 선호도,<br> 상품 정보 충실도 및 검색 정확도 등을<br> 종합적으로 고려한 순위입니다.</p>
+                  </span>
+                </label>
+                
+              </li>
+              <li><input type="radio" name="sortBy" id="descPrice">
+                <label for="descPrice">낮은 가격순</label></li>
+              <li><input type="radio" name="sortBy" id="ascPrice">
+                <label for="ascPrice">높은 가격순</label></li>
+              <li><input type="radio" name="sortBy" id="salesRate">
+                <label for="salesRate">판매량순</label></li>
+              <li><input type="radio" name="sortBy" id="latest">
+                <label for="latest">최신순</label></li>
+            </ul>
+            <div class="listCount"><strong>24개씩 보기<span class="openMark"></span></strong></div>
+          </div>
+
+          <!--제품 리스트-->
+          <div class="productList">
+            
+
+
+          </div>
+
+
+          </div>
+        </div>
+      </section>
+    </div>
   </body>
 </html>

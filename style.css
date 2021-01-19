@@ -1,0 +1,668 @@
+body {
+  margin: 0;
+  font-size: 14px;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+h4 {
+  font-size: 17px;
+}
+h4,
+h5 {
+  margin: 0px;
+  padding: 0px;
+}
+
+#wrapper {
+  width: 1260px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1300px) {
+  #wrapper {
+    width: 1000px;
+    margin: 0 auto;
+  }
+}
+.top-bar {
+  background-color: rgb(230, 230, 230);
+  height: 32px;
+}
+#headerMenu {
+  float: right;
+  position: relative;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  margin-right: 10px;
+}
+#headerMenu > li {
+  display: inline-block;
+  line-height: 32px;
+  text-align: center;
+  width: 70px;
+}
+#headerMenu > li a {
+  color: black;
+  text-decoration: none;
+}
+#subscribeHeader {
+  float: left;
+  position: relative;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+}
+#subscribeHeader > li {
+  display: inline-block;
+  line-height: 32px;
+  text-align: center;
+  width: 70px;
+}
+#subscribeHeader > li a {
+  color: black;
+  text-decoration: none;
+  position: relative;
+}
+
+#subscribeHeader .ic {
+  display: inline-block;
+  position: absolute;
+  padding-left: 10px;
+  top: 10px;
+  left: 60px;
+  width: 5px;
+  height: 3px;
+  background-position: -153px -36px;
+  vertical-align: middle;
+}
+#subHeader {
+  width: 100px;
+  position: absolute;
+  display: none;
+  margin: 0px;
+  padding: 0;
+  left: 60px;
+  border: 1px solid gray;
+  background-color: white;
+}
+#subscribeMenu:hover > #subHeader {
+  display: block;
+}
+#subscribeMenu:hover > #subHeader a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+.categoryButton,
+.ic,
+.searchIc,
+.myCoupangIc,
+.myCartIc,
+.rocketDelivery {
+  background-image: url(header/coupang_header_img_sprite.png);
+  background-repeat: no-repeat;
+}
+.categoryButton {
+  position: absolute;
+  display: inline;
+  width: 110px;
+  height: 115px;
+  background-position: 0 0;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  margin-right: 30;
+}
+.MainHeader {
+  position: relative;
+  width: auto;
+  height: 115px;
+}
+.categoryButton > p {
+  margin-top: 75px;
+  text-align: center;
+  color: white;
+  bottom: -10px;
+}
+.searchArea {
+  border: 2px solid #4388f8;
+  display: inline;
+  position: absolute;
+  height: 40px;
+  top: 30px;
+  left: 350px;
+}
+.searchArea {
+  width: 56%;
+}
+@media screen and (max-width: 1300px) {
+  .searchArea {
+    width: 48%;
+  }
+}
+.searchtype {
+  position: absolute;
+  width: 108px;
+  height: 38px;
+  line-height: 40px;
+  font-size: 12px;
+  padding-left: 10px;
+}
+.searchtype .ic {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  width: 10px;
+  height: 3px;
+  background-position: -153px -36px;
+}
+.searchArea input {
+  position: absolute;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  padding-left: 5px;
+  left: 110px;
+  border: none;
+  border-left: 1px solid rgb(180, 179, 179);
+}
+.searchArea input {
+  width: 70%;
+}
+@media screen and (max-width: 1300px) {
+  .searchArea input {
+    width: 55%;
+  }
+}
+.searchArea .mic {
+  position: absolute;
+  top: 5px;
+  right: 48px;
+  margin: 0;
+  padding: 0;
+  padding-left: 5px;
+  width: 22px;
+  height: 26px;
+  background: url(header/ic_mic.png) 3px 1px;
+  background-size: 20px 48px;
+}
+.searchArea .searchIc {
+  position: absolute;
+  right: 0;
+  width: 50px;
+  height: 39px;
+  background-position: -112px -71px;
+}
+.myCoupangIc {
+  position: absolute;
+  right: 100px;
+  top: 30px;
+  width: 30px;
+  height: 33px;
+  background-position: -112px -42px;
+}
+.myCoupang-title {
+  position: absolute;
+  width: 80px;
+  top: 65px;
+  right: 77px;
+  text-align: center;
+}
+.myCoupangMenu,
+.myCartMenu {
+  display: none;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  border: 1px solid black;
+  background-color: white;
+  z-index: 3;
+}
+.myCoupangMenu {
+  top: 85px;
+  right: 75px;
+  padding-top: 10px;
+  width: 80px;
+  height: 100px;
+  text-align: center;
+  line-height: 2;
+}
+.myCoupang:hover > .myCoupangMenu,
+.myCart:hover > .myCartMenu {
+  display: block;
+}
+.myCartIc {
+  position: absolute;
+  right: 20px;
+  top: 22px;
+  width: 40px;
+  height: 36px;
+  background-position: -112px 0px;
+}
+.myCartIc-title {
+  position: absolute;
+  width: 80px;
+  top: 65px;
+  right: 2px;
+  text-align: center;
+}
+.myCoupang-title:hover,
+.myCartIc-title:hover,
+.myCartMenu li a {
+  color: black;
+  text-decoration: none;
+}
+.myCartCount,
+.myCartCount:hover {
+  position: absolute;
+  top: 23px;
+  right: 30px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+  z-index: 3;
+}
+.myCartMenu {
+  display: none;
+  width: 280px;
+  height: 120px;
+  top: 85px;
+  right: 10px;
+  line-height: 120px;
+  padding-left: 5px;
+}
+.headmenubar {
+  position: relative;
+  width: auto;
+  height: 28px;
+  top: 85px;
+  left: 110px;
+}
+.headmenubarList {
+  margin: 0;
+  padding-left: 25px;
+  line-height: 28px;
+}
+.headmenubarList li {
+  min-width: 95px;
+  height: 28px;
+  text-align: center;
+  float: left;
+}
+.rocketDelivery {
+  background-position: 0 -118px;
+  width: 24px;
+  height: 32px;
+}
+.rocketFresh a::before {
+  content: url(header/rocket_fresh.png);
+  display: inline-block;
+  position: absolute;
+  top: 4px;
+  left: 115px;
+}
+.newIc a::after {
+  content: "";
+  background: url(header/ic_new.png);
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-size: 12px;
+  position: absolute;
+  top: 0px;
+}
+.headerEnd {
+  position: relative;
+  width: auto;
+  background-color: rgb(230, 230, 230);
+  height: 30px;
+  line-height: 30px;
+  padding-left: 20px;
+}
+.mainBody {
+  position: relative;
+  display: block;
+  width: auto;
+}
+.searchFilter {
+  position: relative;
+  width: 200px;
+  line-height: 2;
+  padding: 0 10px;
+  box-shadow: 1px 0 1px 0 #eeeeee, -1px 0 1px 0 #eeeeee;
+  float: left;
+}
+
+.searchFilter input[type="checkbox"] {
+  margin: 10px 8px 0 0;
+}
+.searchFilter a:hover {
+  text-decoration: none;
+}
+.searchFilter-option,
+.searchFilter-category,
+.searchFilter-brand,
+.searchFilter-type,
+.searchFilter-component,
+.searchFilter-layer,
+.searchFilter-isScent,
+.searchFilter-foodtype,
+.searchFilter-nolight,
+.searchFilter-container,
+.searchFilter-calorie,
+.searchFilter-score,
+.searchFilter-price {
+  padding: 2px 10px 8px;
+  margin: 0;
+  width: 180px;
+}
+.searchFilter-option ul {
+  padding-left: 15px;
+}
+.rocket-option {
+  position: absolute;
+  padding-left: 5px;
+  top: 14px;
+}
+.only-rocket-option {
+  position: absolute;
+  top: 46px;
+}
+.rocketDirect-option {
+  position: absolute;
+  left: 56px;
+  top: 78px;
+}
+.subscribe-option {
+  background-image: url(filter/select_sprite.png);
+  background-repeat: no-repeat;
+  background-position: 0 -178px;
+  display: inline-block;
+  width: 63px;
+  height: 14px;
+}
+.avenue-option {
+  position: absolute;
+  top: 140px;
+  left: 48px;
+}
+.searchFilter-calorie li {
+  width: 180px;
+  height: 31px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.starScore {
+  display: inline-block;
+  background-image: url(filter/select_sprite.png);
+  background-repeat: no-repeat;
+  width: 69px;
+  height: 12px;
+  opacity: 0.5;
+}
+.searchFilter-score li:hover .starScore,
+.searchFilter-score li:hover a {
+  opacity: 1;
+  color: blue;
+}
+.priceRange {
+  margin-top: 8px;
+}
+.priceInput {
+  width: 32px;
+  height: 26px;
+  padding: 0 5px;
+  border: 1px solid rgb(206, 205, 205);
+}
+.searchButton {
+  color: white;
+  background-color: rgb(48, 85, 250);
+  width: 36px;
+  height: 28px;
+  position: absolute;
+  display: inline-block;
+  bottom: 8px;
+  left: 153px;
+  border-radius: 2px;
+  text-align: center;
+  text-decoration: none;
+}
+.searchButton:hover {
+  background-color: rgb(98, 126, 250);
+}
+.mainUI {
+  position: relative;
+  width: auto;
+  display: flex;
+  padding-top: 20px;
+  padding-left: 10px;
+  flex-direction: column;
+}
+.mainUI::-webkit-scrollbar {
+  display: none;
+}
+.mainBanner {
+  display: flex;
+  position: relative;
+  float: left;
+}
+.bannerList {
+  margin: 0;
+  padding: 0;
+  width: 260px;
+}
+@media screen and (max-width: 1300px) {
+  .bannerList {
+    display: none;
+  }
+}
+.bannerImg {
+  display: inline;
+}
+.bannerElement {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  width: 260px;
+  height: 60px;
+  overflow: hidden;
+  display: block;
+  box-shadow: 1px 0 1px 0 #dadada, -1px 0 1px 0 #dadada;
+}
+.bannerElement:hover {
+  background-position: -260px 0px;
+}
+.bannerListControl {
+  display: block;
+  position: absolute;
+  width: 260px;
+  height: 26px;
+  background-color: rgb(241, 239, 239);
+  box-shadow: 1px 0 1px 0 #dadada, -1px 0 1px 0 #dadada;
+  bottom: 3px;
+  right: 2px;
+  margin: 0;
+  position: 0;
+  text-align: center;
+}
+@media screen and (max-width: 1300px) {
+  .bannerListControl {
+    display: none;
+  }
+}
+.banner-up,
+.banner-down {
+  background-image: url(banner/banner_sprite.png);
+  background-repeat: no-repeat;
+  width: 29px;
+  height: 29px;
+  display: inline-block;
+}
+.banner-up {
+  background-position: 0 -1px;
+}
+.banner-up:hover {
+  background-position: -30px -1px;
+}
+.banner-down {
+  background-position: 0 -31px;
+}
+.banner-down:hover {
+  background-position: -30px -31px;
+}
+.categoryTitle {
+  display: block;
+  position: relative;
+  margin-top: 40px;
+  height: 10px;
+  line-height: 10px;
+  border-bottom: solid 1px #cccccc;
+  text-align: center;
+}
+.category {
+  display: grid;
+  position: relative;
+  margin-top: 40px;
+  justify-items: center;
+}
+.category {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 250px);
+}
+@media screen and (max-width: 1300px) {
+  .category {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 250px);
+  }
+}
+.categoryItem {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  background-image: url(category/bg_circle.png);
+  background-repeat: no-repeat;
+  width: 182px;
+  height: 182px;
+  cursor: pointer;
+}
+.categoryImg {
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  top: 25px;
+}
+.categoryName {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  bottom: -35px;
+}
+.productSort {
+  background-color: rgb(230, 230, 230);
+  width: auto;
+  height: 32px;
+  line-height: 32px;
+}
+.sortBy {
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+.sortBy li {
+  display: inline-block;
+  padding: 0px 10px;
+  height: 20px;
+  line-height: 20px;
+  border-right: 1px solid rgb(167, 167, 167);
+}
+.sortBy li:last-child {
+  border: 0;
+}
+.sortBy label {
+  cursor: pointer;
+}
+.sortBy input[type="radio"] {
+  display: none;
+}
+
+.sortBy li input:checked + label {
+  color: blue;
+  font-weight: bold;
+}
+.sortBy li input:checked + label::before {
+  background: url(filter/select_sprite.png) no-repeat -89px -91px;
+  content: " ";
+  float: left;
+  width: 13px;
+  height: 13px;
+  margin-top: 5px;
+  margin-right: 3px;
+}
+.coupangRanking-help {
+  background: url(filter/select_sprite.png) no-repeat -72px -91px;
+  cursor: help;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  position: relative;
+  overflow-y: visible;
+}
+.coupangRanking-help p {
+  display: block;
+  position: absolute;
+  visibility: hidden;
+  top: 30px;
+  left: -1px;
+  min-width: 190px;
+  padding: 11px;
+  margin: 0;
+  font-size: 12px;
+  color: white;
+  line-height: 1.5;
+  white-space: nowrap;
+  border-radius: 4px;
+  background-color: black;
+  z-index: 30;
+}
+.coupangRanking-help:hover p {
+  visibility: visible;
+}
+.listCount {
+  float: right;
+  padding: 0 10px;
+}
+.openMark {
+  display: inline-block;
+  background: url(filter/select_sprite.png) no-repeat -99px -203px;
+  width: 17px;
+  height: 17px;
+  line-height: 17px;
+}
+.productList {
+  display: grid;
+  position: relative;
+  justify-items: center;
+  margin-top: 40px;
+}
+.productList {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 457px);
+}
+@media screen and (max-width: 1300px) {
+  .productList {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(8, 457px);
+  }
+}
