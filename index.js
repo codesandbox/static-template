@@ -77,7 +77,7 @@ let handelClick = function (event) {
 
   let currentScore  =  +document.getElementById("score").innerHTML;
   let score = currentQuestion.calculateScore(event.target.innerHTML, time);
-  currentScore = parseInt(score);
+  currentScore += parseInt(score);
   console.log(currentScore);
   document.getElementById("score").innerHTML = currentScore;
 };
@@ -115,12 +115,12 @@ const startGame = function () {
   updatequestion();
 
   if (questions.length - 1 === currentQuestionIndex) {
+alert("Thank you");
     clearInterval(inravalId);
   }
 };
 
-let inravalId = setInterval(startGame, 12000);
-startGame();
+let inravalId;
 
 let startbtn = document.getElementById("start-quiz");
 
@@ -129,6 +129,8 @@ let quesRuleContainer = document.getElementById("container");
 let quesContainer = document.getElementById("questions");
 quesContainer.classList = " ";
 quesRuleContainer.classList = "hide";
+inravalId = setInterval(startGame, 12000);
+startGame();
 return;
 }
 
