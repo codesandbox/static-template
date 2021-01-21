@@ -15,58 +15,63 @@ let question_number = 0;
 
 let questions = [
   new Question(
-     "In Java array are",
-    "Object",
+     `How do you write "Hello W3docs" in an alert box?`,
+     `alert("Hello W3docs");`,
      [
-      "Object Refrence",
-      "Object",
-      "Primitive data type",
+      `alertBox("Hello W3docs");`,
+      `alert("Hello W3docs");`,
+      `modal("Hello W3docs")`,
       "none of the above"
     ]),
   
   
     new Question(
-     "Which one of the following is valid Statement",
-     "[] c = new char[4];",
+     "Which is the correct way to write a comment in JavaScript?",
+     "// ....",
      [
-      "char[] c = new char();",
-      "[] c = new char[4];",
-      "char[] c = new char(4);",
-      "char[] c = new char[];"
+      "{# ... #}",
+      "<!--- .... ---!>",
+      "// ....",
+      " \\ ..."
     ]),
   new Question(
     
    
-      "When you pass the array into the method,the method receives _______",
-    "Copy of the array",
+      "How can you detect the application name of the client’s browser?",
+    "browser.name",
      [
-      "refrence of the array",
-      "Copy of the array",
-      "Length of the array",
-      "A copy of the first element"
+      "navigator.appName",
+      "navigator.browserName",
+      "browser.name",
+      "navigator.browserName"
     ]),
   
   
     new Question(
     
-      "When you pass the array into the method,the method receives _______",
-    "Copy of the array",
+      "How do you declare a new date in JavaScript?",
+    "var date = new Date();",
      [
-      "refrence of the array",
-      "Copy of the array",
-      "Length of the array",
-      "A copy of the first element"
+      "var date = Date();",
+      "var date = date('now');",
+      "var date = new Date();",
+      "var date = date().current();"
     ])
   
-];let currentQuestionIndex = -1;
+];
 
+let currentQuestionIndex = -1;
+
+//update the current answer if it's true it turn into to green 
 let handelClick = function (event) {
   let currentQuestion = questions[currentQuestionIndex];
 
   if (currentQuestion.answered) {
     return;
   }
+
   currentQuestion.answered = true;
+
   if (currentQuestion.isCurret(event.target.innerHTML)) {
     event.target.className = "correct";
     console.log("right");
@@ -82,6 +87,7 @@ let handelClick = function (event) {
   document.getElementById("score").innerHTML = currentScore;
 };
 
+// update the question and option
 function updatequestion() {
   currentQuestionIndex++;
   let { question, option } = questions[currentQuestionIndex];
@@ -97,9 +103,11 @@ function updatequestion() {
   }
 }
 
+
+//start the game
+
 const startGame = function () {
   time = 0;
-
   question_number++;
   document.getElementById("number").innerHTML = question_number;
   document.getElementById("time").innerHTML = 10 - time;
@@ -122,6 +130,7 @@ alert("Thank you");
 
 let inravalId;
 
+// hideing the question window
 let startbtn = document.getElementById("start-quiz");
 
 function handelnext(){

@@ -15,58 +15,47 @@ let question_number = 0;
 
 let questions = [
   new Question(
-     "The lifecycle methods are mainly used for ___.",
-    "freeing up resources",
+     "In Java array are",
+    "Object",
      [
-      "keeping track of event history",
-      "enhancing components",
-      "freeing up resources",
+      "Object Refrence",
+      "Object",
+      "Primitive data type",
       "none of the above"
     ]),
   
   
     new Question(
-     "Which is the right way of accessing a function fetch() from an h1 element in JSX?",
+     "Which one of the following is valid Statement",
      "[] c = new char[4];",
      [
-      "<h1>{fetch()}</h1>",
-      "<h1>${fetch()}</h1>",
-      "h1>{fetch}</h1>;",
-      "<h1>${fetch}</h1>"
+      "char[] c = new char();",
+      "[] c = new char[4];",
+      "char[] c = new char(4);",
+      "char[] c = new char[];"
     ]),
   new Question(
     
    
-      "Which of the following methods in a React Component should be overridden to stop the component from updating?",
-    "componentDidMount",
+      "When you pass the array into the method,the method receives _______",
+    "Copy of the array",
      [
-      "willComponentUpdate",
-      "shouldComponentUpdate",
-      "componentDidUpdate",
-      "componentDidMount"
+      "refrence of the array",
+      "Copy of the array",
+      "Length of the array",
+      "A copy of the first element"
     ]),
   
   
     new Question(
     
-      "What is used to pass data to a component from outside?",
-    "Props",
+      "When you pass the array into the method,the method receives _______",
+    "Copy of the array",
      [
-      "setState",
-      "render with arguments",
-      "PropsType",
-      "Props"
-    ]),
-
-    new Question(
-    
-      "What will happen if you call setState() inside render() method?",
-    "Stack overflow error",
-     [
-      "Repetitive output appears on the screen",
-      "Duplicate key error",
-      "Stack overflow error",
-      "Nothing happens"
+      "refrence of the array",
+      "Copy of the array",
+      "Length of the array",
+      "A copy of the first element"
     ])
   
 ];
