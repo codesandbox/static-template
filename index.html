@@ -1,12 +1,158 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<html>
+  <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Anny Carolinne - Bootcamp</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+
+    <style>
+      body {
+        background: black;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        color: white;
+        text-align: center;
+        font-family: "Arial";
+        font-size: 60px;
+        margin: 0;
+      }
+
+      h2 {
+        color: white;
+        text-align: center;
+        font-family: "Arial";
+        font-size: 30px;
+        margin: 0;
+      }
+
+      h3 {
+        color: white;
+        font-family: "Arial";
+        font-size: 20px;
+        margin: 20;
+      }
+
+      #apresentacao {
+        width: 100%;
+        height: auto;
+        background: url(imagens/background.gif);
+        background-size: cover;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        text-align: center;
+      }
+
+      @media (max-width: 600px) {
+        #habilidades {
+          flex-direction: column;
+        }
+
+        #frontend {
+          width: 100%;
+        }
+
+        #backend {
+          width: 100%;
+        }
+      }
+
+      #habilidades {
+        background: white;
+        display: flex;
+        text-align: center;
+      }
+
+      h4 {
+        font-size: 30px;
+        color: #4a566e;
+      }
+
+      a {
+        color: white;
+        padding: 20px;
+      }
+
+      #frontend {
+        background: #151515;
+        width: 50%;
+        height: auto;
+        color: white;
+        text-align: center;
+        font-family: "Arial";
+        font-size: 40px;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 50px;
+      }
+
+      #backend {
+        background: #111111;
+        width: 50%;
+        height: auto;
+        color: white;
+        text-align: center;
+        font-family: "Arial";
+        font-size: 40px;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 50px;
+      }
+
+      #contato {
+        height: 500px;
+        height: auto;
+        background: white;
+        color: black;
+        text-align: center;
+        font-family: "Arial";
+        font-size: 40px;
+        justify-content: center;
+        align-items: center;
+        padding-top: 50px;
+        padding-bottom: 100px;
+      }
+    </style>
+
+    <body>
+      <div id="apresentacao">
+        <h1>Anny Carolinne</h1>
+        <h2>Desafio de Criação de site em HTML e CSS</h2>
+        <h3 style="border: 2px solid black;">
+          Desafio aceito e concluído!
+        </h3>
+        <img src="imagens/anny.png" />
+      </div>
+
+      <div id="habilidades">
+        <div id="frontend">
+          <p><b>front-end</b></p>
+          <img src="imagens/css.png" />
+          <img src="imagens/js.png" />
+          <img src="imagens/react.png" />
+        </div>
+        <div id="backend">
+          <p><b>back-end</b></p>
+          <img src="imagens/node.png" />
+          <img src="imagens/sql.png" />
+          <img src="imagens/rest.png" />
+        </div>
+      </div>
+
+      <div id="contato">
+        <h4>
+          <p>
+            Precisando de um site ou app? <br /><b>Me manda uma mensagem! :)</b>
+          </p>
+          <a
+            href="https://api.whatsapp.com/send?phone=5532991612068&text=Oi%2C%20peguei%20seu%20whatsapp%20pelo%20bootcamp!"
+            ><img src="imagens/whatsapp.png"
+          /></a>
+        </h4>
+      </div>
+    </body>
+  </html>
 </html>
