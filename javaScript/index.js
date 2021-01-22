@@ -15,54 +15,47 @@ let question_number = 0;
 
 let questions = [
   new Question(
-     `How do you write "Hello W3docs" in an alert box?`,
-     `alert("Hello W3docs");`,
-     [
+    `How do you write "Hello W3docs" in an alert box?`,
+    `alert("Hello W3docs");`,
+    [
       `alertBox("Hello W3docs");`,
       `alert("Hello W3docs");`,
       `modal("Hello W3docs")`,
       "none of the above"
-    ]),
-  
-  
-    new Question(
-     "Which is the correct way to write a comment in JavaScript?",
-     "// ....",
-     [
-      "{# ... #}",
-      "<!--- .... ---!>",
-      "// ....",
-      " \\ ..."
-    ]),
+    ]
+  ),
+
   new Question(
-    
-   
-      "How can you detect the application name of the client’s browser?",
+    "Which is the correct way to write a comment in JavaScript?",
+    "// ....",
+    ["{# ... #}", "<!--- .... ---!>", "// ....", " \\ ..."]
+  ),
+  new Question(
+    "How can you detect the application name of the client’s browser?",
     "browser.name",
-     [
+    [
       "navigator.appName",
       "navigator.browserName",
       "browser.name",
       "navigator.browserName"
-    ]),
-  
-  
-    new Question(
-    
-      "How do you declare a new date in JavaScript?",
+    ]
+  ),
+
+  new Question(
+    "How do you declare a new date in JavaScript?",
     "var date = new Date();",
-     [
+    [
       "var date = Date();",
       "var date = date('now');",
       "var date = new Date();",
       "var date = date().current();"
-    ])
-  
+    ]
+  )
 ];
 
 let currentQuestionIndex = -1;
 
-//update the current answer if it's true it turn into to green 
+//update the current answer if it's true it turn into to green
 let handelClick = function (event) {
   let currentQuestion = questions[currentQuestionIndex];
 
@@ -80,7 +73,7 @@ let handelClick = function (event) {
     console.log("wroung");
   }
 
-  let currentScore  =  +document.getElementById("score").innerHTML;
+  let currentScore = +document.getElementById("score").innerHTML;
   let score = currentQuestion.calculateScore(event.target.innerHTML, time);
   currentScore += parseInt(score);
   console.log(currentScore);
@@ -103,7 +96,6 @@ function updatequestion() {
   }
 }
 
-
 //start the game
 
 const startGame = function () {
@@ -123,7 +115,7 @@ const startGame = function () {
   updatequestion();
 
   if (questions.length - 1 === currentQuestionIndex) {
-alert("Thank you");
+    alert("Thank you");
     clearInterval(inravalId);
   }
 };
@@ -133,15 +125,14 @@ let inravalId;
 // hideing the question window
 let startbtn = document.getElementById("start-quiz");
 
-function handelnext(){
-let quesRuleContainer = document.getElementById("container");
-let quesContainer = document.getElementById("questions");
-quesContainer.classList = " ";
-quesRuleContainer.classList = "hide";
-inravalId = setInterval(startGame, 12000);
-startGame();
-return;
+function handelnext() {
+  let quesRuleContainer = document.getElementById("container");
+  let quesContainer = document.getElementById("questions");
+  quesContainer.classList = " ";
+  quesRuleContainer.classList = "hide";
+  inravalId = setInterval(startGame, 12000);
+  startGame();
+  return;
 }
 
-startbtn .addEventListener("click",handelnext)
-
+startbtn.addEventListener("click", handelnext);
