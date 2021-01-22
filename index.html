@@ -46,64 +46,34 @@
         text-align: center;
       }
 
-      @media (max-width: 600px) {
-        #habilidades {
-          flex-direction: column;
-        }
-
-        #frontend {
-          width: 100%;
-        }
-
-        #backend {
-          width: 100%;
-        }
-      }
-
       #habilidades {
-        background: white;
-        display: flex;
+	      display: flex;
+	      color: white;
         text-align: center;
-      }
-
-      h4 {
-        font-size: 30px;
-        color: #4a566e;
-      }
-
-      a {
-        color: white;
-        padding: 20px;
       }
 
       #frontend {
         background: #151515;
         width: 50%;
-        height: auto;
-        color: white;
-        text-align: center;
-        font-family: "Arial";
-        font-size: 40px;
-        justify-content: center;
-        align-items: center;
         padding-bottom: 50px;
+        font-size: 30px;
       }
 
       #backend {
         background: #111111;
         width: 50%;
-        height: auto;
+        padding-bottom: 50px;
+        font-size: 30px;
+      }
+
+      h4 {
         color: white;
         text-align: center;
         font-family: "Arial";
         font-size: 40px;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 50px;
       }
 
       #contato {
-        height: 500px;
         height: auto;
         background: white;
         color: black;
@@ -115,6 +85,17 @@
         padding-top: 50px;
         padding-bottom: 100px;
       }
+
+      h5 {
+        font-size: 30px;
+        color: #4a566e;
+      }
+
+      a {
+        color: white;
+        padding: 20px;
+      }
+
     </style>
 
     <body>
@@ -129,13 +110,13 @@
 
       <div id="habilidades">
         <div id="frontend">
-          <p><b>front-end</b></p>
+          <h4>front-end</h4>
           <img src="imagens/css.png" />
           <img src="imagens/js.png" />
           <img src="imagens/react.png" />
         </div>
         <div id="backend">
-          <p><b>back-end</b></p>
+          <h4>back-end</h4>
           <img src="imagens/node.png" />
           <img src="imagens/sql.png" />
           <img src="imagens/rest.png" />
@@ -143,12 +124,8 @@
       </div>
 
       <div id="contato">
-        <h4>
-          <p>
-            Precisando de um site ou app? <br /><b>Me manda uma mensagem! :)</b>
-          </p>
-          <a
-            href="https://api.whatsapp.com/send?phone=5532991612068&text=Oi%2C%20peguei%20seu%20whatsapp%20pelo%20bootcamp!"
+        <h5>Precisando de um site ou app?<br>Me manda uma mensagem! :)</h5>
+        <a href="https://api.whatsapp.com/send?phone=5532991612068&text=Oi%2C%20peguei%20seu%20whatsapp%20pelo%20bootcamp!"
             ><img src="imagens/whatsapp.png"
           /></a>
         </h4>
