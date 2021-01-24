@@ -50,11 +50,11 @@
   position: fixed;
   width: 100vw;
   height: 50vh;
-  background-color: rgba(10, 10, 10, .8);
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: stretch;
+  top: 0vh;
 }
 
 .main-menu ul{
@@ -80,6 +80,23 @@
   transition: all .3s ease-in-out;
   transform: scale(1);
 }
+
+
+.main-menu ul li:nth-child(1) a{
+  box-shadow: 0 0 0rem .1rem var(--water-color)
+ }
+ 
+ .main-menu ul li:nth-child(2) a{
+   box-shadow: 0 0 0rem .1rem var(--fire-color)
+  }
+ 
+  .main-menu ul li:nth-child(3) a{
+   box-shadow: 0 0 0rem .1rem var(--earth-color)
+  }
+ 
+  .main-menu ul li:nth-child(4) a{
+   box-shadow: 0 0 0rem .1rem var(--wind-color)
+  }
 
 .main-menu ul li a:hover{
   transform: scale(1.2);
