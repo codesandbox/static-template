@@ -1,6 +1,5 @@
 document.querySelector("a[href='#menu']").onclick = (e) => {
   e.preventDefault();
-  debugger;
   if (document.querySelector("#menu").classList.contains("show")) {
     document.querySelector("#menu").classList.remove("show");
     document.querySelector("#menu").classList.add("hide");

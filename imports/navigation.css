@@ -5,7 +5,7 @@
   padding: 1rem;
   position: fixed;
   bottom: 3rem;
-  z-index: 9;
+  z-index: 8;
 }
 
 .icon-menu ul {
@@ -48,7 +48,7 @@
 .main-menu {
   position: fixed;
   width: 100vw;
-  height: 50vh;
+  height: calc(100vh - 7rem);
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -63,7 +63,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0.25rem;
+  padding: 1rem;
 }
 
 .main-menu ul li {
@@ -119,10 +119,13 @@
 
 .main-menu.show {
   top: 0vh;
+  z-index: 10;
+  background-color: hsla(190, 100%, 5%, 0.9);
 }
 
 .main-menu.hide {
-  top: -50vh;
+  top: -100vh;
+  z-index: 1;
 }
 
 @media screen and (min-width: 1024px) {
