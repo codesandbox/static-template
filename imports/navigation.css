@@ -119,12 +119,33 @@
   box-shadow: 0 0 .8rem .2rem var(--wind-color)
  }
 
-
-
  .main-menu.show{
    top: 0vh;
  }
 
  .main-menu.hide{
   top: -50vh;
+}
+
+@media screen and (min-width:1024px){
+  .main-menu{
+    position: fixed;
+    width: 10vw;
+    height: 50vh;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    top: 25vh;
+    transition: all .3s ease-in;
+  }
+  .main-menu.show{
+    top: 25vh;
+    right: 0vw;
+  }
+ 
+  .main-menu.hide{
+  top: 25vh;
+  right: -10vw;
+ }
 }
