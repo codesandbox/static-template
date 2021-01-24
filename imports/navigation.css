@@ -1,22 +1,22 @@
-.icon-menu{
-  width:100vw;
+.icon-menu {
+  width: 100vw;
   height: 3rem;
   background-color: transparent;
   padding: 1rem;
   position: fixed;
-  bottom:3rem;
+  bottom: 3rem;
 }
 
-.icon-menu ul{
-  display:flex;
-  flex-wrap; wrap;
+.icon-menu ul {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
-.icon-menu ul li{
-  display:flex;
+.icon-menu ul li {
+  display: flex;
 }
-.icon-menu ul li a{
-  display:flex;
+.icon-menu ul li a {
+  display: flex;
   width: 3rem;
   height: 3rem;
   justify-content: center;
@@ -25,19 +25,17 @@
   border-radius: 3rem;
   color: var(--white-color);
   text-decoration: none;
-
 }
 
-
-@media screen and (min-width:1024px){
-  .icon-menu{
+@media screen and (min-width: 1024px) {
+  .icon-menu {
     width: 3rem;
     height: 50vh;
     padding: 0rem;
     top: calc(100vh - 50vh - 25vh);
     left: 1rem;
   }
-  .icon-menu ul{
+  .icon-menu ul {
     flex-direction: column;
     align-content: space-around;
     height: 100%;
@@ -46,7 +44,7 @@
 
 /* Main Menu */
 
-.main-menu{
+.main-menu {
   position: fixed;
   width: 100vw;
   height: 50vh;
@@ -55,80 +53,79 @@
   justify-content: center;
   align-items: stretch;
   top: 0vh;
-  transition: all .3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
-.main-menu ul{
+.main-menu ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: .25rem;
+  padding: 0.25rem;
 }
 
-.main-menu ul li{
+.main-menu ul li {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.main-menu ul li a{
+.main-menu ul li a {
   width: 10vh;
   height: 10vh;
-  background-color: rgba(20,20,20,.7);
+  background-color: rgba(20, 20, 20, 0.7);
   padding: 1rem;
   border-radius: 50%;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   transform: scale(1);
 }
 
+.main-menu ul li:nth-child(1) a {
+  box-shadow: 0 0 0rem 0.1rem var(--water-color);
+}
 
-.main-menu ul li:nth-child(1) a{
-  box-shadow: 0 0 0rem .1rem var(--water-color)
- }
- 
- .main-menu ul li:nth-child(2) a{
-   box-shadow: 0 0 0rem .1rem var(--fire-color)
-  }
- 
-  .main-menu ul li:nth-child(3) a{
-   box-shadow: 0 0 0rem .1rem var(--earth-color)
-  }
- 
-  .main-menu ul li:nth-child(4) a{
-   box-shadow: 0 0 0rem .1rem var(--wind-color)
-  }
+.main-menu ul li:nth-child(2) a {
+  box-shadow: 0 0 0rem 0.1rem var(--fire-color);
+}
 
-.main-menu ul li a:hover{
+.main-menu ul li:nth-child(3) a {
+  box-shadow: 0 0 0rem 0.1rem var(--earth-color);
+}
+
+.main-menu ul li:nth-child(4) a {
+  box-shadow: 0 0 0rem 0.1rem var(--wind-color);
+}
+
+.main-menu ul li a:hover {
   transform: scale(1.2);
 }
 
-.main-menu ul li:nth-child(1) a:hover{
- box-shadow: 0 0 .8rem .2rem var(--water-color)
+.main-menu ul li:nth-child(1) a:hover {
+  box-shadow: 0 0 0.8rem 0.2rem var(--water-color);
 }
 
-.main-menu ul li:nth-child(2) a:hover{
-  box-shadow: 0 0 .8rem .2rem var(--fire-color)
- }
+.main-menu ul li:nth-child(2) a:hover {
+  box-shadow: 0 0 0.8rem 0.2rem var(--fire-color);
+}
 
- .main-menu ul li:nth-child(3) a:hover{
-  box-shadow: 0 0 .8rem .2rem var(--earth-color)
- }
+.main-menu ul li:nth-child(3) a:hover {
+  box-shadow: 0 0 0.8rem 0.2rem var(--earth-color);
+}
 
- .main-menu ul li:nth-child(4) a:hover{
-  box-shadow: 0 0 .8rem .2rem var(--wind-color)
- }
+.main-menu ul li:nth-child(4) a:hover {
+  box-shadow: 0 0 0.8rem 0.2rem var(--wind-color);
+}
 
- .main-menu.show{
-   top: 0vh;
- }
+.main-menu.show {
+  top: 0vh;
+}
 
- .main-menu.hide{
+.main-menu.hide {
   top: -50vh;
 }
 
-@media screen and (min-width:1024px){
-  .main-menu{
+@media screen and (min-width: 1024px) {
+  .main-menu {
     position: fixed;
     width: 10vw;
     height: 50vh;
@@ -137,15 +134,15 @@
     justify-content: center;
     align-items: stretch;
     top: 25vh;
-    transition: all .3s ease-in;
+    transition: all 0.3s ease-in;
   }
-  .main-menu.show{
+  .main-menu.show {
     top: 25vh;
     right: 0vw;
   }
- 
-  .main-menu.hide{
-  top: 25vh;
-  right: -10vw;
- }
+
+  .main-menu.hide {
+    top: 25vh;
+    right: -10vw;
+  }
 }
