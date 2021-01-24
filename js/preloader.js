@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () =>
   setTimeout(
     () => document.querySelector("#preload").classList.toggle("show"),
-    1000
+    5000
   )
 );
 
