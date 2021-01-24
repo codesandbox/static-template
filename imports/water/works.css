@@ -12,12 +12,63 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .works figure {
   width: 100%;
   padding: 1rem;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  z-index: 1;
 }
+.works article:nth-child(odd) figure:hover {
+  padding: 0rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0.1rem hsla(190, 100%, 35%, 1);
+}
+
+.works article:nth-child(even) figure:hover {
+  padding: 0rem;
+  box-shadow: -0.2rem -0.2rem 0.2rem 0.1rem hsla(190, 100%, 35%, 1);
+}
+
 .works figure img {
   max-width: 100%;
+}
+.work-menu {
+  position: absolute;
+  transition: all 0.3s ease-out;
+  z-index: 2;
+}
+
+.works article:nth-child(even) .work-menu {
+  left: -90vw;
+}
+.works article:nth-child(odd) .work-menu {
+  right: -90vw;
+}
+
+.works article:nth-child(odd):hover + .work-menu {
+  right: 0rem;
+}
+.works article:nth-child(even):hover .work-menu {
+  left: 0rem;
+}
+.work-menu li {
+  background-color: hsla(190, 100%, 15%, 1);
+  color: #fafafa;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 1rem 0rem;
+}
+
+@media (min-width: 1024px) {
+  .works article {
+    width: 80vw;
+  }
 }
