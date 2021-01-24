@@ -1,6 +1,7 @@
 window.onload = () => navigationToggler();
 const navigationToggler = () => {
-  document.querySelector("a[href='#menu']").onclick = () => {
+  document.querySelector("a[href='#menu']").onclick = (e) => {
+    e.preventDefault();
     if (document.querySelector("#menu").classList.contains("show")) {
       document.querySelector("#menu").classList.remove("show");
       document.querySelector("#menu").classList.add("hide");
