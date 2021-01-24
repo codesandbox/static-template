@@ -76,3 +76,60 @@
   height: 2rem;
   font-size: 1rem;
 }
+
+@media (min-width: 1024px) {
+  .video {
+    position: relative;
+    width: 80vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    left: 12.5vh;
+    top: 5vh;
+    box-shadow: 0 0 0.2rem 0.5rem hsla(194, 100%, 45%, 0.7);
+    border-radius: 1rem 1rem 0 0;
+    transition: all 0.01 ease-in;
+  }
+
+  .video.paused .video__reel {
+    filter: grayscale(75%);
+    height: 75vh;
+    position: absolute;
+  }
+
+  .controls {
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    background-color: hsla(194, 100%, 45%, 0);
+    transition: all 0.1s 0.1s ease-in;
+  }
+
+  .controls li {
+    cursor: pointer;
+    background-color: #fff;
+    color: hsla(194, 100%, 45%, 1);
+    padding: 0.5rem;
+    border-radius: 50%;
+    font-size: 3rem;
+    transition: all 0.3s 0.1s ease-in-out;
+  }
+
+  .video.played .controls {
+    align-self: flex-end;
+    background-color: hsla(194, 100%, 45%, 1);
+    height: 2rem;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .video.played .controls li {
+    height: 2rem;
+    font-size: 1rem;
+  }
+}
