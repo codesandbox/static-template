@@ -5,14 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./static/red5pro-media.css" />
+
+    <script src="https://webrtchacks.github.io/adapter/adapter-latest.js"></script>
+
+    <!-- <script
+      src="//cdn.delight-vr.com/latest/dl8-0a09504de7b25a1b803c88fd61801f3acb736bdb.js"
+      async
+    ></script> -->
+
     <script
       src="//cdn.delight-vr.com/latest/dl8-f6bfd0be204a7b0b59c9c8bd4b7e7a8aff569bbc.js"
       async
     ></script>
+
+    <script src="./static/red5pro-sdk.min.js"></script>
+
+    <style>
+      #player-container {
+        background-color: black;
+        height: 350px;
+        width: 500px;
+        color: white;
+        position: relative;
+      }
+    </style>
   </head>
   <body>
-    <h1>
-      This is a static template, there is no bundler or bundling involved!
-    </h1>
+    <video
+      width="500"
+      height="350"
+      style="background-color: black;"
+      id="red5pro-publisher"
+      autoplay
+      muted
+    ></video>
+    <br />
+    <button id="start">Start Live Stream</button>
+    <button id="stop">Stop</button>
+    <hr />
+
+    <div id="player-container"></div>
+    <script src="./configs.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>
