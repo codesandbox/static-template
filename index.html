@@ -1,12 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="index.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!--<title>あ</title>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />-->
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <article id="app">
+      <div class="container">
+        <h1>{{ name }}</h1>
+        <div class="row">
+          <div class="col-3">
+            <div
+              class="nav flex-column nav-pills"
+              id="v-pills-tab"
+              role="tablist"
+              aria-orientation="vertical"
+            >
+              <a
+                class="nav-link active"
+                id="v-pills-daylys-tab"
+                data-toggle="pill"
+                href="#v-pills-daylys"
+                role="tab"
+                aria-controls="v-pills-daylys"
+                aria-selected="true"
+                >デイリー</a
+              >
+              <a
+                class="nav-link"
+                id="v-pills-shukais-tab"
+                data-toggle="pill"
+                href="#v-pills-shukais"
+                role="tab"
+                aria-controls="v-pills-shukais"
+                aria-selected="false"
+                >周回</a
+              >
+              <a
+                class="nav-link"
+                id="v-pills-weeklys-tab"
+                data-toggle="pill"
+                href="#v-pills-weeklys"
+                role="tab"
+                aria-controls="v-pills-weeklys"
+                aria-selected="false"
+                >ウィークリー</a
+              >
+              <a
+                class="nav-link"
+                id="v-pills-devides-tab"
+                data-toggle="pill"
+                href="#v-pills-devides"
+                role="tab"
+                aria-controls="v-pills-devides"
+                aria-selected="false"
+                >ディバイド</a
+              >
+            </div>
+          </div>
+
+          <div class="col-9">
+            <div class="tab-content" id="v-pills-tabContent">
+              <div
+                class="tab-pane fade show active"
+                id="v-pills-daylys"
+                role="tabpanel"
+                aria-labelledby="v-pills-daylys-tab"
+              >
+                <div v-for="dayly in daylys">
+                  <input
+                    type="checkbox"
+                    v-model="dayly.status"
+                    v-bind:id="dayly.id"
+                  />
+                  <label v-bind:for="dayly.id">{{ dayly.id }}</label>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="v-pills-shukais"
+                role="tabpanel"
+                aria-labelledby="v-pills-shukais-tab"
+              >
+                <div v-for="shukai in shukais">
+                  <label v-bind:for="shukai.id">{{ shukai.id }}</label>
+                  <select v-bind:id="shukai.status" v-model="shukai.status">
+                    <option value="受注中" id="受注中">受注中</option>
+                    <option value="報告済" id="報告済">報告済</option>
+                    <option value="完了済" id="完了済">完了済</option>
+                  </select>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="v-pills-weeklys"
+                role="tabpanel"
+                aria-labelledby="v-pills-weeklys-tab"
+              >
+                <div v-for="weekly in weeklys">
+                  <input
+                    type="checkbox"
+                    v-model="weekly.status"
+                    v-bind:id="weekly.id"
+                  />
+                  <label v-bind:for="weekly.id">{{ weekly.id }}</label>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="v-pills-devides"
+                role="tabpanel"
+                aria-labelledby="v-pills-devides-tab"
+              >
+              <div v-for="devide in devides">
+                <select v-bind:id="devide.step" v-model="devide.step">
+                  <option id="~5" value="~5">~5</option>
+                  <option id="~35" value="~35">~35</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input type="button" value="更新" v-on:click="save" />
+    </article>
   </body>
 </html>
