@@ -1,12 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Water Site</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <section class="container show" id="preload">
+      <span class="ball"></span>
+    </section>
+    <nav class="icon-menu">
+      <ul>
+        <li>
+          <a href="/"><i class="fas fa-home"></i></a>
+        </li>
+        <li>
+          <a href="#menu"><i class="fas fa-bars"></i></a>
+        </li>
+        <li>
+          <a href="#faqs"><i class="fas fa-question"></i></a>
+        </li>
+      </ul>
+    </nav>
+    <nav id="menu" class="main-menu hide">
+      <ul>
+        <li>
+          <a href="/">
+            <figure class="icon-elemtent">
+              <img src="/assets/element/agua.svg" alt="" />
+            </figure>
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <figure class="icon-elemtent">
+              <img src="/assets/element/fuego.svg" alt="" />
+            </figure>
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <figure class="icon-elemtent">
+              <img src="/assets/element/tierra.svg" alt="" />
+            </figure>
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <figure class="icon-elemtent">
+              <img src="/assets/element/viento.svg" alt="" />
+            </figure>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main class="hero">
+      <section class="video paused">
+        <video
+          src="/assets/videos/Water.mp4"
+          muted
+          loop
+          autoplay
+          id="waterReel"
+          class="video__reel"
+        ></video>
+        <ul class="controls water">
+          <li id="btn-play"><i class="fas fa-play-circle"></i></li>
+          <li id="btn-pause"><i class="fas fa-pause"></i></li>
+          <li id="btn-volume"><i class="fas fa-volume-up"></i></li>
+          <li id="btn-mute"><i class="fas fa-volume-mute"></i></li>
+        </ul>
+      </section>
+
+      <section class="works">
+        <article>
+          <figure>
+            <img
+              src="https://cdn.dribbble.com/users/131302/screenshots/14985514/media/a06400b69290bf15e136167fa0d03fe5.png"
+              alt=""
+            />
+          </figure>
+          <nav class="work-menu">
+            <ul>
+              <li><i class="fas fa-eye"></i></li>
+              <li><i class="fas fa-share-alt"></i></li>
+              <li><i class="fas fa-info"></i></li>
+            </ul>
+          </nav>
+        </article>
+        <article>
+          <figure>
+            <img
+              src="https://cdn.dribbble.com/users/131302/screenshots/14985514/media/a06400b69290bf15e136167fa0d03fe5.png"
+              alt=""
+            />
+          </figure>
+          <nav class="work-menu">
+            <ul>
+              <li><i class="fas fa-eye"></i></li>
+              <li><i class="fas fa-share-alt"></i></li>
+              <li><i class="fas fa-info"></i></li>
+            </ul>
+          </nav>
+        </article>
+        <article>
+          <figure>
+            <img
+              src="https://cdn.dribbble.com/users/131302/screenshots/14985514/media/a06400b69290bf15e136167fa0d03fe5.png"
+              alt=""
+            />
+          </figure>
+          <nav class="work-menu">
+            <ul>
+              <li><i class="fas fa-eye"></i></li>
+              <li><i class="fas fa-share-alt"></i></li>
+              <li><i class="fas fa-info"></i></li>
+            </ul>
+          </nav>
+        </article>
+      </section>
+    </main>
+    <script src="/js/navigation.js"></script>
+    <script src="/js/player.js"></script>
+    <script src="/js/preloader.js"></script>
   </body>
 </html>
