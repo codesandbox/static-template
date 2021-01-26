@@ -7,13 +7,9 @@ header {
   display: inline-block;
   position: fixed;
   z-index: 10;
-  width: 4%;
+  width: 6%;
   height: 100%;
   background: var(--colorPrinc);
-}
-header:hover .menu {
-  left: 4%;
-  opacity: 1;
 }
 
     header .leftBarre svg {
@@ -24,21 +20,29 @@ header:hover .menu {
       font-size: 25px;
       color: #fff;
     }
+    header .leftBarre svg:hover { cursor: pointer; opacity: .7; }
 
   header .menu {
-    display: block;
+    display: none;
     position: fixed;
     z-index: 9;
     box-shadow: 5px 0 10px rgba(0,0,0,.3);
     top: 0;
-    left: -14%;
+    left: 6%;
     padding-top: 1%;
     padding-left: 0;
-    width: 14%;
+    width: 16%;
     height: 100%;
-    opacity: 0;
+    opacity: 1;
     transition: opacity .3s .5s;
     background: var(--colorSecond);
+    animation: menu .25s 1;
+  }
+  header .menuO {
+    display: block;
+  }
+  @keyframes menu {
+    from { left: 3.5%; opacity: 0; }
   }
 
     header ul {
@@ -46,6 +50,7 @@ header:hover .menu {
     }
 
     header ul li {
+      display: none;
       padding: 5%;
       list-style: none;
       height: 20px;
@@ -53,7 +58,12 @@ header:hover .menu {
       opacity: .8;
       transition: .3s;
       overflow: hidden;
+      animation: menu_li .5s;
     }
+    @keyframes menu_li {
+      from { padding-top: 0; }
+    }
+
     header ul li:hover {
       text-decoration: underline;
       background: var(--colorPrinc);
@@ -89,3 +99,9 @@ header:hover .menu {
         text-decoration: underline;
         opacity: 1;
       }
+
+.body {
+  position: absolute;
+  margin-left: 7%;
+  width: 100-7%;
+}
