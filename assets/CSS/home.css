@@ -1,42 +1,91 @@
 body {
-  display: flex;
   margin: 0;
-  padding: 100px;
+  font-family: "Nunito";
 }
 
 header {
-  display: block;
+  display: inline-block;
+  position: fixed;
+  z-index: 10;
+  width: 4%;
+  height: 100%;
+  background: var(--colorPrinc);
+}
+header:hover .menu {
+  left: 4%;
+  opacity: 1;
 }
 
-header .entete {
-  display: inline-flex;
-  height: 60px;
-  width: 100%;
-  background: var(--blue);
-}
+    header .leftBarre svg {
+      display: block;
+      position: initial;
+      margin-top: 15%;
+      margin-left: auto; margin-right: auto;
+      font-size: 25px;
+      color: #fff;
+    }
 
-header .entete img {
-  margin: 5px;
-  width: 50px;
-  height: 50px;
-  background: #fff;
-}
+  header .menu {
+    display: block;
+    position: fixed;
+    z-index: 9;
+    box-shadow: 5px 0 10px rgba(0,0,0,.3);
+    top: 0;
+    left: -14%;
+    padding-top: 1%;
+    padding-left: 0;
+    width: 14%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .3s .5s;
+    background: var(--colorSecond);
+  }
 
-header .entete h1 {
-  font-size: 24px;
-}
+    header ul {
+      padding-left: 0;  
+    }
 
-header .menu {
-  display: inline-flex;
-  padding-left: 0;
-}
+    header ul li {
+      padding: 5%;
+      list-style: none;
+      height: 20px;
+      font-size: 18px;
+      opacity: .8;
+      transition: .3s;
+      overflow: hidden;
+    }
+    header ul li:hover {
+      text-decoration: underline;
+      background: var(--colorPrinc);
+      opacity: 1;
+    }
+    header ul .list:hover {
+      text-decoration: none;
+      height: auto;
+    }
+    header ul .list ul {
+      opacity: .4;
+      transition: opacity .4s;
+    }
+    header ul .list:hover ul {
+      opacity: 1;
+    }
 
-header .menu li {
-  margin-left: 5px;
-  list-style: none;
-}
+      header ul a, header ul li {
+        color: #fff;
+        text-decoration: none;
+      }
 
-header .menu li ul {
-  display: none;
-  padding-left: 0;
-}
+    header ul ul {
+      padding-left: 0;
+      overflow: hidden;
+      opacity: .7;
+    }
+
+      header ul ul li {
+        height: auto;
+      }
+      header ul ul li:hover {
+        text-decoration: underline;
+        opacity: 1;
+      }
