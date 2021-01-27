@@ -7,7 +7,7 @@ header {
   display: inline-block;
   position: fixed;
   z-index: 10;
-  width: 6%;
+  width: 70px;
   height: 100%;
   background: var(--colorPrinc);
 }
@@ -23,26 +23,18 @@ header {
     header .leftBarre svg:hover { cursor: pointer; opacity: .7; }
 
   header .menu {
-    display: none;
+    display: block;
     position: fixed;
     z-index: 9;
     box-shadow: 5px 0 10px rgba(0,0,0,.3);
     top: 0;
-    left: 6%;
+    left: 70px;
     padding-top: 1%;
     padding-left: 0;
-    width: 16%;
+    width: 0;
     height: 100%;
-    opacity: 1;
     transition: opacity .3s .5s;
     background: var(--colorSecond);
-    animation: menu .25s 1;
-  }
-  header .menuO {
-    display: block;
-  }
-  @keyframes menu {
-    from { left: 3.5%; opacity: 0; }
   }
 
     header ul {
@@ -50,18 +42,23 @@ header {
     }
 
     header ul li {
-      display: none;
-      padding: 5%;
+      padding: 20px;
+      padding-right: 0;
       list-style: none;
-      height: 20px;
       font-size: 18px;
-      opacity: .8;
+      color: #fff;
+
+      padding-left: 0;
+      opacity: 0;
+
       transition: .3s;
-      overflow: hidden;
-      animation: menu_li .5s;
+      animation: menu_li .75s;
     }
     @keyframes menu_li {
-      from { padding-top: 0; }
+      from { padding-left: 0; }
+    }
+    header ul a {
+      text-decoration: none;
     }
 
     header ul li:hover {
@@ -72,18 +69,31 @@ header {
     header ul .list:hover {
       text-decoration: none;
       height: auto;
+      overflow: auto;
     }
     header ul .list ul {
-      opacity: .4;
+      display: none;
+      position: absolute;
+      padding: 5px;
+      padding-left: 0%;
+      padding-right: 0%;
+      margin-top: -45px;
+      margin-left: 230px;
+      width: 100%;
+      opacity: 1;
       transition: opacity .4s;
+      background: var(--colorPrinc);
     }
     header ul .list:hover ul {
-      opacity: 1;
+      display: block;
     }
 
-      header ul a, header ul li {
+      header ul .list a {
         color: #fff;
         text-decoration: none;
+      }
+      header ul .list ul a:nth-child(2n) li {
+        background: rgba(255,255,255,.1);
       }
 
     header ul ul {

@@ -1,15 +1,30 @@
 // MENU
 $(".leftBarre").on("click", function() {
 	if ($(".menu").attr("class") == "menu menuO") {
-		$(".menu").attr("class", "menu");
-		$(".menu li").css("display", "none");
-		$(".fa-times").attr("class", "fas fa-bars");
+		$(".menu li").animate({
+		    paddingLeft: 0,
+		    opacity: 0
+		  }, 100);
+
+		$(".menu").animate({
+		    width: 0
+		}, 500, function() {
+			$(".menu").attr("class", "menu");
+		});
+			$(".fa-times").attr("class", "fas fa-bars");
 	}else{
 		$(".menu").attr("class", "menu menuO");
-		$(".menu li").css("display", "block");
-		$(".fa-bars").attr("class", "fas fa-times");
+		$( ".menu" ).animate({
+		    width: "250px"
+		  }, 150);
+
+		$(".menu li").animate({
+		    paddingLeft: "20px",
+		    opacity: 1
+		  }, 200);
+
+			$(".fa-bars").attr("class", "fas fa-times");
 	}
-	console.log($(".menu").attr("class"));
 });
 
 $(".body").on("click", function() {
