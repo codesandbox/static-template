@@ -6,11 +6,11 @@ function openCloseMenu(spec=0) {
 		    paddingLeft: 0,
 		    opacity: 0
 		  }, 100);
+			$(".menu").attr("class", "menu");
 
 		$(".menu").animate({
 		    width: 0
 		}, 500, function() {
-			$(".menu").attr("class", "menu");
 			// $(".menu li").css("display", "none");
 		});
 			$(".fa-times").attr("class", "fas fa-bars");
