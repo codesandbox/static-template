@@ -11,16 +11,20 @@ header {
   height: 100%;
   background: var(--colorPrinc);
 }
-
-    header .leftBarre svg {
-      display: block;
-      position: initial;
-      margin-top: 15%;
-      margin-left: auto; margin-right: auto;
-      font-size: 25px;
-      color: #fff;
+    
+    header .leftBarre p {
+      margin: 0;
     }
-    header .leftBarre svg:hover { cursor: pointer; opacity: .7; }
+
+      header .leftBarre svg {
+        display: block;
+        position: initial;
+        padding: 20px;
+        margin-left: auto; margin-right: auto;
+        font-size: 25px;
+        color: #fff;
+      }
+      header .leftBarre svg:hover { cursor: pointer; opacity: .7; }
 
   header .menu {
     display: block;
@@ -33,8 +37,12 @@ header {
     padding-left: 0;
     width: 0;
     height: 100%;
+    overflow: hidden;
     transition: opacity .3s .5s;
     background: var(--colorSecond);
+  }
+  header .menuO {
+    overflow: initial;
   }
 
     header ul {
@@ -51,13 +59,14 @@ header {
       padding-left: 0;
       opacity: 0;
 
-      transition: .3s;
+      transition: .05s;
       animation: menu_li .75s;
     }
     @keyframes menu_li {
       from { padding-left: 0; }
     }
     header ul a {
+      position: initial;
       text-decoration: none;
     }
 
@@ -71,6 +80,16 @@ header {
       height: auto;
       overflow: auto;
     }
+
+    header ul .list .fa-plus {
+      position: absolute;
+      right: 20px;
+      transition: .25s;
+    }
+    header ul .list:hover .fa-plus {
+      transform: rotate(45deg);
+    }
+
     header ul .list ul {
       display: none;
       position: absolute;
@@ -81,7 +100,7 @@ header {
       margin-left: 230px;
       width: 100%;
       opacity: 1;
-      transition: opacity .4s;
+      /*transition: .4s;*/
       background: var(--colorPrinc);
     }
     header ul .list:hover ul {
@@ -114,4 +133,36 @@ header {
   position: absolute;
   margin-left: 7%;
   width: 100-7%;
+}
+
+@media screen and (max-width: 800px) {
+  header {
+    width: 100%;
+    height: 40px;
+  }
+
+      header .leftBarre p svg {
+        margin-top: -1px;
+        margin-left: 5px;
+        padding: 10px;
+      }
+
+      header .menu {
+        top: 40px;
+        left: 0;
+      }
+      header .menuO {
+        max-width: 80%;
+      }
+
+        header .menu ul li ul {
+          position: initial;
+          margin: 0;
+          margin-left: -10px;
+          width: auto;
+        }
+
+          header .menu ul li ul li {
+            margin-left: 0;
+          }
 }

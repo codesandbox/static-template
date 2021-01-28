@@ -1,6 +1,7 @@
 // MENU
-$(".leftBarre").on("click", function() {
-	if ($(".menu").attr("class") == "menu menuO") {
+function openCloseMenu(spec=0) {
+	if ($(".menu").attr("class") == "menu menuO" || spec == 1) {
+		// FERMETURE
 		$(".menu li").animate({
 		    paddingLeft: 0,
 		    opacity: 0
@@ -10,9 +11,11 @@ $(".leftBarre").on("click", function() {
 		    width: 0
 		}, 500, function() {
 			$(".menu").attr("class", "menu");
+			// $(".menu li").css("display", "none");
 		});
 			$(".fa-times").attr("class", "fas fa-bars");
 	}else{
+		// OUVERTURE
 		$(".menu").attr("class", "menu menuO");
 		$( ".menu" ).animate({
 		    width: "250px"
@@ -22,12 +25,15 @@ $(".leftBarre").on("click", function() {
 		    paddingLeft: "20px",
 		    opacity: 1
 		  }, 200);
-
+			// $(".menu li").css("display", "block");
 			$(".fa-bars").attr("class", "fas fa-times");
 	}
+}
+
+$(".leftBarre").on("click", function() {
+	openCloseMenu();
 });
 
 $(".body").on("click", function() {
-	$(".menu").attr("class", "menu");
-	$(".fa-times").attr("class", "fas fa-bars");
+	openCloseMenu(1);
 });
