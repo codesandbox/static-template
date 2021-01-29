@@ -25,3 +25,27 @@ function conversionEuros(event) {
   //resultat
   document.getElementById("resultat").value = valEuro;
 }
+
+//gérer la saisie d'un mdp
+
+//cible: la zone de saisie
+let cibleMdp = document.getElementById("passwd");
+//event: la saisie d'un caractère -> input
+cibleMdp.addEventListener("input", verifMdp);
+//action: vérifier la longueur du mdp
+function verifMdp(event) {
+  //recuperer la taille de la valeur de saisie
+  let mdp = document.getElementById("passwd").value.length;
+  if (mdp < 4) {
+    document.getElementById("msgPasswd").textContent = "longueur faible";
+    document.getElementById("msgPasswd").style.color = "red";
+  }
+  if (mdp > 4 && mdp < 9) {
+    document.getElementById("msgPasswd").textContent = "longueur moyenne";
+    document.getElementById("msgPasswd").style.color = "orange";
+  }
+  if (mdp > 9) {
+    document.getElementById("msgPasswd").textContent = "longueur bonne";
+    document.getElementById("msgPasswd").style.color = "green";
+  }
+}
