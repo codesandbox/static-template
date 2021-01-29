@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h4>
+      TP conversions Euros <--> Francs
+    </h4>
+    <form>
+      <input type="text" id="valeur" size="5" placeholder="prix" />
+      <input type="button" id="versfrancs" value="Euros>>Francs" />
+      <input type="button" id="verseuros" value="Francs>>Euros" />
+      <input
+        type="text"
+        id="resultat"
+        size="15"
+        readonly="true"
+        placeholder="résultat"
+      />
+    </form>
+    <h4>
+      TP saisie mot de passe
+    </h4>
+    <form id="inscription">
+      <input
+        type="password"
+        name="passwd"
+        id="passwd"
+        placeholder="motdepasse"
+        required
+      />
+      <span id="msgPasswd"></span>
+    </form>
+    <script src="index.js"></script>
   </body>
 </html>
