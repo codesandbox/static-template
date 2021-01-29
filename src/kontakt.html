@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="contactForm.css" />
+    <title>Kontakt</title>
+  </head>
+  <body>
+    <div class="abstand">
+      <nav class="nav">
+        <ul class="navbar">
+          <li><img src="../images/ZoopediaLogo.png" id="Logo" /></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a aria-current="page" class="active">Kontakt</a></li>
+          <li><a href="aufgabe2.html">Aufgabe 2</a></li>
+          <li><a href="vergleich.html">Vergleich Hamster Maus</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="abstand">
+    <h1 class="firstTitle"> Kontakt </h1>
+      <p>Senden Sie uns eine Nachricht per E-Mail an <b> service@zoopedia.de </b> oder nutzen Sie das Kontaktformular.</p>
+      <p> <b> Wenn Sie ein technisches Problem haben, beschreiben Sie uns bitte möglichst detailliert: </b> </p>
+        <ol>
+          <li>  Bei welcher Aktion tritt das Problem auf? </li>
+          <li>  Mit welchem Gerät (z.B. Laptop, Tablet, iPhone 12)? </li> 
+          <li>  In welchem Browser? (z.B. Internet Explorer, Chrome, Firefox)  </li>
+          <li>  Wann ist das Problem aufgetreten?  </li>
+        </ol>
+      <p> <b> Ihre persönlichen Daten </b> </p>
+          <label for="anrede">Anrede:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <select name="anrede" id="anrede">
+                <option value="wahl">Bitte wählen</option>
+              <option value="herr">Herr</option>
+              <option value="frau">Frau</option>
+            </select>
+            <p>
+                Vorname: &nbsp;&nbsp;  <label for="vorname"></label>
+              <input type="text" id="vorname" size="40" />
+              </p>
+              <p>
+                  Nachname:<label for="nachname"></label>
+                <input type="text" id="nachname" size="40" />
+              </p>
+              <p>
+                E-Mail: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="eingabe"></label>
+                <input type="email" id="eingabe" size="40" />
+              </p>
+    
+        <p> <b> Ihre Nachricht </b> </p>
+      <p>
+        Betreff: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="betreff"></label>
+        <input type="text" id="betreff" size="40" />
+      </p>
+      <p>
+        Nachricht: <br />
+        <textarea cols="50" rows="10"></textarea>
+      </p>
+    
+    
+    <p> Wir benötigen Ihre E-Mail-Adresse dazu, Ihre Anfrage zu beantworten. Ihre Daten werden zu keinem anderen Zweck verwendet und nicht an Dritte weitergeleitet. Nach der vollständigen Beantwortung Ihrer E-Mail werden die Daten gelöscht. Die Nachricht wird verschlüsselt übertragen. Bitte lesen Sie auch unsere <b> Datenschutzerklärung </b> und die <b> Nutzungsbedingungen</b>. </p>
+<p>
+    <input type="checkbox" id="zustimmung" name="zustimmung" unchecked />
+    <label for="zustimmung">Ich habe den Datenschutzhinweis gelesen und bin mit dem darin beschriebenen Umgang mit meinen personenbezogenen Daten einverstanden.</label>
+    </p>
+
+<p>
+    <button type="button" class="zurücksetzen">Zurücksetzen</button>
+    <button type="button" class="abgeben">Abgeben</button>
+  </p>  
+</div>
+</body>
+</html>
