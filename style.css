@@ -1,0 +1,236 @@
+body {
+  margin-left: 0;
+  margin-right: 0;
+  background-image: url("/images/seamlessTexture.jpg");
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 186px);
+  grid-gap: 1em;
+}
+
+.grid-item {
+  background-color: rgba(227, 242, 232, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* display: flex (display: flexbox funktioniert nicht ;)  ) */
+
+.grid-container2 {
+  display: grid;
+}
+
+.grid-item2aufgabe2 {
+  font-size: 30px;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.rowaufgabe2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: rebeccapurple;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.navbar {
+  z-index: 2;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: lightgray;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; 
+}
+
+@media all and (max-width 400px){
+  .navbar li {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  #homeImage{
+    margin-top: 80px;
+  }
+  #homeImageText{
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 195px) {
+  #homeImage{
+    margin-top: 160px;
+  }
+  #homeImageText{
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 165px) {
+  #homeImage{
+    margin-top: 240px;
+  }
+  #homeImageText{
+    margin-top: 120px;
+  }
+}
+
+.navbar li a {
+  display: inline-block;
+  vertical-align: top;
+  height: 80px;
+  line-height: 80px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.1s;
+  padding-right: 10px;
+  padding-left: 10px;
+  align-items: center;
+  font-size: large;
+}
+
+.navbar li a:hover {
+  background-color: gray;
+}
+
+#Logo {
+  display: inline-block;
+  vertical-align: top;
+  height: auto;
+  width: 80px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.active {
+  background-color: #9a9c79;
+}
+
+.firstTitle {
+  margin-top: 100px;
+}
+
+#homeImage {
+  display: inline-block;
+  vertical-align: top;
+  height: auto;
+  width: 100%;
+}
+
+.evolutionstext {
+  font-style: italic;
+  font-size: 1em;
+  font-family: fantasy;
+  font-weight: bold;
+}
+
+#homeImageText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  font-size: 5vh;
+  font-size: 5vw;
+  color: white;
+  text-shadow: 4px 4px 7px black;
+}
+
+.frontPageImage {
+  margin-top: 80px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid black;
+}
+
+.abstand {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.h1Design {
+  color: green;
+  font-family: Arial;
+  margin-top: 50px;
+}
+
+.textTierMonat {
+  font-style: italic;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.grid-containerTest {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Left-Side Left-Side Right-Side Right-Side"
+    ". . . ."
+    ". . . .";
+}
+
+.Left-Side { 
+  grid-area: Left-Side; 
+  color: gray;
+  text-shadow: 1px 1px rgb(34, 34, 34);
+}
+
+.Left-Side h1{
+  text-align: center;
+}
+
+.Left-Side p{
+  padding: 15px;
+  padding-top: 0 !important;
+  font-size: x-large;
+}
+
+.Left-Side img{ 
+  width: 100%;
+}
+
+.Right-Side { 
+  grid-area: Right-Side;
+  color: gray; 
+  text-shadow: 1px 1px rgb(34, 34, 34);
+}
+
+.Right-Side h1{
+  text-align: center;
+}
+
+.Right-Side p{
+  padding: 15px;
+  padding-top: 0 !important;
+  font-size: x-large;
+}
+
+.Right-Side img{ 
+  width: 100%;
+}
