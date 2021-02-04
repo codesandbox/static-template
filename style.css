@@ -98,7 +98,7 @@ footer p {
 
 footer img {
   /* border-radius: 50%; */
-  padding-right: 30px;
+  /*  padding-right: 30px; */
 }
 
 footer div {
@@ -117,9 +117,14 @@ p a {
   border-bottom: none;
 }
 
+.social img {
+  margin: 0;
+  transform: scale(0.6);
+}
+
 .social img:hover {
   transition: 0.6s ease;
-  transform: scale(1.2, 1.2);
+  transform: scale(0.8);
 }
 
 /* HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME */
@@ -223,7 +228,6 @@ p a {
 }
 .videoHolder {
   width: 100%;
-
   align-self: center;
 }
 
@@ -360,10 +364,12 @@ p a {
 
 .get1 {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  width: 100%;
+
+  /* width: 100%;
   padding-left: 0%;
-  padding-right: 0%;
+  padding-right: 0%; */
 }
 
 .get1 p::before {
@@ -396,34 +402,34 @@ p a {
   /* padding-left: 5%; */
 }
 
-.textRight {
-  text-align: right;
+#egirl {
+  margin: -20% 0;
 }
-
 #egirl img {
   /* transform: scale(0.7); */
   max-width: 300px;
   transform: scale(0.5);
+  margin: 10% 0;
 }
-
-#egirl {
-  /* width: 25%; */
+#egirlTekst {
+  width: 60%;
 }
-
 #egirlTekst p {
-  width: 75%;
+  /* width: 75%; */
 }
-
 #blackManTekst {
   width: 60%;
-  padding: 0;
+  /* padding: 0;
+  margin-left: -40%; */
+  margin: 0 10% 0 10%;
 }
 
 #blackboi {
   margin: 0;
-  padding-right: 0%;
+  /*  padding-right: 0%; */
   margin-bottom: 10%;
-  width: 40%;
+  /*  width: 40%; */
+  margin: -15% 0 -15% 0%;
 }
 
 #blackboi img {
@@ -437,7 +443,8 @@ p a {
 /* Body */
 
 /* OverOnsText */
-
+.textRight {
+}
 #Wie,
 #Wat,
 #Waar {
@@ -571,6 +578,8 @@ p a {
   margin: 0;
   justify-content: center;
   list-style-type: none;
+  padding: 0;
+  margin: 0 10%;
 }
 .witteBalk li {
   padding: 0;
@@ -748,6 +757,10 @@ input[type="submit"]:hover {
     padding: 5%;
     width: 100%;
   }
+  .get1 {
+    display: flex;
+    flex-direction: row;
+  }
   .mainText {
     /* flex-direction: column;
     margin-top: 0%;
@@ -769,6 +782,7 @@ input[type="submit"]:hover {
   }
   #blackManTekst {
     width: 50%;
+    margin-left: 0%;
   }
   #blackboi {
     margin: 0;
@@ -811,6 +825,9 @@ input[type="submit"]:hover {
     width: 10%;
     margin: 0;
   }
+  .textRight {
+    text-align: right;
+  }
   /* HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME */
   #bgColor {
     flex-direction: row;
@@ -822,7 +839,17 @@ input[type="submit"]:hover {
   .iconEnText {
     flex-direction: row;
   }
-
+  footer img {
+    /* border-radius: 50%; */
+    padding-right: 30px;
+  }
+  .social img {
+    transform: scale(1);
+  }
+  .social img:hover {
+    transition: 0.6s ease;
+    transform: scale(1.2, 1.2);
+  }
   /* BIAS BIAS BIAS BIAS BIAS BIAS BIAS BIAS BIAS BIAS BIAS BIAS */
   .theBias p {
     padding: 5%;
@@ -864,6 +891,7 @@ input[type="submit"]:hover {
   #blackManTekst {
     width: 60%;
     padding-right: 5%;
+    margin-left: 0%;
   }
 
   #blackboi {
