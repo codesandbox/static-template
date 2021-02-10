@@ -1,0 +1,190 @@
+<html>
+
+<head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="./css/style.css">
+<script src="./js/script.js"></script>
+<style>
+	.header-login{
+        height:100px;
+        width:6%;
+	    	float:right;		
+	    	margin-left:70%;    
+}
+.login{
+        height:40px;
+        width:50px;
+        text-decoration: none;
+        padding:0px 0px 0px 5px;
+        margin: 28px 20px 0px 20px;
+        display:inline-block;
+        font-size: 20px;
+        color:pink;
+}
+.login:hover{
+         cursor: pointer;
+         color:pink;
+	}
+	.header-right-btn{
+        height:100px;
+        width:13%;
+		    float:left; 		    
+}
+.signup-btn{         
+        height:50px;
+        width:150px;
+        color: pink;
+        background-color: white;
+        font-size: 20px;
+        padding: 10px 20px;
+        margin-top: 12px;
+        border: 1px solid pink;
+        border-radius: 50px;      
+        transition: all 0.15s ease;
+        transition-property:transform;
+        float: right;
+        box-shadow: 10px 10px 5px rgb(236, 202, 202);
+      -moz-box-shadow: 10px 10px 5px rgb(235, 199, 199);
+      -webkit-box-shadow: 10px 10px 5px rgb(233, 195, 195);
+      -khtml-box-shadow: 10px 10px 5px rgb(240, 200, 200);
+    } 
+    .signup-btn:hover{
+         cursor: pointer;
+         transform: scale(.9);
+    }
+   
+.footer-text-link{
+    font-family: "Noto Sans", Arial, sans-serif;
+    font-size: 14px;
+    margin: 0px 0 0 10px;    
+    transition: 0.5s ease;
+    color: Blue;
+}
+</style>
+</head>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+	<a class="navbar-brand" href="index.html">
+		<img src="media/logo-dark.png" class="logo-img" style="height:100px; width:100px;" />
+	</a>
+<!--	<div id="header-centre"></div>
+         <div class="header-login">
+            <a href="login_signup.html" class="login">
+                Login
+            </a>
+         </div>
+         <div class="header-right-btn">
+           <div class="btn-block">
+            <button class="signup-btn">
+                Get Started                
+            </button>
+           </div>
+		 </div>-->
+</nav>
+
+
+<div class="login-reg-panel">
+		<div class="login-info-box">
+			<h2>Have an account?</h2>
+			<p>Login with your credentials</p>
+			<label id="label-register" for="log-reg-show">Login</label>
+			<input type="radio" name="active-log-panel" id="log-reg-show"  checked="checked">
+		</div>
+							
+		<div class="register-info-box">
+			<h2>Don't have an account?</h2>
+			<p>Sign Up to explore our services</p>
+			<label id="label-login" for="log-login-show">Register</label>
+			<input type="radio" name="active-log-panel" id="log-login-show">
+		</div>
+							
+		<div class="white-panel">
+			<div class="login-show">
+				<h2>LOGIN</h2>
+				<input type="text" placeholder="Email">
+				<input type="password" placeholder="Password">
+				<a href="">Forgot password?</a>
+				
+				<div>
+					<div class="btn-group btn-group-toggle" data-toggle="buttons">
+						<label class="btn btn-secondary active">
+						  <input type="radio" name="options" id="option1" autocomplete="off" checked> I am Planning
+						</label>
+						<label class="btn btn-secondary">
+						  <input type="radio" name="options" id="option2" autocomplete="off"> I am attending
+						</label>
+					  </div>
+				</div>
+
+				<div style="padding-right: 60px; align-self: center; margin-top: 20px; position: relative;">
+					<input type="button" value="Login">
+				</div>
+			</div>
+			
+			<div class="register-show">
+				<h2>REGISTER</h2>
+				<input type="text" placeholder="Name">
+				<input type="text" placeholder="Email">
+				<input type="password" placeholder="Password">
+				<input type="password" placeholder="Confirm Password">
+				<input type="button" value="Register">
+			</div>
+		</div>
+	</div>
+
+<!--footer 1-->
+<footer> 
+  <section class="footer" style="background-color: #FCD5CE;; margin-top:20%;">
+  <div class="container">
+   <div class="row justify-content-start"> 
+     <div class="col-4">
+    <a target="_blank" href="https://www.facebook.com"><img class="social-link" alt="IDD Facebook" src="media/facebook-logo.png" style="height:50px; width:80px; margin-top:7%;"/></a>
+    <a target="_blank" href="https://www.instagram.com"><img class="social-link" alt="idd insta" src="media/instagram-icon.png" style="height:50px; width:80px; margin-top:7%;"/></a>            
+  </div></div>
+    <div class="row justify-content-end" >        
+      <div class="col-4">
+        <p class="small" style="margin-top:-9%;">© 2020 IDD, is a registered trademark of I Do Destination, Inc.</p>
+      </div>
+      <div class="col-4" style="margin-top:-3%;">
+        <a class="footer-text-link" href="/privacy">Privacy Policy</a>
+        <a class="footer-text-link" href="/terms">Terms of Service</a>        
+      </div> 
+  </div>
+</section>
+</footer>
+  
+<script>
+    $(document).ready(function(){
+    $('.login-info-box').fadeOut();
+    $('.login-show').addClass('show-log-panel');
+});
+
+
+$('.login-reg-panel input[type="radio"]').on('change', function() {
+    if($('#log-login-show').is(':checked')) {
+        $('.register-info-box').fadeOut(); 
+        $('.login-info-box').fadeIn();
+        
+        $('.white-panel').addClass('right-log');
+        $('.register-show').addClass('show-log-panel');
+        $('.login-show').removeClass('show-log-panel');
+        
+    }
+    else if($('#log-reg-show').is(':checked')) {
+        $('.register-info-box').fadeIn();
+        $('.login-info-box').fadeOut();
+        
+        $('.white-panel').removeClass('right-log');
+        
+        $('.login-show').addClass('show-log-panel');
+        $('.register-show').removeClass('show-log-panel');
+    }
+});
+
+</script>
+</body>
+</html>
