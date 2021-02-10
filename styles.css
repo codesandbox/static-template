@@ -1,0 +1,62 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* fuentes */
+
+@font-face {
+  font-family: Harukaze;
+  src: url(Multimedia/Harukaze.ttf);
+}
+
+@font-face {
+  font-family: Korean-C;
+  src: url(Multimedia/Korean_Calligraphy.ttf);
+}
+
+/* colores */
+:root {
+  --dark-gray: #424242;
+}
+
+/* defecto */
+nav ul {
+  list-style-type: none;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+}
+
+nav ul li {
+  width: fit-content;
+}
+
+/* Navbar 1 */
+
+.Navbar-1 {
+  background-color: var(--dark-gray);
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  box-shadow: 1px 0px 10px black;
+}
+
+.Navbar-1 ul li {
+  padding: 1rem;
+  align-self: center;
+  margin: 0 0rem;
+  transition: 1s ease;
+  font-size: large;
+  font-family: Korean-C;
+}
+
+.Navbar-1 ul li:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+.Navbar-1 ul li.Titulo {
+  margin-right: auto;
+  font-size: xx-large;
+  font-family: Harukaze;
+}
