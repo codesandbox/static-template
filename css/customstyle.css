@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: "Khmer", cursive;
+}
+.header nav .nav-link {
+  font-size: 14px;
+}
+.header .menu ul li {
+  display: inline;
+  padding: 0;
+}
+.header .menu ul li a {
+  text-decoration: none;
+  color: white;
+}
+.zoom:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+.trending-content .trending-top {
+  overflow: hidden;
+  position: relative;
+}
+.trending-content .trending-top .trend-img {
+  transition: all 0.5s;
+}
+.trending-content .trending-top .trend-img img {
+  width: 100%;
+  border-radius: none;
+}
+.trending-content .trending-top .date {
+  font-size: 12px;
+}
+.trending-content .trending-top .trend-img::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(2, 26, 71, 0) 0%,
+    rgba(2, 26, 71, 0.6) 100%
+  );
+  border-radius: none;
+}
+.trending-content .trending-top .trend-text {
+  position: absolute;
+  bottom: 0px;
+  left: 31px;
+  margin-bottom: 15px;
+}
+.trending-content .trending-top .trend-text h2 {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 30px;
+}
+
+.trending-content .trending-top .cut-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* after 3 line show ... */
+  -webkit-box-orient: vertical;
+}
+
+.trending-right .trending-top .trend-text h2 {
+  font-size: 13px;
+  line-height: 25px;
+}

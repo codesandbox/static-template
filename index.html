@@ -1,12 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home-News Patrol</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Khmer&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/customstyle.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="bg-dark header">
+      <div class="container-fluid px-0">
+        <div class="row">
+          <div class="col-lg-4">
+            <!-- <nav class="nav">
+              <a class="nav-link text-white" href="#">អំពីក្រុមហ៊ុន</a>
+              <a class="nav-link text-white" href="#">គណនី</a>
+              <a class="nav-link text-white" href="#">ទំនាក់ទំនង</a>
+            </nav> -->
+          </div>
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4">
+            <!-- <nav class="nav">
+              <a class="nav-link text-white" href="#"
+                ><i class="fa fa-facebook" aria-hidden="true"></i
+              ></a>
+              <a class="nav-link text-white" href="#"
+                ><i class="fa fa-twitter" aria-hidden="true"></i
+              ></a>
+              <a class="nav-link text-white" href="#"
+              <i class="fa fa-google-plus" aria-hidden="true"></i>
+            </a>
+            </nav> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-light bg-light navbar-expand-lg shadow-sm">
+      <div class="container-md">
+        <a href="#" class="navbar-brand">ព័ត៌មានពិតៗ</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="bi bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="#" class="nav-link">ទំព័រដើម</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">តន្ត្រី</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">បច្ចេកវិទ្យា</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">កីឡា</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="ស្វែងរក"
+            />
+            <button class="btn btn-success" type="submit">
+              ស្វែងរក
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="trending-content">
+      <div class="container">
+        <div class="row mt-lg-3 mt-md-3 mt-sm-3">
+          <div class="col-xl-6 col-lg-12 col-md-12 col-12">
+            <a href="#">
+              <div class="trending-top">
+                <div class="trend-img zoom">
+                  <img
+                    src="img/trending_main_top.png"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </div>
+                <div class="trend-text px-0">
+                  <h2 class="text-white cut-text">
+                    វិបសាយ​​បង្រៀន​មិន​គិត​ថ្លៃ​ដែល​ Elon Musk
+                    ​បាន​បរិច្ចាគ​ក៏​មាន​ជា​ ភាសាខ្មែរ!
+                  </h2>
+                  <span class="date text-light fw-bold lh-lg"
+                    >ថ្ងៃនេះ ម៉ោង 10:05</span
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-xl-6 col-lg-12 col-md-12 col-12">
+            <div class="row mt-xl-0 mt-lg-3 mt-md-3 mt-sm-3">
+              <div class="col-lg-6 col-md-6">
+                <div class="trending-right">
+                  <div class="trending-top">
+                    <div class="trend-img">
+                      <img
+                        src="img/trending_right_single_1.jpg"
+                        class="img-fluid"
+                        alt=""
+                      />
+                      <div class="trend-text">
+                        <span class="badge bg-danger mb-3">music</span>
+                        <h2 class="h4 text-white">
+                          ក្តៅៗ! ម៉ូតូ Yamaha Aerox ឆ្នាំ២០២១ ចេញនៅថៃ
+                          ហើយនេះតម្លៃវា
+                        </h2>
+                        <span class="date text-light fw-bold lh-lg"
+                          >ថ្ងៃនេះ ម៉ោង 10:05</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="trending-right">
+                  <div class="trending-top">
+                    <div class="trend-img">
+                      <img
+                        src="img/trending_right_single_2.jpg"
+                        class="img-fluid"
+                        alt=""
+                      />
+                      <div class="trend-text">
+                        <span class="badge bg-danger mb-3">music</span>
+                        <h2 class="h4 text-white">
+                          អតីត​ខ្សែ​ប្រយុទ្ធ ​McTominay ​ស៊ុត​១​គ្រាប់ ​ជួយ Man
+                          Utd ​ឡើង​វគ្គ​៨​ក្រុម FA Cup ​
+                        </h2>
+                        <span class="date text-light fw-bold lh-lg"
+                          >ថ្ងៃនេះ ម៉ោង 10:05</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-lg-3 mt-md-3 mt-sm-3">
+              <div class="col-lg-6 col-md-6">
+                <div class="trending-right">
+                  <div class="trending-top">
+                    <div class="trend-img">
+                      <img
+                        src="img/trending_right_single_3.jpg"
+                        class="img-fluid"
+                        alt=""
+                      />
+                      <div class="trend-text">
+                        <span class="badge bg-danger mb-3">music</span>
+                        <h2 class="h4 text-white">
+                          ស្រាយចម្ងល់! ទូរសព្ទសាកថ្មល្បឿនដូចព្យុះ
+                          ធ្វើឲ្យថ្មឆាប់ខូចមែនអត់?
+                        </h2>
+                        <span class="date text-light fw-bold lh-lg"
+                          >ថ្ងៃនេះ ម៉ោង 10:05</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="trending-right">
+                  <div class="trending-top">
+                    <div class="trend-img">
+                      <img
+                        src="img/trending_right_single_4.png"
+                        class="img-fluid"
+                        alt=""
+                      />
+                      <div class="trend-text">
+                        <span class="badge bg-danger mb-3">music</span>
+                        <h2 class="h4 text-white">
+                          ការពិត Apple ប្ដូរបុគ្គលិកជាន់ខ្ពស់ថ្ងៃមុន
+                          ឱ្យទៅកាន់កិច្ចការសំខាន់មួយនេះសោះ
+                        </h2>
+                        <span class="date text-light fw-bold lh-lg"
+                          >ថ្ងៃនេះ ម៉ោង 10:05</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
+
+  <script src="js/bootstrap.js"></script>
+  <script src="js/owl.carousel.js"></script>
 </html>
