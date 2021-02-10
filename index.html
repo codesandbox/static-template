@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+      <table>
+        <tr>
+          <td>
+             <center><img id="myImage" src="img/abh-metallicrose.jpg"></center>
+          </td>
+          <td class="info">
+            <center><img class="logopic" src="img/abh-logopic.jpg"></center>
+            </br></br></br><h3>LIP GLOSS:</h3></br><p>Full pigment, weightless lip gloss.</p>
+            </br></br></br><h3>$16.00</h3></br><p>Free shipping for purchases above $25.00.</p>
+            </br></br></br><h3>COLORS:</br></h3>
+            <button onclick="functionOne()" type="button" class="mr">Metallic Rose</button>
+            <button onclick="functionTwo()"type="button" class="c">Caramel</button>
+            <button onclick="functionThree()"type="button" class="p">Parfait</button>
+            <button onclick="functionFour()"type="button" class="dr">Dusty Lilac</button>
+          </td>
+        </tr>
+      </table>
+
+    <script>
+      function functionOne() {
+        document.getElementById("myImage").src = "img/abh-metallicrose.jpg";
+      }
+      function functionTwo() {
+        document.getElementById("myImage").src = "img/abh-caramel.jpg";
+      }
+      function functionThree() {
+        document.getElementById("myImage").src = "img/abh-parfait.jpg";
+      }
+      function functionFour() {
+        document.getElementById("myImage").src = "img/abh-dustyrose.jpg";
+      }
+    </script>
   </body>
 </html>
