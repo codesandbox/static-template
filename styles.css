@@ -1,0 +1,152 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: white;
+}
+
+/* fuentes de texto */
+
+@font-face {
+  font-family: Harukaze;
+  src: url(Fuentes/Harukaze.ttf);
+}
+
+@font-face {
+  font-family: Korean-C;
+  src: url(Fuentes/Korean_Calligraphy.ttf);
+}
+
+/* colores */
+:root {
+  --dark-gray: #424242;
+}
+
+/* defecto */
+nav ul {
+  height: fit-content;
+  list-style-type: none;
+}
+
+nav ul li {
+  width: fit-content;
+}
+
+/* Navbar 1 */
+
+.Navbar-1 {
+  width: 100%;
+  display: flex;
+  color: white;
+  background-color: var(--dark-gray);
+  text-shadow: 1px 1px 1px black;
+  box-shadow: 1px 0px 10px black;
+}
+.Navbar-1 ul.Titulo {
+  display: flex;
+  width: 100%;
+}
+.Navbar-1 ul.Titulo li {
+  padding: 0.5rem;
+  font-size: xx-large;
+  font-family: Harukaze;
+}
+
+.Navbar-1 ul.Titulo li:hover {
+  cursor: pointer;
+  transition: 1s ease;
+  background-color: red;
+}
+
+.Navbar-1 ul.Menu {
+  width: 100%;
+  margin: 3.4rem 0;
+  position: absolute;
+  background-color: #2d2d2d;
+}
+
+.Navbar-1 ul.Menu li {
+  width: 100%;
+  padding: 1rem;
+  font-size: large;
+  align-self: center;
+  font-family: Korean-C;
+  border: 5px solid transparent;
+}
+
+.Navbar-1 ul.Menu li:hover {
+  border-left: 5px solid blue;
+  transition: 1s ease;
+}
+
+.Navbar-1 ul li:not(:hover) {
+  opacity: 0.3;
+}
+
+.btn {
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  margin-left: auto;
+}
+
+.Navbar-1 ul.Titulo li.btn:hover {
+  background-color: gray;
+}
+
+.btn div {
+  width: 100%;
+  height: 7px;
+  border-radius: 7px;
+  border: 1px solid darkgray;
+  background-color: slategray;
+}
+
+.nature {
+  background-image: url(Multimedia/nature.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 15rem;
+}
+
+/* Responsivo */
+
+@media only screen and (min-width: 600px) {
+  /*body {
+    background-color: cyan;
+  }*/
+
+  .Navbar-1 ul.Titulo {
+    width: fit-content;
+  }
+
+  .Navbar-1 ul.Menu {
+    margin: 0;
+    display: flex;
+    position: initial;
+    margin-left: auto;
+    width: fit-content;
+    background-color: #2d2d2d;
+  }
+
+  .Navbar-1 ul.Menu li {
+    padding: 1rem;
+    font-size: large;
+    width: fit-content;
+    font-family: Korean-C;
+  }
+  li.btn {
+    display: none;
+  }
+
+  .nature {
+    background-image: url(Multimedia/nature.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 25rem;
+  }
+}
