@@ -1,12 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Knewave&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <div class="navbar">
+        <div class="header">
+          <h1>Educatics</h1>
+        </div>
+        <div class="nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="success.html">Sucess Stories</a>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Courses
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="design.html">Design</a>
+              <a href="development.html">Development</a>
+              <a href="marketing.html">Marketing</a>
+              <a href="software.html">IT and Software</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <img
+          src="https://cdn1.byjus.com/byjusweb/img/home/image/Sharukh.png"
+          alt="Sharukh image"
+          height="60%"
+          width="60%"
+        />
+        <div class="form">
+          <h2 class="form-heading">Book your free Classes</h2>
+          <p class="form-para">Learn from India's best teachers</p>
+          <p>
+            <label>First Name</label>
+            <input class="w3-input" type="text" placeholder="enter the first name">
+          </p>
+          <p> 
+            <label>Last Name</label>    
+            <input class="w3-input" type="text" placeholder="enter the last name">
+          </p>
+          <p> 
+            <label>Email</label>    
+            <input class="w3-input" type="email" placeholder="enter Email id @">
+          </p>
+          <p> 
+              <label>Number</label>    
+              <input class="w3-input" type="number" placeholder="enter the mobile number">
+          </p>
+
+          <div >
+            <button class="form-submit"  onclick="formSubmit()">Submit</button>
+          </div>
+
+            
+          
+          
+        </div>
+      </div>
+      <div class="decreption">
+        <p class="title">
+          Comprehensive learning programs <br />for school students aged 4-18
+          years
+        </p>
+        <p class="para">
+          Become lifelong learners with India’s best teachers,<br />
+          engaging videos lessons and personalised learning<br />
+          journeys
+        </p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="card-image">
+            <img
+              src="https://cdn1.byjus.com/byjusweb/img/home/image/byjus-classes.png"
+              alt="student-teacher"
+            />
+          </div>
+          <div>
+            <p class="card-heading">Educatics<br />Classes</p>
+            <p class="card-decription">
+              Personalised online <br />tutoring program
+            </p>
+            <button class="card-button">Book for Free Classes</button>
+          </div>
+          <div></div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img
+              src="https://cdn1.byjus.com/byjusweb/img/home/image/btla.png"
+            />
+          </div>
+          <div>
+            <p class="card-heading">Educatics<br />Classes</p>
+            <p class="card-decription">
+              Personalised learning app <br />
+              to learn anytime anywhere
+            </p>
+            <button class="card-button">Book for Free Classes</button>
+          </div>
+          <div></div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img
+              src="https://cdn1.byjus.com/byjusweb/img/home/image/dbel.png"
+              alt="student-teacher"
+            />
+          </div>
+          <div>
+            <p class="card-heading">Educatics<br />Classes</p>
+            <p class="card-decription">
+              A specially crafted Early <br />Learning Program for <br />young
+              minds
+            </p>
+            <button class="card-button">Book for Free Classes</button>
+          </div>
+          <div></div>
+        </div>
+      </div>
+      <div>
+        <p class="advantage">Get the EDUCATICS Advantages</p>
+      </div>
+      <div class="adv-pics">
+
+        <div class="adv-img">
+          <img src="https://cdn1.byjus.com/byjusweb/img/home/image/concept-clarity.png" height="70%" width="70%">
+          <div class="img-descp"><p>Conceptual clarity <br>through visualisation</p></div> 
+
+        </div>
+        <div class="adv-img">
+         <img src="https://cdn1.byjus.com/byjusweb/img/home/image/personalised-learning.png" height="70%" width="70%">
+         <div class="img-descp"><p>Personalised learning<br>programs</p></div> 
+        </div>
+        <div class="adv-img">
+          <img src="https://cdn1.byjus.com/byjusweb/img/home/image/unmatched-attention.png" height="70%" width="70%">
+          <div class="img-descp"><p>Unmatched individual <br>attention</p></div> 
+        </div>
+      </div>
+
+    </div>
+    <footer class="footer">
+      <p>	Copyright <strong>&#169;2021 Educatics.All rights reserved.</strong> </p>
+     <div class="footer-input">
+       <input type="text" placeholder="email @">
+       <button>Submit</button>
+     </div>
+    </footer>
+
+    <script src="index.js"></script>
   </body>
 </html>
