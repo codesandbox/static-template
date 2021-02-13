@@ -1,12 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimal Login Page Design - HTML5 & TailwindCSS</title>
+
+    <!-- Tailwindcss -->
+    <link rel="stylesheet" href="./css/dist.css" />
+
+    <!-- Custom css -->
+    <link rel="stylesheet" href="./css/custom.css" />
+
+    <!-- Fontawesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <section class="flex max-h-full">
+      <main class="w-96 bg-red-400 p-7 space-y-5 hidden md:block">
+
+        <!-- Logo -->
+        <header>
+          <nav class="p-3">
+            <h4 style="font-family:'montserrat regular'" 
+            class="text-xl text-white font-normal uppercase">Laibrus</h2>
+          </nav>
+        </header>
+
+
+
+        <div class="p-3 my-7 space-y-6">
+            <h1 style="font-family:'montserrat regular'"
+            class="text-2xl text-white font-semibold"
+             >
+              The best resource for finding a book
+            </h1>
+            <p style="font-family:'inter'"
+             class="text-white text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia laboriosam perspiciatis, accusantium riorea</p>
+        </div>
+
+          <!-- Img  -->
+          <div>
+              <img src="./reader.png" alt="bookreader">
+          </div>
+
+      </main>
+    
+    
+      <main class="flex-auto bg-white space-y-7 p-2">
+       <header class="py-5 px-5 my-4">
+          <nav>
+              <ul class="flex items-center justify-end space-x-4">
+                <!-- Favourite icon by Fontawesome -->
+                  <a href="#">
+                    <li>
+                      <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+                    </li>
+                  </a>
+
+                <!-- Cart icon by Fontawesome -->
+                  <a href="#">
+                    <li>
+                      <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+                    </li>
+                  </a>
+
+                <!-- User icon by Fontawesome -->
+                  <a href="#">
+                    <li>
+                      <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path></svg>
+                    </li>
+                  </a>
+
+              </ul>
+          </nav>
+       </header>
+
+        <div class="flex items-center justify-center p-5">
+            <h4 style="font-family:'montserrat regular'"
+            class="text-3xl font-black text-black">Log in</h4>
+        </div>
+
+          <section class="flex flex-col items-center justify-center">
+
+                  <!-- Email Input for Accepting email-id -->
+            <form action="#" class="space-y-4">
+
+                    <div class="email">
+                          <div class="relative mt-1">
+                                <input type="search" id="emailInp"
+                                 class="p-4 w-80 h-10 rounded  pl-10 text-sm focus:outline-none border border-gray-200 focus:border-red-400 font-light"  placeholder="e-mail address">
+                                <svg 
+                                class="w-4 h-4 absolute top-0 m-3 text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.243 5.757a6 6 0 10-.986 9.284 1 1 0 111.087 1.678A8 8 0 1118 10a3 3 0 01-4.8 2.401A4 4 0 1114 10a1 1 0 102 0c0-1.537-.586-3.07-1.757-4.243zM12 10a2 2 0 10-4 0 2 2 0 004 0z" clip-rule="evenodd"></path></svg>   
+                            </div>
+                    </div>
+
+                  <!-- Password Input for accepting Password -->
+
+                        <div class="password">
+                          <div class="relative mt-1 mb-2">
+                                <input type="password" id="passwordInp"
+                                 class="p-4 w-80 h-10 rounded pl-10 text-sm focus:outline-none border border-gray-200 focus:border-red-400 font-light" placeholder="password">
+                               <svg class="w-4 h-4 absolute top-0 m-3 text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd"></path></svg>
+                            </div>
+                      </div>
+    
+                <button class="focus:outline-none bg-red-400  focus:bg-red-500 focus:ring focus:ring-red-200 w-80 h-9 text-white rounded">Log in</button>
+              </form>
+          </section>
+
+          <section class="flex flex-col items-center justify-center space-y-4">
+              <h2 class="text-gray-400"><span>or login with</span></h2>
+
+              <div>
+                  <ul class="flex items-center justify-around space-x-5">
+                             <!-- Google icon by Fontawesome -->
+                      <a href="#">
+                              <li class="border border-red-400 w-10 h-10 rounded flex items-center justify-center text-red-400 hover:bg-red-400 hover:text-white">
+                                      <i class="fab fa-google"></i>
+                              </li>
+                       </a>
+                              <!-- Facbook icon by Fontawesome -->
+
+                       <a href="#">
+                          <li class="border border-red-400 w-10 h-10 rounded flex items-center justify-center text-red-400 hover:bg-red-400 hover:text-white">
+                              <i class="fab fa-facebook-f"></i>
+                          </li>
+                       </a>
+
+                                   <!-- linkedin icon by Fontawesome -->
+                       <a href="#">
+                          <li class="border border-red-400 w-10 h-10 rounded flex items-center justify-center text-red-400 hover:bg-red-400 hover:text-white">
+                              <i class="fab fa-linkedin"></i>
+                          </li>
+                       </a>
+      
+                               <!-- Apple icon by Fontawesome -->
+                      <a href="#">
+                          <li class="border border-red-400  w-10 h-10 rounded flex items-center justify-center text-red-400 hover:bg-red-400 hover:text-white">
+                              <i class="fab fa-apple"></i>
+                          </li>
+                      </a>
+                      
+                  </ul>
+              </div>
+              <div class="sign_up_link space-x-1">
+                <span class="text-sm font-light">Don't have an account?</span><a class="text-red-500 hover:text-red-600 text-sm font-light hover:underline" href="#">Sign up</a>
+              </div>
+          </section>
+      </main>
+    </section>
+
   </body>
 </html>
