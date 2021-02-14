@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--Pokémon -->
+<html>
+  <head>
+    <link href="https://pokemontv.netlify.app/icon.png" rel="icon" />
+    <meta charset="utf-8" />
+    <link href="/style/main.css" rel="stylesheet" />
+    <link href="/style/col.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="nav">
+      <a href="/"><div class="nav_image"></div></a>
+    </div>
+    <div class="container">
+      <div class="row">
+        <section class="col-12">
+          <h3>Latest</h3>
+        </section>
+        <section class="col-3 filter">
+          <div class="filter_header">Filter By...</div>
+          <div class="filter_sub">Format</div>
+          <div class="filter_list">
+            <li onclick="screenchot()">Screenshot</li>
+            <li onclick="logo()">logo</li>
+            <li onclick="ptv()">Pokémon TV Images</li>
+          </div>
+          <div class="filter_sub">Issue Date</div>
+          <div class="filter_list last">
+            <li onclick="monday()">Monday</li>
+            <li onclick="tuesday()">Tuesday</li>
+            <li onclick="wednesday()">Wednesday</li>
+            <li onclick="thursday()">Thursday</li>
+            <li onclick="friday()">Friday</li>
+            <li onclick="saturday()">Saturday</li>
+            <li onclick="sunday()">Sunday</li>
+          </div>
+        </section>
+        <section class="col-8" id="mainpage"></section>
+      </div>
+    </div>
+    <script src="/scripts/en/id.js"></script>
+    <script src="/scripts/en/choose.js"></script>
+  </body>
+</html>
