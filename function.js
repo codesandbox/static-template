@@ -50,3 +50,8 @@ $(".leftBarre").on("click", function () {
 $(".body").on("click", function () {
   openCloseMenu(1);
 });
+
+// SORTIE/ANIMATIONS
+$('.event').on('click', function() {
+  document.location.href = 'ephad.html';
+})

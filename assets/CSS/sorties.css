@@ -41,6 +41,7 @@
     transition: .3s;
   }
   .body .liste .event:hover {
+    cursor: pointer;
     box-shadow: 0 0 20px rgba(0,0,0,.5);
     width: 28vw;
     height: 14.5vw;
@@ -53,10 +54,9 @@
     height: 100%;
     color: #fff;
     background: linear-gradient(0, rgba(0,0,0,.8), transparent);
-    transition: .3s;
-  }
-  .body .liste .event .content:hover {
-    /*padding: 4vw;*/
+    transition: padding .75s;
+  }.body .liste .event:hover .content {
+    padding-top: .5vw;
   }
 
      .body .liste .event .content h3 {
@@ -69,4 +69,17 @@
       .body .liste .event .content p {
         margin-top: 0;
         font-size: 15px;
+        width: 85%;
+        text-align: justify;
+        transition: 1s;
+      }
+      .body .liste .event .content p:nth-of-type(1) {
+        opacity: .6;
+      }
+      .body .liste .event .content p:nth-of-type(2) {
+        margin-top: 2vw;
+        opacity: 0;
+      }.body .liste .event:hover .content p:nth-of-type(2) {
+        margin-top: 0;
+        opacity: 1;
       }
