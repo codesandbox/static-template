@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="hole">
+      <div class="col-sm-6 col-sm-6">
+        <h3><strong>UPSC</strong> PATHSHALA</h3>
+
+        <div class="col-sm-7">
+          <h2 class="subhead">
+            <strong>Best Online Coaching for UPSC Preperation</strong>
+          </h2>
+          <img src="image1.png" alt="subhead" height="300px" width="300px" />
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <h3 class="second">Book a Free Demo Class</h3>
+        <h4 style="color: red;">Limited Seats Only!</h4>
+      </div>
+      <div class="box">
+          <form name="myForm" action="/" onsubmit="return validateForm()" method="post">
+        <input type="number" id="mobile" placeholder="Mobile Number"  /></br ></br>
+        <input type="text" id="fname" placeholder="Enter Full Name" /></br></br>
+        <p id="demo"></p>
+        <input type="text" placeholder="Enter E-mail address" /></br></br>
+        <label for="cars">What describes you best?</label></br></br>
+
+      <select name="proffesion" >
+      <option value="College Student">College Student</option>
+      <option value="Working Professional">Working Professional</option>
+      <option value="Full time aspirant">Full time aspirant</option>
+      <option value="Other">Other</option>
+      </select>
+      </div></br></br>
+    </form>  
+      <button class="button" onclick="myFunction()">Submit</button></br></br>
+    
+      <h5>By clicking "submit" button,You explicitly solicit a call & 
+        email from uFber
+      </h5>
+    </div>
+    <script src="index.js"></script>
   </body>
+  
 </html>
