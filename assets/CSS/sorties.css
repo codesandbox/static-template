@@ -1,80 +1,72 @@
-.body {
-  overflow: hidden;
+.body .entete {
+  min-width: 90vw;
 }
 
-.body .sections {
-  display: flex;
-  flex-direction: column;
+.body .enteteSec {
+  position: absolute;
+  width: 94vw;
+  height: 30vw;
+  background: linear-gradient(0, var(--colorSecond), transparent), url("../Images/img7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.body .sections div {
-  position: initial;
-  padding: 1vw;
-  min-width: 47%;
-  color: #000;
-}
+  .body .enteteSec h1 {
+    margin: 0;
+    padding: 10vw;
+    padding-left: 4vw;
+    font-size: 100px;
+    color: #fff;
+  }
 
-.body .sections div div {
-  display: flex;
+.body .liste {
+  display: inline-flex;
+  justify-content: space-around;
+  position: absolute;
+  margin-top: 30vw;
+  width: 94vw;
   flex-wrap: wrap;
 }
 
-.body .sections div div h2 {
-  margin: 0.5vw;
-  margin-left: 5.5vw;
-  font-size: 42px;
-}
+  .body .liste .event {
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    border-radius: .5vw;
+    margin-bottom: 4vw;
+    width: 25vw;
+    height: 12.5vw;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    transition: .3s;
+  }
+  .body .liste .event:hover {
+    box-shadow: 0 0 20px rgba(0,0,0,.5);
+    width: 28vw;
+    height: 14.5vw;
+    background-size: 110%;
+  }
 
-.body .sections div div .event {
-  display: inline-flex;
-  padding: 0;
-  border-radius: 0.25vw;
-  margin: 10px;
-  background: rgba(0, 0, 0, 0.05);
-  transition: 0.2s 0.1s;
-  background: linear-gradient(
-    -90deg,
-    rgba(255, 255, 255, 0.75) 50%,
-    rgba(255, 255, 255, 0.5) 50%
-  );
-}
-.body .sections div div .event:hover {
-  background: linear-gradient(
-    -90deg,
-    rgba(255, 255, 255, 0.65) 50%,
-    rgba(255, 255, 255, 0.35) 50%
-  );
-  transition-delay: 0s;
-}
+  .body .liste .event .content {
+    padding: 2vw;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background: linear-gradient(0, rgba(0,0,0,.8), transparent);
+    transition: .3s;
+  }
+  .body .liste .event .content:hover {
+    /*padding: 4vw;*/
+  }
 
-.body .sections div div .event div {
-  min-width: 45%;
-}
+     .body .liste .event .content h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 35px;
+      font-weight: bold;
+     }
 
-.body .sections div div .event div:nth-child(2) {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 5vw;
-}
-.body .sections div div .event div:nth-child(1) img {
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 0.25vw;
-  width: 100%;
-  overflow: hidden;
-}
-
-.body .sections div div .event div:nth-child(2) h4 {
-  margin: 0;
-  font-size: 35px;
-}
-
-.body .sections div div .event div:nth-child(2) .date {
-  margin-top: -0.5vw;
-  font-size: 15px;
-}
-
-.body .sections div div .event div:nth-child(2) p:nth-child(3) {
-  margin: 0;
-}
+      .body .liste .event .content p {
+        margin-top: 0;
+        font-size: 15px;
+      }
