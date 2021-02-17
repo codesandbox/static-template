@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  font-family: "Nunito";
+}
+
+header {
+  display: inline-block;
+  position: fixed;
+  z-index: 10;
+  width: 70px;
+  height: 100%;
+  background: var(--colorPrinc);
+}
+    
+    header .leftBarre p {
+      margin: 0;
+    }
+
+      header .leftBarre svg {
+        display: block;
+        position: initial;
+        padding: 20px;
+        margin-left: auto; margin-right: auto;
+        font-size: 25px;
+        color: #fff;
+      }
+      header .leftBarre svg:hover { cursor: pointer; opacity: .7; }
+
+  header .menu {
+    display: block;
+    position: fixed;
+    z-index: 9;
+    box-shadow: 5px 0 10px rgba(0,0,0,.3);
+    top: 0;
+    left: 70px;
+    padding-top: 1%;
+    padding-left: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    transition: opacity .3s .5s;
+    background: var(--colorSecond);
+  }
+  header .menuO {
+    overflow: initial;
+  }
+
+    header ul {
+      padding-left: 0;  
+    }
+
+    header ul li {
+      padding: 20px;
+      padding-right: 0;
+      list-style: none;
+      font-size: 18px;
+      color: #fff;
+
+      padding-left: 0;
+      opacity: 0;
+
+      transition: .05s;
+      animation: menu_li .75s;
+    }
+    @keyframes menu_li {
+      from { padding-left: 0; }
+    }
+    header ul a {
+      position: initial;
+      text-decoration: none;
+    }
+
+    header ul li:hover {
+      text-decoration: underline;
+      background: var(--colorPrinc);
+      opacity: 1;
+    }
+    header ul .list:hover {
+      text-decoration: none;
+      height: auto;
+      overflow: auto;
+    }
+
+    header ul .list .fa-plus {
+      position: absolute;
+      right: 20px;
+      transition: .25s;
+    }
+    header ul .list:hover .fa-plus {
+      transform: rotate(45deg);
+      opacity: .5;
+    }
+
+    header ul .list ul {
+      display: none;
+      position: absolute;
+      padding: 5px;
+      padding-left: 0%;
+      padding-right: 0%;
+      margin-top: -45px;
+      margin-left: 230px;
+      width: 100%;
+      opacity: 1;
+      background: var(--colorPrinc);
+    }
+    header ul .list:hover ul {
+      display: block;
+    }
+
+      header ul .list a {
+        color: #fff;
+        text-decoration: none;
+      }
+      header ul .list ul a:nth-child(2n) li {
+        background: rgba(255,255,255,.1);
+      }
+
+    header ul ul {
+      padding-left: 0;
+      overflow: hidden;
+      opacity: .7;
+    }
+
+      header ul ul li {
+        height: auto;
+      }
+      header ul ul li:hover {
+        text-decoration: underline;
+        opacity: 1;
+      }
+
+.body {
+  position: absolute;
+  margin-left: 7%;
+  width: 100-7%;
+}
+
+@media screen and (max-width: 1000px) {
+  header {
+    width: 100%;
+    height: 10vw;
+  }
+
+      header .leftBarre p svg {
+        margin-top: -1px;
+        margin-left: 5px;
+        padding: 2vw;
+        font-size: 6vw;
+      }
+
+      header .menu {
+        top: 10vw;
+        left: 0;
+      }
+      header .menuO {
+        min-width: 60%;
+      }
+
+          header .menu ul li {
+            margin-top: 3vw;
+            margin-bottom: 3vw;
+            font-size: 4vw;
+            transition: .2s;
+          }
+
+            header .menu ul li ul {
+              position: initial;
+              margin: 0;
+              margin-left: -10px;
+              width: auto;
+            }
+
+              header .menu ul li ul li {
+                margin-left: 0;
+              }
+}
