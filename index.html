@@ -1,12 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./syles.css"
+      <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <title>My Linktree</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <a class="profile" href="https://ibb.co/yRCkns2"
+        ><img
+          src="https://i.ibb.co/hMNdR80/foto-demetriu.jpg"
+          alt="foto-demetriu"
+          width="104px"
+          height="104px"
+      /></a>
+      <h2>Demetriu Gabriel</h2>
+      <p class="subtitle">Desenvolvedor Frontend</p>
+      <p>Redes Sociais ✌🏼</p>
+
+      <div class="info-container">
+        <div class="social-medias">
+          <a class="link" href="https://github.com/DemetriuGabriel">
+            <i data-feather="github"></i>
+          </a>
+          <a class="link" href="https://github.com/DemetriuGabriel">
+            <i data-feather="youtube"></i>
+          </a>
+          <a class="link" href="https://www.instagram.com/demetriu.gabriel/">
+            <i data-feather="instagram"></i>
+          </a>
+        </div>
+
+        <div class="info-content">
+          <p>Alguns Projetos👇🏼</p>
+          <div class="project-container">
+            <a
+              class="project-link"
+              href="https://github.com/DemetriuGabriel/get-coffee"
+            >
+              <img
+                src="./assets/get-coffee.png"
+                alt="get-cofee-image"
+                width="100%"
+                height="240px"
+              />
+            </a>
+          </div>
+
+          <div class="project-container">
+            <a
+              class="project-link"
+              href="https://github.com/DemetriuGabriel/nextlevelweek"
+            >
+              <img
+                src="https://camo.githubusercontent.com/8a9c8c82a72ebe48661f41eed4de13062984eb150f633143681b05191739c992/68747470733a2f2f692e696d6775722e636f6d2f37476f5a6670782e706e67"
+                alt="Ecoleta"
+                width="100%"
+                height="240px"
+              />
+            </a>
+          </div>
+
+          <a class="link portifolio" href="https://github.com/DemetriuGabriel">
+            Link do portifólio
+          </a>
+          <a id="setup-button" class="link" href="">💻 Meu Setup</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      feather.replace();
+    </script>
   </body>
 </html>
