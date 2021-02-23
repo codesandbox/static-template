@@ -1,0 +1,156 @@
+/* HTML5 Audio player with playlist styles */
+.example {
+  margin: 50px auto 0;
+  width: 400px;
+}
+.player {
+  background: transparent url("../images/spr.png") no-repeat scroll center top;
+  height: 162px;
+  position: relative;
+  width: 326px;
+  z-index: 2;
+}
+.title,
+.artist {
+  font-family: verdana;
+  left: 167px;
+  position: absolute;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.title {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  top: 23px;
+}
+.artist {
+  color: #eeeeee;
+  font-size: 12px;
+  top: 40px;
+}
+.pl {
+  background: transparent url("../images/spr.png") no-repeat scroll -274px -175px;
+  cursor: pointer;
+  height: 34px;
+  left: 270px;
+  position: absolute;
+  top: 20px;
+  width: 32px;
+}
+.pl:hover {
+  top: 21px;
+}
+.cover {
+  background: transparent url(../data/cover1.jpg) no-repeat scroll center top;
+  border-radius: 5px 5px 5px 5px;
+  height: 94px;
+  left: 20px;
+  position: absolute;
+  top: 20px;
+  width: 94px;
+}
+.controls {
+  cursor: pointer;
+  height: 23px;
+  left: 167px;
+  position: absolute;
+  top: 65px;
+  width: 138px;
+}
+.controls .play,
+.controls .pause,
+.controls .rew,
+.controls .fwd {
+  background: transparent url("../images/spr.png") no-repeat scroll 0 0;
+  float: left;
+  height: 100%;
+  width: 33%;
+}
+.controls .play {
+  background-position: -8px -171px;
+}
+.controls .pause {
+  background-position: -8px -198px;
+  display: none;
+}
+.controls .rew {
+  background-position: -54px -171px;
+}
+.controls .fwd {
+  background-position: -100px -171px;
+}
+.controls .play:hover {
+  background-position: -8px -170px;
+}
+.controls .pause:hover {
+  background-position: -8px -197px;
+}
+.controls .rew:hover {
+  background-position: -54px -170px;
+}
+.controls .fwd:hover {
+  background-position: -100px -170px;
+}
+.hidden {
+  display: none;
+}
+.controls .visible {
+  display: block;
+}
+.volume {
+  height: 11px;
+  left: 186px;
+  position: absolute;
+  top: 96px;
+  width: 112px;
+}
+.tracker {
+  height: 15px;
+  left: 20px;
+  position: absolute;
+  top: 126px;
+  width: 285px;
+}
+.ui-slider-range {
+  background: transparent url("../images/spr.png") no-repeat scroll 5px -222px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.ui-slider-handle {
+  cursor: pointer;
+  height: 10px;
+  margin-left: -5px;
+  position: absolute;
+  top: 2px;
+  width: 10px;
+  z-index: 2;
+}
+.volume .ui-slider-handle {
+  background: url("../images/spr.png") no-repeat scroll -201px -188px
+    rgba(0, 0, 0, 0);
+  height: 13px;
+  width: 13px;
+}
+.playlist {
+  background-color: #333333;
+  border-radius: 5px 5px 5px 5px;
+  list-style-type: none;
+  margin: -10px 0 0 2px;
+  padding-bottom: 10px;
+  padding-top: 15px;
+  position: relative;
+  width: 326px;
+  z-index: 1;
+}
+.playlist li {
+  color: #eeeeee;
+  cursor: pointer;
+  margin: 0 0 5px 15px;
+}
+.playlist li.active {
+  font-weight: bold;
+}
