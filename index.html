@@ -4,9 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <link rel="stylesheet" href="index.css">
+    <title>Calculator</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+   <table>
+      <tr>
+        <td colspan="3"><input type="text" value="" id="result"></td>
+        <td><input type="button" value="C" onclick="clr()" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="1" onclick="display('1')"/></td>
+        <td><input type="button" value="2" onclick="display('2')"/></td>
+        <td><input type="button" value="3" onclick="display('3')"/></td>
+        <td><input type="button" value="+" onclick="display('+')"/></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="4" onclick="display('4')"/></td>
+        <td><input type="button" value="5" onclick="display('5')"/></td>
+        <td><input type="button" value="6" onclick="display('6')"/></td>
+        <td><input type="button" value="-" onclick="display('-')"/></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="7" onclick="display('7')"/></td>
+        <td><input type="button" value="8" onclick="display('8')"/></td>
+        <td><input type="button" value="9" onclick="display('9')"/></td>
+        <td><input type="button" value="/" onclick="display('/')"/></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="." onclick="display('.')"/></td>
+        <td><input type="button" value="0" onclick="display('0')"/></td>
+        <td><input type="button" value="=" onclick="solve()"/></td>
+        <td><input type="button" value="*" onclick="display('*')"/></td>
+      </tr>
+   </table>
+    </div>
   </body>
+  <script type="text/javaScript">
+   function display(val) {
+  if(document.getElementById("result").value==='0'){
+    document.getElementById("result").value=val;
+  }
+  else{
+  document.getElementById("result").value += val;
+   }
+ }
+function clr(){
+  document.getElementById("result").value ="0";
+}
+function solve(){
+  let val=document.getElementById("result").value;
+  document.getElementById("result").value =eval(val);
+}
+  </script>
 </html>
