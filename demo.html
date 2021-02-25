@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Home</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Raleway:400,300,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body data-spy="scroll" data-offset="0" data-target="#gn-menu">
+  <!-- ========== MAIN MENU ========== -->
+  <div class="container">
+    <ul id="gn-menu" class="gn-menu-main">
+      <li class="gn-trigger">
+        <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+        <nav class="gn-menu-wrapper">
+          <div class="gn-scroller">
+            <ul class="gn-menu">
+              <li class="gn-search-item">
+                <input placeholder="Search" type="search" class="gn-search">
+                <a class="gn-icon gn-icon-search"><span>Search</span></a>
+              </li>
+              <li><a href="#home" class="gn-icon gn-icon-home smoothscroll">Home</a></li>
+              <li><a href="#about" class="gn-icon gn-icon-archive smoothscroll">About</a></li>
+              <li><a href="#portfolio" class="gn-icon gn-icon-pictures smoothscroll">Portfolio</a></li>
+              <li><a href="#blog" class="gn-icon gn-icon-article smoothscroll">Blog</a></li>
+              <li><a href="#contact" class="gn-icon gn-icon-envelop smoothscroll">Contact</a></li>
+            </ul>
+          </div>
+          <!-- /gn-scroller -->
+        </nav>
+      </li>
+      <li><a href="#home" class="smoothscroll">Freelance</a></li>
+    </ul>
+  </div>
+  <!-- /container -->
+
+
+  <!-- ========== HEADER SECTION ========== -->
+  <section id="home" name="home"></section>
+  <div id="headerwrap">
+    <div class="container">
+      <div class="col-lg-8">
+        <h1>I'm a front-end developer & designer living in London.</h1>
+      </div>
+      <div class="col-lg-4">
+      </div>
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /headerwrap -->
+
+  <!-- ABOUT SECTION -->
+  <section id="about" name="about"></section>
+  <div class="container about">
+    <div class="col-lg-6 col-lg-offset-3">
+      <h3>About Alex Webber</h3>
+      <h5>FRONT-END DEVELOPER</h5>
+      <hr>
+      <br>
+      <h4>Avid follower of technology. I help businesses create elegant solution to complex problems whilst maintaining the focus on vision & strategy.<br/>-</h4>
+      <p>For the past decade I've been crafting user-centered design experiences for the web. I specialize in responsive front-end design, HTML/CSS and web typography. Some other areas of expertise are creative direction/art direction, interface design,
+        rapid prototyping, concepting, mobile/app design and more. Most days I work with pixels, grids, typography, colors and lines of code. Currently I work at Dell as a web designer.</p>
+    </div>
+    <!-- /col-lg-6 -->
+  </div>
+  <!-- /container -->
+
+  <!-- BEGIN CHART SECTION -->
+  <div id="chartwrap">
+    <br>
+    <br>
+    <div class="container centered">
+      <div class="col-lg-3"></div>
+
+      <!-- FIRST CHART -->
+      <div class="col-lg-2">
+        <canvas id="canvas" height="130" width="130"></canvas>
+        <label>Javascript</label>
+        <br>
+        <br>
+        <br>
+      </div>
+      <!-- col-lg-2 -->
+
+
+      <!-- SECOND CHART -->
+      <div class="col-lg-2">
+        <canvas id="canvas1" height="130" width="130"></canvas>
+        <label>Photoshop</label>
+        <br>
+        <br>
+        <br>
+      </div>
+      <!-- col-lg-2 -->
+
+
+      <!-- THIRD CHART -->
+      <div class="col-lg-2">
+        <canvas id="canvas2" height="130" width="130"></canvas>
+        <label>Bootstrap</label>
+        <br>
+        <br>
+      </div>
+      <!-- col-lg-2 -->
+
+      <div class="col-lg-3"></div>
+    </div>
+    <!-- container -->
+  </div>
+  <!-- chartwrap -->
+
+  <section id="portfolio" name="portfolio"></section>
+  <div id="foliowrap">
+    <div class="container">
+      <h3>I Create Cool Stuff</h3>
+      <br>
+      <br>
+      <div class="row">
+
+        <!-- PORTFOLIO IMAGE 1 -->
+        <div class="col-md-4 ">
+          <div class="grid mask">
+            <figure>
+              <img class="img-responsive" src="img/portfolio/folio01.jpg" alt="">
+              <figcaption>
+                <h5>DASHBOARD</h5>
+                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+              </figcaption>
+              <!-- /figcaption -->
+            </figure>
+            <!-- /figure -->
+          </div>
+          <!-- /grid-mask -->
+          <br>
+        </div>
+        <!-- /col -->
+
+
+        <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
+						      a modal for each of your projects. -->
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Project Title</h4>
+              </div>
+              <div class="modal-body">
+                <p><img class="img-responsive" src="img/portfolio/folio01.jpg" alt=""></p>
+                <p>This project was crafted for Some Name corp. Detail here a little about your job requirements and the tools used. Tell about the challenges faced and what you and your team did to solve it.</p>
+                <p><b><a href="#">Visit Site</a></b></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+
+        <!-- PORTFOLIO IMAGE 2 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure>
+              <img class="img-responsive" src="img/portfolio/folio02.jpg" alt="">
+              <figcaption>
+                <h5>UI DESIGN</h5>
+                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+              </figcaption>
+              <!-- /figcaption -->
+            </figure>
+            <!-- /figure -->
+          </div>
+          <!-- /grid-mask -->
+          <br>
+        </div>
+        <!-- /col -->
+
+        <!-- PORTFOLIO IMAGE 3 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure>
+              <img class="img-responsive" src="img/portfolio/folio03.jpg" alt="">
+              <figcaption>
+                <h5>ANDROID PAGE</h5>
+                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+              </figcaption>
+              <!-- /figcaption -->
+            </figure>
+            <!-- /figure -->
+          </div>
+          <!-- /grid-mask -->
+          <br>
+        </div>
+        <!-- /col -->
+      </div>
+      <!-- /row -->
+
+      <!-- PORTFOLIO IMAGE 4 -->
+      <div class="row">
+        <div class="col-md-4 ">
+          <div class="grid mask">
+            <figure>
+              <img class="img-responsive" src="img/portfolio/folio04.jpg" alt="">
+              <figcaption>
+                <h5>PROFILE</h5>
+                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+              </figcaption>
+              <!-- /figcaption -->
+            </figure>
+            <!-- /figure -->
+          </div>
+          <!-- /grid-mask -->
+          <br>
+        </div>
+        <!-- /col -->
+
+        <!-- PORTFOLIO IMAGE 5 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure>
+              <img class="img-responsive" src="img/portfolio/folio05.jpg" alt="">
+              <figcaption>
+                <h5>TWITTER STATUS</h5>
+                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+              </figcaption>
+              <!-- /figcaption -->
+            </figure>
+            <!-- /figure -->
+          </div>
+          <!-- /grid-mask -->
+          <br>
+        </div>
+        <!-- /col -->
+
+        <!-- PORTFOLIO IMAGE 6 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure>
+              <img class="img-responsive" src="img/portfolio/folio06.jpg" alt="">
+              <figcaption>
+                <h5>PHONE MOCKUP</h5>
+                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+              </figcaption>
+              <!-- /figcaption -->
+            </figure>
+            <!-- /figure -->
+          </div>
+          <!-- /grid-mask -->
+        </div>
+        <!-- /col -->
+        <br>
+      </div>
+      <!-- /row -->
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /foliowrap -->
+
+
+  <section id="blog" name="blog"></section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6 about">
+        <h3>Sometimes I Blog</h3>
+        <h5>THOUGHTS ABOUT DESIGN</h5>
+        <br>
+        <br>
+
+        <!-- ACCORDION -->
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                <date>Sep 15, 2018</date>
+                <plus> + </plus> First Class Design
+              </a>
+            </div>
+            <!-- /accordion-heading -->
+            <div id="collapseOne" class="accordion-body collapse in">
+              <br>
+              <div class="accordion-inner">
+                <h4>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+                  book.
+                </p>
+                <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                  with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                <p><img class="img-circle" src="img/avatar.jpg" height="50px" width="50px"> - <i>Alex Webber.</i></p>
+              </div>
+              <!-- /accordion-inner -->
+            </div>
+            <!-- /collapse -->
+          </div>
+          <!-- /accordion-group -->
+          <br>
+
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                <date>Sep 10, 2018</date>
+                <plus> + </plus> Retina Ready Theme
+              </a>
+            </div>
+            <div id="collapseTwo" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                  with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              </div>
+              <!-- /accordion-inner -->
+            </div>
+            <!-- /collapse -->
+          </div>
+          <!-- /accordion-group -->
+          <br>
+
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                <date>Aug 22, 2018</date>
+                <plus> + </plus> Awesome Support
+              </a>
+            </div>
+            <div id="collapseThree" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                  with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              </div>
+              <!-- /accordion-inner -->
+            </div>
+            <!-- /collapse -->
+          </div>
+          <!-- /accordion-group -->
+          <br>
+
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+                <date>Aug 13, 2018</date>
+                <plus> + </plus> Responsive Design
+              </a>
+            </div>
+            <div id="collapseFour" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                  with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              </div>
+              <!-- /accordion-inner -->
+            </div>
+            <!-- /collapse -->
+          </div>
+          <!-- /accordion-group -->
+          <br>
+        </div>
+        <!-- Accordion -->
+      </div>
+      <!-- /col-lg-6 -->
+
+      <div class="col-lg-3"></div>
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+
+  <div id="testimonial">
+    <div class="container">
+      <div class="bs-example">
+        <div id="carousel-example-generic" class="carousel slide bs-docs-carousel-example">
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="item active">
+              <h1>Work with Alex was a pleasure. He understood exactly what I wanted and created an awesome site for my company.</h1>
+              <br>
+              <h2>Brad Cooper</h2>
+            </div>
+            <div class="item">
+              <h1>I'm really happy with the results. Get 100% satisfaction is difficult but Alex got it without problems.</h1>
+              <br>
+              <h2>Joan Mathews</h2>
+            </div>
+            <div class="item">
+              <h1>Search no more. Alex is the guy that you need for your next project. Don't waste your time. He's the chosen one.</h1>
+              <br>
+              <h2>Trevor Bishop</h2>
+            </div>
+          </div>
+          <br>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="contact" name="contact"></section>
+  <div id="footerwrap">
+    <div class="container">
+      <div class="col-lg-5">
+        <h3>Address</h3>
+        <p>
+          Av. Greenville 987,<br/> New York,<br/> 90873
+          <br/> United States
+        </p>
+      </div>
+
+      <div class="col-lg-7">
+        <h3>Drop Me A Line</h3>
+        <br>
+
+        <form class="contact-form php-mail-form" role="form" action="contactform/contactform.php" method="POST">
+
+          <div class="form-group">
+            <label for="contact-name">Your Name</label>
+            <input type="name" name="name" class="form-control" id="contact-name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" >
+            <div class="validate"></div>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Your Email</label>
+            <input type="email" name="email" class="form-control" id="contact-email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+            <div class="validate"></div>
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Subject</label>
+            <input type="text" name="subject" class="form-control" id="contact-subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+            <div class="validate"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Your Message</label>
+            <textarea class="form-control" name="message" id="contact-message" placeholder="Your Message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
+            <div class="validate"></div>
+          </div>
+
+          <div class="loading"></div>
+          <div class="error-message"></div>
+          <div class="sent-message">Your message has been sent. Thank you!</div>
+
+          <div class="form-send">
+            <button type="submit" class="btn btn-large">Send Message</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="copyrights">
+    <div class="container">
+      <p>Copyright &copy; 2019.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+      <div class="credits">
+       
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/php-mail-form/validate.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/chart/chart.js"></script>
+  <script src="lib/classie/classie.js"></script>
+  <script src="lib/gnmenu/gnmenu.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
