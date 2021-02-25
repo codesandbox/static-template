@@ -1,12 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+    <title>Rogue Portfolio</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <nav>
+      <img class="logo" src="images/Marvel.jpg" alt="logo">
+      </img>
+      <ul class="nav-bar">
+        <li><a href="about-me">About me</a></li>
+        <li><a href="https://github.com/lawrmcfa">Github</a></li>
+        <li><a href="/Pages/contact.html">Contact me</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-info">
+          <h1 id="name">Rogue</h1>
+          <p>Rogue is part of a subspecies of humans called mutants, who are born with superhuman abilities.</p>
+          <div class="styled-break"></div>
+          <div class="button">Hire Me</div>
+          
+      </div>
+      <div>
+          <img
+            class="hero-image"
+            src="/images/happy_rogue.png"
+            alt="Happy Rogue"
+          />
+        </div>
+      <!-- <div class="second"></div> -->
+    </div>
+    <section>
+      <div class="about-me">
+          <img 
+          class="rogue" 
+          src="images/rogue1.jpg" 
+          alt="This is a pic"
+        />
+      </div>
+      <div class="info">
+          <h2><a name="about-me">About me</a></h2>
+          <p>Born a mutant with a phat ass. Needless to say, my milkshake brings all the boys to the yard. However, don't touch because I might drain you of your life force. I can also fly and I am very strong.</p>
+      </div>
+    </section>
+    <section>
+        <div class="test"></div>
+        <div class="test"></div>
+        <div class="test" id="main"></div>
+        <div class="test"></div>
+        <div class="test"></div>
+    </section>
+    <section>
+      <form>
+        <h2>Contact Me</h2>
+        <div class="input-section">
+          <div class="input-group">
+            <label for="first-name">First name:</label>
+            <input type="text" id="first-name" name="firstname" placeholder="John"></input>
+          </div>
+          <div class="input-group">
+            <label for="last-name">Last name:</label>
+            <input type="text" id="last-name" name="lastname" placeholder="Hancock"></input>
+          </div>
+        </div>
+
+        <div class="input-section">
+          <input type="radio" id="office" name="office" value=""></input>
+          <label for="office">Office</label>
+          <input type="radio" id="remote" name="remote" value=""></input>
+          <label for="office">Remote</label>
+          <input type="radio" id="other" name="other" value=""></input>
+          <label for="office">Other</label>
+        </div>
+
+        <div class="input-section">
+          <input type="checkbox" id="contract" name="contract"></input>
+          <label for="contract">Contract work</label>
+          <input type="checkbox" id="fulltime" name="fulltime"></input>
+          <label for="fulltime">Full-time</label>
+          <input type="checkbox" id="sponsorship" name="sponsorship"></input>
+          <label for="sponsorship">Sponsorship</label>
+        </div>
+
+        <button class="button" type="button" id="submit" name="submit">Submit</button>
+      </form>
+    </section>
+    <footer>
+    <ul>
+      <li><a href="">About Me</a></li>
+      <li><a href="">Contact</a></li>
+      <li><a href="https://github.com/lawrmcfa">GitHub</a></li>
+    </ul>
+    </footer>
   </body>
 </html>
