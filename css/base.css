@@ -1,0 +1,60 @@
+@charset "utf8";
+
+/* 内外边距清零 */
+body,
+div,
+p,
+ul,
+li,
+ol,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+ol,
+menu {
+  list-style: none;
+}
+
+/* 对图片，fileset边框清零 */
+img {
+  border: 0;
+}
+
+/* smooth-scroll */
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+/* 闭合浮动 */
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+.clearfix::after {
+  clear: both;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+/* 上三角 */
+.triangle-up {
+  border: 10px solid #122f63;
+  border-style: dashed dashed solid;
+  border-color: transparent transparent #122f63;
+  width: 0;
+  height: 0;
+}

@@ -1,0 +1,134 @@
+@charset "utf-8";
+.side-nav {
+  position: absolute;
+  left: 80px;
+  top: 30px;
+}
+.side-nav a {
+  text-decoration: none;
+  display: inline-block;
+  height: 25px;
+  padding: 3px;
+  margin-top: 5px;
+  color: #333;
+  /* border: 1px solid #333; */
+}
+
+.side-nav a:hover {
+  background-color: rgb(242, 248, 255);
+  opacity: 0.5;
+}
+
+.h-photo {
+  margin: 0 auto;
+  width: 1050px;
+  padding: 20px 0;
+  /* background-color: #182442; */
+}
+
+.h-photo .p-list .p-list-item {
+  float: left;
+  padding: 0 1px;
+}
+
+.p-list .p-list-item div {
+  position: relative;
+  overflow: hidden;
+  color: #333;
+  padding: 0 5px;
+}
+
+.p-list .p-list-item img {
+  position: relative;
+  display: block;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.p-list .p-list-item figcaption {
+  position: absolute;
+  top: 0;
+  padding-top: 10px;
+  z-index: 11;
+  width: 100%;
+  height: 100%;
+}
+
+.p-list-item figcaption h2 {
+  margin: 30px 0 15px 0;
+  color: #122f63;
+  text-align: center;
+  /* border: 2px solid rgb(10, 4, 4); */
+}
+
+.p-list-item figcaption p {
+  padding: 0 20px;
+  color: rgb(109, 107, 107);
+  font-weight: 300;
+  text-align: center;
+  /* border: 2px solid rgb(10, 4, 4); */
+}
+
+.p-list-item figcaption a {
+  /* position: absolute; */
+  text-decoration: none;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  padding: 3px 5px;
+  margin: 110px 90px;
+  font-weight: bold;
+  color: #fff;
+  border: 2px solid #fff;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* svg */
+.p-list .p-list-item svg {
+  position: absolute;
+  display: block;
+  z-index: 10;
+  width: 96%;
+  height: 100%;
+  top: -1px; /* fixes rendering issue in FF */
+}
+
+.p-list .p-list-item svg path {
+  fill: rgb(242, 248, 255);
+}
+
+/* Hover */
+.p-list .p-list-item:hover img {
+  opacity: 1;
+}
+.p-list .p-list-item:hover h2 {
+  transform: translateY(-33px);
+}
+.p-list .p-list-item:hover p {
+  opacity: 0;
+}
+.p-list .p-list-item:hover a {
+  opacity: 1;
+  /* transform: scale(1); */
+}
+
+/* intro-word */
+.h-intro {
+  margin: 20px auto;
+  width: 1050px;
+  font-size: 20px;
+  text-indent: 1em;
+  color: #122f63;
+  /* background-color: #182442; */
+}
+
+.h-intro .i-list .i-list-item {
+  margin: 20px auto;
+}
+
+.h-intro .i-list .i-list-item a {
+  position: relative;
+  right: -1070px;
+  top: -40px;
+}
