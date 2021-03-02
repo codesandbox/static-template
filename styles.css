@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --score: 0
+  --speed: 1
+}
+
+#overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+svg {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  animation: moveX 4s linear 0s infinite alternate, moveY 7.4s linear 0s infinite alternate;
+}
+
+@keyframes moveX {
+  from {
+    left: -15px;
+  }
+  
+  to {
+    left: calc(100% - 85px);
+  }
+}
+
+@keyframes moveY {
+  from {
+    top: -30px;
+  }
+  
+  to {
+    top: calc(100% - 70px);
+  }
+}
