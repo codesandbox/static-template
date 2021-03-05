@@ -1,12 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+    <title>Document</title>
+    <link rel="stylesheet" href="style/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style/style.css">
+    <!-- <link rel="stylesheet" href="style/normalize.css"> -->
+</head>
+
+<body>
+    <div class="container-fluid contenedor ">
+        
+        <!-- Inicio -->
+        
+        
+        <header class="row sticky-top encima">
+            <div class="col-12 p-0 w-100">
+                <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+                    <div class="container-fluid justify -content-between ">
+                        <button class="navbar-toggler btn-primary" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a class="nav-link active linkpadding text-warning fs-5 ps-4 border-1"
+                                    aria-current="page" href="#inicio">Inicio</a>
+                                <a class="nav-link active fs-5 ps-4 text-warning" aria-current="page" href="#sobremi">Sobre
+                                    mi</a>
+                                <a class="nav-link active fs-5 ps-4 text-warning" aria-current="page"
+                                    href="#proyectos">Proyectos</a>
+                                <a class="nav-link active fs-5 ps-4 text-warning" aria-current="page"
+                                    href="#contactanos">Contacto</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="row imagen text-center d-flex justify-md-content-end" id="inicio">
+            <div class="col-6 col-sm-4 text-danger rounded text-center bg-transparent fs-4 centrar rounded mx-md-5">
+                <p>Javier Gómez de Lara Santos</p>
+                <p>Desarrollador web front y backend</p>
+            </div>
+            <div class="col-7 col-sm-">
+            </div>
+        </div>
+
+
+
+        <!-- Sobre mi -->
+
+
+
+        <div class="row pt-3">
+            <div class="col-12 text-center" id="sobremi">
+                <p class="fs-3 mi">SOBRE MI</p>
+            </div>
+        </div>
+        <div class="row text-center justify-content-center d-flex  " >
+            <div class="col-md-4 col-sm-12 text-center d-flex justify-content-center my-md-0 my-sm-5 my-2">
+                <div class="card  text-center borde-carta" style="width: 18rem;">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body bg-primary ">
+                        <h5 class="card-title fs-3 text-info">Quien soy
+                        </h5><br>
+                        <p class="card-text text-white">¡Hola! Soy Javier y vengo a contarte un poco quien soy. <br> Soy
+                            un
+                            programador web
+                            freelance que siempre está motivado para satisfacer las necesidades de mis clientes.
+                            Me gusta mucho el tratar con el cliente y me manejo muy bien en equipo</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 col-sm-12 text-center d-flex justify-content-center my-md-0 my-sm-5 my-4 ">
+                <div class="card text-center d-flex borde-carta " style="width: 18rem;">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body align-content-center justify-content-center bg-primary">
+                        <p class="fs-3 text-info">Lenguajes que conozco</p>
+
+                        <canvas id="myChart" width="400" height="400"></canvas>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 col-sm-12 text-center d-flex justify-content-center mt-md-0 mt-sm-5">
+                <div class="card  text-center borde-carta" style="width: 18rem;">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body bg-primary">
+                        <p class="fs-3 text-info">Opiniones sobre mi trabajo</p>
+                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active text-white">
+                                    <p>Javier nos ha realizado la web de la clínica dental y estamos muy contentos. Ha
+                                        cumplido con los plazos y con las expectativas. La atención ha sido muy buena,
+                                        lo recomendaría. <br> -Clinicas Dental 7-</p>
+                                </div>
+                                <div class="carousel-item text-white">
+                                    <p>Muchas gracias por el trabajo realizado y por la paciencia.
+                                        Profesional, eficiente, rápido y flexible en las necesidades, son las
+                                        características que definen a esta gran persona. <br> -Saboreando Utrera-</p>
+                                </div>
+                                <div class="carousel-item text-white">
+                                    <p class="">El desarrollo de nuestra Web App a medida, a pesar de ser un proceso muy
+                                        complejo, ha sido estupendo. La atención y la ayuda ha sido inestimable.Se han
+                                        cubierto nuestra expectativas.¡Muchas gracias Javier! <br>-In wonderland-</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12 text-center" id="proyectos">
+                <p class="fs-3 mi">PROYECTOS</p>
+            </div>
+        </div>
+
+
+        <!-- Proyectos -->
+        <div class="row mt-2">
+            <div  class="container-fluid galeria d-flex justify-content-center">
+
+                <div class="row mt-4">
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="#" data-toggle="modal" data-target="#imagen1">
+                            <img src="img/thumbs/1.jpg" class="img-fluid mb-4" data-bs-toggle="tooltip"
+                                data-bs-placement="top" title="Página de conciertos. Lenguajes usados: PHP,JavaScript,CSS y Java">
+                        </a>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="#" data-toggle="modal" data-target="#imagen2">
+                            <img src="img/thumbs/2.jpg" class="img-fluid mb-4"  data-bs-toggle="tooltip"
+                            data-bs-placement="top" title="Página de una hamburguesería. Lenguajes usados: PHP,JavaScript,CSS">
+                        </a>
+                        
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="#" data-toggle="modal" data-target="#imagen3">
+                            <img src="img/thumbs/3.jpg" class="img-fluid mb-4"  data-bs-toggle="tooltip"
+                            data-bs-placement="top" title="Página de fútbol. Lenguajes usados: JavaScript,CSS y Java">
+                        </a>
+                       
+                       
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="#" data-toggle="modal" data-target="#imagen4">
+                            <img src="img/thumbs/4.jpg" class="img-fluid mb-4"  data-bs-toggle="tooltip"
+                            data-bs-placement="top" title="Blog de anime Finn and company. Lenguajes usados: PHP,Angular,CSS">
+                        </a>
+                       
+                    </div>
+                    <!--.col-6 col-sm-4 col-md-3 col-lg-2-->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="#" data-toggle="modal" data-target="#imagen5">
+                            <img src="img/thumbs/5.jpg" class="img-fluid mb-4"  data-bs-toggle="tooltip"
+                            data-bs-placement="top" title="Página de turismo por Kenia. Lenguajes usados: PHP,JavaScript,CSS y Java">
+                        </a>
+                        
+                    </div>
+                    <!--.col-6 col-sm-4 col-md-3 col-lg-2-->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="#" data-toggle="modal" data-target="#imagen6">
+                            <img src="img/thumbs/6.jpg" class="img-fluid mb-4"  data-bs-toggle="tooltip"
+                            data-bs-placement="top" title="Blog de videojuegos. Lenguajes usados: TypeScript,CSS y Java">
+                        </a>
+                        
+                    </div>
+
+
+
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="#" data-toggle="modal" data-target="#imagen7">
+                            <img src="img/thumbs/7.jpg" class="img-fluid mb-4"  data-bs-toggle="tooltip"
+                            data-bs-placement="top" title="Página de guitarras. Lenguajes usados: PHP,JavaScript,CSS y Java">
+                        </a>
+                    </div>
+
+
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="#" data-toggle="modal" data-target="#imagen8">
+                            <img src="img/thumbs/8.jpg" class="img-fluid mb-4"  data-bs-toggle="tooltip"
+                            data-bs-placement="top" title="Blog de DJs. Lenguajes usados: PHP,CSS y Java">
+                        </a>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="#" data-toggle="modal" data-target="#imagen9">
+                            <img src="img/thumbs/9.jpg" class="img-fluid mb-4"  data-bs-toggle="tooltip"
+                            data-bs-placement="top" title="Club de lectura Utrera. Lenguajes usados: JavaScript,CSS y Java">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="#" data-toggle="modal" data-target="#imagen10">
+                            <img src="img/thumbs/10.jpg" class="img-fluid mb-4"  data-bs-toggle="tooltip"
+                            data-bs-placement="top" title="Granjas Raykov. Lenguajes usados: PHP,JavaScript,CSS y Java">
+                        </a>
+                    </div>
+                    <!--.col-6 col-sm-4 col-md-3 col-lg-2-->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="#" data-toggle="modal" data-target="#imagen11">
+                            <img src="img/thumbs/11.jpg" class="img-fluid mb-4"  data-bs-toggle="tooltip"
+                            data-bs-placement="top" title="Blog de cine Lna. Lenguajes usados: PHP,JavaScript,CSS y Java">
+                        </a>
+                    </div>
+                    <!--.col-6 col-sm-4 col-md-3 col-lg-2-->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="#" data-toggle="modal" data-target="#imagen12">
+                            <img src="img/thumbs/12.jpg" class="img-fluid mb-4" data-bs-toggle="tooltip"
+                            data-bs-placement="top" title="Lunatic Park. Lenguajes usados: PHP,JavaScript,CSS y Java">
+                        </a>
+                        
+                    </div>
+                    <!--.col-6 col-md-2-->
+                </div>
+            </div>   
+
+
+
+            <!--Contáctanos-->
+            <div class="row justify-content-center" id="contactanos">
+                <div class="col-12 col-md-8 col-lg-6 pb-5">
+                            <form action="#" >
+                                <div class="card border-primary rounded-0">
+                                    <div class="card-header p-0">
+                                        <div class="bg-dark text-white text-center py-2">
+                                            <h2><i class="fa fa-envelope " ></i> ¿Quieres hablar conmigo?</h2>
+                                            <p class="m-0 fs-3">¡Con mucho gusto! <br> Introduce tus datos </p>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-3">
+        
+                                        <!--Body-->
+                                        <div class="form-group">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text mx-2"><ion-icon name="person-outline"></ion-icon></div>
+                                                </div>
+                                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre y tu apellido" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text mx-2"><ion-icon name="mail-outline"></ion-icon></div>
+                                                </div>
+                                                <input type="email" class="form-control" id="nombre" name="email" placeholder="Tu email" required>
+                                            </div>
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text mx-2"><ion-icon name="chatbubbles-outline"></ion-icon></div>
+                                                </div>
+                                                <textarea class="form-control" placeholder="Lo que quieras decirme" required></textarea>
+                                            </div>
+                                        </div>
+        
+                                        <div class="text-center">
+                                            <input type="submit" value="Enviar" class="btn bg-dark btn-block rounded-0 py-2">
+                                        </div>
+                                    </div>
+        
+                                </div>
+                            </form>
+                            <!--Form with header-->
+        
+        
+                        </div>
+            </div>
+            <!-- Footer -->
+
+        <footer class="bg-light text-center text-lg-start row">
+            <!-- Grid container -->
+            <div class="container p-4">
+              <!--Grid row-->
+              <div class="row">
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          
+                  <p>
+                    ¡Espero que te haya gustado la página y sobre todo que te haya gustado yo!
+                    Si deseas contactarme mi número de teléfono es 999 999 999 y mi correo es example@site.com 
+                    ¡Gracias por pasarte!
+                  </p>
+                </div>
+                <!--Grid column-->
+          
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                  <h5 class="text-uppercase">Referencias</h5>
+          
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="https://getbootstrap.com/" class="text-dark">Bootstrap</a>
+                    </li>
+                    <li>
+                      <a href="https://cdn.jsdelivr.net/" class="text-dark">Chart.JS</a>
+                    </li>
+                    <li>
+                        <a href="https://ionicons.com/" class="text-dark">ionIcons</a>
+                      </li>
+                  </ul>
+                </div>
+               
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                  <h5 class="text-uppercase mb-0">Redes</h5>
+          
+                
+                      <a href="#!" class="text-dark"><ion-icon name="logo-twitter" class="fs-2"></ion-icon></a>
+                    
+                    
+                      <a href="#!" class="text-dark"><ion-icon name="logo-instagram" class="fs-2"></ion-icon></a>
+                    
+                
+                      <a href="#!" class="text-dark" ><ion-icon name="logo-facebook" class="fs-2"></ion-icon></a>
+                    
+                    
+                      <a href="#!" class="text-dark"><ion-icon name="logo-linkedin" class="fs-2"></ion-icon></a>
+                    
+                  
+                </div>
+                <!--Grid column-->
+              </div>
+              <!--Grid row-->
+            </div>
+            <!-- Grid container -->
+          
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+              © 2021 Copyright:
+              <a class="text-dark" href="#">Javier Gómez de Lara Santos</a>
+            </div>
+            <!-- Copyright -->
+          </footer>
+        </div>
+</body>
+
+
+<!-- ionIcons -->
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+
+<!-- ChartJS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['PHP', 'CSS', 'HTML', 'JavaScript', 'Java', 'BootStrap'],
+            datasets: [{
+                label: 'Mi maestría con los lenguajes',
+                data: [7, 8, 9, 7, 6, 10],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderColor: [
+                    'rgb(255, 255, 255,0.2)',
+                    'rgb(255, 255, 255,0.2)',
+                    'rgb(255, 255, 255,0.2)',
+                    'rgb(255, 255, 255,0.2)',
+                    'rgb(255, 255, 255,0.2)',
+                    'rgb(255, 255, 255,0.2)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: {
+                labels: {
+                    fontColor: 'black'
+                }
+            }
+            // scales: {
+            //     yAxes: [{
+            //         ticks: {
+            //             beginAtZero: true
+            //         }
+            //     }]
+            // }
+
+        }
+
+    })
+</script>
+
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+  $('a[href^="#"]').click(function() {
+    var destino = $(this.hash);
+    if (destino.length == 0) {
+      destino = $('a[name="' + this.hash.substr(1) + '"]');
+    }
+    if (destino.length == 0) {
+      destino = $('html');
+    }
+    $('html, body').animate({ scrollTop: destino.offset().top }, 500);
+    return false;
+  });
+});
+</script>
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+</script>
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+
 </html>
