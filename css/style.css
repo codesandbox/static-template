@@ -1,0 +1,273 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+}
+nav {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  background-color: #524fef;
+  /* background-image: linear-gradient(#654fef, #05e4f7); */
+  height: 6rem;
+  width: 100%;
+}
+img.logo {
+  width: auto;
+  height: 6rem;
+  line-height: 6rem;
+  padding: 0 3rem;
+}
+nav ul {
+  display: flex;
+  margin-right: 2rem;
+}
+nav ul li {
+  line-height: 6rem;
+  margin: 0 0.5rem;
+}
+nav ul li a {
+  color: white;
+  font-size: 1.4rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: 0.3rem;
+  text-transform: uppercase;
+}
+a.active,
+a:hover {
+  background: #4fefe7;
+  transition: 0.5s;
+}
+.checkbtn {
+  font-size: 3rem;
+  color: white;
+  line-height: 6rem;
+  padding: 0 3rem;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(to bottom left,#644fefc7, #05e4f7);
+  color: white;
+  padding: 0 2.5rem;
+}
+
+#home h1 {
+  font-size: 3.2rem;
+  margin-bottom: 0.5rem;
+}
+#home p {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+}
+.text {
+  width: 100%;
+}
+.form {
+  width: 100%;
+  margin: 0 auto;
+}
+#home #email {
+  border: none;
+  background-color: white;
+  border-radius: 0.3rem;
+  padding: 0.8rem;
+  width: 20rem;
+  margin: 0 1rem 1.2rem 0;
+}
+#home #submit {
+  border: none;
+  background-color: white;
+  border-radius: 0.3rem;
+  padding: 0.8rem;
+  width: 6rem;
+}
+/* ########## */
+#products {
+  display: flex;
+  background-color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+.cards {
+  margin: 4%;
+  height: 22rem;
+  padding: 2%;
+  width: 30%;
+  border-radius: 0.4rem;
+  background-image: linear-gradient(
+    to bottom right,
+    #05e4f7,
+    rgba(99, 77, 238, 0.781)
+  );
+  color: #ffffff;
+  box-shadow: 0.3rem 0.8rem 0.6rem -0.6rem #222222;
+}
+.cards h2 {
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+  padding: 0.1rem 0.5rem;
+}
+.cards h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  background-color: #654fef;
+  width: 60%;
+  text-align: center;
+  border-radius: 0.4rem;
+  padding: 0.4rem 0.3rem;
+  text-transform: capitalize;
+}
+.cards p {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  padding: 0.1rem 0.5rem;
+}
+.cards a {
+  display: block;
+  width: 100%;
+  color: white;
+  font-size: 1.4rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  background-color: #654fef;
+  box-shadow: 0.3rem 0.5rem 0.6rem -0.6rem #222222;
+}
+
+.cards a.active,
+.cards a:hover {
+  background: #4fefe7;
+  transition: 0.5s;
+}
+/* ########################################### */
+#features {
+  display: flex;
+  background-image: linear-gradient(to bottom left,#644fefc7, #05e4f7);
+  justify-content: space-between;
+  align-items: center;
+  height: 70vh;
+  color: #ffffff;
+}
+#features div, video{
+margin: 3rem;
+}
+#features div h2{
+font-size: 2.3rem;
+margin-bottom: 1rem;
+}
+#features div p{
+font-size: 1.3rem;
+margin-bottom: 1.8rem;
+}
+#features div a{
+  color: white;
+  font-size: 1.3rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: 0.3rem;
+  text-transform: uppercase;
+  background-color: #654fef;
+}
+#features div a:hover {
+  background: #4fefe7;
+  transition: 0.5s;
+}
+footer{
+width: 100%;
+background-color: #ffffff;
+font-size: 1rem;
+text-align: center;
+padding: 1rem;
+}
+
+/* ############################################## */
+@media (max-width: 858px) {
+  #home {
+    padding-top: 5rem;
+  }
+  .checkbtn {
+    display: block;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #05e4f7;
+    top: 6rem;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  nav ul li {
+    display: block;
+    margin: 2rem 0;
+    line-height: 3rem;
+  }
+  nav ul li a {
+    font-size: 2rem;
+  }
+  a:hover,
+  a.active {
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+  .form {
+    width: 100%;
+  }
+  #products {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .cards {
+    margin: 4%;
+    height: 19rem;
+    padding: 4%;
+    width: 90%;
+  }
+  #features {
+    display: flex;
+flex-direction: column;
+align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 77vh;
+
+  }
+  #features div, video{
+    margin: 0 10rem;
+    }
+  #features div{
+    width: 90%;
+margin-bottom: 1.8rem;
+  }
+  #features video{
+width: 90%;
+height: 15rem;
+  }
+}

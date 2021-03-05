@@ -1,12 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,900;1,800&display=swap" 
+  rel="stylesheet"> 
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <main>
+    <header id="header">
+      <nav id="nav-bar">
+        <input type="checkbox" name="check" id="check">
+        <img src="/images/logo.png" alt="logo" class="logo" id="header-img">
+        <ul>
+          <li class="nav-link"><a href="#home" class="active">home</a></li>
+          <li class="nav-link"><a href="#products">Products</a></li>
+          <li class="nav-link"><a href="#features">Features</a></li>
+        </ul>
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+      </nav>
+    </header>
+<!-- ############################ -->
+    <section class="sections" id="home">
+      <div class="text">
+        <h1>Welcome to <span>kas'lam</span></h1>
+        <p>To get notified about our products please subscribe to our mail list.</p>
+      </div>
+      <div class="form">
+        <form action="" method="post">
+          <input type="email" name="email" id="email" placeholder="e.g mymail@email.com">
+          <input type="submit" value="submit" id="submit" class="btn">
+        </form>
+      </div>
+    </section>
+<!-- ############################ -->
+    <section class="sections" id="products">
+      <div class="cards">
+        <h2>Sanitizers</h2>
+        <h3>how they work</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Quibusdam fugit voluptates officiis corporis ratione cupiditate 
+          aspernatur sapiente,</p>
+        <a href="#">Buy</a>
+      </div>
+
+      <div class="cards">
+        <h2>Musks</h2>
+        <h3>how they work</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Quibusdam fugit voluptates officiis corporis ratione cupiditate 
+          aspernatur sapiente,</p>
+        <a href="#">Buy</a>
+      </div>
+
+      <div class="cards">
+        <h2>Gloves</h2>
+        <h3>how they work</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Quibusdam fugit voluptates officiis corporis ratione cupiditate 
+          aspernatur sapiente,</p>
+        <a href="#">Buy</a>
+      </div>
+    </section>
+<!-- ################################### -->
+    <section class="sections" id="features">
+<div class="text">
+<h2>Features</h1>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, 
+  minima ut mollitia voluptatum officiis similique repellendus cum 
+  doloribus minus velit perferendis id debitis vitae, 
+  obcaecati cumque neque ullam sequi nesciunt!</p>
+<a href="#" class="active">read more</a>
+</div>
+<video src="https://www.youtube.com/watch?v=78u0oHZGJZ8" 
+width="500px" height="300" controls autoplay></video>
+    </section>
+<!-- ################################### -->
+    <footer>
+      <p>Tshabalalaaj &copy; 2021</p>
+    </footer>
+  </main>
+</body>
 </html>
