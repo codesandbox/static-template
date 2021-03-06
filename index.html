@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Основы верстки</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="js/calc.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
@@ -18,17 +19,17 @@
     </header>
 
     <article id="content">
-      <h2>HTML5</h2>
-      <p>
-        HTML (от англ. HyperText Markup Language — «язык гипертекстовой
-        разметки») — стандартизированный язык разметки веб-страниц во Всемирной
-        паутине. Код HTML интерпретируется браузерами; полученная в результате
-        интерпретации страница отображается на экране монитора компьютера или
-        мобильного устройства. Язык HTML до 5-й версии определялся как
-        приложение SGML (стандартного обобщённого языка разметки по стандарту
-        ISO 8879). Спецификации HTML5 формулируются в терминах DOM (объектной
-        модели документа).
-      </p>
+      <div class="calc">
+        <b>Калькулятор квадратных уравнений</b>
+        <form name="telo">
+            <input type="text" name="a" size="4"> &middot;x&sup2; +
+            <input type="text" name="b" size="4">&middot;x +
+            <input type="text" name="c" size="4"> = 0
+            <p><button onclick="calc()">Решить квадратное уравнение</button></center>
+            </form>
+       
+        <span id="square_sol"></span>
+      </div>
     </article>
 
     <aside>
@@ -44,7 +45,7 @@
     <footer id="foot">
       <section>
         <h1>Основы верстки на HTML и CSS</h1>
-		<p>&copy; ДГТУ 2021</p>
+        <p>&copy; ДГТУ 2021</p>
       </section>
     </footer>
   </body>
