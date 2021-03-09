@@ -57,6 +57,8 @@
     transition: padding .75s;
   }.body .liste .event:hover .content {
     padding-top: .5vw;
+    padding-bottom: 1vw;
+    background: linear-gradient(0, rgba(0,0,0,1), rgba(0,0,0,.3));
   }
 
      .body .liste .event .content h3 {
@@ -68,18 +70,30 @@
 
       .body .liste .event .content p {
         margin-top: 0;
-        font-size: 15px;
+        font-size: .9rem;
         width: 85%;
-        text-align: justify;
         transition: 1s;
       }
       .body .liste .event .content p:nth-of-type(1) {
         opacity: .6;
+      }
+      .body .liste .event:hover .content p:nth-of-type(1) {
+        font-size: .7rem;
       }
       .body .liste .event .content p:nth-of-type(2) {
         margin-top: 2vw;
         opacity: 0;
       }.body .liste .event:hover .content p:nth-of-type(2) {
         margin-top: 0;
+        opacity: 1;
+      }
+
+      .body .liste .event .content svg {
+        margin-left: 80%;
+        font-size: 2rem;
+        opacity: .6;
+        transition: .3s;
+      }.body .liste .event .content svg:hover {
+        padding-left: 2%;
         opacity: 1;
       }
