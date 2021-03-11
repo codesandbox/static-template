@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <button onclick="clickHandle(`A`)">A</button>
+    <button onclick="clickHandle(`B`)">B</button>
+    <button onclick="clickHandle(`C`)">C</button>
+    <script>
+      class Queue {
+        promise = Promise.resolve();
+        constructor() {}
+        static create() {
+          return new Queue();
+        }
+        execute(promise) {
+          return (this.promise = this.promise
+            .then(() => promise)
+            .catch((err) => void console.error(err)));
+        }
+      }
+
+      function createRandomTime() {
+        return Number.parseInt(Math.random() * 5 + 1) * 500;
+      }
+
+      function requestInterface(interfaceName) {
+        return new Promise(
+          (resolve) =>
+            void setTimeout(resolve, createRandomTime(), interfaceName)
+        );
+      }
+
+      const queue = Queue.create();
+
+      async function clickHandle(params) {
+        const res = await queue.execute(requestInterface(params));
+        // console.log(res);
+        console.log(res);
+      }
+      clickHandle("A");
+      clickHandle("B");
+      clickHandle("C");
+      clickHandle("A");
+      clickHandle("C");
+      clickHandle("B");
+    </script>
   </body>
 </html>
