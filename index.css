@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Alata', sans-serif;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 154, 154);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 154, 154, 1) 0%,
+    rgba(0, 70, 110, 1) 100%
+  );
+  background-size: cover;
+}
+
+.game {
+  height: 90%;
+  width: 30%;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px gray;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#target-row {
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+#board {
+  flex-wrap: wrap;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 21, 31, 1) 100%
+  );
+  height: 60%;
+  border-radius: 10px;
+}
+#target {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: lavender;
+  margin: 20px;
+  font-size: 40px;
+}
+
+#currentSum {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: darkslategray;
+  margin: 20px;
+  font-size: 20px;
+  color: white;
+}
+#score {
+  font-weight: bolder;
+  font-size: 15px;
+  height: 5%;
+}
+#timer {
+  height: 10%;
+}
+.row {
+  display: flex;
+}
+.cell {
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  margin: 2px;
+  border-radius: 5px;
+  background-color: grey;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.selected {
+  background-color: rgb(4, 100, 100);
+}
