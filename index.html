@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Screen Recording</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <button id="start">
+      Start Recording
+    </button>
+    <button id="stop" disabled>
+      Stop Recording
+    </button>
+    <video autoplay />
+
+    <script src="cameo-record-screen.js"></script>
   </body>
 </html>
