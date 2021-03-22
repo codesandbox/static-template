@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Błąd</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        background-image: url(/404_error_styles/fall_man.jpg);
+        background-size: 105%;
+        background-repeat: no-repeat;
+        color: white;
+        font-size: 66px;
+        font-family: "Raleway", Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+
+      .bgc_img {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background-color: #000000ad;
+        background-size: cover;
+      }
+
+      h1 {
+        position: absolute;
+        display: block;
+        top: 20%;
+        font-size: 490px;
+        font-weight: 100;
+        color: #f06807;
+      }
+
+      p {
+        position: absolute;
+        display: block;
+        top: 80%;
+        text-transform: uppercase;
+        font-weight: 100;
+        animation: text_showing 10s infinite linear;
+      }
+
+      @keyframes text_showing {
+        0% {
+          opacity: 0;
+        }
+
+        25% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0;
+        }
+
+        75% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bgc_img"></div>
+    <h1>404</h1>
+    <p id="text">coś poszło nie tak</p>
+  </body>
+</html>
