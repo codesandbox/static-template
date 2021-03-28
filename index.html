@@ -1,12 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <link
+      href="assets/CSS/comun.css"
+      rel="stylesheet"
+      media="all"
+      type="text/css"
+    />
+    <link
+      href="assets/CSS/home.css"
+      rel="stylesheet"
+      media="all"
+      type="text/css"
+    />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icone -->
+    <script
+      src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
+      data-auto-a11y="true"
+    >
+      import { config } from '@fortawesome/fontawesome-svg-core'
+    </script>
+    <title>Accueil - Déclic Luchaptais</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <div class="leftBarre">
+        <p><i class="fas fa-bars"></i></p>
+      </div>
+      <div class="menu">
+        <ul>
+          <li class="thisPage">
+            <a href="index.html">Accueil</a>
+          </li>
+          <li class="list">
+            Photo <i class="fas fa-plus"></i>
+            <ul>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="photographes.html">Photographes</a></li>
+              <li><a href="theme_mois.html">Thème du mois</a></li>
+            </ul>
+          </li>
+          <li class="list">
+            Evénements<i class="fas fa-plus"></i>
+            <ul>
+              <li><a href="expo_ag.html">Expos annuelles/AG</a></li>
+              <li><a href="sorties.html">Sorties</a></li>
+              <li><a href="animations.html">Animations</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div class="body">
+      <div class="left">
+        <div class="main">
+          <img src=assets/Images/logo.png>
+          <div class="title">
+            <p>Le déclic</p>
+            <p class="luchapt">Luchaptais</p>
+          </div>
+          <p>
+            Le photo-club de Luchapt déposés à la sous-préfecture de
+            Montmorillon
+          </p>
+          <ul>
+            <li>regrouper autour de la photographie</li>
+            <li>
+              répandre et développer le goût de la photographie artistique ou
+              scientifique
+            </li>
+            <li>sortir sur le terrain</li>
+            <li>Se mettre en difficulté</li>
+          </ul>
+        </div>
+      </div>
+      <div class="right">
+        <div class="list_imgs">
+          <img src="assets/Images/img1.jpg" class="right_side" />
+          <img src="assets/Images/img2.jpg" />
+          <img src="assets/Images/img3.jpg" class="right_side" />
+          <img src="assets/Images/img4.jpg" />
+        </div>
+      </div>
+      <div class="presentation">
+        <h1>Presentation :</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="function.js"></script>
   </body>
 </html>

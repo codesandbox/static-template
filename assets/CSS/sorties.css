@@ -1,0 +1,99 @@
+.body .entete {
+  min-width: 90vw;
+}
+
+.body .enteteSec {
+  position: absolute;
+  width: 94vw;
+  height: 30vw;
+  background: linear-gradient(0, var(--colorSecond), transparent), url("../Images/img7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+  .body .enteteSec h1 {
+    margin: 0;
+    padding: 10vw;
+    padding-left: 4vw;
+    font-size: 100px;
+    color: #fff;
+  }
+
+.body .liste {
+  display: inline-flex;
+  justify-content: space-around;
+  position: absolute;
+  margin-top: 30vw;
+  width: 94vw;
+  flex-wrap: wrap;
+}
+
+  .body .liste .event {
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    border-radius: .5vw;
+    margin-bottom: 4vw;
+    width: 25vw;
+    height: 12.5vw;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    transition: .3s;
+  }
+  .body .liste .event:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0,0,0,.5);
+    width: 28vw;
+    height: 14.5vw;
+    background-size: 110%;
+  }
+
+  .body .liste .event .content {
+    padding: 2vw;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background: linear-gradient(0, rgba(0,0,0,.8), transparent);
+    transition: padding .75s;
+  }.body .liste .event:hover .content {
+    padding-top: .5vw;
+    padding-bottom: 1vw;
+    background: linear-gradient(0, rgba(0,0,0,1), rgba(0,0,0,.3));
+  }
+
+     .body .liste .event .content h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 35px;
+      font-weight: bold;
+     }
+
+      .body .liste .event .content p {
+        margin-top: 0;
+        font-size: .9rem;
+        width: 85%;
+        transition: 1s;
+      }
+      .body .liste .event .content p:nth-of-type(1) {
+        opacity: .6;
+      }
+      .body .liste .event:hover .content p:nth-of-type(1) {
+        font-size: .7rem;
+      }
+      .body .liste .event .content p:nth-of-type(2) {
+        margin-top: 2vw;
+        opacity: 0;
+      }.body .liste .event:hover .content p:nth-of-type(2) {
+        margin-top: 0;
+        opacity: 1;
+      }
+
+      .body .liste .event .content svg {
+        margin-left: 80%;
+        font-size: 2rem;
+        opacity: .6;
+        transition: .3s;
+      }.body .liste .event .content svg:hover {
+        padding-left: 2%;
+        opacity: 1;
+      }
