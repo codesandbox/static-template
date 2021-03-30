@@ -1,12 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" /> 
+    <title>
+      Imersão Dev - Aula 05
+    </title>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <h1 class="page-title">
+        Aluraflix
+      </h1>
+      <img
+        src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg"
+        class="page-logo"
+        alt=""
+      />
+      <p class="page-subtitle">
+        Qual seu filme favorito?
+      </p>
+      <div class="form-wrapper">
+        <input
+          type="text"
+          id="filme"
+          name="filme"
+          placeholder="Insira imagem e trailer de sua lista:"
+               
+        />
+        
+        <button onClick="addFilme()">Adicionar Filme</button>
+        
+        <button onClick="addTrailer()">Adicionar Trailer</button>
+      </div>
+    </div>
+    <div id="listaFilmes">
+      
+    </div>
+    
+    <div id="listaTrailer">
+      
+    </div>
+    <a href="https://alura.com.br/" target="_blank">
+      <img
+        src="https://www.alura.com.br/assets/img/home/alura-logo.svg"
+        alt=""
+        class="alura-logo"
+      />
+    </a>
+
+    <script src="script.js"></script> 
   </body>
 </html>
