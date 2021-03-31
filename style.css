@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 100px 1fr; 
+  grid-gap: 10px;
+  padding: 20px;
+}
+
+header,
+main,
+.inspirational,
+.developers,
+.art {
+  display: grid;
+}
+
+                  /* HEADER START */
+header {
+  border: 1px solid black;
+  border-radius: 10px;
+  align-items: center;
+  background-color: #950C0C;
+}
+
+header h1 {
+  padding-left: 30px;
+  color: #fff;
+}
+                  /* HEADER ENDS */
+
+
+
+                        /* MAIN START */
+/* general rules */
+main {
+  grid-gap: 10px;
+  grid-template: 
+  ". quotes ." 50px/  
+  auto 55ch auto;
+  }
+
+.quote-wrapper {
+  grid-area: quotes; 
+}
+
+
+
+/* quotes boxes!!!! */
+.quotes {
+  display: grid;
+  grid-gap: 10px;
+  margin-top: 30px;  
+}
+
+
+/* box-title */
+h2 {
+  margin: 10px 10px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 2rem;
+}
+
+/* quotes-text */
+.text {
+  display: grid;
+  grid-gap: 10px;
+  border: 1px solid red;
+  border-radius: 10px;
+
+  place-items: center;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1.3rem;
+  
+  text-align: center;
+  padding: 20px;
+}
+
+.inspo-box .text {
+  background-color: rgb(241, 196, 158);
+}
+
+.developers .text {
+  background-color: rgb(235, 197, 223);
+}
+
+.art .text {
+  background-color: rgb(250, 191, 204);
+}
+                        /* MAIN ENDS */
+
