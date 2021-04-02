@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 100px 1fr 50px;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+header,
+main,
+.inspirational,
+.developers,
+.art {
+  display: grid;
+}
+
+                  /* HEADER START */
+header {
+  border-radius: 10px;
+  align-items: center;
+  background-color: #950C0C;
+}
+
+header h1 {
+  padding-left: 30px;
+  color: #fff;
+}
+                  /* HEADER ENDS */
+
+
+
+                        /* MAIN START */
+/* general rules */
+main {
+  grid-gap: 10px;
+  grid-template:
+  ". quotes ." 1fr/
+  auto 55ch auto;
+  }
+
+.quote-wrapper {
+  grid-area: quotes;
+}
+
+
+
+/* all quotes boxes!!!! */
+.quotes {
+  display: grid;
+  grid-gap: 10px;
+  margin-top: 30px;
+}
+
+figcaption {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+
+/* box-title */
+h2 {
+  margin: 30px 10px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 2rem;
+}
+
+/* quotes-text */
+.quotes {
+  display: grid;
+  grid-gap: 10px;
+  border-radius: 10px;
+
+  place-items: center;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1.3rem;
+  
+  text-align: center;
+  padding: 20px;
+  
+  box-shadow: -2px 5px 8px 3px rgba(41, 10, 10, 0.329);
+}
+
+.inspo-box {
+background-color: rgb(241, 196, 158);
+}
+
+.inspo-box p:nth-child(even) {
+  background-color: rgb(252, 179, 120);
+}
+
+.developers {
+  background-color: rgb(235, 197, 223);
+}
+
+.developers p:nth-child(even) {
+  background-color: rgb(243, 174, 221);
+}
+
+.art {
+  background-color: rgb(250, 191, 204);
+}
+
+.art p:nth-child(even) {
+  background-color: rgb(252, 162, 182);
+}
+
+                        /* MAIN ENDS */
+
+
+                        /* footer start */
+footer {
+  display: grid;
+  place-items: center;
+  background-color: #950C0C;
+  color: #fff;
+  border-radius: 10px;
+}
