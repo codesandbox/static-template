@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*focus {
+  font-size: 1.5rem;
+}
+
+/* body of the page starts */
+body {
+  display: grid;
+  grid-template-rows: auto auto auto auto 30px;
+}
+
+/* css in common */
+.border {
+  border-top: 4px solid rgb(24, 48, 65);
+}
+
+.about-me,
+.exp {
+  background-color: rgb(249, 251, 253);
+}
+
+/* header section START */
+header {
+  background-color: rgb(90, 197, 188);
+  
+  display: grid;
+  grid-template-rows: 50px 300px;
+}
+
+.nav-bar h2 {
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 1rem;
+
+}
+       /* nav bar */
+.nav-bar {
+  display: grid;
+  grid-template-columns: 200px auto;
+}
+
+.nav-bar ul {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+
+  margin-left: 50vw;
+}
+
+.nav-bar .nav-ul li {
+  display: grid;
+  place-items: center;
+  list-style: none;
+
+  background-color: white;
+  margin:10px;
+  border-radius: 5px;
+}
+
+.nav-bar .nav-ul a {
+  text-decoration: none;
+  color: rgb(90, 197, 188);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.nav-bar .nav-ul a:hover {
+  color: black;
+}
+
+      /* titles in header */
+.title-section {
+  display: grid;
+  grid-template:
+  ". big-title ." 200px
+  ". small-title ." 100px/
+  1fr 40ch 1fr;
+}
+
+.big-title {
+  grid-area: big-title;
+  margin: 50px 0;
+
+  font-size: 2.5rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.small-title {
+  grid-area: small-title;
+
+  margin: 10px 0;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.small-title strong {
+  color: black;
+}
+
+/* about me section start */
+.about-me {
+  display: grid;
+  grid-template:
+  ". title ." 60px
+  ". text ." 1fr/
+  1fr 40ch 1fr;
+}
+
+.about-me h2,
+.portfolio h2,
+.experience h2 {
+  grid-area: title;
+
+  display: grid;
+  place-content: center;
+
+  font-size: 1.2rem; 
+}
+
+.about-me h3 {
+  font-size: 0.8rem; 
+  margin: 10px 0; 
+
+}
+
+.about-me .text {
+  grid-area: text;
+
+  display: grid;
+  grid-template-rows: 30px 1fr 30px 1fr;
+
+  font-size: 0.8rem;
+  margin: 10px 0; 
+}
+
+.about-me .text ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  margin-left: 30px;
+}
+
+/* portfolio start */
+.portfolio {
+  display: grid;
+  grid-template:
+  ". . title . ." 60px 
+  ". qb trib gym ." 1fr /
+  200px 1fr 1fr 1fr 200px;
+  grid-gap: 10px;
+  
+  background-color: rgb(247, 229, 232);
+  padding-bottom: 30px;
+}
+
+.portfolio article {
+  
+  border: 4px solid rgb(185, 39, 95);
+  border-radius: 5px;
+  box-shadow: 5px 10px 18px #888888;
+}
+
+.portfolio h2 {
+  grid-area: title;
+}
+
+.portfolio .quotebook {
+  grid-area: qb;
+}
+
+.portfolio .tribute {
+  grid-area: trib;
+}
+
+.portfolio .gymtastic {
+  grid-area: gym;
+}
+
+.portfolio article {
+  padding: 20px;
+  background-color: white;
+}
+
+.portfolio article p {
+  padding: 10px 0;
+}
+
+.portfolio article li {  
+  list-style: none;
+  font-size: 0.8rem;
+  display: grid;
+  place-items: center;
+  padding-top: 10px;
+}
+
+.portfolio article a {
+  display: grid;
+  text-decoration: none;
+  color: rgb(185, 39, 95)
+}
+
+.portfolio article .background {
+  color: #fff;
+  padding: 5px 20px;
+  background-color: rgb(185, 39, 95);
+  border-radius: 5px;   
+}
+
+/* experience section start */
+.experience {
+  display: grid;
+  grid-template:
+  ". title ." 60px
+  ". text ." 1fr/
+  1fr 40ch 1fr;
+}
+
+.experience h3 {
+  grid-area: title;   
+}
+
+.experience .text {
+  grid-area: text;
+  font-size: 0.8rem;
+  padding-bottom: 20px;
+}
+
+.job p {
+  padding: 10px 0;
+}
+
+/* back to top button */
+.back-to-top-link {
+  position: sticky;
+  transform: translateX(60px);
+  
+  border: 3px solid rgb(24, 48, 65);
+  padding: 0.57rem 0.625rem;
+  border-radius: 100px;
+  box-shadow: inset 0 0 0 0.1rem #280680, inset 0 0 0 0.2rem #ffffff, 0 4px 12px #00000022;
+  
+  background-color: rgb(24, 48, 65);
+  
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.5rem;
+  font-weight: bold;
+  color: #fff;
+  
+  z-index: 100;
+  bottom: 40px;
+  left: 85vw;
+  /* display: block; */
+  height: 50px;
+  width: 50px;
+
+  cursor: pointer;
+}
+
+body a:hover { 
+background-color: rgb(185, 39, 95);
+}
+
+/* footer start */
+footer {
+  display: grid;
+  align-content: center;
+
+  background-color: rgb(24, 48, 65);
+  color: #fff;
+  font-size: 0.8rem;
+  padding-left: 15px;
+}
