@@ -9,7 +9,14 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   </head>
@@ -18,7 +25,7 @@
       <section id="main">
         <div class="title">PinChat</div>
         <div class="box">
-          <div class="area">
+          <div class="inputbutton">
             <div class="input_area" id="input_area">
               <input
                 type="text"
@@ -35,12 +42,6 @@
         </div>
       </section>
     </div>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
-      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
-      crossorigin="anonymous"
-    />
     <script
       src="https://code.jquery.com/jquery-3.6.0.js"
       integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -48,8 +49,8 @@
     ></script>
     <script>
       $("#btn").click(function () {
-        const input = $("#input").val();
-        if (input.length < 1) {
+        const pin = $("#input").val();
+        if (pin.length < 1) {
           $("#alert").removeClass("hide");
           $("#input_area").addClass("warning");
           setTimeout(function () {
@@ -57,7 +58,7 @@
             $("#alert").addClass("hide");
             $("#input_area").removeClass("warning");
           }, 1100);
-        } else if (input == "whatisyourpin") {
+        } else if (pin == "whatisyourpin") {
           const pins = ["1", "2", "3", "4", "5"];
           var randomItem = pins[Math.floor(Math.random() * pins.length)];
           alert(randomItem);
