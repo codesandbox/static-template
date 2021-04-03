@@ -58,7 +58,9 @@
             $("#input_area").removeClass("warning");
           }, 1100);
         } else if (input == "whatisyourpin") {
-          alert("I don't know");
+          const pins = ["1", "2", "3", "4", "5"];
+          var randomItem = pins[Math.floor(Math.random() * pins.length)];
+          alert(randomItem);
           // easter egg
         }
       });
