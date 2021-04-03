@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Train+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+#main {
+  top: 30%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+}
+
+.title {
+  font-size: 4rem;
+  font-style: italic;
+  transform: translateY(-50%);
+  font-family: "Righteous", cursive;
+}
+
+.box {
+  width: 350px;
+  height: 180px;
+  margin: 0 auto;
+  margin-top: -10%;
+  position: relative;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+}
+
+.inputbutton {
+  width: 100%;
+  height: 100%;
+  padding-top: 10%;
+  position: relative;
+}
+
+.input_area {
+  width: 80%;
+  height: 50px;
+  border: none;
+  outline: none;
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 5px;
+  text-align: center;
+  align-items: center;
+  border: 1px solid #666;
+}
+
+.input_area:focus {
+  box-shadow: 0 0 0 1px black;
+}
+
+input {
+  width: 90%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-weight: 800;
+  margin-left: 10px;
+  font-size: 1.25rem;
+  text-align: center;
+  border-radius: 15px;
+  background-color: transparent;
+  font-family: "Raleway", sans-serif;
+}
+
+button {
+  width: 80%;
+  color: white;
+  height: 50px;
+  outline: none;
+  margin-top: 5%;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  background-color: #2f2f2f;
+  font-family: "Raleway", sans-serif;
+}
+
+button:hover {
+  transform: translateY(1px);
+  background-color: #2f2f2f;
+  box-shadow: 0 1.5px #2f2f2f;
+}
+
+.warning {
+  border: 2px solid red;
+  animation: warning 0.5s ease;
+  animation-iteration-count: 5s;
+}
+
+/* button:focus {
+} */
+
+@keyframes warning {
+  0% {
+    transform: translateX(-10px);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+.fas,
+.fa-exclamation-triangle {
+  color: red;
+  font-size: 1rem;
+  padding-right: 10px;
+}
+
+.hide {
+  display: none !important;
+}
