@@ -1,12 +1,164 @@
 <!DOCTYPE html>
+<!--
+Margins, padding, spacing
+Text styles
+Text box & button styles
+Add video/img background
+Link background changes to scroll position
+Text & image fade on scroll
+Implement secondary animations
+Secondary pages (learn more)
+Implement data viz into secondary pages
+Plug in all text & img content
+Call-to-action - links to social media
+Gyroscope interaction
+Implement additional shazam
+-->
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="/main.js"></script>
+
     <title>Static Template</title>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <h4>placeholder</h4>
+    </header>
+    <main class="scroll-container">
+      <section>
+        <h1>No C.A.P</h1>
+        <p>No Corporate Accountability Present</p>
+        <p>
+          Greenhouse gas emissions are killing our planet and corporations are
+          at fault.
+        </p>
+      </section>
+
+      <section>
+        <h2>WHAT ARE GHGs?</h2>
+        <p>
+          <b>Greenhouse gases (GHGs)</b> are gases that trap heat in earth's
+          atmosphere and are released primarily by burning fossil fuels.
+        </p>
+        <p>This results in:</p>
+        <ul>
+          <li>Rising Sea Levels</li>
+          <li>Higher Temperatures</li>
+          <li>Extreme Weather</li>
+          <li>Accelerated Climate Change</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>GHG CONSEQUENCES</h2>
+        <p>
+          The earth's surface temperature has risen by
+          <b>1.44&#176; Fahrenheit</b>. Large corporations are at fault for
+          <b>50% of that change.</b>
+        </p>
+        <section>
+          <figure><img /></figure>
+          <h3>1.44&#176; Fahrenheit increase</h3>
+          <h3>
+            Corporate Responsibility<br />
+            0.72&#176; Fahrenheit
+          </h3>
+          <span>50%</span>
+          <p>due to corporations</p>
+        </section>
+      </section>
+
+      <section>
+        <h2>GHG CONSEQUENCES</h2>
+        <h3>7 in. sea level increase</h3>
+        <p>
+          GHG emissions have caused a global sea level increase of
+          <b>7 inches</b> and about <b>35%</b> of the change is attributed to
+          <b>large corporations.</b>
+        </p>
+        <h3>2.28 in. due to corporations</h3>
+        <span>35%</span>
+      </section>
+
+      <section>
+        <div id="dataVis"></div>
+
+        <script type="module">
+          import {
+            Runtime,
+            Inspector
+          } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+          import define from "https://api.observablehq.com/d/51d34fdd73b2a397.js?v=3";
+          new Runtime().module(define, (name) => {
+            if (name === "dataVis") {
+              return new Inspector(document.querySelector("#dataVis"));
+            }
+          });
+        </script>
+      </section>
+
+      <section>
+        <h1>Who is Responsible</h1>
+      </section>
+
+      <section>
+        <section><img /></section>
+        <h2>POWER PLANTS</h2>
+        <p>
+          Our electricity comes from power plants, the greatest polluters of GHG
+          emmissions. Responible for 58.5% from all sectors.
+        </p>
+        <button>LEARN MORE</button>
+      </section>
+
+      <section>
+        <section><img /></section>
+        <h2>PETROLEUM AND NATURAL GAS</h2>
+        <p>
+          Our electricity comes from power plants, the greatest polluters of GHG
+          emmissions. Responible for 58.5% from all sectors.
+        </p>
+        <button>LEARN MORE</button>
+      </section>
+
+      <section>
+        <section><img /></section>
+        <h2>REFINERIES</h2>
+        <p>
+          Our electricity comes from power plants, the greatest polluters of GHG
+          emmissions. Responible for 58.5% from all sectors.
+        </p>
+        <button>LEARN MORE</button>
+      </section>
+
+      <section>
+        <section><img /></section>
+        <h2>CHEMICALS</h2>
+        <p>
+          Our electricity comes from power plants, the greatest polluters of GHG
+          emmissions. Responible for 58.5% from all sectors.
+        </p>
+        <button>LEARN MORE</button>
+      </section>
+    </main>
+    <footer>
+      <h4>Scroll to Discover</h4>
+    </footer>
   </body>
 </html>
