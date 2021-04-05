@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="/index.js"></script>
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>Make PDF</h1>
+    <div>
+      <input type="name" id="names" placeholder="place name here" />
+      <input type="email" id="email" placeholder="place email here" />
+      <button type="submit" id="done" onclick="donePdf()">Send</button>
+    </div>
   </body>
+  <script>
+    import { jsPDF } from "jspdf";
+
+    function donePdf() {
+      alert("funciona!");
+      const doc = new jsPDF();
+      alert("funciona2");
+      doc.text("Hello world!", 10, 10);
+      doc.save("a4.pdf");
+    }
+  </script>
 </html>
