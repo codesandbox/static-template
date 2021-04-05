@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+.logo {
+  color: #12334e;
+  font-weight: 700;
+  font-size: 2em;
+  text-decoration: none;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+#navbar {
+  position: relative;
+  right: 60px;
+  height: 60px;
+  transition: 0.5s;
+  width: 0px;
+  overflow: hidden;
+}
+
+#navbar.active {
+  width: 660px;
+}
+
+#navbar ul {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+#navbar ul li {
+  list-style: none;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  color: #12334e;
+  height: 60px;
+  line-height: 60px;
+  display: inline-block;
+  font-size: 1.2em;
+  padding: 0 15px;
+  letter-spacing: 1.5px;
+}
+
+#navbar ul li a:hover {
+  color: #fff;
+  background-color: #9051ff;
+}
+
+#toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background-color: #9051ff;
+  cursor: pointer;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
+}
+
+#toggle::before {
+  position: absolute;
+  content: "";
+  width: 28px;
+  height: 2px;
+  background-color: #fff;
+  transform: translateY(-5px);
+  transition: 0.2s;
+}
+
+#toggle::after {
+  position: absolute;
+  content: "";
+  width: 28px;
+  height: 2px;
+  background-color: #fff;
+  transform: translateY(5px);
+  transition: 0.2s;
+}
+
+#toggle.active::after {
+  transform: translateY(0) rotate(-45deg);
+}
+
+#toggle.active::before {
+  transform: translateY(0) rotate(45deg);
+}
+
+#toggle.active {
+  background-color: #f7226a;
+}
+
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-weight: 700;
+  color: #f5f5f5;
+  font-size: 18vw;
+}
