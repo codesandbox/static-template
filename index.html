@@ -8,10 +8,12 @@ Link background changes to scroll position
 Text & image fade on scroll
 Implement secondary animations
 Secondary pages (learn more)
+Circle packing section
 Implement data viz into secondary pages
 Plug in all text & img content
 Call-to-action - links to social media
 Gyroscope interaction
+"GHG Consequences" image & text arrangement
 Implement additional shazam
 -->
 <html lang="en">
@@ -74,30 +76,38 @@ Implement additional shazam
         </p>
         <section>
           <figure><img /></figure>
-          <h3>1.44&#176; Fahrenheit increase</h3>
-          <h3>
+          <p class="bodyBold">1.44&#176; Fahrenheit increase</p>
+          <p class="bodyBold">
             Corporate Responsibility<br />
             0.72&#176; Fahrenheit
-          </h3>
-          <span>50%</span>
-          <p>due to corporations</p>
+          </p>
+          <span class="callout">50%</span>
+          <p class="bodyBold">due to corporations</p>
         </section>
       </section>
 
       <section>
-        <h2>GHG CONSEQUENCES</h2>
-        <h3>7 in. sea level increase</h3>
-        <p>
-          GHG emissions have caused a global sea level increase of
-          <b>7 inches</b> and about <b>35%</b> of the change is attributed to
-          <b>large corporations.</b>
-        </p>
-        <h3>2.28 in. due to corporations</h3>
-        <span>35%</span>
+        <div class="waterRise">
+          <h2>GHG CONSEQUENCES</h2>
+          <div class="box1">
+            <p class="bodyBold">7 in. sea level increase</p>
+            <p>
+              GHG emissions have caused a global sea level increase of
+              <b>7 inches</b> and about <b>35%</b> of the change is attributed
+              to
+              <b>large corporations.</b>
+            </p>
+          </div>
+          <div class="box2">
+            <p class="bodyBold">2.28 in. due to corporations</p>
+            <span class="callout">35%</span>
+          </div>
+        </div>
       </section>
 
       <section>
         <div id="dataVis"></div>
+        <div id="dataInfo"></div>
 
         <script type="module">
           import {
@@ -121,8 +131,9 @@ Implement additional shazam
         <section><img /></section>
         <h2>POWER PLANTS</h2>
         <p>
-          Our electricity comes from power plants, the greatest polluters of GHG
-          emmissions. Responible for 58.5% from all sectors.
+          Our electricity comes from
+          <b>power plants, the greatest polluters</b> of GHG emissions.
+          Responible for <b>58.5%</b> from all sectors.
         </p>
         <button>LEARN MORE</button>
       </section>
@@ -131,8 +142,9 @@ Implement additional shazam
         <section><img /></section>
         <h2>PETROLEUM AND NATURAL GAS</h2>
         <p>
-          Our electricity comes from power plants, the greatest polluters of GHG
-          emmissions. Responible for 58.5% from all sectors.
+          Our electricity comes from
+          <b>power plants, the greatest polluters</b> of GHG emissions.
+          Responible for <b>58.5%</b> from all sectors.
         </p>
         <button>LEARN MORE</button>
       </section>
@@ -141,8 +153,9 @@ Implement additional shazam
         <section><img /></section>
         <h2>REFINERIES</h2>
         <p>
-          Our electricity comes from power plants, the greatest polluters of GHG
-          emmissions. Responible for 58.5% from all sectors.
+          Our electricity comes from
+          <b>power plants, the greatest polluters</b> of GHG emissions.
+          Responible for <b>58.5%</b> from all sectors.
         </p>
         <button>LEARN MORE</button>
       </section>
@@ -151,8 +164,9 @@ Implement additional shazam
         <section><img /></section>
         <h2>CHEMICALS</h2>
         <p>
-          Our electricity comes from power plants, the greatest polluters of GHG
-          emmissions. Responible for 58.5% from all sectors.
+          Our electricity comes from
+          <b>power plants, the greatest polluters</b> of GHG emissions.
+          Responible for <b>58.5%</b> from all sectors.
         </p>
         <button>LEARN MORE</button>
       </section>

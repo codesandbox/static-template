@@ -6,7 +6,7 @@
 
 html {
   font-size: 16px;
-  font-family: "Ubuntu", "Open Sans", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   text-rendering: optimizeLegibility;
 }
 
@@ -22,9 +22,18 @@ header {
 }
 
 .scroll-container > section {
-  height: 100vh;
-  margin-top: 100px;
+  position: relative;
+  height: 100%;
+  margin: 0 24px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   scroll-snap-align: center;
+}
+
+.scroll-container > section > * {
+  flex-basis: 100%;
 }
 
 h1 {
@@ -32,11 +41,58 @@ h1 {
 }
 
 h2 {
-  font: 2em "Oswald", sans-serif;
+  font: 700 2em "Oswald", sans-serif;
+}
+
+ul {
+  list-style-type: none;
 }
 
 li {
-  font: 1.5em "Oswald", sans-serif;
+  font: 700 1.5em "Oswald", sans-serif;
+  margin: 1em 0;
+}
+
+.waterRise {
+  width: calc(100% + 48px);
+  position: absolute;
+  bottom: 0;
+  left: -24px;
+}
+
+.waterRise h2,
+.box1 > *,
+.box2 > * {
+  margin: 0 24px;
+}
+
+.box1 {
+  height: 46vh;
+  background-color: blue;
+}
+
+.bodyBold {
+  font-weight: 700;
+  /*
+  display: inline;
+  margin: 2px;
+  outline: solid 2px;
+  margin-bottom: 1em;
+  padding: 4px;
+*/
+}
+
+.box2 {
+  height: 22vh;
+  background-color: blueviolet;
+}
+
+.callout {
+  font: 700 4.5em "Ubuntu", sans-serif;
+}
+
+button {
+  max-width: 100px;
 }
 
 footer {
