@@ -1,12 +1,32 @@
+<!--==============================================================
+// ====================== MINI PROJET FRIGO ======================
+// ============================================================-->
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <title>Mon Mini-projet frigo</title>
+    <link rel="icon" href="./images/icone.ico" />
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <input type="button" id="search" value="Chercher" />
+    <input type="text" id="research" placeholder="Produit recherché" />
+    <img src="./images/recherche.png" />
+    <input type="button" id="open" value="Afficher" />
+    <form>
+      <input type="text" id="produit" placeholder="Produit à ajouter" />
+      <input
+        type="number"
+        id="quantite"
+        min="1"
+        max="50"
+        placeholder="Quantité"
+      />
+      <input type="button" id="valider" value="Ajouter" />
+    </form>
+    <div id="liste"></div>
+    <script src="monfrigo.js"></script>
   </body>
 </html>
