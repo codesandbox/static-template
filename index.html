@@ -1,12 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stiluslap.css" />
+    <script src="lotto.js"></script>
+    <title>Lottó</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>Lottó</h1>
+    <div id="lotto6-tarolo">
+      <h2>6-os lottó:</h2>
+      <div id="tippek6">Tippek:</div>
+      <div id="sorsolt6">Húzott számok:</div>
+      <div id="eredmeny6">Találatok száma:</div>
+    </div>
+    <div id="lotto7-tarolo">
+      <h2>Skandináv lottó:</h2>
+      <form>
+        <label>
+          1. tipp:
+          <input type="text" name="s1" id="s1" onfocusout="inputSkandi(this)" />
+        </label>
+        <br />
+        <label>
+          2. tipp:
+          <input type="text" name="s2" id="s2" onfocusout="inputSkandi(this)" />
+        </label>
+        <br />
+        <label>
+          3. tipp:
+          <input type="text" name="s3" id="s3" onfocusout="inputSkandi(this)" />
+        </label>
+        <br />
+        <label>
+          4. tipp:
+          <input type="text" name="s4" id="s4" onfocusout="inputSkandi(this)" />
+        </label>
+        <br />
+        <label>
+          5. tipp:
+          <input type="text" name="s5" id="s5" onfocusout="inputSkandi(this)" />
+        </label>
+        <br />
+        <label>
+          6. tipp:
+          <input type="text" name="s6" id="s6" onfocusout="inputSkandi(this)" />
+        </label>
+        <br />
+        <label>
+          7. tipp:
+          <input type="text" name="s7" id="s7" onfocusout="inputSkandi(this)" />
+        </label>
+        <br />
+        <input
+          type="button"
+          value="Sorsolás"
+          onclick="sorsolSkandi(this.form);"
+        />
+      </form>
+      <div id="tippek7">Tippek:</div>
+      <div id="sorsolt7">Húzott számok:</div>
+      <div id="eredmeny7">Találatok száma:</div>
+    </div>
+
+    <div id="lotto5-tarolo">
+      <h2>5-ös lottó:</h2>
+      <div id="szelveny" class="szelveny5"></div>
+      <div class="gomb" onclick="bekuld();">Beküldés</div>
+      <div id="tippek5">Tippek:</div>
+      <div id="sorsolt5">Húzott számok:</div>
+      <div id="eredmeny5">Találatok száma:</div>
+    </div>
   </body>
 </html>
