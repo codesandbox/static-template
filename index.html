@@ -1,12 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/92aa46a256.js" crossorigin="anonymous"></script>
+    <title>ToDo Task Manager</title>
+</head>
+<body onload="clearCategories()">
+    <aside id="sidebar">
+        <section id="symbols">
+            <div class="task-logos-wrapper">
+                <div class="brand-add-logo">
+                    <img src="Capture.PNG" alt="" class="brand-logo">
+                    <div class="line"></div>
+                </div>
+
+                <div class="schedule-logos">
+                    <div class="file schedule">
+                        <i class="far fa-file-alt"></i>
+                    </div>
+                    <div class="users schedule">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="history schedule">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <div class="calendar schedule">
+                        <i class="far fa-calendar-check"></i>
+                    </div>
+                </div>
+
+                <div class="exit">
+                    <div class="line"></div>
+                    <i class="fas fa-sign-out-alt sign-out"></i>
+                </div>
+            </div>
+
+        </section>
+        <section id="categories">
+            <div class="tasks-categories-wrapper">
+                <div class="wrapper-heading">
+                    <h1 class="task-heading">My Tasks</h1>
+                </div>
+                <div class="categories-wrapper">
+                    <div class="category" id="all">
+                        <h3 class="category-name">All Task</h3>
+                        <p class="pending-tasks" id="all-tasks">0</p>
+                    </div>
+
+                    <div class="category" id="pendingTasks">
+                        <h3 class="category-name">Incomplete Tasks</h3>
+                        <p class="pending-tasks" id="incomplete-tasks">0</p>
+                    </div>
+
+                    <div class="category" id="completedTasks">
+                        <h3 class="category-name">Completed Tasks</h3>
+                        <p class="pending-tasks" id="completed-tasks">0</p>
+                    </div>
+
+                    <div class="category" id="management-">
+                        <h3 class="category-name">Management</h3>
+                        <p class="pending-tasks" id="management">0</p>
+                    </div>
+
+                    <div class="category" id="sales-">
+                        <h3 class="category-name">Sales</h3>
+                        <p class="pending-tasks" id="sales">0</p>
+                    </div>
+
+                    <div class="category" id="operations-">
+                        <h3 class="category-name">Operations</h3>
+                        <p class="pending-tasks" id="operations">0</p>
+                    </div>
+
+                    <div class="category" id="marketing-">
+                        <h3 class="category-name">Marketing</h3>
+                        <p class="pending-tasks" id="marketing">0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </aside>
+    <main id="main">
+        <nav id="topbar">
+            <div class="searchbox">
+                <input type="text" class="search-option" placeholder="Search Task">
+                <i class="fas fa-search search"></i>
+            </div>
+            
+            <div class="login-notification">
+                <div class="notification-logo">
+                    <i class="far fa-bell"></i>
+                    <div class="dot">
+                    </div>
+                </div>
+                <div class="notification-logo">
+                    <i class="far fa-envelope"></i>
+                    <div class="dot"></div>
+                </div>
+                <div class="vertical-line">
+
+                </div>
+                <div class="profile-image">
+                    <img src="https://p7.hiclipart.com/preview/304/305/226/web-development-computer-icons-avatar-business-user-profile.jpg" alt="" class="profile">
+                </div>
+            </div>
+        </nav>
+
+        <section id="greetings">
+            <h1 class="greeting-header">
+                <span>Welcome back, </span>Manager
+            </h1>
+            <div class="add-task">
+                <div class="add-todo-task">
+                    <div>
+                        <i class="fas fa-plus add" onclick="addTask()"></i>
+                        <input type="text" id="todo-input" placeholder="Add a task">
+                    </div>
+                    
+                    <div>
+                        <label for="category" class="category-lbl"> category:</label>
+                        <select name="category" id="categories-option" class="category-options">
+                            <option value="management">Management</option>
+                            <option value="sales">Sales</option>
+                            <option value="operations">Operations</option>
+                            <option value="marketing">Marketing</option>
+                        </select>
+                    </div>
+                    
+                </div>
+            
+            </div>
+            
+        </section>
+
+        <section id="changeDisplay">
+            <div class="grid-view">
+                <div>
+                    <i class="fas fa-th view" onclick="grid()"></i>
+                    <i class="fas fa-grip-lines view" onclick="line()"></i>
+                </div>
+            </div>
+        </section>
+        <section id="tasks-container">
+            <div id="edit-tasks">
+                <input type="text" id="edit-task">
+            </div>
+
+        </section>
+    </main>
+    <script src="./app.js"></script>
+</body>
 </html>
