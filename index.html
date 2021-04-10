@@ -1,12 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Get coding</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="root">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Get Coding</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="collapsible.html">about</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="row">
+        <div class="col s12">
+          <ul class="tabs">
+            <li class="tab col s3">
+              <a href="#test1" class="active">HTML/CSS</a>
+            </li>
+            <li class="tab col s3 disabled"><a href="#test3">Javascript</a></li>
+            <li class="tab col s3"><a href="#test4">Project</a></li>
+          </ul>
+        </div>
+        <div id="test1" class="col s12">
+          <h3 class="center">where to learn</h3>
+          <br />
+
+          <div class="collection">
+            <a
+              href="https://www.freecodecamp.org/"
+              class="collection-item"
+              target="_blank"
+              >freeCodecamp</a
+            >
+            <a href="https://Github.com" class="collection-item" target="_blank"
+              >Github</a
+            >
+            <a
+              href="https://w3schools.com"
+              class="collection-item"
+              target="_blank"
+              >W3schools</a
+            >
+            <a
+              href="https://htmldog.com/"
+              class="collection-item"
+              target="_blank"
+              >htmldog.com</a
+            >
+            <a
+              href="https://codepen.io/"
+              class="collection-item"
+              target="_blank"
+              >codepen.io</a
+            >
+            <a href="https://html.com/" class="collection-item" target="_blank"
+              >html.com</a
+            >
+          </div>
+
+          <div class="row">
+            <div class="col s12 m7">
+              <div class="card s12">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/BvJYXl2ywUE"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="center">
+                <a
+                  href="https://drive.google.com/drive/folders/12j2_oRn_ua502l6yIp5u4F-mVsw5vPft?usp=sharing"
+                  class="waves-effect waves-light btn-small"
+                  ><i class="material-icons left">add_to_drive</i>download my
+                  projects</a
+                >
+              </div> 
+            </div>
+          </div>
+        </div>
+        <div id="test3" class="col s12">not available</div>
+        <div id="test4" class="col s12">
+          <ul class="collection with-header">
+            <li class="collection-header">
+              <h4>Projects to do</h4>
+              <h5>mark when done</h5>
+            </li>
+
+            <li v-for="(project,index) in projects" class="collection-item">
+              <div>
+                {{project.title}}<a href="#!" class="secondary-content"
+                  ><i
+                    @click="projects[index].done = !projects[index].done"
+                    class="material-icons"
+                    :class="project.done ? 'green-text' : 'red-text'"
+                    >done</i
+                  ></a
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>
