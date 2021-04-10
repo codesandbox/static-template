@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <script>
+    // auth2 is initialized with gapi.auth2.init() and a user is signed in.
+    if (auth2.isSignedIn.get()) {
+      var profile = auth2.currentUser.get().getBasicProfile();
+      var userID = rofile.getID();
+      var name = profile.getName();
+      var givenName = profile.getGivenName();
+      var email = profile.getEmail();
+      var familyName = profile.getFamilyName();
+      var imageURL = profile.getImageUrl();
+
+      console.log('ID: ' + profile.getId());
+      console.log('Full Name: ' + profile.getName());
+      console.log('Given Name: ' + profile.getGivenName());
+      console.log('Family Name: ' + profile.getFamilyName());
+      console.log('Image URL: ' + profile.getImageUrl());
+      console.log('Email: ' + profile.getEmail());
+    }
+  </script>
+  <body>
+    html
+  </body>
+</html>

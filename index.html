@@ -88,20 +88,10 @@
                       <p class="already">
                         Already have an account? <a href="#signin">Sign In</a>
                       </p>
-                      <div
-                        class="g-signin2"
-                        data-onsuccess="onSignIn"
-                        data-theme="dark"
-                      ></div>
-                      <div
-                        class="fb-login-button"
-                        data-width=""
-                        data-size="large"
-                        data-button-type="continue_with"
-                        data-layout="default"
-                        data-auto-logout-link="false"
-                        data-use-continue-as="false"
-                      ></div>
+                      <div class="buttons">
+                        <div class="g-signin2 g1" data-onsuccess="onSignIn" data-theme="dark" ></div>
+                        <div class="fb-login-button f1" data-width="" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></div>
+                      </div>
                     </form>
                   </div>
                 </div>
@@ -118,18 +108,8 @@
               </p>
             </div>
           </div>
-        </section>
-        <div id="fb-root data-auto-logout-link"></div>
-        <script
-          async
-          defer
-          crossorigin="anonymous"
-          src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0&appId=151227473590482&autoLogAppEvents=1"
-          nonce="K0pWCF6V"
-          ;
-        >
-          console.log("You've been signed in");
-        </script>
+          <div id="fb-root"></div>
+          <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0&appId=151227473590482&autoLogAppEvents=1" nonce="E4sQ6jKr">console.log("signed in with facebook");</script>
         <script>
           function onSignIn(googleUser) {
             // Useful data for your client-side scripts:
@@ -143,6 +123,8 @@
             // The ID token you need to pass to your backend:
             var id_token = googleUser.getAuthResponse().id_token;
             console.log("ID Token: " + id_token);
+
+            document.location.href='googleDash.html';
           }
         </script>
       </body>
