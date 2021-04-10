@@ -1,0 +1,514 @@
+
+ html {
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Karla', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.d-flex {
+  display: flex;
+  display: -webkit-flex;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+button,
+input,
+select {
+  -webkit-appearance: none;
+  outline: none;
+  font-family: 'Karla', sans-serif;
+}
+
+button,
+.btn,
+select {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0
+}
+
+p {
+  color: #666;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.p-absolute {
+  position: absolute;
+}
+
+.p-fixed {
+  position: fixed;
+}
+
+.p-sticky {
+  position: sticky;
+}
+
+.btn,
+button,
+.actionbg,
+input {
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+}
+
+.btn:hover,
+button:hover {
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+}
+
+/*-- wrapper start --*/
+.wrapper {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .wrapper {
+      max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+      max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .wrapper {
+      max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+      max-width: 1140px;
+  }
+}
+
+.wrapper-full {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*-- //wrapper start --*/
+
+/*-- form styling --*/
+.sign-in-form .logo {
+  text-align: center;
+}
+
+.sign-in-form .logo a.brand-logo {
+  display: inline-block;
+  text-align: center;
+  font-size: 50px;
+  line-height: 1.1em;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+  letter-spacing: -1px;
+}
+
+.sign-in-form .align-end {
+  align-self: flex-end;
+  padding: 2em;
+}
+
+.sign-in-form .logo a.brand-logo span {
+  font-weight: 300;
+}
+
+.sign-in-form h1 {
+  font-size: 50px;
+  line-height: 1.1em;
+  font-weight: 700;
+  color: #3f3a64;
+}
+
+.sign-in-form {
+  position: relative;
+  z-index: 0;
+  padding: 2em 0px;
+  display: grid;
+  align-items: center;
+  height: 100vh;
+}
+
+.sign-in-form .pos-relative {
+  position: relative;
+}
+
+.sign-in-form .copyright {
+  margin-top: 20px;
+}
+
+.sign-in-form p.copy-footer-29 a {
+  color: #495057;
+}
+
+.sign-in-form p.copy-footer-29 a:hover {
+  color: #4361ee;
+}
+
+.sign-in-form h2 {
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.sign-in-form .workinghny-block-grid {
+  display:flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.sign-in-form .workinghny-block-grid img{
+  height:150%;
+  width:auto;
+}
+
+.sign-in-form .login-form-content {
+  padding: 2em 0em;
+}
+
+.sign-in-form .one-frm label {
+  font-style: normal;
+  font-size: 16px;
+  color: #343a40;
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.sign-in-form input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #212529;
+  color: #777;
+  background:transparent;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 12px 15px;
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 0;
+  outline: none;
+}
+
+.sign-in-form select {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #212529;
+  color: #777;
+  background:transparent;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 12px 15px;
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 0;
+  outline: none;
+}
+
+.sign-in-form input:focus {
+  background: transparent;
+  border-bottom: 2px solid #4361ee;
+  box-shadow: none;
+}
+
+.sign-in-form .btn-style {
+  font-size: 18px;
+  color: #fff;
+  width: 100%;
+  background: #4361ee;
+  border: none;
+  height: 55px;
+  font-weight: 700;
+  border-radius: 6px;
+  transition: .3s ease;
+  -webkit-transition: .3s ease;
+  -moz-transition: .3s ease;
+  -ms-transition: .3s ease;
+  -o-transition: .3s ease;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+}
+
+.sign-in-form .btn-style:hover {
+  background: #7089ff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 6px 0 rgba(0,0,0,0.2);
+}
+
+.sign-in-form p.already,
+.sign-in-form p.already a {
+  font-size: 18px;
+  line-height: 25px;
+  color: #495057;
+  margin: 25px 0 0;
+  text-align: center;
+}
+
+.sign-in-form p.remember {
+  color: #495057;
+  line-height: 20px
+}
+
+.sign-in-form p.already a {
+  color: #495057;
+  font-weight: 700;
+}
+
+.sign-in-form p.already a:hover {
+  color: #4361ee;
+}
+
+.sign-in-form .check-remaind input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.sign-in-form .check-remaind {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  margin: 5px 0px 30px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.sign-in-form .check-remaind input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.sign-in-form .checkmark {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 21px;
+  width: 21px;
+  background-color: #F5F4F2;
+  border-radius: 4px;
+}
+
+.sign-in-form .check-remaind:hover input~.checkmark {
+  background-color: #4361ee;
+}
+
+.sign-in-form .check-remaind input:checked~.checkmark {
+  background-color: #4361ee;
+}
+
+.sign-in-form .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.sign-in-form .check-remaind input:checked~.checkmark:after {
+  display: block;
+}
+
+.sign-in-form .check-remaind .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* -- placeholder --*/
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #777;
+  font-family: 'Karla', sans-serif;
+  font-size:14px;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #777;
+  font-family: 'Karla', sans-serif;
+  font-size:14px;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #777;
+  font-family: 'Karla', sans-serif;
+  font-size:14px;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #777;
+  font-family: 'Karla', sans-serif;
+  font-size:14px;
+}
+
+/* -- placeholder --*/
+
+
+/*-- responsive design --*/
+@media (max-width: 992px) {
+  .sign-in-form .workinghny-block-grid {
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+      width: 100%;
+  }
+  .sign-in-form .login-form-content {
+      padding: 0em 0em 2em 0;
+  }
+  .workinghny-left-img {
+      order: 2;
+  }
+
+  .sign-in-form .logo a.brand-logo {
+      font-size: 40px;
+      margin-bottom: 10px;
+  }
+
+  .sign-in-form {
+      height: auto;
+  }
+}
+
+@media (max-width: 667px) {
+  .sign-in-form .align-end {
+      padding: 0em;
+  }
+}
+
+@media (max-width: 480px) {
+  .sign-in-form .logo a.brand-logo {
+      font-size: 35px;
+  }
+
+  .sign-in-form h2 {
+      font-size: 22px;
+  }
+}
+
+@media (max-width: 415px) {
+  .sign-in-form .copyright {
+      margin-top: 30px;
+  }
+}
+
+.icons{
+  text-align:center;
+}
+
+.fa {
+  padding: 12px;
+  font-size: 40px;
+  width: 40px;
+  height:40px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 5px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 6px 0 rgba(0,0,0,0.2);
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+/*-- //responsive design --*/
+/*-- //form styling --*/
