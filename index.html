@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    Player 1 name :
+    <input type="text" id="p1" name="p1" />
+    <br />
+    <br />
+    Player 2 name :
+    <input type="text" id="p2" name="p2" />
+    <br />
+    <br />
+
+    <button id="game-start" onclick="startGame()">Start Game</button>
+
+    <div id="game-container" class="hide">
+      <div class="row">
+        <div class="cell" onclick="handleClick(this)"></div>
+        <div class="cell" onclick="handleClick(this)"></div>
+        <div class="cell" onclick="handleClick(this)"></div>
+      </div>
+      <div class="row">
+        <div class="cell" onclick="handleClick(this)"></div>
+        <div class="cell" onclick="handleClick(this)"></div>
+        <div class="cell" onclick="handleClick(this)"></div>
+      </div>
+      <div class="row">
+        <div class="cell" onclick="handleClick(this)"></div>
+        <div class="cell" onclick="handleClick(this)"></div>
+        <div class="cell" onclick="handleClick(this)"></div>
+      </div>
+    </div>
+<!-- this refers to the current element -->
+    <script src="index.js"></script>
   </body>
 </html>
