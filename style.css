@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+header {
+  position: fixed;
+  top: 0px;
+}
+
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.scroll-center {
+  height: 100%;
+  scroll-snap-align: center;
+}
+
+.content {
+  height: 100%;
+  margin: 0 1.5rem;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.content > * {
+  flex: 0 0 100%;
+}
+
+h1 {
+  font: 3rem "Oswald", sans-serif;
+}
+
+h2 {
+  font: 700 2rem "Oswald", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  font: 700 1.5rem "Oswald", sans-serif;
+  margin: 1rem 0;
+}
+
+.img-cont {
+  max-width: 20%;
+}
+
+.img-cont img {
+  width: 100%;
+}
+
+.bodyBold {
+  font-weight: 700;
+}
+
+.highlight {
+  font: 700 4.5rem "Ubuntu", sans-serif;
+}
+
+.waterRise {
+  width: calc(100% + 48px);
+  position: absolute;
+  bottom: 0;
+  left: -1.5rem;
+}
+
+.waterRise h2,
+.box1 > *,
+.box2 > * {
+  margin: 0 1.5rem;
+}
+
+.box1 {
+  height: 46vh;
+  background-color: blue;
+}
+
+.box2 {
+  height: 22vh;
+  background-color: blueviolet;
+}
+
+#dataVis {
+  background-color: #fff;
+  /* max-width: 60%; */
+}
+
+button {
+  max-width: 10rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+}
