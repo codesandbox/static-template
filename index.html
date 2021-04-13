@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!--
-Margins, padding, spacing
+*1 - Parallax testing/framework
+*2 - Margins, padding, spacing
 Text styles
 Text box & button styles
 Add video/img background
@@ -11,6 +12,7 @@ Secondary pages (learn more)
 Circle packing section
 Implement data viz into secondary pages
 Plug in all text & img content
+Government section
 Call-to-action - links to social media
 Gyroscope interaction
 "GHG Consequences" image & text arrangement
@@ -43,133 +45,198 @@ Implement additional shazam
       <h4>placeholder</h4>
     </header>
     <main class="scroll-container">
-      <section>
-        <h1>No C.A.P</h1>
-        <p>No Corporate Accountability Present</p>
-        <p>
-          Greenhouse gas emissions are killing our planet and corporations are
-          at fault.
-        </p>
-      </section>
-
-      <section>
-        <h2>WHAT ARE GHGs?</h2>
-        <p>
-          <b>Greenhouse gases (GHGs)</b> are gases that trap heat in earth's
-          atmosphere and are released primarily by burning fossil fuels.
-        </p>
-        <p>This results in:</p>
-        <ul>
-          <li>Rising Sea Levels</li>
-          <li>Higher Temperatures</li>
-          <li>Extreme Weather</li>
-          <li>Accelerated Climate Change</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>GHG CONSEQUENCES</h2>
-        <p>
-          The earth's surface temperature has risen by
-          <b>1.44&#176; Fahrenheit</b>. Large corporations are at fault for
-          <b>50% of that change.</b>
-        </p>
-        <section>
-          <figure><img /></figure>
-          <p class="bodyBold">1.44&#176; Fahrenheit increase</p>
-          <p class="bodyBold">
-            Corporate Responsibility<br />
-            0.72&#176; Fahrenheit
+      <div class="scroll-center" style="background-color: #0bf335;">
+        <section class="content">
+          <h1>No C.A.P</h1>
+          <p>No Corporate Accountability Present</p>
+          <p>
+            Greenhouse gas emissions are killing our planet and corporations are
+            at fault.
           </p>
-          <span class="callout">50%</span>
-          <p class="bodyBold">due to corporations</p>
         </section>
-      </section>
+      </div>
 
-      <section>
-        <div class="waterRise">
+      <div class="scroll-center" style="background-color: #27d72f;">
+        <section class="content">
+          <h2>WHAT ARE GHGs?</h2>
+          <p>
+            <b>Greenhouse gases (GHGs)</b> are gases that trap heat in earth's
+            atmosphere and are released primarily by burning fossil fuels.
+          </p>
+          <p>This results in:</p>
+          <ul>
+            <li>Rising Sea Levels</li>
+            <li>Higher Temperatures</li>
+            <li>Extreme Weather</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="scroll-center" style="background-color: #40bf2a;">
+        <section class="content">
           <h2>GHG CONSEQUENCES</h2>
-          <div class="box1">
-            <p class="bodyBold">7 in. sea level increase</p>
-            <p>
-              GHG emissions have caused a global sea level increase of
-              <b>7 inches</b> and about <b>35%</b> of the change is attributed
-              to
-              <b>large corporations.</b>
+          <p>
+            The earth's surface temperature has risen by
+            <b>1.44&#176; Fahrenheit</b>. Large corporations are at fault for
+            <b>50% of that change.</b>
+          </p>
+          <section>
+            <figure class="img-cont">
+              <img src="images/thermometer.png" />
+            </figure>
+            <p class="bodyBold">1.44&#176; Fahrenheit increase</p>
+            <p class="bodyBold">
+              Corporate Responsibility<br />
+              0.72&#176; Fahrenheit
             </p>
+            <span class="highlight">50%</span>
+            <p class="bodyBold">due to corporations</p>
+          </section>
+        </section>
+      </div>
+
+      <div class="scroll-center" style="background-color: #5aa524;">
+        <section class="content" style="position: relative;">
+          <div class="waterRise">
+            <h2>GHG CONSEQUENCES</h2>
+            <div class="box1">
+              <p class="bodyBold">7 in. sea level increase</p>
+              <p>
+                GHG emissions have caused a global sea level increase of
+                <b>7 inches</b> and about <b>35%</b> of the change is attributed
+                to
+                <b>large corporations.</b>
+              </p>
+            </div>
+            <div class="box2">
+              <p class="bodyBold">2.28 in. due to corporations</p>
+              <span class="highlight">35%</span>
+            </div>
           </div>
-          <div class="box2">
-            <p class="bodyBold">2.28 in. due to corporations</p>
-            <span class="callout">35%</span>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
-      <section>
-        <div id="dataVis"></div>
-        <div id="dataInfo"></div>
+      <div class="scroll-center" style="background-color: #4db227;">
+        <section class="content">
+          <h2>HOW WE COMPARE</h2>
+          <p>
+            In 2019, the average U.S. citizen produced equivalent to around 8.1
+            metric tons of CO2. When you multiply that by the population, it
+            comes out to be a pretty big number.
+          </p>
+          <p>
+            Corporate facilities across the country that emit at a large scale
+            hold much more of the responsibility. On average, one of these large
+            facilities anually emits an amount of GHGs equivalent to 41,193
+            citizens - that’s 338,273.87 metric tons of CO2 each.
+          </p>
+          <span class="highlight">8.1</span>
+          <p class="bodyBold">per person</p>
+          <span class="highlight">41,193</span>
+          <p class="bodyBold">people equal 1 corporation</p>
+        </section>
+      </div>
 
-        <script type="module">
-          import {
-            Runtime,
-            Inspector
-          } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-          import define from "https://api.observablehq.com/d/51d34fdd73b2a397.js?v=3";
-          new Runtime().module(define, (name) => {
-            if (name === "dataVis") {
-              return new Inspector(document.querySelector("#dataVis"));
-            }
-          });
-        </script>
-      </section>
+      <div class="scroll-center" style="background-color: #738b1e;">
+        <section class="content">
+          <div id="dataVis"></div>
+          <div id="dataInfo">""</div>
+          <h3 id="dataLabel"></h3>
 
-      <section>
-        <h1>Who is Responsible</h1>
-      </section>
+          <script type="module">
+            import {
+              Runtime,
+              Inspector
+            } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+            import define from "https://api.observablehq.com/d/51d34fdd73b2a397.js?v=3";
+            new Runtime().module(define, (name) => {
+              if (name === "dataVis") {
+                return new Inspector(document.querySelector("#dataVis"));
+              }
+              if (name === "dataInfo") {
+                return {
+                  pending() {
+                    document.querySelector("#dataInfo").innerHTML = "";
+                  },
+                  fulfilled(value) {
+                    document.querySelector("#dataInfo").innerHTML = value;
+                  }
+                };
+                //return new Inspector(document.querySelector("#dataInfo"));
+              }
+              if (name === "dataLabel") {
+                return {
+                  pending() {
+                    document.querySelector("#dataLabel").innerHTML = "";
+                  },
+                  fulfilled(value) {
+                    document.querySelector("#dataLabel").innerHTML = value;
+                  }
+                };
+                //return new Inspector(document.querySelector("#dataLabel"));
+              }
+            });
+          </script>
+        </section>
+      </div>
 
-      <section>
-        <section><img /></section>
-        <h2>POWER PLANTS</h2>
-        <p>
-          Our electricity comes from
-          <b>power plants, the greatest polluters</b> of GHG emissions.
-          Responible for <b>58.5%</b> from all sectors.
-        </p>
-        <button>LEARN MORE</button>
-      </section>
+      <div class="scroll-center" style="background-color: #8d7219;">
+        <section class="content">
+          <h1>Who is Responsible</h1>
+        </section>
+      </div>
 
-      <section>
-        <section><img /></section>
-        <h2>PETROLEUM AND NATURAL GAS</h2>
-        <p>
-          Our electricity comes from
-          <b>power plants, the greatest polluters</b> of GHG emissions.
-          Responible for <b>58.5%</b> from all sectors.
-        </p>
-        <button>LEARN MORE</button>
-      </section>
+      <div class="scroll-center" style="background-color: #a65813;">
+        <section class="content">
+          <section class="img-cont"><img src="images/lightbulb.png" /></section>
+          <h2>POWER PLANTS</h2>
+          <p>
+            Our electricity comes from
+            <b>power plants, the greatest polluters</b> of GHG emissions.
+            Responible for <b>58.5%</b> from all sectors.
+          </p>
+          <button>LEARN MORE</button>
+        </section>
+      </div>
 
-      <section>
-        <section><img /></section>
-        <h2>REFINERIES</h2>
-        <p>
-          Our electricity comes from
-          <b>power plants, the greatest polluters</b> of GHG emissions.
-          Responible for <b>58.5%</b> from all sectors.
-        </p>
-        <button>LEARN MORE</button>
-      </section>
+      <div class="scroll-center" style="background-color: #c03e0d;">
+        <section class="content">
+          <section class="img-cont"><img src="images/helmet.png" /></section>
+          <h2>PETROLEUM AND NATURAL GAS</h2>
+          <p>
+            Our electricity comes from
+            <b>power plants, the greatest polluters</b> of GHG emissions.
+            Responible for <b>58.5%</b> from all sectors.
+          </p>
+          <button>LEARN MORE</button>
+        </section>
+      </div>
 
-      <section>
-        <section><img /></section>
-        <h2>CHEMICALS</h2>
-        <p>
-          Our electricity comes from
-          <b>power plants, the greatest polluters</b> of GHG emissions.
-          Responible for <b>58.5%</b> from all sectors.
-        </p>
-        <button>LEARN MORE</button>
-      </section>
+      <div class="scroll-center" style="background-color: #d92508;">
+        <section class="content">
+          <section class="img-cont"><img src="images/oil.png" /></section>
+          <h2>REFINERIES</h2>
+          <p>
+            Our electricity comes from
+            <b>power plants, the greatest polluters</b> of GHG emissions.
+            Responible for <b>58.5%</b> from all sectors.
+          </p>
+          <button>LEARN MORE</button>
+        </section>
+      </div>
+
+      <div class="scroll-center" style="background-color: #f30b02;">
+        <section class="content">
+          <section class="img-cont"><img src="images/bottle.png" /></section>
+          <h2>CHEMICALS</h2>
+          <p>
+            Our electricity comes from
+            <b>power plants, the greatest polluters</b> of GHG emissions.
+            Responible for <b>58.5%</b> from all sectors.
+          </p>
+          <button>LEARN MORE</button>
+        </section>
+      </div>
     </main>
     <footer>
       <h4>Scroll to Discover</h4>

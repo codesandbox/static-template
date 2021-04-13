@@ -8,6 +8,7 @@ html {
   font-size: 16px;
   font-family: "Ubuntu", sans-serif;
   text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -21,27 +22,30 @@ header {
   scroll-snap-type: y mandatory;
 }
 
-.scroll-container > section {
-  position: relative;
+.scroll-center {
   height: 100%;
-  margin: 0 24px;
+  scroll-snap-align: center;
+}
+
+.content {
+  height: 100%;
+  margin: 0 1.5rem;
   display: flex;
   align-content: center;
   align-items: center;
   flex-wrap: wrap;
-  scroll-snap-align: center;
 }
 
-.scroll-container > section > * {
-  flex-basis: 100%;
+.content > * {
+  flex: 0 0 100%;
 }
 
 h1 {
-  font: 3em "Oswald", sans-serif;
+  font: 3rem "Oswald", sans-serif;
 }
 
 h2 {
-  font: 700 2em "Oswald", sans-serif;
+  font: 700 2rem "Oswald", sans-serif;
 }
 
 ul {
@@ -49,21 +53,37 @@ ul {
 }
 
 li {
-  font: 700 1.5em "Oswald", sans-serif;
-  margin: 1em 0;
+  font: 700 1.5rem "Oswald", sans-serif;
+  margin: 1rem 0;
+}
+
+.img-cont {
+  max-width: 20%;
+}
+
+.img-cont img {
+  width: 100%;
+}
+
+.bodyBold {
+  font-weight: 700;
+}
+
+.highlight {
+  font: 700 4.5rem "Ubuntu", sans-serif;
 }
 
 .waterRise {
   width: calc(100% + 48px);
   position: absolute;
   bottom: 0;
-  left: -24px;
+  left: -1.5rem;
 }
 
 .waterRise h2,
 .box1 > *,
 .box2 > * {
-  margin: 0 24px;
+  margin: 0 1.5rem;
 }
 
 .box1 {
@@ -71,28 +91,18 @@ li {
   background-color: blue;
 }
 
-.bodyBold {
-  font-weight: 700;
-  /*
-  display: inline;
-  margin: 2px;
-  outline: solid 2px;
-  margin-bottom: 1em;
-  padding: 4px;
-*/
-}
-
 .box2 {
   height: 22vh;
   background-color: blueviolet;
 }
 
-.callout {
-  font: 700 4.5em "Ubuntu", sans-serif;
+#dataVis {
+  background-color: #fff;
+  /* max-width: 60%; */
 }
 
 button {
-  max-width: 100px;
+  max-width: 10rem;
 }
 
 footer {
