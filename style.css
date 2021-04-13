@@ -1,0 +1,263 @@
+* {
+  margin: 0px;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  margin: 0px;
+}
+
+.container {
+  display: grid;
+  grid-template:
+    "sidebar middlesection trending" 100vh/
+    230px 1fr 300px;
+  grid-gap: 10px;
+  padding-left: 25px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.middlesection {
+  grid-area: middlesection;
+}
+
+.trending {
+  grid-area: trending;
+}
+
+ul {
+  padding: 0px;
+}
+
+li {
+  height: 50px;
+  font-weight: 600;
+  width: 120px;
+}
+
+.sidebar img {
+  padding-right: 5px;
+}
+
+.sidebar a {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-content: center;
+}
+
+.tweetbutton {
+  border: solid;
+  border-radius: 10px;
+  padding: 10px;
+  width: 80%;
+  font-size: 12px;
+  background-color: #4ba0eb;
+  color: white;
+
+  display: grid;
+  place-items: center;
+}
+
+.blue {
+  color: #4ba0eb;
+}
+
+/* MIDDLE SECTION TOP PART */
+
+.middlesection {
+  border: solid 2px #ebedef;
+}
+
+.hometitle {
+  font-size: 20px;
+  border: 0px;
+  display: grid;
+  grid-template-columns: 100fr 50px;
+  border-bottom: solid 3px #f7f9fa;
+}
+
+/* FIX ALIGNING */
+.hometitle p,
+.hometitle img {
+  margin: 0px;
+  padding: 10px;
+}
+
+.writetweet {
+  font-weight: 400;
+  border-bottom: solid 8px #f7f9fa;
+  display: grid;
+  grid-template:
+    "avatar tweet tweet" 70px
+    "blank icons button" 40px/
+    50px 500fr 80px;
+}
+.avatar {
+  grid-area: avatar;
+  padding: 10px;
+}
+.iconrow {
+  grid-area: icons;
+}
+
+.userpicture {
+  height: 30px;
+}
+
+.tweeticons {
+  width: 18px;
+  padding: 5px;
+}
+
+.sendtweet {
+  border-radius: 15px;
+  padding: 5px;
+  width: 70px;
+  font-weight: 600;
+  grid-area: button;
+  background-color: #4ba0eb;
+  border: solid 1px white;
+  color: white;
+}
+
+.placeholder {
+  grid-area: tweet;
+}
+
+/* TIMELINE SECTION */
+
+.timeline {
+  display: grid;
+  grid-template-rows: 150px 2fr;
+  font-size: 12px;
+}
+
+.timeline img {
+  height: 20px;
+}
+
+.tweetsectionone {
+  color: #6e767d;
+  font-size: 0.8rem;
+  margin-left: 47px;
+  grid-area: tweetsectionone;
+}
+
+.tweetsectionone p {
+  display: inline-block;
+  font-size: 12px;
+}
+
+.tweetmedia {
+  grid-area: tweetmedia;
+}
+
+.userpicture {
+  grid-area: userpicture;
+  width: 70px;
+}
+
+.grey {
+  opacity: 0.5;
+}
+
+.footer {
+  grid-area: footer;
+  display: grid;
+  grid-auto-flow: column;
+  opacity: 0.5;
+}
+
+.tweet {
+  font-weight: 400;
+}
+
+.tweet,
+.tweeterinfo {
+  font-size: 14px;
+}
+
+.tweetcontainer {
+  border-bottom: solid 1px #eeeff1;
+  display: grid;
+  grid-template:
+    "tweetsectionone tweetsectionone" 30px
+    "userpicture tweetmedia" 1fr
+    "userpicture tweetmedia" auto
+    "userpicture footer " 30px/
+    70px 1fr;
+}
+
+/* TRENDING BAR */
+
+.trendingbar {
+  margin-left: 15px;
+}
+.searchbar {
+  border: solid;
+  border-radius: 10px;
+  width: 15px;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 14px;
+  opacity: 0.5;
+}
+
+.search {
+  padding: 8px 23px 8px 30px;
+  background-color: #eceef0;
+  border: solid 5px white;
+  border-radius: 15px;
+}
+
+.trending {
+  padding: 8px;
+  height: 500px;
+  background-color: #f7f9fa;
+  border-radius: 15px;
+  display: grid;
+  grid-template-rows: 35px auto auto auto;
+  padding: 10px;
+}
+
+.trendingone {
+  font-size: 12px;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-gap: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.trending span {
+  border-bottom: solid 1px #eef0f2;
+  font-weight: 800;
+}
+
+.trendingcontainer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 5px;
+  border-bottom: solid 1px #eef0f2;
+}
+
+.headline {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.trendingcontainer img {
+  width: 70px;
+  border-radius: 5px;
+}
