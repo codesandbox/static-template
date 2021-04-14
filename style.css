@@ -22,9 +22,30 @@ header {
   scroll-snap-type: y mandatory;
 }
 
+.parallax {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+  /*perspective-origin-x: 100%;*/
+}
+
 .scroll-center {
   height: 100%;
   scroll-snap-align: center;
+}
+
+.parallax__group {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 2;
+
+  /* transform: translate3d(700px, 0, -800px) rotateY(30deg);*/
+}
+
+.parallaxZ1 {
+  z-index: 1;
 }
 
 .content {
@@ -38,6 +59,39 @@ header {
 
 .content > * {
   flex: 0 0 100%;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /*transform-origin-x: 100%;*/
+}
+
+.parallax__layer--base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 4;
+}
+
+.parallax__layer--back {
+  -webkit-transform: translateZ(-300px) scale(2);
+  transform: translateZ(-300px) scale(2);
+  z-index: 3;
+}
+
+.parallax__layer--far {
+  -webkit-transform: translateZ(-600px) scale(3);
+  transform: translateZ(-600px) scale(3);
+  z-index: 2;
+}
+
+.parallax__layer--deep {
+  -webkit-transform: translateZ(-900px) scale(4);
+  transform: translateZ(-900px) scale(4);
+  z-index: 1;
 }
 
 h1 {
@@ -88,17 +142,20 @@ li {
 
 .box1 {
   height: 46vh;
-  background-color: blue;
+  background-color: rgba(0, 0, 255, 0.25);
 }
 
 .box2 {
   height: 22vh;
-  background-color: blueviolet;
+  background-color: rgba(127, 0, 255, 0.75);
 }
 
-#dataVis {
-  background-color: #fff;
-  /* max-width: 60%; */
+.bg-img {
+  margin: 0 -1.5rem;
+}
+
+.bg-img img {
+  width: 100%;
 }
 
 button {
