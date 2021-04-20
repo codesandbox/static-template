@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Baloo Bhai 2", sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 20px 50px;
+  font-size: 1.25rem;
+  position: relative;
+  margin: 32px;
+}
+
+/* Button 1 */
+.btn-1 {
+  background: #000;
+  color: #fff;
+  border-radius: 30px;
+  transition: transform 0.3s ease;
+}
+
+.btn-1::after,
+.btn-1::before {
+  content: "";
+  position: absolute;
+  opacity: 0.3;
+  background: #000;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.btn-1:hover {
+  transform: translate(-12px, -12px);
+}
+
+.btn-1:hover::after {
+  transform: translate(6px, 6px);
+}
+
+.btn-1:hover::before {
+  transform: translate(12px, 12px);
+}
+
+/* Button 2 */
+.btn-2 {
+  color: #000;
+}
+
+.btn-2::after,
+.btn-2::before {
+  border: 3px solid #000;
+  content: "";
+  position: absolute;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.btn-2:hover::after {
+  transform: translate(-5px, -5px);
+}
+
+.btn-2:hover::before {
+  transform: translate(5px, 5px);
+}
+
+/* Button 3 */
+.btn-3 {
+  overflow: hidden;
+  color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-3::after {
+  content: "";
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: -50px;
+  left: -100px;
+  background: #ff3cac;
+  background: linear-gradient(225deg, #27d86c 0%, #26caf8 50%, #c625d0 100%);
+  z-index: -1;
+  transition: transform 0.5s ease;
+}
+
+.btn-3:hover {
+  transform: translate(0, -6px);
+}
