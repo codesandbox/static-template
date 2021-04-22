@@ -1,0 +1,102 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Images</title>
+    <link rel="stylesheet" href="pagestyles.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body class="images-page">
+    <header>
+      <h1>Hidden Solution</h1>
+    </header>
+    <div class="wrapper">
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/links.html">Links</a></li>
+          <li><a href="/images.html">Images</a></li>
+          <li><a href="/contacts.html">Contacts</a></li>
+          <li><a href="/forms.html">Forms</a></li>
+        </ul>
+      </nav>
+      <main>
+        <form action="mailto:bob@bob.com" method="POST">
+          <div class="flex-reverse">
+            <input required id="name" name="name" type="text" />
+            <label for="name">Name</label>
+          </div>
+          <div class="flex-reverse">
+            <input required id="email" name="email" type="text" />
+            <label for="email">Email</label>
+          </div>
+          <div style="display: flex;">
+            <label for="textArea">Uh...Wassup?</label>
+            <textarea
+              name="textArea"
+              id="textArea"
+              cols="14"
+              rows="5"
+            ></textarea>
+          </div>
+          <div>
+            <label for="reason">Reason for visiting.</label>
+            <select name="reason" id="reason">
+              <option value="none"></option>
+              <option value="browsing">Just Browsing</option>
+              <option value="software">Looking for software</option>
+              <option value="lost">I'm lost</option>
+              <option value="help">I require immediate attention</option>
+            </select>
+          </div>
+          <div>
+            <p>Which do you prefer?</p>
+            <label for="pope">The Pope</label>
+            <input id="pope" type="radio" />
+            <div></div>
+            <label for="shamwow">The ShamWow Guy</label>
+            <input id="shamwow" type="radio" />
+          </div>
+          <div style="height: 24px;"></div>
+          <div>
+            <label for="newsletter">
+              Subscribe to newsletter.
+            </label>
+            <input id="newsletter" name="newsletter" type="checkbox" />
+          </div>
+          <div>
+            <label for="terms">I accept the terms.</label
+            ><input type="checkbox" />
+          </div>
+          <button type="reset">Reset</button>
+          <button type="submit">Submit</button>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

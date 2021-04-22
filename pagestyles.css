@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("/images/3.png");
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+}
+
+nav ul li {
+  list-style-image: url("/images/pope.png");
+}
+
+nav a {
+  color: royalblue;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: rebeccapurple;
+}
+
+.images-page .wrapper main img {
+  position: relative;
+  left: 10px;
+}
+
+.wrapper {
+  background: #fff;
+}
+
+.wrapper nav {
+  float: left;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper main {
+  float: right;
+  width: 70%;
+}
+
+footer {
+  clear: both;
+}
+
+.images-image {
+  max-width: 60vw;
+}
+table {
+  background: #fff;
+}
+tbody > tr:nth-of-type(odd) {
+  background: #9e9b9b;
+}
+
+.flex-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+input:required + label::after {
+  content: "*";
+  color: rgb(197, 39, 39);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 350px;
+}
+/* 
+form > div {
+  display: inline-flex;
+} */
+
+@media screen and (max-width: 768px) {
+  table {
+    color: #033b25;
+  }
+}
