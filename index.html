@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-10" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
+  <style>
+    .circle {
+      width: 300px;
+      height: 300px;
+    }
+    h1 {
+      font-size: 100px;
+      font-weight: 700;
+      margin: 0;
+    }
+    h3 {
+      font-size: 30px;
+      font-weight: 600;
+      margin: 25;
+    }
+    body {
+      font-family: sans-serif, Cambria, Cochin, Georgia, Times,
+        "Times New Roman", serif;
+      color: blue;
+      margin: 0;
+    }
+    .text-vertical-center {
+      display: table-cell;
+      text-align: center;
+      position: relative;
+      top: -50px;
+      vertical-align: middle;
+    }
+    .main-box {
+      display: table;
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background: url(./Mary.jpeg) no-repeat center scroll;
+      background-size: cover;
+    }
+  </style>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="main-box">
+      <div class="text-vertical-center">
+        <img src="./" class="circle" />
+        <h1>Vete a dormir</h1>
+        <h3>Holi</h3>
+      </div>
+    </div>
   </body>
 </html>
