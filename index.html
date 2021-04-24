@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <!--
-*1 - Parallax testing/framework
-*2 - Margins, padding, spacing
+Parallax sizing for mobile
+Media queries
+Margins, padding, spacing
+Flexbox image & text arrangement
 Text styles
+100vh mobile sizing fix
 Text box & button styles
-Add video/img background
-Link background changes to scroll position
-Text & image fade on scroll
-Implement secondary animations
-Secondary pages (learn more)
-Circle packing section
-Implement data viz into secondary pages
-Plug in all text & img content
-Government section
+Add hidden/revealed CTA section
 Call-to-action - links to social media
+Text & image fade on scroll
+Add fish to parallax background
+Learn More pop-ups in lobbying section
+Finalize circle packing section
+Update all text/image content
 Gyroscope interaction
-"GHG Consequences" image & text arrangement
 Implement additional shazam
 -->
 <html lang="en">
@@ -35,7 +34,7 @@ Implement additional shazam
     />
 
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="/main.js"></script>
+    <script src="main.js"></script>
 
     <title>Static Template</title>
   </head>
@@ -45,9 +44,9 @@ Implement additional shazam
       <h4>placeholder</h4>
     </header>
     <main class="scroll-container parallax">
-      <div class="scroll-center" style="background-color: #0bf335;">
+      <div class="scroll-center">
         <section class="content parallax__group">
-          <h1>No C.A.P</h1>
+          <h1>No C.A.P.</h1>
           <p>No Corporate Accountability Present</p>
           <p>
             Greenhouse gas emissions are killing our planet and corporations are
@@ -56,7 +55,7 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center" style="background-color: #27d72f;">
+      <div class="scroll-center">
         <section class="content parallax__group">
           <h2>WHAT ARE GHGs?</h2>
           <p>
@@ -72,7 +71,7 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center" style="background-color: #40bf2a;">
+      <div class="scroll-center">
         <section class="content parallax__group">
           <h2>GHG CONSEQUENCES</h2>
           <p>
@@ -95,8 +94,7 @@ Implement additional shazam
         </section>
       </div>
 
-      <!-- <div class="scroll-center" style="background-color: #5aa524;"> -->
-      <div class="scroll-center parallax__group parallaxZ1">
+      <div class="scroll-center">
         <section class="content parallax__group" style="position: relative;">
           <div class="waterRise">
             <h2>GHG CONSEQUENCES</h2>
@@ -115,12 +113,9 @@ Implement additional shazam
             </div>
           </div>
         </section>
-        <figure class="bg-img parallax__layer parallax__layer--deep"><img src="images/background.png" /></figure>
-        <figure class="bg-img parallax__layer parallax__layer--far"><img src="images/back_buildings.png"></figure>
-        <figure class="bg-img parallax__layer parallax__layer--back"><img src="images/front_building.png" /></figure>
       </div>
 
-      <div class="scroll-center" style="background-color: #4db227;">
+      <div class="scroll-center">
         <section class="content parallax__group">
           <h2>HOW WE COMPARE</h2>
           <p>
@@ -141,11 +136,24 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center" style="background-color: #738b1e;">
-        <section class="content">
+      <div class="scroll-center">
+        <section class="content parallax__group">
           <div id="dataVis"></div>
           <div id="dataInfo">""</div>
           <h3 id="dataLabel"></h3>
+          <div id="socials">
+            <a
+              href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+              class="twitter-share-button"
+              data-show-count="false"
+              >Tweet</a
+            >
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
+          </div>
 
           <script type="module">
             import {
@@ -163,7 +171,10 @@ Implement additional shazam
                     document.querySelector("#dataInfo").innerHTML = "";
                   },
                   fulfilled(value) {
-                    document.querySelector("#dataInfo").innerHTML = value;
+                    if (value != "value => {return value}") {
+                      //console.log(value)
+                      document.querySelector("#dataInfo").innerHTML = value;
+                    }
                   }
                 };
                 //return new Inspector(document.querySelector("#dataInfo"));
@@ -174,7 +185,9 @@ Implement additional shazam
                     document.querySelector("#dataLabel").innerHTML = "";
                   },
                   fulfilled(value) {
-                    document.querySelector("#dataLabel").innerHTML = value;
+                    if (value != "value => {return value}") {
+                      document.querySelector("#dataLabel").innerHTML = value;
+                    }
                   }
                 };
                 //return new Inspector(document.querySelector("#dataLabel"));
@@ -184,17 +197,13 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center" style="background-color: #8d7219;">
-      <!-- <div class="scroll-center parallax__group parallaxZ1"> -->
+      <div class="scroll-center">
         <section class="content parallax__group">
           <h1>Who is Responsible</h1>
         </section>
-        <!-- <figure class="bg-img parallax__layer parallax__layer--deep"><img src="images/background.png" /></figure>
-        <figure class="bg-img parallax__layer parallax__layer--far"><img src="images/back_buildings.png"></figure>
-        <figure class="bg-img parallax__layer parallax__layer--back"><img src="images/front_building.png" /></figure> -->
       </div>
 
-      <div class="scroll-center" style="background-color: #a65813;">
+      <div class="scroll-center">
         <section class="content parallax__group">
           <section class="img-cont"><img src="images/lightbulb.png" /></section>
           <h2>POWER PLANTS</h2>
@@ -207,7 +216,7 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center" style="background-color: #c03e0d;">
+      <div class="scroll-center">
         <section class="content parallax__group">
           <section class="img-cont"><img src="images/helmet.png" /></section>
           <h2>PETROLEUM AND NATURAL GAS</h2>
@@ -220,7 +229,7 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center" style="background-color: #d92508;">
+      <div class="scroll-center">
         <section class="content parallax__group">
           <section class="img-cont"><img src="images/oil.png" /></section>
           <h2>REFINERIES</h2>
@@ -233,7 +242,7 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center" style="background-color: #f30b02;">
+      <div class="scroll-center">
         <section class="content parallax__group">
           <section class="img-cont"><img src="images/bottle.png" /></section>
           <h2>CHEMICALS</h2>
@@ -244,6 +253,74 @@ Implement additional shazam
           </p>
           <button>LEARN MORE</button>
         </section>
+      </div>
+
+      <div class="scroll-center">
+        <section class="content parallax__group">
+          <h1>How is this happening?</h1>
+        </section>
+      </div>
+
+      <div class="scroll-center">
+        <section class="content parallax__group">
+          <h2>PARIS AGREEMENT ISSUES</h2>
+          <p>
+            There’s the Paris Agreement, but what other initiatives are we
+            actually pushing & working towards globally/nationally/locally?
+          </p>
+          <p>
+            Current national targets under the Paris Agreement would lead to
+            52–58 gigatons (Gt) CO2-equivalents (CO2e) per year by 2030 -- not
+            enough to meet the 1.5oC target. [1.5 target meaning we need to keep
+            the global temperature rise below 1.5 degrees above pre-industrial
+            earth]
+          </p>
+          <button>LEARN MORE</button>
+        </section>
+      </div>
+
+      <div class="scroll-center">
+        <section class="content parallax__group">
+          <h2>STATE IRRESPONSIBILITY</h2>
+          <p>
+            We’ve known for a while that we need comprehensive action, but only
+            a handful of states have actually taken action. Even in states where
+            it has been more successful, such as California, there are still
+            setbacks.
+          </p>
+          <button>CALIFORNIA CASE STUDY</button>
+        </section>
+      </div>
+
+      <div class="scroll-center">
+        <section class="content parallax__group">
+          <h2>LOBBYING</h2>
+          <p>
+            Every year, the world's five largest publicly owned oil and gas
+            companies spend approximately $200 million on lobbying designed to
+            control, delay or block binding climate-motivated policy. Some also
+            fund anti-climate change research.
+          </p>
+        </section>
+      </div>
+
+      <div class="scroll-center parallax__group parallaxZ1">
+        <section class="content parallax__group">
+          <h1>What can I do?</h1>
+          <button>WHAT'S NEXT</button>
+        </section>
+        <figure class="bg-img parallax__layer parallax__layer--deep">
+          <img src="images/full_background.png" style="margin-left: 100px;" />
+        </figure>
+        <figure class="bg-img parallax__layer parallax__layer--far">
+          <img src="images/back_buildings.png" style="margin-left: 200px;" />
+        </figure>
+        <figure class="bg-img parallax__layer parallax__layer--back">
+          <img
+            src="images/front_building.png"
+            style="margin-right: 50px; margin-bottom: -50px;"
+          />
+        </figure>
       </div>
     </main>
     <footer>

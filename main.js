@@ -3,6 +3,9 @@ import * as d3 from "d3";
 //const data = require("flight-abrv@2.json");
 //console.log(data);
 
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty("--vh", `${vh}px`);
+
 let Width = 800;
 let Height = Width;
 //data = FileAttachment("flight-abrv@2.json").json();

@@ -7,6 +7,7 @@
 html {
   font-size: 16px;
   font-family: "Ubuntu", sans-serif;
+  color: #38453d;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
 }
@@ -14,10 +15,13 @@ html {
 header {
   position: fixed;
   top: 0px;
+  z-index: 5;
 }
 
 .scroll-container {
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  min-height: -webkit-fill-available;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
@@ -128,7 +132,7 @@ li {
 }
 
 .waterRise {
-  width: calc(100% + 48px);
+  width: calc(100% + 3rem);
   position: absolute;
   bottom: 0;
   left: -1.5rem;
@@ -141,21 +145,25 @@ li {
 }
 
 .box1 {
-  height: 46vh;
+  height: calc(var(--vh, 1vh) * 46);
   background-color: rgba(0, 0, 255, 0.25);
 }
 
 .box2 {
   height: 22vh;
-  background-color: rgba(127, 0, 255, 0.75);
+  height: calc(var(--vh, 1vh) * 22);
+  background-color: rgba(127, 0, 255, 0.25);
 }
 
 .bg-img {
   margin: 0 -1.5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .bg-img img {
-  width: 100%;
+  width: 200%;
 }
 
 button {
@@ -165,4 +173,5 @@ button {
 footer {
   position: fixed;
   bottom: 0px;
+  z-index: 5;
 }
