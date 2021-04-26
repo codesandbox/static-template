@@ -118,20 +118,43 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-4">
-            <button type="button" class="btn btn-outline-dark" id="triple">
+            <button
+              onclick="myFunction1()"
+              type="button"
+              class="btn btn-outline-dark"
+              id="triple"
+            >
               <img class="service" src="img/daycare.png" alt="" />
             </button>
           </div>
           <div class="col-4">
-            <button type="button" class="btn btn-outline-dark" id="triple">
+            <button
+              onclick="myFunction2()"
+              type="button"
+              class="btn btn-outline-dark"
+              id="triple"
+            >
               <img class="service" src="img/grooming.png" alt="" />
             </button>
           </div>
           <div class="col-4">
-            <button type="button" class="btn btn-outline-dark" id="triple">
+            <button
+              onclick="myFunction3()"
+              type="button"
+              class="btn btn-outline-dark"
+              id="triple"
+            >
               <img class="service" src="img/lodging.png" alt="" />
             </button>
           </div>
+        </div>
+        <br />
+        <br />
+        <div id="changeText">
+          <p>
+            Click the buttons to find out more about Daycare, Grooming, and
+            Lodging!
+          </p>
         </div>
       </div>
     </div>
@@ -148,50 +171,60 @@
           <h5>Number: ###-###-####</h5>
         </div>
         <div class="col-5" id="footer2">
-          <button
-            type="button"
-            class="btn"
-            disabled
-            data-bs-toggle="button"
-            autocomplete="off"
-            id="socials"
-          >
+          <button type="button" class="btn" id="socials" disabled>
             <img src="img/snapchat.jpg" class="socials" />
           </button>
-          <button
-            type="button"
-            class="btn"
-            disabled
-            data-bs-toggle="button"
-            autocomplete="off"
-            id="socials"
-          >
+          <button type="button" class="btn" id="socials" disabled>
             <img src="img/insta.jpg" class="socials" />
           </button>
-          <button
-            type="button"
-            class="btn"
-            disabled
-            data-bs-toggle="button"
-            autocomplete="off"
-            id="socials"
-          >
+          <button type="button" class="btn" id="socials" disabled>
             <img src="img/tiktok.jpg" class="socials" />
           </button>
-          <button
-            type="button"
-            class="btn"
-            disabled
-            data-bs-toggle="button"
-            autocomplete="off"
-            id="socials"
-          >
+          <button type="button" class="btn" id="socials" disabled>
             <img src="img/twitter.jpg" class="socials" />
           </button>
         </div>
       </div>
     </div>
 
+    <script>
+      function myFunction1() {
+        var x = document.getElementById("changeText");
+        if (
+          x.innerHTML ===
+          "Click the buttons to find out more about Daycare, Grooming, and Lodging!"
+        ) {
+          x.innerHTML = "Swapped text!";
+        } else {
+          x.innerHTML =
+            "Click the buttons to find out more about Daycare, Grooming, and Lodging!";
+        }
+      }
+      function myFunction2() {
+        var x = document.getElementById("changeText");
+        if (
+          x.innerHTML ===
+          "Click the buttons to find out more about Daycare, Grooming, and Lodging!"
+        ) {
+          x.innerHTML = "Swapped text!";
+        } else {
+          x.innerHTML =
+            "Click the buttons to find out more about Daycare, Grooming, and Lodging!";
+        }
+      }
+      function myFunction3() {
+        var x = document.getElementById("changeText");
+        if (
+          x.innerHTML ===
+          "Click the buttons to find out more about Daycare, Grooming, and Lodging!"
+        ) {
+          x.innerHTML = "Swapped text!";
+        } else {
+          x.innerHTML =
+            "Click the buttons to find out more about Daycare, Grooming, and Lodging!";
+        }
+      }
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
