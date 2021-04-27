@@ -96,10 +96,10 @@
               <a href="#carousel__slide2" class="carousel__next"
                 >Go to next slide</a
               >
-            </div>
-            <div class="teamabout">
-              <img src=".assets/team/manap.jpeg" alt="" />
-              <p>text</p>
+              <div class="teamabout">
+                <img src="assets/team/manap.jpeg" alt="" />
+                <p>text</p>
+              </div>
             </div>
           </li>
           <li id="carousel__slide2" tabindex="0" class="carousel__slide">
@@ -110,6 +110,10 @@
             <a href="#carousel__slide3" class="carousel__next"
               >Go to next slide</a
             >
+            <div class="teamabout">
+              <img src="assets/team/manap.jpeg" alt="" />
+              <p>text</p>
+            </div>
           </li>
           <li id="carousel__slide3" tabindex="0" class="carousel__slide">
             <div class="carousel__snapper"></div>
@@ -119,6 +123,10 @@
             <a href="#carousel__slide4" class="carousel__next"
               >Go to next slide</a
             >
+            <div class="teamabout">
+              <img src="assets/team/manap.jpeg" alt="" />
+              <p>text</p>
+            </div>
           </li>
           <li id="carousel__slide4" tabindex="0" class="carousel__slide">
             <div class="carousel__snapper"></div>
@@ -126,8 +134,12 @@
               >Go to previous slide</a
             >
             <a href="#carousel__slide5" class="carousel__next"
-              >Go to first slide</a
+              >Go to next slide</a
             >
+            <div class="teamabout">
+              <img src="assets/team/manap.jpeg" alt="" />
+              <p>text</p>
+            </div>
           </li>
           <li id="carousel__slide5" tabindex="0" class="carousel__slide">
             <div class="carousel__snapper"></div>
@@ -137,6 +149,10 @@
             <a href="#carousel__slide1" class="carousel__next"
               >Go to first slide</a
             >
+            <div class="teamabout">
+              <img src="assets/team/manap.jpeg" alt="" />
+              <p>text</p>
+            </div>
           </li>
         </ol>
         <aside class="carousel__navigation">
@@ -176,9 +192,14 @@
 <style>
   .teamabout img {
     width: 200px;
+    margin: auto;
   }
   .teamabout {
+    padding-top: 100px;
+    text-align: center;
     z-index: 2;
+    margin: auto;
+    width: 500px;
   }
   .team h1 {
     position: relative;
@@ -210,10 +231,10 @@
       left: 0;
     }
     95% {
-      left: -300%;
+      left: -400%;
     }
     98% {
-      left: -300%;
+      left: -400%;
     }
     99% {
       left: 0;
@@ -236,6 +257,7 @@
   }
 
   .carousel {
+    width: 1000px;
     position: relative;
     padding-top: 75%;
     filter: drop-shadow(0 0 10px #0003);
@@ -259,21 +281,20 @@
     position: relative;
     flex: 0 0 100%;
     width: 100%;
-    background-color: #f99;
+    background-color: #ffffff;
     counter-increment: item;
   }
 
   .carousel__slide:nth-child(even) {
-    background-color: #99f;
+    background-color: #ffffff;
   }
 
   .carousel__slide:before {
-    content: counter(item);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate3d(-50%, -40%, 70px);
-    color: #fff;
+
     font-size: 2em;
   }
 
@@ -284,6 +305,7 @@
     width: 100%;
     height: 100%;
     scroll-snap-align: center;
+    margin: auto;
   }
 
   @media (hover: hover) {
@@ -348,6 +370,7 @@
     border-radius: 50%;
     font-size: 0;
     outline: 0;
+    z-index: 4;
   }
 
   .carousel::before,
@@ -391,7 +414,7 @@
     position: relative;
   }
   .scratchtext {
-    top: -400px;
+    top: 50px;
     float: left;
     position: relative;
     text-align: center;
@@ -406,8 +429,9 @@
     font-family: "Courier New", Courier, monospace;
   }
   .scratchimg {
-    float: left;
+    float: right;
     position: relative;
+    padding-right: 100px;
     width: 500px;
     left: 50px;
   }
@@ -427,6 +451,7 @@
     float: right;
     position: relative;
     text-align: center;
+    top: 50px;
     width: 500px;
   }
   .legotext p {
