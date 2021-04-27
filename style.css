@@ -4,10 +4,14 @@
   box-sizing: border-box;
 }
 
+.backbuild {
+  transform: translateY(0);
+}
+
 html {
   font-size: 16px;
   font-family: "Ubuntu", sans-serif;
-  color: #38453d;
+  color: #000;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
 }
@@ -15,15 +19,42 @@ html {
 header {
   position: fixed;
   top: 0px;
+  width: 100%;
   z-index: 5;
+  display: flex;
+  justify-content: space-between;
+}
+
+header > * {
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5rem;
+}
+
+#volume {
+  max-width: 100%;
+}
+
+#menu {
+  height: 100vh;
+  min-height: -webkit-fill-available;
+  height: calc(var(--vh, 1vh) * 100);
+  display: none;
+  position: absolute;
+  z-index: 7;
 }
 
 .scroll-container {
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
   min-height: -webkit-fill-available;
+  height: calc(var(--vh, 1vh) * 100);
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+}
+
+.scroll-center {
+  height: 100%;
+  scroll-snap-align: center;
 }
 
 .parallax {
@@ -32,11 +63,6 @@ header {
   -webkit-perspective: 300px;
   perspective: 300px;
   /*perspective-origin-x: 100%;*/
-}
-
-.scroll-center {
-  height: 100%;
-  scroll-snap-align: center;
 }
 
 .parallax__group {
@@ -50,19 +76,6 @@ header {
 
 .parallaxZ1 {
   z-index: 1;
-}
-
-.content {
-  height: 100%;
-  margin: 0 1.5rem;
-  display: flex;
-  align-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.content > * {
-  flex: 0 0 100%;
 }
 
 .parallax__layer {
@@ -98,12 +111,65 @@ header {
   z-index: 1;
 }
 
+.content {
+  height: 100%;
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.txtDark {
+  color: #38453d;
+}
+
+.txtLight {
+  color: #f2f2f2;
+}
+
 h1 {
   font: 3rem "Oswald", sans-serif;
+  margin-bottom: 1rem;
 }
 
 h2 {
   font: 700 2rem "Oswald", sans-serif;
+  margin-bottom: 1rem;
+  z-index: 2;
+}
+
+p {
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+
+.boxLight {
+  padding: 0.5rem;
+  margin: 0px -0.5rem 1rem -0.5rem;
+  background: rgba(243, 216, 199, 0.44);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+}
+
+.boxMid {
+  padding: 0.5rem;
+  margin: 0px -0.5rem 1rem -0.5rem;
+  background: rgba(136, 168, 143, 0.44);
+  /* box-shadow: -13px -13px 36px #8fae9b, 13px 13px 36px #38453d; */
+  box-shadow: -13px -13px 36px rgba(143, 174, 155, 0.5),
+    13px 13px 36px rgba(56, 69, 61, 0.5);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+}
+
+.boxDark {
+  padding: 0.5rem;
+  margin: 0px -0.5rem 1rem -0.5rem;
+  background: rgba(78, 34, 43, 0.8);
+  box-shadow: -13px -13px 36px #411b1e, 13px 13px 36px #1f0e11;
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
 }
 
 ul {
@@ -131,28 +197,55 @@ li {
   font: 700 4.5rem "Ubuntu", sans-serif;
 }
 
+.marginClear {
+  margin-bottom: 0px;
+}
+
 .waterRise {
-  width: calc(100% + 3rem);
-  position: absolute;
-  bottom: 0;
-  left: -1.5rem;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 0px;
+}
+
+.box1 {
+  height: 46%;
+  /* background: rgba(0, 0, 0, 0.5); */
+  /* background: rgba(9, 30, 82, 0.5); */
+  background: rgba(11, 51, 71, 0.5);
+  /* background: rgba(13, 65, 62, 0.5); */
+}
+
+.box2 {
+  height: 22%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgb(11, 51, 71)),
+    repeating-linear-gradient(
+      -55deg,
+      #28525f,
+      #28525f 10px,
+      #86afbd 10px,
+      #86afbd 20px
+    );
 }
 
 .waterRise h2,
 .box1 > *,
 .box2 > * {
-  margin: 0 1.5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
-.box1 {
-  height: calc(var(--vh, 1vh) * 46);
-  background-color: rgba(0, 0, 255, 0.25);
+.box1 .bodyBold,
+.box2 .bodyBold {
+  padding-top: 1rem;
 }
 
-.box2 {
-  height: 22vh;
-  height: calc(var(--vh, 1vh) * 22);
-  background-color: rgba(127, 0, 255, 0.25);
+.circlePacking {
+  flex-direction: row;
+  align-content: center;
+}
+
+.circlePacking > * {
+  flex: 0 0 100%;
 }
 
 .bg-img {
@@ -168,10 +261,11 @@ li {
 
 button {
   max-width: 10rem;
+  z-index: 2;
 }
 
-footer {
+/* footer {
   position: fixed;
   bottom: 0px;
   z-index: 5;
-}
+} */

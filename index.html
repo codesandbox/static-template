@@ -2,18 +2,22 @@
 <!--
 Parallax sizing for mobile
 Media queries
+Hamburger menu/site nav
 Margins, padding, spacing
 Flexbox image & text arrangement
 Text styles
 100vh mobile sizing fix
 Text box & button styles
+Text animations (animate.css)
+Fish background (w/ animations?)
 Add hidden/revealed CTA section
-Call-to-action - links to social media
+Call-to-action section
 Text & image fade on scroll
 Add fish to parallax background
 Learn More pop-ups in lobbying section
 Finalize circle packing section
 Update all text/image content
+Compress images
 Gyroscope interaction
 Implement additional shazam
 -->
@@ -40,11 +44,74 @@ Implement additional shazam
   </head>
 
   <body>
-    <header>
-      <h4>placeholder</h4>
+    <header class="txtDark">
+      <audio id="audio" autoplay loop>
+        <source
+          src="https://docs.google.com/uc?export=download&id=1JEn71XOqrVZuDqeOgMG1ZQgdDDoJPWp5"
+          type="audio/wav"
+        />
+      </audio>
+      <figure><img id="volume" src="images/volume.png" /></figure>
+      <script>
+        let volume = document.querySelector("#volume");
+        let audio = document.querySelector("#audio");
+        volume.addEventListener("click", function () {
+          if (audio.muted == true) {
+            audio.muted = false;
+            volume.src = "images/volume.png";
+          } else {
+            audio.muted = true;
+            volume.src = "images/mute.png";
+          }
+        });
+      </script>
+      <div
+        id="menuButton"
+        style="width: 2rem; height: 2rem; background-color: #000;"
+      ></div>
     </header>
+
+    <div id="menu" hidden="true">
+      <nav>
+        <a id="intro"><h2 class="scrollBut">No C.A.P.</h2></a>
+        <a id="who"><h2 class="scrollBut">Who Is Responsible?</h2></a>
+        <a id="how"><h2 class="scrollBut">How Is This Happening?</h2></a>
+        <a id="what"><h2 class="scrollBut">What Can You Do?</h2></a>
+      </nav>
+      <script>
+        function toggleMenu() {
+          if (menu.hidden == true) {
+            menu.style.display = "block";
+            menu.hidden = false;
+          } else if (menu.hidden == false) {
+            menu.style.display = "none";
+            menu.hidden = true;
+          }
+        }
+
+        menuButton.addEventListener("click", toggleMenu);
+
+        intro.onclick = (e) => {
+          document.getElementById("1").scrollIntoView({ behavior: "smooth" });
+          toggleMenu();
+        };
+        who.onclick = (e) => {
+          document.getElementById("2").scrollIntoView({ behavior: "smooth" });
+          toggleMenu();
+        };
+        how.onclick = (e) => {
+          document.getElementById("3").scrollIntoView({ behavior: "smooth" });
+          toggleMenu();
+        };
+        what.onclick = (e) => {
+          document.getElementById("4").scrollIntoView({ behavior: "smooth" });
+          toggleMenu();
+        };
+      </script>
+    </div>
+
     <main class="scroll-container parallax">
-      <div class="scroll-center">
+      <div class="scroll-center txtDark" id="1">
         <section class="content parallax__group">
           <h1>No C.A.P.</h1>
           <p>No Corporate Accountability Present</p>
@@ -55,7 +122,7 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center">
+      <div class="scroll-center txtDark">
         <section class="content parallax__group">
           <h2>WHAT ARE GHGs?</h2>
           <p>
@@ -71,7 +138,7 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center">
+      <div class="scroll-center txtDark">
         <section class="content parallax__group">
           <h2>GHG CONSEQUENCES</h2>
           <p>
@@ -84,51 +151,51 @@ Implement additional shazam
               <img src="images/thermometer.png" />
             </figure>
             <p class="bodyBold">1.44&#176; Fahrenheit increase</p>
-            <p class="bodyBold">
-              Corporate Responsibility<br />
-              0.72&#176; Fahrenheit
-            </p>
+            <div class="bodyBold">
+              <p class="marginClear">Corporate Responsibility</p>
+              <p>0.72&#176; Fahrenheit</p>
+            </div>
             <span class="highlight">50%</span>
             <p class="bodyBold">due to corporations</p>
           </section>
         </section>
       </div>
 
-      <div class="scroll-center">
-        <section class="content parallax__group" style="position: relative;">
-          <div class="waterRise">
-            <h2>GHG CONSEQUENCES</h2>
-            <div class="box1">
-              <p class="bodyBold">7 in. sea level increase</p>
-              <p>
-                GHG emissions have caused a global sea level increase of
-                <b>7 inches</b> and about <b>35%</b> of the change is attributed
-                to
-                <b>large corporations.</b>
-              </p>
-            </div>
-            <div class="box2">
-              <p class="bodyBold">2.28 in. due to corporations</p>
-              <span class="highlight">35%</span>
-            </div>
+      <div class="scroll-center txtLight">
+        <section class="content parallax__group waterRise">
+          <h2 class="txtDark">GHG CONSEQUENCES</h2>
+          <div class="box1">
+            <p class="bodyBold">7 in. sea level increase</p>
+            <p>
+              GHG emissions have caused a global sea level increase of
+              <b>7 inches</b> and about <b>35%</b> of the change is attributed
+              to
+              <b>large corporations.</b>
+            </p>
+          </div>
+          <div class="box2">
+            <p class="bodyBold">2.28 in. due to corporations</p>
+            <span class="highlight">35%</span>
           </div>
         </section>
       </div>
 
-      <div class="scroll-center">
+      <div class="scroll-center txtDark">
         <section class="content parallax__group">
           <h2>HOW WE COMPARE</h2>
-          <p>
-            In 2019, the average U.S. citizen produced equivalent to around 8.1
-            metric tons of CO2. When you multiply that by the population, it
-            comes out to be a pretty big number.
-          </p>
-          <p>
-            Corporate facilities across the country that emit at a large scale
-            hold much more of the responsibility. On average, one of these large
-            facilities anually emits an amount of GHGs equivalent to 41,193
-            citizens - that’s 338,273.87 metric tons of CO2 each.
-          </p>
+          <div class="boxLight">
+            <p>
+              In 2019, the average U.S. citizen produced equivalent to around
+              8.1 metric tons of CO2. When you multiply that by the population,
+              it comes out to be a pretty big number.
+            </p>
+            <p class="marginClear">
+              Corporate facilities across the country that emit at a large scale
+              hold much more of the responsibility. On average, one of these
+              large facilities anually emits an amount of GHGs equivalent to
+              41,193 citizens - that’s 338,273.87 metric tons of CO2 each.
+            </p>
+          </div>
           <span class="highlight">8.1</span>
           <p class="bodyBold">per person</p>
           <span class="highlight">41,193</span>
@@ -136,11 +203,13 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center">
-        <section class="content parallax__group">
+      <div class="scroll-center txtDark">
+        <section class="content parallax__group circlePacking">
           <div id="dataVis"></div>
-          <div id="dataInfo">""</div>
-          <h3 id="dataLabel"></h3>
+          <div class="boxLight">
+            <h3 id="dataLabel"></h3>
+            <p id="dataInfo" class="marginClear">""</p>
+          </div>
           <div id="socials">
             <a
               href="https://twitter.com/share?ref_src=twsrc%5Etfw"
@@ -197,17 +266,17 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center">
-        <section class="content parallax__group">
+      <div class="scroll-center txtDark">
+        <section class="content parallax__group" id="2">
           <h1>Who is Responsible</h1>
         </section>
       </div>
 
-      <div class="scroll-center">
+      <div class="scroll-center txtLight">
         <section class="content parallax__group">
-          <section class="img-cont"><img src="images/lightbulb.png" /></section>
+          <figure class="img-cont"><img src="images/lightbulb.png" /></figure>
           <h2>POWER PLANTS</h2>
-          <p>
+          <p class="boxMid">
             Our electricity comes from
             <b>power plants, the greatest polluters</b> of GHG emissions.
             Responible for <b>58.5%</b> from all sectors.
@@ -216,11 +285,11 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center">
+      <div class="scroll-center txtLight">
         <section class="content parallax__group">
-          <section class="img-cont"><img src="images/helmet.png" /></section>
+          <figure class="img-cont"><img src="images/helmet.png" /></figure>
           <h2>PETROLEUM AND NATURAL GAS</h2>
-          <p>
+          <p class="boxMid">
             Our electricity comes from
             <b>power plants, the greatest polluters</b> of GHG emissions.
             Responible for <b>58.5%</b> from all sectors.
@@ -229,11 +298,11 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center">
+      <div class="scroll-center txtLight">
         <section class="content parallax__group">
-          <section class="img-cont"><img src="images/oil.png" /></section>
+          <figure class="img-cont"><img src="images/oil.png" /></figure>
           <h2>REFINERIES</h2>
-          <p>
+          <p class="boxMid">
             Our electricity comes from
             <b>power plants, the greatest polluters</b> of GHG emissions.
             Responible for <b>58.5%</b> from all sectors.
@@ -242,11 +311,11 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center">
+      <div class="scroll-center txtLight">
         <section class="content parallax__group">
-          <section class="img-cont"><img src="images/bottle.png" /></section>
+          <figure class="img-cont"><img src="images/bottle.png" /></figure>
           <h2>CHEMICALS</h2>
-          <p>
+          <p class="boxMid">
             Our electricity comes from
             <b>power plants, the greatest polluters</b> of GHG emissions.
             Responible for <b>58.5%</b> from all sectors.
@@ -255,20 +324,20 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center">
-        <section class="content parallax__group">
+      <div class="scroll-center txtLight">
+        <section class="content parallax__group" id="3">
           <h1>How is this happening?</h1>
         </section>
       </div>
 
-      <div class="scroll-center">
+      <div class="scroll-center txtLight">
         <section class="content parallax__group">
           <h2>PARIS AGREEMENT ISSUES</h2>
-          <p>
+          <p class="boxDark">
             There’s the Paris Agreement, but what other initiatives are we
             actually pushing & working towards globally/nationally/locally?
           </p>
-          <p>
+          <p class="boxDark">
             Current national targets under the Paris Agreement would lead to
             52–58 gigatons (Gt) CO2-equivalents (CO2e) per year by 2030 -- not
             enough to meet the 1.5oC target. [1.5 target meaning we need to keep
@@ -279,10 +348,10 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center">
+      <div class="scroll-center txtLight">
         <section class="content parallax__group">
           <h2>STATE IRRESPONSIBILITY</h2>
-          <p>
+          <p class="boxDark">
             We’ve known for a while that we need comprehensive action, but only
             a handful of states have actually taken action. Even in states where
             it has been more successful, such as California, there are still
@@ -292,10 +361,10 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center">
+      <div class="scroll-center txtLight">
         <section class="content parallax__group">
           <h2>LOBBYING</h2>
-          <p>
+          <p class="boxDark">
             Every year, the world's five largest publicly owned oil and gas
             companies spend approximately $200 million on lobbying designed to
             control, delay or block binding climate-motivated policy. Some also
@@ -304,27 +373,94 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center parallax__group parallaxZ1">
-        <section class="content parallax__group">
+      <div class="scroll-center parallax__group parallaxZ1 txtLight">
+        <section class="content parallax__group" id="4">
           <h1>What can I do?</h1>
           <button>WHAT'S NEXT</button>
         </section>
         <figure class="bg-img parallax__layer parallax__layer--deep">
-          <img src="images/full_background.png" style="margin-left: 100px;" />
+          <img
+            class="backbuild"
+            src="images/full_background.png"
+            style="margin-left: 100px;"
+          />
         </figure>
         <figure class="bg-img parallax__layer parallax__layer--far">
-          <img src="images/back_buildings.png" style="margin-left: 200px;" />
+          <img
+            class="backbuild"
+            src="images/back_buildings.png"
+            style="margin-left: 200px;"
+          />
         </figure>
         <figure class="bg-img parallax__layer parallax__layer--back">
           <img
+            class="backbuild"
             src="images/front_building.png"
             style="margin-right: 50px; margin-bottom: -50px;"
           />
         </figure>
+        <script>
+          let bgAll = document.querySelectorAll(".backbuild");
+
+          if (typeof DeviceOrientationEvent.requestPermission === "function") {
+            DeviceOrientationEvent.requestPermission()
+              .then((permissionState) => {
+                if (permissionState === "granted") {
+                  window.ondeviceorientation = function (event) {
+                    var x = event.gamma;
+                    var y = event.alpha;
+
+                    let move = `translate(${x * 0.8}px,${y * 0.8}px)`;
+
+                    for (let bg of bgAll) {
+                      bg.style.transform = move;
+                    }
+
+                    console.log(move);
+                  };
+                }
+              })
+              .catch(console.error);
+          } else {
+            window.ondeviceorientation = function (event) {
+              var x = event.gamma;
+              var y = event.alpha;
+
+              let move = `translate(${x * 0.8}px,${y * 0.8}px)`;
+
+              for (let bg of bgAll) {
+                bg.style.transform = move;
+              }
+
+              console.log(move);
+            };
+          }
+
+          // window.ondeviceorientation = function (event) {
+          //   var x = event.gamma;
+          //   var y = event.alpha;
+
+          //   let move = `translate(${x * 0.8}px,${y * 0.8}px)`;
+
+          //   for (let bg of bgAll) {
+          //     bg.style.transform = move;
+          //   }
+
+          //   console.log(move);
+          // };
+
+          let vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+          window.addEventListener("resize", () => {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty("--vh", `${vh}px`);
+          });
+        </script>
       </div>
     </main>
-    <footer>
+    <!-- <footer class="txtDark">
       <h4>Scroll to Discover</h4>
-    </footer>
+    </footer> -->
   </body>
 </html>
