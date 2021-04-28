@@ -1,12 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="headerMain">
+      <div class="headerlogo">
+        <a href="/">
+          <img
+            class="logotypeMain"
+            src="./assets/color_transparent.png"
+            alt=""
+          />
+        </a>
+        <a target="_blank" href="/">
+          <img class="headerInsta" src="./assets/instagram.png" alt="" />
+        </a>
+        <a target="_blank" href="/">
+          <img class="headerWhatsapp" src="./assets/whatsapp.png" alt="" />
+        </a>
+      </div>
+      <div class="helloWorld">
+        <h1>
+          i-Talap
+        </h1>
+        <h1>
+          IT және робототехника мектебі!
+        </h1>
+        <h2>
+          "Талаптыға нұр жауар!"
+        </h2>
+      </div>
+      <div class="headeradress">
+        <p>Түркістан қ., Б. Саттарханов даңғылы 64</p>
+      </div>
+      <div class="hellostartbutton">
+        <a href="/">
+          <button class="startbutton">
+            Start learning!
+          </button>
+        </a>
+      </div>
+    </div>
+    <div class="lessons">
+      <div class="legowedo">
+        <div class="legoimg">
+          <img src="./assets/lessons/legowedo1.jpg" alt="" />
+        </div>
+        <div class="legotext">
+          <h1>Lego Wedo</h1>
+          <p>
+            Балаларға арналған робототехника - Lego WeDo курсы бастауыш сынып
+            оқушылары үшін әр түрлі Lego модельдерін құру арқылы робототехника
+            негіздерін және бағдарламалау тілін үйренуге мүмкіндік береді.
+            Қызықты курсты жас оқушылар оңай және тез игереді.
+          </p>
+        </div>
+      </div>
+      <div class="scratch">
+        <div class="scratchimg">
+          <img src="./assets/lessons/scratch1.jpg" alt="" />
+        </div>
+        <div class="scratchtext">
+          <h1>Scratch</h1>
+          <p>
+            Scratch тілі балаларға бағдарламалауды үйрету үшін арнайы жасалған.
+            Қызықты жобалар, жарқын суреттер, түсінікті нұсқаулар – осының
+            арқасында сіз бағдарламалау негіздерін оңай түсінесіз, компьютердің
+            логикасын түсінесіз, бұл болашақта күрделі бағдарламалау түрлеріне
+            көшуді жеңілдетеді.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="prices">
+      <h1>Бағасы:</h1>
+      <div class="pricecontainer">
+        <h1>10000тг</h1>
+        можно удалить тут и написать в шапке, хотя думаю тут будет лучше так как
+        в конце принято говорить оц ене
+      </div>
+    </div>
+    <div class="team">
+      <h1>Біздің командамыз:</h1>
+      <section class="carousel" aria-label="Gallery">
+        <ol class="carousel__viewport">
+          <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+            <div class="carousel__snapper">
+              <a href="#carousel__slide5" class="carousel__prev"
+                >Go to last slide</a
+              >
+              <a href="#carousel__slide2" class="carousel__next"
+                >Go to next slide</a
+              >
+              <div class="teamabout">
+                <img src="assets/team/manap.jpeg" alt="" />
+                <p>text</p>
+              </div>
+            </div>
+          </li>
+          <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide1" class="carousel__prev"
+              >Go to previous slide</a
+            >
+            <a href="#carousel__slide3" class="carousel__next"
+              >Go to next slide</a
+            >
+            <div class="teamabout">
+              <img src="assets/team/manap.jpeg" alt="" />
+              <p>text</p>
+            </div>
+          </li>
+          <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide2" class="carousel__prev"
+              >Go to previous slide</a
+            >
+            <a href="#carousel__slide4" class="carousel__next"
+              >Go to next slide</a
+            >
+            <div class="teamabout">
+              <img src="assets/team/manap.jpeg" alt="" />
+              <p>text</p>
+            </div>
+          </li>
+          <li id="carousel__slide4" tabindex="0" class="carousel__slide">
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide3" class="carousel__prev"
+              >Go to previous slide</a
+            >
+            <a href="#carousel__slide5" class="carousel__next"
+              >Go to next slide</a
+            >
+            <div class="teamabout">
+              <img src="assets/team/manap.jpeg" alt="" />
+              <p>text</p>
+            </div>
+          </li>
+          <li id="carousel__slide5" tabindex="0" class="carousel__slide">
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide4" class="carousel__prev"
+              >Go to previous slide</a
+            >
+            <a href="#carousel__slide1" class="carousel__next"
+              >Go to first slide</a
+            >
+            <div class="teamabout">
+              <img src="assets/team/manap.jpeg" alt="" />
+              <p>text</p>
+            </div>
+          </li>
+        </ol>
+        <aside class="carousel__navigation">
+          <ol class="carousel__navigation-list">
+            <li class="carousel__navigation-item">
+              <a href="#carousel__slide1" class="carousel__navigation-button"
+                >Go to slide 1</a
+              >
+            </li>
+            <li class="carousel__navigation-item">
+              <a href="#carousel__slide2" class="carousel__navigation-button"
+                >Go to slide 2</a
+              >
+            </li>
+            <li class="carousel__navigation-item">
+              <a href="#carousel__slide3" class="carousel__navigation-button"
+                >Go to slide 3</a
+              >
+            </li>
+            <li class="carousel__navigation-item">
+              <a href="#carousel__slide4" class="carousel__navigation-button"
+                >Go to slide 4</a
+              >
+            </li>
+            <li class="carousel__navigation-item">
+              <a href="#carousel__slide5" class="carousel__navigation-button"
+                >Go to slide 5</a
+              >
+            </li>
+          </ol>
+        </aside>
+      </section>
+    </div>
+    <div class="footer">
+      <h1>i-talap.kz</h1>
+      <a href="/">i-talap.kz</a>
+      <p>2021</p>
+    </div>
   </body>
 </html>
+
+<style>
+  .teamabout img {
+    width: 200px;
+    margin: auto;
+  }
+  .teamabout {
+    padding-top: 100px;
+    text-align: center;
+    z-index: 2;
+    margin: auto;
+    width: 500px;
+  }
+  .team h1 {
+    position: relative;
+    left: -50px;
+  }
+  .team {
+    width: 1100px;
+    margin: 0 auto;
+    top: 100px;
+    position: relative;
+  }
+  @keyframes tonext {
+    75% {
+      left: 0;
+    }
+    95% {
+      left: 100%;
+    }
+    98% {
+      left: 100%;
+    }
+    99% {
+      left: 0;
+    }
+  }
+
+  @keyframes tostart {
+    75% {
+      left: 0;
+    }
+    95% {
+      left: -400%;
+    }
+    98% {
+      left: -400%;
+    }
+    99% {
+      left: 0;
+    }
+  }
+
+  @keyframes snap {
+    96% {
+      scroll-snap-align: center;
+    }
+    97% {
+      scroll-snap-align: none;
+    }
+    99% {
+      scroll-snap-align: none;
+    }
+    100% {
+      scroll-snap-align: center;
+    }
+  }
+
+  .carousel {
+    width: 1000px;
+    position: relative;
+    padding-top: 75%;
+    filter: drop-shadow(0 0 10px #0003);
+    perspective: 100px;
+  }
+
+  .carousel__viewport {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    overflow-x: scroll;
+    counter-reset: item;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
+
+  .carousel__slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    background-color: #ffffff;
+    counter-increment: item;
+  }
+
+  .carousel__slide:nth-child(even) {
+    background-color: #ffffff;
+  }
+
+  .carousel__slide:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -40%, 70px);
+
+    font-size: 2em;
+  }
+
+  .carousel__snapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+    margin: auto;
+  }
+
+  @media (hover: hover) {
+    .carousel__snapper {
+      animation-name: tonext, snap;
+      animation-timing-function: ease;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+    }
+
+    .carousel__slide:last-child .carousel__snapper {
+      animation-name: tostart, snap;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .carousel__snapper {
+      animation-name: none;
+    }
+  }
+
+  .carousel:hover .carousel__snapper,
+  .carousel:focus-within .carousel__snapper {
+    animation-name: none;
+  }
+
+  .carousel__navigation {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+  }
+
+  .carousel__navigation-list,
+  .carousel__navigation-item {
+    display: inline-block;
+  }
+
+  .carousel__navigation-button {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #333;
+    background-clip: content-box;
+    border: 0.25rem solid transparent;
+    border-radius: 50%;
+    font-size: 0;
+    transition: transform 0.1s;
+  }
+
+  .carousel::before,
+  .carousel::after,
+  .carousel__prev,
+  .carousel__next {
+    position: absolute;
+    top: 0;
+    margin-top: 37.5%;
+    width: 4rem;
+    height: 4rem;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    font-size: 0;
+    outline: 0;
+    z-index: 4;
+  }
+
+  .carousel::before,
+  .carousel__prev {
+    left: -1rem;
+  }
+
+  .carousel::after,
+  .carousel__next {
+    right: -1rem;
+  }
+
+  .carousel::before,
+  .carousel::after {
+    content: "";
+    z-index: 1;
+    background-color: #333;
+    background-size: 1.5rem 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 4rem;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .carousel::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+  }
+
+  .carousel::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+  }
+  .pricecontainer {
+    background-color: #03a5fc;
+    font-family: "Courier New", Courier, monospace;
+  }
+  .prices {
+    top: 100px;
+    position: relative;
+  }
+  .scratchtext {
+    top: 50px;
+    float: left;
+    position: relative;
+    text-align: center;
+    width: 500px;
+  }
+  .scratchtext p {
+    font-size: 24px;
+    font-family: "Courier New", Courier, monospace;
+  }
+  .scratchtext h1 {
+    font-size: 36px;
+    font-family: "Courier New", Courier, monospace;
+  }
+  .scratchimg {
+    float: right;
+    position: relative;
+    padding-right: 100px;
+    width: 500px;
+    left: 50px;
+  }
+  .scratchimg img {
+    border-left: 2px solid;
+    padding-left: 50px;
+    width: 100%;
+  }
+  .scratch {
+    top: 50px;
+    height: 500px;
+    margin: auto;
+    width: 1100px;
+    position: relative;
+  }
+  .legotext {
+    float: right;
+    position: relative;
+    text-align: center;
+    top: 50px;
+    width: 500px;
+  }
+  .legotext p {
+    font-size: 24px;
+    font-family: "Courier New", Courier, monospace;
+  }
+  .legotext h1 {
+    font-size: 36px;
+    font-family: "Courier New", Courier, monospace;
+  }
+  .legoimg {
+    float: left;
+    position: relative;
+    width: 500px;
+  }
+  .legoimg img {
+    border-right: 2px solid;
+    padding-right: 50px;
+    width: 100%;
+  }
+  .legowedo {
+    top: 50px;
+    height: 500px;
+    margin: auto;
+    width: 1100px;
+    position: relative;
+  }
+  .lessons {
+    width: 1200px;
+    position: relative;
+    margin: auto;
+  }
+  .headeradress {
+    width: 1200px;
+    font-size: 24px;
+    margin: auto;
+  }
+  .startbutton {
+    color: black;
+    background-color: #03a5fc;
+    width: 200px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+    height: 60px;
+  }
+  .hellostartbutton {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+  }
+  .helloWorld h2 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 36px;
+    margin-top: 0px;
+  }
+  .helloWorld h1 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 56px;
+  }
+  .helloWorld {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+  }
+  .headerWhatsapp {
+    width: 80px;
+    position: relative;
+    top: 5px;
+    float: right;
+    margin-right: 20px;
+  }
+  .headerInsta {
+    width: 50px;
+    position: relative;
+    float: right;
+    top: 20px;
+  }
+  .logotypeMain {
+    width: 180px;
+    top: -37px;
+    position: absolute;
+  }
+  .headerlogo {
+    width: 1000px;
+    margin: 0 auto;
+    height: 100px;
+    margin-bottom: 0px;
+    /* background-color: gray; */
+  }
+  .headerMain {
+    width: 100%;
+    padding: 0;
+    margin: auto;
+    margin: 0;
+  }
+  body {
+    margin: 0;
+  }
+</style>
