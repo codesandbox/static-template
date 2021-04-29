@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-.backbuild {
-  transform: translateY(0);
-}
-
 html {
   font-size: 16px;
   font-family: "Ubuntu", sans-serif;
@@ -20,7 +16,7 @@ header {
   position: fixed;
   top: 0px;
   width: 100%;
-  z-index: 5;
+  z-index: 6;
   display: flex;
   justify-content: space-between;
 }
@@ -36,12 +32,60 @@ header > * {
 }
 
 #menu {
+  position: absolute;
+  z-index: 5;
   height: 100vh;
   min-height: -webkit-fill-available;
   height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  background: linear-gradient(
+    167.96deg,
+    rgba(75, 28, 31, 0.85) 0%,
+    rgba(63, 33, 34, 0.85) 100%
+  );
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   display: none;
-  position: absolute;
-  z-index: 7;
+}
+
+.logo {
+  max-width: 65%;
+  margin: 0px auto;
+}
+
+.logo img {
+  max-width: 100%;
+}
+
+.logo ~ h4 {
+  font: 400 1.125rem "Oswald", sans-serif;
+  color: #66071b;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.logo ~ p {
+  color: #66071b;
+}
+
+#linkCont {
+  margin: 0px 2rem;
+  color: #d7c1c4;
+}
+
+#linkCont h3 {
+  font: 800 1.5rem "Oswald", sans-serif;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#linkCont p {
+  font: 400 1.125rem "Oswald", sans-serif;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.boldAnc {
+  color: #ffffff;
 }
 
 .scroll-container {
@@ -172,17 +216,18 @@ p {
   border-radius: 10px;
 }
 
-ul {
+.GHGcons {
   list-style-type: none;
 }
 
-li {
+.GHGcons li {
   font: 700 1.5rem "Oswald", sans-serif;
   margin: 1rem 0;
 }
 
 .img-cont {
-  max-width: 20%;
+  max-width: 25%;
+  margin: 2rem auto;
 }
 
 .img-cont img {
@@ -248,6 +293,25 @@ li {
   flex: 0 0 100%;
 }
 
+#lobby,
+#irresponse {
+  display: none;
+}
+
+#nxtStep,
+#socials {
+  /* visibility: hidden; */
+  display: none;
+}
+
+.popups {
+  text-decoration: underline;
+}
+
+.backbuild {
+  transform: translateY(0);
+}
+
 .bg-img {
   margin: 0 -1.5rem;
   display: flex;
@@ -267,5 +331,5 @@ button {
 /* footer {
   position: fixed;
   bottom: 0px;
-  z-index: 5;
+  z-index: 7;
 } */

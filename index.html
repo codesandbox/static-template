@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <!--
-Parallax sizing for mobile
-Media queries
-Hamburger menu/site nav
+Qs:
+CTA transition?
+Water level gif?
+
+To do:
+Media queries-
+Hamburger menu/site nav-
+Text animations (animate.css)-
+Fish background (w/ animations?)-
+Update metadata (HTML, .json)
 Margins, padding, spacing
 Flexbox image & text arrangement
 Text styles
-100vh mobile sizing fix
 Text box & button styles
-Text animations (animate.css)
-Fish background (w/ animations?)
-Add hidden/revealed CTA section
-Call-to-action section
-Text & image fade on scroll
-Add fish to parallax background
-Learn More pop-ups in lobbying section
-Finalize circle packing section
-Update all text/image content
 Compress images
-Gyroscope interaction
+Update all text/image content
+Call-to-action section
+Add water level GIF & background change animation
+Call-to-action section
+Intro footer
+
+Finalize circle packing section*
+
 Implement additional shazam
 -->
 <html lang="en">
@@ -44,6 +48,14 @@ Implement additional shazam
   </head>
 
   <body>
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0"
+      nonce="kf1YTDf9"
+    ></script>
     <header class="txtDark">
       <audio id="audio" autoplay loop>
         <source
@@ -64,6 +76,13 @@ Implement additional shazam
             volume.src = "images/mute.png";
           }
         });
+
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+        window.addEventListener("resize", () => {
+          let vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty("--vh", `${vh}px`);
+        });
       </script>
       <div
         id="menuButton"
@@ -71,17 +90,39 @@ Implement additional shazam
       ></div>
     </header>
 
-    <div id="menu" hidden="true">
-      <nav>
-        <a id="intro"><h2 class="scrollBut">No C.A.P.</h2></a>
-        <a id="who"><h2 class="scrollBut">Who Is Responsible?</h2></a>
-        <a id="how"><h2 class="scrollBut">How Is This Happening?</h2></a>
-        <a id="what"><h2 class="scrollBut">What Can You Do?</h2></a>
-      </nav>
+    <nav id="menu" hidden="true">
+      <figure class="logo"><img src="images/logo_pink.png" /></figure>
+      <ul id="linkCont">
+        <a id="intro">
+          <li>
+            <h3>No C.A.P.</h3>
+            <p>Greenhouse Gas Overview</p>
+          </li>
+        </a>
+        <a id="who">
+          <li>
+            <h3>Who Is Responsible</h3>
+            <p>Corporate Accountability</p>
+          </li>
+        </a>
+        <a id="how">
+          <li>
+            <h3>How Is This Happening?</h3>
+            <p>Government Responsibility</p>
+          </li>
+        </a>
+        <a id="what">
+          <li>
+            <h3>What Can You Do?</h3>
+            <p>Spread the Word</p>
+          </li>
+        </a>
+      </ul>
       <script>
         function toggleMenu() {
           if (menu.hidden == true) {
-            menu.style.display = "block";
+            navBold();
+            menu.style.display = "flex";
             menu.hidden = false;
           } else if (menu.hidden == false) {
             menu.style.display = "none";
@@ -107,17 +148,49 @@ Implement additional shazam
           document.getElementById("4").scrollIntoView({ behavior: "smooth" });
           toggleMenu();
         };
+
+        function navBold() {
+          scrollPos = document.querySelector(".scroll-container").scrollTop;
+          if (scrollPos < window.innerHeight * 6) {
+            clearBoldClass();
+            document.getElementById("intro").classList.add("boldAnc");
+          } else if (
+            window.innerHeight * 6 <= scrollPos &&
+            scrollPos < window.innerHeight * 11
+          ) {
+            clearBoldClass();
+            document.getElementById("who").classList.add("boldAnc");
+          } else if (
+            window.innerHeight * 11 <= scrollPos &&
+            scrollPos < window.innerHeight * 15
+          ) {
+            clearBoldClass();
+            document.getElementById("how").classList.add("boldAnc");
+          } else if (window.innerHeight * 15 <= scrollPos) {
+            clearBoldClass();
+            document.getElementById("what").classList.add("boldAnc");
+          }
+        }
+
+        function clearBoldClass() {
+          let links = document.getElementById("linkCont").children;
+          for (let link of links) {
+            link.classList.remove("boldAnc");
+          }
+        }
       </script>
-    </div>
+    </nav>
 
     <main class="scroll-container parallax">
       <div class="scroll-center txtDark" id="1">
         <section class="content parallax__group">
-          <h1>No C.A.P.</h1>
-          <p>No Corporate Accountability Present</p>
-          <p>
+          <figure class="logo"><img src="images/logo_grad.png" /></figure>
+          <h4>
+            No Corporate Accountability Present
+          </h4>
+          <p style="color: #66071b;">
             Greenhouse gas emissions are killing our planet and corporations are
-            at fault.
+            at fault. Learn more about how emissions affect our planet.
           </p>
         </section>
       </div>
@@ -130,7 +203,7 @@ Implement additional shazam
             atmosphere and are released primarily by burning fossil fuels.
           </p>
           <p>This results in:</p>
-          <ul>
+          <ul class="GHGcons">
             <li>Rising Sea Levels</li>
             <li>Higher Temperatures</li>
             <li>Extreme Weather</li>
@@ -210,19 +283,6 @@ Implement additional shazam
             <h3 id="dataLabel"></h3>
             <p id="dataInfo" class="marginClear">""</p>
           </div>
-          <div id="socials">
-            <a
-              href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-              class="twitter-share-button"
-              data-show-count="false"
-              >Tweet</a
-            >
-            <script
-              async
-              src="https://platform.twitter.com/widgets.js"
-              charset="utf-8"
-            ></script>
-          </div>
 
           <script type="module">
             import {
@@ -266,7 +326,7 @@ Implement additional shazam
         </section>
       </div>
 
-      <div class="scroll-center txtDark">
+      <div class="scroll-center txtLight">
         <section class="content parallax__group" id="2">
           <h1>Who is Responsible</h1>
         </section>
@@ -352,10 +412,13 @@ Implement additional shazam
         <section class="content parallax__group">
           <h2>STATE IRRESPONSIBILITY</h2>
           <p class="boxDark">
-            We’ve known for a while that we need comprehensive action, but only
-            a handful of states have actually taken action. Even in states where
-            it has been more successful, such as California, there are still
-            setbacks.
+            <a class="popups">We’ve</a> known for a while that we need
+            comprehensive action, but only a handful of states have actually
+            taken action. Even in states where it has been more successful, such
+            as California, there are still setbacks.
+          </p>
+          <p id="irresponse" class="boxDark">
+            year
           </p>
           <button>CALIFORNIA CASE STUDY</button>
         </section>
@@ -365,18 +428,59 @@ Implement additional shazam
         <section class="content parallax__group">
           <h2>LOBBYING</h2>
           <p class="boxDark">
-            Every year, the world's five largest publicly owned oil and gas
-            companies spend approximately $200 million on lobbying designed to
-            control, delay or block binding climate-motivated policy. Some also
-            fund anti-climate change research.
+            <a class="popups">Every</a> year, the world's five largest publicly
+            owned oil and gas companies spend approximately $200 million on
+            lobbying designed to control, delay or block binding
+            climate-motivated policy. Some also fund anti-climate change
+            research.
+          </p>
+          <p id="lobby" class="boxDark">
+            year
           </p>
         </section>
       </div>
 
+      <script>
+        let popups = document.querySelectorAll(".popups");
+        let lobby = document.querySelector("#lobby");
+        let irre = document.querySelector("#irresponse");
+        for (let i = 0; i < popups.length; i++) {
+          popups[i].addEventListener("click", function () {
+            switch (i) {
+              case 0:
+                console.log(irre.style.display);
+                //
+                if (irre.style.display == "" || irre.style.display == "none") {
+                  console.log("invisible");
+                  irre.style.display = "block";
+                } else {
+                  console.log("visible");
+                  irre.style.display = "none";
+                }
+
+                break;
+              case 1:
+                if (
+                  lobby.style.display == "" ||
+                  lobby.style.display == "none"
+                ) {
+                  console.log("invisible");
+                  lobby.style.display = "block";
+                } else {
+                  console.log("visible");
+                  lobby.style.display = "none";
+                }
+
+                break;
+            }
+          });
+        }
+      </script>
+
       <div class="scroll-center parallax__group parallaxZ1 txtLight">
         <section class="content parallax__group" id="4">
           <h1>What can I do?</h1>
-          <button>WHAT'S NEXT</button>
+          <button id="nxtBut">WHAT'S NEXT</button>
         </section>
         <figure class="bg-img parallax__layer parallax__layer--deep">
           <img
@@ -448,19 +552,55 @@ Implement additional shazam
 
           //   console.log(move);
           // };
-
-          let vh = window.innerHeight * 0.01;
-          document.documentElement.style.setProperty("--vh", `${vh}px`);
-
-          window.addEventListener("resize", () => {
-            let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty("--vh", `${vh}px`);
-          });
         </script>
+      </div>
+
+      <div id="nxtStep" class="scroll-center txtLight">
+        <section class="content parallax__group">
+          <h2>Next Steps</h2>
+          <div id="socials">
+            <a
+              href="https://nocapteam.github.io/"
+              class="twitter-share-button"
+              data-show-count="false"
+              >Tweet</a
+            >
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
+
+            <div
+              class="fb-share-button"
+              data-href="https://nocapteam.github.io/"
+              data-layout="button"
+              data-size="small"
+            >
+              <a
+                target="_blank"
+                href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+                class="fb-xfbml-parse-ignore"
+                >Share</a
+              >
+            </div>
+          </div>
+          <script>
+            let nextButton = document.querySelector("#nxtBut");
+            let nextStep = document.querySelector("#nxtStep");
+            let soc = document.querySelector("#socials");
+            nextButton.addEventListener("click", function () {
+              // nextStep.style.visibility = "visible";
+              // soc.style.visibility = "visible";
+              nextStep.style.display = "block";
+              soc.style.display = "block";
+            });
+          </script>
+        </section>
       </div>
     </main>
     <!-- <footer class="txtDark">
-      <h4>Scroll to Discover</h4>
+      <h4>Take a Dive</h4>
     </footer> -->
   </body>
 </html>
