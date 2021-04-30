@@ -5,18 +5,43 @@
 }
 
 html {
+  height: 100%;
+  background-color: #000;
   font-size: 16px;
   font-family: "Ubuntu", sans-serif;
-  color: #000;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
 }
 
+body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.disclaimer {
+  display: none;
+  max-width: 540px;
+  color: #f2f2f2;
+  margin: auto;
+}
+
+.disclaimer p {
+  margin-bottom: 0.25rem;
+}
+
+.wrapper {
+  align-self: center;
+  margin: 0 auto;
+  position: relative;
+}
+
 header {
-  position: fixed;
+  position: absolute;
   top: 0px;
   width: 100%;
-  z-index: 6;
+  z-index: 4;
   display: flex;
   justify-content: space-between;
 }
@@ -31,11 +56,14 @@ header > * {
   max-width: 100%;
 }
 
+#mobAudio {
+  display: block;
+}
+
 #menu {
   position: absolute;
-  z-index: 5;
+  z-index: 3;
   height: 100vh;
-  min-height: -webkit-fill-available;
   height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   background: linear-gradient(
@@ -54,34 +82,106 @@ header > * {
   margin: 0px auto;
 }
 
-.logo img {
+#menu .logo {
+  margin: 2rem 33%;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 2rem;
+  height: 5px;
+  background-color: black;
+  margin: 5px 0;
+  padding-right: 1em;
+  transition: 0.7s;
+}
+
+.change .bar1 {
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  transform: rotate(45deg) translate(-8px, -6px);
+}
+
+img {
   max-width: 100%;
+}
+
+.scroll-center:first-of-type {
+  color: #66071b;
 }
 
 .logo ~ h4 {
   font: 400 1.125rem "Oswald", sans-serif;
-  color: #66071b;
   text-align: center;
   margin-bottom: 3rem;
-}
-
-.logo ~ p {
-  color: #66071b;
 }
 
 #linkCont {
   margin: 0px 2rem;
   color: #d7c1c4;
+  list-style-type: none;
+}
+
+#linkCont li {
+  position: relative;
+  margin: 0px;
+  padding-bottom: 1em;
+  padding-left: 20px;
+}
+
+#linkCont li:before {
+  background-color: #c00;
+  width: 2px;
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 5px;
+}
+
+#linkCont li:first-child:before {
+  top: 1rem;
+}
+
+#linkCont li:last-child:before {
+  height: 1rem;
+}
+
+.bullet {
+  width: 1rem;
+  margin-top: 0.75rem;
+  margin-left: -1.4rem;
+  fill: #c00;
+  float: left;
+}
+
+.bullet.big {
+  width: 1.5rem;
+  margin-top: 0.5rem;
+  margin-left: -1.65rem;
+  fill: #d7c1c4;
+}
+
+h3 {
+  font: 800 1.5rem "Oswald", sans-serif;
 }
 
 #linkCont h3 {
-  font: 800 1.5rem "Oswald", sans-serif;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-left: 1rem;
 }
 
 #linkCont p {
   font: 400 1.125rem "Oswald", sans-serif;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-left: 1rem;
 }
 
 .boldAnc {
@@ -90,7 +190,6 @@ header > * {
 
 .scroll-container {
   height: 100vh;
-  min-height: -webkit-fill-available;
   height: calc(var(--vh, 1vh) * 100);
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
@@ -106,7 +205,6 @@ header > * {
   overflow-y: auto;
   -webkit-perspective: 300px;
   perspective: 300px;
-  /*perspective-origin-x: 100%;*/
 }
 
 .parallax__group {
@@ -118,8 +216,12 @@ header > * {
   /* transform: translate3d(700px, 0, -800px) rotateY(30deg);*/
 }
 
-.parallaxZ1 {
+.z1 {
   z-index: 1;
+}
+
+.z0 {
+  z-index: 0;
 }
 
 .parallax__layer {
@@ -134,25 +236,29 @@ header > * {
 .parallax__layer--base {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  z-index: 4;
 }
 
 .parallax__layer--back {
   -webkit-transform: translateZ(-300px) scale(2);
   transform: translateZ(-300px) scale(2);
-  z-index: 3;
 }
 
 .parallax__layer--far {
   -webkit-transform: translateZ(-600px) scale(3);
   transform: translateZ(-600px) scale(3);
-  z-index: 2;
 }
 
 .parallax__layer--deep {
   -webkit-transform: translateZ(-900px) scale(4);
   transform: translateZ(-900px) scale(4);
-  z-index: 1;
+}
+
+.txtDark {
+  color: #38453d;
+}
+
+.txtLight {
+  color: #f2f2f2;
 }
 
 .content {
@@ -164,17 +270,10 @@ header > * {
   flex-wrap: wrap;
 }
 
-.txtDark {
-  color: #38453d;
-}
-
-.txtLight {
-  color: #f2f2f2;
-}
-
 h1 {
   font: 3rem "Oswald", sans-serif;
   margin-bottom: 1rem;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 h2 {
@@ -186,6 +285,11 @@ h2 {
 p {
   margin-bottom: 1rem;
   z-index: 1;
+}
+
+footer {
+  position: fixed;
+  bottom: 4rem;
 }
 
 .boxLight {
@@ -225,13 +329,13 @@ p {
   margin: 1rem 0;
 }
 
-.img-cont {
-  max-width: 25%;
-  margin: 2rem auto;
+.flex-img {
+  max-width: 20%;
+  margin: 2rem 0px;
 }
 
-.img-cont img {
-  width: 100%;
+.img-cont {
+  margin: 2rem 25%;
 }
 
 .bodyBold {
@@ -284,25 +388,18 @@ p {
   padding-top: 1rem;
 }
 
-.circlePacking {
-  flex-direction: row;
-  align-content: center;
+#dataVis {
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
-.circlePacking > * {
-  flex: 0 0 100%;
-}
-
-#lobby,
-#irresponse {
+#nxtStep {
   display: none;
 }
 
-#nxtStep,
-#socials {
-  /* visibility: hidden; */
-  display: none;
-}
+/* #nxtStep {
+  visibility: hidden;
+} */
 
 .popups {
   text-decoration: underline;
@@ -320,7 +417,7 @@ p {
 }
 
 .bg-img img {
-  width: 200%;
+  max-width: 200%;
 }
 
 button {
@@ -328,8 +425,77 @@ button {
   z-index: 2;
 }
 
-/* footer {
-  position: fixed;
-  bottom: 0px;
-  z-index: 7;
-} */
+.bg-vid {
+  margin: 0 -2rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: -1;
+  /* overflow: hidden; */
+}
+
+.bg-vid video {
+  min-height: 200%;
+  min-width: 100%;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+  #menu .logo {
+    margin: 2rem 40%;
+  }
+
+  .content {
+    margin: 0 6rem;
+  }
+
+  .bg-vid {
+    margin: 0 -6rem;
+  }
+
+  .waterRise {
+    margin: 0px;
+  }
+
+  .waterRise h2,
+  .box1 > *,
+  .box2 > * {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+}
+
+@media (width: 800px) and (height: 1200px) {
+  .bg-vid video {
+    max-height: 200%;
+  }
+}
+
+@media (min-width: 801px) {
+  .disclaimer {
+    display: block;
+    flex-shrink: 1;
+  }
+
+  .wrapper {
+    outline: solid red;
+    flex-shrink: 0;
+  }
+
+  .wrapper,
+  header,
+  #menu {
+    width: 540px;
+  }
+  .wrapper,
+  #menu,
+  .scroll-container {
+    height: 920px;
+  }
+
+  #mobAudio {
+    display: none;
+  }
+}
