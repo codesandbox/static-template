@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <!--
-To do:
-Media queries-
-Hamburger menu/site nav-
-Text animations (animate.css)
-Fish background images
-Button click -> CTA scroll transition
+Finish:
 CTA z-index fix
-Hijack social media links
-Call-to-action section
+Nav decoration
 
-Margins, padding, spacing
-Flexbox image & text arrangement
-Text styles up to date
-Text box & button styles
-Update header icons
-
-Update all text/image content
-Compress images
-
-Intro "take a dive" footer - add chevron, click function that scrolls to first section
-Update HTML metadata 
-Fix scroll snap issue w/ extra space @ bottom
-Circlepacking proofreading & addition of "metric tons"
-
-Implement additional shazam:
-QR code in wide media queries
-Fish animation
+Shazam:
+Text animations (animate.css)
+Fish background images/animation
 People walking animation
 Water Rise GHG consequences animation
-Water level GIF
 -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      property="og:title"
+      content="No C.A.P. - An immersive journey into the impact of corporations on climate change"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nocapteam.github.io/" />
+    <meta
+      property="og:image"
+      content="https://people.rit.edu/dph8062/nocap.png"
+    />
+    <meta
+      property="og:description"
+      content="No C.A.P. is an immersive journey through an underwater city devestated by rising sea levels, focusing on the impact of corporations on climate change. How much are they contributing to the climate crisis, and what can we do about it?"
+    />
+    <meta
+      property="og:kewywords"
+      content="climate, change, crisis, corporations, corporate, action, accountability, greenhouse gas, emissions, capstone"
+    />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -55,16 +52,22 @@ Water level GIF
       charset="utf-8"
     ></script>
 
-    <title>Static Template</title>
+    <title>
+      No C.A.P. - An immersive journey into the impact of corporations on
+      climate change
+    </title>
   </head>
 
   <body>
     <div
-      class="disclaimer txtLight boxLight"
+      class="disclaimer txtLight boxMid"
       style="padding: 1rem; margin: auto;"
     >
       <p>This site is best viewed on a mobile device.</p>
       <p class="marginClear">Scan this code to view the site on mobile!</p>
+      <figure>
+        <img id="qr-code" src="images/qr-code.svg" alt="QR Code" />
+      </figure>
     </div>
 
     <div class="wrapper">
@@ -83,8 +86,12 @@ Water level GIF
             type="audio/wav"
           />
         </audio>
-        <figure><img id="volume" src="images/volume.png" /></figure>
-        <p id="mobAudio">Tap here for audio</p>
+        <figure>
+          <img id="volume" src="images/volume.png" alt="speaker" />
+        </figure>
+
+        <p id="mobAudio">Tap Here for Audio</p>
+
         <script>
           let volume = document.querySelector("#volume");
           let audio = document.querySelector("#audio");
@@ -100,7 +107,7 @@ Water level GIF
           });
 
           mobAudio.addEventListener("click", function () {
-            audio.play;
+            audio.play();
             mobAudio.style.display = "none";
           });
 
@@ -119,7 +126,9 @@ Water level GIF
       </header>
 
       <nav id="menu" hidden="true">
-        <figure class="logo"><img src="images/logo_pink.png" /></figure>
+        <figure class="logo">
+          <img src="images/logo_pink.png" alt="text saying no cap" />
+        </figure>
         <ul id="linkCont">
           <li>
             <a id="intro">
@@ -161,7 +170,7 @@ Water level GIF
                   <circle stroke="none" cx="16" cy="16" r="10"></circle>
                 </svg>
               </div>
-              <h3>What Can You Do?</h3>
+              <h3>What Can I Do?</h3>
               <p>Spread the Word</p>
             </a>
           </li>
@@ -173,28 +182,30 @@ Water level GIF
               menu.style.display = "flex";
               menu.hidden = false;
               menuButton.classList.toggle("change");
+              // document.querySelector("#mobAudio").style.color = "#f2f2f2";
             } else if (menu.hidden == false) {
               menu.style.display = "none";
               menu.hidden = true;
               menuButton.classList.toggle("change");
+              // document.querySelector("#mobAudio").style.color = "#38453d";
             }
           }
 
           menuButton.addEventListener("click", toggleMenu);
 
-          intro.onclick = (e) => {
+          document.querySelector("#intro").onclick = (e) => {
             document.getElementById("1").scrollIntoView({ behavior: "smooth" });
             toggleMenu();
           };
-          who.onclick = (e) => {
+          document.querySelector("#who").onclick = (e) => {
             document.getElementById("2").scrollIntoView({ behavior: "smooth" });
             toggleMenu();
           };
-          how.onclick = (e) => {
+          document.querySelector("#how").onclick = (e) => {
             document.getElementById("3").scrollIntoView({ behavior: "smooth" });
             toggleMenu();
           };
-          what.onclick = (e) => {
+          document.querySelector("#what").onclick = (e) => {
             document.getElementById("4").scrollIntoView({ behavior: "smooth" });
             toggleMenu();
           };
@@ -202,28 +213,55 @@ Water level GIF
           function navBold() {
             scrollPos = document.querySelector(".scroll-container").scrollTop;
             bullets = document.getElementsByClassName("bullet");
-            if (scrollPos < window.innerHeight * 6) {
-              clearBoldClass();
-              document.getElementById("intro").classList.add("boldAnc");
-              bullets[0].classList.add("big");
-            } else if (
-              window.innerHeight * 6 <= scrollPos &&
-              scrollPos < window.innerHeight * 11
-            ) {
-              clearBoldClass();
-              document.getElementById("who").classList.add("boldAnc");
-              bullets[1].classList.add("big");
-            } else if (
-              window.innerHeight * 11 <= scrollPos &&
-              scrollPos < window.innerHeight * 15
-            ) {
-              clearBoldClass();
-              document.getElementById("how").classList.add("boldAnc");
-              bullets[2].classList.add("big");
-            } else if (window.innerHeight * 15 <= scrollPos) {
-              clearBoldClass();
-              document.getElementById("what").classList.add("boldAnc");
-              bullets[3].classList.add("big");
+            if (document.body.clientWidth <= 800) {
+              if (scrollPos < window.innerHeight * 6) {
+                clearBoldClass();
+                document.getElementById("intro").classList.add("boldAnc");
+                bullets[0].classList.add("big");
+              } else if (
+                window.innerHeight * 6 <= scrollPos &&
+                scrollPos < window.innerHeight * 11
+              ) {
+                clearBoldClass();
+                document.getElementById("who").classList.add("boldAnc");
+                bullets[1].classList.add("big");
+              } else if (
+                window.innerHeight * 11 <= scrollPos &&
+                scrollPos < window.innerHeight * 14
+              ) {
+                clearBoldClass();
+                document.getElementById("how").classList.add("boldAnc");
+                bullets[2].classList.add("big");
+              } else if (window.innerHeight * 14 <= scrollPos) {
+                clearBoldClass();
+                document.getElementById("what").classList.add("boldAnc");
+                bullets[3].classList.add("big");
+              }
+            } else if (document.body.clientWidth > 800) {
+              newWinHeight = document.querySelector(".wrapper").clientHeight;
+              if (scrollPos < newWinHeight * 6) {
+                clearBoldClass();
+                document.getElementById("intro").classList.add("boldAnc");
+                bullets[0].classList.add("big");
+              } else if (
+                newWinHeight * 6 <= scrollPos &&
+                scrollPos < newWinHeight * 11
+              ) {
+                clearBoldClass();
+                document.getElementById("who").classList.add("boldAnc");
+                bullets[1].classList.add("big");
+              } else if (
+                newWinHeight * 11 <= scrollPos &&
+                scrollPos < newWinHeight * 14
+              ) {
+                clearBoldClass();
+                document.getElementById("how").classList.add("boldAnc");
+                bullets[2].classList.add("big");
+              } else if (newWinHeight * 14 <= scrollPos) {
+                clearBoldClass();
+                document.getElementById("what").classList.add("boldAnc");
+                bullets[3].classList.add("big");
+              }
             }
           }
 
@@ -240,21 +278,37 @@ Water level GIF
       <main class="scroll-container parallax">
         <div class="scroll-center txtDark" id="1">
           <section class="content parallax__group">
-            <figure class="logo"><img src="images/logo_grad.png" /></figure>
+            <figure class="logo">
+              <img src="images/logo_grad.png" alt="text saying no cap" />
+            </figure>
             <h4>
-              No Corporate Accountability Present
+              No Corporate Action Present
             </h4>
             <p>
               Greenhouse gas emissions are killing our planet and corporations
               are at fault. Learn more about how emissions affect our planet.
             </p>
             <footer>
-              <h4>Take a Dive</h4>
+              <h5>DIVE IN</h5>
+              <figure style="max-width: 2.5rem; margin: 0.5rem auto 0px auto;">
+                <img
+                  src="images/chevron.svg"
+                  alt="Arrow pointing downwards to begin the journey"
+                  style="width: 100%;"
+                />
+              </figure>
             </footer>
+            <script>
+              document.querySelector("footer").onclick = (e) => {
+                document
+                  .getElementById("diveIn")
+                  .scrollIntoView({ behavior: "smooth" });
+              };
+            </script>
           </section>
         </div>
 
-        <div class="scroll-center txtDark">
+        <div class="scroll-center txtDark" id="diveIn">
           <section class="content parallax__group">
             <h2>WHAT ARE GHGs?</h2>
             <p>
@@ -278,36 +332,56 @@ Water level GIF
               <b>1.44&#176; Fahrenheit</b>. Large corporations are at fault for
               <b>50% of that change.</b>
             </p>
-            <section>
+            <section class="flex-sec">
               <figure class="flex-img">
-                <img src="images/thermometer.png" />
+                <img
+                  src="images/thermometer.png"
+                  alt="temperature thermometer"
+                />
               </figure>
-              <p class="bodyBold">1.44&#176; Fahrenheit increase</p>
-              <div class="bodyBold">
-                <p class="marginClear">Corporate Responsibility</p>
-                <p>0.72&#176; Fahrenheit</p>
+              
+              <figure class="arrow">
+                <img
+                  src="images/increase_g.svg"
+                  alt="Upward arrow showing increase"
+                />
+              </figure>
+              <div>
+                <span class="highlight">50%</span>
+                <p class="bodyBold marginClear" style="color: #758079; display: inline-block;">
+                  INCREASE DUE TO CORPORATIONS
+                </p>
               </div>
-              <span class="highlight">50%</span>
-              <p class="bodyBold">due to corporations</p>
             </section>
           </section>
         </div>
 
         <div class="scroll-center txtLight">
           <section class="content parallax__group waterRise">
+            <div class="bracket"></div>
             <h2 class="txtDark">GHG CONSEQUENCES</h2>
             <div class="box1">
               <p class="bodyBold">7 in. sea level increase</p>
               <p>
                 GHG emissions have caused a global sea level increase of
-                <b>7 inches</b> and about <b>35%</b> of the change is attributed
-                to
+                <b>7 inches</b> since 1880. <b>35%</b> of the change is
+                attributed to
                 <b>large corporations.</b>
               </p>
             </div>
             <div class="box2">
-              <p class="bodyBold">2.28 in. due to corporations</p>
-              <span class="highlight">35%</span>
+              <div class="flex-sec">
+              <figure class="arrow">
+                <img
+                  src="images/increase_w.png"
+                  alt="Upward arrow showing increase"
+                />
+              </figure>
+              <div>
+                <span class="highlight">35%</span>
+                <p class="bodyBold">OF CHANGE DUE TO CORPORATIONS</p>
+              </div>
+            </div>
             </div>
           </section>
         </div>
@@ -318,21 +392,22 @@ Water level GIF
             <div class="boxLight">
               <p>
                 In 2019, the average U.S. citizen produced equivalent to around
-                8.1 metric tons of CO2. When you multiply that by the
-                population, it comes out to be a pretty big number.
+                <b>8.1 metric tons of CO2.</b>
               </p>
               <p class="marginClear">
-                Corporate facilities across the country that emit at a large
-                scale hold much more of the responsibility. On average, one of
-                these large facilities anually emits an amount of GHGs
-                equivalent to 41,193 citizens - that’s 338,273.87 metric tons of
-                CO2 each.
+                Large corporate facilities anually emit an average amount of
+                GHGs equivalent to <b>41,193 citizens</b> - that’s
+                <b>338,273.87 metric tons</b> of CO2 each.
               </p>
             </div>
             <span class="highlight">8.1</span>
-            <p class="bodyBold">per person</p>
+            <p class="bodyBold" style="color: #758079;">
+              METRIC TONS PER PERSON
+            </p>
             <span class="highlight">41,193</span>
-            <p class="bodyBold">people equal 1 corporation</p>
+            <p class="bodyBold" style="color: #758079;">
+              PEOPLE EQUAL 1 CORPORATION'S ANNUAL EMISSIONS
+            </p>
           </section>
         </div>
 
@@ -374,7 +449,8 @@ Water level GIF
                 if (name === "dataLabel") {
                   return {
                     pending() {
-                      document.querySelector("#dataLabel").innerHTML = "";
+                      document.querySelector("#dataLabel").innerHTML =
+                        "2019 Greenhouse Gas Emissions";
                     },
                     fulfilled(value) {
                       if (value != "value => {return value}") {
@@ -397,53 +473,106 @@ Water level GIF
 
         <div class="scroll-center txtLight">
           <section class="content parallax__group">
-            <figure class="img-cont"><img src="images/lightbulb.png" /></figure>
+            <figure class="img-cont">
+              <img src="images/lightbulb.png" alt="shattered lightbulb" />
+            </figure>
             <h2>POWER PLANTS</h2>
             <p class="boxMid">
-              Our electricity comes from
-              <b>power plants, the greatest polluters</b> of GHG emissions.
-              Responible for <b>58.5%</b> from all sectors.
+              Electricity comes from power plants, the
+              <b>greatest polluters</b> of GHG emissions. They contribute
+              <b>over a billion</b> metric tons of CO2e annually and pollute
+              more CO2 than all other sectors combined.
             </p>
-            <button>LEARN MORE</button>
+            <div class="flex-sec">
+              <p class="graphTxt">
+                Power plants are responsible for 58% of sector emissions.
+              </p>
+              <figure class="img-cont">
+                <img
+                  src="images/pp_graph.png"
+                  alt="pie chart highlighting 58 percent"
+                />
+              </figure>
+            </div>
           </section>
         </div>
 
         <div class="scroll-center txtLight">
           <section class="content parallax__group">
-            <figure class="img-cont"><img src="images/helmet.png" /></figure>
+            <figure class="img-cont">
+              <img src="images/helmet.png" alt="broken mining helmet" />
+            </figure>
             <h2>PETROLEUM AND NATURAL GAS</h2>
             <p class="boxMid">
-              Our electricity comes from
-              <b>power plants, the greatest polluters</b> of GHG emissions.
-              Responible for <b>58.5%</b> from all sectors.
+              Oil and gas giants like <b>BP</b> and <b>ExxonMobil</b> are part
+              of this high emitting sector. In 2019 alone, petroleum and natural
+              gas companies released over <b>341 million</b> metric tons of
+              CO2e, similar to GHGs from <b>74 million cars.</b>
             </p>
-            <button>LEARN MORE</button>
+            <div class="flex-sec">
+              <p class="graphTxt">
+                The petrolium and natural gas sector are responsible for 12% of
+                emissions.
+              </p>
+              <figure class="img-cont">
+                <img
+                  src="images/png_graph.png"
+                  alt="pie chart highlighting 12 percent"
+                />
+              </figure>
+            </div>
           </section>
         </div>
 
         <div class="scroll-center txtLight">
           <section class="content parallax__group">
-            <figure class="img-cont"><img src="images/oil.png" /></figure>
-            <h2>REFINERIES</h2>
-            <p class="boxMid">
-              Our electricity comes from
-              <b>power plants, the greatest polluters</b> of GHG emissions.
-              Responible for <b>58.5%</b> from all sectors.
-            </p>
-            <button>LEARN MORE</button>
-          </section>
-        </div>
-
-        <div class="scroll-center txtLight">
-          <section class="content parallax__group">
-            <figure class="img-cont"><img src="images/bottle.png" /></figure>
+            <figure class="img-cont" id="bottle">
+              <img src="images/bottle.png" alt="crumpled up plastic bottle" />
+            </figure>
             <h2>CHEMICALS</h2>
             <p class="boxMid">
-              Our electricity comes from
-              <b>power plants, the greatest polluters</b> of GHG emissions.
-              Responible for <b>58.5%</b> from all sectors.
+              Plastics, pharmaceuticals, and clothing all come from the chemical
+              sector. It polluted <b>186 million</b> metric tons of CO2e in
+              2019! That’s equivalent to the energy use of
+              <b>22.3 million homes</b>!
             </p>
-            <button>LEARN MORE</button>
+            <div class="flex-sec">
+              <p class="graphTxt">
+                Chemical production is responsible for 6.5% of sector emissions.
+              </p>
+              <figure class="img-cont">
+                <img
+                  src="images/chem_graph.png"
+                  alt="pie chart highlighting 6.5 percent"
+                />
+              </figure>
+            </div>
+          </section>
+        </div>
+
+        <div class="scroll-center txtLight">
+          <section class="content parallax__group">
+            <figure class="img-cont" id="oil">
+              <img src="images/oil.png" alt="damaged oil barrel" />
+            </figure>
+            <h2>REFINERIES</h2>
+            <p class="boxMid">
+              Refineries are facilities that turn raw materials, such as crude
+              oil, into a desired product, like gasoline. Its 2019 CO2e is equal
+              to the CO2 emissions from
+              <b>412 million barrels of crude oil.</b>
+            </p>
+            <div class="flex-sec">
+              <p class="graphTxt">
+                Refineries are responsible for 6.2% of sector emissions.
+              </p>
+              <figure class="img-cont">
+                <img
+                  src="images/ref_graph.png"
+                  alt="pie chart highlighting 6.2 percent"
+                />
+              </figure>
+            </div>
           </section>
         </div>
 
@@ -455,35 +584,16 @@ Water level GIF
 
         <div class="scroll-center txtLight">
           <section class="content parallax__group">
-            <h2>PARIS AGREEMENT ISSUES</h2>
-            <p class="boxDark">
-              There’s the Paris Agreement, but what other initiatives are we
-              actually pushing & working towards globally/nationally/locally?
-            </p>
-            <p class="boxDark">
-              Current national targets under the Paris Agreement would lead to
-              52–58 gigatons (Gt) CO2-equivalents (CO2e) per year by 2030 -- not
-              enough to meet the 1.5oC target. [1.5 target meaning we need to
-              keep the global temperature rise below 1.5 degrees above
-              pre-industrial earth]
-            </p>
-            <button>LEARN MORE</button>
-          </section>
-        </div>
-
-        <div class="scroll-center txtLight">
-          <section class="content parallax__group">
             <h2>STATE IRRESPONSIBILITY</h2>
             <p class="boxDark">
-              <a class="popups">We’ve</a> known for a while that we need
-              comprehensive action, but only a handful of states have actually
-              taken action. Even in states where it has been more successful,
-              such as California, there are still setbacks.
+              In 2005, the U.S. Senate determined that Congress must pass
+              <a class="statePopups">comprehensive climate policies</a>. Since
+              then, <a class="statePopups">only 12 states</a> have made policies
+              with <a class="statePopups">varying success</a>.
             </p>
-            <p id="irresponse" class="boxDark">
-              year
-            </p>
-            <button>CALIFORNIA CASE STUDY</button>
+            <h3 id="irreHead"></h3>
+            <div id="irresponse"></div>
+            <div id="irreInfoExp"></div>
           </section>
         </div>
 
@@ -491,51 +601,91 @@ Water level GIF
           <section class="content parallax__group">
             <h2>LOBBYING</h2>
             <p class="boxDark">
-              <a class="popups">Every</a> year, the world's five largest
-              publicly owned oil and gas companies spend approximately $200
-              million on lobbying designed to control, delay or block binding
-              climate-motivated policy. Some also fund anti-climate change
-              research.
+              <a class="lobbyPopups">Lobbying</a> against climate policy is a
+              huge barrier to climate action. Corporations
+              <a class="lobbyPopups">spend millions</a> on lobbying out of fear
+              that it may hurt their business practices. Many of these companies
+              do so in spite of their stated
+              <a class="lobbyPopups">commitments to action</a>.
             </p>
-            <p id="lobby" class="boxDark">
-              year
-            </p>
+            <h3 id="lobbyHead"></h3>
+            <div id="lobby"></div>
+            <div id="lobbyInfoExp"></div>
           </section>
         </div>
 
         <script>
-          let popups = document.querySelectorAll(".popups");
-          let lobby = document.querySelector("#lobby");
+          let statePopups = document.querySelectorAll(".statePopups");
           let irre = document.querySelector("#irresponse");
-          for (let i = 0; i < popups.length; i++) {
-            popups[i].addEventListener("click", function () {
+          let irreHead = document.querySelector("#irreHead");
+          let irreInfoExp = document.querySelector("#irreInfoExp");
+          let lobbyPopups = document.querySelectorAll(".lobbyPopups");
+          let lobby = document.querySelector("#lobby");
+          let lobbyHead = document.querySelector("#lobbyHead");
+          let lobbyInfoExp = document.querySelector("#lobbyInfoExp");
+          for (let i = 0; i < statePopups.length; i++) {
+            statePopups[i].addEventListener("click", function () {
+              if (irre.style.display == "" || irre.style.display == "none") {
+                irre.style.display = "block";
+                irre.classList.add("boxDark");
+              }
               switch (i) {
                 case 0:
-                  console.log(irre.style.display);
-                  //
-                  if (
-                    irre.style.display == "" ||
-                    irre.style.display == "none"
-                  ) {
-                    console.log("invisible");
-                    irre.style.display = "block";
-                  } else {
-                    console.log("visible");
-                    irre.style.display = "none";
-                  }
+                  irreHead.innerHTML = "Comprehensive Policy";
+                  irre.innerHTML =
+                    "A comprehensive policy would place market-based limits and <b>incentives to reduce GHG emissions.</b> Programs include the Regional Greenhouse Gas Initiative in the northeast and cap policies on the west coast.";
+                  irreInfoExp.innerHTML =
+                    "<figure class='img-cont' style='margin: 0px 15%;'><img src='images/usa.png' alt='the united states of america' /></figure>";
 
                   break;
                 case 1:
-                  if (
-                    lobby.style.display == "" ||
-                    lobby.style.display == "none"
-                  ) {
-                    console.log("invisible");
-                    lobby.style.display = "block";
-                  } else {
-                    console.log("visible");
-                    lobby.style.display = "none";
-                  }
+                  irreHead.innerHTML = "Only 12 States";
+                  irre.innerHTML =
+                    "One key state lacking regulations is <b>Texas.</b> This state emits more GHGs than the entire petroleum and natural gas sector!";
+                  irreInfoExp.innerHTML =
+                    "<div class='flex-sec'><figure class='img-cont'><img src='images/tx_graph.png' alt='graph highlighting 13 percent'/></figure><div><h3 style='font-size: 1.5rem;'>Texas</h3><p>is responsible for 13% of U.S. sector emissions.</p></div></div>";
+
+                  break;
+                case 2:
+                  irreHead.innerHTML = "Varying Success";
+                  irre.innerHTML =
+                    "Even California, which is hailed as an example of a good cap-and-trade program, has <b>fallen victim to corporate lobbying.</b> This has resulted in inefficient policy.";
+                  irreInfoExp.innerHTML =
+                    "<figure class='img-cont' style='margin: 0px 33%;'><img src='images/california.png' alt='California state' /></figure>";
+
+                  break;
+              }
+            });
+          }
+
+          for (let i = 0; i < lobbyPopups.length; i++) {
+            lobbyPopups[i].addEventListener("click", function () {
+              if (lobby.style.display == "" || lobby.style.display == "none") {
+                lobby.style.display = "block";
+                lobby.classList.add("boxDark");
+              }
+              switch (i) {
+                case 0:
+                  lobbyHead.innerHTML = "What is Lobbying?";
+                  lobby.innerHTML =
+                    "To lobby is to promote or secure the passage of legislation by influencing public officials.";
+                  lobbyInfoExp.innerHTML = "";
+
+                  break;
+                case 1:
+                  lobbyHead.innerHTML = "Spending on Lobbying";
+                  lobby.innerHTML =
+                    "The 5 largest public oil and gas companies spend <b>$200 million</b> annually on lobbying.";
+                  lobbyInfoExp.innerHTML =
+                    "<figure class='img-cont'><img src='images/lobby_graph.png' alt='Graph showing top corporations' lobbying spending: BP 53 million, shell 49 million, exxonmobile 41 million, chevron 29 million, total 29 million'/></figure>";
+
+                  break;
+                case 2:
+                  lobbyHead.innerHTML = "ExxonMobil";
+                  lobby.innerHTML =
+                    "<b>ExxonMobil spent $30 million</b> on anti-climate change thinktanks and research.";
+                  lobbyInfoExp.innerHTML =
+                    "<span class='highlight'>$30</span><span style='font-weight: 700; font-size: 1.25rem; margin-left: .25rem;'>MILLION</span><p class='bodyBold'>COULD HAVE ESTABLISHED A 30 MEGAWATT SOLAR FARM</p>";
 
                   break;
               }
@@ -545,28 +695,31 @@ Water level GIF
 
         <div class="scroll-center parallax__group z1 txtLight">
           <section class="content" id="4">
-            <h1>What can I do?</h1>
-            <button id="nxtBut">WHAT'S NEXT</button>
+            <h1>What Can I Do?</h1>
+            <button id="nxtBut">Spread the Word</button>
           </section>
           <figure class="bg-img parallax__layer parallax__layer--deep">
             <img
               class="backbuild"
               src="images/full_background.png"
               style="margin-left: 100px;"
+              alt="view under water with sun and mountains in the background"
             />
           </figure>
           <figure class="bg-img parallax__layer parallax__layer--far">
             <img
               class="backbuild"
               src="images/back_buildings.png"
-              style="margin-left: 200px;"
+              style="margin-left: 125px;"
+              alt="2 further destroyed skyscrapers"
             />
           </figure>
           <figure class="bg-img parallax__layer parallax__layer--back">
             <img
               class="backbuild"
               src="images/front_building.png"
-              style="margin-right: 50px; margin-bottom: -50px;"
+              style="margin-right: 125px;"
+              alt="closer destroyed skyscraped"
             />
           </figure>
           <script>
@@ -607,68 +760,84 @@ Water level GIF
                 console.log(move);
               };
             }
-
-            // window.ondeviceorientation = function (event) {
-            //   var x = event.gamma;
-            //   var y = event.alpha;
-
-            //   let move = `translate(${x * 0.8}px,${y * 0.8}px)`;
-
-            //   for (let bg of bgAll) {
-            //     bg.style.transform = move;
-            //   }
-
-            //   console.log(move);
-            // };
           </script>
         </div>
 
         <div id="nxtStep" class="scroll-center parallax__group z1 txtDark">
-          <section class="content parallax__group">
+          <section class="content parallax__group" id="5">
             <div class="bg-vid parallax__layer parallax__layer--base">
-              <video autoplay preload muted>
-                <source src="images/water_receding.mp4" type="video/mp4" />
+              <video
+                id="vid"
+                poster="images/green_future.png"
+                src="images/water_receding.mp4"
+                type="video/mp4"
+                playsinline
+                autoplay
+                preload
+                muted
+              >
+                Your browser does not support the video tag.
               </video>
             </div>
-            <h2>Next Steps</h2>
+            <h2>SPREAD THE WORD</h2>
+            <div class="boxLight">
+              <p class="marginClear">
+                Share the message to put social pressure on corporations and
+                bring attention to what they are doing.
+              </p>
+            </div>
             <div id="socials">
               <a
-                href="https://nocapteam.github.io/"
-                class="twitter-share-button"
-                data-show-count="false"
-                >Tweet</a
+                target="_blank"
+                class="twt"
+                href="https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text=Let%27s%20hold%20corporations%20accountable%20in%20the%20climate%20crisis.&tw_p=tweetbutton&url=https://projectnocap.github.io/"
               >
+              <img src="images/icons8-twitter.svg" alt="twitter icon"></img>
+                <p>Tweet the Message</p>
+              </a>
+              <a
+                target="_blank"
+                class="fb"
+                href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=https%3A%2F%2Fprojectnocap.github.io%2F&display=popup&ref=plugin&src=share_button"
+              >
+                <img src="images/icons8-facebook.svg" alt="facebook icon"></img>
+                <p>Share on Facebook</p>
+              </a>
 
-              <div
-                class="fb-share-button"
-                data-href="https://nocapteam.github.io/"
-                data-layout="button"
-                data-size="small"
-              >
-                <a
-                  target="_blank"
-                  href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
-                  class="fb-xfbml-parse-ignore"
-                  >Share</a
-                >
-              </div>
+              <!-- <a
+              target="_blank"
+              id="copy"              
+              >          
+                <p>Copy URL</p>
+              </a> -->
+
+              <!-- <button id="copy" value="https://projectnocap.github.io/">
+                Copy URL
+              </button> -->
+
+              <script>
+                let nextButton = document.querySelector("#nxtBut");
+                let nextStep = document.querySelector("#nxtStep");
+                 let copy = document.querySelector("#copy");
+                let vid = document.querySelector("#vid");
+                nextButton.addEventListener("click", function () {
+                  nextStep.style.display = "block";
+                  vid.play();
+                  document
+                    .getElementById("5")
+                    .scrollIntoView({ behavior: "smooth" });
+                });
+
+                // copy.addEventListener("click", function () {
+                //   copy.select();
+                //   copy.setSelectionRange(0, 99999);
+                //   document.execCommand(
+                //     "copy",
+                //     "https://projectnocap.github.io/"
+                //   );
+                // });
+              </script>
             </div>
-
-            <a
-              class="twtTrig"
-              href="https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text=Static%20Template&tw_p=tweetbutton&url=file%3A%2F%2F%2FUsers%2FHuggie%2FDesktop%2Fcapstone%2Findex.html"
-            >
-              Actual Tweet
-            </a>
-
-            <script>
-              let nextButton = document.querySelector("#nxtBut");
-              let nextStep = document.querySelector("#nxtStep");
-              nextButton.addEventListener("click", function () {
-                //nextStep.style.visibility = "visible";
-                nextStep.style.display = "block";
-              });
-            </script>
           </section>
         </div>
       </main>
