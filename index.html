@@ -1,12 +1,192 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+<DOCTYPE <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Data Collection Form</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="styles.css" media="print"/>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background:#ffff;
+}
+article{
+  display: flex;
+  height:200vh;
+  justify-content:center;
+  align-items: center;
+  padding: 30px;
+  background:linear-gradient(135deg, #542ecf,#9b59b6)
+}
+.container{
+  max-width: 500px;
+  width:100%;
+  background:#ffffff;
+  padding: 30px 30px;
+  border-radius: 5px;
+
+}
+.container .title{
+  color:black;
+  margin-top:5px;
+  margin-bottom: 5px;
+  font-size:35px;
+  font-weight:500;
+  position:relative;
+}
+/* before and after selectors are used to adding some contents before the selected elements */
+.container .title::before{
+  content:" ";
+  position:absolute;
+  height:3px;
+  width:190px;
+  background:rgb(74, 54, 90);
+  left:0;
+  bottom:0;
+}
+.container form .user-details{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+margin:20px 0 12px 0;
+}
+form .user-details .input-box{
+  width: calc(100%/2-20px);
+}
+.user-details .input-box input{
+  height:30px;
+  width:150px;
+  outline:none;
+  border:2px groove #1d1b1d;
+  padding-left:5px;
+  font-size:16px;
+  border-radius:3px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box .details{
+  display: flex;
+  font-weight: 600;
+  margin-bottom:5px;
+}
+/*-- focus is used to style the elements that is currently targeted by the keyboard of by the mouse */
+  .user-details .input-box input:focus,
+  .user-details .input-box input:valid{
+  border-color:rgb(29, 3, 71);
+  }
+  .gender-details .gender-title{
+    font-size:30px;
+    font-weight: 500;
+  }
+  form .gender-details .categor{
+    display: flex;
+    width: 90%;
+    margin: 14px 20px;
+    justify-content: space-between;
+  }
+  .gender-details .categor label{
+    display: flex;
+    align-items: center;
+  }
+  .gender-details .categor .dot{
+    height: 20px;
+    width: 20px;
+    background:rgb(93, 93, 230);
+    border-radius:50%;
+    margin-right: 12px;
+    border: 5px solid rgb(233, 141, 225);
+  }
+  form .button input{
+    height: 30px;
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #542ecf,#9b59b6);
+  }
+  form .button input:hower{
+    background: linear-gradient(135deg, #542ecf,#9b59b6);
+  }
+  @media (max-width: 584px )
+  {
+    .container{
+      max-width: 100%;
+    }
+  form .user-details .input-box{
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    .user-details .categor{
+      width: 100%;
+    }
+    .container form .user-details{
+      max-height: 300px;
+      overflow: scroll;
+    }
+  }
+  </style> 
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+    <body>
+      <article>
+        
+        <div class="container">
+          <div class="title">Registration</div>
+          <form>
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Full Name</span>
+              <input type="text" placeholder="Enter your name" />
+            </div>
+            <div class="input-box">
+              <span class="details">User Name</span>
+              <input type="text" placeholder="Enter user name" />
+            </div>
+            <div class="input-box">
+              <span class="details">Email</span>
+              <input type="text" placeholder="Enter your email" />
+            </div>
+            <div class="input-box">
+              <span class="details">Phone Number</span>
+              <input type="text" placeholder="Enter Phone Number" />
+            </div>
+            <div class="input-box">
+              <span class="details">Password</span>
+              <input type="password" placeholder="Enter password" />
+            </div>
+            <div class="input-box">
+              <span class="details">Conform password</span>
+              <input type="password" placeholder="Conform your password" />
+            </div>
+          </div>
+        <div class="gender-details">
+          <span class="gender-title">Gender</span>
+          <div class="categor">
+            <label for="">
+              <span class="dot"></span>
+              <span class="gender">Male</span>
+            </label>
+            <label for="">
+                <span class="dot"></span>
+                <span class="gender">Female</span>
+              </label>  
+              <label for="">
+                  <span class="dot"></span>
+                  <span class="gender">Prefer not to say</span>
+                </label>      
+        </div>
+      </div>
+      <div class="button">
+      <input type="Submit" value="Register" >
+      </div>
+    </form>
+      </article>
+
+    </body>
 </html>
+
