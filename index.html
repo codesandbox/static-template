@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>
-      This is a static template, there is no bundler or bundling involved!
-    </h1>
-  </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title>收银台</title>
+    <!-- <link rel='stylesheet' href="./static/css/ifsp-payweb/main.css"> -->
+    <!-- scale.js解决rem适配 -->
+    <!-- <script src="./static/js/vconsole.min.js"></script> -->
+    <script src="./static/js/local/fullscreen.js"></script>
+    <script src="./static/js/local/scale.js"></script>
+    <script src="./static/js/jquery/jquery-3.1.0.min.js"></script>
+    <script src="./static/js/fastclick/fastclick.js"></script>
+    <script src="./static/js/local/jquery.qrcode.min.js"></script>
+    <script src="./static/js/config/request.config.js?v=1.0" defer></script>
+    <!-- 这三个上线需要重新加载 -->
+    <!-- <script src="./static/js/mer/common.js"></script>
+     <script src="./static/js/mobile/onecode/mer/main.js"></script>
+     <script src="./tmpSource/build/template.js"></script> -->
+    <script>
+        var rand = 20202026;
+        function loadStyle(url) {
+            var link = document.createElement('link');
+            link.type = 'text/css';
+            link.rel = 'stylesheet';
+            link.href = url;
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(link);
+        }
+        //  var rand = Math.random();
+        loadStyle('./static/css/ifsp-payweb/main.css?v=' + rand);
+    </script>
+    <script>
+        // var rand = Math.random();
+        var rand = 20202026;
+        document.writeln("<s" + "cript src='./static/js/local/common.js?v=" + rand + "'></scr" + "ipt>");
+        document.writeln("<s" + "cript src='./static/js/local/sensorInit.js?v=" + rand + "'></scr" + "ipt>");
+        document.writeln("<s" + "cript src='./tmpSource/build/template.js?v=" + rand + "'></scr" + "ipt>");
+        document.writeln("<s" + "cript src='./static/js/mobile/onecode/mer/main.js?v=" + rand + "'></scr" + "ipt>");
+    </script>
+</head>
+
+<body style="background-color:white;">
+
+</body>
+
 </html>
