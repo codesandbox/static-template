@@ -1,0 +1,18 @@
+/*TMODJS:{"version":188,"md5":"8c9e189f7bd51e8c10254d454fe011ed"}*/
+template('mobile/onecode/mer/remarkList',function($data,$filename
+) {
+'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,descList=$data.descList,desc=$data.desc,index=$data.index,$escape=$utils.$escape,openFlag=$data.openFlag,$out='';$out+='<style> .mock_bg { background-color: rgba(0,0,0,.6); position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 2; } .remarkConfirm2 { width: 6.68rem; background:rgba(255,255,255,1); border-radius:0.16rem; margin-top: 3rem; margin: 0rem auto; z-index: 10000; position: absolute; left: 0; right: 0; top: 2rem; /* padding: 0 .32rem; */ box-sizing: border-box; } .remarkConfirm2 p { margin: 0; } .remarkConfirm2 .title { height:0.88rem; line-height: .88rem; text-align: center; font-size:0.32rem; font-weight: bold; /* border-bottom: .01rem solid rgba(223,223,223,.5); */ } .remarkConfirm2 .submit { width: 100%; margin-top: .12rem; border-top: .02rem solid rgba(223,223,223,.5);; } .remarkConfirm2 .submit button { height:0.88rem; padding: 0; margin: 0; width: 49%; border: 0; background: #fff; border-radius: 0.16rem; outline:none; font-size:0.32rem; } .remark_list .input { width: 100%; padding:0.32rem; border: 0; background:rgba(242,242,242,1); border-radius:0.04rem; font-size:0.32rem; margin-bottom:.2rem; box-sizing: border-box; outline: 0; } .desc_label { display: flex; justify-content: space-between; font-weight:400; color:#666666; font-size:0.28rem; line-height: .52rem; } .remark_list { max-height: 5.3rem; overflow: scroll; /* position: relative; */ padding: 0 .32rem; /* -webkit-overflow-scrolling: touch; */ } /* 滑块 */ /* .remark_list::-webkit-scrollbar-thumb { background-color: #FFFFFF; background-clip: padding-box; -webkit-border-radius: 0.04rem; -moz-border-radius: 0.04rem; border-radius: 0.04rem; min-width: 0.08rem; } */ /* 轨道 */ /* .remark_list::-webkit-scrollbar-track { background-color: #DFDFDF; background-clip: padding-box; min-height: 5.12rem; width: 0.16rem; } */ span.required::before { padding-right: .1rem; content: \'*\'; color: #FA6B4B; } /* .remark_list ::after { content: \'\'; display: inline-block; width: .16rem; background: #DFDFDF; position: absolute; top: 0; bottom: 0; right: 0.02rem; } */ .scrollBar { text-align: center; background: #DFDFDF; position: absolute; top: 0.96rem; bottom: 0.88rem; right: 0.02rem; display: inline-block; width: .16rem; display: none; } .scrollBar .thumb { display: inline-block; width: 0.08rem; height: 0.48rem; background: #FFFFFF; border-radius: 0.04rem; position: absolute; left: 0.03rem; right: 0px; } </style> <div class="mock_bg"> <div class="remarkConfirm2"> <p class="title">添加备注</p> <div class="remark_list"> ';
+$each(descList,function(desc,index){
+$out+=' <div class="remark_item" > <p class="desc_label"><span class=';
+$out+=$escape(openFlag?'required':'not_required');
+$out+='>';
+$out+=$escape(desc.descInfo);
+$out+='</span> <span>0/30</span></p> <textarea class="input" cid=';
+$out+=$escape(index);
+$out+=' type="text" maxlength="30" rows=\'1\' spellcheck=true value=';
+$out+=$escape(desc.descDetail || '');
+$out+='></textarea> </div> ';
+});
+$out+=' <div class="scrollBar"> <div class="thumb"></div> </div> </div> <div class="submit"> <button @click="closeRemark(0)" id="remark_cancel2" class="cancel" style="color:rgba(34,37,41,0.73);border-right: .01rem solid rgba(223,223,223,.5);border-radius: 0.16rem 0 0 .16rem;" > 取消 </button> <button @click="closeRemark(1)" id="remark_ensure2" class=\'ensure\' style="color: #FA6B4B"> 确认 </button> </div> </div> </div>';
+return new String($out);
+});

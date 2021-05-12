@@ -1,0 +1,2 @@
+/*TMODJS:{"version":2,"md5":"1a4360d73d209b3723060e2827e96fcb"}*/
+template('mobile/onecode/mer/cover','<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta http-equiv="X-UA-Compatible" content="ie=edge"> <title>Document</title> </head> <body> </body> </html>');
