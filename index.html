@@ -127,7 +127,7 @@
         <span class="title">MY TO DO LIST</span>
         <div class="controller">
           <input id="input" type="text" placeholder="type your to do here" />
-          <button type="button" id="addOn">ADD</button>
+          <button type="submit" id="addOn">ADD</button>
         </div>
       </div>
       <div id="listPanel" class="panel">
@@ -136,6 +136,11 @@
     </div>
 
     <script>
+      const button = document.getElementById("addOn");
+      const input = document.getElementById("input");
+      const addList = document.getElementById("list");
+      const next = document.getElementsByClassName("dele");
+
       function newList() {
         const todo = document.getElementById("input").value;
         let li = document.createElement("li");
@@ -153,15 +158,8 @@
         }
       }
 
-      const button = document.getElementById("addOn");
       button.addEventListener("click", newList);
-
-      const input = document.getElementById("input");
       input.addEventListener("change", newList);
-
-      const addList = document.getElementById("list");
-
-      const next = document.getElementsByClassName("dele");
     </script>
   </body>
 </html>
