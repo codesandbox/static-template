@@ -105,9 +105,9 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(#000, #000 0 50%);
-  animation: shadow 15s infinite linear;
-  animation-delay: inherit;
+  /* background-image: radial-gradient(#000, #000 0 50%); */
+  /* animation: shadow 15s infinite linear; */
+  /* animation-delay: inherit; */
 }
 @keyframes shadow {
   0%, 48%, 53%, 100% {
@@ -228,4 +228,26 @@ body {
   to {
     transform: rotateY(-360deg);
  }
+}
+
+.ballShadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#000, rgba(5, 5, 5, 0) 10%);
+  animation: ballShadow 3 infinite ease-in; 
+  animation: shadow 15s infinite linear;
+  animation-delay: inherit;
+}
+@keyframes ballShadow {
+  0%,
+  100% {
+    transform: scale(10);
+    opacity: 0.1;
+  }
+  50% {
+    transform: scale(10);
+    opacity: 0.0;
+    animation-timing-function: ease-out;
+  }
 }
