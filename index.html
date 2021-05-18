@@ -1,12 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JS_my to do list</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+      html body {
+        height: 100%;
+        width: 100%;
+      }
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+      body {
+        background-color: #fbfbfb;
+        font-family: "Roboto", sans-serif;
+      }
+      #app {
+        width: 600px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+        border-radius: 30px;
+        box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.05);
+        padding: 60px 75px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      #inputPanel {
+        margin-bottom: 24px;
+      }
+      .title {
+        display: block;
+        font-size: 22px;
+        margin-bottom: 32px;
+        font-weight: bold;
+      }
+      .controller {
+        width: 450px;
+        height: 48px;
+        margin: auto;
+      }
+      #input {
+        width: 350px;
+        height: 48px;
+        border: 1px solid #c7c7c7;
+        border-radius: 8px 0px 0px 8px;
+        box-sizing: border-box;
+        float: left;
+        font-size: 16px;
+        padding: 15px;
+      }
+      input::placeholder {
+        color: #c7c7c7;
+      }
+      #addOn {
+        width: 100px;
+        height: 48px;
+        background-color: #238058;
+        box-sizing: border-box;
+        border-radius: 0px 8px 8px 0px;
+        float: left;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+      }
+      #listPanel {
+        width: 450px;
+        margin: auto;
+      }
+      li {
+        background-color: #ffeaaa;
+        width: 450px;
+        height: 48px;
+        list-style: none;
+        line-height: 40px;
+        font-size: 16px;
+        text-align: left;
+        text-transform: uppercase;
+        padding: 4px 4px 4px 40px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        z-index: 1;
+        position: relative;
+      }
+      li::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 8px;
+        background-color: white;
+        z-index: 5;
+        display: inline-block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
+      .dele {
+        float: right;
+        color: #b00020;
+        font-size: 16px;
+        font-weight: bold;
+        width: 97px;
+        height: 40px;
+        background-color: white;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .close {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="app">
+      <div id="inputPanel" class="panel">
+        <span class="title">MY TO DO LIST</span>
+        <div class="controller">
+          <input id="input" type="text" placeholder="type your to do here" />
+          <button type="submit" id="addOn">ADD</button>
+        </div>
+      </div>
+      <div id="listPanel" class="panel">
+        <ul id="list"></ul>
+      </div>
+    </div>
+
+    <script>
+      const button = document.getElementById("addOn");
+      const input = document.getElementById("input");
+      const addList = document.getElementById("list");
+      const next = document.getElementsByClassName("dele");
+
+      function newList() {
+        const todo = document.getElementById("input").value;
+        let li = document.createElement("li");
+        li.appendChild(document.createTextNode(todo));
+        let delBtn = document.createElement("span");
+        delBtn.className = "dele";
+        delBtn.setAttribute("onclick", 'parentElement.className="close"');
+        delBtn.appendChild(document.createTextNode("DEL"));
+
+        if (todo === "") {
+          return;
+        } else {
+          addList.appendChild(li).appendChild(delBtn);
+          input.value = "";
+        }
+      }
+
+      button.addEventListener("click", newList);
+      input.addEventListener("change", newList);
+    </script>
   </body>
 </html>
