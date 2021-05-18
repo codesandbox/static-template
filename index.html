@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+ 
+<h1>Tic Tac Toe</h1>
+
+  <div id="pos">
+    Player 1:
+    <input type="text" class="p" id="p1" name="p1" required />
+    <br />
+    <br />
+    Player 2:
+    <input type="text" class="p" id="p2" name="p2" required />
+
+    <br />
+    <br />
+
+    <label for="dimension">Select dimension:</label>
+
+    <select name="dimensions" id="dimensions">
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+    </select>
+
+    <button id="game-start" onclick="startGame()">Start Game</button>
+    <!-- <input id="reset" onclick="reset()" type="reset" value="Reset"> -->
+    <button id = "reset"  onclick="window.location.reload();" class="hide" >Replay</button>
+    <div id="game-container" >
+      <div id="turn"></div>
+    </div>
+  
+  
+    <script src="index.js"></script>
   </body>
 </html>
