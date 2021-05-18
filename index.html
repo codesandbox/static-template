@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="welcome-txt"><h2>Welcome Note...</h2></div>
+    <div class="tab">
+      <button class="tablinks" onclick="tabBar(event, 'Home')">Home</button>
+      <button class="tablinks" onclick="tabBar(event, 'News')">News</button>
+      <button class="tablinks" onclick="tabBar(event, 'Contact')">About</button>
+
+      <div id="Home" class="tabcontent">
+        <h1 style="margin-top: 50px;">hello</h1>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
