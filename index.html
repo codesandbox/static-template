@@ -1,12 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<!-- El input por defecto es un elemento inline, 
+esto quiere decir solo tomara el ancho de su contenido
+para mostrarse en el viewport,  permitiendo que otros elementos
+se posicionen al lado de el -->
+
+<!-- Contrario a los elementos inline, los elementos de bloque, como
+el <p>, toman siempre todo el ancho del viewport, indistintamente si su
+contenido interno llegara a necesitarlo, o no -->
+<DOCTYPE html>
+  <html>
+    <head>
+      <title>FORMULARIOS</title>
+      <link rel="Stylesheet" href="estilos.css" type="text/css"></link>
+    </head>
+    <body>
+      <form action="bas.txt" methot="get" >
+        <div class="barra"></div>
+        <h1 class= " disp posicion_tit">Formulario de acceso:</h1>
+        
+        <h4 class=" disp subtit user">User Name:</h4> 
+        <input class=" vertical_in1 posicion  input-moderno"type="text" placeholder="Ingresa tu username:" />
+        <h4 class="disp subtit pass">Password:</h4>
+        <input class=" subtit vertical_in2 posicion  input-moderno" type="password" placeholder="Ingresa tu password:" />
+        
+        <div>
+          <h4 class=" disp mail">E-mail:</h4>
+          <input class=" vertical_in3 posicion  input-moderno" type="email" placeholder="Ingresa tu email" />
+        </div>
+        
+        
+        
+        <div class="radio">
+          <fieldset >
+              <legend>Deseo recordar mis datos</legend>
+              <label>
+                  <input type="radio" name="opcion" value="si"> Si
+              </label>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              <label>
+                  <input type="radio" name="opcion" value="no" > No
+              </label>
+          </fieldset>
+        </div>
+        <div class= "disp">
+           <h4 class="fecha" >Fecha de nacimiento</h4>
+          
+          <input class="input-moderno date" type="date">  </input>
+        </div>
+        <div class="seleccion disp">Mi plato favorito es:</div>
+          <select class="input-moderno platos">
+            <option>Seleccione</option>
+            <option>Hamburguesa</option>
+            <option>Pasta</option>
+            <option>Mariscos</option>
+            <option>Pollo</option>
+
+          </select>
+
+          <button class="boton " type="submit"> submit</button>
+
+      </form>
+
+    </body>
 </html>
+
+
+
+<!-- INSTRUCCIONES PARA EL CHALLENGE -->
+<!-- 
+
+  Dale estilos a los diferentes inputs del formulario creando reglas CSS 
+  que agreguen un poco más de vida a lo presentado.
+
+  Por ejemplo, agrega la definición de esta clase dentro de 
+  la etiqueta <style>:
+
+  .input-moderno {
+    border: 2px solid black;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: lightpink;
+  }
+
+  Y luego asignala a alguno de los inputs de texto, de esta forma:
+
+  <input class="input-moderno" type="text" placeholder="Ingrega tu username:" />
+
+  observa como dejamos los otros
