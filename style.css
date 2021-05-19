@@ -1,0 +1,34 @@
+.item1 {
+  grid-area: header;
+}
+.item2 {
+  grid-area: Nav;
+}
+.item3 {
+  grid-area: Content;
+}
+
+.item4 {
+  grid-area: footer;
+}
+
+.grid-container {
+  display: grid;
+  /* grid-template-columns: repeat(6); */
+  grid-template-areas:
+    "header header header header header header"
+    "Nav Content   Content    Content    Content    Content "
+    "footer footer footer footer footer footer";
+  grid-gap: 10px;
+  background-color: pink;
+
+  padding: 10px;
+  height: 750px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
