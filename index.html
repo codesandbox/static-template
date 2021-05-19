@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div
+      style="
+        display: flex;
+        width: 100%;
+        height: 40rem;
+        border: 2px solid #cbd5e0;
+      "
+    >
+      <!-- Left element -->
+      <div style="align-items: center; display: flex; justify-content: center;">
+        Left
+      </div>
+
+      <!-- The resizer -->
+      <div
+        style="
+          background-color: #cbd5e0;
+          cursor: ew-resize;
+          height: 100%;
+          width: 4px;
+        "
+        id="dragMe"
+      ></div>
+
+      <!-- Right element -->
+      <div
+        style="
+          flex: 1;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+        "
+      >
+        Right
+      </div>
+    </div>
+    <script>
+      // Query the element
+      const resizer = document.getElementById("dragMe");
+      const leftSide = resizer.previousElementSibling;
+      const rightSide = resizer.nextElementSibling;
+
+      // The current position of mouse
+      let x = 0;
+      let y = 0;
+
+      // Width of left side
+      let leftWidth = 0;
+
+      // Handle the mousedown event
+      // that's triggered when user drags the resizer
+      const mouseDownHandler = function (e) {
+        // Get the current mouse position
+        x = e.clientX;
+        y = e.clientY;
+        leftWidth = leftSide.getBoundingClientRect().width;
+
+        // Attach the listeners to `document`
+        document.addEventListener("mousemove", mouseMoveHandler);
+        document.addEventListener("mouseup", mouseUpHandler);
+      };
+
+      // Attach the handler
+      resizer.addEventListener("mousedown", mouseDownHandler);
+    </script>
   </body>
 </html>
