@@ -1,12 +1,648 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>The Unanswered Question</title>
+
+    <style>
+      html {
+        background-color: hsl(0, 0%, 15%);
+      }
+      body {
+        font-family: Helvetica, sans-serif;
+        font-size: 20px;
+        line-height: 1.35;
+      }
+
+      section {
+        display: grid;
+      }
+
+      article {
+        max-width: 40rem;
+        padding: 1.5rem;
+        background-color: hsl(0, 60%, 95%);
+        border-radius: 0.5rem;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-weight: 100;
+        margin-block-end: 0;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      h3 {
+        font-size: 2rem;
+      }
+
+      h2 + p,
+      h3 + p {
+        padding-top: 0.25rem;
+        margin-top: 0.25rem;
+      }
+
+      .moe,
+      .emiko {
+        max-width: 20rem;
+        margin: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .moe q,
+      .emiko q {
+        display: block;
+        color: hsl(0, 0%, 15%);
+        font-size: 0.95rem;
+        font-weight: 600;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        border-top-left-radius: 0.1rem;
+      }
+
+      .moe q {
+        background-color: hsla(120, 60%, 80%, 1);
+      }
+
+      .emiko q {
+        background-color: hsla(180, 60%, 70%, 1);
+      }
+
+      [lang]:lang(en) {
+        quotes: "" "";
+      }
+
+      [lang]:lang(ja) {
+        quotes: "「" "」" "『" "』";
+      }
+
+      .book details {
+        margin: 2rem;
+        padding: 0.75rem;
+        border-radius: 0.25rem;
+      }
+
+      .book section {
+        background-color: hsl(0, 90%, 25%);
+        color: hsl(0, 0%, 95%);
+        margin: 0 -1rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border: 0.25rem solid white;
+      }
+    </style>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <section>
+      <article lang="en">
+        <h1>The Unanswered Question</h1>
+        <p>
+          One day a young man stops by a florist after work. His good friend was
+          sick and in hospital, so the young man planned on picking up some
+          flowers on his way to visit her in the afternoon. He works as a
+          labourer at a construction site so he starts work very early in the
+          morning and finishes in the afternoon. Even though the young man grew
+          up in a poor family and has been down on luck for most of his life, he
+          was a very thoughtful young man, just like his mother taught him to
+          be.
+        </p>
+        <p>
+          Since he was little, the young man had always been working to help
+          support his family. This is why he never finished school, and
+          therefore had no qualifications to get an office job in the city. If
+          the labour work at the construction site was unpleasant, he didn’t
+          complain because it put food on the table and paid the bills. However,
+          deep down inside he aspired to be an artist just like his mother, who
+          unfortunately passed away when he was very young. While he lived a
+          simple life as a labourer and didn&#39;t know very much about art, the
+          young man was optimistic that with enough hard work, one day he will
+          be able to study art and become an artist.
+        </p>
+        <p>
+          As he stood outside the florist peering into the big glass window, the
+          young man was filled with wonder by all the colourful flowers neatly
+          placed around the shop. After a few minutes of looking around and
+          composing himself again, he took a deep breath and stepped inside.
+          Never having set foot in a florist before, the young man was a bit
+          unsure about what to do next. He was also worried about all the dust
+          and dirt on his clothes from working on the construction site all day,
+          which he tried to clean off as best as he could before setting foot in
+          the shop. But all that changed once the florist who stood near the
+          counter gave him a beautiful bright smile, and beckoned him to come
+          into the store with a gentle motion of her hand.
+        </p>
+        <p>
+          “I didn’t realize that there would be so many flowers here! What
+          should I buy for my sick friend in hospital?” he asked the friendly
+          florist, a young woman about the same age as the friend he is
+          visiting. He remembered hearing people say that every flower has its
+          own meaning, but he wasn&#39;t sure what would be suitable for the
+          occasion. Yet as soon as he asked the question, a wave of regret swept
+          over him - he realised that he didn&#39;t have a lot of money to spend
+          on the flowers, and was embarrassed that the florist might end up
+          suggesting something that was too expensive for him.
+        </p>
+        <p>
+          “What do you think about these Oriental Lilies?” the florist pointed
+          to the star-shaped white and pink flowers near her feet. She explained
+          that the flowers represent the &quot;universal symbol of beauty,&quot;
+          which means that it is a safe choice for any kind of occasion. She
+          thought to herself, with a quiet smile, that the flower symbolized the
+          purity of heart, sweetness and virtue that seemed to match the young
+          man perfectly, but she kept this information to herself.
+        </p>
+        <aside class="discussion">
+          <div class="moe">Moé: <q>Why did she keep this to herself?</q></div>
+          <div class="emiko">
+            Emiko:
+            <q
+              >Maybe it wasn&#39;t just the young man who was too shy to talk to
+              the florist. And sometimes first impressions that you can have
+              about someone aren&#39;t always accurate. Perhaps the florist
+              wanted to wait and see what else the young man had to say before
+              making her judgement about his character.</q
+            >
+          </div>
+        </aside>
+        <p>
+          “They look wonderful, and smell lovely too!” It just occurred to the
+          young man that beauty does come in many different forms - whether it
+          is by sight, smell or touch. These were thoughts that never occurred
+          to him on the construction site with all the choking dust, deafening
+          noise and rough looking workmen going about their work. The smile on
+          the corner of her mouth, as the florist explained the flowers to him,
+          was intoxicating like the fragrance of the Oriental Lilies. You could
+          just tell that she loved flowers and that they were precious to her by
+          the way she talks about and handles them.
+        </p>
+        <aside class="discussion">
+          <div class="moe">
+            Moé:<q
+              >Why are the flowers precious to her? I meant why flowers in
+              general are precious to the florist, not just oriental lilies.</q
+            >
+          </div>
+          <div class="emiko">
+            Emiko:
+            <q
+              >Most people don&#39;t see plants the same way that they see
+              animals, but plants are living things and react to their
+              environment and other living things in a similar way that animals
+              do. The florist understands this and treats the flowers with a lot
+              of care and respect, just as she would with other people and
+              animals as well.</q
+            >
+          </div>
+        </aside>
+        <p>
+          Judging by the calloused hands fidgeting on torn sleeves of his dusty
+          work shirt and also the feet in those hole-filled shoes that were
+          constantly shuffling around, the florist could guess that the young
+          man was worried about the cost of the purchase. As if to reassure the
+          young man, she told him how she is also working hard to save some
+          money up at the moment.
+        </p>
+        <p>
+          “And the best thing is that the Oriental Lily isn’t an expensive
+          flower,” she said, “otherwise, I couldn’t afford to buy one for myself
+          once every month.”
+        </p>
+        <aside class="discussion">
+          <div class="moe">
+            Moé: <q>Why weren&#39;t they expensive if they are so beautiful?</q>
+          </div>
+          <div class="emiko">
+            Emiko:
+            <q
+              >Actually, Oriental Lilies are not exactly cheap flowers either.
+              You could probably buy a bouquet of 20-30 roses for the price of
+              10-15 stems of Oriental Lilies (depending on the variety, but
+              maybe the prices in Japan are different to other countries). And
+              since you only need to buy three or four to fit into a small vase
+              next to a bed in hospital it should be something that the young
+              man can afford.</q
+            >
+          </div>
+        </aside>
+        <p>
+          She then added: “I like making sketches and watercolour paintings of
+          them when I have some spare time.” He learnt that the florist was
+          going to art classes and studying to be an artist, which made the
+          young man quite excited, although he was too embarrassed to tell her
+          that he wanted to be an artist too. But he realises that the florist
+          didn&#39;t let her circumstances get in the way of her dreams, so he
+          was even more determined to pursue his goal.
+        </p>
+        <p>
+          “My name is Rose,” the florist said after he bought the flowers, “I
+          hope your friend makes a speedy recovery.” The sound of her words were
+          being replayed in his mind long after he left the store, as did the
+          image of her smile.
+        </p>
+        <p>
+          Since that brief encounter, the young man’s heart began to grow fond
+          of Rose, who he thought had the most beautiful smile and kind heart.
+          You see, this was a feeling that he had not experienced in his life
+          since his mother passed away. His father had left him soon after his
+          mother passed away, so his grandmother raised him as a young child.
+          However, as he was too shy and couldn&#39;t find another reason to
+          stop by the florist again, he would simply wave at her from afar when
+          he passed by on the way to and from work.
+        </p>
+        <aside class="discussion">
+          <div class="moe">
+            Moé:
+            <q
+              >Why does he not just tell her that he likes her? He can keep a
+              secret if he wants to surprise her, but why not tell her his
+              feelings about her?</q
+            >
+          </div>
+          <div class="emiko">
+            Emiko:
+            <q
+              >I believe there are two similar but different concepts that might
+              help explain the feeling of the young man, one is
+              &quot;恋の予感&quot; (the feeling that you will fall in love with
+              someone) and the other is &quot;一目惚れ&quot; (love at first
+              sight). The young man didn&#39;t immediately fall in love with the
+              florist when he set eyes on her, but as he got to know her better
+              and thought about his feelings more, he developed stronger
+              feelings for her. From that first meeting, he only had a feeling
+              that he might fall in love with the florist, which is why he
+              didn&#39;t say anything to her.</q
+            >
+          </div>
+        </aside>
+        <p>
+          As much as he wanted to tell Rose about the feelings he had inside, he
+          could see all the rich and well-dressed men that stop at the shop to
+          talk to the florist. Some of the men even offered to buy her flowers -
+          the more extravagantly they dressed, the more expensive flowers they
+          wanted to buy for her. However, he knew that her favourite flower was
+          the one that they would never care to look at. And so he would wave to
+          Rose and stop just long enough to see her smile and wave back and him
+          then continue on his way.
+        </p>
+        <aside class="discussion">
+          <div class="moe">
+            Moé:
+            <q>Why didn&#39;t the rich men not look at her favourite flower?</q>
+          </div>
+          <div class="emiko">
+            Emiko:
+            <q
+              >Often people like to express the value of something by its price
+              tag, and not how much it means to someone (in fact, some people
+              don&#39;t care about how expensive something is as long as they
+              like it). The rich men wanted to impress the florist by showing
+              her how much money they have, because they associate the price of
+              something with its value. This is why they deliberately chose the
+              most expensive flowers in the shop and didn&#39;t bother to look
+              at the less expensive flowers. Unfortunately they didn&#39;t think
+              about asking the florist what flowers she likes/values the
+              most.</q
+            >
+          </div>
+          <div class="moe">
+            Moé: <q>Is Rose&#39;s favourite flower the Oriental Lily?</q>
+          </div>
+          <div class="emiko">
+            Emiko:
+            <q
+              >We can safely assume that it is probably Rose&#39;s favourite
+              flower because she buys one every month and practices sketching
+              and painting them when she has time.</q
+            >
+          </div>
+        </aside>
+        <p>
+          One day the young man was browsing through the shelves of a second
+          hand bookstore. This was something he enjoyed doing in his very
+          limited spare time, especially since he could not afford to buy the
+          expensive art books (even at second hand prices).
+        </p>
+        <aside class="discussion">
+          <div class="moe">Moé: <q>What is his name?</q></div>
+          <div class="emiko">
+            Emiko:
+            <q
+              >I don’t think they gave a name for the young man, can you think
+              of one?</q
+            >
+          </div>
+          <div class="moe">
+            Moé: <q>How about Tim or Ben or Vince or Peter?</q>
+          </div>
+        </aside>
+        <p>
+          As he was rummaging through some old books on the shelf, an old
+          manuscript that was wedged between a couple of heavy tomes fell out
+          onto the floor with a puff of dust. The young man picked the
+          manuscript up off the floor, dusted off the cover of the book and read
+          the title of the book:
+        </p>
+        <details class="book">
+          <summary>From rose petals to origami flowers</summary>
+          <section>
+            <h2>From rose petals to origami flowers</h2>
+            <h3>Preface</h3>
+            <p>
+              By its very definition, origami is the folding of paper into a
+              shape or form, and paper is of course made from plant materials.
+              This can also include various types of flowers and its petals,
+              which already possess natural colours and patterns that are more
+              beautiful than what we are able to reproduce on paper. So while it
+              might not seem like an obvious starting material, for a discerning
+              origamist it may very well be the most logical choice.
+            </p>
+            <p>
+              The idea of making origami flowers from flower petals may sound
+              like an exercise in futility and frustration, since turning a
+              flower from its natural form to an origami model is a demanding
+              task that doesn’t necessarily increase its aesthetic appeal. Yet
+              like many artisans who choose to hone their skills on a seemingly
+              impossible task, the purpose for undertaking the task isn’t simply
+              about being able to complete it.
+            </p>
+            <p>
+              Previous enquiries made to verify if others had attempted or
+              achieved this feat failed to turn up any substantial information
+              or leads. However, one cannot dismiss the notion that there are
+              others who have also successfully tackled this exercise, even if
+              there are no florists or origamists that have come forward to
+              verify their attempts. The information documented below is a brief
+              description of how to use flower petals for origami, which
+              acknowledges the fact that not every flower is going to be
+              suitable for a particular type of origami model, and that success
+              is never a guarantee when working with such delicate and organic
+              raw materials. However, what is certain is that you will gain a
+              much greater appreciation for both flora and origami in the
+              process.
+            </p>
+            <h3>Summary</h3>
+            <p>
+              Preparing a flower petal into a material suitable for origami
+              essentially involves the removal of existing moisture so that it
+              can hold its shape when creased. This also requires you to press
+              the flower petal so it becomes more pliable but retains enough
+              moisture so that it is not too brittle when folded. Therefore the
+              origami model you decide to make determines the type of flower
+              used, and the preparation required (and vice versa). Due to the
+              various factors that impact the drying process of flower petals
+              (e.g. temperature, humidity, size of petals, etc.) the exact
+              timing is difficult to estimate precisely without a controlled
+              environment. In addition, this is a summary of the general process
+              for a rose petal but different types of flower will require
+              adjustments to the factors and variables that will be described in
+              more detail.
+            </p>
+            <h3>Selecting the flower</h3>
+            <p>
+              The primary considerations in selecting the types of flowers to
+              use for origami are based on the physical characteristics of the
+              flowers, as determined by the size, shape and thickness of the
+              flowers. Since larger flowers tend to also have a thicker and a
+              more fibrous composition (as well as more prominent veins running
+              through the petal), they become more brittle and hence more
+              difficult to fold when pressed and dried. Interestingly enough,
+              rose petals seem to have an optimal size and thickness when it
+              comes to making miniature origami cranes, as do certain types of
+              orchids. Pick petals that are larger and have less curvature as it
+              will reduce the available surface for folding and minimize the
+              distortion of its shape when pressed into a flat sheet.
+            </p>
+            <h3>Drying the petals</h3>
+            <p>
+              Make sure that all moisture from the surface of the petals is
+              removed by air drying them first. You can use a tissue or a cloth
+              to absorb excessive dew or moisture from the petals before air
+              drying. It is advisable to press dry the flowers using paper that
+              is thick and absorbent (such as blotting paper) and to place some
+              weight on top to help the petals retain a flat and smooth surface.
+              You may also need to change the paper because the moisture
+              retained in the paper used to press the petals can cause
+              discolouration of the petals as part of its natural decomposition
+              process.
+            </p>
+            <p>
+              Even if the flower petals are already quite flat you should still
+              press them, because in the process of drying they can sometimes
+              lose their original shape/form. A slow and gradual dehydration
+              process, which can be obtained using devices such as dehumidifiers
+              or materials like desiccants is also possible but may require a
+              more specialized set up.
+            </p>
+            <h3>Examining/testing the petals</h3>
+            <p>
+              Due to the different size of flower petals and the temperature or
+              humidity of the surrounding, you may need to regularly check the
+              progress of drying over a number of weeks. The most reliable way
+              for determining when the petals are dry enough is to take a small
+              sample from the same batch of flower petals you are drying and try
+              to make a crease. If the crease does not hold its shape or it
+              feels very soft in the fingertips then it is probably still too
+              moist. On the other hand, if folding the petal causes it to tear
+              apart then it is too dry. Another way to tell if the flower petal
+              is suitable for folding is to see if you can leave fingerprints on
+              the petals when you press your finger onto the surface. When there
+              is a small trace of moisture and pliability, It should leave a
+              very faint impression of your fingerprint, but if it is very
+              smooth and glossy it indicates that the petal is likely to be too
+              fragile and brittle.
+            </p>
+            <h3>Cutting the petals</h3>
+            <p>
+              Use a very sharp knife or scalpel to cut the flower petals into
+              the shape and size of the paper you need for the origami model.
+              Try and pick areas that don’t have a lot of, or have very thick
+              veins because it can be more difficult to cut or fold.
+            </p>
+            <h3>Making the origami model</h3>
+            <p>
+              This is where your skill and patience will be tested, as the paper
+              will be delicate and not easy to work with even when it is
+              optimally dried. However, if you are careful with the pre-creases
+              you will find that there is less stress and pressure put on the
+              model and you are less likely to cause tears at the creases.
+            </p>
+            <p>
+              If you suspect that the flower petal is going to be too dry or
+              brittle to work with, it is possible to try and moisten the
+              material with a very tiny bit of water and let it soak into the
+              petal. You can then test the consistency of the material by making
+              a pre-crease to see if it is still too dry to fold, or pressing
+              your finger onto the surface to see if the petal is too wet to
+              retain the crease when you fold it.
+            </p>
+          </section>
+        </details>
+        <p>
+          “Can you really make origami using flower petals?” he thought to
+          himself. The name of the author has long faded because of the age of
+          the book, so he wondered who would come up with such an idea and then
+          write a book about it. Curious to find out more, and eager for an
+          opportunity to talk to Rose again, he tucked the manuscript under his
+          arms and continued looking through the other art books in the shop.
+          The next day, the young man stopped by the florist with a big smile on
+          his face. “I am surprised that you actually stopped by the shop
+          today,” said Rose in a teasing manner, “do you have another friend you
+          have to visit at the hospital?” He didn’t quite catch the tone of her
+          voice, since he was so focused on showing the old manuscript to her
+          and then asking if she had ever heard of anything like this before,
+          and if it is something that is worth trying.
+        </p>
+        <aside class="discussion">
+          <div class="moe">
+            Moé:
+            <q
+              >Why did the young man not quite catch the tone of her voice? How
+              did she sound?</q
+            >
+          </div>
+          <div class="emiko">
+            Emiko:
+            <q
+              >The young man was only thinking about telling Rose about the
+              manuscript and what she thought about it, so he didn&#39;t pay as
+              much attention to what she was saying to him. This was
+              unfortunate, because Rose wanted to know if the young came back
+              because he wanted to see her, or if it was for another reason.
+              Sometimes people try very hard to impress a person that they like,
+              when all they really have to do is to listen more carefully and
+              show that they care :)</q
+            >
+          </div>
+        </aside>
+        <p>
+          “I am a florist and not an origami artist, but it does sound very
+          impressive…,” she said, sounding skeptical but also somewhat curious.
+          “But why do you want to do something like this?” Even though Rose
+          thought it was quite silly to try something like this, she
+          nevertheless gave him an encouraging smile, since the young man seemed
+          so determined to figure out if this was actually possible. So the
+          young man left the shop with a small bag of rose petals left over from
+          Valentine&#39;s Day from Rose with a mission to accomplish.
+        </p>
+        <p>
+          The young man had set his heart on surprising Rose with an origami
+          flower made from the rose petals, and he spent every spare moment he
+          had reading and experimenting with the techniques in the manuscript.
+          His rough and calloused hands, which are used to holding heavy tools
+          and working at the construction site, were clearly not made for
+          handling such delicate materials like flower petals. In fact he found
+          it to be much harder than the work that he has to do every day, but in
+          a different way. “But if I were to give up on this now, what chances
+          would I have of becoming an artist like my mother, and also like
+          Rose?” And because he would not give up on his goal to become an
+          artist so easily, he was also determined to keep trying with the
+          experiments.
+        </p>
+        <p>
+          Days went by, then weeks and months. The young man would walk by the
+          florist and wave, but he was not going inside the shop again until he
+          could show Rose the origami flower. But one day he walked past the
+          florist as usual and Rose was not there. “Maybe she is sick or just
+          taking some time off from work?” he thought to himself.
+        </p>
+        <p>
+          Days went by, then weeks and months. The young man would walk by the
+          florist as he always did, but the only reminder of Rose was the
+          Oriental Lilies that she loved so much on display inside the glass
+          window. “I wonder where she went…” the young man told the friend who
+          he visited at the hospital with the Oriental Lilies a while ago. The
+          young woman made a speedy recovery soon after his visit, and they
+          became closer friends ever since. She thinks that it had something to
+          do with watching the Oriental Lilies and taking her mind of the
+          illness, so she was very grateful for the young man’s thoughtful
+          visit. They would talk about many things but he never spoke to her
+          about the manuscript or his feelings about the florist.
+        </p>
+        <aside class="discussion">
+          <div class="moe">
+            Moé:
+            <q>What&#39;s her name? How about Emiko or Emma? I like Emma :)</q>
+          </div>
+        </aside>
+        <p>
+          “It’s funny you know,” she said to the young man, “there was a young
+          lady in my art class who had won a scholarship to study overseas not
+          long ago. But she had to sell everything that she owned and hardly had
+          any time to get organized before she had to leave.” &quot;And what was
+          her name?&quot; He asked, desperate to know if this was Rose on her
+          way to realising her dream of becoming an artist.
+        </p>
+        <p>
+          &quot;I don&#39;t really remember to be honest... but her name kind of
+          reminded me of a flower,&quot; she replied. &quot;Oh, and there was
+          something rather interesting she mentioned before she left. Something
+          about it being such a shame not to find out if it was really possible
+          to make origami using flower petals.&quot;
+        </p>
+        <aside class="discussion">
+          <div class="moe">
+            Moé:
+            <q
+              >Why did the story not end with the young man asking his friend,
+              &quot;Was her name Rose?&quot;</q
+            >
+          </div>
+          <div class="emiko">
+            Emiko:
+            <q
+              >I think the young man should have been more direct with his
+              question too, and he was probably also regretting not being more
+              open with his feelings about Rose.</q
+            >
+          </div>
+          <div class="moe">
+            Moé:
+            <q
+              >Also, I would like to keep reading this story, so can you write
+              another page?</q
+            >
+          </div>
+          <div class="emiko">
+            Emiko:
+            <q
+              >The title of the story is &quot;The unanswered question&quot;. Do
+              you think you know the answer to the question? How do you think
+              the story should end? Does it really need another page?</q
+            >
+          </div>
+          <div class="moe">
+            Moé:
+            <q
+              >I am curious about what happened to the young man and Rose. I
+              thought you could write more because it&#39;s fun to read. I think
+              the story should end with the young man marrying Rose.</q
+            >
+          </div>
+          <div class="emiko">
+            Emiko:
+            <q
+              >Do you think that the young man marrying Rose will result in a
+              happy ending? I think that this story has a happy ending because
+              Rose gets a chance to pursue her dream, and the young man will
+              also have time to also try and achieve his goal. And when they
+              eventually meet again, if the feelings that they had for each
+              other are still there, we will know that Rose and the young man
+              are meant to be together, don&#39;t you think?</q
+            >
+          </div>
+        </aside>
+      </article>
+    </section>
   </body>
 </html>
