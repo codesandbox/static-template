@@ -12,8 +12,16 @@
       }
       body {
         font-family: Helvetica, sans-serif;
-        font-size: 20px;
+        font-size: 110%;
         line-height: 1.35;
+      }
+
+      body .japanese {
+        font-size: 150%;
+      }
+
+      .japanese .book {
+        font-size: 20px;
       }
 
       section {
@@ -21,10 +29,11 @@
       }
 
       article {
-        max-width: 40rem;
-        padding: 1.5rem;
+        display: grid;
+        max-width: 30em;
+        padding: 1.5em;
         background-color: hsl(0, 60%, 95%);
-        border-radius: 0.5rem;
+        border-radius: 0.5em;
       }
 
       h1,
@@ -35,51 +44,44 @@
       }
 
       h1 {
-        font-size: 3rem;
+        font-size: 3em;
       }
 
       h2 {
-        font-size: 2.5rem;
+        font-size: 2.5em;
       }
 
       h3 {
-        font-size: 2rem;
+        font-size: 2em;
       }
 
       h2 + p,
       h3 + p {
-        padding-top: 0.25rem;
-        margin-top: 0.25rem;
+        padding-top: 0.25em;
+        margin-top: 0.25em;
       }
 
       .moe,
       .emiko {
-        max-width: 20rem;
-        margin: 1rem;
-        font-size: 0.9rem;
-      }
-
-      .moe q,
-      .emiko q {
-        display: block;
+        max-width: 20em;
+        margin: 1em;
+        font-size: 0.9em;
         color: hsl(0, 0%, 15%);
-        font-size: 0.95rem;
-        font-weight: 600;
-        padding: 0.75rem;
-        border-radius: 0.5rem;
-        border-top-left-radius: 0.1rem;
+        padding: 0.75em;
+        border-radius: 0.5em;
+        border-top-left-radius: 0.1em;
       }
 
-      .moe q {
+      .moe {
         background-color: hsla(120, 60%, 80%, 1);
       }
 
-      .emiko q {
+      .emiko {
         background-color: hsla(180, 60%, 70%, 1);
       }
 
       [lang]:lang(en) {
-        quotes: "" "";
+        quotes: "" " " "";
       }
 
       [lang]:lang(ja) {
@@ -87,24 +89,471 @@
       }
 
       .book details {
-        margin: 2rem;
-        padding: 0.75rem;
-        border-radius: 0.25rem;
+        margin: 2em;
+        padding: 0.75em;
+        border-radius: 0.25em;
       }
 
       .book section {
         background-color: hsl(0, 90%, 25%);
         color: hsl(0, 0%, 95%);
-        margin: 0 -1rem;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        border: 0.25rem solid white;
+        margin: 0 -1em;
+        padding: 1em;
+        border-radius: 0.5em;
+        border: 0.25em solid white;
       }
     </style>
   </head>
 
   <body>
     <section>
+      <article class="japanese" lang="ja">
+        <h1>答えは出ぬままに</h1>
+        <p>
+          ある日、仕事帰りにある花屋に立ち止まった青年がいた。工事現場の作業員として働く彼は、その日
+          も早朝から現場に入り、午後に仕事を終えたばかり。その足で病を患った入院中の友人を見舞おうと、
+          花を選ぶつもりでいた。彼は貧しい家庭に育ち運にも恵まれなかったが、母親が育てた通りの、思いや
+          りのある優しい青年だった。
+        </p>
+        <p>
+          幼い頃から家計を助けるために働いてきた彼は、学業を優先することができず、会社勤めを断念せざ
+          るを得なかった。現場作業員としての仕事は辛かったが、生活に必要な収入を得ることはできるため、
+          不平不満を言うことは一切ない。ただ彼は心の奥底で、若くして亡くなった母親と同じように、アーテ
+          ィストになる夢を抱いていたのである。日々慎ましやかに暮らしている彼に芸術の知識はなかった。し
+          かし懸命に働き続ければ、いつか勉強をする機会に恵まれ、アーティストへの道が拓けるだろうと前向
+          きに考えていた。
+        </p>
+        <p>
+          店先の大きなガラス越しから店内をうかがってみた青年は、整然と並べられた色とりどりの花々の様
+          子に圧倒された。しばらく美しい花々に見惚れていたが、冷静さを取り戻し、大きな深呼吸をしてから
+          、勇気を出して店内に足を踏み入れてみた。今まで花屋に一度も入ったことがなかった青年は、次に何
+          をすればいいのかわからない。その上、工事現場で着いた埃や土汚れが気になって仕方がなかった。店
+          内に入る前にできるだけ取り払ってはみたものの、完璧に汚れを落とすことはできなかった。そんな時
+          、カウンターの近くにいる花屋のスタッフが、満面の笑みを浮かべながら彼を店内へと手招きしてくれ
+          た。そんな彼女のまぶしい笑顔を見た途端に、彼の不安な気持ちはすっと消えていったのである。
+        </p>
+        <p>
+          青年は「こんなにもたくさんの種類の花があるんですね。入院している友人のお見舞いに行くんです
+          が、どんな花がおすすめですか」と、その友人と同年代ほどの親切な女性スタッフに尋ねてみた。そし
+          て「すべての花には花言葉があると聞いたことがあるんですが、お見舞いに適した花はどれでしょう
+          ？」と付け足したものの、途端に後悔の念にさいなまれた。高価な花を買うほどのお金を持っていない
+          彼は、スタッフが提案した花を買うことができなかったら、大恥をかくと思ったのである。
+        </p>
+        <p>
+          そんな時スタッフは「それなら、オリエンタルリリーはいかがですか？」と、自分の足元にある、星
+          型をしたホワイトとピンクの花を指差した。「オリエンタルリリーには、『美の普遍的シンボル』とい
+          う花言葉があります。なのでどんな場面においても差し障りはないと思いますよ」と微笑みながら言っ
+          た。彼女は心の中で、オリエンタルリリーが他に持つ「純朴な心」「優しさ」「美徳」という花言葉は
+          、まさにこの青年にぴったりだと思っていたが、その時は何も言わず、その思いをそっと胸の中に秘め
+          ておくことにした。
+        </p>
+        <aside class="discussion">
+          <div class="moe">
+            萌：<q>どうしてこの女の人はそのことを胸に秘めておいたの？</q>
+          </div>
+          <div class="emiko">
+            母：<q
+              >きっと引っ込み思案だったのは男性だけじゃなかったのよ。第一印象がいつも正しいとは限らな
+              いでしょう？　このお花屋さんは、青年のことをすぐに判断する代わりに、少し時間を置いてから、彼
+              がどんな人なのか、そしてどんなこと言うのか、聞いてみたたかったんだと思うの</q
+            >
+          </div>
+        </aside>
+        「綺麗な花ですね。とてもいい匂いがする」と青年は言いながら、その見た目の美しさをはじめ、かぐ
+        わしい香り、そしてなめらかな質感に惹きつけられた。そんな花を前に、「美しさ」とは実に様々な形
+        で表現されるものだと、彼は生まれて初めて気が付いたのである。荒々しい作業員達が働く騒音や埃に
+        まみれた工事現場では、こんなことを考えたのは未だかつて一度もない。花の説明をしている彼女の優
+        しい口調や口元の微笑みは、まるでオリエンタルリリーの芳香のように甘美だった。その上、彼女がと
+        にかく花が好きで、花が彼女にとって心から大切な存在であることは、その話し方や花を扱う丁寧な仕
+        草からも明らかだった。
+        <aside class="discussion">
+          <div class="moe">
+            萌：<q
+              >なんで彼女にとってお花は大切だったの？オリエンタルリリーだけじゃなく、お花すべてが大事
+              なの？</q
+            >
+          </div>
+          <div class="emiko">
+            母：
+            <q
+              >ほとんどの人は、動物を見るように植物を見ようとはしないわよね。でも実は植物にも命があっ
+              て、動物と同じように周りの環境に影響を受けるの。きっとこのお花屋さんは、そのことを知っている
+              んじゃないかしら。だからお花を丁寧に、大切に扱っているんだと思う。きっと彼女は、他の人や動物
+              にもとても優しく接するでしょうね</q
+            >
+          </div>
+        </aside>
+        <p>
+          そんな花屋の女性にとって、青年の手の厚くなった皮や、埃っぽい作業着の破れた袖、そして穴が開
+          き擦り減った靴を見れば、花の代金のことが気になるだろうというとは一目瞭然だった。彼女はそんな
+          青年の気を和らげようと、「自分もお金を貯めるために今は一生懸命働いている」ということをさりげ
+          なく伝えた。
+        </p>
+        <p>
+          「幸いオリエンタルリリーは高いお花ではありません。そうでないと、私も毎月一本ずつ、自分用に買
+          うことなんてできないですから」と彼女は続けた。
+        </p>
+        <aside class="discussion">
+          <div class="moe">
+            萌：<q>なんでそんなに綺麗なお花なのに高くないの？</q>
+          </div>
+          <div class="emiko">
+            母：<q
+              >本当はね、オリエンタルリリーは安いお花ではないの。20〜30本のバラの花束を買うお金では
+              、10〜15本のオリエンタルリリーしか買うことができないから（種類にもよるが、日本での価格は他の
+              国とは異なる場合もある）。でもお見舞いに持って行くことを考えると、病室には小さな花瓶しかない
+              だろうから、2〜3本もあれば十分ね。それならこの青年もきっと買えるはずよ</q
+            >
+          </div>
+        </aside>
+        <p>
+          女性はさらに「私は時間がある時に、オリエンタルリリーのスケッチや水彩画を描くのが好きなんで
+          す」と付け加えた。青年は彼女がアートクラスに通っていること、そしてアーティストになるために勉
+          強に励んでいると聞いて胸が高鳴った。でも自分も同じようにアーティストになりたいと思っているこ
+          とは、恥ずかしくてとても口にはできない。ただ、状況を顧みず、夢を叶えるために懸命に努力してい
+          る彼女の姿を見て、自分もいつか必ず目標を達成しようと心に誓ったのである。
+        </p>
+        <p>
+          青年が花を買った後、彼女は「私の名前はユリです」と名乗り、「お友達が一刻も早く退院されると
+          いいですね」と彼に伝えた。そうして店を出た青年の頭の中では、そんな彼女の優しい言葉とまぶしい
+          笑顔が、長い間何度も繰り返えされていた。
+        </p>
+        <p>
+          そのささやかなやり取りがあって以来、青年はユリのことが気になって仕方がなかった。あの美しい
+          笑顔や、優しさあふれる言葉がどうしても忘れられない。それは彼の母親が亡くなって以来、経験した
+          ことのない感情だった。母親の死から間もなく、彼の父親は息子の元を去り、青年は祖母に育てられた
+          。奥手な性格だった彼は、花屋にもう一度行く理由をどうしても見つけられない。できることと言った
+          ら、通勤途中に遠くからユリに手を振ることだけ。それだけで精一杯だった。
+        </p>
+        <aside class="discussion">
+          <div class="moe">
+            萌：<q
+              >なんで彼はユリのことを好きだってはっきりと言わないの？驚かせたいなら秘密にしておいても
+              いいけど、好きだって気持ちをなんで伝えないの？</q
+            >
+          </div>
+          <div class="emiko">
+            母：<q
+              >人を好きになる時には、ふた通りの感情があると思うの。それは似ているようで、ちょっと違う
+              想い。それがわかったら、萌にも青年の気持ちが説明できるかもしれない。一つは『恋の予感』という
+              、誰かを好きになりそうな時に感じる、ときめく想い。もう一つは『一目惚れ』といって、その人を見
+              た瞬間に恋に落ちること。彼はユリに一目惚れはしなかったでしょう？　でも彼女のことを知るうちに
+              、段々と好意を抱くようになったみたいね。最初に会った時は心がほんの少しときめいただけだったか
+              ら、何も言わなかったんじゃないかしら</q
+            >
+          </div>
+        </aside>
+        <p>
+          胸に秘めた想いをユリに伝えたくても、花屋に立ち寄る他の裕福そうな男たちが目に付いて、青年は
+          一向に足を踏み出せないでいた。男たちの中にはユリに花を贈ろうとする者もいるようだ。しかも高級
+          そうな身なりをしている男たちほど、高価な花を買おうとする。でも青年は、ユリの一番のお気に入り
+          の花は、男たちが見向きもしないものだということを知っている。そんな想いを胸に、彼はいつものよ
+          うにユリに手を振り、彼女が微笑みながら手を振り返すのを見届けてから、また帰途に着いた。
+        </p>
+        <aside class="discussion">
+          <div class="moe">
+            萌：<q
+              >なんで裕福な男の人たちは、ユリの好きなお花には見向きもしないの？</q
+            >
+          </div>
+          <div class="emiko">
+            母：<q
+              >きっとお金で物事の価値を判断する人が多いからじゃないかしら。でも人によっては、お金では
+              なく、自分にとってどれだけ意義のあるものかということで判断する人もいるの。中には自分が気に入
+              った物だったら、金額なんて関係ないっていう人もいるのよ。ただその裕福な男性たちは、自分がどれ
+              だけお金持ちかということを見せつけて、ユリの気を惹こうとしたんだと思う。彼らは金額が物の価値
+              を決めると思っているから、わざと一番高価なお花をユリに贈ろうとしたんじゃないかしら。ユリが一
+              番好きで大切にしているお花のことを、気にも留めなかったのは残念だけどね</q
+            >
+          </div>
+          <div class="moe">
+            萌：<q>ユリの一番のお気に入りはオリエンタルリリーなの？</q>
+          </div>
+          <div class="emiko">
+            母：<q
+              >ユリは毎月オリエンタルリリーを1本買って、時間のある時にスケッチや絵の勉強をするって言っ
+              ていたから、そう考えるのが自然かもしれないわね
+              　そんなある日のこと、青年はある古本屋で本を探していた。それは限れられた空き時間にできる、彼
+              の数少ない楽しみでもあった。金額の張るアートブックには、古本であっても手が出せないのでなおさ
+              らだ。</q
+            >
+          </div>
+          <div class="moe">萌：<q>青年の名前は何ていうの？</q></div>
+          <div class="emiko">
+            母：<q
+              >彼の名前はどこにも出てこないわね。なんて呼べばいいかしら？</q
+            >
+          </div>
+          <div class="moe">
+            萌：<q>ティム、ベン、ヴィンス、それかピーターはどう？</q>
+          </div>
+        </aside>
+        <p>
+          棚に陳列された古本をくまなく物色していると、2冊の学術書に挟まっていた年代物のある原稿が、埃
+          を立てながら床に落ちてきた。彼は床からその原稿をつまみ上げて、表紙の埃をそっと拭った。すると
+          その本の題名が目に入ってきたのである。それは、
+        </p>
+        <!--<p>『バラの花びらから折り花へ – 花を折る芸術』</p>-->
+        <details class="book">
+          <summary>From rose petals to origami flowers</summary>
+          <section>
+            <h2>From rose petals to origami flowers</h2>
+            <h3>Preface</h3>
+            <p>
+              By its very definition, origami is the folding of paper into a
+              shape or form, and paper is of course made from plant materials.
+              This can also include various types of flowers and its petals,
+              which already possess natural colours and patterns that are more
+              beautiful than what we are able to reproduce on paper. So while it
+              might not seem like an obvious starting material, for a discerning
+              origamist it may very well be the most logical choice.
+            </p>
+            <p>
+              The idea of making origami flowers from flower petals may sound
+              like an exercise in futility and frustration, since turning a
+              flower from its natural form to an origami model is a demanding
+              task that doesn’t necessarily increase its aesthetic appeal. Yet
+              like many artisans who choose to hone their skills on a seemingly
+              impossible task, the purpose for undertaking the task isn’t simply
+              about being able to complete it.
+            </p>
+            <p>
+              Previous enquiries made to verify if others had attempted or
+              achieved this feat failed to turn up any substantial information
+              or leads. However, one cannot dismiss the notion that there are
+              others who have also successfully tackled this exercise, even if
+              there are no florists or origamists that have come forward to
+              verify their attempts. The information documented below is a brief
+              description of how to use flower petals for origami, which
+              acknowledges the fact that not every flower is going to be
+              suitable for a particular type of origami model, and that success
+              is never a guarantee when working with such delicate and organic
+              raw materials. However, what is certain is that you will gain a
+              much greater appreciation for both flora and origami in the
+              process.
+            </p>
+            <h3>Summary</h3>
+            <p>
+              Preparing a flower petal into a material suitable for origami
+              essentially involves the removal of existing moisture so that it
+              can hold its shape when creased. This also requires you to press
+              the flower petal so it becomes more pliable but retains enough
+              moisture so that it is not too brittle when folded. Therefore the
+              origami model you decide to make determines the type of flower
+              used, and the preparation required (and vice versa). Due to the
+              various factors that impact the drying process of flower petals
+              (e.g. temperature, humidity, size of petals, etc.) the exact
+              timing is difficult to estimate precisely without a controlled
+              environment. In addition, this is a summary of the general process
+              for a rose petal but different types of flower will require
+              adjustments to the factors and variables that will be described in
+              more detail.
+            </p>
+            <h3>Selecting the flower</h3>
+            <p>
+              The primary considerations in selecting the types of flowers to
+              use for origami are based on the physical characteristics of the
+              flowers, as determined by the size, shape and thickness of the
+              flowers. Since larger flowers tend to also have a thicker and a
+              more fibrous composition (as well as more prominent veins running
+              through the petal), they become more brittle and hence more
+              difficult to fold when pressed and dried. Interestingly enough,
+              rose petals seem to have an optimal size and thickness when it
+              comes to making miniature origami cranes, as do certain types of
+              orchids. Pick petals that are larger and have less curvature as it
+              will reduce the available surface for folding and minimize the
+              distortion of its shape when pressed into a flat sheet.
+            </p>
+            <h3>Drying the petals</h3>
+            <p>
+              Make sure that all moisture from the surface of the petals is
+              removed by air drying them first. You can use a tissue or a cloth
+              to absorb excessive dew or moisture from the petals before air
+              drying. It is advisable to press dry the flowers using paper that
+              is thick and absorbent (such as blotting paper) and to place some
+              weight on top to help the petals retain a flat and smooth surface.
+              You may also need to change the paper because the moisture
+              retained in the paper used to press the petals can cause
+              discolouration of the petals as part of its natural decomposition
+              process.
+            </p>
+            <p>
+              Even if the flower petals are already quite flat you should still
+              press them, because in the process of drying they can sometimes
+              lose their original shape/form. A slow and gradual dehydration
+              process, which can be obtained using devices such as dehumidifiers
+              or materials like desiccants is also possible but may require a
+              more specialized set up.
+            </p>
+            <h3>Examining/testing the petals</h3>
+            <p>
+              Due to the different size of flower petals and the temperature or
+              humidity of the surrounding, you may need to regularly check the
+              progress of drying over a number of weeks. The most reliable way
+              for determining when the petals are dry enough is to take a small
+              sample from the same batch of flower petals you are drying and try
+              to make a crease. If the crease does not hold its shape or it
+              feels very soft in the fingertips then it is probably still too
+              moist. On the other hand, if folding the petal causes it to tear
+              apart then it is too dry. Another way to tell if the flower petal
+              is suitable for folding is to see if you can leave fingerprints on
+              the petals when you press your finger onto the surface. When there
+              is a small trace of moisture and pliability, It should leave a
+              very faint impression of your fingerprint, but if it is very
+              smooth and glossy it indicates that the petal is likely to be too
+              fragile and brittle.
+            </p>
+            <h3>Cutting the petals</h3>
+            <p>
+              Use a very sharp knife or scalpel to cut the flower petals into
+              the shape and size of the paper you need for the origami model.
+              Try and pick areas that don’t have a lot of, or have very thick
+              veins because it can be more difficult to cut or fold.
+            </p>
+            <h3>Making the origami model</h3>
+            <p>
+              This is where your skill and patience will be tested, as the paper
+              will be delicate and not easy to work with even when it is
+              optimally dried. However, if you are careful with the pre-creases
+              you will find that there is less stress and pressure put on the
+              model and you are less likely to cause tears at the creases.
+            </p>
+            <p>
+              If you suspect that the flower petal is going to be too dry or
+              brittle to work with, it is possible to try and moisten the
+              material with a very tiny bit of water and let it soak into the
+              petal. You can then test the consistency of the material by making
+              a pre-crease to see if it is still too dry to fold, or pressing
+              your finger onto the surface to see if the petal is too wet to
+              retain the crease when you fold it.
+            </p>
+          </section>
+        </details>
+        <p>
+          青年は「花びらの折り紙なんて、本当に作れるのだろうか？」と心の中で呟いた。作者の名前は時間
+          の経過とともに薄らいでしまい、読み取ることができない。彼は、一体どこの誰がそんなことを考えて
+          、本まで書いたのだろうと思った。もっと詳しく知りたいという気持ちと、ユリとまた話せるチャンス
+          になるかもしれないという想いから、青年は原稿を腕に挟み、他のアートブックへと関心を戻していっ
+          た。
+        </p>
+        <p>
+          その翌日、青年は顔一面に笑顔を浮かべながら花屋の店先に立ち止まった。「あら、ようやく立ち寄
+          ってくれたのね。今日は他のお友達のお見舞いに行くの？」と、ユリはいたずらな表情を浮かべながら
+          言った。でも青年は、折り花の原稿をユリに見せて、彼女がどう思うか、試す価値はあるかどうかと聞
+          くことに気を取られて、彼女の声のトーンをよく聞き取ることができなかった。
+        </p>
+
+        <aside class="discussion">
+          <div class="moe">
+            萌：<q>
+              なんで青年はユリの声のトーンをうまく聞き取れなかったの？ユリの声はどんな風に聞こえたの？</q
+            >
+          </div>
+          <div class="emiko">
+            母：<q>
+              多分青年は、ユリに原稿のことを伝えて彼女の意見を聞くことで頭がいっぱいだったのよ。だから
+              彼女が言うことはあまり耳に入ってこなかったんだと思う。タイミングが悪いわよね。もしかしたらユ
+              リは、自分に会うためにお花屋さんに来たのかどうかを、青年に聞きたかったのかもしれないのに。好
+              きな人に良く思われようと必死に自分のことばかり話すのではなく、その人の話にもっと耳を傾けたら
+              いいのにね。</q
+            >
+          </div>
+        </aside>
+        <p>
+          「私はあくまでも花屋だから折り紙のことはよくわからないけど、本当に実現できたらすごいことだと
+          思う。でもなんでこんなことを試そうと思ったの？」とユリは半信半疑ながら、どこか好奇心のある声
+          でそう答えた。ユリは心の中で、そんなことをするのは途方もないと思ったが、青年の意思が固いこと
+          を察し、終始笑顔で彼を励ますことに徹した。青年はユリから、先日のバレンタインデーの際に残った
+          バラの花びらが入った小さな包みをもらい、計画を実行に移すために店を出た。
+        </p>
+        <p>
+          青年は花びらの折り紙を完成させて、ユリを驚かせようと心に決めた。暇さえあれば原稿を読み、学
+          んだばかりの技術を試す日々が続いた。工事現場で重い道具を持つことに慣れた彼の手はゴツく、手の
+          皮は厚くて硬い。花びらのような繊細な材料を取り扱うには、不向きであることは明らかだった。事実
+          、ある意味青年にとっては、日々の重労働よりも、花びらを扱うことの方が困難を極めた。しかし「こ
+          こで諦めたら、母やユリのようなアーティストになるチャンスが消えてしまう」と自分に言い聞かせ、
+          一度決めた目標へと向かって、花びらを使った折り紙の製作に専念したのである。
+        </p>
+        <p>
+          そして日々は過ぎ、何ヶ月もの月日が経った。青年は花屋の前を通ってはユリに手を振るものの、折
+          り花をユリに見せることができるようになるまではと、店内に入ることは決してなかった。
+        </p>
+        <p>
+          しかしある日のこと、花屋の前を通り過ぎた時に、いつものようにユリが店内にいないことに気が付
+          いた。「気分が優れないのか、ただ休みを取っているだけだろう」と、青年は思った。
+        </p>
+
+        <p>
+          さらに月日が経ち、いつものように花屋の前を通り過ぎてはみたが、ユリの面影は、彼女がいつもウ
+          インドウに飾っていたお気に入りのオリエンタルリリーだけだった。
+        </p>
+        <p>
+          そんなある日、青年は以前入院していた女友達とたわいのない会話をしていた。お見舞い以降、体調
+          が素早く回復した彼女は、病室でオリエンタルリリーを眺めていたことによって気が紛れたと言う。そ
+          れが病状の回復を早めたような気がするので、青年が見舞いに来てくれたことに心から感謝しているそ
+          うだ。そうして親友となった二人はいろいろなことを話題にしたが、青年は彼女に折り花の原稿のこと
+          や、ユリに対する想いを語ることはなかった。ただ青年はそれとなく、「花屋の彼女はどこに行ったん
+          だろう……」とつぶやいた。
+        </p>
+        <aside class="discussion">
+          <div class="moe">
+            萌：<q
+              >お友達の名前は何て言うの？　エミコ……それかエマはどう？　私、エマって名前が大好き。
+              　すると彼女は「そう言えばね……」と青年に言った。「私と同じアートのクラスに、最近奨学金をも
+              らって海外に留学した子がいたの。出発前に持っていたものを処分しないといけなかったから、とても
+              忙しそうだった。」</q
+            >
+          </div>
+        </aside>
+        <p>
+          青年はそれがアーティストとしての道を歩み始めたユリであるかを知りたい一心で、「その子の名前
+          は？」とさりげなく聞いてみた。
+        </p>
+        <p>
+          「名前はなんだっけ……
+          確か花の名前だったと思うんだけど……」と友人は答えた。「それにね、出発
+          前にこんなことを言っていたの。『花びらを使って折り紙が作れるかどうか、その答えがわからないま
+          まなのが残念だ』って……」
+        </p>
+
+        <aside class="discussion">
+          <div class="moe">
+            萌：<q
+              >物語の終わりに、青年はなんで「彼女の名前はユリだった？」って聞かなかったの？</q
+            >
+          </div>
+          <div class="emiko">
+            母：<q
+              >ママも、青年はもっとはっきりと聞くべきだったと思ってる。多分彼も、ユリへ自分の想いを打ち
+              明けるべきだったって後悔しているはず。</q
+            >
+          </div>
+          <div class="moe">
+            萌：<q>まだ物語の続きが読みたいな。あと１ページ書いてくれる？</q>
+          </div>
+          <div class="emiko">
+            母：<q
+              >この物語には『答えは出ぬままに』っていう題名が付いているの。萌には答えがわかった？　この
+              物語はどう終わるべきだと思う？　本当にもう1ページ必要かしら？</q
+            >
+          </div>
+          <div class="moe">
+            萌：<q
+              >青年とユリがどうなったのかが知りたいし、読むのが楽しいからもう1ページ書いて欲しいの。それ
+              に、二人が結婚したら嬉しいな。</q
+            >
+          </div>
+          <div class="emiko">
+            母：<q
+              >二人が結婚することが本当に幸せな結末だと思う？　ママは、ユリが自分の夢を叶えるチャンスを
+              掴んで、青年も自分の目標に向かって歩み出したから、物語は素敵な終わり方をしていると思うの。将
+              来二人が再会して、まだお互いへの気持ちが変わっていないようなら、ユリと青年は一緒になる運命な
+              んだって思うのではないかしら。萌はどう思う？</q
+            >
+          </div>
+        </aside>
+      </article>
+      <!--
       <article lang="en">
         <h1>The Unanswered Question</h1>
         <p>
@@ -353,141 +802,7 @@
           manuscript up off the floor, dusted off the cover of the book and read
           the title of the book:
         </p>
-        <details class="book">
-          <summary>From rose petals to origami flowers</summary>
-          <section>
-            <h2>From rose petals to origami flowers</h2>
-            <h3>Preface</h3>
-            <p>
-              By its very definition, origami is the folding of paper into a
-              shape or form, and paper is of course made from plant materials.
-              This can also include various types of flowers and its petals,
-              which already possess natural colours and patterns that are more
-              beautiful than what we are able to reproduce on paper. So while it
-              might not seem like an obvious starting material, for a discerning
-              origamist it may very well be the most logical choice.
-            </p>
-            <p>
-              The idea of making origami flowers from flower petals may sound
-              like an exercise in futility and frustration, since turning a
-              flower from its natural form to an origami model is a demanding
-              task that doesn’t necessarily increase its aesthetic appeal. Yet
-              like many artisans who choose to hone their skills on a seemingly
-              impossible task, the purpose for undertaking the task isn’t simply
-              about being able to complete it.
-            </p>
-            <p>
-              Previous enquiries made to verify if others had attempted or
-              achieved this feat failed to turn up any substantial information
-              or leads. However, one cannot dismiss the notion that there are
-              others who have also successfully tackled this exercise, even if
-              there are no florists or origamists that have come forward to
-              verify their attempts. The information documented below is a brief
-              description of how to use flower petals for origami, which
-              acknowledges the fact that not every flower is going to be
-              suitable for a particular type of origami model, and that success
-              is never a guarantee when working with such delicate and organic
-              raw materials. However, what is certain is that you will gain a
-              much greater appreciation for both flora and origami in the
-              process.
-            </p>
-            <h3>Summary</h3>
-            <p>
-              Preparing a flower petal into a material suitable for origami
-              essentially involves the removal of existing moisture so that it
-              can hold its shape when creased. This also requires you to press
-              the flower petal so it becomes more pliable but retains enough
-              moisture so that it is not too brittle when folded. Therefore the
-              origami model you decide to make determines the type of flower
-              used, and the preparation required (and vice versa). Due to the
-              various factors that impact the drying process of flower petals
-              (e.g. temperature, humidity, size of petals, etc.) the exact
-              timing is difficult to estimate precisely without a controlled
-              environment. In addition, this is a summary of the general process
-              for a rose petal but different types of flower will require
-              adjustments to the factors and variables that will be described in
-              more detail.
-            </p>
-            <h3>Selecting the flower</h3>
-            <p>
-              The primary considerations in selecting the types of flowers to
-              use for origami are based on the physical characteristics of the
-              flowers, as determined by the size, shape and thickness of the
-              flowers. Since larger flowers tend to also have a thicker and a
-              more fibrous composition (as well as more prominent veins running
-              through the petal), they become more brittle and hence more
-              difficult to fold when pressed and dried. Interestingly enough,
-              rose petals seem to have an optimal size and thickness when it
-              comes to making miniature origami cranes, as do certain types of
-              orchids. Pick petals that are larger and have less curvature as it
-              will reduce the available surface for folding and minimize the
-              distortion of its shape when pressed into a flat sheet.
-            </p>
-            <h3>Drying the petals</h3>
-            <p>
-              Make sure that all moisture from the surface of the petals is
-              removed by air drying them first. You can use a tissue or a cloth
-              to absorb excessive dew or moisture from the petals before air
-              drying. It is advisable to press dry the flowers using paper that
-              is thick and absorbent (such as blotting paper) and to place some
-              weight on top to help the petals retain a flat and smooth surface.
-              You may also need to change the paper because the moisture
-              retained in the paper used to press the petals can cause
-              discolouration of the petals as part of its natural decomposition
-              process.
-            </p>
-            <p>
-              Even if the flower petals are already quite flat you should still
-              press them, because in the process of drying they can sometimes
-              lose their original shape/form. A slow and gradual dehydration
-              process, which can be obtained using devices such as dehumidifiers
-              or materials like desiccants is also possible but may require a
-              more specialized set up.
-            </p>
-            <h3>Examining/testing the petals</h3>
-            <p>
-              Due to the different size of flower petals and the temperature or
-              humidity of the surrounding, you may need to regularly check the
-              progress of drying over a number of weeks. The most reliable way
-              for determining when the petals are dry enough is to take a small
-              sample from the same batch of flower petals you are drying and try
-              to make a crease. If the crease does not hold its shape or it
-              feels very soft in the fingertips then it is probably still too
-              moist. On the other hand, if folding the petal causes it to tear
-              apart then it is too dry. Another way to tell if the flower petal
-              is suitable for folding is to see if you can leave fingerprints on
-              the petals when you press your finger onto the surface. When there
-              is a small trace of moisture and pliability, It should leave a
-              very faint impression of your fingerprint, but if it is very
-              smooth and glossy it indicates that the petal is likely to be too
-              fragile and brittle.
-            </p>
-            <h3>Cutting the petals</h3>
-            <p>
-              Use a very sharp knife or scalpel to cut the flower petals into
-              the shape and size of the paper you need for the origami model.
-              Try and pick areas that don’t have a lot of, or have very thick
-              veins because it can be more difficult to cut or fold.
-            </p>
-            <h3>Making the origami model</h3>
-            <p>
-              This is where your skill and patience will be tested, as the paper
-              will be delicate and not easy to work with even when it is
-              optimally dried. However, if you are careful with the pre-creases
-              you will find that there is less stress and pressure put on the
-              model and you are less likely to cause tears at the creases.
-            </p>
-            <p>
-              If you suspect that the flower petal is going to be too dry or
-              brittle to work with, it is possible to try and moisten the
-              material with a very tiny bit of water and let it soak into the
-              petal. You can then test the consistency of the material by making
-              a pre-crease to see if it is still too dry to fold, or pressing
-              your finger onto the surface to see if the petal is too wet to
-              retain the crease when you fold it.
-            </p>
-          </section>
-        </details>
+        
         <p>
           “Can you really make origami using flower petals?” he thought to
           himself. The name of the author has long faded because of the age of
@@ -643,6 +958,6 @@
           </div>
         </aside>
       </article>
-    </section>
+    --></section>
   </body>
 </html>
