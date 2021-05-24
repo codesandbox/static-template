@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="main-container">
+      <div class="container top">
+        <h1>Weather App</h1>
+        <form action="" onsubmit="return false">
+          <input type="text" class="search" placeholder="Search by City Name" />
+          <button type="submit" class="btn">Submit</button>
+          <p class="error"></p>
+        </form>
+        <section>
+          <div class="container">
+            <div class="icon">
+              <img src="" alt="" class="weather-icon">
+            </div>
+            <div class="location">
+              <div class="city">New York, US</div>
+              <div class="date">Thursday, Nov 26 2020</div>
+            </div>
+            <div class="current">
+              <div class="temp">Temp: 25<span>&#176 C</span></div>
+              <div class="weather">Weather: Sunny</div>
+              <div class="temp-range">Temp-Range: 10 &#176/ 15 &#176</div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
