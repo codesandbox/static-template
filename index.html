@@ -1,12 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sopa de letras</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="caja">
+        <div class="divTitulos">
+            <h1>Palabras</h1>
+        </div>
+
+        <h3>Para ver la definición de la palabra hacer clic sobre ella</h3>
+        <br />
+        <ol type="1">
+            <li
+                onclick="alert('HTML es un lenguaje de marcado que se utiliza para el desarrollo de páginas de Internet. Se trata de la siglas que corresponden a HyperText Markup Language, es decir, Lenguaje de Marcas de Hipertexto”')">
+                HTML
+            </li>
+            <li onclick="alert('DIV de division Sirve para crear secciones o agrupar contenidos')">
+                DIV
+            </li>
+            <li
+                onclick="alert('BODY representa el contenido de un documento HTML. Solo puede haber un elemento body en un documento.')">
+                BODY
+            </li>
+            <li onclick="alert('STYLE Permite especificar información de estilo. Por defecto, estilos CSS.')">
+                STYLE
+            </li>
+            <li onclick="alert('ALIGN Alineación del texto')">ALIGN</li>
+            <li onclick="alert('ETIQUETA: son  códigos para dar instrucciones al navegador web sobre')">
+                ETIQUETA
+            </li>
+            <li onclick="alert('IMG: ETIQUETA para añadir imágenes al documento')">
+                IMG
+            </li>
+            <li onclick="alert('BR:  etiqueta para saltos de linea')">BR</li>
+            <li onclick="alert('HEAD:  Etiqueta con información sobre el documento')">
+                HEAD
+            </li>
+            <li onclick="alert('WEB: Conjunto de información que se encuentra en una')">
+                WEB
+            </li>
+            <li
+                onclick="alert('WWW: sigla de la expresión World Wide Web red informatica mundial, sistema lógico de acceso y búsqueda de la información disponible en internet.')">
+                WWW
+            </li>
+            <li
+                onclick="alert('SCRIPT: es un término informal que se usa para designar a un programa relativamente simple.')">
+                SCRIPT
+            </li>
+            <li onclick="alert('INTERPRETE: es un programa informático capaz de analizar y ejecutar otros programas.')">
+                INTERPRETE
+            </li>
+            <li
+                onclick="alert('PROGRAMACIÓN: es el proceso utilizado para idear y ordenar las acciones necesarias para realizar un proyecto, preparar ciertas máquinas o aparatos para que empiecen a funcionar en el momento y en la forma deseados o elaborar programas para su empleo en computadoras.')">
+                PROGRAMACIÓN
+            </li>
+            <li
+                onclick="alert('CSS: es un lenguaje usado para definir la presentación de un documento estructurado escrito en HTML y derivados.')">
+                CSS
+            </li>
+            <li
+                onclick="alert('XML: es un metalenguaje que permite definir lenguajes de marcas desarrollado por el World Wide Web')">
+                XML
+            </li>
+            <li onclick="alert('USUARIO: es una persona que utiliza una computadora o un servicio de red.')">
+                USUARIO
+            </li>
+            <li
+                onclick="alert('INTERNET:  es un conjunto descentralizado de redes de comunicación interconectadas que utilizan la familia de protocolos TCP/IP, lo cual garantiza que las redes físicas heterogéneas que la componen constituyen una red lógica única de alcance mundial.')">
+                INTERNET
+            </li>
+            <li onclick="alert('LINK: etiqueta para vincular el sitio a hojas de estilo o iconos')">
+                LINK
+            </li>
+            <li
+                onclick="alert('SERVIDOR: es un programa informático que procesa una aplicación del lado del servidor, realizando conexiones bidireccionales o unidireccionales y síncronas o asíncronas con el cliente y generando o cediendo una respuesta en cualquier lenguaje o aplicación del lado del cliente.')">
+                SERVIDOR
+            </li>
+        </ol>
+    </div>
+    <div id="mtabla" class="caja">
+        <h1>Tabla generada</h1>
+        <button onclick="generaTabla()">Crear y llenar la tabla</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
 </html>
