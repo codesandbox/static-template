@@ -1,0 +1,238 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 800px;
+  overflow: hidden;
+}
+
+.fall {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: fallRotate 42s infinite linear;
+}
+@keyframes fallRotate {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.wall {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  transform-style: preserve-3d;
+  background-image: linear-gradient(#0007, #000c);
+  animation: move 15s infinite linear;
+  bottom: -210px;
+}
+.wall:nth-child(odd) {
+  left: -10px;
+  transform: translate(-50%, 50%) rotateY(90deg) rotateX(45deg) translatez(-20px) translateY(-220px);
+}
+.wall:nth-child(even) {
+  left: 10px;
+  transform: translate(-50%, 50%) rotateY(-90deg) rotateX(45deg) translatez(-20px) translateY(-220px);
+}
+.wall:nth-child(1) {
+  animation-delay: -1.5s;
+  background-color: #ef8f8f;
+}
+.wall:nth-child(2) {
+  animation-delay: -3s;
+  background-color: #efc98f;
+}
+.wall:nth-child(3) {
+  animation-delay: -4.5s;
+  background-color: #dcef8f;
+}
+.wall:nth-child(4) {
+  animation-delay: -6s;
+  background-color: #a3ef8f;
+}
+.wall:nth-child(5) {
+  animation-delay: -7.5s;
+  background-color: #8fefb6;
+}
+.wall:nth-child(6) {
+  animation-delay: -9s;
+  background-color: #8fefef;
+}
+.wall:nth-child(7) {
+  animation-delay: -10.5s;
+  background-color: #8fb6ef;
+}
+.wall:nth-child(8) {
+  animation-delay: -12s;
+  background-color: #a38fef;
+}
+.wall:nth-child(9) {
+  animation-delay: -13.5s;
+  background-color: #dc8fef;
+}
+.wall:nth-child(10) {
+  animation-delay: -15s;
+  background-color: #ef8fc9;
+}
+@keyframes move {
+  from {
+    bottom: -1210px;
+  }
+  to {
+    bottom: 810px;
+  }
+}
+.wall > div {
+  position: absolute;
+  background-color: inherit;
+}
+.wall .ceil {
+  width: 80px;
+  height: 80px;
+  background-image: linear-gradient(#fff7, #fff0);
+  animation: wallCeil 15s infinite linear;
+  animation-delay: inherit;
+  overflow: hidden;
+}
+.wall .ceil::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#000, #0000 50%);
+  animation: shadow 15s infinite linear;
+  animation-delay: inherit;
+}
+@keyframes shadow {
+  0%, 48%, 53%, 100% {
+    opacity: 0;
+    transform: translateY(80px) scale(2);
+  }
+  50% {
+    opacity: 0.25;
+    transform: translateY(4px) scale(0.5);
+  }
+}
+.wall .top {
+  width: 80px;
+  transform: rotateX(90deg);
+  transform-origin: top;
+  background-image: linear-gradient(#0007, #fff7);
+  animation: wallHeight 15s infinite linear;
+  animation-delay: inherit;
+}
+.wall .bottom {
+  bottom: 0;
+  width: 80px;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  background-image: linear-gradient(#fff0, #000c);
+  animation: wallHeight 15s infinite linear;
+  animation-delay: inherit;
+}
+.wall .left {
+  bottom: 0;
+  height: 80px;
+  transform: rotateY(-90deg);
+  transform-origin: left;
+  background-image: linear-gradient(to bottom left, #fff3, #000c);
+  animation: wallWidth 15s infinite linear;
+  animation-delay: inherit;
+}
+.wall .right {
+  bottom: 0;
+  right: 0;
+  height: 80px;
+  transform: rotateY(90deg);
+  transform-origin: right;
+  background-image: linear-gradient(to bottom right, #fff3, #000c);
+  animation: wallWidth 15s infinite linear;
+  animation-delay: inherit;
+}
+@keyframes wallCeil {
+  0%, 49.75%, 55%, 100% {
+    transform: translateZ(20px);
+  }
+  50% {
+    transform: translateZ(10px);
+  }
+}
+@keyframes wallHeight {
+  0%, 49.75%, 55%, 100% {
+    height: 20px;
+  }
+  50% {
+    height: 10px;
+  }
+}
+@keyframes wallWidth {
+  0%, 49.75%, 55%, 100% {
+    width: 20px;
+  }
+  50% {
+    width: 10px;
+  }
+}
+
+.ballArm {
+  position: absolute;
+  bottom: -210px;
+  width: 20px;
+  height: 240px;
+  transform-origin: bottom;
+  transform-style: preserve-3d;
+  animation: armRotate 1.5s infinite linear alternate;
+}
+@keyframes armRotate {
+  from {
+    transform: translateX(-50%) rotate(-45deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(45deg);
+  }
+}
+
+.ball {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 10%;
+  transform-style: preserve-3d;
+  animation: ballRotateZ 1.5s infinite linear alternate;
+}
+@keyframes ballRotateZ {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(-45deg);
+  }
+}
+.ball::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: radial-gradient(circle at top, #fff, #222);
+  border-radius: 50%;
+  animation: ballRotateY 42s infinite linear;
+}
+@keyframes ballRotateY {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
