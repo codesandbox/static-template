@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200;1,400;1,500&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  font-size: 50px;
+  font-weight: 800;
+}
+
+h2:after {
+  content: "";
+  height: 5px;
+  width: 225px;
+  background-color: #fff;
+  display: block;
+  margin: auto;
+  letter-spacing: 1.5px;
+}
+
+body > table {
+  width: 80%;
+}
+
+table {
+  border-collapse: collapse;
+}
+table.list {
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even),
+table.list thead > tr {
+  background-color: #dddddd;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #0000ee;
+  margin-right: 4px;
+}
+
+span.validation-error {
+  color: red;
+  margin-left: 5px;
+}
+
+.hide {
+  display: none;
+}
+
+#shopping {
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("image1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+#shopping .content {
+  max-width: 800px;
+  text-align: center;
+}
+
+#shopping .content h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.shoppingForm {
+  width: 40%;
+  padding: 40px;
+  background: #fff;
+}
+
+.shoppingForm h2 {
+  font-size: 30px;
+  color: #333;
+  font-weight: 500;
+}
+
+.shoppingForm .inputBox {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.shoppingForm .inputBox input {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #333;
+  outline: none;
+}
+
+.shoppingForm .inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  color: #666;
+}
+
+.shoppingForm .inputBox input:focus ~ span,
+.shoppingForm .inputBox input:valid ~ span {
+  color: #e91e63;
+  font-size: 12px;
+  transform: translateY(-20px);
+}
+
+.shoppingForm .addBtn input[type="submit"] {
+  width: 100px;
+  background: #00bcd4;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.shopping-table {
+  border-style: solid;
+  padding: 20px;
+  margin: auto;
+  width: 70%;
+}
+
+.shopping-table h2 {
+  font-size: 30px;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  #shopping {
+    padding: 50px;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  .shoppingForm {
+    width: 100%;
+  }
+
+  .shopping-table {
+    width: 100%;
+  }
+}
