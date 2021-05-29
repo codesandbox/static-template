@@ -1,12 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
+<html>
+<head>
+  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+    <title>
+        My shopping list app
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <div id="shopping">
+        <div class="content">
+          <h2>My Shopping List</h2>
+        </div>
+        <div class="shoppingForm">
+          <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+            <h2>Shopping List</h2>  
+            <div class="inputBox">            
+                  <input type="text" name="item" id="item" required="required" />
+                  <span>Item</span><span class="validation-error hide" id="itemValidationError">This field is required.</span>
+              </div>
+              <div class="inputBox">        
+                  <input type="text" name="quantity" id="quantity" required="required" />
+                  <span>Quantity</span>
+              </div>
+              <div class="inputBox">            
+                  <input type="text" name="description" id="description" required="required" />
+                  <span>description</span>
+              </div>        
+              <div  class="addBtn">
+                  <input type="submit" value="Add">
+              </div>
+          </form>
+        </div>
+      </div>
+    <br/>
+    <div class = "shopping-table">
+      <h2>Shopping Items</h2>
+      <table class="list" id="itemList">
+          <thead>
+              <tr>
+                  <th>Item</th>
+                  <th>Quantity</th>
+                  <th>Description</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+      </table>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
 </html>
+
+
