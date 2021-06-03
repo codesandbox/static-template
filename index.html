@@ -1,12 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <style>
+      .grid {
+        display: grid;
+        /* grid-template-columns: repeat(5, 1fr); */
+        grid-template-columns: minmax(50px, 100px) 3fr 2fr 2fr 3fr;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+      }
+
+      .grid > span {
+        padding: 8px 4px;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+      .grid > span.header {
+        background-color: silver;
+        font-weight: bold;
+      }
+    </style>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="grid">
+      <span class="header">Id</span>
+      <span class="header">FullName</span>
+      <span class="header">Country</span>
+      <span class="header">Created at</span>
+      <span class="header">Email</span>
+
+      <span>0</span>
+      <span>AaronKris</span>
+      <span>Philippines</span>
+      <span>1991-05-23T14:19:51</span>
+      <span>Ophelia_Mitchell@karley.name</span>
+
+      <span>1</span>
+      <span>SimeonMcLaughlin</span>
+      <span>Singapore</span>
+      <span>2012-03-07T00:08:36</span>
+      <span>Sabrina_Barton@torey.net</span>
+
+      <span>2</span>
+      <span>Kelsie Shanahan</span>
+      <span>Brazil</span>
+      <span>1985-03-10T20:13:04</span>
+      <span>Karianne@salvatore.biz</span>
+    </div>
   </body>
 </html>
