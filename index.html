@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/vue.min.js"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="app">
+      <!--題目-->
+      <div class="img">
+        <img v-bind:src="exams[exam_index].img" />
+      </div>
+      <div class="container_03">
+        <p class="">{{ exams[exam_index].title }}</p>
+      </div>
+      <!--答題後按鈕-->
+      <button class="btn_01"></button>
+      <button class="btn_02"></button>
+      <div class="container_01">
+        <!--選項-->
+        <template v-for="option in exams[exam_index].options">
+          <div class="card" v-on:click="chose(option)">
+            <h3 class="title">{{option}}</h3>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
+          </div>
+        </template>
+      </div>
+    </div>
+    <!--<button class="btn_03"></button>
+    <div class="container_02"></div> -->
+    <script src="js/index.js"></script>
   </body>
 </html>
