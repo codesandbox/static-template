@@ -1,0 +1,95 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url("adventure-time-background-6.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.circle1
+{
+    width: 700px;
+    height: 700px;
+border: 12px solid black;
+    border-radius: 50%;
+}
+.circle2
+{
+    width:531px ;
+    height: 531px;
+    border: 85px solid rgb(255, 38, 0);
+    border-radius: 50%;
+}
+.circle3
+{
+    background-image: url("dial.png");
+    background-position: center;
+    background-size: 960px;
+    background-repeat: no-repeat;
+    width: 525px;
+    height: 523px;
+    border: 5px solid aqua;
+    border-radius: 50%;
+}
+
+.line1
+{
+    width: 190px;
+border-bottom: 7px solid #000;
+position: absolute;
+top: 50%;
+right: 50%;
+transform-origin: bottom left;
+animation: time 43200s infinite linear;
+left: 50%;
+}
+.line2
+{
+    width: 245px;
+    border-bottom: 7px solid #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom left;
+    /* animation: time 3600s infinite linear; */
+    animation: time 3600s infinite steps(60)
+
+}
+.line3
+{
+    width: 210px;
+    border-bottom: 2px solid red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom left;
+    /* animation: time 60s infinite linear; */
+    animation: time 60s infinite steps(60);
+}
+.center
+{
+    position: absolute;
+    margin-left: 254px;
+    margin-top: -12px;
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 25px;
+    height: 25px;
+    background-color: whitesmoke;
+    top:50%
+    
+}
+
+@keyframes time{
+    to{
+        transform:rotate(360deg)
+    }
+}
