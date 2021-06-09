@@ -1,12 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Keywordio</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <!-- <script src="https://code.highcharts.com/modules/exporting.js"></script> -->
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <big>AdHelp.io | Company name</big>
+      <big class="logout">Collaborate |<a href="#"> Logout</a></big>
+    </header>
+
+    <span id="main1">
+      Daily cost:<strong style="color: DodgerBlue;">SEK 1,000</strong> Projected
+      monthly budget:<strong style="color: DodgerBlue;">SEK 31,698</strong>
+    </span>
+
+    <select name="" id="select_Ads">
+        <option value="googleAds">Google Ads</option>
+        <option value="bingAds">Bing Ads</option>
+        <option value="facebookAds">Facebook Ads</option>
+        <option value="instagramAds">Instagram Ads</option>
+
+    </select>
+
+    <select name="range" id="range">
+        <option value=""disable selected hidden>Select Range</option>
+        <option value="1000">1000</option>
+        <option value="2000">2000</option>
+        <option value="3000">3000</option>
+    </select>
+</div>
+
+    <div class="contain">
+      <div class="container">
+        <div class="containerbox">
+          <span class="click">
+            Clicks
+            <i
+              class="far fa-smile"
+              style="font-size: 20px; color: green; background-color: white;"
+            ></i>
+          </span>
+
+          <span class="value">25,000</span>
+          <span
+            >Yaay!<span style="color: dodgerblue;">+5,000</span> than last
+            month</span
+          >
+        </div>
+
+        <div class="containerbox">
+          <span class="cost_box"
+            >Cost
+            <i
+              class="far fa-smile"
+              style="
+                font-size: 20px;
+                color: orangered;
+                background-color: white;
+              "
+            ></i>
+          </span>
+
+          <span class="value">29,256</span>
+          <span
+            >Oops!<span style="color: orangered;">-SEK 500 </span>than last
+            month</span
+          >
+        </div>
+
+        <div class="containerbox">
+          <span class="revenue"
+            >Revenue
+            <i
+              class="far fa-smile"
+              style="font-size: 20px; color: orange; background-color: white;"
+            ></i>
+          </span>
+
+          <span class="value">79,963</span>
+          <span
+            >Yaay! <span style="color: dodgerblue;">+500</span> than last
+            month</span
+          >
+        </div>
+
+        <div class="containerbox">
+          <span class="rate"
+            >Conversion rate
+            <i
+              class="far fa-grin-beam"
+              style="font-size: 20px; color: orange; background-color: white;"
+            ></i>
+          </span>
+
+          <span class="value">20%</span>
+          <span
+            >You are <span style="color: orangered;">+SEK 50</span> off the
+            target</span
+          >
+        </div>
+      </div>
+      <div class="info">
+        <h3>Top 3 performing Ads/URLs</h3>
+        <h5>(Based on most Conversions/Clicks)</h5>
+        <div class="infobox">
+          <ol>
+            <li>Nike Air|Sports Shoes|Summer Sale</li>
+            <li>Nike sport|Sports Shoes female|Summer Sale</li>
+            <li>Nike Air Max|Men's Shoes|Summer Sale</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <figure class="highcharts-figure">
+      <h3>Conversion summary</h3>
+      <div id="container"></div>
+    </figure>
+
+    <footer>
+      <button><i class="fab fa-facebook-f"></i>Advertise on Facebook</button>
+      <button id="slack"><i class="fab fa-slack"></i>Connect to Slack</button>
+      <button><i class="fas fa-lightbulb"></i>Knowledge centre</button>
+    </footer>
+    <script src="index.js"></script>
   </body>
 </html>
