@@ -1,12 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>National Geographic | Magazine</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <main class="magazine">
+        <small class="magazine__url"
+          >Nationalgeographic.com/magazine |
+          <span class="magazine__date">August 2009</span>
+        </small>
+
+        <h1 class="magazine__title">National Geographic</h1>
+
+        <section class="magazine__highlight">
+          <h2 class="highlight__title">
+            Yellowstone
+            <span class="title">Supervolcano</span>
+          </h2>
+          <p class="highlight__subtitle">What lies beneath the park</p>
+        </section>
+
+        <section class="magazine__topics">
+          <h3 class="topics__title topics__title--principal">
+            Heaven <br />
+            for Salmon
+            <span class="topics__page">28</span>
+          </h3>
+
+          <div class="divider"></div>
+
+          <h3 class="topics__title topics__title--secondary">
+            Nature's scam artist
+            <span class="topics__page">70</span>
+          </h3>
+
+          <div class="divider"></div>
+
+          <h3 class="topics__title topics__title--principal">
+            Can Venice <br />
+            Be Saved?
+            <span class="topics__page">88</span>
+          </h3>
+
+          <div class="divider"></div>
+
+          <h3 class="topics__title topics__title--secondary">
+            Camel Beauty Queens
+            <span class="topics__page">114</span>
+          </h3>
+        </section>
+      </main>
+    </div>
+
+    <footer class="attribution">
+      <figure class="attribution__image">
+        <img
+          src="https://pbs.twimg.com/profile_images/1401622184561233925/lEX0bCs5_400x400.jpg"
+          alt="Profile picture"
+          class="image"
+        />
+      </figure>
+      <div class="attribution__url">
+        With &hearts; by
+        <a class="url" href="https://github.com/alexcamachogz">Alex Camacho</a>
+      </div>
+    </footer>
   </body>
 </html>

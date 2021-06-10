@@ -1,0 +1,183 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@700&family=Playfair+Display:wght@500&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+/* Vars */
+:root {
+  --yellow: #fdc30f;
+  --orange: #ff8810;
+  --white: #ffffff;
+  --shadow: #222222;
+}
+
+/* Initialization */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  align-items: center;
+  background-color: var(--white);
+  color: var(--white);
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  height: 100vh;
+  justify-content: center;
+}
+
+/* Styles */
+.container {
+  background-image: url('https://images.justwatch.com/backdrop/11816636/s1920/yellowstone');
+  background-position: 75%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 25px solid var(--yellow);
+  box-shadow: 5px 5px 15px -8px rgba(0, 0, 0, 0.75);
+  height: 750px;
+  width: 500px;
+}
+
+.container:hover {
+  border-radius: 20px;
+}
+
+.divider {
+  border-bottom: 1px solid var(--white);
+  margin: 6px 0;
+  width: 50px;
+}
+
+.magazine {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.magazine .magazine__url {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  position: relative;
+  text-transform: uppercase;
+  top: -20px;
+}
+
+.magazine .magazine__date {
+  font-weight: 500;
+}
+
+.magazine .magazine__title {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Playfair Display', serif;
+  font-size: 6.2rem;
+  font-weight: 500;
+  line-height: 4.8rem;
+  position: relative;
+  text-align: center;
+  text-shadow: 2px 2px 2px var(--shadow);
+  text-transform: uppercase;
+  top: -90px;
+}
+
+.magazine .magazine__highlight {
+  position: relative;
+  right: 10px;
+  top: -40px;
+  width: 95%;
+}
+
+.magazine .magazine__highlight .highlight__title {
+  font-family: 'News Cycle', sans-serif;
+  font-size: 7.5rem;
+  line-height: 23px;
+  text-align: right;
+  text-shadow: 2px 2px 2px var(--shadow);
+}
+
+.magazine .magazine__highlight .highlight__title .title {
+  color: var(--orange);
+  font-size: 3rem;
+  position: relative;
+  right: 150px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.magazine .magazine__highlight .highlight__subtitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  left: 45px;
+  margin-top: 10px;
+  position: relative;
+  text-shadow: 2px 2px 2px var(--shadow);
+  text-transform: uppercase;
+}
+
+.magazine .magazine__topics {
+  align-self: flex-end;
+  padding-right: 15px;
+}
+
+.magazine .magazine__topics .topics__title {
+  font-family: sans-serif;
+}
+
+.magazine .magazine__topics .topics__title--principal {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 18px;
+}
+
+.magazine .magazine__topics .topics__title--secondary {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.magazine .magazine__topics .topics__title .topics__page {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+.attribution {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  color: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 10px;
+  width: 150px;
+}
+
+.attribution .attribution__image {
+  width: 50px;
+}
+
+.attribution .attribution__image .image {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.attribution .attribution__url .url {
+  color: var(--orange);
+  text-decoration: none;
+}
+
+.attribution .attribution__url .url:hover {
+  color: var(--yellow);
+}
