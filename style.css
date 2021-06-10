@@ -1,0 +1,94 @@
+body {
+  background-color: black;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.magazine {
+  border: 1px solid blue;
+  width: 800px;
+  height: 1200px;
+  margin: 15px auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-image: url(https://cdn.pixabay.com/photo/2016/10/11/21/43/geometric-1732847_1280.jpg);
+  rotate: 180;
+}
+
+.date,
+.footer {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 20px;
+  background-color: black;
+}
+
+.magazine-main {
+  height: 100%;
+}
+.name,
+.title,
+.numbers {
+  color: white;
+}
+.name {
+  display: flex;
+  padding: 20px;
+  padding-right: 35px;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.name p {
+  font-size: 25px;
+  font-weight: 600;
+}
+.name h1 {
+  font-size: 145px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.title *:first-child {
+  font-size: 50px;
+  margin-bottom: 40px;
+}
+
+.title p {
+  font-size: 70px;
+  font-weight: 700;
+  color: orange;
+  line-height: 0.9;
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+  margin-top: 80px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.numbers p:first-child {
+  color: orange;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.span-2 {
+  grid-column-end: -1;
+  grid-column-start: 1;
+}
+.footer {
+  align-items: flex-end;
+}
