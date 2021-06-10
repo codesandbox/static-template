@@ -1,0 +1,221 @@
+body {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(17, 25, 48, 1) 45%,
+    rgba(33, 36, 91, 1) 100%
+  );
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  text-shadow: 2px 2px 5px black;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.title:hover {
+  font-size: 52px;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 1;
+  font-style: italic;
+  text-shadow: 2px 2px 5px black;
+  margin: 0px;
+}
+
+.content {
+  /* background-image: url("https://i.pinimg.com/originals/b2/e0/d0/b2e0d0fb84e946df10f5dd65be6beb4d.jpg"); */
+  background-image: url("https://wallpaperaccess.com/full/1483808.jpg");
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 1vw;
+  margin-right: 32vw;
+  margin-left: 32vw;
+  border-radius: 5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #eecc41;
+}
+
+.survey-form {
+  margin-right: 2vw;
+  margin-left: 2vw;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.about1 {
+  grid-column: 1/3;
+  grid-row: 1;
+}
+.about2 {
+  grid-column: 1/3;
+  grid-row: 2;
+}
+.about3 {
+  grid-column: 1/3;
+  grid-row: 3;
+}
+.about4 {
+  grid-column: 4/6;
+  grid-row: 2/4;
+  padding-top: 3vw;
+}
+
+.titleAbout {
+  margin: 0px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  color: yellow;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-shadow: 2px 1px 3px black;
+  transition: 0.3s;
+}
+
+.titleAbout:hover {
+  font-size: 15px;
+}
+
+.descriptionAbout {
+  margin: 0px;
+  padding-top: 5px;
+  display: flex;
+  justify-content: flex-start;
+  color: white;
+  font-family: "Signika Negative", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  text-shadow: 1px 1px 1px black;
+}
+
+.contFooter {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.contFooterDiv {
+  grid-column: 1/3;
+  grid-row: 1;
+}
+
+.contFooterBar {
+  grid-column: 3/4;
+  grid-row: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.footerTitle {
+  margin: 0px;
+  padding-top: 40px;
+  font-family: "Oswald", sans-serif;
+  color: yellow;
+  text-shadow: 1px 1px 1px black;
+  font-size: 22px;
+}
+
+.footerDescription {
+  margin: 0px;
+  font-family: "Oswald", sans-serif;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  font-size: 16px;
+}
+
+.codeBar {
+  width: 70%;
+  height: auto;
+}
+
+@media (max-width: 1000px) {
+  .content {
+    margin-top: 10vw;
+    margin-right: 14vw;
+    margin-left: 14vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    margin-top: 1vw;
+    margin-right: 5vw;
+    margin-left: 5vw;
+  }
+  .title {
+    font-size: 35px;
+  }
+  .title:hover {
+    font-size: 37px;
+  }
+  .description {
+    font-size: 15px;
+  }
+  .footerDescription {
+    font-size: 12px;
+  }
+  .descriptionAbout {
+    font-size: 11px;
+  }
+  .titleAbout {
+    font-size: 14px;
+  }
+  .titleAbout:hover {
+    font-size: 15px;
+  }
+  .about {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+
+  .about1 {
+    grid-column: 1/3;
+    grid-row: 1;
+  }
+  .about2 {
+    grid-column: 1/3;
+    grid-row: 2;
+  }
+  .about3 {
+    grid-column: 1/3;
+    grid-row: 3;
+  }
+  .about4 {
+    grid-column: 3/5;
+    grid-row: 2/4;
+    padding-top: 15vw;
+  }
+
+  .content {
+    margin-top: 7vw;
+  }
+}
