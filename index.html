@@ -1,12 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="utf-8">
+    <title></title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="logo">
+      <div id="toplogo">
+        <div class="setlogo"><img source src="clone_kakao_setlogo.jpg" height="15px"></div>
+        <div class="closelogo"><img source src="clone_kakao_closelogo.jpg" height="20px"></div>
+      </div>
+      <div id="middlelogo">
+        <div class="kakaologo"><img source src="clone_kakao_logo.jpg" width="188px"></div>
+        <div class="login"><input type="text" placeholder="&nbsp카카오계정 (이메일 또는 전화번호)" style="width:240px; height:33px; font-size:12.5px;   background-image: url('./login_icon.jpg'); background-position: right; background-repeat: no-repeat; background-size: 28px;"></div>
+        <div class="password"><input type="password" placeholder="&nbsp비밀번호" style="width:240px; height:33px; font-size:12.5px";></div>
+        <div class="button"><input type="text" value="로그인" style="width:240px; height:33px; text-align: center; font-size:12.5px; color: gray; background: #F2F2F2; "></div>
+      </div>
+      <div id="middlelogo2">
+        <div class="checkbox"><input type="checkbox"><label for = "checkbox"></label></div>
+        <div class="text">자동로그인</div>
+        <div class="questionlogo"><img source src="clone_kakao_questionlogo.jpg" width="15px"></div>
+      </div>
+      <div id="bottomlogo">
+        <div class="text1">카카오계정 찾기</div>
+        <div class="text2">비밀번호 재설정</div>
+      </div>
+    </div>
   </body>
 </html>
+<style>
+  #logo {
+    display: flex;
+    width: 358px;
+    height: 587px;
+    border: 1px solid #FFEB33;
+    background-color: #FFEB33;
+    flex-direction: column;
+  }
+  #toplogo {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 6px;
+    margin-top: 6px;
+  }
+  #middlelogo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 270px;
+    margin-top: 45px;
+  }
+  #middlelogo2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 147px;
+    margin-top: 15px;
+  }
+  #bottomlogo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 148px;
+  }
+  .setlogo {
+    margin-right: 9px;
+    height: 18px;
+    border-right: 1px solid #BFBFBF;
+  }
+  .login {
+    margin-top: 18px;
+    border-bottom: 1px solid #F2F2F2;
+  }
+  .button {
+    margin-top: 4px;
+  }
+  .questionlogo {
+    margin-top: 4px;
+  }
+  .text {
+    font-size: 12px;
+    color: gray;
+    margin-left: 4px;
+  }
+  .text1 {
+    font-size: 12px;
+    color: gray;
+    border-right: 1px solid #BFBFBF;
+    padding-right: 7px;
+  }
+  .text2 {
+    font-size: 12px;
+    color: gray;
+    padding-left: 7px;
+  }
+  input {
+    border: 1px solid #DCCF4C
+  }
+  input[type="checkbox"] + label{
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border: 1px solid #EFE33F;
+    cursor: pointer;
+    background: white;
+  }
+  input[type="checkbox"]{
+    display:none;
+  }
+</style>
