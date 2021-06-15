@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>3D BOX</title>
+    <style>
+      #cube {
+        margin: 0 auto;
+        display: flex;
+        width: 500px;
+        height: 500px;
+        justify-items: center;
+        align-items: center;
+        background-color: gray;
+        perspective: 600px;
+        perspective-origin: center;
+      }
+      .front {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        transform: translate3d(0, 0, -100px);
+      }
+      .end {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        transform: translate3d(0, 0, 100px);
+      }
+      .top {
+      }
+      .bottom {
+      }
+      .left {
+      }
+      .right {
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>3D BOX</h1>
+    <div id="cube">
+      <div class="front"></div>
+      <div class="end"></div>
+      <div class="top"></div>
+      <div class="bottom"></div>
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
