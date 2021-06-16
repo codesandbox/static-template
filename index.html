@@ -1,12 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/2e8ed2eead.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="header">
+      <!-- navbar -->
+      <div class="navbar">
+        <figure>
+          <img src="./assets/logo.svg" class="logo" alt="logo" />
+        </figure>
+        
+        <nav class="nav">
+          <a href="#about" class="nav__link">About me</a>
+          <a href="#" class="nav__link">Proyects</a>
+        </nav>
+        <div class="navbar-btn">
+          <button class="btn-cv">Cv</button>
+        </div>
+       
+      </div>
+      <!-- end navbar -->
+      <div class="header-center container">
+        <div class="content__copy">
+          <p class="content__paragraph">
+            Hi,my names is
+          </p>
+          <h1 class="content__title">
+            James Capcha Flores
+          </h1>
+          <h2 class="content__subtitle">Front-end Developer</h2>
+          <p class="content__subParagraph">
+            I am a Systems Engineer, currently at Lima-Peru headquarters. in the
+            client part of the web UX-UI (occasionally design) but I also know
+            how to handle the backend part.
+          </p>
+
+          <a href="#" class="btn-header"
+            >Contact me <i class="fas fa-thumbs-up"></i
+          ></a>
+        </div>
+        <figure>
+          <img src="assets/hero.svg" class="img-hero" alt="hero" />
+        </figure>
+      </div>
+      <div class="header-bottom-style container">
+        <svg
+          width="300"
+          height="49"
+          viewBox="0 0 501 49"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="svg-x"
+        >
+          <line y1="22.5" x2="501" y2="22.5" stroke="black" stroke-width="5" />
+          <line
+            x1="2.5"
+            y1="1.09278e-07"
+            x2="2.5"
+            y2="49"
+            stroke="black"
+            stroke-width="5"
+          />
+          <line
+            x1="99.5"
+            y1="1.09278e-07"
+            x2="99.5"
+            y2="49"
+            stroke="black"
+            stroke-width="5"
+          />
+        </svg>
+        <div class="card-contact">
+          <p class="card__text">You can find me here. :)</p>
+          <a href="https://github.com/JAMESESTGER27" class="card__github">
+            <img src="./assets/github.svg" class="github" alt="github" />
+          </a>
+          <a href="#" class="card__linked">
+            <img src="./assets/linkeding.svg" class="linked" alt="linked" />
+          </a>
+        </div>
+
+        <svg
+          width="200"
+          height="49"
+          viewBox="0 0 326 49"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="svg-y"
+        >
+          <line
+            x1="323.5"
+            y1="1.09278e-07"
+            x2="323.5"
+            y2="49"
+            stroke="black"
+            stroke-width="5"
+          />
+          <line y1="22.5" x2="321" y2="22.5" stroke="black" stroke-width="5" />
+        </svg>
+      </div>
+    </div>
+    <!-- Main -->
+    <main class="main container">
+      <div id="about" class="title-content">
+        <h3 class="main__title"><span>About </span>me</h3>
+      </div>
+      <div class="main__content">
+        <div class="main__photo">
+          <img
+            src="./assets/background-photo.svg"
+            class="background-photo"
+            alt=""
+          />
+          <!-- <img src="./assets/me.png" class="me" alt="" /> -->
+        </div>
+        <div class="main__text">
+          <div class="text__1">
+            <p>
+              Hi! My name is James, I am a person who likes to investigate,
+              learn on his own but also have good lessons from the masters in
+              development is good. I learn from mistakes and always try to
+              improve to give a good product.
+            </p>
+          </div>
+          <div class="text__2">
+            <p>
+              More than a year ago I started on this path of being a web
+              developer, when I graduated from systems engineering I had no idea
+              which branch to focus on because there were too many. But now I
+              know that I have to make a mark in programming with good work.
+            </p>
+          </div>
+          <div class="skills">
+            <div class="skill__content-p">
+              <p class="skills__p">
+                and these tools I have learned throughout this time.
+              </p>
+            </div>
+            <ul class="skills__ul">
+              <li class="skills__li">Javascript()</li>
+              <li class="skills__li">ReactJs</li>
+              <li class="skills__li">Sass</li>
+            </ul>
+          </div>
+        </div>
+       </div>
+      
+      <section class="section-padre container">
+        <div class="section__title">
+          <h3 class="section__h3">Proyects</h3>
+        </div>
+        <!--
+        <section class="section">
+          <div class="div_1">
+            <div class="div_1-1">
+              <p>
+                A nicer look at your GitHub profile and repository stats with
+                data visualizations of your top languages and stars. Sort
+                through your top repos by number of stars, forks, and size.
+              </p>
+            </div>
+          </div>
+          <div class="div_2">
+            <div class="div__2-1"></div>
+
+            <div class="div__2-3"></div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="div_1">
+            <div class="div_1-1"></div>
+          </div>
+          <div class="div_2">
+            <div class="div__2-1">
+              <p>Featured Project</p>
+              <a><h3>Profile</h3></a>
+            </div>
+
+            <div class="div__2-3">
+              <ul class="div__2-3-ul">
+                <li>Next.js</li>
+                <li>Chart.js</li>
+                <li>GitHub API</li>
+              </ul>
+            </div>
+            <div class="div__2-4">
+              <a href="">
+                <svg></svg>
+              </a>
+              <a href="">
+                <svg></svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      </section> -->
+    </main>
+    <footer class="footer container"></footer>
+    <script src="app.js"></script>
   </body>
 </html>

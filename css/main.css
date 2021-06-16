@@ -1,0 +1,357 @@
+/*fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,600;0,700;1,400;1,600&display=swap");
+/*font-family: 'Titillium Web', sans-serif;*/ /*--->*/ /*navbar-links*/
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap");
+/* font-family: 'Karla', sans-serif;*/ /*--->*/ /*hero-title-paraprase*/
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
+/*Colors*/
+:root {
+  --background-general: rgba(0, 148, 156, 1);
+  --background-primary: rgba(0, 201, 167, 1);
+  --background-secundary: #feaf02;
+  --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+/*General*/
+body {
+  background-color: var(--background-general);
+}
+img {
+  max-width: 100%;
+}
+/* Magic */
+.header {
+  height: 100vh;
+}
+.logo {
+  width: 57px;
+}
+.container {
+  max-width: 1000px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.navbar {
+  position: sticky;
+  background-color: var(--background-primary);
+  border: 3px solid #000000;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 93%;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 20px;
+  z-index: 1;
+}
+.nav {
+  display: flex;
+  gap: 45px;
+}
+.nav__link {
+  font-family: "Titillium Web ", sans-serif;
+  color: #000000;
+  font-weight: 700;
+  text-decoration: none;
+}
+.btn-cv {
+  background-color: var(--background-secundary);
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 3px solid #000000;
+  border-radius: 10px;
+  color: #000000;
+  font-family: "Titillium Web ", sans-serif;
+  font-weight: 700;
+}
+.header-center {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr max-content;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+}
+.img-hero {
+  height: 500px;
+}
+.content__paragraph {
+  font-family: "Baloo Tammudu 2", cursive;
+  font-weight: bold;
+}
+.content__title {
+  font-size: 5rem;
+  color: var(--background-secundary);
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: #040404 -2px 0px 0px, #000000 0px 2px 0px, #000000 -1px -2px 0px,
+    #000000 2px -2px 0px, #000000 6px 4px 0px;
+}
+.content__subtitle {
+  font-size: 3rem;
+  color: var(--background-secundary);
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: #040404 -2px 0px 0px, #000000 0px 2px 0px, #000000 -1px -2px 0px,
+    #000000 2px -2px 0px, #000000 5px 3px 0px;
+}
+.content__subParagraph {
+  max-width: 500px;
+  font-family: "Baloo Tammudu 2", cursive;
+  font-weight: bold;
+}
+.btn-header {
+  background-color: rgba(0, 201, 167, 1);
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  padding: 8px 20px 8px 20px;
+  position: relative;
+  font-size: 1.5rem;
+  font-family: "Titillium Web", sans-serif;
+  border: 6px solid black;
+  font-weight: bold;
+  box-shadow: #000 1px 1px 0, #000 2px 2px 0, #000 3px 3px 0, #000 4px 4px 0,
+    #000 5px 5px 0, #000 6px 6px 0, #000 7px 7px 0, #000 8px 8px 0,
+    #000 9px 9px 0, #000 10px 10px 0, #000 11px 11px 0, #000 11px 11px 0,
+    #000 12px 12px 0, #000 13px 13px 0;
+  cursor: pointer;
+}
+.btn-header::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  bottom: -11px;
+  left: 12px;
+  border-right: 1px dashed white;
+  border-bottom: 1px dashed white;
+}
+.header-bottom-style {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-contact {
+  display: flex;
+  align-items: center;
+  font-family: "Titillium Web", sans-serif;
+  gap: 5px;
+}
+.github,
+.linked {
+  width: 28px;
+}
+.card__text {
+  font-weight: 700;
+}
+.card__github {
+  background-color: var(--background-primary);
+  padding: 5px;
+  border: 3px solid #000000;
+}
+.card__linked {
+  background-color: var(--background-secundary);
+  padding: 5px;
+  border: 3px solid #000000;
+}
+@media (max-width: 800px) {
+  .header-center {
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    height: auto;
+  }
+  .card-contact {
+    margin: 10px;
+  }
+  .card__text {
+    font-size: 15px;
+  }
+}
+/* main */
+.main {
+  height: 100vh;
+}
+.title-content {
+  text-align: center;
+}
+.main__title {
+  font-size: 2.5rem;
+  padding: 10px;
+}
+.background-photo {
+  position: relative;
+  height: 100%;
+}
+
+.me {
+  position: absolute;
+  max-width: 400px;
+  max-height: 400px;
+}
+.main__content {
+  display: flex;
+  gap: 10px;
+  height: 500px;
+}
+.main__photo {
+  width: 50%;
+}
+.main__text {
+  width: 50%;
+}
+.text__1 {
+  background-color: var(--background-primary);
+  border: 3px solid black;
+  padding: 5px;
+  margin-top: 35px;
+  position: relative;
+  text-align: center;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+}
+.text__1::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  bottom: 13px;
+  left: -11px;
+  border: 3px solid var(--background-secundary);
+  z-index: -1;
+}
+.text__2 {
+  background-color: var(--background-primary);
+  border: 3px solid black;
+  position: relative;
+  padding: 5px;
+  text-align: center;
+  margin-top: 35px;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+}
+.text__2::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  bottom: 13px;
+  left: -11px;
+  border: 3px solid var(--background-secundary);
+  z-index: -1;
+}
+.skill__content-p {
+  text-align: center;
+}
+.skills__p {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+}
+.skills__ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  padding: 0px;
+  margin: 20px 0px 0px;
+  overflow: hidden;
+
+  list-style: none;
+}
+.skills__li {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+.skills__li::before {
+  content: "▹";
+  position: absolute;
+  left: 0px;
+  line-height: 12px;
+  font-size: 1.4rem;
+  color: var(--background-secundary);
+}
+.section {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-padre {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.div_1 {
+  width: 60%;
+  height: 300px;
+  background-image: url("https://images.unsplash.com/photo-1623261742238-313064efa022?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMzcwMzc0Mg&ixlib=rb-1.2.1&q=85");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+.div_1-1 {
+  width: 500px;
+  height: 100px;
+  background-color: white;
+  position: absolute;
+  text-align: center;
+  top: 80px;
+  right: -320px;
+  z-index: 1;
+}
+.div_2 {
+  width: 40%;
+  height: 300px;
+  text-align: right;
+}
+.div__2-1 {
+  height: 50%;
+  background-color: yellow;
+  padding: 10px;
+}
+.div__2-3 {
+  height: 50%;
+  padding: 10px;
+  background-color: grey;
+}
+.div__2-3-ul {
+  list-style: none;
+}
+.section__title {
+  text-align: center;
+}
+@media (max-width: 800px) {
+  .main__content {
+    flex-direction: column;
+    height: auto;
+  }
+  .card-contact {
+    width: 204px;
+  }
+  .svg-x {
+    width: 129px;
+  }
+  .svg-y {
+    width: 94px;
+  }
+  .card__text {
+    font-size: 14px;
+  }
+  .main__photo {
+    width: auto;
+    height: 400px;
+  }
+  .main__text {
+    width: auto;
+  }
+}
