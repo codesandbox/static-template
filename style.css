@@ -1,0 +1,107 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+header {
+  background-color: #f7f8f9;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header nav {
+  margin-top: 10px;
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
+
+header nav i {
+  font-size: 2rem;
+}
+
+header nav a {
+  color: black;
+}
+
+.cover {
+  padding: 1rem 2rem;
+  background-color: #f7f8f9;
+}
+
+.cover img {
+  max-width: 100%;
+  height: auto;
+}
+
+.cover button {
+  background-color: #f6e05e;
+  border-radius: 25px;
+  padding: 10px 48px;
+  margin-top: 20px;
+  font-size: 0.9375rem;
+  font-weight: bold;
+  border-width: 0;
+  cursor: pointer;
+}
+
+.about {
+  padding: 1rem 2rem;
+}
+
+.form-field {
+  font-weight: bold;
+}
+
+.about img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+
+  header nav {
+    margin-top: 0;
+    display: flex;
+    width: 20%;
+    justify-content: space-around;
+  }
+
+  header nav i {
+    font-size: 1rem;
+  }
+
+  .cover {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+
+  .about {
+    display: flex;
+  }
+
+  .about div img {
+    max-width: 70%;
+  }
+}
