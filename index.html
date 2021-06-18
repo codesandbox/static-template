@@ -1,12 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--stylesheet-->
+    <link rel="stylesheet" href="styles.css" class="styles" />
+    <!--stylesheet---->
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Pattaya&display=swap"
+      rel="stylesheet"
+    />
+    <!--fonts---->
+    <title>Magic8ball 🔮</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <div class="navbar">
+        <h1>Magic8ball 🔮</h1>
+      </div>
+
+      <div class="pageBody">
+        <div class="pageContent">
+          <div class="pageHeaders">
+            <h1>Welcome to Magic8ball</h1>
+            <h2>May the answer be in your favor</h2>
+          </div>
+
+          <div class="pageControls">
+            <h3 id="answers">Ready for your answers?</h3>
+            <input type="name" placeholder="name" id="name" />
+            <input
+              type="text"
+              placeholder="type your question . . ."
+              id="myInput"
+            />
+          </div>
+          <button onclick="submitted()">Ask Away 🧛‍♂️</button>
+        </div>
+      </div>
+      <div class="footer">
+        <hr />
+        <h4 id="username">@ccbagel</h4>
+        <h6>2021</h6>
+      </div>
+    </div>
   </body>
+
+  <script>
+    function submitted() {
+      let answer;
+      let question;
+      question = document.getElementById("myInput").value;
+      name = document.getElementById("name").value;
+      document.getElementById("answers").style.color = "#d60044";
+
+      const randNumbers = Math.floor(Math.random() * 10);
+
+      switch (randNumbers) {
+        case 0:
+          answer = `As I see it ${name}, yes`;
+          break;
+        case 1:
+          answer = `Ask again later`;
+          break;
+        case 2:
+          answer = `Better not tell you now ${name}`;
+          break;
+        case 3:
+          answer = `My reply is no`;
+          break;
+        case 4:
+          answer = `Concentrate and ask again ${name}`;
+          break;
+        case 5:
+          answer = `Don’t count on it ${name}`;
+          break;
+        case 6:
+          answer = `It is certain`;
+          break;
+        case 7:
+          answer = `Outlook not so good ${name}`;
+          break;
+        case 8:
+          answer = `Signs point to yes`;
+          break;
+        case 9:
+          answer = `Without a doubt ${name}`;
+          break;
+        case 10:
+          answer = `Yes, definitely ${name}`;
+          break;
+        default:
+          answer = `Cannot predict now`;
+      }
+
+      document.getElementById("answers").innerText = answer;
+    }
+  </script>
 </html>
