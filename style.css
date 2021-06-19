@@ -1,21 +1,32 @@
 body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
   width: 100vw;
   height: 100vh;
   background-image: url(to-do.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: "Indie Flower", "Caveat", cursive;
+  font-weight: bold;
+  font-size: 1.4rem;
+  letter-spacing: 0.3rem;
 }
 main {
   background-color: rgba(0, 0, 0, 0.6);
+  height: 100vh;
 }
 header {
   width: 90vw;
-  margin: auto;
+  margin: 0 auto;
   text-align: center;
-  font-size: 1.2rem;
   letter-spacing: 0.2rem;
   color: #fff;
+}
+h2 {
+  margin: 0;
+  padding: 1rem 0;
 }
 form,
 section {
@@ -23,19 +34,24 @@ section {
   margin: auto;
   text-align: center;
 }
+section {
+  width: 70%;
+}
 .input-task,
 .input-deadline {
   padding: 6px 0px;
 }
 ::placeholder {
   color: #003;
-  font-size: 1.2em;
+  font-size: 1.4rem;
+  font-family: "Indie Flower", "Caveat" cursive;
 }
 input {
   padding: 10px;
   border: 0;
   border-radius: 1rem;
   width: 50vw;
+  font-family: "Indie Flower", cursive;
 }
 input:focus {
   outline: none;
@@ -48,6 +64,8 @@ input:focus::placeholder {
 }
 input[type="text"] {
   border-bottom: 3px solid black;
+  padding: 1rem;
+  font-size: 1.4rem;
 }
 .buttonSubmit {
   margin-top: 30px;
@@ -55,42 +73,36 @@ input[type="text"] {
   border: 0;
   border-radius: 1rem;
   width: 53vw;
-  font-size: 1em;
+  font-size: 1.4em;
   background: rgba(0, 0, 3, 0.2);
   color: #fff;
   cursor: pointer;
+  font-family: "Indie Flower", cursive;
+  border: 1px solid #fff;
 }
 .buttonSubmit:hover {
   background: rgba(224, 224, 224, 0.7);
   color: rgba(0, 0, 3, 1);
   border: 1px solid #000;
 }
-.task {
-  margin: auto;
-}
-a {
-  text-decoration: none;
-  font-size: 1.2rem;
-  color: #fff;
-}
 ul {
+  color: white;
+  margin: 1rem auto;
+  list-style-type: none;
   display: flex;
   flex-direction: column;
 }
 li {
-  list-style-type: none;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #fff;
+  margin: 0.3rem;
 }
-.time-info {
-  display: flex;
-  flex-direction: row;
-  justify-items: flex-start;
+span {
+  padding: 0 0.5rem;
 }
-p {
-  padding: 0 10px;
-  color: #fff;
+span:hover {
+  cursor: pointer;
+  color: rgb(236, 75, 75);
 }

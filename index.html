@@ -4,22 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Static Template</title>
+    <title>To Do App</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"
+      integrity="undefined"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <main>
       <header><h2>Task Manager</h2></header>
-      <form>
+      <form class="form-submit">
         <div class="input-task">
           <input
             class="taskText"
             type="text"
             placeholder="Enter task"
+            name="searchTerm"
             required
           />
         </div>
@@ -28,9 +45,7 @@
         </div>
       </form>
       <section>
-        <ul>
-          
-        </ul>
+        <ul class="todos"></ul>
       </section>
     </main>
     <script src="task.js"></script>
