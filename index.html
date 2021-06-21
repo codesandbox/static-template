@@ -1,12 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Appt</title>
+    <link rel="stylesheet" href="bedget.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <h2>BUDGET APP</h2>
+          <div class="col-sm-5 money">
+            <h5 class="info">Please Enter Your Budget</h5>
+            <input type="number" class="number" min="0" id="amountInput" />
+            <button class="calculate" id="calcul">Calculate</button>
+          </div>
+          <div class="col-sm-5 holder">
+            <div class="row">
+              <div class="col-sm-4 budget">
+                <h4>BUDGET</h4>
+                <i
+                  class="fa fa-money"
+                  style="font-size: 70px; color: #084298;"
+                ></i>
+                <p style="font-size: 50px; font-weight: bold; color: green;">
+                  ₦ <span id="budgetAmount">0</span>
+                </p>
+              </div>
+              <div class="col-sm-4 expenses">
+                <h4>EXPENSES</h4>
+                <i
+                  class="fa fa-credit-card"
+                  style="font-size: 70px; color: #084298;"
+                ></i>
+                <p style="font-size: 50px; font-weight: bold; color: red;">
+                  ₦ <span id="expenseBalance">0</span>
+                </p>
+              </div>
+              <div class="col-sm-4 balance">
+                <h4>BALANCE</h4>
+                <i
+                  class="fa fa-dollar"
+                  style="font-size: 70px; color: #084298;"
+                ></i>
+                <p style="font-size: 50px; font-weight: bold; color: #c000ff;">
+                  ₦ <span id="budgetBalance">0</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 30px;">
+          <div class="col-sm-5 expenseHolder">
+            <h5 class="info">Please Enter Your Expense</h5>
+            <input type="text" id="expensesName" class="amount" />
+            <h5 class="info">Please Enter Your Amount</h5>
+            <input type="number" id="expensesAmount" class="amount" />
+            <button class="addExpense" id="addButton">Add Expense</button>
+          </div>
+          <div class="col-sm-5">
+            <div>
+              <div class="col-sm-4 balance">
+                <h4>Expense Title</h4>
+                <div id="displa">
+                  <ul id="expenseTitle"></ul>
+                </div>
+              </div>
+              <div class="col-sm-4 balance">
+                <h4>Expense Value</h4>
+                <div id="displa">
+                  <ul id="expenseAmount"></ul>
+                </div>
+              </div>
+
+              <div class="col-sm-3 balance" id="balance3">
+                <h4>Delete/Edit</h4>
+                <ul id="iconn"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="budget.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
