@@ -1,12 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<html>
+<head>
+	<title>3D Flip Login</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="logo.png" type="image/gif">
+</head>
+<body>
+<div class="container">
+<div class="card">
+<div class="inner-box" id="card">
+<div class="card-front">
+	<h2>LOGIN</h2>
+		<form>
+			<input id="email" type="email" class="input-box" placeholder="Type Your Email" required>
+			<input id="password" type="password" class="input-box" placeholder="Password" required>
+			<button type="submit" class="submit">Confirm</button></a>
+			<input type="checkbox"><span>Remeber Me</span>
+		</form>
+		<button type="button" class="btn" onclick="openRegister()">I'm New Here</button>
+		<a href="">Forgot Password</a>
+</div>
+<div class="card-back">					
+<h2>REGISTER</h2>
+		<form id="login-form" method="post" action="index.php">
+			<input type="text" class="input-box" placeholder="Type Your Name" required>
+			<input id="email" type="email" class="input-box" placeholder="Type Your Email" required>
+			<input id="password" type="password" class="input-box" placeholder="Password" required>
+			<button type="submit" class="submit">Confirm</button></a>
+			<input type="checkbox"><span>Remeber Me</span>
+		</form>
+		<button type="button" class="btn" onclick="openLogin()">I've An Account</button>
+		<a href="">Forgot Password</a>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+var card = document.getElementById("card");
+
+function openRegister(){
+	card.style.transform = "rotateY(-180deg)";
+}
+
+function openLogin(){
+	card.style.transform = "rotateY(0deg)";
+}
+</script>
+
+</body>
 </html>
