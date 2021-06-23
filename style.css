@@ -1,0 +1,229 @@
+body {
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  color: #e6e6e6;
+  background-color: #17181f;
+  margin: 0px 40px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.addWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.todoInput {
+  width: 70%;
+  background-color: #17181f;
+  border: solid 1px #4b4f66;
+  border-right: none;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  color: #e6e6e6;
+  padding: 15px;
+  font-size: 20px;
+}
+
+.todoInput::placeholder {
+  color: #e6e6e6;
+  font-size: 18px;
+  font-family: "Poppins";
+}
+.todoInput:focus {
+  outline: none;
+}
+
+.dateInput {
+  width: 30%;
+  text-align: right;
+  background-color: #17181f;
+  border: solid 1px #4b4f66;
+  border-left: none;
+  border-right: none;
+  color: #e6e6e6;
+  font-size: 18px;
+  font-family: "Poppins";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dateInput:focus {
+  outline: none;
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.dateInputField {
+  border: none;
+  color: #e6e6e6;
+  background-color: #17181f;
+  font-size: 18px;
+  font-family: "Poppins";
+  padding-left: 10px;
+}
+
+.dateInputField:focus {
+  outline: none;
+}
+
+.dateInputField::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.timeInput {
+  width: 30%;
+  text-align: right;
+  background-color: #17181f;
+  border: solid 1px #4b4f66;
+  border-left: none;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  color: #e6e6e6;
+  font-size: 18px;
+  font-family: "Poppins";
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeInput:focus {
+  outline: none;
+}
+
+.timeInput::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.timeInputField {
+  background-color: #17181f;
+  border: none;
+  color: #e6e6e6;
+  font-size: 18px;
+  font-family: "Poppins";
+  margin-left: 10px;
+}
+
+.timeInputField:focus {
+  outline: none;
+}
+
+.timeInputField::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.formWrapper {
+  display: flex;
+  width: 100%;
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 18px;
+  align-self: flex-start;
+  padding: 5px;
+  background-color: #fa78a2;
+  color: #e6e6e6;
+  border: none;
+  margin: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.submitButton:hover {
+  background-color: #fd3672;
+  transform: scale(1.1);
+}
+
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.tasksWrapper {
+  display: flex;
+  flex-direction: column;
+  color: #e6e6e6;
+}
+.titleWrapper {
+  color: #dadada;
+  margin: 16px 0px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.completeWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  margin: 6px 0px;
+  border-radius: 15px;
+  background-color: #20212c;
+  transition: all 0.3s ease;
+  box-shadow: #20212c;
+  box-shadow: -13px -8px 29px -2px #16171b;
+  user-select: none;
+}
+
+.task:hover {
+  background-color: #282a41;
+  transform: scale(1.05);
+}
+
+.taskText {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.taskDatetime {
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+}
+
+[type="checkbox"] {
+  position: relative;
+  left: 15px;
+  top: -4px;
+  z-index: 0;
+  -webkit-appearance: none;
+}
+
+[type="checkbox"] + label::before {
+  width: 15px;
+  height: 15px;
+  border-radius: 8px;
+  border: 3px solid #fa78a2;
+  background-color: transparent;
+  display: block;
+  content: "";
+  float: left;
+  margin-right: 10px;
+  z-index: 5;
+  position: relative;
+  cursor: pointer;
+}
+
+[type="checkbox"]:checked + label::before {
+  box-shadow: inset 0px 0px 0px 3px #fff;
+  background-color: #fa78a2;
+}

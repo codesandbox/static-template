@@ -1,12 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <title>Todo</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="header">
+      <h1>
+        📃 Todo-Liste:
+      </h1>
+    </div>
+    <div class="addWrapper">
+      <div class="submitButtonWrapper">
+        <button class="submitButton" id="submitButton">
+          +
+        </button>
+      </div>
+      <div class="formWrapper">
+        <input
+          class="todoInput"
+          id="todoInput"
+          type="text"
+          placeholder="Add a Todo"
+        />
+        <label class="dateInput" for="dateInput">
+          📆
+          <input
+            name="dateInput"
+            class="dateInputField"
+            id="dateInput"
+            type="date"
+          />
+        </label>
+        <label class="timeInput" for="timeInput">
+          🕐
+          <input
+            name="timeInput"
+            class="timeInputField"
+            id="timeInput"
+            type="time"
+          />
+        </label>
+      </div>
+    </div>
+    <div class="mainWrapper">
+      <div class="tasksWrapper" id="tasksWrapper">
+        <div class="titleWrapper">Tasks</div>
+        <div class="task" id="task">
+          <input
+            type="checkbox"
+            class="taskCheckbox"
+            id="taskCheckbox1"
+            name="taskCheckbox1"
+          />
+          <label class="taskText" id="taskCheckbox" for="taskCheckbox1"
+            >Make IBS Project</label
+          >
+          <div class="taskDatetime">11.02.2021 - 20:10</div>
+        </div>
+        <div class="task" id="task">
+          <input
+            type="checkbox"
+            class="taskCheckbox"
+            id="taskCheckbox2"
+            name="taskCheckbox2"
+          />
+          <label class="taskText" id="taskCheckbox" for="taskCheckbox2"
+            >Make MCI ❌</label
+          >
+          <div class="taskDatetime">11.02.2021 - 20:10</div>
+        </div>
+        <div class="task" id="task">
+          <input
+            type="checkbox"
+            class="taskCheckbox"
+            id="taskCheckbox3"
+            name="taskCheckbox3"
+          />
+          <label class="taskText" id="taskCheckbox" for="taskCheckbox3"
+            >SE Project</label
+          >
+          <div class="taskDatetime">11.02.2021 - 20:10</div>
+        </div>
+      </div>
+      <div class="completeWrapper" id="tasksWrapper">
+        <div class="titleWrapper">Completed</div>
+        <div class="task" id="task">
+          <input
+            type="checkbox"
+            class="taskCheckbox"
+            id="taskCheckbox4"
+            name="taskCheckbox4"
+            checked
+          />
+          <label class="taskText" id="taskCheckbox" for="taskCheckbox4"
+            >SE Project</label
+          >
+          <div class="taskDatetime">11.02.2021 - 20:10</div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
