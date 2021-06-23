@@ -1,0 +1,312 @@
+body {
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  color: #e6e6e6;
+  background-color: #17181f;
+  margin: 0vw 20vw;
+}
+
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #17181f;
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  z-index: 10;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #17181f;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: none;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+.loginInput {
+  border: solid 1px #4b4f66;
+  color: white;
+  padding: 8px;
+  background-color: transparent;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  outline: none;
+}
+
+.signupButton {
+  color: rgb(125, 125, 236);
+  cursor: pointer;
+  user-select: none;
+}
+
+.loginButton {
+  margin-top: 10px;
+  border: none;
+  color: white;
+  padding: 5px;
+  background-color: #fd3672;
+  border-radius: 8px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.addWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.todoInput {
+  height: 68px;
+  width: 70%;
+  background-color: #17181f;
+  border: solid 1px #4b4f66;
+  border-right: none;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  color: #e6e6e6;
+  font-size: 18px;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todoInput::placeholder {
+  color: #e6e6e6;
+  font-size: 18px;
+  font-family: "Poppins";
+}
+.todoInput:focus {
+  outline: none;
+}
+
+.dateInput {
+  height: 70px;
+  width: 30%;
+  background-color: #17181f;
+  border: solid 1px #4b4f66;
+  border-left: none;
+  border-right: none;
+  color: #e6e6e6;
+  font-size: 18px;
+  font-family: "Poppins";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dateInput:focus {
+  outline: none;
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.dateInputField {
+  border: none;
+  color: #e6e6e6;
+  background-color: #17181f;
+  font-size: 18px;
+  font-family: "Poppins";
+}
+
+.dateInputField:focus {
+  outline: none;
+}
+
+.dateInputField::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.timeInput {
+  height: 70px;
+  width: 30%;
+  text-align: right;
+  background-color: #17181f;
+  border: solid 1px #4b4f66;
+  border-left: none;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  color: #e6e6e6;
+  font-size: 18px;
+  font-family: "Poppins";
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeInput:focus {
+  outline: none;
+}
+
+.timeInput::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.timeInputField {
+  background-color: #17181f;
+  border: none;
+  color: #e6e6e6;
+  font-size: 18px;
+  font-family: "Poppins";
+}
+
+.timeInputField:focus {
+  outline: none;
+}
+
+.timeInputField::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.formWrapper {
+  display: flex;
+  width: 100%;
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 18px;
+  align-self: flex-start;
+  padding: 5px;
+  background-color: #fa78a2;
+  color: #e6e6e6;
+  border: none;
+  margin: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.submitButton:hover {
+  background-color: #fd3672;
+  transform: scale(1.1);
+}
+
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.tasksWrapper {
+  display: flex;
+  flex-direction: column;
+  color: #e6e6e6;
+}
+.titleWrapper {
+  color: #dadada;
+  margin: 16px 0px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.completeWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  margin: 6px 0px;
+  border-radius: 15px;
+  background-color: #20212c;
+  transition: all 0.3s ease;
+  box-shadow: #20212c;
+  box-shadow: -13px -8px 29px -2px #16171b;
+  user-select: none;
+  font-size: 18px;
+}
+
+.task:hover {
+  background-color: #282a41;
+  transform: scale(1.05);
+}
+
+.taskText {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.taskDateTime {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+[type="checkbox"] {
+  position: relative;
+  left: 15px;
+  top: -4px;
+  z-index: 0;
+  -webkit-appearance: none;
+}
+
+[type="checkbox"] + label::before {
+  width: 15px;
+  height: 15px;
+  border-radius: 8px;
+  border: 3px solid #fa78a2;
+  background-color: transparent;
+  display: block;
+  content: "";
+  float: left;
+  margin-top: 3px;
+  margin-right: 10px;
+  z-index: 5;
+  position: relative;
+  cursor: pointer;
+}
+
+[type="checkbox"]:checked + label::before {
+  box-shadow: inset 0px 0px 0px 3px #fff;
+  background-color: #fa78a2;
+}
+[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #20212c;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fa78a2;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
