@@ -4,7 +4,59 @@ body {
   font-family: "Poppins";
   color: #e6e6e6;
   background-color: #17181f;
-  margin: 0px 40px;
+  margin: 0vw 20vw;
+}
+
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #17181f;
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  z-index: 10;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #17181f;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: none;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+.loginInput {
+  border: solid 1px #4b4f66;
+  color: white;
+  padding: 8px;
+  background-color: transparent;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  outline: none;
+}
+
+.signupButton {
+  color: rgb(125, 125, 236);
+  cursor: pointer;
+  user-select: none;
+}
+
+.loginButton {
+  margin-top: 10px;
+  border: none;
+  color: white;
+  padding: 5px;
+  background-color: #fd3672;
+  border-radius: 8px;
 }
 
 .header {
@@ -19,6 +71,7 @@ body {
 }
 
 .todoInput {
+  height: 68px;
   width: 70%;
   background-color: #17181f;
   border: solid 1px #4b4f66;
@@ -26,8 +79,11 @@ body {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   color: #e6e6e6;
-  padding: 15px;
-  font-size: 20px;
+  font-size: 18px;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .todoInput::placeholder {
@@ -40,8 +96,8 @@ body {
 }
 
 .dateInput {
+  height: 70px;
   width: 30%;
-  text-align: right;
   background-color: #17181f;
   border: solid 1px #4b4f66;
   border-left: none;
@@ -68,7 +124,6 @@ body {
   background-color: #17181f;
   font-size: 18px;
   font-family: "Poppins";
-  padding-left: 10px;
 }
 
 .dateInputField:focus {
@@ -80,6 +135,7 @@ body {
 }
 
 .timeInput {
+  height: 70px;
   width: 30%;
   text-align: right;
   background-color: #17181f;
@@ -110,7 +166,6 @@ body {
   color: #e6e6e6;
   font-size: 18px;
   font-family: "Poppins";
-  margin-left: 10px;
 }
 
 .timeInputField:focus {
@@ -180,6 +235,7 @@ body {
   box-shadow: #20212c;
   box-shadow: -13px -8px 29px -2px #16171b;
   user-select: none;
+  font-size: 18px;
 }
 
 .task:hover {
@@ -194,10 +250,13 @@ body {
   cursor: pointer;
 }
 
-.taskDatetime {
+.taskDateTime {
+  width: 100%;
   display: flex;
-  font-size: 12px;
+  flex-direction: row;
+  font-size: 18px;
   align-items: center;
+  justify-content: space-around;
 }
 
 [type="checkbox"] {
@@ -217,6 +276,7 @@ body {
   display: block;
   content: "";
   float: left;
+  margin-top: 3px;
   margin-right: 10px;
   z-index: 5;
   position: relative;
@@ -226,4 +286,27 @@ body {
 [type="checkbox"]:checked + label::before {
   box-shadow: inset 0px 0px 0px 3px #fff;
   background-color: #fa78a2;
+}
+[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #20212c;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fa78a2;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

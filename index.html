@@ -9,12 +9,29 @@
       href="https://fonts.googleapis.com/css?family=Poppins"
       rel="stylesheet"
     />
+    <script src="app.js"></script>
     <title>Todo</title>
   </head>
   <body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <p>
+          Login or <span class="signupButton" onclick="signup()">Signup</span>
+        </p>
+        <form class="loginForm" id="loginForm">
+          <label for="">email</label>
+          <input type="email" name="" id="email" class="loginInput" />
+          <label for="">Password</label>
+          <input type="password" name="" id="password" class="loginInput" />
+          <input type="button" value="Login" class="loginButton" />
+        </form>
+      </div>
+    </div>
     <div class="header">
       <h1>
-        📃 Todo-Liste:
+        📃 Todo
       </h1>
     </div>
     <div class="addWrapper">
@@ -63,7 +80,10 @@
           <label class="taskText" id="taskCheckbox" for="taskCheckbox1"
             >Make IBS Project</label
           >
-          <div class="taskDatetime">11.02.2021 - 20:10</div>
+          <div class="taskDateTime">
+            <div class="taskDate">📆 11.02.2021</div>
+            <div class="taskTime">🕐 21:00</div>
+          </div>
         </div>
         <div class="task" id="task">
           <input
@@ -75,7 +95,10 @@
           <label class="taskText" id="taskCheckbox" for="taskCheckbox2"
             >Make MCI ❌</label
           >
-          <div class="taskDatetime">11.02.2021 - 20:10</div>
+          <div class="taskDateTime">
+            <div class="taskDate">📆 11.02.2021</div>
+            <div class="taskTime">🕐 21:00</div>
+          </div>
         </div>
         <div class="task" id="task">
           <input
@@ -87,7 +110,10 @@
           <label class="taskText" id="taskCheckbox" for="taskCheckbox3"
             >SE Project</label
           >
-          <div class="taskDatetime">11.02.2021 - 20:10</div>
+          <div class="taskDateTime">
+            <div class="taskDate">📆 11.02.2021</div>
+            <div class="taskTime">🕐 21:00</div>
+          </div>
         </div>
       </div>
       <div class="completeWrapper" id="tasksWrapper">
@@ -100,10 +126,37 @@
             name="taskCheckbox4"
             checked
           />
-          <label class="taskText" id="taskCheckbox" for="taskCheckbox4"
+          <label
+            class="taskText taskChecked"
+            id="taskCheckbox"
+            for="taskCheckbox4"
             >SE Project</label
           >
-          <div class="taskDatetime">11.02.2021 - 20:10</div>
+          <div class="taskDateTime">
+            <div class="taskDate">📆 11.02.2021</div>
+            <div class="taskTime">🕐 21:00</div>
+          </div>
+        </div>
+        <div class="task" id="task">
+          <input
+            type="checkbox"
+            class="taskCheckbox"
+            id="taskCheckbox5"
+            name="taskCheckbox5"
+            checked
+          />
+          <label
+            class="taskText taskChecked"
+            id="taskCheckbox"
+            for="taskCheckbox5"
+            >SE Project
+          </label>
+          <div class="taskDateTime">
+            <div class="taskDate">
+              📆 11.02.2021
+            </div>
+            <div class="taskTime">🕐 21:00</div>
+          </div>
         </div>
       </div>
     </div>
