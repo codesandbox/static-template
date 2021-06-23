@@ -1,12 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Start Your Search!</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <nav class="navbar d-flex justify-content-between">
+      <div class="container">
+        <a href="./index.html">
+          <img src="img/logo.svg" width="173" height="25" alt="">
+        </a>
+        <div>
+          <img src="img/icn_search.svg" width="23" height="23" alt="Search">
+          <img class="ml-4" src="img/icn_person.svg" alt="Profile">
+        </div>
+      </div>
+    </nav>
+    <section class="above-the-fold">
+      <div class="container">
+        <div class="headline text-white text-center mb-4 mb-md-5">
+          <h1 class="mb-3">Start Your Search!</h1>
+          <h2>Look up for people’s name, photos and online profiles with their email address or phone number. See what you find!</h2>
+        </div>
+        
+        <form>
+          <div class="input-group">
+            <input class="form-control" type="text" name="email" placeholder="Enter an Email Address" />
+            <p class="error-msg">Please enter a valid email address</p>
+            <button id="btn-search" class="btn btn-form-submit text-uppercase" type="submit">Go!</button>
+          </div>
+          <div class="d-flex justify-content-start justify-content-md-end align-items-center mt-4">
+            <img src="img/icn_lock.svg" alt="lock">
+            <p class="form-subtext">People in the search won't be notified.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="headline">
+          <h1 class="text-primary text-center mb-2 mb-md-4">Here's How It Works</h1>
+          <h2 class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h2>
+        </div>
+        <div class="row">
+          <div class="list-item col-md-6 d-flex align-items-lg-center">
+            <div class="list-circle">1</div>
+            <div class="list-text">
+              <h3>Lorem Ipsum</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="list-item col-md-6 d-flex align-items-lg-center">
+            <div class="list-circle">4</div>
+            <div class="list-text">
+              <h3>Lorem Ipsum</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="list-item col-md-6 d-flex align-items-lg-center">
+            <div class="list-circle">2</div>
+            <div class="list-text">
+              <h3>Lorem Ipsum</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="list-item col-md-6 d-flex align-items-lg-center">
+            <div class="list-circle">5</div>
+            <div class="list-text">
+              <h3>Lorem Ipsum</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="list-item col-md-6 d-flex align-items-lg-center mb-md-0">
+            <div class="list-circle">3</div>
+            <div class="list-text">
+              <h3>Lorem Ipsum</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="list-item col-md-6 d-flex align-items-lg-center mb-md-0">
+            <div class="list-circle">6</div>
+            <div class="list-text">
+              <h3>Lorem Ipsum</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <footer class="footer">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-10">
+            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div class="col-md-2 text-center text-md-right pl-0 mt-3 mt-md-0">
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

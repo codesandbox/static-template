@@ -1,0 +1,388 @@
+/* ************************************************** !!
+/* CSS CONTENTS ----------------------------------------
+--------------------------------------------------------
+--| General
+--| Navbar
+--| Search Form
+--| [SECTION] Above the Fold 
+--| [SECTION] Features
+--| [SECTION][RESULTS PAGE] Result
+--| [SECTION][RESULTS PAGE] Search Again
+--| Footer
+--------------------------------------------------------
+----------------------------------------------------- */
+
+/* ************************************************************
+***************************************************************
+--- General ---
+***************************************************************
+************************************************************ */
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #000;
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 52px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+h3,
+h5 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 32px;
+}
+
+h3,
+h4,
+h5 {
+  font-weight: bold;
+  color: #004A80;
+}
+
+section {
+  padding: 40px 0 52px;
+}
+
+.text-primary {
+  color: #004A80 !important;
+}
+
+.text-secondary {
+  color: #4A4A4A !important;
+}
+
+@media (max-width: 991px) {
+  h1 {
+    font-size: 48px;
+  }
+  h2,
+  h3,
+  h5 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+}
+
+/* ************************************************************
+***************************************************************
+--- Navbar ---
+***************************************************************
+************************************************************ */
+
+.navbar {
+  background: #004A80;
+}
+
+.navbar {
+  padding: 20px 16px;
+}
+
+/* ************************************************************
+***************************************************************
+--- Search Form ---
+***************************************************************
+************************************************************ */
+
+.btn-form-submit {
+  font-size: 24px;
+  font-weight: bold;
+  color: #004A80;
+  background-image: linear-gradient(225deg, #F2DA56 0%, #F6BC25 100%);
+  box-shadow: 0 3px 0 0 #A6953B, inset 0 1px 0 0 #FFFFFF;
+  border-radius: 6px;
+  outline: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 180px;
+  margin-left: 20px;
+}
+
+.input-group > .form-control {
+  height: 70px;
+  background: #FFF;
+  box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20);
+  border-radius: 3px !important;
+  font-size: 22px;
+}
+
+.input-group.error > .form-control {
+  border: 3px solid #DC0015;
+  border-radius: 3px 3px 0 0 !important;
+}
+
+.error-msg {
+  display: none;
+}
+
+.input-group.error .error-msg {
+  display: block;
+  position: absolute;
+  bottom: -30px;
+  margin: 0px;
+  padding: 4px 12px;
+  background: #DC0015;
+  color: #FFF;
+  border-radius: 0 0 3px 3px;
+  font-size: 16px;
+}
+
+.form-control::placeholder {
+  color: #9B9B9B;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.form-subtext {
+  font-size: 16px;
+  color: #FFF;
+  margin: 0 0 0 15px;
+  line-height: normal;
+}
+
+@media (max-width: 767px) {
+  .input-group {
+    flex-direction: column;
+  }
+  .input-group > .form-control,
+  .btn-form-submit {
+    width: 100%;
+  }
+  .input-group > .form-control {
+    height: 50px;
+  }
+  .btn-form-submit {
+    margin: 12px 0 0 0;
+  }
+}
+
+/* ************************************************************
+***************************************************************
+--- [SECTION] Above the Fold ---
+***************************************************************
+************************************************************ */
+
+.above-the-fold {
+  background: #004A80;
+  padding-top: 24px;
+}
+
+.above-the-fold .headline {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* ************************************************************
+***************************************************************
+--- [SECTION] Features ---
+***************************************************************
+************************************************************ */
+
+.features {
+  background-image: linear-gradient(0deg, #E6E6E6 0%, #FFFFFF 100%);
+}
+
+.features .headline {
+  margin-bottom: 40px;
+}
+
+.features h2 {
+  line-height: 30px;
+}
+
+.list-item {
+  margin-bottom: 28px;
+}
+
+.list-circle {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  background: #004A80;
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: #F6BC25;
+  flex: 0 0 90px;
+  margin-right: 20px;
+}
+
+.list-text p {
+  margin: 0;
+  line-height: 26px;
+}
+
+@media (max-width: 991px) {
+  .features .headline {
+    margin-bottom: 28px;
+  }
+  .features h2 {
+    line-height: 28px;
+  }
+  .list-item {
+    margin-bottom: 20px;
+  }
+  .list-circle {
+    width: 63px;
+    height: 63px;
+    line-height: 63px;
+    flex: 0 0 63px;
+    font-size: 33.6px;
+  }
+  .list-text p {
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .features .headline {
+    margin-bottom: 20px;
+  }
+  .list-item {
+    margin-bottom: 16px;
+  }
+  .list-circle {
+    width: 50.4px;
+    height: 50.4px;
+    line-height: 50.4px;
+    flex: 0 0 50.4px;
+    font-size: 26.88px;
+    margin-right: 10.6px;
+  }
+}
+
+/* ************************************************************
+***************************************************************
+--- [SECTION][RESULTS PAGE] Result ---
+***************************************************************
+************************************************************ */
+
+.result {
+  background: #F8F8F8;
+  min-height: 455px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.result-wrap {
+  display: none;
+}
+
+.result-card {
+  max-width: 980px;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+  border-radius: 30px;
+  padding: 40px;
+  margin: 40px auto;
+}
+
+.result-avatar {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  line-height: 86px;
+  background: #004A80;
+  text-align: center;
+  flex: 0 0 90px;
+  margin-right: 20px;
+}
+
+.result-desc {
+  color: #4A4A4A;
+}
+
+@media (max-width: 991px) {
+  .result {
+    min-height: 512px;
+  }
+  .result-avatar {
+    width: 63px;
+    height: 63px;
+    line-height: 58px;
+    flex: 0 0 63px;
+  }
+  .result-avatar img {
+    width: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .result {
+    min-height: 306px;
+  }
+  .result-avatar {
+    display: none;
+  }
+}
+
+/* ************************************************************
+***************************************************************
+--- [SECTION][RESULTS PAGE] Search Again ---
+***************************************************************
+************************************************************ */
+
+.search-again {
+  background: #004A80;
+}
+
+@media (min-width: 992px) {
+  .search-again {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .search-again {
+    padding: 40px 0;
+  }
+}
+
+/* ************************************************************
+***************************************************************
+--- Footer ---
+***************************************************************
+************************************************************ */
+
+.footer {
+  padding: 16px 0;
+}
+
+.footer p {
+  font-size: 15px;
+  color: #999;
+  line-height: 20px;
+}
+
+.footer a {
+  font-size: 14px;
+  font-weight: bold;
+  color: #004A80;
+}
+
+.footer a:first-of-type:after {
+  content: '|';
+  padding-left: 5px;
+}

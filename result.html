@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Result</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav class="navbar d-flex justify-content-between">
+      <div class="container">
+        <a href="./index.html">
+          <img src="img/logo.svg" width="173" height="25" alt="">
+        </a>
+        <div>
+          <img src="img/icn_search.svg" width="23" height="23" alt="Search">
+          <img class="ml-4" src="img/icn_person.svg" alt="Profile">
+        </div>
+      </div>
+    </nav>
+    <section class="result">
+      <div class="container">
+        <div class="headline text-center">
+          <h1 id="result-count" class="text-primary mb-3"></h1>
+          <h2 id="result-subtext" class="result-desc"></h2>
+        </div>
+        <div class="result-wrap">
+          <div class="result-card d-flex">
+            <div class="result-avatar">
+              <img src="img/icn_person.svg" alt="result image">
+            </div>
+            <div class="result-content w-100">
+              <h4 id="user-name" class="name"></h4>
+              <p id="user-description" class="user-description"></p>
+              <div class="row">
+                <div class="col-md-6">
+                  <h5>Address</h5>
+                  <p id="address" class="address"></p>
+                </div>
+                <div class="col-md-6">
+                  <h5>Phone Numbers</h5>
+                  <div class="phone-num"></div>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <h5>Email</h5>
+                  <p id="email" class="email"></p>
+                </div>
+                <div class="col-md-6">
+                  <h5>Relatives</h5>
+                  <div class="relatives"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-again">
+      <div class="container">
+        <div class="headline text-white text-center">
+          <h1 class="mb-3">Can't Find The Right Person?</h1>
+          <h2 class="mb-4 mb-md-5"><strong>Try Again</strong> - Make a new search</h2>
+        </div>
+        <form>
+          <div class="input-group">
+            <input class="form-control" type="text" name="email" placeholder="Enter an Email Address" />
+            <p class="error-msg">Please enter a valid email address</p>
+            <button id="btn-search" class="btn btn-form-submit text-uppercase" type="submit">Go!</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    
+    <footer class="footer">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-10">
+            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div class="col-md-2 text-center text-md-right pl-0 mt-3 mt-md-0">
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+    <script src="js/result.js"></script>
+  </body>
+</html>
