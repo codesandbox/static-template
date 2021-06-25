@@ -1,12 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>My Drag-and-Drop Example</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="example-parent">
+      <div class="example-origin">
+        <div
+          id="draggable-1"
+          class="example-draggable"
+          draggable="true"
+          ondragstart="onDragStart(event);"
+        >
+          thing 1
+        </div>
+        <div
+          id="draggable-2"
+          class="example-draggable"
+          draggable="true"
+          ondragstart="onDragStart(event);"
+        >
+          thing 2
+        </div>
+        <div
+          id="draggable-3"
+          class="example-draggable"
+          draggable="true"
+          ondragstart="onDragStart(event);"
+        >
+          thing 3
+        </div>
+        <div
+          id="draggable-4"
+          class="example-draggable"
+          draggable="true"
+          ondragstart="onDragStart(event);"
+        >
+          thing 4
+        </div>
+      </div>
+
+      <div
+        class="example-dropzone"
+        ondragover="onDragOver(event);"
+        ondrop="onDrop(event);"
+      >
+        dropzone
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
