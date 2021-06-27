@@ -1,0 +1,351 @@
+/*********** CUSTOM SETTINGS *****************/
+:root {
+  font-size: 10px;
+
+  --main-font-family: Helvetica, Arial, sans-serif;
+
+  --primary-clr: #4fa3e4; /*cornflowerblue */
+  --primary-bg: #0d4892; /* midnightblue */
+  --secondary-bg: #fffff0; /*ivory */
+  --primary-dark: #0075b2; /* darkcyan */
+  --deep-dark-primary: #0d4992; /*teal */
+  --primary-light: #87d4ff; /* lightskyblue */
+  --secondary-clr: #2f4f4f; /*darkslategray */
+  --complement-clr: #e4904f; /* peru */
+  --txt-onPri: #131417;
+  --txt-onSec: #f9f9fa; /* ghostwhite */
+  --gray-clr: #b7b7b7; /* silver */
+  --dark-gray: #3f3f3f; /*darkslategray */
+
+  --main-heading: 4rem;
+  --sub-heading: 3.6rem;
+  --sub-sub-heading: 3rem;
+}
+
+/*********** #CUSTOM SETTINGS *****************/
+
+/*********** DEFAULT SETTINGS *****************/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--main-font-family);
+  font-size: 1.6rem;
+  line-height: 1.3;
+  max-width: 100vw;
+  color: var(--txt-onPri);
+}
+
+header,
+nav,
+section,
+article,
+aside {
+  display: block;
+}
+
+h1 {
+  font-size: var(--main-heading);
+}
+
+h2 {
+  font-size: var(--sub-heading);
+}
+
+h3,
+h4 {
+  font-size: var(--sub-sub-heading);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 0.7em 1.5em;
+  background: transparent;
+  font-weight: 600;
+}
+.wrapper {
+  width: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+  position: relative;
+}
+/*********** #DEFAULT SETTINGS *****************/
+
+/********************** HEADER  **********************/
+header {
+  background-color: #f9f8f4;
+}
+
+/**************MINI NAVBAR *******************/
+.mini-sticky-navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: var(--primary-dark);
+  padding: 0.5em 0;
+  opacity: 0.8;
+}
+
+.mini-sticky-navbar p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--txt-onSec);
+  opacity: 0.75;
+}
+.top-links {
+  opacity: 1;
+}
+.top-links select {
+  border: none;
+  margin-right: 1em;
+}
+
+.top-links option {
+  font-weight: 550;
+}
+
+.top-links i {
+  color: var(--dark-gray);
+  font-size: 1.8rem;
+  padding: 0.3em;
+}
+
+.top-links i:hover {
+  color: var(--primary-light);
+}
+
+.top-links button {
+  background-color: var(--primary-bg);
+  color: var(--txt-onSec);
+  padding: 0.5em 01.3em;
+  margin-left: 1em;
+  border: none;
+  cursor: pointer;
+}
+
+.mini-sticky-navbar button:hover {
+  background-color: var(--primary-light);
+  color: var(--dark-gray);
+}
+/************ #MINI NAVBAR  ******************/
+
+/************ SECONDARY NAVBAR  ************/
+.secondary-navbar {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.logo {
+  max-width: fit-content;
+}
+
+.logo img {
+  max-width: 200px;
+}
+
+.sec-nav-contact {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.sec-nav-contact div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 1em;
+}
+
+.sec-nav-contact div i {
+  font-size: 1.65rem;
+  color: var(--primary-dark);
+  opacity: 0.6;
+}
+
+.sec-nav-contact .details {
+  margin-left: 0.6em;
+}
+
+.details p:first-child,
+.details p:first-child a {
+  font-size: 1.35rem;
+  font-weight: 550;
+  color: var(--txt-onPri);
+}
+.details p:last-child {
+  font-size: 1.125rem;
+  color: var(--gray-clr);
+}
+/***********  #SECONDARY NAVBAR ************/
+/* ***********MAIN NAV ********************/
+.main-nav {
+  max-width: 70%;
+  margin: -1em auto 0;
+  padding: 0 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--deep-dark-primary);
+  color: var(--txt-onSec);
+}
+
+.main-nav .nav-links {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav li {
+  padding: 1.2em 0;
+}
+.nav-links a {
+  color: var(--txt-onSec);
+  padding: 1.2em 0.5em;
+}
+
+.nav-links a:hover,
+.search-cart i:hover {
+  background: var(--primary-light);
+  color: var(--txt-onSec);
+}
+
+.search-cart {
+  width: fit-content;
+}
+
+.search-cart i {
+  padding: 1.2em;
+}
+
+.search-cart i:last-child {
+  margin-left: 0.5em;
+}
+/* *********** #MAIN NAV ******************/
+/*****************HERO SECTION*****************/
+.hero {
+  background: var(--secondary-bg);
+  padding: 5em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.hero-content {
+  max-width: 45ch;
+  align-self: flex-start;
+}
+
+.hero-content h1 {
+  padding-top: 1em;
+  opacity: 0.75;
+}
+
+.hero-btn {
+  margin-top: 1em;
+}
+.hero-btn button {
+  border-radius: 5px;
+}
+.hero-btn button:hover {
+  background: var(--complement-clr);
+  opacity: 0.75;
+}
+.hero-btn .btn-about {
+  border: 1px double var(--complement-clr);
+}
+.hero-btn .btn-service {
+  background: var(--complement-clr);
+  margin-left: 0.6em;
+}
+.btn-about a {
+  color: var(--dark-gray);
+}
+.btn-service a {
+  color: var(--txt-onSec);
+}
+
+.hero-img {
+  max-width: 400px;
+  box-shadow: 15px 15px 10px #a6a6a6;
+  margin-right: 1em;
+}
+
+/*****************HERO SECTION*****************/
+
+/********************** #HEADER  **********************/
+
+/****************** MINI CALL TO ACTION**********/
+.mini-call-to-action {
+  background: url(../images/hero-bg.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  color: var(--txt-onSec);
+  position: relative;
+  z-index: 0;
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.mini-call-to-action::after {
+  content: "";
+  background: var(--deep-dark-primary);
+  opacity: 0.7;
+  mix-blend-mode: multiply;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.left-content {
+  max-width: 70ch;
+}
+.left-content p:first-child {
+  line-height: 1.5;
+}
+
+.left-content p:last-child {
+  font-size: 1.2rem;
+  font-weight: 200;
+  opacity: 0.75;
+}
+
+.mini-call-to-action button {
+  background-color: var(--primary-light);
+  padding: 0.7em 2em;
+}
+
+.mini-call-to-action button:hover {
+  background-color: var(--primary-dark);
+}
+.mini-call-to-action button a {
+  color: inherit;
+}
+/****************** #MINI CALL TO ACTION**********/
