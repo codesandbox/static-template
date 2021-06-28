@@ -1,12 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>lgbt-exercise</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <form action="action()">
+      <input type="text" id="num1" placeholder="Num1" />
+      <input type="text" id="num2" placeholder="Num2" />
+      <input type="submit" />
+    </form>
+    <script>
+      let num1;
+      let num2;
+      let pari;
+
+      function doStuff() {
+        let sum = num1 + num2;
+
+        if (sum / 2 == 0) {
+          pari = true;
+        } else {
+          pari = false;
+        }
+      }
+      function getData() {
+        num1 = document.querySelector("#num1");
+        num2 = document.querySelector("#num2");
+      }
+      const style = `
+    color:white;
+    background: linear-gradient(312deg, rgba(255,0,0,1) 0%, rgba(241,255,0,1) 15%, rgba(0,255,12,1) 30%, rgba(0,254,255,1) 43%, rgba(0,1,255,1) 59%, rgba(250,0,253,1) 88%, rgba(255,0,0,1) 100%);
+    border: 1px solid white;
+    padding: 5px;
+    font-family: "Comic Sans MS";
+    font-size: 16px;
+`;
+
+      console.error(
+        `%c🌈💖 An error has occurred. Everything is ruined forever. 💖🌈`,
+        `${style}`
+      );
+      function printResult(val) {
+        if (val == 1) {
+          console.log("ok");
+        } else {
+          console.log("oh sh1t");
+        }
+      }
+      function action() {
+        getData();
+        doStuff();
+        if (pari == true) {
+          printResult(1);
+        } else {
+          printResult(2);
+        }
+      }
+    </script>
   </body>
 </html>
