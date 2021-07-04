@@ -1,12 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"
+    />
+    <link href="/src/css/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header id="app-header">
+      <nav
+        id="app-navbar"
+        class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="#">Website Name</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#app-home">
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#app-services">Services</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Careers</a>
+			  </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="#app-about-us">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#app-contact-us">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- <div class="container-fluid"> -->
+      <!-- </div> -->
+    </header>
+    <div
+      data-spy="scroll"
+      data-target="#app-header"
+      data-offset="0"
+      class="scrollspy-example"
+    >
+      <div class="container" id="app-home">
+        <!-- <h1>
+         This is a static template, there is no bundler or bundling involved!
+         </h1> -->
+        <section id="app-intro">
+          <div class="row">
+            <div class="col-md-6">
+              <h1 class="display-3 intro-title">Consulting</h1>
+              <h1 class="display-3 intro-title">IT Solutions</h1>
+              <h1 class="display-3 intro-title">Digital Marketing</h1>
+              <!-- <small class="text-muted"></small> -->
+              <p class="lead">
+                Lorem ipsum dolor sit amet, Nulla vitae est quis nisi vulputate
+                malesuada sit amet at mauris. Etiam luctus egestas mauris eu
+                ullamcorper. In nisl purus, iaculis quis odio convallis,
+                vestibulum euismod eros. Sed gravida est tellus, eu suscipit
+                nisl vehicula ac. Morbi mattis porttitor sem ut ornare.
+                Suspendisse ac est nunc.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <img class="img-fluid" src="/src/img/18771.jpg" alt="intro.jpg" />
+            </div>
+          </div>
+          <!-- <div class="row">
+          <div class="col-md-4">
+            Lorem ipsum dolor sit amet, Nulla vitae est quis nisi vulputate
+            malesuada sit amet at mauris. Etiam luctus egestas mauris eu
+            ullamcorper. In nisl purus, iaculis quis odio convallis, vestibulum
+            euismod eros. Sed gravida est tellus, eu suscipit nisl vehicula ac.
+            Morbi mattis porttitor sem ut ornare. Suspendisse ac est nunc.
+          </div>
+        </div> -->
+        </section>
+        <section id="app-services">
+          <h3>What we do?</h3>
+          <p class="lead">
+            Lorem ipsum dolor sit amet, Nulla vitae est quis nisi vulputate
+            malesuada sit amet at mauris.
+          </p>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card">
+                <img
+                  src="/src/img/social-media-640.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Marketing</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <img
+                  src="/src/img/mobile-app-640.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Software Solutions</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <img
+                  src="/src/img/office-640.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Consulting</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <img
+                  src="/src/img/thumb_img.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-12">
+              <p>
+                Lorem ipsum dolor sit amet, Nulla vitae est quis nisi vulputate
+                malesuada sit amet at mauris. Etiam luctus egestas mauris eu
+                ullamcorper. In nisl purus, iaculis quis odio convallis,
+                vestibulum euismod eros. Sed gravida est tellus, eu suscipit
+                nisl vehicula ac. Morbi mattis porttitor sem ut ornare.
+                Suspendisse ac est nunc.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section id="app-about-us">
+          <h3>About Us</h3>
+          <p class="lead">
+            This is a lead paragraph. It stands out from regular paragraphs.
+          </p>
+          <div class="row">
+              <div class="col-md-6">
+                  <img
+                  src="/src/img/about-us-1280.jpg"
+                  class="img-fluid"
+                  alt="..."
+                />
+              </div>
+            <div class="col-md-6">
+              <p >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+                ultricies ullamcorper urna, ut volutpat sapien feugiat vel.
+                Curabitur feugiat tristique sagittis. Donec condimentum risus sit
+                amet tortor elementum euismod. Donec ante magna, sodales non arcu
+                vitae, consequat pulvinar dui. Morbi ac magna magna. Morbi tempor
+                libero a fringilla fermentum. Praesent sed auctor lectus, quis
+                porttitor risus. Nullam augue lectus, scelerisque vitae molestie in,
+                convallis tempor nunc. Integer in elit sit amet sapien scelerisque
+                mollis. Aenean cursus massa ac mi tristique pulvinar.
+              </p>
+            </div>
+
+          </div>
+        </section>
+        <section id="app-contact-us">
+          <h3>How to contact us?</h3>
+          <p class="lead">
+            This is a lead paragraph. It stands out from regular paragraphs.
+          </p>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <form>
+                <div class="mb-3">
+                  <label for="inuptEmail" class="form-label"
+                    >Email address</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="inuptEmail"
+                    placeholder="name@example.com"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="inputSubject" class="form-label">Subject</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputSubject"
+                    placeholder="Subject Here"
+                  />
+                </div>
+                <div class="mb-3">
+                  <!-- <label for="inputEmailContent" class="form-label"
+                    >Example textarea</label
+                  > -->
+                  <textarea
+                    class="form-control"
+                    id="inputEmailContent"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+            <div class="col-12 col-md-6">
+              <img src="/src/img/email-1280.png" class="img-fluid" alt="..." />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="container-fluid justify-content-center text-light app-footer">
+      <footer>
+        <div class="row justify-content-center py-5">
+          <div class="col-11">
+            <div class="row">
+              <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                <h3 class="text-muted mb-md-0 mb-5 bold-text">Company Name</h3>
+              </div>
+              <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                <h6 class="mb-3 mb-lg-4 bold-text"><b>MENU</b></h6>
+                <ul class="list-unstyled">
+                  <li>Home</li>
+                  <li>About</li>
+                  <li>Blog</li>
+                  <li>Portfolio</li>
+                </ul>
+              </div>
+              <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                <h6 class="mb-3 mb-lg-4 bold-text mt-sm-0 mt-5">
+                  <b>ADDRESS</b>
+                </h6>
+                <address>
+                  address line no1 <br />
+                  address line no2 <br />
+                  address line no3 <br />
+                </address>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end"
+              >
+                <p class="social text-muted mb-0 pb-0 bold-text">
+                  <span class="mx-2"
+                    ><i class="fa fa-facebook" aria-hidden="true"></i
+                  ></span>
+                  <span class="mx-2">
+                    <!-- <i class="fas fa-coffee fa-xs"></i> -->
+                    <i class="fa fa-linkedin-square" aria-hidden="true"></i
+                  </span>
+                  <span class="mx-2"
+                    ><i class="fa fa-twitter" aria-hidden="true"></i
+                  ></span>
+                  <span class="mx-2"
+                    ><i class="fa fa-instagram" aria-hidden="true"></i
+                  ></span>
+                </p>
+                <small class="rights"
+                  ><span>&#174;</span> CompanyName All Rights Reserved.</small
+                >
+              </div>
+              <div
+                class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end"
+              >
+                <h6 class="mt-55 mt-2 text-muted bold-text">
+                  <b>1st contact Name</b>
+                </h6>
+                <small>
+                  <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                  firstcontact@gmail.com</small
+                >
+              </div>
+              <div
+                class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3"
+              >
+                <h6 class="text-muted bold-text"><b>Second contact name</b></h6>
+                <small>
+                  <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                  secondcontact@gmail.com
+                  </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://kit.fontawesome.com/e2e2fde995.js"
+    crossorigin="anonymous"
+  ></script>
+  <!-- <script src="src/js/app.js"></script> -->
+  <script>
+	  $(document).ready(function(){
+        console.log('js working');
+	  });
+  </script>
 </html>
