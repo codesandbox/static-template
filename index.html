@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link href="./assets/css/common.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="slide_container">
+      <div class="slide fade">
+        <img
+          src="https://www.dropbox.com/s/6i60hcgrz7yatl5/nexus-6-2770-001.jpg?raw=1"
+        />
+        <div class="slide_caption">Caption Text</div>
+      </div>
+
+      <div class="slide fade">
+        <img src="https://www.dropbox.com/s/wu9u6l53z3q6zpa/date.jpg?raw=1" />
+        <div class="slide_caption">Caption Two</div>
+      </div>
+
+      <div class="slide fade">
+        <img
+          src="https://www.dropbox.com/s/c7vg753l95iv7g8/photo-bg-04.jpg?raw=1"
+        />
+        <div class="slide_caption">Caption Three</div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br />
+
+    <div class="blogSlider__dots" style="text-align: center;">
+      <span class="slider_dots" onclick="currentSlide(1)"></span>
+      <span class="slider_dots" onclick="currentSlide(2)"></span>
+      <span class="slider_dots" onclick="currentSlide(3)"></span>
+    </div>
+    <script src="./assets/js/common.js" type="text/javascript"></script>
   </body>
 </html>
