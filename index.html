@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Static Template</title>
+    <title>Value Chakra</title>
+    <link rel="icon" href="/src/img/vc_icon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/src/img/vc_icon.ico" type="image/x-icon"/>
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -17,6 +19,10 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <link href="/src/css/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -26,7 +32,9 @@
         class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
       >
         <div class="container">
-          <a class="navbar-brand" href="#">Website Name</a>
+          <a class="navbar-brand" href="#">
+            <img src="/src/img/vc-icon.png" alt="" width="36" height="36"> Value Chakra
+          </a>
           <button
             class="navbar-toggler"
             type="button"
@@ -66,7 +74,7 @@
     </header>
     <div
       data-spy="scroll"
-      data-target="#app-header"
+      data-target="#app-navbar"
       data-offset="0"
       class="scrollspy-example"
     >
@@ -76,23 +84,23 @@
          </h1> -->
         <section id="app-intro">
           <div class="row">
-            <div class="col-md-6">
-              <h1 class="display-3 intro-title">Consulting</h1>
-              <h1 class="display-3 intro-title">IT Solutions</h1>
-              <h1 class="display-3 intro-title">Digital Marketing</h1>
+            <div class="col-12">
+                <h1 class="display-1 intro-title text-uppercase align-middle animate__animated animate__bounce">Value Chakra</h1>
+              <!-- <h1 class="display-1 intro-title text-uppercase align-middle animate__animated animate__bounce">Value</h1>
+              <h1 class="display-1 intro-title text-uppercase">Chakra</h1> -->
               <!-- <small class="text-muted"></small> -->
-              <p class="lead">
+              <!-- <p class="lead">
                 Lorem ipsum dolor sit amet, Nulla vitae est quis nisi vulputate
                 malesuada sit amet at mauris. Etiam luctus egestas mauris eu
                 ullamcorper. In nisl purus, iaculis quis odio convallis,
                 vestibulum euismod eros. Sed gravida est tellus, eu suscipit
                 nisl vehicula ac. Morbi mattis porttitor sem ut ornare.
                 Suspendisse ac est nunc.
-              </p>
+              </p> -->
             </div>
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
               <img class="img-fluid" src="/src/img/18771.jpg" alt="intro.jpg" />
-            </div>
+            </div> -->
           </div>
           <!-- <div class="row">
           <div class="col-md-4">
@@ -348,6 +356,7 @@
       </footer>
     </div>
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -361,6 +370,14 @@
   <script>
 	  $(document).ready(function(){
         console.log('js working');
+        $('#navbarNavDropdown').on('click', '.nav-link', function() {
+          $('.nav-link').removeClass('active');
+          $(this).addClass('active');
+        });
+
+        var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+          target: '#app-navbar'
+        })
 	  });
   </script>
 </html>
