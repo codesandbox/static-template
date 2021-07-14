@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>blob.html</title>
+</head>
+<body style="margin: 0">
+
+<canvas style="border: 1px solid" width="200" height="120" id="canvasElem"></canvas>
+<input type="button" value="Submit" onclick="submit()">
+
+
+<script>
+  canvasElem.onmousemove = function (e) {
+    let ctx = canvasElem.getContext("2d");
+    ctx.lineTo(e.clientX, e.clientY);
+    ctx.stroke();
+  }
+
+  async function submit() {
+    let imgBlob = await new Promise(resolve => canvasElem.toBlob(resolve, 'image/png'));
+
+    let formdata = new FormData();
+    formdata.append("firstName", "john");
+    formdata.append("image", imgBlob, "kkp.png");
+
+    let response = await fetch('/article/formdata/post/image-form',{
+      method: 'POST',
+      body: formdata
+    })
+
+    let result = await response.json();
+    console.log(result, 22);
+
+
+  }
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+

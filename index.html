@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>index.html</title>
+</head>
+<body>
+
+<form id="formElem">
+  <input type="text" name="firstName" value="John">
+  Picture: <input type="file" name="picture" accept="image/*">
+  <input type="submit">
+</form>
+
+
+<script>
+  formElem.onsubmit = async (e) => {
+    e.preventDefault();
+
+    let response = await fetch('/article/formdata/post/user-avatar', {
+      method: 'POST',
+      body: new FormData(formElem)
+    });
+
+    let result = await response.json();
+
+    alert(result.message);
+  };
+
+</script>
+
+</body>
 </html>
