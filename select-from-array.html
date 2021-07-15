@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Select-Option from object-array</title>
+  </head>
+  <body>
+    <select name="province" id="province"></select>
+    <hr />
+    <select name="district" id="district"></select>
+  </body>
+  <script>
+    // resource :
+    // https://stackoverflow.com/questions/14473207/how-can-i-give-an-array-as-options-to-select-element
+    let selProvince = document.querySelector("#province");
+    let selDistrict = document.querySelector("#district");
+    let data = [
+      {
+        province: "Bangkok",
+        district: ["Select", "Donmuang", "Bangkhen"],
+        selected: true
+      },
+      {
+        province: "Nontaburi",
+        district: ["Select", "Pakkret", "Bangsai"]
+      }
+    ];
+
+    data.forEach(({ province, district, selected }) => {
+      selProvince.options.add(new Option(province, province, selected));
+    });
+    data[selProvince.selectedIndex].district.forEach((x) =>
+      selDistrict.options.add(new Option(x, x))
+    );
+
+    selProvince.addEventListener("change", (e) => {
+      // let i = data.findIndex( x=>x.province === e.target.value)
+      selDistrict.innerHTML = "";
+      data[selProvince.selectedIndex].district.forEach((x) =>
+        selDistrict.options.add(new Option(x, x))
+      );
+    });
+  </script>
+</html>

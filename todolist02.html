@@ -1,0 +1,141 @@
+<!-- use Dom createElement() instead of innerHTML -->
+<!-- add data (array) then control view by render -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <title>TodoList by JS + Bootstrap5</title>
+  </head>
+  <body style="max-width: 700px; margin: 0 auto;">
+    <div class="container-md mt-3">
+      <div class="display-3">Todo List</div>
+      <div class="input-group my-4">
+        <input
+          id="newjob"
+          type="text"
+          class="form-control"
+          placeholder="Input New Job"
+          aria-label="Input new Task with Add button"
+        />
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          onclick="addJob()"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let list = [
+        { id: 1, jobName: "Practice HTML", status: "undone" },
+        { id: 2, jobName: "Practice CSS", status: "undone" },
+        { id: 3, jobName: "Practice Javascript", status: "undone" }
+      ];
+
+      function clearElement(ele) {
+        while (ele.children[2]) {
+          ele.removeChild(ele.children[2]);
+        }
+      }
+      function render() {
+        let target = document.body.firstElementChild;
+        clearElement(target);
+        console.log("...render....");
+        list.forEach((x) => {
+          let div = document.createElement("div");
+          div.classList.add("input-group", "my-2");
+          let input = document.createElement("input");
+          input.classList.add("form-control");
+          input.setAttribute("type", "text");
+          input.setAttribute("readonly", "");
+          input.value = x.jobName;
+          //
+          let btnEdit = document.createElement("button");
+          btnEdit.classList.add("btn", "btn-outline-secondary");
+          btnEdit.innerText = "Edit";
+          btnEdit.setAttribute("type", "button");
+          btnEdit.addEventListener("click", () => editJob(x.id));
+
+          let btnDel = document.createElement("button");
+          btnDel.classList.add("btn", "btn-outline-secondary");
+          btnDel.innerText = "Delete";
+          btnDel.setAttribute("type", "button");
+          btnDel.addEventListener("click", () => deleteJob(x.id));
+
+          //comprise together
+          div.appendChild(input);
+          div.appendChild(btnEdit);
+          div.appendChild(btnDel);
+
+          target.appendChild(div);
+        });
+        console.log(list);
+      }
+
+      function addJob() {
+        let newjob = document.querySelector("#newjob").value;
+        if (newjob === null || newjob.trim() === "") return;
+        list.push({
+          id: list.length > 0 ? list[list.length - 1].id + 1 : 1,
+          jobName: newjob,
+          status: "undone"
+        });
+        render();
+        document.querySelector("#newjob").value = "";
+        document.querySelector("#newjob").select();
+      }
+
+      function editJob(e_id) {
+        event.preventDefault();
+        let ele = event.target;
+        let editBox = ele.previousElementSibling;
+        console.log(ele);
+        if (editBox.readOnly) {
+          ele.innerText = "OK";
+          ele.classList.toggle("bg-info");
+          editBox.readOnly = false;
+          editBox.select();
+        } else {
+          ele.innerText = "Edit";
+          ele.classList.toggle("bg-info");
+          editBox.readOnly = true;
+          console.log(editBox.value);
+          newJobName = editBox.value;
+          idx = list.findIndex((x) => x.id === e_id);
+          list[idx].jobName = newJobName;
+          render();
+        }
+      }
+
+      function doneJob(ele) {
+        if (ele.nextElementSibling.innerText === "OK") return;
+        ele.classList.toggle("text-muted");
+        ele.classList.toggle("text-decoration-line-through");
+      }
+
+      function deleteJob(del_id) {
+        // ele.parentElement.remove();
+        console.log(del_id);
+        list = [...list.filter((x) => x.id !== del_id)];
+        render();
+      }
+      render();
+    </script>
+  </body>
+</html>

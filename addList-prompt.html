@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <h1>
+      This is a static template, there is no bundler or bundling involved!
+    </h1>
+    <script>
+      function addList(ul, str) {
+        let li = document.createElement("li");
+        li.innerText = str;
+        ul.appendChild(li);
+      }
+
+      let u = document.body.appendChild(document.createElement("ul"));
+      while (true) {
+        msg = prompt("Enter List");
+        if (!Boolean(msg.trim())) break;
+        addList(u, msg);
+      }
+    </script>
+  </body>
+</html>
