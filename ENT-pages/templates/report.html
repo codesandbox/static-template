@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Merci d'utiliser l'application</title>
+            <!-- | <link rel="stylesheet" type="text/css" href="../static/globalcss.css" /> | -->
+            <style>
+                body{
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                }
+                .border{
+                   border: ridge lightgrey 2px;
+                }
+            </style>
+            <link rel="icon" href="../static/warning-icon.png" />
+        </head>
+        <body>
+            <h1>Rapporter un bug <button onclick="window.location.href='main.html'" class="border" style="text-align: right;">Retour</button></h1>
+            <form method="POST">
+                <h3>Description du bug</h2>
+                <input type="text" name="title" size="65">
+                <h3>Etapes pour reporduire le bug</h2>
+                <textarea rows="8", cols="65">Merci d'écrire les différentes étapes comme ci-dessous:
+- Première étape
+- Deuxième étape
+- Troisième étape...</textarea>
+                <h3>Insérer une capture d'écran</h3>
+                <input name="file" type="file" />
+                <br>
+                <br>
+                <input type="submit" value="Envoyer le rapport" class="border">
+            </form>
+        </body>
+    </html>
