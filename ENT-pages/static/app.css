@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+html, body {
+	margin: 0px;
+	font-family: "Open Sans", sans-serif;
+	height: 100%;
+}
+body {
+	display: flex;
+  	flex-flow: column;
+  	height: 100%;
+}
+h1, h2 {
+	margin: 0px;
+}
+header {
+	display: flex;
+	background-color: #6002EE;
+	justify-content: space-between;
+}
+header div {
+	display: flex;
+}
+#account-section {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: #FFFFFF;
+	width: 200px;
+	justify-content: space-around;
+}
+header a:hover {
+	background-color: #9F6BF2;
+}
+#title-div > a {
+	width: 43px;
+	height: 43px;
+	font-size: 32px;
+	text-align: center;
+}
+#title-div > a > span {
+	font-size: 43px;
+	text-align: center;
+	color: #FFFFFF;
+}
+h1 {
+	color: #FFFFFF;
+	margin-left: 10px;
+}
+a[href="/logout"] span {
+	color: #FFFFFF;
+	font-size: 24px;
+	text-align: center;
+}
+a[href="/logout"] {
+	width: 43px;
+	height: 43px;
+	font-size: 32px;
+	text-align: center;
+}
+#loadingbar {
+	width: 100%;
+	height: 3px;
+}
+#loadingbar div {
+	background-color: #5555FF;
+	height: 3px;
+	animation-name: loading;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+@keyframes loading {
+	0% {
+		width: 0%;
+		margin-left: 0%;
+	}
+	50% {
+		width: 100%;
+		margin-left: 0%;
+	}
+	100% {
+		width: 0%;
+		margin-left: 100%;
+	}
+}
+iframe {
+	flex-grow: 1;
+	border: none;
+}
+footer {
+	background-color: #999999;
+	text-align: center;
+}

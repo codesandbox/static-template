@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width" />
+  	<title>Python ENT - {{ firstname }} {{ name }}</title>
+  	<link rel="stylesheet" href="/static/app.css" />
+  	<!-- https://material.io/resources/icons/?style=baseline -->
+		<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+		<!-- https://material.io/resources/icons/?style=outline -->
+		<link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+		<!-- https://material.io/resources/icons/?style=round -->
+		<link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
+		<!-- https://material.io/resources/icons/?style=sharp -->
+		<link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+		<!-- https://material.io/resources/icons/?style=twotone -->
+		<link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">
+		<script src="/static/app.js"></script>
+  </head>
+  <body>
+  	<header>
+  		<div id="title-div">
+	  		<a href="/login" id="symbol">
+	  			<span class="material-icons-outlined">close</span>
+	  		</a>
+	  		<h1>Python ENT - Accueil</h1>
+	  	</div>
+	  	<div id="account-div">
+	  		<a href="javascript:account()" id="account-section">
+      <span class="material-icons-outlined">account_circle</span>
+      <h2>{{ firstname }} {{ name }}</h2>
+	  		</a>
+	  		<a href="/logout">
+	  			<span class="material-icons-outlined">logout</span>
+	  		</a>
+	  	</div>
+  	</header>
+  	<div id="loadingbar">
+  		<div></div>
+  	</div>
+  	<iframe src="/app/main" onload="iframeLoad()"></iframe>
+  	<footer>
+  		Icons from <a href="https://fonts.google.com/icons">Material Design</a>
+  	</footer>
+  </body>
+ </html>
+<!-- FIN -->
