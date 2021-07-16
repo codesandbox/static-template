@@ -3,7 +3,32 @@ body {
   width: 100vw;
   padding: 2rem;
   background-color: rgba(197, 226, 243, 0.712);
+  display: grid;
+  grid-template-columns: 8;
+  grid-template-rows: 11;
+  grid-gap: 0.5rem;
 }
 form {
   padding: 1rem;
+  grid-column: 1/2;
+  grid-row: 2/9;
+  justify-self: start;
+}
+img {
+  grid-column: 2/8;
+  grid-row: 7/11;
+  justify-self: end;
+}
+.textbox {
+  margin-bottom: 1rem;
+}
+button {
+  color: white;
+  background-color: blue;
+  padding: 0.25rem;
+  width: 5rem;
+}
+.labeltext {
+  margin-bottom: 0.25rem;
+  display: inline-block;
 }
