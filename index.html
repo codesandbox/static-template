@@ -1,12 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Vue Shopping List</title>
+	</head>
+	<body>
+		<div id="shopping_list">
+			<h1>{{header ? header : "Welcome"}}</h1>
+			<div v-if="editItem" class="addItemForm">
+				<input
+				@keyup.enter="addItem(newItem)"
+				v-model="newItem"
+				type="text"
+				placeholder="Add your item"
+			/>
+			<input type="checkbox" name="priority" v-model="highPriority">High Priority</input>
+			<button type="button" name="saveItemButton" v-model="newItem" @click="addItem(newItem)" class="saveItemButton">Save item</button>
+			</div>
+			
+			<p v-if="item_list.length === 0 && editItem === false">Need to buy something?</p>
+			<button v-if="editItem" @click="doEditItem(false)" class="editItemTrue">Finished Shopping</button>
+			<button v-else  @click="doEditItem(true)" class="editItemTrue">Yes</button>
+			<ul>
+				<li v-for="item in item_list" :key="item.id">
+					{{"Item " + item.id + ": "}}{{item.content}}{{item.priority ? " 🚨" : ""}}
+					<button @click="deleteItem(item.id)" type="button" class="itemDeletes">×</button>
+				</li>
+			</ul>
+			
+		</div>
+	</body>
+	<script src="https://unpkg.com/vue@3.1.2/dist/vue.global.js"></script>
+	<script>
+		Vue.createApp({
+			data() {
+				return {
+					header: "Shopping List App",
+					newItem: '',
+					highPriority: false ,
+					editItem: false,
+					item_list: [
+						// { id: 1, content: "1 box of eggs" },
+						// { id: 2, content: "1 carton of milk"},
+						// { id: 3, content: "1 box of ichigo" },
+						// { id: 4, content: "meat!" }
+					]
+				};
+			}, 
+			methods: {
+				addItem (newItem){
+					this.item_list.push({id: this.item_list.length+1, content: newItem, priority : this.highPriority})
+					this.newItem = ""
+					this.highPriority = false
+				},
+				doEditItem(editItem){
+					this.editItem = editItem;
+				},
+				deleteItem(id){
+					this.item_list = this.item_list.filter(item => item.id !== id);
+
+					//Reset ID of each item after deleting an item. forEach loop over the new array.
+					this.item_list.forEach(item => {
+						item.id = this.item_list.indexOf(item)+1
+					});
+				}
+			}
+		}).mount("#shopping_list");
+	</script>
 </html>
