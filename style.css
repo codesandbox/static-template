@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-size: 62.5%;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  height: 7rem;
+  background: green;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  padding-top: 1rem;
+}
+
+.header .header-container .logo {
+  margin: 0 20rem 0 0;
+}
+.nav {
+  display: flex;
+  flex-basis: 50%;
+  justify-content: space-between;
+}
+
+.nav li {
+  list-style: none;
+}
+
+.nav li a,
+.logo a {
+  text-decoration: none;
+  color: white;
+  padding: 0.4rem 1rem;
+}
+
+.active,
+.nav li a:hover {
+  background: orangered;
+  border-radius: 0.5rem;
+}
+
+.logo a:hover {
+  color: orangered;
+  padding: 0.4rem 1rem;
+}
+
+.main .cover {
+  height: 40vh;
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.image-section-container {
+  padding-top: 3rem;
+  background-color: deepskyblue;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+  justify-items: center;
+  align-items: center;
+}
+
+.image-card {
+  width: 30rem;
+  height: 30rem;
+  background-color: darkblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-card img {
+  display: block;
+  width: 60%;
+  height: 60%;
+}
+
+.footer {
+  text-align: center;
+  background: orangered;
+  font-size: 3rem;
+}
