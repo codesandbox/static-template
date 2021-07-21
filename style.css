@@ -1,0 +1,654 @@
+body {
+  font-family: "Yomogi", cursive;
+  margin: 0px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+p {
+  font-family: "Shippori Mincho", serif;
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+}
+
+h1 {
+  font-family: "Nanum Brush Script", cursive;
+  color: white;
+  /* filter: drop-shadow(0px 4px 10px rgba(51, 85, 95, 0.856)); */
+}
+
+h3 {
+  font-family: "Shippori Mincho", serif;
+}
+
+main div {
+  display: block;
+}
+
+.container {
+  height: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+/* background */
+.cover-bg {
+  position: absolute;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.bg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Header */
+
+.header {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.85);
+  filter: drop-shadow(0px 4px 10px rgba(57, 99, 104, 0.2));
+}
+
+.header-inner {
+  position: relative;
+  right: 3%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-logo {
+  width: 20%;
+  padding: 1rem 0px 1rem 5%;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.header-navbar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+}
+
+ul {
+  list-style: none;
+}
+
+.nav-list a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+}
+
+.nav-item {
+  margin-left: 1.5vw;
+}
+
+.nav-item:hover {
+  transform: translateY(-7px);
+  cursor: pointer;
+}
+
+/* hamburger */
+
+.btn-burger {
+  display: none;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+#navToggle {
+  display: none;
+}
+
+.home {
+  width: 70%;
+  padding-top: 12%;
+  margin-right: auto;
+  margin-left: auto;
+  vertical-align: center;
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+  /* display: block; */
+  padding-top: 56.25%;
+  /* width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 0; */
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* icons */
+.icon-bar {
+  width: 5%;
+  position: fixed;
+  top: 40%;
+  right: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  width: 35px;
+  margin: 15px;
+}
+
+.icon:hover {
+  transform: translateY(-7px);
+  cursor: pointer;
+}
+
+/* about */
+#about.content {
+  text-align: left;
+  position: relative;
+  width: 100%;
+}
+
+.content h1 {
+  font-size: 6rem;
+  margin-top: 7rem;
+  text-align: center;
+  padding-bottom: 4rem;
+  position: relative;
+  z-index: 10;
+  background-image: url(img/brush.png);
+  background-repeat: no-repeat;
+  background-size: 15rem;
+  background-position: center 2rem;
+}
+
+.content h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 30px;
+}
+
+.content p {
+  padding: 0 4rem;
+  margin-bottom: 50px;
+}
+
+.content-inner {
+  width: 50%;
+  background-color: white;
+  padding: 1rem;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+/* Profile */
+
+#team {
+  position: relative;
+  width: 100%;
+  height: 1000px;
+}
+
+.profile {
+  position: relative;
+  width: 70%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+}
+
+.profile-area {
+  width: 350px;
+  position: relative;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+}
+
+.main-sq {
+  width: 350px;
+  height: 450px;
+  background: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 115px;
+  left: 0px;
+  border-radius: 3%;
+}
+
+.circle {
+  width: 230px;
+  height: 230px;
+  background: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 0px;
+  left: 60px;
+  border-radius: 50%;
+}
+.profile-pic1 {
+  width: 220px;
+  height: 220px;
+  background: url("img/kanae.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  top: 5px;
+  left: 65px;
+  border-radius: 110px;
+  box-shadow: 0px 4px 5px rgba(12, 12, 12, 0.76);
+}
+.profile-pic2 {
+  width: 220px;
+  height: 220px;
+  background: url("img/kiryu.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  top: 5px;
+  left: 65px;
+  border-radius: 110px;
+  box-shadow: 0px 4px 5px rgba(12, 12, 12, 0.76);
+}
+
+.name {
+  width: 120px;
+  height: 60px;
+  color: rgba(0, 0, 0, 1);
+  position: relative;
+  top: 250px;
+  font-family: Nanum Brush Script;
+  font-size: 3rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.intro {
+  width: 225px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 319px;
+  left: 66px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  text-align: left;
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.instagram {
+  width: 30px;
+  height: 30px;
+  background: url("img/instagram.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  top: 500px;
+  left: 130px;
+}
+
+.home-page {
+  width: 30px;
+  height: 29px;
+  background: url("img/home.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  top: 500px;
+  left: 190px;
+}
+
+/* plans */
+
+#plans.content {
+  position: relative;
+}
+
+/* footer */
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+.footer-box {
+  width: 100%;
+  padding: 20px 0;
+  background-color: white;
+  text-align: center;
+}
+
+.footer-img {
+  width: 20%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-text {
+  text-align: center;
+}
+
+.footer-text p {
+  margin: 10px 0 0 0;
+}
+
+/* mobile */
+
+@media screen and (max-width: 560px) {
+  .content h1 {
+    color: white;
+    font-size: 6rem;
+    margin-top: 5rem;
+    margin-bottom: 0;
+    text-align: center;
+    padding-bottom: 1rem;
+    position: relative;
+    z-index: 10;
+    background-image: url(img/brush.png);
+    background-repeat: no-repeat;
+    background-size: 7rem;
+    background-position: center 12px;
+    filter: drop-shadow(0px 5px 5px rgba(114, 117, 117, 0.774));
+  }
+
+  p {
+    margin-bottom: 30px;
+    font-size: 0.8rem;
+  }
+
+  .header-inner {
+    /* justify-content: center; */
+    display: block;
+    /* position: fixed; */
+  }
+
+  .header-navbar {
+    height: 100%;
+    float: left;
+    left: 10%;
+  }
+
+  .header-logo {
+    min-width: 40%;
+    padding: 1rem 0px 1rem 5%;
+  }
+
+  /*ハンバーガーアイコン*/
+  .btn-burger {
+    position: fixed;
+    width: 10%;
+    height: auto;
+    right: 10px;
+    top: 35px;
+    display: block;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .bars,
+  .bars:before,
+  .bars:after {
+    height: 4px; /*線の太さ*/
+    width: 100%; /*線の長さ*/
+    background-color: #444;
+    border-radius: 2px;
+    display: block;
+    content: "";
+    cursor: pointer;
+    /* margin: auto; */
+    position: absolute;
+    transition: all 1s;
+  }
+
+  .bars:before {
+    top: 10px;
+  }
+
+  .bars:after {
+    top: -10px;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-toggle:checked ~ .btn-burger .bars {
+    background: transparent;
+    top: 30px;
+  }
+  .nav-toggle:checked ~ .btn-burger .bars:before {
+    transform: rotate(-45deg);
+    top: 0px;
+  }
+  .nav-toggle:checked ~ .btn-burger .bars:after {
+    transform: rotate(45deg);
+    top: 0px;
+  }
+
+  .nav-toggle:checked ~ .btn-burger {
+    right: 10px;
+    top: 5px;
+    margin-right: 20px;
+    position: fixed;
+  }
+
+  .nav-toggle:checked ~ .header-inner {
+    justify-content: center;
+  }
+
+  /*表示されるメニューの中身*/
+  .navbar {
+    margin: 20%;
+    background-color: transparent;
+  }
+
+  .nav-list a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 36px;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: none;
+    padding: 0;
+  }
+
+  .nav-item {
+    margin: 0;
+  }
+
+  .nav-list li {
+    margin-left: 0;
+    padding: 5px;
+  }
+
+  .nav-toggle:checked ~ .navbar .nav-list {
+    display: block;
+  }
+
+  .nav-toggle:checked ~ .header {
+    height: 100%;
+  }
+
+  .icon-bar {
+    width: 5%;
+    top: 70%;
+    right: 6%;
+    z-index: 60;
+  }
+
+  .icon {
+    width: 30px;
+    margin: 5px;
+  }
+
+  .home {
+    width: 90%;
+    padding-top: 7rem;
+  }
+
+  #about.content {
+    text-align: left;
+    height: 20%;
+    position: relative;
+    width: 100%;
+  }
+
+  .content h1 {
+    font-size: 3rem;
+    margin-top: 30%;
+  }
+
+  .content h3 {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .content p {
+    padding: 0;
+  }
+
+  .content-inner {
+    width: 73%;
+    margin: auto;
+  }
+
+  #team.content {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .profile {
+    display: block;
+    width: 90%;
+    height: auto;
+  }
+
+  .profile-area {
+    width: 100%;
+    height: 600px;
+    /* position: relative; */
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  #kiryu-insta.instagram {
+    width: 30px;
+    height: 30px;
+    background: url("img/instagram.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 440px;
+    left: 130px;
+  }
+
+  #kiryu-hp.home-page {
+    width: 30px;
+    height: 29px;
+    background: url("img/home.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 440px;
+    left: 190px;
+  }
+
+  #kiryu-sq.main-sq {
+    height: 300px;
+  }
+
+  .main-sq {
+    width: 100%;
+    text-align: center;
+  }
+
+  #kiryu.profile-area {
+    height: 520px;
+  }
+
+  #team.content h1 {
+    margin: 45px;
+  }
+
+  div #plans {
+    display: none;
+  }
+
+  div #contact {
+    display: none;
+  }
+
+  .footer-box {
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: rgb(232, 250, 255);
+    /* background-image: url(img/bg.jpg); */
+    text-align: center;
+  }
+
+  .footer-img {
+    width: 45%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .footer-text p {
+    text-align: center;
+    margin: 10px;
+  }
+  /* bg */
+  .cover-bg {
+    display: none;
+  }
+}
+
+/* main */

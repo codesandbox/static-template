@@ -1,12 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Love&Sun</title>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+    ></script>
+    <script type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    <link rel="icon" 
+      type="image/png" 
+      href="https://dejpknyizje2n.cloudfront.net/svgcustom/clipart/preview/heart-sun-10405-11818-550x550.webp">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="cover-bg">
+      <img src="img/bg.jpg" alt="background" class="bg" />
+    </div>
+    <div class="container">
+      <main class="main">
+          <header class="header">
+              <div class="header-inner">
+                <div class="header-logo">
+                  <a href="index.html">
+                    <picture>
+                      <source
+                        media="(max-width: 300px)"
+                        srcset="img/loveandsun_logo.png"
+                      />
+                      <img src="img/loveandsun_logo.png" alt="Love & Sun" class="logo"/
+                      >
+                    </picture>
+                  </a>
+                </div>
+                <div class="header-navbar">
+                  <input
+                    type="checkbox"
+                    name="navToggle"
+                    id="navToggle"
+                    class="nav-toggle"
+                  />
+                  <label for="navToggle" class="btn-burger">
+                    <span class="bars"></span>
+                  </label>
+                  <nav class="navbar">
+                    <ul class="nav-list">
+                      <li class="nav-item"><a href="#home">Home</a></li>
+                      <li class="nav-item">
+                        <a href="#about">About</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="#team">Team</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="#plans">Plans</a>
+                      </li>
+                      <!-- <li class="nav-item">Photos</li>
+                      <li class="nav-item">Voices</li> -->
+                      <li class="nav-item">
+                        <a href="#contact">Contact</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://loveandsun.base.shop/">Ticket </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </header>
+        <div class="home" id="home">
+          <div class="video-container">
+            <iframe
+              class="video"
+              
+              src="https://www.youtube.com/embed/tjrM9rF1w-k?autoplay=1&mute=1&loop=1&playlist=tjrM9rF1w-k&modestbranding=1&controls=0&frameborder=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            ></iframe>
+          </div>
+        </div>
+        <div class="icon-bar">
+          <a href="https://www.instagram.com/loveandsun_project/" target="_blank"
+            ><img src="img/instagram.png" alt="instagram" class="icon"
+          /></a>
+          <img src="img/tik-tok.png" alt="tiktok" class="icon" />
+          <img src="img/twitter.png" alt="twitter" class="icon" />
+        </div>
+        <div class="content" id="about">
+          <h1>About</h1>
+          <div class="content-inner">
+            <h3>~秘めたる太陽との出会い~</h3>
+            <p>アーティストKANAEによる潜在意識に繋がり彩るボディペイント。
+              その想いや感情も包んで写真に切り取るフォトグラファーKiryu。
+              2人が紡ぐアートの主役は、他でもないあなた。
+              魂を色に、色を写真に、
+              そして魂からのメッセージを聴いた先には、
+              あなたの中に秘めたる太陽との出会いが待っている。</p>
+            <h3>~Why we do~</h3>
+            <p>人は皆、それぞれの魅力があるのに人と比べたりコンプレックスを持っていたりして、本来の自分で輝き切れていないように思うのです。
+              そんな「人」の潜在意識と繋がりをKANAEがペイントをして作品とすることで、そもそもの素材（魅力）があってこそ輝く作品となる。
+              この企画を通して、自分がいつの間にかどこかに仕舞い込んでしまった（秘めてしまった）魅力 = 太陽と再び出会う機会をつくれたらと私たちは思いました。
+              そして、秘めたる太陽と出会ったあなたをKiryuが写真として残すことで、益々輝いてくれたらそれで幸せなのです。
+              私たちはこうして、2021年5月、このプロジェクトをスタートさせました。</p>
+          </div>
+        </div>
+        <div class="content" id="team">
+          <h1>Team</h1>
+          <div class="profile">
+              <div class="profile-area">
+                  <div class="main-sq"></div>
+                  <div class="circle"></div>
+                  <div class="profile-pic1"></div>
+                  <span class="name">KANAE</span>
+                  <span class="intro">魂と感情そしてストーリーを色形にする表現者。時にはキャンバスに、時には顔に、腕に描かれるストーリーは心を震わせる。
+                      2021年からは【その「ひと」と共に在る】をテーマに作品を発表している。</span>
+                  <div class="instagram"></div>
+                  <div class="home-page"></div>
+              </div>
+              <div class="profile-area" id="kiryu">
+                  <div class="main-sq" id="kiryu-sq"></div>
+                  <div class="circle"></div>
+                  <div class="profile-pic2"></div>
+                  <span class="name">Kiryu</span>
+                  <span class="intro">"きっかけはこの１枚から" をコンセプトにイベントやポートフォリオ撮影など、マルチに活躍するカメラマン。</span>
+                  <div class="instagram" id="kiryu-insta"></div>
+                  <div class="home-page" id="kiryu-hp"></div>
+              </div>
+          </div>
+        </div>
+        <div class="content" id="plans">
+          <h1>Plans</h1>
+          <div>
+
+          </div>
+        </div>
+        <div class="content" id="contact">
+          <h1>Contact</h1>
+          <div>
+
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer　class="footer">
+      <div class="footer-box">
+        <div class="footer-img">
+          <img src="img/loveandsun_logo.png" alt="Love & Sun" class="logo" />
+        </div>
+        <div class="footer-text">
+          <p>@Love and Sun All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
+
+
