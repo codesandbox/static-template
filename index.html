@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>
+      Cash Register Manager
+    </h1>
+    <div>
+      <input type="number" placeholder="Bill Amount" id="bill-amt"></input>
+      <button onclick="clickNext();">Next</button><br><br>
+    </div>
+   <div><input type="number" placeholder="Cash Amount" class="cash-amt"></input>
+    <button onclick="clickSubmit();">Submit</button>
+    <br><br>
+  </div>
+   <div class="equalAmt">No Need</div>
+   <div><table>
+    <tr>
+      <th>Types of Notes</th>
+      <th>2000</th>
+      <th>500</th>
+      <th>200</th>
+      <th>100</th>
+      <th>50</th>
+      <th>10</th>
+      <th>5</th>
+      <th>1</th>
+      
+    </tr>
+
+    <tr>
+      <th>NO.of Notes</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+     
+    </tr>
+
+   </table></div>
+    <script src="./app.js" />
   </body>
 </html>
