@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Cash Register manager</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>Cash Register Manager</h1>
+    <div class="container">
+        <div class="bill-div">
+            <Input type="number" class="billAmt" placeholder="Enter Bill Amount"></Input>
+            <button class="nextBtn" onclick="nxtOnClick()">Next</button>
+        </div>
+        <div class="cash-div">
+            <Input class="cashAmt" placeholder="Enter Cash Amount"></Input>
+            <button class="calcBtn" onclick="calcOnClick()">Calculate</button>
+        </div>
+        <div class="return"></div>
+
+    </div>
+
+    <div class="table">
+        <table>
+            <tr>
+                <th>Type Of Notes</th>
+                <td>1</td>
+                <td>5</td>
+                <td>10</td>
+                <td>20</td>
+                <td>100</td>
+                <td>500</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <th>No.OfNotes</th>
+                <td class="noOfNotes"></td>
+                <td class="noOfNotes"></td>
+                <td class="noOfNotes"></td>
+                <td class="noOfNotes"></td>
+                <td class="noOfNotes"></td>
+                <td class="noOfNotes"></td>
+                <td class="noOfNotes"></td>
+            </tr>
+        </table>
+    </div>
+    <script src="./app.js" />
+</body>
+
 </html>
