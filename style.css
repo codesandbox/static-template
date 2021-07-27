@@ -1,0 +1,237 @@
+* {
+  --hue: 359;
+  --background-color: hsl(var(--hue), 55%, 78%);
+  --second-text-color: hsl(var(--hue), 53%, 20%);
+  --text-color: hsl(var(--hue), 41%, 10%);
+  --border-color: hsl(var(--hue), 41%, 22%);
+  --background-button: hsl(var(--hue), 53%, 30%);
+  --text-button: hsl(var(--hue), 33%, 95%);
+  margin: 0;
+  padding: 0px;
+}
+
+header {
+  padding: 1rem;
+  display: block;
+  background-color: var(--background-color);
+  align-items: center;
+}
+
+header h1 {
+  display: flex;
+  text-align: center;
+  font-size: 1.2rem;
+  align-content: center;
+}
+
+header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-color);
+}
+
+header .header-content .logo {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+header .header-content img {
+  border-radius: 100%;
+  margin-right: 1rem;
+}
+
+header .header-content .menu {
+  display: flex;
+  padding-right: 2rem;
+}
+
+header .header-content .menu h1 {
+  list-style: none;
+  display: inline-block;
+  position: relative;
+}
+
+header .header-content .menu a {
+  display: flex;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  margin: 0 1rem;
+}
+
+.container {
+  display: block;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-color);
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.container .text {
+  text-align: center;
+}
+
+.container h1 {
+  margin-top: 5rem;
+  font-size: 1.5rem;
+}
+
+.container h2 {
+  margin-top: 0.25rem;
+  font-size: 2rem;
+  color: var(--second-text-color);
+}
+
+.container .text p {
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+  font-size: 1rem;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.container .button {
+  display: flex;
+  justify-content: center;
+}
+
+.container .box button {
+  width: 70%;
+  margin-top: 2rem;
+  cursor: pointer;
+  background-color: var(--background-button);
+  border: none;
+  padding: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  color: var(--text-button);
+}
+
+.container .button button {
+  width: 65%;
+  max-width: 350px;
+  margin-top: 2rem;
+  background-color: var(--background-button);
+  color: var(--text-button);
+  cursor: pointer;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+}
+
+#about {
+  margin-top: -3rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+}
+#about .portf {
+  display: block;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+#about .portf .box {
+  max-width: 500px;
+  margin-top: 1rem;
+  border: solid;
+  border-width: 1px;
+  border-color: var(--border-color);
+  background-color: var(--background-color);
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
+
+#about .portf .box button a {
+  text-decoration: none;
+  color: var(--text-button);
+}
+
+#about .portf .box p {
+  margin-top: 2rem;
+  padding: 0;
+  font-size: 1rem;
+}
+
+#about .portf .box h3 {
+  margin-top: 1rem;
+}
+
+.container #about .portf h3 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container #about .portf .box img {
+  border-radius: 0.25rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+#cv {
+  text-align: center;
+  margin-bottom: 7rem;
+}
+
+#cv h2 {
+  margin-bottom: 1rem;
+}
+
+footer {
+  background: var(--background-color);
+  font-family: "Montserrat", sans-serif;
+}
+
+footer .itens {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer a {
+  font-size: 1rem;
+  color: black;
+  text-decoration: none;
+}
+
+footer .fonts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .fonts img {
+  padding-right: 2px;
+}
+
+footer p {
+  text-align: center;
+}
+footer .copyright {
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 699px) {
+  :root {
+  }
+  header .header-content .menu {
+    display: none;
+  }
+  header .header-content .logo img {
+    width: 3rem;
+  }
+}
+
+@media (min-width: 700px) {
+  :root {
+    font-size: 26px;
+  }
+}
