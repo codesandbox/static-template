@@ -1,12 +1,340 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Meu Portifólio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <img class="foto" src="FotoMaria.png" />
+      <div class="dados">
+        <h1><span> Maria Romualdo</span></h1>
+        <p class="profissao t60">Desenvolvedora Front-end em Aprendizado</p>
+      </div>
+    </header>
+    <main>
+      <div class="coluna-menor">
+        <div class="experiencias">
+          <h2>Experiências Profissionais</h2>
+          <div class="linha">
+            <ul>
+              <li>
+                <img
+                  src="https://pbs.twimg.com/profile_images/1333865894808870912/KjrZQaMt_400x400.png"
+                />
+                <div class="conteudo">
+                  <h3><b>Auxiliar de Lógistica</b> @Ricado Eletro</h3>
+                  <p class="periodo t60">De Março de 2015 a Novembro de 2018</p>
+                </div>
+              </li>
+
+              <li>
+                <img
+                  src="https://media-exp3.licdn.com/dms/image/C4D0BAQF4wy2hhp_vxw/company-logo_200_200/0/1625487992493?e=2159024400&v=beta&t=YXkmf2KGFNNDSfehBs-xRiVg0gfOMcHlfsH2eyVMrI8"
+                />
+                <div class="conteudo">
+                  <h3><b>Atendimento ao Cliente</b> @Almaviva do Brasil</h3>
+                  <p class="periodo t60">De Abril de 2014 a Outubro 2014</p>
+                </div>
+              </li>
+
+              <li>
+                <img
+                  src="data:image/jpeg;base64,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"
+                />
+                <div class="conteudo">
+                  <h3><b>Operador De SAC </b> @Atento do Brasil</h3>
+                  <p class="periodo t60">De Dezembro de 2012 a Abril de 2013</p>
+                </div>
+              </li>
+
+              <li>
+                <img
+                  src="https://media-exp3.licdn.com/dms/image/C4D0BAQGsPq1nebKORg/company-logo_200_200/0/1625147543141?e=2159024400&v=beta&t=txx6K-6LA8qLk-nezdndNtOmXa-1CjjVMDDIvm8TZhM"
+                />
+                <div class="conteudo">
+                  <h3><b>Operador de Call Center</b> @AeC</h3>
+                  <p class="periodo t60">De Junho de 2012 a Agosto de 2012</p>
+                </div>
+              </li>
+
+              <li>
+                <img src="logo.png" />
+                <div class="conteudo">
+                  <h3><b>Auxiliar de Administrativo</b> @Salute Locadora</h3>
+                  <p class="periodo t60">
+                    De Dezembro de 2011 a Fevereiro de 2012
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <img
+                  src="https://media-exp1.licdn.com/dms/image/C560BAQGYO9Q1rEKrpg/company-logo_200_200/0/1600949156478?e=2159024400&v=beta&t=eJio42mhV03laMR8HX_mCSMZplZtzQm9MUF2q-jgt0o"
+                />
+                <div class="conteudo">
+                  <h3>
+                    <b>Montador de Equipamentos Eletrônicos</b> @Jabil Circuit
+                    do Brasil Ltda
+                  </h3>
+                  <p class="periodo t60">De Setembro de 2008 a Julho de 2010</p>
+                </div>
+              </li>
+
+              <li>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Logo_Neumayer_Tekfor.svg/1200px-Logo_Neumayer_Tekfor.svg.png"
+                />
+                <div class="conteudo">
+                  <h3><b>Auxiliar de Qualidade</b> @Neumayer Teckfor</h3>
+                  <p class="periodo t60">De Setembro de 2005 a Julho de 2007</p>
+                </div>
+              </li>
+
+              <li>
+                <img src="" />
+                <div class="conteudo">
+                  <h3>
+                    <b>Assistente de Produção</b> @Thomson Tubes Components
+                    BHte.LTDA
+                  </h3>
+                  <p class="periodo t60">De Janeiro de 2002 a Maio de 2005</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="formacao">
+              <h2>Formação</h2>
+              <div class="linha">
+                <ul>
+                  <li>
+                    <img
+                      src="https://pbs.twimg.com/profile_images/1364629475246366726/-5Axkq3y_400x400.jpg"
+                    />
+                    <div class="conteudo">
+                      <h3>
+                        <b>Analise e Desenvolvimento de Sistemas </b> @Faculdade
+                        Pitagoras
+                      </h3>
+                      <p class="periodo t60">
+                        De Fevereiro de 2011 a julho de 2014
+                      </p>
+                    </div>
+                  </li>
+
+                  <li>
+                    <img
+                      src="data:image/jpeg;base64,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"
+                    />
+                    <div class="conteudo">
+                      <h3><b>Técnico em Logística</b> @IBHES/UNIP</h3>
+                      <p class="periodo t60">
+                        De Agosto de 2014 a Outobro de 2015
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="coluna-maior">
+        <h2>Habilidades</h2>
+        <div class="habilidades">
+          <div class="habilidade">
+            <h3>Front</h3>
+            <ul>
+              <li>
+                <p>HTML</p>
+                <div class="progresso">
+                  <div class="barra"></div>
+                  <div class="barra"></div>
+                  <div class="barra"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                </div>
+              </li>
+
+              <li>
+                <p>CSS</p>
+                <div class="progresso">
+                  <div class="barra"></div>
+                  <div class="barra"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                </div>
+              </li>
+
+              <li>
+                <p>JAVASCRIPT</p>
+                <div class="progresso">
+                  <div class="barra"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                </div>
+              </li>
+
+              <li>
+                <p>REACT</p>
+                <div class="progresso">
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="habilidade">
+            <h3>Back</h3>
+            <ul>
+              <li>
+                <p>Node.js</p>
+                <div class="progresso">
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                </div>
+              </li>
+
+              <li>
+                <p>PosrgreSQL</p>
+                <div class="progresso">
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                </div>
+              </li>
+
+              <li>
+                <p>JWT</p>
+                <div class="progresso">
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                </div>
+              </li>
+
+              <li>
+                <p>REST</p>
+                <div class="progresso">
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="habilidade">
+            <h3>Soft Skills</h3>
+            <ul>
+              <li>
+                <p>Comunicação</p>
+                <div class="progresso">
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                </div>
+              </li>
+
+              <li>
+                <p>Trabalho em Equipe</p>
+                <div class="progresso">
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                </div>
+              </li>
+
+              <li>
+                <p>Gerenciamento de Tempo</p>
+                <div class="progresso">
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                </div>
+              </li>
+
+              <li>
+                <p>Gestão de Conflito</p>
+                <div class="progresso">
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                  <div class="barra incompleto"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Projetos</h2>
+        <div class="projetos">
+          <div class="projeto">
+            <h3>WF Desing + Build</h3>
+            <p>
+              High-end. custom residenters renovaters serving Fraser Valler
+              homeowners.
+            </p>
+            <img src="https://source.unsplash.com/random/344x190?desing" />
+            <a href="https://google.com">Ver o Projeto</a>
+          </div>
+
+          <div class="projeto">
+            <h3>2020 Arctic Winter Games</h3>
+            <p>
+              Uniting First Nations culture and community through winter sports
+              competition
+            </p>
+            <img src="https://source.unsplash.com/random/344x190?ski" />
+            <a href="https://google.com">Ver o Projeto</a>
+          </div>
+
+          <div class="projeto">
+            <h3>Chronicled</h3>
+            <p>
+              Blockchain pioneers bringing transparency , trust, and security to
+              suppy.
+            </p>
+            <a href="https://google.com">Ver o Projeto</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      Projeto desenvolvido durante a imersão do Cubos Academy 2021
+    </footer>
   </body>
 </html>
