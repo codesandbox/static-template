@@ -1,0 +1,349 @@
+/* -----------------------------
+    GENERAL SECTION
+-------------------------------- */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.inner {
+  width: 960px;
+  margin: 0 auto;
+  background-color: #131313;
+  margin: 20px;
+}
+
+.rightAligned {
+  float: right;
+}
+
+/* -----------------------------
+  HEADER SECTION
+-------------------------------- */
+header {
+  height: 450px;
+  background-color: (red, yellow);
+  position: static;
+  display: flex;
+}
+.inner-header {
+  display: flex;
+  flex-direction: column;
+}
+.Logo {
+  text-align: left;
+  float: left;
+  margin-top: 181px;
+  margin-left: -481px;
+  /* background-color: red; */
+}
+
+.new-logo {
+  display: flex;
+  float: left;
+  margin-top: 15px;
+  /* flex-direction: row; */
+}
+/* ================================== */
+.company-name {
+  font-size: 60px;
+  line-height: 1.4;
+  letter-spacing: 0px;
+  color: black;
+  display: flex;
+  float: left;
+  font-family: Serif;
+  /* flex-direction: row */
+
+  /* width: 100%;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  float: right;
+  text-transform: uppercase;
+  display: flex-wrap;
+  margin-left: 250px; */
+
+  background-image: url("../images/header-shade.jpg");
+  width: XXpx;
+  height: XXpx;
+}
+.inner {
+  margin-top: -229px;
+  margin-left: 308px;
+}
+
+.banner {
+  margin-top: -676px;
+  margin-left: 273px;
+  position: static;
+}
+
+.header-introduction {
+  text-align: justify;
+  letter-spacing: 0.8px;
+  word-spacing: 1.5px;
+  line-height: 20px;
+  background-color: #83677e;
+  margin-top: -70px;
+  color: white;
+  text-align: justify;
+  position: static;
+  background-image: url("imgs/mopecs.jpg");
+  text-justify: center;
+  margin-left: 102px;
+  text-decoration: blink;
+  background: black;
+  color: white;
+  border-radius: 1em;
+  padding: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -15px;
+  transform: translate(-50%, -50%);
+  width: 67%;
+  align-items: center;
+  background-image: linear-gradient(black, yellow);
+}
+
+.topNav {
+  position: sticky;
+  top: 0;
+}
+
+.topNav ul {
+  background-color: #413c3f;
+  display: flex;
+  justify-content: space-around;
+}
+
+.topNav ul a {
+  color: #fff;
+  background-color: #413c3f;
+  text-decoration: none;
+  text-transform: capitalize;
+  padding: 10px;
+  display: block;
+}
+
+.topNav ul a:hover {
+  color: #413c3f;
+  background-color: #fff;
+}
+
+.topNav ul a:active {
+  text-decoration: underline;
+}
+
+.random-movie {
+  height: 565px;
+  position: relative;
+  background: rgba(40, 172, 108, 0.4);
+  padding-top: 57px;
+  padding-bottom: 23px;
+  margin-top: 10px;
+}
+
+.random {
+  background-color: #fbc500;
+  height: 80px;
+  width: inherit;
+  margin-left: -2px;
+  margin-top: -13px;
+  line-height: 30px;
+  font-family: sans-serif;
+  font-size: 30px;
+  align-items: center;
+}
+
+ain {
+  position: relative;
+  height: 635px;
+  border: 1px solid #999;
+  margin: 50px 0;
+  box-shadow: 3px 3px 3px #333;
+}
+
+/* =====================   Random PICTURES SECTION ==== */
+
+.bigPics {
+  position: absolute;
+  top: 56px;
+  right: 56px;
+
+  opacity: 0;
+}
+
+/* =====================   THUMBS  SECTION ==== */
+.thumbnails {
+  position: relative;
+  top: 16px;
+  left: 56px;
+  margin-bottom: 37px;
+  margin-top: -44px;
+  z-index: 20;
+}
+
+.thumbnails:hover + .bigPics {
+  opacity: 1;
+  z-index: 20;
+}
+/* =====================  FRAMEDIVS  SECTION ==== */
+
+.frameDivs {
+  position: absolute;
+  top: 28px;
+  background-color: #fff;
+  height: 579px;
+  z-index: 10;
+}
+
+#frameDiv1 {
+  left: 28px;
+  width: 204px;
+  margin-top: 10px;
+}
+
+#frameDiv2 {
+  width: 695px;
+  right: 28px;
+  background-image: url("../imgs/Gallery_00.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* -----------------------------
+  MAIN SECTION - Movie Content 
+-------------------------------- */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  background-color: yellow;
+  height: 500px;
+}
+
+.schedule-of-movies {
+  display: grid;
+  height: 400px;
+  width: 75%;
+  float: left;
+  padding: 20px;
+  background: rgba(134, 134, 128, 0.4);
+  margin-top: 25px;
+  margin-left: 100px;
+}
+.program-for-next-few-days {
+  display: grid;
+  height: 400px;
+  width: 75%;
+  float: right;
+  padding: 20px;
+  background: rgba(134, 134, 128, 0.4);
+  margin-top: 25px;
+}
+
+.column-1 {
+  font-size: 25px;
+  line-height: 1.4;
+  justify-items: center;
+  letter-spacing: 0px;
+  color: #fff;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+}
+
+.complete-list {
+  font-size: 45px;
+  line-height: 1.4;
+  justify-items: center;
+  color: rgba(2, 8, 44, 0.363);
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+}
+
+.column-2 {
+  font-size: 25px;
+  line-height: 1.4;
+  justify-items: center;
+  letter-spacing: 0px;
+  color: #fff;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+}
+
+.annoucements {
+  display: grid;
+  background-color: (gray, lightgray, white, yellow, turquoise);
+  height: 500px;
+}
+
+.news {
+  margin-top: 50px;
+  display: flex;
+  background: linear-gradient(
+    to left,
+    gray,
+    lightgray,
+    white,
+    yellow,
+    turquoise
+  );
+}
+.news:before,
+h1:after {
+  color: white;
+  content: "";
+  flex: 1;
+  border-bottom: groove 2px;
+  margin: auto 0.25em;
+  box-shadow: 0 -1px; /* ou 0 1px si border-style:ridge */
+}
+/* -----------------------------
+  FOOTER SECTION
+-------------------------------- */
+footer {
+  color: #fff;
+  background-color: #cdda23;
+  padding: 30px 0 120px;
+  margin-top: 50px;
+  text-align: justify;
+  letter-spacing: 0.8px;
+  word-spacing: 1.5px;
+  line-height: 20px;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+/* -----------------------------
+  GALLERY PAGE SECTION
+-------------------------------- */
+
+.galleryHolder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.galleryHolder img {
+  margin-bottom: 6.5px;
+  box-shadow: 3px 3px 3px #333;
+  border-radius: 5px;
+}
+
+/* -----------------------------
+   Schdule .HTML SECTION
+-------------------------------- */
+.list-header {
+  background-color: red;
+  height: 100px;
+}
+
+/* -----------------------------
+   SECTION
+-------------------------------- */
+/* -----------------------------
+   SECTION
+-------------------------------- */
+/* -----------------------------
+   SECTION
+-------------------------------- */
