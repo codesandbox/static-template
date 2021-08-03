@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>forms</title>
+  </head>
+
+  <body>
+    <h1>Registration to Access Movies</h1>
+  
+    <hr />
+    <div>
+         
+   
+          <p><label for="username">Please type here your username:</label></p>
+          <p>
+            <input
+              id="username"
+              required
+              type="text"
+              name="usr"
+              value=""
+              placeholder="username here..."
+            />
+          </p>
+
+          <p><label for="password">please type here your password:</label></p>
+          <p>
+            <input
+              id="password"
+              type="password"
+              name="psw"
+              value=""
+              placeholder="password here..."
+            />
+          </p>
+
+          <p><label>please select your age group:</label></p>
+          <p>
+            <input type="radio" name="age" value="18" disabled /> less than 18
+          </p>
+          <p><input type="radio" name="age" value="20" checked /> 20-30</p>
+          <p><input type="radio" name="age" value="30" /> 30-40</p>
+          <p><input type="radio" name="age" value="40" /> 40-50</p>
+          <p><input type="radio" name="age" value="50" /> 50+</p>
+
+          
+        <fieldset>
+          <legend>about us:</legend>
+          <p><label for="aboutUs">how did you know about us?</label></p>
+          <p>
+            <select name="aboutUs" id="aboutUs">
+              <option value="null"></option>
+              <option value="web" selected>internet</option>
+              <option value="ads">advertisement</option>
+              <option value="friends">friends</option>
+              <option value="other" disabled>other</option>
+            </select>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>message:</legend>
+          <p><label for="msg">Details of the Movie you will like to watch</label></p>
+          <p>
+            <textarea
+              name="msg"
+              id="msg"
+              placeholder="your message here..."
+              cols="30"
+              rows="10"
+            ></textarea>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>buttons:</legend>
+          <p>
+            <button type="reset">clear form</button>
+            <button type="submit">submit form</button>
+          </p>
+          
+        </fieldset>
+      </form>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <hr />
+  </body>
+</html>
