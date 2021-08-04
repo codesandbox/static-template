@@ -15,8 +15,8 @@ btn.addEventListener("click", () => {
   }
 });
 
-list.addEventListener("click", (a) => {
-  if (a.target.TagName === "LI") {
-    a.target.classlist.toggle("checked");
+list.addEventListener("click", (e) => {
+  if (e.target.tagName === "LI") {
+    e.target.classList.toggle(".checked");
   }
 });
