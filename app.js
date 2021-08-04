@@ -15,7 +15,7 @@ btn.addEventListener("click", () => {
   }
 });
 
-list.addEventListener("click", (cancel) => {
+list.addEventListener("click", cancel => {
   if (cancel.target.TagName === "") {
     cancel.target.classlist.toggle("checked");
   }
