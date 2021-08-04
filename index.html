@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/666f0c7a0e.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <section>
+      <div class="container">
+        <div class="clear">
+          <i class="fa fa-refresh" aria-hidden="true"></i>
+        </div>
+        <h2>To-Do List</h2>
+        <div class="content">
+          <ul id="list">
+            <!-- <li class="item">
+                        <i class="fa fa-circle-thin co" job="complete" id="0"></i>
+                        <p>Wake Up</p>
+                        <i class="fa fa-trash-o de" job="delete" id="0"></i>
+                    </li> -->
+          </ul>
+        </div>
+        <div class="add">
+          <i class="myPlus fa fa-plus-circle" aria-hidden="true"></i>
+          <input type="text" id="input" placeholder="Add Item" />
+        </div>
+      </div>
+    </section>
+
+    <div class="box">
+      <div id="date"></div>
+    </div>
+
+    <script src="./script.js"></script>
   </body>
 </html>
