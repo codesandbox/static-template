@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+    <title>To-do list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>ToDo List</h1>
+        <div class="add-element">
+            <input type="text" id="add" placeholder="Add your to-do">
+            <button id="btn">Add</button>
+        </div>
+
+        <div class="element-list">
+            <ul id="list">
+                <li>Wake Up</li>
+                <li>Drink Coffee</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+<script src="app.js"></script>
+
 </html>
