@@ -3,6 +3,7 @@ let btn = document.querySelector("#btn");
 let list = document.querySelector("#list");
 let li = document.getElementsByTagName("li");
 
+
 btn.addEventListener("click", () => {
   let txt = Input.value;
   if (txt === "") {
@@ -13,10 +14,10 @@ btn.addEventListener("click", () => {
     list.insertBefore(li, list.childNodes[0]);
     Input.value = "";
   }
-});
+})
 
-list.addEventListener("click", (e) => {
-  if (e.target.tagName === "LI") {
-    e.target.classList.toggle(".checked");
+list.addEventListener('click', e => {
+  if (e.target.tagName ==  "LI" ) {
+    e.target.classList.toggle("checked");
   }
-});
+})
