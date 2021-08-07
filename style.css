@@ -1,0 +1,288 @@
+/* Common page regions */
+#wrapper {
+  width: 1500px;
+  margin: 0 auto;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  background-color: #dacbf6;
+}
+#pageheader {
+  border-bottom: 2px solid #000000;
+  background-color: #3e089e;
+}
+#pagefooter {
+  clear: both;
+  border-top: 1px solid #000000;
+  border-radius: 0.5em;
+  background-color: #3e089e;
+}
+#pagefooter li {
+  display: inline;
+  margin-right: 0.25em;
+  list-style: none;
+}
+
+/* Primary navigation */
+#primarynav {
+  border-bottom: 1px solid #000000;
+  background-color: #3e089e;
+}
+
+#primarynav ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#primarynav ul li {
+  float: left;
+  border-right: 1px solid #000000;
+  list-style-type: none;
+}
+
+#primarynav ul li a {
+  display: block;
+  padding: 0.2em 2em;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#primarynav ul li a:hover,
+#secondarynavcol ul li a:hover,
+#commonlinks li a:hover {
+  text-decoration: none;
+}
+/* Secondary navigation */
+#secondarynavcol ul {
+  margin: 2em 0.25em 0 0.25em;
+  padding: 0;
+  border-top: 1px solid #000000;
+}
+
+#secondarynavcol ul li {
+  list-style-type: none;
+  border-bottom: 1px solid #000000;
+  background-color: #3e089e;
+}
+
+#secondarynavcol ul li a {
+  display: block;
+  padding: 0.25em;
+  text-decoration: none;
+  color: #ffffff;
+}
+/* Common links */
+
+#commonlinks {
+  text-align: right;
+  background-color: #270564;
+}
+#commonlinks ul {
+  margin: 0;
+}
+#commonlinks li {
+  display: inline;
+  margin-right: 0.25em;
+  list-style: none;
+}
+
+#commonlinks li a {
+  color: #ffffff;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+/* Breadcrumbs */
+
+#breadcrumbs {
+  font-size: 0.75em;
+  padding: 1em;
+}
+
+/* Two column page regions */
+
+#columncontainer {
+  overflow: hidden;
+  background: #ffffff url(images/leftcol.gif) repeat-y;
+  width: 100%;
+}
+
+#contenttwocolpage {
+  width: 80%;
+  float: right;
+}
+
+#secondarynavcol {
+  width: 10%;
+  float: right;
+}
+
+/* User-defined classes */
+
+/* Current page */
+
+a.currentpage {
+  background-color: #c93c62;
+}
+
+/* Highlight (italics) */
+
+.highlight {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Tagline */
+
+h2.tagline {
+  letter-spacing: 0.2em;
+  margin: 0 0 1.5em 1.5em;
+  color: #cec500;
+}
+
+/* Feature blocks (index.html) */
+
+.featureblock {
+  clear: both;
+}
+
+.featureblock img {
+  float: left;
+}
+.featureblock h2 {
+  border-bottom: 2px solid #3e089e;
+}
+
+/* Body */
+
+body {
+  font-size: 1em;
+  font-family: century gothic, Arial, sans-serif;
+}
+
+/* Headings */
+h1.logo {
+  font-size: 5em;
+  font-family: "Niagara Solid", arial, sans-serif;
+  font-weight: normal;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+  margin: 0 0 0 0.25em;
+  text-shadow: 0 0 20px #ffffff;
+}
+
+h1 {
+  font-size: 2.75em;
+  font-family: "century gothic", poiret, sans-serif;
+  color: #293401;
+  margin: 1% 2% 1% 2%;
+}
+
+h2 {
+  font-size: 2em;
+  font-family: "Niagara Engraved", arial, sans-serif;
+  color: #293401;
+  margin: 1% 2% 1% 2%;
+}
+
+h3 {
+  font-size: 1.25em;
+  font-family: "century gothic", arial, sans-serif;
+  color: #293401;
+  margin: 0 2% 1% 2%;
+  clear: left;
+}
+h4 {
+  font-size: 1.3em;
+  font-family: "century gothic", arial, sans-serif;
+  color: #1fa704;
+}
+h5 {
+  font-size: 1em;
+  font-family: "century gothic", arial, sans-serif;
+  color: #ffffff;
+  text-shadow: 0 0 20px #000000;
+}
+h7 {
+  font-size: 1.3em;
+  font-family: "century gothic", arial, sans-serif;
+  color: #a70450;
+}
+
+/* Links */
+
+a {
+  color: #000000;
+}
+
+/* Paragraphs */
+
+p {
+  margin: 0 2% 2% 2%;
+}
+
+#pagefooter p {
+  font-size: 0.75em;
+  margin: 4% 2% 4% 2%;
+  color: #ffffff;
+}
+img {
+  float: left;
+  padding-right: 0.6em;
+  padding-bottom: 1.6em;
+}
+/* Star rating hover */
+
+.rating > span:hover:before {
+  content: "\2605";
+  position: absolute;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  content: "\2605";
+  position: absolute;
+}
+/*cONTACT Us*/
+input[type="text"],
+select,
+textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type="submit"] {
+  background-color: #04aa6d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* darker green when you move your mouse over  */
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+button {
+  background-color: rgb(161, 10, 10);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
