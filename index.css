@@ -1,0 +1,82 @@
+body {
+  background: #399;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background: #333;
+  margin: 20px;
+}
+
+.topLeft {
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle at bottom right, transparent, red 50%);
+  float: left;
+  shape-outside: circle(100% at bottom right) transparent 50%;
+  shape-outside: radial-gradient(
+    circle at bottom right,
+    transparent 69%,
+    red 69%
+  );
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  background: #333;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.content {
+  text-align: center;
+  color: #fff;
+}
+
+.top:before,
+.top::after,
+.bottom:before,
+.bottom:after {
+  content: "";
+  width: 100px;
+  height: 100px;
+}
+
+.top:before,
+.bottom:before {
+  float: left;
+  clear: left;
+}
+
+.top:after,
+.bottom:after {
+  content: "";
+  float: right;
+  clear: right;
+}
+
+.top:before {
+  shape-outside: radial-gradient(
+    circle at bottom right,
+    transparent 60%,
+    red 100%
+  );
+}
+
+.bottom:before {
+  shape-outside: radial-gradient(circle at top right, transparent 69%, red 69%);
+}
+
+.top:after {
+  shape-outside: radial-gradient(
+    circle at bottom left,
+    transparent 69%,
+    red 69%
+  );
+}
+
+.bottom:after {
+  shape-outside: radial-gradient(circle at top left, transparent 71%, red 71%);
+}
