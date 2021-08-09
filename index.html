@@ -56,10 +56,10 @@
     </section>
 
     <section class="section" id="media">
-      <img src="image/firefox.jpg" alt="firefox" width="400" /><br />
-      <img src="image/firefox2.jpg" alt="firefox" width="400" /><br />
-      <video src="vid.mp4"></video>
-      <audio src="audio/audio.mp3" autoplay></audio>
+      <img src="recources/firefox.jpg" alt="firefox" width="400" /><br />
+      <img src="recources/firefox2.jpg" alt="firefox" width="400" /><br />
+      <video src="recources/vid.mp4"></video>
+      <audio src="recources/audio.mp3" autoplay></audio>
     </section>
 
     <section class="section" id="table">
@@ -107,7 +107,7 @@
         <li>Suit</li>
       </ul>
 
-      <ul style="list-style-type:square;">
+      <ul style="list-style-type: square;">
         <li>Bottle</li>
         <li>Bag</li>
         <li>Suit</li>
@@ -122,11 +122,22 @@
     </section>
 
     <section class="section" id="iframe">
-        <iframe width="400" height="225" src="https://www.youtube.com/embed/Hj0EwO4p53o"></iframe>
+      <iframe
+        width="400"
+        height="225"
+        src="https://www.youtube.com/embed/Hj0EwO4p53o"
+      ></iframe>
     </section>
 
     <section class="section" id="script">
-      <script></script>
+      <p id="test-script">THIS IS SCRIPT</p>
+      <script type="text/javascript">
+        function runAlert() {
+          alert("This is script");
+        }
+        document.getElementById('test-script').innerHTML = 'my name is'
+      </script>
+      <script type="text/javascript" src=""></script>
     </section>
   </body>
 </html>
