@@ -1,12 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- include A-Frame obviously -->
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <!-- include ar.js for A-Frame -->
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+
+    <script>
+      window.onload = function () {
+        document
+          .querySelector(".say-hi-button")
+          .addEventListener("click", function () {
+            // here you can change also a-scene or a-entity properties, like
+            // changing your 3D model source, size, position and so on
+            // or you can just open links, trigger actions...
+            alert("Hi there!");
+          });
+      };
+    </script>
+    <style>
+      .buttons {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+      }
+
+      .say-hi-button {
+        padding: 0.25em;
+        border-radius: 4px;
+        border: none;
+        background: white;
+        color: black;
+        width: 4em;
+        height: 2em;
+      }
+    </style>
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <body style="margin: 0px; overflow: hidden;">
+    <div class="buttons">
+      <button class="say-hi-button">SAY HI!</button>
+    </div>
+    <a-scene embedded arjs="sourceType: webcam;">
+      <a-marker-camera preset="hiro">
+        <!--<a-box position="0 0 0" rotation="0 45 0" color="#4CC3D9"></a-box>
+        <! --<a-gltf-model src="#scene.gltf" scale="10 10 10"></a-gltf-model>
+        <a-entity gltf-model="src/scene.gltf" scale="20 20 20"></a-entity> -->
+        <a-entity
+          position="0 0 0"
+          scale="0.1 0.1 0.1"
+          gltf-model="?v=1628171571773"
+        ></a-entity>
+      </a-marker-camera>
+      <a-entity camera></a-entity>
+    </a-scene>
   </body>
 </html>
