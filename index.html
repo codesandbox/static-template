@@ -1,12 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="utf-8" />
+    <title>site de thomas</title>
+    <style>
+      body {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 195, 0, 1) 0%,
+          rgba(255, 127, 81, 1) 100%
+        );
+      }
+      h1 {
+        color: #d00000;
+        font-size: 50px;
+      }
+      ol {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-items: center;
+      }
+      ol li {
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid #ffffff;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      ol li img {
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      function play(lien) {
+        if (typeof hymne !== "undefined") {
+          hymne.pause();
+        }
+        hymne = new Audio(lien);
+        hymne.play();
+      }
+    </script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>Bonjour je m'appelle Thomas</h1>
+    <p>C'est mon premier site internet</p>
+    <h2>Voila les choses que je prefere</h2>
+    <ol>
+      <li>
+        Basket
+        <img
+          height="100"
+          src="https://www.lequipe.fr/_medias/img-photo-jpg/evan-fournier-n-a-pas-manque-l-occasion-de-pester-contre-l-horaire-de-la-finale-programmee-samedi-a/1500000001526285/172:86,1998:1303-828-552-75/db228.jpg"
+        />
+      </li>
+      <li>
+        Trotinette
+        <img
+          height="100"
+          src="https://www.nomadeshop.com/ethic-trottinette-freestyle-erawan-brushed-ltd-1-950-25785.jpg"
+        />
+      </li>
+      <li>
+        Pastèque
+        <img
+          height="100"
+          src="https://i-sam.unimedias.fr/2018/07/24/pasteque.jpg?auto=format%2Ccompress&cs=tinysrgb"
+        />
+      </li>
+      <li>
+        Netflix
+        <img
+          height="100"
+          src="https://fr.web.img4.acsta.net/newsv7/21/04/21/11/14/0002101.jpg"
+        />
+      </li>
+      <li>
+        Surf
+        <img
+          height="100"
+          src="https://www.1jour1actu.com/wp-content/uploads/VIDEO_surf.jpg"
+        />
+      </li>
+      <li>
+        Trampoline
+        <img
+          height="100"
+          src="https://i1.wp.com/www.newjumprennes.com/wp-content/uploads/2019/12/08-tumbling-la-meziere.jpg?fit=650%2C433&ssl=1"
+        />
+      </li>
+    </ol>
+    <h2>Mes vacances</h2>
+    <ol>
+      <li>
+        Cette année je suis parti a Crozon
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d85033.4253961921!2d-4.538754698617316!3d48.239457232459735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4816c14092afab1b%3A0xc3b97fb2598d185c!2s29160%20Crozon!5e0!3m2!1sfr!2sfr!4v1628586834629!5m2!1sfr!2sfr"
+          width="500"
+          height="300"
+          style="border: 0;"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </li>
+    </ol>
+    <h2>Les endroits où j'aimerais aller</h2>
+    <ol>
+      <li>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15840339.24478038!2d-60.34501423920601!3d-14.237446702785773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9c59c7ebcc28cf%3A0x295a1506f2293e63!2zQnLDqXNpbA!5e0!3m2!1sfr!2sfr!4v1628587381768!5m2!1sfr!2sfr"
+          width="500"
+          height="300"
+          style="border: 0;"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </li>
+      <li>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29614316.79444974!2d115.23033713176262!3d-25.033093093393386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2b2bfd076787c5df%3A0x538267a1955b1352!2sAustralie!5e0!3m2!1sfr!2sfr!4v1628587494390!5m2!1sfr!2sfr"
+          width="500"
+          height="300"
+          style="border: 0;"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </li>
+      <li>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3479520.5556738707!2d-23.727388000622476!3d64.79678404457277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48d22b52a3eb6043%3A0x6f8a0434e5c1459a!2sIslande!5e0!3m2!1sfr!2sfr!4v1628587715341!5m2!1sfr!2sfr"
+          width="500"
+          height="300"
+          style="border: 0;"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </li>
+    </ol>
+    <h2>Voici les langues que je parle</h2>
+    <ol>
+      <li>
+        Le Francais 🇫🇷🇫🇷
+        <img
+          width="500"
+          height="300"
+          loading="lazy"
+          src="https://www.histoiresdepompiers.fr/wp-content/uploads/2017/06/11032602-18289605.jpg"
+          onclick="play('https://www.dinosoria.com/hymnes/marseillaise.mp3')"
+        />Sa position
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5662655.923824988!2d-2.433984123796592!3d46.131453104615716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd54a02933785731%3A0x6bfd3f96c747d9f7!2sFrance!5e0!3m2!1sfr!2sfr!4v1628600190096!5m2!1sfr!2sfr"
+          width="500"
+          height="300"
+          style="border: 0;"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </li>
+      <li>
+        L'Anglais 🇬🇧🇬🇧
+        <img
+          width="500"
+          height="300"
+          loading="lazy"
+          src="https://www.code-couleur.com/images/main/header2020/drapeau-royaume-uni.jpg"
+          onclick="play('https://www.dinosoria.com/hymnes/grande-bretagne.mp3')"
+        />Sa postion
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2469164.3619628637!2d-4.569780498332097!3d52.81707682327674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d0a98a6c1ed5df%3A0xf4e19525332d8ea8!2sAngleterre%2C%20Royaume-Uni!5e0!3m2!1sfr!2sfr!4v1628601357722!5m2!1sfr!2sfr"
+          width="500"
+          height="300"
+          style="border: 0;"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </li>
+      <li>
+        L'Espagnol 🇪🇸🇪🇸
+        <img
+          width="500"
+          height="300"
+          loading="lazy"
+          src="https://m.media-amazon.com/images/I/61TZOBdmZkL._AC_SX425_.jpg"
+          onclick="play('https://www.dinosoria.com/hymnes/espagne_hymne.mp3')"
+        />Sa position
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6248284.395807389!2d-8.200730107513674!3d40.12178371153746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc42e3783261bc8b%3A0xa6ec2c940768a3ec!2sEspagne!5e0!3m2!1sfr!2sfr!4v1628601531949!5m2!1sfr!2sfr"
+          width="500"
+          height="300"
+          style="border: 0;"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </li>
+    </ol>
+    <h2>Mes films préférés</h2>
+    <ol>
+      <li>
+        Avengers engame
+        <img src="https://m.media-amazon.com/images/I/51NtQJzvwuL._AC_.jpg" />
+      </li>
+      <li>
+        Demon slayer
+        <img
+          src="https://bleachmx.fr/wp-content/uploads/Demon-Slayer-Kimetsu-no-Yaiba-Le-Train-de-linfini-Le-film-au-cinema-en-avril-pour-occident-avant-le-debut-de-la-saison-2-e1616771010420-780x480.jpg"
+        />
+      </li>
+    </ol>
+    <h2>Mes séries préférées</h2>
+    <ol>
+      <li>
+        Arrow
+        <img
+          src="https://static1.terrafemina.com/articles/5/28/43/55/@/325960-deja-la-saison-4-pour-arrow-953x0-1.jpg"
+        />
+      </li>
+      <li>
+        Scorpion
+        <img
+          src="https://p0.storage.canalblog.com/06/92/1306930/99842822.jpg"
+        />
+      </li>
+    </ol>
+    <h2>Mes plats préférés</h2>
+    <ol>
+      <li>
+        Burger frites
+        <img
+          src="https://cache.cosmopolitan.fr/data/photo/w600_h315_c17/52/burger-frites.jpg"
+        />
+      </li>
+
+      <li>
+        bolognaises
+        <img
+          src="https://assets.afcdn.com/recipe/20190911/98077_w1024h1024c1cx1015cy738.jpg"
+          width="500"
+          height="500"
+        />
+      </li>
+    </ol>
   </body>
 </html>
