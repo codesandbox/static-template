@@ -1,0 +1,188 @@
+body {
+  position: relative;
+  width: 1440px;
+  height: 900px;
+  background-color: rgba(255, 100, 100, 0.9);
+  background-image: url("/assets/bg02.png");
+}
+/* Intro Page */
+.intro {
+  position: relative;
+  width: 1440px;
+  height: 900px;
+  background-image: url("/assets/bg03.png");
+}
+.namebox {
+  position: relative;
+  left: 580px;
+  top: -700px;
+
+  font-family: Cabin Sketch;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 68px;
+  line-height: 84px;
+
+  color: #000000;
+}
+.scorebox {
+  position: relative;
+  left: 580px;
+  top: -750px;
+
+  font-family: Cabin Sketch;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 68px;
+  line-height: 84px;
+
+  color: #000000;
+}
+.btn_04 {
+  position: absolute;
+  width: 350px;
+  height: 80px;
+  left: 620px;
+  top: 535px;
+  background: #da5d5d;
+  border-radius: 45px;
+}
+.p1 {
+  position: relative;
+  top: -75px;
+  font-family: Cabin Sketch;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 72px;
+  line-height: 84px;
+  color: #ffffff;
+}
+
+/* Intro Page End*/
+
+/* 題目圖片放置匡 */
+.img > img {
+  position: absolute;
+  width: 380px;
+  height: 359px;
+  left: 136px;
+  top: 120px;
+  background-color: #ffffff;
+  border-radius: 179.5px;
+}
+
+/* try again 再試試按鈕 */
+.btn_01 {
+  position: absolute;
+  width: 172px;
+  height: 59px;
+  left: calc(50% - 172px / 2 + 316px);
+  top: 377px;
+  background: #fed56c;
+  backdrop-filter: blur(4px);
+  border-radius: 36px;
+}
+/* answer觸發答案按鈕 */
+.btn_02 {
+  position: absolute;
+  width: 172px;
+  height: 59px;
+  left: calc(50% - 172px / 2 + 511px);
+  top: 377px;
+  background: #fe6c6c;
+  border-radius: 36px;
+}
+/* next 回答匡內觸發問題按鈕 */
+.btn_03 {
+  position: absolute;
+  width: 172px;
+  height: 59px;
+  left: calc(50% - 172px / 2 + 506px);
+  top: 771px;
+
+  background: #fed56c;
+  border-radius: 36px;
+  z-index: 1;
+}
+/* 卡牌匡 */
+.container_01 {
+  position: absolute;
+  height: 300px;
+  width: 600px;
+  top: 520px;
+  left: calc(50% - 550px);
+  display: flex;
+}
+
+/* 答案匡 */
+.container_02 {
+  position: absolute;
+  width: 1230px;
+  height: 350px;
+  left: 135px;
+  top: 520px;
+  background: rgba(255, 100, 100);
+  backdrop-filter: blur(4px);
+  border-radius: 36px;
+}
+/* 題目放置匡 */
+.container_03 {
+  position: absolute;
+  width: 788px;
+  height: 358px;
+  left: 565px;
+  top: 120px;
+  background-color: #ffffff;
+  backdrop-filter: blur(4px);
+  border-radius: 36px;
+  font-family: Cabin Sketch;
+  font-style: normal;
+  font-weight: normal;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  justify-items: center;
+  font-size: 72px;
+  line-height: 112px;
+  color: #4f3359;
+}
+
+.card {
+  display: flex;
+  height: 350px;
+  width: 285px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border-radius: 36px;
+  /*   margin-left: -50px; */
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
+}
+
+.card:not(:first-child) {
+  margin-left: 15px;
+}
+
+.card:hover {
+  transform: scale(1.05, 1.05);
+  transition: 0.4s ease-out;
+}
+
+.card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+.title {
+  font-family: Cabin Sketch;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 72px;
+  color: black;
+  position: absolute;
+  left: 45px;
+  top: 50px;
+}
