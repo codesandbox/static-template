@@ -1,23 +1,256 @@
+html {
+  font-size: 20px;
+}
+
 h1 {
   color: blue;
 }
 
+.size200 {
+  width: 200px;
+  height: 200px;
+}
+
 .background-color {
-  background-color: aqua;
-  width: 200;
-  height: 200;
+  background-color: aqua; 
 }
 
 .background-image {
-  background-image: url(*/recources/firefox.jpg*);
+  background-image: url(/recources/firefox.jpg);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  width: 200;
-  height: 200;
 }
 .border {
   border: 5px solid red;
-  width: 200;
-  height: 200;
+  border: 5px dotted red;
+  border: 5px dashed red;
+  border-bottom: 10px solid blue;
+  border-left: 15px dotted purple;
+}
+
+.margin {
+  margin: 50px 100px 30px 100px;
+  background-color: green;
+}
+
+.padding {
+  padding: 20px 20px 20px 20px;
+  background-color: orange;
+}
+
+.width-height {
+  width: 200px;
+  height: 300px;
+  background-color: brown;
+}
+
+.mixed-width {
+  width: 200px;
+  height: 200px;
+  padding: 30px;
+  margin: 50px;
+  border: 10px solid red;
+}
+
+.outline {
+  outline: 15px double green;
+  outline-offset: 15px;
+  border: 10px solid red;
+  margin: 30px;
+}
+
+.text {
+  margin: 100px;
+}
+
+.text p {
+  text-align: center;
+  /*text-align: justify;*/
+}
+
+.text .first {
+  text-align: left;
+  text-decoration: underline;  
+  text-decoration-color: red;
+  text-transform: lowercase;
+  text-transform: capitalize;
+}
+
+.text .second {
+  text-align: right;
+  text-decoration: overline;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-spacing: -5px;
+}
+
+.text .third {
+  text-indent: 50px;
+  letter-spacing: -1px;
+  line-height: 1.5;
+  font-size: 20px;
+  word-spacing: 20px;
+  text-shadow: 5px 5px 10px red;
+}
+
+.font  {
+  margin: 100px;
+}
+
+.font p:first-child {
+  font-family: 'Palette Mosaic', cursive;
+  font-size: 30px;
+}
+
+.font p:nth-child(2) {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 1000;
+}
+
+.font p:nth-child(3) {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 1000;
+  font-style: italic;
+} 
+.icon i:first-child {
+  color: red;
+  font-size: 40px;
+}
+
+.link a:link {
+  color: blue;
+}
+
+.link a:visited {
+  color: red;
+}
+
+.link a:hover {
+  color: orange;
+  background-color: black;
+}
+
+.list ul {
+  background-color: blue;
+}
+
+.list ul li{
+  list-style-type: square;
+  background-color: red;
+  margin: 5px;
+  margin-left: 20px;
+}
+
+.display p:first-child {
+  display: none;
+}
+
+.display p:nth-child(2) {
+  display: block;
+}
+
+.display p:nth-child(3) {
+  display: inline;
+}
+
+.display p:nth-child(4) {
+  display: inline;
+}
+
+.display p:nth-child(6) {
+  display: inline;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/*.flex .flex-item {
+  flex: 1;
+  height: 30px;
+  background-color: yellow;
+  margin: 5px;
+}*/
+
+.flex .flex-item:first-child {
+  height: 30px;
+  width: 400px;
+  margin: 5px;
+  background-color: yellow;
+}
+
+.flex .flex-item:nth-child(2) {
+  height: 30px;
+  width: 400px;
+  margin: 5px;
+  background-color: yellow;
+}
+
+.position {
+  height: 200px;
+}
+
+.position div:first-child {
+  position: static;
+}
+
+.position div:nth-child(2) {
+  position: absolute;
+  right: 0;
+}
+
+.position div:nth-child(3) {
+  position: relative;
+  top: 100px;
+  left: 200px;
+}
+
+.position div:nth-child(4) {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+.position div:nth-child(5) {
+  position: sticky;
+  top: 50px;
+}
+
+.overflow {
+  overflow: auto;
+  height: 300px;
+}
+
+.overflow .box {
+  height: 1000px;
+  width: 150%;
+  background-color: red;
+}
+
+.float {
+  margin-top: 50px;
+}
+
+.float .left {
+  float: left;
+  background-color: blue;
+  width: 100px;
+  height: 100px;
+}
+
+.float .right {
+  float: right;
+  background-color: blue;
+  width: 100px;
+  height: 100px;
+}
+
+.float .normal {
+  background-color: blueviolet;
+  width: 100px;
+  height: 100px;
 }
