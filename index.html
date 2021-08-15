@@ -1,12 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+    <title>Fundamentos - align content</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section> <!--row-->
+        <h1>row</h1>
+        <p>stretch <em>(padrão)</em></p>
+        <div class="container stretch">
+            <div class="item">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</div>
+            <div class="item">Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit amet.</div>
+            <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit amet consectetur.</div>
+        </div>
+        <p>center</p>
+            <div class="container center">
+            <div class="item">Lorem, ipsum dolor.</div>
+            <div class="item">Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem elit. Unde, fugit..</div>
+            <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+        </div>
+        <p>flex-start</p>
+        <div class="container start">
+            <div class="item">Lorem, ipsum dolor.</div>
+            <div class="item">Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem elit. Unde, fugit..</div>
+            <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+        </div>
+        <p>flex-end</p>
+        <div class="container end">
+            <div class="item">Lorem ipsum dolor sit amet.</div>
+            <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+            <div class="item">Lorem, ipsum dolor.</div>
+            <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur!</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit amet consectetur.</div>
+        </div>
+        <p>space between</p>
+        <div class="container between">
+            <div class="item">Lorem ipsum dolor sit amet.</div>
+            <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+            <div class="item">Lorem, ipsum dolor.</div>
+            <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur!</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit amet consectetur.</div>
+        </div>
+        <p>space around</p>
+        <div class="container around">
+            <div class="item">Lorem ipsum dolor sit amet.</div>
+            <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+            <div class="item">Lorem, ipsum dolor.</div>
+            <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur!</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit amet consectetur.</div>
+        </div>
+    </section>
+
+    <section> <!--column-->
+        <h1>column</h1>
+        <p>stretch <em>(padrão)</em></p>
+        <div class="container stretch column">
+            <div class="item">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</div>
+            <div class="item">Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit amet.</div>
+            <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit amet consectetur.</div>
+        </div>
+        <p>center</p>
+            <div class="container center column">
+            <div class="item">Lorem, ipsum dolor.</div>
+            <div class="item">Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem elit. Unde, fugit..</div>
+            <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+        </div>
+        <p>flex-start</p>
+        <div class="container start column">
+            <div class="item">Lorem, ipsum dolor.</div>
+            <div class="item">Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem elit. Unde, fugit..</div>
+            <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+        </div>
+        <p>flex-end</p>
+        <div class="container end column">
+            <div class="item">Lorem ipsum dolor sit amet.</div>
+            <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+            <div class="item">Lorem, ipsum dolor.</div>
+            <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur!</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit amet consectetur.</div>
+        </div>
+        <p>space between</p>
+        <div class="container between column">
+            <div class="item">Lorem ipsum dolor sit amet.</div>
+            <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+            <div class="item">Lorem, ipsum dolor.</div>
+            <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur!</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit amet consectetur.</div>
+        </div>
+        <p>space around</p>
+        <div class="container around column">
+            <div class="item">Lorem ipsum dolor sit amet.</div>
+            <div class="item">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+            <div class="item">Lorem, ipsum dolor.</div>
+            <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur!</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit.</div>
+            <div class="item">Lorem ipsum dolor sit amet consectetur.</div>
+        </div>
+    </section>
+</body>
 </html>
