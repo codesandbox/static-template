@@ -1,12 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>FoodBox</title>
+
+    <style>
+      body {
+        background: lightgray;
+        font-family: Roboto;
+      }
+
+      .topo {
+        background: #cf2b2b;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      .produto {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        border: 5px solid white;
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-family: apple-system;
+        font-weight: bold;
+      }
+
+      h4 {
+        font-size: 20px;
+        margin-bottom: 5px;
+        margin-top: 0px;
+      }
+
+      img {
+        width: 100px;
+        border-radius: 5px;
+        float: right;
+        margin-left: 15px;
+      }
+
+      p {
+        margin: 15px 0 0 0;
+      }
+
+      .preco {
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .botao {
+        background: #0b940b;
+        text-align: center;
+        padding: 15px;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        border-radius: 50px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="topo">
+      <h1>FoodBox</h1>
+      <h2>Monte seu box e receba em 15 minutos</h2>
+    </div>
+
+    <h3>Primeiro, seu prato</h3>
+
+    <div id="frango" class="produto" onclick="escolherFrango()">
+      <img
+        src="https://t2.rg.ltmcdn.com/pt/images/2/4/8/img_arroz_de_cabidela_de_galinha_5842_orig.jpg"
+      />
+      <h4>Galinha Cabidela</h4>
+      <p>Um pouco de arroz e batata</p>
+      <p class="preco">R$ 20</p>
+    </div>
+    <div id="tapioca" class="produto" onclick="escolherTapioca()">
+      <img
+        src="https://claudia.abril.com.br/wp-content/uploads/2020/02/receita-tapioca-carne-de-sol.jpg"
+      />
+      <h4>Tapioca</h4>
+      <p>Queijo-coalho, coco e carne-de-sol</p>
+      <p class="preco">R$ 12</p>
+    </div>
+
+    <h3>Agora, sua bebida</h3>
+
+    <div id="caculinha" class="produto" onclick="escolherCaculinha()">
+      <img
+        src="https://images-americanas.b2w.io/produtos/01/00/img1/104885/4/104885410_1GG.jpg"
+      />
+      <h4>Caçulinha</h4>
+      <p>Bem gelado</p>
+      <p class="preco">R$ 2</p>
+    </div>
+    <div id="suco" class="produto" onclick="escolherSuco()">
+      <img
+        src="https://img.itdg.com.br/tdg/images/recipes/000/098/564/333992/333992_original.jpg?w=1200"
+      />
+      <h4>Suco de laranja</h4>
+      <p>Na medida</p>
+      <p class="preco">R$ 4</p>
+    </div>
+
+    <h3>Por fim, sua sobremesa</h3>
+
+    <div id="doce" class="produto" onclick="escolherdoce()">
+      <img
+        src="https://1.bp.blogspot.com/-fafDgKf_xwA/Vb1ie4GKLiI/AAAAAAAAC98/OmNCpKtE3wA/s1600/800x533xIMG_4743.jpg.pagespeed.ic.n5nOolcHmr.jpg"
+      />
+      <h4>Doce de cajú</h4>
+      <p>Mais doce e gostoso, impossível!</p>
+      <p class="preco">R$ 3</p>
+    </div>
+
+    <div class="botao" onclick="finalizarPedido()">
+      Finalizar pedido
+    </div>
+
+    <script>
+      let = prato;
+      let = bebida;
+      let = sobremesa;
+
+      function escolherFrango() {
+        document.getElementById("frango").style.borderColor = "green";
+        document.getElementById("tapioca").style.borderColor = "white";
+        prato = "Frango";
+      }
+      function escolherTapioca() {
+        document.getElementById("tapioca").style.borderColor = "green";
+        document.getElementById("frango").style.borderColor = "white";
+        prato = "Tapioca";
+      }
+
+      function escolherCaculinha() {
+        document.getElementById("caculinha").style.borderColor = "green";
+        document.getElementById("suco").style.borderColor = "white";
+        bebida = " Refrigerante";
+      }
+      function escolherSuco() {
+        document.getElementById("suco").style.borderColor = "green";
+        document.getElementById("caculinha").style.borderColor = "white";
+        bebida = " Suco";
+      }
+
+      function escolherdoce() {
+        document.getElementById("doce").style.borderColor = "green";
+        sobremesa = " Doce de caju";
+      }
+
+      function finalizarPedido() {
+        let mensagem;
+        mensagem =
+          "olá, gostaria de pedir um combo: " +
+          prato +
+          "," +
+          bebida +
+          " e" +
+          sobremesa;
+
+        alert(mensagem);
+
+        window.open("https://wa.me/+5582991234567?text=" + mensagem);
+      }
+    </script>
   </body>
 </html>
