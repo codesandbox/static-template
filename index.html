@@ -1,32 +1,209 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Form 1</title>
+
+    <style>
+      h1 {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        color: #02002e;
+        padding: 0px 0px 0px 45px;
+      }
+
+      body {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        text-align: left;
+        color: black;
+      }
+
+      div.myDiv {
+        width: 400px;
+        background-color: #d2d2d2;
+        text-align: left;
+      }
+
+      Input.myInput {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        text-align: left;
+      }
+
+      Input.numberInput {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        text-align: left;
+        font-size: 11px;
+        width: 37px;
+      }
+
+      Input.buttonInput {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        text-align: left;
+        font-size: 15px;
+        color: rgb(255, 255, 255);
+        width: 150px;
+        background-color: #35905a;
+        padding: 0px 0px 0px 030px;
+      }
+      table {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        text-align: center;
+      }
+
+      p.myPara {
+        font-family: "Helvetica";
+        color: #838383;
+        font-size: 13px;
+        text-align: left;
+      }
+
+      td.specialTd {
+        text-align: left;
+        font-size: 11px;
+        padding: 0px 0px 0px 45px;
+      }
+
+      td.specialTdx {
+        text-align: left;
+        font-size: 15px;
+        padding: 0px 0px 0px 45px;
+      }
+    </style>
+  </head>
   <body>
-    <h2>Form</h2>
+    <div class="myDiv">
+      <h1>Crea una cuenta</h1>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Es rápido y fácil
+      <br />
+      <form action="recibido.html" method="POST">
+        <table style="width: 100%;">
+          <tr>
+            <td>
+              <label for="name"> </label>
+              <input
+                id="name"
+                name="user_name"
+                type="text"
+                placeholder="Name"
+                size="15"
+                class="myInput"
+              />
+              <label for="apellido"> </label>
+              <input
+                id="apellido"
+                name="user_app"
+                type="text"
+                placeholder="Apellido"
+                size="16"
+                class="myInput"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="cel_correo"> </label>
+              <input
+                id="cel_correo"
+                name="user_cel_correo"
+                type="tel"
+                placeholder="Número de celular o correo electrónico"
+                size="35"
+                class="myInput"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="pass"> </label>
+              <input
+                id="pass"
+                name="user_pass"
+                type="password"
+                placeholder="Contraseña nueva"
+                size="35"
+                class="myInput"
+              />
+            </td>
+          </tr>
 
-    <ul>
-      <li>
-        <label for="name">Name: </label>
-        <input type="text" id="name" name="user_name" />
-      </li>
+          <tr>
+            <td class="specialTd">
+              <p class="myPara"><b> Fecha de nacimiento </b></p>
+              <label for="day"> </label>
+              <input
+                id="day"
+                type="number"
+                name="_day"
+                min="1"
+                max="31"
+                placeholder="día"
+                class="numberInput"
+              />
 
-      <li>
-        <label for="mail">E-mail: </label>
-        <input type="email" id="mail" name="user_mail" />
-      </li>
-      <li>
-        <label for="msg">Message:</label>
-        <textarea id="msg" name="user_message"></textarea>
-      </li>
+              <label for="month"> </label>
+              <input
+                id="month"
+                type="number"
+                name="_month"
+                min="1"
+                max="12"
+                placeholder="mes"
+                class="numberInput"
+              />
 
-      <li>
-        <input type="button" value="Send your message" onclick="msg()" />
-      </li>
+              <label for="pass"> </label>
+              <input
+                id="quantity"
+                type="number"
+                name="quantity"
+                min="1953"
+                max="2016"
+                placeholder="año"
+                class="numberInput"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td class="specialTdx">
+              <p class="myPara"><b> Sexo </b></p>
+              <input id="m" type="radio" name="_m" value="mujer" />
+              <label for="m"> Mujer </label>
+
+              <input id="h" type="radio" name="_h" value="hombre" />
+              <label for="h"> Hombre </label>
+
+              <input id="p" type="radio" name="_p" value="mujer" />
+              <label for="p"> Personalizado </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="specialTdx">
+              <input
+                type="button"
+                value="Registrarse"
+                onclick="msg()"
+                class="buttonInput"
+              />
+            </td>
+          </tr>
+        </table>
+      </form>
 
       <script>
         function msg() {
-          alert("sent");
+          alert("Registered!");
         }
       </script>
-    </ul>
+    </div>
+    &nbsp;
   </body>
 </html>
