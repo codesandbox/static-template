@@ -5,22 +5,28 @@
 
     <ul>
       <li>
-        <label for="name">Nombre:</label>
+        <label for="name">Name: </label>
         <input type="text" id="name" name="user_name" />
       </li>
 
       <li>
-        <label for="mail">Correo electrónico:</label>
+        <label for="mail">E-mail: </label>
         <input type="email" id="mail" name="user_mail" />
       </li>
       <li>
-        <label for="msg">Mensaje:</label>
+        <label for="msg">Message:</label>
         <textarea id="msg" name="user_message"></textarea>
       </li>
 
       <li>
-        <input
+        <input type="button" value="Send your message" onclick="msg()" />
       </li>
+
+      <script>
+        function msg() {
+          alert("sent");
+        }
+      </script>
     </ul>
   </body>
 </html>
