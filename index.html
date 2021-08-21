@@ -49,7 +49,7 @@
       h3 {
         font-family: "Righteous";
         font-size: 30px;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
         font-weight: normal;
       }
       h4 {
@@ -95,20 +95,16 @@
     <!--Seccao dos pratos-->
     <h3>Primeiro, seu prato</h3>
     <!--Divisao do frango-->
-    <div class="produto">
-      <img
-        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.OvBj9dhGpAErjThXExnXEAHaE-%26pid%3DApi&f=1"
-      />
+    <div id="frango" class="produto" onclick="escolherFrango()">
+      <img src="imagens/frango.jpg" />
       <h4>Frango Yin-Yan</h4>
       <p>Um pouco de batata, um pouco de salada</p>
       <p class="preco">500,00 MT</p>
     </div>
 
     <!--Divisao da carne-->
-    <div class="produto">
-      <img
-        src="https://lh3.googleusercontent.com/S2xghDIZs0shS-e34Bh3b-a9JA0i62Yx-Kg3u5dhOiG5EkAssCpK7zlxZfjCkAyQvhBTWDY=s155"
-      />
+    <div id="carne" class="produto" onclick="escolherCarne()">
+      <img src="imagens/carne.jpg" />
       <h4>Carne e salada</h4>
       <p>Partida ao meio pra parecer mais carne</p>
       <p class="preco">850,00 MT</p>
@@ -117,20 +113,16 @@
     <!-- Seccao das bebidas-->
     <h3>Agora, sua bebida</h3>
     <!--Divisao da Coca-cola-->
-    <div class="produto">
-      <img
-        src="https://lh3.googleusercontent.com/9YOHXZtL3h-1qOAzGjJiKtUF0Iy2wPu6fHJpjEyJ88DR7sHClcwAoFXjnqlpL2THSPktww=s142"
-      />
+    <div id="cocaCola" class="produto" onclick="escolherCocaCola()">
+      <img src="imagens/coca.jpg" />
       <h4>Coca-cola gelada</h4>
       <p>Normal ou zero. Tente a sorte</p>
       <p class="preco">80,00 MT</p>
 
       <!--Divisao do Sumo-->
     </div>
-    <div class="produto">
-      <img
-        src="https://lh3.googleusercontent.com/8Y20W8nL5IOvmyJ8MXkypBVPhYdaUIqVNcqvR39WQ1KpfLCmQodgvIFdEYW7tpkBV_Gpsw=s128"
-      />
+    <div id="sumo" class="produto" onclick="escolherSumo()">
+      <img src="imagens/refresco.jpg" />
       <h4>Sumo</h4>
       <p>Podia ser sumo, mas leva agua</p>
       <p class="preco">100,00 MT</p>
@@ -139,20 +131,16 @@
     <!--Divisao da Sobremesa-->
     <h3>Por fim, a sua sobremesa</h3>
     <!--Divisao do Pudim-->
-    <div class="produto">
-      <img
-        src="https://lh3.googleusercontent.com/Nd6Ud8KWj2253oyJZI8_WMHL1ZB0_4rBCyRy0-PuqC2i-CpQuJomMM6Ds5WzM9qsqO_1_mk=s127"
-      />
+    <div id="pudim" class="produto" onclick="escolherPudim()">
+      <img src="imagens/pudim.jpg" />
       <h4>Pudim</h4>
       <p>Apenas um lindo e brilhante pudim</p>
       <p class="preco">200,00 MT</p>
 
       <!--Divisao do Sorvete-->
     </div>
-    <div class="produto">
-      <img
-        src="https://lh3.googleusercontent.com/EpRVz8TNaz7-TD1igo259f-kfXyO2cdpxXf9sf6ci560jHr7EW9BvjOwaB8VIgMRVo3T5go=s128"
-      />
+    <div id="sorvete" class="produto" onclick="escolherSorvete()">
+      <img src="imagens/sorvete.jpg" />
       <h4>Sorvete bem gelado</h4>
       <p>Exatamente como na foto</p>
       <p class="preco">70,00 MT</p>
@@ -162,5 +150,32 @@
     <div class="botao">
       Finalizar pedido
     </div>
+
+    <script>
+      function escolherFrango() {
+        document.getElementById("frango").style.borderColor = "green";
+        document.getElementById("carne").style.borderColor = "white";
+      }
+      function escolherCarne() {
+        document.getElementById("carne").style.borderColor = "green";
+        document.getElementById("frango").style.borderColor = "white";
+      }
+      function escolherCocaCola() {
+        document.getElementById("cocaCola").style.borderColor = "green";
+        document.getElementById("sumo").style.borderColor = "white";
+      }
+      function escolherSumo() {
+        document.getElementById("sumo").style.borderColor = "green";
+        document.getElementById("cocaCola").style.borderColor = "white";
+      }
+      function escolherPudim() {
+        document.getElementById("pudim").style.borderColor = "green";
+        document.getElementById("sorvete").style.borderColor = "white";
+      }
+      function escolherSorvete() {
+        document.getElementById("sorvete").style.borderColor = "green";
+        document.getElementById("pudim").style.borderColor = "white";
+      }
+    </script>
   </body>
 </html>
