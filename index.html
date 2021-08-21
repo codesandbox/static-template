@@ -147,34 +147,54 @@
     </div>
 
     <!--Botao-->
-    <div class="botao">
+    <div class="botao" onclick="finalizarPedido()">
       Finalizar pedido
     </div>
 
     <script>
+      let prato, bebida, sobremesa;
+
       function escolherFrango() {
         document.getElementById("frango").style.borderColor = "green";
         document.getElementById("carne").style.borderColor = "white";
+        prato = "Frango";
       }
       function escolherCarne() {
         document.getElementById("carne").style.borderColor = "green";
         document.getElementById("frango").style.borderColor = "white";
+        prato = "Carne";
       }
       function escolherCocaCola() {
         document.getElementById("cocaCola").style.borderColor = "green";
         document.getElementById("sumo").style.borderColor = "white";
+        bebida = "Coca-Cola";
       }
       function escolherSumo() {
         document.getElementById("sumo").style.borderColor = "green";
         document.getElementById("cocaCola").style.borderColor = "white";
+        bebida = "Sumo";
       }
       function escolherPudim() {
         document.getElementById("pudim").style.borderColor = "green";
         document.getElementById("sorvete").style.borderColor = "white";
+        sobremesa = "Pudim";
       }
       function escolherSorvete() {
         document.getElementById("sorvete").style.borderColor = "green";
         document.getElementById("pudim").style.borderColor = "white";
+        sobremesa = "Sorvete";
+      }
+
+      function finalizarPedido() {
+        let mensagem =
+          "Ola, gostaria de pedir um combo: " +
+          prato +
+          ", " +
+          bebida +
+          " e " +
+          sobremesa;
+
+        window.open("http://wa.me/+258852515067?text=" + mensagem);
       }
     </script>
   </body>
