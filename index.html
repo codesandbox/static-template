@@ -1,12 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>FoodBox</title>
+    <style>
+      body {
+        background: #e5e5e5;
+        font-family: "Roboto";
+      }
+      .topo {
+        background: #cf2b2b;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 #bbbbbb;
+      }
+      .produto {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 0 10px 0 #bbbbbb;
+        cursor: pointer;
+        border: 5px solid white;
+      }
+      h1 {
+        font-family: "Righteous";
+        margin: 0;
+        font-weight: normal;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: normal;
+      }
+
+      h3 {
+        font-family: "Righteous";
+        font-size: 30px;
+        margin-bottom: 5px;
+        font-weight: normal;
+      }
+      h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 20px;
+      }
+      img {
+        width: 130px;
+        border-radius: 5px;
+        float: right;
+        margin-left: 15px;
+      }
+      p {
+        margin: 15px 0 0 0;
+      }
+
+      .preco {
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .botao {
+        background: #0b940b;
+        border-radius: 50px;
+        padding: 15px;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="topo">
+      <h1>FoodBox</h1>
+      <h2>Monte o seu box e receba em 15 minutos</h2>
+    </div>
+
+    <!--Seccao dos pratos-->
+    <h3>Primeiro, seu prato</h3>
+    <!--Divisao do frango-->
+    <div class="produto">
+      <img
+        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.OvBj9dhGpAErjThXExnXEAHaE-%26pid%3DApi&f=1"
+      />
+      <h4>Frango Yin-Yan</h4>
+      <p>Um pouco de batata, um pouco de salada</p>
+      <p class="preco">500,00 MT</p>
+    </div>
+
+    <!--Divisao da carne-->
+    <div class="produto">
+      <img
+        src="https://lh3.googleusercontent.com/S2xghDIZs0shS-e34Bh3b-a9JA0i62Yx-Kg3u5dhOiG5EkAssCpK7zlxZfjCkAyQvhBTWDY=s155"
+      />
+      <h4>Carne e salada</h4>
+      <p>Partida ao meio pra parecer mais carne</p>
+      <p class="preco">850,00 MT</p>
+    </div>
+
+    <!-- Seccao das bebidas-->
+    <h3>Agora, sua bebida</h3>
+    <!--Divisao da Coca-cola-->
+    <div class="produto">
+      <img
+        src="https://lh3.googleusercontent.com/9YOHXZtL3h-1qOAzGjJiKtUF0Iy2wPu6fHJpjEyJ88DR7sHClcwAoFXjnqlpL2THSPktww=s142"
+      />
+      <h4>Coca-cola gelada</h4>
+      <p>Normal ou zero. Tente a sorte</p>
+      <p class="preco">80,00 MT</p>
+
+      <!--Divisao do Sumo-->
+    </div>
+    <div class="produto">
+      <img
+        src="https://lh3.googleusercontent.com/8Y20W8nL5IOvmyJ8MXkypBVPhYdaUIqVNcqvR39WQ1KpfLCmQodgvIFdEYW7tpkBV_Gpsw=s128"
+      />
+      <h4>Sumo</h4>
+      <p>Podia ser sumo, mas leva agua</p>
+      <p class="preco">100,00 MT</p>
+    </div>
+
+    <!--Divisao da Sobremesa-->
+    <h3>Por fim, a sua sobremesa</h3>
+    <!--Divisao do Pudim-->
+    <div class="produto">
+      <img
+        src="https://lh3.googleusercontent.com/Nd6Ud8KWj2253oyJZI8_WMHL1ZB0_4rBCyRy0-PuqC2i-CpQuJomMM6Ds5WzM9qsqO_1_mk=s127"
+      />
+      <h4>Pudim</h4>
+      <p>Apenas um lindo e brilhante pudim</p>
+      <p class="preco">200,00 MT</p>
+
+      <!--Divisao do Sorvete-->
+    </div>
+    <div class="produto">
+      <img
+        src="https://lh3.googleusercontent.com/EpRVz8TNaz7-TD1igo259f-kfXyO2cdpxXf9sf6ci560jHr7EW9BvjOwaB8VIgMRVo3T5go=s128"
+      />
+      <h4>Sorvete bem gelado</h4>
+      <p>Exatamente como na foto</p>
+      <p class="preco">70,00 MT</p>
+    </div>
+
+    <!--Botao-->
+    <div class="botao">
+      Finalizar pedido
+    </div>
   </body>
 </html>
