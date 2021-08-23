@@ -1,12 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile Builder</title>
+    <script id="template" type="text/x-handlebars-template">
+      <div class="profile {{style}}">
+      	<header>
+      		<h1>{{title}} {{firstName}} {{lastName}}</h1>
+
+      		<p class="address_{{style}}">
+      		{{address}}<br />
+      		{{address2}}<br />
+      		{{city}}, {{state}} {{zip}}
+      		</p>
+
+      		<p class="info_{{style}}">
+      		email: <span class="contact_{{style}}">{{email}}</span><br />
+      		web site: <span class="contact_{{style}}">{{website}}</span>
+      		</p>
+      	</header>
+
+      	<section role="region">
+      		<h2>Interests</h2>
+      		<p class="interests_{{style}}">{{interests}}</p>
+      	</section>
+
+      	<section role="region">
+      		<h2>Experience</h2>
+      		<p class="experience_{{style}}">{{experience}}</h2>
+      	</section>
+
+      </div>
+    </script>
+
+    <!--[if IE]>
+      <script src="html5shim.js"></script>
+    <![endif]-->
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="form" id="form" role="form">
+      <header>
+        <h1>Profile Builder</h1>
+      </header>
+
+      <section role="region">
+        <h2>Name:</h2>
+        <select id="title">
+          <option value="">&nbsp;</option>
+          <option value="Mr.">Mr.</option>
+          <option value="Miss">Miss</option>
+          <option value="Mrs.">Mrs.</option>
+          <option value="Ms.">Ms.</option>
+        </select>
+        <input type="text" id="firstName" placeholder="First Name" />
+        <input type="text" id="lastName" placeholder="Last Name" />
+      </section>
+
+      <section role="region">
+        <h2>Address:</h2>
+        <input type="text" id="address" placeholder="123 Main Street" /><br />
+        <input type="text" id="address2" /><br />
+        <input type="text" id="city" placeholder="City" />
+        <input type="text" id="state" placeholder="State" />
+        <input type="text" id="zip" placeholder="Zip Code" />
+      </section>
+
+      <section role="region">
+        <h2>Info:</h2>
+        <input type="text" id="email" placeholder="Email" /><br />
+        <input type="text" id="website" placeholder="Web Site" />
+      </section>
+
+      <section role="region">
+        <h2>Interests</h2>
+        <textarea id="interests" rows="6" cols="40"></textarea>
+      </section>
+
+      <section role="region">
+        <h2>Experience</h2>
+        <textarea id="experience" rows="6" cols="40"></textarea>
+      </section>
+
+      <section role="region">
+        <h2>Style</h2>
+        <select id="style">
+          <option value="formal">Formal</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="colorful">Colorful</option>
+        </select>
+      </section>
+
+      <section role="region">
+        <h2>Preview</h2>
+        <p>
+          <button id="previewBtn"><strong>Build Profile</strong></button>
+        </p>
+      </section>
+    </div>
+
+    <div id="preview" role="article"></div>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.js"
+    ></script>
   </body>
 </html>
