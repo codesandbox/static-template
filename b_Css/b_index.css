@@ -1,0 +1,303 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/* reset css */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* font-family: 'Montserrat', sans-serif; */
+/* font-family: 'Nunito Sans', sans-serif; */
+/* font-family: 'NanumSquare', sans-serif; */
+
+/* Page css */
+.header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 100px; /*padding 축약표현사용*/
+}
+
+.logo {
+  margin-top: 38px;
+}
+
+.gnb {
+  margin-top: 45px;
+}
+
+.gnb-list {
+  display: flex;
+}
+
+.gnb-list-item {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  margin-left: 30px;
+  /* 오른쪽 기준을 이미 정했기 때문에 margin-right가 아닌 left*/
+}
+
+.gnb-list-link {
+  color: #191919;
+  text-decoration: none;
+}
+
+.gnb-list-link:hover {
+  /*a:link 와 동일*/
+  color: rgb(16, 201, 195);
+  /* color:rgba(16,201,195,0.6); */
+  /* a : 투명도(0.0 ~ 1.0)  */
+}
+
+.section01 {
+  height: 315px;
+  background-color: #f6f6f6;
+  padding-top: 100px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.section-heading {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 38px;
+  color: #191919;
+  margin-bottom: 35px;
+}
+
+.paragraph {
+  font-family: "NanumSquare", sans-serif;
+  font-size: 16px;
+  color: #191919;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.more-link {
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+  border: 1px solid red;
+  line-height: 40px; /* 많이 사용하는 태그*/
+  text-decoration: none;
+  color: #191919;
+  margin-top: 20px;
+}
+
+.more-link:hover {
+  backgroud: red;
+  color: #fff;
+}
+
+.group {
+  display: flex;
+  justify-content: center;
+}
+
+.figure {
+  width: 340px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.figure-image {
+  height: 300px;
+}
+
+.figure-video {
+  height: 300px;
+}
+
+.footer {
+  height: 280px;
+  background-color: #141414;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 100px 100px 0px;
+  font-family: "NanumSquare", sans-serif;
+  font-size: 15px;
+  box-sizing: border-box; /*padding 으로 조정을 했기에*/
+}
+
+.copyright-company {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 27px;
+}
+.sitemap {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 108px;
+  width: 230px;
+}
+
+.sitemap-item {
+  margin-bottom: 12px;
+  width: 60px;
+  margin-left: 55px;
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    height: auto;
+    flex-direction: column;
+    padding: 0 0 10px 0; /* 0일때는 단위생략 가능 */
+  }
+  .logo {
+    margin-top: 10px;
+    /* 인라인 요소에 text-align을 적용 가능 */
+    text-align: center;
+  }
+  .gnb {
+    margin-top: 15px;
+  }
+  .gnb-list {
+    justify-content: center;
+  }
+  .gnb-list-item:first-child {
+    margin-left: 0;
+  }
+  .section-heading {
+    font-size: 24px;
+  }
+  .paragraph {
+    padding: 0 25px;
+  }
+  .paragraph br {
+    display: none;
+  }
+  .group {
+    flex-direction: column;
+  }
+  .figure {
+    margin: 10px auto; /* box의 바깥여백을 자동으로 조절*/
+  }
+}
