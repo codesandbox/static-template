@@ -1,12 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="calculator">
+      <form action="#" name="form">
+        <div class="result">
+          <input type="text" name="display" id="dispaly" />
+        </div>
+        <div class="buttons">
+          <div class="row">
+            <input
+              type="button"
+              value="7"
+              name="v7"
+              onclick="buttonClick(v7.value)"
+            />
+            <input
+              type="button"
+              value="8"
+              name="v8"
+              onclick="buttonClick(v8.value)"
+            />
+            <input
+              type="button"
+              value="9"
+              name="v9"
+              onclick="buttonClick(v9.value)"
+            />
+            <input
+              type="button"
+              value="+"
+              name="add"
+              onclick="buttonClick(add.value)"
+            />
+          </div>
+          <div class="row">
+            <input
+              type="button"
+              value="4"
+              name="v4"
+              onclick="buttonClick(v4.value)"
+            />
+            <input
+              type="button"
+              value="5"
+              name="v5"
+              onclick="buttonClick(v5.value)"
+            />
+            <input
+              type="button"
+              value="6"
+              name="v6"
+              onclick="buttonClick(v6.value)"
+            />
+            <input
+              type="button"
+              value="-"
+              name="sub"
+              onclick="buttonClick(sub.value)"
+            />
+          </div>
+          <div class="row">
+            <input
+              type="button"
+              value="1"
+              name="v1"
+              onclick="buttonClick(v1.value)"
+            />
+            <input
+              type="button"
+              value="2"
+              name="v2"
+              onclick="buttonClick(v2.value)"
+            />
+            <input
+              type="button"
+              value="3"
+              name="v3"
+              onclick="buttonClick(v3.value)"
+            />
+            <input
+              type="button"
+              value="*"
+              name="mul"
+              onclick="buttonClick(mul.value)"
+            />
+          </div>
+          <div class="row">
+            <input
+              type="button"
+              value="0"
+              name="v0"
+              onclick="buttonClick(v0.value)"
+            />
+            <input
+              type="button"
+              value="."
+              name="vdot"
+              onclick="buttonClick(vdot.value)"
+            />
+            <input
+              type="button"
+              value="/"
+              name="vdiv"
+              onclick="buttonClick(vdiv.value)"
+            />
+            <input type="button" value="=" name="veql" onclick="calculate()" />
+            <input
+              type="button"
+              value="Clear"
+              name="vclear"
+              onclick="clear()"
+              style="width: 100%;"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function buttonClick(result) {
+        form.dispaly.value = form.dispaly.value + result;
+      }
+      function calculate() {
+        form.dispaly.value == ""
+          ? alert("Please enter a string")
+          : (form.dispaly.value = eval(form.dispaly.value));
+      }
+      function clear() {
+        form.dispaly.value = "";
+      }
+    </script>
   </body>
 </html>
