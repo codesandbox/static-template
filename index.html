@@ -1,12 +1,203 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-PT">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>FoodBox</title>
+    <style>
+      body {
+        background: #e5e5e5;
+        font-family: "Roboto";
+      }
+      .topo {
+        background: #cf2b2b;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 #bbbbbb;
+      }
+      .produto {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 0 10px 0 #bbbbbb;
+        cursor: pointer;
+        border: 5px solid white;
+      }
+      h1 {
+        font-family: "Righteous";
+        margin: 0;
+        font-weight: normal;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: normal;
+      }
+
+      h3 {
+        font-family: "Righteous";
+        font-size: 30px;
+        margin-bottom: 15px;
+        font-weight: normal;
+      }
+      h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 20px;
+      }
+      img {
+        width: 130px;
+        border-radius: 5px;
+        float: right;
+        margin-left: 15px;
+      }
+      p {
+        margin: 15px 0 0 0;
+      }
+
+      .preco {
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .botao {
+        background: #0b940b;
+        border-radius: 50px;
+        padding: 15px;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="topo">
+      <h1>FoodBox</h1>
+      <h2>Monte o seu box e receba em 15 minutos</h2>
+    </div>
+
+    <!--Seccao dos pratos-->
+    <h3>Primeiro, seu prato</h3>
+    <!--Divisao do frango-->
+    <div id="frango" class="produto" onclick="escolherFrango()">
+      <img src="imagens/frango.jpg" />
+      <h4>Frango Yin-Yan</h4>
+      <p>Um pouco de batata, um pouco de salada</p>
+      <p class="preco">500,00 MT</p>
+    </div>
+
+    <!--Divisao da carne-->
+    <div id="carne" class="produto" onclick="escolherCarne()">
+      <img src="imagens/carne.jpg" />
+      <h4>Carne e salada</h4>
+      <p>Partida ao meio pra parecer mais carne</p>
+      <p class="preco">850,00 MT</p>
+    </div>
+
+    <!-- Seccao das bebidas-->
+    <h3>Agora, sua bebida</h3>
+    <!--Divisao da Coca-cola-->
+    <div id="cocaCola" class="produto" onclick="escolherCocaCola()">
+      <img src="imagens/coca.jpg" />
+      <h4>Coca-cola gelada</h4>
+      <p>Normal ou zero. Tente a sorte</p>
+      <p class="preco">80,00 MT</p>
+
+      <!--Divisao do Sumo-->
+    </div>
+    <div id="sumo" class="produto" onclick="escolherSumo()">
+      <img src="imagens/refresco.jpg" />
+      <h4>Sumo</h4>
+      <p>Podia ser sumo, mas leva agua</p>
+      <p class="preco">100,00 MT</p>
+    </div>
+
+    <!--Divisao da Sobremesa-->
+    <h3>Por fim, a sua sobremesa</h3>
+    <!--Divisao do Pudim-->
+    <div id="pudim" class="produto" onclick="escolherPudim()">
+      <img src="imagens/pudim.jpg" />
+      <h4>Pudim</h4>
+      <p>Apenas um lindo e brilhante pudim</p>
+      <p class="preco">200,00 MT</p>
+
+      <!--Divisao do Sorvete-->
+    </div>
+    <div id="sorvete" class="produto" onclick="escolherSorvete()">
+      <img src="imagens/sorvete.jpg" />
+      <h4>Sorvete bem gelado</h4>
+      <p>Exatamente como na foto</p>
+      <p class="preco">70,00 MT</p>
+    </div>
+
+    <!--Botao-->
+    <div class="botao" onclick="finalizarPedido()">
+      Finalizar pedido
+    </div>
+
+    <script>
+      let prato = "";
+      let bebida = "";
+      let sobremesa = "";
+
+      function escolherFrango() {
+        document.getElementById("frango").style.borderColor = "green";
+        document.getElementById("carne").style.borderColor = "white";
+        prato = "Frango";
+      }
+      function escolherCarne() {
+        document.getElementById("carne").style.borderColor = "green";
+        document.getElementById("frango").style.borderColor = "white";
+        prato = "Carne";
+      }
+      function escolherCocaCola() {
+        document.getElementById("cocaCola").style.borderColor = "green";
+        document.getElementById("sumo").style.borderColor = "white";
+        bebida = "Coca-Cola";
+      }
+      function escolherSumo() {
+        document.getElementById("sumo").style.borderColor = "green";
+        document.getElementById("cocaCola").style.borderColor = "white";
+        bebida = "Sumo";
+      }
+      function escolherPudim() {
+        document.getElementById("pudim").style.borderColor = "green";
+        document.getElementById("sorvete").style.borderColor = "white";
+        sobremesa = "Pudim";
+      }
+      function escolherSorvete() {
+        document.getElementById("sorvete").style.borderColor = "green";
+        document.getElementById("pudim").style.borderColor = "white";
+        sobremesa = "Sorvete";
+      }
+
+      function finalizarPedido() {
+        let mensagem =
+          "Ola, gostaria de pedir um combo: " +
+          prato +
+          ", " +
+          bebida +
+          " e " +
+          sobremesa;
+
+        window.open("http://wa.me/+258845470062?text=" + mensagem);
+      }
+    </script>
   </body>
 </html>
