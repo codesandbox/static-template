@@ -1,0 +1,88 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+*::selection {
+  background-color: rgba(119, 19, 86, 0.863);
+}
+
+h1 {
+  text-shadow: 2px 2px 3px rgba(119, 19, 86, 0.863);
+}
+
+body {
+  background: linear-gradient(#3d096ed5, rgba(119, 19, 86, 0.863));
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  min-height: 200vh;
+}
+header {
+  margin: 20px auto;
+  text-align: center;
+  color: #fff;
+}
+nav {
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  padding: 0 40px;
+  background-color: rgba(240, 109, 240, 0.288);
+}
+nav a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #fff;
+  text-shadow: 2px 2px 3px #5f4054dc;
+}
+.nav-sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(240, 109, 240, 0.288);
+  height: 25px;
+  width: max-content;
+  position: absolute;
+  right: 0;
+  color: #fff;
+}
+.nav-sub > p {
+  padding: 10px;
+}
+
+.nav-sub::before {
+  content: url(banner.png);
+  position: absolute;
+  left: -25px;
+  top: 0;
+}
+
+.icons > a {
+  color: #fff;
+  font-size: 35px;
+  display: block;
+  margin-left: 20px;
+  margin-bottom: -14px;
+}
+
+.icons {
+  position: fixed;
+  bottom: 0;
+}
+.icons > a > i::after {
+  content: "|";
+  position: relative;
+  top: -7px;
+  left: 13.7px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 30px;
+}
