@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+
+:root {
+  --primary-color: #f2994a;
+  --icon-color: #828282;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat";
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 2rem 0;
+  padding: 1rem;
+  font-size: 3rem;
+  color: #4e5150;
+}
+h2 {
+  font-size: 1.4rem;
+}
+label {
+  font-size: 1rem;
+  color: #4f4f4f;
+}
+input::placeholder {
+  font-size: 1.2rem;
+  color: #828282;
+}
+p {
+  font-size: 1.2rem;
+}
+
+/* common style */
+.center {
+  display: grid;
+  place-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.mx-4 {
+  margin: 1rem 0;
+}
+/* container */
+.container {
+  padding: 1.3rem;
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 645px) {
+  .container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+/* shoplist */
+.shoplist {
+  border-radius: 12px;
+  width: 100%;
+  height: fit-content;
+  min-width: 350px;
+  padding: 1rem 1.5rem;
+  background: #f2f2f2;
+}
+
+@media screen and (min-width: 645px) {
+  .shoplist {
+    margin-left: 10vw;
+  }
+}
+.itemlist {
+  margin-bottom: 8rem;
+}
+
+/* item */
+.item {
+  display: flex;
+  margin-bottom: 1rem;
+  padding: 2rem 1rem;
+}
+
+.item__image {
+  width: 120px;
+  border-radius: 13px;
+  margin-right: 1.5rem;
+}
+.item__title {
+  font-size: 1.2rem;
+  color: #4e5150;
+  margin-bottom: 1rem;
+}
+
+.item__prices {
+  margin-bottom: 2.3rem;
+}
+.item__price {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-right: 1rem;
+}
+.item__preprice {
+  color: #4e5150;
+  font-size: 1rem;
+  text-decoration: line-through;
+}
+
+.item__number {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 120px;
+  height: 50px;
+  padding: 1rem;
+  border: 1px solid #828282;
+  border-radius: 12px;
+}
+
+.item__number input {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.item__number input::placeholder {
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.item__number button {
+  width: 20px;
+  height: 20px;
+  color: #828282;
+  outline: none;
+  border: none;
+  background: #e0e0e0;
+  font-size: 1rem;
+  padding: 0.5rem 0.3rem;
+  border-radius: 4px;
+  transition: background 300ms ease-in-out;
+  cursor: pointer;
+}
+.item__number button:hover {
+  background: #c0c0c0;
+}
+
+.shoplist__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #bdbdbd;
+}
+
+.shoplist__title {
+  margin: 1rem 0;
+}
+
+/* form */
+.form {
+  width: 100%;
+  min-width: 350px;
+}
+.form h2 {
+  margin-bottom: 1.6rem;
+}
+.input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #828282;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.6rem;
+  margin-top: 5px;
+  padding: 0 1rem;
+}
+
+.input i {
+  padding: 1rem 0.5rem;
+  color: var(--icon-color);
+}
+.input input {
+  outline: none;
+  border: none;
+  flex-grow: 1;
+  padding: 1rem 0.5rem;
+}
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.input-left,
+.input-right {
+  width: 48%;
+}
+
+.input-left {
+  margin-right: 4%;
+}
+/* button */
+.btn {
+  display: block;
+  margin-left: auto;
+  font-family: inherit;
+  color: white;
+  border: none;
+  outline: none;
+  background: var(--primary-color);
+  border-radius: 12px;
+  font-size: 1.6rem;
+  padding: 1.7rem 4.5rem;
+  transition: background 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: rgb(245, 174, 42);
+}

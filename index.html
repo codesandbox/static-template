@@ -1,12 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="devchallenges.png" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://devchallenges.io/"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>checkout page challenge</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>Checkout</h1>
+    <div class="container">
+      <div class="shoplist">
+        <div class="itemlist">
+          <div class="item">
+            <img class="item__image" src="./photo1.png" />
+            <div class="item__info">
+              <p class="item__title">Vintage Backbag</p>
+              <div class="item__prices">
+                <span class="item__price">$54.99</span>
+                <span class="item__preprice">$94.99</span>
+              </div>
+              <div class="item__number">
+                <button>-</button>
+                <input type="text" placeholder="1" />
+                <button>+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img class="item__image" src="./photo2.png" />
+            <div class="item__info">
+              <p class="item__title">Levi Shoes</p>
+              <div class="item__prices">
+                <span class="item__price">$74.99</span>
+                <span class="item__preprice">$124.99</span>
+              </div>
+              <div class="item__number">
+                <button>-</button>
+                <input type="text" placeholder="1" />
+                <button>+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="shoplist__row">
+          <p class="shoplist__title">Shipping</p>
+          <p class="shoplist__price">$19</p>
+        </div>
+        <div class="shoplist__row">
+          <p class="shoplist__title">Total</p>
+          <p class="shoplist__price">$148.98</p>
+        </div>
+      </div>
+      <form class="form" action="#">
+        <h2>Contact information</h2>
+        <div class="input-group">
+          <label class="label" for="email">E-mail</label>
+          <br />
+          <div class="input">
+            <i class="fas fa-envelope"></i>
+            <input id="email" type="text" placeholder="Enter your email..." />
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="label" for="phone">Phone</label>
+          <br />
+          <div class="input">
+            <i class="fas fa-phone-alt"></i>
+            <input id="phone" type="text" placeholder="Enter your phone..." />
+          </div>
+        </div>
+        <h2>Shipping address</h2>
+        <div class="input-group">
+          <label class="label" for="email">Full name</label>
+          <br />
+          <div class="input">
+            <i class="fas fa-user-circle"></i>
+            <input id="email" type="text" value="Rodney Cotton" />
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="label" for="email">Adress</label>
+          <br />
+          <div class="input">
+            <i class="fas fa-home"></i>
+            <input id="email" type="text" placeholder="Your address..." />
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="label" for="email">City</label>
+          <br />
+          <div class="input">
+            <i class="fas fa-building"></i>
+            <input id="email" type="text" placeholder="Your city..." />
+          </div>
+        </div>
+        <div class="input-group flex">
+          <div class="input-left">
+            <label class="label" for="email">Country</label>
+            <br />
+            <div class="input">
+              <i class="fas fa-globe-americas"></i>
+              <input id="email" type="text" placeholder="Your country..." />
+            </div>
+          </div>
+          <div class="input-right">
+            <label class="label" for="email">Postal code</label>
+            <br />
+            <div class="input">
+              <i class="fas fa-inbox"></i>
+              <input id="email" type="text" placeholder="Your postal code..." />
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center mx-4">
+          <input
+            type="checkbox"
+            name="save-information"
+            id="save-information"
+          />
+          <span>
+            Save this information for next time
+          </span>
+        </div>
+        <button class="btn">Continue</button>
+      </form>
+    </div>
   </body>
 </html>
