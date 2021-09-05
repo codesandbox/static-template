@@ -1,12 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>FoodBox</title>
+    <link rel="stylesheet" type"text/css" href="assets.css"/>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="topo">
+      <h1>FoodBox</h1>
+      <h2>Monte seu box em 15 minutos!</h2>
+    </div>
+    <h3>Primeiro Seu Prato!</h3>
+    <div id="frango" class="produto" onclick="escolherProduto()">
+      <img
+        src="https://mh-2-agencia-estoque.panthermedia.net/media/previews/0013000000/13882000/~prato-principal-com-frango-frito-fritas-e_13882215_high.jpg"
+      />
+      <h4>Frango Yin-Yang</h4>
+      <p>Um pouco de batata, um pouco de salada</p>
+      <p><strong>R$ 19,90</strong></p>
+    </div>
+    <div id="carne" class="produto" onclick="escolherProduto2()">
+      <img
+        src="https://img3.stockfresh.com/files/p/peteer/m/69/8403134_stock-photo-grilled-pork-chops.jpg"
+      />
+      <h4>Carne e Salada!</h4>
+      <p>Bisteca suina, um pouco de salada</p>
+      <p><strong>R$ 24,90</strong></p>
+    </div>
+    <h3>Agora sua bebida!</h3>
+    <div id="bebida" class="produto" onclick="escolherProduto3()">
+      <img
+        src="https://hamburgueriavital.com.br/wp-content/uploads/2020/11/refrigerantes-1280x720-1.jpg"
+      />
+      <h4>Bebidas Geladas!</h4>
+      <p>Todos os tipos e sabores, tem pra todos os gostos.</p>
+      <p><strong>R$ 5,90</strong></p>
+    </div>
+    <div id="bebida2" class="produto" onclick="escolherProduto4()">
+      <img
+        src="https://www.receitasedicasdochef.com.br/wp-content/uploads/2020/12/Sucos-Naturais-Para-Hidratar-o-Corpo-e-a-Pele.jpg"
+      />
+      <h4>Suco da fruta!</h4>
+      <p>Sucos 100% natural e vitaminas de todos os sabores.</p>
+      <p><strong>R$ 4,50</strong></p>
+    </div>
+    <div class="botao" onclick="finalizarPedido()">
+      <p class="pedido"><strong>Finalizar Pedido!</strong></p>
+    </div>
+    <script>
+      let prato;
+      let bebidas;
+      function escolherProduto() {
+        document.getElementById("frango").style.borderColor = "green";
+        document.getElementById("carne").style.borderColor = "white";
+        //document.getElementById("bebida").style.borderColor = "white";
+        //document.getElementById("bebida2").style.borderColor = "white";
+        prato = "Frango";
+      }
+      function escolherProduto2() {
+        document.getElementById("carne").style.borderColor = "green";
+        document.getElementById("frango").style.borderColor = "white";
+        //document.getElementById("bebida").style.borderColor = "white";
+        //document.getElementById("bebida2").style.borderColor = "white";
+        prato = "Carne";
+      }
+      function escolherProduto3() {
+        document.getElementById("bebida").style.borderColor = "green";
+        document.getElementById("bebida2").style.borderColor = "white";
+        //document.getElementById("frango").style.borderColor = "white";
+        //document.getElementById("carne").style.borderColor = "white";
+        bebidas = "Refigerante";
+      }
+      function escolherProduto4() {
+        document.getElementById("bebida2").style.borderColor = "green";
+        document.getElementById("bebida").style.borderColor = "white";
+        //document.getElementById("frango").style.borderColor = "white";
+        //document.getElementById("carne").style.borderColor = "white";
+        bebidas = "Suco";
+      }
+      function finalizarPedido() {
+        //Essa função vai guardar os pedidos escolhidos
+        //alert(prato);
+        //alert(bebidas);
+        let mensagem;
+        mensagem =
+          "Olá, gostaria de fazer um pedido de " + prato + " e " + bebidas;
+        //alert(mensagem);
+        window.open(
+          "https://api.whatsapp.com/send/?phone=%2B5585985700207&text= " +
+            mensagem
+        );
+      }
+    </script>
   </body>
 </html>
