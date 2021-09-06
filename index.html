@@ -1,12 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script language="JavaScript">
+      alert("¡Hola Mundo!");
+    </script>
+
     <title>Static Template</title>
+    <style>
+      h1 {
+        color: green;
+      }
+      h2 {
+        font-family: Impact;
+      }
+      body {
+        text-align: center;
+      }
+    </style>
+    <script type="text/javascript">
+      function validarSiNumero(numero) {
+        if (!/^([0-9])*$/.test(numero))
+          alert("El valor " + numero + " no es un número");
+      }
+      function validateMail(idMail) {
+        //Creamos un objeto
+        object = document.getElementById(idMail);
+        valueForm = object.value;
+        // Patron para el correo
+        var patron = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+        if (valueForm.search(patron) == 0) {
+          //Mail correcto
+          object.style.color = "#000";
+          return;
+        }
+        //Mail incorrecto
+        object.style.color = "#f00";
+      } //-->
+    </script>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>
+      Mi primer programa con JavaScript !!!
+    </h1>
+    <h1>Bienvenidos</h1>
+    <h2>Java Script</h2>
+    <p>
+      Ejemplo de doble click sobre el botón para mostrar un "Mensaje de Alerta":
+    </p>
+    <button ondblclick="myalert()">
+      Mostrar Mensaje de Alerta
+    </button>
+    <script>
+      function myalert() {
+        alert("Test\n " + "Mensaje de Alerta" + "Sobre un botón");
+      }
+    </script>
+    <br />
+    <p>
+      Ingrese su Matricula
+    </p>
+    <input
+      type="text"
+      name="numero"
+      id="numero"
+      value=""
+      class="data"
+      required
+      onKeyUp="javascript:validarSiNumero(this.value)"
+    />
+    <br />
+    <p>Ingrese su Correo</p>
+    <div class="correo">
+      <input
+        type="text"
+        name="email"
+        id="email"
+        value=""
+        class="data"
+        required
+        onKeyUp="javascript:validateMail('email')"
+      />
+    </div>
+
+    <label for="start">Start date:</label>
+
+    <form>
+      <br />
+      <div>
+        <label for="bday">Escriba su cumpleaños:</label>
+        <input type="date" id="bday" name="bday" />
+      </div>
+    </form>
+    <br />
+    <br />
+
+    <h3>¿Cómo se considera en la toma de decisiones?</h3>
+    <button onclick="document.getElementById('myImage').src='Impulsivo.png'">
+      Impulsivo
+    </button>
+    <img id="myImage" src="Defecto.png" style="width: 100px;" />
+    <button onclick="document.getElementById('myImage').src='Tactico.png'">
+    Táctico
+    </button>
   </body>
 </html>
