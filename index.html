@@ -1,12 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
+    <title>Blog</title>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+      </head>
+  <style>
+  footer {
+  width: 102.5%;
+  background: #6505b4;
+  color: rgb(21, 169, 196);
+  font-size: 12px;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 1rem;
+  padding-bottom: 20px;
+
+}</style>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper blue darken-4">
+          <a href="#" class="brand-logo right">Mi Blog</a>
+
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Datos Personales</a></li>
+            <li><a href="#">Gustos</a></li>
+            <li><a href="#">Personalidad</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m6 offset-m4">
+          <form action="index.html" method="get">
+            <div class="row card-panel z-depth-4">
+              <h5>Login</h>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input
+                  type="text"
+                  placeholder="cuenta de usuario"
+                  id="usuario"
+                  name="usuario"
+                  class="validate"
+                  required
+                />
+              </div>
+
+              <div class="input-field col s12">
+                <i class="material-icons prefix">fingerprint</i>
+                <input
+                  type="password"
+                  placeholder="tu password"
+                  id="pswd"
+                  name="pswd"
+                  class="validate"
+                  required
+                />
+              </div>
+              <button class="btn blue right">
+                <i class="material-icons left">login</i>
+                Enviar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s6">
+          <div class="card blue lighten-3">
+            <div class="card-content">
+              <p>
+                <div class="datos"> 
+                  <h4>Datos personales</h4>
+                  <h5>Edad: 22</h5>
+                  <h5>Ocupacion:Estudiante</h5>
+                  <h5>Licenciatura: Ingenieria en Sistemas Computacionales</h5>
+                  <h5>Lugar de Nacimiento: Campeche,Campeche Mx</h5>
+                  <h5>Col.Solidaridad Urbana</h5>
+
+                  <h5>Num integrantes de familia: 3</h5>
+                  <!--hipervinculos-->
+                  <h4>Redes sociales</h4>
+                  <h5>
+                  <a color: "#00073C" >Facebook:</a>  
+                  <a href="https://www.facebook.com/adrian.hernandezestrella/">AdrianHernandez</a><p>
+                  
+                    <a>Universidad:</a>
+
+                  <a href="https://www.uacam.mx">UACAM</a><p> 
+                  </h5>
+              
+              </p>
+            </div>
+          </div>
+        </div>
+
+      
+      </div>
+
+      <div class="row">
+        <div class="col s6">
+          <div class="card blue darken-1">
+            <div class="card-image">
+              <img src="images/uac.jpg" alt="" />
+            </div>
+            <div class="card-title">
+              Mi Universidad
+            </div>
+            <div class="card-content">
+              <h4>Universidad Autonoma de Campeche</h4>
+              <p>
+                En esta universidad la prioridad son los estudiantes, la cual son el futuro de nuestro campeche, la uac tiene clara sus responsabilidades y sobre todo, tiene el talento y las personas para que los grandes fines se vuelvan compromisos sociales.
+                
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col s9">
+          <div class="card">
+            <div class="card-images">
+              <img src="images/campeche.jpg" alt="" />
+            </div>
+
+            <div class="card-title">
+              Mi ciudad
+            </div>
+            <div class="card-content">
+              <h3>Campeche</h3>
+              <p>
+                  Campeche, oficialmente llamada San Francisco de Campeche​ es la cabecera del municipio de Campeche y capital del estado de Campeche (México). Es una ciudad histórica fortificada ubicada a orillas del golfo de México, en la península de Yucatán. Es famosa por ser una de las pocas ciudades amuralladas de América.Conserva en excelente estado su patrimonio histórico, una de las razones por la que fue declarada Patrimonio Cultural de la Humanidad por la Unesco en 1999
+                  
+                  ¿Que podemos encontrar en Campeche? 
+                  Si te gustan los rincones arquitectonicos llenos de color, la Calle 59 te fascinará. Esta peatonal abarca desde la Puerta de la Tierra hasta la Puerta del Mar, dos de las cuatro puertas de entrada a esta ciudad amurallada. En ella estan algunos edificios representativos como la Casa del Teniente Rey o la Iglesia San Francisquito. También hay restaurantes, galerias de arte, tiendas y cafeterías con balcones. Para comprar un souvenir, este mismo camino te llevará hasta la Calle 10, donde está la Casa de las Artesanías para comprar huipiles y sombreros de jipijapa tejidos a mano en las cuevas de Becal.
+                   
+                  
+                  Muy cerca del complejo artesanal está la Plaza Independencia, donde se levanto la Catedral de Nuestra Señora de la Purísima Concepción, cuyo interior resguarda el Museo de Arte Sacro. En esta plaza podrás abordar un tranvia para continuar descubriendo los monumentos principales de la ciudad.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <!--pie de pag-->
+    <footer>
+        <strong>© 2021 Programación de Aplicaciones Web</strong>
+        <br>      
+        <a>Alumno: Adrian Hernandez Estrella </a> | <a href="">al052279@uacam.mx</a> 
+    </footer>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
 </html>
