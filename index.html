@@ -1,12 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+   
+    <!-- permite el dinamismo-->
+<script>
+var current = 0;
+var imagenes = new Array();
+ 
+$(document).ready(function() {
+    var numImages = 6;
+    if (numImages <= 3) {
+        $('.right-arrow').css('display', 'none');
+        $('.left-arrow').css('display', 'none');
+    }
+ 
+    $('.left-arrow').on('click',function() {
+        if (current > 0) {
+            current = current - 1;
+        } else {
+            current = numImages - 3;
+        }
+ 
+        $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+ 
+        return false;
+    });
+ 
+    $('.left-arrow').on('hover', function() {
+        $(this).css('opacity','0.5');
+    }, function() {
+        $(this).css('opacity','1');
+    });
+ 
+    $('.right-arrow').on('hover', function() {
+        $(this).css('opacity','0.5');
+    }, function() {
+        $(this).css('opacity','1');
+    });
+ 
+    $('.right-arrow').on('click', function() {
+        if (numImages > current + 3) {
+            current = current+1;
+        } else {
+            current = 0;
+        }
+ 
+        $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+ 
+        return false;
+    }); 
+ });
+</script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+
+    <!-- encabezado (menu de navegacion)-->
+    <div class="navbar-fixed">
+      <nav>
+        <!--  <div class="nav-wrapper  yellow"> cambia el color -->
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo right">UacamFI</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="https://animeflv.net/">Anime</a></li>
+            <li><a href="https://www.nintendo.com/">videojuegos</a></li>
+            <li><a href="https://www.mundodeportivo.com/wwe">Deportes</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- titulo-->
+    <div class="container">
+        <h1>Mi BLog Personal</h1>
+    </div>
+
+    <div class="container">
+    <div class="card-panel  deep-orange">
+        <span class="white-text text-darken-2">REGISTRATE</span>
+    </div>
+  </div>
+
+    <!--login-->
+    <div class="container">
+      <br /><br />
+      <div class="row">
+        <div class="col s12 m6 offset-m4">
+          <form action="index.html" method="get">
+            <div class="row card-panel z-depth-4">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">perm_identity</i>
+                <input
+                  type="text"
+                  placeholder=""
+                  id="usuario"
+                  name="usuario"
+                  class="validate"
+                  required
+                />
+                <label for="POST-name">Usuario:</label>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">lock</i>
+                <input
+                  type="password"
+                  id="pswd"
+                  name="pswd"
+                  class="validate"
+                  required
+                />
+                <label for="pswd">Contraseña:</label>
+              </div>
+              <button class="btn blue right">
+                <i class="material-icons left">login</i>
+                Enviar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--cards-->
+    <div class="container">
+        <div class="card-panel  deep-orange">
+                <span class="white-text text-darken-2">Conoce mis pasatiempos</span>
+          </div>
+      <div class="row">
+        <div class="col m4 s12">
+          
+          <div class="card cyan white-text">
+              <div class="card-image">
+                  <img src="Dibujo.png" alt="" />
+                  <div class="card-tittle">Dibujos y Sketchs</div>
+                </div>
+            <div class="card-content">
+              <p>
+                Me gusta hacer mis pequeños dibujos y comics con temas variados, como el humor y el albur.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col m4 s12">
+     
+          <div class="card green darken black-text">
+              <div class="card-image">
+                  <img src="Splatoon3.jpg" alt="" />
+                  <div class="card-tittle" >Jugar Video Juegos</div>
+                </div>
+            <div class="card-content">
+          
+              <p>
+                Los video juegos son mi mejor conección con los retos y estrategias en tiempo real.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col m4 s12">
+          <div class="card yellow black-text">
+            <div class="card-image">
+              <img src="DY.jpg" alt="" />
+              <div class="card-tittle">La música urbana</div>
+            </div>
+            <div class="card-content">
+              <p>
+                La música siempre hace mis dias más alegre, y el reggaeton urbano, la musica electronica y la cumbia siempre me mantienen feliz y lleno de energia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="card-panel  deep-orange">
+        <span class="white-text text-darken-2" 3>Mis personajes favoritos</span>
+      </div>
+
+    <!--  carusel-->
+    <div class="container">
+    <div id="carrusel">
+        <a href="#" class="left-arrow"><img src="izquierda.png" /></a>
+        <a href="#" class="right-arrow"><img src="derecha.png" /></a>
+        <div class="carrusel">
+            <div class="product" id="product_0">
+                <img src="Daidouji.jpg" width="195" height="100" />
+                <h5>Daidouji</h5>
+            </div>
+            <div class="product" id="product_1">
+                <img src="baby-rosalina.jpg" width="195" height="100" />
+                <h5>Baby Rosalina 2</h5>
+            </div>
+            <div class="product" id="product_2">
+                <img src="pokemon.png" width="195" height="100" />
+                <p><h5> Grookey</h5></p>
+            </div>
+            <div class="product" id="product_3">
+                <img src="setsuna.jpg" width="195" height="100" />
+                <h5>Setsuna</h5>
+            </div>
+            <div class="product" id="product_4">
+                <img src="tae.jpg" width="195" height="100" />
+                <h5>Yamada Tae</h5>
+            </div>
+            <div class="product" id="product_5">
+                <img src="lucina.jpg" width="195" height="100" />
+                <h5>Lucina</h5>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!--parrafos-->
+    <div class="container">
+      <p>
+          Daidouji (大道寺) es un personaje jugable de la serie de videojuegos Senran Kagura. Ella hace su debut en Senran Kagura: Portrait of Girls.
+          Es una estudiante de tercer año de la Academia Hanzo. Es una estudiante mayor enigmática y legendaria, que emana un aura peligrosa.      
+          A pesar de su edad y registro de asistencia escasa, ella sigue reinando sobre la Academia. Ella posee una increíble velocidad y un poder abrumador, y en contraste con su entrenamiento ninja, nunca se molesta en las tácticas de sigilo
+          Su estilo de lucha hace temblar la tierra y el cielo, centrada en atacar a sus enemigos de frente con su enorme fuerza.
+      </p>
+      <br />
+      <hr />
+      <p>
+          Bebé Estela o Bebé Rosalina (en inglés: Baby Rosalina) es un personaje que apareció por primera vez en el juego Mario Kart 8, para la consola de sobremesa Wii U. Aunque apareció por primera vez en este juego Bebé Estela había sido creada y usada muchas veces por los fans en 
+          páginas web fanon. Bebé Estela es la homóloga del pasado de Estela. Su color es el turquesa.
+      </p>
+      <p>
+          Grookey es un Pokémon de tipo planta introducido en la octava generación. Es uno de los Pokémon iniciales de Pokémon Espada y Pokémon Escudo
+          Grookey es un mono verde con orejas y cola marrón, manos y hocico de color naranja, y una hoja con una ramita en su cabeza. La baqueta que lleva Grookey no era más que una ramita recogida del bosque en el que habita su manada,
+          pero, tras estar expuesta a la energía que emana de su cuerpo, adquirió poderes especiales. El pelaje verde de Grookey sintetiza energía a partir de la luz solar. Las flores y hojas marchitas recuperan su color cuando Grookey golpea con su baqueta cerca de ellas.
+        </p>
+      <br />
+      <hr />
+      <p>
+          Setsuna (せつな) es una de las tres protagonistas de la serie de anime Hanyō no Yashahime.
+          Es la menor de las gemelas hanyo que nacieron de la relación de Sesshomaru con su esposa[3] humana Rin[4]. Luego de separarse de su hermana sus sueños fueron consumidos por una Mariposa de los sueños, por lo que no es capaz de dormir y mucho menos recordar algo de su pasado.
+          Mi nombre es Setsuna, y no tengo nada mas que decirte.. Por esa razón, este es tu fin” — Setsuna en el Trailer.
+      </p>
+      <br />
+      <hr />
+      <p>
+          Yamada Tae (山田 た え) es una chica misteriosa con un pasado desconocido. Ella es la única zombie que no ha despertado. Kotaro no da ninguna explicación a quien es y cuando Sakura le pregunto el solo respondió "Quien dice que debe haber una leyenda para todo". También es miembro del grupo idol Franchouchou.
+      La zombie de un largo pelo negro. La única zombie de los siete que aún no está completamente consciente. Como tal, ella es la más zombie del grupo, siempre tratando de morder algo. Aunque Tae solo habla en gemidos, parece ser capaz de entender lo que el resto de los miembros están
+      diciendo hasta cierto punto. Debido a que ella es impulsada puramente por instinto, Tae siempre termina mordisqueando a Junko cuando está cerca.    
+      </p>
+      <br />
+      <hr />
+      <p>
+          Lucina es un personaje jugable en Fire Emblem Awakening y una de los tres protagonistas de éste.
+          Lucina es la hija de Chrom del futuro y tiene la marca de Naga, conocida como la marca del venerable, en su ojo izquierdo. Ella es una princesa amable y decidida con un gran sentido de justicia, que cree que salvar al mundo es su misión. Ella adora a su padre y siempre se está 
+          preocupando por él. Su espada es la Falchion linaje que es la misma espada  que tiene Chrom pero traída del futuro. Dependiendo con quien se case Chrom, Lucina puede ser hermana de Linfan (masculino), Íñigo, Cynthia, Brady o Kjelle, o ser hija única. También es prima de Owain y posiblemente de Linfan (femenino) si Daraen se casa con Lissa o con Emmeryn.
+      </p>
+      <br />
+      <hr />
+    </div>
+    <br /><br />
+
+    <!--registro-->
+    <div class="container">
+        <div class="row">
+            <form class="col s12">
+                <div class="card white black-text">
+                    <div class="card-content">
+              <div class="row">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">mode_edit</i>
+                  <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                  <label for="icon_prefix2">redacte su pinion sobre mi pagina</label>
+                </div>
+              </div>
+              <!--botones-->
+              <button class="button is-success">
+                  <span class="icon is-small">
+                      <i class="material-icons prefix">done</i>
+                  </span>
+                  <span>Save</span>
+                </button>
+                <button class="button is-success">
+                  <span>Delete</span>
+                  <span class="icon is-small">
+                      <i class="material-icons prefix">delete_forever</i>
+                  </span>
+                </button>
+            </div>
+          </div>
+            </form>
+          </div>
+    </div>   
+</div>
+      </div>
+      
+      <!--pie de pagina-->
+    <div class="container">
+      <footer class="page-footer">
+        <div class="footer-copyright">
+          <div class="container">
+            Raúl Alejandro Caballero Ramírez
+            <a class="grey-text text-lighten-4 right" href="#!">Mas sobre mi</a>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
