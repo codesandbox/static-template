@@ -16,6 +16,19 @@ body {
   height: 100vh;
 }
 
+:root {
+  --mainredcol: #e06262;
+  --maingreycol: #686868;
+}
+
+.red-col {
+  color: var(--mainredcol);
+}
+
+.grey-col {
+  color: var(--maingreycol);
+}
+
 body,
 html {
   margin: 0;
@@ -23,8 +36,8 @@ html {
 }
 
 .container {
-  height: 500px;
-  width: 500px;
+  height: 600px;
+  width: 600px;
   background-color: #f2eecb;
   border-radius: 5px;
 
@@ -34,4 +47,24 @@ html {
 .frame {
   border: 1px solid #484848;
   height: 100%;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.header-title {
+  flex: 1;
+  text-align: center;
+  font-size: 3.6rem;
+}
+
+.header-btn {
+  font-size: 1.8rem;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+  background-color: unset;
+  border: unset;
 }
