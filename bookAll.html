@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>睡前小说网</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="font_icon/iconfont.css">
+	<link rel="shortcut icon" href="./images/favicon.ico"/>
+	<script src="./js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<!-- 头部信息 -->
+	<header>
+		<div class="header box-center">
+			<h1><a href="./index.html" title="睡前小说网"></a>
+				<span>睡前小说网</span>
+			</h1>
+			<div class="search-wrap">
+				<form action="">
+					<input type="text" placeholder="建设大时代" id="search-input" onkeydown="search()">
+					<label id="search-btn"><i class="iconfont">&#xe65e;</i></label>
+				</form>
+			</div>
+			<div class="user-wrap">
+				<div class="user-message">
+					<span class="iconfont">&#xe603;</span>
+					<a href="./bookshelf.html">我的书架</a>
+					<span class="iconfont">&#xe691;</span>
+					<a href="./user.html">消息</a>
+				</div>
+				<p>
+					<a href="javascript:void(0)" id="login" onclick="login(this)">登录</a>|
+					<a href="javascript:void(0)" id="register" onclick="login(this)">注册</a>
+				</p>
+				<div class="user-avatar">
+					<a href="./user.html">
+						<img src="images/avatar.png" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- 菜单栏 -->
+		<nav class="header-nav box-center">
+			<ul>
+				<li id="show-allMenu">
+					<a href="javascript:void(0)"><i class="icon iconfont">&#xe625;</i>全部分类
+					</a>
+				</li>
+				<li><a href="./ranking.html">排行榜</a></li>
+				<li><a href="./free.html">免费</a></li>
+				<li><a href="./bookAll.html">完本</a></li>
+				<li><a href="./404.html">作者专区</a></li>
+			</ul>
+			<div class="menu-list">
+				<ul></ul>
+			</div>
+		</nav>
+	</header>
+	
+	<!-- 用户登录框 -->
+	<div class="login">
+		<div class="login-block">
+			<div class="avatar">
+				<img src="./images/avatar.png">
+			</div>
+			<form>
+				<div class="user-info">
+				  <input type="text" name="username" id="username" placeholder="请输入用户名" />
+				  <input type="password" name="password" id="userpwd" placeholder="密码" />
+				</div>
+				<div class="login-box">
+					<p>
+						<input type="checkbox" name="remember" value="0" id="remember"> 
+						<label for="remember">自动登录</label>
+						<a href="javascript:alert('没弄这功能，忘了就忘了吧')" class="unremeber">忘记密码</a>
+					</p>
+					<input type="submit" value="登录" id="login_btn">
+				</div>
+				<div class="tips">
+					<p>登录即代表同意<a href="javascript:alert('欢迎加入网站，在使用网站之前请您仔细阅读本用户协议，以下省略8888字。不阅读也没事，也就这几个字。')">《用户服务协议》</a>和<a href="javascript:alert('抱歉，你早就没隐私了')">《隐私政策》</a></p>
+				</div>
+			</form>
+			<span class="close">x</span>
+		</div>
+	</div>
+	
+	<div class="container box-center">
+		<div class="books-classify">
+			<ul>
+				<li>
+					<strong>分类:</strong>
+					<div class="tags">
+					</div>
+				</li>
+				<li>
+					<strong>字数:</strong>
+					<div class="tags">
+						<span class="active">全部</span>
+						<span>30万以下</span>
+						<span>50~100万</span>
+						<span>100~200万</span>
+						<span>100~200万</span>
+					</div>
+				</li>
+				<li>
+					<strong>状态:</strong>
+					<div class="tags">
+						<span class="active">全部</span>
+						<span>连载</span>
+						<span>完结</span>
+						<span>出版</span>
+					</div>
+				</li>
+				<li>
+					<strong>属性:</strong>
+					<div class="tags">
+						<span class="active">全部</span>
+						<span>免费</span>
+						<span>收费</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<!-- 书籍列表排序块 -->
+		<div class="books-block">
+			<div class="books-sort">
+				<span class="active">综合</span>
+				<span>字数</span>
+				<span>点击</span>
+				<span>时间</span>
+			</div>
+			<div class="books-list">
+				<ul></ul>
+			</div>
+			<div id="null" style="height:100px;text-align: center;margin-top: 60px;display: none">
+				<p style="font-size: 18px;">搜索暂无结果，请更换关键词</p>
+			</div>
+			<!--  分页 -->
+			<div class="pages">
+				<ul>
+					<li class="pre noborder disable"><a href="javascript:void(0)"><</a></li>
+					<li class="active"><a href="javascript:void(0)">1</a></li>
+					<li><a href="javascript:void(0)">2</a></li>
+					<li><a href="javascript:void(0)">3</a></li>
+					<li class="noborder">...</li>
+					<li><a href="javascript:void(0)">88</a></li>
+					<li class="next noborder disable">
+						<a href="javascript:void(0)">></a>
+					</li>
+					<li class="noborder" style="margin-right: 20px;">
+						<input type="number" value="1">
+					</li>
+					<li class="noborder">
+						<button type="submit">GO</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- 公共底部 -->
+	<footer class="box-center">
+		<div class="link-map">
+			<a href="./about.html" target="_self" rel="nofollow">关于本站</a>
+			<a href="./about.html" target="_self" rel="nofollow">联系我们</a>
+		</div>
+		<p>Copyright © 2020 127.0.0.1 All Rights Reserved版权所有</p>
+		<p>请所有作者发布作品时务必遵守国家互联网信息管理办法规定，我们拒绝任何色情小说，一经发现，即作删除！</p>
+		<div class="safe">
+			<a class="site1" href="http://www.12377.cn" target="_blank"></a>
+			<a class="site2" href="http://www.shjbzx.cn" target="_blank"></a>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="./js/common.js"></script>
+	<script>
+		var search = encodeURI(getUrlParam('search')); //获取地址参数转码，否则出错
+		// console.log(typeof(search));
+		search = search == 'null' ? '' : search
+		// console.log(search);
+		var pages = search ? 1 : 3; //如果是通过搜索，只获取API第一页内容
+		for(let i=1;i<=pages;i++){
+			var url = encode(`http://admin.iqingtun.com/web/bookroom/index?c_id=0&sales=1&page=${i}${search?'&search='+search : ''}`);
+			// console.log(url);
+			$.get(URLPROXY+url,(data)=>{
+				if (data.code == 400) {
+					$('#null').show()
+					$('.pages').hide()
+				}
+				$.each(data.data ,(i,value)=>{
+					$('.books-list ul').append(`<li>
+						<div class="book-img">
+							<a href="./catalog.html?bookid=${value.id}">
+								<img src="http://${value.front_cover}" alt="">
+							</a>
+						</div>
+						<div class="book-info">
+							<h3>
+								<a href="./catalog.html?bookid=${value.id}">
+								${value.title}
+								</a>
+							</h3>
+							<p class="author">${value.u_name}</p>
+							<div class="tag">
+								<span class="class">${value.c_is_vip == 1?'vip':'免费'}</span>
+								<span class="state">${value.update_status}</span>
+								<span class="number">字数:${value.char_num}</span>
+							</div>
+							<p class="intro">
+								${value.introduction}
+							</p>
+						</div>
+					</li>`)
+				})
+			})
+		}
+		
+	</script>
+	<script>
+		//点击标签后效果
+		$(".books-classify .tags").on('click','span',function() {
+	        $(this).siblings('span').removeClass('active');
+	        $(this).addClass('active');                    
+    	});
+    	$(".books-block .books-sort span").on('click',function() {
+	        $(this).siblings('span').removeClass('active');
+	        $(this).addClass('active');               
+    	});
+	</script>
+
+</body>
+</html>

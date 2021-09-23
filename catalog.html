@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>睡前小说网</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="font_icon/iconfont.css">
+	<link rel="shortcut icon" href="./images/favicon.ico"/>
+	<script src="./js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<!-- 头部信息 -->
+	<header>
+		<div class="header box-center">
+			<h1><a href="./index.html" title="睡前小说网"></a>
+				<span>睡前小说网</span>
+			</h1>
+			<div class="search-wrap">
+				<form action="">
+					<input type="text" placeholder="建设大时代" id="search-input" onkeydown="search()">
+					<label id="search-btn"><i class="iconfont">&#xe65e;</i></label>
+				</form>
+			</div>
+			<div class="user-wrap">
+				<div class="user-message">
+					<span class="iconfont">&#xe603;</span>
+					<a href="./bookshelf.html">我的书架</a>
+					<span class="iconfont">&#xe691;</span>
+					<a href="./user.html">消息</a>
+				</div>
+				<p>
+					<a href="javascript:void(0)" id="login" onclick="login(this)">登录</a>|
+					<a href="javascript:void(0)" id="register" onclick="login(this)">注册</a>
+				</p>
+				<div class="user-avatar">
+					<a href="./user.html">
+						<img src="images/avatar.png" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- 菜单栏 -->
+		<nav class="header-nav box-center">
+			<ul>
+				<li id="show-allMenu">
+					<a href="javascript:void(0)"><i class="icon iconfont">&#xe625;</i>全部分类
+					</a>
+				</li>
+				<li><a href="./ranking.html">排行榜</a></li>
+				<li><a href="./free.html">免费</a></li>
+				<li><a href="./bookAll.html">完本</a></li>
+				<li><a href="./404.html">作者专区</a></li>
+			</ul>
+			<div class="menu-list">
+				<ul>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	
+	<!-- 用户登录框 -->
+	<div class="login">
+		<div class="login-block">
+			<div class="avatar">
+				<img src="./images/avatar.png">
+			</div>
+			<form>
+				<div class="user-info">
+				  <input type="text" name="username" id="username" placeholder="请输入用户名" />
+				  <input type="password" name="password" id="userpwd" placeholder="密码" />
+				</div>
+				<div class="login-box">
+					<p>
+						<input type="checkbox" name="remember" value="0" id="remember"> 
+						<label for="remember">自动登录</label>
+						<a href="javascript:alert('没弄这功能，忘了就忘了吧')" class="unremeber">忘记密码</a>
+					</p>
+					<input type="submit" value="登录" id="login_btn">
+				</div>
+				<div class="tips">
+					<p>登录即代表同意<a href="javascript:alert('欢迎加入网站，在使用网站之前请您仔细阅读本用户协议，以下省略8888字。不阅读也没事，也就这几个字。')">《用户服务协议》</a>和<a href="javascript:alert('抱歉，你早就没隐私了')">《隐私政策》</a></p>
+				</div>
+			</form>
+			<span class="close">x</span>
+		</div>
+	</div>
+
+	<!-- 主体内容 -->
+	<div class="container box-center">
+		<div class="process">
+			<p>
+				<a href="./index.html">首页</a>
+				<em>></em>
+				<a href="#" class="className">古代言情</a>
+				<em>></em>
+				<a href="#" class="bookName">农门肥千金</a>
+			</p>
+		</div>
+		<section class="catalog-info">
+            <div class="book-img">
+            	<img src="./images/book_1.jpg">
+            </div>
+ 
+            <div class="book-info">
+            	<a href="javascript:;" class="unfold">展开</a>
+            	<h3>我有外挂三千</h3>
+                <p class="book-author">糖炒栗子</p>
+				<p class="book-mess">
+					<label for="">字数:</label>
+					<span class="number">10万字</span>|
+					<label for="">点击量:</label>
+					<span class="hits">8888</span>
+				</p>
+                <p style="margin: 10px 0 15px 0;">
+					<span class="state">完结</span>
+					<span class="class">古代言情</span>
+                </p>
+
+                <p class="intro">
+                女主：我有三千外挂（大佬脸）羡慕嫉妒众路人：可惜那都不是你的是男主的（小人得志脸）女主：我有三千男主（大佬脸）羡慕嫉妒众路人：可惜都是你的任务对象你又带不走（小人得志脸）女主：我有主神三千宠爱众：打扰了，告辞。女主：谈恋爱吗？死去活来的内种。既精分又切片蛇精病属性男主X撩完就跑真刺激皮皮虾属性女主本文又可以叫《拿着男主剧本却为何刷着苦情反派剧情》《我送一个快递就崩一个位面》《大佬追妻之我把自己坑惨了的那些年》《论一个深井冰的自我修养》欢迎补充(ಡωಡ)
+                </p>
+                <div class="btn">
+                    <a class="read-btn" href="#" target="_self">免费阅读</a>
+                    <a class="add-btn" href="javascript:alert('成功加入书架')" >加入书架</a>
+                </div>
+            </div>
+		</section>
+		<div class="nav-title">
+			<p>目录(88章)</p>
+		</div>
+		<section class="catalog-list">
+			<h5>正文·共88章</h5>
+			<a href="#">
+				<span>更新至: </span>
+				<a href="" class="uprocess" style="color: #1588f4;">第108章 见死不救·4小时前</a>
+				<span class="time"></span>
+			</a>
+			<ul class="clearfix">
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+				<li><a href="#">第一章 小妹诈尸了</a></li>
+			</ul>
+		</section>
+	</div>
+	<!-- 加载蒙版 -->
+	<div class="mask">
+		<div class="spinner">
+		  <div class="bounce1"></div>
+		  <div class="bounce2"></div>
+		  <div class="bounce3"></div>
+		</div>
+	</div>
+
+	<!-- 公共底部 -->
+	<footer class="box-center">
+		<div class="link-map">
+			<a href="./about.html" target="_self" rel="nofollow">关于本站</a>
+			<a href="./about.html" target="_self" rel="nofollow">联系我们</a>
+		</div>
+		<p>Copyright © 2020 127.0.0.1 All Rights Reserved版权所有</p>
+		<p>请所有作者发布作品时务必遵守国家互联网信息管理办法规定，我们拒绝任何色情小说，一经发现，即作删除！</p>
+		<div class="safe">
+			<a class="site1" href="http://www.12377.cn" target="_blank"></a>
+			<a class="site2" href="http://www.shjbzx.cn" target="_blank"></a>
+		</div>
+	</footer>
+	<script type="text/javascript" src="./js/common.js"></script>
+	<script>
+	var book_id = getUrlParam('bookid');
+	$('.bookName').attr('href',"catalog.html?bookid="+book_id);
+	if (book_id != null) {
+		// 获取书籍信息
+		setMask()
+		$.get(`${URLPROXY}http://admin.iqingtun.com/web/book/index?id=${book_id}&u_id=`,(data)=>{
+			console.log(data);
+			var content = data['data'].chapter_content
+			$('.book-img img').attr('src','http://'+data['data'].front_cover);
+			$('.book-info p.intro').text(content.replace(/(<\w>|<\/\w>)/g,''));
+			$('.book-info h3').text(data['data'].title);
+			$('.book-info p.book-author').text(data['data'].u_name);
+			$('.book-info span.state').text(data['data'].update_status)
+			$('.book-info span.class').text(data['data'].c_title)
+			$('.book-info .book-mess span.number').text(data['data'].char_num)
+			$('.book-info .book-mess span.hits').text(data['data'].hits)
+			$('.process a.className').text(data['data'].c_title)
+			$('.process a.bookName').text(data['data'].title)
+			$('.book-info .btn a.read-btn').text(data['data'].is_vip == 0 ? '免费阅读' :'仅限VIP阅读').attr('data-vip',data['data'].is_vip)
+			$('.catalog-list .uprocess').text(data['data'].chapter_title + "  "+ data['data'].last_update_chapter_time).attr('href',`./read.html?bid=${book_id}&cid=${data['data'].last_update_chapter_id}`)
+		});
+		// 获取目录
+		$.get(`${URLPROXY}http://admin.iqingtun.com/web/book/directory?id=${book_id}&order=0`,(data)=>{
+			var chapters = data.data.volume[0].chapter;
+			// console.log($('.read-btn').attr('data-vip'));
+			$('.read-btn').attr('href',$('.read-btn').attr('data-vip') == 0 ? `./read.html?bid=${chapters[0].b_id}&cid=${chapters[0].id}` :'javascript:alert("仅限VIP阅读哦！");')
+			$('.catalog-list h5').text(`正文·共${chapters.length}章`)
+			$('.nav-title p').text(`目录(${chapters.length}章)`)
+			var chapter_list = "";
+			try{
+				$.each(chapters,(i,value)=>{
+					chapter_list += `<li><a href="./read.html?bid=${book_id}&cid=${value.id}">第${i+1}章 ${value.title}</a></li>`
+				})
+			}catch{
+				var chapters = data.data.volume[1].chapter;
+				$.each(chapters,(i,value)=>{
+					chapter_list += `<li><a href="./read.html?bid=${book_id}&cid=${value.id}">第${i+1}章 ${value.title}</a></li>`
+				})
+			}
+			// 避免出现空白横条
+			chapter_list += chapters.length % 3==1? '<li></li><li></li>':chapters.length % 3==2 ? '<li></li>' :'';
+			$('.catalog-list ul').html(chapter_list)
+			setMask('none')
+		});
+	}
+
+	$('.unfold').click(function(){
+		if ($(this).text() == "收起") {
+			$(this).text("展开")
+			$('.intro').css('display','-webkit-box')
+		}else{
+			$(this).text("收起")
+			$('.intro').css('display','block')
+		}
+	})
+	</script>
+</body>
+</html>

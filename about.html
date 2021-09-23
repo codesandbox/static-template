@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>睡前小说网</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="font_icon/iconfont.css">
+	<link rel="shortcut icon" href="./images/favicon.ico"/>
+	<script src="./js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<!-- 头部信息 -->
+	<header>
+		<div class="header box-center">
+			<h1><a href="./index.html" title="睡前小说网"></a>
+				<span>睡前小说网</span>
+			</h1>
+			<div class="search-wrap">
+				<form action="">
+					<input type="text" placeholder="建设大时代" id="search-input" onkeydown="search()">
+					<label id="search-btn"><i class="iconfont">&#xe65e;</i></label>
+				</form>
+			</div>
+			<div class="user-wrap">
+				<div class="user-message">
+					<span class="iconfont">&#xe603;</span>
+					<a href="./bookshelf.html">我的书架</a>
+					<span class="iconfont">&#xe691;</span>
+					<a href="./user.html">消息</a>
+				</div>
+				<p>
+					<a href="javascript:void(0)" id="login" onclick="login(this)">登录</a>|
+					<a href="javascript:void(0)" id="register" onclick="login(this)">注册</a>
+				</p>
+				<div class="user-avatar">
+					<a href="./user.html">
+						<img src="images/avatar.png" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- 菜单栏 -->
+		<nav class="header-nav box-center">
+			<ul>
+				<li id="show-allMenu">
+					<a href="javascript:void(0)"><i class="icon iconfont">&#xe625;</i>全部分类
+					</a>
+				</li>
+				<li><a href="./ranking.html">排行榜</a></li>
+				<li><a href="./free.html">免费</a></li>
+				<li><a href="./bookAll.html">完本</a></li>
+				<li><a href="./404.html">作者专区</a></li>
+			</ul>
+			<div class="menu-list">
+				<ul>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	
+	<!-- 用户登录框 -->
+	<div class="login">
+		<div class="login-block">
+			<div class="avatar">
+				<img src="./images/avatar.png">
+			</div>
+			<form>
+				<div class="user-info">
+				  <input type="text" name="username" id="username" placeholder="请输入用户名" />
+				  <input type="password" name="password" id="userpwd" placeholder="密码" />
+				</div>
+				<div class="login-box">
+					<p>
+						<input type="checkbox" name="remember" value="0" id="remember"> 
+						<label for="remember">自动登录</label>
+						<a href="javascript:alert('没弄这功能，忘了就忘了吧')" class="unremeber">忘记密码</a>
+					</p>
+					<input type="submit" value="登录" id="login_btn">
+				</div>
+				<div class="tips">
+					<p>登录即代表同意<a href="javascript:alert('欢迎加入网站，在使用网站之前请您仔细阅读本用户协议，以下省略8888字。不阅读也没事，也就这几个字。')">《用户服务协议》</a>和<a href="javascript:alert('抱歉，你早就没隐私了')">《隐私政策》</a></p>
+				</div>
+			</form>
+			<span class="close">x</span>
+		</div>
+	</div>
+	<!-- 主体内容 -->
+	<div class="container box-center">
+		<section class="ad">
+			<img src="./images/about.jpg" alt="" style="">
+			<h2 class="about-zh">关于我们</h2>
+			<h3 class="about-en">About Us</h3>
+		</section>
+		<div class="about">
+			<div class="about-info">
+				<div class="member">
+					<img src="images/team_1.png" alt="">
+					<span class="name">xxxx</span>
+					<p class="intro">擅长前端开发、web设计、LOGO、UI等设计。</p>
+				</div>
+				<div class="member">
+					<img src="images/team_2.png" alt="">
+					<span class="name">xxxx</span>
+					<p class="intro">擅长影视设计、web设计、LOGO、UI等设计。</p>
+				</div>
+				<div class="member">
+					<img src="images/team_3.png" alt="">
+					<span class="name">xxxx</span>
+					<p class="intro">擅长三维设计、web设计、UI等设计。</p>
+				</div>
+				<div class="member">
+					<img src="images/team_4.png" alt="">
+					<span class="name">xxxx</span>
+					<p class="intro">擅长平面设计、LOGO、UI、效果图设计。</p>
+				</div>
+			</div>
+			
+			<div class="join-us">
+				<!-- <h2>加入我们</h2> -->
+				<p>
+					我们是一群怀揣着一点点梦想的年轻人，我们是新媒体的忠实信徒
+				</p>
+				<p>
+					我们相信世界正在因新媒体而改变
+				</p>
+				<p>
+					我们倾向于组建小而精悍的团队，我们喜欢快速反应的工作节奏，我们挚爱正在从事的工作
+				</p>
+				<p>
+					那是我们相当一部分的乐趣所在，我们都曾经历过巨大的挫折和失败
+				</p>
+				<p>但从未有放弃</p>
+				<p>如果您同样有梦想，同样喜欢新媒体</p>
+				<p>欢迎您加入我们</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 公共底部 -->
+	<footer class="box-center">
+		<div class="link-map">
+			<a href="./about.html" target="_self" rel="nofollow">关于本站</a>
+			<a href="./about.html" target="_self" rel="nofollow">联系我们</a>
+		</div>
+		<p>Copyright © 2020 127.0.0.1 All Rights Reserved版权所有</p>
+		<p>请所有作者发布作品时务必遵守国家互联网信息管理办法规定，我们拒绝任何色情小说，一经发现，即作删除！</p>
+		<div class="safe">
+			<a class="site1" href="http://www.12377.cn" target="_blank"></a>
+			<a class="site2" href="http://www.shjbzx.cn" target="_blank"></a>
+		</div>
+	</footer>
+	<script type="text/javascript" src="./js/common.js"></script>
+</body>
+</html>

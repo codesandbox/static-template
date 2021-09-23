@@ -1,0 +1,1372 @@
+
+/* banner轮播图 */
+.banner{
+	width: 100%;
+	background: #fff;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.banner-box{
+	bottom: 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.banner-box ul{
+	overflow: hidden;
+}
+
+.banner-box li,.banner-box a{
+	max-height: 400px;
+	z-index: 1;
+}
+
+.banner .banner-box img{
+	width: 100%;
+}
+
+.banner .banner-box .banner-menu{
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+}
+
+.banner .banner-box .banner-menu a:hover{
+	opacity: 1;
+	background: var(--main-color);
+}
+
+.banner .banner-box .banner-menu a{
+	box-sizing: border-box;
+	width: 20%;
+	height: 40px;
+	line-height: 40px;
+	float: left;
+	color: #fff;
+	background: #000;
+	opacity: 0.5;
+}
+
+.banner .banner-box .banner-menu a:not(:last-child){
+	border-right: 1px solid #ccc;
+}
+
+.banner-menu a:hover{
+	background: var(--main-color)
+}
+
+.banner .banner-box .show{
+	display: block;
+}
+
+.banner .banner-box .hidden{
+	display: none;
+}
+
+.container h2{
+	font-size: 1.2em;
+	font-weight: bold;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #000;
+}
+
+/* 热门推荐 */
+.host-block{
+	border-radius: 10px;
+	margin-bottom: 20px;
+	box-sizing:border-box;
+	padding: 20px;
+	background: #fff;
+	overflow: hidden;
+}
+
+.host-block .host-left{
+	width: 73%;
+	height: 100%;
+	float: left;
+}
+
+.host-right{
+	width: 25%;
+	height: 100%;
+	float:right;
+	background: white;
+}
+
+.host-block .host-left .host-new-book{
+	width: 100%;
+	overflow: hidden;
+}
+
+.host-block .host-left .host-new-book ul{
+	width: 100%;
+	overflow: hidden;
+	margin-top: 20px;
+}
+
+.host-block .host-left .host-new-book li{
+	float:left;
+	width: 33.3%;
+	margin-bottom: 30px;
+}
+
+.host-block .host-new-book .book-img{
+	float: left;
+	margin-right: 10px;
+}
+
+.host-block .host-new-book .book-img img{
+	width: 75px;
+	border: 1px solid #ccc;
+	box-shadow: 1px 2px 4px #ccc;
+}
+
+.host-block .host-new-book .book-info{
+	overflow: hidden;
+	padding-right: 12px;
+}
+
+.host-block .host-new-book .book-info h3{
+	font-size: 1em;
+	margin-bottom: 10px;
+}
+
+.host-block .host-new-book .book-info h3 a:hover{
+	color: var(--main-color);
+}
+
+.host-block .host-new-book .book-info p.book-about{
+	height: 40px;
+	color: #666;
+	font-size: 12px;
+	margin-bottom: 10px;
+	line-height: 20px;
+	word-wrap: break-word;
+    word-break: break-all;
+	overflow: hidden;
+}
+
+.host-block .host-new-book .info-box{
+	color: #a6a6a6;
+	font-size: 0.7em;
+}
+
+.host-block .host-new-book .info-box a{
+	float: left;
+	position: relative;
+}
+
+.host-block .host-new-book .info-box a>i{
+	position: absolute;
+	font-size: 1.5em;
+	color: #777;
+	left: 0px;
+	top: -2px;
+}
+
+.host-block .host-new-book .info-box .author-text p{
+	margin-left: 20px;
+	color: #777;
+}
+
+.host-block .host-new-book .info-box span{
+	border:0.1px solid #ccc;
+	padding: 3px;
+	float: right;
+}
+.host-block .host-right .host-week{
+	font-size: 14px;
+	font-family: PingFangSC-Regular,Simsun;
+}
+.host-block .host-right .host-week li{
+	line-height: 32px;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.host-block .host-right .host-week li:last-child{
+	border-bottom: none;
+}
+
+.host-block .host-right li a.category{
+	color:grey;
+}
+
+.host-block .host-right li a.category:hover{
+	color:var(--main-color,#008c8c);
+}
+
+.host-block .host-right li a.bookname:hover{
+	color:var(--main-color,#008c8c);
+}
+
+/* 限时免费 */
+.free-time{
+	background: #fff;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	box-sizing:border-box;
+	overflow: hidden;
+}
+
+.free-time .timing-block{
+	width: 16%;
+	float: left;
+	text-align: center;
+	padding: 25px;
+	box-sizing: border-box;
+}
+
+.free-time .timing-block span{
+	display: inline-block;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: var(--main-color,#008c8c);
+	margin-bottom: 10px;
+}
+
+.free-time .timing-block p{
+	font-size: 0.6em;
+	color: #999;
+	margin-bottom: 10px;
+}
+
+.free-time .timing-block i{
+	font-size: 5em;
+	color: var(--main-color);
+}
+
+.free-time .timing-block p.time{
+	font-size: 1.1em;
+	font-weight: bold;
+	margin-top: 10px;
+	color: var(--main-color,#008c8c);
+	
+}
+
+.free-time ul{
+	width: 84%;
+	display: inline-block;
+	overflow: hidden;
+
+}
+
+.free-time ul>li{
+	float: left;
+	height: 100%;
+	width: 25%;
+	border-left: 1px solid #ccc;
+	box-sizing: border-box;
+	transition: box-shadow 1s;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.free-time ul>li:hover{
+	box-shadow: 0 5px 16px #ccc;
+}
+
+
+.free-time ul>li img{
+	width: 80px;
+	text-align: center;
+	margin: 30px 0 20px 0;
+	box-shadow: 1px 3px 5px #ccc;
+}
+
+.free-time ul>li img{
+	width: 80px;
+	text-align: center;
+	margin: 30px 0 20px 0;
+	box-shadow: 1px 3px 5px #ccc;
+}
+
+.free-time ul>li h3{
+	font-size: 1em;
+}
+
+.free-time ul>li a{
+	height: 30px;
+	width: 50%;
+	color: var(--main-color);
+	line-height: 30px;
+	border-radius: 30px;
+	border: 1px solid var(--main-color);
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.free-time ul>li a:hover{
+	color: #fff;
+	background: var(--main-color);
+}
+
+/*排行榜*/
+.ranking{
+	background: #fff;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	box-sizing:border-box;
+	overflow: hidden;
+	padding: 20px 20px 10px 20px;
+}
+
+.ranking .rank_list{
+	width: 23%;
+	float: left;
+	margin:0 10px;
+	box-sizing: border-box;
+}
+
+.ranking .rank_list ul{
+	overflow: hidden;
+}
+
+.ranking .rank_list ul>li.rank_first{
+	display: inline-block;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 20px;
+}
+
+.ranking .rank_list .rank_first .rank_info{
+	float: left;
+    width: 50%;
+    padding-top: 10px;
+    overflow: hidden;
+}
+
+
+.ranking .rank_list .rank_first .rank_info span{
+    width: 33px;
+	color: #fff;
+    display: block;
+	padding: 2px;
+	font-size: 13px;
+    margin-bottom: 10px;
+	background: #dd001b;
+	margin: 10px 0 10px 0;
+	font-weight: bold;
+}
+
+.ranking .rank_list .rank_first .rank_info h3{
+	width: 100%;
+	font-size: 16px;
+	margin-bottom: 10px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+}
+
+.ranking .rank_list .rank_first .rank_info p{
+	color: #a5a5a5;
+	font-size: 13px;
+}
+
+.ranking .rank_list .rank_first .rank_bookimg{
+	float: right;
+}
+
+.ranking .rank_list .rank_first .rank_bookimg img{
+	width: 70px;
+    margin-top: 20px;
+    margin-right: 15px;
+    box-shadow: 3px 3px 2px #ccc;
+}
+
+.ranking .rank_list ul>li:not(:first-child){
+	width: 100%;
+	clear: both;
+    height: 30px;
+	margin: 5px 0 5px 0;
+}
+
+.ranking .rank_list ul>li>span{
+	width: 18px;
+    height: 18px;
+    line-height: 18px;
+	color: #fff;
+    font-size: 12px;
+	text-align: center;
+	display: inline-block;
+	background: gray;
+	float: left;
+	font-weight: bold;
+}
+
+.ranking .rank_list ul>li:nth-child(2) span{
+	background: #ff815e;
+}
+
+.ranking .rank_list ul>li:nth-child(3) span{
+	background: #81de87;
+}
+
+.ranking .rank_list .rank_bookname{
+	width: 87%;
+	height: 30px;
+    float: right;
+    border-bottom: 1px solid #ccc;
+    margin-left: 10px;
+}
+
+.ranking .rank_list li:last-child .rank_bookname{
+	border-bottom: none;
+}
+
+
+.ranking .rank_list .rank_bookname h3{
+	font-size: 14px;
+	float: left;
+	width: 150px;
+	height: 20px;
+	overflow: hidden;
+}
+
+.ranking .rank_list .rank_bookname h3>a:hover{
+	color:var(--main-color);
+}
+
+.ranking .rank_list .rank_bookname p{
+	float: right;
+    font-size: 12px;
+    color: #ccc;
+    line-height: 20px;
+}
+
+/* 更新栏目 */
+.updates{
+	background: #fff;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	box-sizing:border-box;
+	padding: 20px;
+}
+
+.updates ul{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.updates ul>li{
+	width: 100%;
+    height: 36px;
+    line-height: 36px;
+    overflow: hidden;
+    border-bottom: 1px dotted #ddd;
+    vertical-align: middle;
+    font-size: 15px;
+}
+
+.updates ul>li:last-child{
+	border-bottom: none;
+}
+
+.updates ul>li>span {
+	display: inline-block;
+	float: left;
+}
+
+.updates ul>li .classify {
+	color: #999;
+	width: 5%;
+	margin-right: 10px;
+}
+
+.updates ul>li .name {
+	width: 20%;
+}
+
+.updates ul>li span.name a:hover,
+.updates ul>li span.chapter a:hover {
+	color: var(--main-color);
+}
+
+.updates ul>li .chapter {
+	width: 40%;
+}
+
+.updates ul>li .author {
+	width: 15%;
+}
+
+.updates ul>li .time {
+	float: right;
+}
+
+.updates ul>li .chapter .vip{
+    display: inline-block;
+    width: 30px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    font-style: normal;
+    text-align: center;
+    color: #fff;
+    border-radius: 3px;
+    background: #f60;
+    padding-bottom: 2px;
+}
+
+/* 横条栏 */
+.ad{
+	width: 100%;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.ad img{
+	width: 100%;
+}
+
+/* 免费小说 */
+
+.container .free-book{
+	border-radius: 10px;
+	margin-bottom: 20px;
+	box-sizing:border-box;
+	overflow: hidden;
+	padding: 20px 20px 10px 20px;
+	background: #fff;
+}
+
+.free-book ul>li:not(:first-child){
+	background-color: #fff;
+    margin: 20px 0;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.free-book .book-img{
+	/*width: 100px;*/
+	float: left;
+}
+
+.free-book .book-img a>img{
+	width: 110px;
+	margin-left: 10px;
+    box-shadow: 2px 3px 5px #999;
+}
+
+
+.free-book .book-right{
+	width: 140px;
+	float: right;
+}
+
+.free-book .book-right .btn{
+    margin-top: 30%;
+    margin-right: 20px;
+    text-align: right;
+}
+
+.free-book .book-right .btn a{
+   	display: inline-block;
+    background: var(--main-color);
+    border-radius: 20px;
+    color: #fff;
+    padding: 8px 22px;
+    font-size: .8em;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.free-book .book-right .btn a.add-btn{
+	background: none;
+	color: var(--main-color);
+	font-weight: bold;
+	border: 1px solid var(--main-color);
+}
+
+.free-book .book-info{
+	margin: 0 140px;
+}
+
+.free-book .book-info h3{
+	font-size: 1.2em;
+    font-weight: bold;
+}
+
+.free-book .book-info .book-author{
+	font-size: .8em;
+    color: #999;
+    margin: 10px 0;
+}
+
+.free-book .book-info .intro{
+	font-size: 13px;
+	height: 68px;
+	overflow: hidden;
+	line-height: 30px;
+}
+
+.free-book .book-info .update a{
+	font-size: 0.8em;
+	color: blue;
+}
+
+/* 小说详情页 */
+.container .process{
+	margin-bottom: 20px;
+	font-size: .8em;
+}
+
+.container .process em{
+	margin:0 5px;
+}
+
+.container .catalog-info{
+	border-radius: 10px;
+	margin-bottom: 10px;
+	box-sizing:border-box;
+	overflow: hidden;
+	padding: 20px;
+	background: #fff;
+}
+
+.catalog-info .book-img{
+	float: left;
+	width: 20%;
+	margin-right: 20px;
+}
+
+.catalog-info .book-img img{
+	width: 100%;
+	box-shadow: 1px 2px 4px #999;
+}
+
+.catalog-info .book-info{
+	position: relative;
+	overflow: hidden;
+}
+
+.catalog-info .book-info h3{
+	font-size: 1.4em;
+	font-weight: bold;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	display: inline-block;
+}
+
+.catalog-info .book-info p.book-author{
+	display: inline-block;
+	font-size: 1em;
+}
+
+.catalog-info .book-info span.state,
+.catalog-info .book-info span.class{
+	font-size: .9em;
+	border: 1px solid #1588f4;
+	color: #1588f4;
+	border-radius: 5px;
+	padding: 2px 5px;
+	margin-right: 10px;
+}
+
+.catalog-info .book-info p.intro{
+	font-size: 1em;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	/*letter-spacing: 1px;*/
+	line-height: 2em;
+}
+
+.catalog-info .book-info .btn{
+    font-size: .8em;
+    margin: 40px 0;
+}
+
+.catalog-info .book-info .btn a{
+    color: #fff;
+	padding: 10px 30px;
+	border-radius: 20px;
+	margin-right: 30px;
+}
+
+.catalog-info .book-info .btn .read-btn,
+.catalog-info .book-info .btn a:hover{
+	color: #fff;
+	background: var(--main-color);
+}
+
+.catalog-info .book-info .book-mess{
+	font-size: .8em;
+	/*margin:15px 0;*/
+	display: inline;
+	float: right;
+}
+
+.catalog-info .book-info .book-mess span.number{
+	margin-right: 10px;
+}
+
+.catalog-info .book-info .unfold {
+	position: absolute;
+	color: blue;
+	right: 0;
+	bottom: 80px;
+}
+
+.catalog-info .book-info .btn .add-btn{
+	border: 2px solid var(--main-color);
+	color: var(--main-color);
+}
+
+
+.container .nav-title{
+	border-bottom:1px solid #ccc;
+	margin-bottom: 25px;
+}
+
+.container .nav-title p{
+	display: inline-block;
+	color:var(--main-color);
+	font-size: 1.2em;
+	padding: 10px 20px;
+	border-bottom: 2px solid var(--main-color);
+}
+
+.container .catalog-list{
+	border-radius: 10px;
+	margin-bottom: 40px;
+	box-sizing:border-box;
+	overflow: hidden;
+	padding: 20px;
+	background: #fff;
+}
+
+.container .catalog-list h5{
+	font-size: 1.4em;
+	font-weight: bold;
+	margin-bottom: 15px;
+	margin-right: 30px;
+	display: inline-block;
+
+}
+
+.container .catalog-list ul>li{
+	float: left;
+	width: 33.3%;
+	border-top: 1px solid #ccc;
+	padding: 15px 0;
+}
+
+.container .catalog-list ul>li a:hover{
+	color: var(--main-color);
+}
+
+.container .catalog-list a>span{
+	display: inline-block;
+	color: #1588f4;
+}
+
+/* 阅读页面 */
+
+.read-main{
+	margin-bottom: 10px;
+	box-sizing:border-box;
+	overflow: hidden;
+	padding: 20px 30px;
+	background: #eaeaea;
+	position: relative;
+}
+
+.read-main .read-head{
+	height: 30px;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+}
+
+.read-main .read-head h2{
+	display: inline;
+	font-weight: normal;
+	color: #999;
+	border-bottom:none;
+	margin-right: 20px;
+}
+
+.read-main .read-head h3{
+	display: inline;
+	color: #999;
+}
+
+.read-main .read-head .read-tool{
+	float: right;
+}
+
+.read-main .read-head .read-tool>span{
+	cursor: pointer;
+	margin:0 5px;
+}
+
+
+.read-main .read-head h3>span{
+	margin:0 5px;
+}
+
+.read-main .read-title {
+	text-align: center;
+	margin-bottom: 35px;
+}
+.read-main .read-title .read-info{
+	font-size: 14px;
+	color: #777;
+}
+
+.read-main .read-title .read-info p{
+	display: inline;
+}
+
+.read-main .read-title h2{
+	font-size:1.6em;
+	border-bottom: none;
+	margin:30px 0 10px 0;
+}
+
+.read-main .read-content{
+	text-align: left;
+	font-style:normal;
+	margin-bottom: 80px;
+	line-height: 30px;
+}
+
+.read-main .read-content p{
+	margin-bottom: 15px;
+	text-indent: 2em;
+}
+
+.read-main .read-btn{
+	width: 100%;
+	border-top: 1px solid #ccc;
+	text-align: center;
+	padding-top: 60px;
+	padding-bottom: 40px; 
+}
+
+.read-main .read-btn a{
+	background: var(--main-color);
+	padding:10px 30px;
+	border-radius: 5px;
+	color: #fff;
+	margin-left: 20px;
+}
+
+.btn-disable{
+	background: #ccc!important;
+	color: #999!important;
+	cursor: not-allowed;
+}
+
+/*.read-main .btn-left{
+	position: fixed;
+	left: 0px;
+	background: #fff;
+}*/
+
+/* 
+	完本，分类页面 
+*/
+
+.books-classify{
+	padding:10px 30px;
+	background: #fff;
+	box-sizing:border-box;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 30px;
+	border-radius: 10px;
+}
+
+.books-classify ul>li{
+	width: 100%;
+	overflow: hidden;
+	padding: 10px 0;
+	box-sizing: border-box;
+	border-bottom:1px solid #ccc;
+}
+
+.books-classify ul>li:last-child{
+	border-bottom:none;
+}
+
+.books-classify ul>li strong{
+	float: left;
+	display: inline;
+	font-size: 15px;
+	margin:5px 20px 0 0;
+}
+
+.books-classify .tags{
+	overflow: hidden;
+}
+
+.books-classify .tags span.active{
+	background: var(--main-color);
+	color: #fff;
+}
+
+.books-classify .tags span{
+	float: left;
+	margin:5px 20px;
+	line-height: 20px;
+	font-size: 15px;
+	padding: 2px 8px;
+	cursor: pointer;
+}
+/*
+.books-classify .tags span:not([class="active"]):hover{
+	color:var(--main-color);
+}*/
+/*排序列表*/
+.books-block{
+	padding:30px 30px 10px;
+	margin-bottom: 50px;
+	background: #fff;
+	box-sizing:border-box;
+	overflow: hidden;
+	position: relative;
+	border-radius: 10px;
+}
+
+.books-block .books-sort{
+	overflow: hidden;
+	font-size: 15px;
+}
+
+.books-block .books-sort span.active{
+	background:var(--main-color);
+	color: #fff;
+}
+
+.books-block .books-sort span{
+	float: left;
+	margin-right: 20px; 
+	padding:5px 10px;
+	cursor: pointer;
+}
+
+.books-block .books-list{
+	overflow: hidden;
+}
+
+.books-block .books-list ul>li{
+	width: 33.3%;
+	margin:20px 0;
+	box-sizing: border-box;
+	border-top: 1px solid #ccc;
+	display: inline-block;
+	padding-top: 25px;
+}
+
+.books-block .books-list .book-img{
+	float: left;
+	width: 35%;
+	margin-right: 15px;
+}
+
+.books-block .books-list .book-info{
+	overflow: hidden;
+	margin-right: 3px;
+}
+
+.books-block .books-list .book-info h3{
+	font-size: 16px;
+	font-weight: bold;
+	margin:5px 0;
+	cursor: pointer;
+	overflow: hidden;
+    /* height: 11px; */
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.books-block .books-list .book-info h3:hover{
+	color:var(--main-color);
+}
+
+.books-block .books-list .book-info p.author{
+	font-size: 13px;
+}
+
+.books-block .books-list .book-info .tag span{
+	display: inline-block;
+	font-size: 13px;
+	margin:5px 0;
+	padding:0 4px;
+}
+
+.books-block .books-list .book-info .tag span.class{
+	color: green;
+	border: 1px solid green;
+}
+
+.books-block .books-list .book-info .tag span.state{
+	color: red;
+	border: 1px solid red;
+}
+
+.books-block .books-list .book-info .tag span.number{
+	color: blue;
+	border: 1px solid blue;
+}
+
+.books-block .books-list .book-img img{
+	width: 100%;
+	box-shadow: 2px 2px 5px #ccc;
+}
+
+.books-block .books-list .book-img img:hover{
+    transform: scale(1.03);
+}
+
+.books-classify span:not([class="active"]):hover,
+.books-block span:not([class="active"]):hover{
+	color: var(--main-color);
+}
+
+/*
+	多行文本显示省略号参考
+	http://www.daqianduan.com/6179.html
+ */
+.books-block .books-list p.intro{
+	font-size: 14px;
+	overflow: hidden;
+	display: -webkit-box;
+	/*text-overflow:ellipsis;*/
+	/*white-space: nowrap;*/
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+/**
+ * 关于我们
+ */
+
+.about{
+	padding:30px;
+	background: #fff;
+	box-sizing:border-box;
+	overflow: hidden;
+	text-align: center;
+	padding-bottom: 100px;
+}
+
+.ad h2.about-zh{
+	position: absolute;
+	top: 30%;
+	left: 10%;
+	color: #fff;
+	font-size:30px;
+	border-bottom:none;
+	margin-bottom: 30px;
+}
+
+.ad h3.about-en{
+	position: absolute;
+	top:50%;
+	left: 10%;
+	font-size: 25px;
+	color: #ccc;
+}
+
+.about-info{
+	width: 100%;
+	overflow: hidden;
+	margin:40px 0 100px;
+}
+
+.about .about-info .member{
+	width: 25%;
+	float: left;
+}
+.about .about-info .member img{
+	width: 150px;
+}
+
+.about .about-info .member .name{
+	display: block;
+	font-size: 20px;
+	font-weight: bold;
+	margin:20px 0;
+}
+
+.about .join-us h2{
+	font-size: 30px;
+	border-bottom: none;
+}
+
+.about .join-us p{
+	font-size: 18px;
+	height: 50px;
+}
+
+/*
+	用户中心
+ */
+.user-left{
+	width: 25%;
+	background: #fff;
+	text-align: center;
+	display: inline-block;
+	float: left;
+}
+
+.user-left .info-top{
+	background:var(--main-color);
+	color: #fff;
+	padding:30px 20px;
+}
+
+.user-left .info-top img{
+	width: 90px;
+	margin-bottom:10px;
+	border-radius: 50%;
+	border:3px solid #fff;
+	background: #fff;
+}
+
+.user-left .info-top h4{
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.user-left .info-menu{
+	padding:30px 0;
+}
+
+.user-left .info-menu ul>li{
+	margin-bottom:20px;
+	font-size: 17px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.user-left .info-menu ul>li i.iconfont{
+	margin-right:10px;
+	font-size: 24px;
+}
+
+.user-left .info-menu li.active a{
+	color: var(--main-color);
+	font-weight: bold;
+}
+
+.user-left .info-menu .active{
+	border-left: 5px solid var(--main-color);
+}
+
+.user-left .info-menu li>a:hover{
+	color: var(--main-color);
+}
+
+.user-right{
+	width: 70%;
+	margin-left: 20px;
+	background: #fff;
+	display: inline-block;
+	padding: 20px 0;
+	box-sizing: border-box;
+	border-radius: 10px;
+	float: left;
+}
+
+.user-right h3{
+	font-size: 20px;
+	font-weight: bold;
+	margin:0px 20px 20px 20px;
+	padding-bottom: 10px;
+	border-bottom:1px solid #ccc;
+}
+
+.user-right .info{
+	display: inline-block;
+	margin:10px 50px;
+}
+
+.user-right .info>img.avatar{
+	width: 100px;
+}
+
+.user-right .info .info-center{
+	display: inline-block;
+	margin:0 20px;
+}
+
+.user-right .info .info-center h4{
+	font-size: 18px;
+	margin:10px 0;
+	display: inline-block;
+}
+
+.user-right .info .info-center h4:after{
+	content: "vip";
+	border-radius: 4px;
+	color: #fff;
+	padding: 2px 4px;
+	margin:0 10px;
+	font-size: 13px;
+	background: #ff692f;
+}
+
+.user-right .info .info-center .user-pro{
+	font-size: 14px;	
+	color: #999;
+}
+
+.user-right .info .info-center .user-pro .progress{
+	height: 10px;
+	width: 200px;
+	background: #ccc;
+	border-radius: 10px;
+	margin-top: 5px;			
+}
+
+.user-right .info .info-center .user-pro .progress:after{
+	content: "";
+	width: 100px;
+	height: 10px;
+	border-radius: 10px;				
+	background: var(--main-color);
+	position: absolute;
+}
+
+.user-right .info .info-center .user-pro span{
+	display: block;
+	margin-top: 5px;
+}
+
+.user-right .info .info-right{
+	display: inline-block;
+	margin-left: 40px;
+}
+
+.user-right .info .info-right p{
+	display: block;
+	margin:10px 0;
+}
+
+.user-right .edit{
+	padding:20px;
+	background-color: #fff;
+}
+
+.user-right .edit ul>li:nth-child(odd){
+	background: #f5f5f5;
+}
+
+.user-right .edit ul>li{
+	height: 50px;
+	line-height: 50px;
+	padding:0px 30px;
+}
+
+.user-right .edit ul>li p{
+	display: inline;
+}
+
+.user-right .edit ul>li a{
+	float: right;
+	font-size: 14px;
+	color: #318ee9;
+}
+
+/* 我的书架 */
+.user-right h3>span{
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+.user-right h3>span.up-sort,
+.user-right h3>span.read-sort{
+	float: right;
+	font-size: 12px;
+	padding: 4px 10px;
+	font-weight: normal;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.user-right h3>span.active{
+	color: #fff;
+	background: var(--main-color);
+}
+
+.user-right .bookshelf-list{
+	margin-top: -10px;
+}
+
+.user-right .bookshelf-list>ul{
+	padding: 0 20px;
+}
+
+.user-right .bookshelf-list ul>li{
+	padding: 10px 0;
+}
+
+.user-right .bookshelf-list ul>li.booklist:not(:last-child) {
+	border-bottom: 1px solid #ccc;
+}
+
+.user-right .bookshelf-list ul>li .booklist li{
+	float: left;
+}
+
+.user-right .bookshelf-list li.checkbox{
+	margin-right: 10px;
+}
+
+.user-right .bookshelf-list li.title{
+	margin-left:10px;
+	width: 200px;
+}
+
+.user-right .bookshelf-list li.title h4{
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+.user-right .bookshelf-list li.update{
+	width: 300px;
+	overflow: hidden;
+}
+
+.user-right .bookshelf-list li.update h4{
+	font-size: 15px;
+}
+
+.user-right .bookshelf-list li.title p{
+	font-size: 13px;
+	color: gray;
+}
+
+.user-right .bookshelf-list li.update a{
+	font-size: 13px;
+	color: #999;
+}
+
+.user-right .bookshelf-list ul>li .bookimg img{
+	width: 60px;
+	box-shadow: 1px 2px 4px #ccc;
+}
+
+.user-right .bookshelf-list ul>li .read-btn a{
+	background: var(--main-color);
+	color: #fff;
+	border-radius: 10px;
+	border: none;
+	padding: 10px;
+	font-size: 14px;
+}
+
+.user-right .bookshelf-list ul>li .read-btn a:hover{
+	box-shadow: 1px 2px 3px #ccc;
+	cursor: pointer;
+}

@@ -1,12 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<head>
+	<meta charset="UTF-8">
+	<title>Thiên Môn</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="font_icon/iconfont.css">
+	<link rel="shortcut icon" href="./images/favicon.ico"/>
+	<script src="./js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<!-- Thông Tin Tiêu Đề -->
+	<header>
+		<div class="header box-center">
+			<h1><a href="#" title="Thiên Môn "></a>
+				<span>睡前小说网</span>
+			</h1>
+			<div class="search-wrap">
+				<form >
+					<input type="text" placeholder="Tìm Kiếm" id="search-input" onkeydown="search()">
+					<label id="search-btn"><i class="iconfont">&#xe65e;</i></label>
+				</form>
+			</div>
+			<div class="user-wrap">
+				<div class="user-message">
+					<span class="iconfont">&#xe603;</span>
+					<a href="./bookshelf.html">Truyện Theo Dõi</a>
+					<span class="iconfont">&#xe691;</span>
+					<a href="./user.html">Trang Cá Nhân </a>
+				</div>
+				<p>
+					<a href="javascript:void(0)" id="login" onclick="login(this)">Đăng Nhập</a>|
+					<a href="javascript:void(0)" id="register" onclick="login(this)">Đăng Ký</a>
+				</p>
+				<div class="user-avatar">
+					<a href="./user.html">
+						<img src="images/avatar.png" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- menu bar -->
+		<nav class="header-nav box-center">
+			<ul>
+				<li id="show-allMenu">
+					<a href="javascript:void(0)"><i class="icon iconfont">&#xe625;</i>Danh Mục
+					</a>
+				</li>
+				<li><a href="./ranking.html">Bảng Xếp Hạng</a></li>
+				<li><a href="./free.html">Truyện Miễn Phí</a></li>
+				<li><a href="./bookAll.html">Truyện Hoàn Thành</a></li>
+				<li><a href="./404.html">Khu Vực Tác Giả</a></li>
+			</ul>
+			<div class="menu-list">
+				<ul>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	
+	<!-- 用户登录框 -->
+	<div class="login">
+		<div class="login-block">
+			<div class="avatar">
+				<img src="./images/avatar.png">
+			</div>
+			<form>
+				<div class="user-info">
+				  <input type="text" name="username" id="username" placeholder="请输入用户名" />
+				  <input type="password" name="password" id="userpwd" placeholder="密码" />
+				</div>
+				<div class="login-box">
+					<p>
+						<input type="checkbox" name="remember" value="0" id="remember"> 
+						<label for="remember">Tự Động Đăng Nhập </label>
+						<a href="javascript:alert('没弄这功能，忘了就忘了吧')" class="unremeber">Quên Mật Khẩu</a>
+					</p>
+					<input type="submit" value="登录" id="login_btn">
+				</div>
+				<div class="tips">
+					<p>Đăng Nhập <a href="javascript:alert('欢迎加入网站，在使用网站之前请您仔细阅读本用户协议，以下省略8888字。不阅读也没事，也就这几个字。')">《用户服务协议》</a>和<a href="javascript:alert('抱歉，你早就没隐私了')">《隐私政策》</a></p>
+				</div>
+			</form>
+			<span class="close">x</span>
+		</div>
+	</div>
+	
+	<!-- 主体内容 -->
+	<div class="container box-center">
+		<!-- 轮播图 -->
+		<div class="banner">
+			<div class="banner-box">
+				<ul>
+					<li>
+						<a href="#" class="show">
+							<img src="./images/banner_2.jpg" >
+						</a>
+						<a href="#" class="hidden">
+							<img src="./images/banner_3.jpg" >
+						</a>
+						<a href="#" class="hidden">
+							<img src="./images/banner_1.jpg" >
+						</a>
+						<a href="#" class="hidden">
+							<img src="./images/banner_4.jpg">
+						</a>
+						<a href="#" class="hidden">
+							<img src="./images/banner_5.jpg">
+						</a>
+					</li>
+				</ul>
+				 <div class="banner-menu">
+				 </div>
+			</div>
+		</div>
+
+		<!-- 热门推荐 -->
+		<section class="host-block">
+			<div class="host-left">
+				<h2>Truyện Đề Xuất</h2>
+				<div class="host-new-book">
+					<ul></ul>
+				</div>
+			</div>
+			<div class="host-right">
+				<h2>Đề Xuất Trong Tuần </h2>
+				<div class="host-week">
+					<ul></ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- 限时免费 -->
+		<section class="free-time">
+			<div class="timing-block">
+				<span>Thời Gian Miễn Phí </span>
+				<p>Chương VIP Đọc Miễn Phí</p>
+				<i class="iconfont">&#xe629;</i>
+				<p class="time">1 Ngày 06:07:49</p>
+			</div>
+			<ul></ul>
+		</section>
+
+		<!-- Cột Quảng Cáo 1 -->
+		<section class="ad">
+			<img src="./images/ad_2.jpg" alt="">
+		</section>
+
+		<!-- Các Bảng Xếp Hạng -->
+		<section class="ranking">
+			<div class="rank_list">
+				<h2>Truyện Mới Cập Nhật </h2>
+				<ul></ul>
+			</div>
+			<div class="rank_list">
+				<h2>Truyện Đang Hot</h2>
+				<ul></ul>
+			</div>
+			<div class="rank_list">
+				<h2>Danh Sách Tiềm Năng</h2>
+				<ul></ul>
+			</div>
+			<div class="rank_list">
+				<h2>Truyện Mới </h2>
+				<ul></ul>
+			</div>
+
+		</section>
+
+		<!-- Cập Nhật Gần Đây -->
+		<section class="updates">
+			<h2>Cập Nhật Gần Đây</h2>
+			<ul></ul>
+		</section>
+		<!-- Cột Quảng Cáo 2 -->
+		<section class="ad">
+			<a href="http://www.12377.cn">
+				<img src="./images/ad_1.jpg">
+			</a>
+		</section>
+	</div>
+
+	<!-- 加载蒙版 -->
+	<div class="mask">
+		<div class="spinner">
+		  <div class="bounce1"></div>
+		  <div class="bounce2"></div>
+		  <div class="bounce3"></div>
+		</div>
+	</div>
+
+	<!-- chân trang -->
+	<footer class="box-center">
+		<div class="link-map">
+			<a href="./about.html" target="_self" rel="nofollow">关于本站</a>
+			<a href="./about.html" target="_self" rel="nofollow">联系我们</a>
+		</div>
+		<p>Copyright © 2020 127.0.0.1 All Rights Reserved版权所有</p>
+		<p>请所有作者发布作品时务必遵守国家互联网信息管理办法规定，我们拒绝任何色情小说，一经发现，即作删除！</p>
+		<div class="safe">
+			<a class="site1" href="http://www.12377.cn" target="_blank"></a>
+			<a class="site2" href="http://www.shjbzx.cn" target="_blank"></a>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="./js/common.js"></script>
+	<script type="text/javascript" src="./js/home-data.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			timing()
+		})
+		// baner slide
+		var banners = $('.banner .banner-box ul>li a');
+		var index = 0;
+		function play(){
+			index++;
+			if (index == 5) {
+				index =0;
+			}
+			for(let i =0;i<=banners.length;i++){
+				if (i == index) {
+					banners.eq(i).attr('class','show')
+				}else{
+					banners.eq(i).attr('class','hidden')
+				}
+			}
+			
+		}
+		var timer = setInterval(play,2000);
+		$('.banner .banner-box ul>li').mouseover(function(){
+        	clearInterval(timer);
+    	})
+    	$('.banner .banner-box ul>li').mouseout(function(){
+            timer = setInterval(play,2000);
+        })
+
+        // Thời gian ViP
+        var freetime = $('.free-time .timing-block p.time');
+        function addZero(i){
+        	return i <=9 ? "0"+i : i
+        }
+        function timing() {
+            var nowtime = new Date();
+            var endtime = new Date("2020/07/11,00:00:00");
+            var time = parseInt(endtime.getTime() - nowtime.getTime());
+            var days = parseInt(time / 1000 / 60 / 60 / 24);
+			var hours = parseInt(time / 1000 / 60 / 60 % 24);
+			var minutes = parseInt(time / 1000 / 60 % 60);
+			var seconds = parseInt(time / 1000 % 60);
+			freetime.text(days+"天"+addZero(hours)+":"+addZero(minutes)+":"+addZero(seconds));
+            // Sự Khác Biệt Hai Mốc Thời gian <0 Kết Thúc
+            if (time <= 0) {
+            	$('.free-time').hide()
+            	// clearTimeout(timer);
+                return;
+            }
+            var timer = setTimeout(timing, 1000);
+          }
+
+         // đổi màu di chuyển chuột menu
+         $('.banner-menu').on('mouseover','a',function(e){
+         	var index = $(this).index();
+         	var listImg = $('.banner-box ul>li a');
+         	$('.banner-box ul>li a').eq($(this).index()).siblings('a').removeClass("show").addClass('hidden');
+         	if (listImg.eq(index).hasClass("hidden")) {
+                    listImg.eq(index).removeClass("hidden");
+                    listImg.eq(index).addClass("show");
+                }
+         	clearInterval(timer)
+         })
+         // bỏ nút chế độ xoay tự dộngd
+         $('.banner-menu').on('mouseout','a',function(){
+				timer = setInterval(play,2000);
+         })
+	</script>
+</body>
 </html>

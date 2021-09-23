@@ -1,0 +1,562 @@
+:root{
+	--main-color:#ff304d;
+	--font-color:#000;
+	--body-block-color:#fff;
+	background: #f5f5f5;
+}
+
+html,body{
+	background-color: #f5f5f5;
+	font-size: 16px;
+	font-family: PingFangSC-Regular,'Microsoft YaHei',sans-serif;
+}
+
+body > header{
+	height: 160px;
+	position: relative;
+	top: 0px;
+	background: #fff;
+	box-shadow: 0 1px 4px rgba(0,0,0,.1);
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+/*@media only screen and (max-width: 640px) {
+	.box-center {
+	    width: 500px;
+	    margin-right: auto;
+	    margin-left: auto;
+	}
+}*/
+
+@media screen and (min-device-width: 980px) {
+    .box-center {
+	    width: 1040px;
+	    margin-right: auto;
+	    margin-left: auto;
+	}
+}
+
+@media screen and (min-device-width: 1440px){
+    .box-center {
+	    width: 1440px;
+	    margin-right: auto;
+	    margin-left: auto;
+	}
+	.search-wrap label#search-btn{
+		right: 0px;
+	}
+}
+
+.header{
+	height: 60%;
+	border-bottom: 1px solid var(--main-color);
+	overflow: hidden;
+}
+
+.header > h1{
+	width: 200px;
+	height: 50px;
+	margin-top: 20px;
+	margin-right: 15%;
+	float: left;
+	background: url('../images/logo.png') no-repeat;
+	cursor: pointer;
+}
+
+.header h1>a{
+	display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+.header > h1 > span{
+	display: none;
+}
+
+.search-wrap{
+	width: 30%;
+	margin-top: 30px;
+	display: inline-block;
+}
+
+.search-wrap form{
+	position: relative;
+}
+
+.search-wrap label{
+	position: absolute;
+    top: 8px;
+    right: -15px;
+}
+
+.search-wrap i{
+	font-size: 1.2em;
+	color: var(--main-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#search-input{
+	width: 90%;
+	height: 35px;
+	line-height: 35px;
+	color: #999;
+	border:2px solid var(--main-color,#008c8c);
+	border-radius: 100px;
+	padding-left: 20px;
+	padding-right: 40px;
+}
+
+.user-wrap{
+	float: right;
+	margin-top: 30px;
+	font-size: .9em;
+}
+
+.user-wrap p{
+	display: inline-block;
+    line-height: 40px;
+}
+
+.user-wrap p>a:hover{
+	color: var(--main-color);
+}
+
+#login{
+	margin-right: 10px;
+}
+
+#register{
+	margin-left: 10px;
+}
+
+.user-message {
+	display: none;
+	line-height: 40px;
+	float: left;
+	margin-right: 10px;
+}
+
+.user-message a{
+	margin-right: 10px;
+}
+
+.user-message a:hover{
+	color:var(--main-color);
+}
+
+.user-message span{
+	font-size: 1.4em;
+	color: var(--main-color);
+	/*font-weight: bold;*/
+}
+
+.user-avatar{
+	display: none;
+ 	height: 40px;
+	width: 40px;
+	float: right;
+	border-radius: 50%;
+	overflow: hidden;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.user-avatar img{
+ 	width: 100%;
+}
+
+.header-nav{
+	height: 70px;
+}
+
+.header-nav>ul>li{
+	float: left;
+	margin: 20px 50px 0 0;
+	text-align: center;
+}
+
+.header-nav li#show-allMenu i{
+	font-size:1.1em;
+	margin-right: 10px;
+}
+
+.header-nav li a:hover{
+	color: var(--main-color,#008c8c)
+}
+
+.header-nav .menu-list{
+	background: #000;
+	position: fixed;
+	margin-top: 50px;
+	display: none;
+	z-index: 10;
+}
+
+.header-nav .menu-list ul>li{
+    padding: 10px 35px;
+}
+.header-nav .menu-list ul>li a{
+	color: #fff;
+}
+
+.header-nav .menu-list li:hover{
+	background:var(--main-color);
+}
+
+
+.header-nav .menu-list:before{
+	width:0;
+	height:0;
+	position: absolute;
+	top:-8px;
+	left: 10px;
+	border-bottom: 8px solid black;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+	content: '';
+}
+
+.header-nav .menu-list li:first-child{
+    margin-top: 10px;
+}
+
+.header-nav .menu-list li:last-child{
+    margin-bottom: 10px;
+}
+
+.container{
+	height: 100%;
+	overflow: hidden;
+}
+
+.clearfix{
+	content: "";
+	display: inline-block;
+	clear: both;
+}
+
+.vertical-center{
+	display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+/*底部站点信息*/
+footer{
+	position: relative;
+	bottom: 0;
+	text-align: center;
+}
+
+footer .link-map {
+	margin: 20px 0px 20px 0px;
+}
+
+footer .link-map a{
+	margin-right: 20px;
+	color: #999;
+}
+
+footer .link-map a:hover{
+	color: #008c8c;
+	color: var(--main-color);
+}
+
+footer p{
+	font-size: .8em;
+	color:#999;
+	margin-bottom: 20px;
+}
+
+footer .safe a{
+	display: inline-block;
+	height: 48px;
+	width: 128px;
+	background: url(../images/foot_site.png);
+}
+
+footer .safe .site1{
+	background-position: 0px 0px;
+}
+
+footer .safe .site2{
+	background-position: 0px 46px;
+}
+
+/*登录框*/
+.login{
+	position: fixed;
+	background: rgba(0,0,0,.7);
+	height: 100%;
+	width: 100%;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+}
+
+/* 该居中方法参考
+	https://www.cnblogs.com/yugege/p/5246652.html 
+*/
+.login{
+	display: none;
+}
+
+.login:after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.login .login-block{
+	position: relative;
+	box-sizing: border-box;
+	width: 400px;
+	height: 400px;
+	display: inline-block;
+    vertical-align: middle;
+	background: #fff;
+	padding: 40px;
+}
+
+.login .login-block .close{
+	position: absolute;
+	top: 2px;
+	right: 18px;
+	z-index: 100;
+	font-size: 1.6em;
+	cursor: pointer;
+	color: #999;
+}
+
+.login .login-block .avatar{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.login .login-block .avatar:hover{
+	animation: avatar 3s linear infinite;
+}
+
+@keyframes avatar{
+	0%{
+		transform: rotateZ(0deg);
+	}
+	100%{
+		transform: rotateZ(360deg);
+	}
+}
+
+.login .login-block img{
+	width: 80px;
+}
+
+.login .login-block .user-info {
+	margin: 20px 0 10px 0;
+}
+
+.login .login-block .user-info input{
+	width: 100%;
+	box-sizing: border-box;
+	line-height: 20px;
+	padding: 10px;
+	border:1px solid #ccc;
+	margin: 5px 0;
+}
+
+.login .login-block .user-info input:focus{
+	border: 1px solid var(--main-color);
+}
+
+.login .login-block .login-box{
+	text-align: left;
+	font-size: .7em;
+}
+
+.login .login-block .login-box p>a.unremeber{
+	float: right;
+}
+
+.login .login-block .login-box input[type='submit']{
+	color: #fff;
+	width: 100%;
+	font-size: 1.2em;
+	background: var(--main-color);
+	border: none;
+	padding: 10px 0;
+	margin: 20px 0;
+	cursor: pointer;
+	border-radius: 30px;
+}
+
+.login .login-block .login-box input[type='submit']:hover{
+	box-shadow: 1px 2px 5px #999;
+}
+
+.login .login-block .tips{
+	font-size: .7em;
+}
+
+.login .login-block .tips a{
+	color: blue
+}
+
+/* 分页器 */
+.pages{
+	background: #fff;
+	width: 100%;
+	border-top: 1px solid #ccc;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.pages ul{
+	margin:20px 0;
+	overflow: hidden;
+	display: inline-block;
+}
+
+.pages ul>li {
+	float: left;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	margin:0 5px;
+	font-size: 16px;
+	display: inline-block;
+}
+
+.pages ul>li a{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.pages ul>li:not(.pre):not(.active) a:hover{
+	color: var(--main-color);
+}
+
+.pages ul>li:hover:not(.noborder){
+	border:1px solid var(--main-color);
+}
+
+.pages ul>li.active a{
+	color: #fff;
+	background:var(--main-color);
+}
+
+.pages .pre a,
+.pages .next a{
+	color:#ccc;
+}
+
+.pages li.noborder:hover{
+	border: 0;!important;
+}
+.pages li.disable a{
+	cursor: default;
+}
+
+.pages ul>li>input{
+	text-align: center;
+	display: block;
+	width: 40px;
+	height: 30px;
+	border:1px solid #ccc;
+	box-sizing: border-box;
+	margin-right: 10px;
+}
+
+.pages ul>li>button{
+	display: block;
+	height: 30px;
+	background: none;
+	border: 1px solid #ccc;
+}
+
+.pages ul>li>button:focus{
+	outline: none;
+}
+
+.pages ul>li>button:hover{
+	color: var(--main-color);
+	border: 1px solid red;
+}
+
+/* 蒙版 */
+.mask{
+	position: fixed;
+	background: rgba(0,0,0,.5);
+	height: 100%;
+	width: 100%;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	display: none;
+}
+
+.mask:after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+/*
+	加载动画参考
+	https://www.cnblogs.com/lhb25/p/loading-spinners-animated-with-css3.html
+ */
+.spinner {
+  margin: 100px auto 0;
+  width: 150px;
+  text-align: center;
+  display: inline-block;
+}
+ 
+.spinner > div {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+ 
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+ 
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+ 
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+ 
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+/* ---加载动画代码结束---- */
