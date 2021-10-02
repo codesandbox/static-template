@@ -1,12 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+   
+    <!-- permite el dinamismo-->
+<script>
+var current = 0;
+var imagenes = new Array();
+ 
+$(document).ready(function() {
+    var numImages = 6;
+    if (numImages <= 3) {
+        $('.right-arrow').css('display', 'none');
+        $('.left-arrow').css('display', 'none');
+    }
+ 
+    $('.left-arrow').on('click',function() {
+        if (current > 0) {
+            current = current - 1;
+        } else {
+            current = numImages - 3;
+        }
+ 
+        $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+ 
+        return false;
+    });
+ 
+    $('.left-arrow').on('hover', function() {
+        $(this).css('opacity','0.5');
+    }, function() {
+        $(this).css('opacity','1');
+    });
+ 
+    $('.right-arrow').on('hover', function() {
+        $(this).css('opacity','0.5');
+    }, function() {
+        $(this).css('opacity','1');
+    });
+ 
+    $('.right-arrow').on('click', function() {
+        if (numImages > current + 3) {
+            current = current+1;
+        } else {
+            current = 0;
+        }
+ 
+        $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+ 
+        return false;
+    }); 
+ });
+</script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+
+    <!-- encabezado (menu de navegacion)-->
+    <div class="navbar-fixed">
+      <nav>
+        <!--  <div class="nav-wrapper  yellow"> cambia el color -->
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo right">UacamFI</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="https://animeflv.net/">Anime</a></li>
+            <li><a href="https://www.nintendo.com/">videojuegos</a></li>
+            <li><a href="https://www.mundodeportivo.com/wwe">Deportes</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- titulo-->
+    <div class="container">
+        <h1>Mi BLog Personal</h1>
+    </div>
+
+    <div class="container">
+    <div class="card-panel  deep-orange">
+        <span class="white-text text-darken-2">REGISTRATE</span>
+    </div>
+  </div>
+
+    <!--login-->
+    <div class="container">
+      <br /><br />
+      <div class="row">
+        <div class="col s12 m6 offset-m4">
+          <form action="index.html" method="get">
+            <div class="row card-panel z-depth-4">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">perm_identity</i>
+                <input
+                  type="text"
+                  placeholder=""
+                  id="usuario"
+                  name="usuario"
+                  class="validate"
+                  required
+                />
+                <label for="POST-name">Usuario:</label>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">lock</i>
+                <input
+                  type="password"
+                  id="pswd"
+                  name="pswd"
+                  class="validate"
+                  required
+                />
+                <label for="pswd">Contraseña:</label>
+              </div>
+              <button class="btn blue right">
+                <i class="material-icons left">login</i>
+                Enviar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--cards-->
+    <div class="container">
+        <div class="card-panel  deep-orange">
+                <span class="white-text text-darken-2">Conoce mis pasatiempos</span>
+          </div>
+      <div class="row">
+        <div class="col m4 s12">
+          
+          <div class="card cyan white-text">
+              <div class="card-image">
+                  <img src="Dibujo.png" alt="" />
+                  <div class="card-tittle">Dibujos y Sketchs</div>
+                </div>
+            <div class="card-content">
+              <p>
+                Me gusta hacer mis pequeños dibujos y comics con temas variados, como el humor y el albur.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col m4 s12">
+     
+          <div class="card green darken black-text">
+              <div class="card-image">
+                  <img src="Splatoon3.jpg" alt="" />
+                  <div class="card-tittle" >Jugar Video Juegos</div>
+                </div>
+            <div class="card-content">
+          
+              <p>
+                Los video juegos son mi mejor conección con los retos y estrategias en tiempo real.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col m4 s12">
+          <div class="card yellow black-text">
+            <div class="card-image">
+              <img src="DY.jpg" alt="" />
+              <div class="card-tittle">La música urbana</div>
+            </div>
+            <div class="card-content">
+              <p>
+                La música siempre hace mis dias más alegre, y el reggaeton urbano, la musica electronica y la cumbia siempre me mantienen feliz y lleno de energia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="card-panel  deep-orange">
+        <span class="white-text text-darken-2" 3>Mis personajes favoritos</span>
+      </div>
+
+    <!--  carusel-->
+    <div class="container">
+    <div id="carrusel">
+        <a href="#" class="left-arrow"><img src="izquierda.png" /></a>
+        <a href="#" class="right-arrow"><img src="derecha.png" /></a>
+        <div class="carrusel">
+            <div class="product" id="product_0">
+                <img src="Inkling.png" width="195" height="100" />
+                <h5>Inkling (Splatoon)</h5>
+            </div>
+            <div class="product" id="product_1">
+                <img src="Garchomp.png" width="195" height="100" />
+                <h5>Garchomp (Pókemon)</h5>
+            </div>
+            <div class="product" id="product_2">
+                <img src="Corrin.png" width="195" height="100" />
+                <p><h5> Corrin (Fire Emblem Fates)</h5></p>
+            </div>
+            <div class="product" id="product_3">
+                <img src="Ankha.png" width="195" height="100" />
+                <h5>Ankha</h5>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!--parrafos-->
+    <div class="container">
+      <p>
+        La Inkling chica naranja es el icono de la saga Splatoon, siendo una protagonista muy famosa y ruda.
+         </p>
+      <br />
+      <hr />
+      <p>
+          Garchomp, un dragon parte tiburon, parte avion a reaccion y criatura de arena, majestuosa y peligrosa.
+      </p>
+      <p>
+        Corrin, un chico o chica, dependiende del jugador, atrapado en un gran problema, obliga a tomar una desicion de escoger a su familia biologica o a su familia adoptiva en medio de una gran guerra a punto de desatarse sin importar su eleccion.
+          </p>
+      <br />
+      <hr />
+      <p>
+      Ankha. Una gata parte momia, presumida y amante de todo lo que sea dorado, si esta hecho de oro, mejor.    
+      </p>
+      <br />
+      <hr />
+    </div>
+    <br /><br />
+
+    <!--registro-->
+    <div class="container">
+        <div class="row">
+            <form class="col s12">
+                <div class="card white black-text">
+                    <div class="card-content">
+              <div class="row">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">mode_edit</i>
+                  <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                  <label for="icon_prefix2">redacte su pinion sobre mi pagina</label>
+                </div>
+              </div>
+              <!--botones-->
+              <button class="button is-success">
+                  <span class="icon is-small">
+                      <i class="material-icons prefix">done</i>
+                  </span>
+                  <span>Save</span>
+                </button>
+                <button class="button is-success">
+                  <span>Delete</span>
+                  <span class="icon is-small">
+                      <i class="material-icons prefix">delete_forever</i>
+                  </span>
+                </button>
+            </div>
+          </div>
+            </form>
+          </div>
+    </div>   
+</div>
+      </div>
+      
+      <!--pie de pagina-->
+    <div class="container">
+      <footer class="page-footer">
+        <div class="footer-copyright">
+          <div class="container">
+            Raúl Alejandro Caballero Ramírez
+            <a class="grey-text text-lighten-4 right" href="#!">Mas sobre mi</a>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
