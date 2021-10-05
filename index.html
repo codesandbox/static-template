@@ -1,12 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Dashboard StarWars</title>
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <div class="lateral-menu">
+        <img src="assets/logo.png" alt="Star Wars" />
+        <div class="menu-itens">
+          <ul>
+            <li>
+              <img src="assets/dashboard.svg" alt="" />
+              <p>Dashboard</p>
+            </li>
+            <li>
+              <img src="assets/personagens.svg" alt="" />
+              <p>Personagens</p>
+            </li>
+            <li>
+              <img src="assets/planetas.svg" alt="" />
+              <p>Planetas e luas</p>
+            </li>
+            <li>
+              <img src="assets/nave.svg" alt="" />
+              <p>Naves Espaciais</p>
+            </li>
+          </ul>
+        </div>
+        <div class="settings">
+          <i data-feather="settings"></i>
+          <p>Configurações</p>
+        </div>
+      </div>
+      <div class="content">
+        <div class="cards-header">
+          <div class="card card-small">
+            <div class="card-content">
+              <div class="card-info">
+                <p>Personagens</p>
+                <h2 id="personagens"></h2>
+              </div>
+              <img src="assets/personagens-black.svg" alt="" />
+            </div>
+          </div>
+
+          <div class="card card-large">
+            <div class="card-container">
+              <div class="card-content">
+                <div class="card-info">
+                  <p>Luas</p>
+                  <h2 id="luas"></h2>
+                </div>
+                <img src="assets/luas-black.svg" alt="" />
+              </div>
+
+              <div class="card-content">
+                <div class="card-info">
+                  <p>Planetas</p>
+                  <h2 id="planetas"></h2>
+                </div>
+                <img src="assets/planetas-black.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-small">
+            <div class="card-content">
+              <div class="card-info">
+                <p>Naves</p>
+                <h2 id="naves"></h2>
+              </div>
+              <img src="assets/nave-black.svg" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="content-info">
+          <div class="table">
+            <h5>Últimos filmes</h5>
+            <p>Saiba os ultimos da marca</p>
+            <table id="filmsTable">
+              <thead>
+                <tr>
+                  <th>Títulos</th>
+                  <th>Estréia</th>
+                  <th>Diretors</th>
+                  <th>Episódio</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <div class="chart">
+            <div id="piechart" style="width: 400px; height: 400px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      feather.replace();
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="index.js" />
   </body>
 </html>
