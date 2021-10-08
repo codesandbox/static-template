@@ -1,0 +1,262 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+:root {
+  --primary-color: #be830e;
+  --primary-light-color: #ca962f;
+  --secondary-color: #000000;
+  --third-color: #ffffff;
+  --fourth-color: #999999;
+}
+
+.container {
+  height: 100vh;
+  padding-top: 40px;
+}
+
+.margin-footer {
+  width: 100%;
+  height: 100px;
+}
+
+.wt-form input,
+.wt-form textarea,
+.wt-form button {
+  border: none;
+  padding: 10px 15px;
+  color: var(--third-color);
+}
+
+.wt-form textarea {
+  padding-top: 35px !important;
+}
+
+.wt-form input,
+.wt-form textarea,
+.wt-form input:focus,
+.wt-form textarea:focus,
+.contact-container {
+  border: 1px solid var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.wt-form button {
+  background: var(--primary-color);
+  border: none;
+  border-radius: 0.2rem;
+  color: var(--third-color);
+  transition: all 0.25s ease-in-out;
+  margin-top: 15px !important;
+  float: right;
+  font-weight: bold;
+}
+
+.wt-form button:hover {
+  opacity: 0.8;
+}
+
+.wt-form input {
+  margin-bottom: 20px;
+}
+
+.wt-form label,
+.wt-form input::placeholder {
+  color: var(--secondary-color);
+}
+
+.wt-form #floatingTextarea {
+  resize: none;
+  height: 250px;
+  color: var(--seconday-color);
+}
+
+.wt-form .message label {
+  margin-left: 15px !important;
+}
+
+.preview-message::before {
+  content: "Prévia";
+  color: var(--fourth-color);
+  position: relative;
+  width: 100%;
+  z-index: 9999;
+  float: left;
+  font-size: 14px;
+}
+
+.wt-form .sp-box label {
+  border: 1px solid var(--primary-color);
+  margin: 5px;
+  width: 45.33%;
+}
+
+.wt-form .sp-box input:checked + label {
+  background: var(--primary-color);
+  color: var(--third-color);
+}
+
+.contact-container {
+  margin-bottom: 20px;
+  border-radius: 0.2rem;
+}
+
+.contact-container input,
+.contact-container input:focus {
+  background: none;
+  border: none;
+  margin: 0px;
+}
+
+.contact-container input::placeholder {
+  color: var(--fourth-color);
+}
+
+.contact-container .tags-area {
+  width: 100%;
+  padding: 10px;
+}
+
+.contact-container .tags-area .tag {
+  padding: 5px 10px;
+  border-radius: 0.75rem;
+  border: 1px solid var(--primary-color);
+  background: #f8f2e6;
+  margin: 5px;
+  display: inline-block;
+  word-wrap: break-word;
+  cursor: pointer;
+  max-width: 20ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.contact-container .tags-area .tag::before {
+  content: "x";
+  margin-left: 10px;
+  float: right;
+  color: var(--primary-color);
+}
+
+.upload-area {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 0.2rem;
+  overflow: hidden;
+}
+
+.upload-area #archives {
+  display: none;
+}
+
+.upload-options {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.format-archives .format-selected {
+  width: 50px;
+  height: 50px;
+  background: #efefef;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.format-archives .format-selected .anexar-icon {
+  width: 50px;
+  height: 50px;
+  background: url(./anexar.png) no-repeat;
+  background-position: center;
+  background-size: 30px auto;
+  transition: all 0.25s ease-in-out;
+  opacity: 0.5;
+}
+
+.format-archives.active .format-selected .anexar-icon {
+  opacity: 0.3;
+}
+
+.format-archives .format-options {
+  display: none;
+  position: absolute;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.format-archives .format-options .type-archive {
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+  background: #f8f2e6;
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.format-archives .format-options .type-archive i {
+  color: var(--primary-color);
+  font-size: 30px;
+  position: relative;
+  top: 12%;
+  left: 25%;
+  transform: translate(-12%, -25%);
+  transition: all 0.25s ease-in-out;
+}
+
+.format-archives .format-options .type-archive:hover i {
+  color: var(--primary-light-color);
+}
+
+.format-archives.active .format-options,
+.format-archives.deactive .format-options {
+  display: block;
+  overflow: hidden;
+}
+.format-archives.active .format-options .type-archive {
+  animation: show-upload-options 0.25s ease-in-out;
+}
+.format-archives.deactive .format-options .type-archive {
+  animation: hidden-upload-options 0.25s ease-in-out;
+}
+
+@keyframes show-upload-options {
+  0% {
+    transform: scale(0) rotate(-60deg);
+  }
+}
+
+@keyframes hidden-upload-options {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(0) rotate(-60deg);
+  }
+}
+
+.preview-message {
+  width: 48%;
+  padding-top: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 0.2rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.preview-message .linkMessage {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.errors {
+  width: 100%;
+  background: #be3e3e;
+  padding: 20px 25px;
+  color: #ffffff;
+  position: fixed;
+  bottom: 0px;
+  font-weight: bold;
+  text-align: center;
+}

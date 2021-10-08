@@ -1,12 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <form
+        name="wt-form"
+        class="wt-form"
+        autocomplete="off"
+        enctype="multipart/form-data"
+      >
+        <div class="row gy-5">
+          <div class="col-xl-9 col-lg-8 col-md-7 col-sm-12 col-12">
+            <div class="contact-container">
+              <div class="tags-area"></div>
+              <input
+                type="text"
+                class="form-control shadow-none contacts"
+                name="contacts"
+                placeholder="Pressione VÍRGULA para adicionar"
+              />
+            </div>
+
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control shadow-none"
+                id="floatingInput"
+                placeholder="Título"
+                name="title"
+              />
+              <label for="floatingInput">Título</label>
+            </div>
+            <div class="row gy-5">
+              <div
+                class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 form-floating message"
+              >
+                <textarea
+                  class="form-control shadow-none"
+                  placeholder="Mensagem"
+                  id="floatingTextarea"
+                  name="message"
+                ></textarea>
+                <label for="floatingTextarea">Mensagem</label>
+              </div>
+              <div
+                class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 preview-message"
+              ></div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-5 col-sm-12 col-12">
+            <div class="form-floating mb-3">
+              <input
+                type="time"
+                class="form-control shadow-none"
+                id="floatingInput"
+                placeholder="Horário"
+                name="hour"
+              />
+              <label for="floatingInput">Horário</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="date"
+                class="form-control shadow-none"
+                id="floatingInput"
+                placeholder="Data"
+                name="date"
+              />
+              <label for="floatingInput">Data</label>
+            </div>
+            <div class="sp-box">
+              <input
+                type="checkbox"
+                class="btn-check"
+                id="dom"
+                autocomplete="off"
+                name="weekDay[]"
+                value="0"
+              />
+              <label class="btn shadow-none" for="dom">Domingo</label>
+              <input
+                type="checkbox"
+                class="btn-check"
+                id="seg"
+                autocomplete="off"
+                name="weekDay[]"
+                value="1"
+              />
+              <label class="btn shadow-none" for="seg">Segunda</label>
+              <input
+                type="checkbox"
+                class="btn-check"
+                id="ter"
+                autocomplete="off"
+                name="weekDay[]"
+                value="2"
+              />
+              <label class="btn shadow-none" for="ter">Terça</label>
+              <input
+                type="checkbox"
+                class="btn-check"
+                id="qua"
+                autocomplete="off"
+                name="weekDay[]"
+                value="3"
+              />
+              <label class="btn shadow-none" for="qua">Quarta</label>
+              <input
+                type="checkbox"
+                class="btn-check"
+                id="qui"
+                autocomplete="off"
+                name="weekDay[]"
+                value="4"
+              />
+              <label class="btn shadow-none" for="qui">Quinta</label>
+              <input
+                type="checkbox"
+                class="btn-check"
+                id="sex"
+                autocomplete="off"
+                name="weekDay[]"
+                value="5"
+              />
+              <label class="btn shadow-none" for="sex">Sexta</label>
+              <input
+                type="checkbox"
+                class="btn-check"
+                id="sab"
+                autocomplete="off"
+                name="weekDay[]"
+                value="6"
+              />
+              <label class="btn shadow-none" for="sab">Sábado</label>
+            </div>
+            <div class="upload-area">
+              <input type="file" name="archives[]" multiple id="archives" />
+              <div class="upload-options">
+                <div class="format-archives">
+                  <div class="format-selected" value="">
+                    <div class="anexar-icon"></div>
+                  </div>
+                  <div class="format-options"></div>
+                </div>
+                <button type="submit">Agendar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="margin-footer"></div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./main.js"></script>
   </body>
 </html>
