@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link rel="stylesheet" href="main.css" />
+    <script src="index.js" defer></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <form>
+        <div class="baseArea">
+          <!-- title of project -->
+          <div class="title">
+            <h2>Age Calculator</h2>
+          </div>
+          <!-- block states -->
+          <div class="blockSections">
+            <p class="monthSection">Date</p>
+            <input
+              type="text"
+              id="month"
+              name="month"
+              placeholder="MM"
+              required
+              minlength="1"
+              maxlength="2"
+            />
+          </div>
+
+          <div class="blockSections">
+            <p class="dateSection">Month</p>
+            <input
+              type="text"
+              id="date"
+              name="date"
+              placeholder="DD"
+              required
+              minlength="1"
+              maxlength="2"
+            />
+          </div>
+
+          <div class="blockSections">
+            <p class="yearSection">Date</p>
+            <input
+              type="text"
+              id="year"
+              name="year"
+              placeholder="YYYY"
+              required
+              minlength="4"
+              maxlength="4"
+            />
+          </div>
+          <!-- btn -->
+          <div class="baseAreaBtn">
+            <div class="enter">
+              <input
+                type="button"
+                name="submit"
+                value="Submit"
+                onclick="age()"
+              />
+            </div>
+          </div>
+          <!-- age shown with thur javascript -->
+          <div id="totalAge"></div>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
