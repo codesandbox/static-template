@@ -1,12 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+  <title>MMM2</title>
+  <script src="app.js"></script>
+</head>
+
+
+
+<body>
+
+  <div class="home">
+    <div class="topbar">
+      <div class="topbaritems">
+        <div class="dropdown">
+          <button class="dropbtn">
+            <i class="fas fa-bars" style="font-size:35px;"></i>
+          </button>
+          <div class="dropdown-content" style="right: 0;">
+            <a href="#">Add new worker</a>
+              <button onclick="test2()">Add new worker</button>
+            <a href="#">Options</a>
+            <a href="#">Some other stuff</a>
+          </div>
+        </div> 
+      </div>
+    </div>
+
+
+    <div class="sidebar">
+      <div class="sidebaritems">
+        <a href="#home">Home</a>
+        <a href="#stat">Stats</a>
+        <a href="#workersview">Workers</a>
+        <a href="#commandandcontrol">C&C</a>
+      </div>
+    </div>
+
+
+
+
+    <div class="row" id="row">
+      <div class="column">
+        <div class="worker">
+          <div class="workername">
+              <h4><b>Neo</b></h4>
+          </div>
+          <div class="workerstatus">
+            <div class="workerrevenu">
+              <p id="ttyr"></p>
+            </div>
+            <div class="workerstat">
+              <h5><b>Mining</b></h5>
+            </div>  
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="worker">
+            <div class="workername">
+              <h4><b>Trinity</b></h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="worker">
+          <div class="workername">
+              <h4><b>Morpheus</b></h4>
+          </div>
+        </div>
+      </div>
+
+
+    </div> 
+  </div>
+
+</body>
 </html>
