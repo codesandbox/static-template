@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1rem;
+}
+
+body {
+  background: url("https://image.freepik.com/free-vector/fluid-abstract-background_1199-322.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin: 12px;
+  padding: 12px;
+  width: 180px;
+  height: 180px;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.card h1 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: rgba(0, 0, 0, 0.6);
+}
