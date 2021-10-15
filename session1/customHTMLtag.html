@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Custom Tag</title>
+  </head>
+  <body>
+    <h1>Hello below is my customTag :</h1>
+    <nameTag name="foobarbaz" />
+  </body>
+  <script>
+    const tagNamesArray = document.getElementsByTagName(tagName);
+    function customTag(tagName, fn) {
+      for (let tag of tagNamesArray) {
+        console.log(tag);
+        fn(tag);
+      }
+    }
+
+    function tagFun(ele) {
+      if (ele.attributes.name) {
+        var name = ele.attributes.name.value;
+        var customText = `Hello ${name}, your name was passed in this customTag`;
+        ele.innerHTML = customText;
+      }
+    }
+
+    customTag("nameTag", tagFun);
+  </script>
+</html>
