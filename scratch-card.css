@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#scratch-card {
+  position: relative;
+  user-select: none;
+}
+
+#scratch-card > canvas {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+}
+
+#scratch-card form {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+
+#scratch-card .background {
+  width: 100%;
+  height: 100%;
+}
+
+#scratch-card .template {
+  display: none;
+}
