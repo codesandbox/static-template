@@ -1,12 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator V2</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1 class="text" id="input">Press the buttons</h1>
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 80%;">
+          <h1 class="text" id="bottomInput"></h1>
+        </td>
+        <td>
+          <h1 class="text" id="bottomInputTwo"></h1>
+        </td>
+      </tr>
+    </table>
+    <table style="width: 100%;">
+      <tr>
+        <td class="left">
+          <button class="left" onclick="number('1')">1</button>
+        </td>
+        <td class="middle">
+          <button class="middle" onclick="number('2')">2</button>
+        </td>
+        <td class="right">
+          <button class="right" onclick="number('3')">3</button>
+        </td>
+      </tr>
+      <tr>
+        <td class="left">
+          <button class="left" onclick="number('4')">4</button>
+        </td>
+        <td class="middle">
+          <button class="middle" onclick="number('5')">5</button>
+        </td>
+        <td class="right">
+          <button class="right" onclick="number('6')">6</button>
+        </td>
+      </tr>
+      <tr>
+        <td class="notEquals">
+          <button class="left" onclick="number('7')">7</button>
+        </td>
+        <td class="notEquals">
+          <button class="middle" onclick="number('8')">8</button>
+        </td>
+        <td class="notEquals">
+          <button class="right" onclick="number('9')">9</button>
+        </td>
+      </tr>
+      <tr>
+        <td class="notEquals">
+          <button class="left" onclick="clearIt()">C</button>
+        </td>
+        <td class="notEquals">
+          <button class="middle" onclick="number('0')">0</button>
+        </td>
+        <td class="notEquals">
+          <button class="right" onclick="number('.')">.</button>
+        </td>
+      </tr>
+    </table>
+    <table style="width: 100%;">
+      <tr>
+        <td class="notEquals">
+          <button class="left" onclick="operator('+')">+</button>
+        </td>
+        <td class="notEquals">
+          <button class="middle" onclick="operator('-')">-</button>
+        </td>
+        <td class="notEquals">
+          <button class="middle" onclick="operator('*')">*</button>
+        </td>
+        <td class="notEquals">
+          <button class="right" onclick="operator('/')">/</button>
+        </td>
+      </tr>
+    </table>
+    <table style="width: 100%;">
+      <tr>
+        <td class="equals">
+          <button class="middle" onclick="equality()">=</button>
+        </td>
+      </tr>
+    </table>
   </body>
+  <script>
+    let topText = document.getElementById("input"); // variable setup; good
+    console.log(topText.innerHTML); //check for correct variable; good
+    let bottomText = document.getElementById("bottomInput"); // variable setup ; good
+    console.log(bottomText.innerHTML); //check for correct variable; good
+
+    let mathematics = []; //empty array for calculations
+    let history = []; //empty array for previous calculation
+
+    const number = (theButton) => {
+      //function for 1 through 9
+      if (topText.innerHTML === "Press the buttons") {
+        topText.innerHTML = theButton; //do nothing if just cleared
+      } else if (history.length === 1 && bottomText.innerHTML === "") {
+        //checks if a calculation was just made
+        // pushes top text to bottom
+        topText.innerHTML = theButton; // restarts for a new number
+      } else {
+        topText.innerHTML = topText.innerHTML + theButton; //continually adds new numbers
+      }
+    };
+
+    const operator = (theOtherButton) => {
+      //function for , + , * , /
+      if (topText.innerHTML === "Press the buttons") {
+        console.log("did nothing"); //do nothing
+      } else {
+        mathematics.push(parseFloat(topText.innerHTML)); //parses top row and logs it into array
+        mathematics.push(theOtherButton); //logs the operator pressed
+        bottomText.innerHTML =
+          bottomText.innerHTML + topText.innerHTML + " " + theOtherButton; //displays the button pressed and the number in the bottom row
+        topText.innerHTML = " "; //resets top text display
+      }
+    };
+
+    const clearIt = () => {
+      topText.innerHTML = "Press the buttons";
+      bottomText.innerHTML = "";
+      mathematics = [];
+      history = [];
+    };
+
+    const equality = () => {
+      if (mathematics.length === 0) {
+        console.log("did nothing"); //do nothing
+      } else {
+        mathematics.push(parseFloat(topText.innerHTML)); //logs previous number to array
+        let y = mathematics.toString();
+        console.log(y); //check for correct string
+        let z = y.replace(/,/g, " "); //replace commas in string to space
+        bottomText.innerHTML = ""; //resets bottom text
+        topText.innerHTML = eval(z); //replaces bottom text with the evaluated value of the array's string
+        history[0] = eval(z); //adds one item for history
+        document.getElementById("bottomInputTwo").innerHTML = history[0];
+        mathematics = []; //resets array for new calculation
+      }
+    };
+
+    const undo = () => {};
+  </script>
 </html>
