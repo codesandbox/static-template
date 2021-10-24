@@ -1,12 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Oefening CSS</title>
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+      .box-blue {
+        width: 440px;
+        height: 330px;
+        background-color: #222730;
+        position: relative;
+      }
+      .box-lightblue {
+        width: 440px;
+        height: 216px;
+        background-color: #4caab3;
+        position: absolute;
+        top: 50px;
+        z-index: 1;
+      }
+      .box-rotated {
+        width: 250px;
+        height: 250px;
+        background-color: #222730;
+        position: absolute;
+        left: 23px;
+        right: 23px;
+        margin: auto; /*to horizontally center*/
+        top: 10%;
+        transform: rotate(45deg);
+        z-index: 2;
+      }
+      .box-lightblue-centered {
+        width: 150px;
+        height: 150px;
+        background-color: #4caab3;
+        /* Center vertically and horizontally */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -80px 0 0 -80px; /* Apply negative top and left margins to truly center the element */
+        transform: rotate(45deg);
+        z-index: 3;
+      }
+      .circle-centered {
+        width: 50px;
+        height: 50px;
+        background-color: #393e46;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="box-blue">
+      <div class="box-lightblue"></div>
+      <div class="box-rotated"></div>
+      <div class="box-lightblue-centered">
+        <div class="circle-centered"></div>
+      </div>
+    </div>
   </body>
 </html>
