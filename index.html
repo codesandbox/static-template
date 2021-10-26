@@ -5,14 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link rel="stylesheet" href="game.css" />
+    <script src="game.js"></script>
+    <noscript>
+      Warning - JavaScript is Disabled. For full functionality of this page, it
+      is necessary to enable JavaScript.
+    </noscript>
+    <script>
+      var bear;
+    </script>
   </head>
-  <body>
+
+  <body onload="start();">
     <div id="title">
       <h1>Bear has been attacked by bees, he need to escape !</h1>
       <p>
         Bear tries to avoid being stung by
         <input type="text" id="nbBees" value="1" size="3" /> bees by running and
-        jumping. The objective is to have as less stings as possible!
+        jumping. <br />
+        The objective is to have as less stings as possible!
       </p>
       <p>
         You can ajust bees' speed
