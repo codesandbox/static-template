@@ -1,12 +1,270 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <article>
+<h1 id="running-any-npm-pacakge-in-the-browser-locally">Running any NPM pacakge in the browser locally</h1>
+
+<p>JavaScript has never had any official solution for distributing
+packages, and every web platform (Rails, Django etc) has their own idea
+of how to structure and package JavaScript. In the last few years NPM
+has started becoming the canonical way of distribution, with Webpack as
+the build system, but there’s no way to load NPM packages in the browser
+without a server-side component.</p>
+
+<p>Scrimba is a platform for interactive coding screencast where you can
+run the code at any moment in time. Being able to use NPM packages has
+been a frequently requested feature, but it turns out to be surprisingly
+technically difficult to implement. In this article I will explain how
+we tackled the problem and the final solution we ended up with.</p>
+
+<figure>
+    <img src="https://mave.me/img/projects/full_placeholder.png">
+    <figcaption>Credits: Wesley Buurke</figcaption>
+</figure>
+<p>Our solution (inspired by StackBlitz) runs almost entirely on the
+client-side. Dependency resolution is done server-side, but
+fetching NPM files, parsing <code>require()</code>, resolving require paths and
+creating a bundle is all done at the client. This (combined with
+IndexedDB caching) gives a smooth experience with very low latency.</p>
+
+<h2 id="what-is-involved-in-supporting-npm">What is involved in supporting NPM?</h2>
+
+<p>There are two very distinct steps in supporting NPM: Dependency
+resolution and module loading.</p>
+
+<p><strong>Dependency resolution</strong> is about going from a dependency requirement,</p>
+
+<div class="language-json highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#606"><span style="color:#404">&quot;</span><span>dependencies</span><span style="color:#404">&quot;</span></span>: {
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#606"><span style="color:#404">&quot;</span><span>react</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">^16.0.0</span><span style="color:#710">&quot;</span></span>,
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  <span style="color:#606"><span style="color:#404">&quot;</span><span>react-rom</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">^16.0.0</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>}
+</pre></div>
+</div>
+</div>
+
+<p>to a concrete description of what packages needs to be installed:</p>
+
+<pre><code>node_modules/react       react@16.0.0
+node_modules/react-dom   react-dom@16.0.0
+node_modules/fbjs        fbjs@0.8.16
+...
+</code></pre>
+
+<p><strong>Module loading</strong> is more involved and includes:</p>
+
+<ul>
+  <li>Figuring out that <code>require("react")</code> in app.js refers to
+node_modules/react/index.js</li>
+  <li>Making sure dependencies are available before the module body is being executed</li>
+  <li>Providing <code>exports</code>, <code>module</code>, <code>process</code> variables inside the module
+body</li>
+</ul>
+
+<h2 id="dependency-resolution">Dependency resolution</h2>
+
+<p><a href="https://yarnpkg.com/">Yarn</a> is a package manager for NPM which you
+<em>can</em> use a library. There is not a public API available at the moment,
+but as long as you depend on a fixed version everything works out
+nicely. Yarn has a <code>PackageResolver</code> which resolves all dependencies,
+and with the <code>PackageHoister</code> you can find the paths where packages
+needs to be installed. Yarn is decently decoupled and although it lacks
+documentation about the internal classes it’s quite easy to figure
+things out.</p>
+
+<p class="aside">
+    Yarn 1.3 was recently released and includes a bunch of new features!
+</p>
+
+<h2 id="module-loader-webpack">Module loader: Webpack</h2>
+
+<p>There are some online coding sandboxes
+(<a href="https://www.webpackbin.com/">Webpackbin</a> and
+<a href="https://codesandbox.io/">CodeSandbox</a>) which supports NPM packages
+through server-side Webpack. Their approach is essentially as follows:</p>
+
+<p>First they have a <em>packager</em> which takes a list of fully resolved packages
+(e.g <code>react@16.0.0,react-dom@16.0.0</code>), generates a <code>package.json</code>,
+install packages and dependencies with <code>yarn</code>, and then uses Webpack to
+build a <a href="https://webpack.js.org/plugins/dll-plugin/">DLL package</a>. A DLL
+package is a way of bundling all files into a single Webpack bundle.
+Packaging can take a while (&gt;10s), but it’s only needed once per request
+and you can cache the produced package indefinitely.</p>
+
+<p>When you want to execute your app.js you send it to the server, generate
+a Webpack configuration (which includes a reference to the DLL package)
+and Webpack will resolve everything for you.</p>
+
+<p>There are two big disadvantages with this approach:</p>
+
+<ul>
+  <li>Building the initial package can take a <em>long</em> time. This needs
+to be done on the server-side and its scalability is limited by how
+many servers you have.</li>
+  <li>Packages can only be cached as a whole. This means that if you add one
+small dependency you must still create a whole new package.</li>
+</ul>
+
+<p>We created a prototype together with Christian Alfoni (the creator of
+Webpackbin), but had some pending work when we discovered a different
+approach.</p>
+
+<h2 id="module-loader-unpkg--systemjs">Module loader: Unpkg + SystemJS</h2>
+
+<p><a href="https://stackblitz.com/">StackBlitz</a> is an online coding sandbox which
+supports NPM without using Webpack at all. They briefly described their approach
+in a
+<a href="https://github.com/unpkg/unpkg-website/issues/35#issuecomment-317128917">comment at the unpkg-repo</a>:</p>
+
+<blockquote>
+  <p>In short, SystemJS &amp; Unpkg are an incredible duo for dev UX because
+they reflect what makes local dev environments great: the client is
+doing all of the downloading, installing, bundling, and even serving
+the application.</p>
+</blockquote>
+
+<p>They haven’t open-sourced their solution yet, but from their description
+we can still go through how it works. Let’s say we have an app.js which
+contains the following:</p>
+
+<div class="language-javascript highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">import</span> React from <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">react</span><span style="color:#710">'</span></span>;
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">import</span> ReactDOM from <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">react-dom</span><span style="color:#710">'</span></span>;
+</pre></div>
+</div>
+</div>
+
+<p>This can be defined as a module in SystemJS and it will start doing its
+magic. The required paths (<code>react</code> and <code>react-dom</code>) will be extracted
+and attempted resolved. By writing a SystemJS-plugin we can integrate
+with <a href="https://unpkg.com/">Unpkg</a> and fetch files directly from NPM
+packages:</p>
+
+<ul>
+  <li>First we can load <a href="https://unpkg.com/react@16.0.0/package.json">https://unpkg.com/react@16.0.0/package.json</a> to find
+the main file. In this case it’s <code>index.js</code>.</li>
+  <li>Then we can fetch <a href="https://unpkg.com/react@16.0.0/index.js">https://unpkg.com/react@16.0.0/index.js</a> directly
+and register it as a SystemJS module.</li>
+  <li>SystemJS will extract the required paths from this file and
+recursively fetch/register all dependent files.</li>
+  <li>Once everything is complete we can execute our original app.js.</li>
+</ul>
+
+<p>From StackBlitz’ description we implemented a prototype in Scrimba, and
+we had the following experiences:</p>
+
+<ul>
+  <li>It turns out that SystemJS’s built-in resolve logic doesn’t completely
+match Node’s, and there’s quite a few packages which depends on Node’s
+behaviour. We ended up writing our custom path resolver.</li>
+  <li>SystemJS is slow. Even though we cached the content of the files and
+did no HTTP requests at all, it took around 150ms to just resolve all
+dependencies. It seems to be caused by heavily use of Promises which
+causes overhead when there’s no asynchronicity.</li>
+</ul>
+
+<p>In the end we felt we needed to re-invent many parts of SystemJS in
+order to get the correct behaviour, and the parts left of SystemJS were
+slow or not in use.</p>
+
+<h2 id="module-loader-custom-loader-our-approach">Module loader: Custom loader (our approach)</h2>
+
+<p>Our final solution uses a module loader we wrote for our use case. It
+consists of several decoupled parts which combines into a complete
+solution. The project is called “mrmanager” and is currently not
+open-sourced, but if there’s interest we can make it happen.</p>
+
+<p>First there’s a virtual <strong>file system</strong>. The file system handles require
+path resolution and integrates with Unpkg to fetch NPM files.</p>
+
+<div class="language-javascript highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> fs = <span style="color:#080;font-weight:bold">new</span> FileSystem;
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#777">// Set up file system:</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#080;font-weight:bold">var</span> npm = <span style="color:#080;font-weight:bold">new</span> PackageSet;
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>fs.mount(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/node_modules/react/</span><span style="color:#710">&quot;</span></span>, npm.get(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">react@16.0.0</span><span style="color:#710">&quot;</span></span>);
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>fs.mount(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/node_modules/react-dom/</span><span style="color:#710">&quot;</span></span>, npm.get(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">react-dom@16.0.0</span><span style="color:#710">&quot;</span></span>);
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#080;font-weight:bold">var</span> <span style="color:#080;font-weight:bold">static</span> = <span style="color:#080;font-weight:bold">new</span> StaticMount({<span style="color:#606"><span style="color:#404">&quot;</span><span>app.js</span><span style="color:#404">&quot;</span></span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">require('react')</span><span style="color:#710">&quot;</span></span>});
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>fs.mount(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/</span><span style="color:#710">&quot;</span></span>, <span style="color:#080;font-weight:bold">static</span>);
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#777">// Resolve paths relative to a directory:</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#080;font-weight:bold">var</span> path = await fs.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">react</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/</span><span style="color:#710">&quot;</span></span>)
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#777">// result: /node_modules/react/index.js</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="color:#777">// Fetch the body</span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="color:#080;font-weight:bold">var</span> body = await fs.fetch(path);
+</pre></div>
+</div>
+</div>
+
+<p>Then we have the <strong>module system</strong>. This provides a way to register modules
+and execute modules:</p>
+
+<div class="language-javascript highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">var</span> system = <span style="color:#080;font-weight:bold">new</span> ModuleSystem;
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#777">// Define module</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>system.define(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/app.js</span><span style="color:#710">&quot;</span></span>, <span style="color:#080;font-weight:bold">function</span>(require, module, exports) {
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  <span style="color:#080;font-weight:bold">var</span> React = require(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">react</span><span style="color:#710">&quot;</span></span>);
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>});
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#777">// Register mappings</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>system.registerResolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">react</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/node_modules/react/index.js</span><span style="color:#710">&quot;</span></span>);
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#777">// Execute module</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#080;font-weight:bold">var</span> result = system.moduleResult(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/app.js</span><span style="color:#710">&quot;</span></span>)
+</pre></div>
+</div>
+</div>
+
+<p>Note that the module system does <em>not</em> parse require paths or fetch
+dependencies, and you must handle this at a different level. It’s your
+responsibilty to define all modules before you attempt to execute them.
+This is a way of simplifying the module system to its most basic
+features and allowing for different approaches to dependency handling.</p>
+
+<p>The final piece of the puzzle is the <strong>loader</strong>. The loader combines the
+module system with the file system such that:</p>
+
+<ul>
+  <li>The loader will use the file system to fetch the code</li>
+  <li>It will parse the code for dependencies, fetch the dependencies,
+resolve all paths and make sure everything is available. This is done
+recursively.</li>
+  <li>The code will be wrapped inside a <code>system.define(name, function() { … }</code>-block</li>
+  <li>The wrapped code for <em>all</em> files is concatenated together to one big
+string</li>
+  <li>Once all dependencies are loaded, it will execute the code once. This
+will register every file to the module system, and we’re now ready to
+invoke the main file.</li>
+</ul>
+
+<p>The crucial part here (compared to SystemJS) is that we combine all the
+processed files into one big string and (1) execute it at once and (2)
+cache it all together. In SystemJS the only unit you can cache is a
+<em>file</em> and SystemJS will every time re-parse require paths, resolve
+those paths and so on.</p>
+
+<p>This is a good example of how decoupling two system (the module system
+and the dependency system) gives us greater flexibility even though
+we’re always going to use them together. By decoupling them we have
+clearly defined what the module system needs to function. After careful
+consideration we found a way to cache this in the most performant way.</p>
+
+<p>The end result? From a hot cache, mrmanager is capable of executing
+React (with ReactDOM) in 9ms instead of SystemJS’ 150ms. Those
+milliseconds matter when you want to quickly iterate on small projects.</p>
+
+<p>I must again clarify that it was not only performance which lead us to a
+custom approach. In our SystemJS-prototype we ended up using just a
+fraction of SystemJS, reinventing parts of it, and monkey-patching
+various functions. That’s not a criticism of SystemJS itself, but a sign
+that it hasn’t been designed for our use case.</p>
+
+        </article>
+    </body>
 </html>
