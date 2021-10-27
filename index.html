@@ -1,12 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet"> 
+    <title>Pet Survey</title>
+</head>
+<body>
+    <header>
+        <div id="title-center">
+            <h1 id="title">PET SURVEY</h1>
+        </div>
+
+        <div id="description-center">
+            <p id="description">According to the U.S. Centers for Disease Control and Prevention, caring for a pet can help lower your blood pressure, cholesterol and triglyceride levels and ward off feelings of loneliness and depression. Please take the survey below and let Hep know how your pet impacts your health.</p>
+        </div>
+    </header>
+
+        <div id="form-center">
+            <form action="" id="survey-form">
+
+                <div class="input-group">
+                    <label for="name" id="name-label">Enter firstame: </label>
+                    <input type="text" name="name" id="name" placeholder="Enter your firstname..." required/>
+                </div>
+
+                <div class="input-group">
+                    <label for="lname" id="lname-label">Enter lastname: </label>
+                    <input type="text" name="lname" id="lname" placeholder="Enter your lastname..." required/>
+                </div>
+
+                <div class="input-group">
+                    <label for="email" id="email-label">Enter email: </label>
+                    <input pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" type="email" name="email" id="email" placeholder="Enter your email address..." required/>
+                </div>
+
+                <div class="input-group">
+                    <label for="age" id="number-label">Enter age  <span> (not necessary)</span>: </label>
+                    <input type="number" name="age" min="15" max="100" id="number" placeholder="Enter your age..." />
+                </div>
+
+                <div class="input-group">
+                    <p>Do you have a pet and if yes, how many?</p>
+                    <select name="pet-number" id="dropdown" class="input">
+                        <option value="select" disabled selected value>Select an option</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4 and more</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <p>Do you believe having a pet benefits your health and well-being?</p>
+                    <label for=""><input type="radio" name="answer" class="input-radio" value="yes"/>Yes</label>
+                    <label for=""><input type="radio" name="answer" class="input-radio" value="no"/>No</label>
+                </div>
+
+                <div class="input-group">
+                    <p>What kind of pet do you have? <span>(Check all that apply.)</span></p>
+                    <label><input name="prefer" value="Dog" type="checkbox" class="input-checkbox"/>Dog</label>
+                    <label><input name="prefer" value="Cat" type="checkbox" class="input-checkbox"/>Cat</label>
+                    <label><input name="prefer" value="Bird" type="checkbox" class="input-checkbox"/>Bird</label>
+                    <label><input name="prefer" value="Fish" type="checkbox" class="input-checkbox"/>Fish</label>
+                    <label><input name="prefer" value="Turtle" type="checkbox" class="input-checkbox"/>Turtle</label>
+                    <label><input name="prefer" value="Rabbit" type="checkbox" class="input-checkbox"/>Rabbit</label>
+                    <label><input name="prefer" value="Hamster" type="checkbox" class="input-checkbox"/>Hamster</label>
+                    <label><input name="prefer" value="Snake" type="checkbox" class="input-checkbox"/>Snake</label>
+                    <label><input name="prefer" value="Other" type="checkbox" class="input-checkbox"/><input type="text" name="other" id="" placeholder="Other"></label>
+                    <!-- <label><input name="prefer" value="front-end-projects" type="checkbox" class="input-checkbox"/>Front-end Projects</label> -->
+                </div>
+
+                <div class="input-group">
+                    <p>Where did you get your pet? <span>(Check all that apply.)</span></p>
+                    <label><input name="got-pet" value="Breeder" type="checkbox" class="input-checkbox"/>Breeder</label>
+                    <label><input name="got-pet" value="Rescue Organization" type="checkbox" class="input-checkbox"/>Rescue Organization</label>
+                    <label><input name="got-pet" value="Pet store" type="checkbox" class="input-checkbox"/>Pet store</label>
+                    <label><input name="got-pet" value="Family/friend" type="checkbox" class="input-checkbox"/>Family/friend</label>
+                </div>
+
+                <div class="input-group">
+                    <p>Has your own health status ever affected how you care for your pet?</p>
+                    <label for=""><input type="radio" name="answer1" class="input-radio" value="yes"/>Yes</label>
+                    <label for=""><input type="radio" name="answer1" class="input-radio" value="no"/>No</label>
+                </div>
+
+                <div class="input-group">
+                    <p>How does your pet benefit your health and well-being? <span>(Check all that apply.)</span></p>
+                    <label><input name="health" value="By giving me something to live for" type="checkbox" class="input-checkbox"/>By giving me something to live for</label>
+                    <label><input name="health" value="By providing me companionship" type="checkbox" class="input-checkbox"/>By providing me companionship</label>
+                    <label><input name="health" value="By offering unconditional love" type="checkbox" class="input-checkbox"/>By offering unconditional love</label>
+                    <label><input name="health" value="By helping me relax/reduce stress" type="checkbox" class="input-checkbox"/>By helping me relax/reduce stress</label>
+                    <label><input name="health" value="By making me feel needed" type="checkbox" class="input-checkbox"/>By making me feel needed</label>
+                    <label><input name="health" value="By making me exercise (e.g., walking a dog or riding a horse)" type="checkbox" class="input-checkbox"/>By making me exercise (e.g., walking a dog or riding a horse)</label>
+                    <label><input name="health" value="By increasing my contact with others" type="checkbox" class="input-checkbox"/>By increasing my contact with others</label>
+                    <label><input name="health" value="By distracting me from my health issues" type="checkbox" class="input-checkbox"/>By distracting me from my health issues</label>
+                    <label><input name="health" value="None of the above" type="checkbox" class="input-checkbox"/>None of the above</label>
+                    <label><input name="health" value="Other" type="checkbox" class="input-checkbox"/><input type="text" name="other" id="" placeholder="Other"></label>
+                </div>
+
+                <div class="input-group">
+                    <p>Where does your pet sleep? <span>(Check all that apply.)</span></p>
+                    <label><input name="sleep" value="Outside" type="checkbox" class="input-checkbox"/>Outside</label>
+                    <label><input name="sleep" value="In a crate/cage/tank" type="checkbox" class="input-checkbox"/>In a crate/cage/tank</label>
+                    <label><input name="sleep" value="In my bed" type="checkbox" class="input-checkbox"/>In my bed</label>
+                    <label><input name="sleep" value="In its own bed" type="checkbox" class="input-checkbox"/>In its own bed</label>
+                    <label><input name="sleep" value="Other" type="checkbox" class="input-checkbox"/><input type="text" name="other" id="" placeholder="Other"></label>
+                    
+                </div>
+
+                <div class="input-group">
+                    <p>How many years have you had a pet?</p>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="0-5 years"/>0-5 years</label>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="5-10 years"/>5-10 years</label>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="10-15 years"/>10-15 years</label>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="15 or more years"/>15 or more years</label>  
+                </div>
+
+                <div class="input-group">
+                    <p>Where do you primarily get information about pet care?</p>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="Magazines"/>Magazines</label>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="Books"/>Books</label>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="Online"/>Online</label>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="Family/friends"/>Family/friends</label>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="Veterinarian"/>Veterinarian</label>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="None of the above"/>None of the above</label>
+                </div>
+
+                <div class="input-group">
+                    <p>Where do you primarily purchase your pet(s) food?</p>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="Grocery store/discount store"/>Grocery store/discount store</label>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="Chain pet store"/>Chain pet store</label>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="Local pet store"/>Local pet store</label>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="Veterinarian's office"/>Veterinarian's office</label>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="Another pet-related business"/>Another pet-related business</label>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="Online"/>Online</label>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="Home prepared"/>Home prepared</label>
+                    <label for=""><input type="radio" name="year" class="input-radio" value="None of the above"/>None of the above</label>
+                </div>
+
+                <div class="input-group">
+                    <p>Any comments or suggestions?</p>
+                    <textarea id="comments" class="input-textarea" name="comment" placeholder="Enter your comment here..."></textarea>
+                </div>
+              
+                <div class="input-group">
+                    <button type="submit" id="submit" class="submit-button">Submit</button>
+                </div>
+
+
+            </form>
+        </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
 </html>
