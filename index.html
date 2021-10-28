@@ -1,20 +1,38 @@
-<body>
-  <div id="title"></div>
-  <h1>Help the bear escape the bees!</h1>
-  <p>
-    Bear tried to avoid being stung by
-    <input type="text" id="beeNumber" value="1" />
-    bees by running and jumping. The objective is to have as less stings as
-    possible.
-  </p>
-  <p>
-    You can adjust bees' speed
-    <input type="text" id="beeSpeed" value="2" /> px/ms
-  </p>
-  <h1>Press left, right, up, down keys to move the bear</h1>
-  <button onclick="start()">Start</button>
-  <button onclick="bearAdd()">Add bear</button>
+<!DOCTYPE html>
+<html lang="en">
 
-  <div id="scores"></div>
-  <div id="board"></div>
-</body>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>JavaScript and DOM API</title>
+    <link rel="stylesheet" type="text/css" href="game.css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <body>
+
+        <div id="title">
+            <h1>Help the bear escape the bees !</h1>
+            <p>Bear tries to avoid being stung by <input type="text" id="nbBees" value="1" size="3"> bees by running and jumping. The objective is to have as less stings as possible!</p>
+            <p>You can ajust bees' speed <input type="text" id="speedBees" value="50" size="3"> px/ms
+                <br> and the refresh period <input type="text" id="periodTimer" value="10" size="3"> ms </p>
+            <h2>Press left, right, up, down keys to move the bear</h2>
+
+        </div>
+        <div id="scores">
+            <table>
+                <tr>
+                    <td>
+                        <p>Stings: [<span id="hits">0</span>]</p>
+                    </td>
+                    <td>
+                        <p>Best duration: [<span id="duration">?</span>]</p>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div id="board">
+            <img src="./images/bear.gif" id="bear" alt="bear">
+        </div>
+    </body>
+
+</html>
