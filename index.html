@@ -1,12 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
-</html>
+<body>
+  <div id="title"></div>
+  <h1>Help the bear escape the bees!</h1>
+  <p>
+    Bear tried to avoid being stung by
+    <input type="text" id="beeNumber" value="1" />
+    bees by running and jumping. The objective is to have as less stings as
+    possible.
+  </p>
+  <p>
+    You can adjust bees' speed
+    <input type="text" id="beeSpeed" value="2" /> px/ms
+  </p>
+  <h1>Press left, right, up, down keys to move the bear</h1>
+  <button onclick="start()">Start</button>
+  <button onclick="bearAdd()">Add bear</button>
+
+  <div id="scores"></div>
+  <div id="board"></div>
+</body>
