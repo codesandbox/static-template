@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+    <div id="root2"></div>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+      const handleClick = () => {
+        alert("pressed!");
+      };
+      const element = <button onClick={handleClick}>press</button>;
+      ReactDOM.render(element, rootElement);
+
+      const root2Element = document.getElementById("root2");
+      const state = { keyword: "", typing: false, result: "" };
+      const App = () => {
+        function hadleChange(event) {
+          setState({ typing: true, keyword: event.target.value });
+        }
+        function handleClickButton() {
+          setState({
+            typing: false,
+            result: `We find resluts of ${state.keyword}`
+          });
+        }
+        return (
+          <>
+            <input onChange={hadleChange} />
+            <button onClick={handleClickButton}>search</button>
+            <p>
+              {state.typing ? `Looking for ${state.keyword}...` : state.result}
+            </p>
+          </>
+        );
+      };
+
+      function setState(newState) {
+        Object.assign(state, newState);
+        render();
+      }
+      function render() {
+        ReactDOM.render(<App />, root2Element);
+      }
+      render();
+    </script>
   </body>
 </html>
