@@ -10,6 +10,7 @@ function start() {
 function Bear() {
   this.dBear = 100;
   this.htmlElement = document.getElementById("bear");
+  console.log(this.htmlElement);
   this.id = this.htmlElement.id;
   this.x = this.htmlElement.offsetLeft;
   this.y = this.htmlElement.offsetTop;
@@ -17,10 +18,11 @@ function Bear() {
   this.move = function (xDir, yDir) {
     this.x += this.dBear * xDir;
     this.y += this.dBear * yDir;
+    this.display();
   };
   this.display = function () {
     this.htmlElement.style.left = this.x + "px";
-    this.htmlElement.style.top = this.x + "px";
+    this.htmlElement.style.top = this.y + "px";
     this.htmlElement.style.display = "absolute";
   };
 }
@@ -32,6 +34,7 @@ function moveBear(e) {
   const KEYDOWN = 40;
   const KEYLEFT = 37;
   const KEYRIGHT = 39;
+  console.log(bear);
   if (e.keyCode == KEYRIGHT) {
     bear.move(1, 0);
   } // right key
