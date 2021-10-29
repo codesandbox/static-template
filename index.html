@@ -1,12 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src https://*; child-src 'none';"> -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Roboto:wght@500&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="style.css">
+  <title>Product Landing Page</title>
+</head>
+<body>
+  <!-- <div id="page-wrapper"> -->
+    <header id="header">
+        <nav id="nav-bar">
+
+          <div class="image-flex">
+            <div><a href="index.html"><img id="header-img" src="https://cdn-icons-png.flaticon.com/128/3047/3047928.png" alt=""></a></div>
+            <div>PET HOTEL</div>
+          </div>
+
+          <!-- <div id="nav-ul"> -->
+            <ul class="nav-flex">
+              <li ><a class="nav-link" href="#registration" class="btn">Registration</a></li>
+              <li ><a class="nav-link" href="#features" class="btn">Features</a></li>
+              <li ><a class="nav-link" href="#pricing" class="btn">Pricing</a></li>
+            </ul>
+          <!-- </div> -->
+
+        </nav>
+    </header>
+
+    <!-- <div class="container"> -->
+      <section id="registration">
+        <!-- <h2 id="registration">Registration</h2> -->
+        <!-- <form id="form" action="">
+          <input id="email" type="text" placeholder="Enter your email address">
+          <input id="submit" type="button" value="" >
+        </form> -->
+        
+        <form action="" id="form">
+
+          <div class="input-group">
+              <label for="fname" id="fname-label">Enter First name: </label>
+              <input type="text" name="fname" id="fname" placeholder="Enter your first name..." required/>
+          </div>
+
+          <div class="input-group">
+              <label for="lname" id="lname-label">Enter Last name: </label>
+              <input type="text" name="lname" id="lname" placeholder="Enter your last name..." required/>
+          </div>
+
+          <div class="input-group">
+              <label for="email" id="email-label">Enter email: </label>
+              <input pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" type="email" name="email" id="email" placeholder="Enter your email address..." required/>
+          </div>
+
+          <div class="input-group">
+            <!-- <label for="email" id="email-label">Enter email: </label> -->
+            <input type="submit" name="submit" id="submit" class="btn" value="SUBMIT"/>
+        </div>
+
+
+
+      </section>
+
+      <section id="features">
+        <!-- <h2>Features</h2> -->
+          <div class="features-grid">
+
+            <div class="features-item-1">
+              <img src="img/pet-food.png" alt="">
+            </div>
+
+            <div class="features-item-2">
+              <img src="img/pet-shampoo.png" alt="">
+            </div>
+            
+            <div class="features-item-3">
+              <img src="img/pet-boarding.png" alt="">
+            </div>
+
+            <div class=" features-item-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam consequuntur, unde officia, adipisci quia veniam quam ipsam minus, recusandae mollitia praesentium? Incidunt eum non quidem ab, magni quia iure quaerat.</div>
+            <div class="features-item-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt asperiores ex architecto aspernatur eos commodi, error voluptates corrupti explicabo quas similique. Voluptas corporis assumenda numquam repellendus eaque deleniti doloribus possimus.</div>
+            <div class="features-item-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa labore, nihil repellat nostrum earum, odio sed rerum, iste at eos dolor a. Quasi vitae aliquid voluptatum adipisci accusantium obcaecati sequi.</div>
+          </div>
+
+      </section>
+
+      <section>
+        <iframe id="video" width="560" height="600" src="https://www.youtube.com/embed/iKA6ZXpGcGQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </section>
+
+      <section id="pricing">
+        <!-- <h2>Pricing</h2> -->
+        <div class="pricing-flex">
+          <div class="pricing-flex-item">
+            <h3>Lorem ipsum</h3>
+
+            <div class="price-1">
+              <div class="price-item">Price: $100</div>
+              <div class="price-item item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum lobortis interdum. Mauris non commodo. </div>
+              <div class="price-item"><a class="nav-link" href="#" class="btn">Select</a></div>
+            </div>
+
+          </div>
+          <div class="pricing-flex-item">
+            <h3>Lorem ipsum</h3>
+
+            <div class="price-1">
+              <div class="price-item">Price: $200</div>
+              <div class="price-item item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac nunc vel sem pharetra cursus. </div>
+              <div class="price-item"><a class="nav-link" href="#" class="btn">Select</a></div>
+            </div>
+
+          </div>
+          <div class="pricing-flex-item">
+            <h3>Lorem ipsum</h3>
+
+            <div class="price-1">
+              <div class="price-item">Price: $400</div>
+              <div class="price-item item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tincidunt, erat vel eleifend fringilla, massa. </div>
+              <div class="price-item"><a class="nav-link" href="#" class="btn">Select</a></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+        <br><br>
+
+      <footer id="footer">
+        <!-- <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab molestiae fugit et? Tempore 
+          ea nisi eligendi necessitatibus asperiores commodi magnam minus hic dolor exercitationem deleniti, 
+          accusantium cumque quaerat porro voluptatibus! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti velit, veritatis porro nisi illum aspernatur quasi ipsa facilis officia? Voluptatibus aliquam, officia necessitatibus eos obcaecati veritatis voluptatum quam perferendis quaerat?
+        </div> -->
+        <div class="footer-div-flex">
+
+          <span class="span-flex">Copyright 2016, Original Trombones</span>
+
+          <ul class="footer-flex">
+            <li><a class="footer-link" href="">Privacy</a></li>
+            <li><a class="footer-link" href="#">Terms</a></li>
+            <li><a class="footer-link" href="#">Contact</a></li>
+          </ul>
+
+          
+
+        </div>
+        
+      </footer>
+
+      
+      
+
+    <!-- </div>
+   
+  </div> -->
+  
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
 </html>

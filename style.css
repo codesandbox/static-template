@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  /* background: #95D5B2; */
+  background-image: url("https://cdn.dribbble.com/users/1786581/screenshots/14299720/media/15ee71ff3ec81c1e4f9e1af4644fce1f.jpg");
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  padding-top: 200px;
+}
+
+#header {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  background-color: #cbc39e;
+  color: #fff;
+  border-radius: 0px 0px 15px 15px;
+}
+
+#header-img {
+  height: 100px;
+  width: 100px;
+}
+
+#footer {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  background-color: #cbc39e;
+  border-radius: 15px 15px 0px 0px;
+  padding: 10px;
+}
+
+.footer-div-flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#nav-bar {
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.nav-flex,
+.footer-flex,
+.span-flex {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+}
+
+.image-flex {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  color: #000000;
+  font-weight: 600;
+}
+
+.nav-link,
+.footer-link {
+  margin: 10px;
+  text-decoration: none;
+  background-color: #31302e;
+  color: #fbf3eb;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+a.nav-link:hover,
+a.footer-link:hover {
+  background-color: #8c7b7c;
+}
+
+#form,
+.input-group,
+label {
+  display: flex;
+  margin: auto;
+}
+
+#form {
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-group {
+  flex-direction: column;
+  margin-top: 10px;
+  width: 50%;
+}
+
+label {
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+#fname,
+#lname,
+#email,
+#submit {
+  font-size: 1.2rem;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+#submit {
+  background-color: #31302e;
+  color: #fbf3eb;
+  border: none;
+  padding: 10px;
+}
+
+#submit:hover {
+  background-color: #8c7b7c;
+}
+
+#registration,
+#features,
+#video,
+#pricing {
+  padding-top: 145px;
+}
+
+.features-item-1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  /* z-index: 2; */
+}
+
+.features-item-2 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.features-item-3 {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.features-item-4 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.features-item-5 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.features-item-6 {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+.features-grid {
+  background-color: #fbf3eb;
+  opacity: 0.7;
+  display: grid;
+  grid-gap: 20px;
+  align-items: center;
+  padding: 50px;
+  width: 60%;
+  margin: auto;
+}
+
+.features-grid:hover {
+  opacity: 1;
+}
+
+.features-item-4,
+.features-item-5,
+.features-item-6 {
+  justify-self: start;
+}
+
+.features-item-1 > img,
+.features-item-2 > img,
+.features-item-3 > img {
+  transition: transform 0.2s;
+  height: 100px;
+  width: 100px;
+}
+
+.features-item-1 > img:hover,
+.features-item-2 > img:hover,
+.features-item-3 > img:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 700px) {
+  .features-grid {
+    padding: 5px;
+    width: 80%;
+    margin: auto;
+  }
+}
+
+#video {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  #video {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.pricing-flex {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: wrap;
+  /* align-items: baseline; */
+}
+
+.pricing-flex-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 250px; /* Or whatever */
+  height: 350px; /* Or whatever */
+  background-color: #fbf3eb;
+  margin-top: 50px;
+  border-radius: 15px;
+  /* border: 1px solid; */
+  opacity: 0.7;
+  transition: transform 0.2s;
+}
+
+h3 {
+  padding: 14px;
+  height: 50px;
+  padding: auto;
+  text-align: center;
+  background-color: #cbc39e;
+  border-radius: 14px 14px 0px 0px;
+}
+
+.pricing-flex-item:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.price-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-item {
+  align-self: center;
+  margin: 20px;
+}
+
+.item-text {
+  height: 100px;
+}
