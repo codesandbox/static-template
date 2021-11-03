@@ -1,12 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css-reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <nav id="navbar">
+      <header id="meniu-header">PHP Documentation</header>
+      <ul class="nav-links-container">
+        <li class="btn">
+          <a class="nav-link" href="#Introduction">Introduction</a>
+        </li>
+        <li class="btn">
+          <a class="nav-link" href="#Environment_Setup">Environment Setup</a>
+        </li>
+        <li class="btn">
+          <a class="nav-link" href="#Variable_Types">Variable Types</a>
+        </li>
+        <li class="btn">
+          <a class="nav-link" href="#Decision_Making">Decision Making</a>
+        </li>
+        <li class="btn">
+          <a class="nav-link" href="#Loop_Types">Loop Types</a>
+        </li>
+        <li class="btn"><a class="nav-link" href="#Arrays">Arrays</a></li>
+      </ul>
+    </nav>
+
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header class="headers">Introduction</header>
+
+        <ul>
+          <li>
+            <h2>What is PHP?</h2>
+            <p>
+              PHP (recursive acronym for PHP:
+              <code>Hypertext Preprocessor</code> ) is a widely-used open source
+              general-purpose scripting language that is especially suited for
+              web development and can be embedded into HTML.
+            </p>
+            <p>Nice, but what does that mean? An example:</p>
+            <h3>Example #1 An introductory example</h3>
+            <div class="code">
+              <code>
+                &lt;&#33;DOCTYPE html>
+                <br />
+                &lt;html>
+                <br />
+                &nbsp;&nbsp;&nbsp;&lt;head>
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title>Example&lt;/title>
+                <br />
+                &nbsp;&nbsp;&nbsp;&lt;/head>
+                <br />
+                &nbsp;&nbsp;&nbsp;&lt;body>
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="php-tag"
+                  >&lt;?php</span
+                >
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  id="echo"
+                  >echo</span
+                >
+                <span id="text">"Hi, I'm a PHP script!";</span>
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="php-tag"
+                  >?></span
+                >
+                <br />
+                &nbsp;&nbsp;&nbsp;&lt;body>
+                <br />
+                &lt;html>
+              </code>
+            </div>
+            <p>
+              Instead of lots of commands to output HTML (as seen in C or Perl),
+              PHP pages contain HTML with embedded code that does "something"
+              (in this case, output "Hi, I'm a PHP script!"). The PHP code is
+              enclosed in special start and end processing instructions
+              <?php and ?>
+              that allow you to jump into and out of "PHP mode."
+            </p>
+            <p>
+              What distinguishes PHP from something like client-side JavaScript
+              is that the code is executed on the server, generating HTML which
+              is then sent to the client. The client would receive the results
+              of running that script, but would not know what the underlying
+              code was. You can even configure your web server to process all
+              your HTML files with PHP, and then there's really no way that
+              users can tell what you have up your sleeve.
+            </p>
+            <p>
+              The best part about using PHP is that it is extremely simple for a
+              newcomer, but offers many advanced features for a professional
+              programmer. Don't be afraid to read the long list of PHP's
+              features. You can jump in, in a short time, and start writing
+              simple scripts in a few hours.
+            </p>
+            <p>
+              Although PHP's development is focused on server-side scripting,
+              you can do much more with it. Read on, and see more in the What
+              can PHP do? section, or go right to the introductory tutorial if
+              you are only interested in web programming.
+            </p>
+          </li>
+
+          <li>
+            <h2>What can PHP do?</h2>
+            <p>
+              Anything. PHP is mainly focused on server-side scripting, so you
+              can do anything any other CGI program can do, such as collect form
+              data, generate dynamic page content, or send and receive cookies.
+              But PHP can do much more.
+            </p>
+            <p>There are three main areas where PHP scripts are used.</p>
+            <ul class="ul-list">
+              <li>Server-side scripting.</li>
+              <li>Command line scripting.</li>
+              <li>Writing desktop applications.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Environment_Setup">
+        <header class="headers">Environment Setup</header>
+        <p>
+          In order to develop and run PHP Web pages, three vital components need
+          to be installed on your computer system.
+        </p>
+        <ul class="ul-list">
+          <li>
+            <span>Web Server</span> - PHP will work with virtually all Web
+            Server software, including Microsoft's Internet Information Server
+            (IIS) but then most often used is freely available Apache Server.
+            Download Apache for free here: http://httpd.apache.org/download.cg
+          </li>
+          <li>
+            <span>Database</span> - PHP will work with virtually all database
+            software, including Oracle and Sybase but most commonly used is
+            freely available MySQL database. Download MySQL for free here:
+            http://www.mysql.com/downloads/index.html
+          </li>
+          <li>
+            <span>PHP Parser</span> - In order to process PHP script
+            instructions, a parser must be installed to generate HTML output
+            that can be sent to the Web Browser. This tutorial will guide you
+            how to install PHP parser on your computer.
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Variable_Types">
+        <header class="headers">Variable Types</header>
+        <p>
+          The main way to store information in the middle of a PHP program is by
+          using a variable. Here are the most important things to know about
+          variables in PHP.
+        </p>
+
+        <ul class="ul-list">
+          <li>
+            All variables in PHP are denoted with a leading dollar sign ($).
+          </li>
+          <li>
+            The value of a variable is the value of its most recent assignment.
+          </li>
+          <li>
+            Variables are assigned with the = operator, with the variable on the
+            left-hand side and the expression to be evaluated on the right.
+          </li>
+          <li>
+            Variables can, but do not need, to be declared before assignment.
+          </li>
+          <li>
+            Variables in PHP do not have intrinsic types - a variable does not
+            know in advance whether it will be used to store a number or a
+            string of characters.
+          </li>
+          <li>Variables used before they are assigned have default values.</li>
+          <li>
+            PHP does a good job of automatically converting types from one to
+            another when necessary.
+          </li>
+          <li>PHP variables are Perl-like.</li>
+        </ul>
+        <p>
+          PHP has a total of eight data types which we use to construct our
+          variables:
+        </p>
+        <ul class="ul-list">
+          <li>
+            <span>Integers:</span> are whole numbers, without a decimal point,
+            like 4195.
+          </li>
+          <li>
+            <span>Doubles:</span> are floating-point numbers, like 3.14159 or
+            49.1.
+          </li>
+          <li>
+            <span>Booleans:</span> have only two possible values either true or
+            false.
+          </li>
+          <li>
+            <span>NULL:</span> is a special type that only has one value: NULL.
+          </li>
+          <li>
+            <span>Strings:</span> are sequences of characters, like 'PHP
+            supports string operations.'
+          </li>
+          <li>
+            <span>Arrays:</span> are named and indexed collections of other
+            values.
+          </li>
+          <li>
+            <span>Objects:</span> are instances of programmer-defined classes,
+            which can package up both other kinds of values and functions that
+            are specific to the class.
+          </li>
+          <li>
+            <span>Resources:</span> are special variables that hold references
+            to resources external to PHP (such as database connections).
+          </li>
+        </ul>
+        <p>
+          The first five are simple types, and the next two (arrays and objects)
+          are compound - the compound types can package up other arbitrary
+          values of arbitrary type, whereas the simple types cannot.
+        </p>
+        <p>
+          We will explain only simile data type in this chapters. Array and
+          Objects will be explained separately.
+        </p>
+
+        <h2>Integers</h2>
+        <hr />
+        <p>
+          They are whole numbers, without a decimal point, like 4195. They are
+          the simplest type .they correspond to simple whole numbers, both
+          positive and negative. Integers can be assigned to variables, or they
+          can be used in expressions, like so:
+        </p>
+        <div class="code">
+          <code>
+            $int_var = 12345;
+            <br />
+            $another_int = -12345 + 12345;
+          </code>
+        </div>
+        <p>
+          Integer can be in decimal (base 10), octal (base 8), and hexadecimal
+          (base 16) format. Decimal format is the default, octal integers are
+          specified with a leading 0, and hexadecimals have a leading 0x.
+        </p>
+        <p>
+          For most common platforms, the largest integer is (2**31 . 1) (or
+          2,147,483,647), and the smallest (most negative) integer is . (2**31 .
+          1) (or .2,147,483,647).
+        </p>
+        <h2>Doubles</h2>
+        <hr />
+        <p>
+          They like 3.14159 or 49.1. By default, doubles print with the minimum
+          number of decimal places needed. For example, the code:
+        </p>
+        <div class="code">
+          <code>
+            $many = 2.2888800;
+            <br />
+            $many_2 = 2.2111200;
+            <br />
+            $few = $many + $many_2;
+            <br />
+            print(.$many + $many_2 = $few&lt;br>.);
+          </code>
+        </div>
+        <p>It produces the following browser output:</p>
+        <div class="code">
+          <code>
+            2.28888 + 2.21112 = 4.5
+          </code>
+        </div>
+        <h2>Boolean</h2>
+        <hr />
+        <p>
+          They have only two possible values either true or false. PHP provides
+          a couple of constants especially for use as Booleans: TRUE and FALSE,
+          which can be used like so:
+        </p>
+        <div class="code">
+          <code>
+            if (TRUE)<br />
+            &nbsp;&nbsp;&nbsp;print("This will always print&lt;br>");<br />
+            else <br />
+            &nbsp;&nbsp;&nbsp;print("This will never print&lt;br>");
+          </code>
+        </div>
+        <h2>NULL</h2>
+        <hr />
+        <p>
+          NULL is a special type that only has one value: NULL. To give a
+          variable the NULL value, simply assign it like this:
+        </p>
+        <div class="code">
+          <code>
+            $my_var = NULL;
+          </code>
+        </div>
+        <p>
+          The special constant NULL is capitalized by convention, but actually
+          it is case insensitive; you could just as well have typed:
+        </p>
+        <div class="code">
+          <code>
+            $my_var = null;
+          </code>
+        </div>
+      </section>
+
+      <section class="main-section" id="Decision_Making">
+        <header class="headers">Decision Making</header>
+        <p>
+          The if, elseif ...else and switch statements are used to take decision
+          based on the different condition.
+        </p>
+        <p>
+          You can use conditional statements in your code to make your
+          decisions. PHP supports following three decision making statements −
+        </p>
+        <ul class="ul-list">
+          <li>
+            <span>if...else statement</span> − use this statement if you want to
+            execute a set of code when a condition is true and another if the
+            condition is not true
+          </li>
+          <li>
+            <span>elseif statement</span> − is used with the if...else statement
+            to execute a set of code if one of the several condition is true
+          </li>
+          <li>
+            <span>switch statement</span> − is used if you want to select one of
+            many blocks of code to be executed, use the Switch statement. The
+            switch statement is used to avoid long blocks of if..elseif..else
+            code.
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Loop_Types">
+        <header class="headers">Loop Types</header>
+        <p>
+          Loops in PHP are used to execute the same block of code a specified
+          number of times. PHP supports following four loop types.
+        </p>
+        <ul class="ul-list">
+          <li>
+            <span>for</span> − loops through a block of code a specified number
+            of times.
+          </li>
+          <li>
+            <span>while</span> − loops through a block of code if and as long as
+            a specified condition is true.
+          </li>
+          <li>
+            <span>do...while</span> − loops through a block of code once, and
+            then repeats the loop as long as a special condition is true.
+          </li>
+          <li>
+            <span>foreach</span> − loops through a block of code for each
+            element in an array.
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Arrays">
+        <header class="headers">Arrays</header>
+        <p>
+          An array is a data structure that stores one or more similar type of
+          values in a single value. For example if you want to store 100 numbers
+          then instead of defining 100 variables its easy to define an array of
+          100 length.
+        </p>
+        <p>
+          There are three different kind of arrays and each array value is
+          accessed using an ID c which is called array index.
+        </p>
+        <ul class="ul-list">
+          <li>
+            <span>Numeric array</span> − An array with a numeric index. Values
+            are stored and accessed in linear fashion.
+          </li>
+          <li>
+            <span>Associative array</span> − An array with strings as index.
+            This stores element values in association with key values rather
+            than in a strict linear index order.
+          </li>
+          <li>
+            <span>Multidimensional array</span> − An array containing one or
+            more arrays and values are accessed using multiple indices
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer></footer>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   </body>
 </html>
