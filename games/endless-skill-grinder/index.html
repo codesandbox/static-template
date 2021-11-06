@@ -1,0 +1,332 @@
+<html>
+  <head>
+    <title>ESG</title>
+    <link rel="shortcut icon" href="/assets/esg/icon/icon.png" />
+    <link rel="stylesheet" href="esg.css" />
+  </head>
+  <body>
+    <!-- Tab HTML -->
+    <div class="tab unselectable">
+      <ul id="ulTab">
+        <li
+          class="tablinks"
+          onclick="openTab(event, 'Skills')"
+          id="defaultOpen"
+        >
+          <a>
+            Skills
+          </a>
+        </li>
+        <li class="tablinks" onclick="openTab(event, 'Upgrades')">
+          <a>Upgrades</a>
+        </li>
+        <li class="tablinks" onclick="openTab(event, 'Stats')">
+          <a>Stats</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- XP Amount Tab HTML-->
+    <div class="tab unselectable">
+      <ul id="ulXP">
+        <li>
+          <a id="farmingXPColor"><span id="farmingXP">0</span> Farming XP</a>
+          <a id="farmingXPColor"
+            ><span id="farmingLevel">1</span> Farming Level(s)</a
+          >
+          <a id="farmingXPColor"
+            ><span id="farmingXPReq">500</span> XP Needed</a
+          >
+        </li>
+        <li>
+          <a id="miningXPColor"><span id="miningXP">0</span> Mining XP</a>
+        </li>
+        <li>
+          <a id="combatXPColor"><span id="combatXP">0</span> Combat XP</a>
+        </li>
+        <li>
+          <a id="foragingXPColor"><span id="foragingXP">0</span> Foraging XP</a>
+        </li>
+        <li>
+          <a id="alchemyXPColor"><span id="alchemyXP">0</span> Alchemy XP</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- XP Tab Job Pages HTML-->
+    <div id="Wheat" class="tabcontent">
+      <ul id="ulCrop">
+        <li onclick="randomXP()">
+          <a id="farmingXPColor"> >>>>Click to Harvest<<<< </a>
+        </li>
+      </ul>
+      <img
+        id="crop1"
+        src="/assets/esg/farming/wheat.png"
+        width="128"
+        height="128"
+      />
+      <img
+        id="crop2"
+        src="/assets/esg/farming/wheat.png"
+        width="128"
+        height="128"
+      />
+      <img
+        id="crop3"
+        src="/assets/esg/farming/wheat.png"
+        width="128"
+        height="128"
+      />
+      <img
+        id="crop4"
+        src="/assets/esg/farming/wheat.png"
+        width="128"
+        height="128"
+      />
+      <img
+        id="crop5"
+        src="/assets/esg/farming/wheat.png"
+        width="128"
+        height="128"
+      />
+    </div>
+    <div id="Carrots" class="tabcontent">
+      <ul id="ulCrop">
+        <li onclick="randomXP()">
+          <a id="farmingXPColor"> >>>>Click to Harvest<<<< </a>
+        </li>
+      </ul>
+      <img
+        id="crop1"
+        src="/assets/esg/farming/carrot.png"
+        width="128"
+        height="128"
+      />
+      <img
+        id="crop2"
+        src="/assets/esg/farming/carrot.png"
+        width="128"
+        height="128"
+      />
+      <img
+        id="crop3"
+        src="/assets/esg/farming/carrot.png"
+        width="128"
+        height="128"
+      />
+      <img
+        id="crop4"
+        src="/assets/esg/farming/carrot.png"
+        width="128"
+        height="128"
+      />
+      <img
+        id="crop5"
+        src="/assets/esg/farming/carrot.png"
+        width="128"
+        height="128"
+      />
+    </div>
+    <div id="Potatoes" class="tabcontent">
+      <ul id="ulCrop">
+        <li onclick="randomXP()">
+          <a id="farmingXPColor"> >>>>Click to Harvest<<<< </a>
+        </li>
+      </ul>
+      <img
+        id="crop1"
+        src="/assets/esg/farming/potato.png"
+        width="128"
+        height="128"
+      />
+      <img
+        id="crop2"
+        src="/assets/esg/farming/potato.png"
+        width="128"
+        height="128"
+      />
+      <img
+        id="crop3"
+        src="/assets/esg/farming/potato.png"
+        width="128"
+        height="128"
+      />
+      <img
+        id="crop4"
+        src="/assets/esg/farming/potato.png"
+        width="128"
+        height="128"
+      />
+      <img
+        id="crop5"
+        src="/assets/esg/farming/potato.png"
+        width="128"
+        height="128"
+      />
+      <script>
+        var farmingXP = 0;
+        var farmingLevel = 1;
+        var farmingXPReq = 500;
+        function randomXP() {
+          farmingXP =
+            farmingXP +
+            Math.floor(Math.random() * 15) +
+            15 * up_goldenhoe_function;
+          document.getElementById("farmingXP").innerHTML = farmingXP;
+          openTab(event, "Skills");
+          saveGame();
+          farmingLevels();
+        }
+        function farmingLevels() {
+          if (farmingXP >= farmingXPReq) {
+            farmingLevel = farmingLevel + 1;
+            farmingXPReq = Math.round(farmingXPReq * 4.5);
+            document.getElementById("farmingLevel").innerHTML = farmingLevel;
+            document.getElementById("farmingXPReq").innerHTML = farmingXPReq;
+            saveGame();
+          }
+        }
+      </script>
+    </div>
+
+    <!-- Tab Pages HTML -->
+    <div>
+      <div id="Skills" class="tabcontent">
+        <div class="tab unselectable">
+          <ul id="ulXPJobFarming">
+            <li class="tablinks" onclick="randomJobFarming()">
+              <a id="farmingXPColor">Harvest Crops</a>
+            </li>
+          </ul>
+          <ul id="ulXPJobMining">
+            <li class="tablinks" onclick="randomJobMining()">
+              <a id="miningXPColor">Mine Stones</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="Upgrades" class="tabcontent">
+          <table class="upShop" onclick="up_goldenhoe_buy()">
+              <tr>
+                <td id="image">
+                  <img src="/assets/esg/upgrades/goldenhoe.png"/>
+                <td id="upgradeAndCost">
+                  <p id="farmingXPColor"><span>Golden Hoe</p>
+                  <p id="farmingXPColor">[Level <span id="up_goldenhoe_amt">0</span>]</p>
+                  <p id="farmingXPColor"><span id="up_goldenhoe_cost">250</span> Farming XP</p>
+                  </td>
+                </td>
+                </td>
+              </tr>
+            </table>
+        <script>
+          var up_goldenhoe_amt = 1;
+          var up_goldenhoe_cost = 250;
+          var up_goldenhoe_function = 0;
+
+          function up_goldenhoe_buy() {
+              if (farmingXP >= up_goldenhoe_cost) {
+                farmingXP = farmingXP - up_goldenhoe_cost;
+                up_goldenhoe_function = up_goldenhoe_function + 0.05;
+                up_goldenhoe_cost = Math.round(up_goldenhoe_cost * 1.75);
+                up_goldenhoe_amt = up_goldenhoe_amt + 1;
+                saveGame();
+                document.getElementById("up_goldenhoe_cost").innerHTML = up_goldenhoe_cost;
+                document.getElementById("up_goldenhoe_function").innerHTML = up_goldenhoe_function;
+                document.getElementById("up_goldenhoe_amt").innerHTML = up_goldenhoe_amt;
+              }
+          }
+        </script>
+      </div>
+
+      <div id="Stats" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+      </div>
+    </div>
+
+    <!-- Random Farming Job Script -->
+    <div>
+      <script>
+        function randomJobFarming() {
+          var farmingJobs = ["Wheat", "Carrots", "Potatoes"];
+          var randomFarmingJob =
+            farmingJobs[Math.floor(Math.random() * farmingJobs.length)];
+          openTab(event, randomFarmingJob);
+        }
+        function randomJobMining() {
+          var miningJobs = ["Stone"];
+          var randomMiningJob =
+            miningJobs[Math.floor(Math.random() * miningJobs.length)];
+          openTab(event, randomMiningJob);
+        }
+      </script>
+    </div>
+
+    <!-- Tab Script -->
+    <div>
+      <script>
+        function openTab(evt, tabName) {
+          // Declare all variables
+          var i, tabcontent, tablinks;
+
+          // Get all elements with class="tabcontent" and hide them
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+
+          // Get all elements with class="tablinks" and remove the class "active"
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(
+              " active",
+              ""
+            );
+          }
+
+          // Show the current tab, and add an "active" class to the button that opened the tab
+          document.getElementById(tabName).style.display = "block";
+        }
+        function loadGame() {
+          var savedGame = JSON.parse(localStorage.getItem("gameSave"));
+          if (typeof savedGame.farmingXP !== "undefined")
+            farmingXP = savedGame.farmingXP;
+          if (typeof savedGame.farmingLevel !== "undefined")
+            farmingLevel = savedGame.farmingLevel;
+          if (typeof savedGame.farmingXPReq !== "undefined")
+            farmingXPReq = savedGame.farmingXPReq;
+          if (typeof savedGame.up_goldenhoe_function !== "undefined")
+            up_goldenhoe_function = savedGame.up_goldenhoe_function;
+          if (typeof savedGame.up_goldenhoe_cost !== "undefined")
+          up_goldenhoe_cost = savedGame.up_goldenhoe_cost;
+          if (typeof savedGame.up_goldenhoe_amt !== "undefined")
+          up_goldenhoe_amt = savedGame.up_goldenhoe_amt;
+        }
+        window.onload = function () {
+          loadGame();
+          document.getElementById("farmingXP").innerHTML = farmingXP;
+          document.getElementById("farmingLevel").innerHTML = farmingLevel;
+          document.getElementById("farmingXPReq").innerHTML = farmingXPReq;
+          document.getElementById("up_goldenhoe_cost").innerHTML = up_goldenhoe_cost;
+          document.getElementById("up_goldenhoe_function").innerHTML = up_goldenhoe_function;
+          document.getElementById("up_goldenhoe_amt").innerHTML = up_goldenhoe_amt;
+        };
+        function saveGame() {
+            var gameSave = {
+              farmingXP: farmingXP,
+              farmingLevel: farmingLevel,
+              farmingXPReq: farmingXPReq,
+              up_goldenhoe_function: up_goldenhoe_function,
+              up_goldenhoe_cost: up_goldenhoe_cost,
+              up_goldenhoe_amt: up_goldenhoe_amt
+            };
+            localStorage.setItem("gameSave", JSON.stringify(gameSave));
+          }
+        document.getElementById("defaultOpen").click();
+      </script>
+    </div>
+  </body>
+</html>
