@@ -1,12 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>BlankMC</title>
+    <meta name="description" content="BlankMC" />
+    <link rel="shortcut icon" href="assets/icon/icon.jpg" />
+    <style>
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      /* Change the link color to #111 (black) on hover */
+      li a:hover {
+        background-color: #111;
+      }
+      body {
+        background-image: url("assets/global/backgrounds/bg1.jpg");
+        background-size: cover;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="games/index.html">Games</a></li>
+    </ul>
   </body>
 </html>

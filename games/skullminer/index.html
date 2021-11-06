@@ -1,0 +1,242 @@
+<html>
+  <head>
+    <link rel="shortcut icon" href="/assets/skullminer/icon/icon.png" />
+    <link rel="stylesheet" href="skullminer.css">
+    <title id="version">
+      Skull Miner
+    </title>
+  </head>
+  <body>
+      <div class="sectionUpgrades unselectable">
+          <table class="Shop" onclick="buyClicker()">
+            <tr>
+              <td id="image">
+                <img src="/assets/skullminer/clickers/clicker.png"/>
+              <td id="upgradeAndCost">
+                <p>Basic Clicker</p>
+                <p><span id="clickerCost">200</span> Skulls</p>
+                <td id="amount"><span id="clickerAmount">0</span>
+                </td>
+              </td>
+              </td>
+            </tr>
+          </table>
+      </div>
+    <div class="sectionLeft">
+      <center>
+        <div class="skullContainer unselectable">
+          <span id="skulls">0</span> <span>Skulls</span><br />
+          <span id="skullspersecond">0</span> <span>SPS</span><br>
+          <span id="skullsperclick">1</span> <span>SPC</span>
+        </div>
+        <br />
+        <div class="clickerContainer unselectable">
+          <img
+            src="/assets/skullminer/skulls/skull.png"
+            height="128"
+            width="128"
+            onclick="addToSkulls(clickingPower)"
+          />
+        </div>
+      </center>
+    </div>
+    <div class="sectionMiner unselectable">
+        <table class="Shop" onclick="buySkullMiner()">
+          <tr>
+            <td id="image">
+              <img src="/assets/skullminer/skulls/skull.png"/>
+            <td id="upgradeAndCost">
+              <p>Basic SkullMiner</p>
+              <p><span id="skullminerCost">15</span> Skulls</p>
+              <td id="amount"><span id="skullminerAmount">0</span>
+              </td>
+            </td>
+            </td>
+          </tr>
+        </table>
+        <table class="Shop" onclick="buyBlueSkullMiner()">
+            <tr>
+              <td id="image">
+                <img src="/assets/skullminer/skulls/blueskull.png"/>
+              <td id="upgradesAndCost">
+                <p>Blue SkullMiner</p>
+                <p><span id="blueskullminerCost">60</span> Skulls</p>
+                <td id="amount"><span id="blueskullminerAmount">0</span>
+                </td>
+              </td>
+              </td>
+            </tr>
+          </table>
+          <table class="Shop" onclick="buyUltraSkullMiner()">
+            <tr>
+              <td id="image">
+                <img src="/assets/skullminer/skulls/ultraskull.png"/>
+              <td id="upgradeAndCost">
+                <p>Ultra SkullMiner</p>
+                <p><span id="ultraskullminerCost">120</span> Skulls</p>
+                <td id="amount"><span id="ultraskullminerAmount">0</span>
+                </td>
+              </td>
+              </td>
+            </tr>
+          </table>
+    </div>
+    <script>
+      var skulls = 0;
+
+      var clickingPower = 1;
+
+      var skullminerCost = 15;
+
+      var skullminerAmount = 0;
+
+      var blueskullminerCost = 60;
+
+      var blueskullminerAmount = 0;
+
+      var ultraskullminerCost = 120;
+
+      var ultraskullminerAmount = 0;
+
+      var clickerCost = 200;
+
+      var clickerAmount = 0;
+
+      var SPS = 0;
+
+      var version = "Skull Miner v0.1.0";
+
+      function buySkullMiner() {
+        if (skulls >= skullminerCost) {
+          skulls = skulls - skullminerCost;
+          skullminerAmount = skullminerAmount + 1;
+          skullminerCost = Math.round(skullminerCost * 1.25);
+
+          document.getElementById("skulls").innerHTML = skulls;
+          document.getElementById("skullminerAmount").innerHTML = skullminerAmount;
+          document.getElementById("skullminerCost").innerHTML = skullminerCost;
+        }
+      }
+      function buyBlueSkullMiner() {
+        if (skulls >= blueskullminerCost) {
+          skulls = skulls - blueskullminerCost;
+          blueskullminerAmount = blueskullminerAmount + 1;
+          blueskullminerCost = Math.round(blueskullminerCost * 1.5);
+
+          document.getElementById("skulls").innerHTML = skulls;
+          document.getElementById("blueskullminerAmount").innerHTML = blueskullminerAmount;
+          document.getElementById("blueskullminerCost").innerHTML = blueskullminerCost;
+        }
+      }
+      function buyUltraSkullMiner() {
+        if (skulls >= ultraskullminerCost) {
+          skulls = skulls - ultraskullminerCost;
+          ultraskullminerAmount = ultraskullminerAmount + 1;
+          ultraskullminerCost = Math.round(ultraskullminerCost * 1.65);
+
+          document.getElementById("skulls").innerHTML = skulls;
+          document.getElementById("ultraskullminerAmount").innerHTML = ultraskullminerAmount;
+          document.getElementById("ultraskullminerCost").innerHTML = ultraskullminerCost;
+        }
+      }
+      function buyClicker() {
+        if (skulls >= clickerCost) {
+          skulls = skulls - clickerCost;
+          clickerAmount = clickerAmount + 1;
+          clickerCost = Math.round(clickerCost * 2.5);
+          clickingPower = clickingPower + 1
+
+          document.getElementById("skulls").innerHTML = skulls;
+          document.getElementById("clickerAmount").innerHTML = clickerAmount;
+          document.getElementById("clickerCost").innerHTML = clickerCost;
+        }
+      }
+      function addToSkulls(amount) {
+        skulls = skulls + amount;
+        document.getElementById("skulls").innerHTML = skulls;
+      }
+      function saveGame() {
+        var gameSave = {
+          skulls: skulls,
+          clickingPower: clickingPower,
+          skullminerCost: skullminerCost,
+          skullminerAmount: skullminerAmount,
+          blueskullminerAmount: blueskullminerAmount,
+          blueskullminerCost: blueskullminerCost,
+          ultraskullminerAmount: ultraskullminerAmount,
+          ultraskullminerCost: ultraskullminerCost,
+          clickerAmount: clickerAmount,
+          clickerCost: clickerCost
+        }
+        localStorage.setItem("gameSave", JSON.stringify(gameSave));
+      }
+      function loadGame() {
+        var savedGame = JSON.parse(localStorage.getItem("gameSave"));
+        if (typeof savedGame.skulls !== "undefined") skulls = savedGame.skulls;
+        if (typeof savedGame.clickingPower !== "undefined") clickingPower = savedGame.clickingPower;
+        if (typeof savedGame.skullminerCost !== "undefined") skullminerCost = savedGame.skullminerCost;
+        if (typeof savedGame.skullminerAmount !== "undefined") skullminerAmount = savedGame.skullminerAmount;
+        if (typeof savedGame.blueskullminerCost !== "undefined") blueskullminerCost = savedGame.blueskullminerCost;
+        if (typeof savedGame.blueskullminerAmount !== "undefined") blueskullminerAmount = savedGame.blueskullminerAmount;
+        if (typeof savedGame.ultraskullminerCost !== "undefined") ultraskullminerCost = savedGame.ultraskullminerCost;
+        if (typeof savedGame.ultraskullminerAmount !== "undefined") ultraskullminerAmount = savedGame.ultraskullminerAmount;
+        if (typeof savedGame.clickerCost !== "undefined") clickerCost = savedGame.clickerCost;
+        if (typeof savedGame.clickerAmount !== "undefined") clickerAmount = savedGame.clickerAmount;
+      }
+      function resetGame() {
+        if (confirm("Do you wanna reset?")) {
+          var gameSave = {};
+          LocalStorage.setItem("gameSave", JSON.stringify(gameSave));
+          location.reload();
+        }
+      }
+      window.onload = function() {
+        loadGame();
+        document.getElementById("skulls").innerHTML = skulls;
+        document.getElementById("skullminerCost").innerHTML = SPS;
+        document.getElementById("skullminerAmount").innerHTML = skullminerAmount;
+        document.getElementById("skullminerCost").innerHTML = skullminerCost;
+        document.getElementById("blueskullminerAmount").innerHTML = blueskullminerAmount;
+        document.getElementById("blueskullminerCost").innerHTML = blueskullminerCost;
+        document.getElementById("ultraskullminerAmount").innerHTML = ultraskullminerAmount;
+        document.getElementById("ultraskullminerCost").innerHTML = ultraskullminerCost;
+        document.getElementById("clickerAmount").innerHTML = clickerAmount;
+        document.getElementById("clickerCost").innerHTML = clickerCost;
+        document.getElementById("version").innerHTML = version;
+      };
+      document.body.addEventListener("keydown", function(event) {
+    if (event.keyCode == 83) {
+        alert("Saved Game!");
+        saveGame();
+    }
+});
+      document.body.addEventListener("keydown", function(event) {
+    if (event.keyCode == 76) {
+        alert("Loaded Game!");
+        loadGame();
+    }
+});
+document.body.addEventListener("keydown", function(event) {
+    if (event.keyCode == 82) {
+        resetGame();
+        alert("Reset Game!")
+    }
+});
+document.body.addEventListener("keydown", function(event) {
+    if (event.keyCode == 32) {
+        addToSkulls(clickingPower);
+    }
+});
+      setInterval(function () {
+        skulls = skulls + skullminerAmount + blueskullminerAmount * 3 + ultraskullminerAmount * 7
+        document.getElementById("skulls").innerHTML = skulls;
+        SPS = skullminerAmount + blueskullminerAmount * 3 + ultraskullminerAmount * 7;
+        document.getElementById("skullspersecond").innerHTML = SPS;
+        document.getElementById("skullsperclick").innerHTML = clickingPower;
+      }, 1000); // 1000ms = 1 second
+      setInterval(function() {
+        saveGame();
+      }, 30000); // 30 seconds
+    </script>
+  </body>
+</html>
