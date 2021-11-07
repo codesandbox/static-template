@@ -1,12 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>MarKup Portfolio</title>
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <body class="bg-primary">
+    <nav
+      id="navbar"
+      class="navbar navbar-expand-lg navbar-light bg-secondary fixed-top"
+    >
+      <div class="container-fluid container">
+        <a class="navbar-brand" href="#">MK</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- <div class="flex-fill">
+          <a class="navbar-brand fw-bolder" href="#">MK</a>
+        </div> -->
+
+          <ul class="navbar-nav d-flex align-items-center w-100">
+            <!-- <li class="nav-item fw-bolder">
+            <a class="navbar-brand" href="#">MK</a>
+          </li> -->
+            <li class="flex-fill"></li>
+            <li class="nav-item px-3 mx-2">
+              <a class="nav-link text-dark" href="#welcome-section"
+                ><i class="fas fa-home fa-lg"></i> Home</a
+              >
+            </li>
+            <li class="nav-item px-3 mx-2">
+              <a class="nav-link text-dark" href="#projects"
+                ><i class="fas fa-briefcase fa-lg"></i> Projects</a
+              >
+            </li>
+            <li class="nav-item px-3 mx-2">
+              <a class="nav-link text-dark" href="#contact"
+                ><i class="fas fa-envelope fa-lg"></i> Contact</a
+              >
+            </li>
+            <li class="flex-fill"></li>
+            <li class="nav-item">
+              <a
+                id="profile-link"
+                class="nav-link text-dark"
+                href="https://github.com/MartynasKupsys?tab=repositories"
+                target="_blank"
+                ><i class="fab fa-github fa-lg"></i> GitHub</a
+              >
+            </li>
+          </ul>
+          <!-- <div class="flex-fill">GitHub</div> -->
+        </div>
+      </div>
+    </nav>
+    <!-- <header class="container">
+    <h1>Hello World 2</h1>
+
+  </header> -->
+    <section
+      id="welcome-section"
+      class="container min-vh-100 d-flex align-items-center"
+    >
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 text-center p-5">
+          <img
+            class="img-fluid w-75 border border-dark rounded-3"
+            src="./img/martynas.jpg"
+            alt=""
+          />
+        </div>
+        <div class="col-12 col-md-6 p-3">
+          <h1 class="fw-bolder">
+            Hi I'm Martynas and welcome to my portfolio. I'm a junior
+            <span class="bg-light rounded-3">Front-End</span> web developer
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container min-vh-100 pt-5">
+      <h2 class="py-3 fw-bolder text-center">Projects</h2>
+      <div class="row g-2 g-md-3">
+        <div class="col-sm-12 col-md-4">
+          <div
+            class="d-flex flex-column align-items-center border border-dark bg-light rounded-3 project-tile fadeInRight"
+          >
+            <div class="project-1">
+              <img
+                src=""
+                alt=""
+                class="img-fluid rounded-top"
+                srcset="https://screenshots.codesandbox.io/fj87c/10.png"
+              />
+            </div>
+            <div class="mt-3 text-center">
+              <p>Tribute Page</p>
+              <p>
+                <a href="https://fj87c.csb.app/" class="btn btn-success"
+                  >Please visit</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4">
+          <div
+            class="d-flex flex-column align-items-center border border-dark bg-light rounded-3 project-tile fadeInTop"
+          >
+            <div class="project-2">
+              <img
+                src=""
+                alt=""
+                class="img-fluid rounded-top"
+                srcset="https://screenshots.codesandbox.io/gjs10/46.png"
+              />
+            </div>
+            <div class="mt-3 text-center">
+              <p>Survey Form</p>
+              <p>
+                <a href="https://gjs10.csb.app/" class="btn btn-success"
+                  >Please visit</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4">
+          <div
+            class="d-flex flex-column align-items-center border border-dark bg-light rounded-3 project-tile fadeInLeft"
+          >
+            <div class="project-3">
+              <img
+                src=""
+                alt=""
+                class="img-fluid rounded-3 rounded-top"
+                srcset="https://screenshots.codesandbox.io/5voix/78.png"
+              />
+            </div>
+            <div class="mt-3 text-center">
+              <p>Product Landing Page</p>
+              <p>
+                <a href="https://5voix.csb.app/" class="btn btn-success"
+                  >Please visit</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4">
+          <div
+            class="d-flex flex-column align-items-center border border-dark bg-light rounded-3 project-tile fadeInRight"
+          >
+            <div class="project-4">
+              <img
+                src=""
+                alt=""
+                class="img-fluid rounded-top"
+                srcset="https://screenshots.codesandbox.io/sglj7/16.png"
+              />
+            </div>
+            <div class="mt-3 text-center">
+              <p>Technical Documentation Page</p>
+              <p>
+                <a href="https://sglj7.csb.app/" class="btn btn-success"
+                  >Please visit</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4">
+          <div
+            class="d-flex flex-column align-items-center border border-dark bg-light rounded-3 project-tile"
+          >
+            <div class="project-5">
+              <img
+                src=""
+                alt=""
+                class="img-fluid rounded-top bg-info"
+                srcset=""
+              />
+            </div>
+            <div class="mt-3 text-center">
+              <p>Not created yet</p>
+              <p>
+                <a href="#" class="btn btn-success disabled">Coming Soon</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4">
+          <div
+            class="d-flex flex-column align-items-center border border-dark bg-light rounded-3 project-tile"
+          >
+            <div class="project-6">
+              <img
+                src=""
+                alt=""
+                class="img-fluid rounded-top bg-info"
+                srcset=""
+              />
+            </div>
+            <div class="mt-3 text-center">
+              <p>Not created yet</p>
+              <p>
+                <a href="#" class="btn btn-success disabled">Coming Soon</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="contact"
+      class="container d-flex flex-column align-items-center justify-content-center py-5"
+    >
+      <div class="col-12 col-md-6">
+        <h2 class="py-3 fw-bolder text-center">Contact</h2>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control bg-light"
+            id="exampleFormControlInput1"
+            placeholder="name@example.com"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label"
+            >Example textarea</label
+          >
+          <textarea
+            class="form-control bg-light"
+            id="exampleFormControlTextarea1"
+            rows="3"
+          ></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   </body>
 </html>
