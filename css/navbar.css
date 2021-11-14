@@ -1,0 +1,46 @@
+#navbar.navbar {
+  padding: 20px 0;
+  background-color: #4bca6d;
+  min-width: 100%;
+  z-index: 1055;
+}
+
+#navbar.navbar a {
+  font-weight: bolder;
+  color: rgb(202, 75, 168);
+  cursor: pointer;
+}
+
+#navbar.navbar a:hover {
+  color: #202020;
+}
+
+#navbar .container {
+  max-width: fit-content !important;
+}
+
+.diagonal::before,
+.diagonal::after {
+  position: fixed;
+  content: "";
+  pointer-events: none;
+}
+
+.diagonal {
+  z-index: 1045;
+  background: #4bca6d;
+  position: fixed;
+}
+
+.diagonal::before,
+.diagonal::after {
+  top: 75px;
+  z-index: 1051;
+  width: 100%;
+  height: 50px;
+  background: inherit;
+  -webkit-transform: rotate(-1deg);
+  transform: rotate(-1deg);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
