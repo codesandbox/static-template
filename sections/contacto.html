@@ -1,0 +1,87 @@
+<div class="container py-4" id="contacto">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <form id="contactForm" class="needs-validation">
+        <div class="mb-3">
+          <label class="form-label" for="name">Nombre</label>
+          <input
+            class="form-control"
+            id="name"
+            type="text"
+            placeholder="Tu nombre"
+            minlength="1"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="emailAddress"
+            >Direccion de correo</label
+          >
+          <input
+            class="form-control"
+            id="emailAddress"
+            type="email"
+            minlength="5"
+            placeholder="tu@email.com"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="message">Mensaje</label>
+          <textarea
+            class="form-control"
+            id="message"
+            type="text"
+            minlength="10"
+            placeholder="Dejanos tu mensaje acá..."
+            style="height: 10rem;"
+            required
+          ></textarea>
+          <div class="valid-tooltip">
+            Gracias por sus mensajes!
+          </div>
+          <div class="invalid-tooltip">
+            Por favor, escribi algo!
+          </div>
+        </div>
+
+        <div class="d-grid">
+          <button class="btn btn-primary btn-lg" type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div
+    class="modal fade"
+    id="confirmacionContacto"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Gracias por escribirnos
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          Gracias, nos vamos a poner en contacto. O no....
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-primary" href="/inicio" role="button"
+            >Volver al inicio</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
