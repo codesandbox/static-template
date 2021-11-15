@@ -1,0 +1,39 @@
+
+.container {
+  /* border : 2px solid black; */
+  display: grid;
+  grid-template-columns: 200px 300px 200px;
+ 
+  grid-gap: 5px;
+  /* grid-template-areas: 'areaName areaName areaName areaName'; */
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.t {
+  padding: 40px;
+  background: #f14668;
+  text-align: center;
+  font-size: 32px;
+  border-radius: 10px;
+}
+.container > div:nth-child(odd) {
+  background: #ffd880;
+}
+.one{
+  grid-column: 1/4;
+  /* grid-area: areaName; */
+}
+.three {
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+}
+
+.five {
+  grid-row: 3 / 5;
+}
+.seven {
+  grid-column: 2 / 4;
+}
