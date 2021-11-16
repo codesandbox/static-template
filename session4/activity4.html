@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Activity 4</title>
+    <!-- internal link to stylesheet -->
+    <style>
+      main {
+        background-color: red;
+      }
+      .main#main {
+        background-color: blue;
+        color: chocolate;
+      }
+
+      .main {
+        background-color: blue;
+        color: pink;
+      }
+
+      #main {
+        background-color: green;
+        color: yellow;
+      }
+      .parent {
+        color: steelblue;
+        background-color: lightcyan;
+        /* these dont get passed along to the child*/
+        padding: 1px;
+        margin: 1px;
+      }
+
+      .grand-parent {
+        color: red;
+        background-color: yellow;
+
+        /* height is not something that html inherits like in humans!  */
+        height: 256px;
+
+        /* these dont get passed along to the child*/
+        padding: 1px;
+        margin: 1px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- concept of css specificity! -->
+
+    <main>
+      <p>This is a para inside child</p>
+    </main>
+
+    <!-- not all main styling is being applied from the element style definition -->
+
+    <main class="main" id="main">
+      <p>This is a para inside child</p>
+    </main>
+    <main id="main">
+      <p>This is a para inside child</p>
+    </main>
+    <main class="main">
+      <p>This is a para inside child</p>
+    </main>
+
+    <!--  inheritance -- the closest inheritance's styling applies only during a conflict situation! (style/color of
+    text flows from parent top element to the child )  -->
+
+    <section class="parent">
+      <div class="child">
+        <!-- block element take all the available width provided by the parents ( its not inheritance ) -->
+
+        <p>This is a para inside child</p>
+      </div>
+    </section>
+    <br />
+    <section class="grand-parent">
+      GrandParent Section
+      <section class="parent">
+        <div class="child">
+          <p>This is a para inside child</p>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>
