@@ -1,12 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--estilos claro-->
+    <link
+      rel="stylesheet"
+      href="https://www.clarochile.cl/portal/recursos_estaticos_claro/claro/css/styles.css"
+    />
+    <!--base-->
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <!--card movil-->
+    <link rel="stylesheet" href="./assets/css/cards.css" />
+
+    <title>Cambiate a claro</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!--navigation-->
+    <div class="header-landing">
+      <a href="#"><img src="./assets/img/logo-claro.png" alt="" /></a>
+      <a class="phone" href="tel:6000830030"
+        >Comunicate con nosotros 600 083 0030</a
+      >
+    </div>
+    <!--hero landing-->
+    <div
+      class="hero-landing"
+      style="
+        background: url('./assets/img/bg-hero-landing.jpg') no-repeat center
+          center;
+      "
+    >
+      <img src="./assets/img/img-landing.png" alt="" />
+    </div>
+
+    <!--tabs buttons-->
+
+    <ul class="tabs">
+      <li class="tabsbutton active-tab" data-tab-id="tab1">Planes Móviles</li>
+      <li class="tabsbutton" data-tab-id="tab2">Planes con Equipo</li>
+      <li class="tabsbutton" data-tab-id="tab3">Planes Hogar</li>
+    </ul>
+
+    <!--tabs content-->
+    <div class="content-section-tabs">
+      <div id="tab1" class="tab-content active-tab-content active">
+        <div class="content-tab">
+          <h2>
+            Si quieres sólo contratar un plan,
+            <strong>tenemos estas ofertas para ti</strong>
+          </h2>
+        </div>
+        <!--container planes moviles-->
+        <div id="planes-moviles" class="content-planes"></div>
+        <!--container planes moviles-->
+      </div>
+      <div id="tab2" class="tab-content">
+        <div class="content-tab">
+          <h2>
+            Pórtate y Aprovecha las ofertas con hasta en
+            <strong>24 Cuotas precio contado</strong>
+          </h2>
+        </div>
+        <!--container planes moviles-->
+        <div id="equipos" class="content-planes"></div>
+        <!--container planes moviles-->
+      </div>
+      <div id="tab3" class="tab-content">
+        <div class="content-tab">
+          <h2>
+            Aprovecha los planes de
+            <strong>Internet y Televisión Hogar</strong> con la mejor velocidad
+            y programación para ti.​
+          </h2>
+        </div>
+        <!--container planes moviles-->
+        <div id="hogar" class="content-planes"></div>
+        <!--container planes moviles-->
+      </div>
+    </div>
+
+    <script src="./assets/js/tabs.js"></script>
+    <script src="./assets/js/fetch.js"></script>
+    <script src="./assets/js/card-ver-detalle.js"></script>
   </body>
 </html>
