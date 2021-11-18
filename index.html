@@ -1,12 +1,122 @@
+t .
+<colgroup></colgroup>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <style>
+      /* div {
+        border: 2px solid #000;
+        margin: 5px;
+        color: #fff;
+        box-sizing: border-box;
+      } */
+
+      .box {
+        background-color: red;
+      }
+
+      .fifty-percent {
+        width: 50%; /* relative unit it will take upper level element as parent */
+      }
+
+      .hundred-pixels {
+        width: 150px; /* absolute unit it will take document as parent */
+      }
+
+      .vw {
+        width: 50vw;
+      }
+
+      .vh {
+        height: 30vh;
+      }
+
+      .parent {
+        border: 2px solid #000;
+        width: 100px;
+        font-size: 30px;
+      }
+
+      .one-rem {
+        font-size: 1rem;
+      }
+
+      .one-em {
+        font-size: 1em;
+      }
+
+      .two-rem {
+        font-size: 2rem;
+      }
+
+      .two-em {
+        font-size: 2em;
+      }
+
+      .twohundred-percent {
+        font-size: 200%;
+      }
+      .icon {
+        background-color: red;
+      }
+
+      .em-icon {
+        width: 1em;
+        height: 1em;
+      }
+
+      .rem-icon {
+        width: 1rem;
+        height: 1rem;
+      }
+
+      .icon-container.large {
+        font-size: 30px;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!-- <div class="box fifty-percent">50%</div> -->
+    <!-- <div class="box hundred-pixels">100px</div> -->
+    <!-- <div class="box vw">50vw</div>
+    <div class="box vh">50vh</div> -->
+    <div class="one-rem">1rem</div>
+    <div class="one-em">1em</div>
+    <div class="two-rem">2rem</div>
+    <div class="two-em">2em</div>
+    <div class="twohundred-percent">200percent</div>
+    <hr />
+    <div class="parent">
+      <!-- <div class="box fifty-percent">50%</div> -->
+      <!-- <div class="box hundred-pixels">100px</div> -->
+      <!-- <div class="box vw">50vw</div>
+      <div class="box vh">50vh</div> -->
+      <div class="one-rem">1rem</div>
+      <div class="one-em">1em</div>
+      <div class="two-rem">2rem</div>
+      <div class="two-em">2em</div>
+      <div class="twohundred-percent">200percent</div>
+    </div>
+    <hr />
+    <div class="icon-container">
+      <div class="icon rem-icon"></div>
+      <span class="icon-text">1rem icon</span>
+    </div>
+    <div class="icon-container">
+      <div class="icon em-icon"></div>
+      <span class="icon-text">1em icon</span>
+    </div>
+    <div class="icon-container large">
+      <div class="icon rem-icon"></div>
+      <span class="icon-text">1rem icon</span>
+    </div>
+    <div class="icon-container large">
+      <div class="icon em-icon"></div>
+      <span class="icon-text">1em icon</span>
+    </div>
   </body>
 </html>
