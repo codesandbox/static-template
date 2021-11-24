@@ -1,12 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    
+    <!-- Compiled and minified JavaScript -->
+
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+    <header class="header">
+    
+      <nav>
+        <div class="nav-wrapper teal darken-3">
+            <a href="#" class="brand-logo left">Dog Framework <i class="material-icons">adb</i> </a>  
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+        </div>
+      </nav>
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      
+    </header>
+<main>
+  <div class="container">
+    <div class="row">
+        <article>
+            <div class="col s12 orange lighten-5 hoverable">
+                <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+                    <a class="btn-floating btn-large red">
+                      <i class="large material-icons">mode_edit</i>
+                    </a>
+                    <ul>
+                      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+                      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+                      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+                      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+                    </ul>
+                  </div>
+              <h1 class="center pink-text lighten-1">Hello world!</h1>
+              <p class="blue-text center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae hic possimus dolore ratione molestias tempora at quidem asperiores, ea saepe!
+                <br>
+                <img
+                  src="https://post.healthline.com/wp-content/uploads/2020/08/3180-Pug_green_grass-732x549-thumbnail-732x549.jpg"
+                  alt="Pug photo"
+                  class="responsive-img circle z-depth-4"
+                />
+              </p>
+              <blockquote>
+                This is an example quotation that uses the blockquote tag.
+              </blockquote>
+              <a class="col s12 waves-effect waves-light btn btn-large">Get started</a>
+            </div>
+      </article>
+      
+      <article>
+          <div class="col s6 orange lighten-5">
+           
+          </div>
+        </div>  
+      </div>
+    </article>
+    <section>
+        <div class="carousel">
+            <a class="carousel-item" href="#one!"><img src="https://cdn.cnn.com/cnnnext/dam/assets/201030094143-stock-rhodesian-ridgeback-super-tease.jpg"></a>
+            <a class="carousel-item" href="#two!"><img src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg"></a>
+            <a class="carousel-item" href="#three!"><img src="https://images.news18.com/ibnlive/uploads/2021/08/1628056310_dogdrinking-1200x800.png"></a>
+            <a class="carousel-item" href="#four!"><img src="https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg?_=42445"></a>
+            <a class="carousel-item" href="#five!"><img src="https://www.gannett-cdn.com/-mm-/675ba115506e09d3d7e32d07055fdcb503ebe995/c=0-2-1272-718/local/-/media/2020/05/28/USATODAY/usatsports/Reviewed.com-RvEW-24856-lead.jpg"></a>
+          </div>
+      <div class="container">
+          <div class="input-field col s12">
+              <i class="material-icons prefix">comment</i>
+              <input type="text" id="autocomplete-input" class="autocomplete">
+              <label for="autocomplete-input" class="pink-text">About dogs</label>
+            </div>
+      </div>
+    </section>
+    <div class="card">
+      <div class="card-content">
+        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+      </div>
+      <div class="card-tabs">
+        <ul class="tabs tabs-fixed-width pink">
+          <li class="tab hoverable blue"><a href="#test4" class="white-text">Länk med hover effekt</a></li>
+          <li class="tab hoverable green"><a class="active black-text" href="#test5">Länk 2 med hover effekt</a></li>
+          <li class="tab hoverable"><a href="#test6" class="yellow-text">Länk 3 med hover effekt</a></li>
+        </ul>
+      </div>
+      <div class="card-content grey lighten-4">
+        <div class="waves-effect waves-orange btn hoverable" id="test4"><i class="material-icons left">cloud</i>Moln</div>
+        <div class="waves-effect waves-red btn"id="test5">wave effect</div>
+        <div class="waves-effect waves-light btn"id="test6">Test 3</div>
+      </div>
+      
+  <!-- Switch -->
+  <div class="switch blue">
+    <label>
+      Off
+      <input type="checkbox" >
+      <span class="lever yellow"></span>
+      On
+    </label>
+  </div>
+
+  <!-- Disabled Switch -->
+  <div class="switch red">
+    <label>
+      Off
+      <input disabled type="checkbox">
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+    </div>
+
+    <div class="collection">
+        <a href="#!" class="collection-item"><span class="badge">1</span>Pug1</a>
+        <a href="#!" class="collection-item"><span class="new badge">4</span>Pug2</a>
+        <a href="#!" class="collection-item">Pug3</a>
+        <a href="#!" class="collection-item"><span class="badge">14</span>Pug4</a>
+      </div>
+    
+    <h2>Learn today!</h2>
+    <article class="row">
+        <div class="col s12 m3">
+            <div class="card">
+              <div class="card-image">
+                <img src="https://lh3.googleusercontent.com/proxy/fNqkcuHiWY3dKBq9ObZqnzX_qhfevcyFjsWirVNIK5OrXwSla0EhtjDDo8xY9GgZmHRSCGoo7EmbIzLDMYyq8cRav3EbB548tZEvQ-D2SwXyIzoZzHgUp6rIYBHBseQ1mfEtqDWXBukDtnWFMg">
+              </div>
+              <div class="card-content">
+                <p>Documentation</p>
+              </div>
+              <div class="card-action">
+                <a href="https://materializecss.com/">Click Me</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m3">
+              <div class="card">
+                <div class="card-image">
+                  <img src="https://test.techbriefly.com/wp-content/uploads/sites/4/2021/10/ytb11ss.jpeg">
+                </div>
+                <div class="card-content">
+                  <p>Youtube tutorial</p>
+                </div>
+                <div class="card-action">
+                  <a href="https://www.youtube.com/watch?v=xiXRQginKH0">Click Me</a>
+                </div>
+              </div>
+            </div>
+    </article>
+    <div class="progress">
+        <div class="indeterminate"></div>
+    </div>
+    
+    </main>
+    <footer class="page-footer teal darken-3">
+        <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">The Amazing Footer</h5>
+                <p class="grey-text text-lighten-4">This is the best website ever! Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi repellat esse nesciunt molestias fugiat officiis odio enim. Cumque, corporis eius?</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Have a good life</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Location</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Sign in</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+      
+    </footer>
+<!-- Compiled and minified JavaScript -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+M.AutoInit();
+</script>
+<script src="index.js"></script>
+</body>
 </html>
