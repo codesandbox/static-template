@@ -1,0 +1,277 @@
+body {
+  background: #000
+    url("https://i.ibb.co/zn3DWps/2560px-Red-rose-with-black-background.jpg");
+  margin: 0;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100%;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+#btn_yes {
+  display: none;
+  font-size: 34px;
+  color: #ffffff;
+  height: 40px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  font-family: Caveat;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #00000017;
+  border: none;
+  transition: 3s;
+  animation: ease;
+}
+.text__1 {
+  font-size: 34px;
+  color: #ffffff;
+  height: 40px;
+  position: absolute;
+  top: calc(30% - 40px);
+  left: 0px;
+  width: 100%;
+  font-family: Caveat;
+  text-align: center;
+}
+
+.video {
+  position: absolute;
+}
+
+.move__bg {
+}
+/*.video-background {
+  background: #000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -99;
+}
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#vidtop-content {
+  top: 0;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground {
+    height: 300%;
+    top: -100%;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground {
+    width: 375%;
+    left: -142%;
+  }
+}
+*/
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: table;
+}
+div {
+  font-size: 24px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: Caveat;
+  color: #bfe2ff;
+  display: table-cell;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 14px;
+  font-family: calibri;
+  --bg: #ebebeb;
+  --black: #333;
+  --prog: #a4b7be;
+}
+
+a {
+  text-decoration: none;
+}
+.flex {
+  display: flex;
+}
+.player {
+  margin: 2rem auto;
+  padding: 3rem 1.25rem;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 0px;
+  margin-top: auto;
+  position: absolute;
+  bottom: 0px;
+  opacity: 0;
+}
+
+.header {
+  height: 40px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.header > .button {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  color: var(--black);
+  background: linear-gradient(145deg, #fbfbfb, #d4d4d4);
+  border-radius: 6px;
+  box-shadow: 4px 4px 7px #ccc, -4px -4px 7px #fff;
+}
+
+.header > p {
+  text-align: center;
+}
+
+.art {
+  display: block;
+  width: 175px;
+  height: 175px;
+  margin: 1rem auto;
+  border-radius: 50%;
+  animation: rolling-disk 7s 0.25s linear infinite;
+}
+
+@keyframes rolling-disk {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.info {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.info h1 {
+  color: #930004;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.info p {
+  font-size: 24px;
+  color: #fff;
+}
+
+.prog {
+  padding: 10px 0;
+}
+
+.prog-time {
+  padding: 3px 5px;
+  color: var(--prog);
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.prog-time > p {
+  font-size: 0.65rem;
+}
+
+.prog-bar {
+  width: 100%;
+  height: 10px;
+  padding: 1px;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #fbfbfb, #d4d4d4);
+  box-shadow: 5px 5px 10px #a5a5a5, -5px -5px 10px #fff;
+}
+
+.prog-bar-inner {
+  height: 8px;
+  background: var(--prog);
+  border-radius: 25px;
+  animation: timer 212s linear 0.1s;
+}
+
+@keyframes timer {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.buttons {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  color: var(--prog);
+  border-radius: 50%;
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 10px #d4d4d4, -5px -5px 10px #fff;
+}
+
+.button-sm {
+  width: 2rem;
+  height: 2rem;
+  opacity: 0.75;
+}
+
+.button-md {
+  width: 2.5rem;
+  height: 2.5rem;
+  opacity: 0.85;
+}
+
+.button-lg {
+  width: 3.25rem;
+  height: 3.25rem;
+  opacity: 0.9;
+}
+
+.bar {
+  width: 50%;
+  height: 2px;
+  margin: auto;
+  background: var(--prog);
+  border-radius: 25px;
+  position: absolute;
+  left: 25%;
+  bottom: 1rem;
+}
