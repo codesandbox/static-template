@@ -1,0 +1,44 @@
+.menu {
+  margin: 1rem;
+  width: fit-content;
+  padding: 4px;
+  /* ensures cursor changes from an arrow to a hand */
+  cursor: pointer;
+}
+
+.dot {
+  margin-bottom: 4px;
+  background-color: #424242;
+  width: 1rem;
+  height: 1rem;
+  /* anything >50% is a circle */
+  border-radius: 50%;
+}
+
+.square {
+  margin-bottom: 4px;
+  background-color: #424242;
+  width: 1rem;
+  height: 1rem;
+}
+
+.rect {
+  margin-bottom: 4px;
+  background-color: #424242;
+  width: 2.5rem;
+  height: 0.5rem;
+}
+
+/* ensures no margin is applied to the last element of the menu icon */
+.dot:last-child,
+.square:last-child,
+.rect:last-child {
+  /* this is the same as 0px; */
+  margin-bottom: 0;
+}
+
+.menu:hover .dot,
+.menu:hover .square,
+.menu:hover .rect {
+  background-color: rgba(68, 240, 76, 0.4);
+}
