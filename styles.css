@@ -1,0 +1,29 @@
+#canvas-container {
+  position: relative;
+  width: 500px;
+  height: 800px;
+  box-shadow: 0 0 5px 1px black;
+  margin: 10px auto;
+  border: 5px solid transparent;
+}
+#canvas-container.over {
+  border: 5px dashed cyan;
+}
+#images img.img_dragging {
+  opacity: 0.4;
+}
+/* 
+Styles below based on  http://www.html5rocks.com/en/tutorials/dnd/basics/ 
+*/
+
+/* Prevent the text contents of draggable elements from being selectable. */
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+  cursor: move;
+}
