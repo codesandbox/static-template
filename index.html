@@ -1,12 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ANYA GOMES</title>
+    <style>
+      body {
+        background: gray;
+      }
+
+      .titulo {
+        background: red;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 35px;
+        text-align: center;
+      }
+      .trabalho {
+        font-size: 20px;
+        background: green;
+        border-radius: 15px;
+        margin: 15px;
+        margin-bottom: -5px;
+        font-style: italic;
+        border: 5px solid green;
+      }
+      .site {
+        font-size: 25px;
+        padding: 25px;
+        margin-top: 0;
+      }
+      .botao {
+        background: black;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 20px;
+        color: white;
+        padding: 15px;
+        border-radius: 35px;
+        margin: 10px;
+        margin-top: 50px;
+        margin-bottom: 0;
+        text-align: center;
+      }
+      h1 {
+        margin: 0;
+      }
+      h2 {
+        margin: 0;
+      }
+      h3 {
+        margin: 5px;
+        padding: 0;
+      }
+      img {
+        width: 500px;
+        float: right;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="titulo">
+      <h1>Engenheira Anya Gomes</h1>
+      <h2>TRABALHANDO COM BIM</h2>
+    </div>
+
+    <div>
+      <p><h2> Selecione qual serviço você está precisando ou queira mais informações</h2></p> 
+    </div>
+
+    <div id="projetos" class="trabalho" onclick="escolherProjetos()">
+      <h3>Elaboração de projetos de instalações</h3>
+    </div>
+    
+    <div id="tour" class="trabalho" onclick="escolherTour()">
+      <p><h3>Tour 360º</h3></p>
+    </div>
+    
+    <div id="renders" class="trabalho" onclick="escolherRenders()">
+      <p><h3>Renders</h3></p>
+    </div>
+
+    <div id="RAV" class="trabalho" onclick="escolherRAV()">
+      <h3>Realidade Aumentada e Realidade Virtual</h3>
+    </div>
+
+    <div class="botao" onclick="finalizar()" >
+        ORÇAMENTO
+    </div>
+
+    <div class="site">
+      <a href="https://www.instagram.com/engenheira.anyagomes/">
+        <strong>Clique aqui para ir ao meu INSTAGRAM</strong>
+          <img
+          src="https://media-exp1.licdn.com/dms/image/C4E1BAQHbWPzptL6xqw/company-background_10000/0/1561570958096?e=2159024400&v=beta&t=LZqKNtFtCicE1JQi5XDY83r9zEdColyLDAVKt4N8HeQ"
+        </a>
+    </div>
+
+    <script> 
+    let servico;
+    function escolherProjetos()  {
+      document.getElementById("projetos").style.borderColor = "white";
+      document.getElementById("tour").style.borderColor = "green";
+      document.getElementById("renders").style.borderColor = "green";
+      document.getElementById("RAV").style.borderColor = "green";
+      servico= "Projetos de Instalações";
+    }
+    function escolherTour()  {
+      document.getElementById("projetos").style.borderColor = "green";
+      document.getElementById("tour").style.borderColor = "white";
+      document.getElementById("renders").style.borderColor = "green";
+      document.getElementById("RAV").style.borderColor = "green";
+      servico= "Tour 360º";
+    }
+    function escolherRenders()  {
+      document.getElementById("projetos").style.borderColor = "green";
+      document.getElementById("tour").style.borderColor = "green";
+      document.getElementById("renders").style.borderColor = "white";
+      document.getElementById("RAV").style.borderColor = "green";
+      servico= "Renders";
+    }
+    function escolherRAV()  {
+      document.getElementById("projetos").style.borderColor = "green";
+      document.getElementById("tour").style.borderColor = "green";
+      document.getElementById("renders").style.borderColor = "green";
+      document.getElementById("RAV").style.borderColor = "white";
+      servico= "Realidade Aumentada e Virtual";
+    }
+
+    function finalizar()  {
+      let mensagem;
+      mensagem = "Olá, gostaria de saber mais sobre " + servico + "!";
+      window.open ("https://wa.me/+5588999270186?text=" + mensagem);
+    }
+    </script>
   </body>
 </html>
