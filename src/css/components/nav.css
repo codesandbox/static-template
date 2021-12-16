@@ -1,0 +1,100 @@
+/*Nav erscheinen und verschwinden lassen*/
+
+/* Burger menu */
+.topnav {
+  overflow: hidden;
+  background-color: black;
+  position: relative;
+}
+.topnav #myLinks {
+  display: none;
+}
+.topnav a {
+  color: white;
+  background-color: rgb(53, 53, 53);
+  padding: 10px;
+  padding-bottom: 25px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+.topnav a.icon {
+  background: rgb(53, 53, 53);
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.topnav a.icon a:hover {
+  background-color: lightgrey;
+  color: black;
+}
+.active {
+  background-color: darkgrey;
+  color: white;
+}
+
+/* Button Text Weiterlesen */
+.collapsible {
+  background-color: darkgray;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  marging-top: 0.5em;
+}
+.active,
+.collapsible:hover {
+  background-color: #ccc;
+}
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.topnav {
+  display: none;
+}
+.menu {
+  display: block;
+}
+
+@media screen and (max-width: 750px) {
+  .topnav {
+    display: block;
+  }
+  .menu {
+    display: none;
+  }
+}
+
+/*NAVI styling*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
