@@ -1,0 +1,54 @@
+/* Creamos un UL, con width automático , con list-style-type: none, 
+para que no aparezca la lista con puntos, y con color de fondo marrón */
+ul {
+  list-style-type: none;
+  margin: auto;
+  padding: 2%;
+  width: auto;
+  background-color: #9b4922;
+}
+/* Creamos un elemento li, con un 2% de padding para que sea más grande cada botón del menú, 
+y alineación del texto centrada para que esté en el centro*/
+li {
+  padding: 2%;
+}
+/*Definimos un color blanco para las letras de los enlaces de la lista, 
+y text-decoration:none para que no aparezcan los enlaces subrayados*/
+li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Cuando se pasa el ratón por encima de li, 
+cambia el color de fondo a verde */
+li:hover {
+  background-color: #b69467;
+}
+
+nav {
+  width: auto;
+  position: relative;
+  text-align: center;
+}
+
+/*Cuando el tamaño de pantalla es mayor a 600px 
+(es decir, en escritorio, cambio el diseño a que se muestre la lista en lugar de en vertical, 
+en horizontal, utilizando display:inline que indica que en lugar de mostrar la lista en horizontal, se muestra en vertical)*/
+@media screen and (min-width: 600px) {
+  li {
+    display: inline;
+  }
+}
+
+/* LOGO */
+
+.logo {
+  width: auto;
+  background: #9b4922;
+  text-align: center;
+}
+/* selected link */
+
+a:active {
+  color: black;
+}

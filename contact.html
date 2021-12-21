@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--Esto es para el idioma y el pais-->
+<html lang="es-ES">
+  <head>
+    <link rel="shortcut icon" href="BAR PACO (1).png" />
+    <title>Contact</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Equipo 1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="formularios.css" rel="stylesheet" />
+    <link href="Menu.css" rel="stylesheet" />
+    <link href="mystyle.css" rel="stylesheet" />
+    <link href="imagenfondo.css" rel="stylesheet" />
+    <link href="opacidad.css" rel="stylesheet"/>
+    <link href="opacidad.css" rel="stylesheet"/>
+    <link href="opacidad.css" rel="stylesheet"/>
+    <link href="interlineadoIconos.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  </head>
+
+  <body>
+      
+    <!--Esto es el logo de la pagina-->
+    <div class="logo">
+      <img
+        src="Barpacobanner.png"
+        srcset="Barpacobanner.png, 
+        Barpacobanner.png 768w, 
+        Barpacobanner.png 768w 2x, 
+        Barpacobanner.png 1200w, 
+        Barpacobanner.png 1200w 2x"
+      />
+    </div>
+    <!--Este es el menu para ir a las diferentes páginas-->
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobrenosotros.html">Sobre Nosotros</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+        <li><a href="service.html">Servicio</a></li>
+        <li><a href="merchandising.html">Merchandising</a></li>
+      </ul>
+    </nav>
+
+    <p class="interlineado">
+      
+        <p1 class="sombra">      
+
+      Si tienes alguna duda, problema o sugerencia no dude en contactarnos
+      rellenando el siguiente formulario.
+        </p1>
+    </p>
+
+    <!--Este es el icono con la funcion i-->
+    <i class="fa fa-angle-double-down" id="iconos"></i>
+
+    <!--Con form se crea el formulario-->
+    <form>
+      <!--label es la etiqueta de cada input-->
+      <!--input permite crear los cuadros de texto para introducir datos, botones de selección y la checkbox-->
+      <section class="formulario">
+        <h4>Formulario del Bar Paco</h4>
+        <label for="nombre">Nombre: </label>
+        <!--text crea los cuadros de texto en input-->
+        <div class="tooltip">
+          <input
+            class="control"
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder=" Juan"
+            maxlength="10"
+            required
+          />
+          <span class="tooltiptext"> Escriba su nombre.</span>
+        </div>
+        <label for="apellidos">Apellidos: </label>
+        <div class="tooltip">
+          <input
+            class="control"
+            type="text"
+            id="apellidos"
+            name="apellidos"
+            placeholder="Pérez González"
+            maxlength="30"
+            required
+          />
+          <span class="tooltiptext"> Escriba sus apellidos.</span>
+        </div>
+        <label for="telf">Tel&eacute;fono: </label>
+        <div class="tooltip">
+          <input
+            class="control"
+            type="text"
+            id="telefono"
+            name="telefono"
+            placeholder=" ☎   656212898"
+            minlength="9"
+            required
+          />
+          <span class="tooltiptext"> Escriba su número móvil de contacto.</span>
+        </div>
+        <label for="email">Email: </label>
+        <div class="tooltip">
+          <input
+            class="control"
+            type="text"
+            id="email"
+            name="email"
+            placeholder=" ✉   nombre@correo.com"
+            minlength="5"
+            required
+          />
+          <span class="tooltiptext"> Escriba su correo electrónico.</span>
+        </div>
+        <!--en input radio sirve para crear el botón circular-->
+
+        <label class="opciones">Sexo: </label>
+        <div class="tooltip">
+            <span class="tooltiptext"> Elija su sexo.</span>
+        <label class="container"
+          >Hombre
+          <input type="radio" name="radio" required />
+          <span class="checkmark"></span>
+        </label>
+      
+        <label class="container"
+          >Mujer
+          <input type="radio" name="radio" required />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container"
+          >Otro
+          <input type="radio" name="radio" required />
+          <span class="checkmark"></span>
+        </label>
+      </div></span>
+     
+      
+        <label for="opciones">Elige una opción:</label>
+        <!--Con select se crea una lista despegable y 'option' representa cada opción-->
+        <div class="tooltip">
+            <span class="tooltiptext"> Seleccione una consulta.</span>
+        <select name="opciones" id="opciones" required>
+          <!--<value=""> sirve aquí para que required funcione si no se selecciona nada
+            <disable selected hidden> hace que esa opción esté deshabilitada y no aparezca -->
+          <option value="" disabled selected hidden></option>
+          <option value="reservar mesa">Reservar mesa</option>
+          <option value="reservar local">Reservar local</option>
+          <option value="opinion">Opinión</option>
+          <option value="sugerencias">Sugerencias</option>
+          <option value="quejas">Quejas</option>
+          <option value="atencion al cliente">Atención al cliente</option>
+          <option value="otro">Otro</option>
+        </select> 
+      </div></span>
+ 
+
+        <label for="mensaje">Mensaje: </label>
+        <div class="tooltip">
+            <span class="tooltiptext"> Redacte concisamente su mensaje.</span>
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          rows="5"
+          cols="75"
+          placeholder="Escriba aquí su mensaje detallado."
+          required
+        ></textarea>
+      </div></span>
+        <input type="checkbox" id="tos" name="tos1" required />
+        <label for="tos1">He leído los términos y condiciones</label>
+      </section>
+
+      <input class="botones" type="submit" value="Enviar" />
+      <input class="botones" type="reset" value="Restaurar" />
+      
+      <iframe
+       class="opacidad" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d4525.228516153042!2d-4.447121548054883!3d36.678834191897245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sbar%20paco!5e0!3m2!1ses!2ses!4v1635092839615!5m2!1ses!2ses"
+        ></iframe>
+    </div>
+    </form>
+  </body>
+</html>

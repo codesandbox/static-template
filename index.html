@@ -1,12 +1,77 @@
+<!--Este es el tipo de documento-->
 <!DOCTYPE html>
-<html lang="en">
+<!--Esto es el idioma del pais-->
+<html lang="es-ES">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <!--Este es la pagina donde estamos practicando leo,delgao,alberto y Evita-->
+    <title>index.html</title>
+    <link rel="shortcut icon" href="BAR PACO (1).png" />
+    <meta charset="utf-8" />
+    <link href="Menu.css" rel="stylesheet" />
+    <link href="Columnas.css" rel="stylesheet" />
+    <link href="margin.css" rel="stylesheet" />
+    <link href="mystyle.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
   </head>
+  <!--Esto es el cuerpo de la página, donde se muestra el texto principal-->
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!--Esto es el logo de la pagina-->
+    <div class="logo">
+      <img
+        class="logo"
+        src="Barpacobanner.png"
+        srcset="Barpacobanner.png, 
+        Barpacobanner.png 768w, 
+        Barpacobanner.png 768w 2x, 
+        Barpacobanner.png 1200w, 
+        Barpacobanner.png 1200w 2x"
+      />
+    </div>
+
+    <!--Este es el menu para ir a las diferentes páginas-->
+    <nav>
+      <ul class="lista">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobrenosotros.html">Sobre Nosotros</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+        <li><a href="service.html">Servicio</a></li>
+        <li><a href="merchandising.html">Merchandising</a></li>
+      </ul>
+    </nav>
+
+    <p class="margen">
+      Bienvenidos a Bar Paco estamos encantados de recibiros en nuestro nuevo
+      local, tenemos mucha variedad de comida. somos un bar ubicado en el centro
+      de Málaga con muchos años de experiencia. Esperamos que os guste la
+      comida, el servicio y nos volvamos a ver, un saludo.
+    </p>
+    <!--Columnas con imagenes-->
+    <nav>
+      <div class="row">
+        <div class="column">
+          <a href="sobrenosotros.html"
+            ><img src="Sobrenosotros.png" style="width: 275px;" ; />
+          </a>
+        </div>
+
+        <div class="column">
+          <a href="contact.html">
+            <img src="Contacto.png" style="width: 275px;" ;
+          /></a>
+        </div>
+
+        <div class="column">
+          <a href="service.html">
+            <img src="Servicio.png" style="width: 275px;" ; />
+          </a>
+        </div>
+
+        <div class="column">
+          <a href="merchandising.html">
+            <img src="Merchandising.png" style="width: 275px;" ; />
+          </a>
+        </div>
+      </div>
+    </nav>
   </body>
 </html>

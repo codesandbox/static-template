@@ -1,0 +1,40 @@
+table,
+td,
+th {
+  outline-style: dotted;
+  outline-color: #6e4019;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  white-space: nowrap;
+}
+table {
+  border-collapse: separate;
+  width: 100%;
+}
+td,
+th {
+  border: solid 3px lightsalmon;
+  padding: 8px;
+  text-align: center;
+}
+
+/*<!--Esto es para el responsive-- >*/
+th:first-child {
+  border-top-left-radius: 10px;
+}
+th:last-child {
+  border-top-right-radius: 10px;
+}
+tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+/*Stripped Tables*/
+
+tr:nth-child(even) {
+  background-color: #c5c3c1;
+}
