@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/main.js" type="module"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <i class="fab fa-youtube"></i>
+      <h1>youTube Channel Random Name Generator</h1>
+    </header>
+
+    <main>
+      <section class="submit-section">
+        <h2 id="form-heading" class="offscreen">Enter your First Name</h2>
+        <form action="" id="submit-form" class="submitSection-form">
+          <input
+            type="text"
+            id="submitSection-textInput"
+            class="submitSection-textInput"
+            required
+            maxlength="20"
+            placeholder="Enter First Name"
+            aria-labelledby="form-heading"
+          />
+          <button class="submitSection-button" aria-label="Submit">
+            <i class="fa fa-check"></i>
+          </button>
+        </form>
+      </section>
+
+      <section id="suggestion-section" class="suggestion-section hidden">
+        <h2>Suggestions:</h2>
+        <ol></ol>
+        <p>YMMV: Click the name to see if it is already taken.</p>
+      </section>
+    </main>
   </body>
 </html>

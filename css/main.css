@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 1.35px;
+  color: #fff;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1557599443-2071a2df9c19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGNvZGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
+  background-color: rgba(30, 144, 255, 0.2);
+  background-size: cover;
+  background-blend-mode: overlay;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+header,
+main {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #fff;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+
+header i {
+  font-size: 5rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  display: block;
+}
+
+main {
+  margin-top: 10px;
+}
+
+section {
+  position: relative;
+}
+
+.submit-section form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit-section form input,
+.submit-section form button {
+  font-size: 1.25rem;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+
+.submit-section form input {
+  width: calc(100% - 60px);
+}
+
+.submit-section form button {
+  min-width: 48px;
+  min-height: 48px;
+  cursor: pointer;
+  background-color: rgb(50, 161, 205);
+  color: #fff;
+  letter-spacing: 1.35px;
+  font-weight: bold;
+}
+
+.suggestion-section {
+  padding-top: 20px;
+}
+
+.suggestion-section h2 {
+  padding-bottom: 20px;
+}
+
+.suggestion-section a,
+.suggestion-section a:hover,
+.suggestion-section a:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+ol {
+  margin-left: 20px;
+  word-break: break-all;
+  font-size: 1.15rem;
+}
+
+ol > ul {
+  padding-bottom: 10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+ul > li {
+  margin-top: 10px;
+}
+
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  ol {
+    margin-left: 40px;
+    font-size: 1.5rem;
+  }
+}
