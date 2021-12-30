@@ -16,6 +16,35 @@
     <script src="js/main.js"></script>
   </head>
   <body>
-    <header><h1>Code Channel Random Name Generator</h1></header>
+    <header>
+      <i class="fa fa-youtube-play" aria-hidden="true"></i>
+      <h1>Code Channel Random Name Generator</h1>
+    </header>
+
+    <main>
+      <section class="submit-section">
+        <h2 id="form-heading" class="offscreen">Enter your First Name</h2>
+        <form action="" id="submit-form" class="submitSection-form">
+          <input
+            type="text"
+            id="submitSection-textInput"
+            class="submitSection-textInput"
+            required
+            maxlength="20"
+            placeholder="Enter First Name"
+            aria-labelledby="form-heading"
+          />
+          <button class="submitSection-button" aria-label="Submit">
+            <i class="fa fa-check" aria-hidden="true"></i>
+          </button>
+        </form>
+      </section>
+
+      <section id="suggestion-section" class="suggestion-section hidden">
+        <h2>Suggestions:</h2>
+        <ol></ol>
+        <p>YMMV: Click the name to see if it is already taken.</p>
+      </section>
+    </main>
   </body>
 </html>
