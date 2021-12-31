@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #79b4b7;
+}
+
+body,
+.jumbotron {
+  padding: 30px;
+}
+
+.bookmark-list {
+  z-index: 9;
+  position: relative;
+}
+
+.content {
+  font-size: 19px;
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.floter {
+  background: #fff;
+  border-radius: 5px;
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.4) all;
+  margin-bottom: 30px !important;
+  z-index: 11;
+}
+
+.floter input[type="text"] {
+  padding: 30px 20px;
+  border: none;
+  box-shadow: none;
+  font: size 14px;
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.4) all;
+}
+
+.floter-bottom {
+  padding: 6px 10px 8px;
+  text-align: right;
+  border-top: 1px solid #ddd;
+}
+
+.floter-bottom button {
+  padding: 3px 12px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bolder;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  transition: 0.3s ease opacity;
+  opacity: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* show floter */
+
+body.show-floter .floter {
+  transform: scale(1.1);
+}
+
+body.show-floter .floter input[type="text"] {
+  font-size: 15px;
+  padding: 30px 20px;
+}
+
+body.show-floter .overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Bookmark */
+.bookmark {
+  position: relative;
+  display: flex;
+  background: #fff;
+  color: #041c32 !important;
+  padding: 20px;
+  transition: 0.3s ease all;
+  border-radius: 5px;
+  border-bottom: 3px solid #1c6dd0;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.bookmark:hover {
+  color: #1c6dd0 !important;
+  text-decoration: none;
+}
+
+.bookmark .img {
+  background-color: #041c32;
+  border-radius: 3px;
+  background-image: url("https://picsum.photos/seed/picsum/200/300");
+  background-size: 100% 100%;
+  background-position: center;
+  width: 80px;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.bookmark .title {
+  display: flex;
+  align-items: center;
+}
+
+.bookmark .remove {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #041c32;
+  transition: 0.3s ease color;
+  cursor: pointer;
+}
+
+.bookmark:hover .remove {
+  color: red;
+}
