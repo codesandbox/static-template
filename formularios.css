@@ -1,0 +1,181 @@
+/*Esto aplica el estilo auto-responsive*/
+@media screen and (max-width: 600px) {
+  .col-25,
+  .col-75,
+  input[type="submit"] {
+    width: 38%;
+    margin-top: 0;
+  }
+}
+
+/*Aplica todo el estilo a los botones de enviar y restaurar del formulario*/
+.botones {
+  width: 38%;
+  background-color: rgb(190, 133, 82);
+  color: rgb(85, 49, 18);
+  padding: 14px 20px;
+  margin-left: 8%;
+  margin-bottom: 13%;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  border: 3px inset rgb(128, 86, 50);
+}
+
+/*Aplica el estilo a las cajas de los imput text, select y textarea*/
+.control {
+  width: 100%;
+  background: rgb(220, 205, 196);
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid rgb(220, 205, 196);
+  font-size: 100%;
+}
+
+/*Crea el color de fondo del formulario*/
+.formulario {
+  background: rgb(190, 133, 82);
+  padding: 5%;
+  margin: 4%;
+  margin-top: 10%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.formulario h4 {
+  text-align: center;
+  font-size: 150%;
+  color: rgb(134, 77, 27);
+  margin-bottom: 5%;
+}
+
+label {
+  color: rgb(85, 49, 18);
+  font-size: 120%;
+  margin-bottom: 5px;
+}
+
+/*Aplica el estilo a los imput text, select y textarea*/
+input[type="text"],
+textarea {
+  width: 90%;
+  padding: 15px;
+  border: 2px outset rgb(128, 86, 50);
+  resize: horizontal;
+  color: rgb(110, 64, 25);
+  background-color: rgb(220, 205, 196);
+  margin-bottom: 5%;
+  border-radius: 40px;
+}
+
+/*Hace que cambie el color de los imput text al clickar sobre ellos*/
+input[type="text"]:focus {
+  background-color: rgb(117, 78, 49);
+}
+
+/*Aplica el estilo al menú desplegable*/
+select {
+  width: 95%;
+  padding: 16px 20px;
+  border: 2px outset rgb(128, 86, 50);
+  border-radius: 30px;
+  margin-bottom: 5%;
+  background-color: rgb(220, 205, 196);
+}
+
+iframe {
+  display: block;
+  margin: auto;
+  width: "30%";
+  height: "450";
+  scale: "border: 0;" allowfullscreen= "" loading= "lazy";
+}
+
+.radio {
+  margin: 1%;
+  padding: 5%;
+}
+
+/*Crea los tooltip de los imput*/
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: rgb(117, 78, 49);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Posiciona los tooltip */
+  position: bottom;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.container {
+  margin-top: 2%;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Esconde el boton por defecto del radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Crea un botón personalizado */
+.checkmark {
+  margin-top: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #9b4922;
+  border-radius: 50%;
+}
+
+/* Cuando se pone el ratón por encima, cambia de color */
+.container:hover input ~ .checkmark {
+  background-color: #75381c;
+}
+
+/* Cuando el botón se marca cambia de color. */
+.container input:checked ~ .checkmark {
+  background-color: #3b1705;
+}
+
+/* Crea un indicator, un circulo mas pequeño que está escondido si no está marcado */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Muestra el indicador cuando está marcado */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* El estilo del indicador */
+.container .checkmark:after {
+  top: 6px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgb(247, 225, 192);
+}
