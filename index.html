@@ -1,12 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <script type="text/javascript" src="scriptC.js"></script>
+    <link type="text/css" rel="stylesheet" href="styleC.css" />
+    <title>Calculator</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>Calculator</h1>
+    <table class="calculator">
+      <tr>
+        <td colspan="4">
+          <input
+            class="display-box"
+            placeholder="ENTER"
+            type="text"
+            id="result"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <input
+            class="button"
+            type="button"
+            value="C"
+            onclick="clearScreen()"
+            style="background-color: #e6e6fa;"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value=","
+            onclick="display(',')"
+          />
+        </td>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="<"
+            onclick="display('<')"
+          />
+        </td>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value=">"
+            onclick="display('>')"
+          />
+        </td>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="Del"
+            onclick="delterm()"
+            style="background-color: #e6e6fa;"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="("
+            onclick="display('(')"
+          />
+        </td>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value=")"
+            onclick="display(')')"
+          />
+        </td>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="/"
+            onclick="display('/')"
+          />
+        </td>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="*"
+            onclick="display('*')"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="1"
+            onclick="display('1')"
+          />
+        </td>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="2"
+            onclick="display('2')"
+          />
+        </td>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="3"
+            onclick="display('3')"
+          />
+        </td>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="-"
+            onclick="display('-')"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="4"
+            onclick="display('4')"
+          />
+        </td>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="5"
+            onclick="display('5')"
+          />
+        </td>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="6"
+            onclick="display('6')"
+          />
+        </td>
+        <td rowspan="2">
+          <input
+            class="button"
+            type="button"
+            value="+"
+            onclick="display('+')"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="7"
+            onclick="display('7')"
+          />
+        </td>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="8"
+            onclick="display('8')"
+          />
+        </td>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="9"
+            onclick="display('9')"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="."
+            onclick="display('.')"
+          />
+        </td>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="0"
+            onclick="display('0')"
+          />
+        </td>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="%"
+            onclick="display('%')"
+          />
+        </td>
+        <td>
+          <input
+            class="button"
+            type="button"
+            value="="
+            onclick="calculate()"
+            style="background-color: #e6e6fa;"
+          />
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
