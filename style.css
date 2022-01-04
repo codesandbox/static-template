@@ -1,10 +1,8 @@
 * {
   box-sizing: border-box;
 }
-/* body {
-  height: 1000px;
-} */
-/* Header */
+
+/* -------------------------------------------------------------------Header ----------------------------------------------------------------*/
 /* --------------------------------------------------------------------Navbar */
 nav {
   height: 50px;
@@ -30,13 +28,13 @@ nav ul a:hover {
   color: white;
 }
 
-/* slidbar */
+/* ----------------------------------------------------------------slidbar */
 .d-flex.flex-column.flex-shrink-0.p-3.text-white.bg-dark {
   width: 280px;
   position: absolute;
   top: 0;
-  right: -100%;
   bottom: 0;
+  display: none;
   position: fixed;
   height: 100vh;
   display: none;
@@ -51,7 +49,37 @@ nav ul a:hover {
 #slidbar_icon {
   display: none;
 }
-/* slidbar */
+header .show {
+  right: 0px;
+  display: block;
+}
+header .hide {
+  right: -100%;
+}
+/* ----------------------------------------------------------------slidbar */
+/* ------------------------------------------------------------Navbar---------------------------------------------------------------- */
+/* ------------------------------------------------------------<Home section >---------------------------------------------------------------- */
+.home_section {
+  height: 95vh;
+  background-color: red;
+}
+.home_section .row {
+  display: flex;
+  /* position: relative; */
+}
+.home_section .row .text-about-me {
+  align-items: center;
+}
+.home_section .row .text-about-me .all-links {
+  height: 100px;
+  background-color: pink;
+}
+.home_section .row .text-about-me .home-headings {
+  height: 400px;
+  background-color: pink;
+  margin-left: 3rem;
+}
 
-/* ------------------------------------------------------------Navbar */
-/* header */
+/* ------------------------------------------------------------</Home section > ---------------------------------------------------------------- */
+
+/*---------------------------------------------------------------- header---------------------------------------------------------------- */
