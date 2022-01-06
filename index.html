@@ -1,12 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
+    </style>
+    <link rel="stylesheet" href="style.css" />
+    <title>TP Front 2</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <header class="header">
+        <img
+          class="logo"
+          src="https://img.icons8.com/ios-glyphs/90/ffffff/death-star.png"
+          alt="logo"
+        />
+        <h1>Space Oddity</h1>
+        <h2>Formulaire d'inscription</h2>
+      </header>
+      <form action="#" id="formulaire">
+        <div class="form-group">
+          <label for="name" id="name-label">Nom</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-control"
+            placeholder="Votre nom"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="firstname" id="firstname-label">Prénom</label>
+          <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            class="form-control"
+            placeholder="Votre prénom"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email" id="email-label">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Votre e-mail"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="age" id="age-label">Age (optionel)</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            class="form-control"
+            placeholder="Votre age"
+            min="18"
+            max="99"
+          />
+        </div>
+        <div class="form-group">
+          <label for="date" id="date-label">Date souhaitée</label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="dropdown">Sélectionné votre planète de départ:</label>
+          <select name="dropdown" id="dropdown" class="form-control" required>
+            <option disabled>Sélectionné une planète</option>
+            <option value="Terre">Terre</option>
+            <option value="Mars">Mars</option>
+            <option value="Jupiter">Jupiter</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <p>Sélectionné une classe :</p>
+          <p>
+            <label>
+              <input type="radio" name="classe" id="eco" value="eco" checked />
+              Économique
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="classe" id="affaire" value="Affaire" />
+              Affaire
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="classe" id="vip" value="VIP" />
+              VIP
+            </label>
+          </p>
+        </div>
+        <div class="form-group">
+          <p>Sélectionné vos extras :</p>
+          <p>
+            <label>
+              <input type="checkbox" name="extras" value="hibernation" />
+              Hibernation
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" name="extras" value="ia interactive" />
+              IA interactive
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" name="extras" value="VR panoramique" />
+              VR panoramique
+            </label>
+          </p>
+        </div>
+        <div class="form-group">
+          <p>Renseignement particulier ?</p>
+          <textarea
+            name="comment"
+            id="comment"
+            cols="50"
+            rows="6"
+            placeholder="Entrer vos renseignements ici"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <p>Coder vos données personnelle ?</p>
+          <input type="checkbox" id="switch" class="checkbox" />
+          <label for="switch" class="toggle"></label>
+        </div>
+        <div class="form-group">
+          <button type="submit" id="submit">valider</button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
