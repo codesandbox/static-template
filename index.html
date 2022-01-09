@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <style>
+      .card {
+        height: 300px;
+        width: 50%;
+        resize: both;
+        border: 1px solid rgb(49, 49, 0);
+        padding: 10px;
+        background-color: rgb(209, 166, 252);
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
+        transition: all 0.3s ease-in-out;
+      }
+      .card:hover {
+        box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+        transform: translate3d(0px, -1px, 0px);
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="card">
+      <h3>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae
+        provident cumque ipsum et. Labore pariatur tempore laudantium, earum
+        omnis, rem at nemo placeat ad beatae laborum iure dolores praesentium
+        necessitatibus excepturi facere eaque quos.
+      </h3>
+    </div>
   </body>
 </html>
