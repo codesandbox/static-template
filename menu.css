@@ -1,0 +1,38 @@
+/* CSS MENU BOOSTRAP */
+
+.margen {
+  font-size: 1.1em;
+  text-align: center;
+}
+
+/* Texto Gradiente Animado */
+.animation {
+  font-weight: bold;
+  font-size: 1.15em;
+  color: rgb(0, 0, 0);
+  background: linear-gradient(
+    80deg,
+    rgb(50, 139, 255),
+    rgb(34, 123, 255),
+    rgb(1, 185, 1),
+    rgb(255, 136, 0),
+    rgb(255, 0, 0)
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-size: 500% 500%;
+  position: relative;
+  animation: cambiar 10s ease-in-out infinite;
+}
+
+@keyframes cambiar {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}

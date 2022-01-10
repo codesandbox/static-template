@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+    <!-- Etiquetas Autor, código idioma y país, codificaión UFT-8 y formato responsive-->
+    <title>Contacto</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Jaime, Yasine, Luis, Amirreza, Jose" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Links Nav Bar Boostrap | Google Fonts | CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Holtwood One SC|Alfa Slab One|Alegreya Sans"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- MENÚ HAMBURGUESA BOOSTRAP 5 -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top margen">
+      <div class="container-fluid">
+        <a class="navbar-brand animation" href="index.html">Aljy</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="servicios.html">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="AboutUs.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pagina_contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pagina_libre.html">Equipo</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </nav>
+		
+		<!--Este es el Índice-->
+    <h4> 
+      <a href="index.html" title="La página principal">
+        <img class="icono" src="https://i.imgur.com/lgC44xv.png"> <a> 
+      <a href="AboutUs.html" title="Sobre nosotros">
+        <img class="icono" src="https://i.imgur.com/aokFw1H.png"> 
+      <a href="servicios.html"title="La página de servicios">
+        <img class="icono" src="https://i.imgur.com/90eFW5U.jpeg">
+      <a href="pagina_contacto.html"title="La página de contacto">
+        <img class="icono" src="https://i.imgur.com/2Rm0G7T.png"> </h4> <a>
+    
+    <!-- Aqui empieza el formulario-->
+    <form name="formulario" method="post" action="www.aljy.com">
+      <p><b>Aquí deberemos introducir nuestros datos en los campos correspondientes y con su debida validación</b></p>
+		<h1>DATOS PERSONALES</h1>
+
+    <p>Nombre:</p>
+ 	    <input class="nombre" type="text" name="nombre" pattern="[a-z A-Z]{1,15}" placeholder="Escriba aquí su nombre">
+     
+    <p>Apellidos:</p>
+      <input class="apellidos" type="text" name="Apellidos" pattern="[a-z A-Z]" placeholder=" Escriba aquí sus apellidos">
+
+ 	  <p>Sexo:</p>
+ 	 	  <input type="radio" name="sexo" value="H">Hombre
+ 	 	  <input type="radio" name="sexo" value="M">Mujer
+
+	  <p>Teléfono:</p>
+	    <input class="telefono" type="tel" name="telefono" placeholder=" +XX 123-456-789" pattern="[0-9]{9}">
+    
+    <p>Correo electrónico:</p>
+ 	    <input class="email" type="email" name="Correo" placeholder="sucorreo@gmail.com">
+
+    <h1>Productos</h1>
+<!--lista desplegable-->
+    	<select>
+    		<option disabled selected="">Seleccione un producto
+    		<option>Portatil Teclast F7 Plus 2</option>
+    		<option>Smart TV T5305 32"</option>
+    		<option>Altavoces Bluetooth JBL Boombox 2</option>
+    		<option>Auriculares tws</option>
+    		<option>Auriculares tws pro</option>
+    		<option>Auriculares tws waterproof</option>
+    		<option>Auriculares tws gaming</option>
+    		<option>Cascos Bluetooth</option>
+    		<option>Tablet 8 pulgadas</option>
+    		<option>Monitor portatil</option>
+    	</select>
+<!--Este es el campo de validacion del formulario-->
+    <textarea rows="10" cols="30"></textarea>
+    <input type="reset" value="Reset">
+	<input type="submit" value="Enviar Formulario">
+        </form>
+        <input type="checkbox" checked="" name="Acepto">Acepto los términos y servicios
+	<h1>Contacto</h1>
+<!--Este es el mapa-->	
+	<iframe class="sombra mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25584.5347927357!2d-4.438439121808363!3d36.72095571774401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f7959d2b253d%3A0x8548f50830256a62!2sDistrito%20Centro%2C%20M%C3%A1laga!5e0!3m2!1ses!2ses!4v1634399735145!5m2!1ses!2ses"></iframe>
+</body>
+</html>
