@@ -1,12 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Update Crime</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      h3 {
+        color: black;
+      }
+
+      .form-control {
+        margin-bottom: 20px;
+      }
+      .form {
+        margin-top: 4rem;
+        display: grid;
+        width: 50%;
+        margin-left: 25%;
+      }
+      .btn {
+        margin-top: 20px;
+        width: 15%;
+        margin-left: 45%;
+        margin-bottom: 20px;
+      }
+      .btn:hover {
+        background-color: rgb(49, 235, 49);
+        color: black;
+      }
+      .form-control {
+        border: 1px solid rgba(155, 155, 161, 0.877);
+      }
+      label {
+        font-size: 19px;
+        font-weight: 12rem;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <h1>Crime record addition from:</h1>
+    <div>
+      <form class="form">
+        <label>Case id:</label>
+        <input class="form-control" type="text" placeholder="Case id" />
+        <label>Case branch:</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>Theft</option>
+          <option>Murder</option>
+          <option>Cyber crime</option>
+          <option>Rape</option>
+        </select>
+        <label>Criminal id:</label>
+        <input class="form-control" type="text" placeholder="Criminal id" />
+        <label>Criminal name:</label>
+        <input class="form-control" type="text" placeholder="Criminal name" />
+        <label>Location at which crime took place:</label>
+
+        <input class="form-control" type="text" placeholder="Location" />
+        <label>Year at which crime took place:</label>
+        <input class="form-control" type="text" placeholder="Year" />
+
+        <label>Victim id:</label>
+        <input class="form-control" type="text" placeholder="Victim id" />
+        <label>Victim name:</label>
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Name of the victim"
+        />
+        <label>Victim phone number:</label>
+        <input class="form-control" type="tel" placeholder="Phone number" />
+        <label>Location of victim:</label>
+        <input class="form-control" type="text" placeholder="Location" />
+
+        <label>Case status:</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>Ongoing</option>
+          <option>Not started</option>
+          <option>Closed</option>
+        </select>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
   </body>
 </html>
