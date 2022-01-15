@@ -32,7 +32,9 @@
     <link rel="stylesheet" href="./CSS/grid.css" />
     <link rel="stylesheet" href="./CSS/main.css" />
     <link rel="stylesheet" href="./CSS/animation.css" />
-    <title>She by Shj</title>
+    <link rel="stylesheet" href="./CSS/collection-fall-winter.css" />
+    <link rel="stylesheet" href="./CSS/best-seller.css" />
+    <title>Sản phẩm nổi bật - She by Shj</title>
   </head>
   <body>
     <div class="App">
@@ -102,122 +104,61 @@
         </div>
       </header>
 
-      <!--SLIDE-SHOW-->
-      <div class="slide">
-        <img
-          src="./images/slideshow/slideshow_1.png"
-          alt="slide show 1"
-          class="slide-image animate-fading"
-        />
-        <img
-          src="./images/slideshow/slideshow_2.webp"
-          alt="slide show 2"
-          class="slide-image animate-fading"
-        />
-        <img
-          src="./images/slideshow/slideshow_3.webp"
-          alt="slide show 3"
-          class="slide-image animate-fading"
-        />
-        <img
-          src="./images/slideshow/slideshow_4.webp"
-          alt="slide show 4"
-          class="slide-image animate-fading"
-        />
-      </div>
-      <!--BANNER-->
-      <div class="banner">
-        <div class="grid wide">
-          <div class="row">
-            <div class="col l-6 banner-product">
-              <a href="#home" class="banner-product-link">
-                <img
-                  src="./images/banner/xxx_4.png"
-                  alt="Áo trắng"
-                  class="banner-product-image"
-                />
-              </a>
-              <div class="banner-product-caption banner-product-caption__left">
-                <h3>TOPS</h3>
-                <p>MUA NGAY</p>
-              </div>
-            </div>
-            <div class="col l-6 banner-product">
-              <a href="#home" class="banner-product-link">
-                <img
-                  src="./images/banner/xxx_5.png"
-                  alt="Váy xạnh"
-                  class="banner-product-image"
-                />
-              </a>
-              <div class="banner-product-caption banner-product-caption__right">
-                <h3>DRESSES</h3>
-                <p>MUA NGAY</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!--PRODUCTS-WINTER-->
+      <!--COLLECTION BEST SELLER-->
       <div class="products">
         <div class="grid wide">
-          <div class="row">
-            <div class="col l-12 product-title">
-              <h3>WINTER '21</h3>
+          <div class="row no-gutters product-fall-winter-title">
+            <div class="col l-6 title-list-option">
+              <ul class="title-list-option__list">
+                <li class="title-list-option__list-item active">
+                  <a href=""><i class="fa fa-th-large"></i></a>
+                </li>
+                <li class="title-list-option__list-item">
+                  <a href=""><i class="fa fa-th-list"></i></a>
+                </li>
+              </ul>
             </div>
-          </div>
-          <div class="row products-winter"></div>
-        </div>
-      </div>
-
-      <!--BANNER-2-->
-      <div class="banner">
-        <div class="grid wide">
-          <div class="row">
-            <div class="col l-6 banner-product">
-              <a href="#home" class="banner-product-link">
-                <img
-                  src="./images/banner/xxx_6.png"
-                  alt="Áo trắng"
-                  class="banner-product-image"
-                />
-              </a>
-              <div
-                class="banner-product-caption banner-product-caption__left-2"
-              >
-                <h3>SALE OFF</h3>
-                <p>MUA NGAY</p>
-              </div>
-            </div>
-            <div class="col l-6 banner-product">
-              <a href="#home" class="banner-product-link">
-                <img
-                  src="./images/banner/xxx_7.png"
-                  alt="Váy xạnh"
-                  class="banner-product-image"
-                />
-              </a>
-              <div
-                class="banner-product-caption banner-product-caption__right-2"
-              >
-                <h3>SHE BY SHJ GIRL</h3>
-                <p>MUA NGAY</p>
+            <div class="col l-6 toolbar">
+              <span class="toolbar-title">Sắp xếp:</span>
+              <div class="toolbar-option">
+                <span class="toolbar-current"
+                  >Sản phẩm nổi bật <i class="fas fa-caret-down"></i
+                ></span>
+                <ul class="toolbar-option-list">
+                  <li class="toolbar-option-list-item">Sản phẩm nổi bật</li>
+                  <li class="toolbar-option-list-item">Giá: Tăng dần</li>
+                  <li class="toolbar-option-list-item">Giá: Giảm dần</li>
+                  <li class="toolbar-option-list-item">Tên: A-Z</li>
+                  <li class="toolbar-option-list-item">Tên: Z-A</li>
+                </ul>
               </div>
             </div>
           </div>
+          <div class="row product-best-seller"></div>
         </div>
       </div>
 
-      <!--PRODUCTS-SELLER-->
-      <div class="products">
+      <!--CHANGE PAGE-->
+      <div class="pagination">
         <div class="grid wide">
           <div class="row">
-            <div class="col l-12 product-title">
-              <h3>BEST SELLERS</h3>
+            <div class="col l-12">
+              <div class="pagination-number">
+                <ul class="pagination-number-list">
+                  <li class="pagination-number-list-item active">
+                    <span>1</span>
+                  </li>
+                  <li class="pagination-number-list-item">
+                    <a
+                      href="./best-seller-page-2.html"
+                      class="pagination-number-list-item-link"
+                      >2</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="row products-seller"></div>
         </div>
       </div>
 
@@ -379,75 +320,7 @@
           </div>
         </div>
       </div>
-
-      <!--MODAL-->
-      <!-- <div class="modal">
-            <div class="modal-container">
-                <div class="modal-close-icon">
-                    <i class="fas fa-times"></i>
-                </div>
-                <header class="modal-header">
-                    THÔNG TIN SẢN PHẨM
-                </header>
-                <div class="modal-body">
-                    <form method="" action="" class="form">
-                        <div class="grid">
-                            <div class="row">
-                                <div class="col l-5">
-                                    <div class="image-zoom">
-                                        <img src="./images/products-winter/Skylar Dress-1.jpeg" alt="" class="image-zoom-img">     
-                                        <div class="row">
-                                            <div class="col l-3">
-                                                <div class="image-zoom-seen">
-                                                    <img src="./images/products-winter/Skylar Dress-1.jpeg" alt="" class="image-zoom-seen-img">
-                                                </div>
-                                            </div>
-                                            <div class="col l-3">
-                                                <div class="image-zoom-seen">
-                                                    <img src="./images/products-winter/Skylar Dress-1.jpeg" alt="" class="image-zoom-seen-img">
-                                                </div>
-                                            </div>
-                                            <div class="col l-3">
-                                                <div class="image-zoom-seen">
-                                                    <img src="./images/products-winter/Skylar Dress-1.jpeg" alt="" class="image-zoom-seen-img">
-                                                </div>
-                                            </div>
-                                            <div class="col l-3">
-                                                <div class="image-zoom-seen">
-                                                    <img src="./images/products-winter/Skylar Dress-1.jpeg" alt="" class="image-zoom-seen-img">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col l-7">
-                                    <div class="form-input">
-                                        <div class="form-input-title">
-                                            <h1>Mori Dress</h1>
-                                        </div>
-                                        <div class="form-input-price">
-                                            <span>590,000đ</span>
-                                        </div>
-                                    </div>
-                                    <div class="form-input">
-                                        <label>Số lượng</label>
-                                        <input type="number" name="quanlity" value="1" min="1" class="form-input-quanlity">
-                                    </div>
-                                    <div class="form-input">
-                                        <button class="btn btn-add-cart">Thêm vào giỏ hàng</button>
-                                        <button class="btn btn-see-details">Xem chi tiết</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div> -->
     </div>
-
-    <script src="./JS/slideShow.js"></script>
-    <script src="./JS/productWinter.js"></script>
-    <script src="./JS/productSeller.js"></script>
+    <script src="./JS/bestSeller.js"></script>
   </body>
 </html>
