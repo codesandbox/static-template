@@ -1,12 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="de">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webentwicklung lernen</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        flex-grow: 1;
+      }
+      .headerBox {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border: 2px solid #424242;
+        height: 100px;
+        background-color: #0d78ae;
+      }
+      .websiteHeading {
+        font-family: "Bahnschrift";
+        font-size: 50px;
+        font-weight: 900;
+        margin-left: 150px;
+      }
+      .navigationBox {
+        font-family: "Century Gothic";
+        border: 2px solid #424242;
+        width: 170px;
+        background-color: #f2f2f2;
+        font-size: 15px;
+      }
+      .navigationHeading {
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      a {
+        font-weight: bold;
+        text-decoration: none;
+        color: #013f55;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .footerBox {
+        font-family: "Century Gothic";
+        height: 70px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 20px;
+      }
+      .copyrightText {
+        margin-left: 20px;
+        color: #6e6e6e;
+        font-size: 13px;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <div class="headerBox">
+        <img
+          src="C:\Users\bobla\Desktop\Webentwicklung-LernWebsite\Images\WebDevelopmentLogo.jpg"
+          alt="WebDevelopmentLogo"
+          height="100"
+        />
+        <div class="websiteHeading">
+          <p>Webentwicklung lernen</p>
+        </div>
+      </div>
+    </header>
+    <nav class="navigationBox">
+      <p class="navigationHeading">Navigation</p>
+      <ul>
+        <li>
+          <a
+            href="C:\Users\bobla\Desktop\Webentwicklung-LernWebsite\LearnHTML.html"
+            >HTML Übersicht</a
+          >
+        </li>
+        <li>
+          <a href="#">CSS Übersicht</a>
+        </li>
+        <li>
+          <a href="#">JavaScript<br />Übersicht</a>
+        </li>
+      </ul>
+      <hr />
+      <ul>
+        <li>
+          <a href="#">Hilfe</a>
+        </li>
+        <li>
+          <a href="#">Sonstiges</a>
+        </li>
+      </ul>
+    </nav>
+    <main></main>
+    <footer>
+      <div class="footerBox">
+        <p class="copyrightText">
+          Website developed and designed by ⓒDjLangmann
+        </p>
+        <a style="margin-left: 20px;" href="#">Impressum</a>
+        <a style="margin-left: 20px;" href="#">Kontaktformular</a>
+        <a style="margin-left: 20px;" href="#">Standort</a>
+        <a style="margin-left: 20px;" href="#">Links</a>
+      </div>
+    </footer>
   </body>
 </html>
