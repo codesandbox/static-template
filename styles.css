@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url("https://drive.google.com/file/d/1GcS7stF_6-5oTHQ_VuDfNZIiG4f3FkqT/view?usp=sharing"); /* this will create a gradient on image*/
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  padding: 30px 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo img {
+  color: aliceblue;
+  width: 50px;
+  border-radius: 50%;
+  background-image: linear-gradient(#0000, #dee2e6, #dee2e6, #0000);
+}
+
+nav .logo img:hover {
+  box-shadow: 0 0 10px #fff, 0 0 20px #fff;
+  transition: 0.5s;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-links ul li {
+  list-style: none;
+  padding: 8px 12px;
+}
+
+.nav-links ul li a {
+  color: beige;
+  text-decoration: none;
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 20px;
+}
+.nav-links ul li a:hover {
+  background: #fff;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+  transition: 0.5s;
+}
+.nav-links ul li a:active {
+  background: #fff;
+  color: #dee2e6;
+  box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+  transition: 0.1s;
+  background: transparent;
+}
+
+.text-box {
+  width: 90%;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text-box h1 {
+  font-size: 62px;
+}
+.text-box p {
+  margin: 10px 16px 40px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.text-box div .btn {
+  display: inline-block;
+  color: #fff;
+  padding: 15px 16px;
+  border: 2px solid #fff;
+  position: relative;
+}
+
+.home-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 12px 34px;
+  font-size: 13px;
+  position: relative;
+  background: transparent;
+}
+.home-btn:hover {
+  color: black;
+  background-color: #fff;
+  box-shadow: 0 0 10px #fff, 0 0 20px #fff;
+  transition: 0.5s;
+}
+.home-btn:active {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.145);
+  transition-duration: 0.2s;
+}
+
+@media (max-width: 700px) {
+  .text-box h1 {
+    font-size: 32px;
+  }
+  .text-box p {
+    font-size: 12px;
+  }
+  nav ul {
+    display: block;
+  }
+  .nav-links {
+    position: absolute;
+    background: #bfbfbfc0;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: 0;
+    text-align: left;
+    z-index: 2;
+  }
+  nav .logo img {
+    position: absolute;
+    top: 10;
+    left: 0;
+    transform: translateX(30px);
+    border-radius: 20px;
+  }
+}
