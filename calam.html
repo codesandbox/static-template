@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <!--
+    
+    Ladies and JentGentlemen, Boys and Gals, I present to you my latest and best project so far, Calamity.
+    What inspired me to make this was a MUD game called Enceladus (https://enceladusgame.io/play).  I did kind of make a clone with some pros and cons.
+
+    The goal of the game is to kill as many enemies as possible (shown as red dots on the map), help the NPCs fufill their quests (shown as yellow dots on the map), and activate the portal in the aliens' base.
+
+    I am using an early version of DreamForgerJS to make        this.
+    https://github.com/DreamForgerJS/DreamForgerJS
+    
+    DreamForgerJS is a JS library for making text adventure     games.  It comes with a ton of built-in algorithms and      functions.
+
+    It is completely made out of DOM and is quite difficult     to use.
+
+    I did make the DreamForgerJS engine before Primavera,       but I don't see why it violates the contest rules         since it's a library in itself like PJS or Jquery.
+
+    Credit to Syrix, The Lich King, and ThomasBoots for coming up with a     ton of weapons.
+    
+    The code I used was a bit much for the program to          handle and I had to reload the entire page almost every     time I updated something.  That's why I couldn't finish     making it.
+    
+    See if you can find the easter egg and the secret of       the warlocks ;)
+    
+    Syrix is the first person that found the easter egg!
+    
+-->
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <title>Dashboard</title>
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="https://mcpsmd.instructure.com/favicon.ico"
+    />
+    <link href="calam.css" type="text/css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="log"></div>
+      <div id="command-box">
+        <div id="cmd">
+          <input id="com" type="text" value=">" autocomplete="off" />
+        </div>
+      </div>
+    </div>
+    <div id="stats">
+      <h2>Stats</h2>
+      <div id="mainStats"></div>
+    </div>
+    <canvas id="canvas-map" width="200" height="200"></canvas>
+
+    <script src="calam.js" type="text/javascript"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Dashboard</title>
+    <link rel="shortcut icon" type="image/jpg" href="https://mcpsmd.instructure.com/favicon.ico"/>
+    <link href="clicker.css" rel="stylesheet" type="text/css" media="screen and (min-device-width: 800px)"/>
+    <link href="clicker2.css" rel="stylesheet" type="text/css" media="screen and (max-device-width: 800px)"/>
+  </head>
+  <body>
+    <script src="clicker.js"></script>
+    <main>
+      <div id = 'cookieframe'>
+        <div id='cookiestextcontainer'>Cookies: <span id='js-cookies'>1</span></div>
+        <img src = 'cookies/cookie.png' id = 'cookieimage' onclick='bake()'>
+        <p><span id='js-cookietype'>Chocolate Chip Cookie</span> <span style = 'border: solid; padding: 2px; position: inline-block;' onclick='upgradecookie()'>Upgrade</span></p>
+        <p>Muahahaha! I've decided not to tell you what happens when you upgrade. :)</p>
+      </div>
+      <div id = 'shop'>
+        <h1>Shop</h1>
+        <div class='shopitem' title='+1 cookies/click'><p style='font-size: large;'>Cookie Dough</p><i style='font-size: smaller;'>What are you supposed to make cookies with? Pizza Dough?</i><br><br><div style='border: solid; padding: 4px; position: inline-block;' onclick='buyitem("cookiedough")'>Buy for <span id='js-cookiedough-cost'>25</span> cookies</div></div>
+        <hr><br>
+        <div class='shopitem' title='1+ cookies/2.5 secs'><p style='font-size: large;'>Grandpa</p><i style='font-size: smaller;'>Hates baking, so gets it done quickly!</i><br><br><div style='border: solid; padding: 4px; position: inline-block;' onclick='buyitem("grandpa")'>Buy for <span id='js-grandpa-cost'>200</span> cookies</div></div>
+        <hr><br>
+        <div class='shopitem' title='+2 cookies/2 secs'><p style='font-size: large;'>Great Grandpa</p><i style='font-size: smaller;'>Wisdom is the key to a tasty cookie, and wisdom comes with age!</i><br><br><div style='border: solid; padding: 4px; position: inline-block;' onclick='buyitem("greatgrandpa")'>Buy for <span id='js-greatgrandpa-cost'>410</span> cookies</div></div>
+        <hr><br>
+        <div class='shopitem' title='+1 cookies/.75 secs'><p style='font-size: large;'>Plantation</p><i style='font-size: smaller;'>2 times bigger than those simple farms.</i><br><br><div style='border: solid; padding: 4px; position: inline-block;' onclick='buyitem("plantation")'>Buy for <span id='js-plantation-cost'>1000</span> cookies</div></div>
+        <hr><br>
+        <div class='shopitem' title='+10 cookies/.75 secs'><p style='font-size: large;'>Pit Of Cookies</p><i style='font-size: smaller;'>No need to mine the cookies, just pick them up!</i><br><br><div style='border: solid; padding: 4px; position: inline-block;' onclick='buyitem("pitofcookies")'>Buy for <span id='js-pitofcookies-cost'>50000</span> cookies</div></div>
+        <hr><br>
+        <div class='shopitem' title='+100 cookies/.5 secs'><p style='font-size: large;'>Treasure Chest</p><i style='font-size: smaller;'>The most ancient and valuable can be found here.</i><br><br><div style='border: solid; padding: 4px; position: inline-block;' onclick='buyitem("treasurechest")'>Buy for <span id='js-treasurehest-cost'>750000</span> cookies</div></div>
+        <hr><br>
+        <div class='shopitem' title='+1000 cookies/.5 secs'><p style='font-size: large;'>Aztec City</p><i style='font-size: smaller;'>Temples and buildings of immense proportions. The age of these cookies makes the treasure chests seem young!</i><br><br><div style='border: solid; padding: 4px; position: inline-block;' onclick='buyitem("azteccity")'>Buy for <span id='js-azteccity-cost'>1750000</span> cookies</div></div>
+        <hr><br>
+        <div class='shopitem' title='+7000 cookies/.5 secs'><p style='font-size: large;'>CPS Truck</p><i style='font-size: smaller;'>Cookies Per Second delivery can carry thousands of tons a second.</i><br><br><div style='border: solid; padding: 4px; position: inline-block;' onclick='buyitem("cpstruck")'>Buy for <span id='js-cpstruck-cost'>5000000</span> cookies</div></div>
+        <hr><br>
+        <div class='shopitem' title='+20000 cookies/.5 secs'><p style='font-size: large;'>Matter Transformer</p><i style='font-size: smaller;'>In comes anything, out comes cookies.</i><br><br><div style='border: solid; padding: 4px; position: inline-block;' onclick='buyitem("mattertransformer")'>Buy for <span id='js-mattertransformer-cost'>12500000</span> cookies</div></div>
+        <hr><br>
+        <div class='shopitem' title='+1000000 cookies/1 sec'><p style='font-size: large;'>Santa's Sleigh</p><i style='font-size: smaller;'>Santa's <del>Workshop</del> Bakery in full operation!</i><br><br><div style='border: solid; padding: 4px; position: inline-block;' onclick='buyitem("santassleigh")'>Buy for <span id='js-santassleigh-cost'>200000000</span> cookies</div></div>
+        <hr><br>
+      </div>
+    </main>
+    <div id = 'upgrades'>
+      <!--
+      <div class='upgradeitem' title=
+      'Power Drill: '>1K</div>
+      -->
+    </div>
+  </body>
+</html>
