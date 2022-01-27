@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* === Colors ====*/
+  --color0: #050505;
+  --color1: #332f2e;
+  --color2: #332f2e;
+  --color3: #332e30;
+  --color4: #332e33;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+header{
+  padding: 10px 25px;
+
+  background-color: var(--color1);
+}
+
+#header-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#side-area-button{
+  margin-bottom: -6px;
+
+  cursor: pointer;
+}
+
+#side-area-button .stripe {
+  margin-bottom: 6px;
+  width: 21px;
+  height: 1px;
+
+  background-color: white;
+}
+
+#logo-area{
+  display: flex;
+  align-items: center;
+}
+
+#logo-area svg {
+  display: block;
+  width: 95px;
+}
+
+#search-area {
+  display: flex;
+  align-items: stretch;
+}
+
+#search-area input {
+  height: 30px;
+  width: 40vw;
+  margin-right: 10px;
+  padding: 5px;
+
+  color: white;
+
+  border: 1px solid black;
+  outline: none;
+  background-color: var(--color0);
+}
+
+#search-area input::placeholder {
+  font-size: 1.2em;
+  color: #929290;
+}
+
+#search-area input:focus {
+  border: 1px solid rgb(21, 105, 214);
+  outline: none;
+}
+
+#search-area button {
+  padding: 0px 20px;
+
+  cursor: pointer;
+  border: none;
+  background-color: var(--color0);
+}
+
+#search-area button > svg {
+  display: block;
+  height: 20px;
+
+  fill: white;
+}
+
+#aplications-area {
+  display: flex;
+  align-items: center;
+}
+
+#aplications-area-apps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 2px;
+
+  cursor: pointer;
+}
+
+#aplications-area-apps .blocks {
+  height: 3px;
+  width: 3px;
+  border: 1px solid white;
+}
