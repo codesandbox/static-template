@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.site-title {
+  padding: 150px 0px;
+  background-color: white;
+  background-image: url(/image/back.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+}
+.site-title::after {
+  content: "";
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  z-index: -1;
+}
+.site-name {
+  text-align: center;
+  font-size: 50px;
+  color: #27a2b3;
+}
+.contacts {
+  position: relative;
+  width: 1600px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: flex-end;
+  align-items: center;
+}
+.contact {
+  display: flex;
+
+  align-items: center;
+}
+.main {
+  width: 1600px;
+  margin: auto;
+}
+h2 {
+  text-align: center;
+  font-size: 15em;
+  color: red;
+}
