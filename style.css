@@ -1,0 +1,125 @@
+:root {
+  --main2: rgb(255, 255, 255);
+  --main: rgb(17, 17, 17);
+  --red: rgb(255, 0, 0);
+  --green: rgb(0, 255, 0);
+  --blue: rgb(43, 99, 255);
+  --yellow: yellow;
+
+  --red2: rgb(209, 0, 0);
+  --green2: rgb(0, 204, 0);
+  --blue2: rgb(0, 98, 209);
+  --yellow2: rgb(212, 212, 0);
+
+  --color: var(--main);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  background: var(--main);
+  color: var(--main2);
+  font-family: monospace;
+}
+
+button {
+  padding: 8px;
+  border-radius: 4px;
+  border: solid var(--main2) 1px;
+  background: var(--main);
+  color: var(--main2);
+  transition: all;
+  transition-duration: 300ms;
+  font-family: monospace;
+  font-size: 24px;
+}
+
+button:hover {
+  background: var(--main2);
+  color: var(--main);
+}
+
+.pick {
+  flex-grow: 100;
+}
+.game {
+  display: flex;
+  justify-content: stretch;
+  flex-wrap: wrap;
+  align-content: stretch;
+  width: 100%;
+  height: 30vh;
+  gap: 4px;
+}
+
+.correct {
+  background: var(--green2);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 28px;
+}
+.incorrect {
+  background: var(--red2);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 28px;
+}
+
+.pick:nth-of-type(1) {
+  background: var(--blue);
+  color: var(--color);
+}
+
+.pick:nth-of-type(2) {
+  background: var(--green);
+  color: var(--color);
+}
+
+.pick:nth-of-type(3) {
+  background: var(--red);
+  color: var(--color);
+}
+.pick:nth-of-type(4) {
+  background: var(--yellow);
+  color: var(--color);
+}
+
+.pick:nth-of-type(1):hover {
+  background: var(--blue2);
+  color: var(--color);
+}
+
+.pick:nth-of-type(2):hover {
+  background: var(--green2);
+  color: var(--color);
+}
+
+.pick:nth-of-type(3):hover {
+  background: var(--red2);
+  color: var(--color);
+}
+.pick:nth-of-type(4):hover {
+  background: var(--yellow2);
+  color: var(--color);
+}
