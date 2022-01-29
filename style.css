@@ -1,0 +1,155 @@
+:root {
+  --main2: rgb(255, 255, 255);
+  --main: rgb(17, 17, 17);
+  --main3: rgb(36, 36, 36);
+
+  --red: rgb(173, 0, 0);
+  --green: rgb(0, 158, 0);
+  --blue: rgb(44, 95, 235);
+  --yellow: rgb(161, 161, 0);
+
+  --red2: rgb(110, 0, 0);
+  --green2: rgb(0, 107, 0);
+  --blue2: rgb(0, 58, 124);
+  --yellow2: rgb(116, 116, 0);
+
+  --color2: var(--main2);
+  --color: var(--main2);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  background: var(--main);
+  color: var(--main2);
+  font-family: monospace;
+}
+
+button {
+  padding: 8px;
+  border-radius: 4px;
+  border: solid var(--main2) 1px;
+  background: var(--main);
+  color: var(--main2);
+  transition: all;
+  transition-duration: 300ms;
+  font-family: monospace;
+  font-size: 24px;
+}
+
+button:hover {
+  background: var(--main2);
+  color: var(--main);
+}
+
+.pick {
+  flex-grow: 100;
+}
+.game {
+  display: flex;
+  justify-content: stretch;
+  flex-wrap: wrap;
+  align-content: stretch;
+  width: 100%;
+  height: 30vh;
+  gap: 4px;
+}
+
+.correct {
+  background: var(--green2);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 28px;
+}
+.incorrect {
+  background: var(--red2);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 28px;
+}
+
+.pick:nth-of-type(1) {
+  background: var(--blue);
+  color: var(--color);
+}
+
+.pick:nth-of-type(2) {
+  background: var(--green);
+  color: var(--color);
+}
+
+.pick:nth-of-type(3) {
+  background: var(--red);
+  color: var(--color);
+}
+.pick:nth-of-type(4) {
+  background: var(--yellow);
+  color: var(--color);
+}
+
+.pick:nth-of-type(1):hover {
+  background: var(--blue2);
+  color: var(--color2);
+}
+
+.pick:nth-of-type(2):hover {
+  background: var(--green2);
+  color: var(--color2);
+}
+
+.pick:nth-of-type(3):hover {
+  background: var(--red2);
+  color: var(--color2);
+}
+.pick:nth-of-type(4):hover {
+  background: var(--yellow2);
+  color: var(--color2);
+}
+a {
+  color: var(--main2);
+  transition: all;
+  transition-duration: 250ms;
+}
+a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}
+.item {
+  flex: auto;
+  border: solid var(--main2) 2px;
+  background: var(--main3);
+  border-radius: 4px;
+  padding: 4px;
+  transition: all;
+  transition-duration: 250ms;
+  font-size: 24px;
+}
+.item:hover {
+  background: var(--main);
+}
+.level {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
