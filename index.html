@@ -1,12 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SiteCoursCSS</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <body id="accueil">
+    <!-- Accueil et Navbar -->
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="contItems">
+        <a href="#accueil" class="items">Accueil</a>
+        <a href="#sectionTxtImg" class="items">À propos</a>
+        <a href="#creations" class="items">Créations</a>
+        <a href="#contact" class="items">Contact</a>
+      </div>
+      <img src="/ressources/menu.svg" alt="logo menu" class="logoMenuImg" />
+    </div>
+
+    <!-- Accueil -->
+    <div class="accueil">
+      <h1>Découvrez mes créations</h1>
+      <p class="sousTitreP">
+        Lorem ipsum dolor sit amet consectetur adipisicing.
+      </p>
+    </div>
+
+    <!-- Section 1 texte et images -->
+
+    <h2 class="titreSec1">Lorem ipsum dolor sit amet.</h2>
+
+    <section id="sectionTxtImg" class="txtImg">
+      <div class="flexContainerSection1">
+        <div class="contImgSec1">
+          <img src="/ressources/imgNature.jpg" alt="image nature" />
+        </div>
+
+        <div class="contTxtSec1">
+          <h2>Lorem, ipsum.</h2>
+          <p class="sousTitreSec1">Lorem ipsum dolor sit amet.</p>
+          <p class="txtSec1">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore
+            vel obcaecati laborum perspiciatis? Aliquam, vel? Illo at vitae
+            molestias vero ipsum cum deserunt ipsam porro culpa laudantium, sint
+            voluptatibus iste beatae id cupiditate quidem consectetur sunt
+            magnam dolorem quia perspiciatis repudiandae a! Quaerat et id labore
+            dicta minus excepturi itaque.
+          </p>
+          <hr />
+          <p class="txtSec1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+            ipsam cum mollitia nisi fugiat beatae corporis fugit reprehenderit
+            nulla non accusamus temporibus facere deleniti quia sit adipisci
+            maiores aperiam deserunt tenetur, eius eos possimus repellat. Nulla
+            vero cumque blanditiis hic nihil alias, quis, molestiae cupiditate
+            laboriosam ipsa omnis quibusdam aliquam!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section portfolio -->
+
+    <h2 class="titrePortfolio">Lorem ipsum dolor sit amet.</h2>
+
+    <hr class="diviseurPort" />
+
+    <section id="creations" class="portfolioImg">
+      <div class="flexImgPortfolio">
+        <div class="imgPort">
+          <img src="/ressources/portfolio/imgP1.jpg" alt="image nature 1" />
+        </div>
+        <div class="imgPort">
+          <img src="/ressources/portfolio/imgP2.jpg" alt="image nature 2" />
+        </div>
+        <div class="imgPort">
+          <img src="/ressources/portfolio/imgP3.jpg" alt="image nature 3" />
+        </div>
+        <div class="imgPort">
+          <img src="/ressources/portfolio/imgP4.jpg" alt="image nature 4" />
+        </div>
+        <div class="imgPort">
+          <img src="/ressources/portfolio/imgP5.jpg" alt="image nature 5" />
+        </div>
+        <div class="imgPort">
+          <img src="/ressources/portfolio/imgP6.jpg" alt="image nature 6" />
+        </div>
+        <div class="imgPort">
+          <img src="/ressources/portfolio/imgP7.jpg" alt="image nature 7" />
+        </div>
+        <div class="imgPort">
+          <img src="/ressources/portfolio/imgP8.jpg" alt="image nature 8" />
+        </div>
+        <div class="imgPort">
+          <img src="/ressources/portfolio/imgP9.jpg" alt="image nature 9" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Section parallax -->
+
+    <div class="paraScroll">
+      <h3>Nature</h3>
+    </div>
+
+    <!-- Section formulaire -->
+
+    <h2 class="titreForm">Rentrons en Contact !</h2>
+
+    <section class="formulaire">
+      <form id="contact">
+        <div class="row">
+          <label for="prenom">Prénom</label>
+          <input
+            type="text"
+            id="prenom"
+            name="prenom"
+            placeholder="Ton prénom..."
+          />
+        </div>
+        <div class="row">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" placeholder="Ton nom..." />
+        </div>
+        <div class="row">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Ton message..."
+          ></textarea>
+        </div>
+        <div class="row">
+          <input type="submit" class="subBtn" value="Submit" />
+        </div>
+      </form>
+    </section>
+
+    <br /><br /><br /><br />
+
+    <footer>
+      <p>Tout droits réservés &#169;</p>
+    </footer>
+
+    <script src="/app.js"></script>
   </body>
 </html>

@@ -1,0 +1,360 @@
+$blancCasse: #f1f1f1;
+$blancGris: #f5f5f5;
+$sombre: #333;
+
+@mixin flexCentreX {
+    display: flex;
+    justify-content: center;
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+}
+
+// Navbar
+
+.navbar {
+    height: 60px;
+    width: 100%;
+    background: $blancGris;
+    @include flexCentreX();
+    border-bottom: 1px solid black;
+    position: fixed;
+    z-index: 100;
+
+    .contItems {
+        font-size: 22px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        .items {
+            margin-right: 30px;
+            text-decoration: none;
+            color: black;
+
+            &:hover {
+                color: #5f5f5f;
+            }
+        }
+    }
+    
+    .logoMenuImg {
+        display: none;
+        position: absolute;
+        width: 30px;
+        right: 15px;
+        top: 15px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .navbar {
+        display: block;
+
+        .contItems {
+            display: none;
+            border-top: 1px solid black;
+
+            .items {
+                background: $blancGris;
+                margin-right: 0;
+                padding: 10px 20px;
+                display: block;
+
+                &:nth-child(1) {
+                    padding-top: 20px;
+                }
+            } 
+        }
+
+        .logoMenuImg {
+            display: block;
+        }
+
+        .responsive {
+            display: block;
+            margin-top: 59px;
+        }
+    }
+}
+
+// Accueil 
+
+.accueil {
+    height: 800px;
+    width: 100%;
+    background-color: $sombre;
+    background: url('../ressources/home.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        font-family: 'Abril FatFace', sans-serif;
+        color: $blancCasse;
+        font-size: 70px;
+        letter-spacing: 5px;
+        margin: 0;
+        position: relative;
+        padding-top: 150px;
+
+        &::first-letter {
+            font-size: 120px;
+        }
+    }
+
+    .sousTitreP {
+        color: $blancCasse;
+        font-family: 'Poppins', sans-serif;
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .accueil h1 {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .accueil  {
+        height: 600px;
+        h1 {
+            font-size: 30px;
+        }
+        .sousTitreP {
+            font-size: 16px;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .accueil  {
+        height: 500px;
+        align-items: flex-start;
+
+        h1 {
+            margin: 0 20px;
+            &::first-letter {
+                font-size: 50px;
+            }
+        }
+
+        .sousTitreP {
+            margin: 0 20px;
+        }
+    }
+}
+
+// Section 1 texte et image
+
+.titreSec1 {
+    text-align: center;
+    font-size: 40px;
+    padding-top: 20px;
+}
+
+.txtImg {
+    width: 100%;
+    @include flexCentreX();
+    border-bottom: 1px dashed lightskyblue;
+
+    .flexContainerSection1 {
+        @include flexCentreX();
+        width: 1200px;
+
+        .contImgSec1 {
+            width: 45%;
+            margin: 20px;
+
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 2px;
+            }
+        }
+
+        .contTxtSec1 {
+            width: 45%;
+            background: azure;
+            margin: 20px;
+            border-radius: 2px;
+
+            h2 {
+                text-align: center;
+                font-size: 35px;
+            }
+
+            .sousTitreSec1 {
+                text-align: center;
+            }
+
+            hr {
+                width: 60px;
+            }
+
+            .txtSec1 {
+                font-size: 19px;
+                padding: 15px;
+
+                &::first-letter {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .txtImg .flexContainerSection1 {
+        flex-direction: column;
+        align-items: center;
+        width: 400px;
+
+        .contImgSec1 {
+            width: 100%;
+        }
+
+        .contTxtSec1 {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .titreSec1 {
+        font-size: 25px;
+    }
+}
+
+// Section Portfolio
+
+.titrePortfolio {
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 10px;
+
+}
+
+@media screen and (max-width: 550px) {
+    .titrePortfolio {
+        font-size: 25px;
+    }
+}
+
+.diviseurPort {
+    width: 20%;
+}
+
+.portfolioImg {
+    padding-top: 20px;
+    width: 100%;
+    @include flexCentreX();
+    padding-bottom: 100px;
+
+    .flexImgPortfolio {
+        width: 1200px;
+        @include flexCentreX();
+        flex-wrap: wrap;
+
+        .imgPort {
+            width: 300px;
+            height: 370px;
+            margin: 20px;
+            overflow: hidden;
+
+            img {
+               width: 100%;
+               height: auto;
+            }
+        }
+    }
+}
+
+// Section parallax
+
+.paraScroll {
+    width: 100%;
+    height: 300px;
+    background: url('../ressources/para.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    @include flexCentreX();
+    align-items: center;
+
+    h3 {
+        text-align: center;
+        color: $blancCasse;
+        font-size: 50px;
+        letter-spacing: 5px;
+    }
+}
+
+// Section formulaire 
+
+.titreForm {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.formulaire {
+    width: 100%;
+    @include flexCentreX();
+
+    form {
+        width: 60%;
+
+        .row {
+            width: 100%;
+
+            input, textarea {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            textarea {
+                height: 150px;
+            }
+
+            .subBtn {
+                width: 30%;
+                margin: 0 auto;
+                display: block;
+                margin-top: 10px;
+                cursor: pointer;
+                transition: all .4s ease;
+
+                &:hover {
+                    background: midnightblue;
+                    color: $blancCasse
+                }
+            }
+        }
+
+        .row:nth-child(2), .row:nth-child(3) {
+            margin-top: 30px;
+        }
+    }
+}
+
+// Footer
+
+footer {
+    @include flexCentreX();
+    border-top: 1px dashed $sombre;
+}
