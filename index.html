@@ -1,12 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #333;
+      }
+      .loader {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        background: #333;
+        border-radius: 50%;
+        box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.5),
+          10px 10px 70px rgba(0, 0, 0, 0.5);
+        border: 2px solid #222;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      .loader::before {
+        content: "";
+        position: absolute;
+        inset: 35px;
+        border-radius: 50%;
+        border: 3px dashed blue;
+        box-shadow: inset -5px -5px 25px rgba(0, 0, 0, 0.25),
+          inset 5px 5px 35px rgba(0, 0, 0, 0.25);
+        z-index: 10;
+      }
+      .loader::after {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 50%;
+        border: 3px dashed blue;
+        box-shadow: inset -5px -5px 25px rgba(0, 0, 0, 0.25),
+          inset 5px 5px 35px rgba(0, 0, 0, 0.5);
+        z-index: 10;
+      }
+      .loader span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        background: transparent;
+        transform-origin: top left;
+        animation: animate 2s linear infinite;
+        overflow: hidden;
+      }
+      @keyframes animate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .loader span::before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background: red;
+        transform-origin: top left;
+        transform: rotate(35deg);
+        opicity: 0.75;
+
+        filter: blur(30px) drop-shadow(50px 50px 50px #f00);
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="loader"><span></span></div>
+    <div class="loader"><span></span></div>
   </body>
 </html>
