@@ -1,12 +1,215 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@200&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Virgil</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="row">
+      <div class="col-12">
+        <nav
+          class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top"
+        >
+          <div class="container-fluid">
+            <a class="navbar-brand virgil" href="#">Virgil Abloh</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href=#home
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href=#biography>Biography</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href=#projects>Projects</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href=#gallery>Gallery/Memorial</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container-fluid jumbo-back" id="home">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="jumbo-title">"Forever In Our Hearts"</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <img class="crop" src="img/virgil-jumbo.png" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid bio-space" id="biography">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="bio-title bio-color title">The Life Of Virgil</h1>
+        </div>
+      </div>      
+      <div class="row">
+        <div class="col-12">
+          <h6>
+            <p class="bio bio-color">
+              Virgil Abloh was born in 1980 in Rockford, Illinois, USA, to a
+              family of immigrants from Ghana. He spent his young years in
+              Rockford and, in 2002, he achieved a B.Sc. Degree in Civil
+              Engineering from the University of Wisconsin–Madison. In 2006, he
+              graduated from the Illinois Institute of Technology and received
+              his Master of Architecture.
+            </p>
+
+            <p class="bio bio-color">
+              In 2009, during his internship at Fendi in Italy, Abloh got to
+              know world-famous rapper Kanye West and they started a
+              collaboration together. In 2011, Kanye West appointed Abloh as his
+              agency's creative director.
+            </p>
+
+            <p class="bio bio-color">
+              A year later, Abloh started his first business, "Pyrex Vision". He
+              bought deadstock clothing from Ralph Lauren, printed additional
+              designs on it, and sold it at more than ten times the price. The
+              company closed a year later, as it wasn’t intended to become a
+              real business but was rather one of Abloh's artistic projects and
+              experiments.
+            </p>
+
+            <p class="bio bio-color">
+              In 2013, the designer started his own fashion house "Off-White",
+              specializing in high-end streetwear, with main offices in Milan,
+              Italy. This was followed by a number of successful collaborations
+              with well-established companies such as Nike and IKEA.
+            </p>
+
+            <p class="bio bio-color">
+              In March 2018, Abloh was also appointed the menswear artistic
+              director at Louis Vuitton. In November 2021, he died after a long
+              struggle with cancer.
+            </p>
+          </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fill projects-back" id="projects">
+      <div class="row hello">
+        <div class="col-4">
+          <div class="pros">
+            <h4>"Off-White"<br>Clothing Brand</h4>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="pros">
+          <h4>"Off-White" / Nike Collab</h4>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="pros">
+          <h4>"Off-White" / Louis Vuitton Collab</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery" id="gallery">
+      <div class="row one">
+        <div class="col-3">
+          <center><img src="/img/chicago-ones.jpeg" class="gal" height="200px"></center>
+        </div>
+        <div class="col-3">
+          <center><img src="/img/mercurial.jpg" class="gal" height="200px"></center>
+        </div>
+        <div class="col-3">
+          <center><img src="/img/white-tee.jpeg" class="gal" height="200px"></center>
+        </div>
+        <div class="col-3">
+          <center><img src="/img/ghosting.jpeg" class="gal" height="200px"></center>
+        </div>
+      </div>
+      <div class="row one">
+        <div class="col-4">
+          <center><img src="/img/g-wagon.jpeg" class="gal" height="200px"></center>
+        </div>
+        <div class="col-4">
+          <center><img src="/img/black.jpeg" class="gal" height="200px"></center>
+        </div>
+        <div class="col-4">
+          <center><img src="/img/apparel.jpeg" class="gal" height="200px"></center>
+        </div>
+      </div>
+      <div class="row one">
+        <div class="col-3">
+          <center><img src="/img/staircase.jpeg" class="gal" height="200px"></center>
+        </div>
+        <div class="col-3">
+          <center><img src="/img/blue.jpeg" class="gal" height="200px"></center>
+        </div>
+        <div class="col-3">
+          <center><img src="/img/lv.jpeg" class="gal" height="200px"></center>
+        </div>
+        <div class="col-3">
+          <center><img src="/img/mca.jpeg" class="gal" height="200px"></center>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+
+
+
+
   </body>
 </html>
