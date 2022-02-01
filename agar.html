@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- NOTE FOR TIME TRAVELERS: THIS IS 2020 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Agar.io solo</title>
+    <link href="agar.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+    <!-- AAAAH WHAT AM I DOING WHY AM I USING IDs JUST TO AVOID JQUERY HELP HELP IM GOING INSANE FROM QUARANTINE HELP HELP -->
+  </head>
+  <body>
+    <div id="page1">
+      <!-- Page 1 start -->
+      <h1>Agar.io Solo</h1>
+      <p>Use your mouse to move. Avoid bigger cells and eat smaller cells!</p>
+      <p>High score: <span id="highscore">0</span></p>
+      <button id="play">Play</button>
+      <a href="/leaders.html">Leaderboard</a>
+    </div>
+    <div id="page2" class="hide">
+      <!-- Page 2 die -->
+      <h1>You died!</h1>
+      <p>Score: <span id="score">0</span></p>
+      <p id="acheive" class="hide">New high score!</p>
+      <button id="restart">Retry</button>
+    </div>
+    <script src="col.js"></script>
+    <script src="agar.js"></script>
+  </body>
+</html>
