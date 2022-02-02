@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Activity 3</title>
+  </head>
+  <body>
+    <section id="card">
+      <h1>New Student</h1>
+      <h3>Role</h3>
+      <p>Bio Text Goes Here</p>
+    </section>
+
+    <script>
+      function updateCard(elem, name, role, bio) {
+        var card = document.getElementById(elem);
+        var cardHeading = document.querySelector("h1");
+        cardHeading.innerText = name;
+        var cardHeading = document.querySelector(`h3`);
+        cardHeading.innerText = role;
+        var cardHeading = document.querySelector(`p`);
+        cardHeading.innerText = bio;
+      }
+      updateCard("card", "Rajesh", "XYZ", "ROLE");
+    </script>
+  </body>
+</html>

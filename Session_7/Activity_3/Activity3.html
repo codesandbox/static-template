@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>User Data</title>
+  </head>
+  <body>
+    <h1>User Data</h1>
+    <input
+      type="text"
+      name="fullName"
+      id="fname"
+      placeholder="Enter Full Name"
+    />
+    <input type="text" name="email" id="emailId" placeholder="Email" />
+    <button id="Show_Details">Show Details</button>
+  </body>
+  <script>
+    var nameInput = document.getElementById("fname");
+    var emailInput = document.getElementById("emailId");
+    var submitInput = document.getElementById("Show_Details");
+    function printInput() {
+      console.log(nameInput.value);
+      console.log(emailInput.value);
+    }
+    submitInput.addEventListener("click", printInput);
+  </script>
+</html>
