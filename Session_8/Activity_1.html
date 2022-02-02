@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <title>Book a session</title>
+  </head>
+
+  <body>
+    <main class="p-4">
+      <h1>Book a session</h1>
+      <p>Fill in the form below to book a virtual session with your doctor</p>
+      <form id="booking-form">
+      <div>
+        <label for="fullName" class="form-label">Full Name</label>
+        <input
+          required
+          type="text"
+          name="fullName"
+          id="fullName"
+          class="form-control w-50"
+          placeholder="Full Name"
+        />
+      </div>
+      <div>
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="email" id="email" class="form-control w-50" />
+      </div>
+      <div class="my-4">
+        <h5>Doctor's List</h5>
+        <select name="doctor" id="doctor" class="form-select w-50">
+           <option value = " " selected> Select your doctor</option>
+           <option value = "JOHN_HOPKINS">Dr. John Hopkins</option>
+           <option value = "MAYA_MARIN"> Dr. Maya Marin</option>
+           <option value = "DONNA_DOUGLAS"> Dr. Donna Douglas</option>
+        </select>
+      </div>
+
+      <div class="mx-4">
+        <h5>Where ?</h5>
+        <div class="form-check">
+              <input type="radio" name="location" value="GOOGLE_MEET" class="form-check-input" id="google"/>
+              <label for = "locationMeet" class = "form-check-label" i>Google Meet</label>
+        </div>
+        <div class="form-check">
+              <input type="radio" name="location" value="PHONE" class="form-check-input" id="phone"/>
+              <label for = "locationPhone" class = "form-check-label">Phone</label>
+        </div>
+      </div>
+
+    <div class="my-4 ">
+      <h5>When ?</h5>
+      <input
+      type="datetime-local"
+      name="date"
+      id="date"
+      class="form-control w-50"
+    />
+    </div>
+
+    <button type="submit" class="btn btn-primary my-1"> Confirm Booking</button>
+      </form>
+    <script src="index.js"></script>
+    </body>
+
+</html>
