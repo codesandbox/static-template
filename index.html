@@ -1,12 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>VUE jquery plugin</title>
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="app">
+      <button @click="sayHello">activate</button>
+      <br />
+      <accordion ref="accordion" />
+
+      <div id="date-picker">
+        <date-picker
+          @update-date="(newValue) => date = newValue"
+          date-format="yy-mm-dd"
+          v-once
+        ></date-picker>
+        <div>
+          <br />
+          <span>date is: </span>{{ date }}
+        </div>
+      </div>
+      <div id="select2-app">
+        <select-two
+          v-once
+          @update-districts="newValues => districts = newValues"
+          @remove-districts="newValues => districts = newValues"
+        ></select-two>
+        <br />
+        <br />
+        Possible districts:
+        <pre v-cloak>{{ districtStore.districts }}</pre>
+      </div>
+      <div id="districts-app">
+        Here are:
+        <districts />
+      </div>
+    </div>
+
+    <script type="text/x-template" id="accordion-app">
+      <div id="acc-app">
+        <br />
+        <button @click="addNew">Add New</button>
+        <br />
+
+        <div id="accordion">
+            <template v-for="(data, i) in datas" :key="i">
+              <h3>{{ data.title }}</h3>
+              <p>
+                {{ data.description }}
+              </p>
+            </template>
+          </div>
+      </div>
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <script>
+      Vue.component("accordion", {
+        template: "#accordion-app",
+        mounted() {
+          $("#accordion").accordion();
+        },
+        beforeDestroy() {
+          $("#accordion").accordion("destroy");
+        },
+        data() {
+          return {
+            datas: [
+              {
+                id: 1,
+                title: "Section 1",
+                description:
+                  "lorem asdasd asd as da sd asda  a d s ads das  dsa"
+              },
+              {
+                id: 2,
+                title: "Section 2",
+                description:
+                  "123123 lorem asdasd asd as da sd asda  a d s ads das  dsa"
+              }
+            ]
+          };
+        },
+        methods: {
+          addNew() {
+            this.datas.push({
+              id: "11",
+              title: "Hello World",
+              description: "asd a sd lorem1 as a sd as d as d d"
+            });
+            this.$nextTick(() => {
+              $("#accordion").accordion("refresh");
+            });
+          }
+        }
+      });
+
+      const newValues = [];
+
+      const state = Vue.observable({
+        districts: []
+      });
+
+      Vue.component("date-picker", {
+        template: "<input/>",
+        props: ["dateFormat"],
+        mounted() {
+          $(this.$el).datepicker({
+            dateFormat: this.dateFormat,
+            onSelect: (date) => {
+              this.$emit("update-date", date);
+            }
+          });
+        },
+        beforeDestroy() {
+          $(this.$el).datepicker("hide").datepicker("destroy");
+        }
+      });
+
+      Vue.component("select-two", {
+        template: `
+          <select class="js-example-basic-single" name="districts" multiple>
+            <option value="AL">Alabama</option>
+            <option value="DD">Decem</option>
+            <option value="WY">Wyoming</option>
+          </select>
+        `,
+        mounted() {
+          $(this.$el).select2();
+          $(this.$el).on("select2:select", (e) => {
+            newValues.push(e.params.data.id);
+            // this.$emit("update-districts", newValues);
+            state.districts = newValues;
+          });
+          $(this.$el).on("select2:unselect", (e) => {
+            newValues.splice(newValues.indexOf(e.params.data.id), 1);
+            // this.$emit("remove-districts", newValues);
+            state.districts = newValues;
+          });
+        },
+        beforeDestroy() {
+          $(this.$el).select2("destroy");
+        }
+      });
+
+      Vue.component("districts", {
+        template: `
+          <div>
+             {{ localDistrictStore.districts }}
+          </div>
+        `,
+        data() {
+          return {
+            localDistrictStore: state
+          };
+        }
+      });
+
+      new Vue({
+        el: "#app",
+        data: {
+          date: null,
+          districts: [],
+          district: null,
+          districtStore: state
+        },
+        methods: {
+          updateDate(date) {
+            this.date = date;
+          },
+          sayHello() {
+            console.log(this.$refs.accordion);
+          }
+        }
+      });
+    </script>
   </body>
 </html>
