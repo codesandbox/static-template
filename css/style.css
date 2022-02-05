@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap");
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #000;
+}
+
+/* Links */
+a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+}
+a:hover {
+  color: #1ed760;
+}
+
+/* Titles */
+h1,
+h2,
+h3 {
+  margin: 0 0 1.25rem;
+}
+h1 {
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+h2 {
+  font-size: 18px;
+  font-weight: 300;
+}
+h3 {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Sections */
+.section {
+  text-align: center;
+  padding: 3rem 0;
+}
+.section-premium {
+  background-color: #f0cdff;
+}
+.section-free {
+  color: #1ed760;
+  background-color: #2941ab;
+}
+.section-free {
+  color: #1ed760;
+  background-color: #2941ab;
+  background-image: url(https://content-tooling.spotifycdn.com/images/af63e367-ad10-4063-a8e2-5a50ae2a4b28_lie_circles-mobile.svg);
+  background-position: 65% 55%;
+  background-size: auto 177%;
+  background-repeat: no-repeat;
+  padding-bottom: 120px;
+}
+@media (min-width: 768px) {
+  .section-free {
+    background-image: url(https://content-tooling.spotifycdn.com/images/1d2242b4-f071-4244-a276-3bcdc58e77cf_lie_circles-tablet.svg);
+    background-position: center center;
+    background-size: auto 115%;
+    padding: 112px 0 168px;
+  }
+}
+@media (min-width: 1200px) {
+  .section-free {
+    background-size: auto 100%;
+    background-image: url(https://content-tooling.spotifycdn.com/images/b236bf87-bfd5-4bcb-b51a-77881073039c_lie_circles.svg);
+    background-position: right center;
+    padding-top: 128px;
+  }
+}
+
+/* Container */
+.container {
+  width: 100%;
+  padding-right: 12px;
+  padding-left: 12px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 16px 32px;
+  border: 1px solid transparent;
+  border-radius: 480px;
+  background-color: transparent;
+  color: #212529;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn:hover {
+  color: #000;
+}
+.btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.25);
+}
+.section-free .btn {
+  color: #2941ab;
+  background-color: #1ed760;
+  border-color: #1ed760;
+}
+.section-premium .btn:hover,
+.section-premium .btn:focus,
+.section-premium .btn:active {
+  background-color: #43e57d;
+  border-color: #43e57d;
+}
+.section-premium .btn {
+  color: #fff;
+  background-color: #000;
+  border-color: #000;
+}
+.section-premium .btn:hover,
+.section-premium .btn:focus,
+.section-premium .btn:active {
+  background-color: #101010;
+  border-color: #101010;
+}
