@@ -39,6 +39,108 @@ h3 {
   letter-spacing: 0.1em;
 }
 
+/* Navbar */
+.navbar {
+  background-color: #000;
+}
+.navbar .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+.navbar-brand {
+  text-decoration: none;
+  display: inline-block;
+  width: 89px;
+  height: 27px;
+}
+.navbar-brand svg path {
+  fill: #fff;
+}
+.navbar-toggler {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  padding: 4px;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+.navbar-toggler .bar {
+  height: 3px;
+  width: 22px;
+  background-color: #fff;
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.navbar-toggler .bar:nth-of-type(2) {
+  top: 25%;
+}
+.navbar-toggler .bar:nth-of-type(1) {
+  top: 75%;
+}
+#navbar-toggler-hidden-checkbox:checked + .navbar-toggler .bar:nth-of-type(2) {
+  opacity: 0;
+}
+#navbar-toggler-hidden-checkbox:checked + .navbar-toggler .bar:nth-of-type(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+#navbar-toggler-hidden-checkbox:checked + .navbar-toggler .bar:nth-of-type(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+#navbar-toggler-hidden-checkbox {
+  display: none;
+}
+.navbar-collapse {
+  color: #fff;
+  background-color: #000;
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+  float: right;
+  overflow: hidden;
+  width: 0;
+  transition: width 0.2s ease;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  margin-top: 0;
+}
+
+#navbar-toggler-hidden-checkbox:checked ~ .navbar-collapse {
+  width: 100vw;
+}
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  margin-bottom: 0;
+  list-style: none;
+}
+.nav-item-separator {
+  width: 25px;
+  height: 4px;
+  background-color: #fff;
+  margin: 1rem 0;
+}
+.nav-link {
+  display: block;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  padding: 0.5rem 0;
+}
+
 /* Sections */
 .section {
   text-align: center;
