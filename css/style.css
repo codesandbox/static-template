@@ -150,3 +150,143 @@ h3 {
   background-color: #101010;
   border-color: #101010;
 }
+
+/* Footer */
+footer {
+  background-color: #000;
+  padding: 48px 0;
+}
+footer a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+}
+footer a:hover {
+  color: #1ed760;
+}
+
+/* Footer brand */
+footer .footer-brand {
+  margin-bottom: 48px;
+}
+footer .footer-brand a {
+  height: auto;
+  width: 90px;
+}
+footer .footer-brand svg path {
+  fill: #fff;
+}
+
+/* Footer links */
+footer .footer-links a {
+  font-size: 16px;
+}
+footer .footer-links ul {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 48px;
+  margin-top: 0;
+}
+footer .footer-links ul li {
+  padding: 0.5 0;
+  font-weight: 700;
+}
+footer .footer-links ul li:first-child {
+  color: #919496;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding-top: 0;
+}
+footer .footer-links ul li:last-child {
+  padding-bottom: 0;
+}
+
+/* Footer social */
+footer .footer-social ul {
+  padding-left: 0;
+  margin-bottom: 48px;
+  list-style: none;
+}
+footer .footer-social ul li {
+  padding-left: 0;
+  list-style: none;
+}
+footer .footer-social ul li:not(:last-child) {
+  margin-right: 8px;
+}
+footer .footer-social ul li {
+  display: inline-block;
+}
+footer .footer-social ul li a {
+  border-radius: 50%;
+  background-color: #222326;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 44px;
+  height: 44px;
+}
+
+/* Footer secondary */
+.footer-secondary a,
+.footer-secondary p {
+  font-size: 10px;
+  color: #919496;
+}
+.footer-secondary ul {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+.footer-secondary ul li {
+  display: inline-block;
+}
+.footer-secondary ul li:last-child {
+  float: right;
+}
+.footer-secondary ul li:not(:last-child) {
+  margin-right: 8px;
+}
+@media (min-width: 768px) {
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .footer-links ul {
+    flex: 1 0 0%;
+  }
+  .footer-links ul > * {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .footer-main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .footer-main div {
+    flex: 1 0 0%;
+  }
+  .footer-main div > * {
+    width: 100%;
+    max-width: 100%;
+  }
+  .footer-main .footer-links {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .footer-main .footer-social {
+    flex: 0 0 auto;
+    width: 30%;
+    text-align: right;
+  }
+  footer .footer-brand a {
+    height: auto;
+    width: 135px;
+  }
+}
