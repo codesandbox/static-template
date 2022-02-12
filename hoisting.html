@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <h1>
+      HOISTING
+    </h1>
+    <script language="Javascript">
+      //var ini merupakan variabel global sehingga meskipun declare di bawah console log jadi masih bisa
+      var nameA = "Michel Jordans";
+      console.log(nameA);
+
+      let nameB = "Ronaldo";
+      console.log(nameB);
+
+      console.log("---------------");
+
+      if (true) {
+        var addressA = "Malang";
+        let addressB = "Surabaya";
+        console.log(addressB);
+      }
+
+      console.log(addressA);
+      // console.log(addressB); Error karena let adalah level Local
+
+      function tampil() {
+        var genderA = "Male";
+        console.log(genderA);
+      }
+
+      tampil();
+      // console.log(genderA); Error karena genderA menjadi local meskipun var karena masuk di dadalam function
+    </script>
+  </body>
+</html>
