@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <h1>
+      CLASS SUBCLASS
+    </h1>
+    <script language="Javascript">
+      class Person {
+        constructor(name, department) {
+          this.name = name;
+          this.department = department;
+        }
+        getPerson() {
+          return `${this.name} ${this.department}`;
+        }
+      }
+      class Employee extends Person {
+        constructor(name, department, job) {
+          super(name, department);
+          this.job = job;
+        }
+      }
+
+      const person = new Person("Marco", "IT");
+      console.log(`- ${person.name} | ${person.department}`);
+      console.log(`- ${person.getPerson()}`);
+
+      console.log("--------------------------------");
+
+      const employee = new Employee("Marco", "IT", "Programmer");
+      console.log(
+        `${employee.name} | ${employee.department} | ${employee.job}`
+      );
+    </script>
+  </body>
+</html>
