@@ -17,6 +17,23 @@ li {
         font-size: 16px;
         font-style: italic;
 }
+
+h2 {
+        /* background-color: orange;*/
+        position: relative;
+}
+h2::after {
+        content: 'Top';
+        background-color: yellow;
+        font-size: 16px;
+        display: inline-block;
+        font-weight: bolder;
+        padding: 5px;
+        margin: 5px;
+        position: absolute;
+        top: -15px;
+        right: -25px;
+}
 /*body {
         margin: 0px;
 }*/
@@ -31,6 +48,14 @@ h3 {
         color: #3547ebd0;
         margin-bottom: 20px;
 }
+h1::first-letter {
+        font-size: 60px;
+        margin-left: 5px;
+        font-style: normal;
+}
+h3 + p::first-letter {
+        /*color: red;*/
+}
 article p:nth-child(3) {
         color: red;
 }
@@ -42,6 +67,7 @@ article p:nth-child(3) {
 }
 .post-header {
         margin-bottom: 50px;
+        /*position: relative;*/
 }
 aside {
         background-color: #c3a6f841;
@@ -188,4 +214,18 @@ nav a:link {
 
 nav a:link: :nth-child (2) {
         margin-right: 0;
+}
+button {
+        font-size: 15px;
+        text-transform: capitalize;
+        padding: 5px;
+        cursor: pointer;
+        position: relative;
+        /*top: 50;
+        left: 50;*/
+        bottom: 50;
+        right: 50;
+}
+body {
+        position: relative;
 }
