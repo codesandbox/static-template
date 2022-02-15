@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+
+    <style>
+      ul {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+      }
+      .menu-item {
+        margin-top: 10px;
+        list-style: none;
+        cursor: pointer;
+        color: coral;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1 data-i18n="app-title"></h1>
+    <h2 data-i18n="lead"></h2>
+    <ul id="ul">
+      <li class="menu-item">en</li>
+      <li class="menu-item">ru</li>
+    </ul>
+    <script src="./scripts.js"></script>
   </body>
 </html>
