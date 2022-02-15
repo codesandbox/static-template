@@ -1,0 +1,4 @@
+Southwest chicken quesadilla: 6 piece quesadilla with black beans, shredded chicken, and corn, topped with a drizzle of our fan favorite ancho-chili sauce
+byob (build your own burrito): a choice of flour or wheat tortilla. your choice of meat: carnitas, chicken, or beef. choice of beans: refried, black, or pinto, cheese, and sauce and toppings
+bbq bacon chli huevos cheeseburger: thick  angus burger smothered in house signature bbq sauce, topped with applewood hickory smoked bacon, a scoop of our chili con carne, american, cheddar, and mexican blend cheese, and lastly a perfectly cooked to your preference
+the vaquero: A5 wagyu tomowhawk steak, dripping in rendered fat and our house secret compound butter served with a side of roasted garlic butter & cheese yukon golds

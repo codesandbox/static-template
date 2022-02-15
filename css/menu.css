@@ -1,0 +1,65 @@
+.menu {
+  padding: 0 10px 30px 10px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%/1, max(64px, 100%/3)), 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  display: grid;
+  grid-gap: 20px 40px;
+}
+
+.food-items {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  background-color: var(--secondary-bg);
+}
+
+.food-items .image img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px;
+}
+
+.food-items .image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+
+.food-items .details .details-sub h1 {
+  grid-column: 1/-1;
+  text-align: center;
+}
+
+.details {
+  padding: 20px 10px;
+  display: grid;
+  grid-row-gap: 15px;
+  grid-template-rows: auto 1fr 50px;
+}
+
+.details-sub {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.details-sub > h5 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.price {
+  text-align: right;
+}
+
+.details > p {
+  color: #6f6f6f;
+  font-size: 15px;
+  line-height: 28px;
+  font-weight: 400;
+  align-self: stretch;
+}
