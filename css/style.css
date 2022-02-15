@@ -1,0 +1,70 @@
+/* --------------------------------------------------------
+# General
+-------------------------------------------------------- */
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-gray: hsl(212, 45%, 89%);
+  --color-grayish-blue: hsl(220, 15%, 55%);
+  --color-dark-blue: hsl(218, 44%, 22%);
+
+  font-family: "Outfit", sans-serif;
+}
+
+/* --------------------------------------------------------
+# Mobile
+-------------------------------------------------------- */
+body {
+  background-color: var(--color-light-gray);
+}
+
+body .container {
+  background-color: var(--color-white);
+  border-radius: 15px;
+  height: 500px;
+  width: 330px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 15%;
+}
+
+@media only screen and (min-width: 751px) {
+  body .container {
+    margin-top: 10%;
+  }
+}
+
+body .container img {
+  border-radius: 10px;
+  width: 290px;
+  margin: 20px 20px 0px 20px;
+}
+
+body .container .text {
+  width: 270px;
+  padding: 0px 30px;
+}
+
+h1 {
+  color: var(--color-dark-blue);
+  text-align: center;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+p {
+  text-align: center;
+  font-size: 15px;
+  color: var(--color-grayish-blue);
+}
+
+/* --------------------------------------------------------
+# Atrribution
+-------------------------------------------------------- */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin: 20px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
