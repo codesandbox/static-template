@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html,
+body {
+  background-color: #95d2ff;
+}
+.container {
+  max-width: 1210px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 200px;
+  align-items: center;
+}
+
+header .title h1 {
+  font-size: 48px;
+}
+
+header .title p {
+  font-size: 24px;
+}
+
+header .author {
+  display: flex;
+  align-items: center;
+}
+
+header .author .name-auth {
+  margin-right: 15px;
+}
+header .author .name-auth .namep {
+  font-size: 30px;
+}
+
+header .author .name-auth p {
+  font-size: 22px;
+  text-align: right;
+}
+
+.author img {
+  width: 65px;
+  height: 67px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card-login {
+  box-shadow: 0 5px 20px grey;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 26px;
+  overflow: hidden;
+  height: 42.5rem;
+  max-width: 75.5rem;
+  display: flex;
+}
+.card-login .card-left {
+  flex: 0 0 50%;
+}
+.card-login .card-right {
+  flex: 0 0 50%;
+}
+
+.card-left {
+  padding: 50px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-left .logo img {
+  width: 100px;
+  height: 100px;
+  background: transparent;
+}
+.login-input {
+  margin-top: 20px;
+}
+
+.login-title h3 {
+  font-size: 2rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+input[type="email"],
+[type="password"] {
+  margin-top: 5px;
+  width: 80%;
+  padding: 10px 20px;
+  border: 1px solid gray;
+  border-radius: 15px;
+}
+
+input[type="email"]:focus,
+[type="password"]:focus {
+  border: 2px solid rgb(149, 210, 255);
+  box-shadow: 0 0 10px rgb(149, 210, 255);
+  border: none;
+}
+
+.checkboxx {
+  font-size: 15px;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-top: 20px;
+}
+
+form button {
+  width: 70%;
+  padding: 10px 20px;
+  margin-top: 25px;
+  font-size: 1.5rem;
+  color: #fff;
+  border-radius: 20px;
+  border: 0;
+  background: rgb(149, 210, 255);
+  background: linear-gradient(
+    36deg,
+    rgba(149, 210, 255, 1) 38%,
+    rgba(181, 242, 255, 1) 100%
+  );
+  cursor: pointer;
+  transition: 0.3s;
+}
+form button:hover {
+  box-shadow: 0 0 15px rgb(149, 210, 255);
+}
+
+form p {
+  margin-top: 25px;
+}
+
+form p span:hover {
+  border-bottom: 1px solid rgb(149, 210, 255);
+}
+
+.card-right {
+  display: flex;
+  align-items: center;
+  background: rgb(149, 210, 255);
+  background: linear-gradient(
+    36deg,
+    rgba(149, 210, 255, 1) 35%,
+    rgba(181, 242, 255, 1) 100%
+  );
+}
+
+.card-right img {
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-login {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 900px;
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .card-login .card-right img {
+    width: 200px;
+    object-fit: cover;
+    position: relative;
+    top: 25%;
+    left: 25%;
+  }
+
+  .card-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input[type="email"],
+  [type="password"] {
+    width: 100%;
+  }
+  form button {
+    font-size: 1rem;
+    width: 100%;
+  }
+  header .title h1 {
+    font-size: 25px;
+  }
+  header .title p {
+    font-size: 18px;
+  }
+  header .author .name-auth .namep {
+    font-size: 15px;
+  }
+  header .author .name-auth p {
+    font-size: 15px;
+  }
+}
