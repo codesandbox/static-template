@@ -24,19 +24,23 @@ body {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 992px) {
+  /* Changing background color to yellow */
   body {
     background-color: yellow;
   }
+  /* Making circles size to 100px */
   .circles {
     background-color: black;
     height: 100px;
     width: 100px;
   }
-
+  /* Chaning the circle base from grid of 10 items per row to 5 */
   .circle_base {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
   }
+  /* hiding .last .second classes using display: none*/
+
   .last,
   .second {
     display: none;
@@ -44,20 +48,24 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  /* Changing backgrond to black */
   body {
     background-color: black;
   }
+  /* Chaning the circle base from grid to flex */
   .circle_base {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .circles {
-    height: 80vh;
-    width: 80vw;
-    margin: auto;
+
+  /* Making the only_one circl to large */
+  #only_one {
+    height: 400px;
+    width: 400px;
     border-radius: 51%;
   }
+  /* hiding .first .last .second classes using display: none*/
   .first,
   .last,
   .second {
