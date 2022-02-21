@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+    <!-- dom - 논리적 모델 VANILLA JS -> 순수 JS -->
+
+    <!-- js가 읽는 script와 babel이 읽는 script가 다르기 때문에 type="text/babel"을 기입을 해줘야한다. -->
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      //HTML의 모양을 JS로 가져온거기때문에 편함.
+      const text = "hello , world";
+      const titleClassName = "title123";
+
+      const props = { className: titleClassName, children: text };
+      const customH1 = <h1 {...props} />;
+      //=== const customH1 = <h1 className={props.className}  children={props.children}/>;
+      const element = customH1;
+      ReactDOM.render(element, rootElement);
+    </script>
   </body>
 </html>
