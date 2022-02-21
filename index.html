@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Login TFAC</title>
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <body class="h-screen bg-gray-100">
+    <div
+      class="max-w-sm md:max-w-lg mx-auto bg-blue-300 p-5 rounded-2xl shadow-2xl login flex flex-col items-center mt-10"
+    >
+      <div class="logo">
+        <img
+          class="w-24"
+          src="https://acpro-std.tfac.or.th/test_std/uploads/images/%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%A3%E0%B8%A7%E0%B8%A1%E0%B8%A1%E0%B8%B2%E0%B8%95%E0%B8%A3%E0%B8%90%E0%B8%B2%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8A%E0%B8%B5/%E0%B8%A1%E0%B8%B2%E0%B8%95%E0%B8%A3%E0%B8%90%E0%B8%B2%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B8%E0%B8%87%206%20%E0%B8%89%E0%B8%9A%E0%B8%B1%E0%B8%9A/TFAC_LOGO%20PNG.png"
+          alt=""
+        />
+      </div>
+      <div class="title">
+        <h3 class="uppercase text-center font-medium text-lg text-gray-600">
+          Federation of Accounting profession thailand
+        </h3>
+      </div>
+
+      <div class="login-wrapper flex flex-col items-center mt-10">
+        <div class="title-login text-3xl">REGISTRATION</div>
+        <form>
+          <input
+            class="mt-3 px-5 w-full bg-gray-200 py-2 rounded-2xl"
+            type="text"
+            placeholder="เลขบัตรประชาชน"
+          />
+          <input
+            class="mt-3 px-5 w-full bg-gray-200 py-2 rounded-2xl"
+            type="password"
+            placeholder="รหัสผ่าน"
+          />
+          <div class="btn-login mt-3 flex justify-center items-center">
+            <button
+              class="bg-blue-300 mr-3 px-10 py-1 text-lg rounded-full text-white bg-blue-500 shadow-lg shadow-blue-500/50"
+            >
+              Login
+            </button>
+            |
+            <a
+              class="text-center text-sm w-24 md:text-md mr-3 ml-3 hover:border-b-2 border-blue-500"
+              href="#"
+              >ลงทะเบียนใหม่</a
+            >
+            <a
+              class="text-center text-sm w-24 md:text-md mr-3 hover:border-b-2 border-blue-500"
+              href="#"
+              >ลืมรหัสผ่าน ?</a
+            >
+          </div>
+        </form>
+        <p class="text-red-600 mt-8 text-center text-md font-light">
+          *คำแนะนำในการใช้ระบบ : เครื่องคอมพิวเตอร์ของผู้ใช้งานควรใช้ IE9
+          ขึ้นไปหรือสามารถใช้งาน Google Chrome และ Mozilla Firefox ได้
+        </p>
+
+        <div class="footer mt-8">
+          <hr />
+          <p class="text-sm mt-5 font-light text-justify text-gray-500">
+            © Copyright 2017 All Rights Reserved. สภาวิชาชีพบัญชี
+            ในพระบรมราชูปถัมภ์ Federation of Accounting Professions
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
