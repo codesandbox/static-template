@@ -1,12 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Water Bottle Web design</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Satisfy&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      .logo {
+        font-family: "Satisfy", cursive;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <nav class="container mx-auto h-20 flex justify-between items-center">
+        <div class="logo text-2xl cursor-pointer ml-10">TUPPERWARE</div>
+        <div class="nav-item hidden md:block">
+          <ul class="flex">
+            <li class="px-16 cursor-pointer">
+              <a
+                href=""
+                class="border-b-2 border-indigo-500 hover:border-b-2 border-indigo-500"
+                >HOME</a
+              >
+            </li>
+            <li class="px-16 cursor-pointer">
+              <a href="" class="hover:border-b-2 border-indigo-500">ABOUNT</a>
+            </li>
+            <li class="px-16 cursor-pointer">
+              <a href="" class="hover:border-b-2 border-indigo-500">PRICING</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-btn hidden md:block">
+          <button class="bg-black text-white p-2 rounded-full text-sm">
+            Contact us
+          </button>
+        </div>
+        <i
+          class="fa fa-bars cursor-pointer text-3xl mr-10 md:hidden"
+          aria-hidden="true"
+        ></i>
+      </nav>
+    </header>
+
+    <section class="container mx-auto flex flex-col mb-3 md:flex-row md:h-4/6">
+      <div class="content-left flex flex-col items-center flex-1">
+        <h1
+          class="uppercase text-6xl mt-10 leading-snug md:text-8xl md:mt-10 md:leading-snug"
+        >
+          Bottle <br />
+          which <br /><span class="text-yellow-300">needed</span><br />
+          everydays.
+        </h1>
+        <p class="mt-5 w-4/5">
+          Tupperware water bottle is not just a water bottle its bpa free &
+          drinking more water every day can make a huge impact on your health.
+        </p>
+        <button
+          class="px-12 py-2 rounded-full bg-black text-white text-lg mt-12"
+        >
+          Buy Now
+        </button>
+      </div>
+      <div class="content-right mt-12 flex-1">
+        <img
+          class="w-11/12 mx-auto md:h-5/6 md:w-full object-cover rounded-3xl"
+          src="asset/bottle.png"
+          alt=""
+        />
+      </div>
+    </section>
   </body>
 </html>
