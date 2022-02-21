@@ -1,12 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <title>Personal Portfolio</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <nav
+      class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark"
+      id="navbar"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">DN</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav align-items-center mx-auto">
+            <!-- <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li> -->
+            <li class="nav-item mx-2">
+              <a class="nav-link h6" href="#about"
+                ><i class="bi bi-person-circle"></i> About</a
+              >
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link h6" href="#projects"
+                ><i class="bi bi-display"></i> Works</a
+              >
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link h6" href="#contact"
+                ><i class="bi bi-person-lines-fill"></i> Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- === Showcase === -->
+
+    <section
+      class="bg-dark text-light p-5 text-center vph"
+      id="welcome-section"
+    >
+      <div class="container mt-5">
+        <div
+          class="d-sm-flex align-items-center justify-content-between fst-italic"
+        >
+          <div class="col-md p-3">
+            <h1>
+              Hi I'm Shmopsy -
+              <span class="text-warning">newbie web developer</span>
+            </h1>
+          </div>
+          <img
+            class="img-fluid mepic"
+            src="https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- === Boxes === -->
+
+    <section id="projects" class="p-5">
+      <div class="container">
+        <h2 class="text-center display-3 fw-bold project-tile">My Projects</h2>
+        <div class="row g-2 g-sm-4 py-3">
+          <div class="col-md-6 col-lg-3 rounded-3 py-2 boxx">
+            <div class="card bg-dark text-light text-center">
+              <img class="card-img-top" src="./img/tribute.JPG" alt="Tribute" />
+              <div class="card-body">
+                <h4 class="card-title pb-1">Tribute page</h4>
+                <!-- <p class="card-text">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Animi, nobis!
+                </p> -->
+                <a
+                  href="https://2tf6e.csb.app/"
+                  class="btn btn-primary"
+                  target="”_blank”"
+                  >View page<i class="bi bi-arrow-right-short"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 rounded-3 py-2 boxx">
+            <div class="card bg-dark text-light text-center">
+              <img class="card-img-top" src="./img/survey.JPG" alt="Survey" />
+              <div class="card-body">
+                <h4 class="card-title pb-1">Survey form</h4>
+                <!-- <p class="card-text">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Animi, nobis!
+                </p> -->
+                <a
+                  href="https://fb4oz.csb.app/"
+                  class="btn btn-primary"
+                  target="”_blank”"
+                  >View page<i class="bi bi-arrow-right-short"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 rounded-3 py-2 boxx">
+            <div class="card bg-dark text-light text-center">
+              <img class="card-img-top" src="./img/product.JPG" alt="Product" />
+              <div class="card-body">
+                <h4 class="card-title pb-1">Product page</h4>
+                <!-- <p class="card-text">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Animi, nobis!
+                </p> -->
+                <a
+                  href="https://czdfh.csb.app/"
+                  class="btn btn-primary"
+                  target="”_blank”"
+                  >View page<i class="bi bi-arrow-right-short"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 rounded-3 py-2 boxx">
+            <div class="card bg-dark text-light text-center">
+              <img
+                class="card-img-top"
+                src="./img/technical.JPG"
+                alt="Technical"
+              />
+              <div class="card-body">
+                <h4 class="card-title pb-1">Technical Documentation Page</h4>
+                <!-- <p class="card-text">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p> -->
+                <a
+                  href="https://yjds3.csb.app/"
+                  class="btn btn-primary"
+                  target="”_blank”"
+                  >View page<i class="bi bi-arrow-right-short"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- === box2 === -->
+
+    <section class="p-5">
+      <div class="container">
+        <h2 class="text-center display-3 fw-bold project-tile">Certificates</h2>
+        <div class="row g-2 g-sm-4 py-3">
+          <div class="col-md-6 col-lg-4 rounded-3 py-2">
+            <div class="card bg-dark text-light text-center">
+              <img
+                class="card-img-top"
+                src="./img/certificate.PNG"
+                alt="Tribute"
+              />
+              <div class="card-body">
+                <h4 class="card-title pb-1">Responsive Web Design</h4>
+                <!-- <p class="card-text">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Animi, nobis!
+                </p> -->
+                <a
+                  href="https://www.freecodecamp.org/certification/suiradn/responsive-web-design"
+                  class="btn btn-primary"
+                  target="”_blank”"
+                  >View<i class="bi bi-arrow-right-short"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- === About === -->
+
+    <section id="about" class="p-5 bg-dark text-light">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md d-flex justify-content-center">
+            <img
+              class="img-fluid mepic2"
+              src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=717&q=80"
+              alt="ME"
+            />
+          </div>
+          <div class="col-md p-3">
+            <h1>About me</h1>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Perferendis delectus laudantium molestiae velit, voluptas
+              molestias rerum quaerat voluptatum inventore quas repudiandae
+              impedit ea labore repellat aut sint. Eaque, tempore voluptatum.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              amet!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- === Contact === -->
+
+    <section id="contact" class="p-5">
+      <div class="container">
+        <div class="row g-4">
+          <h2 class="text-center mb-4">Contact Info</h2>
+          <div class="col-md">
+            <ul class="list-inline text-center pt-4">
+              <li class="list-inline-item">
+                <a href="https://lt-lt.facebook.com/" target="_blank"
+                  ><i class="bi bi-facebook text-dark h3 mx-2 social-links"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://twitter.com/" target="_blank"
+                  ><i class="bi bi-twitter text-dark h3 mx-2 social-links"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/" target="_blank"
+                  ><i class="bi bi-linkedin text-dark h3 mx-2 social-links"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a id="profile-link" href="https://github.com/" target="_blank"
+                  ><i class="bi bi-github text-dark h3 mx-2 social-links"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/" target="_blank">
+                  <i class="bi bi-instagram text-dark h3 mx-2 social-links"></i
+                ></a>
+              </li>
+            </ul>
+
+            <ul class="list-group list-group-flush text-center pt-4">
+              <li class="list-group-item">
+                <span><i class="bi bi-telephone-fill h3"></i></span
+                ><a class="ms-3" href="tel:+37069696969">+370-6969-6969</a>
+              </li>
+              <li class="list-group-item">
+                <span><i class="bi bi-envelope-fill h3"></i></span
+                ><a class="ms-3" href="mailto:darius@navickas.lt"
+                  >darius@navickas.lt</a
+                >
+              </li>
+              <li class="list-group-item">
+                <span><i class="bi bi-globe h3"></i></span
+                ><span class="fw-bold ms-3">Vilnius, Lithuania</span>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md">
+            <form
+              action="https://formsubmit.co/darius.navickas@balticinstitute.onmicrosoft.com"
+              method="POST"
+              class="text-center"
+            >
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Email address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="name@example.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label"
+                  >Message for me</label
+                >
+                <textarea
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-outline-dark">
+                <i class="bi bi-arrow-return-right"></i> Send
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- === Footer === -->
+
+    <footer class="p-3 bg-dark text-white text-center position-relative">
+      <div class="container">
+        <p class="lead">Copyright &copy; 2021 DN</p>
+
+        <a href="#" class="position-absolute bottom-0 end-0 p-3">
+          <i class="bi bi-arrow-up-circle h1"></i>
+        </a>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   </body>
 </html>
