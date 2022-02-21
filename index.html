@@ -1,12 +1,111 @@
+<!-- 
+  Use Emmet shortcuts to even faster experience.
+  For an example: type div#root and press Tab.
+-->
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <!-- Styles will be included here automatically -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.9.0/cdn.js"
+    ></script>
+    <script src="data.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      var xdata = null;
+      const wait = (msecs) =>
+        new Promise((res) =>
+          setTimeout(() => {
+            res(msecs);
+          }, msecs)
+        );
+      function _xdata() {
+        return {
+          cart: {
+            items: [],
+            busy: false,
+            waitTime: 500,
+            async add(id) {
+              if (!this.busy) {
+                this.busy = true;
+                this.items.filter((x) => x.id === id)[0].quantity++;
+                await wait(this.waitTime);
+                this.busy = false;
+              }
+            },
+            async remove(id) {
+              if (!this.busy) {
+                this.busy = true;
+                this.items.filter((x) => x.id === id)[0].quantity--;
+                await wait(this.waitTime);
+                this.busy = false;
+              }
+            }
+          },
+          async init() {
+            this.cart.items = api().products;
+          }
+        };
+      }
+      xdata = _xdata();
+    </script>
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <body class="bg-white">
+    <div x-data="xdata" x-init="init">
+      <template x-for="ci in cart.items">
+        <div class="grid grid-cols-4">
+          <h1 x-text="ci.title"></h1>
+          <div class="p-1 bg-gray-200 mx-auto">
+            <template x-if="cart.busy">
+              <div class="cursor-not-allowed">
+                <button
+                  @click="cart.remove(ci.id)"
+                  class="border-gray-300 text-gray-300 rounded border border-black px-2"
+                >
+                  -
+                </button>
+                <input
+                  class="border border-gray-300 text-gray-300 w-16 text-center"
+                  type="text"
+                  x-model="ci.quantity"
+                />
+                <button
+                  @click="cart.add(ci.id)"
+                  class="border-gray-300 text-gray-300 rounded border border-black px-2"
+                >
+                  +
+                </button>
+              </div>
+            </template>
+
+            <template x-if="!cart.busy">
+              <div class="">
+                <button
+                  @click="cart.remove(ci.id)"
+                  class="rounded border border-black px-2"
+                >
+                  -
+                </button>
+                <input
+                  class="border border-gray-600 w-16 text-center"
+                  type="text"
+                  x-model="ci.quantity"
+                />
+
+                <button
+                  @click="cart.add(ci.id)"
+                  class="rounded border border-black px-2"
+                >
+                  +
+                </button>
+              </div>
+            </template>
+          </div>
+          <div class="" x-text="'EUR ' + ci.price  + '/pcs'"></div>
+          <div class="" x-text="ci.price*ci.quantity"></div>
+        </div>
+      </template>
+    </div>
   </body>
 </html>
