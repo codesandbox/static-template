@@ -27,15 +27,12 @@
           var img2 = new Image();
           (img2.onload = draw), reDraw;
           img2.onerror = failed;
-          console.log(e.target.files[0]);
+
           img2.src = URL.createObjectURL(e.target.files[0]);
           img.src = URL.createObjectURL(e.target.files[0]);
         });
 
         function draw() {
-          console.log(this.width);
-          console.log(this.src);
-
           var ctx = canvas.getContext("2d");
           var p1 = ctx.transformedPoint(0, 0);
           var p2 = ctx.transformedPoint(canvas.width, canvas.height);
@@ -118,8 +115,7 @@
           var multi = Math.pow(scalef, ev);
           ctx.scale(multi, multi);
           ctx.translate(-point.x, -point.y);
-          console.log(xchng.a);
-          console.log(xchng.d);
+
           reDraw();
         };
 
@@ -160,7 +156,6 @@
         };
         ctx.restore = () => {
           xchng = savedTrack.pop();
-          console.log(xchng);
 
           return restore.call(ctx);
         };
