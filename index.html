@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <div class="card" data-tilt data-tilt-scale="1.1">
+        <div class="content">
+          <h2>01</h2>
+          <h3>Card One</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem nam
+            nulla repellat amet praesentium porro!
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+      <div class="card" data-tilt data-tilt-scale="1.1">
+        <div class="content">
+          <h2>02</h2>
+          <h3>Card Two</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem nam
+            nulla repellat amet praesentium porro!
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+      <div class="card" data-tilt data-tilt-scale="1.1">
+        <div class="content">
+          <h2>03</h2>
+          <h3>Card Three</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem nam
+            nulla repellat amet praesentium porro!
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script type="text/javascript">
+      VanillaTilt.init(document.querySelectorAll(".card"), {
+        max: 25,
+        speed: 400
+      });
+
+      //It also supports NodeList
+    </script>
   </body>
 </html>
