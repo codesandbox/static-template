@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Static Template</title>
-  </head>
   <body>
-    <h1>
-      This is a static template, there is no bundler or bundling involved!
-    </h1>
+    <!-- react cdn -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- bable cdn -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
   </body>
+  <script type="text/babel">
+    const rootEl = document.getElementById("root");
+    const Paint = ({ title, description, children }) => {
+      return (
+        <>
+          <h1>{title}</h1>
+          <h3>{description}</h3>
+          {children}
+        </>
+      );
+    };
+
+    const Good = () => {
+      return <h3>Goood~~!!</h3>;
+    };
+
+    const element = (
+      <>
+        <Paint title="Good" description="good">
+          <Good />
+          <Good />
+          <Good />
+        </Paint>
+      </>
+    );
+
+    ReactDOM.render(element, rootEl);
+  </script>
 </html>
