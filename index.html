@@ -10,27 +10,16 @@
   </body>
   <script type="text/babel">
     const rootEl = document.getElementById("root");
-    const Paint = ({ title, description, children }) => {
-      return (
-        <>
-          <h1>{title}</h1>
-          <h3>{description}</h3>
-          {children}
-        </>
-      );
-    };
 
-    const Good = () => {
-      return <h3>Goood~~!!</h3>;
+    const Number = ({ number }) => {
+      return <>{number % 2 === 0 ? <h1>{number}</h1> : <h5>{number}</h5>}</>;
     };
 
     const element = (
       <>
-        <Paint title="Good" description="good">
-          <Good />
-          <Good />
-          <Good />
-        </Paint>
+        <Number number={1} />
+        <Number number={2} />
+        <Number number={3} />
       </>
     );
 
