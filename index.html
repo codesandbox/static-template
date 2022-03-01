@@ -1,12 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <p id="example" style class="text">Test data</p>
+    <p id="example-1" class="text">Test data 2</p>
+    <!---fsdfsdgsd-->
+    <style>
+      /*this is for your p class text*/
+
+      .text {
+        color: green;
+        background-color: red;
+      }
+      html {
+        background: black;
+      }
+    </style>
+    <script>
+      /*
+        Start your code here
+        Plain Vanilla JS
+        */
+      //document.write("Hello World, yaya!");
+    </script>
+
+    <script>
+      //document.getElementById("example").innerText = "Chris Phang";
+      document.getElementsByClassName("text")[0].innerHTML =
+        "<span>I love </span>Chris Phang";
+      //document.querySelectorAll(".text")[0].innerHTML = "Keng Fai";
+      //jQuery(".text").text("KF");
+      $(".text").eq(0).text("I love programming");
+      //-->
+    </script>
+    <script>
+      var el = document.getElementsByClassName("text");
+      el[0].innerHTML = "<span>I love </span>Keng Fai";
+      function chrisPhang() {
+        var i;
+        var j;
+        var k;
+        var l;
+      }
+    </script>
+    <script>
+      el[0].style.fontSize = "24px";
+      el[1].style.color = "black";
+      el[0].style.backgroundColor = "yellow";
+    </script>
+    <script>
+      document.getElementsByClassName("text")[0].style.color = "black";
+      document.getElementsByClassName("text")[0].style.backgroundColor = "blue";
+      var tx = document.getElementsByClassName("text");
+      tx[1].innerHTML = "Thank you";
+      tx[1].style.backgroundColor = "green";
+      tx[1].style.fontSize = "43px";
+      tx[1].style.fontFamily = "Tahoma";
+    </script>
+    <a style="" href="https://wa.me/60169760860" target="_blank">
+      <img
+        style="
+          width: 80px;
+          border: white 2px solid;
+          border-radius: 8px;
+          padding: 10px;
+        "
+        class="whatsapp"
+        src="/whatsapp-image.png"
+      />
+    </a>
+    <img
+      style="
+        width: 80px;
+        border: white 2px solid;
+        border-radius: 8px;
+        padding: 10px;
+        cursor: pointer;
+      "
+      class="click-link"
+      src="/whatsapp-image.png"
+    />
+    <script>
+      document
+        .getElementsByClassName("click-link")[0]
+        .addEventListener("click", function (event) {
+          // do something
+          //alert("this is whatsapp");
+          document.getElementsByClassName("whatsapp")[0].click();
+        });
+    </script>
   </body>
 </html>
