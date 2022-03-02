@@ -1,12 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="material-components-web.min.css" />
+    <style>
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .element-card {
+        width: 20em;
+        margin: 16px;
+      }
+
+      .element-card > .mdc-card__media {
+        height: 9em;
+      }
+
+      #demo-absolute-fab {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 1;
+      }
+    </style>
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <body class="mdc-typography">
+    <h1>Choose your element</h1>
+    <div class="cards">
+      <div class="mdc-card element-card earth">
+        <div class="mdc-card__media">
+          <div class="mdc-card__media-content">
+            <h1 class="mdc-typography--headline4">Earth</h1>
+            <h2 class="mdc-typography--headline6">A solid decision.</h2>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <div class="mdc-card element-card wind">
+        <div class="mdc-card__media">
+          <h1 class="mdc-typography--headline4">Wind</h1>
+          <h2 class="mdc-typography--headline6">Stormy weather ahead.</h2>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <div class="mdc-card element-card fire">
+        <div class="mdc-card__media">
+          <h1 class="mdc-typography--headline4">Fire</h1>
+          <h2 class="mdc-typography--headline6">Hot-headed much?</h2>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <div class="mdc-card element-card water">
+        <div class="mdc-card__media">
+          <h1 class="mdc-typography--headline4">Water</h1>
+          <h2 class="mdc-typography--headline6">Go with the flow.</h2>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+    </div>
+    <button class="mdc-fab" id="demo-absolute-fab" aria-label="Favorite">
+      <div class="mdc-fab__ripple"></div>
+      <span class="mdc-fab__icon material-icons">favorite</span>
+    </button>
   </body>
 </html>
