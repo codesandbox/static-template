@@ -11,10 +11,30 @@
   <script type="text/babel">
     const rootElement = document.getElementById("root");
 
+    function useLocalStorage(itemName, value = "") {
+      const [state, setState] = React.useState(() => {
+        return window.localStorage.getItem(itemName) || value;
+      });
+      React.useEffect(() => {
+        window.localStorage.setItem(itemName, state);
+      }, [state]);
+
+      return [state, setState];
+    }
+
     const App = () => {
-      const [keyword, setKeyword] = React.useState("");
-      const [typing, setTyping] = React.useState(false);
-      const [result, setResult] = React.useState("");
+      const [keyword, setKeyword] = useLocalStorage("keyword");
+      const [result, setResult] = useLocalStorage("result");
+      const [typing, setTyping] = useLocalStorage("typing", false);
+
+      React.useEffect(() => {
+        window.localStorage.setItem("result", result);
+      }, [result]);
+
+      React.useEffect(() => {
+        window.localStorage.setItem("typing", typing);
+      }, [typing]);
+
       const handleEvent = (event) => {
         setTyping(true);
         setKeyword(event.target.value);
