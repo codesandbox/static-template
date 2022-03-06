@@ -10,49 +10,26 @@
   </body>
   <script type="text/babel">
     const rootElement = document.getElementById("root");
-
-    function useLocalStorage(itemName, value = "") {
-      const [state, setState] = React.useState(() => {
-        return window.localStorage.getItem(itemName) || value;
-      });
-      React.useEffect(() => {
-        window.localStorage.setItem(itemName, state);
-      }, [state]);
-
-      return [state, setState];
-    }
-
     const App = () => {
-      const [keyword, setKeyword] = useLocalStorage("keyword");
-      const [result, setResult] = useLocalStorage("result");
-      const [typing, setTyping] = useLocalStorage("typing", false);
-
+      const inputRef = React.useRef();
+      const boxRef = React.useRef();
       React.useEffect(() => {
-        window.localStorage.setItem("result", result);
-      }, [result]);
+        inputRef.current.focus();
+        setTimeout(() => {
+          boxRef.current.style.backgroundColor = "pink";
+        }, 1000);
+      }, []);
 
-      React.useEffect(() => {
-        window.localStorage.setItem("typing", typing);
-      }, [typing]);
-
-      const handleEvent = (event) => {
-        setTyping(true);
-        setKeyword(event.target.value);
-      };
-      const handleClick = () => {
-        setTyping(false);
-        setResult(`we found ${keyword}`);
-      };
       return (
         <>
-          <input onChange={handleEvent} />
-          <button onClick={handleClick}>click me</button>
-          <p>{typing ? `looking for ${keyword}...` : result}</p>
+          <input ref={inputRef} />
+          <div
+            ref={boxRef}
+            style={{ height: 100, width: 100, backgroundColor: "brown" }}
+          />
         </>
       );
     };
-
     ReactDOM.render(<App />, rootElement);
-    render();
   </script>
 </html>
