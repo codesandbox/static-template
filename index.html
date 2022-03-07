@@ -1,12 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>imgur</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <nav id="nav">
+        <div class="left">
+          <img
+            src="https://www.linkpicture.com/q/logo-1200-630-removebg-preview.png"
+            alt=""
+          />
+          <a class="Button_upload">
+            <img
+              src="https://s.imgur.com/desktop-assets/desktop-assets/icon-new-post.13ab64f9f36ad8f25ae3544b350e2ae1.svg"
+            />
+            <span class="newPostLabel">New post</span></a
+          >
+        </div>
+
+        <div class="mid">
+          <input
+            type="text"
+            class="searchInput"
+            id="searchInput"
+            placeholder="Images, #tags, @user oh my god!"
+          />
+          <img
+            class="searchBtn"
+            src="https://s.imgur.com/desktop-assets/desktop-assets/icon-search.8d0f9b564a4659d48d8eca38b968a7f2.svg"
+          />
+        </div>
+        <div id="debounceBox"></div>
+
+        <div class="right">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 -2 34 34"
+            class="uScaleTransition ProfileNavbar-item"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Comment Leaderboard</title>
+            <g fill="none" fill-rule="evenodd">
+              <path d="M0 0h32v32H0z"></path>
+              <g transform="translate(6.5 3)" stroke="#ffffff" stroke-width="2">
+                <path
+                  d="M4 16.977v7.076l5.5-2.481 5.5 2.481v-7.076l-5.5 1.245L4 16.977z"
+                ></path>
+                <circle cx="9.5" cy="9.5" r="8.5"></circle>
+              </g>
+            </g>
+          </svg>
+
+          <button class="ads">Go Ad-Free</button>
+          <button class="signin">Sign in</button>
+          <button class="signUp">Sign up</button>
+        </div>
+      </nav>
+      <!-- <img src="https://i.imgur.com/TMbbd42.png" alt=""> -->
+    </header>
+
+    <div class="displayBox" id="displayBox">
+      <div id="displayBoxA"></div>
+      <div id="displayBoxB"></div>
+      <div id="displayBoxC"></div>
+      <div id="displayBoxD"></div>
+      <div id="displayBoxE"></div>
+    </div>
   </body>
+  <script src="index.js"></script>
 </html>
+<!-- <script>
+  let gArr = [];
+
+  const token =
+    "131e53e01ff93a5eeda767059254a4c9a796ca807c3f5e6d92d560c2e49ade7c";
+  let para = "latest";
+  const api = `https://serpapi.com/search.json?q=${para}&api_key=${token}`;
+
+  const getData = async () => {
+    const req = await fetch(
+      "https://api.imgur.com/3/gallery/top/?showViral=true&mature=true&album_previews=true",
+      {
+        method: "GET",
+        headers: { Authorization: "Client-ID 414496012eaf87e" }
+      }
+    );
+    // const req = await fetch(api)
+    const { data } = await req.json();
+    console.log(data);
+    gArr.push(...data);
+    showData(gArr);
+  };
+  getData();
+
+  window.addEventListener("load", () => {
+    getData();
+  });
+
+  console.log("gArr outside ", gArr, gArr.length);
+
+  const showData = (gArr) => {
+    const displayBox = document.getElementById("displayBox");
+
+    gArr.map((a, i) => {
+      let img;
+      if (a.images !== undefined) {
+        img = a.images[0].link;
+      } else {
+        img = a.link;
+      }
+
+      console.log(i, img);
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+          ${a.title}
+          <img class="img" src="${img}">
+        `;
+      displayBox.append(card);
+    });
+  };
+</script> -->
