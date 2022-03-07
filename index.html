@@ -2,6 +2,8 @@
 <html lang="en">
   <body>
     <!-- react cdn -->
+    <meta charset="utf-8" />
+
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <!-- bable cdn -->
@@ -10,26 +12,41 @@
   </body>
   <script type="text/babel">
     const rootElement = document.getElementById("root");
-    const App = () => {
-      const inputRef = React.useRef();
-      const boxRef = React.useRef();
-      React.useEffect(() => {
-        inputRef.current.focus();
-        setTimeout(() => {
-          boxRef.current.style.backgroundColor = "pink";
-        }, 1000);
-      }, []);
 
+    class ErrorBoundary extends React.Component {
+      state = { error: null };
+      static getDerivedStateFromError(error) {
+        return { error };
+      }
+      render() {
+        const { error } = this.state;
+        if (error) {
+          return this.props.fallback;
+        }
+
+        return this.props.children;
+      }
+    }
+
+    const Child = () => {
+      throw new Error("test Error");
+      return <p>Child</p>;
+    };
+
+    const App = () => {
       return (
         <>
-          <input ref={inputRef} />
-          <div
-            ref={boxRef}
-            style={{ height: 100, width: 100, backgroundColor: "brown" }}
-          />
+          <p>App</p>
+          <ErrorBoundary fallback={<p>NewError!!</p>}>
+            <Child />
+          </ErrorBoundary>
+          <ErrorBoundary fallback={<p>NewError22</p>}>
+            <Child />
+          </ErrorBoundary>
         </>
       );
     };
+
     ReactDOM.render(<App />, rootElement);
   </script>
 </html>
