@@ -1,12 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Liban</title>
+    <link
+      rel="shortcut icon"
+      href="https://raw.githubusercontent.com/LibanAlasow/my-basement/e472fd9c9e95b0d056c13bd8f91d2c32cf0da580/newpfp.jpg"
+      type="image/x-icon"
+    />
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="box">
+      <div class="user">
+        <div style="display: flex; align-items: center;">
+          <div class="pfp"></div>
+          <div class="text">
+            <p class="username">Liban Alasow</p>
+            <p class="caption">
+              <ion-icon name="leaf-outline"></ion-icon> Web-designer
+            </p>
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 23px;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: lightgray 0 10px 25px 0px;
+          "
+          class="planet"
+          onclick="window.open('https://libanalasow.github.io/')"
+        >
+          <ion-icon name="planet-outline"></ion-icon>
+        </div>
+      </div>
+      <div
+        class="social-banner"
+        onclick="window.open('https://discord.gg/wildlifeproductions')"
+      >
+        <ion-icon
+          name="logo-discord"
+          style="padding: 15px; font-size: 25px;"
+        ></ion-icon>
+        WildLife Productions
+      </div>
+      <div class="section2">
+        <p class="medium-title">Who am I?</p>
+        <div
+          class="activity"
+          style="
+            padding-right: 20px;
+            line-height: 19.5px;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+          "
+        >
+          My name is Liban, and I'm 15 years old. The only time I'm serious is
+          when I'm discussing serious stuff.
+        </div>
+        <p class="medium-title">What do I do?</p>
+        <div class="hub">
+          <div style="display: flex;">
+            <div class="icon"><ion-icon name="logo-html5"></ion-icon></div>
+            <p style="margin: 0;">HTML</p>
+          </div>
+          <div class="bar">
+            <div class="bar-inner" style="animation: anim1;"></div>
+          </div>
+        </div>
+        <div class="hub">
+          <div style="display: flex;">
+            <div class="icon"><ion-icon name="logo-css3"></ion-icon></div>
+            <p style="margin: 0;">CSS</p>
+          </div>
+          <div class="bar">
+            <div class="bar-inner" style="width: 95%; animation: anim2;"></div>
+          </div>
+        </div>
+        <div class="hub">
+          <div style="display: flex;">
+            <div class="icon"><ion-icon name="logo-javascript"></ion-icon></div>
+            <p style="margin: 0;">Javascript</p>
+          </div>
+          <div class="bar">
+            <div class="bar-inner" style="width: 60%; animation: anim3;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
+
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  @keyframes anim1 {
+    from {
+      width: 1%;
+    }
+    to {
+      width: 82%;
+    }
+  }
+
+  @keyframes anim2 {
+    from {
+      width: 1%;
+    }
+    to {
+      width: 95%;
+    }
+  }
+
+  @keyframes anim3 {
+    from {
+      width: 1%;
+    }
+    to {
+      width: 60%;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .box {
+    width: 600px;
+    height: 600px;
+    box-shadow: rgb(222, 222, 222) 1px 40px 40px 40px;
+    border-radius: 10px;
+    padding: 15px;
+  }
+
+  .user {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .pfp {
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+    border-radius: 50%;
+    background: #eee;
+    background-size: cover;
+    background-position: center;
+    background-image: url(https://raw.githubusercontent.com/LibanAlasow/my-basement/e472fd9c9e95b0d056c13bd8f91d2c32cf0da580/newpfp.jpg);
+  }
+
+  .username {
+    margin: 6px;
+    font-size: 17px;
+  }
+
+  .caption {
+    margin: 6px;
+    font-size: 15px;
+    color: gray;
+  }
+
+  .planet:hover {
+    box-shadow: none;
+    transition: 0.5s;
+  }
+
+  .section2 {
+    height: 100px;
+    margin-top: 20px;
+    padding: 20px;
+    border-top: rgb(218, 218, 218) solid 1px;
+  }
+
+  .small-title {
+    margin-top: 5px;
+    font-size: 14px;
+    color: rgb(87, 87, 87);
+    font-weight: bold;
+  }
+
+  .medium-title {
+    margin-top: 2px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .hub {
+    min-height: 60px;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(10, 7, 27, 0.15) 0px 48px 100px 0px;
+    background: white;
+    transition: 0.5s;
+    max-width: 100%;
+  }
+  .hub:hover {
+    box-shadow: none;
+  }
+
+  .icon {
+    margin-right: 7.5px;
+  }
+
+  .bar {
+    height: 15px;
+    max-width: 100%;
+    width: 300px;
+    margin: 10px;
+    background: rgb(210, 210, 210);
+    border-radius: 7px;
+    overflow: hidden;
+  }
+
+  .bar-inner {
+    background: rgb(102, 71, 255);
+    height: 100%;
+    width: 82%;
+    border-radius: 7px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .box {
+      border-radius: 0;
+      box-shadow: none;
+      width: 100%;
+    }
+    body {
+      align-items: flex-start;
+    }
+
+    .username {
+      font-size: 15px;
+    }
+    .caption {
+      font-size: 14px;
+    }
+  }
+</style>
