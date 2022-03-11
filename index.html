@@ -15,44 +15,46 @@
     const rootElement = document.getElementById("root");
 
     const App = () => {
-      const [idValue, setIdValue] = React.useState("");
-      const [pwValue, setPwValue] = React.useState("");
-      const [btn, setBtn] = React.useState(true);
-
-      const handleIdChange = (event) => {
-        setIdValue(event.target.value);
-      };
-      const handlePwChange = (event) => {
-        setPwValue(event.target.value);
-      };
-
+      const [data, setData] = React.useState(null);
+      const [error, setError] = React.useState(null);
       React.useEffect(() => {
-        if (idValue.length > 0 && pwValue.length > 0) {
-          setBtn(false);
-        } else {
-          setBtn(true);
-        }
-      }, [idValue, pwValue]);
+        fetch(
+          "https://raw.githubusercontent.com/techoi/raw-data-api/main/simple-api.json"
+        )
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (myJson) {
+            setData(myJson.data);
+          })
+          .catch((error) => {
+            setError(error.message);
+            console.log(error);
+            alert(error);
+          });
+      }, []);
+
+      if (error != null) {
+        return <p>There is some Error!</p>;
+      }
+
+      if (data == null) {
+        return <p>Loading...</p>;
+      }
+
       return (
         <>
-          <label htmlFor="id">ID :</label>
-          <input
-            id="id"
-            type="text"
-            onChange={handleIdChange}
-            value={idValue}
-          />
-          <br />
-          <label htmlFor="pw">PW :</label>
-          <input
-            id="pw"
-            type="password"
-            onChange={handlePwChange}
-            value={pwValue}
-          />
-          <br />
-          <br />
-          <button disabled={btn}>Login</button>
+          <p>People</p>
+
+          {data &&
+            data.people.map((person) => {
+              return (
+                <div>
+                  <span>name : {person.name}, </span>
+                  <span>age : {person.age}</span>
+                </div>
+              );
+            })}
         </>
       );
     };
