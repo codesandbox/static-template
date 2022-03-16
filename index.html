@@ -1,12 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!--
+    <table>
+      <h1>
+        <caption>
+          Pessoas por idade
+        </caption>
+      </h1>
+
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>idade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Carlos</td>
+          <td>17</td>
+        </tr>
+
+        <tr>
+          <td>Mario</td>
+          <td>36</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Total:</td>
+          <td>2 pessoas</td>
+        </tr>
+      </tfoot>
+    </table>
+  -->
+
+    <table>
+      <caption>
+        Produzidos X Venditos por loja
+      </caption>
+
+      <colgroup>
+        <col />
+        <col span="2" style="background-color: red;" />
+        <col span="2" style="background-color: blue;" />
+      </colgroup>
+
+      <thead>
+        <tr>
+          <th rowspan="2"></th>
+          <th colspan="2" scope="colgroup">Mercado Guanabara</th>
+          <th colspan="2" scope="colgroup">Carreta Furacão</th>
+        </tr>
+        <tr>
+          <th scope="col">Produzidos</th>
+          <th scope="col">Vendidos</th>
+          <th scope="col">Produzidos</th>
+          <th scope="col">Vendidos</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th scope="row">Vassouras</th>
+          <td>50</td>
+          <td>20</td>
+          <td>30</td>
+          <td>30</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Baldes</th>
+          <td>20</td>
+          <td>20</td>
+          <td>10</td>
+          <td>5</td>
+        </tr>
+
+        <tr>
+          <th>Mochilas</th>
+          <td>20</td>
+          <td>10</td>
+          <td>100</td>
+          <td>1000</td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
