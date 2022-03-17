@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      #myInput {
+        background-image: url("/css/searchicon.png");
+        background-position: 10px 12px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+      }
+
+      #myUL {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      #myUL li a {
+        border: 1px solid #ddd;
+        margin-top: -1px;
+        /* Prevent double borders */
+        background-color: #f6f6f6;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 18px;
+        color: black;
+        display: block;
+      }
+
+      #myUL li a:hover:not(.header) {
+        background-color: #eee;
+      }
+    </style>
+    <title>JavaScript - read JSON from URL</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="app.js"></script>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <input
+      type="text"
+      id="myInput"
+      onkeyup="myFunction()"
+      placeholder="Search for names.."
+      title="Type in a name"
+    />
+    <div>
+      <table id="myTable" class="myFormat">
+        <tr></tr>
+      </table>
+    </div>
   </body>
 </html>

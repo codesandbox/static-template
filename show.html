@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript - read JSON from URL</title>
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  </head>
+
+  <body>
+    School name:<span id="SchoolName"></span><br />
+    School no:<span id="SchoolNo"></span><br />
+    <iframe
+      id="myFrame"
+      width="800"
+      height="600"
+      frameborder="0"
+      scrolling="no"
+      marginheight="0"
+      marginwidth="0"
+    ></iframe>
+  </body>
+  <script>
+    //get value
+    var detail;
+
+    var url =
+      "https://services3.arcgis.com/6j1KwZfY2fZrfNMR/arcgis/rest/services/Hong_Kong_School_Location_and_Information/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json";
+    $.getJSON(url, function (data) {
+      detail = data.features;
+      run();
+    });
+    function run() {
+      var no = sessionStorage.getItem("schoolNo");
+      console.log(no);
+      var numb = getID(no);
+      rename();
+    }
+    function getID(no) {
+      for (var i = 0; i < detail.length; i++) {
+        if (no == detail[i].attributes.SCHOOL_NO_) {
+          numb = i;
+        }
+      }
+    }
+    function rename() {
+      var schoolname = detail[numb].attributes.ENGLISH_NAME;
+      var schoolno = detail[numb].attributes.SCHOOL_NO_;
+      var telephone = detail[numb].attributes.TELEPHONE;
+      var lat = detail[numb].attributes.LATITUDE;
+      var lon = detail[numb].attributes.LONGITUDE;
+      document.getElementById("SchoolName").innerHTML = schoolname;
+      document.getElementById("SchoolNo").innerHTML = schoolno;
+      document.getElementById("myFrame").src =
+        "https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=" +
+        lat +
+        "," +
+        lon +
+        "&z=16&output=embed&t=>";
+    }
+  </script>
+</html>
