@@ -1,0 +1,97 @@
+<html>
+<head>
+    <title>search</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <label>school Level:</label>
+    
+    <select id="school_level" onchange="selection()">
+      <option value="null">null</option>
+      <option value="KINDERGARTEN-CUM-CHILD CARE CENTRES">KINDERGARTEN-CUM-CHILD CARE CENTRESPRIMARY</option>
+      <option value="PRIMARY">PRIMARY</option>
+      <option value="SECONDARY">SECONDARY</option>
+    </select>
+    </form>
+
+
+
+    <div >
+      <table id="myTable" class='myFormat' >
+          <tr></tr>
+      </table>
+          
+  </div> 
+<script>
+  var detail;
+var count;
+var numb
+var url = 'https://services3.arcgis.com/6j1KwZfY2fZrfNMR/arcgis/rest/services/Hong_Kong_School_Location_and_Information/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json'
+$.getJSON(url, function (data) {
+    detail = data.features;
+    count = 0;
+    console.log(1)
+    var lat = detail[0].attributes.LATITUDE;
+    var lon = detail[0].attributes.LONGITUDE;
+    lat = parseFloat(lat);
+    lon = parseFloat(lon);
+    var path = window.location.pathname;
+    var page = path.split("/").pop();
+    myTable();
+    
+
+
+});
+function selection() {
+    var input, filter, found, table, tr, td, i, j;
+    input = document.getElementById("myInput");
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td");
+        for (j = 0; j < td.length; j++) {
+            found=check(i);
+            console.log(found)
+        }
+        if (found) {
+            tr[i].style.display = "";
+            found = false;
+        } else {
+            tr[i].style.display = "none";
+        }
+}}
+// Find a <table> element with id="myTable":
+function myTable() {
+    var table = document.getElementById("myTable");
+
+    // Create an empty <tr> element and add it to the 1st position of the table:
+    for (var i = 0; i < detail.length; i++) {
+        var a;
+        a = table.insertRow(0).insertCell(0)
+        a.innerHTML = detail[i].attributes.ENGLISH_NAME;
+        a.setAttribute("onclick", "show(" + i + ");");
+    }
+}
+//pass value
+function show(no) {
+    window.location.href = "show.html";
+    //school name
+    var schoolname = detail[no].attributes.ENGLISH_NAME;
+    sessionStorage.setItem("schoolName", schoolname);
+    //school no
+    var schoolno = detail[no].attributes.SCHOOL_NO_;
+    sessionStorage.setItem("schoolNo", schoolno);
+
+}
+function check(i) {
+  filter = document.getElementById("school_level").value;
+  if (filter=="null") {
+                return true;
+            }
+            if(filter==detail[i].attributes.SCHOOL_LEVEL){
+          return true;
+        }
+    return false;
+}
+</script>
+
+</html>
