@@ -1,0 +1,98 @@
+@font-face {
+	font-family: PT Root;
+	src: url(/assets/ptroot.woff2);
+}
+
+body {
+	font-family: PT Root;
+	font-size: 24px;
+	line-height: 1.5;
+
+	background-color: #000000;
+	color: #ffffff;
+	margin: 40px auto 40px auto;
+}
+
+img {
+	width: 100%;
+}
+
+h1,
+h2 {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	position: fixed;
+	font-size: 16px;
+	top: 8px;
+	left: 0px;
+	z-index: 9999;
+	overflow: hidden;
+	width: 100%;
+	font-variation-settings: 'wght' 800;
+}
+
+header h1,
+header h2 {
+	display: flex;
+}
+
+h1 span,
+h2 span {
+	font-size: 16px;
+	width: 150px;
+	flex: 0 0 auto;
+	display: inline-block;
+}
+
+h2 span {
+	width: 250px;
+}
+
+section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	min-height: 100vh;
+}
+
+section:nth-child(2n) {
+	display: gir;
+}
+
+section div.split {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+section div.split:first-child {
+	background: #111111;
+}
+
+section div.slides {
+	width: 500px;
+	height: 750px;
+	position: relative;
+}
+
+section div.slides img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 750px;
+	width: 500px;
+}
+
+section div.info {
+	max-width: 480px;
+}
+
+section h2 {
+	font-size: 32px;
+}
+
+section p {
+	margin: 32px 0 0 0;
+}
