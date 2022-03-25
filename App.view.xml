@@ -1,0 +1,41 @@
+<mvc:View
+  controllerName="HelloWorld.App"
+ 	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+  <Page title="Learning UI5"/>
+   <Button id="Bt" text="Clear" type="Transparent" press="onPress" />
+   <SearchField id="Field"  search="handleLiveChange"/>
+   <ComboBox
+                id="FbBox"
+				items="{/animals}">
+				<core:Item key="{name}" text="{name}" />
+   </ComboBox>
+  <Table id="tableId" inset="false" items="{/animals}">
+      <columns>
+          <Column width="12em">
+              <ObjectIdentifier text="Name"/>
+          </Column>
+          <Column>
+              <Text text="Favourite Food"/>
+          </Column>
+          <Column>
+              <Text text="Color"/>
+          </Column>
+          <Column>
+              <ObjectNumber number="Number of Legs"/>
+          </Column>
+      </columns>
+      <items>
+          <ColumnListItem>
+              <cells>
+                  <ObjectIdentifier title="{name}"/>
+                  <Text text="{favouriteFood}"/>
+                  <Text text="{color}"/>
+                  <ObjectNumber
+                    number="{numberOfLegs}" />
+              </cells>
+          </ColumnListItem>
+      </items>
+  </Table>
+</mvc:View>
