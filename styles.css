@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&family=Montserrat:wght@300;400;500;700;900&display=swap");
+* {
+  border: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Montserrat Subrayada", sans-serif;
+}
+body {
+  display: flex;
+}
+
+nav {
+  position: fixed;
+  background-color: whitesmoke;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 20vw;
+  height: 100%;
+  overflow: auto;
+}
+header {
+  margin: 35px 0;
+}
+
+header p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+header > p:nth-child(1) {
+  font-size: large;
+}
+header > p:nth-child(2) {
+  font-size: 2rem;
+}
+header > p:nth-child(3) {
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: "Montserrat Subrayada", sans-serif;
+}
+
+hr {
+  border: 2px solid aquamarine;
+  width: 90%;
+}
+.links {
+  display: flex;
+  /* background-color: red; */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(128, 128, 128);
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+a:hover {
+  /* text-decoration: ; */
+  font-weight: 800;
+  color: rgb(50, 50, 50);
+}
+
+/* main */
+
+#main-doc {
+  margin-left: 25%;
+  width: 75%;
+}
+
+#img-main {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+/* --- query --- */
+
+@media (max-width: 600px) {
+  /* navbar */
+
+  header > p:nth-child(1) {
+    font-size: small;
+  }
+  header > p:nth-child(2) {
+    font-size: 1rem;
+  }
+  header > p:nth-child(3) {
+    font-size: 2rem;
+    font-weight: 800;
+    font-family: "Montserrat Subrayada", sans-serif;
+  }
+
+  a {
+    font-size: smaller;
+  }
+
+  a:hover {
+    /* text-decoration: ; */
+    font-weight: 800;
+    color: rgb(50, 50, 50);
+  }
+}
