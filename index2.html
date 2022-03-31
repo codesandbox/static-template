@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Changable Grid Layout</title>
+    <style>
+      #wrap2 {
+        width: 90%;
+        height: 500px;
+        margin: 0 auto;
+        border: 4px solid #000;
+        display: flex;
+      }
+
+      #wrap2 div {
+        width: 31.25%;
+        height: 100%;
+      }
+
+      #wrap2 div:first-child {
+        margin-right: 47%;
+        background: #1f518b;
+      }
+
+      #wrap2 div:first-child + div {
+        background: #f7e047;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap2">
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>

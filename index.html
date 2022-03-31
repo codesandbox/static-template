@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Changable Grid Layout</title>
+    <style>
+      #wrap {
+        width: 90%;
+        height: 500px;
+        margin: 0 auto;
+        border: 4px solid #000;
+      }
+
+      .container {
+        width: 94.11%;
+        height: 492px;
+        margin: 0 auto;
+        border: 4px solid #000;
+        display: flex;
+      }
+
+      .container div {
+        height: 100%;
+      }
+
+      .container div:first-child {
+        width: 33%;
+        background: #20106e;
+      }
+
+      .container div:first-child + div {
+        width: 67%;
+        background: gold;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <nav>
+      <a href="/">index</a>
+      <a href="/index2.html">index2</a>
+      <a href="/index3.html">index3</a>
+      <a href="/index4.html">index4</a>
+      <a href="/index5.html">index5</a>
+      <a href="/index6.html">index6</a>
+      <a href="/index7.html">index7</a>
+      asdfsf
+    </nav>
+    <div id="wrap">
+      <div class="container">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MediaQueries</title>
+    <style>
+      #wrap {
+        width: 90%;
+        margin: 0 auto;
+        border: 4px solid #000;
+      }
+      #wrap div {
+        display: inline-block;
+        height: 100px;
+      }
+      #wrap div:first-child {
+        background: #f45750;
+      }
+      #wrap div:nth-child(2) {
+        background: #40b0f9;
+      }
+      #wrap div:nth-child(3) {
+        background: #00d2a5;
+      }
+      #wrap div:nth-child(4) {
+        background: #ff884d;
+      }
+      #wrap div:last-child {
+        background: #464646;
+      }
+      @media all and (min-width: 320px) {
+        #wrap {
+          width: 30%;
+        }
+      }
+      @media all and (min-width: 768px) {
+        #wrap div {
+          width: 50%;
+        }
+        #wrap div:last-child {
+          width: 100%;
+        }
+      }
+      @media all and (min-width: 1024px) {
+        #wrap div {
+          width: 20%;
+        }
+        #wrap div:last-child {
+          width: 20%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>
