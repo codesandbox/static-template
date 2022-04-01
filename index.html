@@ -1,12 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>
+      This is a static template, there is no bundler or bundling involved!
+    </h1>
+    <h1>Concatonation vs Addition</h1>
+    <p>"+" can be used for both depending on context</p>
+    <script>
+      console.log("University's Garden");
+      function avg3(num1, num2, num3) {
+        return (num1 + num2 + num3) / 3;
+      }
+      console.log(avg3(45, 67, 103));
+      function getTip(cost, percentage) {
+        return "$" + (cost * percentage).toFixed(2);
+      }
+      console.log(getTip(10.0, 0.15));
+      function PizzaCPSI(cost, diameter) {
+        let area = Math.PI * (diameter / 2) ** 2;
+        return "$" + (cost / area).toFixed(2);
+      }
+      console.log(PizzaCPSI(23.95, 18));
+      const conversionFactor = 25.4;
+      function inchesToMM(inches) {
+        return (inches * conversionFactor).toFixed(2);
+      }
+      function displayOutput() {
+        let w = 8.5;
+        let h = 11;
+        console.log(
+          w +
+            " x " +
+            h +
+            " inches = " +
+            inchesToMM(w) +
+            " x " +
+            inchesToMM(h) +
+            " mm"
+        );
+      }
+      displayOutput();
+      function getPerimeter(w, h) {
+        return ((Number(w) + Number(h)) * 2).toFixed(2);
+      }
+      function displayPerimeter(w, h) {
+        let perimeter = getPerimeter(w, h);
+        console.log("For a " + w + " x " + h + " inch sheet of paper:");
+        console.log(
+          "Perimeter = " + perimeter + " in or " + inchesToMM(perimeter) + " mm"
+        );
+      }
+      displayPerimeter(8.5, 11);
+      function getArea(w, h) {
+        return (w * h).toFixed(2);
+      }
+      function displayArea() {
+        let w = prompt("What is the width of the rectangle?");
+        let h = prompt("What is the height of the rectangle?");
+        console.log("Width = ", w);
+        console.log("Height = ", h);
+        console.log("Perimeter = ", getPerimeter(w, h));
+        console.log("Area = ", getArea(w, h));
+      }
+      displayArea();
+    </script>
   </body>
 </html>
