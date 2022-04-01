@@ -3,6 +3,7 @@
   margin: 0;
   list-style-type: none;
   text-decoration: none;
+  transition: all 0.3s;
 }
 
 html {
@@ -17,10 +18,29 @@ a:hover {
   color: #555;
 }
 
-nav {
+.navbar {
   display: flex;
   padding: 15px 15px;
   background: #fff;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 0 4px 0;
+}
+
+.navbar .logo {
+  padding: 0 10px;
+}
+
+.navbar-nav {
+  display: flex;
+}
+
+.menu-link {
+  padding: 10px;
+  margin: 1px;
+  text-align: center;
+}
+
+.menu-link:hover {
+  background: #ccc;
 }
