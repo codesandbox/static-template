@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Todos List Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function display_c() {
+        var refresh = 1000; // Refresh rate in milli seconds
+        mytime = setTimeout("display_ct()", refresh);
+      }
+
+      function display_ct5() {
+        var x = new Date();
+        var ampm = x.getHours() >= 12 ? " PM" : " AM";
+
+        var x1 = x.getMonth() + 1 + "/" + x.getDate() + "/" + x.getFullYear();
+        x1 =
+          x1 +
+          " - " +
+          x.getHours() +
+          ":" +
+          x.getMinutes() +
+          ":" +
+          x.getSeconds() +
+          ":" +
+          ampm;
+        document.getElementById("ct5").innerHTML = x1;
+        display_c5();
+      }
+      function display_c5() {
+        var refresh = 1000; // Refresh rate in milli seconds
+        mytime = setTimeout("display_ct5()", refresh);
+      }
+      display_c5();
+    </script>
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <body onload="display_c5();">
+    <div id="myDIV" class="header">
+      <h2 style="margin: 5px;">To Do List Details</h2>
+      <input
+        type="text"
+        id="myInput"
+        placeholder="Enter To do list Title......."
+      />
+      <span
+        onclick="newElement()"
+        class="addBtn"
+        style="background-color: greenyellow;"
+        >Add</span
+      >
+      <!--Displaying date and time-->
+      <p>Current Date and Time is:<br><span id="date-time"><span id="ct5" style="background-color: indianred;"></span></p>
+      <span id="ct"></span>
+    </div>
+
+    <ul id="myUL">
+    </ul>
+    <script type="text/javascript" src="index.js">
+            var dt = new Date();
+      document.getElementById('date-time').innerHTML=dt;
+    </script>
   </body>
 </html>
