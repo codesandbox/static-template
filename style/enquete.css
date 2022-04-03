@@ -1,0 +1,145 @@
+/*** セクション ***/
+section h1 {
+  text-align: center;
+  font-size: 36px;
+  height: 50px;
+}
+body > section > h1 {
+  text-decoration: underline;
+  margin: 100px auto 50px;
+  text-decoration-color: #fa8d00;
+}
+h2 {
+  text-align: center;
+  font-size: 28px;
+}
+
+/*** アンケート ***/
+section.enquete {
+  width: 50%;
+  margin: 0 auto;
+}
+section.enquete label {
+  cursor: pointer;
+}
+section.enquete input,
+section.enquete select {
+  cursor: pointer;
+}
+
+section.enquete input.name {
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+section.enquete select {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* ラジオボタン・チェックボックス */
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+.radio-text:before,
+.checkbox-text:before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 50%;
+  padding: 2px;
+  background-clip: content-box;
+  position: relative;
+  top: 2px;
+}
+.checkbox-text:before {
+  border-radius: 0;
+}
+input[type="radio"]:not(:checked) + .radio-text:before,
+input[type="checkbox"]:not(:checked) + .checkbox-text:before {
+  border-color: #72767b;
+}
+input[type="radio"]:checked + .radio-text:before,
+input[type="checkbox"]:checked + .checkbox-text:before {
+  border-color: #fa8d00;
+  background-color: #fa8d00;
+}
+
+/* その他 */
+section.enquete h4 {
+  font-size: 20px;
+  margin-top: 50px;
+}
+
+section.enquete label.select-item {
+  display: inline-block;
+  margin: 5px 20px 5px 0;
+}
+
+section.enquete textarea {
+  height: 120px;
+  width: 80%;
+}
+
+section.enquete input.name:focus,
+section.enquete select:focus,
+section.enquete textarea:focus {
+  /* border: 3px solid #50c8fa; */
+  background-color: #ffe8cb;
+}
+
+/* ボタン */
+section.enquete .button-field {
+  margin: 40px 0 0 0;
+}
+section.enquete button {
+  border: none;
+  background-color: #eb6100;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 40px;
+}
+
+section.enquete button:hover,
+section.enquete button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #ffdaad;
+}
+
+section.enquete button:active {
+  background-color: #e97929;
+  box-shadow: none;
+  padding: 8px 40px 2px;
+}
+
+.btn--orange,
+a.btn--orange {
+  color: #fff;
+  background-color: #eb6100;
+}
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+a.btn--radius {
+  border-radius: 100vh;
+}
+
+@media only screen and (max-device-width: 730px) {
+  section.enquete {
+    width: 90%;
+  }
+  section.enquete textarea {
+    width: 90%;
+  }
+}
