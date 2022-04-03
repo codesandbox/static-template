@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style/enquete.css" />
+    <link rel="stylesheet" href="style/common.css" />
+    <title>ITeens Lab ゼミ特集</title>
+  </head>
+  <body>
+    <header>
+      <a href="https://vqtb3y.csb.app/">
+        <img src="resources/common/itl_logo.webp" class="logo" />
+      </a>
+      <div class="nav">
+        <a href="https://iteenslab.com/" target="_blank">公式サイト</a>
+        <a href="https://vqtb3y.csb.app/enquete.html">アンケート</a>
+        <a href="#access">アクセス</a>
+      </div>
+    </header>
+
+    <section class="enquete">
+      <form name="enqueteForm" method="post" action="#">
+        <h1>アンケート</h1>
+        <h2>どんなことに興味があるか教えてね</h2>
+        <label>
+          <h4>お名前</h4>
+          <input
+            type="text"
+            name="name"
+            placeholder="例：むさびー"
+            class="name"
+          />
+        </label>
+
+        <h4>性別</h4>
+        <label class="select-item">
+          <input type="radio" name="gender" value="男" />
+          <span class="radio-text">男性</span>
+        </label>
+        <label class="select-item">
+          <input type="radio" name="gender" value="女" />
+          <span class="radio-text">女性</span>
+        </label>
+        <label class="select-item">
+          <input
+            type="radio"
+            name="gender"
+            value="それ以外"
+            checked="checked"
+          />
+          <span class="radio-text">それ以外</span>
+        </label>
+
+        <label>
+          <h4>学年</h4>
+          <select name="grade">
+            <option value="">選択してください</option>
+            <option value="小学生">小学生</option>
+            <option value="中学生">中学生</option>
+            <option value="高校生">高校生</option>
+          </select>
+        </label>
+
+        <h4>興味があるゼミ</h4>
+        <label class="select-item">
+          <input
+            type="checkbox"
+            name="interestSeminar"
+            value="プログラミング初級"
+          />
+          <span class="checkbox-text">プログラミング初級</span>
+        </label>
+        <label class="select-item">
+          <input
+            type="checkbox"
+            name="interestSeminar"
+            value="プログラミング中級"
+          />
+          <span class="checkbox-text">プログラミング中級</span>
+        </label>
+        <label class="select-item">
+          <input
+            type="checkbox"
+            name="interestSeminar"
+            value="音楽制作クラス"
+          />
+          <span class="checkbox-text">音楽制作クラス</span>
+        </label>
+        <label class="select-item">
+          <input
+            type="checkbox"
+            name="interestSeminar"
+            value="ITパスポート試験合格講座"
+          />
+          <span class="checkbox-text">ITパスポート試験合格講座</span>
+        </label>
+
+        <label>
+          <h4>その他に気になること</h4>
+          <textarea name="others"></textarea>
+        </label>
+
+        <div class="button-field">
+          <button>送信</button>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      Copyright © ITeens Lab All Rights Reserved.
+    </footer>
+
+    <script src="./js/enquete.js" />
+  </body>
+</html>

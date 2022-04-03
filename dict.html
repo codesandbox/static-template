@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/dict.css">
+    <title>基本的なHTMLタグ</title>
+  </head>
+  <body>
+    <section>
+      <h1>タグの構成</h1>
+      <div>
+        <img src="./resources/dict/tag_sample.PNG"/>
+        <dl class="list">
+          <dt>タグ</dt>
+          <dd>要素の名前を山括弧で囲んだもの。要素の始まり。</dd>
+          <dt>閉じタグ</dt>
+          <dd>要素の終わりを表す。imgタグ等の閉じタグがない書き方もある。</dd>
+          <dt>要素：Element</dt>
+          <dd>ある１つのタグから同種の閉じタグまでの全てを含む範囲。</dd>
+          <dt>属性：Attribute</dt>
+          <dd>要素に関する追加情報。例で使っているclass 以外にもname やalt 等たくさんある。</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section>
+      <h1>文字の表示に関するタグ</h1>
+
+      <h2>見出しタグ</h2>
+      <div>
+        <h1>見出しタグ h1</h1>
+        <h2>見出しタグ h2</h2>
+        <h3>見出しタグ h3</h3>
+        見出しタグはh1～h6 まであります。<br>
+        若い番号ほど見え方も大きく、ページ内での重要度が高い内容になります。
+      </div>
+      
+      <h2>その他の文章を入れるタグ</h2>
+
+      <h3>pタグ（1行テキスト）</h3>
+      <p><b>&lt;p&gt;タグ</b>は一行のテキストです</p>
+  
+      <h3>divタグ（ブロック要素）とbrタグ（改行）</h3>
+      <div>
+        <b>&lt;div&gt;タグ</b>は複数行に対応したものです。<br>
+        いろいろなタグを1つのブロックにまとめる用途でも使われます。<br>
+        文章が長くなりすぎると、基本的にはdivタグの横幅いっぱいになるまで改行はしません。<br>
+        好きなところで改行してほしい場合は、<b>改行タグ&lt;br&gt;</b>を使いましょう。<br>
+      </div>
+  
+      <h3>spanタグ（インライン要素）</h3>
+      <div>
+        文章の中の一部分に対してタグで囲みたい場合は、<b><span>&lt;span&gt;</span>タグ</b>を使います。
+      </div>
+
+      <div>
+        div とspan はそれ自体は見た目に何も影響を与えませんが大変便利なものです。<br>
+        span はCSSと組み合わせることで文章の一部分を装飾することができます。<br>
+        また、div はタグを一つのブロックとしてまとめることで編集や構成をやりやすくします。
+      </div>
+
+      <div class="supplement">
+        <h3>ブロック要素とインライン要素</h3>
+        HTMLタグは大きく<b>ブロック要素とインライン要素</b>の2つにわけることができます。<br>
+        ブロック要素はdiv やh1 のようにそれ自体で横幅いっぱい広がる要素です。<br>
+        インライン要素はspan やstrong 等、文章中で改行することなく差し込める要素となります。
+      </div>
+    </section>
+
+    <section>
+      <h1>テキストの装飾</h1>
+  
+      <h2>strongタグ（強調）</h2>
+      <div>
+        文中のテキストを装飾するタグ。<br>
+        よく使われるのは<b>&lt;strong&gt;タグ</b>です。
+      </div>
+
+      <h2>aタグ（アンカーテキスト）</h2>
+      <div>
+        aタグはアンカータグやアンカーテキストと呼ばれますが、一般的には<b>リンク</b>と知られています。<br>
+        下の例ではテキストにリンクをはってますが、画像をaタグで囲むと画像にリンクをはることもできます。<br>
+        <br>
+        <a href="https://iteenslab.com/" target="_blank">ITeensLab サイトへのリンク</a><br>
+        <code>&lt;a href="https://iteenslab.com/" target="_blank"&gt;ITeensLab サイトへのリンク&lt;/a&gt;</code>
+      </div>
+  
+
+      <h2>リスト</h2>
+      
+      <h3>ulタグ（シンプルリスト）</h3>
+      <div>
+          「・」から始まるリストです。<br>
+          <b>&lt;ul&gt;&lt;/ul&gt;</b>で外側を囲って<b>&lt;li&gt;&lt;/li&gt;</b>で1行ずつ書いていきます。
+          <ul>
+            <li>リスト1</li>
+            <li>リスト2</li>
+            <li>リスト3</li>
+          </ul>
+          <pre>
+  &lt;ul&gt;
+    &lt;li&gt;リスト1&lt;/li&gt;
+    &lt;li&gt;リスト2&lt;/li&gt;
+    &lt;li&gt;リスト3&lt;/li&gt;
+  &lt;/ul&gt;
+          </pre>
+      </div>
+
+      <br>
+      <h3>olタグ（番号リスト）</h3>
+      <div>
+          「数字」から始まるリストです。<br>
+          <b>&lt;ol&gt;&lt;/ol&gt;</b>で外側を囲って<b>&lt;li&gt;&lt;/li&gt;</b>で1行ずつ書いていきます。
+        <ol>
+          <li>数字リスト1</li>
+          <li>数字リスト2</li>
+          <li>数字リスト3</li>
+        </ol>
+        <pre>
+&lt;ol&gt;
+  &lt;li&gt;数字リスト1&lt;/li&gt;
+  &lt;li&gt;数字リスト2&lt;/li&gt;
+  &lt;li&gt;数字リスト3&lt;/li&gt;
+&lt;/ol&gt;
+        </pre>
+      </div>
+
+      <br>
+      <h3>dlタグ（タイトルと内容）</h3>
+      <div>
+        リストのタイトルと内容を自由なテキストにできます。
+        <dl>
+          <dt>タイトル 1</dt>
+          <dd>データ 1</dd>
+          <dt>タイトル 2</dt>
+          <dd>データ 2</dd>
+          <dt>タイトル 3</dt>
+          <dd>データ 3</dd>
+        </dl>
+        <pre>
+&lt;dl&gt;
+  &lt;dt&gt;タイトル 1&lt;/dt&gt;
+  &lt;dd&gt;データ 1&lt;/dd&gt;
+  &lt;dt&gt;タイトル 2&lt;/dt&gt;
+  &lt;dd&gt;データ 2&lt;/dd&gt;
+  &lt;dt&gt;タイトル 3&lt;/dt&gt;
+  &lt;dd&gt;データ 3&lt;/dd&gt;
+&lt;/dl&gt;
+        </pre>
+      </div>
+
+      <br>
+      <h2>tableタグ（テーブル）</h2>
+      縦の列と横の行で構成される表形式のタグです。<br>
+      構成するタグが多いため少し複雑です。<br>
+      ※ あまり海外では使われることがない
+
+      <table>
+        <thead>
+          <tr>
+            <th>名前</th>
+            <th>学年</th>
+            <th>クラブ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>田中</td>
+            <td>1年生</td>
+            <td>サッカー部</td>
+          </tr>
+          <tr>
+            <td>山田</td>
+            <td>2年生</td>
+            <td>美術部</td>
+          </tr>
+          <tr>
+            <td>斉藤</td>
+            <td>3年生</td>
+            <td>サッカー</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <pre>
+&lt;table&gt;<span class="comment"> &lt;!-- table の大枠 --&gt;</span>
+  &lt;thead&gt;<span class="comment"> &lt;!-- thead タグ。表のヘッダー枠で縦列の項目名等をのせる。--&gt;</span>
+    &lt;tr&gt;<span class="comment"> &lt;!-- tr　タグ横1行のまとまりを囲む --&gt;</span>
+      &lt;th&gt;名前&lt;/th&gt;<span class="comment"> &lt;!-- th タグ。ヘッダー項目一つ一つの入力枠。 --&gt;</span>
+      &lt;th&gt;学年&lt;/th&gt;
+      &lt;th&gt;クラブ&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt; <span class="comment">&lt;!-- tbody タグ。表のデータ部分の大枠。 --&gt;</span>
+    &lt;tr&gt;
+      &lt;td&gt;田中&lt;/td&gt;<span class="comment">&lt;!-- td タグ。データ一つ一つが入力される枠。 --&gt;</span>
+      &lt;td&gt;1年生&lt;/td&gt;
+      &lt;td&gt;サッカー部&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;山田&lt;/td&gt;
+      &lt;td&gt;2年生&lt;/td&gt;
+      &lt;td&gt;美術部&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+      </pre>
+    </section>
+
+
+
+    <section>
+      <h1>フォームに関するタグ</h1>
+  
+      <h2>input タグ</h3>
+  
+      <div>
+        input タグは一番よく使われる入力タグです。<br>
+        type 属性を指定することでいろいろな種類に変えることができます。<br>
+        属性を指定しない場合、一行のテキストの入力となります。<br>
+        <pre>
+&lt;input /&gt;
+        </pre>
+        インプット：<input />
+      </div>
+  
+      <p>input は <b>type属性</b>を追加することでいろいろな形に変えることができる。</p>
+  
+      <h3>type="radio"（ラジオボタン）</h3>
+      <div>
+        name属性が同じラジオボタンの中から1つだけ選ぶことができます。<br>
+        <pre>
+&lt;input type="radio" name="radio" value="radio1" /&gt;
+        </pre>
+        <div>
+          <input type="radio" name="radio" value="radio1" />ラジオボタン1
+          <input type="radio" name="radio" value="radio1" />ラジオボタン2
+          <input type="radio" name="radio" value="radio1" />ラジオボタン3
+        </div>
+      </div>
+
+      <h3>type="checkbox"（チェックボックス）</h3>
+      <div>
+        ラジオボタンとの違いは複数選択ができることと、一度選択したチェックを取り消しができます。
+        <pre>
+&lt;input type="checkbox" name="checkbox" value="check1" /&gt;
+        </pre>
+        <div>
+          <input type="checkbox" name="checkbox" value="check1" />チェック1
+          <input type="checkbox" name="checkbox" value="check2" />チェック2
+          <input type="checkbox" name="checkbox" value="check3" />チェック3
+        </div>
+      </div>
+
+      <h3>type="password"（パスワード）</h3>
+      <div>
+        入力すると他人からは見えない伏字になります。<br>
+        <pre>
+&lt;input type="password"/&gt;
+        </pre>
+        パスワード：<input type="password" />
+      </div>
+
+      <h2>その他の入力系タグ</h2>
+      
+      <h3>textareaタグ（テキストエリア）</h3>
+      <div>
+        複数行テキストの入力。<br>
+        <code>&lt;textarea&gt;</code><br><br>
+
+        <textarea></textarea>
+      </div>
+  
+  
+      <h3>selectタグ（セレクトボックス）</h3>
+      
+      <div>
+        リストの中から1つを選ぶボックス。<br>
+        <select>
+          <option>セレクト1</option>
+          <option>セレクト2</option>
+          <option>セレクト3</option>
+        </select>
+        <pre>
+&lt;select&gt;
+  &lt;option&gt;セレクト1&lt;/option&gt;
+  &lt;option&gt;セレクト2&lt;/option&gt;
+  &lt;option&gt;セレクト3&lt;/option&gt;
+&lt;/select&gt;
+        </pre>
+      </div>
+
+      <h3>optgroupタグ</h3>
+      <div>
+        セレクトボックスの応用編。<br>
+        option タグをoptgroup タグで囲むことで、選択肢をカテゴリ分けすることができます。<br>
+        <select>
+          <optgroup label="グループ1">
+            <option>グループ1のセレクト1</option>
+            <option>グループ1のセレクト2</option>
+          </optgroup>
+          <optgroup label="グループ2">
+            <option>グループ2のセレクト1</option>
+            <option>グループ2のセレクト2</option>
+          </optgroup>
+        </select>
+        <pre>
+&lt;select&gt;
+  &lt;optgroup label="グループ1"&gt;
+    &lt;option&gt;グループ1のセレクト1&lt;/option&gt;
+    &lt;option&gt;グループ1のセレクト2&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;optgroup label="グループ2"&gt;
+    &lt;option&gt;グループ2のセレクト1&lt;/option&gt;
+    &lt;option&gt;グループ2のセレクト2&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;
+        </pre>
+      </div>
+      
+      <h3>ボタン</h3>
+      <div>
+        シンプルなボタンです。<br>
+        JavaScriptと連携させて、ボタンを押すと文字の色が変わったりメールを送信するなどの機能に使われます。<br>
+        <br>
+        <button>送信ボタン！</button><br>
+        <pre>
+&lt;button&gt;送信ボタン！<&lt;/button&gt;
+        </pre>
+      </div>
+
+      <div class="supplement">
+        <h3>補足：formタグ</h3>
+        <div>
+          これらの入力系タグは<b>&lt;form&gt;タグ</b>とセットで使われることが多いです。<br>
+          &lt;form&gt;タグは入力したデータをどこに送信するか等を指定するタグで、formタグで囲んだ中のinput等に入力したデータを送信します。<br>
+          また、送信する場合はbuttonタグではなく、<code>&lt;input type="submit"&gt;</code>を使うことが多いです。<br>
+          <b>submit の例：</b><input type="submit" value="送信する">
+        </div>
+      </div>
+      <br>
+
+      <h2>lavelタグ（ラベル）</h2>
+      <div>
+        フォームに関連したラベルを付けをすることで、フォームをより便利にします。<br>
+        下の例ではlabel タグをチェックボックスと組み合わせて使ってます。<br>
+        先に書いたチェックボックスではテキスト部分をクリックしても何も反応がありませんでしたが、label タグを使うとテキストをクリックした場合でもチェックをON/OFFができるようになります。<br>
+        label がinput要素と連動するには、<b>input タグのid属性とlabel タグのfor 属性を一致させてください。</b><br>
+        <br>
+        <input type="checkbox" id="label-check" value="check1" />
+        <label for="label-check">チェックボックス</label>
+
+        <pre>
+&lt;input type="checkbox" id="label-check" value="check1" /&gt;
+&lt;label for="label-check"&gt;チェックボックス&lt;/label&gt;
+        </pre>
+      </div>
+      
+    </section>
+    
+    <section>
+      <h1>メディアを掲載</h1>
+
+      <h2>img タグ（画像）</h2>
+      <div>
+        画像を載せるimgタグではsrc 属性で画像がある場所（パス）の指定が必須となります。<br>
+        <pre>
+&lt;img src="./resources/itl_logo.webp" /&gt;
+        </pre>
+        <img src="./resources/common/itl_logo.webp" width=400 />
+      </div>
+
+      <h2>video タグ（動画）</h2>
+      <div>
+        動画ファイルを載せるタグです。こちらもsrc 属性で動画ファイルのパスを指定します。<br>
+        他にも様々な属性があり、例では再生ボタン等を表示する<code>controls</code>やループ再生させる<code>loop</code>を使用してます。<br>
+        <pre>
+&lt;video src="./resources/kirakiraEffect.mp4" controls loop width=420&gt;&lt;/video&gt;
+        </pre>
+        <video src="./resources/dict/kirakiraEffect.mp4" controls loop width=420></video>
+      </div>
+
+      <h2>iframe タグ</h2>
+      <div>
+        iframe タグはWebページの中にWebページを表示するという特殊なタグです。<br>
+        一から使う機会は少ないですが、Youtube やGoogleMap の共有ボタンから出来上がったタグを提供されてそれをコピーして貼り付けることで動画や地図を載せることができます。<br>
+        これを<b>埋め込みタグ</b>と呼びます。
+
+        <h3>Youtube</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Y-CCmXEXat4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <h3>Google Map</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13294.850651658193!2d130.36035703885872!3d33.5868089671079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354193cc8cdba4c7%3A0xcdef79ddef4df798!2z5aSn5r-g5YWs5ZyS!5e0!3m2!1sja!2sjp!4v1647307849162!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+    </section>
+    
+    <section>
+      <h1>その他</h2>
+  
+      <h2>hrタグ（横線）</h2>
+      <p><b>&lt;hr&gt;タグ</b>は文章を区切るための横線をひきます。</p>
+      <hr>
+
+      <h2>コメントアウト</h2>
+      <div>
+        HTMLに下記のように書くと、プログラムに影響を与えずブラウザにも表示されないメモとしてのテキストを書くことができます。<br>
+        これを<b>コメントアウト</b>といいます。<br>
+        <code>&lt;!-- ここにコメント --&gt;</code>
+        <!-- コメントアウトされた部分は画面には表示されません。 -->
+      </div>
+
+      <h2>linkタグ：CSSファイルを別ファイルに書いて使用する</h2>
+      <div>
+        CSSは別ファイルに分けて書くのが一般的です。<br>
+        それを使うために、link タグをrel やhref 等の属性を指定してhead タグ内で呼び出します。<br>
+        このページでも、CSSは別のフォルダに置いたファイルを読込んで使っています。
+        <code>&lt;link rel="stylesheet" href="style/common.css"&gt; <span class="comment"></code>
+        
+      </div>
+      
+      <h2>HTML基本構成</h2>
+      <div>
+        HTMLを書く際に最低限必要なタグの構成です。
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;<span class="comment"> &lt;!-- ページで使用している言語の指定。日本語はja、英語ならen。--&gt;</span>
+  &lt;head&gt;<span class="comment"> &lt;!-- サイトに関する設定情報を書きこむ要素 --&gt;</span>
+    &lt;meta charset="UTF-8" /&gt;<span class="comment"> &lt;!-- 文字のエンコード形式 --&gt;</span>
+    &lt;title&gt;タイトル&lt;/title&gt; <span class="comment"> &lt;!-- ページのタイトル。ブラウザのタブに表示される。 --&gt;</span>
+  &lt;/head&gt;
+  &lt;body&gt;
+    <span class="comment">&lt;!-- ここに書いた内容がブラウザに表示されます --&gt;</span>
+  &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+      </div>
+      
+    </section>
+  </body>
+</html>
