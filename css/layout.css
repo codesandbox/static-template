@@ -1,0 +1,46 @@
+/* FlexBox*/
+/**:hover {
+  outline: dashed 1px red;
+}*/
+
+* {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 0px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  text-align: center;
+}
+.flex-item {
+  margin-top: 10px;
+  padding: 10px;
+  flex: 20%;
+}
+
+@media (max-width: 600px) {
+  .flex-container {
+    flex-direction: row;
+  }
+}
+
+/*Grid LAYOUT*/
+.grid-layout-equipos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  text-align: center;
+}
+
+div.grid-layout-equipos > div {
+  border: 5px solid black;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
