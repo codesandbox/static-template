@@ -34,7 +34,7 @@ const onSearch = async () => {
     method: "GET",
     headers: {
       "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
-      "X-RapidAPI-Key": "cf752a3308msh1290ccc584f2ddcp10b564jsnc0e2211463e4"
+      "X-RapidAPI-Key": "<ENTER_API_KEY>"
     }
   };
   const searchValue = document.getElementById("search-value").value;
