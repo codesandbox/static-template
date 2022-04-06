@@ -1,12 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://imgs.search.brave.com/nBYWv7pFAXbX4QOlElk5oQmKJOS3tXF3QxnhdAXJugM/rs:fit:480:480:1/g:ce/aHR0cHM6Ly9mcmVl/cG5naW1nLmNvbS9k/b3dubG9hZC93ZWF0/aGVyLzIzNTI5LTIt/d2VhdGhlci1oZC5w/bmc"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://imgs.search.brave.com/nBYWv7pFAXbX4QOlElk5oQmKJOS3tXF3QxnhdAXJugM/rs:fit:480:480:1/g:ce/aHR0cHM6Ly9mcmVl/cG5naW1nLmNvbS9k/b3dubG9hZC93ZWF0/aGVyLzIzNTI5LTIt/d2VhdGhlci1oZC5w/bmc"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Weather App</title>
+    <style>
+      .weather-display {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+    </style>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <ion-app>
+      <ion-toolbar color="primary">
+        <ion-buttons slot="primary">
+          <ion-button onclick="showSearch()">
+            <ion-icon slot="icon-only" name="search"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-title>Weather App</ion-title>
+      </ion-toolbar>
+
+      <ion-content id="search">
+        <div class="weather-display">
+          <h2>
+            Search for Weather
+          </h2>
+          <ion-searchbar id="search-value"></ion-searchbar>
+          <ion-button color="primary" onclick="onSearch()">Search</ion-button>
+        </div>
+      </ion-content>
+
+      <ion-content id="results" style="display: none;">
+        <div class="weather-display">
+          <h3 id="results-location">
+            Chicago
+          </h3>
+          <div>
+            <img
+              src="//cdn.weatherapi.com/weather/64x64/day/116.png"
+              height="100px"
+              width="100px"
+              id="results-img"
+            />
+          </div>
+          <h1 id="results-temp">
+            76°
+          </h1>
+          <p id="results-desc">
+            Partly Cloudy
+          </p>
+        </div>
+      </ion-content>
+    </ion-app>
+    <script src="./main.js"></script>
   </body>
 </html>
