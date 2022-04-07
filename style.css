@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #060447;
+  color: #fff38a;
+  font-family: "Montserrat", sans-serif;
+  background-image: url("https://picsum.photos/1200/1400");
+}
+
+.resume,
+.years,
+.images {
+  width: min(90vw, 533px);
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.resume-item,
+.years h2,
+.images .image {
+  transition: transform 2s ease;
+}
+
+[data-fade-in="1"] {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.resume-item {
+  min-width: 100%;
+}
+
+.resume-item h3 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  margin-bottom: 1rem;
+}
+
+.resume-item p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.years {
+  max-width: 392px;
+}
+
+.years h2 {
+  font-size: clamp(10rem, calc(10rem + ((1vw - 0.234375rem) * 5.178)), 15rem);
+}
+
+.images {
+  display: none;
+}
+
+.images .image {
+  min-width: 100%;
+}
+
+.progress-bar {
+  width: min(70vw, 1000px);
+  margin-bottom: 3rem;
+  height: 0px;
+  position: relative;
+  transition: width 2s ease;
+  border-bottom: 2px solid #827b68;
+}
+
+.circle {
+  position: absolute;
+  bottom: 0;
+  width: clamp(16px, calc(1rem + ((1vw - 3.75px) * 4.0302)), 32px);
+  height: clamp(16px, calc(1rem + ((1vw - 3.75px) * 4.0302)), 32px);
+  border-radius: 50%;
+  background-color: #fff38a;
+  transform: translate(-50%, 50%);
+}
+
+.circle:nth-child(2) {
+  left: 20%;
+}
+.circle:nth-child(3) {
+  left: 40%;
+}
+.circle:nth-child(4) {
+  left: 60%;
+}
+.circle:nth-child(5) {
+  left: 80%;
+}
+.circle:nth-child(6) {
+  left: 100%;
+}
+
+.front-bar {
+  position: absolute;
+  bottom: -2px;
+  height: 2px;
+  background-color: #fff38a;
+  width: 0px;
+  display: inline;
+}
+
+.buttons {
+  display: flex;
+  column-gap: 3rem;
+}
+
+.buttons button {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn {
+  width: 40px;
+  height: 3px;
+  background-color: #fff38a;
+  position: relative;
+  border-radius: 3px;
+}
+
+.btn::before,
+.btn::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 20px;
+  background-color: inherit;
+  border-radius: 3px;
+  top: 0;
+  transform-origin: right;
+}
+
+.btn::before {
+  transform: rotate(45deg);
+}
+
+.btn::after {
+  transform: rotate(-45deg);
+}
+
+.btn-prec {
+  transform: scaleX(-1);
+}
