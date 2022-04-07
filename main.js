@@ -2,6 +2,7 @@ const filmResume = document.querySelectorAll(".resume-item");
 const filmYear = document.querySelectorAll(".years h2");
 const image = document.querySelectorAll(".images .image");
 const frontBar = document.querySelector(".front-bar");
+const progressBarCircle = document.querySelectorAll(".progress-bar .circle");
 const buttonPrec = document.querySelector(".buttons button");
 const buttonNext = document.querySelector(".btn-next");
 let index = 0;
@@ -22,6 +23,7 @@ buttonNext.addEventListener("click", () => {
     translateX(filmYear, index);
     filmResume[index].dataset.fadeIn = "1";
     filmYear[index].dataset.fadeIn = "1";
+    progressBarCircle[index].dataset.activeCircle = "1";
   }
 });
 
@@ -32,5 +34,6 @@ buttonPrec.addEventListener("click", () => {
     translateX(image, index);
     translateX(filmResume, index);
     translateX(filmYear, index);
+    progressBarCircle[index + 1].dataset.activeCircle = "0";
   }
 });
