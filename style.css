@@ -1,62 +1,96 @@
+/* NORMALIZE */
+
 * {
   margin: 0;
   padding: 0;
 }
+
+/* GLOBAL */
 
 img {
   width: 100%;
   height: auto;
 }
 
+ul {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 3rem;
+}
+
 body {
-  width: 100%;
   height: 100vh;
-  display: grid;
-  place-items: center;
   background-color: #060447;
   color: #fff38a;
   font-family: "Montserrat", sans-serif;
-  background-image: url("https://picsum.photos/1200/1400");
+  background-image: url("images/sw0.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: soft-light;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr 2fr 1fr;
+  grid-template-areas:
+    "resume"
+    "years"
+    "buttons";
+  justify-items: center;
+}
+.images {
+  grid-area: images;
+}
+.resume {
+  grid-area: resume;
+}
+.years {
+  grid-area: years;
+}
+.buttons {
+  grid-area: buttons;
 }
 
 .resume,
 .years,
-.images {
-  width: min(90vw, 533px);
-  position: relative;
-  display: flex;
-  overflow: hidden;
-  margin-bottom: 3rem;
+.images,
+.buttons {
+  width: min(70vw, 500px);
 }
 
 .resume-item,
 .years h2,
 .images .image {
   transition: transform 2s ease;
+  position: absolute;
+  opacity: 0;
 }
 
-[data-fade-in="1"] {
-  animation: fadeIn 2s ease-in-out;
+/* FILMS RESUME */
+
+.resume {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0.7;
-  }
-  100% {
-    opacity: 1;
-  }
+.resume-item img,
+.resume-item h3 {
+  margin-bottom: 1rem;
 }
 
-.resume-item {
-  min-width: 100%;
+.resume-item img {
+  width: clamp(64px, calc(4rem + ((1vw - 3.75px) * 1.6828)), 90px);
 }
 
 .resume-item h3 {
   font-weight: 700;
-  font-size: 40px;
+  font-size: clamp(32px, calc(2rem + ((1vw - 3.75px) * 0.5178)), 40px);
   line-height: 49px;
-  margin-bottom: 1rem;
 }
 
 .resume-item p {
@@ -65,12 +99,14 @@ body {
   line-height: 30px;
 }
 
-.years {
-  max-width: 370px;
-}
+/* IMAGES */
 
-.years h2 {
-  font-size: clamp(7rem, calc(10rem + ((1vw - 0.234375rem) * 5.178)), 15rem);
+.images {
+  width: min(90vw, 533px);
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 3rem;
 }
 
 .images {
@@ -81,7 +117,19 @@ body {
   min-width: 100%;
 }
 
+/* YEARS */
+
+.years {
+  position: relative;
+  font-size: 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* PROGRESS BAR */
+
 .progress-bar {
+  display: none;
   width: min(70vw, 1000px);
   margin-bottom: 3rem;
   height: 0px;
@@ -138,20 +186,15 @@ body {
   height: 2px;
   background-color: #fff38a;
   width: 0px;
-  display: inline;
+  transition: width 2s ease;
 }
+
+/* BUTTONS */
 
 .buttons {
   display: flex;
+  justify-content: space-around;
   column-gap: 3rem;
-}
-
-.buttons button {
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
 }
 
 .btn {
@@ -184,4 +227,66 @@ body {
 
 .btn-prec {
   transform: scaleX(-1);
+}
+
+/* ANIMATIONS */
+
+.fade-in-right {
+  animation: fadeInRight 4s forwards;
+}
+
+.fade-out-right {
+  animation: fadeOutRight 4s forwards;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 4s forwards;
+}
+
+.fade-out-left {
+  animation: fadeOutLeft 4s forwards;
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translate(50%, 0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutRight {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -0%);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translate(-50%, 0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutLeft {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(50%, -0%);
+    opacity: 0;
+  }
 }
