@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+}
+:root {
+  --White: hsl(0, 0%, 100%);
+  --LightGrey: hsl(217, 12%, 63%);
+  --MediumGrey: hsl(216, 12%, 54%);
+  --DarkBlue: hsl(213, 19%, 18%);
+  --LightDarkBlue: hsl(210, 14%, 20%);
+  --VeryDarkBlue: hsl(225, 10%, 8%);
+  --Orange: hsl(25, 97%, 53%);
+}
+body {
+  background-color: var(--VeryDarkBlue);
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.container {
+  background-color: var(--DarkBlue);
+  width: 340px;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.star-icon {
+  background-color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+}
+.review {
+  background-color: var(--LightDarkBlue);
+  color: var(--Orange);
+  text-align: center;
+  padding: 7px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin: 15px 0;
+}
+.review-text {
+  text-align: center;
+}
+.text h1 {
+  color: var(--White);
+  padding: 15px 0;
+  font-size: 26px;
+}
+.text p {
+  color: var(--MediumGrey);
+  line-height: 1.5rem;
+  font-size: 15px;
+}
+.review-btns {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  width: 100%;
+}
+.btn {
+  background-color: black;
+  color: var(--MediumGrey);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.clicked {
+  background-color: #7c8798;
+  color: white;
+}
+.btn:hover {
+  background-color: var(--Orange);
+  color: white;
+}
+.submit-btn {
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  background-color: var(--Orange);
+  width: 100%;
+  padding: 15px 0;
+  color: white;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  font-family: "Overpass", sans-serif;
+  font-size: 15px;
+}
+.submit-btn:hover {
+  background-color: white;
+  color: var(--Orange);
+}
+.modal {
+  display: none;
+}
+@media (min-width: 900px) {
+  .container {
+    width: 350px;
+  }
+}
