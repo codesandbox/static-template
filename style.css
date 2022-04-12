@@ -1,0 +1,292 @@
+/* NORMALIZE */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* GLOBAL */
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 3rem;
+}
+
+body {
+  height: 100vh;
+  background-color: #060447;
+  color: #fff38a;
+  font-family: "Montserrat", sans-serif;
+  background-image: url("images/sw0.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: soft-light;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr 2fr 1fr;
+  grid-template-areas:
+    "resume"
+    "years"
+    "buttons";
+  justify-items: center;
+}
+.images {
+  grid-area: images;
+}
+.resume {
+  grid-area: resume;
+}
+.years {
+  grid-area: years;
+}
+.buttons {
+  grid-area: buttons;
+}
+
+.resume,
+.years,
+.images,
+.buttons {
+  width: min(70vw, 500px);
+}
+
+.resume-item,
+.years h2,
+.images .image {
+  transition: transform 2s ease;
+  position: absolute;
+  opacity: 0;
+}
+
+/* FILMS RESUME */
+
+.resume {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.resume-item img,
+.resume-item h3 {
+  margin-bottom: 1rem;
+}
+
+.resume-item img {
+  width: clamp(64px, calc(4rem + ((1vw - 3.75px) * 1.6828)), 90px);
+}
+
+.resume-item h3 {
+  font-weight: 700;
+  font-size: clamp(32px, calc(2rem + ((1vw - 3.75px) * 0.5178)), 40px);
+  line-height: 49px;
+}
+
+.resume-item p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+/* IMAGES */
+
+.images {
+  width: min(90vw, 533px);
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.images {
+  display: none;
+}
+
+.images .image {
+  min-width: 100%;
+}
+
+/* YEARS */
+
+.years {
+  position: relative;
+  font-size: 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* PROGRESS BAR */
+
+.progress-bar {
+  display: none;
+  width: min(70vw, 1000px);
+  margin-bottom: 3rem;
+  height: 0px;
+  position: relative;
+  transition: width 2s ease;
+  border-bottom: 2px solid #827b68;
+}
+
+.circle {
+  position: absolute;
+  bottom: 0;
+  width: clamp(16px, calc(1rem + ((1vw - 3.75px) * 4.0302)), 32px);
+  height: clamp(16px, calc(1rem + ((1vw - 3.75px) * 4.0302)), 32px);
+  border-radius: 50%;
+  background-color: #827b68;
+  transform: translate(-50%, 50%);
+}
+
+.circle[data-active-circle="0"] {
+  transition-property: background-color;
+  transition-delay: 0.2s;
+  background-color: #827b68;
+}
+
+.circle[data-active-circle="1"] {
+  transition-property: background-color;
+  transition-delay: 1.1s;
+  background-color: #fff38a;
+}
+
+.circle:nth-child(1) {
+  background-color: #fff38a;
+}
+
+.circle:nth-child(2) {
+  left: 20%;
+}
+.circle:nth-child(3) {
+  left: 40%;
+}
+.circle:nth-child(4) {
+  left: 60%;
+}
+.circle:nth-child(5) {
+  left: 80%;
+}
+.circle:nth-child(6) {
+  left: 100%;
+}
+
+.front-bar {
+  position: absolute;
+  bottom: -2px;
+  height: 2px;
+  background-color: #fff38a;
+  width: 0px;
+  transition: width 2s ease;
+}
+
+/* BUTTONS */
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  column-gap: 3rem;
+}
+
+.btn {
+  width: 40px;
+  height: 3px;
+  background-color: #fff38a;
+  position: relative;
+  border-radius: 3px;
+}
+
+.btn::before,
+.btn::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 20px;
+  background-color: inherit;
+  border-radius: 3px;
+  top: 0;
+  transform-origin: right;
+}
+
+.btn::before {
+  transform: rotate(45deg);
+}
+
+.btn::after {
+  transform: rotate(-45deg);
+}
+
+.btn-prec {
+  transform: scaleX(-1);
+}
+
+/* ANIMATIONS */
+
+.fade-in-right {
+  animation: fadeInRight 4s forwards;
+}
+
+.fade-out-right {
+  animation: fadeOutRight 4s forwards;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 4s forwards;
+}
+
+.fade-out-left {
+  animation: fadeOutLeft 4s forwards;
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translate(50%, 0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutRight {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -0%);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translate(-50%, 0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutLeft {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(50%, -0%);
+    opacity: 0;
+  }
+}
