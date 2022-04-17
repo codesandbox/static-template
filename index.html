@@ -1,12 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <!-- Bootstrap files -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    />
+    <!-- Custom css file -->
+    <link rel="stylesheet" href="./student_form.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!-- form container -->
+    <!-- <section class="vh-100 gradient-custom"> -->
+      <div class="container py-5 h-100 ">
+        <!-- align the form container to the center -->
+        <div class="row justify-content-center align-items-center">
+          <div class="col-12 col-lg-9 col-xl-7">
+            <div
+              class="card shadow-2-strong card-registration"
+              style="border-radius: 15px;"
+            >
+              <div class="card-body p-4 p-md-5">
+                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+                <form>
+                  <!-- first row -->
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <!-- First Name -->
+                      <div class="form-outline">
+                        <input
+                          type="text"
+                          id="name"
+                          class="form-control form-control-lg"
+                          placeholder="Full Name"
+                        />
+                      </div>
+                    </div>
+                    <!-- College Name -->
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input
+                          type="text"
+                          id="lastName"
+                          class="form-control form-control-lg"
+                          placeholder="College Name"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Second row -->
+                  <div class="row">
+                    <!-- Age -->
+                    <div class="col mb-4">
+                      <div class="form-outline">
+                        <input
+                          type="number"
+                          class="form-control form-control-lg"
+                          id="age"
+                          min="21"
+                          max="32"
+                          required
+                          placeholder="Age"
+                        />
+                      </div>
+                    </div>
+                    <!-- Gender Box -->
+                    <div class="col mb-4">
+                      <div class="form">
+                        <select
+                          class="form-select form-control-lg"
+                          name="gender"
+                          id=""
+                          aria-label="Floating label select example"
+                        >
+                          <option value="female">Female</option>
+                          <option value="male">Male</option>
+                          <option value="others">Others</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- Status -->
+                    <div class="col mb-4">
+                      <div class="form">
+                        <select
+                          class="form-select form-control-lg"
+                          name="gender"
+                          id=""
+                          aria-label="Floating label select example"
+                        >
+                          <option value="placed">Placed</option>
+                          <option value="notplaced">Not Placed</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Third row -->
+                  <div class="row">
+                    <!-- Test score -->
+                    <div class="col-12 mb-4">
+                      <div class="row">
+                        <input
+                          type="number"
+                          class="form-control form-control-lg col mr-4"
+                          name="dsa"
+                          min="0"
+                          max="10"
+                          placeholder="DSA Score"
+                        />
+                        <input
+                          type="number"
+                          class="form-control form-control-lg col mr-4"
+                          name="wd"
+                          min="0"
+                          max="10"
+                          placeholder="WD Score"
+                        />
+                        <input
+                          type="number"
+                          class="form-control form-control-lg col mr-4"
+                          name="react"
+                          min="0"
+                          max="10"
+                          placeholder="React Score"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Fourth row -->
+                  <div class="row">
+                    <div class="col-12">
+                      <select class="select form-control-lg">
+                        <option value="1" disabled>Choose option</option>
+                        <option value="2">Subject 1</option>
+                        <option value="3">Subject 2</option>
+                        <option value="4">Subject 3</option>
+                      </select>
+                      <label class="form-label select-label"
+                        >Choose option</label
+                      >
+                    </div>
+                  </div>
+                  <!-- Submit button -->
+                  <div class="mt-4 pt-2">
+                    <input
+                      class="btn btn-primary btn-lg"
+                      type="submit"
+                      value="Submit"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Bootstrap JS files -->
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- fontawesome files -->
+    <script
+      src="https://kit.fontawesome.com/c53827b8c0.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
