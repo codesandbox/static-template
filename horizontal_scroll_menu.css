@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+.horizontal-scroll {
+  width: 600px;
+  height: 120px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.horizontal-scroll .btn-scroll {
+  background-color: #fff;
+  color: #999;
+  box-shadow: 0 0 10px #999;
+  padding: 5px 8px;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 5px;
+  z-index: 1;
+  cursor: pointer;
+  transition: 1s;
+}
+.storys-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  transition: 0.5s all ease-out;
+}
+.story-circle {
+  background: linear-gradient(rgb(231, 0, 231), rgb(255, 115, 0));
+  width: 60px;
+  height: 60px;
+  margin: 15px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+.story-circle img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transform: rotate(-45deg);
+}
+
+.newWidgetDemo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transform: rotate(-45deg);
+}
+.newWidget {
+  width: 150px;
+}
