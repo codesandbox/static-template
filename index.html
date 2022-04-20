@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>CSS Animation</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <div class="rows">
+        <div class="circle" id="c1"></div>
+        <div class="circle c2" id="c2"></div>
+      </div>
+      <div class="rows">
+        <div class="circle c3" id="c3"></div>
+        <div class="circle c4" id="c4"></div>
+      </div>
+      <div class="buttons">
+        <button onclick="start()">Start</button>
+        <button onclick="stop()">Stop</button>
+      </div>
+    </div>
+
+    <script>
+      const cols = document.getElementsByClassName("circle");
+      function start() {
+        for (i = 0; i < cols.length; i++) {
+          cols[i].style.WebkitAnimationPlayState = "running";
+        }
+      }
+      function stop() {
+        for (i = 0; i < cols.length; i++) {
+          cols[i].style.WebkitAnimationPlayState = "paused";
+        }
+      }
+    </script>
   </body>
 </html>
