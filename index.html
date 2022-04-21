@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" />
+  <link rel="stylesheet" href="range.css">
+  <title>Document</title>
+  <script src="range.js"></script>
+
+</head>
+
+<body>
+  <div class="ak" style="height:450px" <div class="container-fluid">  <br><br>
+    <h3 align="center" class="pb-4">EMI Calculator</h3>
+    
+    <div class="row p-4 justify-content-center">
+      <div class="col-12  col-lg-5 col-md-5 col-sm-5 col-xs-5" align="end">
+
+        Amount you Need &#8377 <input id="txtAmount" onchange="changeaAmount()" value="50000"
+          type="text"></input><br><br>
+        <div class="dr">&#8377 50,000 <input id="slideAmount" min="50000" max="4000000" value="50000"
+            onchange="changeAmount()" type="range"></input>&#8377 4,000,000</div>
+        <hr>
+      </div>
+
+      <div class="col-12 col-lg-4 col-md-4 col-sm-4 col-xs-4" align="end">
+        for <input id="txtYear" onchange="changeaYear()" value="1" type="text"></input> years<br><br>
+        <div class="dr"> 1 year <input id="slideYear" min="1" max="20" value="1" onchange="changeYear()"
+            type="range"></input> 20 year</div>
+        <hr>
+      </div>
+
+      <div class="col-12 col-lg-3 col-md-3 col-sm-3 col-xs-3" align="end">
+        Interest rate <input id="txtInterest" onchange="changeaInterest()" value="1" type="text"></input> %<br><br>
+        <div class="dr"> 1%<input id="slideInterest" min="1" max="12" value="1" onchange="changeInterest()"
+            type="range"></input> 12%</div>
+        <hr>
+      </div>
+    </div><br>
+    <div><h3 align="center" style="font-weight: bolder; color: rgb(36, 34, 35);" id="pr"></h3> <button class="btn-lg btn-primary " onclick="calculate()" style="float: right;">Calculate</button></div>
+  </div>
+  
+    <br>
+  </div>
+  <br>
+  
+</body>
+
 </html>
