@@ -1,12 +1,470 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/metropolis" type="text/css"/>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+  />
+
+    <title>Ejercicio 2 Team 10</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    
+
+    <!-- SECTION UNO NAVBAR -->
+    <div class="section1">
+      <!-- <div class="container-fluid"> -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+          <a
+            class="navbar-brand"
+            href="./index.html"
+            >SB UI Kit Pro</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Landings
+                </a>
+
+                <div
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <div class="container" style="width: 500px">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="img-fluid bg-image">
+                            <p>texto cualquiera</p>
+                        </div>
+                          <!-- <div class="bg-image" 
+                            style="background-image: url('https://sb-ui-kit-pro.startbootstrap.com/assets/img/backgrounds/bg-dropdown-xl.jpg');
+                                  height:500px; background-repeat: no-repeat">
+                           </div> -->
+                          <!-- <img src="https://sb-ui-kit-pro.startbootstrap.com/assets/img/backgrounds/bg-dropdown-xl.jpg" alt=""> -->
+                          <!-- <img class="img-fluid"src="https://sb-ui-kit-pro.startbootstrap.com/assets/img/backgrounds/bg-dropdown-xl.jpg" alt=""> -->
+                        </div>
+                      </div>
+                      <div class="col">
+                          <div class="row">
+                              <div class="col-6">
+                                <ul>
+                                  <li>APLICATIONS</li>
+                                  <li>Mobile App</li>
+                                  <li>Desktop App</li>
+                                </ul>
+                                <ul>
+                                  <li>BUSINESS</li>
+                                  <li>Multipurpose</li>
+                                  <li>Agency</li>
+                                  <li>Press</li>
+                                  <li>Directory</li>
+                                  <li>Rental</li>
+                                  <li>Real Estate</li>
+                                  <li>Classifields</li>
+                                </ul>
+                                <ul>
+                                  <li>LEAD GENERATION</li>
+                                  <li>Lead Capture</li>
+                                </ul>
+                                <p>Columna1 (imagen)</p>
+                              </div>
+                              <div class="col-6">
+                                <ul>PERSONAL
+                                 <li>Resume</li>
+                                 <li>Portfolio</li>
+                                </ul>
+                                <ul>
+                                  <li>HEADER STYLES</li>
+                                  <li>Basic</li>
+                                  <li>Basic (Signup)</li>
+                                  <li>Graphic</li>
+                                  <li>Graphic (Signup)</li>
+                                  <li>Video Header (New!)</li>
+                                  <li>Inner Page</li>
+                                  <li>Nav Only</li>
+                                </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Pages
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li><a class="dropdown-item" href="#"></a></li>
+                  <li><a class="dropdown-item" href="#"></a></li>
+                  <li>
+                    <a class="dropdown-item" href="#"></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Documentation
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li><a class="dropdown-item" href="#"></a></li>
+                  <li><a class="dropdown-item" href="#"></a></li>
+                  <li>
+                    <a class="dropdown-item" href="#"></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <button>Buy Now ➝</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- Master Container -->
+<div class="mastercontainer">
+  <div class="container">
+    <div class="container d-flex justify-content-between pt-4">
+      <span class="featured_story"> Featured Story</span>
+      <span class="more_headlines"><a href="#">More headlines   </a><i class="fa-solid fa-arrow-right"></i></span>
+    </div>
+    <hr class="py-0">
+  </div>
+
+<div class="container bg-white pt-1 shadow rounded">
+  <div  class="row">
+    <div class="col-6 p-4">
+
+         <span class="badge rounded-pill bg-primary text-decoration-none mb-3">Web</span> 
+      
+      
+      <h2 style="font-weight:bold; font-size: 28px">News companies post headline about creating new websites with powerful UI kits</h2>
+<p style="font-size: 19px; color: grey">When creating and developing startups, using a UI kit to bootstrap your companies website can be an extremely efficient way to save time, money, and runway.</p>
+<span class="more_headlines"><a href="#">Read More   </a><i class="fa-solid fa-arrow-right"></i></span> 
+</div>
+    <div class="col-6 m-0 p-0">
+    <img class="img-fluid"  src="https://source.unsplash.com/npxXWgQ33ZQ/1200x800" alt="">
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="container d-flex justify-content-between pt-4">
+    <span class="featured_story" style="font-weight:bold"> Top Stories</span>
+    <span class="more_headlines"><a href="#">View more   </a><i class="fa-solid fa-arrow-right"></i></span>
+  </div>
+  <hr class="py-0">
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+
+<div class="row">
+  <div class="col-9">
+      <h5 style="font-weight:bold">Is the Bootstrap framework the best way to build a mobile responsive website?</h5>
+      <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+      <span class="more_headlines"><a href="#">Read More   </a><i class="fa-solid fa-arrow-right"></i></span>
+  </div>
+  <div class="col-3 d-flex justify-content-end">
+    <img style="max-width: 100px;max-height: 100px; border-radius: 6px" class="img-fluid" src="https://source.unsplash.com/4hbJ-eymZ1o/160x160" alt="">
+  </div>
+  <hr class="py-0 mt-4">
+</div>
+
+<div class="stories">
+  <div class="row mb-3">
+  <div class="col-9">
+      <h5 style="font-weight:bold">Is virtual reality the new UI? Exploring the use of virtual reality and 3D user interfaces for everyday products</h5>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt repellat possimus delectus odit vero! Accusantium, omnis! Amet reiciendis ex numquam. Minus corporis, tempore facere placeat repellat ipsum eaque similique neque.</p>
+      <span class="more_headlines"><a href="#">Read More   </a><i class="fa-solid fa-arrow-right"></i></span>    
+  </div>
+  <div class="col-3 d-flex justify-content-end">
+      <img style="max-width: 100px;max-height: 100px;border-radius: 6px" class="img-fluid"src="https://source.unsplash.com/HI6gy-p-WBI/160x160" alt="">
+    </div>
+  <hr class="py-0 mt-4">
+</div>
+</div>
+
+<div class="stories">
+  <div class="row mb-3">
+<div class="col-9">
+    <h5 style="font-weight:bold">How cats can improve your workflow productivity</h5>
+    <p>Quasi error voluptates, commodi enim voluptate, quisquam vitae temporibus asperiores velit vero aperiam culpa iste eius autem praesentium ducimus similique iusto dolorum.</p>
+    <span class="more_headlines"><a href="#">Read More   </a><i class="fa-solid fa-arrow-right"></i></span>  
+</div>
+<div class="col-3 d-flex justify-content-end">
+    <img style="max-width: 100px;max-height: 100px;border-radius: 6px" class="img-fluid pe-0"src="https://source.unsplash.com/bN9FFTPlLjU/160x160" alt="">
+  </div>
+  </div>
+  <hr class="py-0 mt-4">
+</div>
+
+      
+    </div>
+    <div style="height:450px; border-radius: 5px; width: 370px" class="col-3 bg-white pt-3 ms-5 sombra">
+
+<h4 style="font-size:1.2rem">Opinion</h4>
+<hr class="py-0">
+<div class="opinion">
+  <div class="row">
+
+      <div class="card border-0 pt-0">
+          <div class="row g-0">
+            <div class="col-md-2">
+              <img class="img-fluid rounded-circle"src="https://sb-ui-kit-pro.startbootstrap.com/assets/img/illustrations/profiles/profile-1.png" style="height:50px;" alt="...">
+            </div>
+            <div class="col-md-10">
+              <div class="card-body pt-0">
+                <h5 class="card-title mb-0">Bootstrap is the best CSS framework, hands down</h5>
+                <p class="card-text"><small class="text-muted">by Valerie Luna</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card border-0 pt-0">
+            <div class="row g-0">
+              <div class="col-md-2">
+                <img class="img-fluid rounded-circle"src="https://sb-ui-kit-pro.startbootstrap.com/assets/img/illustrations/profiles/profile-2.png" style="height:50px;" alt="...">
+              </div>
+              <div class="col-md-10">
+                <div class="card-body pt-0">
+                  <h5 class="card-title mb-0">Bootstrap is the best CSS framework, hands down</h5>
+                  <p class="card-text"><small class="text-muted">by Ewan Rogers</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card border-0 pt-0">
+              <div class="row g-0">
+                <div class="col-md-2">
+                  <img class="img-fluid rounded-circle"src="https://sb-ui-kit-pro.startbootstrap.com/assets/img/illustrations/profiles/profile-3.png"  style="height:50px;" alt="...">
+                </div>
+                <div class="col-md-10">
+                  <div class="card-body pt-0">
+                    <h5 class="card-title mb-0">Bootstrap is the best CSS framework, hands down</h5>
+                    <p class="card-text"><small class="text-muted">by Alicia Allen</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card border-0 pt-0">
+                <div class="row g-0">
+                  <div class="col-md-2">
+                    <img class="img-fluid rounded-circle"src="https://sb-ui-kit-pro.startbootstrap.com/assets/img/illustrations/profiles/profile-4.png"  style="height:50px;" alt="...">
+                  </div>
+                  <div class="col-md-10">
+                    <div class="card-body pt-0">
+                      <h5 class="card-title mb-0">Bootstrap is the best CSS framework, hands down</h5>
+                      <p class="card-text"><small class="text-muted">by Kolby Brock</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card border-0 pt-0">
+                  <div class="row g-0">
+                    <div class="col-md-2">
+                      <img class="img-fluid rounded-circle"src="https://sb-ui-kit-pro.startbootstrap.com/assets/img/illustrations/profiles/profile-5.png" style="height:50px;" alt="...">
+                    </div>
+                    <div class="col-md-10">
+                      <div class="card-body pt-0">
+                        <h5 class="card-title mb-0">Bootstrap is the best CSS framework, hands down</h5>
+                        <p class="card-text"><small class="text-muted">by William Cole</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container"><div class="row">
+  <div class="col">
+
+<h5 >Tech</h5>
+<hr class="py-0">
+<h5>Newest tech from 2020 that can improve our quality of life</h5>
+<p>New technology is always improving the way we live. This year, we've made some major advancements.</p>
+<h5>Robotics and the future of industry</h5>
+<p>Machining and tooling systems are improving everday with the help of modern robotics.</p>
+<h5>Artificial intelligence - should we be worried?</h5>
+<p>Ever since James Cameron's blockbuster, the discussion about whether AI is safe has been on our minds.</p>
+<span class="more_headlines"><a href="#">More from Tech   </a><i class="fa-solid fa-arrow-right"></i></span>
+</div>
+  <div class="col">
+
+    <h5>Business</h5>
+<hr class="py-0">
+<h5>Cottage industries and the passion economy</h5>
+<p>An old turn of phase states that if you do what you love, you won't work a day in your life. In today's economy, some are pushing that concept to the limit.</p>
+<h5>Everybody love pizza!</h5>
+<p>Well, not everybody, but pizza companies are making major moves towards global expansion.</p>
+<h5>Tax season is here, and you can file for free</h5>
+<p>Before you go and pay to get your taxes filed, take a look at some of these free options!</p>
+<span class="more_headlines"><a href="#">More from Business   </a><i class="fa-solid fa-arrow-right"></i></span>
+
+  </div>
+  <div class="col">
+    <h5>Health</h5>
+    <hr class="py-0">
+    <h5>The carnivore diet, what the science says...</h5>
+    <p>It's like having a meat lover's pizza without the bread, cheese, and sauce - but is it healthy?</p>
+  <h5>High intensity workouts and their effect on blood pressure</h5>
+  <p>Working out with more intensity for less time, is it worth the added exhaustion?</p>
+  <h5>An annual review of pathology and disease</h5>
+  <p>This year's statistics are in, and the numbers have a lot to say.</p>
+  <span class="more_headlines"><a href="#">More from Health   </a><i class="fa-solid fa-arrow-right"></i></span>
+  </div>
+</div></div>
+
+<div id="form" class="container mt-5 bg-white py-5 z-1 sombra">
+  <div class="row">
+    <div class="col">
+      <h4>Get the latest news</h4>
+      <p style="color: #878a8d">Stay in the loop with the latest stories and breaking headlines!</p>
+    </div>
+    <div class="col">
+        <div style="height:50px" class="input-group">
+            <input style="background-color:#f4f0f4" type="text" class="form-control" placeholder="youremail@example.com" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <span style="color:white; background-color:#0062f2" class="input-group-text" id="basic-addon2">Sign up</span>
+          </div>
+          <p style="color: #878a8d">You can unsubscribe at any time.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+  </div>
+</div>
+
+  </div>
+  <div class="pancita">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>  
+</div>
+ <!-- Final Section -->
+<div class="fondomorado">
+      <div class="container">
+        <div class="row">
+          <div class="col text-start text-center">
+            <h1>SB UI Kit Pro</h1>
+            <h5>Design made easy</h5>
+            <p class="d-flex justify-content-evenly">
+              <i class="bi bi-instagram"></i><i class="bi bi-facebook"></i
+              ><i class="bi bi-github"></i><i class="bi bi-twitter"></i>
+            </p>
+          </div>
+          <div class="col">
+            <ul style=" text-align: start;list-style-type: none;">
+              <li><a style="font-size: 150%" href="">Product</a></li>
+              <li><a href="">Landing</a></li>
+              <li><a href="">Pages</a></li>
+              <li><a href="">Sections</a></li>
+              <li><a href="">Documentation</a></li>
+              <li><a href="">Changelog</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul style="list-style-type: none;">
+              <li><a style="font-size: 150%" href="">TECHNICAL</a></li>
+              <li><a href="">Documentation</a></li>
+              <li><a href="">Changelog</a></li>
+              <li><a href="">Theme Customizer</a></li>
+              <li><a href="">UI Kit</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul style="list-style-type: none;">
+              <li><a style="font-size: 150%" href="">INCLUDES</a></li>
+              <li><a href="">Utilities</a></li>
+              <li><a href="">Components</a></li>
+              <li><a href="">Layouts</a></li>
+              <li><a href="">Code Samples</a></li>
+              <li><a href="">Products</a></li>
+              <li><a href="">Afiliates</a></li>
+              <li><a href="">Updates</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul style="list-style-type: none;">
+              <li><a style="font-size: 150%" href="">LEGAL</a></li>
+              <li><a href="">Privacy Policy</a></li>
+              <li><a href="">Terms and Conditions</a></li>
+              <li><a href="">License</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+      <div class="container d-flex justify-content-between">
+        <span>Copyright © Your Website 2021</span>
+        <span>Privacy Policy · Terms & Conditions</span>
+      </div>
+
+    </div>
+
+    <!-- </div> -->
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://kit.fontawesome.com/62f90680e3.js" crossorigin="anonymous"></script>
   </body>
 </html>
