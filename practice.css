@@ -1,0 +1,154 @@
+/*
+  :root{--変数名: 値} : htmlタグに変数を定義できる(カスタムプロパティ)
+  "--"を変数の頭につける。他のcssプロパティから参照可能。
+*/
+
+/*
+  大きさの単位
+  em: 親要素のfont-sizeの大きさを基準としたサイズ
+  rem: rootタグ(<html>)のfont-sizeの大きさを基準としたサイズ
+  em,remはfont-sizeだけでなくmarginやpaddingにも付けられる
+  レスポンシブサイトではremがおすすめ
+  */
+
+:root {
+  --clr-primary-200: #f3eed9;
+  --clr-primary-400: #824936;
+  --clr-neutral-100: #fff;
+  --clr-neutral-900: #222c2a;
+
+  --ff-primary: "Roboto", sans-serif;
+  --ff-accent: "Playfair Display", serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-weight: 400;
+  font-size: 1.3125rem;
+  line-height: 1.6;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-accent);
+  font-weight: 900;
+  line-height: 1;
+}
+
+h2,
+h3,
+p {
+  margin-bottom: 1em;
+}
+
+/*
+  画像: レスポンシブでは高さを指定しない
+  max-width: オリジナルの横幅以上にならない
+*/
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+header,
+section {
+  padding: 3rem 0;
+}
+
+/*
+  container: 子要素の表示範囲を強調する
+  margin: 0 auto; 子要素の幅を計算し、残りの幅を使い子要素を中央寄せする
+  width: min(size1,size2); 値の小さい方のサイズを適応する
+*/
+.container {
+  margin: 0 auto;
+  width: min(90%, 70.5rem);
+}
+
+/*headerのサブタイトル、タイトルの横幅の最大値を設定*/
+.container--narrow {
+  max-width: 34rem;
+}
+
+/*
+  split: 画像とテキストを横表示、縦表示するためのflex
+  media (min-height)でpcのcssを書くため、ここではスマホサイズの設定を行う
+  スマホでは縦、pcサイズでは横向きにする
+*/
+.split {
+  display: flex;
+  flex-direction: column;
+}
+
+.split-sentence {
+  margin-top: 3em;
+}
+
+.bg-light {
+  background-color: var(--clr-primary-200);
+}
+.bg-primary {
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-primary-400);
+}
+.bg-dark {
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-900);
+}
+
+.bg-primary h2,
+.bg-dark h2 {
+  color: var(--clr-neutral-100);
+}
+
+/*
+  @media (and screen) (min-width: size){} : 指定したサイズ以上の画面幅の場合適応させる
+  min-widthを使う場合はスマホのcssをベースに考える。min-width: 500px, min-width: 960pxのように小さい幅から書いてく
+  max-widthの場合はpcのcssベース、幅が大きいものから書く
+*/
+@media (min-width: 960px) {
+  header,
+  section {
+    padding: 7rem 0;
+  }
+
+  /*
+    スマホではdisplay: flex; flex-direction: column;が設定され縦並びになっている
+    flex-direction: row;をオーバーライドして再び横並びにする
+  */
+  .split {
+    flex-direction: row;
+  }
+
+  /*
+  flex-basis: flexコンテンツの幅を指定する。flex-direction: column;の場合は高さを指定できる。
+  flex-direction: row;で横になったflexコンテンツの幅を親要素に合わせる
+  flexコンテンツのため100%を指定しても大きさはそれぞれ{親要素の幅/flexコンテンツの数}になる。flexコンテンツが動的に増えても同じ幅で表示できる
+  */
+  .split > * {
+    flex-basis: 100%;
+  }
+
+  .split > * + * {
+    margin-left: 2em;
+  }
+}
