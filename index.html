@@ -1,12 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <!-- レスポンシブに必要な設定。使用している端末の大きさを基準にしている-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Static Template</title>
+    <link rel="stylesheet" href="practice.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header class="bg-light text-center">
+      <!--サブタイトルとタイトルを同じ比率でレスポンシブに対応させるためdivで囲う-->
+      <div class="container container--narrow">
+        <p>テストテキストss</p>
+        <h1>
+          Responsive layouts don't have to be astruggle
+        </h1>
+      </div>
+    </header>
+
+    <!--
+      section: mainを3つのsectionに分ける。それぞれ上下にpaddingをつける
+      div.container: sectionの表示範囲を指定。marginを左右につける
+      div.split: 画面幅によってコンテンツを縦横変更できるように子要素を配置
+    -->
+    <section>
+      <div class="container">
+        <h2 class="text-center">Quality Designs</h2>
+        <div class="split">
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+              cupiditate laudantium aperiam repudiandae cumque, modi consectetur
+              accusantium culpa sapiente quas hic sunt quam quae! Quia?
+            </p>
+          </div>
+          <div>
+            <p>
+              Nisi ex cupiditate odit, deserunt voluptas reprehenderit hic quia
+              dolor consectetur quae a quisquam ipsum! Nesciunt voluptatem nisi
+              distinctio tempore! Iure voluptatem quia repellat exercitationem.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-dark">
+      <div class="container">
+        <div class="split">
+          <div>
+            <h2>Made custom for me</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis,
+              magnam. Quibusdam expedita nobis recusandae officiis.
+            </p>
+          </div>
+          <div>
+            <img src="https://source.unsplash.com/random" alt="test1" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-primary">
+      <div class="container">
+        <div class="split">
+          <div>
+            <img src="https://source.unsplash.com/random" />
+          </div>
+          <div class="split-sentence">
+            <h2>Created with care</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni,
+              obcaecati unde dolorem doloremque omnis maiores.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
