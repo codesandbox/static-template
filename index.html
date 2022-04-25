@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <body>
+    <!--react cdn-->
     <script
       crossorigin
       src="https://unpkg.com/react@17/umd/react.development.js"
@@ -9,15 +10,30 @@
       crossorigin
       src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
     ></script>
+    <!--jsx 사용하려면 babel 필요-->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <div id="root"></div>
-    <script>
+    <!--script type에 text/babel이라고 해줘야 babel이 정상 작동함-->
+    <script type="text/babel">
+      //root에 아래 element를 추가해주는 방법:
+      //아래처럼
+      //---> 번거롭다.
+      //jsx사용하면 createElement, ReactDOM.render 사용하지 않고도
+      //jsx 사용하려면 Babel이라는 Javascript Compiler 필요
+      //jsx는 JavaScript의 확장 문법
+      //모든것을 변수화 가능
       const rootElement = document.getElementById("root");
-      //const elementV = document.createElement("h1");
-      //const element = React.createElement("h1", { children: "Hello world!" });
-      const element = React.createElement("h1", null, "Hello world!");
-      //elementV.textContent = "Hello World!";
-      console.log(element);
-      //console.log(elementV);
+
+      //이렇게 변수 주입도 가능
+      const text = "Hello world!!!";
+      //const element = <h1 className="title">Hello World!{text}</h1>;
+
+      //classname으로 class명 변수 주입도 가능
+      const titleClassName = "title 123";
+      //const element = <h1 className={titleClassName}>{text}</h1>;
+
+      //text를 안넣고 chlidren으로 넣어도 똑같은 효과
+      const element = <h1 className={titleClassName} children={text} />;
       ReactDOM.render(element, rootElement);
     </script>
   </body>
