@@ -33,7 +33,13 @@
       //const element = <h1 className={titleClassName}>{text}</h1>;
 
       //text를 안넣고 chlidren으로 넣어도 똑같은 효과
-      const element = <h1 className={titleClassName} children={text} />;
+      //const element = <h1 className={titleClassName} children={text} />;
+
+      const props = { className: titleClassName, children: text };
+      //spread 연산자 : ...으로 표현한 것. props의 내용을 분해해서 넣어준다.
+      const customH1 = <h1 {...props} />;
+      const element = customH1;
+
       ReactDOM.render(element, rootElement);
     </script>
   </body>
