@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <div id="root"></div>
+    <script>
+      //root에 아래 element를 추가해주는 방법:
+      //아래처럼 createElement, ReactDOM.render
+      //---> 번거롭다.
+      //jsx사용하면 더 쉬워진다.
+      const rootElement = document.getElementById("root");
+      //아래 둘중 하나로 가능
+      //const element = React.createElement("h1", { children: "Hello world!" });
+      const element = React.createElement("h1", null, "Hello world!");
+      ReactDOM.render(element, rootElement);
+    </script>
+  </body>
+</html>
