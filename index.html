@@ -1,12 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="./assets/microphone.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Podcast Project</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./flexproperties.css" />
+    <link rel="stylesheet" href="./mediaq.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!-- header -->
+
+    <div class="flex alignc barrasup">
+      <!-- logo -->
+      <div class="logo_container">
+        <div class="flex logo alignc justifyc flexuno">
+          sbd
+        </div>
+      </div>
+
+      <!-- menu desktop -->
+
+      <nav class="menu_desktop flex">
+        <a class="botonesnav" href="#episodios">EPISODIOS</a>
+        <a class="botonesnav" href="#conoce_mas">NOSOTROS</a>
+        <a class="botonesnav" href="#entrevistas">ENTREVISTAS</a>
+        <a class="botonesnav" href="#topics">TÓPICOS</a>
+      </nav>
+
+      <!-- menu movile -->
+
+      <div class="burger flex column align_end">
+        <input type="checkbox" id="hamburguesa" />
+        <label for="hamburguesa">
+          <div class="cross flex column">
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+          </div>
+          <!-- <img
+            class="logo_menu"
+            width="25px"
+            src="/assets/menu.svg"
+            alt="menú"
+          /> -->
+        </label>
+        <div class="enlaces flex alignc column">
+          <a class="botonesnavmov" href="#episodios">EPISODIOS</a>
+          <a class="botonesnavmov" href="#conoce_mas">NOSOTROS</a>
+          <a class="botonesnavmov" href="#entrevistas">ENTREVISTAS</a>
+          <a class="botonesnavmov" href="#topics">TÓPICOS</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- seccion principal -->
+
+    <div class="flex title column">
+      <h2 class="row">
+        Hello
+        <span class="linethrough">world</span>
+        pale blue dot<span class="dot">.</span>
+      </h2>
+      <div>
+        <p class="subtitle">
+          El portal de podcasts que explora el mundo de la programación y la
+          tecnología. Nuevos episodios, todos los jueves cada 15 días.
+        </p>
+      </div>
+      
+        <a class="button" href="#conoce_mas">CONOCÉ MÁS</a>
+      
+    </div>
+
+    <!-- seccion podcasts -->
+
+    <div class="fondogradiente">
+      <h1 id="episodios" class="tituloepisodios">Episodios</h1>
+        <div class="flex podcasts-container">
+          
+          <iframe
+            src="https://open.spotify.com/embed/show/2ySVrxGkN6n6frMTo9Nsrt"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        
+        
+          <iframe
+            src="https://open.spotify.com/embed/show/4kYCRYJ3yK5DQbP5tbfZby"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        
+        
+          <iframe
+            src="https://open.spotify.com/embed/show/5JxcIaIkN8zx3Zy7yD9snv"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        
+          <iframe
+            src="https://open.spotify.com/embed/show/2Iibd5A6R7mxkCm4NwNmUn"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        
+      </div>
+    </div>
+
+    <!-- seccion sobre nosotros -->
+
+    <div class="aboutusdiv flex">
+    <div class="phone flex">
+      <img class="phoneimg" src="/assets/phone.png" alt="foto" />
+    </div>
+    <div class="flex aboutus-container">
+      <div class="flex column aboutus">
+        <h1 id="conoce_mas" class="aboutustitle">De dónde venimos</h1>
+        <p class="aboutusparr">
+          Our posturings, our imagined self-importance, the delusion that we
+          have some privileged position in the Universe, are challenged by this
+          point of pale light. Our planet is a lonely speck in the great
+          enveloping cosmic dark. In our obscurity, in all this vastness, there
+          is no hint that help will come from elsewhere to save us from
+          ourselves.
+        </p>
+      </div>
+    </div>
+  </div>
+
+    <!-- seccion entrevistas  -->
+
+    <div class="seccion_entrevistas">
+      <h1 id="entrevistas" class="photogallerytitle">Invitadas/os estelares</h1>
+      <div class="photogallery flex wrap">
+        <img class="fotos" src="/assets/grace-hopper.png" alt="grace hopper" />
+        <img class="fotos" src="/assets/Katie-Bouman.png" alt="katie bouman" />
+        <img
+          class="fotos"
+          src="/assets/Margaret_Hamilton.png"
+          alt="margaret hamilton"
+        />
+        <img
+          class="fotos"
+          src="/assets/An E.R.A.Univac 1103 computer in the 1950s.png"
+          alt="computer in the 1950s"
+        />
+        <img
+          class="fotos"
+          src="/assets/Computer operators with an Eniac — the world’s first programmable general-purpose computer.png"
+          alt="computer operators"
+        />
+        <img class="fotos" src="/assets/susan-kare.png" alt="susan kare" />
+      </div>
+    </div>
+
+    <!-- seccion topics  -->
+
+    <div>
+      <h1 id="topics" class="topicstitle">Algunos de nuestros temas</h1>
+      <div class="flex row topicsicons">
+        <div class="icon-container flex column alignc">
+          <div>
+            <img src="/assets/icon1.svg" alt="" />
+          </div>
+            <h3>Trabajo remoto</h3>
+        </div>
+        <div class="icon-container flex column alignc">
+          <div>
+            <img src="/assets/icon2.svg" alt="" />
+          </div>
+            <h3>Repensando la<br />programación</h3>
+        </div>
+        <div class="icon-container flex column alignc">
+          <div>
+            <img src="/assets/icon3.svg" alt="" />
+          </div>
+            <h3>Bases del código</h3>
+        </div>
+        <div class="icon-container flex column alignc">
+          <div>
+            <img src="/assets/icon4.svg" alt="" />
+          </div>
+            <h3>Seguridad<br />informática</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- seccion final -->
+
+    <div class="flex fondogradiente2 justifyc alignc column">
+      <h1 class="footertitle">¿Querés las últimas novedades?</h1>
+      <a class="button2" href="#episodios">ESCUCHÁ LOS EPISODIOS</a>
+    </div>
+
+    <!-- footer -->
+
+    <div class="flex footer">
+      <div class="footer_text">© 2019— Hello blue pale dot </div>
+      <div class="iconos flex">
+        <a href="https://www.spotify.com/">
+          <svg id="Bold" class="reficon" enable-background="new 0 0 24 24" height="18px" viewBox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="m12 24c6.624 0 12-5.376 12-12s-5.376-12-12-12-12 5.376-12 12 5.376 12 12 12zm4.872-6.344v.001c-.807 0-3.356-2.828-10.52-1.36-.189.049-.436.126-.576.126-.915 0-1.09-1.369-.106-1.578 3.963-.875 8.013-.798 11.467 1.268.824.526.474 1.543-.265 1.543zm1.303-3.173c-.113-.03-.08.069-.597-.203-3.025-1.79-7.533-2.512-11.545-1.423-.232.063-.358.126-.576.126-1.071 0-1.355-1.611-.188-1.94 4.716-1.325 9.775-.552 13.297 1.543.392.232.547.533.547.953-.005.522-.411.944-.938.944zm-13.627-7.485c4.523-1.324 11.368-.906 15.624 1.578 1.091.629.662 2.22-.498 2.22l-.001-.001c-.252 0-.407-.063-.625-.189-3.443-2.056-9.604-2.549-13.59-1.436-.175.048-.393.125-.625.125-.639 0-1.127-.499-1.127-1.142 0-.657.407-1.029.842-1.155z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/">
+          <svg  height="18px" class="reficon" viewBox="0 0 512.00096 512.00096" xmlns="http://www.w3.org/2000/svg"><path d="m373.40625 0h-234.8125c-76.421875 0-138.59375 62.171875-138.59375 138.59375v234.816406c0 76.417969 62.171875 138.589844 138.59375 138.589844h234.816406c76.417969 0 138.589844-62.171875 138.589844-138.589844v-234.816406c0-76.421875-62.171875-138.59375-138.59375-138.59375zm108.578125 373.410156c0 59.867188-48.707031 108.574219-108.578125 108.574219h-234.8125c-59.871094 0-108.578125-48.707031-108.578125-108.574219v-234.816406c0-59.871094 48.707031-108.578125 108.578125-108.578125h234.816406c59.867188 0 108.574219 48.707031 108.574219 108.578125zm0 0"/><path d="m256 116.003906c-77.195312 0-139.996094 62.800782-139.996094 139.996094s62.800782 139.996094 139.996094 139.996094 139.996094-62.800782 139.996094-139.996094-62.800782-139.996094-139.996094-139.996094zm0 249.976563c-60.640625 0-109.980469-49.335938-109.980469-109.980469 0-60.640625 49.339844-109.980469 109.980469-109.980469 60.644531 0 109.980469 49.339844 109.980469 109.980469 0 60.644531-49.335938 109.980469-109.980469 109.980469zm0 0"/><path d="m399.34375 66.285156c-22.8125 0-41.367188 18.558594-41.367188 41.367188 0 22.8125 18.554688 41.371094 41.367188 41.371094s41.371094-18.558594 41.371094-41.371094-18.558594-41.367188-41.371094-41.367188zm0 52.71875c-6.257812 0-11.351562-5.09375-11.351562-11.351562 0-6.261719 5.09375-11.351563 11.351562-11.351563 6.261719 0 11.355469 5.089844 11.355469 11.351563 0 6.257812-5.09375 11.351562-11.355469 11.351562zm0 0"/></svg>
+        </a>
+        <a href="https://www.twitter.com/">
+                        <?xml version="1.0" encoding="iso-8859-1"?>
+              <svg version="1.1" class="reficon"  height="18px" width="18px" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+              <g>
+                <g>
+                  <path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
+                    c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
+                    c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
+                    c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152
+                    c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792
+                    c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44
+                    C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568
+                    C480.224,136.96,497.728,118.496,512,97.248z"/>
+                </g>
+              </svg>
+        </a>
+        <a href="https://www.facebook.com/">
+                      <?xml version="1.0" encoding="iso-8859-1"?>
+            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+            <svg version="1.1" class="reficon" height="18px" width="18px" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              width="97.75px" height="97.75px" viewBox="0 0 97.75 97.75" style="enable-background:new 0 0 97.75 97.75;" xml:space="preserve"
+              >
+            <g>
+              <path d="M48.875,0C21.882,0,0,21.882,0,48.875S21.882,97.75,48.875,97.75S97.75,75.868,97.75,48.875S75.868,0,48.875,0z
+                M67.521,24.89l-6.76,0.003c-5.301,0-6.326,2.519-6.326,6.215v8.15h12.641L67.07,52.023H54.436v32.758H41.251V52.023H30.229V39.258
+                h11.022v-9.414c0-10.925,6.675-16.875,16.42-16.875l9.851,0.015V24.89L67.521,24.89z"/>
+            </g>
+          </svg>
+        </a>
+        <a href="https://telegram.org">
+          <svg id="Bold" enable-background="new 0 0 24 24" class="reficon" height="18px" viewBox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="m12 24c6.629 0 12-5.371 12-12s-5.371-12-12-12-12 5.371-12 12 5.371 12 12 12zm-6.509-12.26 11.57-4.461c.537-.194 1.006.131.832.943l.001-.001-1.97 9.281c-.146.658-.537.818-1.084.508l-3-2.211-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953z"/></svg>
+        </a>
+      </div>
+    </div>
   </body>
 </html>
