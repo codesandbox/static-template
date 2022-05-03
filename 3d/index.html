@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      html {
+        /* disables highlighting on mobile */
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        position: fixed;
+        background: rgba(166, 213, 233, 1);
+      }
+      canvas {
+        width: 100%;
+        height: 100%;
+        outline: none;
+      }
+      #container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+    </style>
+    <title>GU</title>
+  </head>
+  <body>
+    <div id="container">
+      <canvas id="canvas3d"></canvas>
+    </div>
+    <script type="module">
+      import { Application } from "./runtime.js";
+      const canvas = document.getElementById("canvas3d");
+      const app = new Application(canvas);
+      app.load("./scene.spline");
+    </script>
+  </body>
+</html>
