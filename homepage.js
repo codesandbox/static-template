@@ -1,6 +1,6 @@
 //Scroll up
 /**
- * Skript se změnami pro abecední rejstřík
+ * Kompletní skript včetně změn pro abecední rejstřík
  * Přidány byly řádky 25 - 47 a 69 - 82
  */
 window.onscroll = function () {
