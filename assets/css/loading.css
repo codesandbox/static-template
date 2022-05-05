@@ -1,0 +1,61 @@
+/*********Loader *********************************/
+
+#loader {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 350px;
+  z-index: 9999;
+  font-size: 75px;
+  background-color: rgb(12, 15, 22);
+}
+
+#conteudo {
+  display: none;
+  position: relative;
+}
+
+#myProgress {
+  position: absolute;
+  left: 0;
+  top: 250px;
+  width: 100%;
+}
+
+#myBar {
+  font-size: 155px;
+  border-top: 5px solid rgb(26, 28, 32);
+  color: rgba(3, 48, 10, 0.3);
+}
+
+@keyframes enter {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    filter: blur(5px);
+    transform: scale(1.5);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+    top: 100px;
+  }
+  100% {
+    opacity: 1;
+    filter: blur(1px);
+    top: 0;
+  }
+}
+
+.percent {
+  font-size: 75px;
+  font-weight: 900;
+  line-height: 1.25rem;
+}
+/********Loader End *****************************/
