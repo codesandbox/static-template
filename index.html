@@ -1,12 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vem de zap</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+
+      body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-image: url("https://cdn.wallpapersafari.com/1/80/8DYndB.png");
+        font-family: "Roboto", sans-serif;
+      }
+      div {
+        background-color: #daf7c1;
+        width: 320px;
+        margin: 8px;
+        padding: 8px 18px;
+        border-radius: 14px;
+        box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      div:hover {
+        box-shadow: 4px 4px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+      }
+      img {
+        margin: 7px;
+        width: 40px;
+        height: 40px;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div onclick="mandaZap(this)">
+      <p>
+        Muitas felicidades no seu aniversário! Sei que o ano passado passou por
+        alguns momentos difíceis, mas espero que o próximo ano traga a você a
+        boa sorte que você merece. Você é um grande amigo e eu sou muito grato
+        por sua presença em minha vida...🎉🎉
+      </p>
+      <img
+        src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-icone.png"
+      />
+    </div>
+
+    <div onclick="mandaZap(this)">
+      <p>
+        Que a alegria que você espalhou no passado volte para você neste dia.
+        Desejando à você um feliz aniversário! Feliz aniversário! Sua vida está
+        prestes a ganhar velocidade e explodir na estratosfera. Use o cinto de
+        segurança e aproveite a viagem. Feliz aniversário!❤️❤️❤️
+      </p>
+      <img
+        src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-icone.png"
+      />
+    </div>
+
+    <div onclick="mandaZap(this)">
+      <p>
+        Feliz aniversário para um grande cara! Você faz muito pelos outros.
+        Espero que você possa reservar um tempo para si mesma no seu grande dia.
+        Você merece tanto quanto qualquer um, e mais do que a maioria.👊🏼👊🏼
+      </p>
+      <img
+        src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-icone.png"
+      />
+    </div>
+
+    <div onclick="mandaZap(this)">
+      <p>
+        Você nasceu e o mundo se tornou um lugar melhor. Eu sou abençoado por
+        ter um amigo como você. Feliz aniversário querido amigo. Que o seu dia
+        especial seja carregado de felicidade e amor.🥰🙌🏼🥰🙌🏼
+      </p>
+      <img
+        src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-icone.png"
+      />
+    </div>
+
+    <div onclick="mandaZap(this)">
+      <p>
+        Desde o dia que nasci acho que sempre estive à espera de encontrar você
+        na minha vida. Você além de me fazer sorrir, é com certeza um dos
+        maiores motivos que tenho para poder dizer que sou plenamente feliz!
+        Nunca pensei que em um planeta com tanta gente poderia realmente existir
+        essa coisa de alma gêmea. Você me completa, e é tudo aquilo que um dia
+        eu poderia querer! Hoje venho lhe lembrar da pessoa maravilhosa que você
+        é, e quão importante é em minha vida!🥰😘❤️
+      </p>
+      <img
+        src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-icone.png"
+      />
+    </div>
+
+    <div onclick="mandaZap(this)">
+      <p>Bom dia, luz do dia!</p>
+      <img
+        src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-icone.png"
+      />
+    </div>
+    <script>
+      function mandaZap(elemento) {
+        let texto = elemento.firstElementChild.innerText;
+        let numero = prompt("Qual é o número?");
+        let zapLink = `https://api.whatsapp.com/send?phone=55${numero}&text=${texto}`;
+        window.open(zapLink);
+      }
+    </script>
   </body>
 </html>
