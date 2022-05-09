@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link href="css/style.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="header">
+      <div id="texto_header1">Relatório de falhas</div>
+      <div id="CSC">CSC</div>
+      <div class="linha_header"></div>
+    </div>
+    <h1 id="titulo">Clique para ver detalhes sobre a falha</h1>
+    <table>
+      <tr>
+        <th>Data/Hora</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Processo</th>
+        <th>Detalhes</th>
+      </tr>
+      <tr>
+        <td>2/2/22 11:10:21</td>
+        <td>FILIPE SILVA</td>
+        <td>filipe.crispim@gcb.com.br</td>
+        <td>Análises de registros fiscais</td>
+        <td>
+          <a id="det" class="linha" name="1" href="detail.html">Ver detalhes</a>
+        </td>
+      </tr>
+      <tr>
+        <td>2/8/22 7:52:18</td>
+        <td>WALDENIO ROGERIO DE MENEZES</td>
+        <td>waldenio.menezes@gcb.com.br</td>
+        <td>NFST</td>
+        <td>
+          <a id="det" class="linha" name="2" href="detail.html">Ver detalhes</a>
+        </td>
+      </tr>
+      <tr>
+        <td>2/8/22 19:10:00</td>
+        <td>EMERSON DE LIMA PONTES</td>
+        <td>emerson.pontes@gcb.com.br</td>
+        <td>Recebimento Fiscal</td>
+        <td><a href="detail.html">Ver detalhes</a></td>
+      </tr>
+    </table>
+    <script src="script.js"></script>
   </body>
 </html>
