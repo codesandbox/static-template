@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vem de ZAP</title>
+
+    <h1>Partiu mandar um Zap?</h1>
+
+    <style>
+      @import url("@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');");
+
+      h1 {
+        font-family: "Roboto", sans-serif;
+        margin-left: 25%;
+        margin-right: 25%;
+      }
+
+      body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-family: "Roboto", sans-serif;
+        background-image: url("https://cdn.wallpapersafari.com/1/80/8DYndB.png");
+      }
+
+      div {
+        background-color: #daf7c1;
+        width: 320px;
+        margin: 8px;
+        padding: 8px 18px;
+        border-radius: 14px;
+        box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      div:hover {
+        box-shadow: 4px 4px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+      }
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div onclick="zap(this)">
+      <p>Bom dia, luz do dia! 🌞</p>
+      <img
+        src="https://i.pinimg.com/originals/d9/d9/7d/d9d97d48264770f85d35c208f279152c.png"
+      />
+    </div>
+
+    <div onclick="zap(this)">
+      <p>Bom dia, flor do dia! 🌻</p>
+      <img
+        src="https://i.pinimg.com/originals/d9/d9/7d/d9d97d48264770f85d35c208f279152c.png"
+      />
+    </div>
+
+    <div onclick="zap(this)">
+      <p>Feliz aniversário! 🥳🎉🎊</p>
+      <img
+        src="https://i.pinimg.com/originals/d9/d9/7d/d9d97d48264770f85d35c208f279152c.png"
+      />
+    </div>
+
+    <div onclick="zap(this)">
+      <p>Oi, sumido! 😉</p>
+      <img
+        src="https://i.pinimg.com/originals/d9/d9/7d/d9d97d48264770f85d35c208f279152c.png"
+      />
+    </div>
+
+    <div onclick="zap(this)">
+      <p>Oi, sumida! 😉</p>
+      <img
+        src="https://i.pinimg.com/originals/d9/d9/7d/d9d97d48264770f85d35c208f279152c.png"
+      />
+    </div>
+
+    <div onclick="zap(this)">
+      <p>Não diga "Oi", diga "Vem de Zap"</p>
+      <img
+        src="https://i.pinimg.com/originals/d9/d9/7d/d9d97d48264770f85d35c208f279152c.png"
+      />
+    </div>
+
+    <script>
+      function zap(elemento) {
+        let texto = elemento.firstElementChild.innerText;
+        let numero = prompt("Informe seu número por favor");
+        let zaplink = `https://api.whatsapp.com/send?
+phone=55${numero}&text=${texto}`;
+        window.open(zaplink);
+      }
+    </script>
+  </body>
+</html>
