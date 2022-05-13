@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ESTRUTURA DE REPETIÇÃO 04</title>
+  </head>
+  <body>
+    <header><h2>programa de contas</h2></header>
+    <hr />
+    <p>Descrição de conta :<input type="text" id="desConta" /></p>
+    <p>valor da conta R$ :<input type="text" id="valConta" /></p>
+    <input type="button" value="Registrar contas" id="btnRegistrar" />
+    <pre id="listaConta"></pre>
+    <pre id="valTotalConta"></pre>
+    <script>
+      let numContas = 0;
+      let valTotal = 0;
+      let resposta = "";
+      function registrarContas() {
+        let inDescricao = document.getElementById("desConta").value;
+        let inValor = Number(document.getElementById("valConta").value);
+        if (inDescricao == "" || inValor == 0 || isNaN(inValor)) {
+          alerta("informe os dados corretos!");
+          inDescricao.focus();
+          return;
+        }
+        numContas++;
+        valTotal = valTotal + inValor;
+        resposta =
+          resposta + inDescricao + " -R$: " + inValor.toFixed(2) + "\n";
+        listaConta.textContent = resposta + "-----------------------";
+        valTotalConta.textContent =
+          numContas + "conta(s)-- total R$ :" + valTotal.toFixed(2);
+        desConta.value = "";
+        valConta.value = "";
+        desConta.focus();
+      }
+      var btnRegistrar = document.getElementById("btnRegistrar");
+      btnRegistrar.addEventListener("click", registrarContas);
+    </script>
+  </body>
+</html>

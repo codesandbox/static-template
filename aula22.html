@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ESTRUTURA DE REPETIÇÃO</title>
+  </head>
+  <body>
+    <p>Numero:<input type="text" id="numero" /></p>
+    <input type="button" value="calcular" id="btnGerar" />
+    <pre id="tabuada"></pre>
+    <script>
+      function gerarTabuada() {
+        let inNumero = Number(document.getElementById("numero").value);
+        let outTabuada = document.getElementById("tabuada");
+        if (inNumero == 0 || isNaN(inNumero)) {
+          alerta("informe um numero valido...");
+          numero.value = "";
+          numero.focus();
+          return;
+        }
+        resposta = "";
+        for (let i = 1; i <= 10; i++) {
+          resposta = resposta + inNumero + "x" + i + "=" + inNumero * i + "\n";
+        }
+        outTabuada.textContent = resposta;
+      }
+      var btnGerar = document.getElementById("btnGerar");
+      btnGerar.addEventListener("click", gerarTabuada);
+    </script>
+  </body>
+</html>

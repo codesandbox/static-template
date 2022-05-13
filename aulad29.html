@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <header><h2>programa gera pares entre um intervalo</h2></header>
+    <hr />
+    <p>Digite um número acima de 1 :<input type="text" id="numero" /></p>
+    <input type="button" value="Gerar pares" id="btnGerar" />
+    <p id="pares"></p>
+    <script>
+      function intervaloPares() {
+        do {
+          var inNumero = Number(document.getElementById("numero").value);
+          if (
+            inNumero == 0 ||
+            inNumero == 1 ||
+            inNumero == "" ||
+            isNaN(inNumero)
+          ) {
+            alerta("Informe um número!!!");
+            numero.value = "";
+            numero.focus();
+            return;
+          }
+        } while (
+          inNumero == 0 ||
+          inNumero == 1 ||
+          inNumero == "" ||
+          isNaN(inNumero)
+        );
+        let outPares = document.getElementById("pares");
+        let resposta = "pares ente 1 e  " + inNumero + ":  ";
+        if (inNumero > 1) {
+          resposta = resposta + "2";
+        }
+        for (let i = 4; i <= inNumero; i = i + 2) {
+          resposta = resposta + ", " + i;
+        }
+        outPares.textContent = resposta;
+      }
+      var btnGerar = document.getElementById("btnGerar");
+      btnGerar.addEventListener("click", intervaloPares);
+    </script>
+  </body>
+</html>

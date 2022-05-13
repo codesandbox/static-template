@@ -1,12 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title> Media</title>
+</head>
+<body>
+  <h2>  Situação do aluno   </h2></hr>
+  <p> Nome do aluno:<input type="text"  id="nomeAluno" /></p>
+  <p> Nota 1:<input id="nota1" type="text"  /> </p>
+   <p> Nota 2:<input id="nota2" type="text" /> </p>
+  <input id="resultado" type="button" value="Exibir media e situação do aluno" />
+<p id="exibirMedia"></p>
+<p id="exibirSituacao"></p>
+
+<script> 
+function calcularMedia() {
+   let aluno = document.getElementById("nomeAluno").value;
+   let nota1 = Number(document.getElementById("nota1").value);
+   let nota2 = Number(document.getElementById("nota2").value);
+   let situacao = document.getElementById("exibirSituacao");
+   let msnMedia = document.getElementById("exibirMedia");
+  let media = (nota1 + nota2)/2;
+  msnMedia.textContent = "Media das notas : " + media.toFixed(1);
+    if (media >= 7){
+      situacao.textContent="Parabéns " +aluno+"... voce foi aprovado(a)";
+    }else{ 
+  situacao.textContent="Infelizmente " +aluno+"... voce foi reprovado(a)";
+    }
+}
+var resultado = document.getElementById("resultado");
+resultado.addEventListener("click", calcularMedia);
+</script>
+</body>
 </html>

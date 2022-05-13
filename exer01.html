@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>calculadora</title>
+  </head>
+  <body>
+    <h3>Calculadora de Horas de Viagem</h3>
+    <hr />
+    <input id="QtdDias" type="text" placeholder="Dias" />
+    <input id="QtdHoras" type="text" placeholder="Horas" />
+    <input id="calcular" type="button" value="calcular" />
+    <p id="totalDeHoras"></p>
+    <script>
+      function funcaoCalcularHoras() {
+        let dias = Number(document.getElementById("QtdDias").value);
+        let horas = Number(document.getElementById("QtdHoras").value);
+        let calculo = dias * 24 + horas;
+        document.getElementById("totalDeHoras").textContent =
+          "Total de dias: " + calculo;
+      }
+      var mostrar = document.getElementById("calcular");
+      mostrar.addEventListener("click", funcaoCalcularHoras);
+    </script>
+  </body>
+</html>
