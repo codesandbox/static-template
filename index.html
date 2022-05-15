@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Question: Where is this text visible? -->
+    <title>Best Movies</title>
+
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="main">
+      <h1>🎉 Movies of Marc 🎉</h1>
+
+      <!-- TODO: Change the description -->
+      <p id="description">This is a list of the best movies API</p>
+
+      <!-- TODO: Rename the button text -->
+      <button id="fetch-button">Get movies</button>
+
+      <div id="result">No movies fetched yet</div>
+
+      <!-- TODO: Change the image -->
+      <img
+        id="movie"
+        src="https://media.newyorker.com/photos/5cdf1ad7339acf8247bfc768/1:1/w_1525,h_1525,c_limit/Richard-JohnWick.jpg"
+        height="200px"
+      />
+    </div>
+
+    <div id="footer">
+      <!-- TODO: Adjust the link -->
+      <a href="https://www.netflix.com/de-en/title/80234304"
+        >You got to check this series out</a
+      >
+      <a href="https://www.netflix.com/de/title/80133311">Another one</a>
+      <!-- TODO: Add a third link -->
+    </div>
+
+    <!-- Don't touch this! ❌ -->
+    <script src="movies.js"></script>
   </body>
 </html>
