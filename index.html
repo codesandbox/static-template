@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>JavaScript Pyramid</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="dark-mode">
+  <header>
+    <!-- title + input  -->
+    <h1 class="h1">
+      <!-- h1 input character -->
+      <span class="tooltip"><span class="tooltiptext normalize">input a character</span>
+        <input type="character" id="inputChar" placeholder="*" maxlength="1" value="*" /></span>
+      Pyramid Generator
+    </h1>
+    <!-- input level  -->
+    <div class="tooltip">
+      <input class="dark-mode" type="number" id="inputValue" min="0" max="99" placeholder="enter level" />
+      <span class="tooltiptext">enter integer value (0-99)</span>
+    </div>
+    <!-- run btn -->
+    <div class="btn">    <button class="tooltip dark-mode" id="run">
+      run <span class="tooltiptext btn">click to run</span>
+    </button>
+    <!-- clear btn  -->
+    <button class="tooltip dark-mode" id="clear">
+      clear <span class="tooltiptext btn">click to clear</span>
+    </button></div>
+
+  </header>
+  <section>
+    <!-- <p id="demo"></p> -->
+    <label for="demo"">Generated Text:</label>
+    <textarea name=" viewport" class="dark-mode" id="demo"></textarea>
+    <!-- dark mode  -->
+    <button class="dark-mode btn"  onclick="darkMode()">Toggle dark mode</button>
+  </section>
+
+  <!-- JavaScript  -->
+  <script src="js/main.js"></script>
+</body>
+
 </html>

@@ -1,0 +1,94 @@
+body {
+  padding: 4rem;
+  font-family: monospace;
+  height: auto;
+  transition: 1s;
+}
+
+::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+  border: solid white 1px;
+  transition: 1s;
+}
+
+section {
+  padding: 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+header {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+#demo {
+  width: 100%;
+  height: 50vh;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  text-align: left;
+}
+
+.btn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.normalize {
+  font-size: 1rem;
+}
+
+/* p {
+  padding: 0.5rem;
+  text-align: left;
+} */
+
+title {
+  font-size: 3rem;
+}
+
+#inputChar {
+  width: 2rem;
+}
+
+#inputValue {
+  width: 50vw;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0);
+  text-align: center;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  position: absolute;
+  z-index: 1;
+  margin-top: 5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  border: solid 1px black;
+  pointer-events: none;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
