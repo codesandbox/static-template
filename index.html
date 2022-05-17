@@ -1,12 +1,910 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      @-webkit-keyframes loading-ring-animation {
+        0% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        to {
+          -webkit-transform: rotate(1turn);
+          transform: rotate(1turn);
+        }
+      }
+      @keyframes loading-ring-animation {
+        0% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        to {
+          -webkit-transform: rotate(1turn);
+          transform: rotate(1turn);
+        }
+      }
+      #app-calculator {
+        position: relative;
+        margin: 3rem auto;
+        background: #f7f7f7;
+        border: 2px solid #ededed;
+        padding: 1rem;
+        border-radius: 3px !important;
+        padding: 1.25rem;
+      }
+      #app-calculator.loading .loading-overlay {
+        opacity: 1 !important;
+        z-index: 50 !important;
+      }
+      #app-calculator .loading-overlay {
+        position: absolute;
+        background-color: hsla(0, 0%, 66%, 0.369);
+        border-radius: 20px;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        top: 0;
+        transition: all 0.3s ease-in-out;
+        width: 100%;
+      }
+      #app-calculator input[data-name="salaryEarned"] {
+        background: transparent !important;
+        border: 0;
+        font-weight: 700;
+      }
+      #app-calculator .computation {
+        background: #b1e9b1;
+        padding: 0.75rem;
+        border-radius: 5px;
+        border: 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        justify-self: flex-end;
+        padding: 0.1rem 0.35rem;
+        text-align: right;
+      }
+      #app-calculator tr > th {
+        vertical-align: baseline;
+      }
+      #app-calculator tr > td,
+      #app-calculator tr > td:first-child,
+      #app-calculator tr > td:last-child,
+      #app-calculator tr > th,
+      #app-calculator tr > th:first-child,
+      #app-calculator tr > th:last-child {
+        max-width: 100px;
+      }
+      #app-calculator .sticky-bottom {
+        position: -webkit-sticky;
+        position: sticky;
+      }
+      #app-calculator th small {
+        color: #818181;
+        font-size: 12px;
+        font-style: italic;
+      }
+      #app-calculator th small.empty {
+        display: block;
+        height: 20px;
+      }
+      #app-calculator .computation-prefix {
+        font-style: italic;
+      }
+      #app-calculator .app-body-container {
+        z-index: 30;
+      }
+      #app-calculator .form-control {
+        min-width: 100px;
+        width: 90%;
+        display: inline-block;
+      }
+      #app-calculator .loading-ring {
+        display: inline-block;
+        height: 80px;
+        left: 50%;
+        margin-left: -40px;
+        margin-top: -40px;
+        position: relative;
+        top: 50%;
+        width: 80px;
+      }
+      #app-calculator .loading-ring div {
+        -webkit-animation: loading-ring-animation 1.2s
+          cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        animation: loading-ring-animation 1.2s cubic-bezier(0.5, 0, 0.5, 1)
+          infinite;
+        border: 8px solid transparent;
+        border-radius: 50%;
+        border-top-color: silver;
+        box-sizing: border-box;
+        display: block;
+        height: 64px;
+        margin: 8px;
+        position: absolute;
+        width: 64px;
+      }
+      #app-calculator #reset {
+        margin-left: 0.5rem;
+        color: white;
+        background: #6c757d !important;
+        border-color: #6c757d !important;
+      }
+      #app-calculator .btn-primary {
+        background: #f7c207 !important;
+        border-color: #f7c207 !important;
+      }
+      #app-calculator .loading-ring div:first-child {
+        -webkit-animation-delay: -0.45s;
+        animation-delay: -0.45s;
+      }
+      #app-calculator .loading-ring div:nth-child(2) {
+        -webkit-animation-delay: -0.3s;
+        animation-delay: -0.3s;
+      }
+      #app-calculator .loading-ring div:nth-child(3) {
+        -webkit-animation-delay: -0.15s;
+        animation-delay: -0.15s;
+      }
+      #app-calculator .computation-prefix {
+        margin-top: 0.5rem;
+      }
+      /*# sourceMappingURL=main.af53eb46.css.map*/
+    </style>
+    <div id="root">
+      <div class="container mt-5 position-relative" id="app-calculator">
+        <div class="position-absolute loading-overlay">
+          <div class="loading-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div class="app-body-container position-relative">
+          <div
+            class="d-flex flex-wrap justify-content-between align-items-center align-content-top"
+          >
+            <div class="">
+              <h1 class="border-bottom border-1 pb-2">
+                13-Month Pay Calculator
+              </h1>
+              <strong>My basic salary for the whole year:</strong>
+              <br /><small class="fs-italic"
+                >Note: Do not put comma ( , ) when typing your salary</small
+              >
+              <div
+                class="form-group my-3 col-12 col-md-4 d-flex align-items-center"
+              >
+                <span class="peso-sign me-2">₱</span>
+                <input
+                  class="form-control inline"
+                  name="basicSalaryWholeYear"
+                  id="basicSalaryWholeYear"
+                  value="0"
+                />
+              </div>
+            </div>
+            <img
+              src="https://filipiknow.net/wp-content/uploads/2022/05/filipiknow-mascot-transbg.png"
+              class="filipiknow-mascot"
+              alt="Filipiknow Mascot"
+              width="120"
+              height="auto"
+              class="inline-block"
+            />
+          </div>
+
+          <div class="table-responsive">
+            <table class="table" disabled="">
+              <thead>
+                <tr>
+                  <th>Month<br /><small class="empty"> </small></th>
+                  <th>Basic Salary<br /><small>In PHP</small></th>
+                  <th>Deduction<br /><small>Due to absences/late</small></th>
+                  <th>
+                    Salary<br /><small>Salary earned for the month</small>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="month-row">
+                  <td>January</td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="0"
+                      name="0-grossAmount"
+                      data-name="grossAmount"
+                      data-month="January"
+                      class="form-control"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="0"
+                      class="form-control"
+                      name="0-deduction"
+                      data-name="deduction"
+                      data-month="January"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-name="salaryEarned"
+                      data-month="January"
+                      data-id="0"
+                      class="form-control"
+                      name="0-salaryEarned"
+                      disabled=""
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                </tr>
+                <tr class="month-row">
+                  <td>February</td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="1"
+                      name="1-grossAmount"
+                      data-name="grossAmount"
+                      data-month="February"
+                      class="form-control"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="1"
+                      class="form-control"
+                      name="1-deduction"
+                      data-name="deduction"
+                      data-month="February"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-name="salaryEarned"
+                      data-month="February"
+                      data-id="1"
+                      class="form-control"
+                      name="1-salaryEarned"
+                      disabled=""
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                </tr>
+                <tr class="month-row">
+                  <td>March</td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="2"
+                      name="2-grossAmount"
+                      data-name="grossAmount"
+                      data-month="March"
+                      class="form-control"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="2"
+                      class="form-control"
+                      name="2-deduction"
+                      data-name="deduction"
+                      data-month="March"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-name="salaryEarned"
+                      data-month="March"
+                      data-id="2"
+                      class="form-control"
+                      name="2-salaryEarned"
+                      disabled=""
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                </tr>
+                <tr class="month-row">
+                  <td>April</td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="3"
+                      name="3-grossAmount"
+                      data-name="grossAmount"
+                      data-month="April"
+                      class="form-control"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="3"
+                      class="form-control"
+                      name="3-deduction"
+                      data-name="deduction"
+                      data-month="April"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-name="salaryEarned"
+                      data-month="April"
+                      data-id="3"
+                      class="form-control"
+                      name="3-salaryEarned"
+                      disabled=""
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                </tr>
+                <tr class="month-row">
+                  <td>May</td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="4"
+                      name="4-grossAmount"
+                      data-name="grossAmount"
+                      data-month="May"
+                      class="form-control"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="4"
+                      class="form-control"
+                      name="4-deduction"
+                      data-name="deduction"
+                      data-month="May"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-name="salaryEarned"
+                      data-month="May"
+                      data-id="4"
+                      class="form-control"
+                      name="4-salaryEarned"
+                      disabled=""
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                </tr>
+                <tr class="month-row">
+                  <td>June</td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="5"
+                      name="5-grossAmount"
+                      data-name="grossAmount"
+                      data-month="June"
+                      class="form-control"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="5"
+                      class="form-control"
+                      name="5-deduction"
+                      data-name="deduction"
+                      data-month="June"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-name="salaryEarned"
+                      data-month="June"
+                      data-id="5"
+                      class="form-control"
+                      name="5-salaryEarned"
+                      disabled=""
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                </tr>
+                <tr class="month-row">
+                  <td>July</td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="6"
+                      name="6-grossAmount"
+                      data-name="grossAmount"
+                      data-month="July"
+                      class="form-control"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="6"
+                      class="form-control"
+                      name="6-deduction"
+                      data-name="deduction"
+                      data-month="July"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-name="salaryEarned"
+                      data-month="July"
+                      data-id="6"
+                      class="form-control"
+                      name="6-salaryEarned"
+                      disabled=""
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                </tr>
+                <tr class="month-row">
+                  <td>August</td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="7"
+                      name="7-grossAmount"
+                      data-name="grossAmount"
+                      data-month="August"
+                      class="form-control"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="7"
+                      class="form-control"
+                      name="7-deduction"
+                      data-name="deduction"
+                      data-month="August"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-name="salaryEarned"
+                      data-month="August"
+                      data-id="7"
+                      class="form-control"
+                      name="7-salaryEarned"
+                      disabled=""
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                </tr>
+                <tr class="month-row">
+                  <td>September</td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="8"
+                      name="8-grossAmount"
+                      data-name="grossAmount"
+                      data-month="September"
+                      class="form-control"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="8"
+                      class="form-control"
+                      name="8-deduction"
+                      data-name="deduction"
+                      data-month="September"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-name="salaryEarned"
+                      data-month="September"
+                      data-id="8"
+                      class="form-control"
+                      name="8-salaryEarned"
+                      disabled=""
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                </tr>
+                <tr class="month-row">
+                  <td>October</td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="9"
+                      name="9-grossAmount"
+                      data-name="grossAmount"
+                      data-month="October"
+                      class="form-control"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="9"
+                      class="form-control"
+                      name="9-deduction"
+                      data-name="deduction"
+                      data-month="October"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-name="salaryEarned"
+                      data-month="October"
+                      data-id="9"
+                      class="form-control"
+                      name="9-salaryEarned"
+                      disabled=""
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                </tr>
+                <tr class="month-row">
+                  <td>November</td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="10"
+                      name="10-grossAmount"
+                      data-name="grossAmount"
+                      data-month="November"
+                      class="form-control"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="10"
+                      class="form-control"
+                      name="10-deduction"
+                      data-name="deduction"
+                      data-month="November"
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-name="salaryEarned"
+                      data-month="November"
+                      data-id="10"
+                      class="form-control"
+                      name="10-salaryEarned"
+                      disabled=""
+                      type="number"
+                      value="0"
+                    />
+                  </td>
+                </tr>
+                <tr class="month-row">
+                  <td>December</td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="11"
+                      name="11-grossAmount"
+                      data-name="grossAmount"
+                      data-month="December"
+                      class="form-control"
+                      type="text"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-id="11"
+                      class="form-control"
+                      name="11-deduction"
+                      data-name="deduction"
+                      data-month="December"
+                      type="text"
+                      value="0"
+                    />
+                  </td>
+                  <td class="justify-content-center align-items-center">
+                    <span class="peso-sign">₱</span>
+                    <input
+                      data-name="salaryEarned"
+                      data-month="December"
+                      data-id="11"
+                      class="form-control"
+                      name="11-salaryEarned"
+                      disabled=""
+                      type="text"
+                      value="0"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            class="mt-3 d-flex align-content-center justify-content-between mb-5 flex-wrap"
+          >
+            <div class="col col-12 col-lg-6">
+              <button class="btn btn-primary inline" id="calculate">
+                Calculate</button
+              ><button class="inline btn btn-outline-secondary ms-2" id="reset">
+                Reset
+              </button>
+            </div>
+            <div
+              class="mt-3 mt-lg-0 d-flex align-items-center justify-content-between mb-5 flex-wrap"
+            >
+              <div class="computation-prefix fw-bold mt-lg-0 me-lg-2">
+                13-Month Pay for this year:
+              </div>
+              <span class="computation text-end" disabled=""
+                >₱ <span class="computation-amount">0</span></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      (function ($) {
+        $.fn.simpleMoneyFormat = function () {
+          this.each(function (index, el) {
+            var elType = null; // input or other
+            var value = null;
+            // get value
+            if ($(el).is("input") || $(el).is("textarea")) {
+              value = $(el).val().replace(/,/g, "");
+              elType = "input";
+            } else {
+              value = $(el).text().replace(/,/g, "");
+              elType = "other";
+            }
+            // if value changes
+            $(el).on("paste keyup", function () {
+              value = $(el).val().replace(/,/g, "");
+              formatElement(el, elType, value); // format element
+            });
+            formatElement(el, elType, value); // format element
+          });
+          function formatElement(el, elType, value) {
+            var result = "";
+            var valueArray = value.split("");
+            var resultArray = [];
+            var counter = 0;
+            var temp = "";
+            for (var i = valueArray.length - 1; i >= 0; i--) {
+              temp += valueArray[i];
+              counter++;
+              if (counter == 3) {
+                resultArray.push(temp);
+                counter = 0;
+                temp = "";
+              }
+            }
+            if (counter > 0) {
+              resultArray.push(temp);
+            }
+            for (var i = resultArray.length - 1; i >= 0; i--) {
+              var resTemp = resultArray[i].split("");
+              for (var j = resTemp.length - 1; j >= 0; j--) {
+                result += resTemp[j];
+              }
+              if (i > 0) {
+                result += ",";
+              }
+            }
+            if (elType == "input") {
+              $(el).val(result);
+            } else {
+              $(el).empty().text(result);
+            }
+          }
+        };
+      })(jQuery);
+      (function ($) {
+        const $appContainer = $("#app-calculator");
+
+        if ($appContainer === null) {
+          return;
+        }
+
+        const formControls = $appContainer.find(".form-control");
+        //formControls.simpleMoneyFormat();
+
+        const $monthRow = $(".month-row");
+
+        const grossAmountInputs = $monthRow.find(
+          "input[data-name=grossAmount]"
+        );
+        const deductionInputs = $monthRow.find("input[data-name=deduction]");
+        const salaryEarnedInputs = $monthRow.find(
+          "input[data-name=salaryEarned]"
+        );
+        const calculateButton = $("#calculate");
+        const resetButton = $("#reset");
+        const $computationText = $(".computation");
+        const basicSalaryWholeYear = $("#basicSalaryWholeYear");
+
+        const handleOnChange = function () {
+          const $this = $(this);
+          const id = $this.data("id");
+          const month = $this.data("month");
+          let newValue = {
+            id,
+            month,
+            subTotal: parseFloat(0),
+            grossAmount: parseFloat(0),
+            deduction: parseFloat(0)
+          };
+
+          if ($this.val() === NaN || $this.val() === "") {
+            $this.val() = 0;
+          }
+
+          if ($this.data("name") === "grossAmount") {
+            newValue.grossAmount = parseFloat($this.val());
+          } else {
+            newValue.grossAmount = parseFloat(
+              $(`input[name=${id}-grossAmount]`).val()
+            );
+          }
+
+          if ($this.data("name") === "deduction") {
+            newValue.deduction = parseFloat($this.val());
+          } else {
+            newValue.deduction = parseFloat(
+              $(`input[name=${id}-deduction]`).val()
+            );
+          }
+
+          newValue.subTotal = parseFloat(
+            newValue.grossAmount - newValue.deduction
+          );
+
+          $(`input[name=${id}-salaryEarned]`).val(newValue.subTotal);
+        };
+
+        const doCalculate = () => {
+          let newTotal = parseFloat(0);
+          $.each(salaryEarnedInputs, function (i, entry) {
+            newTotal += parseFloat($(entry).val());
+          });
+
+          newTotal = parseFloat(newTotal / 12).toFixed(2);
+
+          $appContainer.addClass("loading");
+          setTimeout(() => {
+            $computationText.find(".computation-amount").text(newTotal);
+            $appContainer.removeClass("loading");
+          }, 2000);
+        };
+
+        const handleCalculate = function (e) {
+          e.preventDefault();
+          doCalculate();
+        };
+
+        const handleReset = function (e) {
+          e.preventDefault();
+          const _this = $(this);
+          $appContainer.addClass("loading");
+          setTimeout(() => {
+            $appContainer.removeClass("loading");
+            deductionInputs.val(0);
+            grossAmountInputs.val(0);
+            salaryEarnedInputs.val(0);
+            basicSalaryWholeYear.val(0);
+            $computationText.find(".computation-amount").text(parseFloat(0));
+          }, 2000);
+        };
+
+        const handlebasicSalaryWholeYearChange = function () {
+          const value = parseFloat($(this).val().replace(",", ""));
+
+          grossAmountInputs.each((index, entry) => {
+            $(entry).val(value);
+          });
+
+          $("input[data-name=salaryEarned]").each((index, entry) => {
+            const basicSalary = parseFloat(
+              $(`input[name=${index}-grossAmount]`).val()
+            );
+            const deduction = parseFloat(
+              $(`input[name=${index}-deduction]`).val()
+            );
+            const totalPerMonth = parseFloat(basicSalary - deduction);
+            $(entry).val(totalPerMonth);
+          });
+        };
+
+        grossAmountInputs.on("change", handleOnChange);
+        deductionInputs.on("change", handleOnChange);
+        calculateButton.on("click", (e) => handleCalculate(e));
+        resetButton.on("click", (e) => handleReset(e));
+        basicSalaryWholeYear.on("change", handlebasicSalaryWholeYearChange);
+      })(jQuery);
+    </script>
   </body>
 </html>
