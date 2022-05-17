@@ -1,12 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <style>
+      *,
+      ::after,
+      ::before {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      p {
+        font-family: "Lavishly Yours", cursive !important;
+        margin-bottom: 0 !important;
+      }
+
+      .name {
+        font-size: 42px;
+      }
+
+      .info {
+        word-spacing: 5px;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Parisienne&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <body class="vh-100" id="body-element" class="p-3">
+    <div class="position-relative">
+      <img
+        class="img-fluid"
+        src="assets/background.png"
+        alt="Background image"
+      />
+      <div
+        class="position-absolute top-50 start-50 translate-middle text-center"
+      >
+        <p class="name fw-bold">Elnur</p>
+        <p class="name fw-bold">- & -</p>
+        <p class="name fw-bold">Nuranə</p>
+      </div>
+    </div>
+    <div class="text-center">
+      <p class="info fs-1">12 June</p>
+      <p class="info fs-1">Sonalar Sonası restaurant</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.22/dist/vanta.birds.min.js"></script>
+    <script>
+      VANTA.BIRDS({
+        el: "#body-element",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 100.0,
+        minWidth: 100.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        backgroundColor: 0xdedede,
+        color1: 0xd76500,
+        color2: 0x68900,
+        colorMode: "lerp",
+        birdSize: 1.0
+      });
+    </script>
   </body>
 </html>
