@@ -1,0 +1,199 @@
+.container,
+.glass-wrapper,
+.glass,
+.champagne,
+.leg,
+.foot,
+.inner-foot {
+  position: absolute;
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass-wrapper {
+  width: 73px;
+  height: 256px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.glass {
+  border: 1.5px solid black;
+  width: 73px;
+  height: 150px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.champagne {
+  width: 73px;
+  height: 130px;
+  border-top: 1.5px solid black;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: #f7ce40;
+  opacity: 60%;
+  top: 18px;
+}
+
+.leg {
+  border: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+  width: 4px;
+  height: 93px;
+  top: 151.5px;
+  z-index: 1;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: white;
+}
+
+.foot {
+  width: 62px;
+  height: 15px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  background-color: black;
+  border-bottom: 1px solid black;
+  top: 242px;
+}
+
+.inner-foot {
+  width: 60px;
+  height: 12px;
+  clip-path: polygon(50% 0%, 0% 99%, 99% 99%);
+  background-color: white;
+  top: 3px;
+  left: 1px;
+}
+
+/* -----------Bubbles - bottom to top----------- */
+.bubble-1,
+.bubble-2,
+.bubble-3,
+.bubble-4,
+.bubble-5,
+.bubble-6,
+.bubble-7 {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid white;
+  background: radial-gradient(circle at 50%, #f7ce40, #f7ce40 20%, white 95%);
+  border-radius: 50%;
+}
+
+.bubble-1,
+.bubble-3,
+.bubble-5,
+.bubble-7 {
+  width: 5px;
+  height: 5px;
+}
+
+.bubble-2,
+.bubble-4,
+.bubble-6 {
+  width: 8px;
+  height: 8px;
+}
+
+.bubble-1 {
+  top: 90%;
+  left: 50%;
+}
+
+.bubble-2 {
+  top: 75%;
+  left: 40%;
+}
+
+.bubble-3 {
+  top: 82%;
+  left: 55%;
+}
+
+.bubble-4 {
+  top: 90%;
+  left: 55%;
+}
+
+.bubble-5 {
+  top: 70%;
+  left: 36%;
+}
+
+.bubble-6 {
+  top: 72%;
+  left: 44%;
+}
+
+.bubble-7 {
+  top: 75%;
+  left: 40%;
+}
+
+/* The animation code */
+
+@keyframes bubbling {
+  0% {
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 20%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+.champagne > div {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: bubbling;
+}
+/* The element to apply the animation to */
+
+/* Small bubbles random */
+
+.bubble-1 {
+  animation-duration: 4s;
+}
+
+.bubble-3 {
+  animation-duration: 3.1s;
+}
+
+.bubble-5 {
+  animation-duration: 2.2s;
+}
+
+.bubble-7 {
+  animation-duration: 1.5s;
+}
+
+/* Big bubbles random */
+
+.bubble-2 {
+  animation-duration: 4s;
+}
+
+.bubble-4 {
+  animation-duration: 2.8s;
+}
+
+.bubble-6 {
+  animation-duration: 1.8s;
+}
