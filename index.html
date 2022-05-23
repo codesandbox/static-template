@@ -1,12 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>PodcastChannel</title>
+    <STYLE>A {text-decoration: none;} </STYLE>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="assets/logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/1c5f3fc9f5.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+  <div class="contenedor">
+        <div class="menucompleto">
+          <div class="logo"><img src="assets/logo.svg" alt=""/></div></section>
+          <nav class= "nav_menu">
+            <ul>
+               <li><a href="#episodios">EPISODIOS</a></li> 
+               <li><a href="#nosotros">NOSOTROS</a></li> 
+               <li><a href="#entrevistas">ENTREVISTAS</a></li> 
+               <li><a href="#topicos">TÓPICOS</a></li> 
+           </ul>
+          </nav>
+
+  <!--CAMBIO A MENU MOBILE-->
+
+  <nav class="mobile-menu"><!--NAVEGACION CELULAR-->
+    <input type="checkbox" id="hamburguesa" />
+    <label for="hamburguesa">
+        <div class="navegacion-movil">
+          <span></span><!--ESTO ES NUEVO-->
+          <span></span><!--ESTO ES NUEVO-->
+          <span></span><!--ESTO ES NUEVO-->
+        </div>
+    </label>
+    <div class="nav-menu-movil">
+        <div><a href="#episodios">EPISODIOS</a></div>
+        <div><a href="#nosotros">NOSOTROS</a></div>
+        <div><a href="#entrevistas">ENTREVISTAS</a></div>
+        <div><a href="#topicos">TÓPICOS</a></div>
+    </div>
+</nav>
+</div>
+
+      <h1>
+        Hello
+        <span class="tachado">world</span>
+        pale blue dot
+        <span class="punto">.</span>
+      </h1>
+  <!--CAMBIO A MENU MOBILE-->
+           <div class="h1_mobile">
+            Hello 
+            <span class="tachado">world</span>
+            pale blue dot. 
+           </div>
+  <!--CAMBIO A MENU MOBILE-->
+      <p>
+        El portal de podcasts que explora el mundo de la programación y la
+        tecnología. Nuevos episodios, todos los jueves cada 15 días.
+      </p>
+      <button>Conocé más</button>     
+    </header>
+   
+    <main>
+      <div id="episodios">
+        <h2>Episodios</h2>
+          <section class="episodios_contenedor">
+              <iframe
+              src="https://open.spotify.com/embed/episode/24qSDlar3bv8Wbg8ExQlRq" 
+              width="584"
+              height="232"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe>
+            <iframe
+              src="https://open.spotify.com/embed/episode/7C31iidWtxzelqxVSPVU3i"
+              width="584"
+              height="232"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe>
+            <iframe
+              src="https://open.spotify.com/embed/episode/0Ut660uryPg2fWan7Oc2Lw"
+              width="584"
+              height="232"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe>
+            <iframe
+              src="https://open.spotify.com/embed/episode/0VBzknv01DAf4NDYvAL4yt"
+              width="584"
+              height="232"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe>
+            
+         </section>
+      </div>
+      <div id="nosotros">
+            <section class="nosotros_articulo">
+            <img src="assets/phone.png" alt="" class="nosotros_imagen"/>
+            <h3>De dónde venimos</h3>
+            <div id="parrafo">
+              Our posturings, our imagined self-importance, 
+              the delusion that we have some privileged 
+              position in the Universe, are challenged by this
+              point of pale light.
+           
+              Our planet is a lonely speck in the great 
+              enveloping cosmic dark. In our obscurity, in all 
+              this vastness, there is no hint that help will
+              come from elsewhere to save us from ourselves.
+            </div>
+          </section>
+      </div>
+      <div id="entrevistas">
+        <h4>Invitadas/os estelares</h4>
+          <section class="invitadas_contenedor">
+            <img src="assets/grace-hopper.png" alt="" class="grace-hopper" />
+            <img src="assets/Katie-Bouman.png" alt="" class="katie-bouman"/>
+            <img src="assets/Margaret_Hamilton.png" alt="" class="margaret_hamilton"/>
+            <img src="assets/An E.R.A.Univac 1103 computer in the 1950s.png" alt="" class="An_Era"/>
+            <img src="assets/Computer operators with an Eniac — the world’s first programmable general-purpose computer.png" alt="" class="computer"/>
+            <img src="assets/susan-kare.png" alt="" class="susan"/>
+        </section>
+      </div>
+
+      <div id="topicos"> 
+        <h5>Algunos de nuestros temas</h5>
+          <section class="temas_contenedor">
+            <div class="cada_uno">        
+              <img src="assets/icon1.svg" alt=""><img/>
+              <h6>Trabajo Remoto</h6></div>
+            <div class="cada_uno">
+              <img src="assets/icon2.svg" alt=""><img/>
+              <h6>Repensando la programación</h6></div>
+            <div class="cada_uno">
+              <img src="assets/icon3.svg" alt=""><img/>
+              <h6>Bases del código</h6></div>
+            <div class="cada_uno">
+              <img src="assets/icon4.svg" alt=""><img/>
+              <h6>Seguridad informática</h6></div>
+        </section>
+      </div>
+
+        <div id="novedades">
+            <h7>¿Querés las últimas novedades?</h6>
+            <a class="segundo_boton" href="">ESCUCHÁ LOS EPISODIOS</a>
+        </div>
+        </main>
   </body>
+  <footer>
+    <div class="container_footer">
+      <div class="año">© 2019— Hello blue pale dot </div>
+      <div class="redes">
+          <ul>
+            <li>
+              <a href="https://www.spotify.com/co/">
+                <i class="fab fa-spotify" id="spfy_icon"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/">
+                  <i class="fab fa-instagram" id="ig_icon"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/">
+                  <i class="fab fa-twitter" id="tw_icon"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/">
+                  <i class="fab fa-facebook" id="fb_icon"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://web.telegram.org/">
+                  <i class="fab fa-telegram" id="tg_icon"></i>
+                </a>
+              </li>
+            </ul>
+      </div>
+    </div>
+  </footer>
 </html>
+
