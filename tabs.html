@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>無標題文件</title>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.1/themes/dot-luv/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/95e3d7283f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="flex h-screen overflow-y-hidden">
+      <!-- --------------------Menu-------------------- -->
+      <aside class="w-64" aria-label="Sidebar">
+        <div
+          class="menuPage h-screen overflow-y-auto py-4 px-3 bg-gray-50 dark:bg-gray-800"
+        ></div>
+      </aside>
+      <!-- --------------------Menu-------------------- -->
+      <div class="w-screen overflow-y-auto">
+        <div class="flex-1 mx-auto max-w-2xl">
+          <div id="tabs">
+            <ul>
+              <li><a href="#tabs-1">Tab 1</a></li>
+              <li><a href="#tabs-2">Tab 2</a></li>
+              <li><a href="#tabs-3">Tab 3</a></li>
+            </ul>
+            <div id="tabs-1">
+              <p>內容 1</p>
+            </div>
+            <div id="tabs-2">
+              <p>內容 2</p>
+            </div>
+            <div id="tabs-3">
+              <p>內容 3</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  $(".menuPage").load("./ajax/menu.html");
+  $("#tabs").tabs();
+</script>
