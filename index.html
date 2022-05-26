@@ -1,12 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <!-- <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- babel-standalone@6버전에서 Buttons 클래스가 나오지 않는 문제 발생해 버전 변경 -->
+
+    <div id="root"></div>
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+      /*
+      function draw() {
+        const number = Math.floor(Math.random() * 9 + 1);
+        const element = (
+          <React.Fragment>
+            <button>{number}</button>
+            <div>
+              <p>{number}</p>
+            </div>
+          </React.Fragment>
+        );
+        ReactDOM.render(element, rootElement);
+      }
+      setInterval(draw, 1000);
+      */
+
+      /* props를 이용하는 형태 (1)
+      function Hello(props) {
+        return <h1>Hello, Component {props.name}</h1>;
+      }
+      const element = <Hello name="component" />;
+      */
+
+      /* props를 이용하는 형태 (2)  - props라는 키워드 없이 변수명을 바로 사용하기 위해 중괄호 사용
+      function Hello({name}) {
+        return <h1>Hello, Component {name}</h1>;
+      }
+      const element = <Hello name="component" />;
+      */
+
+      /* props를 이용하는 형태 (3) - (1), (2)와 같은 결과.
+        props를 data와 같이 다른 변수명으로 사용하여 data.name으로 조회해도 해당 값을 가져올 수 있다.
+      function Hello(data) {
+        return <h1>Hello, Component {data.name}</h1>;
+      }
+      const element = <Hello name="component" />;
+      */
+
+      /* 함수형 컴포넌트를 const 키워드를 이용해 정의하는 방식
+      const Hello = (data) => <h1>Hello, Component {data.name}</h1>;
+      const element = <Hello name="component" />;
+      */
+
+      /* ReactDOM.render(element, rootElement); */
+
+      function Button({ number }) {
+        return (
+          <button
+            style={{ backgroundColor: number % 2 == 0 ? "pink" : "green" }}
+          >
+            {number}
+          </button>
+        );
+      }
+
+      const Buttons = () => (
+        <>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <Button number={4} />
+          <Button number={5} />
+          <Button number={6} />
+        </>
+      );
+
+      ReactDOM.render(Buttons(), rootElement);
+    </script>
   </body>
 </html>
