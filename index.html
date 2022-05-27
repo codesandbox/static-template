@@ -8,56 +8,168 @@
     <title>Static Template</title>
   </head>
   <body>
-    <div id="top">
-      <nav class="navbar">
-        <h5 class="nav-brand">JT OGOFE</h5>
+    <nav class="navbar">
+      <h5 class="nav-brand">JT OGOFE</h5>
 
-        <ul class="list-unstyled nav">
-          <li><a class="nav-link" href="#about-section"> About </a></li>
-          <li><a class="nav-link" href="#service-section"> Services </a></li>
-          <li>
-            <a class="nav-link" href="#contact-section"> Talk to Sales </a>
-          </li>
-        </ul>
-      </nav>
+      <ul class="list-unstyled nav">
+        <button class="nav-toggle">&times;</button>
+        <li><a class="nav-link" href="#about-section"> About </a></li>
+        <li><a class="nav-link" href="#service-section"> Services </a></li>
+        <li>
+          <a class="nav-link" href="#contact-section"> Talk to Sales </a>
+        </li>
+      </ul>
 
-      <div class="hero">
-        <div class="hero-content">
-          <div class="hero-text">
-            <h1>Software Development</h1>
-            <h4>What can we do for you?</h4>
-          </div>
+      <button class="nav-toggle">&Equal; Menu</button>
+    </nav>
 
-          <div class="searchbar">
-            <ion-icon class="search-icon" name="search"></ion-icon>
-            <input
-              placeholder="Search Tech stack, Platform, Service (e.g Django web development)"
-              name="search"
-              type="search"
-              class="search-field"
-            />
-          </div>
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Software Development</h1>
+          <h4>What can we do for you?</h4>
+        </div>
+
+        <div class="searchbar">
+          <ion-icon class="search-icon" name="search"></ion-icon>
+          <input
+            placeholder="Search Tech stack, Platform, Service (e.g Django web development)"
+            name="search"
+            type="search"
+            class="search-field"
+          />
         </div>
       </div>
     </div>
 
     <div id="about-section" class="section">
-      <h2 class="title">What We Do</h2>
+      <h2 class="title">Who We Are</h2>
 
       <article class="section-content">
         <p>
-          We are a team of developers from accross Africa, vetted and experienced in creating customer facing products for clients, whether its a business or a personal project, our team can handle the work load. 
-          <br/>
-          We help our clients realize what they need. We walk through the whole idea and development strategies with you so we can achieve the best an optimal desired results. We're committed to your growth, we create 
-          intuitively designed applications to give you ease of use, and responsiveness across your devices, so you and your customers enjoy easy access to your product on the go.
-          <br> Our tech stack is vast, so we can build almost anything you an think of. Try us now!
+          We are a team of developers from accross Africa, vetted and
+          experienced in creating customer facing products for clients, whether
+          its a business or a personal project, our team can handle the work
+          load.
+          <br />
+          We help our clients realize what they need. We walk through the whole
+          idea and development strategies with you so we can achieve the best an
+          optimal desired results. We're committed to your growth, we create
+          intuitively designed applications to give you ease of use, and
+          responsiveness across your devices, so you and your customers enjoy
+          easy access to your product on the go.
+          <br />
+          Our tech stack is vast, so we can build almost anything you an think
+          of. Try us now!
         </p>
-      </article
+      </article>
     </div>
 
-    <div id="service-section" class="section"></div>
+    <div class="skew"></div>
+    <div id="service-section" class="section">
+      <h2 class="title">What We Do</h2>
 
-    <div id="contact-section" class="section"></div>
+      <div class="">
+        <ul id="services" class="list-unstyled flexbox">
+          <li>
+            <div class="card">
+              <div class="card-img">
+                <img src="./assets/concept-web.jpg" class="image" />
+              </div>
+
+              <div class="card-body">
+                <h4 class="card-title">Web Development</h4>
+                <p>
+                  Responsively designed websites and web applications that suit
+                  your needs. Perfect for branding and customer facing web apps
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="card">
+              <div class="card-img">
+                <img src="./assets/concept-app.jpg" class="image" />
+              </div>
+
+              <div class="card-body">
+                <h4 class="card-title">Mobile App Development</h4>
+                <p>
+                  Responsively designed websites and web applications that suit
+                  your needs. Perfect for branding and customer facing web apps
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="card">
+              <div class="card-img">
+                <img src="./assets/concept-1.jpg" class="image" />
+              </div>
+
+              <div class="card-body">
+                <h4 class="card-title">Cloud Ochestration</h4>
+                <p>
+                  Responsively designed websites and web applications that suit
+                  your needs. Perfect for branding and customer facing web apps
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="card">
+              <div class="card-img">
+                <img src="./assets/concept-2.jpg" class="image" />
+                <a
+                  class="attribution"
+                  href="https://unsplash.com/photos/RAZU_R66vUc?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
+                >
+                  Photo by Richard Horvath
+                </a>
+              </div>
+
+              <div class="card-body">
+                <h4 class="card-title">API Development</h4>
+                <p>
+                  Responsively designed websites and web applications that suit
+                  your needs. Perfect for branding and customer facing web apps
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="contact-section" class="section">
+      <h2 class="title">Get A Quote</h2>
+
+      <div class="section-content">
+        <h4>
+          Got a project you want us to work on? <br />
+          Leave us a message, and we'll get back to you with promptness and
+          detail on how we plan proceed
+        </h4>
+        <form
+          method="post"
+          onsubmit="function stop(event){
+          event.preventDefault();
+        }"
+        >
+          <div class="form-group">
+            <label> Email </label>
+            <input type="email" placeholder="Your email address" />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <div></div>
+    </footer>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>

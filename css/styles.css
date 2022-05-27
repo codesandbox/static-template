@@ -14,6 +14,8 @@ body {
   justify-content: space-between;
   position: sticky;
   top: 0;
+  z-index: 1000;
+  box-shadow: 0px -10px 20px 2px rgb(130, 130, 134);
   align-items: center;
 }
 
@@ -26,6 +28,7 @@ body {
 .nav {
   display: flex;
   flex-grow: 100%;
+  transition: 0.3s;
   justify-content: space-around;
 }
 
@@ -118,4 +121,118 @@ body {
   line-height: 27px;
   text-align: left;
   text-align-last: center;
+}
+
+.skew {
+  height: 70px;
+  background-color: black;
+  padding: 1rem;
+  transform: skewY(-3deg) translateY(50px);
+  z-index: 0;
+}
+
+#about-section {
+  position: sticky;
+  background-color: #fff;
+  z-index: -10;
+  top: 0;
+  padding-bottom: 120px;
+}
+
+#service-section {
+  background-color: black;
+  color: #fff;
+}
+#service-section .title {
+  z-index: 20;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px 1.5px rgba(255, 255, 255, 0.623);
+  transition: 0.5s;
+  min-height: 150px;
+  width: 300px;
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 5px;
+  height: 200px;
+}
+
+.card-img .image {
+  border-radius: 5px 5px 0px 0px;
+  width: 100%;
+  height: 100%;
+}
+
+a.attribution {
+  color: #fff;
+  text-decoration: none;
+  font-size: 10px;
+  text-align: right;
+  display: block;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  transform: scale(1.05, 1.05);
+  transition: 0.5s;
+}
+
+.card-body {
+  padding: 15px 10px;
+}
+
+.card-title {
+  margin: 5px;
+}
+
+.card-body p {
+  font-size: 14px;
+}
+
+#services li {
+  margin: 10px auto;
+}
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#contact-section {
+  /* position: sticky;
+  top: 0;
+  z-index: -10; */
+  background-color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  .nav {
+    transition: 0.3s;
+    position: fixed;
+    right: 0%;
+    transform: translateX(250px);
+    width: 220px;
+    padding: 15px 10px;
+    top: 0px;
+    z-index: 5;
+    height: 100vh;
+    display: block;
+    background-color: inherit;
+    padding-top: 50px;
+  }
+
+  .nav.open {
+    transform: translateX(0);
+  }
+
+  .nav li {
+    padding: 1rem 0px;
+  }
 }
