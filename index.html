@@ -1,12 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>EMJ Pre-School</title>
+    <!-- bootstrap CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <a href="">
+        <div
+          class="d-flex justify-content-around text-center align-self-center header"
+        >
+          <img class="img" src="./images/logo.png" alt="" />
+          <h1 class="heading-h1">
+            EMJ Rising Stars <br />
+            Little Einstein Pre-School
+          </h1>
+          <img class="img" src="/images/LE-Logo.png" alt="" />
+        </div>
+      </a>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <a class="navbar-brand" href="/">EMJ</a>
+      <!--Dropdown button for small devices  -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle-navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav d-flex justify-content-end w-100">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home<a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#scrollspyHeading1">Programs</a>
+              </li>
+              <!-- <li class="nav-item active">
+                  <a class="nav-link" href="">Admissions</a>
+              </li> -->
+              <!-- <li class="nav-item active">
+                    <a class="nav-link" href="">Gallery</a>
+              </li> -->
+              <li class="nav-item active">
+                      <a class="nav-link" href="#scrollspyHeading2">About Us</a>
+              </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="#scrollspyHeading3">Contact Us</a>
+              </li>
+           </ul>
+      </div>
+    </nav>
+
+    <!-- Mission and vison hero image -->
+    <div
+      class="hero-image d-flex flex-column justify-content-center align-items-center text-white text-center"
+    >
+      <div>
+        <h2>Our Mission</h2>
+        <p>Is to develop and educate young individuals to excel at academics, social interactions and become capable, independent, empendent, empathetic rising stars.</p>
+        <h2>Our Vision</h2>
+        <p>To provide and nurture fun, healthy, hands on learning experience that self-promotes a high self-esteem and holistic development.</p>
+      </div>
+    </div>
+
+     <!-- Flex layout of program Cards -->
+    <div>
+      <h1 id="scrollspyHeading1" style="font-weight: bolder; text-align: center">OUR PROGRAMS</h1>
+
+      <div class="container">
+          <div class="content">
+              <div class="row" style="justify-content: space-between">
+                  <div class="card" style="width: 10rem;">
+                      <img class="card-img-top" src="/images/toddlers.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Toddlers</h5>
+                        <p class="card-text">Age: Below 2</p>
+                      </div>
+                  </div>
+                  <div class="card" style="width: 10rem;">
+                      <img class="card-img-top" src="/images/playgroup.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Play Group</h5>
+                        <p class="card-text">Age: Below 3</p>
+                      </div>
+                  </div>
+                  <div class="card" style="width: 10rem;">
+                      <img class="card-img-top" src="/images/nursery.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Nursery</h5>
+                        <p class="card-text">Age: Below 4</p>
+                      </div>
+                  </div>
+                  <div class="card" style="width: 10rem;">
+                      <img class="card-img-top" src="/images/lkg.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">LKG</h5>
+                        <p class="card-text">Age: Below 5</p>
+                      </div>
+                  </div>
+                  <div class="card" style="width: 10rem;">
+                      <img class="card-img-top" src="/images/ukg.jpeg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">UKG</h5>
+                        <p class="card-text">Age: Below 6</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    
+        <!-- <div>
+            <div class="container text-center css-grid">
+                <div><img src="images/baby.jpg" alt=""></div>
+                <div><img src="images/baby.jpg" alt=""></div>
+                <div><img src="images/baby.jpg" alt=""></div>
+                <div><img src="images/baby.jpg" alt=""></div>
+              </div>
+        </div> -->
+    
+
+    <div id="scrollspyHeading2" class="container text-center about-us bg-light">
+      <h2>About Us</h2>
+      <div>
+        <ul style="list-style: none; font-size: 1.2rem">
+          <li>Ranked among the top 5 Pre-School chains and awarded best Pre-School in India 2018 ELETS</li>
+          <li>Little Einsteins branches nationally and internationally in UK, USA, South Africa, Finland, Philippines & Nepal</li>
+          <li>100% CCTV coverage with spacious, colourfull, AC classrooms with smartboards, whiteboards, TABS AND INTERNATIONALLY CERTIFIED TEACHERS.</li>
+          <li>Interactive classes with Indoor and Outdoor activities(Music, Drama, Cooking, Sports, etc.</li>
+        </ul>
+      </div>
+    </div>
+  
+    
+    <footer id="scrollspyHeading3">
+      <div class="container text-center contact-us">
+        <h2>Contact Us</h2>
+        <div>+91-9552135457</div>
+        <div>emjrisingstars@gmail.com</div>
+        <div>
+          <a href="https://www.instagram.com/emjlittleeinsteins/?hl=en">
+          <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt="instagram">
+          </a>
+          <a href="https://m.facebook.com/EMJ-Little-Einsteins-645489032545066/">
+            <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yJ/r/cxlDXk-9TTk.png" alt="facebook logo">
+          </a>
+        </div>
+        <div>Copyright © 2022 • All Rights Reserved</div>
+      </div>
+    </footer>
+
+    <!-- JavaScript Bundle with Popper Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- javascript index.js -->
+    <script src="index.js"></script>
   </body>
 </html>
