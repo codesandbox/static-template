@@ -1,12 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>React Local</title>
+    <!-- react -->
+    <script
+      type="application/javascript"
+      src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"
+    ></script>
+    <!-- react-dom -->
+    <script
+      type="application/javascript"
+      src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"
+    ></script>
+    <!-- redux -->
+    <script
+      type="application/javascript"
+      src="https://unpkg.com/redux@4.2.0/dist/redux.js"
+    ></script>
+    <!-- babel -->
+    <script
+      type="application/javascript"
+      src="https://unpkg.com/babel-standalone@6.26.0/babel.js"
+    ></script>
+    <!-- axios -->
+    <script
+      type="application/javascript"
+      src="https://unpkg.com/axios/dist/axios.min.js"
+    ></script>
+    <!-- jquery -->
+    <script
+      type="application/javascript"
+      src="https://code.jquery.com/jquery-3.5.1.js"
+    ></script>
+    <!-- bootstrap 4 -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+    <!-- dataTable -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css"
+    />
+    <script
+      type="application/javascript"
+      src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"
+    ></script>
+    <script
+      type="application/javascript"
+      src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"
+    ></script>
+    <!-- font -->
+    <link type="text/css" rel="stylesheet" href="./lib/font.css" />
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="./lib/style.css" />
+    <!-- dropzone -->
+    <script src="lib/dropzone.js"></script>
+    <link href="lib/dropzone.css" rel="stylesheet" type="text/css" />
+    <!-- include components -->
+    <script type="text/babel" src="./app.js"></script>
+    <script type="text/babel" src="./components/TableComponent.js"></script>
+    <script type="text/babel" src="./components/DropzoneComponent.js"></script>
+    <!-- include components/Approve -->
+    <script
+      type="text/babel"
+      src="./components/Approve/AttachFile/AttachFileComponent.js"
+    ></script>
+    <script
+      type="text/babel"
+      src="./components/Approve/Detail/Header/HeaderComponent.js"
+    ></script>
+    <script
+      type="text/babel"
+      src="./components/Approve/Detail/Customer/GeneralComponent.js"
+    ></script>
+    <script
+      type="text/babel"
+      src="./components/Approve/Detail/Customer/PipeComponent.js"
+    ></script>
+    <script
+      type="text/babel"
+      src="./components/Approve/Detail/Customer/AuthorizeComponent.js"
+    ></script>
+    <script
+      type="text/babel"
+      src="./components/Approve/Detail/Customer/CustomerComponent.js"
+    ></script>
+    <script
+      type="text/babel"
+      src="./components/Approve/Detail/Project/ProjectComponent.js"
+    ></script>
+    <script
+      type="text/babel"
+      src="./components/Approve/Detail/Land/RoyalLandComponent.js"
+    ></script>
+    <script
+      type="text/babel"
+      src="./components/Approve/Detail/Land/OtherLandComponent.js"
+    ></script>
+    <script
+      type="text/babel"
+      src="./components/Approve/Detail/Land/LandComponent.js"
+    ></script>
+    <script
+      type="text/babel"
+      src="./components/Approve/Detail/Plan/PlanComponent.js"
+    ></script>
+    <script
+      type="text/babel"
+      src="./components/Approve/Detail/DetailComponent.js"
+    ></script>
+    <script
+      type="text/babel"
+      src="./components/Approve/ApproveComponent.js"
+    ></script>
+    <!-- include pages -->
+    <script type="text/babel" src="./pages/ApprovePage.js"></script>
+    <script type="text/babel" src="./pages/RegisterPage.js"></script>
+    <script type="text/babel" src="./pages/PlanningPage.js"></script>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // Obtain the root
+      const rootElement = document.getElementById("root");
+
+      // Use the ReactDOM.render to show your component on the browser
+      ReactDOM.render(<App />, rootElement);
+    </script>
   </body>
 </html>
