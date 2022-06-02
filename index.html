@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Static Template</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+      <div class="nav" id="nav">
+          <b><u>White Board</u></b>
+          <div style="font-size: 10px;">Your own personnel space</div>
+      </div>
+   <div class="workspace" id="workspace" onmousedown="drawfn()">
+  </div>
+  <button id="reset" style="position:absolute;left:50%;top:90%;" onclick="fn()">Reset</button>
+  <button id="eraser" style="position:absolute;left:90%;top:20%;" onclick="erasefn()">Erase</button>
+  <button id="drawele" style="position: absolute;left:90%;top:25%;" disabled onclick="drew()">Draw</div>
+  <script src="index.js"></script> 
   </body>
 </html>
