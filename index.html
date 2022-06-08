@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+
+    <title>Full Year Calendar</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/js-year-calendar@latest/dist/js-year-calendar.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="calendar"></div>
+    <script src="https://unpkg.com/js-year-calendar@latest/dist/js-year-calendar.min.js"></script>
+    <script>
+      new Calendar(document.querySelector(".calendar"));
+    </script>
   </body>
 </html>

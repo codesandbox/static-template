@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kdam+Thmor+Pro&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Amatic SC", cursive;
+  font-family: "Kdam Thmor Pro", sans-serif;
+}
+body {
+  background: rgba(255, 140, 0, 0.301);
+}
+.calendar {
+  padding: 20px 40px;
+}
+.months-container {
+  gap: 40px;
+  justify-content: center;
+}
+.calendar .months-container .month-container {
+  background: whitesmoke;
+  padding: 20px;
+  min-width: 280px;
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+.calendar table.month th.month-title {
+  color: rgb(148, 65, 90);
+  font-size: 1.9em;
+  font-weight: 700;
+}
+table.month td:first-child,
+table.month thead tr:nth-child(2) th:first-child {
+  color: rgb(238, 48, 48);
+}
+table.month td:last-child,
+table.month thead tr:nth-child(2) th:last-child {
+  color: rgb(79, 168, 252);
+}
+.calendar table.month td.day .day-content {
+  padding: 6px 8px;
+}
+.calendar table.month th.day-header {
+  color: #777;
+  font-size: 0.9em;
+  font-weight: 700;
+}
+.month tr td {
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #777;
+}
+table.month td.day .day-content:hover {
+  background-color: #908a5efa;
+  color: white;
+}
+.calendar .calendar-header {
+  border: none;
+}
+.calendar .calendar-header table th:hover {
+  background: transparent;
+}
+.calendar .calendar-header .year-title {
+  /* background-color: #e95a01; */
+  color: rgb(221, 75, 75);
+  font-size: 4em;
+  /* border-radius: 15px; */
+}
+.calendar .calendar-header .year-neighbor {
+  font-size: 2.25em;
+}
+.calendar .calendar-header .year-neighbor2 {
+  font-size: 1em;
+}
