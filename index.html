@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1 class="title">Maze Generator</h1>
+
+    <div class="complete">
+      <h3>Maze Completed.</h3>
+      <button class="replay" id="submit">Play again</button>
+      <button class="close" id="submit">Close</button>
+    </div>
+    
+      <form id="settings" action="">
+        <p>Maze Size</p>
+        <input id="size" type="number" value="500"/></br>
+        <p>Rows/Columns</p>
+        <input id="number" type="number" value="20" /></br>
+        <input id="submit" type="submit" value="Generate Maze">
+      </form>
+  
+    <canvas class="maze"></canvas>
+    <script src="mazeGen.js"></script>
+    <script src="setMaze.js"></script>
   </body>
 </html>
