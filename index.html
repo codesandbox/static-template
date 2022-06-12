@@ -1,12 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="lottie.min.js"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <button type="button" name="setAmount" id="setAmount">金額設定</button>
+
+    <button type="button" name="payment" id="payment">使った金額</button>
+
+    <div id="wallet" style="width: 500px; height: 500px;"></div>
+
+    <script>
+      let animation = lottie.loadAnimation({
+        container: document.getElementById("wallet"),
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
+        path: "99719-cash-back.json"
+      });
+
+      document
+        .getElementById("setAmount")
+        .addEventListener("click", function () {
+          animation.play();
+          animation.playSegments([0, 90], true);
+        });
+
+      document.getElementById("payment").addEventListener("click", function () {
+        animation.setDirection(-1);
+        animation.playSegments([90, 0], true);
+      });
+    </script>
   </body>
 </html>
