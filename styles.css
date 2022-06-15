@@ -1,0 +1,198 @@
+:root {
+  --header-height: 56px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #18191a;
+}
+
+.navWrapper {
+  position: relative;
+  height: var(--header-height);
+  color: white;
+  background-color: #242526;
+}
+
+.leftNav {
+  height: var(--header-height);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  padding: 0px 16px;
+  font-size: 0.9375rem;
+}
+
+.leftNav > div {
+  display: flex;
+}
+
+.leftNav > div > input {
+  padding: 10px 10px 10px 0px;
+  background-color: #3a3b3c;
+  outline: none;
+  border: none;
+  color: #b0b3b8;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  width: 212px;
+}
+
+.leftNav > div > svg {
+  margin-left: 9px;
+  padding: 12px;
+  background-color: #3a3b3c;
+  outline: none;
+  border: none;
+  color: #b0b3b8;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.fbLogo {
+  cursor: pointer;
+  width: 40px;
+  position: relative;
+}
+
+.middleNav {
+  position: fixed;
+  height: var(--header-height);
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b0b3b8;
+}
+
+.middleNav > li {
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-grow: 1;
+  min-width: 50px;
+  max-width: 129.6px;
+  transition: all 100ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.middleNav > li:hover {
+  background-color: #3a3b3c;
+  border-radius: 10px;
+}
+
+.middleNav > li > a {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.rightNav {
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding-right: 16px;
+}
+
+.rightNavProfile {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  margin-right: 15px;
+}
+
+.rightNavProfile > img {
+  width: 28px;
+  margin-right: 5px;
+  border-radius: 100%;
+}
+
+.rightNav > ul {
+  display: flex;
+  align-self: center;
+  gap: 7.5px;
+}
+
+.rightNav > ul > li {
+  cursor: pointer;
+  background-color: #3a3b3c;
+  border-radius: 100%;
+  padding: 10px;
+  display: flex;
+  align-self: center;
+  transition: all 100ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.rightNav > ul > li:hover {
+  background-color: #4a4a4b;
+}
+
+.rightNav > ul > li > svg {
+  height: 20px;
+  width: 20px;
+}
+
+#createButton {
+  display: none;
+}
+
+#moreButton {
+  display: none;
+}
+
+@media only screen and (max-width: 1260px) {
+  .leftNav > div > svg {
+    border-radius: 50px;
+  }
+  .leftNav > div > input {
+    display: none;
+  }
+  .middleNav > li {
+    max-width: 111.6px;
+  }
+  .rightNavProfile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  #menuButton {
+    display: none;
+  }
+  #createButton {
+    display: flex;
+  }
+  #gamingButton {
+    display: none;
+  }
+  #moreButton {
+    display: flex;
+  }
+  .middleNav > li {
+    max-width: calc(15vw - 55px);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .middleNav {
+    padding: 0 110px;
+    justify-content: start;
+  }
+  .middleNav > li:not(:last-child) {
+    display: none;
+  }
+}
