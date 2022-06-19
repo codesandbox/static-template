@@ -6,11 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Flexbox learn</title>
     <style>
-      .container-1,
-      .container-2 {
-        display: flex;
-      }
-
       .container-1 div,
       .container-2 div {
         border: solid 2px #8b8b8b;
@@ -33,7 +28,21 @@
       }
 
       .flex-box-1 {
-        width: 30%;
+        width: auto;
+      }
+
+      @media (min-width: 768px) {
+        .container-1 {
+          display: flex;
+        }
+
+        .container-2 {
+          display: flex;
+          justify-content: space-between;
+        }
+        .flex-box-1 {
+          width: 30%;
+        }
       }
     </style>
   </head>
