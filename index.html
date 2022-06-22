@@ -1,12 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>TeeRex Store</title>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <section id="header">
+      <a id="home" href="TeeRex Store.html" style="text-decoration: none;"
+        >TeeRex Store</a
+      >
+
+      <div>
+        <ul id="navbar">
+          <li>
+            <a class="active" href="Products.html">Products</a>
+          </li>
+          <li>
+            <a href="cart.html"
+              ><i class="fas fa-shopping-cart" style="font-size: 24px;"></i
+              ><span id="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrapper" href="search.css">
+        <div id="search-container">
+          <input
+            type="search"
+            id="search-input"
+            placeholder="search for products.."
+          />
+          <button id="search"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="category">
+      <div class="container">
+        <div class="row">
+          <div class="products"></div>
+          <div class="col-lg-3">
+            <div>
+              <aside class="side-area product-side side-shadow mt-5">
+                <div class="side-content">
+                  <ul class="list">
+                    <p>Colour</p>
+                    <div>
+                      <label>
+                        <input type="checkbox" aria-label="radio button" />
+                        <a href="">Red</a>
+                      </label>
+                    </div>
+                    <div>
+                      <label>
+                        <input type="checkbox" aria-label="radio button" />
+                        <a href="">Blue</a>
+                      </label>
+                    </div>
+                    <div>
+                      <label>
+                        <input type="checkbox" aria-label="radio button" />
+                        <a href="">Green</a>
+                      </label>
+                    </div>
+                  </ul>
+
+                  <ul class="list">
+                    <p>Gender</p>
+                    <div>
+                      <label>
+                        <input type="checkbox" aria-label="radio button" />
+                        <a href="">Men</a>
+                      </label>
+                    </div>
+                    <div>
+                      <label>
+                        <input type="checkbox" aria-label="radio button" />
+                        <a href="">Women</a>
+                      </label>
+                    </div>
+                  </ul>
+
+                  <ul class="list">
+                    <p>Price</p>
+                    <div>
+                      <label>
+                        <input type="checkbox" aria-label="radio button" />
+                        <a href="">0-Rs250</a>
+                      </label>
+                    </div>
+                    <div>
+                      <label>
+                        <input type="checkbox" aria-label="radio button" />
+                        <a href="">Rs251-450</a>
+                      </label>
+                    </div>
+                    <div>
+                      <label>
+                        <input type="checkbox" aria-label="radio button" />
+                        <a href="">Rs450</a>
+                      </label>
+                    </div>
+                  </ul>
+
+                  <ul class="list">
+                    <p>Type</p>
+                    <div>
+                      <label>
+                        <input type="checkbox" aria-label="radio button" />
+                        <a href="">Polo</a>
+                      </label>
+                    </div>
+                    <div>
+                      <label>
+                        <input type="checkbox" aria-label="radio button" />
+                        <a href="">Hoodie</a>
+                      </label>
+                    </div>
+                    <div>
+                      <label>
+                        <input type="checkbox" aria-label="radio button" />
+                        <a href="">Basic</a>
+                      </label>
+                    </div>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <!-- <div class="products"></div> -->
+        </div>
+      </div>
+      <!-- </section> -->
+
+      <!-- <section> -->
+      <!-- <div class="products"></div> -->
+    </section>
+
+    <script src="script.js"></script>
   </body>
 </html>
