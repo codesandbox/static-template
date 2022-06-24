@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <h1 class="text">Chris Phang</h1>
+    <p class="subline">test</p>
+  </body>
+  <script>
+    //pseudo code
+    //get url query param
+    let params = new URL(document.location).searchParams;
+    let campaign = params.get("utm_campaign");
+    //if utm_campaign = CIMB
+    if (campaign == "CIMB") {
+      document.getElementsByClassName("text")[0].innerHTML = "Keng Fai";
+      document.getElementsByClassName("text")[0].style.color = "red";
+      document.getElementsByClassName("subline")[0].innerHTML =
+        "Welcome to the club";
+    }
+    //change to Keng Fai
+    //if utm_campaign = HSBC
+    //change to Chris
+  </script>
+</html>

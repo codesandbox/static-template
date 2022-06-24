@@ -1,0 +1,102 @@
+<body>
+  <p class="text">Teste</p>
+
+  <script>
+    var newText = "Testing";
+    document.getElementsByClassName("text")[0].innerHTML = newText;
+    var el = document.getElementsByClassName("text")[0];
+    //const flag = 1;
+
+    //ARRAY
+    var students = ["Chris", "Terence", "KF"]; //Data starts zero
+    //var students = new Array("KF","Chris","Terence");
+    students[3] = "Alicia";
+    //start with operations;
+    students.length; //4
+    students.reverse(); //reserve data
+    students.sort(); //sorting
+    students.pop(); //remove last
+    students.shift(); //remove first
+    students.push("Muhammad");
+    el.innerHTML = students; //display final data
+  </script>
+
+  <script>
+    var numbers = [9, 2, 3, 5];
+    numbers[0] = numbers[0] * 2;
+    //numbers.sort();
+    //numbers.shift();
+
+    //Sort and lowest number removed
+    el.innerHTML = numbers;
+
+    //LOOP
+    // FOR LOOPi
+    /*for (var i = 0; i < 4; i++) {
+      el.innerHTML = el.innerHTML + "<li>" + numbers[i];
+    }
+    // WHILE
+    //var k = 0;
+    while (k < 18) {
+      el.innerHTML = el.innerHTML + "<li>" + k;
+      k++;
+    }
+    //DO WHILE
+    // var i = 0;
+    do {
+      el.innerHTML = el.innerHTML + "<li>" + i;
+      i++;
+    } while (i < 18);*/
+
+    var numbers = 1;
+    /*for (var m = 0; m < 12; m++) {
+      el.innerHTML = el.innerHTML + "<li>" + numbers;
+      var numbers = numbers + 2;
+    }*/
+    el.innerHTML = el.innerHTML + "<ul>";
+    for (var m = 1; m < 24; m = m + 2) {
+      el.innerHTML = el.innerHTML + "<li>" + m;
+      if (m == 3) {
+        //const list = document.getElementsByTagName("UL")[0];
+        document.getElementsByTagName("li:nth-child(3)").style.fontSize = "14";
+      }
+      //var numbers = numbers + 2;
+    }
+    el.innerHTML = el.innerHTML + "</ul>";
+
+    // create a list of odd numbers - 12 numbers
+    //end goal of the data would be 1.3.5.7. etc...
+
+    //start 1
+    //then always add 2 per row
+    //stop at row 12
+
+    //Conditional Statement IF ELSE , IF ELSEIF
+    if (i == 0) {
+    } else if (i > 1) {
+    } else {
+    }
+  </script>
+
+  <p class="footer" id="demo"></p>
+
+  <script>
+    year = new Date().getFullYear();
+
+    document.getElementById("demo").innerHTML =
+      "Copyright © " +
+      year +
+      " Beyond Insights Sdn. Bhd. (Co. Reg. 836403-V | #200801035063), all rights reserved.";
+  </script>
+
+  <p class="footer" id="16183436-ECD1-74B3-64C4-3BAD10C5EBCD"></p>
+
+  <script>
+    year = new Date().getFullYear();
+
+    document.getElementById("16183436-ECD1-74B3-64C4-3BAD10C5EBCD").innerHTML =
+      "Copyright © " +
+      year +
+      " Beyond Insights Sdn. Bhd. (Co. Reg. 836403-V | #200801035063), all rights reserved.";
+  </script>
+</body>

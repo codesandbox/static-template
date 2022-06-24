@@ -1,0 +1,108 @@
+<html>
+  <p id="demo">test</p>
+  <p id="footer">my footer</p>
+  <input id="num1" />
+  <span> + </span>
+  <input id="num2" />
+  <style></style>
+  <script>
+    var i = "demo"; //you always change or manipulate
+    const j = 3; //constant to be the same
+
+    function myFooter(id) {
+      year = new Date().getFullYear();
+      document.getElementById(id).innerHTML =
+        "Copyright © " +
+        year +
+        " Beyond Insights Sdn. Bhd. (Co. Reg. 836403-V | #200801035063), all rights reserved.";
+    }
+
+    myFooter(i); //define and reuse
+    myFooter("footer");
+  </script>
+
+  <script type="text/javascript">
+    /*
+    var count = 0;
+    function countVowels(name) {
+      for (var i = 0; i < name.length; i++) {
+        if (
+          name[i] == "a" ||
+          name[i] == "e" ||
+          name[i] == "i" ||
+          name[i] == "o" ||
+          name[i] == "u"
+        )
+          count = count + 1;
+      }
+      document.write(
+        "Hello " + name + "!!! Your name has " + count + " vowels."
+      );
+    }
+
+    //var myName = prompt("Please enter your name");
+    var myName = "Keng Fai";
+    countVowels(myName);
+    */
+  </script>
+
+  <script type="text/javascript">
+    /*
+    function returnSum1(first, second) {
+      var sum = first + second;
+      return sum;
+    }
+    var firstNo = 78;
+    var secondNo = 22;
+    document.write(
+      firstNo + " + " + secondNo + " = " + returnSum(firstNo, secondNo)
+    );*/
+  </script>
+  <br />
+  <br />
+  <script>
+    /*
+    //create a function to do plus and multiply with three variables
+    // sum = b + c * d
+
+    function returnSum2(b, c, d) {
+      var sum = b + c * d;
+      return sum;
+    }
+    var bNo = 10;
+    var cNo = 10;
+    var dNo = 5;
+
+    document.write(
+      returnSum2(bNo, cNo, dNo) + "=" + bNo + "+" + cNo + "*" + dNo
+    );
+    */
+  </script>
+
+  <script>
+    //prompt two inputs and calculate ROI
+    //formula  is (b-a)/b *100
+
+    function returnSum3(myA, myB) {
+      var sum = ((myB - myA) / myB) * 100;
+      return sum;
+    }
+
+    var myB = prompt("Please enter your sell price");
+    var myA = prompt("Please enter your buy price");
+
+    document.write(
+      "( " +
+        myB +
+        " - " +
+        myA +
+        " )" +
+        " / " +
+        myB +
+        " * " +
+        "100" +
+        " = " +
+        returnSum3(myA, myB)
+    );
+  </script>
+</html>
