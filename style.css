@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+:root {
+    --color-bg: #1f1f38;
+    --color-bg-variant: #2c2c6c;
+    --color-primary: #4db5ff;
+    --color-primary-variant: rgba(77, 181, 255, 0.4);
+    --color-white: #fff;
+    --color-light: rgba(255, 255, 255, 0.6);
+    --container-width-lg: 85%;
+    --container-width-md: 86%;
+    --container-width-ms: 83%;
+    --transition: all 400ms ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+body {
+    font-family: 'Poppins', sans-serif!important;
+    background: var(--color-bg);
+    color: var(--color-white);
+    line-height: 1.7;
+    background-image: url(/ProjectImg/bg-img.png);
+}
+.porject-container {
+    gap: 3rem;
+}
+.projectt{
+    background: var(--color-bg-variant);
+    padding: 1.3rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+    width: 400px;
+}
+.projectt:hover{
+    border-color: var(--color-primary-variant);
+    background: transparent;
+}
+.project_img{
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+img{
+    height: 100%;
+}
+.projectt h3{
+    margin: 1.2rem 0 2rem;
+    font-weight: 500;
+    font-size: 20px;
+}
+.btns{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+.btn{
+    font-size: 1.2rem!important;
+    font-weight: 400!important;
+}
+a {
+    color: var(--color-primary);
+    transition: var(--transition);
+    font-size: 1.2rem;
+}
+
+a:hover {
+    color: var(--color-white);
+}
+
+.btn {
+    width: max-content;
+    display: inline-block;
+    color: var(--color-primary);
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid var(--color-primary);
+    transition: var(--transition);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: var(--color-white);
+    color: var(--color-bg);
+    border-color: transparent;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: var(--color-bg);
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+h2{
+    color: #4db5ff;
+}
