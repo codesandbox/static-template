@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Team CharGe</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <h2>Team CharGe</h2>
+      <a href="#about">About</a>
+      <a href="https://youtube.com/channel/UCyPRV50L63JmYrjZAb5APww">Channel</a>
+      <a href="#football">Football</a>
+    </header>
+
+    <div id="about" class="maincontent">
+      <h2>About</h2>
+      <p>
+        Team CharGe is a cool youtube channel that makes football videos you
+        should sub yo him cuz he is cool.
+      </p>
+    </div>
+    <div id="football" class="maincontent">
+      <h2>Football</h2>
+      <p>Team Charge prides football and makes great content</p>
+      <p>
+        you should sub to him because idk what to put in the football section
+      </p>
+    </div>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Gentium+Plus:wght@700&family=Roboto+Slab:wght@300&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto Slab", serif;
+      }
+      body {
+        background-color: rgb(29, 24, 24);
+        color: white;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+        transition: 0.5s;
+      }
+      a:hover {
+        opacity: 0.8;
+      }
+      header {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: rgb(36, 34, 34);
+        height: 60px;
+      }
+      .maincontent {
+        font-family: "Roboto Slab", serif;
+        background-color: rgb(36, 34, 34);
+        width: 80%;
+        margin: 5%;
+        padding: 5%;
+        text-align: center;
+        border-radius: 22px;
+      }
+    </style>
   </body>
 </html>
