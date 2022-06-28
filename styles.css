@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+/* Nav bar at top of page  */
+.containerFirstPage {
+  border-top: 5px solid #1c3239;
+  border-bottom: 5px solid #1c3239;
+  height: 100vh;
+  display: grid;
+  grid-template:
+    "header header headerButtons " 60px
+    "left main right" 1fr
+    "left sub right" 200px / 400px 1fr 400px;
+}
+.header {
+  grid-area: header;
+  background-color: #dd3f4e;
+  display: grid;
+  grid-gap: 5px;
+
+  grid-template-columns: 220px 1fr 1fr 1fr;
+}
+
+.header .Home {
+  padding: 10px;
+  grid-gap: 5px;
+}
+
+.header .Home p {
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+}
+
+.headerButtons {
+  grid-area: headerButtons;
+  background-color: #dd3f4e;
+}
+
+.headerButtons button {
+  padding: 10px;
+  margin: 15px;
+  border-radius: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* .header .buttons {
+  border: 1px dashed black;
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  justify-content: right;
+  padding: 5px;
+  grid-gap: 5px;
+}
+.header .aboutMe .buttons {
+  border: 1px dashed black;
+}
+.header .portfolio .buttons {
+  border: 1px dashed black;
+}
+.header .experience .buttons {
+  border: 1px dashed black;
+} */
+
+/* front landing page  */
+
+.main {
+  grid-area: main;
+  background-color: #dd3f4e;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+  grid-area: left;
+  background-color: #dd3f4e;
+}
+
+.right {
+  grid-area: right;
+  background-color: #dd3f4e;
+}
+
+.main .centerMain h1 {
+  align-items: left;
+  /* margin: auto; */
+  color: white;
+  font-size: 80px;
+}
+
+.sub {
+  grid-area: sub;
+  background-color: #dd3f4e;
+  color: white;
+}
+
+.sub strong {
+  color: black;
+}
+
+.sub p {
+  margin: auto;
+  font-size: 20px;
+}
+
+/* about me  */
+.aboutMe {
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-bottom: 100px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.aboutMe h2 {
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.aboutMe h3 {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 18px;
+}
+
+.technicalSkills {
+  /* border: 1px dashed black; */
+  display: inline;
+  margin-left: 50px;
+  height: 100px;
+  display: inline;
+}
+
+.technicalSkills ul {
+  padding: 20px;
+  float: left;
+  margin-left: 15px;
+}
+
+/* Portfolio  */
+
+.portfolio {
+  border-top: 5px solid #1c3239;
+  border-bottom: 5px solid #1c3239;
+  display: grid;
+  gap: 50px;
+
+  grid-template:
+    "leftPort middlePort rightPort" 600px
+    / 1fr 1fr 1fr;
+}
+
+.portfolio button {
+  background-color: #56187d;
+  margin: 10px;
+  font-weight: 800;
+  color: white;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 8px;
+  display: block;
+}
+
+.portfolio a {
+  color: #b0135a;
+  font-size: 15px;
+  padding: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.leftPort {
+  grid-area: leftPort;
+  border: 8px solid #56187d;
+  padding: 40px;
+  margin: 50px;
+  font-size: 20px;
+}
+
+.leftPort h3 {
+  padding: 10px;
+  font-size: 30px;
+}
+.leftPort p {
+  padding: 10px;
+}
+
+.middlePort {
+  grid-area: middlePort;
+  border: 8px solid #56187d;
+  margin: 50px;
+  font-size: 20px;
+  padding: 40px;
+}
+
+.middlePort h3 {
+  padding: 10px;
+  font-size: 30px;
+}
+
+.middlePort p {
+  padding: 10px;
+}
+
+.rightPort {
+  grid-area: rightPort;
+  border: 8px solid #56187d;
+  padding: 40px;
+  margin: 50px;
+  font-size: 20px;
+}
+
+.rightPort h3 {
+  padding: 10px;
+  font-size: 30px;
+}
+
+.rightPort p {
+  padding: 10px;
+}
+
+/* Experience  */
+.Experience {
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-bottom: 100px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.Experience h2 {
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.Experience h3 {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 18px;
+}
+
+/* footer   */
+.footer {
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #1d313a;
+  color: white;
+  text-align: left;
+}
