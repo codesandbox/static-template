@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="flex">
+      <div class="left">
+        <button>option1</button>
+        <button>option2</button>
+        <button>option3</button>
+        <button>option4</button>
+        <button>option5</button>
+        <button>option6</button>
+      </div>
+      <div class="right">
+        <button>drag here</button>
+        <button>drag here</button>
+        <button>drag here</button>
+        <button>drag here</button>
+        <button>drag here</button>
+        <button>drag here</button>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      function el(selec) {
+        return document.querySelector(selec);
+      }
+      function els(selec) {
+        return Array.from(document.querySelectorAll(selec));
+      }
+
+      els("button").forEach((x) => x.setAttribute("draggable", true));
+      els("button").forEach((x) => x.addEventListener("dragstart", p1));
+      els("button").forEach((x) => x.addEventListener("dragover", p2));
+      els("button").forEach((x) => x.addEventListener("drop", p3));
+
+      function p1(e) {
+        e.target.style.background = "lime";
+      }
+      function p2(e) {
+        e.preventDefault();
+      }
+      function p3(e) {
+        e.preventDefault();
+        e.target.style.background = "tomato";
+      }
+    </script>
   </body>
 </html>
