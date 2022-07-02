@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>배열/객체/Class</title>
+  </head>
+  <body>
+    <h1>배열/객체/Class</h1>
+    <script>
+      const array = [1, 2, 3];
+
+      console.log(array[0]);
+      console.log(array);
+
+      array[0] = 5;
+      console.log(array);
+
+      array.push(30);
+
+      // array = ["a", "b", "c"];
+
+      const price = [1000, 2000, 3000, 4000, 5000];
+      {
+        for (let i = 0; i < 5; i++) {
+          price[i] = price[i] * 0.7;
+        }
+      }
+      console.log(price);
+      
+
+      array.pop();
+      console.log(price);
+
+      // 객체 데이터 선언
+      const obj = {
+        type: 'fiat',
+        model: '50',
+        color: 'white'
+      }
+
+      // 객체 데이터 접근방식
+      // 객체이름.프로퍼티(메소드)
+      console.log(obj);
+      console.log(obj.type);
+      console.log(obj['type']);
+
+      // 0 : 'type'
+      // obj.0 (x)
+      // obj[0] (o)
+
+      // 클래스 선언
+      // property
+      class myClass{
+        constructor(type, model, color){
+          this.type = type;
+          this.model = model;
+          this.color = color;
+
+        }
+        print(){
+          console.log(this.type, this.model, this.color);
+        }
+      }
+      
+      // 객체 데이터 생성
+      let carObj = new myClass('Benz', 'E-class', 'red');
+      console.log(carObj);
+
+      carObj.pint();
+
+
+    </script>
+  </body>
+</html>
