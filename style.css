@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,900&display=swap");
+/* General Style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  background: #0c111b;
+}
+/* End of General Style */
+
+/* ---NAVBAR SECTION---- */
+.navbar {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0c111b;
+  padding: 0 4%;
+  display: flex;
+  align-items: center;
+  z-index: 9;
+}
+.brand-logo {
+  width: 70px;
+}
+.nav-links {
+  margin-top: 10px;
+  display: flex;
+}
+.nav-items a {
+  margin-left: 20px;
+  color: #fff;
+  text-transform: capitalize;
+  opacity: 0.9;
+}
+.right-container {
+  display: block;
+  margin-left: auto;
+}
+.search-box {
+  border-bottom: 1px solid #aaa;
+  height: 30px;
+  width: 250px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  transition: all 0.5s;
+}
+.search-box:focus {
+  width: 400px;
+  border-color: #1f80e0;
+}
+.sub-btn {
+  height: 30px;
+  background-color: #1f80e0;
+  color: #fff;
+  padding: 0 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+.login-link {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+/* ---End of NAVBAR SECTION---- */
+
+/* SLIDER SECTION */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  margin-top: 80px;
+  padding: 20px 0;
+  overflow-x: hidden;
+}
+.carousel {
+  position: relative;
+  width: 92%;
+  height: 100%;
+  display: flex;
+  margin: auto;
+}
+.slider {
+  position: relative;
+  margin-right: 30px;
+  width: 100%;
+  height: 100%;
+  flex: 0 0 auto;
+  border-radius: 5px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: 1s;
+  overflow: hidden;
+}
+.slider img {
+  display: block;
+  width: 70%;
+  min-height: 100%;
+  object-fit: cover;
+  margin-left: auto;
+}
+.slider-content {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(to right, #030b17 80%, #0c111b00);
+  color: #fff;
+}
+.movie-title {
+  padding-left: 50px;
+  margin-top: 80px;
+  text-transform: capitalize;
+}
+.movie-des {
+  padding-left: 50px;
+  width: 80%;
+  line-height: 30px;
+  margin-top: 30px;
+  opacity: 0.8;
+}
+/* END OF SLIDER SECTION */
+
+/* VIDEO CARD SECTION */
+.video-card-container {
+  position: relative;
+  width: 92%;
+  height: 10vw;
+  display: flex;
+  margin: auto;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+.video-card {
+  position: relative;
+  min-width: calc(100% / 5 - 10px);
+  width: calc(100% / 5 - 10px);
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #030b17;
+}
+.video-card-image,
+.card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-video {
+  position: absolute;
+}
+.video-card:hover .video-card-image {
+  display: none;
+}
+/* END OF VIDEO CARD SECTION */
+
+/* CARD SLIDER */
+.title {
+  color: #fff;
+  text-transform: capitalize;
+  padding-left: 4%;
+  font-size: 22px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+.movies-list {
+  position: relative;
+  width: 100%;
+  height: 13.75rem;
+  margin: 10px 0 20px;
+}
+.card-container {
+  position: relative;
+  width: 92%;
+  height: 13.75rem;
+  padding-left: 10px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+}
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+.card {
+  position: relative;
+  min-width: 150px;
+  width: 150px;
+  height: 200px;
+  border-radius: 5px;
+  margin-left: 10px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+.card:hover .card-body {
+  opacity: 1;
+}
+.card-body {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: 10px;
+  background: linear-gradient(to bottom, rgba(4, 8, 15, 0), #192133 90%);
+  transition: 0.5s;
+}
+.name {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-top: 60%;
+}
+.des {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 5px 0;
+  opacity: 0.8;
+}
+.watchlist-btn {
+  position: relative;
+  width: 100%;
+  background: none;
+  text-transform: capitalize;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  text-align: right;
+  cursor: pointer;
+  margin: 5px 0;
+  padding: 10px 5px;
+  border-radius: 5px;
+}
+.watchlist-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 35px;
+  height: 35px;
+  background-image: url(images/add.png);
+  background-size: cover;
+  transform: scale(0.4);
+}
+.watchlist-btn:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.pre-btn,
+.nxt-btn {
+  position: absolute;
+  top: 0;
+  width: 5%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+}
+.pre-btn {
+  left: 0;
+  background: linear-gradient(to right, #0c111b 0%, #0c111b00);
+}
+.nxt-btn {
+  right: 0;
+  background: linear-gradient(to left, #0c111b 0%, #0c111b00);
+}
+.pre-btn img,
+.nxt-btn img {
+  width: 15px;
+  height: 20px;
+  opacity: 0;
+}
+.pre-btn:hover img,
+.nxt-btn:hover img {
+  opacity: 1;
+}
+
+/* END OF CARD SLIDER */
