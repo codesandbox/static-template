@@ -1,0 +1,136 @@
+body {
+  background-image: url("./img/background login.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: fixed;
+}
+
+html,
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.group {
+  margin: 20px 0px 20px 0px;
+}
+
+.signin {
+  min-height: 300px;
+  align-items: center;
+  text-align: center;
+  padding: 30px 30px 0px 30px;
+  border-radius: 30px;
+  box-shadow: 5px 5px 15px #22b049;
+  background-color: white;
+}
+
+.esqueceu {
+  margin-left: 140px;
+}
+
+.group input {
+  width: 280px;
+  height: 35px;
+  border: 0px;
+  outline: none;
+  font-size: 13px;
+  padding: 0px 10px 0px 10px;
+  border-bottom: 1px solid #22b049;
+  font-family: "Poppins", sans-serif;
+  transition: 0.5s;
+}
+
+.group input:hover {
+  border-bottom: 1px solid #000;
+}
+
+.group button {
+  width: 300px;
+  height: 45px;
+  outline: none;
+  border: none;
+  background-color: #22b049;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.sign-up-link {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+  font-weight: 400;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+a:hover {
+  color: #22b049;
+}
+
+label {
+  font-weight: 400;
+  margin-right: 230px;
+  color: #22b049;
+}
+
+.head {
+  margin-top: 0px;
+}
+
+.head p {
+  margin-top: -20px;
+  color: #22b049;
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+
+.field-icon {
+  margin-left: -30px;
+  margin-top: 8px;
+  position: absolute;
+  z-index: 2;
+}
+
+.group button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.group button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.group button:hover span {
+  padding-right: 25px;
+}
+
+.group button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+@media screen and (max-width: 400px) {
+  .signin {
+    border: 0;
+    padding: 0px;
+    border-radius: 10px;
+    box-shadow: none;
+  }
+}
