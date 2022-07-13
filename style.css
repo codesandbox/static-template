@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-font: "Poppins", sans-serif;
+  --primary-color: hsla(145, 100%, 42%, 1);
+  /* rgba(0, 215, 91, 1) */
+  --hover-color: hsla(145, 100%, 35%, 1);
+
+  --text-color: hsla(213, 5%, 39%, 1);
+  /* rgba(95, 99, 104, 1) */
+
+  --padding-x: clamp(16px, 8vw, calc(100vw - 50%));
+  --btn-padding: 1em 1.5em;
+
+  --body-font-sz: clamp(1em, calc(100vw / 70), 1.25em);
+  --header-font-sz: clamp(2em, 8%, 4em);
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header nav .profile img {
+  width: 100%;
+}
+
+nav {
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* width: 1400px; */
+}
+
+header {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 20px 40px; */
+  padding: 0 var(--padding-x);
+  box-shadow: 1px -2px 8px 0px rgba(0, 0, 0, 0.4);
+}
+
+header nav .profile {
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+main {
+  height: 90vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0px 40px; */
+  padding: 0 var(--padding-x);
+}
+
+/* .main-wrapper {
+  width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+.left-text {
+  width: 35vw;
+  margin-bottom: 50px;
+}
+
+p {
+  font-weight: 400;
+  font-size: var(--body-font-sz);
+  color: var(--text-color);
+  line-height: 27px;
+  margin-top: 25px;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: var(--header-font-sz);
+  line-height: 48px;
+}
+
+.join {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.join p {
+  margin: 0px;
+}
+
+.join p {
+  margin-left: 15px;
+}
+
+.left a {
+  display: inline-block;
+  width: auto;
+  /* padding: 15px 30px; */
+  padding: var(--btn-padding);
+  border-radius: 5px;
+  border: 1px solid black;
+  color: black;
+  text-decoration: none;
+}
+
+.left a span {
+  margin-right: 15px;
+}
+
+.right .person {
+  height: 300px;
+  width: 350px;
+  background-color: #d9d9d9;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.right .person .center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.right .person .bottom {
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right a:hover {
+  background-color: var(--hover-color);
+}
+
+.right a {
+  background-color: var(--primary-color);
+  border-radius: 6px;
+  padding: var(--btn-padding);
+  color: white;
+  text-decoration: none;
+  width: 300px;
+  text-align: center;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo svg {
+  width: 50px;
+}
+
+@media (max-width: 890px) {
+  body {
+    margin-bottom: 20px;
+  }
+
+  header {
+    padding: 0px 40px;
+  }
+
+  main {
+    height: auto;
+    padding: 0px 40px;
+    margin-bottom: 40px;
+    flex-direction: column;
+  }
+
+  /* .left-text {
+    width: 100%;
+  } */
+  /* .main-wrapper {
+    flex-direction: column;
+  } */
+
+  main > div {
+    margin-top: 50px;
+    text-align: center;
+    width: 100%;
+  }
+
+  main .left-text {
+    width: 100%;
+  }
+
+  main .join {
+    justify-content: center;
+  }
+
+  .right .person {
+    max-width: 350px;
+    width: 100%;
+  }
+
+  .right a {
+    width: 200px;
+  }
+}
