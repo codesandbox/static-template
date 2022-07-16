@@ -11,8 +11,8 @@
     - 추가 문법
 
 - 활용
+  - HTML DOM(Document Object Model)
   - HTML/CSS/Js 종합 활용
-  - HTML DOM
   - Open API - 객체
 
 ## JS basic
@@ -273,8 +273,84 @@ let array = [1,2,3,4,5]
   ```
 
 #### class
+
 - 객체 데이터를 쉽게 만들 수 있게 하는 설계도
 
 ### 추가 문법
 
+#### 변수 scope
+
+- Scope
+
+  - Global Scope
+
+    - 변수는 모든 범위에서 접근 가능
+
+  - Function Scope:for구문에 함수선언을 넣을 수는 없다
+
+    - 변수는 해당 범위내에서만 접근 가능
+
+  - block Scope
+    - 변수는 해당 범위내에서만 접근 가능
+
+```
+<script>
+// Global Scope
+let a = 1;
+var _a = 1;
+
+function myFunction(){
+  //function scope
+  let b = 2;
+  var _b = 2;
+
+  for(statement){
+    //block Scope(1)
+    let c = 3;
+    var _c = 3;
+  }
+}
+
+if(condition){
+  //block Scope(2)
+    let d = 4;
+    var _d = 4;
+}
+</script>
+```
+
 ## JS 활용
+
+- 데이터 입출력
+- UI 효과
+
+### HTML DOM
+
+- DOM(Document Object Model): HTML Element들을 객체화 시킨 모델
+- HTML DOM을 사용하여 HTML Element를 제어
+
+### DOM 접근 API(Application Programming Interface)
+
+- DOM API : DOM 객체 메소드
+
+```
+HTML4
+document.getElementByID('id'): id로 DOM 접근
+document.getElementsByClassName('class'): class로 DOM 접근
+document.getElementsByTagName('tagname'): tag로 DOM 접근
+
+jQuery: 요즘 많이 사용하지 않음
+$('#id')
+$('.class'):여러개 일 경우 알아서 접근/속도,효율이 떨어짐/개발은 편함
+$('tag')
+
+HTML5
+document.querySelector('#id')
+document.querySelector('.class'):여러개 일 경우 맨 처음 하나만 접근
+document.querySelector('tag')
+
+document.querySelectorAll('.class')
+document.querySelectorAll('tag')
+
+vanilla JS: 프레임워크 또는 라이브러리가 적용되지 않은 순수한 자바스크립트
+```

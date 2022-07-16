@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Scope</title>
+  </head>
+  <body>
+    <h1>변수 스코프</h1>
+    <script>
+      // Global Scope
+      let a = 1;
+      var _a = 1;
+
+      function myFunction() {
+        //function scope
+        let b = 2;
+        var _b = 2;
+
+        for (let i = 0; i < 1; i++) {
+          //block Scope(1)
+          let c = 3;
+          var _c = 3;
+        }
+      }
+      myFunction();
+
+      if (true) {
+        //block Scope(2)
+        let d = 4;
+        var _d = 4;
+        console.log(a);
+        // console.log(b);
+        // console.log(c);
+        console.log(d);
+        console.log(_a);
+        // console.log(_b);
+        // console.log(_c);
+        console.log(_d);
+      }
+    </script>
+  </body>
+</html>
