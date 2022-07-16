@@ -1,12 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="Leandro Amaral" />
+    <title>Car Rental Agreement Form</title>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <header class="header">
+        <h1 id="title" class="text-center">Car Rental Agreement</h1>
+        <br>
+        <p id="description" class="description text-center">This is a car rental agreement and is relative to a booking made through Carrenters.app. The parties have agreed to Carrenters.is terms and conditions. The parties realize that the carrenters.is terms and conditions are equivalent to this agreement and should been handeled as a attachment to this document</p>
+    </header>
+      <form id="survey-form" method="post">
+        <p id="subtitle" class="subtitle text-center">Car Rental Form</p>
+        <hr>
+        <br>
+        <div class="form-group">
+          <p>Pick-up Location</p>
+            <select id="dropdown" name="role" class="form-control" required="">
+              <option disabled="" selected="" value="">Select current role</option>
+              <option value="Alabama"> Alabama </option>
+              <option value="Alaska"> Alaska </option>
+              <option value="Arizona"> Arizona </option>
+              <option value="Arkansas"> Arkansas </option>
+              <option value="California"> California </option>
+              <option value="Colorado"> Colorado </option>
+              <option value="Connecticut"> Connecticut </option>
+              <option value="Delaware"> Delaware </option>
+              <option value="District of Columbia"> District of Columbia </option>
+              <option value="Florida"> Florida </option>
+              <option value="Georgia"> Georgia </option>
+              <option value="Hawaii"> Hawaii </option>
+              <option value="Idaho"> Idaho </option>
+              <option value="Illinois"> Illinois </option>
+              <option value="Indiana"> Indiana </option>
+              <option value="Iowa"> Iowa </option>
+              <option value="Kansas"> Kansas </option>
+              <option value="Kentucky"> Kentucky </option>
+              <option value="Louisiana"> Louisiana </option>
+              <option value="Maine"> Maine </option>
+              <option value="Maryland"> Maryland </option>
+              <option value="Massachusetts"> Massachusetts </option>
+              <option value="Michigan"> Michigan </option>
+              <option value="Minnesota"> Minnesota </option>
+              <option value="Mississippi"> Mississippi </option>
+              <option value="Missouri"> Missouri </option>
+              <option value="Montana"> Montana </option>
+              <option value="Nebraska"> Nebraska </option>
+              <option value="Nevada"> Nevada </option>
+              <option value="New Hampshire"> New Hampshire </option>
+              <option value="New Jersey"> New Jersey </option>
+              <option value="New Mexico"> New Mexico </option>
+              <option value="New York"> New York </option>
+              <option value="North Carolina"> North Carolina </option>
+              <option value="North Dakota"> North Dakota </option>
+              <option value="Ohio"> Ohio </option>
+              <option value="Oklahoma"> Oklahoma </option>
+              <option value="Oregon"> Oregon </option>
+              <option value="Pennsylvania"> Pennsylvania </option>
+              <option value="Puerto Rico"> Puerto Rico </option>
+              <option value="Rhode Island"> Rhode Island </option>
+              <option value="South Carolina"> South Carolina </option>
+              <option value="South Dakota"> South Dakota </option>
+              <option value="Tennessee"> Tennessee </option>
+              <option value="Texas"> Texas </option>
+              <option value="Utah"> Utah </option>
+              <option value="Vermont"> Vermont </option>
+              <option value="Virgin Islands"> Virgin Islands </option>
+              <option value="Virginia"> Virginia </option>
+              <option value="Washington"> Washington </option>
+              <option value="West Virginia"> West Virginia </option>
+              <option value="Wisconsin"> Wisconsin </option>
+              <option value="Wyoming"> Wyoming </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <p>Pick-up Date</p>
+            <input type="date" class="date" placeholder="MM/DD/YYYY"/>
+          </div>
+        <div class="form-group">
+          <p>Drop-off Location</p>
+            <select id="dropdown" name="role" class="form-control" required="">
+              <option disabled="" selected="" value="">Select current role</option>
+              <option value="Alabama"> Alabama </option>
+              <option value="Alaska"> Alaska </option>
+              <option value="Arizona"> Arizona </option>
+              <option value="Arkansas"> Arkansas </option>
+              <option value="California"> California </option>
+              <option value="Colorado"> Colorado </option>
+              <option value="Connecticut"> Connecticut </option>
+              <option value="Delaware"> Delaware </option>
+              <option value="District of Columbia"> District of Columbia </option>
+              <option value="Florida"> Florida </option>
+              <option value="Georgia"> Georgia </option>
+              <option value="Hawaii"> Hawaii </option>
+              <option value="Idaho"> Idaho </option>
+              <option value="Illinois"> Illinois </option>
+              <option value="Indiana"> Indiana </option>
+              <option value="Iowa"> Iowa </option>
+              <option value="Kansas"> Kansas </option>
+              <option value="Kentucky"> Kentucky </option>
+              <option value="Louisiana"> Louisiana </option>
+              <option value="Maine"> Maine </option>
+              <option value="Maryland"> Maryland </option>
+              <option value="Massachusetts"> Massachusetts </option>
+              <option value="Michigan"> Michigan </option>
+              <option value="Minnesota"> Minnesota </option>
+              <option value="Mississippi"> Mississippi </option>
+              <option value="Missouri"> Missouri </option>
+              <option value="Montana"> Montana </option>
+              <option value="Nebraska"> Nebraska </option>
+              <option value="Nevada"> Nevada </option>
+              <option value="New Hampshire"> New Hampshire </option>
+              <option value="New Jersey"> New Jersey </option>
+              <option value="New Mexico"> New Mexico </option>
+              <option value="New York"> New York </option>
+              <option value="North Carolina"> North Carolina </option>
+              <option value="North Dakota"> North Dakota </option>
+              <option value="Ohio"> Ohio </option>
+              <option value="Oklahoma"> Oklahoma </option>
+              <option value="Oregon"> Oregon </option>
+              <option value="Pennsylvania"> Pennsylvania </option>
+              <option value="Puerto Rico"> Puerto Rico </option>
+              <option value="Rhode Island"> Rhode Island </option>
+              <option value="South Carolina"> South Carolina </option>
+              <option value="South Dakota"> South Dakota </option>
+              <option value="Tennessee"> Tennessee </option>
+              <option value="Texas"> Texas </option>
+              <option value="Utah"> Utah </option>
+              <option value="Vermont"> Vermont </option>
+              <option value="Virgin Islands"> Virgin Islands </option>
+              <option value="Virginia"> Virginia </option>
+              <option value="Washington"> Washington </option>
+              <option value="West Virginia"> West Virginia </option>
+              <option value="Wisconsin"> Wisconsin </option>
+              <option value="Wyoming"> Wyoming </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <p>Drop-off Date</p>
+            <input type="date" class="date" placeholder="MM/DD/YYYY"/>
+          </div>
+          <div class="form-group">
+            <p>Car Type</p>
+            <label><input type="radio" name="prefer" value="standart-Cars" class="input-checkbox">Standart Cars</label>
+            <label><input type="radio" name="prefer" value="convertibles" class="input-checkbox">Convertibles</label>
+            <label><input type="radio" name="prefer" value="luxury-Cars" class="input-checkbox">Luxury Cars</label>
+            <label><input type="radio" name="prefer" value="vans" class="input-checkbox">Vans</label>
+            <label><input type="radio" name="prefer" value="suvs" class="input-checkbox">SUVs</label>
+          </div>
+          <div class="form-group">
+            <p id="subtitle" class="subtitle text-center">Extras</p>
+            <hr>
+            <br>
+              <label><input type="checkbox" name="extras" value="gps-navigation-system" class="input-checkbox">GPS navigation system</label>
+              <label><input type="checkbox" name="extras" value="booster" class="input-checkbox">Booster</label>
+              <label><input type="checkbox" name="extras" value="child-safety-seat" class="input-checkbox">Child safety seat</label>
+              <label><input type="checkbox" name="extras" value="additional-driver" class="input-checkbox">Additional driver</label>
+          </div>
+          <div class="form-group">
+            <p>Additional Requests</p>
+            <textarea id="additional-requests" class="input-textarea" name="additional" placeholder="Type here..."></textarea>         
+          </div>
+          <div class="form-group">
+            <p id="subtitle" class="subtitle text-center">Personal Information</p>
+            <hr>
+            <br>
+            <label id="name-label" for="name">Name</label>
+            <input type="text" name="name" id="name" class="form-control" required placeholder="Enter your name">
+          </div>
+            <div class="form-group">
+            <label id="email-label" for="email">Email</label>
+            <input type="email" name="email" id="email" class="form-control" required placeholder="Enter your Email">
+          </div>
+          <div class="form-group">
+            <label id="tel-label" for="tel">Phone Number</label>
+            <input type="tel" name="tel" id="tel" class="form-control" required placeholder="(xx) xxxxx-xxxx">
+          </div>
+          <div class="form-group">
+            <p class="description">Please fill out the following as it appears on the identification documentation that you are traveling with. Alread a member? <a target="_blank" href="https://www.google.com.br/">Singn In</a>.</p>
+            <br>
+            <p class="description"><a class="link" target="_blank" href="https://www.google.com.br/">🔍</a> Driver lookup Enter your driver's license information and last name to get started</p>
+            <br>
+            <p class="note">*Required to complete your enrollment</p>
+          </div>
+          <div class="form-group">
+            <label id="number-label" for="number">Driver's License Number</label>
+            <input type="number" name="number" id="number" class="form-control" min="000000001" max="999999999" placeholder="xxx.xxx.xxx" required>
+          </div>
+          <div class="form-group">
+          <button type="submit" id="submit" class="submit-button">Submit
+        </button>
+      </form>
+    </div>
   </body>
 </html>
