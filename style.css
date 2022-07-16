@@ -1,0 +1,198 @@
+body {
+  background-color: rgb(168, 210, 210);
+}
+
+/* Ball animation */
+.ball {
+  background-color: rgba(92, 179, 177, 0.407);
+  width: auto;
+  height: auto;
+  /* padding: 15px; */
+  border-radius: 25px;
+  margin-right: 33px;
+  background: linear-gradient(
+    129deg,
+    rgba(255, 255, 255, 0.9504844173997724) 35%,
+    rgba(16, 119, 119, 0.659) 100%
+  );
+  color: rgb(193, 34, 34);
+  animation: animName4 2s linear infinite;
+}
+.ball1 {
+  background-color: rgba(92, 179, 177, 0.407);
+  width: auto;
+  height: auto;
+  /* padding: 15px; */
+  border-radius: 25px;
+  margin-right: 23px;
+  background: linear-gradient(
+    129deg,
+    rgba(255, 255, 255, 0.9504844173997724) 35%,
+    rgba(16, 119, 119, 0.659) 100%
+  );
+}
+@keyframes animName4 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+/* Upcoming matches text */
+.Heading {
+  font-family: "Rubik Moonrocks", cursive;
+  font-size: 22px;
+  /* background: -webkit-linear-gradient(rgb(110, 106, 106), rgb(201, 201, 201)); */
+  background-color: rgb(255, 254, 254);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgb(2, 2, 2);
+}
+.th {
+  background: linear-gradient(
+    129deg,
+    rgba(21, 156, 122, 0.95) 35%,
+    rgba(131, 187, 235, 0.659) 100%
+  );
+  border-bottom: 1px solid gray;
+  box-shadow: 3px 3px 13px rgb(112, 121, 119);
+}
+
+.match {
+  background: radial-gradient(
+    circle,
+    rgb(215, 219, 240) 0%,
+    rgb(164, 181, 189) 100%
+  );
+
+  padding: 90px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.match:hover {
+  background: radial-gradient(
+    circle,
+    rgb(222, 224, 235) 0%,
+    rgb(120, 103, 177) 100%
+  );
+}
+
+.left {
+  /* margin-left: auto; */
+  margin-right: auto;
+  width: 25%;
+  padding: 10px;
+  animation: myAnim 1s ease 0s 1 normal forwards;
+}
+@keyframes myAnim {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100px);
+  }
+}
+.right {
+  margin-left: auto;
+  /* margin-right: auto; */
+  width: 20%;
+  animation: myAnim1 1s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim1 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100px);
+  }
+}
+
+.box {
+  position: absolute;
+  left: 200px;
+  top: 0px;
+  z-index: 1;
+  background-color: antiquewhite;
+  width: 200px;
+  height: 200px;
+}
+.p {
+  padding: 20px;
+  font-family: "Rubik Moonrocks";
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: radial-gradient(
+    circle,
+    rgb(176, 187, 240) 0%,
+    rgb(150, 234, 197) 100%
+  );
+  position: relative;
+  z-index: 1;
+  border-radius: 13px 13px;
+  box-shadow: -2px -2px 7px rgb(98, 96, 96);
+}
+.s {
+  padding: 6px;
+  color: rgb(0, 0, 0);
+  font-family: "Rubik Moonrocks";
+  -webkit-background-clip: text;
+  background: -webkit-linear-gradient(
+    rgba(255, 255, 255, 0.601),
+    rgb(118, 132, 133)
+  );
+  margin-bottom: 7px;
+  border-radius: 13px 1px;
+  animation: animName 0.3s linear;
+}
+
+.s1 {
+  animation: animName 0.2s linear;
+}
+
+.s2 {
+  animation: animName 0.3s linear;
+}
+.s3 {
+  animation: animName 0.4s linear;
+}
+.s4 {
+  animation: animName 0.5s linear;
+}
+.s5 {
+  animation: animName 0.6s linear;
+}
+.s6 {
+  animation: animName 0.7s linear;
+}
+.s7 {
+  animation: animName 0.8s linear;
+}
+.s8 {
+  animation: animName 0.9s linear;
+}
+.s9 {
+  animation: animName 1s linear;
+}
+.s10 {
+  animation: animName 1.1s linear;
+}
+.s11 {
+  animation: animName 1.2s linear;
+}
+
+@keyframes animName {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
