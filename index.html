@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="shortcut icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="styleHome.css" rel="stylesheet" />
+    <title>dddario</title>
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <body class="rompeTODO">
+    <ul id="menu" class="visible">
+      <li class="cajita"><a href="index.html"> Inicio </a></li>
+      <li class="cajita"><a href="recetas.html" id="receta"> Recetas</a></li>
+      <!-- <li><a href="gatos.html"> Gatos </a></li>  -->
+      <li class="cajita"><a href="#" id="nover"> NO VER </a></li>
+    </ul>
+
+    <h1 class="visible">Pagina de... Dario Cabrera</h1>
+
+    <p class="visible">
+      "Una pequeña muestra de lo que se puede hacer con lo visto en clase"
+    </p>
+
+    <p class="visible">Hola ...</p>
+
+    <p id="fecha" class="visible">Bienvenid@ a la clase del dia 11/7</p>
+
+    <div class="cartelEntrada">
+      <button id="cambio">entrar</button>
+    </div>
+
+    <script src="home.js"></script>
+
+    <audio controls autoplay class="visible">
+      <source src="Achoo.mp3" type="audio/mp3" />
+      Tu navegador no soporta HTML5 audio.
+    </audio>
   </body>
 </html>
