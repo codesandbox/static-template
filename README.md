@@ -37,7 +37,7 @@ codesandbox 원본 주소 : https://codesandbox.io/s/class06-3qikei
   - 서버에서 처리되는 언어를 사용해서 개발
   - Java, PHP, Python, nodejs
 
-## naming 표기법
+## naming 표기법d
 
 - naming하는 경우
 
