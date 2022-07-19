@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="counter">0</div>
+    <button id="inc">+</button>
+    <button id="dec">-</button>
+
+    <script>
+      const $counter = document.getElementById("counter");
+      const $inc = document.getElementById("inc");
+      const $dec = document.getElementById("dec");
+
+      let num = 0;
+      const render = function () {
+        $counter.innerHTML = num;
+      };
+
+      $inc.onclick = function () {
+        num++;
+        console.log("inc btn click", num);
+        render();
+      };
+
+      $dec.onclick = function () {
+        num--;
+        console.log("dec btn click", num);
+        render();
+      };
+    </script>
   </body>
 </html>
