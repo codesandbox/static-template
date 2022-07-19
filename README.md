@@ -49,7 +49,7 @@ codesandbox 원본 주소 : https://codesandbox.io/s/class06-3qikei
 
   - 2단어 이상 여러개로 naming을 할때 단어와 단어 사이를 구분해야함
 
-- 표기법의 종류
+- 표기법의 종류s
   - section_content : snake case - 파일, 폴더
   - section-content : kebab case - id, class
   - sectionContent : camel case - js
