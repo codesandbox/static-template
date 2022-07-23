@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>데이터 입출력</title>
+    <style>
+      .list {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>데이터 입출력</h1>
+
+    <ol class="list">
+      <li class="list-item">
+        <span class="item-number">1</span>
+        <span class="item-text">HTML</span>
+      </li>
+      <li class="list-item">
+        <span class="item-number">2</span>
+        <span class="item-text">CSS</span>
+      </li>
+    </ol>
+    <div>
+      <input type="text" class="input-create" />
+      <button type="button" class="create">Create</button>
+    </div>
+
+    <div>
+      <input type="text" class="input-read" />
+      <button type="button" class="read">Read</button>
+    </div>
+
+    <div>
+      <input type="text" class="input-number" />
+      <input type="text" class="input-update" />
+      <button type="button" class="update">Update</button>
+    </div>
+
+    <div>
+      <input type="text" class="input-delete" />
+      <button type="button" class="delete">Delete</button>
+    </div>
+
+    <div class="print"></div>
+
+    <script>
+      // Create
+      let createBtn = document.querySelector(".create");
+      createBtn.addEventListener("click", function () {
+        //목록 항목 추가대상
+        let list = document.querySelector(".list");
+
+        //목록 항목 요소
+        let listItem = document.querySelectorAll(".list-item");
+
+        //추가할 태그 생성
+        let newListItem = document.createElement("li");
+
+        //태그에 class 추가
+        newListItem.classList.add("list-item");
+
+        //input 접근/가져오기
+        let inputCreate = document.querySelector(".input-create");
+
+        //span태그에 번호추가
+        let itemNumber = document.createElement("span");
+        itemNumber.classList.add("item-number");
+        itemNumber.innerHTML = listItem.length + 1;
+
+        //span태그에 test 추가
+        let itemText = document.createElement("span");
+        itemText.classList.add("item-text");
+        itemText.innerHTML = inputCreate.value;
+
+        newListItem.appendChild(itemNumber);
+        newListItem.appendChild(itemText);
+
+        //목록에 새로 생성한 항목 추가
+        list.appendChild(newListItem);
+      });
+
+      // read
+      let readBtn = document.querySelector(".read");
+      readBtn.addEventListener("click", function () {
+        let listItem = document.querySelectorAll(".list-item");
+
+        let print = document.querySelector(".print");
+        let inputRead = document.querySelector(".input-read");
+
+        inputRead.value = "";
+
+        print.innerHTML = "";
+
+        for (let i = 0; i < listItem.length; i++) {
+          inputRead.value +=
+            listItem[i].querySelector("item-text").innerHTML + " ";
+        }
+      });
+
+      // update
+      let updateBtn = document.querySelector(".update");
+      updateBtn.addEventListener("click", function () {
+        let updateNumber = document.querySelector(".input-number").value;
+        let updateText = document.querySelector(".input-update").value;
+        let listItem = document.querySelectorAll(".list-item");
+
+        listItem[updateNumber - 1].querySelector(
+          "item-text"
+        ).innerHTML = updateText;
+      });
+
+      // delete
+      let deleteBtn = document.querySelector(".delete");
+      deleteBtn.addEventListener("click", function () {
+        let list = document.querySelector(".list");
+        let listItem = document.querySelectorAll(".list-item");
+        let deleteNumber = document.querySelector(".input-delete").value;
+        list.removeChild(listItem[deleteNumber - 1]);
+        // listItem[1].remove(); 사용가능;
+      });
+    </script>
+  </body>
+</html>
+
+<!-- print.appendChild = ListItem[0].innerHTML; -->
