@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <!-- "Este documento fue hecho por Mario Fabian Schmoker" -->
+    <meta charset="UTF-8" />
+    <meta name="author" content="Schmoker Mario Fabian" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Historia del meme</title>
+    <link
+      rel="shortcut icon"
+      href="data:image/png;base64,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"
+    />
+    <link rel="stylesheet" type="text/css" href="estilos.css" />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>Mi primer HTML</h1>
+    <p id="primerParrafo">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti
+      distinctio cumque incidunt dolorem autem? Earum architecto explicabo
+      numquam, consequatur eos assumenda, ducimus itaque cumque officiis optio,
+      facilis eveniet harum non?
+    </p>
+    <h2>Mi segundo HTML</h2>
+    <p class="subParrafo">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum odio vitae
+      voluptate tempore magni? Soluta fugit hic ex culpa exercitationem dolor
+      non. Debitis iure et fugiat obcaecati quaerat blanditiis illum.
+    </p>
+    <h3>Mi tercer HTML</h3>
+    <p class="subParrafo">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum odio vitae
+      voluptate tempore magni? Soluta fugit hic ex culpa exercitationem dolor
+      non. Debitis iure et fugiat obcaecati quaerat blanditiis illum.
+    </p>
+    <ul>
+      <li><a href="">item 1</a></li>
+      <li class="liEspecial"><a href="">item 2</a></li>
+      <li class="liEspecial"><a href="">item 3</a></li>
+      <li><a href="">item 4</a></li>
+    </ul>
+    <ol>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+      <li>item 4</li>
+    </ol>
+    <div></div>
+
+    <img width="400" src="img1.jpg.jpg" alt="meme" />
   </body>
 </html>
