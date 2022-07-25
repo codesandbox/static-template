@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Teachers</title>
+    <style>
+      body {
+        background-image: url("Background5.jpg");
+      }
+
+      .container {
+        box-sizing: border-box;
+        position: fixed;
+        border-style: solid;
+        border-radius: 1rem;
+        width: 80vw;
+        height: 40rem;
+        padding: 0.5rem 1rem;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      p {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        text-align: center;
+        font-weight: bold; 
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      #slideshow {
+        overflow: hidden;
+        height: 30rem;
+        margin-block-start: 4rem;
+      }
+
+      .slide {
+        float: left;
+        height: 30rem;
+        width: 45rem;
+      }
+
+      .slide-wrapper {
+        width: calc(45rem * 6);
+        animation: slide 30s ease infinite;
+      }
+
+      @keyframes slide {
+        20% {
+          margin-left: calc(-45rem * 0);
+        }
+        40% {
+          margin-left: calc(-45rem * 1);
+        }
+        60% {
+          margin-left: calc(-45rem * 2);
+        }
+        80% {
+          margin-left: calc(-45rem * 3);
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="slideshow">
+        <div class="slide-wrapper">
+          <div class="slide">
+            <p>
+              Miss Keith holds a Montessori Diploma and joined Little Stars in
+              2010. Miss Kay believes passionately in supporting children and
+              parents.
+            </p>
+            <img src="Teacher1.jpg" />
+          </div>
+          <div class="slide">
+            <p>
+              Miss Henry holds a BA Hons degree in Geography and joined Young England in 2013 as
+              School Business Manager and works across admissions, HR and marketing.
+            </p>
+            <img src="Teacher2.jpg" />
+          </div>
+
+          <div class="slide">
+            <p>
+              Mr Cappell from Studio Cultivate teaches the children to explore the wondrous natural processes that create and sustain the world in which we live.
+            </p>
+            <img src="Teacher3.jpg" />
+          </div>
+          <div class="slide">
+            <p>
+              Coach Matt from Playball introduces children to constructive and
+              enjoyable sport participation through various age-appropriate
+              programmes.</p>
+              <img src="Teacher4.png" />
+            </p>
+          </div>
+          <div class="slide">
+              <p>
+                Prior to joining Little Stars in April 2019, Miss Evans spent six years teaching in two nursery schools. She is a Group Teacher for the morning and afternoon sessions and our SENDCO (accredited).
+              </p>
+              <img src="Teacher5.jpg" />
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
