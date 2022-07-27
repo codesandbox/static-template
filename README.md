@@ -1,0 +1,2 @@
+# static-template
+hola perros
