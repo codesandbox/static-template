@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>함수</title>
+  </head>
+  <body>
+    <h1>함수</h1>
+    <script>
+      // 함수 정의/선언
+      function myFunction() {
+        console.log("Hellow world");
+      }
+      // 호출
+      myFunction();
+
+      function gugudan() {
+        for (let i = 1; i <= 9; i++) {
+          console.log("2*" + i + "=" + 2 * i);
+        }
+      }
+      gugudan();
+
+      function temp(parameter1, parameter2) {
+        console.log(parameter1 + parameter2);
+      }
+      temp(3, 5);
+
+      function gugudanAll(dan) {
+        for (let i = 1; i <= 9; i++) {
+          console.log(dan + "*" + i + "=" + dan * i);
+        }
+      }
+      gugudanAll(5);
+      gugudanAll(7);
+
+      for (let i = 1; i <= 9; i++) {
+        gugudanAll(i);
+      }
+
+      function total(number1, number2, number3) {
+        console.log(number1 + number2 + number3);
+
+        return number1 + number2 + number3;
+      }
+
+      let x = 0;
+      x = total(1, 2, 3);
+      console.log(x);
+    </script>
+  </body>
+</html>

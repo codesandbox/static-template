@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DOM 접근 API</title>
+  </head>
+  <body>
+    <h1>DOM 접근 API</h1>
+
+    <div>content1</div>
+    <div class="content">content2</div>
+    <div id="content">content3</div>
+
+    <p class="new-content"></p>
+    <img src="/Project/images/image_01.jpg" alt="" class="photo" />
+
+    <script>
+      let getTagName = document.getElementsByTagName("div");
+      console.log(getTagName);
+      console.log(getTagName.lenght);
+      console.log(getTagName[0]);
+
+      let getClassName = document.getElementsByClassName("content");
+      console.log(getClassName);
+
+      let getId = document.getElementById("content");
+      console.log(getId);
+
+      // HTML5
+      let queryTag = document.querySelectorAll("div");
+      console.log(queryTag);
+
+      let queryClass = document.querySelector(".content");
+      console.log(queryClass);
+
+      let queryId = document.querySelector("#content");
+      console.log(queryId);
+
+      console.log("innerHTML : " + queryClass.innerHTML);
+
+      let newContent = document.querySelector(".new-content");
+
+      newContent.innerHTML = queryClass.innerHTML;
+      queryId.innerHTML = "Jeon you eun";
+
+      let image = document.querySelector(".photo");
+      image.src = "/Project/images/image_04.jpg";
+    </script>
+  </body>
+</html>

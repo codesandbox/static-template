@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 요소 연습</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /*
+      font-family: 'Gowun Dodum', sans-serif;
+      font-family: 'Roboto', sans-serif;
+      */
+      h1 {
+        color: orange;
+        font-family: "Roboto", sans-serif;
+        font-weight: 900;
+      }
+      body {
+        font-family: "Gowun Dodum", sans-serif;
+        color: grey;
+      }
+      .sub-title {
+        text-align: right;
+        word-spacing: 5px;
+      }
+      .justify {
+        text-align: justify;
+      }
+      a {
+        text-decoration: none;
+        color: blueviolet;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: hotpink;
+      }
+      .indent {
+        text-indent: 16px;
+      }
+      h2 {
+        letter-spacing: 5px;
+      }
+
+      /* 가로스페이스바생성 */
+      .white {
+        white-space: nowrap;
+      }
+      .list {
+        line-height: 1.6;
+      }
+      .concent-list {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HTML5</h1>
+    <hr />
+    <p class="sub-title">위키백과, 우리 모두의 백과사전.</p>
+    <p class="justify indent white">
+      HTML5는 <a href="https://ko.wikipedia.org/wiki/HTML">HTML</a>의 완전한
+      5번째 버전으로 월드 와이드 웹 (World Wide Web)의 핵심
+      <a
+        href="https://ko.wikipedia.org/wiki/%EB%A7%88%ED%81%AC%EC%97%85_%EC%96%B8%EC%96%B4"
+        >마크업 언어</a
+      >이다. 2004년 7월 Web Hypertext Application Technology Working
+      Group(WHATWG)에서 웹 애플리케이션 1.0이라는 이름으로 세부 명세 작업을
+      시작하였다.
+    </p>
+    <p class="justify indent">
+      HTML5는 HTML 4.01, XHTML 1.0, DOM 레벨 2 HTML에 대한 차기 표준 제안이다.
+      비디오, 오디오 등 다양한 부가기능과 최신 멀티미디어 콘텐츠를 액티브X 없이
+      브라우저에서 쉽게 볼 수 있게 하는 것을 목적으로 한다.
+    </p>
+    <p class="indent">
+      <a href="https://ko.wikipedia.org/wiki/W3C" target="_blank">W3C</a>는
+      2014년 10월 28일 HTML5 표준안을 확정했다고 발표했다.
+    </p>
+    <p class="indent">
+      이후 2016년 11월 1일 HTML5의 마이너 업데이트 버전인 HTML5.1 표준안을 확정,
+      2017년 12월 14일 HTML5.2 표준안을 확정했다. HTML5.3 표준안은 현재 작업
+      초안 단계로 진행 중이다.
+    </p>
+
+    <p>목차</p>
+    <ol class="concent-list">
+      <li><a href="#c1">1 HTML4와의 차이점</a></li>
+      <li><a href="#c2">2 일정 및 역사</a></li>
+      <li><a href="#c3">3 브라우저 지원 현황</a></li>
+      <li>4 HTML5 기반 암호화 표준화 진행</li>
+      <li>5 같이 보기</li>
+      <li>6 각주</li>
+      <li>7 외부 링크</li>
+    </ol>
+
+    <h2 id="c1">HTML4와의 차이점</h2>
+
+    <ul class="list">
+      <li class="list-item">
+        요소 추가
+        <ul class="list-2depth">
+          <li>
+            구조적인 요소 - 구역을 나누는 블록 요소인 div 요소를 대신한다.
+            <ul class="list-3depth">
+              <li class="list-3depth-item">header</li>
+              <li class="list-3depth-item">nav</li>
+              <li class="list-3depth-item">article</li>
+              <li class="list-3depth-item">section</li>
+              <li class="list-3depth-item">aside</li>
+              <li class="list-3depth-item">footer</li>
+            </ul>
+          </li>
+          <li class="list-2depth">
+            멀티미디어 요소 - 플러그인 없이 멀티미디어를 재생할 수 있게 한다
+            <ul class="list-3depth">
+              <li class="list-3depth-item">audio - 오디오를 재생한다.</li>
+              <li class="list-3depth-item">video - 비디오를 재생한다.</li>
+              <li class="list-3depth-item">canvas</li>
+            </ul>
+          </li>
+
+          <li class="list-2depth">command</li>
+          <li class="list-2depth">datalist</li>
+          <li class="list-2depth">details</li>
+          <li class="list-2depth">embed</li>
+          <li class="list-2depth">figure</li>
+          <li class="list-2depth">figcaption</li>
+        </ul>
+      </li>
+      <li class="list-item">
+        요소 의미 변경
+        <ul>
+          <li class="list-2depth">em</li>
+          <li class="list-2depth">hr</li>
+        </ul>
+      </li>
+      <li class="list-item">
+        문서 선언 - &lt;!DOCTYPE html&gt;으로 간소화 되었다.(대소문자 구별 안함)
+      </li>
+      <li class="list-item">
+        요소 제거
+        <ul>
+          <li class="list-2depth">
+            비슷한 기능의 다른 태그로 대체 가능한 태그들 - acronym, applet, dir,
+            isindex
+          </li>
+          <li class="list-2depth">
+            디자인적인 기능 이상의 의미가 없어 삭제 (CSS로 대체 가능한 태그들) -
+            basefont, big, center, font, strike, tt
+          </li>
+          <li class="list-2depth">
+            웹 접근성 향상을 위해 사용을 지양하는 태그들 - frame, frameset,
+            noframes
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2 id="c2">일정 및 역사</h2>
+
+    <ul>
+      <li>2007년 5월 HTML5와 Web Forums 2.0 스펙 채택 - 리뷰 기반으로</li>
+      <li>2007년 11월 HTML5 디자인 원칙 작업 초안</li>
+      <li>2010년 1월 HTML5 Last Call 작업 초안</li>
+      <li>2010년 8월 HTML5 Working Draft 공개</li>
+    </ul>
+
+    <dl>
+      <dt>수정된 HTML 5.0 개발 일정</dt>
+      <dd>1. CR(Candidate Recommendation): 2012년 4분기</dd>
+      <dd>2. LCf: 2014년 3분기</dd>
+      <dd>3. PR(Proposed Recommendation): 2014년 4분기</dd>
+      <dd>4. Rec(Recommendation): 2014년 4분기</dd>
+    </dl>
+
+    <dl>
+      <dt>HTML5.1 개발 일정</dt>
+      <dd>
+        <ol>
+          <li>FPWD(First Publication Working DrafT): 2012년 4분기</li>
+          <li>LC(Working Draft Last Call): 2014년 3분기</li>
+          <li>CR(Candidate Recommendation): 2015년 1분기</li>
+          <li>Rec(Recommendation): 2016년 4분기</li>
+        </ol>
+      </dd>
+    </dl>
+
+    <h2 id="c3">브라우저 지원 현황</h2>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <style type="text/css">
+      .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      .tg td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+      }
+      .tg th {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+      }
+      .tg .tg-si28 {
+        background-color: #eaecf0;
+        color: #202122;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+      }
+      .tg .tg-uz39 {
+        background-color: #ececec;
+        color: #0645ad;
+        font-weight: bold;
+        text-align: left;
+        vertical-align: top;
+      }
+      .tg .tg-u5k6 {
+        background-color: #ff9090;
+        color: #202122;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+      }
+      .tg .tg-3r4p {
+        background-color: #ececec;
+        color: #d33;
+        font-weight: bold;
+        text-align: left;
+        vertical-align: top;
+      }
+    </style>
+    <table class="tg">
+      <thead>
+        <tr>
+          <th class="tg-si28">
+            <span style="background-color: #eaecf0;">브라우저</span>
+          </th>
+          <th class="tg-si28">
+            <span style="background-color: #eaecf0;">Ver</span>
+          </th>
+          <th class="tg-si28">
+            <span style="background-color: #eaecf0;">HTML5 검사 점수</span
+            ><a href="https://ko.wikipedia.org/wiki/HTML5#cite_note-3"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #0645ad;
+                  background-color: initial;
+                "
+                >[3]</span
+              ></a
+            ><br /><span style="background-color: #eaecf0;"
+              >2012년 1월 6일</span
+            >
+          </th>
+          <th class="tg-si28">
+            <span style="background-color: #eaecf0;">Ver</span>
+          </th>
+          <th class="tg-si28">
+            <span style="background-color: #eaecf0;">HTML5 검사 점수</span
+            ><br /><span style="background-color: #eaecf0;"
+              >2012년 5월 23일</span
+            ><a href="https://ko.wikipedia.org/wiki/HTML5#cite_note-4"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #0645ad;
+                  background-color: initial;
+                "
+                >[4]</span
+              ></a
+            >
+          </th>
+          <th class="tg-si28">
+            <span style="background-color: #eaecf0;">Ver</span>
+          </th>
+          <th class="tg-si28">
+            <span style="background-color: #eaecf0;">HTML5 검사 점수(500)</span
+            ><br /><span style="background-color: #eaecf0;"
+              >2012년 12월 11일</span
+            ><a href="https://ko.wikipedia.org/wiki/HTML5#cite_note-5"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #0645ad;
+                  background-color: initial;
+                "
+                >[5]</span
+              ></a
+            >
+          </th>
+          <th class="tg-si28">
+            <span style="background-color: #eaecf0;">Ver</span>
+          </th>
+          <th class="tg-si28">
+            <span style="background-color: #eaecf0;">HTML5 검사 점수(500)</span
+            ><br /><span style="background-color: #eaecf0;">2013년 4월 7일</span
+            ><a href="https://ko.wikipedia.org/wiki/HTML5#cite_note-6"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #0645ad;
+                  background-color: initial;
+                "
+                >[6]</span
+              ></a
+            >
+          </th>
+          <th class="tg-si28">
+            <span style="background-color: #eaecf0;">Ver</span>
+          </th>
+          <th class="tg-si28">
+            <span style="background-color: #eaecf0;">HTML5 검사 점수(500)</span
+            ><br /><span style="background-color: #eaecf0;"
+              >2013년 8월 16일</span
+            ><a href="https://ko.wikipedia.org/wiki/HTML5#cite_note-7"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #0645ad;
+                  background-color: initial;
+                "
+                >[7]</span
+              ></a
+            >
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tg-uz39">
+            <a
+              href="https://ko.wikipedia.org/wiki/%EA%B5%AC%EA%B8%80_%ED%81%AC%EB%A1%AC"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #0645ad;
+                  background-color: initial;
+                "
+                >크롬</span
+              ></a
+            >
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">16.0</span>
+          </td>
+          <td class="tg-u5k6">
+            <span style="color: black; background-color: #ff9090;"
+              >373/475</span
+            >
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">18</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">400</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">23</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">448</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">28(dev)</span>
+          </td>
+          <td class="tg-u5k6">
+            <span style="color: black; background-color: #ff9090;">468</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">28</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">463</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-uz39">
+            <a
+              href="https://ko.wikipedia.org/wiki/%EB%AA%A8%EC%A7%88%EB%9D%BC_%ED%8C%8C%EC%9D%B4%EC%96%B4%ED%8F%AD%EC%8A%A4"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #0645ad;
+                  background-color: initial;
+                "
+                >파이어폭스</span
+              ></a
+            >
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">10.0</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">332/475</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">12</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">345</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">16</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">372</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">20</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">394</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">22</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">410</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-uz39">
+            <a
+              href="https://ko.wikipedia.org/wiki/%EC%98%A4%ED%8E%98%EB%9D%BC_(%EC%9B%B9_%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80)"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #0645ad;
+                  background-color: initial;
+                "
+                >오페라</span
+              ></a
+            >
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">11.60</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">329/475</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">11.60</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">338</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">15</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">423</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-uz39">
+            <a
+              href="https://ko.wikipedia.org/wiki/%EC%98%A4%ED%8E%98%EB%9D%BC_(%EC%9B%B9_%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80)"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #0645ad;
+                  background-color: initial;
+                "
+                >오페라</span
+              ></a
+            >
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">12 알파</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">344/475</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">12.00</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">385</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">12.10</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">419</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-uz39">
+            <a
+              href="https://ko.wikipedia.org/wiki/%EC%95%A0%ED%94%8C_%EC%82%AC%ED%8C%8C%EB%A6%AC"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #0645ad;
+                  background-color: initial;
+                "
+                >애플 사파리</span
+              ></a
+            >
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">5.1</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">302/475</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">5.1</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">317</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">6.0</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">378</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">6.0</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">378</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-uz39">
+            <a
+              href="https://ko.wikipedia.org/wiki/%EC%9D%B8%ED%84%B0%EB%84%B7_%EC%9D%B5%EC%8A%A4%ED%94%8C%EB%A1%9C%EB%9F%AC"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #0645ad;
+                  background-color: initial;
+                "
+                >인터넷 익스플로러</span
+              ></a
+            >
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">9</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">141/475</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">9</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">138</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-uz39">
+            <a
+              href="https://ko.wikipedia.org/wiki/%EC%9D%B8%ED%84%B0%EB%84%B7_%EC%9D%B5%EC%8A%A4%ED%94%8C%EB%A1%9C%EB%9F%AC"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #0645ad;
+                  background-color: initial;
+                "
+                >인터넷 익스플로러</span
+              ></a
+            >
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">10</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">306/475</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">10</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">316</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">10</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">320</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">10</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">320</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-uz39">
+            <a href="https://ko.wikipedia.org/wiki/%EB%A7%A5%EC%8A%A4%ED%86%A4"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #0645ad;
+                  background-color: initial;
+                "
+                >맥스톤</span
+              ></a
+            >
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">3.3.7</span>
+          </td>
+          <td class="tg-u5k6">
+            <span style="color: black; background-color: #ff9090;">437</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">3.4.5</span>
+          </td>
+          <td class="tg-u5k6">
+            <span style="color: black; background-color: #ff9090;">457</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">4.0</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">476</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-uz39">
+            <a href="https://ko.wikipedia.org/wiki/IOS"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #0645ad;
+                  background-color: initial;
+                "
+                >iOS</span
+              ></a
+            >
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">7.0</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">404</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-uz39">
+            <a
+              href="https://ko.wikipedia.org/wiki/%EA%B5%AC%EA%B8%80_%ED%81%AC%EB%A1%AC"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #0645ad;
+                  background-color: initial;
+                "
+                >크롬 (모바일)</span
+              ></a
+            >
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">25</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">417</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-uz39">
+            <a
+              href="https://ko.wikipedia.org/wiki/%EB%B8%94%EB%9E%99%EB%B2%A0%EB%A6%AC_OS"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #0645ad;
+                  background-color: initial;
+                "
+                >블랙베리 (모바일)</span
+              ></a
+            >
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">10.1</span>
+          </td>
+          <td class="tg-u5k6">
+            <span style="color: black; background-color: #ff9090;">485</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-uz39">
+            <a href="https://ko.wikipedia.org/wiki/%ED%82%A8%EB%93%A4"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #0645ad;
+                  background-color: initial;
+                "
+                >킨들 실크</span
+              ></a
+            >
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">2.2</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">358</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-3r4p">
+            <a
+              href="https://ko.wikipedia.org/w/index.php?title=%EC%82%BC%EC%84%B1_%EC%8A%A4%EB%A7%88%ED%8A%B8_%ED%8B%B0%EB%B9%84&action=edit&redlink=1"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #d33;
+                  background-color: initial;
+                "
+                >삼성 스마트 티비</span
+              ></a
+            >
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">2012</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">302</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-3r4p">
+            <a
+              href="https://ko.wikipedia.org/w/index.php?title=%EC%83%A4%ED%94%84_%EC%95%84%EC%BF%A0%EC%98%A4%EC%8A%A4&action=edit&redlink=1"
+              ><span
+                style="
+                  text-decoration: none;
+                  color: #d33;
+                  background-color: initial;
+                "
+                >샤프 아쿠오스</span
+              ></a
+            >
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">-</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">6.0.10</span>
+          </td>
+          <td class="tg-si28">
+            <span style="background-color: #eaecf0;">365</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <img
+      src="/resource/photo.jpg"
+      alt="제주도 바닷가에 작은 의자 4개가 놓여있는 사진"
+    />
+
+    <!-- 로컬방식 -->
+    <video controls autoplay muted loop>
+      <source src="/resource/mov_bbb.mp4" type="video/mp4" />
+    </video>
+
+    <!-- youtube -->
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/hr2xGbc6jO0?autoplay=1&mute=1&loop=1&playlist=hr2xGbc6jO0"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+
+    <a href="#">top</a>
+  </body>
+</html>

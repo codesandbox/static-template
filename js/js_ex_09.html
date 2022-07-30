@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DOM 제어 API</title>
+    <style>
+      .font {
+        font-size: 30px;
+        font-weight: bold;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DOM 제어 API</h1>
+
+    <p class="paragraph">
+      HTML5는 HTML 4.01, XHTML 1.0, DOM 레벨 2 HTML에 대한 차기 표준 제안이다.
+      비디오, 오디오 등 다양한 부가기능과 최신 멀티미디어 콘텐츠를 액티브X 없이
+      브라우저에서 쉽게 볼 수 있게 하는 것을 목적으로 한다.
+    </p>
+
+    <script>
+      // DOM에 css 스타일링
+      let paragraph = document.querySelector(".paragraph");
+      paragraph.style.textAlign = "center";
+      paragraph.style.color = "green";
+
+      //DOM에 class 이름을 추가/제거
+      paragraph.classList.add("font");
+    </script>
+  </body>
+</html>
