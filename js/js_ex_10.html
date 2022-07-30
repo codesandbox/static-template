@@ -89,15 +89,14 @@
         let listItem = document.querySelectorAll(".list-item");
 
         let print = document.querySelector(".print");
+
         let inputRead = document.querySelector(".input-read");
 
         inputRead.value = "";
 
-        print.innerHTML = "";
-
         for (let i = 0; i < listItem.length; i++) {
           inputRead.value +=
-            listItem[i].querySelector("item-text").innerHTML + " ";
+            listItem[i].querySelector(".item-text").innerHTML + " ";
         }
       });
 
@@ -109,7 +108,7 @@
         let listItem = document.querySelectorAll(".list-item");
 
         listItem[updateNumber - 1].querySelector(
-          "item-text"
+          ".item-text"
         ).innerHTML = updateText;
       });
 

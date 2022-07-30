@@ -384,3 +384,14 @@ dom.addEventListener('click',function(){
  실행코드블럭
 });
 ```
+
+### CRUD
+
+### 화면효과(Effect)
+- 시각적 효과=> CSS제어
+  - CSS 시작상태화 끝상태를 구현
+  - JS구현
+- Effect구현 밸런스
+  - 효과 표현: CSS
+  - 효과 동적 제어: JS
+

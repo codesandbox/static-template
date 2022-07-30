@@ -594,3 +594,104 @@ display:inline-block; /* inline과 block의 특성을 모두 표시: 나란히 �
 - grid
 
 #### flexbox
+
+- HTML Element가 포함관계로 구성되어야 함
+- 부모요소에 flex 설정, 배치관련 속성들을 적용
+
+```
+<div class="flex-containter">
+<div></div>
+<div></div>
+<div></div>
+</div>
+
+.flex-containter{
+  display:felx;
+  flex-direction:colum; /*박스배치 방향*/
+  flex-wrap:wrap; /*박스배치 줄바꿈*/
+  justify-content:center; /*박스배치 가로 정렬, 간격*/
+  align-items:center; /*박스배치 세로 정렬*/
+}
+```
+
+#### position
+
+- 박스 위치 단독 지정
+- top, right, bottom, left 위치 지정 속성과 같이 사용
+
+- relative
+
+  - 박스 원래 위치에서 좌표크기 만큼 이동
+  - 요소의 일반 흐름에서 제외되지 않음
+
+- absolute
+
+  - position 속성이 지정된 가장 가까운 조상요소를 기준으로 위치 지정
+  - 요소의 일반 흐름에서 제외됨
+  - 문서에서 제외되지 않음
+
+- fixed
+  - 브라우저를 기준으로 위치 지정
+  - 요소의 일반 흐름에서 제외됨
+  - 문서에서 제외됨
+
+#### z-index
+
+- 박스가 겹칠 때 앞뒤 순서 지정
+- 값은 단위없는 정수(양수,음수)를 사용
+- z-index를 사용할 때는 position 속성이 적용 되어 있어야 함
+- 숫자가 크면 앞으로 나옴
+
+## Responsive Web Design (반응형 웹)
+
+- 다양한 디바이스의 화면에 컨텐츠, 레이아웃이 잘 보이도록 스타일 구현
+- OSMU(One Source Multi Use)
+  - 하나의 HTML source에 여러개의 css source
+
+### 뷰포트(브라우저 영역)
+
+- 모바일 디바이스 화면에 웹 페이지 컨텐츠나 레이아웃이 잘 보일 수 있도록 하는 기능
+- 뷰포트가 없을 때는 PC에 최적화괸 레이아웃이 모바일 디바이스 화면에 보이게 됨
+
+#### 미디어 쿼리
+
+- 특정조건이 true일 경우에만 CSS 코드블럭이 실행됨
+
+```
+순서중요(cascade 법칙 적용)
+body {
+  background-color: lightgreen;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+```
+
+- PC Moniter:
+  디바이스 스크린의 해상도는 가로 해상도를 기준
+  세로는 스크롤하니깐 따질필요 없음
+  그러므로 가장 작은 가로 해상도 기준으로 하는게 좋음
+
+  - 1920px x 1080px : Full HD(1K)
+  - 3840px x 2160px : 4K
+  - 1280px x 720px(1024px)
+  - 1024px x 768px
+
+- Tablet
+  세로 해상도 기준으로 하는게 좋음
+
+  - 1920px x 1080px
+  - 1280px x 720px
+  - 1024px x 768px
+
+- Phone
+
+  - 400px x 800px
+  - 320px x 640px
+
+- Add a Breakpoint
+  - 화면 크기에 따라 CSS가 다르게 적용되는 해상도 지점
+  - 1024, 720, 320 해상도가 Breakpoint로 선택될 수 있음

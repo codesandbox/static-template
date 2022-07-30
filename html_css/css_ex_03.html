@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>반응형 웹 변경점</title>
+    <style>
+      .flex-container {
+        display: flex;
+      }
+      .flex-item {
+        width: 100px;
+        height: 100px;
+        background: skyblue;
+        margin: 10px;
+      }
+
+      /*tablet*/
+      @media only screen and (max-width: 1024px) {
+        .flex-container {
+          width: 360px;
+          flex-wrap: wrap;
+        }
+      }
+
+      /*smart phone*/
+      @media only screen and (max-width: 650px) {
+        .flex-container {
+          width: auto;
+        }
+        .flex-item {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+      <div class="flex-item">4</div>
+      <div class="flex-item">5</div>
+      <div class="flex-item">6</div>
+    </div>
+  </body>
+</html>
