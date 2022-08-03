@@ -1,12 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Basic HTML</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+    <main>
+      <nav class="navBar">
+        <h1>Anvitha R Portfolio</h1>
+        <div class="navigationMenu">
+          <a href="#aboutMe">About Me</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contactForm">Let's Connect!</a>
+        </div>
+      </nav>
+      <section class="heroSection">
+        <img
+          class="profileImage"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNJEbNBW7WgMiqHuSO0OPtl8yxP218c-U-4Q&usqp=CAU"
+        />
+        <div class="herosectionDetails">
+          <h1>Anvitha R</h1>
+          <h3>Student at AJIET,Mangalore</h3>
+        </div>
+      </section>
+      <section class="aboutMe" id="aboutMe">
+        <h1>What I Do....</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo
+          metus ligula, in vulputate orci finibus in. Proin sit amet faucibus
+          enim, in auctor velit. Cras ipsum nibh, fringilla non sem et,
+          consectetur tempus libero. Duis ultricies elit quis viverra dictum.
+          Sed et justo congue, consectetur justo at, faucibus massa. Maecenas
+          laoreet augue quam, sed convallis urna pulvinar in. Pellentesque
+          dapibus mi quam, nec tempor massa cursus pretium. Sed bibendum ante a
+          nisi sollicitudin ornare. Curabitur cursus mi semper efficitur
+          bibendum. Ut vel bibendum dui. Integer eu vehicula massa. Vivamus
+          porttitor urna vitae nisl interdum tempor. Nunc lectus magna, ornare
+          vel risus ac, sollicitudin commodo metus. Integer quis felis nibh.
+          Pellentesque a diam at nulla suscipit posuere. Mauris eu nibh
+          lobortis, porttitor dui non, dictum lorem.
+        </p>
+      </section>
+      <section class="skillsAndProjects">
+        <div class="skills" id="skills">
+          <h1 class="cardHeading">Skills</h1>
+          <img src="html-svgrepo-com.svg" title="HTML" />
+          <img src="css-svgrepo-com.svg" title="CSS" />
+          <img src="django-svgrepo-com.svg" title="C++" />
+          <img src="js-svgrepo-com.svg" title="Javascript" />
+          <img src="python-svgrepo-com.svg" title="python" />
+          <img src="php-svgrepo-com.svg" title="php" />
+          <img src="c-svgrepo-com.svg" title="C" />
+        </div>
+      <div class="projects" id="projects">
+        <h1 class="cardHeading">Projects</h1>
+        <div class="projectContainer">
+          <img src="css-svgrepo-com.svg" />
+          <div class="projectDescription">
+            <h4>Project Name</h4>
+            <p>
+              Some details of the project.Some details of the project.Some
+              details of the project.
+            </p>
+            </div>
+      </div>
+      <div class='projectContainer'>
+        <img src='css-svgrepo-com.svg'>
+        <div class='projectDescription'>
+          <h4>Project Name</h4>
+          <p>Some details of the project.Some details of the project.Some details of the project.</p>
+        </div>
+      </div>
+      <div class='projectContainer'>
+        <img src='css-svgrepo-com.svg'>
+        <div class='projectDescription'>
+          <h4>Project Name</h4>
+          <p>Some details of the project.Some details of the project.Some details of the project.</p>
+        </div>
+      </div>
+    </div>
+    </section>
+    <section class='contactForm' id='contactForm'>
+      <h1>Let's Connect!</h2>
+        <div class='formGroup'>
+          <label for='name'>Enter Full name</label><br />
+          <input type='text' id='name' placeholder='Full Name' />
+        </div>
+        <div class='formGroup'>
+          <label for='email'>Email</label><br />
+          <input type='text' id='email' placeholder='Email' />
+        </div>
+        <div class='formGroup'>
+          <label for='message'>Message</label><br />
+          <textarea placeholder='Send some message!' id="message" name="w3review" rows="4" cols="50"></textarea>
+        </div>
+        <button class='submission' onclick={submit()}>Connect</button>
+    </section>
+  </main>
+</body>
 </html>
