@@ -1,12 +1,78 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="card text-bg-dark mt-3 p-1"  id="calculator">
+        <div class="text-bg-warning p-4 mb-2 mt-2" id="name">
+            CALCULATOR
+        </div>
+        <div id="display" class="text-bg-light p-3 mb-2 mt-2" >
+            <p id="display"></p>
+        </div>
+            <div class="btn-group-vertical p-3" role="group" aria-label="Vertical button group">
+                <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+                    <button type="button" class="btn btn-light" data-value = "ac">AC</button>
+                    <button type="button" class="btn btn-light" data-value = "sign">+/-</button>
+                    <button type="button" class="btn btn-light" data-value = "%">%</button>
+                    <button type="button" class="btn btn-light" data-value = "/">/</button>
+    
+                </div>
+                <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+                    <button type="button" class="btn btn-light" data-value = "7">7</button>
+                    <button type="button" class="btn btn-light" data-value = "8">8</button>
+                    <button type="button" class="btn btn-light" data-value = "9">9</button>
+                    <button type="button" class="btn btn-light" data-value = "*">*</button>
+    
+                </div>
+                <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+                    <button type="button" class="btn btn-light" data-value = "4">4</button>
+                    <button type="button" class="btn btn-light" data-value = "5">5</button>
+                    <button type="button" class="btn btn-light" data-value = "6">6</button>
+                    <button type="button" class="btn btn-light" data-value = "-">-</button>
+    
+                </div>
+                <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+                    <button type="button" class="btn btn-light" data-value = "1">1</button>
+                    <button type="button" class="btn btn-light" data-value = "2">2</button>
+                    <button type="button" class="btn btn-light" data-value = "3">3</button>
+                    <button type="button" class="btn btn-light" data-value = "+">+</button>
+    
+                </div>
+                <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+                    <button type="button" class="btn btn-light" id="zero" data-value = "0">0</button>
+                    <button type="button" class="btn btn-light" data-value = ".">.</button>
+                    <button type="button" class="btn btn-light equal" data-value = "=">=</button>
+                    
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
