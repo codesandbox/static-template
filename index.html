@@ -1,12 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top"
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1 class="title">
+      This is a static template, there is no bundler or bundling involved!
+    </h1>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas magni
+    laudantium architecto deleniti qui? Nulla at odit ad sapiente eveniet quam
+    nihil? Eaque provident delectus impedit repellat animi error minima. Lorem
+    ipsum dolor sit amet consectetur, adipisicing elit. Aliquam quo pariatur
+    recusandae veritatis necessitatibus, nihil impedit distinctio? Iste, sed
+    architecto consectetur, repellat rem dolore, mollitia nisi possimus
+    accusamus molestias recusandae? Exercitationem eligendi itaque modi!
+    Blanditiis animi assumenda minima, eligendi sit ipsa quisquam provident
+    optio mollitia excepturi pariatur aut quos tempora, quo nemo quae placeat
+    autem. Quas architecto maxime illum eveniet? Tenetur culpa corrupti pariatur
+    ullam aliquam dicta? Sapiente maiores labore nisi aut distinctio recusandae
+    neque nemo fugit reprehenderit eos sequi placeat quisquam ipsam quas maxime
+    sit cumque, atque qui similique! Natus vel dolorem consequuntur perspiciatis
+    fugiat eos atque in nesciunt maxime ad. Modi, pariatur! Repellendus
+    voluptate maxime cupiditate aut laboriosam quisquam et voluptates molestiae
+    numquam nobis. Veniam itaque delectus ex! Accusamus ut doloribus modi
+    temporibus inventore doloremque autem, sequi eos vero, dolorum iure dicta
+    officia itaque magnam ullam quae unde quo aliquam accusantium fugit eligendi
+    necessitatibus cupiditate quisquam! Expedita, corrupti? Exercitationem
+    magnam aliquam pariatur delectus accusamus ut iusto harum, omnis adipisci
+    atque libero, nulla fugiat molestias eos officia totam optio! Repellat quos
+    impedit, porro aliquam tenetur reiciendis non provident soluta. Magnam vitae
+    incidunt beatae autem deserunt accusamus ut sed placeat, ex praesentium,
+    esse in, debitis deleniti necessitatibus! Quaerat quia laudantium quibusdam
+    dolorem. Dolor, eius rem! Molestias accusamus itaque modi cum!
+    <button class="uptop"></button>
+    <a class= "top" href="#top"></a>
+    <script>
+      const upTop = document.querySelector(".uptop");
+      upTop.addEventListener("click", show);
+      function show() {
+        console.log("uptop");
+        window.scroll({
+          top: 0,
+          behavior: "smooth"
+        });
+      }
+    </script>
   </body>
 </html>
