@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>ペローナちゃん</title>
+  </head>
+  <body>
+    <header>
+      <ul>
+        <a
+          class="main-button"
+          href="index.html"
+          style="color: white; text-decoration: none;"
+          >Perona</a
+        >
+        <a class="m" href="next.html">img</a>
+        <a class="m" href="birthday.html">day</a>
+        <a class="m" href="map.html">map</a>
+        <a class="m" href="#">but</a>
+        <a class="m" href="#">but</a>
+      </ul>
+    </header>
+    <main>
+      <div id="countdownArea" class="countdown">
+        <p>6月7日　ペローナ様の誕生日まで</p>
+        <span id="countdown-day"></span>日 <span id="countdown-hour"></span>時間
+        <span id="countdown-min"></span>分 <span id="countdown-sec"></span>秒
+      </div>
+    </main>
+    <footer></footer>
+    <script>
+      let countdown = setInterval(function () {
+        const now = new Date(); //今の日時
+        const target = new Date("2023/6/7 0:00:00");
+        const remainTime = target - now; //差分を取る（ミリ秒で返ってくる
+        //指定の日時を過ぎていたら処理をしない
+        if (remainTime < 0) return false;
+
+        //差分の日・時・分・秒を取得
+        const difDay = Math.floor(remainTime / 1000 / 60 / 60 / 24);
+        const difHour = Math.floor(remainTime / 1000 / 60 / 60) % 24;
+        const difMin = Math.floor(remainTime / 1000 / 60) % 60;
+        const difSec = Math.floor(remainTime / 1000) % 60;
+
+        //残りの日時を上書き
+        document.getElementById("countdown-day").textContent = difDay;
+        document.getElementById("countdown-hour").textContent = difHour;
+        document.getElementById("countdown-min").textContent = difMin;
+        document.getElementById("countdown-sec").textContent = difSec;
+
+        //指定の日時になればカウントを止める
+        if (remainTime < 0) clearInterval(countdown);
+      }, 1000); //1秒間に1度処理
+    </script>
+  </body>
+</html>
