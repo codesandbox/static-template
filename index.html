@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div>
+      <label for="program-list-course">Select language deverlopment</label>
+    </br>
+      <input
+        list="list-course"
+        id="program-list-course"
+        name="listcourse"
+        placeholder="...select one"
+      />
+      <datalist id="list-course">
+        <option value="Java"></option>
+        <option value="Javascript"></option>
+        <option value="PHP"></option>
+        <option value="HTML"></option>
+        <option value="Reactjs"></option>
+      </datalist>
+    </div>
+    <div>
+      <label for="select"></label>
+      <select id="select">
+        <option value="">select only one</option>
+        <optgroup label="Fontend">
+          <option value="">html</option>
+        </optgroup>
+        <optgroup label="Backend">
+          <option value="">node</option>
+        </optgroup>
+      </select>
+    </div>
+    <details>
+      <summary draggable=true >Code for real</summary>
+      <h4>trinh van duc</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum reiciendis dolores, voluptate architecto similique optio maiores consectetur, aperiam, tempora laborum dolor sequi. Alias, voluptatibus officia distinctio aliquam quos cumque fuga.</p>
+    </details>
+      <h4>Code:</h4>
+      <pre style="background-color:bisque">
+        <code>
+          {
+            "@import React from 'react'"
+          }      
+        </code>
+      </pre>
   </body>
 </html>
