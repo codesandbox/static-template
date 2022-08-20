@@ -1,0 +1,504 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto";
+  background-color: #fafafa;
+}
+
+.Top_bar {
+  width: 100%;
+  height: 54px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dbdbdb;
+  z-index: 2;
+}
+
+.Top_bar_elements {
+  width: 935px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Logo_Brand {
+  height: 100%;
+  padding-top: 15px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.Logo_Brand div {
+  display: flex;
+  align-items: flex-end;
+}
+
+.Logo_Brand div ion-icon {
+  font-size: 22px;
+}
+
+ion-icon:hover {
+  cursor: pointer;
+}
+
+.Logo_Brand img {
+  width: 103px;
+  height: 29px;
+}
+
+.Logo_Brand img:hover {
+  cursor: pointer;
+}
+
+.Vertical_bar {
+  width: 1px;
+  height: 22px;
+  margin: 0 10px;
+  background-color: #dbdbdb;
+}
+
+input {
+  width: 215px;
+  height: 28px;
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #979797;
+}
+
+.Brand_Mobile {
+  width: 103px;
+  height: 29px;
+  margin-top: 15px;
+  margin-bottom: auto;
+  display: none;
+  cursor: pointer;
+}
+
+.Top_bar_icons {
+  width: 148px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Top_bar_icons ion-icon {
+  font-size: 22px;
+}
+
+.Container {
+  width: 935px;
+  margin: 80px auto 0 auto; /* */
+  display: flex;
+}
+
+.Publications {
+  width: 614px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Stories_box {
+  height: 118px;
+  margin-bottom: 24px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+.Stories {
+  width: 644px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 0 0 18px;
+}
+
+.Stories_box ion-icon {
+  position: absolute;
+  top: 42px;
+  right: 4px;
+  z-index: 1;
+  font-size: 32px;
+  color: #ffffff;
+  filter: drop-shadow(0px 4px 3px rgba(0, 0, 0, 0.4));
+}
+
+.Stories div {
+  width: 66px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.Stories_Picture {
+  position: absolute;
+  top: 5px;
+}
+
+.Stories_Picture:hover {
+  cursor: pointer;
+}
+
+.Stories div p {
+  margin-top: 3.5px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  color: #262626;
+}
+
+.Stories div p:hover {
+  cursor: pointer;
+}
+
+.Stories_background {
+  width: 66px;
+  height: 66px;
+}
+
+.Post {
+  margin-bottom: 60px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #ffffff;
+}
+
+.Author {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.Post_image {
+  width: 100%;
+}
+
+.Author img {
+  width: 32px;
+  height: 32px;
+  margin-left: 17px;
+  margin-right: 15px;
+}
+
+.Author img:hover {
+  cursor: pointer;
+}
+
+.Author p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.Author p:hover {
+  cursor: pointer;
+}
+
+.Author ion-icon {
+  margin: 0 17px 0 auto;
+}
+
+.Horizontal_line {
+  height: 1px;
+  background-color: #efefef;
+}
+
+.Interactions {
+  height: 37.6px;
+  padding-left: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Interactions ion-icon {
+  font-size: 22px;
+  margin-right: 14px;
+}
+
+.Interactions ion-icon:nth-child(4) {
+  margin: 0 14px 0 auto;
+}
+
+.Likes {
+  margin-bottom: 14px;
+  margin-left: 17px;
+  display: flex;
+}
+
+.Likes img {
+  width: 20px;
+  height: 20px;
+}
+
+.Likes img:hover {
+  cursor: pointer;
+}
+
+.Likes p {
+  margin: auto 0 auto 5px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+}
+
+.Publications strong {
+  font-weight: 500;
+}
+
+.Publications strong:hover {
+  cursor: pointer;
+}
+
+.Publications strong:nth-child(1):hover {
+  text-decoration: underline;
+}
+
+.Sidebar {
+  width: 321px;
+  padding-left: 29px;
+  display: flex;
+  flex-direction: column;
+}
+
+.User {
+  height: 103px;
+  display: flex;
+  align-items: center;
+}
+
+.User img {
+  width: 56px;
+  height: 56px;
+  margin-right: 17px;
+}
+
+.User img:hover {
+  cursor: pointer;
+}
+
+.Username p:nth-child(1) {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.Username p:nth-child(1):hover {
+  cursor: pointer;
+}
+
+.Username p:nth-child(2) {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+}
+
+.Suggestion_text {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 17px;
+}
+
+.Suggestion_text p {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+}
+
+.Suggestion_text p:nth-child(1) {
+  color: #8e8e8e;
+}
+
+.Suggestion_text p:nth-child(2) {
+  color: #262626;
+}
+
+.Suggestion_text p:nth-child(2):hover {
+  cursor: pointer;
+}
+
+.Suggestions {
+  width: 100%;
+  height: 224px;
+  margin-bottom: 33px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Relationship_suggested {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Image_Username {
+  display: flex;
+}
+
+.Image_Username img {
+  width: 32px;
+  height: 32px;
+  margin-right: 11px;
+}
+
+.Image_Username img {
+  cursor: pointer;
+}
+
+.Username_Relationship {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Username_Relationship p:nth-child(1) {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #262626;
+}
+
+.Username_Relationship p:nth-child(1):hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.Username_Relationship p:nth-child(2) {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  color: #8e8e8e;
+}
+
+.Follow {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  color: #139ef2;
+}
+
+.Follow:hover {
+  cursor: pointer;
+}
+
+.Links {
+  margin-bottom: 18px;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13px;
+  letter-spacing: -0.08px;
+  color: #c7c7c7;
+}
+
+.Links strong:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.Trademark {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13px;
+  color: #c7c7c7;
+}
+
+.Bottom_bar {
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  height: 54px;
+  padding: 0 20px;
+  background-color: #ffffff;
+  border-top: 1px solid #dbdbdb;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Bottom_bar ion-icon {
+  font-size: 22px;
+}
+
+@media (max-width: 935px) {
+  .Top_bar {
+    width: 100%;
+  }
+
+  .Top_bar_elements {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .Container {
+    width: 614px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .Sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 614px) {
+  .Logo_Brand div .Ocult_element {
+    display: none;
+  }
+
+  .Ocult_element {
+    display: none;
+  }
+
+  .Brand_Mobile {
+    display: initial;
+  }
+
+  .Top_bar_icons {
+    width: auto;
+  }
+
+  .Container {
+    width: 100%;
+    margin-top: 54px;
+  }
+
+  .Publications {
+    width: 100%;
+  }
+
+  .Stories_box {
+    margin-bottom: 0;
+    border: none;
+    background-color: #fafafa;
+  }
+
+  .Stories_box ion-icon {
+    display: none;
+  }
+
+  .Post {
+    border-radius: 0;
+  }
+
+  .Bottom_bar {
+    display: flex;
+  }
+}
