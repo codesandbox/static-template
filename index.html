@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <title>Document</title>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container-title">
+      <p class="todotitle">To Do List</p>
+    </div>
+    <div class="container">
+      <div class="inputcol">
+        <input type="text" class="input" placeholder="Tasks to be Done" />
+        <button type="button" class="buttoninput">
+          <i class="fa-solid fa-check"></i>
+        </button>
+      </div>
+      <div id="date"></div>
+    </div>
+    <div class="todolist"></div>
   </body>
 </html>
