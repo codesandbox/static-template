@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>notas</title>
     <script src="../js/script.js"></script>
     <link rel="stylesheet" href="../style/estilos.css" />
   </head>
@@ -23,7 +23,7 @@
         src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg"
       />
     </a>
-    <h1 class="cabeza">En esta pãgina irian notas</h1>
+    <h1 class="cabeza"><span>😎COGNIZANT</span><span>WAVE 33</span></h1>
     <nav class="nav">
       <ul>
         <li><a href="../index.html">Inicio</a></li>
@@ -32,5 +32,124 @@
         <li><a href="notas.html">Notas</a></li>
       </ul>
     </nav>
+
+    <h1 style="margin: 10px 0 10px 20px;">
+      Listado de códigos (Eventos de analytics)
+    </h1>
+    <p
+      style="
+        margin-left: 30px;
+        background: rgb(47, 47, 49);
+        color: lavender;
+        padding: 20px 0 20px 30px;
+      "
+    >
+      &nbsp;&nbsp;&nbsp;&nbsp;>>Boton de Whatsapp<<
+      <br />
+      <br />
+      windows.addEventListener('DOMContentLoaded', function() {
+      <br />
+      &emsp;document.querySelector('#whatsapp-button').addEventListener('click',
+      function (){
+      <br />
+      &emsp;&emsp;gtag('event', 'whatsapp', {
+      <br />
+      &emsp;&emsp;'event_category': 'botonClicado',
+      <br />
+      &emsp;&emsp;});
+      <br />
+      &emsp;});
+      <br />
+      });
+    </p>
+
+    <p
+      style="
+        margin-left: 30px;
+        background: rgb(47, 47, 49);
+        color: lavender;
+        padding: 20px 0 20px 30px;
+      "
+    >
+      &nbsp;&nbsp;&nbsp;&nbsp;>>Agregar al Carrito<<
+      <br />
+      <br />
+      window.addEventListener('DOMContentLoaded',function() {
+      <br />
+      &emsp;document.querySelectorAll('.add_to_cart_button').forEach(function(btn){
+      <br />
+      &emsp;&emsp;btn.addEventListener('click',function(){
+      <br />
+      &emsp;&emsp;&emsp;gtag('event', 'adicionar-carrito', {
+      <br />
+      &emsp;&emsp;&emsp;'event_category': 'carrito',
+      <br />
+      &emsp;&emsp;&emsp;});
+      <br />
+      &emsp;&emsp;});
+      <br />
+      &emsp;});
+      <br />
+      });
+    </p>
+
+    <p
+      style="
+        margin-left: 30px;
+        background: rgb(47, 47, 49);
+        color: lavender;
+        padding: 20px 0 20px 30px;
+      "
+    >
+      &nbsp;&nbsp;&nbsp;&nbsp;>>Producto visto<<
+      <br />
+      <br />
+      windows.addEventListener('DOMContentLoaded', function() {
+      <br />
+      &emsp;if(window.location.href.includes('product')){
+      <br />
+      &emsp;&emsp;gtag('event', 'vista_producto', {
+      <br />
+      &emsp;&emsp;'event_category':
+      document.querySelector('.product_title').innerText
+      <br />
+      &emsp;&emsp;});
+      <br />
+      &emsp;};
+      <br />
+      });
+    </p>
+
+    <p
+      style="
+        margin-left: 30px;
+        background: rgb(47, 47, 49);
+        color: lavender;
+        padding: 20px 0 20px 30px;
+      "
+    >
+      &nbsp;&nbsp;&nbsp;&nbsp;>>Compra con valor e Id de Transaccion<<
+      <br />
+      <br />
+      window.addEventListener('DOMContentLoaded',function() {
+      <br />
+      &emsp;if(window.location.href.includes('order-received')){
+      <br />
+      &emsp;&emsp;gtag('event', 'compra', {
+      <br />
+      &emsp;&emsp;'event_category': 'compra-realizada',
+      <br />
+      &emsp;&emsp;'event_label': document.querySelector('.order_details .order
+      strong').innerText
+      <br />
+      &emsp;&emsp;'value': Number(document.querySelector('.total
+      .amount').innerText.replace('R$','').replaceAll('.','').replace(',','.')),
+      <br />
+      &emsp;&emsp;});
+      <br />
+      &emsp;};
+      <br />
+      });
+    </p>
   </body>
 </html>
