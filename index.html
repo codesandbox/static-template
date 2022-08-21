@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="root">
+      <h2>Peliculas</h2>
+      <form v-for="movie in movies">
+        <h3>{{movie.name}}</h3>
+        <button
+          type="button"
+          v-bind:disabled="movie.available >=0"
+          v-on:click="movie.boletos -=1"
+        >
+          -
+        </button>
+        {{movie.boletos}}
+        <button
+          type="button"
+          v-bind:disabled="movie.boletos >= movie.available"
+          v-on:click="movie.boletos += 1"
+        >
+          +
+        </button>
+      </form>
+    </div>
+    <script src="https://unpkg.com/vue@3.0.5/dist/vue.global.js"></script>
+    <script>
+      const { createApp } = Vue;
+      const app = createApp({
+        data() {
+          return {
+            movies: [
+              {
+                name: "Avengers",
+                available: 3,
+                boletos: 0
+              },
+              {
+                name: "La vaca Lola",
+                available: 7,
+                boletos: 0
+              }
+            ]
+          };
+        }
+      });
+      app.mount("#root");
+    </script>
   </body>
 </html>
