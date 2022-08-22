@@ -36,120 +36,119 @@
     <h1 style="margin: 10px 0 10px 20px;">
       Listado de códigos (Eventos de analytics)
     </h1>
-    <p
-      style="
-        margin-left: 30px;
-        background: rgb(47, 47, 49);
-        color: lavender;
-        padding: 20px 0 20px 30px;
-      "
-    >
-      &nbsp;&nbsp;&nbsp;&nbsp;>>Boton de Whatsapp<<
-      <br />
-      <br />
-      windows.addEventListener('DOMContentLoaded', function() {
-      <br />
-      &emsp;document.querySelector('#whatsapp-button').addEventListener('click',
-      function (){
-      <br />
-      &emsp;&emsp;gtag('event', 'whatsapp', {
-      <br />
-      &emsp;&emsp;'event_category': 'botonClicado',
-      <br />
-      &emsp;&emsp;});
-      <br />
-      &emsp;});
-      <br />
-      });
-    </p>
+    <div class="notas">
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;>>Boton de Whatsapp<<
+        <br />
+        <br />
+        windows.addEventListener('DOMContentLoaded', function() {
+        <br />
+        &emsp;document.querySelector('#whatsapp-button').addEventListener('click',
+        function (){
+        <br />
+        &emsp;&emsp;gtag('event', 'whatsapp', {
+        <br />
+        &emsp;&emsp;'event_category': 'botonClicado',
+        <br />
+        &emsp;&emsp;});
+        <br />
+        &emsp;});
+        <br />
+        });
+      </p>
 
-    <p
-      style="
-        margin-left: 30px;
-        background: rgb(47, 47, 49);
-        color: lavender;
-        padding: 20px 0 20px 30px;
-      "
-    >
-      &nbsp;&nbsp;&nbsp;&nbsp;>>Agregar al Carrito<<
-      <br />
-      <br />
-      window.addEventListener('DOMContentLoaded',function() {
-      <br />
-      &emsp;document.querySelectorAll('.add_to_cart_button').forEach(function(btn){
-      <br />
-      &emsp;&emsp;btn.addEventListener('click',function(){
-      <br />
-      &emsp;&emsp;&emsp;gtag('event', 'adicionar-carrito', {
-      <br />
-      &emsp;&emsp;&emsp;'event_category': 'carrito',
-      <br />
-      &emsp;&emsp;&emsp;});
-      <br />
-      &emsp;&emsp;});
-      <br />
-      &emsp;});
-      <br />
-      });
-    </p>
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;>>Agregar al Carrito<<
+        <br />
+        <br />
+        window.addEventListener('DOMContentLoaded',function() {
+        <br />
+        &emsp;document.querySelectorAll('.add_to_cart_button').forEach(function(btn){
+        <br />
+        &emsp;&emsp;btn.addEventListener('click',function(){
+        <br />
+        &emsp;&emsp;&emsp;gtag('event', 'adicionar-carrito', {
+        <br />
+        &emsp;&emsp;&emsp;'event_category': 'carrito',
+        <br />
+        &emsp;&emsp;&emsp;});
+        <br />
+        &emsp;&emsp;});
+        <br />
+        &emsp;});
+        <br />
+        });
+      </p>
 
-    <p
-      style="
-        margin-left: 30px;
-        background: rgb(47, 47, 49);
-        color: lavender;
-        padding: 20px 0 20px 30px;
-      "
-    >
-      &nbsp;&nbsp;&nbsp;&nbsp;>>Producto visto<<
-      <br />
-      <br />
-      windows.addEventListener('DOMContentLoaded', function() {
-      <br />
-      &emsp;if(window.location.href.includes('product')){
-      <br />
-      &emsp;&emsp;gtag('event', 'vista_producto', {
-      <br />
-      &emsp;&emsp;'event_category':
-      document.querySelector('.product_title').innerText
-      <br />
-      &emsp;&emsp;});
-      <br />
-      &emsp;};
-      <br />
-      });
-    </p>
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;>>Producto visto<<
+        <br />
+        <br />
+        windows.addEventListener('DOMContentLoaded', function() {
+        <br />
+        &emsp;if(window.location.href.includes('product')){
+        <br />
+        &emsp;&emsp;gtag('event', 'vista_producto', {
+        <br />
+        &emsp;&emsp;'event_category':
+        document.querySelector('.product_title').innerText
+        <br />
+        &emsp;&emsp;});
+        <br />
+        &emsp;};
+        <br />
+        });
+      </p>
 
-    <p
-      style="
-        margin-left: 30px;
-        background: rgb(47, 47, 49);
-        color: lavender;
-        padding: 20px 0 20px 30px;
-      "
-    >
-      &nbsp;&nbsp;&nbsp;&nbsp;>>Compra con valor e Id de Transaccion<<
-      <br />
-      <br />
-      window.addEventListener('DOMContentLoaded',function() {
-      <br />
-      &emsp;if(window.location.href.includes('order-received')){
-      <br />
-      &emsp;&emsp;gtag('event', 'compra', {
-      <br />
-      &emsp;&emsp;'event_category': 'compra-realizada',
-      <br />
-      &emsp;&emsp;'event_label': document.querySelector('.order_details .order
-      strong').innerText
-      <br />
-      &emsp;&emsp;'value': Number(document.querySelector('.total
-      .amount').innerText.replace('R$','').replaceAll('.','').replace(',','.')),
-      <br />
-      &emsp;&emsp;});
-      <br />
-      &emsp;};
-      <br />
-      });
-    </p>
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;>>Compra con valor e Id de Transaccion<<
+        <br />
+        <br />
+        window.addEventListener('DOMContentLoaded',function() {
+        <br />
+        &emsp;if(window.location.href.includes('order-received')){
+        <br />
+        &emsp;&emsp;gtag('event', 'compra', {
+        <br />
+        &emsp;&emsp;'event_category': 'compra-realizada',
+        <br />
+        &emsp;&emsp;'event_label': document.querySelector('.order_details .order
+        strong').innerText
+        <br />
+        &emsp;&emsp;'value': Number(document.querySelector('.total
+        .amount').innerText.replace('R$','').replaceAll('.','').replace(',','.')),
+        <br />
+        &emsp;&emsp;});
+        <br />
+        &emsp;};
+        <br />
+        });
+      </p>
+
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;>>PASO A PASO PARA WEBSITE CALL CONVERSION<<
+        <br />
+        <br />
+        1-Entrar en herramientas y configuraciones.<br />
+        2-Nueva acción de conversión.<br />
+        3-llamadas telefónicas.<br />
+        4-Llamadas a un número de teléfono en su sitio web.<br />
+        5-Agregar nombre a la conversión. <br />
+        6-Valor > no asignar ningún valor a esta acción de conversión. <br />
+        7-Recuento > una. <br />
+        8-Número de teléfono > seleccionar país > agregar No° teléfono. <br />
+        9-Colocar los segundos para contabilizar la conversión. <br />
+        10-Ventana de conversión post-clic > 30 días. <br />
+        11-Modelo de atribución > Basada en datos Recomendada. <br />
+        12-Crear y continuar. <br />
+        13-Copiar y pegar el código generado dentro del sitio web.
+        <br />
+        <br />
+        >>Para comprobar si está funcionando una conversión de llamada en el
+        sitio<< <br />
+        Al final del enlace del sitio colocar #google-wcc-debug y selecciono
+        *Force en el cuadro que se me habilita.
+      </p>
+    </div>
   </body>
 </html>
