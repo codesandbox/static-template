@@ -1,5 +1,5 @@
 function prueba() {
-  alert("mensaje del boton1");
+  alert("mensaje del boton");
 }
 /*window.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".nav li a").forEach(function (btn) {
