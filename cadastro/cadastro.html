@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta name="Author" content="InTra Company" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- Atributo name da meta tag escrito incorretamente -->
+    <meta
+      name="descripiont"
+      content="Ainda não possui cadastro, cadastre-se agora e venha aproiveitar todos os benefícios."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="content-language" content="pt-br" />
+    <title>Cadastro</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <section class="nav_ham_bar" aria-label="menu hamburguer">
+            <li>
+              <section class="ham_bar"></section>
+            </li>
+            <li>
+              <section class="ham_bar"></section>
+            </li>
+            <li>
+              <section class="ham_bar"></section>
+            </li>
+          </section>
+          <!-- Adicionar title às imagens -->
+          <li><img src="" alt="intra-logo" class="logo" /></li>
+          <li><img src="" alt="profile" /></li>
+        </ul>
+      </nav>
+    </header>
+    <script src="cadastro.js">
+      function ValidateName() {
+          var name = document.getElementById("name");
+          console.log(name.value);
+          if(name.value == ""){
+            var txt = document.getElementById("name-invalid");
+            console.log(txt);
+            txt.textContent = "Nome inválido";
+          }
+
+        }
+        function ValidateAll(event){
+          var recaptcha = document.getElementById("recaptcha");
+          console.log(recaptcha.checked);
+          if (recaptcha.checked == true){
+            console.log("try");
+          }else{
+            event.preventDefault();
+            console.log("not try");
+          }
+        }
+    </script>
+    <main>
+      <section class="form">
+        <!-- Incoerência nos atributos role dos componentes -->
+        <form
+          name="registration"
+          method="POST"
+          action="#"
+          role="registration"
+          onsubmit="ValidateAll()"
+        >
+          <h1>Cadastro</h1>
+          <button type="button" name="Google">Continuar com o Google</button>
+          <button type="button" name="FaceBook">
+            Continuar com o FaceBook
+          </button>
+          <label class="text">Digite o seu nome:</label>
+          <input
+            type="text"
+            name="name"
+            class="fields"
+            role="nome"
+            id="name"
+            onkeyup="ValidateName()"
+          />
+          <p id="name-invalid"></p>
+          <label class="text">Digite a sua senha:</label>
+          <input type="password" name="password" class="fields" role="senha" />
+          <!-- Campos diferentes não devem possuir o mesmo nome (password), do contrário não há como resgatá-los -->
+          <label class="text">Confirme sua senha:</label>
+          <input
+            type="password"
+            name="password"
+            class="fields"
+            role="confirmacao"
+          />
+
+          <!-- Checkbox precisa de um valor (booleano) para ser validado -->
+          <section class="recaptcha">
+            <input
+              type="checkbox"
+              name="recaptcha"
+              role="verificacao"
+              id="recaptcha"
+            />
+            <label>Não sou robô</label>
+          </section>
+
+          <!-- Checkbox precisa de um valor (booleano) para ser validado -->
+          <input type="checkbox" name="terms" role="validacao" />
+          <label>Aceito os termos de uso!</label>
+
+          <!-- Colocar nomes mais significativos, como "userController" ou "login" -->
+          <input type="submit" name="submit" id="submit" />
+        </form>
+      </section>
+
+      <!-- Faltou a implementação do componente? -->
+      <section class="recaptcha"></section>
+    </main>
+    <footer>
+      <section class="dark_bar"></section>
+    </footer>
+  </body>
+</html>
