@@ -11,7 +11,7 @@ function AJAX(atributo,valor){
 
 //código para validar o nome
 function ValidateName() {
-  var inputName = document.getElementsByName("name");
+  var inputName = document.getElementById("name");
   var name = inputName.value;
   var exist = AJAX("name",name);
   if (name == undefined || name == null){
@@ -25,7 +25,7 @@ function ValidateName() {
 
 //código para validar a primeira senha
 function ValidatePWD() {
-  var pwd = document.getElementsByName("password").value;
+  var pwd = document.getElementById("password").value;
   if(pwd == undefined || pwd == null){
     campo vermelho
   }
@@ -40,7 +40,7 @@ function ValidatePWD() {
 }
 
 function ValidateVPWD() {
-  var vpwd = document.getElementsByName("vpassword").value;
+  var vpwd = document.getElementById("vpassword").value;
   if(vpwd == undefined || vpwd == null){
     campo vermelho
   }
@@ -55,8 +55,8 @@ function ValidateVPWD() {
 }
 
 function ValidateRecaptcha(){
-  var recap = document.getElementsByName("recaptcha");
-  if (recap.check == true){
+  var recap = document.getElementById("recaptcha");
+  if (recap.checked == true){
     return true;
   }else{
     campo vermelho
@@ -64,7 +64,7 @@ function ValidateRecaptcha(){
 }
 
 function ValidateTerms(){
-  var terms = document.getElementsByName("terms");
+  var terms = document.getElementById("terms");
   if (terms.check == true){
     return true;
   }else{
