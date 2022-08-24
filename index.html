@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
+  <script>
+    function getValue() {
+      var txt = document.getElementById("text");
+      console.log(txt.value);
+    }
+  </script>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <a href="cadastro/cadastro.html"><button>cadastro</button></a>
+    <form name="sla" action="#" method="POST" onsubmit="getValue()">
+      <input name="try" type="text" id="text" />
+      <input name="enviar" type="submit" value="Enviar" />
+    </form>
+    <h1>
+      This is a static template, there is no bundler or bundling involved!
+    </h1>
   </body>
 </html>
