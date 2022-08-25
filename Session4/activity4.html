@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Activity 1</title>
+  </head>
+
+  <body>
+    <ol id="elem">
+      <li>Hello</li>
+      <li>World</li>
+    </ol>
+
+    <script>
+      function appendToParent(parent, childTagType, text) {
+        let liCreation = document.createElement(childTagType);
+        console.log(liCreation);
+        liCreation.innerText = "LI Text";
+        parent.innerHTML = parent.innerHTML + "<li>Hie</li>" + parent.innerHTML;
+        // console.log(parent);
+        // parent.appendChild(liCreation);
+      }
+
+      // let liCreation = document.createElement("li");
+      // liCreation.innerText = "text";
+      // parentElement.innerHTML = parentElement.innerHTML + "<li>Hie</li>";
+      // // parentElement.innerHTML
+      // console.log(parentElement);
+
+      let parentElement = document.getElementById("elem");
+      appendToParent(parentElement, "li", "Newly added");
+    </script>
+  </body>
+</html>

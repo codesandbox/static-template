@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Activity 1</title>
+  </head>
+
+  <body>
+    <section id="card">
+      <h1>New Student Name</h1>
+      <h3>Role</h3>
+      <p>Bio Text Goes Here</p>
+    </section>
+
+    <script>
+      function updateCard(elem, name, role, bio) {
+        // const h1 = cardElement.getElementsByTagName("h1");
+        // h1[0].innerText = name;
+        // const h3 = cardElement.getElementsByTagName("h3");
+        // h3[0].innerText = role;
+        // const p = cardElement.getElementsByTagName("p");
+        // p[0].innerText = bio;
+        console.log(elem.innerHTML);
+        elem.innerHTML = `
+        <h1>${name}</h1>
+        <h3>${role}</h3>
+        <p>${bio}</p>
+        `;
+      }
+
+      const cardElement = document.getElementById("card");
+      console.log(
+        updateCard(cardElement, "Raju", "Instructor", "Teaches FE-2")
+      );
+    </script>
+  </body>
+</html>
