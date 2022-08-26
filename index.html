@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+<link rel="stylesheet" href="style.css" />
+
+    <title>Covid Cases Tracker </title>
+</head>
+
+<body>
+<div class="container">
+    <div class="searchBx">
+        <input class="searchTxt" type="text" id="myInput" placeholder="Type to search">
+        <a class="searchBtn" href="#" onclick="getInputValue();">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </a>
+    </div>
+    <h1>Covid-19 Cases In <span id="country"></span> <img src="" alt="country" id="flag"></h1>
+    <div class="content">
+        <div class="box">
+            <div class="subtitle active" >Active Cases</div>
+            <div class="data" id="Active_Cases"></div>
+        </div>
+        <div class="box">
+            <div class="subtitle total">Total Cases</div>
+            <div class="data" id="Total_Cases"></div>
+        </div>
+        <div class="box">
+            <div class="subtitle critical">Critical Cases</div>
+            <div class="data" id="Critical_Cases"></div>
+        </div>
+        <div class="box">
+            <div class="subtitle death">Total Deaths</div>
+            <div class="data" id="Total_Death"></div>
+        </div>
+        <div class="box">
+            <div class="subtitle recovered">Recovered Cases</div>
+            <div class="data" id="Recovered_Cases"></div>
+        </div>
+        <div class="box">
+            <div class="subtitle test">Total Tests Done</div>
+            <div class="data" id="Total_Test_Done"></div>
+        </div>
+    </div>
+</div>
+
+<div>
+<script src="script.js"></script>
+</body>
+
 </html>
