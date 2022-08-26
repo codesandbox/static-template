@@ -1,0 +1,137 @@
+body {
+  background-color: white;
+  color: white;
+  min-width: 450px;
+  margin: auto;
+  margin-top: -3.2%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  max-width: 1500px;
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+#navBar ul a li {
+  display: inline-block;
+  text-transform: uppercase;
+}
+#container_header {
+  height: 500px;
+  background: rgba(5, 5, 5, 0.5);
+  background-image: url("https://scontent.ftnr2-1.fna.fbcdn.net/v/t39.30808-6/301614838_549105756904557_847983731062526530_n.jpg?stp=dst-jpg_s600x600&_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=ws-veXPHcd0AX8Oz9To&_nc_ht=scontent.ftnr2-1.fna&oh=00_AT82HXFYszWCASdSPsUgkx9aFiPb21foyV7iA7GVMeSRAQ&oe=630DD724");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  width: auto;
+  white-space: nowrap;
+}
+#div-head {
+  height: 80%;
+  padding-top: 15%;
+  padding-left: 5%;
+}
+#p-animate {
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 36px;
+  text-transform: uppercase;
+  width: max-content;
+}
+.img_petite {
+  height: 35px;
+  width: 40px;
+}
+#navBar {
+  top: 0%;
+}
+
+/*ecran grand*/
+@media only screen and (min-width: 801px) {
+  li {
+    display: inline-block;
+  }
+  #nav_option_min,
+  #elements,
+  #monja2 {
+    display: none;
+  }
+  #nav_option {
+    height: 50px;
+    width: 100%;
+    padding: 0%;
+  }
+  #elements1 {
+    position: relative;
+    margin-top: -2%;
+    height: 100%;
+    width: auto;
+    padding: 0%;
+  }
+  .list_menu {
+    font-size: small;
+    font-weight: bold;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    height: 55%;
+    width: 115px;
+    padding-top: 2%;
+    text-align: center;
+    float: left;
+    text-transform: uppercase;
+    margin-bottom: 0%;
+  }
+  .list_menu:hover {
+    background-color: rgb(59, 89, 139);
+  }
+}
+
+/*ecran petit */
+@media only screen and (max-width: 800px) {
+  #nav_option,
+  #monja {
+    display: none;
+  }
+  #menu {
+    position: relative;
+    cursor: pointer;
+    float: right;
+    margin-right: 3%;
+  }
+  #nav_elements {
+    position: absolute;
+    margin-top: 50px;
+    background-color: white;
+    width: 120%;
+    color: black;
+    display: none;
+  }
+
+  #nav_option_min {
+    width: 100%;
+    padding: 5px;
+    margin-top: -15%;
+  }
+  #elements {
+    width: 100%;
+    padding-left: 0%;
+    display: block;
+  }
+  #nav_elements #elements a li {
+    color: black;
+    height: 35px;
+    padding-top: 20px;
+    font-size: small;
+    font-weight: bold;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    width: 100%;
+    padding-left: 4%;
+  }
+  #nav_elements #elements a:hover .list_menu {
+    background-color: rgb(59, 89, 139);
+  }
+}
