@@ -1,12 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Freelancer Murillo</title>
+    <link rel="stylesheet" href="CSS/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" href="CSS/styles.css" as="styles" />
+    <link rel="stylesheet" href="CSS/styles.css" />
   </head>
+
+  <!--Estructurando el contenido-->
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <h1 class="titulo">Montserrat Murillo Loyola <span>Freelancer</span></h1>
+    </header>
+
+    <!--NAVEGACION PRINCIPAL-->
+
+    <div class="nv-bg">
+      <nav class="navegacion-principal contenedor">
+        <!--Aqui ira la navegacion con los enlaces-->
+        <a href="sobremi.html">Sobre mi</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="#">Otros Proyectos</a>
+      </nav>
+    </div>
+
+    <!--Imagen de portada-->
+
+    <section class="hero">
+      <div class="contenido-hero">
+        <h2>Diseño y Desarrollo Web Freelancer</h2>
+        <p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-map-2"
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#ffffff"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <line x1="18" y1="6" x2="18" y2="6.01" />
+            <path d="M18 13l-3.5 -5a4 4 0 1 1 7 0l-3.5 5" />
+            <polyline points="10.5 4.75 9 4 3 7 3 20 9 17 15 20 21 17 21 15" />
+            <line x1="9" y1="4" x2="9" y2="17" />
+            <line x1="15" y1="15" x2="15" y2="20" />
+          </svg>
+        </p>
+        <p>Ciudad de México</p>
+        <a class="boton" href="#">Contactar</a>
+      </div>
+    </section>
+    <!--SERVICIOS-->
+    <main class="contenedor sombra">
+      <h2>Mis Sevicios</h2>
+
+      <div class="servicios">
+        <section class="servicio">
+          <h3>Diseño Web</h3>
+          <div class="iconos">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-device-laptop"
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="#2c3e50"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <line x1="3" y1="19" x2="21" y2="19" />
+              <rect x="5" y="6" width="14" height="10" rx="1" />
+            </svg>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, qui
+            fugiat laboriosam magni pariatur nihil.
+          </p>
+        </section>
+
+        <section class="servicio">
+          <h3>Aplicaciones Móviles</h3>
+          <div class="iconos">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-brand-android"
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="#2c3e50"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <line x1="4" y1="10" x2="4" y2="16" />
+              <line x1="20" y1="10" x2="20" y2="16" />
+              <path
+                d="M7 9h10v8a1 1 0 0 1 -1 1h-8a1 1 0 0 1 -1 -1v-8a5 5 0 0 1 10 0"
+              />
+              <line x1="8" y1="3" x2="9" y2="5" />
+              <line x1="16" y1="3" x2="15" y2="5" />
+              <line x1="9" y1="18" x2="9" y2="21" />
+              <line x1="15" y1="18" x2="15" y2="21" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-brand-apple"
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="#2c3e50"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M9 7c-3 0 -4 3 -4 5.5c0 3 2 7.5 4 7.5c1.088 -.046 1.679 -.5 3 -.5c1.312 0 1.5 .5 3 .5s4 -3 4 -5c-.028 -.01 -2.472 -.403 -2.5 -3c-.019 -2.17 2.416 -2.954 2.5 -3c-1.023 -1.492 -2.951 -1.963 -3.5 -2c-1.433 -.111 -2.83 1 -3.5 1c-.68 0 -1.9 -1 -3 -1z"
+              />
+              <path d="M12 4a2 2 0 0 0 2 -2a2 2 0 0 0 -2 2" />
+            </svg>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+            excepturi facilis quae veniam consequuntur debitis.
+          </p>
+        </section>
+
+        <section class="servicio">
+          <h3>E-commerce</h3>
+          <div class="iconos">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-brand-mastercard"
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="#2c3e50"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <circle cx="14" cy="12" r="3" />
+              <path d="M12 9.765a3 3 0 1 0 0 4.47" />
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+            </svg>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi in
+            impedit laboriosam exercitationem placeat perspiciatis!
+          </p>
+        </section>
+      </div>
+      <!-- SERVICIOS-->
+
+      <section>
+        <h2>Contacto</h2>
+
+        <form class="formulario">
+          <fieldset>
+            <legend>Contáctame llenando todos los campos</legend>
+            <!--Agrupar con div-->
+            <div class="contenedor-campos">
+              <div class="campo">
+                <label for="">Nombre</label>
+                <input class="input-text" type="text" placeholder="Tu nombre" />
+              </div>
+              <div class="campo">
+                <label for="">Teléfono</label>
+                <input
+                  class="input-text"
+                  type="tel"
+                  placeholder="Tu teléfono"
+                />
+              </div>
+              <div class="campo">
+                <label for="">Correo electrónico</label>
+                <input class="input-text" type="email" placeholder="Tu email" />
+              </div>
+
+              <div class="campo">
+                <label for="">Mensaje</label>
+                <textarea
+                  class="input-text"
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </div>
+            </div>
+            <!--CONTENEDOR DE CAMPOS-->
+
+            <div class="enviar alinear-derecha flex">
+              <input class="boton w-sm-100" type="submit" value="Enviar" />
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Todos los Derechos Reservados Murillo Loyola Montserrat</p>
+    </footer>
   </body>
 </html>
