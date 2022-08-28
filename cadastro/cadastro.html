@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta name="Author" content="InTra Company" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- Atributo name da meta tag escrito incorretamente -->
+    <meta
+      name="descripiont"
+      content="Ainda não possui cadastro, cadastre-se agora e venha aproiveitar todos os benefícios."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="content-language" content="pt-br" />
+    <title>Cadastro</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <section
+            class="nav_ham_bar"
+            aria-haspopup="true"
+            aria-controls="menu"
+            aria-label="Abrir Menu"
+            aria-expanded="false"
+            onclick="hamMenu(this)"
+          >
+            <li>
+              <section class="ham_bar"></section>
+            </li>
+            <li>
+              <section class="ham_bar"></section>
+            </li>
+            <li>
+              <section class="ham_bar"></section>
+            </li>
+          </section>
+          <!-- Adicionar title às imagens -->
+          <li><img src="" alt="intra-logo" class="logo" /></li>
+          <li><img src="" alt="profile" /></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="form">
+        <!-- Incoerência nos atributos role dos componentes -->
+        <form
+          name="registration"
+          method="POST"
+          action="#"
+          role="registration"
+          onsubmit="obtain()"
+        >
+          <h1>Cadastro</h1>
+          <button type="button" name="Google">Continuar com o Google</button>
+          <button type="button" name="FaceBook">
+            Continuar com o FaceBook
+          </button>
+          <section id="email">
+            <label class="text">Digite o seu email:</label>
+            <input
+              type="email"
+              name="email"
+              class="fields"
+              role="email"
+              id="email"
+              required
+              min="1"
+              max="128"
+              value="try"
+            />
+            <p id="email-isnt-correct"></p>
+          </section>
+          <section id="pwd">
+            <label class="text">Digite a sua senha:</label>
+            <input
+              type="password"
+              name="password"
+              class="fields"
+              role="senha"
+              required
+              min="8"
+            />
+            <p id="pwd-isnt-correct"></p>
+          </section>
+
+          <!-- Campos diferentes não devem possuir o mesmo nome (password), do contrário não há como resgatá-los -->
+          <section id="cpwd">
+            <label class="text">Confirme sua senha:</label>
+            <input
+              type="password"
+              name="cpassword"
+              class="fields"
+              role="confirmacao"
+              required
+              min="8"
+            />
+            <p id="vpwd-isnt-correct"></p>
+          </section>
+
+          <!-- Checkbox precisa de um valor (booleano) para ser validado -->
+          <section class="recaptcha" id="recaptcha">
+            <input type="checkbox" name="recaptcha" role="verificacao" />
+            <label>Não sou robô</label>
+            <p id="recaptcha-not-accepted"></p>
+          </section>
+
+          <!-- Checkbox precisa de um valor (booleano) para ser validado -->
+          <section id="terms-box">
+            <input type="checkbox" name="terms" role="validacao" />
+            <label>Aceito os termos de uso!</label>
+            <p id="terms-not-accepted"></p>
+          </section>
+          <!-- Colocar nomes mais significativos, como "userController" ou "login" -->
+          <input type="submit" name="submit" id="submit" />
+        </form>
+      </section>
+
+      <!-- Faltou a implementação do componente? -->
+      <section class="recaptcha"></section>
+    </main>
+    <footer>
+      <section class="dark_bar"></section>
+    </footer>
+  </body>
+  <script src="cadastro.js"></script>
+</html>
