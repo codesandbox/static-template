@@ -1,12 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <style>
+      * {
+        margin: 0;
+      }
+
+      .card {
+        border: 1px solid black;
+        margin: 10px;
+        padding: 10px;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      #section1 {
+        flex: 1 1 400px;
+      }
+
+      #section2 {
+        flex: 1 1 400px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      #section2 > .card {
+        flex: 200px;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <div class="section" id="section1">
+        <div class="card" id="top">
+          <h2>Top</h2>
+          <p>
+            Et enim consectetur amet velit quis sit consectetur minim laboris.
+            Id consequat voluptate tempor amet esse. Sint cupidatat eiusmod nisi
+            velit sunt culpa ut nostrud. Nulla quis ea exercitation ipsum dolor
+            sint pariatur nulla magna aliqua labore non aute. Elit ad minim
+            eiusmod enim dolore ipsum nulla anim ipsum. Sunt fugiat exercitation
+            Lorem proident occaecat anim esse tempor aliqua consequat labore sit
+            pariatur excepteur. Fugiat duis ad esse incididunt veniam laborum
+            est laboris officia qui enim aliqua excepteur do.
+          </p>
+        </div>
+      </div>
+      <div class="section" id="section2">
+        <div class="card">
+          <h2>Heading2</h2>
+          <p>
+            Et enim consectetur amet velit quis sit consectetur minim laboris.
+            Id consequat voluptate tempor amet esse. Sint cupidatat eiusmod nisi
+            velit sunt culpa ut nostrud. Nulla quis ea exercitation ipsum dolor
+            sint pariatur nulla magna aliqua labore non aute. Elit ad minim
+            eiusmod enim dolore ipsum nulla anim ipsum. Sunt fugiat exercitation
+            Lorem proident occaecat anim esse tempor aliqua consequat labore sit
+            pariatur excepteur. Fugiat duis ad esse incididunt veniam laborum
+            est laboris officia qui enim aliqua excepteur do.
+          </p>
+        </div>
+        <div class="card">
+          <h2>Heading3</h2>
+          <p>
+            Et enim consectetur amet velit quis sit consectetur minim laboris.
+            Id consequat voluptate tempor amet esse. Sint cupidatat eiusmod nisi
+            velit sunt culpa ut nostrud. Nulla quis ea exercitation ipsum dolor
+            sint pariatur nulla magna aliqua labore non aute. Elit ad minim
+            eiusmod enim dolore ipsum nulla anim ipsum. Sunt fugiat exercitation
+            Lorem proident occaecat anim esse tempor aliqua consequat labore sit
+            pariatur excepteur. Fugiat duis ad esse incididunt veniam laborum
+            est laboris officia qui enim aliqua excepteur do.
+          </p>
+        </div>
+        <div class="card">
+          <h2>Heading4</h2>
+          <p>
+            Sint tempor voluptate fugiat cillum amet deserunt labore
+            exercitation sit id. Sint non fugiat consequat minim. Fugiat tempor
+            adipisicing in qui cillum fugiat dolor veniam elit voluptate
+            cupidatat. Do minim et sint excepteur. Consectetur velit dolore qui
+            ipsum elit ad mollit labore nisi do. Aliqua nulla cupidatat enim
+            exercitation dolor est anim pariatur labore tempor sint. Deserunt
+            adipisicing amet consequat eu velit veniam incididunt cillum sit
+            deserunt irure. Nostrud quis fugiat cillum laborum. Amet esse qui do
+            tempor exercitation eu ea ad. Incididunt anim enim cupidatat sint
+            magna mollit dolor id occaecat nulla ut consectetur. Minim excepteur
+            amet ullamco laborum incididunt velit occaecat. Irure enim duis
+            Lorem elit. Anim cillum deserunt non non qui dolore cillum esse
+            dolore laborum qui ipsum. Enim dolore voluptate dolore occaecat
+            mollit. Minim enim aliqua qui magna labore ipsum occaecat.
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

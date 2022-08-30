@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Activity 1</title>
+  </head>
+
+  <body>
+    <ul id="names">
+      <li>John</li>
+      <li>Mary</li>
+      <li>Dora</li>
+      <li>Donny</li>
+    </ul>
+    <script>
+      // lensole.log(el);
+      let result = "Not found";
+      function searchPerson(elemId, name) {
+        let names = document.getElementById(elemId);
+        let arr = Array.from(names.children);
+        arr.forEach((element) => {
+          if (element.innerHTML === name) {
+            // return "found";
+            result = "found";
+          }
+        });
+        return result;
+        // for (let i = 0; i < name1.length; i++) {
+        //   if (elemId == "names" && name == name1[i].innerHTML) {
+        //     result = "found";
+        //     break;
+        //   } else {
+        //     result = "Not found";
+        //   }
+        // }
+        // return result;
+      }
+      console.log(searchPerson("names", "New"));
+    </script>
+  </body>
+</html>

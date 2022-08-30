@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1>
+      Hello Programmer
+    </h1>
+    <div>
+      <ul id="divElem"></ul>
+    </div>
+
+    <script>
+      async function fetchQuote() {
+        let url = "https://api.kanye.rest/";
+        let data = await fetch(url);
+        let data1 = await data.json();
+        // console.log(data1);
+        return data1;
+      }
+
+      function addQuoteToDOM(parameterObject) {
+        const { quote } = parameterObject; // using decontrution
+        // const quote = parameterObject.quote; //using individual elements
+        // let get = document.getElementById("elemH");
+        let createPara = document.createElement("p");
+        createPara.innerHTML = quote;
+        document.body.append(createPara);
+      }
+
+      async function quoteKanye() {
+        // fetchQuote().then((quote) => addQuoteToDOM(quote));
+        let quote = await fetchQuote();
+        addQuoteToDOM(quote);
+      }
+
+      quoteKanye();
+    </script>
+  </body>
+</html>
