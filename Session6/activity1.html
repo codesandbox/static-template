@@ -8,33 +8,66 @@
   </head>
   <body>
     <h1>
-      console.log("hie")
+      Hello Programmer
     </h1>
+    <div>
+      <ul id="divElem"></ul>
+    </div>
     <script>
       function getUsers() {
-        return fetch("https://api.github.com/users")
-          .then((res) => res.json())
-          .then((users) => {
-            return users.map((user) => user.login);
-          });
+        // let arr = [];
+        let url = "https://api.github.com/users";
+
+        return fetch(url).then((dataPromise) => dataPromise.json());
       }
+      getUsers();
+
+      // createListItem(text);
 
       function createListItem(text) {
-        const listElem = document.getElementById("list");
-        listElem.innerHTML += `<li><b>Name:</b> ${text}</li>`;
+        // const { nameList } = text;
+        // console.log(nameList);
+        let createElem = document.createElement("li");
+        createElem.innerHTML = `<li>${text}</li>`;
+        let div = document.getElementById("divElem");
+        div.append(createElem);
       }
 
       function addUsersToDOM() {
-        const namesPromise = getUsers();
-        namesPromise.then((names) => {
-          names.forEach((name) => createListItem(name));
+        getUsers().then((element) => {
+          element.map((abc) => {
+            createListItem(abc.login);
+            // console.log(abc.login);
+          });
+          // console.log(abc.login);
         });
       }
+      addUsersToDOM();
 
-      const namesPromise = getUsers();
-      namesPromise.then((names) => {
-        console.log("names 2", names);
-      });
+      // function getUsers() {
+      //   return fetch("https://api.github.com/users")
+      //     .then((res) => res.json())
+      //     .then((users) => {
+      //       return users.map((user) => user.login);
+      //     });
+      // }
+
+      // function createListItem(text) {
+      //   const listElem = document.getElementById("list");
+      //   listElem.innerHTML += `<li><b>Name:</b> ${text}</li>`;
+      // }
+
+      // function addUsersToDOM() {
+      //   const namesPromise = getUsers();
+      //   namesPromise.then((names) => {
+      //     names.forEach((name) => createListItem(name));
+      //   });
+      // }
+
+      // const namesPromise = getUsers();
+      // namesPromise.then((names) => {
+      //   console.log("names 2", names);
+      // });
     </script>
   </body>
 </html>

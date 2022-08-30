@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      #content-section {
+        border: 2px solid red;
+        padding: 2em;
+      }
+      #numbers-list {
+        border: 2px solid green;
+        padding: 2em;
+      }
+      #text-paras {
+        border: 2px solid black;
+        padding: 2em;
+      }
+      .btn {
+        color: white;
+        padding: 1em;
+        border-radius: 0.4em;
+      }
+      #btn1 {
+        background-color: red;
+      }
+      #btn2 {
+        background-color: green;
+      }
+      #btn3 {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content-section">
+      <button class="btn" id="btn1" type="" onclick="redBox()">
+        Add inside Red Box
+      </button>
+      <button class="btn" id="btn2" type="" onclick="greenBox()">
+        Add inside Green Box
+      </button>
+      <button class="btn" id="btn3" type="" onclick="blaclBox()">
+        Add inside Black Box
+      </button>
+      <h2>Numbers list</h2>
+      <ul id="numbers-list">
+        <li>1</li>
+        <li>2</li>
+      </ul>
+
+      <h2>Text paras</h2>
+      <div id="text-paras">
+        <p>Hello world</p>
+        <p>Lorem ipsum</p>
+      </div>
+    </div>
+    <script>
+      function redBox() {
+        let parentRed = document.getElementById("content-section");
+        let childTagCreatePrompt = prompt(
+          "Enter Element Name to add inside Red Box"
+        );
+        let childTagCreate = document.createElement(childTagCreatePrompt);
+        let textPrompt = prompt(
+          `Enter text for ${childTagCreatePrompt} element`
+        );
+
+        childTagCreate.innerText = textPrompt;
+        parentRed.append(childTagCreate);
+      }
+
+      function greenBox() {
+        let parentgreen = document.getElementById("numbers-list");
+        let childTagCreatePrompt = prompt(
+          "Enter Element Name to add inside Green Box"
+        );
+        let childTagCreate = document.createElement(childTagCreatePrompt);
+        let textPrompt = prompt(
+          `Enter text for ${childTagCreatePrompt} element`
+        );
+        childTagCreate.innerText = textPrompt;
+
+        parentgreen.append(childTagCreate);
+      }
+
+      function blaclBox() {
+        let parentBlack = document.getElementById("text-paras");
+        let childTagCreatePrompt = prompt(
+          "Enter Element Name to add inside Green Box"
+        );
+        let childTagCreate = document.createElement(childTagCreatePrompt);
+        let textPrompt = prompt(
+          `Enter text for ${childTagCreatePrompt} element`
+        );
+        childTagCreate.innerText = textPrompt;
+
+        parentBlack.append(childTagCreate);
+      }
+
+      // addNewChildElementToParent("numbers-list", "li", 4);
+      // /**
+      //  * Append a new child element to the parent Node element passed as argument
+      //  * - Child element should be of specified tag type
+      //  * - Child element should contain the specified text as its content
+      //  * @param {Node} parentId
+      //  * @param {String} childTagType
+      //  * @param {String} text
+      //  */
+      // function addNewChildElementToParent(parentId, childTagType, text) {
+      //   let parentElem = document.getElementById(parentId);
+      //   let childTagCreate = document.createElement(childTagType);
+      //   // console.log(childTagCreate);
+      //   childTagCreate.innerText = text;
+      //   parentElem.append(childTagCreate);
+      // }
+
+      // addNewChildElementToParent("numbers-list", "li", "3"); // Appends 3 as a list item
+      // addNewChildElementToParent("text-paras", "p", "Hey there");
+    </script>
+  </body>
+</html>
