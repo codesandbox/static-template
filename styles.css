@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-size: 14px;
+  scroll-behavior: smooth;
+}
+
+body {
+  /* margin: 0; */
+  font-family: "Ubuntu", system-ui, sans-serif;
+  color: black;
+  /* background-color: #e0e0e0; */
+  background: url(https://media.istockphoto.com/photos/render-of-a-macro-view-of-a-futuristic-electronic-circuit-board-with-picture-id995267166?b=1&k=20&m=995267166&s=170667a&w=0&h=zJpXaavQUKKAApgTMfdNqBSw1iOUeF7i21Nkbl-q_nY=)
+    100% repeat;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  background-color: #100a1f;
+  border-bottom: 3px solid #55ff00;
+
+  --animate-duration: 2s;
+  --animate-delay: 0.9s;
+}
+
+nav a {
+  display: inline-block;
+  min-width: 9rem;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  border: solid 1px #aaa;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+nav a[aria-current="page"] {
+  color: #000;
+  background-color: #d4d4d4;
+}
+
+nav a:hover {
+  color: #55ff00;
+}
+
+/* set nav scroll behavior */
+.navScroll-behavior {
+  background-color: #100a1f;
+  border-bottom: 3px solid #55ff00;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.hero-title {
+  background-color: rgba(126, 126, 126, 0.8);
+  font-weight: 700;
+  font-size: x-large;
+  text-transform: capitalize;
+  text-align: center;
+  border-radius: 5px;
+  margin: 10px;
+  border: 3px solid #55ff00;
+
+  /* animation duration */
+  --animate-duration: 2s;
+
+  /* animation delay */
+  --animate-delay: 4s;
+}
+
+.main-container {
+  padding: 0.3rem;
+  width: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* movie container */
+.movie-container {
+  background-color: rgba(182, 195, 199, 0.4);
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 10px;
+
+  border-top: 3px solid #55ff00;
+  border-bottom: 3px solid #55ff00;
+  border-radius: 15px;
+
+  padding: 5px;
+
+  width: 95%;
+  max-width: 1400px;
+}
+
+.movieCard {
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: #efefef;
+  text-align: justify;
+  min-width: 100px;
+  max-width: 250px;
+  height: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.movie-poster {
+  max-width: 245px;
+  border-radius: 12px;
+  border-bottom: 2px solid #000;
+}
+
+.movie-title {
+  font-weight: bolder;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1em;
+}
+
+.movie-average,
+.movie-date {
+  text-transform: capitalize;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.btn-overview,
+.btn-secondary {
+  background: #382b58 !important;
+  color: #fff !important;
+  border-radius: 100px !important;
+  font-family: "Ubuntu", sans-serif !important;
+  font-weight: 400 !important;
+  transition: 0.3s ease all !important;
+  margin-bottom: 5px !important;
+}
+/* ### */
+
+/* pagination */
+.pagination {
+  background-color: #100a1f;
+  border: 2px solid #55ff00;
+  border-radius: 15px;
+  width: 95%;
+  min-height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+.pagination button {
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 50px;
+  width: 200px;
+  background: #382b58;
+  color: #fff;
+  border-radius: 100px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+  transition: 0.3s ease all;
+}
+
+.pagination button:hover {
+  /* background: #137c32; */
+  background: #55ff00;
+  color: #382b58;
+}
+/* ### */
+
+/* footer */
+.footer {
+  background-color: rgba(182, 195, 199, 0.7);
+  border-top: 2px solid #55ff00;
+  min-height: 60px;
+  max-height: 200px;
+  width: auto;
+  text-transform: capitalize;
+
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 10px;
+}
+
+.author,
+.footer_link {
+  font-size: x-large;
+  color: #000;
+  text-decoration: none;
+}
+
+.footer_link:hover {
+  color: #382b58;
+}
+/* ### */
