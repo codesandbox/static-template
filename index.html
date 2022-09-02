@@ -1,12 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/index.js"></script>
+	<script type="text/javascript">
+		
+	</script>
+</head>
+
+<body>
+	<p class="p1">用户管理</p>
+	<button class="button1" onclick="act()" onclick="coki(this)">新建</button>
+	<input style="padding: 7px;margin: 10px;font-size: 15px;" type="text" placeholder="按关键字搜索"  />
+	<button class="button2" >撤销</button> 
+	<div id="table">
+		<table style="width: 100%;" cellpadding="0" cellspacing="0" id="t0" >
+			<thead>
+				<tr>
+					<th><input type="checkbox" name="chk" id="ck" onclick="chooseall()" ></th>
+					<th>姓名</th>
+					<th>年龄</th>
+					<th>性别</th>
+					<th>联系电话</th>
+					<th>详细地址</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="checkbox" name="chk" ></td>
+					<td>小明</td>
+					<td>18</td>
+					<td>男</td>
+					<td>13700000000</td>
+					<td>广东省广州市天河区</td>
+					<td>
+						<button onclick="act1(this)">编辑</button>
+						<button onclick="del(this)">删除</button>	
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<div class="main">
+			<div class="cont">
+			<p style="text-align: center;">新建/编辑用户</p>
+			<table style=" table-layout: fixed; word-wrap: break-word;width: 100%;height: 85%;">
+				<tr>
+				<td>姓名</td>
+				<td><input id="name" style="padding: 7px;margin: 10px;font-size: 15px;" type="text" value="" /></td>
+				</tr>
+				<tr>
+				<td>性别</td>
+				<td>
+				<select id="sex">
+					<option value="男" >男</option>
+					<option value="女">女</option>
+					<option value=" "selected="selected"></option>
+				</select>
+				</td>
+				</tr>
+				<tr>
+				<td>年龄</td>
+				<td><input id="age" style="padding: 7px;margin: 10px;font-size: 15px;" type="text" value="" /></td>
+				</tr>
+				<tr>
+				<td>电话</td>
+				<td><input id="number" style="padding: 7px;margin: 10px;font-size: 15px;" type="text" value="" /></td>
+				</tr>
+				<tr>
+				<td>详细地址</td>
+				<td><input id="addres" style="padding: 7px;margin: 10px;font-size: 15px;" type="text" value="" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+					<button onclick="act2(this)">确定</button>
+					<button onclick="act3()">取消</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+		</div>
+	<table>
+		<button class="button1" onclick="choosedel()">批量删除</button>
+	</table>
+</body>
+
 </html>
