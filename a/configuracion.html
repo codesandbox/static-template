@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Sistema de Asistencia</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <!-- SideBar -->
+    <section class="full-box cover dashboard-sideBar">
+        <div class="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
+        <div class="full-box dashboard-sideBar-ct">
+            <!--SideBar Title -->
+            <div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
+                Sistema de Asistencia <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+            </div>
+            <!-- SideBar User info -->
+            <div class="full-box dashboard-sideBar-UserInfo">
+                <figure class="full-box">
+                    <img src="../123/img/admin.jpg" >
+                    <figcaption class="text-center text-titles">Administrador</figcaption>
+                </figure>
+                <ul class="full-box list-unstyled text-center">
+                    <li>
+                        <a href="#!" class="btn-exit-system">
+                            <i class="zmdi zmdi-power"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- SideBar Menu -->
+            <ul class="list-unstyled full-box dashboard-sideBar-Menu">
+                <li>
+                    <a href="paneldecontrol.html">
+                        <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Panel de Control
+                    </a>
+                </li>
+
+                <li>
+                        
+                    <li>
+                        <a href="crear_usuario.html">
+                            <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Usuario
+                        </a>
+                    </li>
+                </li>
+                <li>
+                    <a href="#!" class="btn-sideBar-SubMenu">
+                        <i class="zmdi zmdi-shield-security zmdi-hc-fw"></i> Acceso <i
+                            class="zmdi zmdi-caret-down pull-right"></i>
+                    </a>
+                    <ul class="list-unstyled full-box">
+                        <li>
+                            <a href="justificacion.html"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Justificacion</a>
+                        </li>
+
+                        <li>
+                            <a href="configuracion.html"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Configuracion</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#!" class="btn-sideBar-SubMenu">
+                        <i class="zmdi zmdi-shield-security zmdi-hc-fw"></i> Reporte <i
+                            class="zmdi zmdi-caret-down pull-right"></i>
+                    </a>
+                    <ul class="list-unstyled full-box">
+                        <li>
+                            <a href="reporte_usuario.html"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Reporte de usuario</a>
+                        </li>
+                        <li>
+                            <a href="reporte_general.html"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Reporte General</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+         </div>
+        </section>
+<!-- Content page-->
+<section class="full-box dashboard-contentPage">
+    <!-- NavBar -->
+    <nav class="full-box dashboard-Navbar">
+    <ul class="full-box list-unstyled text-right">
+        <li class="pull-left">
+            <a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
+        </li>
+
+        <li>
+            <a href="#!" class="btn-search">
+                <i class="zmdi zmdi-search"></i>
+            </a>
+        </li>
+    </ul>
+     </nav>
+
+
+<!-- Content page -->
+<div class="container-fluid">
+    <div class="page-header">
+      <h1 class="text-titles"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> Configuracion</small></h1>
+    </div>
+</div>
+<div class="col-sm-6">
+                    <form method="post" name="formRegistraEmpleado" id="formRegistraEmpleado">
+                        <div class="row">
+                                
+                            <div class="col sm-2">
+                                <h1 style="text-align: down"></h1>
+                                <label for="fechaInicio" class="form-label">Fecha Inicio</label>
+                                <input type="date" class="form-control" name="fechaInicio" id="fechaInicio"
+                                    required='true'>
+                            </div>
+                            <div class="col mt-2">
+                                <label for="fechaFin" class="form-label">Fecha Fin</label>
+                                <input type="date" class="form-control" name="fechaFin" id="fechaFin" required='true'> 
+                               
+                            </div>
+                            <div class="form-group label-floating">
+                                <label class="control-label">Hora de Entrada</label>
+                                <input type="time" value="08:00:00">
+                              </div>
+                              <div class="form-group label-floating">
+                                <label class="control-label">Hora de Salida </label>
+                                <input type="time" value="08:00:00">
+                              </div>
+                              <div class="form-group label-floating">
+                                <label class="control-label">Codigo JharidID</label>
+                                <input class="form-control" type="text">
+                              </div>
+                        
+                        </div>
+                        <p class="text-center">
+                            <button href="#!" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> Guardar</button>
+                                                               </p>
+                    </form>
+                </div>
+
+
+     
+<!--====== Scripts -->
+<script src="./js/jquery-3.1.1.min.js"></script>
+<script src="./js/sweetalert2.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/material.min.js"></script>
+<script src="./js/ripples.min.js"></script>
+<script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="./js/main.js"></script>
+<script>
+    $.material.init();
+</script>
+</body>
+
+   
+
+</html>
