@@ -1,12 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Caro Vertretungsplan</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <meta
+      data-n-head="ssr"
+      data-hid="mobile-web-app-capable"
+      name="mobile-web-app-capable"
+      content="yes"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="theme-color"
+      content="orange"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#3794c1"
+      media="(prefers-color-scheme: dark)"
+    />
+    <script src="src/index.js"></script>
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+
+  <body style="margin: 0; padding: 0;">
+    <header>
+      <span style="position: sticky; top: 0em;">Gemacht von Heinrich</span>
+      <hr />
+      <span style="position: sticky; top: 1em;"
+        >Vertretung Morgen
+        <p></p
+      ></span>
+      <hr />
+      <span style="position: sticky; top: 2em;">
+        gehostet mit nachhaltigen Energien
+      </span>
+    </header>
+    <!-- <hr> -->
+    <div id="app">
+      <table class="plan" id="plan0">
+        <tr>
+          <th>Klasse</th>
+          <th>Stunde</th>
+          <th>Fach</th>
+          <th>Raum</th>
+          <th>Lehrer</th>
+          <th>Text</th>
+        </tr>
+      </table>
+    </div>
+    <footer>
+      <div id="wcb" class="carbonbadge"></div>
+    </footer>
+
+    <script
+      src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js"
+      defer=""
+    ></script>
   </body>
 </html>
