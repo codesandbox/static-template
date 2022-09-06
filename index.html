@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+   
+    <script defer src="script.js"></script>
+    <link href="style.css" rel="stylesheet"></link>
+
+    <title>Shuffle and MVC</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+    <div id='score-board' style="visibility:hidden">
+      <div id='dealer-score'>Dealer: <span id='dealer-points'>0</span></div>
+      <div id='user-score'>You: <span id='user-points'>0</span></div>
+    </div>
+<div id="msg-space"></div>
+<div id='dealer-space' class='player-div'>
+
+</div>
+
+<div id='user-space' class='player-div'>
+
+</div>
+
+<div id='control-panel'>
+  <button id='deal-btn' style='visibility:visible'>Deal</button>
+  <button id='hit-btn'>Hit</button>
+  <button id='stand-btn'>Stand</button>
+  <button id='new-round-btn'>New Round</button>
+</div>
+
+<p> The Blackjack game that I turned in for my bootcamp course was Frankensteined together to meet a deadline and
+   when I came back to the code after graduation, it was nearly unreadable, even to me.
+  To build a better understanding of MVC architecture and coding best practices, I decided to 
+  build a series of smaller games, each reinforcing just a small piece of the logic needed to build a
+   fully-functioning Blackjack game.   </p>
+   <p> Part 1 is played with only 10 'cards', each with a respective point value from 1-10. Focus is on:
+     <ul><li>shuffling the 'deck' using Math.random and a while loop</li><li>Calculating player scores using a for loop</li>
+      <li>Displaying cards and player scores using DOM manipulation</li></p></ul>
+<p>My code here could definitely use some tightening up - the JS is 161 lines and it feels like half of that is just toggling button visibility!
+However, since I was able to implement all the game logic and DOM manipulation from scratch, I consider this part of the project a success.
+</p>
+</body>
 </html>
