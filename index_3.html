@@ -25,7 +25,7 @@
     }
   </style>
   <script>
-    AFRAME.registerComponent("markerhandler", {
+    AFRAME.registerComponent("foneworxHandler", {
       init: function () {
         this.el.sceneEl.addEventListener("markerFound", () => {
           // redirect to custom URL
@@ -34,16 +34,76 @@
             //   window.location =
             //     "https://games.foneworx.co.za//foneworx-island-entry";
 
-            openGameUrl();
+            openGameUrl("https://games.foneworx.co.za//foneworx-island-entry");
           });
         });
 
-        this.el.sceneEl.addEventListener("markerLost", () => {
-          // Remove event.
-          this.el.sceneEl.removeEventListener("click", () => {
-            openGameUrl();
+        // this.el.sceneEl.addEventListener("markerLost", () => {
+        //   // Remove event.
+        //   this.el.sceneEl.removeEventListener("click", () => {
+        //     openGameUrl();
+        //   });
+        // });
+
+        // this.el.sceneEl.addEventListener("click", () => {
+        //   // redirect to custom URL
+        //   //   window.location =
+        //   //     "https://games.foneworx.co.za//foneworx-island-entry";
+
+        //   openGameUrl();
+        // });
+      }
+    });
+
+    AFRAME.registerComponent("fourwaysreviewHandler", {
+      init: function () {
+        this.el.sceneEl.addEventListener("markerFound", () => {
+          // redirect to custom URL
+          this.el.sceneEl.addEventListener("click", () => {
+            // redirect to custom URL
+            //   window.location =
+            //     "https://games.foneworx.co.za//foneworx-island-entry";
+
+            openGameUrl("https://fourwaysreview.co.za");
           });
         });
+
+        // this.el.sceneEl.addEventListener("markerLost", () => {
+        //   // Remove event.
+        //   this.el.sceneEl.removeEventListener("click", () => {
+        //     openGameUrl();
+        //   });
+        // });
+
+        // this.el.sceneEl.addEventListener("click", () => {
+        //   // redirect to custom URL
+        //   //   window.location =
+        //   //     "https://games.foneworx.co.za//foneworx-island-entry";
+
+        //   openGameUrl();
+        // });
+      }
+    });
+
+    AFRAME.registerComponent("randburgsunHandler", {
+      init: function () {
+        this.el.sceneEl.addEventListener("markerFound", () => {
+          // redirect to custom URL
+          this.el.sceneEl.addEventListener("click", () => {
+            // redirect to custom URL
+            //   window.location =
+            //     "https://games.foneworx.co.za//foneworx-island-entry";
+
+            openGameUrl("https://randburgsun.co.za");
+          });
+        });
+
+        // this.el.sceneEl.addEventListener("markerLost", () => {
+        //   // Remove event.
+        //   this.el.sceneEl.removeEventListener("click", () => {
+        //     openGameUrl();
+        //   });
+        // });
 
         // this.el.sceneEl.addEventListener("click", () => {
         //   // redirect to custom URL
@@ -60,9 +120,9 @@
       console.log("Loaded");
     });
 
-    function openGameUrl() {
+    function openGameUrl(url) {
       link = document.createElement("a");
-      link.href = "https://games.foneworx.co.za//foneworx-island-entry";
+      link.href = url;
       link.target = "_blank";
       link.click();
     }
@@ -100,6 +160,43 @@
           src="assets/competitiongraphicspirates_quarter.jpg"
         ></a-image>
       </a-nft>
+
+      <a-nft
+        type="nft"
+        url="./assets/randburgsun"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5"
+      >
+        <a-image
+          scale="10 10 10"
+          rotation="-90 0 0"
+          position="0 0 0"
+          width="3"
+          height="1.5"
+          src="assets/feedback.png"
+        ></a-image>
+      </a-nft>
+
+      <a-nft
+        type="nft"
+        url="./assets/fourwaysreview"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5"
+      >
+        <a-image
+          scale="10 10 10"
+          rotation="-90 0 0"
+          position="0 0 0"
+          width="3"
+          height="1.5"
+          src="assets/feedback.png"
+        ></a-image>
+      </a-nft>
+
       <!-- static camera that moves according to the device movemenents -->
       <a-entity camera></a-entity>
     </a-scene>
