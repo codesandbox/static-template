@@ -1,4 +1,4 @@
-.cube,
+.cube1,
 .cube2,
 .cube3,
 .cube4 {
@@ -13,7 +13,7 @@
   transition: 0.5s;
 }
 
-.cube:hover {
+.cube1:hover {
   margin-left: 20px;
   background-color: rgb(168, 154, 255);
   border-start-start-radius: 20px;
@@ -39,4 +39,59 @@
   background-color: rgb(0, 255, 136);
   border-start-start-radius: 20px;
   border-bottom-left-radius: 20px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+.nav1,
+.nav2,
+.nav3,
+.nav4 {
+  display: flex;
+  justify-content: center;
+  min-width: 450px;
+  height: 25px;
+  border-radius: 10px;
+  background-color: red;
+  margin: 5px;
+}
+
+@media screen and (max-width: 1400px) {
+  .nav1,
+  .nav2,
+  .nav3,
+  .nav4 {
+    min-width: 330px;
+    background-color: rgb(36, 216, 36);
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .nav1,
+  .nav2,
+  .nav3,
+  .nav4 {
+    min-width: 240px;
+    background-color: green;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .menu {
+    min-width: 240px;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 320px) {
+  .nav1,
+  .nav2,
+  .nav3,
+  .nav4 {
+    align-items: center;
+    min-width: 240px;
+    background-color: aqua;
+    flex-direction: column;
+  }
 }
