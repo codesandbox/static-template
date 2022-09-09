@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="parent">
+      <div class="main-card">
+        <div class="card-header">
+          <div class="left">
+            <p>My balance</p>
+            <h2>$921.48</h2>
+          </div>
+          <div class="right"><img src="img/logo.svg" alt="logo" /></div>
+        </div>
+        <div class="card-body">
+          <h2>Spending - Last 7 Days</h2>
+          <div class="bars">
+            <div class="bar-container">
+              <div class="actual-bar"></div>
+              <h5>mon</h5>
+            </div>
+            <div class="bar-container">
+              <div class="actual-bar"></div>
+              <h5>tue</h5>
+            </div>
+            <div class="bar-container">
+              <span>$52.36</span>
+              <div class="actual-bar"></div>
+              <h5>wed</h5>
+            </div>
+            <div class="bar-container">
+              <span>$31.07</span>
+
+              <div class="actual-bar"></div>
+              <h5>thu</h5>
+            </div>
+            <div class="bar-container">
+              <div class="actual-bar"></div>
+              <h5>fri</h5>
+            </div>
+            <div class="bar-container">
+              <div class="actual-bar"></div>
+              <h5>sat</h5>
+            </div>
+            <div class="bar-container">
+              <div class="actual-bar"></div>
+              <h5>sun</h5>
+            </div>
+          </div>
+
+          <div class="bottom">
+            <div class="left">
+              <h5>Total this month</h5>
+              <p>$478.33</h>
+            </div>
+            <div class="right">
+              <h4>+2.4%</h4>
+              <p>from last month</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
