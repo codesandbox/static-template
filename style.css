@@ -1,0 +1,108 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+*,
+*::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  background: slategrey;
+}
+.header {
+  background: black;
+  padding: 0;
+  color: white;
+  margin-top: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+.header ul {
+  display: flex;
+  list-style: none;
+}
+
+.header ul li {
+  margin: 0px 5px;
+}
+
+.header2 button {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.header button:hover {
+  background-color: royalblue;
+}
+
+.header button:focus {
+  outline: none;
+}
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/images/sunset.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.banner-texts {
+  padding: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--white-color);
+  color: aliceblue;
+}
+
+.banner-title {
+  font-size: 3.5rem;
+  font-weight: 500;
+}
+
+.banner-subtitle {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 1.3em 0;
+  color: var(--light-color);
+}
+
+.banner-button {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 22px;
+  background-color: sandybrown;
+  color: var(--white-color);
+  text-transform: uppercase;
+  transition: transform 0.3s ease-in;
+}
+
+@media (hover: hover) {
+  .banner-button:hover {
+    transform: translateX(10px);
+    cursor: pointer;
+  }
+}
+.product-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
