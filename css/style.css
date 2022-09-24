@@ -17,10 +17,6 @@ img {
   max-width: 100%;
 }
 
-body {
-  font-family: "font", sans-serif;
-}
-
 @font-face {
   font-family: "Inter";
   src: url("../fonts/InterLight.woff2") format("woff2");
@@ -59,4 +55,54 @@ body {
   font-display: swap;
   font-weight: 700;
   font-style: normal;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --collor-white: #fff;
+  --collor-grey: #838383;
+  --collor-dark: #1d1d1f;
+}
+
+.container {
+  max-width: 1230px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.logo {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 130%;
+  color: var(--collor-white);
+}
+
+.hero {
+  padding-top: 400px;
+  background-image: url("../img/hero-cover.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero__title {
+  margin: 0;
 }
