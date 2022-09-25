@@ -108,6 +108,7 @@ body {
   text-align: center;
   color: var(--collor-dark);
   background-color: var(--collor-white);
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .btn--light {
@@ -115,9 +116,19 @@ body {
   background-color: var(--collor-white);
 }
 
+.btn--light:hover {
+  color: var(--collor-white);
+  background-color: var(--collor-dark);
+}
+
 .btn--dark {
   color: var(--collor-white);
   background-color: var(--collor-dark);
+}
+
+.btn--dark:hover {
+  color: var(--collor-dark);
+  background-color: var(--collor-white);
 }
 
 .grid {
@@ -159,6 +170,11 @@ body {
   font-size: 16px;
   line-height: 19px;
   color: var(--collor-white);
+  transition: color 0.3s ease-in-out;
+}
+
+.nav__link:hover {
+  color: var(--collor-grey);
 }
 
 .logo {
@@ -173,13 +189,20 @@ body {
   margin-right: 35px;
   width: 24px;
   height: 24px;
+  color: var(--collor-white);
+  transition: color 0.3s ease-in-out;
 }
 
-.header__btn svg {
+.header__search svg {
   display: block;
   width: 100%;
   height: 100%;
+  stroke: currentColor;
   object-fit: cover;
+}
+
+..header__search:hover {
+  color: var(--collor-grey);
 }
 
 .hero {
@@ -278,6 +301,8 @@ body {
   width: 100px;
   height: 100px;
   transform: translate(-50%, -50%);
+  color: var(--collor-white);
+  transition: color 0.3s ease-in-out;
 }
 
 .about__play--hidden {
@@ -289,6 +314,14 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.about__play circle {
+  fill: currentColor;
+}
+
+.about__play:hover {
+  color: var(--collor-grey);
 }
 
 .portfolio {
@@ -437,6 +470,8 @@ body {
   display: block;
   width: 40px;
   height: 40px;
+  color: var(--collor-white);
+  transition: color 0.3s ease-in-out;
 }
 
 .social__link svg {
@@ -444,6 +479,11 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  fill: currentColor;
+}
+
+.social__link:hover {
+  color: var(--collor-grey);
 }
 
 .footer__title {
