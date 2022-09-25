@@ -1,12 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
+<!-- IRE Dev tools -->
+<!-- Needs to be index.html for github -->
+<!-- You can use Live Server to update this easily on vs code -->
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src=".\jquery-toast-plugin-master\dist\jquery.toast.min.js"></script>
+  <!-- Import JS Files -->
+  <script src=".\assets\main.js"></script>
+  <script src=".\assets\helperfunctions.js"></script>
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    rel="noopener"
+    target="_blank"
+    href=".\jquery-toast-plugin-master\dist\jquery.toast.min.css"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    rel="noopener"
+    target="_blank"
+    href=".\assets\main.css"
+  />
+</head>
+
+<html>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="app">
+      <!-- Get Jquery Element from ID -->
+      <div>
+        <div class="max_min_button">- Get Jquery ID Selector from JS ID</div>
+        <br />
+        <div class="elevated-div">
+          <p>
+            Converts an ID to a Jqery element selector.<br />
+            eg MainContent_reconciliationCtrl_... =>
+            $('#MainContent_reconciliationCtrl_...')
+          </p>
+          For Jqery Selector:
+          <input id="htmlID" class="create-jquery-selector" /> <br />
+          For ASP ClientID Selector:
+          <input id="forASPClientID" class="create-jquery-selector" />
+          <br /><br />
+          <input
+            id="jqueryIDSelector"
+            class="create-jquery-selector"
+            disabled
+          />
+          <button onclick="CopyJqueryIDSelector()">Copy Result</button>
+        </div>
+      </div>
+
+      <!-- Convert Azure ticket to IRE ticket -->
+      <div>
+        <div class="max_min_button">- Convert Azure ticket to IRE ticket</div>
+        <br />
+        <div class="elevated-div">
+          <span>
+            eg. Product Backlog Item 27964: Important Ticket => (AA) ITX:
+            [#27964] Important Ticket</span
+          >
+          <p>Product</p>
+          <select id="ireTicketProductList">
+            <!-- <option value="~/Dash/Default.aspx">IRE Dash</option>
+            <option value="~/UserTasks/Tasks.aspx?product=19">Tasks</option>
+            <option value="ROL">ROL Rentals</option>
+            <option value="~/AppTracker2/Default.aspx">AppTracker</option>
+            <option value="~/MoveMeIn/Preview.aspx">Move Me In (Preview)</option>
+            <option value="~/EntryTracker/Default.aspx">EntryTracker</option>
+            <option value="~/RIS/Default.aspx">RIS</option>
+            <option value="~/LeaseTracker/Default.aspx">LeaseTracker</option>
+            <option value="~/VacateTracker/Default.aspx">VacateTracker</option>
+            <option value="KT">KeyTracker</option>
+            <option value="~/SignTracker/Summary.aspx">SignTracker</option>
+            <option value="~/RentRollTracker/Default.aspx">RentRollTracker</option>
+            <option value="~/IRE-BDM/Default.aspx">IRE BDM</option>
+            <option value="~/RegisterOnline/Sales/Default.aspx">ROL Sales</option>
+            <option value="~/IREUploader/Default.aspx">IRE Uploader</option> -->
+
+            <option value="IRE">IRE</option>
+            <option value="General">General</option>
+            <option selected="selected" value="ITX">IRE Transact</option>
+            <option value="MT">MaintenanceTracker</option>
+            <option value="LT">LeaseTracker</option>
+            <option value="VT">VacateTracker</option>
+            <option value="KW">KeyWhere</option>
+          </select>
+          <br /><br />
+
+          <!-- TODO: Drop down or searchable textbox to get the username to concat with -->
+          <textarea id="azureTicket" class="ticket-converts"></textarea>
+          <br /><br />
+          <textarea id="ireTicket" class="ticket-converts" disabled></textarea>
+          <button onclick="CopyIRETicket()">Copy IRE Ticket</button>
+        </div>
+      </div>
+
+      <!-- Remove Commas from String  -->
+      <div>
+        <div class="max_min_button">
+          - Remove Commas from String eg. 100, 101, 102 => 100 101 102
+        </div>
+
+        <br />
+        <div class="elevated-div">
+          <div class="side-by-side-div">
+            <div class="string-with-comma">
+              <textarea
+                id="stringWithCommas"
+                class="comma-text-area"
+              ></textarea>
+            </div>
+            <div class="string-with-comma">
+              <textarea
+                id="stringWithoutCommas"
+                class="comma-text-area"
+                disabled
+              ></textarea>
+            </div>
+          </div>
+          <div class="float-right">
+            <button onclick="CopyStringWithoutCommas()">Copy Result</button>
+          </div>
+          <br />
+        </div>
+      </div>
+
+      <!-- Replace spaces with commas -->
+      <div>
+        <div class="max_min_button">
+          - Replace spaces with commas. This will replace spaces and new lines
+          with commas eg. 100 101 102 => 100, 101,102.
+        </div>
+        <br />
+        <div class="elevated-div">
+          <div class="side-by-side-div">
+            <div class="string-with-comma">
+              <textarea
+                id="stringWithoutAddedCommas"
+                class="comma-text-area"
+              ></textarea>
+            </div>
+            <div class="string-with-comma">
+              <textarea
+                id="stringWithAddedCommas"
+                class="comma-text-area"
+                disabled
+              ></textarea>
+            </div>
+          </div>
+          <div class="float-right">
+            <button onclick="CopyStringWithAddedCommas()">Copy Result</button>
+          </div>
+          <br />
+        </div>
+      </div>
+
+      <!-- Trim Commit ID -->
+      <div>
+        <div class="max_min_button">- Trim Commit ID</div>
+        <br />
+        <div class="elevated-div">
+          <p>
+            Trim your commit ID to the first 8 characters eg.
+            d7ec58cb5911df2a681efaee5ae98cdadb95ce89 => d7ec58cb
+          </p>
+          <input id="commitID" class="commit-id" />
+          <br /><br />
+          <input id="commitIDTrimmed" class="commit-id-trimmed" disabled />
+          <button onclick="CopyCommitID()">Copy Commit ID</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
