@@ -1,0 +1,54 @@
+@media (max-width: 767.99px) {
+  .header__container {
+    flex-direction: column;
+  }
+
+  .header__right {
+    margin-top: 30px;
+    padding-bottom: 10px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .hero__title {
+    font-size: 70px;
+    line-height: 84px;
+  }
+
+  .grid {
+    grid-template-columns: auto;
+    row-gap: 40px;
+  }
+
+  :root {
+    --offset: 60px;
+  }
+
+  .portfolio-item--reverse .portfolio-item__col:first-child {
+    order: 1;
+  }
+
+  .portfolio-item--reverse .portfolio-item__col:last-child {
+    order: 2;
+  }
+
+  .portfolio-item:not(:last-child) {
+    margin-bottom: 60px;
+  }
+
+  .footer {
+    padding-bottom: 90px;
+  }
+}
+
+@media (max-width: 575.99px) {
+  .hero__title {
+    font-style: 40px;
+    line-height: 54px;
+  }
+
+  .hero {
+    padding-top: 200px;
+  }
+}
