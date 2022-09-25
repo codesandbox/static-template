@@ -67,6 +67,17 @@ body {
   --collor-dark: #1d1d1f;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
 .container {
   max-width: 1230px;
   padding: 0 15px;
@@ -100,6 +111,12 @@ body {
 .btn--light {
   color: var(--collor-dark);
   background-color: var(--collor-white);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 60px;
 }
 
 .header {
@@ -186,4 +203,77 @@ body {
   font-size: 16px;
   line-height: 150%;
   color: var(--collor-white);
+}
+
+.about__top {
+  padding-top: 190px;
+}
+
+.about__item:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+.completed__value {
+  font-weight: 300;
+  font-size: 64px;
+  line-height: 140%;
+  color: var(--collor-dark);
+}
+
+.completed__descr {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--collor-grey);
+}
+
+.about__title {
+  margin: 0;
+  margin-bottom: 60px;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 140%;
+  color: var(--collor-dark);
+}
+
+.about__descr {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--collor-dark);
+}
+
+.about__descr:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.about__video {
+  position: relative;
+  width: 100%;
+  height: 630px;
+  overflow: hidden;
+}
+
+.about__video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+}
+
+.about__play svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
