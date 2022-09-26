@@ -1,12 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bhagyashree Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!-- navbar -->
+    <nav class="navbar">
+      <ul class="link-group">
+        <li class="link active"><a href="#">Home</a></li>
+        <li class="link"><a href="#c1">Project</a></li>
+        <li class="link"><a href="#c2">About Me</a></li>
+        <li class="link"><a href="#c3">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- home section -->
+    <section class="home-section active">
+      <h1 class="hero-heading">
+        Hello, I am <br />
+        Bhagyashree
+      </h1>
+      <img src="Bhagya-pic.jpg" class="home-img" alt="" />
+    </section>
+
+    <!-- project section -->
+    <section class="project-section active">
+      <h1 class="project-heading" id="c1">some of my projects</h1>
+      <div class="project-container">
+        <div class="project-card">
+          <img src="project-img.jpg" class="project-img" alt="" />
+          <div class="project-content">
+            <h1 class="project-title">Project 01</h1>
+            <p class="project-info">
+              It is a type of currency converter in which the user can convert
+              the currency from rupee to Dollar, Canadian and Euro also. Our
+              team implemented it using ANDROID with JAVA language.
+            </p>
+            <div class="project-btn-grp">
+              <button class="project-btn github">github repo</button>
+              <button class="project-btn live">see live</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+    </section>
+    <h1 class="about-h1" id="c2"><i>About Me</i></h1>
+
+    <!-- about section -->
+    <section class="about-section active">
+      <div class="about">
+        <div class="about-img-container">
+          <img src="Bhagya-pic.jpg" class="about-img" alt="" />
+          <button
+            class="download-cv-btn"
+            style="
+              color: white;
+              font-size: 25px;
+              font-family: 'Times New Roman', Times, serif;
+            "
+          >
+            <a
+              href="https://uploads.codesandbox.io/uploads/user/db71d421-8222-425b-a754-6d232c2c3f61/vLeD-RESUME+BVT.pdf"
+              target="_blank" title:"Bhagya CV"
+            >
+              downlaod cv</a
+            >
+          </button>
+        </div>
+
+        <p class="about-info">
+          My name is Bhagyashree Vijay Telghare. I'm a B.tech student at
+          Jhulelal Institute of Technology from Computer Science & Engineering
+          Department. I was born and raised in Nagpur. I am pursing a B.Tech. in
+          Computer Science & Engineering from Jhulelal Institute of Technology,
+          Rastrasant Tukdoji Maharaj Nagpur University (RTMNU), formerly Nagpur
+          University. I had got 85.40 aggregate in 10th standard and 72.77
+          aggregate in 12th standard. I am self motivated and discipline soul. I
+          am always keen to up-skill myself by learning new things whenever I
+          get a chance. My strenghts are my analytical approach, my human touch
+          to the situations and presentation skills.I believe in being
+          realistic. In my free time I enjoy spending time with my family,
+          sometimes cooking, listening to music, doing reading and playing
+          outdoor sports.
+        </p>
+      </div>
+    </section>
+
+    <!-- skills -->
+    <div class="skill-section">
+      <h1 class="heading"><i>Skills</i></h1>
+      <div class="skills-container">
+        <div class="skill-card">
+          <h1 class="skill-name">HTML</h1>
+          <img src="html.png" class="skill-img" alt="" />
+          <div class="skill-level">90%</div>
+        </div>
+        <div class="skills-container">
+          <div class="skill-card">
+            <h1 class="skill-name">CSS</h1>
+            <img src="css3.png" class="skill-img" alt="" />
+            <div class="skill-level">80%</div>
+          </div>
+          <div class="skills-container">
+            <div class="skill-card">
+              <h1 class="skill-name">PYTHON</h1>
+              <img src="python-logo.png" class="skill-img" alt="" />
+              <div class="skill-level">40%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- timeline -->
+    <section>
+      <div class="timeline" active>
+        <h1 class="heading"><i>Education and experience</i></h1>
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title">2017-2018</h1>
+            <p class="card-detail">
+              I have completed my SSC Education from Nehru English High School
+              with the aggregate of 85.40%
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title">2019-2020</h1>
+            <p class="card-detail">
+              I have completed my HSC Education from St. George Junior College
+              with the aggregate of 72.77%
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title">2020-2024</h1>
+            <p class="card-detail">
+              At Present I am pursuing B.Tech. in Computer Science & Engineering
+              from Jhulelal Institute of Technology, Rastrasant Tukdoji Maharaj
+              Nagpur University (RTMNU), formerly Nagpur University.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+    <hr />
+    <br /><br />
+
+    <!-- contact section -->
+    <h3
+      id="c3"
+      style="
+        text-align: center;
+        font-size: 80px;
+        color: #fff;
+        text-transform: capitalize;
+        font-weight: 30px;
+        margin-bottom: 50px;
+      "
+    >
+      <i> Contact Form</i>
+    </h3>
+
+    <div class="container">
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <input
+          type="text"
+          id="fname"
+          name="firstname"
+          placeholder="Your name.."
+        />
+
+        <label for="lname">Last Name</label>
+        <input
+          type="text"
+          id="lname"
+          name="lastname"
+          placeholder="Your last name.."
+        />
+        <label for="lname">Email</label>
+        <input type="text" id="email" name="Email" placeholder="Your Email.." />
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="india">India</option>
+          <option value="ireland">Ireland</option>
+          <option value="italy">Italy</option>
+          <option value="usa">USA</option>
+        </select>
+
+        <label for="subject">Message</label>
+        <textarea
+          id="subject"
+          name="subject"
+          placeholder="Write something.."
+          style="height: 200px;"
+        ></textarea>
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <script src="app.js"></script>
   </body>
 </html>
