@@ -1,12 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <title>QR code</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+      }
+      .container {
+        position: relative;
+        height: 497px;
+        width: 320px;
+        margin: auto;
+        margin-top: 150px;
+
+        background-color: white;
+        border-radius: 20px;
+      }
+      .qrimage {
+        display: inline-block;
+        height: 288px;
+        width: 288px;
+        margin: auto;
+        padding: 16px;
+        border-radius: 30px;
+      }
+      .firsttext {
+        display: inline-block;
+        height: 56px;
+        width: 288px;
+        padding: 16px;
+        left: 0px;
+        margin-top: 1px;
+        font-family: "Outfit", sans-serif;
+        color: #1f314f;
+
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 28px;
+        text-align: center;
+      }
+      .secondtext {
+        height: 57px;
+        width: 256px;
+        left: 16px;
+        margin-top: -50px;
+        text-align: center;
+        padding: 30px;
+        font-family: "Outfit", sans-serif;
+        color: #7d889e;
+
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0.1875px;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <img src="/image-qr-code.png" class="qrimage" />
+      <h1 class="firsttext">
+        Improve your front-end skills by building projects
+      </h1>
+      <p class="secondtext">
+        Scan the QR code to visit Frontend Mentor and take your coding skills to
+        the next level
+      </p>
+    </div>
   </body>
 </html>
