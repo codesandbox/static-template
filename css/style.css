@@ -134,11 +134,30 @@ ul {
   font-size: 18px;
   line-height: 130%;
   color: white;
+
+  transition: color 0.3s ease-in-out;
 }
 
 .nav__logo {
   width: 40px;
   height: 40px;
+}
+
+.nav__link:hover {
+  color: var(--collor-active);
+}
+
+.nav-inst {
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-inst svg {
+  stroke: currentColor;
+}
+
+.nav-inst:hover {
+  color: var(--collor-active);
 }
 
 /*hero*/
@@ -201,10 +220,24 @@ ul {
   padding-bottom: 150px;
 }
 
+.services__item {
+  position: relative;
+  padding-bottom: 50px;
+}
+
 .services__img {
   width: 396px;
   height: 300px;
-  border: 1 solid var(--collor-active);
+}
+
+.services__border {
+  position: absolute;
+  top: -25px;
+  left: 25px;
+  width: 396px;
+  height: 300px;
+  border: 1px solid rgba(205, 170, 125, 0.5);
+  z-index: -1;
 }
 
 .services__title {
@@ -214,8 +247,13 @@ ul {
   font-weight: 400;
   font-size: 30px;
   line-height: 120%;
-  text-align: center;
   color: white;
+
+  transition: color 0.3s ease-in-out;
+}
+
+.services__title:hover {
+  color: var(--collor-active);
 }
 
 /*brand*/
@@ -268,6 +306,12 @@ ul {
   font-size: 24px;
   line-height: 130%;
   color: white;
+
+  transition: color 0.3s ease-in-out;
+}
+
+.portfolio--step__link:hover {
+  color: var(--collor-active);
 }
 
 /*footer*/
@@ -290,6 +334,7 @@ ul {
 
 .footer__title {
   margin: 0;
+  margin-bottom: 25px;
   font-weight: 700;
   font-size: 24px;
   line-height: 120%;
@@ -297,6 +342,8 @@ ul {
 }
 
 .footer__number {
+  display: block;
+  padding-bottom: 15px;
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;
@@ -311,8 +358,23 @@ ul {
 }
 
 .footer__time {
+  margin: 0;
+  padding-bottom: 15px;
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;
   color: white;
+}
+
+.footer__inst {
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer__inst svg {
+  stroke: currentColor;
+}
+
+.footer__inst:hover {
+  color: var(--collor-active);
 }
