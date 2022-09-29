@@ -1,12 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header class="header">
+      <div class="container">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="" class="nav-inst">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.5341 1H7.46592C3.89455 1 1 3.89507 1 7.46592V18.5341C1 22.1054 3.89507 25 7.46643 25H18.5336C22.1049 25 25 22.1049 25 18.5336V7.46592C25 3.89455 22.1049 1 18.5336 1H18.5341Z"
+                  
+                  stroke-width="2"
+                  stroke-miterlimit="10"
+                />
+                <path
+                  d="M13 18.7932C16.1995 18.7932 18.7932 16.1995 18.7932 13C18.7932 9.8005 16.1995 7.20679 13 7.20679C9.80049 7.20679 7.20679 9.8005 7.20679 13C7.20679 16.1995 9.80049 18.7932 13 18.7932Z"
+                  
+                  stroke-width="2"
+                  stroke-miterlimit="10"
+                />
+                <path
+                  d="M20.0345 7.20688C20.72 7.20688 21.2757 6.65115 21.2757 5.96562C21.2757 5.2801 20.72 4.72437 20.0345 4.72437C19.3489 4.72437 18.7932 5.2801 18.7932 5.96562C18.7932 6.65115 19.3489 7.20688 20.0345 7.20688Z"
+                  
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">
+              Главная
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">
+              Мастера
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">
+              Косметика
+            </a>
+          </li>
+          <li class="nav__item">
+            <img src="img/logo.png" alt="" class="nav__logo" />
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">
+              Акции
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">
+              Отзывы
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">
+              Контакты
+            </a>
+          </li>
+          <li class="nav__item">
+            <button class="nav__burger">
+              <svg width="50" height="21" viewBox="0 0 50 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line class="line__one" x1="10" y1="0.5" x2="50" y2="0.5" stroke="white"/>
+              <line class="line__two" x1="10" y1="20.5" x2="50" y2="20.5" stroke="white"/>
+              <line class="line__three" y1="10.5" x2="40" y2="10.5" stroke="white"/>
+              </svg>
+            </button>
+          </li>
+        </ul>
+        <!--
+        <div class="burger burger--active">
+          <button class="burger--close"></button>
+          <ul class="burger__list">
+            <li class="burger__item">
+              <p class="burger__descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum, adipiscing amet in egestas sem dui, arcu faucibus scelerisque. Nisl est felis id volutpat. Sed dolor fermentum amet lectus nibh quis. Tortor donec pellentesque leo ac placerat. Morbi.</p>
+            </li>
+            <li class="burger__item">
+              <h3 class="title">Контакты</h3>
+              <a class="number" href="">+7 (812) 123-45-67</a>
+              <a class="number" href="">+7 (911) 123-45-67</a>
+              <address class="address">Новоостровский проспект, дом 36 лит. С</address>
+            </li>
+            <li class="burger__item">
+              <h3 class="burger__title title">Режим работы</h3>
+              <p class="time">C 10:00 до 21:00 (Пн-Пт)</p>
+              <p class="time">С 11:00 до 20:00 (Сб-Вс)</p>
+            </li>
+          </ul>
+        </div>
+      -->
+      </div>
+    </header>
+    <section class="hero">
+      <div class="container hero__container">
+        <h1 class="hero__title">
+          Салон красоты &laquo;Delote-Beauty&raquo; на&nbsp;Крестовском
+        </h1>
+        <button class="hero__button">Прокрутите вниз</button>
+      </div>
+    </section>
+    <section class="quote">
+      <div class="container container__quote">
+        <h2 class="visually-hidden">Цитата</h2>
+        <img class="quote__img" src="img/quote.png" alt="" />
+        <p class="quote__text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In&nbsp;arcu
+          nibh vitae amet. Ipsum, pharetra donec ornare velit.
+          Id&nbsp;at&nbsp;quisque accumsan risus ac&nbsp;ipsum&nbsp;ut. Sit
+          elit, facilisi proin non malesuada sociis tristique. Viverra augue
+          lorem ut&nbsp;quisque quam tortor, malesuada iaculis.
+        </p>
+        <p class="quote__text">
+          Et&nbsp;elementum at&nbsp;nulla venenatis, faucibus integer. Auctor
+          neque eros, viverra rutrum. Fames ultrices condimentum tortor nec
+          penatibus. Velit imperdiet sapien fringilla vestibulum sit fames.
+        </p>
+      </div>
+    </section>
+    <section class="services">
+      <div class="container">
+        <h2 class="visually-hidden">Услуги</h2>
+        <ul class="services__list grid">
+          <li class="services__item">
+            <div class="services__border"></div>
+            <a href="" class="services__link">
+              <img class="services__img" src="img/services/1.jpg" alt="" />
+              <h3 class="services__title">Парикмахерские услуги</h3>
+            </a>
+          </li>
+          <li class="services__item">
+            <div class="services__border"></div>
+            <a href="" class="services__link">
+              <img class="services__img" src="img/services/2.jpg" alt="" />
+              <h3 class="services__title">Маникюр</h3>
+            </a>
+          </li>
+          <li class="services__item">
+            <div class="services__border"></div>
+            <a href="" class="services__link">
+              <img class="services__img" src="img/services/3.jpg" alt="" />
+              <h3 class="services__title">Педикюр</h3>
+            </a>
+          </li>
+          <li class="services__item">
+            <div class="services__border"></div>
+            <a href="" class="services__link">
+              <img class="services__img" src="img/services/4.jpg" alt="" />
+              <h3 class="services__title">Косметология</h3>
+            </a>
+          </li>
+          <li class="services__item">
+            <div class="services__border"></div>
+            <a href="" class="services__link">
+              <img class="services__img" src="img/services/5.jpg" alt="" />
+              <h3 class="services__title">Эстетист по телу</h3>
+            </a>
+          </li>
+          <li class="services__item">
+            <div class="services__border"></div>
+            <a href="" class="services__link">
+              <img class="services__img" src="img/services/6.jpg" alt="" />
+              <h3 class="services__title">Визаж</h3>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="brand">
+      <div class="container">
+        <h2 class="visually-hidden">Бренды</h2>
+        <ul class="brand__list">
+          <li class="brand__item">
+            <img src="img/brand/1.png" alt="" class="brand__img" />
+          </li>
+          <li class="brand__item">
+            <img src="img/brand/2.png" alt="" class="brand__img" />
+          </li>
+          <li class="brand__item">
+            <img src="img/brand/3.png" alt="" class="brand__img" />
+          </li>
+          <li class="brand__item">
+            <img src="img/brand/4.png" alt="" class="brand__img" />
+          </li>
+        </div>
+      </div>
+    </section>
+    <section class="portfolio">
+      <div class="container">
+        <h2 class="portfolio__title">Наши работы</h2>
+        <ul class="portfolio--step">
+          <li class="portfolio--step__item">
+            <a href="" class="portfolio--step__link">Показать все</a>
+          </li>
+          <li class="portfolio--step__item">
+            <a href="" class="portfolio--step__link">Парикмахерские услуги</a>
+          </li>
+          <li class="portfolio--step__item">
+            <a href="" class="portfolio--step__link">Маникюр</a>
+          </li>
+          <li class="portfolio--step__item">
+            <a href="" class="portfolio--step__link">Педикюр</a>
+          </li>
+        </ul>
+        <ul class="portfolio__list grid">
+          <li class="portfolio__item">
+            <img class="portfolio__img" src="img/portfolio/1.jpg" alt="" />
+          </li>
+          <li class="portfolio__item">
+            <img class="portfolio__img" src="img/portfolio/2.jpg" alt="" />
+          </li>
+          <li class="portfolio__item">
+            <img class="portfolio__img" src="img/portfolio/3.jpg" alt="" />
+          </li>
+          <li class="portfolio__item">
+            <img class="portfolio__img" src="img/portfolio/4.jpg" alt="" />
+          </li>
+          <li class="portfolio__item">
+            <img class="portfolio__img" src="img/portfolio/5.jpg" alt="" />
+          </li>
+          <li class="portfolio__item">
+            <img class="portfolio__img" src="img/portfolio/6.jpg" alt="" />
+          </li>
+          <li class="portfolio__item">
+            <img class="portfolio__img" src="img/portfolio/7.jpg" alt="" />
+          </li>
+          <li class="portfolio__item">
+            <img class="portfolio__img" src="img/portfolio/8.jpg" alt="" />
+          </li>
+          <li class="portfolio__item">
+            <img class="portfolio__img" src="img/portfolio/9.jpg" alt="" />
+          </li>
+        </ul>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <ul class="footer__list">
+          <li class="footer__item">
+            <img src="img/logo.png" alt="" class="footer__logo" />
+          </li>
+          <li class="footer__item">
+            <h4 class="title">Контакты</h4>
+            <a href="" class="number">+7 (812) 123-45-67</a>
+            <a href="" class="number">+7 (911) 123-45-67</a>
+            <address class="address">
+              Новоостровский проспект, дом 36 лит. С
+            </address>
+          </li>
+          <li class="footer__item">
+            <h4 class="title">Режим работы</h4>
+            <p class="time">C 10:00 до 21:00 (Пн-Пт)</p>
+            <p class="time">С 11:00 до 20:00 (Сб-Вс)</p>
+          </li>
+          <li class="footer__item">
+            <h4 class="title">Мы в Instagram</h4>
+            <a href="" class="footer__inst"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.5341 1H7.46592C3.89455 1 1 3.89507 1 7.46592V18.5341C1 22.1054 3.89507 25 7.46643 25H18.5336C22.1049 25 25 22.1049 25 18.5336V7.46592C25 3.89455 22.1049 1 18.5336 1H18.5341Z"  stroke-width="2" stroke-miterlimit="10"/>
+              <path d="M13 18.7932C16.1995 18.7932 18.7932 16.1995 18.7932 13C18.7932 9.8005 16.1995 7.20679 13 7.20679C9.80049 7.20679 7.20679 9.8005 7.20679 13C7.20679 16.1995 9.80049 18.7932 13 18.7932Z"  stroke-width="2" stroke-miterlimit="10"/>
+              <path d="M20.0345 7.20688C20.72 7.20688 21.2757 6.65115 21.2757 5.96562C21.2757 5.2801 20.72 4.72437 20.0345 4.72437C19.3489 4.72437 18.7932 5.2801 18.7932 5.96562C18.7932 6.65115 19.3489 7.20688 20.0345 7.20688Z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
