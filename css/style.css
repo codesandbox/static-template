@@ -78,6 +78,14 @@ body {
   overflow: hidden;
 }
 
+.blog-title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 31px;
+  color: var(--dark-color);
+}
+
 /*header*/
 
 .header {
@@ -193,12 +201,7 @@ body {
 }
 
 .blog-post__title {
-  margin: 0;
   margin-bottom: 20px;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 31px;
-  color: var(--dark-color);
 }
 
 .blog-post__link::before {
@@ -382,4 +385,95 @@ body {
   width: 100%;
   height: 2px;
   background-color: currentColor;
+}
+
+/* sidebar */
+
+.popular-posts {
+  margin-bottom: 32px;
+}
+
+.popular-posts__title {
+  margin-bottom: 21px;
+}
+
+.popular-posts__article {
+  padding: 0;
+  background: transparent;
+  padding-bottom: 9px;
+  padding-top: 9px;
+  border-radius: 0;
+  border-bottom: 1px solid #e6e4e4;
+}
+
+.popular-posts__article .blog-post__title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  margin-bottom: 10px;
+}
+
+.popular-posts__article .blog-post__date {
+  font-size: 18px;
+  line-height: 23px;
+  position: initial;
+}
+
+.popular-posts__item:last-child .popular-posts__article {
+  border-bottom: transparent;
+}
+
+/* subscribe */
+
+.subscribe {
+  padding: var(--grid-gap) 0;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.subscribe__title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sub-form {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.sub-form__input {
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 20px;
+  background: #f5f5f5;
+  padding-left: 30px;
+  font-family: 'Futura', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: rgba(47, 34, 34, 0.4);
+}
+
+.sub-form__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  background-color: var(--accent-color);
+  border-radius: 20px;
+  font-family: 'Futura', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #fff;
+}
+
+.sub-form__btn span {
+  margin-right: 12px;
 }
