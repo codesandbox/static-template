@@ -1,12 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<html lang="it">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="script.js"></script>
+		<link rel="stylesheet" src="style.css"></link>
+		<!-- CSS-Bootstrap -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+			crossorigin="anonymous"
+		/>
+		<!-- JavaScript-Bootstrap -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<div class="mb-3">
+			<label for="exampleFormControlInput1" class="form-label"
+				>Email address</label
+			>
+			<input
+				type="email"
+				class="form-control"
+				id="exampleFormControlInput1"
+				placeholder="name@example.com"
+			/>
+		</div>
+		<div class="mb-3">
+			<label for="exampleFormControlTextarea1" class="form-label"
+				>Example textarea</label
+			>
+			<textarea
+				class="form-control"
+				id="exampleFormControlTextarea1"
+				rows="3"
+			></textarea>
+		</div>
+
+		<h1>Example heading <span class="badge bg-secondary">New</span></h1>
+		<h2>Example heading <span class="badge bg-secondary">New</span></h2>
+		<h3>Example heading <span class="badge bg-secondary">New</span></h3>
+		<h4>Example heading <span class="badge bg-secondary">New</span></h4>
+		<h5>Example heading <span class="badge bg-secondary">New</span></h5>
+		<h6>Example heading <span class="badge bg-secondary">New</span></h6>
+
+		<button type="button" class="btn btn-primary position-relative">
+			Profile
+			<span
+				class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"
+			>
+				<span class="visually-hidden">New alerts</span>
+			</span>
+		</button>
+	</body>
 </html>
