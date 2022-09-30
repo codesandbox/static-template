@@ -364,7 +364,22 @@ body {
 }
 
 .pagination__link {
+  position: relative;
   font-size: 18px;
   line-height: 23px;
   color: #000;
+}
+
+.pagination__link--current {
+  color: var(--accent-color);
+}
+
+.pagination__link--current::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
 }
