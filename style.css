@@ -1,7 +1,6 @@
 body {
   font-family: Encode Sans;
   margin: 0;
-  /*width: 1600px;*/
   height: 1080px;
 }
 
@@ -245,20 +244,20 @@ body {
   width: 1250px;
   height: 845px;
 
-  /*Parte necessária para exibir todos os outros campos*/
+  /*Por algum motivo, sem essa parte não exibe a coluna do meio e a coluna da direita*/
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/*Impede que todos os membros herdeiros da div menuSuperior mude de cor ao ser clicado*/
+/*Impede que todos os membros herdeiros da div notícias mude de cor ao ser clicado*/
 .noticias a {
   text-decoration: none;
   color: inherit;
 }
 
 /*<*******NOTICIAS DA PARTE 01***********>*/
-/*Onde ficará a maior coluna a dá direita. Subdividido em 3 partes: A, B e C*/
+/*Onde ficará a maior coluna a dá direita. Dividido em 3 partes: A, B e C. A parte 'A' possui subdivisões*/
 .noticiasParte01 {
   width: 663px;
   height: 845px;
@@ -266,24 +265,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.animacao {
-  /*Para aumentar a "janelinha", sem deixar passar da div*/
-  overflow: hidden;
-
-  -webkit-transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
-}
-
-.animacao:hover {
-  /*Ao passar o cursor, a "janelinha" muda de cor*/
-  border-radius: 12px;
-  background: rgb(242, 242, 242);
-
-  /*Para aumentar a "janelinha", ao passar o cursor*/
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
 }
 
 .noticiaPrincipalA {
@@ -360,34 +341,14 @@ body {
   margin-right: 35px;
 }
 
-.noticiaB {
+.noticiasB {
   width: 193px;
   height: 277px;
-
-  /*Para aumentar a imagem, sem deixar passar da div*/
-  overflow: hidden;
-
-  -webkit-transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
 }
 
-/*Para aumentar a imagem, ao passar o cursor*/
-.noticiaB img {
-  -webkit-transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
-}
-.noticiaB:hover img {
-  -webkit-transform: scale(1.15);
-  transform: scale(1.15);
-}
-
-.noticiaB:hover {
-  /*Ao passar o cursor, a "janelinha" muda de cor*/
-  border-radius: 12px;
-  background: rgb(242, 242, 242);
-  /*Para aumentar a "janelinha", ao passar o cursor*/
-  -webkit-transform: scale(1.15);
-  transform: scale(1.15);
+.noticiasC {
+  width: 191px;
+  height: 179px;
 }
 
 .noticiaPrincipalC {
@@ -404,31 +365,6 @@ body {
   justify-content: space-between;
 }
 
-.noticiaC {
-  width: 191px;
-  height: 179px;
-
-  display: flex;
-  flex-direction: column;
-  justify-items: space-between;
-  align-items: center;
-
-  /*Para aumentar a "janelinha", sem deixar passar da div*/
-  overflow: hidden;
-
-  -webkit-transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
-}
-
-.noticiaC:hover {
-  /*Ao passar o cursor, a "janelinha" muda de cor*/
-  border-radius: 12px;
-  background: rgb(242, 242, 242);
-
-  /*Para aumentar a "janelinha", ao passar o cursor*/
-  -webkit-transform: scale(1.15);
-  transform: scale(1.15);
-}
 /*<*******NOTICIAS DA PARTE 02***********>*/
 .noticiasParte02 {
   height: 845px;
@@ -439,10 +375,26 @@ body {
   align-items: center;
   align-content: center;
 }
+
+.noticias2 {
+  width: 240px;
+  height: 246px;
+}
+
+/*Específico para a noticia do Espião Estátistico*/
+.noticias2n1 {
+  width: 240px;
+  height: 293px;
+}
+
+.noticias2n3 {
+  width: 240px;
+  height: 222px;
+}
+
 /*---------------------------------------*/
 /*<*******NOTICIAS DA PARTE 03***********>*/
 .noticiasParte03 {
-  /* width: 357px;*/
   height: 845px;
 
   display: flex;
@@ -451,6 +403,25 @@ body {
   align-items: center;
   align-content: center;
 }
+
+/*Específico para cada noticia*/
+.noticias3n1 {
+  width: 240px;
+  height: 222px;
+
+  margin-top: -61px;
+}
+
+.noticias3n2 {
+  width: 240px;
+  height: 280px;
+}
+
+.noticias3n3 {
+  width: 240px;
+  height: 217px;
+}
+
 /*---------------------------------------*/
 
 /*---------------------------------------*/
@@ -463,7 +434,6 @@ body {
   border-bottom-style: solid;
   border-bottom-color: #f5f6f7;
   border-bottom-width: 1px;
-  /*margin-bottom: 34px;*/
 }
 
 .bordaNoticiaHorizontal {
@@ -483,12 +453,10 @@ body {
 
   border-left-style: solid;
   border-left-color: #ebedef;
-  /*border-top-color: black;*/
   border-left-width: 1px;
 
   margin-top: 0px;
   margin-bottom: 0px;
-  /*margin-left: 35px;*/
   margin-right: 35px;
 }
 
@@ -498,7 +466,6 @@ body {
 
   border-left-style: solid;
   border-left-color: #ebedef;
-  /*border-top-color: black;*/
   border-left-width: 1px;
 
   margin-top: 0px;
@@ -535,7 +502,7 @@ body {
   width: 240px;
   height: 128px;
   border-radius: 12px;
-  margin-top: -24px;
+  /*margin-top: 100px;*/
 }
 /*---------------------------------------*/
 
@@ -601,7 +568,7 @@ body {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-/*Da pate 02 - 1ª notícia*/
+/*Da pate 02*/
 .leg02 {
   width: 240px;
   height: 19px;
@@ -650,6 +617,15 @@ body {
   margin-bottom: 25px;
 }
 
+.mct02n3 {
+  width: 240px;
+  height: 60px;
+
+  color: #2f3134;
+
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
 /*Da pate 03*/
 .leg03 {
   width: 240px;
@@ -678,7 +654,7 @@ body {
 }
 
 /*Da pate 03 - noticias específicas*/
-.mct03_n2 {
+.mct03_n1n2 {
   width: 240px;
   height: 60px;
 
@@ -687,7 +663,6 @@ body {
   margin-top: 0px;
   margin-bottom: 8px;
 }
-
 .smct03n2_1 {
   width: 217px;
   height: 21px;
@@ -702,7 +677,6 @@ body {
   margin-top: 0px;
   margin-bottom: 50px;
 }
-
 .mct03n3 {
   width: 240px;
   height: 26px;
@@ -712,13 +686,40 @@ body {
   margin-top: 0px;
   margin-bottom: 8px;
 }
-
 .smct03n3 {
   width: 217px;
   height: 21px;
   color: #2f3134;
   margin-top: 0px;
-  /*margin-bottom: 50px;*/
 }
 
 /*---------------------------------------*/
+/*-------------------------------------*/
+/*Animação*/
+.animacao {
+  /*Para aumentar a "janelinha", sem deixar passar da div*/
+  overflow: hidden;
+
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+}
+
+.animacao img {
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+}
+
+.animacao:hover {
+  /*Ao passar o cursor, a "janelinha" muda de cor*/
+  border-radius: 12px;
+  background: rgb(242, 242, 242);
+
+  /*Para aumentar a "janelinha", ao passar o cursor*/
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.animacao:hover img {
+  -webkit-transform: scale(1.15);
+  transform: scale(1.15);
+}
