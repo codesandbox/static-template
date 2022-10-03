@@ -355,7 +355,31 @@ body {
   width: 193px;
   height: 277px;
 
+  /*Para aumentar a imagem, sem deixar passar da div*/
+  overflow: hidden;
+
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
   background: pink;
+}
+
+/*Para aumentar a imagem, ao passar o cursor*/
+.noticiaB img {
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+}
+.noticiaB:hover img {
+  -webkit-transform: scale(1.15);
+  transform: scale(1.15);
+}
+
+.noticiaB:hover {
+  /*Ao passar o cursor, a "janelinha" muda de cor*/
+  border-radius: 12px;
+  background: rgb(242, 242, 242);
+  /*Para aumentar a "janelinha", ao passar o cursor*/
+  -webkit-transform: scale(1.15);
+  transform: scale(1.15);
 }
 
 .noticiaPrincipalC {
@@ -380,19 +404,28 @@ body {
 
   display: flex;
   flex-direction: column;
-  /*justify-content: space-between;*/
   justify-items: space-between;
   align-items: center;
-  /*align-content: center;*/
+
+  /*Para aumentar a "janelinha", sem deixar passar da div*/
+  overflow: hidden;
+
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+}
+
+.noticiaC:hover {
+  /*Ao passar o cursor, a "janelinha" muda de cor*/
+  border-radius: 12px;
+  background: rgb(242, 242, 242);
+
+  /*Para aumentar a "janelinha", ao passar o cursor*/
+  -webkit-transform: scale(1.15);
+  transform: scale(1.15);
 }
 /*<*******NOTICIAS DA PARTE 02***********>*/
 .noticiasParte02 {
-  /*width: 357px;*/
   height: 845px;
-
-  /*margin-right: 36px;
-  margin-bottom: 35px;
-  margin-left: 36px;*/
 
   background: grey;
 
