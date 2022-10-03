@@ -8,8 +8,6 @@ body {
 /*---------------------------------------*/
 /*CABEÇALHO*/
 .logotype_globo {
-  background: lightblue;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -236,7 +234,6 @@ body {
 /*NOTICIAS*/
 
 .containerNoticias {
-  background: magenta;
   height: 917px;
 
   display: flex;
@@ -247,7 +244,6 @@ body {
 .noticias {
   width: 1250px;
   height: 845px;
-  background: orange;
 
   /*Parte necessária para exibir todos os outros campos*/
   display: flex;
@@ -264,13 +260,30 @@ body {
 /*<*******NOTICIAS DA PARTE 01***********>*/
 /*Onde ficará a maior coluna a dá direita. Subdividido em 3 partes: A, B e C*/
 .noticiasParte01 {
-  background: green;
   width: 663px;
   height: 845px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.animacao {
+  /*Para aumentar a "janelinha", sem deixar passar da div*/
+  overflow: hidden;
+
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+}
+
+.animacao:hover {
+  /*Ao passar o cursor, a "janelinha" muda de cor*/
+  border-radius: 12px;
+  background: rgb(242, 242, 242);
+
+  /*Para aumentar a "janelinha", ao passar o cursor*/
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .noticiaPrincipalA {
@@ -283,7 +296,6 @@ body {
 .noticiaPrincipalA1 {
   width: 624px;
   height: 201px;
-  background: hotpink;
 
   display: flex;
 
@@ -303,7 +315,6 @@ body {
 .noticiaPrincipalA2 {
   width: 622px;
   height: 25px;
-  background: red;
 
   display: flex;
 
@@ -323,7 +334,6 @@ body {
 .noticiaPrincipalA3 {
   width: 622px;
   height: 25px;
-  background: red;
 
   display: flex;
 
@@ -340,7 +350,6 @@ body {
 
 /*Onde ficarão as notícias abaixo da notícia principal*/
 .noticiaPrincipalB {
-  background: greenyellow;
   width: 624px;
   height: 338px;
 
@@ -360,7 +369,6 @@ body {
 
   -webkit-transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
-  background: pink;
 }
 
 /*Para aumentar a imagem, ao passar o cursor*/
@@ -394,13 +402,11 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: brown;
 }
 
 .noticiaC {
   width: 191px;
   height: 179px;
-  background: cyan;
 
   display: flex;
   flex-direction: column;
@@ -427,8 +433,6 @@ body {
 .noticiasParte02 {
   height: 845px;
 
-  background: grey;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -441,8 +445,6 @@ body {
   /* width: 357px;*/
   height: 845px;
 
-  background: yellow;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -454,8 +456,6 @@ body {
 /*---------------------------------------*/
 /*BORDAS*/
 .bordaMenu {
-  background: lightgray;
-
   border-top-style: solid;
   border-top-color: #f5f6f7;
   border-top-width: 1px;
