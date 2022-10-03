@@ -1,0 +1,285 @@
+/* There will be all the styles for forms and input */
+
+:root {
+  --form-input-large-height: 3.25rem;
+  --form-input-medium-height: 3.125rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* General Label Styles */
+
+.form-label {
+}
+
+/* General Input Styles */
+
+.form-control {
+  background-color: var(--placeholder);
+  color: var(--dark);
+  border-radius: var(--radius-1);
+  display: flex;
+  flex-direction: row;
+  padding: 0 1rem;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  /* If we only have a unique size for forms */
+  height: var(--form-input-large-height);
+  font-size: var(--font-size-1);
+}
+
+.form-control::placeholder {
+  font-size: var(--font-size-1);
+  color: var(--dark);
+  line-height: var(--line-height-9);
+  letter-spacing: var(--font-letterspacing-7);
+}
+
+.form-control:focus-visible {
+  outline: 1px solid var(--dark);
+}
+
+textarea.form-control {
+  max-width: calc(100% - 2rem);
+  padding: 1rem;
+  font-family: var(--text-font);
+  height: calc(var(--form-input-large-height) * 2);
+}
+
+/* Form Validation */
+
+.form-control[data-validation="error"] {
+  color: var(--error);
+  border: 1px solid var(--error);
+}
+
+.form-control[data-validation="error"]::placeholder {
+  color: var(--error);
+  font-size: var(--font-size-0);
+}
+
+.form-control__icon[data-validation="error"] {
+  color: var(--error) !important;
+}
+
+/* Adding icons to inputs */
+
+.form-control-with-icon {
+  display: flex;
+  position: relative;
+}
+
+:is(.form-control-with-icon[data-position="right"]) .form-control__icon {
+  position: absolute;
+  font-size: var(--font-size-3);
+  color: var(--dark);
+  top: calc(var(--form-input-large-height) / 2 - var(--font-size-3) / 2);
+  right: 1rem;
+}
+
+:is(.form-control-with-icon[data-position="left"]) .form-control__icon {
+  position: absolute;
+  font-size: var(--font-size-3);
+  color: var(--dark);
+  top: calc(var(--form-input-large-height) / 2 - var(--font-size-3) / 2);
+  left: 1rem;
+}
+
+:is(.form-control-with-icon[data-position="left"]) .form-control {
+  padding-left: 2.875rem;
+}
+
+:is(.form-control[disabled]) {
+  cursor: auto;
+  opacity: 0.5;
+}
+
+:is(.form-control[readonly]) {
+  cursor: not-allowed;
+}
+
+/* File Upload Input */
+
+input[type="file"]::file-selector-button {
+  height: 100%;
+  vertical-align: middle;
+  padding: 0 1em;
+  margin-right: 0.5em;
+  color: var(--white);
+  font-weight: var(--font-weight-2);
+  border: none;
+  margin-left: -1.125em;
+  background-color: var(--dark);
+  font-family: var(--text-font);
+}
+
+/* Input Size Changes */
+
+/* Uncomment if we have more than one size */
+
+/* :is(.form-control[data-size="large"]) {
+  height: var(--form-input-large-height);
+  font-size: var(--font-size-1);
+}
+
+:is(.form-control[data-size="medium"]) {
+  height: var(----form-input-medium-height);
+  font-size: var(--font-size-1);
+} */
+
+/* Checkboxes, Switches & Radios */
+
+/* Checkboxes */
+
+.form-control[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  border: 1px solid var(--dark);
+  border-radius: var(--radius-00);
+  background-color: var(--placeholder);
+}
+
+.form-control[type="checkbox"]:checked {
+  background-color: var(--white);
+  color: var(--primary-accent);
+  border: 1px solid var(--primary-accent);
+  justify-content: center;
+  align-items: center;
+}
+
+.form-control[type="checkbox"]:checked:before {
+  font-family: "fontawesome";
+  content: "\f00c";
+  display: inline;
+  letter-spacing: 0;
+  color: var(--primary-accent);
+  text-align: center;
+  font-size: 1em;
+}
+
+/* Switches */
+
+.form-switch[type="checkbox"] {
+  font-family: "fontawesome";
+  min-width: 3rem;
+  height: 1.5rem;
+  border-radius: 1em;
+  padding: 0.1em;
+  position: relative;
+}
+
+.form-switch[type="checkbox"]:checked {
+  border: none;
+  justify-content: flex-end;
+  background-color: var(--dark);
+}
+
+.form-switch[type="checkbox"]:before {
+  content: "\f111";
+}
+
+.form-switch[type="checkbox"]:checked:before {
+  content: "\f111";
+  color: var(--white);
+  font-size: 1em;
+  position: unset;
+}
+
+/* Radio Input */
+
+.form-control[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  border: 1px solid var(--dark);
+  border-radius: 100%;
+  font-family: "fontawesome";
+  align-items: center;
+  justify-content: center;
+}
+
+.form-control[type="radio"]:checked:before {
+  content: "\f111";
+  font-size: 1em;
+}
+
+/* Color Input */
+
+.form-control[type="color"] {
+  appearance: none;
+  padding: 0.2em;
+  width: 2em;
+  height: 2em;
+}
+
+.form-control-plaintext {
+}
+
+/* Select */
+
+.outer-form-select {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.form-select {
+  appearance: none;
+  width: 100%;
+}
+
+.form-select__icon {
+  position: absolute;
+  font-size: var(--font-size-3);
+  color: var(--dark);
+  top: calc(var(--form-input-large-height) / 2 - var(--font-size-3) / 2);
+  right: 1rem;
+}
+
+.form-select option {
+  display: none;
+}
+
+:is(.form-select[disabled]) {
+}
+
+/* Form Range */
+
+.form-range {
+}
+
+:is(.form-range[disbaled]) {
+}
+
+/* Input Group */
+
+/* Class to add on the container of the group */
+.input-group {
+}
+
+.input-group-sm {
+}
+
+.input-group-lg {
+}
+
+/* Class to add on a span element before or after the input */
+.input-group-text {
+}

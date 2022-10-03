@@ -1,0 +1,162 @@
+@import url(./css/variables.css);
+@import url(./css/buttons.css);
+@import url(./css/forms1.css);
+@import url(./css/typography.css);
+@import url(./css/header.css);
+@import url(./css/mobileHeader.css);
+@import url(./css/footer.css);
+@import url(./css/layout.css);
+@import url(./css/cards.css);
+@import url(./css/utilities.css);
+@import url(./css/gsapDemo.css);
+@import url(./css/miscellaneous.css);
+
+.demo-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 6.25rem;
+}
+
+.demo-nav .button-small[aria-current] {
+  background-color: var(--primary-accent);
+  color: var(--white);
+  outline: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+main {
+  margin-top: 6rem;
+  max-width: min(100%, 1200px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.container.texts {
+  gap: 1rem;
+}
+
+.container.typo {
+  padding: 2rem;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.demoLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: var(--font-size-00);
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+.demoUnderline {
+  width: 100%;
+  height: 1px;
+  background-color: var(--dark);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background: none;
+  border-radius: none;
+}
+
+.grid-column-demo {
+  background: rgba(255, 0, 0, 0.2);
+  height: 100%;
+}
+
+.grid-row-demo {
+  height: 100%;
+}
+
+.grid-overlay {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  position: absolute;
+  height: 1000vh;
+  pointer-events: none;
+}
+
+.grid-toggle {
+  margin-top: 2rem;
+  z-index: 1000;
+  position: fixed;
+  top: 10px;
+  left: -10px;
+}
+
+.instructions {
+  padding: 30px;
+  position: fixed;
+  max-width: 30rem;
+  z-index: 1000;
+  width: 20rem;
+  top: 80px;
+  left: -10px;
+  opacity: 1;
+  border-radius: var(--radius-1);
+  color: var(--dark);
+  background-color: var(--placeholder);
+  transition: opacity 1s ease 0.4s, max-width 0.6s ease;
+}
+
+.js-instructions-hidden {
+  max-width: 0px;
+  opacity: 0;
+  transition: opacity 0.2s ease, max-width 0.6s ease 0.2s;
+}
+
+.js-grid-overlay-hidden {
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.hero__video > video {
+  max-width: 100%;
+  height: auto;
+}

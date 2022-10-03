@@ -1,0 +1,94 @@
+.chips {
+  font-size: var(--font-size-00);
+  border-radius: var(--radius-pill);
+  width: fit-content;
+  padding: 0.25rem 0.75rem;
+  font-family: var(--text-font);
+}
+
+.chips[data-color="pink"] {
+  background: var(--bg-pink-tint-3);
+}
+
+.chips[data-color="green"] {
+  background: var(--bg-green-tint-3);
+}
+
+.chips[data-color="yellow"] {
+  background: var(--bg-yellow-tint-3);
+}
+
+.chips[data-color="primary"] {
+  background: var(--bg-primary-tint-2);
+}
+
+.chips[data-color="secondary"] {
+  background: var(--bg-secondary-tint-3);
+}
+
+/* Play buttons */
+
+.icon-button {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.icon-button[data-color="primary"] {
+  color: var(--white);
+  background: var(--primary-accent);
+}
+
+.icon-button[data-color="grey"] {
+  color: var(--dark);
+  background: var(--placeholder);
+}
+
+.icon-button[data-shape="pill"] {
+  width: auto;
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-capsule);
+}
+
+.icon-button[data-shape="circle"] {
+  aspect-ratio: 1/1;
+  border-radius: var(--radius-circle);
+}
+
+.icon-button[data-size="small"] {
+  height: 2rem;
+}
+
+.icon-button[data-size="medium"] {
+  font-size: 1.25rem;
+  height: 3rem;
+}
+
+.icon-button[data-size="large"] {
+  font-size: 1.5rem;
+  height: 4rem;
+}
+
+/* Sliders Dots */
+
+.slider-dots {
+  display: flex;
+  gap: 10px;
+  font-size: 10px;
+  color: var(--placeholder);
+}
+
+.slider-dots[data-direction="horizontal"] {
+  flex-direction: row;
+}
+
+.slider-dots[data-direction="vertical"] {
+  flex-direction: column;
+}
+
+.slider-dot[data-state="active"] {
+  color: var(--dark);
+}

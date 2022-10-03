@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Forms</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer type="module" src="./script.js"></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/ae7bbcad81.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="demo-nav">
+      <a href="/" class="button-small" data-variant="outline">Home</a>
+      <a href="/buttons.html" class="button-small" data-variant="outline"
+        >Buttons</a
+      >
+      <a
+        href="/forms.html"
+        aria-current="page"
+        class="button-small"
+        data-variant="outline"
+        >Forms</a
+      >
+      <a href="/typography.html" class="button-small" data-variant="outline"
+        >Typography</a
+      >
+      <a href="/header.html" class="button-small" data-variant="outline"
+        >Header</a
+      >
+      <a href="/footer.html" class="button-small" data-variant="outline"
+        >Footer</a
+      >
+      <a href="/layout.html" class="button-small" data-variant="outline"
+        >Grid System</a
+      >
+      <a href="/cards.html" class="button-small" data-variant="outline"
+        >Cards</a
+      >
+    </nav>
+    <main>
+      <div class="container">
+        <h3 class="h3-fluid">Text Inputs</h3>
+        <div class="row">
+          <span class="demoLabel">
+            Text input with icon on the right
+            <div class="demoUnderline"></div>
+          </span>
+          <div class="form-control-with-icon" data-position="right">
+            <i
+              class="fa-solid fa-envelope form-control__icon"
+              data-position="right"
+            ></i>
+            <input
+              type="email"
+              name=""
+              placeholder="john.doe@email.com"
+              class="form-control"
+              data-size="large"
+              data-align="right"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <span class="demoLabel">
+            Text input with icon on the right
+            <div class="demoUnderline"></div>
+          </span>
+          <div class="form-control-with-icon" data-position="left">
+            <i
+              class="fa-solid fa-envelope form-control__icon"
+              data-position="left"
+            ></i>
+            <input
+              type="email"
+              name=""
+              placeholder="john.doe@email.com"
+              class="form-control"
+              data-size="large"
+              data-align="right"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <span class="demoLabel">
+            Text input disabled
+            <div class="demoUnderline"></div>
+          </span>
+          <div class="form-control-with-icon" data-position="left">
+            <i
+              class="fa-solid fa-user form-control__icon"
+              data-position="right"
+            ></i>
+            <input
+              type="text"
+              name=""
+              disabled
+              placeholder="username"
+              class="form-control"
+              data-size="large"
+              data-align="right"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <span class="demoLabel">
+            Text input read only
+            <div class="demoUnderline"></div>
+          </span>
+          <div class="form-control-with-icon" data-position="left">
+            <i
+              class="fa-solid fa-user form-control__icon"
+              data-position="right"
+            ></i>
+            <input
+              type="text"
+              name=""
+              readonly
+              placeholder="username"
+              class="form-control"
+              data-size="large"
+              data-align="right"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <span class="demoLabel">
+            Text input validation error
+            <div class="demoUnderline"></div>
+          </span>
+          <div class="form-control-with-icon" data-position="left">
+            <i
+              class="fa-solid fa-circle-exclamation form-control__icon"
+              data-validation="error"
+            ></i>
+            <input
+              type="text"
+              name=""
+              class="form-control"
+              data-size="large"
+              data-align="right"
+              data-validation="error"
+              placeholder="Oops there was a mistake!"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <span class="demoLabel">
+            Text Area
+            <div class="demoUnderline"></div>
+          </span>
+          <textarea
+            type="text-area"
+            name=""
+            class="form-control"
+            data-size="large"
+          ></textarea>
+        </div>
+        <div class="row">
+          <span class="demoLabel">
+            Dropdown trigger -- Actual Dropdown must be generated throught JS
+            <div class="demoUnderline"></div>
+          </span>
+          <div class="outer-form-select">
+            <i class="fa-solid fa-chevron-down form-select__icon"></i>
+            <select name="" class="form-select form-control">
+              <option value="">One option</option>
+              <option value="">Two option</option>
+              <option value="">Three option</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="checkboxes container">
+        <h3 class="h3-fluid">Checkboxes, switches and radios</h3>
+        <div class="row">
+          <span class="demoLabel">
+            Checkboxes -- Default, Checked, Disabled
+            <div class="demoUnderline"></div>
+          </span>
+          <div class="inline">
+            <input
+              type="checkbox"
+              name=""
+              class="form-control"
+              data-size="large"
+            />
+            <input
+              type="checkbox"
+              name=""
+              class="form-control"
+              checked
+              data-size="large"
+            />
+            <input
+              type="checkbox"
+              name=""
+              class="form-control"
+              disabled
+              data-size="large"
+            />
+            <input
+              type="checkbox"
+              name=""
+              class="form-control"
+              disabled
+              checked
+              data-size="large"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="switches container">
+        <div class="row">
+          <span class="demoLabel">
+            Switches -- Default, Checked, Disabled
+            <div class="demoUnderline"></div>
+          </span>
+          <div class="inline">
+            <input
+              type="checkbox"
+              name=""
+              class="form-control form-switch"
+              data-size="large"
+              role="switch"
+            />
+            <input
+              type="checkbox"
+              name=""
+              class="form-control form-switch"
+              checked
+              data-size="large"
+              role="switch"
+            />
+            <input
+              type="checkbox"
+              name=""
+              class="form-control form-switch"
+              disabled
+              data-size="large"
+              role="switch"
+            />
+            <input
+              type="checkbox"
+              name=""
+              class="form-control form-switch"
+              checked
+              disabled
+              data-size="large"
+              role="switch"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="radios container">
+        <div class="row">
+          <span class="demoLabel">
+            Radios -- Default, Checked, Disabled
+            <div class="demoUnderline"></div>
+          </span>
+          <div class="inline">
+            <input
+              type="radio"
+              name="demoRadios"
+              class="form-control"
+              checked
+              data-size="large"
+            />
+            <input
+              type="radio"
+              name="demoRadios"
+              class="form-control"
+              data-size="large"
+            />
+            <input
+              type="radio"
+              name="demoRadios"
+              class="form-control"
+              disabled
+              data-size="large"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <h3 class="h3-fluid">Miscelleanous Form Inputs</h3>
+        <div class="row">
+          <span class="demoLabel">
+            Color Picker
+            <div class="demoUnderline"></div>
+          </span>
+          <input type="color" name="" class="form-control" data-size="large" />
+          <span class="demoLabel">
+            Upload a file
+            <div class="demoUnderline"></div>
+          </span>
+          <input type="file" name="" class="form-control" data-size="large" />
+          <span class="demoLabel">
+            Pick a date
+            <div class="demoUnderline"></div>
+          </span>
+          <input type="date" name="" class="form-control" data-size="large" />
+          <span class="demoLabel">
+            Number Input
+            <div class="demoUnderline"></div>
+          </span>
+          <input
+            type="number"
+            name=""
+            class="form-control"
+            data-size="large"
+            placeholder="50"
+          />
+          <span class="demoLabel">
+            Password Input
+            <div class="demoUnderline"></div>
+          </span>
+          <input
+            type="password"
+            name=""
+            class="form-control"
+            data-size="large"
+            placeholder="password"
+          />
+          <span class="demoLabel">
+            Range Selector
+            <div class="demoUnderline"></div>
+          </span>
+          <input type="range" name="" class="form-control" data-size="large" />
+          <span class="demoLabel">
+            Telephone
+            <div class="demoUnderline"></div>
+          </span>
+          <input type="tel" name="" class="form-control" data-size="large" />
+          <span class="demoLabel">
+            URL
+            <div class="demoUnderline"></div>
+          </span>
+          <input type="url" name="" class="form-control" data-size="large" />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
