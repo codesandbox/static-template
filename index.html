@@ -1,12 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/e65c3f51e8.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>
+      Frontend Mentor | Huddle landing page with alternating feature blocks
+    </title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <section class="container header">
+        <div class="headerBox">
+          <img
+            src="images/logo.svg"
+            alt="Logo Huddle"
+            class="headerBox__logo"
+          />
+          <a href="#" class="headerButton" aria-label="Try It Free"
+            >Try It Free</a
+          >
+        </div>
+        <div class="container mainBox">
+          <div class="mainBoxContent">
+            <h1 class="mainBox__title">
+              Build The Community Your Fans Will Love
+            </h1>
+            <p class="mainBox__desc">
+              Huddle re-imagines the way we build communities. You have a voice,
+              but so does your audience. Create connections with your users as
+              you engage in genuine discussion.
+            </p>
+            <a href="#" class="mainButton" aria-label="Get Started For Free"
+              >Get Started For Free</a
+            >
+          </div>
+          <img
+            src="images/illustration-mockups.svg"
+            alt="Mockups Illustrations"
+            class="mainBox__img"
+          />
+        </div>
+      </section>
+    </header>
+
+    <section class="container box">
+      <div class="secondBoxContent">
+        <h2 class="titleBox">Grow Together</h2>
+        <p class="descBox">
+          Generate meaningful discussions with your audience and build a strong,
+          loyal community. Think of the insightful conversations you miss out on
+          with a feedback form.
+        </p>
+      </div>
+      <img
+        src="images/illustration-grow-together.svg"
+        alt="Grow Together Image"
+        class="imgBox secondImgBox"
+      />
+    </section>
+    <section class="container box">
+      <img
+        src="images/illustration-flowing-conversation.svg"
+        alt="Flowing Conversation"
+        class="imgBox thirdBoxImg"
+      />
+      <div class="thirdBoxContent">
+        <h2 class="titleBox">Flowing Conversations</h2>
+        <p class="descBox">
+          You wouldn't paginate a conversation in real life, so why do it
+          online? Our threads have just-in-time loading for a more natural flow.
+        </p>
+      </div>
+    </section>
+    <section class="container box">
+      <div class="fourthBoxContent">
+        <h2 class="titleBox">Your Users</h2>
+        <p class="descBox">
+          It takes no time at all to integrate Huddle with your app's
+          authentication solution. This means, once signed in to your app, your
+          users can start chatting immediately.
+        </p>
+      </div>
+      <img
+        src="images/illustration-your-users.svg"
+        alt="Your Users"
+        class="imgBox secondImgBox"
+      />
+    </section>
+    <section class="container box lastBox">
+      <h1 class="mainBox__title lastTitle">Ready To Build Your Community?</h1>
+      <a
+        href="#"
+        class="mainButton lastButton"
+        aria-label="Get Started For Free"
+        >Get Started For Free</a
+      >
+    </section>
+
+    <footer>
+      <div class="foot">
+        <div class="logo">
+          <img id="logo" src="images/logo.svg" alt="Logo" />
+          <span class="logo__items"
+            ><img src="images/icon-location.svg" alt="location" />Lorem ipsum
+            dolor sit amet, consectetur <br />
+            adipiscing elit, sed do eiusmod tempor <br />
+            incididunt ut labore et dolore magna aliqua.</span
+          >
+          <span class="logo__items"
+            ><img src="images/icon-phone.svg" alt="phone" /> Phone:
+            +1-543-123-4567</span
+          >
+          <span class="logo__items"
+            ><img src="images/icon-email.svg" alt="email" />
+            example@huddle.com</span
+          >
+        </div>
+        <div class="links-one">
+          <ul>
+            <a href="#" aria-label="About Us"><li>About Us</li></a>
+            <a href="#" aria-label="What We Do"><li>What We Do</li></a>
+            <a href="#" aria-label="FAQs"><li>FAQ</li></a>
+          </ul>
+        </div>
+        <div class="links-two">
+          <ul>
+            <a href="#" aria-label="Career"><li>Career</li></a>
+            <a href="#" aria-label="Blog"><li>Blog</li></a>
+            <a href="#" aria-label="Contact Us"><li>Contact Us</li></a>
+          </ul>
+        </div>
+        <div class="social">
+          <a href="#" aria-label="Facebook" class="facebook"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a href="#" aria-label="Twitter" class="twitter"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+          <a href="#" aria-label="Instagram" class="instagram"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+        </div>
+      </div>
+      <p class="footer__last">
+        &copy; Copyright 2018 Huddle. All rights reserved.
+      </p>
+    </footer>
   </body>
 </html>
