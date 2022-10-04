@@ -1,0 +1,406 @@
+:root {
+  --font1: "Poppins", sans-serif;
+  --font2: "Open Sans" sans-serif;
+  --paleCyan: hsl(193, 100%, 96%);
+  --darkCyan: hsl(192, 100%, 9%);
+  --grayishBlue: hsl(208, 11%, 55%);
+  --pink: hsl(322, 100%, 66%);
+}
+
+body {
+  font-size: 18px;
+  overflow-x: hidden;
+}
+
+/* Header */
+
+header {
+  background-image: url("images/bg-hero-desktop.svg");
+}
+
+.header {
+  font-family: var(--font1);
+  font-weight: 600;
+  background-repeat: no-repeat;
+  margin-bottom: 15em;
+}
+
+.headerBox {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 60px;
+}
+
+.headerBox__logo {
+  width: 15%;
+  height: 10%;
+}
+
+.headerButton {
+  border: 1px solid #f0f0f0;
+  border-radius: 50px;
+  font-weight: 400;
+  text-decoration: none;
+  color: black;
+  padding: 8px 58px;
+  box-shadow: 1px 1px 1px 1px #e2e2e2;
+}
+
+.headerButton:hover {
+  font-size: 19px;
+  background-color: #f4f4f4;
+  transition: 0.5s;
+}
+
+/* Main Area */
+
+.mainBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 58px;
+}
+
+.mainBox__title {
+  font-family: var(--font1);
+  font-size: 2.5rem;
+  margin-bottom: 1em;
+}
+
+.mainBox__desc {
+  font-family: var(--font2);
+  font-weight: 400;
+  color: #2f2f2f;
+  margin-bottom: 2em;
+}
+
+.mainBox__img {
+  padding-left: 5rem;
+  width: 50%;
+}
+
+.mainButton {
+  font-family: var(--font2);
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  border: 1px solid transparent;
+  background-color: var(--pink);
+  border-radius: 50px;
+  padding: 16px 58px;
+}
+
+.mainButton:hover {
+  font-size: 17px;
+  background-color: hsl(322, 100%, 64%);
+  transition: 0.5s;
+}
+
+/* Second Area */
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5.5em 5.5em;
+  padding: 1.5em 5em;
+  border: 1px solid #f8f5f5;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #f8f5f5;
+}
+
+.titleBox {
+  font-family: var(--font1);
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+.descBox {
+  font-family: var(--font2);
+  line-height: 1.25em;
+  font-weight: 400;
+  color: gray;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgBox {
+  width: 30%;
+  padding-left: 15em;
+}
+
+/* Third Area */
+
+.thirdBoxImg {
+  padding: 0 14rem 0 0;
+}
+
+.lastBox {
+  flex-direction: column;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  padding: 2em 1em;
+  margin: auto;
+  width: 50%;
+  background-color: white;
+  position: relative;
+  bottom: -50px;
+  box-shadow: none;
+}
+
+.lastTitle {
+  font-size: 32px;
+}
+
+.lastButton {
+  font-family: var(--font1);
+  font-weight: 600;
+}
+
+/* Footer */
+
+footer {
+  background-color: var(--darkCyan);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--grayishBlue);
+  font-family: var(--font2);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.foot {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 5rem 10em;
+}
+
+.foot .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.foot .logo #logo {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(307deg)
+    brightness(104%) contrast(102%);
+  margin-bottom: 1.5rem;
+}
+
+.logo__items {
+  margin: 1em 5em 1em 0;
+}
+
+.foot .logo span img {
+  margin-right: 10px;
+}
+
+.links-one,
+.links-two {
+  padding: 2.5em;
+}
+
+.foot .links-one ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.foot .links-two ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.links-one a,
+.links-two a,
+.social a {
+  text-decoration: none;
+  color: var(--grayishBlue);
+}
+
+.foot li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.foot li:hover {
+  color: hsl(208, 85%, 30%);
+  font-size: 17px;
+  transition: 0.5s;
+}
+
+.foot .social {
+  margin-top: 5.5em;
+}
+
+.social a {
+  margin: 0 1px;
+}
+
+.social a:hover {
+  color: hsl(208, 85%, 30%);
+  font-size: 17px;
+  transition: 0.6s;
+}
+
+.social .facebook,
+.twitter,
+.instagram {
+  border: 1px solid var(--grayishBlue);
+  border-radius: 50%;
+  padding: 5px 5px;
+}
+
+.social .facebook {
+  padding: 5px 7.5px;
+}
+
+.footer__last {
+  position: relative;
+  right: 15em;
+  bottom: -200px;
+}
+
+@media screen and (max-width: 940px) {
+  body {
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  header {
+    background-image: url("images/bg-hero-mobile.svg");
+  }
+
+  .header {
+    margin-bottom: 5em;
+  }
+
+  .headerBox {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 5px 40px 5px;
+  }
+
+  .headerBox__logo {
+    width: 40%;
+  }
+
+  .headerButton {
+    padding: 8px 20px;
+  }
+
+  /* Main Area */
+
+  .mainBox {
+    display: inline-block;
+  }
+
+  .mainBox__title {
+    font-size: 1.8rem;
+    padding-right: 5em;
+    width: 100%;
+  }
+
+  .mainBox__desc {
+    font-family: var(--font2);
+    line-height: 1.5em;
+    font-size: 16px;
+    margin-bottom: 3em;
+  }
+
+  .mainBox__img {
+    justify-content: center;
+    padding: 4em 5em 0 0;
+    width: 100%;
+  }
+
+  .mainButton {
+    font-size: 15px;
+  }
+
+  /* Second Area */
+
+  .box {
+    display: block;
+    text-align: center;
+    margin: 2em 0;
+  }
+
+  .secondBoxContent,
+  .fourthBoxContent {
+    position: relative;
+    top: 13em;
+  }
+
+  .secondImgBox {
+    position: relative;
+    top: -13em;
+  }
+
+  .imgBox {
+    position: relative;
+    width: 100%;
+    margin: 2em 0;
+    padding: 0 15rem 0 0;
+  }
+
+  /* Last Area */
+
+  .lastBox {
+    padding: 2em 2em;
+    margin: auto;
+    width: 70%;
+  }
+
+  .lastTitle {
+    font-size: 28px;
+    margin-bottom: 2em;
+  }
+
+  /* Footer */
+
+  footer {
+    width: 100%;
+    display: block;
+  }
+
+  .foot {
+    width: 90%;
+    display: block;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-top: 5em;
+    margin: 0 10px;
+  }
+
+  .links-one,
+  .links-two {
+    padding: 0;
+  }
+
+  .foot .social {
+    margin-top: 2.5em;
+  }
+
+  .footer__last {
+    position: relative;
+    margin: 1em 0 0 0;
+    right: 0;
+    bottom: 0;
+  }
+}
