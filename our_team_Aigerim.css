@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.team {
+  background-color: rgb(248, 249, 250);
+  padding-bottom: 2em;
+}
+.title {
+  font-family: sans-serif;
+  font-size: xx-large;
+  margin-bottom: 10px;
+}
+.title-content {
+  margin-top: 0;
+  color: gray;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+.members {
+  display: flex;
+  justify-content: center;
+}
+
+.member {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.img-cont img {
+  border: solid 5px lightgray;
+  border-radius: 300px;
+  width: 200px;
+  height: 200px;
+}
+
+.intro,
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  width: 200px;
+  text-align: center;
+  margin-bottom: 0;
+  font-family: cursive;
+}
+.job {
+  width: 150px;
+  text-align: center;
+  margin-top: 5px;
+  font-size: smaller;
+  color: gray;
+}
+.icon {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+#icon {
+  /* width: 25px;
+    height: 25px; */
+  padding: 5px;
+  background-color: rgb(57, 62, 68);
+  color: white;
+  border-radius: 100px;
+}
+#icon:hover {
+  background-color: gray;
+}
+
+.team-footer {
+  text-align: center;
+  /* width: 60%; */
+  /* margin:50px 0 0 100px; */
+  padding: 10px 10% 10px 10%;
+  color: gray;
+}
+
+/* changed 500px to 900px */
+@media only screen and (max-width: 600px) {
+  .members {
+    flex-direction: column;
+    align-items: center;
+  }
+  .member {
+    margin-top: 30px;
+  }
+}

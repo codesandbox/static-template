@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.portfolio {
+  /* section, low level container */
+  background-color: rgb(247, 248, 249);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.portfolio .portfolio-case {
+  width: 70%;
+  min-width: none;
+  display: flex;
+  padding: 10px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 300px);
+  gap: 10px;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 20px; */
+  background-color: var(--our_light_grey);
+  border: 1px dotted black;
+}
+
+.portfolio h2 {
+  font-size: 40px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.portfolio p {
+  font-size: 20px;
+  padding: 20px;
+}
+
+.portfolio-case .row {
+  /* card with picture and 2 lines of text */
+  /* maybe set a height */
+  width: 200px;
+  margin: 10px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-case .row h3 {
+  /* text styling using color var --our_text_color */
+  color: var(--our_text_color);
+  text-align: center;
+  font-size: 22px;
+}
+
+.portfolio-case .row p {
+  /* text styling using color var --our_text_color_light */
+  color: var(--our_text_color_light);
+  text-align: center;
+}
+
+.portfolio-case .row img {
+  width: 100%;
+  border: none;
+
+  width: 200px;
+  height: 200px;
+  /* bring all photos to same unchangable size */
+}
+
+.portfolio-case .row img:hover {
+  /* pseudolayout - yellow  and content " + " in tne center  with very large font size  */
+  /* make image refering to main page */
+  background-color: var(--our_yellow);
+}
