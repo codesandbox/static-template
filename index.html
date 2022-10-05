@@ -1,12 +1,74 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <title>qr code card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #d5e1ef;
+      }
+      div {
+        width: 320px;
+        height: 497px;
+        border-radius: 20px;
+        background-color: white;
+        overflow: hidden;
+        padding: 16px;
+        margin: auto;
+      }
+      h1 {
+        padding-left: 16px;
+        padding-right: 16px;
+        width: 288px;
+        left: 0%;
+        right: 0%;
+        top: calc(50% - 56px / 2 - 36.5px);
+        font-family: "Outfit";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 28px;
+        text-align: center;
+      }
+      p {
+        width: 256px;
+        height: 57px;
+        left: 5.56%;
+        right: 5.56%;
+        top: calc(50% - 57px / 2 + 36px);
+        font-family: "Outfit";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 19px;
+        text-align: center;
+        letter-spacing: 0.1875px;
+        color: #7d889e;
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+
+      img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div>
+      <img src="image-qr-code.png" alt="" />
+      <h1>Improve your front-end skills by building projects</h1>
+      <p>
+        Scan the QR code to visit Frontend Mentor and take your coding skills to
+        the next level
+      </p>
+    </div>
   </body>
 </html>
