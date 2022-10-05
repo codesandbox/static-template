@@ -1,12 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link rel="stylesheet" href="src/styles/style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <section>
+      <header>
+        <div class="heading">
+          <h1>The Charles Party</h1>
+          <nav>
+            <!-- <input type="checkbox" name="menu" id="hm" /> -->
+            <label id="hm">Home</label>
+            <!-- <input type="checkbox" name="menu" id="svce" /> -->
+            <label id="svce">Services</label>
+          </nav>
+        </div>
+
+        <div class="name">
+          <p>Fred Charles</p>
+        </div>
+      </header>
+
+      <article id="home">
+        <div id="description">
+          <h2>description</h2>
+        </div>
+
+        <div id="dashboard">
+          <h2>projects</h2>
+        </div>
+      </article>
+
+      <article id="services">
+        <h2>Services</h2>
+
+        <p>services and prices</p>
+        <p>terms and conditions</p>
+      </article>
+
+      <div class="float" style="display: none;">
+        <input type="checkbox" name="request" id="request" />
+        <label for="request"></label>
+      </div>
+
+      <footer>
+        <p>copyright</p>
+
+        <a target="_blank" href="https://bit.ly/3yc90sL">@TheCharlesParty</a>
+      </footer>
+    </section>
+
+    <script src="src/scripts/main.js"></script>
   </body>
 </html>
