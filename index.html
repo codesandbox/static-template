@@ -11,10 +11,10 @@
     <!-- banner -->
     <div class="banner">
       <header>
-        <a href="#" class="logo">Brand Name</a>
+        <a href="#" class="logo">Mananyak</a>
         <div class="toggle"></div>
       </header>
-      <img src="./bg.jpg" alt="photo1" />
+      <img src="./bg3.jpg" alt="photo1" />
       <div class="content">
         <h2>Coded by <span>Manak</span></h2>
         <p>
@@ -26,8 +26,117 @@
       </div>
     </div>
     <!-- about -->
+    <section class="about">
+      <div class="contentBx">
+        <h2 class="heading">About <span>Us</span></h2>
+        <p class="text">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni
+          asperiores et quasi provident fuga quae consequuntur nemo officiis
+          maiores, molestias quam earum voluptatibus vitae dolorem aspernatur,
+          ipsa sunt, eveniet eos. <br /><br />Lorem ipsum dolor sit amet,
+          consectetur adipisicing elit. Sed expedita dolores, est quas officia
+          officiis ut delectus quae iure esse rem eveniet incidunt impedit
+          assumenda sequi possimus perspiciatis iusto. Cum.
+        </p>
+      </div>
+      <div class="imgBx"></div>
+    </section>
     <!-- services -->
-    <!-- technology -->
+    <section class="services">
+      <h2 class="heading">Our <span>services</span></h2>
+      <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorum
+        veniam, quis odit beatae laborum tempore! Commodi, modi architecto earum
+        iusto ex corrupti delectus veniam, facilis qui ipsam distinctio
+        veritatis.
+      </p>
+      <div class="container">
+        <div class="serviceBx">
+          <div>
+            <img src="./icon1.png" alt="Design" />
+            <h2>Design</h2>
+          </div>
+        </div>
+        <div class="serviceBx">
+          <div>
+            <img src="./icon2.png" alt="Development" />
+            <h2>Development</h2>
+          </div>
+        </div>
+        <div class="serviceBx">
+          <div>
+            <img src="./icon3.png" alt="Branding" />
+            <h2>Branding</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- my project-->
+    <section id="project">
+        <!--heading--------------->
+        <div class="project-heading">
+          <span>Let's See My Work</span>
+          <h3>MY PROJECTS</h3>
+        </div>
+        <!--filter--------->
+        <ul class="portfolio-filter">
+          <li class="list portfolio-filter-active" data-filter="all">All</li>
+          <li class="list" data-filter="app">Application</li>
+          <li class="list" data-filter="appdesign">App Design</li>
+          <li class="list" data-filter="web">Website Designs</li>
+          <li class="list" data-filter="ai">AI</li>
+      </ul>
+      <!--container--------->
+      <div class="portfolio-container">
+        <!--1------------>
+        <a href="images/b-1.jpg" class="portfolio-box app" data-lightbox="work">
+          <img alt="" src="images/b-1.jpg">
+        </a>
+        <!--2------------>
+        <a href="images/b-2.jpg" class="portfolio-box app" data-lightbox="work">
+          <img alt="" src="images/b-2.jpg">
+        </a>
+        <!--3------------>
+        <a href="images/b-3.jpg" class="portfolio-box appdesign" data-lightbox="work">
+          <img alt="" src="images/b-3.jpg">
+        </a>
+        <!--4------------>
+        <a href="images/b-4.jpg" class="portfolio-box web" data-lightbox="work">
+          <img alt="" src="images/b-4.jpg">
+        </a>
+        <!--5------------>
+        <a href="images/b-5.jpg" class="portfolio-box web" data-lightbox="work">
+          <img alt="" src="images/b-5.jpg">
+        </a>
+        <!--6------------>
+        <a href="images/b-6.jpg" class="portfolio-box ai" data-lightbox="work">
+          <img alt="" src="images/b-6.jpg">
+        </a>
+      </div>
+      </section>
+      <!--js---------------------------------->
+      <script src="js/JQuery.js"></script>
+      <script src="js/lightbox.min.js"></script>
+      <script>
+        /*blog-filter-menu----------------------------*/
+        $(document).on('click','.portfolio-filter li',function(){
+                $(this).addClass('portfolio-filter-active').siblings().removeClass('portfolio-filter-active')
+            });
+            
+         /*portfolio-filter---------------------------------*/
+         $(document).ready(function(){
+                $('.list').click(function(){
+                    const value = $(this).attr('data-filter');
+                    if(value == 'all'){
+                        $('.portfolio-box').show('1000');
+                    }
+                    else{
+                        $('.portfolio-box').not('.'+value).hide('1000');
+                        $('.portfolio-box').filter('.'+value).show('1000');
+                    }
+                });
+            });
+      </script>
     <!-- Client -->
     <!-- Testimonials -->
   </body>
