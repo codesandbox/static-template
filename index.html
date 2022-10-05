@@ -51,13 +51,21 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav mx-auto">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-            <a class="nav-link" href="#about">About</a>
-            <a class="nav-link" href="#project">Project</a>
-            <a class="nav-link" href="#skill">Skill</a>
-            <a class="nav-link" href="#contact">Contact</a>
-          </div>
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#project">Project</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skill">Skill</a>
+            </li>
+          </ul>
 
           <div class="wrapper-button">
             <a class="button-contact" href="">Contact</a>
@@ -71,9 +79,9 @@
     <section id="hero-section">
       <div class="container-fluid">
         <div class="container vh-100">
-          <div class="row h-100">
+          <div class="row h-100 row-h">
             <div
-              class="col-lg-5 col-md- 5 col-sm-12"
+              class="col-lg-5 col-md-5 col-sm-12"
               style="padding-top: 180px;"
             >
               <h1 class="hero-title">
@@ -90,12 +98,12 @@
 
               <!-- nesting card -->
               <div class="row nesting-card">
-                <div class="col-md-5 mb-3">
+                <div class="col-md-5 col-sm-12 mb-3">
                   <a class="card-button" href="#project">
                     <div class="wrapper-card">
                       <div class="card py-2 px-4">
                         <div class="row">
-                          <div class="col-md-3">
+                          <div class="col-md-3 col-sm-6">
                             <div class="wrapper-nesting-card">
                               <img
                                 src="assets/images/icon-project.png"
@@ -105,7 +113,7 @@
                             </div>
                           </div>
 
-                          <div class="col-md-9">
+                          <div class="col-md-9 col-sm-6">
                             <div class="wrapper-body">
                               <div class="wrapper-nesting-card">
                                 <span>Project</span>
@@ -184,7 +192,8 @@
               </div>
             </div>
 
-            <div class="col-md-6 offset-1 position-relative">
+            <!-- col 2 -->
+            <div class="col-md-6 offset-md-1 col-sm-12 position-relative">
               <div class="wrapper-images">
                 <img
                   class="accsent-img img-fluit position-absolute end-0 bottom-0"
@@ -211,25 +220,28 @@
 
           <div class="row">
             <div class="col-md-5">
-              <img src="assets/images/img-about.png" alt="img-about" />
+              <img src="assets/images/img-about.png" alt="img-about w-100" />
             </div>
 
             <div class="col-md-6">
-              <p class="content">
-                Saya seorang mahasiswa kelas karyawan salah satu universitas di
-                jakarta dengan jurusan teknik informatika. dengan background IT
-                yang saya emban, saya berkeinginan menjadi seorang Fullstack
-                Developer dan bekerja di perusahaan teknologi.
-              </p>
+              <div class="wrapper-content">
+                <p class="content">
+                  Saya seorang mahasiswa kelas karyawan salah satu universitas
+                  di jakarta dengan jurusan teknik informatika. dengan
+                  background IT yang saya emban, saya berkeinginan menjadi
+                  seorang Fullstack Developer dan bekerja di perusahaan
+                  teknologi.
+                </p>
 
-              <p class="content">
-                Sebelumnya saya pernah bekerja dibeberapa perusahaan dengan
-                background perusahaan yang berbeda-beda, mulai dari perusahaan
-                yang bergerak dibidang tekstil sampai dengan perusahaan
-                manufaktur otomotif. sekarang saya menjadi freelancer dan
-                berkeinginan mengikuti bootcamp programming agar bisa bekerja
-                dibidang yang saya sukai yaitu teknologi.
-              </p>
+                <p class="content">
+                  Sebelumnya saya pernah bekerja dibeberapa perusahaan dengan
+                  background perusahaan yang berbeda-beda, mulai dari perusahaan
+                  yang bergerak dibidang tekstil sampai dengan perusahaan
+                  manufaktur otomotif. sekarang saya menjadi freelancer dan
+                  berkeinginan mengikuti bootcamp programming agar bisa bekerja
+                  dibidang yang saya sukai yaitu teknologi.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -314,17 +326,86 @@
       </div>
     </section>
 
+    <!-- section skill -->
+
+    <section id="skill">
+      <div class="container-fluid bg-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="title text-center">
+                Skill
+              </h2>
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-3 col-sm-4">
+              <div class="wrapper-icon text-center">
+                <img
+                  src="assets/images/logo-html.png"
+                  alt="logo-html"
+                  class="img-fluid img-icon"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-4">
+              <div class="wrapper-icon text-center">
+                <img
+                  src="assets/images/logo-css.png"
+                  alt="logo-css"
+                  class="img-fluid img-icon"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="wrapper-icon text-center">
+                <img
+                  src="assets/images/logo-js.png"
+                  alt="logo-js"
+                  class="img-fluid img-icon"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="wrapper-icon text-center">
+                <img
+                  src="assets/images/logo-bootstrap.png"
+                  alt="logo-bootstrap"
+                  class="img-fluid img-icon"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container-fluid bg-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="title text-center">Contact</h2>
+            </div>
+          </div>
+
+          <div class="row"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- my js -->
+    <script src="assets/js/script.js"></script>
+
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
   </body>
 </html>

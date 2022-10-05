@@ -27,18 +27,18 @@ nav {
   background-color: white;
 }
 
-.navbar-nav a {
+ul.navbar-nav li.nav-item a {
   font-size: 1.143em;
   text-transform: uppercase;
   color: #313131;
 }
 
-.navbar-nav a:hover {
+ul.navbar-nav li.nav-item a:hover {
   color: #e68754 !important;
   font-weight: 700;
 }
 
-.navbar-nav .nav-link.active {
+.navbar-nav li.nav-item a.nav-link.active {
   color: #e68754 !important;
   font-weight: 700;
 }
@@ -225,6 +225,12 @@ nav {
 
 /* end section project */
 
+/* section skill */
+.wrapper-icon {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
 /* keyframe */
 @keyframes upDown {
   0% {
@@ -250,6 +256,23 @@ nav {
 /* responsive mobile */
 @media screen and (max-width: 576px) {
   /* navbar */
+  * {
+    z-index: 2;
+  }
+
+  .title {
+    font-size: 1.714em;
+  }
+
+  nav {
+    z-index: 3;
+  }
+
+  .accsent-img {
+    width: 100%;
+    z-index: -1;
+    top: 0;
+  }
 
   .navbar-collapse {
     background-color: white;
@@ -258,6 +281,14 @@ nav {
   }
 
   /* hero section */
+
+  #hero-section .container {
+    height: 100vh;
+  }
+
+  #hero-section .row-h {
+    height: 100vh;
+  }
   .hero-title {
     font-size: 2.5em;
     line-height: 45px;
@@ -266,4 +297,26 @@ nav {
   .hero-caption {
     font-size: 1em;
   }
+
+  /* end hero section */
+
+  /* about section */
+  .content {
+    font-size: 0.857em;
+  }
+
+  .wrapper-content {
+    margin-top: 20px;
+  }
+
+  .img-about {
+    width: 100%;
+  }
+  /* end about section */
+
+  /* skill */
+  .img-icon {
+    width: 100px;
+  }
+  /* end skill */
 }
