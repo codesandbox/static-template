@@ -1,12 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- my style -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png" />
+
+    <title>Portfolio | Hosea leonardo</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!-- navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light position-fixed"
+      style="width: 100%;"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="assets/images/logo.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav mx-auto">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#project">Project</a>
+            <a class="nav-link" href="#skill">Skill</a>
+            <a class="nav-link" href="#contact">Contact</a>
+          </div>
+
+          <div class="wrapper-button">
+            <a class="button-contact" href="">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- end navbar -->
+
+    <!-- hero section -->
+    <section id="hero-section">
+      <div class="container-fluid">
+        <div class="container vh-100">
+          <div class="row h-100">
+            <div
+              class="col-lg-5 col-md- 5 col-sm-12"
+              style="padding-top: 180px;"
+            >
+              <h1 class="hero-title">
+                Hallo!, Saya <br /><span class="hero-span">Hosea Leonardo</span>
+              </h1>
+              <p class="hero-caption">
+                Memberikan yang terbaik, bekerja dengan sepenuh hati,
+                bertanggung jawab dengan sepenuh raga.
+              </p>
+
+              <div class="wrapper-button-hire">
+                <a class="button-hire" href="">Hire Me</a>
+              </div>
+
+              <!-- nesting card -->
+              <div class="row nesting-card">
+                <div class="col-md-5 mb-3">
+                  <a class="card-button" href="#project">
+                    <div class="wrapper-card">
+                      <div class="card py-2 px-4">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <div class="wrapper-nesting-card">
+                              <img
+                                src="assets/images/icon-project.png"
+                                styl="width:35px;"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+
+                          <div class="col-md-9">
+                            <div class="wrapper-body">
+                              <div class="wrapper-nesting-card">
+                                <span>Project</span>
+                                <p class="fw-bolder">2</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- card 2 -->
+                <div class="col-md-5">
+                  <a class="card-button" href="#project">
+                    <div class="wrapper-card">
+                      <div class="card py-2 px-4">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <div class="wrapper-nesting-card">
+                              <img
+                                src="assets/images/icon-task.png"
+                                styl="width:35px;"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+
+                          <div class="col-md-9">
+                            <div class="wrapper-body">
+                              <div class="wrapper-nesting-card">
+                                <span>Task Complete</span>
+                                <p class="fw-bolder">2</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- end card 2 -->
+              </div>
+              <!-- end nesting card -->
+
+              <div class="wrapper-sosmed">
+                <a
+                  class="sosmed"
+                  href="https://github.com/hosealeonardo18"
+                  target="_blank"
+                  ><img src="assets/images/github-logo 1.png" alt="github-logo"
+                /></a>
+
+                <a
+                  class="sosmed"
+                  href="https://www.instagram.com/hosea_leonardo/?hl=id"
+                  target="_blank"
+                  ><img
+                    src="assets/images/instgram-logo.png"
+                    alt="instagram-logo"
+                /></a>
+
+                <a
+                  class="sosmed"
+                  href="https://api.whatsapp.com/send?phone=6287880724123"
+                  target="_blank"
+                  ><img
+                    src="assets/images/whatsapp-logo.png"
+                    alt="whatsapp-logo"
+                /></a>
+
+                <a class="sosmed" href="" target="_blank"
+                  ><img src="assets/images/email-logo.png" alt="email-logo"
+                /></a>
+              </div>
+            </div>
+
+            <div class="col-md-6 offset-1 position-relative">
+              <div class="wrapper-images">
+                <img
+                  class="accsent-img img-fluit position-absolute end-0 bottom-0"
+                  src="assets/images/img-hero.png"
+                  alt="img-hero"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container-fluid bg-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h2 class="title">
+                About
+              </h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-5">
+              <img src="assets/images/img-about.png" alt="img-about" />
+            </div>
+
+            <div class="col-md-6">
+              <p class="content">
+                Saya seorang mahasiswa kelas karyawan salah satu universitas di
+                jakarta dengan jurusan teknik informatika. dengan background IT
+                yang saya emban, saya berkeinginan menjadi seorang Fullstack
+                Developer dan bekerja di perusahaan teknologi.
+              </p>
+
+              <p class="content">
+                Sebelumnya saya pernah bekerja dibeberapa perusahaan dengan
+                background perusahaan yang berbeda-beda, mulai dari perusahaan
+                yang bergerak dibidang tekstil sampai dengan perusahaan
+                manufaktur otomotif. sekarang saya menjadi freelancer dan
+                berkeinginan mengikuti bootcamp programming agar bisa bekerja
+                dibidang yang saya sukai yaitu teknologi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="project">
+      <div class="container-fluid bg-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="title text-center">Project</h2>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center">
+            <!-- card 1 -->
+            <div class="col-md-4">
+              <div class="wrapper-card-project">
+                <div class="card-about">
+                  <img
+                    class="img-fluid w-100"
+                    src="assets/images/portfolio-img-or.png"
+                    alt="web-project"
+                  />
+
+                  <div class="card-body">
+                    <h3 class="title-body">
+                      Website Organisasi
+                    </h3>
+
+                    <p class="sub-titile">
+                      Sebuah website sederhana yang dibuat dengan framework
+                      bootstrap v.5
+                    </p>
+                  </div>
+
+                  <div class="wrapper-button-visit">
+                    <a
+                      class="text-center fw-bolder"
+                      href="https://gkmiimanuel.org/"
+                      target="_blank"
+                      >Kunjungi</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end-card 1 -->
+
+            <!-- card 2 -->
+            <div class="col-md-4">
+              <div class="wrapper-card-project">
+                <div class="card-about">
+                  <img
+                    class="img-fluid w-100"
+                    src="assets/images/portfolio-img-2.png"
+                    alt="web-project"
+                  />
+
+                  <div class="card-body">
+                    <h3 class="title-body">
+                      Website Portfolio
+                    </h3>
+
+                    <p class="sub-titile">
+                      Sebuah website sederhana yang dibuat dengan framework
+                      bootstrap v.5
+                    </p>
+                  </div>
+
+                  <div class="wrapper-button-visit">
+                    <a class="text-center fw-bolder" href="" target="_blank"
+                      >Kunjungi</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end card 2 -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
   </body>
 </html>
