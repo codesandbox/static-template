@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Главная | Блог</title>
+    <link rel="stylesheet" href="css/post.css" />
+    <title>Пост | Блог</title>
   </head>
   <body>
     <header class="header">
@@ -36,184 +37,90 @@
       </div>
     </header>
     <main class="main">
-      <section class="banner">
-        <h1 class="visually-hidden">Блог по теме</h1>
-      </section>
-      <section class="content">
-        <h2 class="visually-hidden">Статьи нашего блога</h2>
-        <div class="container content__container">
-          <div class="posts">
-            <article class="blog-post blog-post--main">
-              <a href="" class="blog-post__category">Категория 1</a>
-              <h3 class="blog-post__title blog-title">
-                <a href="#" class="blog-post__link">
-                  Управление ИТ-активами – скучная рутина или творческая задача?
-                </a>
-              </h3>
-              <p class="blog-post__descr">
+      <div class="post-banner">
+        <div
+          class="container post-banner__container"
+          style="background-image: url('img/Blog/post-banner.jpg');"
+        ></div>
+      </div>
+      <section class="post-content">
+        <div class="container post-content__container">
+          <div class="post-wrapper">
+            <div class="post">
+              <div class="post-meta">
+                <a href="#" class="post-category">Категория 1</a>
+                <time class="post-date">13 дек 2020</time>
+              </div>
+              <h1 class="blog-title post-title">
+                Управление ИТ-активами – скучная рутина или творческая задача?
+              </h1>
+              <p>
                 Размышляя об управлении ИТ-активами, я вспомнил один учебный
                 пример. Менеджер по ИТ-мощностям в крупной компании периодически
                 готовил толстенный отчёт руководству. В очередной раз он не
-                принёс отчёт, решив проверить, нужен ли он вообще.
+                принёс отчёт, решив проверить, нужен ли он вообще. Выждав
+                несколько дней, он пришёл к руководителю и спросил: «Похоже тот
+                отчёт, который я готовлю, не особо востребован, а что вам
+                действительно нужно?» Руководитель признался, что массивный
+                отчёт хороший, но им не пользуются. И набросал на листе бумаги
+                то, что хотелось бы иметь под рукой.
               </p>
-              <time class="blog-post__date">13 дек 2020</time>
-            </article>
-            <ul class="post-grid list-reset">
-              <li class="post-grid__item">
-                <article class="blog-post">
-                  <a href="" class="blog-post__category">Категория 1</a>
-                  <h3 class="blog-post__title blog-title">
-                    <a href="#" class="blog-post__link">
-                      Управление ИТ-активами – скучная рутина или творческая
-                      задача?
-                    </a>
-                  </h3>
-                  <p class="blog-post__descr">
-                    Размышляя об управлении ИТ-активами, я вспомнил один учебный
-                    пример. Менеджер по ИТ-мощностям в крупной компании
-                    периодически готовил толстенный отчёт руководству. В
-                    очередной раз он не принёс отчёт, решив проверить, нужен ли
-                    он вообще.
-                  </p>
-                  <time class="blog-post__date">13 дек 2020</time>
-                </article>
-              </li>
-              <li class="post-grid__item">
-                <article class="blog-post">
-                  <a href="" class="blog-post__category">Категория 1</a>
-                  <h3 class="blog-post__title blog-title">
-                    <a href="#" class="blog-post__link">
-                      ITAM&SAMDay – самая настоящая удача!
-                    </a>
-                  </h3>
-                  <time class="blog-post__date">13 дек 2020</time>
-                </article>
-              </li>
-              <li class="post-grid__item">
-                <article
-                  class="blog-post"
-                  style="background-image: url('img/post-bg.jpg');"
+              <p>
+                Управление ИТ-активами, как и управление конфигурациями,
+                является базовым процессом для других. В первом случае более
+                важным является финансовый аспект, во втором – эксплуатационные
+                задачи. Оба процесса можно перегрузить деталями и превратить во
+                что-то рутинное. Как же найти баланс и сделать процесс
+                по-настоящему «живым»?
+              </p>
+              <p>
+                Конечно, баланс унификации и персонального подхода – дело
+                каждого. Вспомним историю про послевоенное автомобилестроение:
+                американская и японская тактика. Постепенно японцы достигли
+                превосходства благодаря, в том числе, выверенному балансу
+                унификации и культуре производства. Но это правило не для всех.
+              </p>
+              <p>
+                Конечно, баланс унификации и персонального подхода – дело
+                каждого. Вспомним историю про послевоенное автомобилестроение:
+                американская и японская тактика. Постепенно японцы достигли
+                превосходства благодаря, в том числе, выверенному балансу
+                унификации и культуре производства. Но это правило не для всех.
+              </p>
+              <img src="img/Blog/post-img.jpg" alt="" />
+            </div>
+            <div class="post-links">
+              <a href="" class="post-links__link post-links__link--prev">
+                <svg
+                  width="6"
+                  height="11"
+                  viewBox="0 0 6 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <a href="" class="blog-post__category">
-                    Очень длинная категория 2
-                  </a>
-                  <h3 class="blog-post__title blog-title">
-                    <a href="#" class="blog-post__link">
-                      Управление ИТ-активами – скучная рутина или творческая
-                      задача?
-                    </a>
-                  </h3>
-                  <time class="blog-post__date">13 дек 2020</time>
-                </article>
-              </li>
-              <li class="post-grid__item">
-                <article class="blog-post">
-                  <a href="" class="blog-post__category">Категория 1</a>
-                  <h3 class="blog-post__title blog-title">
-                    <a href="#" class="blog-post__link">
-                      Управление ИТ-активами – скучная рутина или творческая
-                      задача слово слово и еще длинное слово после чего ...
-                    </a>
-                  </h3>
-                  <time class="blog-post__date">13 дек 2020</time>
-                </article>
-              </li>
-              <li class="post-grid__item">
-                <article class="blog-post">
-                  <a href="" class="blog-post__category">Категория 1</a>
-                  <h3 class="blog-post__title blog-title">
-                    <a href="#" class="blog-post__link">
-                      ITAM&SAMDay – самая настоящая удача!
-                    </a>
-                  </h3>
-                  <time class="blog-post__date">13 дек 2020</time>
-                </article>
-              </li>
-              <li class="post-grid__item">
-                <article class="blog-post">
-                  <a href="" class="blog-post__category">Категория 1</a>
-                  <h3 class="blog-post__title blog-title">
-                    <a href="#" class="blog-post__link">
-                      Управление ИТ-активами – скучная рутина или творческая
-                      задача?
-                    </a>
-                  </h3>
-                  <p class="blog-post__descr">
-                    Размышляя об&nbsp;управлении ИТ-активами, я&nbsp;вспомнил
-                    один учебный пример. Менеджер по&nbsp;ИТ-мощностям
-                    в&nbsp;крупной компании периодически готовил толстенный
-                    отчёт руководству. В&nbsp;очередной раз
-                    он&nbsp;не&nbsp;принёс отчёт, решив проверить, нужен&nbsp;ли
-                    он&nbsp;вообще.
-                  </p>
-                  <time class="blog-post__date">13 дек 2020</time>
-                </article>
-              </li>
-              <li class="post-grid__item">
-                <article class="blog-post">
-                  <a href="" class="blog-post__category">
-                    Очень длинная категория 2
-                  </a>
-                  <h3 class="blog-post__title blog-title">
-                    <a href="#" class="blog-post__link">
-                      ITAM&SAMDay – самая настоящая удача!
-                    </a>
-                  </h3>
-                  <time class="blog-post__date">13 дек 2020</time>
-                </article>
-              </li>
-              <li class="post-grid__item">
-                <article class="blog-post" style="background-image: url('');">
-                  <a href="" class="blog-post__category">
-                    Категория 1
-                  </a>
-                  <h3 class="blog-post__title blog-title">
-                    <a href="#" class="blog-post__link">
-                      Управление ИТ-активами – скучная рутина или творческая
-                      задача?
-                    </a>
-                  </h3>
-                  <time class="blog-post__date">13 дек 2020</time>
-                </article>
-              </li>
-              <li class="post-grid__item">
-                <article class="blog-post">
-                  <a href="" class="blog-post__category">Категория 1</a>
-                  <h3 class="blog-post__title blog-title">
-                    <a href="#" class="blog-post__link">
-                      Управление ИТ-активами – скучная рутина или творческая
-                      задача слово слово и еще длинное слово после чего ...
-                    </a>
-                  </h3>
-                  <time class="blog-post__date">13 дек 2020</time>
-                </article>
-              </li>
-              <li class="post-grid__item">
-                <article class="blog-post">
-                  <a href="" class="blog-post__category">Категория 1</a>
-                  <h3 class="blog-post__title blog-title">
-                    <a href="#" class="blog-post__link">
-                      ITAM&SAMDay – самая настоящая удача!
-                    </a>
-                  </h3>
-                  <time class="blog-post__date">13 дек 2020</time>
-                </article>
-              </li>
-            </ul>
-            <ul class="pagination list-reset">
-              <li class="pagination__item">
-                <a class="pagination__link pagination__link--current">1</a>
-              </li>
-              <li class="pagination__item">
-                <a href="#" class="pagination__link">2</a>
-              </li>
-              <li class="pagination__item">
-                <a href="#" class="pagination__link">3</a>
-              </li>
-              <li class="pagination__item">
-                <a href="#" class="pagination__link">4</a>
-              </li>
-            </ul>
+                  <path
+                    d="M0.413444 5.22558L5.03874 0.613083C5.19028 0.462049 5.43563 0.462303 5.58692 0.613865C5.73809 0.765407 5.7377 1.01089 5.58614 1.16205L1.23615 5.50002L5.58629 9.83797C5.73784 9.98914 5.73823 10.2345 5.58708 10.386C5.51124 10.462 5.41188 10.5 5.31253 10.5C5.21342 10.5 5.11446 10.4623 5.03876 10.3868L0.413444 5.77443C0.340456 5.70181 0.299498 5.60299 0.299498 5.50002C0.299498 5.39705 0.340573 5.29834 0.413444 5.22558Z"
+                    fill="#5D71DD"
+                  />
+                </svg>
+                <span>Предыдущая новость</span>
+              </a>
+              <a href="" class="post-links__link post-links__link--next">
+                <span>Следующая новость</span>
+                <svg
+                  width="6"
+                  height="11"
+                  viewBox="0 0 6 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.58656 5.22558L0.961262 0.613083C0.80972 0.462049 0.56437 0.462303 0.413081 0.613865C0.26191 0.765407 0.2623 1.01089 0.413862 1.16205L4.76385 5.50002L0.413706 9.83797C0.262164 9.98914 0.261773 10.2345 0.412925 10.386C0.488764 10.462 0.58812 10.5 0.687475 10.5C0.786576 10.5 0.88554 10.4623 0.961243 10.3868L5.58656 5.77443C5.65954 5.70181 5.7005 5.60299 5.7005 5.50002C5.7005 5.39705 5.65943 5.29834 5.58656 5.22558Z"
+                    fill="#5D71DD"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
           <aside class="sidebar">
             <div class="popular-posts">
