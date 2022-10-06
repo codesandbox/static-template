@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>
+      This is a static template, there is no bundler or bundling involved!
+    </h1>
   </body>
+  <script>
+    function add7() {
+      console.log("add7 function working!");
+    }
+
+    function multiply(a, b) {
+      var sum = a + b;
+      console.log(sum);
+    }
+
+    function capitalize(string) {
+      //returns that string with only the first letter capitalized
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    function lastLetter(string) {
+      return string.charAt(string.length - 1);
+    }
+
+    add7();
+    multiply(2, 2);
+    console.log(capitalize("test"));
+    console.log(lastLetter("abcd"));
+  </script>
 </html>
