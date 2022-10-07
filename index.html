@@ -1,12 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Anton Baylon - User Creation Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+    <div class="login-box" id="myForm">
+      <h2>User Creation Form</h2>
+      <form>
+        <div class="user-box">
+          <input type="text" name="name" id="name" required />
+          <label>Full Name</label>
+        </div>
+        <div class="user-box">
+          <input type="text" name="email" id="email" required />
+          <label>Email</label>
+        </div>
+        <div class="user-box">
+          <input type="password" name="password" id="password" required />
+          <label>Password</label>
+        </div>
+        <div class="dropdown">
+          <label for="occupations">Occupation: </label>
+          <div>
+            <select
+              name="occupation"
+              id="occupation"
+              style="
+                padding: 5px;
+                background-color: rgb(220, 243, 247);
+                border: none;
+                width: 250px;
+              "
+              required
+            >
+              <option value="">--Occupation--</option>
+            </select>
+          </div>
+        </div>
+        <div class="dropdown">
+          <label for="states">State: </label>
+          <div>
+            <select
+              name="state"
+              id="state"
+              style="
+                padding: 5px;
+                background-color: rgb(220, 243, 247);
+                border: none;
+                width: 250px;
+              "
+              required
+            >
+              <option value="">--State--</option>
+            </select>
+          </div>
+        </div>
+        <a
+          href="#"
+          id="check"
+          onclick="submissionFunction();"
+          type="submit"
+          value="Submit"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Submit
+        </a>
+      </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      let dropdownOccupations = $("#occupation"); //occupations dropdown
+
+      let dropdownStates = $("#state"); //states dropdown
+
+      var staticUrl = "https://frontend-take-home.fetchrewards.com/form";
+
+      $.getJSON("https://frontend-take-home.fetchrewards.com/form", (data) => {
+        var arrayCountoccupations = Object.keys(data.occupations).length;
+        var arrayCountstates = Object.keys(data.states).length;
+        console.log(data.states.name);
+        for (let i = 0; i < arrayCountoccupations; i++) {
+          dropdownOccupations.append(
+            $("<option></option>")
+              .attr("value", data.occupations)
+              .text(data.occupations[i])
+          );
+        }
+        for (let i = 0; i < arrayCountstates; i++) {
+          dropdownStates.append(
+            $("<option></option>")
+              .attr("value", data.states)
+              .text(data.states[i].name + ", " + data.states[i].abbreviation)
+          );
+        }
+      });
+    </script>
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
 </html>
