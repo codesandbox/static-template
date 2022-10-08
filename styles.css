@@ -1,0 +1,66 @@
+body {
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+.e1-hex-container {
+  position: relative;
+  width: 50%;
+}
+
+.e1-hex {
+  position: relative;
+  display: flex;
+}
+
+.e1-hex-link {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.e1-hex-link a {
+  display: block;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  padding: 0.7em;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.5s;
+  word-break: keep-all;
+}
+
+.e1-hex-link a:hover {
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+.e1-hex-img {
+  width: 90%;
+  margin: 5%;
+  display: block;
+  opacity: 0.5;
+}
+.e1-bg-hex {
+  position: absolute;
+  max-width: 40%;
+  left: 10px;
+}
+svg {
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+
+/* Custom position for hexagons */
+
+.e1-hex-link {
+  font-size: 16px;
+}
+.e1-hex-container:nth-child(2) {
+  margin-right: -15%;
+  margin-left: -15%;
+}
+
+.e1-hex-container:nth-child(1),
+.e1-hex-container:nth-child(3) {
+  transform: translate(0, 80%);
+}
