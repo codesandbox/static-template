@@ -1,0 +1,130 @@
+:root {
+  --tab-color: #191919;
+  --white-color: #fff;
+  --home-icon-color: #00f7ff;
+  --heart-icon-color: #adff2f;
+  --plus-icon-color: #ee82ee;
+  --bell-icon-color: #ffff00;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #000000;
+}
+
+li {
+  display: inline-block;
+}
+
+.nav {
+  background-color: var(--tab-color);
+  width: 30em;
+  height: 8em;
+  border-radius: 2em;
+  padding: 0 2em;
+  box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav__links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__link a {
+  color: var(--white-color);
+  font-size: 2.5rem;
+  opacity: 0.5;
+}
+.nav__light {
+  position: absolute;
+  top: 0;
+  left: 1.3em;
+  background-color: var(--white-color);
+  width: 4em;
+  height: 0.4em;
+  border-radius: 2px;
+
+  display: flex;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+.nav__light::before {
+  content: "";
+  width: 5em;
+  height: 7em;
+  position: absolute;
+  top: 0.4;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.3) -50%,
+    rgba(255, 255, 255, 0) 90%
+  );
+  clip-path: polygon(30% 0, 70% 0, 100% 100%, 0% 100%);
+}
+
+.nav__link.active a {
+  opacity: 1;
+}
+
+.nav__link.active a .bx-home-alt-2 {
+  color: var(--home-icon-color);
+  text-shadow: 0 0 15px var(--home-icon-color), 0 0 30px var(--home-icon-color),
+    0 0 45px var(--home-icon-color), 0 0 60px var(--home-icon-color);
+}
+.nav__link:nth-child(1).active ~ .nav__light {
+  background-color: var(--home-icon-color);
+}
+
+.nav__link.active a .bx-heart {
+  color: var(--heart-icon-color);
+  text-shadow: 0 0 15px var(--heart-icon-color),
+    0 0 30px var(--heart-icon-color), 0 0 45px var(--heart-icon-color),
+    0 0 60px var(--heart-icon-color);
+}
+.nav__link:nth-child(2).active ~ .nav__light {
+  background-color: var(--heart-icon-color);
+}
+
+.nav__link.active a .bx-plus-circle {
+  color: var(--plus-icon-color);
+  text-shadow: 0 0 15px var(--plus-icon-color), 0 0 30px var(--plus-icon-color),
+    0 0 45px var(--plus-icon-color), 0 0 60px var(--plus-icon-color);
+}
+.nav__link:nth-child(3).active ~ .nav__light {
+  background-color: var(--plus-icon-color);
+}
+
+.nav__link.active a .bx-user {
+  color: var(--user-icon-color);
+  text-shadow: 0 0 15px var(--user-icon-color), 0 0 30px var(--user-icon-color),
+    0 0 45px var(--user-icon-color), 0 0 60px var(--user-icon-color);
+}
+.nav__link:nth-child(4).active ~ .nav__light {
+  background-color: var(--user-icon-color);
+}
+
+.nav__link.active a .bx-bell {
+  color: var(--bell-icon-color);
+  text-shadow: 0 0 15px var(--bell-icon-color), 0 0 30px var(--bell-icon-color),
+    0 0 45px var(--bell-icon-color), 0 0 60px var(--bell-icon-color);
+}
+.nav__link:nth-child(5).active ~ .nav__light {
+  background-color: var(--bell-icon-color);
+}
