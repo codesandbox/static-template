@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="app"></div>
+    <form>
+      <label for="firstname">first name</label>
+      <input type="text" id="firstname" />
+      <label for="lastname">lastname</label>
+      <input type="text" id="lastname" /><br />
+      <button class="add-btn">add</button>
+    </form>
+    <hr />
+    <button class="multi-delete-btn">delete</button>
+    <table style="border: 1px double black;">
+      <thead style="border: 1px double black;">
+        <tr style="border: 1px double black;">
+          <th><input type="checkbox" name="chckbox" class="select-all" /></th>
+          <th>first name</th>
+          <th>last name</th>
+          <th>operations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="checkbox" name="" id="lastname" /></td>
+          <td class="firstname"></td>
+          <td class="lastname"></td>
+          <td>
+            <a class="deleteBtn" href="">delete</a> |
+            <a class="editBtn" href="">edit</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="script.js"></script>
   </body>
 </html>
