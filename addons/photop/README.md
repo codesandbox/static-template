@@ -8,5 +8,5 @@ You get notified everytime a post is made!
 Create a bookmark named Post Notify and in the url impoet the following:
 
 ```js
-loadScript("https://0o86op.csb.app/addons/photop/postnotify.js");
+javascript: loadScript("https://0o86op.csb.app/addons/photop/postnotify.js");
 ```
