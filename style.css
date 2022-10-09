@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap");
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mobile .menu-topo {
+  display: none;
+}
+.barra {
+  display: none;
+}
+body {
+  font-family: "Roboto";
+}
+.cabecalho {
+  width: 936px;
+  margin: 0 auto;
+}
+.menu-topo {
+  background: #ffffff;
+  width: 936px;
+  height: 35px;
+  font-size: 25px;
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  top: 0;
+  padding-top: 20px;
+  z-index: 1;
+}
+.logo {
+  margin-top: 5px;
+  display: flex;
+  margin-right: 60px;
+}
+
+.coluna {
+  background-color: #dbdbdb;
+  width: 1px;
+  height: 80%;
+  margin-top: 2px;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+input {
+  width: 215px;
+  height: 28px;
+  border: 0;
+}
+.campo-pesquisa {
+  font-size: large;
+}
+.campo-pesquisa::placeholder {
+  text-align: center;
+  background: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+}
+.navegacao ion-icon {
+  margin-right: 15px;
+}
+
+.conteiner {
+  width: 935px;
+  height: 100%;
+  margin: 80px auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.stories {
+  width: 614px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 118px;
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+.stories img {
+  margin-bottom: 5px;
+  margin-right: 15px;
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 66px;
+  height: 66px;
+
+  background-image: url("../imagens/s.jpg");
+  background-size: 66px;
+  background-repeat: no-repeat;
+  margin-left: 14px;
+  font-size: 12px;
+}
+.story img {
+  padding-top: 5px;
+  padding-left: 15px;
+}
+.stories ion-icon {
+  position: absolute;
+  right: 1%;
+  color: #ffffff;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.4));
+}
+.feed {
+  width: 614px;
+  height: 100%;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.post {
+  background-color: ivory;
+  width: 614px;
+  height: 900px;
+
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 70px;
+  position: relative;
+}
+.post video {
+  width: 100%;
+  height: 612px;
+}
+
+.cima {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  position: relative;
+}
+
+.cima ion-icon {
+  position: absolute;
+  right: 10px;
+}
+
+.foto {
+  width: 612px;
+  height: 612px;
+}
+
+.icone-perfil {
+  width: 32px;
+  height: 32px;
+  margin-right: 20px;
+}
+
+.negrito {
+  font-weight: 600;
+  color: #262626;
+}
+
+.cima .negrito {
+  margin-right: 480px;
+}
+.acoes {
+  font-size: 20px;
+  padding-top: 15px;
+}
+.acoes ion-icon {
+  margin-left: 10px;
+}
+
+.salvar {
+  font-size: 20px;
+  padding-left: 460px;
+}
+.like {
+  width: 20px;
+  height: 20px;
+}
+
+.baixo {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  padding-top: 15px;
+}
+
+.comentarios {
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-bottom: 20px;
+}
+.comentarios div {
+  color: #8e8e8e;
+
+  padding-bottom: 10px;
+}
+.comentarios ion-icon {
+  padding-left: 380px;
+}
+.comentar {
+  display: flex;
+  align-items: center;
+  width: 598px;
+  height: 80px;
+  border: 1px solid #dbdbdb;
+  font-size: 40px;
+  padding-left: 15px;
+  position: absolute;
+  bottom: 0;
+}
+.comentar input {
+  padding-left: 10px;
+  padding-right: 240px;
+}
+.comentar::placeholder {
+  text-align: center;
+  background: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  font-size: 24px;
+}
+.comentar button {
+  background: #ffffff;
+  color: #0095f6;
+  border: none;
+  opacity: 0.3;
+  filter: alpha(opacity=50);
+  zoom: 1;
+}
+
+.comentar button:hover {
+  opacity: 1;
+  filter: alpha(opacity=100); /* IE8 e anteriores */
+  zoom: 1; /* Ativa "hasLayout" no IE 7 e anteriores */
+  transition-duration: 300ms;
+  background: #ffffff;
+}
+
+.comentar .seguir {
+  padding: 10px;
+  font-size: 20px;
+}
+.sidebar {
+  width: 300px;
+  height: 400px;
+  position: fixed;
+  left: calc(50% + 165px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.perfil {
+  display: flex;
+  align-items: center;
+}
+.perfil img {
+  width: 56px;
+  height: 56px;
+}
+.nome {
+  padding-left: 20px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #262626;
+}
+.sugestoes {
+  font-weight: 300;
+  font-size: 12px;
+  color: #8e8e8e;
+}
+.sugestoes .negrito {
+  padding-left: 140px;
+}
+.sugestoes img {
+  width: 32px;
+  height: 32px;
+}
+.sugestao {
+  padding-top: 7px;
+}
+.sugestao .negrito {
+  padding-left: 0;
+}
+.seguir {
+  padding-left: 95px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #139ef2;
+}
+.sugestao .perfil {
+  padding-bottom: 10px;
+}
+
+.extra {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  color: #c7c7c7;
+}
+
+@media (max-width: 614px) {
+  .mobile .menu-topo {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 30px;
+    font-size: 34px;
+    padding: 20px 0;
+  }
+  .barra {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    height: 54px;
+    bottom: 0;
+    font-size: 30px;
+    background: #ffffff;
+    border: 1px solid #dbdbdb;
+  }
+  .cabecalho {
+    display: none;
+  }
+  .stories ion-icon {
+    display: none;
+  }
+  .conteiner {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 935px) {
+  .cabecalho .menu-topo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+  .conteiner {
+    width: 614px;
+    margin: 80px auto;
+  }
+  .sidebar {
+    display: none;
+  }
+}
