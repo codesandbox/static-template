@@ -1,12 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+
+    <title>NFT Preview Card</title>
+    <style>
+      /* import outfit font */
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+      /* End of import outfit font */
+      
+        
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: #0d192c;
+        height: 90vh
+        position: absolute;
+        box-sizing: border-box;
+        margin: 0% auto
+          
+      }
+
+      div {
+        
+        
+        width: 350px;
+        background-color: #15263f;
+        border-radius: 8px;
+        overflow: hidden;
+        
+        
+        padding: 24px;
+      }
+      img {
+        max-width: 100%;
+        border-radius: 8px;
+      }
+      h1 {
+        color: #ffffff;
+        font-size: 22px;
+      }
+      p {
+        color: #8bacd9;
+        font-size: 18px;
+      }
+      h2 {
+        color: #00FFF8;
+      }
+      h4 {
+        color: #8BACD9
+      }
+      div.icons-div  {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      }
+       hr{
+        background: #F2F2F2;
+        Width: 302px
+        Height: 1px
+        Top: 514px
+        left: 24px
+        
+       }
+      
+      div.div0 {
+        display: flex;
+        justify-content: center;
+        align-items: space-between
+      }
+
+
+       div.div1 {    
+        width: 33px;
+        height: 100px;
+        left: 24px;     
+       }
+       div.div2 {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+
+       }
+       h1:hover {
+         position: relative;
+         cursor: pointer;
+         color: #00FFF8;
+       }
+
+       img:hover {
+        position: relative;
+        cursor: pointer;
+        max-width: 100%;
+       }
+       
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div>
+      <img src="./image-equilibrium.jpg" />
+      <h1>
+        Equilibrium #3429
+      </h1>
+      <p>
+        Our Equilibrium collection promotes balance and calm.
+      </p>
+      
+      <!-- Icons Div -->
+      <div class="icons-div">
+        <img src="./icon-ethereum.svg" />
+        <h2>0.041 ETH</h2>
+        <img src="./icon-clock.svg" />
+        <h4>3 days left</h4>
+      </div>
+      <!-- End of Icons Dic Div -->
+<!-- Horizontal Line -->
+ <Hr class="Horizontal-line">
+</Hr>
+<!-- End of Horizontal Line -->
+  
+<!-- Avatar and Text -->
+
+  <div class="div0">
+      <div class="div1"> 
+
+          <img src="./image-avatar.png" >
+        
+          </div>
+        <div class="div2">
+            <p> Creation of Jules Wyvern
+            </p>     
+        </div>
+  </div>
+
+<!-- End of Avatar and Text -->
+
+    </div>
   </body>
 </html>
