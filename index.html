@@ -1,12 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="fr-BE" dir="LTR">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>AR-target</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="./gesture-detector.js"></script>
+    <script src="./gesture-handler.js"></script>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <a-scene
+      arjs
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+    >
+      <a-assets>
+        <a-asset-item id="apple" src="./3dmodels/apple.glb"> </a-asset-item>
+      </a-assets>
+      <!-- cible -->
+      <a-marker preset="custom" type="pattern" url="./img/marker.patt">
+        <a-entity
+          id="apple-model"
+          gltf-model="#apple"
+          position="0 0 0"
+          scale="0.10 0.10 0.10"
+          class="clickable"
+          gesture-handler="minScale: 0.05; maxScale: 0.15"
+        >
+        </a-entity>
+      </a-marker>
+      <a-light
+        type="directional"
+        target="#directionaltarget"
+        intensity="5"
+        castShadow="true"
+      >
+        <a-entity id="directionaltarget" position="0 0 -1"> </a-entity>
+      </a-light>
+      <a-entity camera></a-entity>
+    </a-scene>
   </body>
 </html>
