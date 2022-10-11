@@ -1,12 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <form id="test1">
+      first Name : <input type="text" id="firstName" /><br />
+      last Name : <input type="text" id="lastname" /><br />
+      phoneNo : <input type="number" id="phoneNo" /><br />
+      email : <input type="email" id="email" /><br />
+      birthDate : <input type="date" id="birthdate" name="date" /><br />
+      <br />
+
+      <br />
+
+      <label>Hobby</label>
+      <input type="checkbox" id="hobby" name="hobby" value="football" />
+      <label for="hobby">football</label>
+      <input type="checkbox" id="hobby1" name="hobby" value="coding" />
+      <label for="hobby1">coding</label>
+      <input type="checkbox" id="hobby2" name="hobby" value="cricket" />
+      <label for="hobby2">cricket</label>
+      <br / >
+
+      <label>City</label>
+      <select id="myselect">
+        <option>Ahmedabad</option>
+        <option>Baroda</option>
+      </select>
+
+      <br />
+
+      <input type="button" onclick="myfunction()" value="Save it" />
+    </form>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2">test</p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <script>
+      let array = [];
+      let array1 = [];
+
+      function myfunction() {
+        let A = document.getElementById("test1").value;
+        let B = document.getElementsByName("hobby");
+        let C = "";
+
+        for (let i = 0; i < B.length; i++) {
+          if (B[i].type == "checkbox" && B[i].Checked == true) c += B[i].value;
+        }
+        array.push(C);
+        document.getElementById("demo1").innerHTML = array;
+
+        var listDetails = {
+          firstName: document.getElementById("firstName").value,
+          lastName: document.getElementById("lastname").value,
+          phone: document.getElementById("phoneNo").value,
+          email: document.getElementById("email").value,
+          birthdate: document.getElementById("birthdate").value,
+          city: document.getElementById("myselect").value
+        };
+        array1.push(listDetails);
+        console.log(array1);
+        // for(let j = 0; j <array1.length; j++){
+        //     document.getElementById("demo2").innerHTML = document.getElementById("demo2").innerHTML + "<br/>" + array1[j];
+        // }
+        // document.getElementById("demo4").innerHTML = array
+
+        document.getElementById("demo3").innerHTML =
+          listDetails.firstName +
+          listDetails.lastName +
+          listDetails.phone +
+          listDetails.email +
+          listDetails.birthdate +
+          listDetails.city;
+      }
+    </script>
   </body>
 </html>
