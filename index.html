@@ -2,11 +2,224 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>NFT-PREVIEW-CARD-COMPONENT</title>
+    <style>
+      body{
+        position: relative;
+        width: 1440px;
+        height: 900px;
+        background-color: #0D192C;
+        margin: 0px;
+        display: flex;
+        height: 100vh;
+      }
+      div{
+        width: 350px;
+        height: 596px;
+        position: absolute;
+        left: 545px;
+        right: 545px;
+        top: 152px;
+        bottom: 152px;
+        border-radius: 15px;
+        background-color: #15263F;
+        box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.0952917);
+      }
+      img{
+        position: absolute;
+        width: 302px;
+        height: 302px;
+        left: 6.86%;
+        right: 6.86%;
+        top: 4.03%;
+        bottom: 45.3%;
+        border-radius: 8px;
+      }
+      h1{
+        position: absolute;
+        width: 302px;
+        height: 28px;
+        left: 6.86%;
+        right: 6.86%;
+        top: 58.72%;
+        bottom: 36.58%;
+        font-family: "Outfit";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 28px;
+        color: white;
+        margin: 0px;
+      }
+      p1{
+        position: absolute;
+        width: 302px;
+        height: 52px;
+        left: 6.86%;
+        right: 6.86%;
+        top: calc(50% - 52px/2 + 122px);
+        font-family: 'Outfit';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 26px;
+        color: #8BACD9;
+      }
+      div1{
+        position: absolute;
+        width: 301px;
+        height: 20px;
+        left: 6.86%;
+        right: 7.14%;
+        top: 78.86%;
+        bottom: 17.79%;
+      }
+      div2{
+        position: absolute;
+        width: 93.48px;
+        height: 20px;
+        right: 68.94%;
+        left: 0%;
+        top: 0%;
+        bottom: 0%;
+      }
+      svg{
+        position: absolute;
+        left: 0%;
+        right: 88.23%;
+        bottom: 5%;
+        top: 5%;
+      }
+      p2{
+        position: absolute;
+        width: 75px;
+        height: 20px;
+        left: 18.7%;
+        right: 1.07%;
+        top: calc(50% - 20px/2);
+        font-family: 'Outfit';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        color: #00FFF8;
+      }
+      svg1{
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        left: 72.86%;
+        top: 93.37%;
+      }
+      p3{
+        position: absolute;
+        width: 73px;
+        height: 20px;
+        left: 75.42%;
+        right: 0.33%;
+        top: calc(50% - 20px/2);
+        font-family: 'Outfit';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #8BACD9;
+      }
+      div3{
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        right: 81.7px;
+        left: 203.3px;
+        top: 1.33px;
+        bottom: 2.67px;
+      }
+      rect{
+        position:absolute;
+        width: 302px;
+        height: 1px;
+        left: 6.86%;
+        right: 6.86%;
+        top: 86.24%;
+        bottom: 13.59%;
+        background-color: #2E405A;
+      }
+      div4{
+        position: absolute;
+        width: 230px;
+        height: 33px;
+        left: 24px;
+        top: 531px;
+        bottom: 32px;
+        right: 96px;
+      }
+      div6{
+        position: absolute;
+        width: 33px;
+        height: 33px;
+        right: 197px;
+        box-sizing: border-box;
+        border: 1px solid white;
+        background-image: url(image-avatar.png);
+        background-size: 100%;
+        border-radius: 50%;
+      }
+      div5{
+        position: absolute;
+        width: 181px;
+        height: 20px;
+        left: 49px;
+      }
+      p4{
+        position: absolute;
+        height: 20px;
+        left: 0%;
+        right: 55.25%;
+        top: 6px;
+        font-family: 'Outfit';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #8BACD9;
+      }
+      p5{
+        position: absolute;
+        height: 20px;
+        left: 47.51%;
+        right: 1.1%;
+        top: 6px;
+        font-family: 'Outfit';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: white;
+      }
+    </style>  
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div>
+    <img src="image-equilibrium.jpg";/>
+    <h1>Equilibrium #3429</h1>
+    <p1>Our Equilibrium collection promotes balance and calm.</p1>
+    <div1>
+      <div2>
+        <svg width="11" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 10.216 5.5 18 0 10.216l5.5 3.263 5.5-3.262ZM5.5 0l5.496 9.169L5.5 12.43 0 9.17 5.5 0Z" fill="#00FFF8"/></svg>
+        <p2>0.041 ETH</p2>
+      </div2>
+      <div3>
+      <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M8.305 2.007a6.667 6.667 0 1 0 0 13.334 6.667 6.667 0 0 0 0-13.334Zm2.667 7.334H8.305a.667.667 0 0 1-.667-.667V6.007a.667.667 0 0 1 1.334 0v2h2a.667.667 0 0 1 0 1.334Z" fill="#8BACD9"/></svg>
+      </div3>
+      <p3>3 days left</p3>
+    </div1>
+    <rect></rect>
+    <div4>
+      <div6 class="oval"></div6>
+      <div5>
+        <p4>Creation of</p4>
+        <p5>Jules Wyvern</p5>
+      </div5>
+    </div4>
   </body>
 </html>
