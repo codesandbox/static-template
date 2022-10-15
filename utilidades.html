@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link href="styles/utilidades.css" rel="stylesheet" type="text/css" />
+
+    <script src="/js/utilidades.js"></script>
+    <script async="" src="https://mc.yandex.ru/metrika/tag.js"></script>
+    <script src="https://partner.googleadservices.com/gampad/cookie.js?domain=calculadoraweb.com&amp;callback=_gfp_s_&amp;client=ca-pub-8832009714196077&amp;gpid_exp=1"></script>
+
+    <title>Utilidades</title>
+  </head>
+  <body>
+    <div class="utlidades">
+      <div class="formulario">
+        <div class="title">
+          <h3>Calculadora de Ganancias</h3>
+        </div>
+        <br />
+        <label for="">Valor de la compra</label>
+        <input type="number" id="valorCompra" name="valorCompra" />
+        <br />
+        <label for="">Porcentaje de Utilidade</label>
+        <input type="number" id="Utilidad" name="Utilidad" />
+        <br />
+        <label for="">Porcentaje de impuestos</label>
+        <input type="number" id="Impuestos" name="Impuestos" />
+
+        <div class="buttons">
+          <button
+            type="button"
+            id="primary"
+            class="btn btn-primary"
+            onclick="calcularUtilidad()"
+          >
+            Calcular
+          </button>
+          <button type="button" class="btn btn-danger" onclick="borrar()">
+            Borrar
+          </button>
+        </div>
+
+        <label for="">Valor de Venta</label>
+        <input id="valorVenta" type="text" readonly="" aria-invalid="false" />
+
+        <br />
+        <label for="">Ganancia</label>
+        <input id="ganancia" type="text" readonly="" aria-invalid="false" />
+      </div>
+    </div>
+
+    <br />
+    <hr />
+    <div class="convertidor">
+      <div id="fbuilder">
+        <div id="fbuilder_1" data-processed="1">
+          <div id="formheader_1">
+            <div class="fform" id="field">
+              <h2>Convertidor de Bytes</h2>
+            </div>
+          </div>
+          <div id="fieldlist_1" class="left_aligned">
+            <div class="pb0 pbreak" page="0">
+              <div class="fields fieldname2_1 cff-number-field" id="field_1-0">
+                <label for="fieldname2_1">Cantidad</label>
+                <div class="dfield">
+                  <input
+                    aria-label="Cantidad"
+                    id="cantidad"
+                    name="fieldname2_1"
+                    class="field number small valid"
+                    type="text"
+                    value="1024"
+                    data-previousvalue="1024"
+                    aria-invalid="false"
+                  /><span class="uh"></span>
+                </div>
+                <div class="clearer"></div>
+              </div>
+              <div
+                class="fields fieldname3_1 cff-dropdown-field"
+                id="field_1-1"
+              >
+                <label for="fieldname3_1">Unidad</label>
+                <div class="dfield">
+                  <select
+                    aria-label="Unidad"
+                    id="unidad"
+                    name="fieldname3_1"
+                    class="field medium valid"
+                    aria-invalid="false"
+                    data-previousvalue="1"
+                    ><option value="1" vt="Bytes" data-i="0">Bytes</option
+                    ><option value="2" vt="KiloBytes" data-i="1"
+                      >KiloBytes</option
+                    ><option value="3" vt="MegaBytes" data-i="2"
+                      >MegaBytes</option
+                    ><option value="4" vt="GigaBytes" data-i="3"
+                      >GigaBytes</option
+                    ><option value="5" vt="TeraBytes" data-i="4"
+                      >TeraBytes</option
+                    ></select
+                  ><span class="uh"></span>
+                </div>
+                <div class="clearer"></div>
+                <div class="clearer"></div>
+              </div>
+              <div class="fields separator1_1 section_breaks" id="field_1-2">
+                <div class="section_break" id="separator1_1"></div>
+                <label>Resultados calculados</label><span class="uh"></span>
+                <div class="clearer"></div>
+              </div>
+              <div
+                class="fields fieldname1_1 cff-calculated-field"
+                id="field_1-3"
+              >
+                <label for="fieldname1_1">Bytes</label>
+                <div class="dfield">
+                  <input
+                    aria-label="Bytes"
+                    id="bytes"
+                    name="fieldname1_1"
+                    class="codepeoplecalculatedfield field medium valid"
+                    type="text"
+                    value=""
+                    dep=""
+                    notdep=""
+                    readonly=""
+                    aria-invalid="false"
+                  /><span class="uh"></span>
+                </div>
+                <div class="clearer"></div>
+              </div>
+              <div
+                class="fields fieldname4_1 cff-calculated-field"
+                id="field_1-4"
+              >
+                <label for="fieldname4_1">KiloBytes</label>
+                <div class="dfield">
+                  <input
+                    aria-label="KiloBytes"
+                    id="kiloBytes"
+                    name="fieldname4_1"
+                    readonly=""
+                    class="codepeoplecalculatedfield field medium valid"
+                    type="text"
+                    value=""
+                    dep=""
+                    notdep=""
+                    aria-invalid="false"
+                  /><span class="uh"></span>
+                </div>
+                <div class="clearer"></div>
+              </div>
+              <div
+                class="fields fieldname5_1 cff-calculated-field"
+                id="field_1-5"
+              >
+                <label for="fieldname5_1">MegaBytes</label>
+                <div class="dfield">
+                  <input
+                    aria-label="MegaBytes"
+                    id="megaBytes"
+                    name="fieldname5_1"
+                    readonly=""
+                    class="codepeoplecalculatedfield field medium valid"
+                    type="text"
+                    value=""
+                    dep=""
+                    notdep=""
+                    aria-invalid="false"
+                  /><span class="uh"></span>
+                </div>
+                <div class="clearer"></div>
+              </div>
+              <div
+                class="fields fieldname6_1 cff-calculated-field"
+                id="field_1-6"
+              >
+                <label for="fieldname6_1">GigaBytes</label>
+                <div class="dfield">
+                  <input
+                    aria-label="GigaBytes"
+                    id="gigaBytes"
+                    name="fieldname6_1"
+                    readonly=""
+                    class="codepeoplecalculatedfield field medium valid"
+                    type="text"
+                    value=""
+                    dep=""
+                    notdep=""
+                    aria-invalid="false"
+                  /><span class="uh"></span>
+                </div>
+                <div class="clearer"></div>
+              </div>
+              <div
+                class="fields fieldname7_1 cff-calculated-field"
+                id="field_1-7"
+              >
+                <label for="fieldname7_1">TeraBytes</label>
+                <div class="dfield">
+                  <input
+                    aria-label="TeraBytes"
+                    id="teraBytes"
+                    name="fieldname7_1"
+                    readonly=""
+                    class="codepeoplecalculatedfield field medium valid"
+                    type="text"
+                    value=""
+                    dep=""
+                    notdep=""
+                    aria-invalid="false"
+                  /><span class="uh"></span>
+                </div>
+                <div class="clearer"></div>
+              </div>
+            </div>
+          </div>
+          <div class="clearer"></div>
+        </div>
+        <br /><br />
+        <div class="button">
+          <button class="btn btn-primary" onclick="convertir()">
+            Calcular
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+  </body>
+</html>
