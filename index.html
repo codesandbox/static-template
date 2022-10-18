@@ -1,12 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>임대리 flex</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-compatible" content="ie=edge" />
+    <style>
+      body {
+        background-color: #2540d9;
+        font-family: "Pretendard";
+      }
+      h1 {
+        font-size: 62px;
+        font-weight: 900;
+        color: #2540d9;
+        background: hsl(52, 94%, 50%);
+      }
+      .h1-sub {
+        font-size: 62px;
+        font-weight: 900;
+        color: #2540d9;
+        background: hsl(155, 100%, 51%);
+        height: 100px;
+      }
+      .h1-sub-side {
+        font-size: 62px;
+        font-weight: 900;
+        color: #2540d9;
+        background: hsl(315, 100%, 50%);
+        height: 100px;
+      }
+      .h1-box {
+        font-size: 40px;
+        font-weight: 800;
+        text-align: center;
+        color: #ffffff;
+        background: hsl(32, 94%, 50%);
+        height: 50px;
+        width: 50px;
+      }
+      h2 {
+        font-size: 42px;
+        font-weight: 500;
+        color: #f2f2f2;
+      }
+      h3 {
+        font-size: 26px;
+        font-weight: 300;
+        color: #0bbf6b;
+      }
+      p,
+      span {
+        font-size: 22px;
+        font-weight: 100;
+        color: #0bbf6b;
+      }
+      .block01 {
+        font-size: 24px;
+        font-weight: 600;
+        background-color: #0bbf6b;
+        color: #f2f2f2;
+      }
+      .block02 {
+        font-size: 24px;
+        font-weight: 600;
+        background-color: #e0f719;
+        color: #2540d9;
+      }
+      .profile_card {
+        background: red;
+      }
+    </style>
+    <!-- Pretendard 폰트 import -->
+    <style type="text/css">
+      @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css");
+    </style>
+    <!-- Pretendard 폰트 import -->
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1 style="display: flex;">
+      <div class="h1-box">P</div>
+      <div class="h1-box">O</div>
+      This is a static template, there is no bundler or bundling involved!
+    </h1>
+    <!-- <br /> -->
+    <h1
+      style="
+        display: flex;
+        justify-content: left;
+        padding-left: 50px;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        padding-right: 50px;
+        box-sizing: border-box;
+        height: 300px;
+      "
+    >
+      <div class="h1-box">P</div>
+      <div class="h1-box">O</div>
+      <!-- <br />
+      Justify-content -->
+    </h1>
+    <!-- <br /> -->
+    <h1
+      style="
+        display: flex;
+        justify-content: flex-end;
+        padding: 100px;
+        box-sizing: border-box;
+      "
+    >
+      <div class="h1-box">P</div>
+      <div class="h1-box" style="margin-left: 100px;">O</div>
+    </h1>
+    <!-- <br /> -->
+    <h1 style="display: flex; justify-content: space-around;">
+      <div class="h1-box">P</div>
+      <div class="h1-box">O</div>
+    </h1>
+    <!-- <br /> -->
+    <h1 style="display: flex; justify-content: space-evenly;">
+      <div class="h1-box">P</div>
+      <div class="h1-box">O</div>
+    </h1>
+    <!-- <br /> -->
+    <h1
+      class="h1-sub"
+      style="display: flex; justify-content: center; align-items: center;"
+    >
+      <div class="h1-box">P</div>
+      <div class="h1-box">O</div>
+    </h1>
+    <!-- <br /> -->
+    <h1
+      class="h1-sub"
+      style="display: flex; justify-content: center; align-items: flex-end;"
+    >
+      <div class="h1-box">P</div>
+      <div class="h1-box" style="margin-left: 50px;">O</div>
+    </h1>
+    <!-- <br /> -->
+    <h1
+      class="h1-sub-side"
+      style="display: flex; justify-content: center; flex-direction: column;"
+    >
+      <div class="h1-box">P</div>
+      <div class="h1-box">O</div>
+    </h1>
+    <!-- <br /> -->
+    <h1
+      class="h1-sub-side"
+      style="
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      "
+    >
+      <div class="h1-box">P</div>
+      <div class="h1-box">O</div>
+    </h1>
+    <!-- <br /> -->
+    <h1
+      class="h1-sub-side"
+      style="
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-end;
+      "
+    >
+      <div class="h1-box">P</div>
+      <div class="h1-box">O</div>
+    </h1>
+    <!-- <br /> -->
+    <h1
+      class="h1-sub"
+      style="
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-end;
+      "
+    >
+      <div class="h1-box">P</div>
+      <div class="h1-box">O</div>
+    </h1>
   </body>
 </html>
