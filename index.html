@@ -6,10 +6,17 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <h1 id="header">IP Verification</h1>
-    <br />
-    <input type="text" id="ip" placeholder="IP" />
-    <button onclick="TryIP()">Verify</button>
+    <div class="Wrapper">
+      <h1 id="header">IP Verification & Lookup</h1>
+      <div class="WrapperAll">
+        <br />
+        <input type="text" id="ip" placeholder="IP" />
+        <div class="buttonwrapper">
+          <button onclick="TryIP()">Verify</button>
+          <button onclick="Lookup()">Lookup</button>
+        </div>
+      </div>
+    </div>
 
     <script src="main.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
