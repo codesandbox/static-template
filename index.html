@@ -1,12 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <title>私の夏休み</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>My Summer Vacation</h1>
+    <div id="home"></div>
+
+    <button id="btn1">Ibaraki</button>
+    <button id="btn2">Shizuoka</button>
+    <button id="btn3">Yamanashi</button>
+
+    <div id="title">
+      今年は３回旅行に行けたので、それぞれまとめました。<br /><br />
+      地名ボタンでページに飛びます。<br />
+      写真の上にマウスをかざすと下に詳細が出ます。<br /><br />
+      タイトル「My Summer Vacation」をクリックするとこの画面に戻ります。
+      押してみてください。
+    </div>
+    <div id="pic">
+      <div id="pic1"></div>
+      <div id="pic2"></div>
+      <div id="pic3"></div>
+    </div>
+
+    <div id="coment"></div>
+
+    <div id="memo">
+      <div id="time"></div>
+      <div id="day"></div>
+    </div>
+
+    <script>
+      $("#btn1").on("click", function () {
+        $("#title").remove();
+        $("body").css("background", "#9f9bba");
+        $("h1").on("click", function () {
+          $("h1").css("color", "#d6d3c3");
+          location.reload();
+        });
+
+        $("#memo").css("background", "#f8e8d3cd");
+        $("#memo").css("outline", "2px solid #fcf5f7");
+        $("#memo").css("border-radius", "1.3rem");
+        $("#memo").css("margin-left", "50px");
+        $("#memo").css("margin-right", "50px");
+
+        $("#pic1").html('<img src="img/bbq.png" alt="BBQ">');
+        $("#pic2").html('<img src="img/umi.png" alt="海"　width="300px">');
+        $("#pic3").html('<img src="img/hanabi.png" alt="花火"　width="300px">');
+
+        $("#time").html(
+          "地元の友達3人と車で茨城県までグランピングしに行きました。"
+        );
+        $("#day").html("day 8/8 ~ 8/9");
+
+        $("#pic1").mouseover(function () {
+          // $("#pic1").css("outline", "2px solid #665754");
+          $("#coment").html("BBQ~!量が多くてお腹いっぱいだった");
+        });
+        $("#pic2").mouseover(function () {
+          $("#coment").html(
+            "阿字ヶ浦海水浴場~海なし県民は海見るだけで興奮します"
+          );
+        });
+        $("#pic3").mouseover(function () {
+          $("#coment").html("地元戻ってきて家で花火~毎年恒例楽しかった");
+        });
+      });
+
+      $("#btn2").on("click", function () {
+        $("#title").remove();
+        $("body").css("background", "#669199");
+        $("h1").on("click", function () {
+          $("h1").css("color", "#d6d3c3");
+          location.reload();
+        });
+
+        $("#memo").css("background", "#f8e8d3cd");
+        $("#memo").css("outline", "2px solid #fcf5f7");
+        $("#memo").css("border-radius", "1.3rem");
+        $("#memo").css("margin-left", "50px");
+        $("#memo").css("margin-right", "50px");
+
+        $("#pic1").html(
+          '<img src="img/hashi.png" alt="蓬莱橋"　width="300px">'
+        );
+        $("#pic2").html(
+          '<img src="img/gyouza.png" alt="浜松餃子"　width="300px">'
+        );
+        $("#pic3").html(
+          '<img src="img/paruparu.png" alt="浜名湖パルパル"　width="300px">'
+        );
+
+        $("#time").html("高校の友達と新幹線で静岡旅行へ行きました。");
+        $("#day").html("day 9/4 ~ 9/5");
+
+        $("#pic1").mouseover(function () {
+          $("#coment").html("日本最古の木造橋！ガタガタいうから割と怖い");
+        });
+        $("#pic2").mouseover(function () {
+          $("#coment").html("浜松餃子~ハチャメチャ美味しかった！！");
+        });
+        $("#pic3").mouseover(function () {
+          $("#coment").html("浜名湖パルパル~園内広くて乗り物沢山！");
+        });
+      });
+
+      $("#btn3").on("click", function () {
+        $("#title").remove();
+        $("body").css("background", "#a78191");
+        $("h1").on("click", function () {
+          $("h1").css("color", "#d6d3c3");
+          location.reload();
+        });
+
+        $("#memo").css("background", "#f8e8d3cd");
+        $("#memo").css("outline", "2px solid #fcf5f7");
+        $("#memo").css("border-radius", "1.3rem");
+        $("#memo").css("margin-left", "50px");
+        $("#memo").css("margin-right", "50px");
+
+        $("#pic1").html('<img src="img/houtou.png" alt="放蕩"　width="300px">');
+        $("#pic2").html('<img src="img/torii.png" alt="鳥居"　width="300px">');
+        $("#pic3").html(
+          '<img src="img/piza.png" alt="白桃ピザ"　width="300px">'
+        );
+
+        $("#time").html("家族と河口湖の放蕩を食べに旅行へ行きました。");
+        $("#day").html("day 9/9 ~ 9/10");
+
+        $("#pic1").mouseover(function () {
+          $("#coment").html("鮑入り放蕩~開店前から並んだ甲斐あり！");
+        });
+        $("#pic2").mouseover(function () {
+          $("#coment").html(
+            "河口浅間神社。晴れてたら鳥居越しに富士山見えるらしい曇天過ぎた💦"
+          );
+        });
+        $("#pic3").mouseover(function () {
+          $("#coment").html("河口湖近くのお店　期間限定白桃ピザ！");
+        });
+      });
+    </script>
   </body>
 </html>
