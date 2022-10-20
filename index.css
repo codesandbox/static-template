@@ -1,0 +1,64 @@
+body {
+  display: flex;
+}
+
+.buttons,
+.floors {
+  height: 1200px;
+  width: 300px;
+  position: relative;
+}
+
+.floorZeroButtons,
+.floorOneButtons,
+.floorTwoButtons {
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.upbutton {
+  transform: rotate(-90deg);
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+.downbutton {
+  transform: rotate(90deg);
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+.selected {
+  fill: green;
+}
+
+.floorOne,
+.floorTwo,
+.floorZero {
+  height: 300px;
+  width: 300px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.elevator {
+  height: 250px;
+  width: 250px;
+  position: absolute;
+  top: 660px;
+  left: 25px;
+  background: red;
+  text-align: center;
+  transition: all 5s ease-in;
+}
+.toGroundfloor {
+  top: 660px;
+}
+.toFirstfloor {
+  top: 350px;
+}
+.toSecondfloor {
+  top: 50px;
+}
