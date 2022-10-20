@@ -1,0 +1,228 @@
+/**{ border: 2px solid blue;}*/
+/* //////////////////// Cabeçalho //////////////////// */
+h1, h2, h3, body, p {
+    margin: 0;
+}
+
+body {
+    background-color: #e5e5e5;
+}
+
+header {
+    background-color: white;
+    padding: 32px 64px; /*32px 64px*/
+}
+
+.img-dados{/*******************/
+    display: flex; /*criei essa caixa para poder aplicar um flex para que os dados não ficassem em cima da imagem ao diminuir a tela*/
+}
+
+.foto { 
+    width: 255px; /*Não fala essa especificação*/
+    height: 255px; /*Não fala essa especificação*/
+    border-radius: 50%;
+    border: 2px solid #ffc700; /*4px*/
+    margin-bottom: -100px; /*-100px ou - 120px*/
+    margin-right: 20px; /*24px*/
+}
+
+.dados {
+    display: inline-block;
+    padding-top: 81px; /*******************/ /*Tive que colocar para os dados ficarem em uma posição certa já que adotei o flex na caixa pai .img-dados*/
+    /*margin-bottom: 16px; não coloquei*/
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px; /*64px*/
+    font-weight: normal;
+}
+
+h1 span {
+    font-weight: bold;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.profissao {
+    font-size: 16px; /*24px*/
+    font-weight: 600; /*Não tinha*/
+}
+
+/* //////////////// main - coluna menor ////////////////*/
+.t60 {
+    color: rgb(0, 0, 0, 0.6); /*Também em cabeçalho*/
+}
+
+main {
+    padding: 40px 64px; /*margin: 40px 64px causou mesmo efeito*/ /*40px 70px*/
+    display: flex; /* 3º passo - aula flex para a div coluna-menor ficar ao lado da div coluna-maior*/
+
+}
+
+.coluna-menor {
+    margin-top: 48px; /*48px*/
+    width: 325px; /*288px*//* 1º passo - aula flex */
+}
+
+.experiencias .linha {
+    /*com isso vai selecionar apenas a linha que está dentro da caixa div de experiências*/
+    border-color:  #4200FF; /* color daria no mesmo*/
+}
+
+.linha {
+    width: 80px;
+    border-top: 2px solid;
+    margin-top: 8px;
+}
+
+ul, ol { /* vai utilizar ol também pois caso queira usar tal tag no futuro, essa já estará formatada*/
+    list-style-type: none; /* propriedade nova - tira o tipo de stilo da lista (pontinhos)*/
+    padding: 0;
+}
+
+.coluna-menor li{
+    margin-top: 32px;
+    display: flex; /* 2º passo - aula flex */
+}
+
+.coluna-menor img {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 4px;
+    margin-right: 8px;
+    margin-bottom: -3px; /*Não tinha*/
+}
+
+.conteudo {
+    display: inline-block; /* não funciona para tag div a menos que se coloque nas duas*/
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: 16px; /*16px*/
+    /*não precisa colocar font-weight: bold para h3 pois uma parte dela ja esta em uma tag b que por si só já representa o bold*/
+}
+
+.formacao {
+    padding-top: 20px; /*margin-top: 32px;*/
+    
+}
+
+.formacao .linha{
+    border-color: #ffc700;
+}
+
+/* //////////// main - coluna maior (habilidades) ///////////*/
+
+/*div.coluna-maior {
+    display: inline-block; não funciona, pois teriamos que colocar essa mesma propriedade no coluna-menor e mesmo uma ficando do lado da outra não teriamos como fazer mais ajustar. Solução: usaro display flex na tag pai das duas o "main"
+}*/
+
+.coluna-maior {
+    margin-left: 20px; /*24px o mesmo do margin-right de .foto*/
+}
+
+.coluna-maior h2{
+    font-size: 42px;
+    margin-bottom: 20px;
+    /*margin-left: 16px - ele colocou para resolver um problema de margin com os quadrados de habilidades. Não precisei, pois não coloquei margin 12px para tudo no .quadrado-habilidade*/
+}
+
+.habilidades { /*Vai ter que colocar isso em .projetos tbm*/
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.quadrado-habilidade { /*habilidade*/
+    background-color: white;
+    border-radius: 16px;
+    padding: 24px;
+    margin: 0 24px 24px 0; /*colocou 12px para tudo*/
+    width: 288px;
+}
+
+.quadrado-habilidade h3 {
+    font-size: 24px; /*30px*/
+    font-weight: bold;
+    /*margin-bottom: 16px; não muda nada do que já está no meu, portanto não coloquei*/
+}
+
+.quadrado-habilidade p {
+    font-size: 16px; /*20px*/
+}
+
+.quadrado-habilidade li {
+    margin-top: 32px; /* se colocasse margin-bottom: 32px no .progresso ia ter o mesmo resultado*/
+}
+
+.quadrado-habilidade li:first-child { /* Isso é para selecionar o primeiro filho "li" da div com class quadrado-habilidade. Vamos corrigir o espaçamento que ficou entre o titulo Front e o primeiro li. Poderia ser feito de forma mais simples colocando margin-bottom: -14px; no .front h3{} subitraindo assim a margem*/
+    margin-top: 0px;
+}
+
+.progresso {
+    width: 100%; /* 100% do tamanho do pai front*/
+    display: flex; /*para uma barrinha ficar ao lado da outras*/
+}
+
+.barra {
+    width: 20%;
+    height: 4px;
+    background-color: #4200FF; /*border-top: 4px solid #4200FF; substituiria o height e o background-color - fiz dessa forma, mas depois optei pela forma da aula*/
+    margin-top: 8px;
+}
+
+.incompleto { /* algumas barras vão conter essa class pra gerar opacidade - na progressão basta apenas colocar ou retirar essa class das barras no html*/ 
+    opacity: 0.1; /*0.2*//* propriedade nova*/ 
+}
+
+/* /////////////// main - coluna maior (projetos) ///////////*/
+
+.projetos { /*O mesmo que foi colocado em .habilidades*/
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.quadrado-projeto{ /*projeto*/
+    width: 392px;
+    padding: 24px;
+    background-color: white;
+    border-radius: 8px;
+    margin: 0 24px 24px 0; /*colocou 12px para tudo*/
+}
+
+.quadrado-projeto h3 {
+    font-size: 24px; /*30px*/
+    font-weight: bold;
+    /*margin-bottom: 16px; não muda nada do que já está no meu, portanto não coloquei*/
+}
+
+.quadrado-projeto p {
+    margin-top: 16px;
+    margin-bottom: 24px;
+    font-size: 16px; /*20px*/
+}
+
+.quadrado-projeto a {
+    text-decoration: none;
+    background-color: #4200FF;
+    color: white;
+    padding: 8px 24px;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 4px;
+    font-weight: 600px; 
+    display: inline-block;
+    text-align: center;/* a tag a tem como padrão o display inline quebrando como se fosse texto, para tirarmos isso colocamos o display: inline-block e depois para não quebrar o texto dentro do botão usamos text-align: center;*/
+    margin-top: 24px;
+}
+
+footer {
+    background-color: #14004d;
+    color: white;
+    padding: 57.6px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
