@@ -1,12 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+
+    <style>
+      @font-face {
+        font-family: Starjedi;
+        src: url("assets/Starjedi.ttf");
+      }
+      body {
+        background: #000000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        margin-top: 30px;
+      }
+      h1 {
+        color: yellow;
+        font-family: Starjedi;
+      }
+      .boneco {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+      }
+
+      .darth-vader {
+        width: 300px;
+      }
+
+      .cabeca {
+        background: #0e0e13;
+        width: 300px;
+        height: 120px;
+
+        position: absolute;
+        top: 0;
+      }
+
+      .braco-esquerdo {
+        background: #0e0e13;
+        width: 100px;
+        height: 160px;
+
+        position: absolute;
+        left: 0;
+      }
+
+      .torso {
+        background: #0e0e13;
+        width: 100px;
+        height: 160px;
+
+        position: absolute;
+        left: 100px;
+      }
+
+      .braco-direito {
+        background: #0e0e13;
+        width: 100px;
+        height: 160px;
+
+        position: absolute;
+        right: 0;
+      }
+
+      .perna-esquerda {
+        background: #0e0e13;
+        width: 155px;
+        height: 160px;
+
+        position: absolute;
+        left: 0;
+        top: 190px;
+      }
+
+      .perna-direita {
+        background: #0e0e13;
+        width: 155px;
+        height: 160px;
+
+        position: absolute;
+        right: 0;
+        top: 190px;
+      }
+      .logo-driven {
+        width: 90px;
+      }
+      button {
+        background: #4894c3 color #ffffff;
+        border: 0;
+        border-radius: 4px;
+        padding: 12px 24px;
+        cursor: pointer;
+      }
+      .palavra {
+        background: #e6b93c;
+        font-size: 40px;
+      }
+      .letra {
+        border: 1px solid #e6b93c;
+      }
+      .mostrar {
+        background: transparent;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>jogo da força</h1>
+    <div class="boneco">
+      <img src="assets/darth-vader.png" class="darth-vader" />
+      <div class="parte-do-boneco cabeca"></div>
+      <div class="parte-do-boneco braco-esquerdo"></div>
+      <div class="parte-do-boneco torso"></div>
+      <div class="parte-do-boneco braco-direito"></div>
+      <div class="parte-do-boneco perna-esquerda"></div>
+      <div class="parte-do-boneco perna-direita"></div>
+    </div>
+    <p class="palavra"></p>
+    <button onclick="chutar()">CHUTAR LETRA</button>
+    <img src="assets/driven.png" class="logo-driven" />
+
+    <script>
+      const partesDoBoneco = Array.from(
+        document.querySelectorAll(".parte-do-boneco")
+      );
+
+      const ChutesEfetuados = [];
+      const palavra = "darth vader";
+      let errosCometidos = 0;
+      const QtdMaxDeErros = partesDoBoneco.length;
+
+      mostrarPalavra();
+
+      function mostrarPalavra() {
+        let palavraMostrada = "";
+        for (let i = 0; i < palavra.length; i = i + 1) {
+          if (ChutesEfetuados.includes(palavra[i])) {
+            palavraMostrada =
+              palavraMostrada + '<span class="letra">' + palavra[i] + "</span>";
+          } else if (palavra[i] === " ") {
+            palavraMostrada = palavraMostrada + " ";
+          } else {
+            palavraMostrada = palavraMostrada + '<span class="letra">_</span>';
+          }
+        }
+        document.querySelector(".palavra").innerHTML = palavraMostrada;
+      }
+
+      function chutar() {
+        if (errosCometidos === QtdMaxDeErros) {
+          alert("Você perdeu!");
+          return;
+        }
+
+        const chute = prompt("Qual é o seu chute?");
+
+        if (ChutesEfetuados.includes(chute)) {
+          alert("Chute já efetuado!");
+          return;
+        }
+
+        ChutesEfetuados.push(chute);
+
+        if (palavra.includes(chute)) {
+          mostrarPalavra();
+        } else {
+          errosCometidos = errosCometidos + 1;
+
+          for (let i = 0; i < errosCometidos; i = i + 1) {
+            partesDoBoneco[i].classList.add("mostrar");
+          }
+
+          if (errosCometidos === QtdMaxDeErros) {
+            alert("Você perdeu!");
+          } else {
+            alert("Chute errado, tente novamente!");
+          }
+        }
+      }
+    </script>
   </body>
 </html>
