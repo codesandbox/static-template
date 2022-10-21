@@ -1,0 +1,76 @@
+body {
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+.e1-hex {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+.e1-bg-hex {
+  position: absolute;
+  max-width: 50%;
+  left: 25%;
+  top: 40%;
+}
+
+.e1-hex-container svg {
+  opacity: 0.9;
+  padding: 5px;
+}
+.e1-hex-link {
+  text-align: center;
+}
+
+.e1-hex-link a {
+  position: relative;
+  margin-top: -78%;
+  z-index: 1;
+  display: block;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  /* padding: 0.7em; */
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.5s;
+  word-break: keep-all;
+  transform: scale(0.9);
+}
+
+.e1-hex-link a:hover {
+  font-weight: bold;
+  transform: scale(1);
+}
+
+.svg-shadow {
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+
+/* Custom position for hexagons */
+
+/* .e1-hex-link {
+  font-size: 16px;
+} */
+
+/* cloud */
+.e1-hex-container:nth-child(2) {
+  grid-column-start: 2;
+  grid-column-end: span 2;
+}
+
+/* edge */
+.e1-hex-container:nth-child(3) {
+  /* margin-right: -15%; */
+  /* margin-left: -15%; */
+  grid-column-end: span 2;
+  grid-row-start: 3;
+}
+
+/* connectivity */
+.e1-hex-container:nth-child(4) {
+  /* transform: translate(0, 80%); */
+  grid-row-start: 3;
+  grid-column-start: 3;
+  grid-column-end: span 2;
+}
