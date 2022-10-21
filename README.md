@@ -22,3 +22,4 @@ Multi-window application sample code.
 ## 隨筆
 
 [Javascript Multiple Thread](https://hackmd.io/0Gh1Y7N6S6CxjPZZDPw9iQ?view)
+> 想要開蓋即食的話，看 shared worker 的部分就好
