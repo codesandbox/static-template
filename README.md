@@ -18,3 +18,7 @@ Multi-window application sample code.
 `worker.port.postMessage('hello world');`
 
 2. 打開另一視窗的 console 
+
+## 隨筆
+
+[Javascript Multiple Thread](https://hackmd.io/0Gh1Y7N6S6CxjPZZDPw9iQ?view)
