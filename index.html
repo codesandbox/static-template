@@ -1,12 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <form method="POST" id="form">
+      <div class="form">
+        <h1>Registro</h1>
+        <div class="grupo">
+          <input type="text" id="name" required /> <span class="barra"></span>
+          <label for="">Nombre</label>
+        </div>
+        <div class="grupo">
+          <input type="email" id="email" required /> <span class="barra"></span>
+          <label for="">Email</label>
+        </div>
+        <div class="grupo">
+          <input type="password" id="password" required />
+          <span class="barra"></span>
+          <label for="">Password</label>
+        </div>
+        <button type="submit">Suscribirte</button>
+      </div>
+    </form>
+    <!-- JS -->
+    <script src="index.js"></script>
   </body>
 </html>
