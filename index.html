@@ -1,12 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/39573e49ec.js" crossorigin="anonymous"></script>
+    <title>Damian Gil Portfolio</title>
+    <meta charset="UTF=8" />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <nav>
+      <img
+        class="logo"
+        src="images/javascript-games-logo.png"
+        alt="Damian Gil Logo"
+      ></img>
+      <ul class="nav-bar">
+        <li><a href="#about-me">About me</a></li>
+        <li><a href="https://github.com/gh33ls0n">GitHub</a></li>
+        <li><a href="pages/contact.html">Contact me</a></li>
+      </ul>
+
+    </nav>
+    <div class="hero">
+      <div class="hero-info">
+        <h1 id="name">Damian Gil</h1>
+        <p>I am a proffesional Software Developer and YouTuber. I love to teach anyone and everyone how to code.</p>
+        <div class="styled-break"></div>
+        <div class="button">Hire me</div>
+      </div>
+      <div>
+        <img
+        class="hero-image" 
+        src="images/working-illustration.png" 
+        alt="working-illustration of a woman"
+        />
+      </div>
+      
+    </div>
+    <section>
+      <div class="about-me">
+          <img 
+          class="avatar" src="images\avatar.jpg" 
+          alt="Damian Gil headshot" 
+        />
+      </div>
+      <div class="info">
+          <h2>
+            <a name="about-me">About Me </a>
+          </h2>
+          <p>
+            Born in Poland and raised in the United Arab Emirates, I discovered my passion for software development when building my first e-commerce website
+          </p>
+      </div>
+      <div class="socials">
+        <i class="far fa-user-circle"></i>
+        <i class="far fa-user-circle"></i>
+        <i class="far fa-bell"></i>
+        <i class="far fa-bell"></i>
+        <i class="far fa-bell"></i>
+      </div>
+    </section>
+    <section>
+        <form>
+          <h2>Contact Me</h2>
+          <div class="input-section">
+            <div class="input-group">
+              <label for="first-name"> First name:</label>
+              <input type="text" id="first-name" name="first-name" value="John"></input>
+            </div>
+          
+            <div class="input-group">
+              <label for="last-name"> Last name:</label>
+              <input type="text" id="last-name" name="last-name" value="Doe"></input>
+            </div>
+          </div>
+          <div class="input-section">
+            <input type="radio" id="office" name="office" value="office">
+            <label for="office">Office</label>
+            <input type="radio" id="remote" name="remote" value="remote">
+            <label for="office">Remote</label>
+            <input type="radio" id="other" name="other" value="other">
+            <label for="office">Other</label>
+          </div>
+          <div class="input-section">
+            <input type="checkbox" id="contract" name="contract" value="contract">
+            <label for="contract">Contract Work</label>
+            <input type="checkbox" id="fulltime" name="fulltime" value="fulltime">
+            <label for="contract">Full-time</label>
+            <input type="checkbox" id="sponsorship" name="sponsorship" value="sponsorship">
+            <label for="contract">Sponsorship</label>
+          </div>
+          <input class="button" type="submit" value="submit"></input>
+          
+        </form>
+      </section>
+    <footer>
+      <ul>
+        <li><a href="">About me</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="https://github.com/gh33ls0n">GitHub</a></li>
+      </ul>
+    </footer>
   </body>
 </html>
