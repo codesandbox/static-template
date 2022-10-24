@@ -1,0 +1,96 @@
+body {
+  height: 100vh;
+  background: black;
+}
+h1 {
+  color: goldenrod;
+  font-size: 40px;
+  text-align: center;
+  font-family: Poppins;
+}
+h2 {
+  color: lightyellow;
+  font-size: 17px;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.diya {
+  width: 250px;
+  height: 100px;
+  /* background: #948383; */
+  position: relative;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, 50%);
+  display: flex;
+  justify-content: center;
+}
+.dleft {
+  width: 100px;
+  height: 80px;
+  background: linear-gradient(to right, #752c1a, #85341f);
+  border-radius: 0 0 0 100%;
+}
+.dright {
+  width: 150px;
+  height: 80px;
+  background: #85341f;
+  border-radius: 0 0 100% 0;
+}
+.dtop {
+  width: 250px;
+  height: 30px;
+  background: linear-gradient(to right, #691f02, #af3e24, #f87736);
+  position: absolute;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 10px solid #612516;
+}
+.flame {
+  width: 20px;
+  height: 80px;
+  /* background: blue; */
+  position: relative;
+  top: 41%;
+  left: 48%;
+  transform: translate(50%, -260%);
+}
+.flame::before {
+  content: "";
+  position: absolute;
+  transform: translate(50%, -50%);
+  height: 30%;
+  width: 50%;
+  background: linear-gradient(#976d36, #3a1a21, #0e0d0d, #c29c2b 90%);
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  border-radius: 30%;
+  z-index: 1;
+}
+.flame::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at bottom,
+    blue 0%,
+    dodgerblue 20%,
+    orange 50%,
+    yellow 90%
+  );
+  border-radius: 50% 50% 30% 30%;
+  box-shadow: 0 0 50px lightyellow;
+  animation: anim 3s linear infinite;
+
+  /* animation: flicker 2s linear reverse infinite; */
+  transform-origin: bottom;
+}
+@keyframes anim {
+  50% {
+    opacity: 0.6;
+    transform: rotate(10.4deg) scale(1.2);
+    box-shadow: 0 0 40px yellow;
+  }
+}
