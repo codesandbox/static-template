@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="Wrapper">
+      <h1 id="header">IP Verification & Lookup</h1>
+      <div class="WrapperAll">
+        <br />
+        <input type="text" id="ip" placeholder="IP" />
+        <div class="buttonwrapper">
+          <button onclick="TryIP()">Verify</button>
+          <button onclick="Lookup()">Lookup</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
 </html>
