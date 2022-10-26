@@ -1,350 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script defer type="module" src="script.js"></script>
-    <script defer src="./js/layouts.js"></script>
-    <script
-      defer
-      src="https://kit.fontawesome.com/ae7bbcad81.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <button
-    class="button-small grid-toggle"
-    data-variant="secondary"
-    data-color="dark"
-    data-icon="right"
-  >
-    <i class="fa-solid fa-grip-vertical"></i>
-    Hide/Show Grid
-  </button>
-  <p class="paragraph-small instructions">
-    Now resize the browser window to see the grid changing
-  </p>
-  <div class="grid-overlay section-container">
-    <div class="row-fluid grid-row-demo">
-      <div class="span1 grid-column-demo tablet-span1 mobile-span1"></div>
-      <div class="span1 grid-column-demo tablet-span1 mobile-span1"></div>
-      <div class="span1 grid-column-demo tablet-span1"></div>
-      <div class="span1 grid-column-demo tablet-span1"></div>
-      <div class="span1 grid-column-demo tablet-span1"></div>
-      <div class="span1 grid-column-demo tablet-span1"></div>
-      <div class="span1 grid-column-demo tablet-span1"></div>
-      <div class="span1 grid-column-demo tablet-span1"></div>
-      <div class="span1 grid-column-demo"></div>
-      <div class="span1 grid-column-demo"></div>
-      <div class="span1 grid-column-demo"></div>
-      <div class="span1 grid-column-demo"></div>
-    </div>
-  </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home</title>
+		<link rel="stylesheet" href="styles.css" />
+		<script defer type="module" src="script.js"></script>
+		<script defer src="./js/layouts.js"></script>
+		<script defer src="https://kit.fontawesome.com/ae7bbcad81.js" crossorigin="anonymous"></script>
+	</head>
+	<button class="button-small grid-toggle" data-variant="secondary" data-color="dark" data-icon="right">
+		<i class="fa-solid fa-grip-vertical"></i>
+		Hide/Show Grid
+	</button>
+	<p class="paragraph-small instructions">
+		Now resize the browser window to see the grid changing
+	</p>
+	<div class="grid-overlay section-container">
+		<div class="row-fluid grid-row-demo">
+			<div class="span1 grid-column-demo tablet-span1 mobile-span1"></div>
+			<div class="span1 grid-column-demo tablet-span1 mobile-span1"></div>
+			<div class="span1 grid-column-demo tablet-span1"></div>
+			<div class="span1 grid-column-demo tablet-span1"></div>
+			<div class="span1 grid-column-demo tablet-span1"></div>
+			<div class="span1 grid-column-demo tablet-span1"></div>
+			<div class="span1 grid-column-demo tablet-span1"></div>
+			<div class="span1 grid-column-demo tablet-span1"></div>
+			<div class="span1 grid-column-demo"></div>
+			<div class="span1 grid-column-demo"></div>
+			<div class="span1 grid-column-demo"></div>
+			<div class="span1 grid-column-demo"></div>
+		</div>
+	</div>
 
-  <body>
-    <nav class="demo-nav">
-      <a href="/" class="button-small" data-variant="outline">Home</a>
-      <a href="/buttons.html" class="button-small" data-variant="outline"
-        >Buttons</a
-      >
-      <a href="/forms.html" class="button-small" data-variant="outline"
-        >Forms</a
-      >
-      <a href="/typography.html" class="button-small" data-variant="outline"
-        >Typography</a
-      >
-      <a href="/header.html" class="button-small" data-variant="outline"
-        >Header</a
-      >
-      <a
-        href="/footer.html"
-        aria-current="page"
-        class="button-small"
-        data-variant="outline"
-        >Footer</a
-      >
-      <a href="/layout.html" class="button-small" data-variant="outline"
-        >Grid System</a
-      >
-      <a href="/cards.html" class="button-small" data-variant="outline"
-        >Cards</a
-      >
-      <a href="/miscellaneous.html" class="button-small" data-variant="outline"
-        >Miscellaneous</a
-      >
-    </nav>
-    <main>
-      <footer class="footer__container flex-col-center">
-        <div class="section-container flex-col-start">
-          <div class="footer__row row-fluid" data-footer-row="top">
-            <div class="footer__column span5 flex-col-start">
-              <p class="paragraph-medium form-control__label">Newsletter</p>
-              <form action="" class="flex-row-start no-wrap">
-                <div class="form-control-with-icon" data-position="right">
-                  <i
-                    class="fa-solid fa-envelope form-control__icon"
-                    data-position="right"
-                  ></i>
-                  <input
-                    type="email"
-                    class="form-control"
-                    placeholder="john@email.com"
-                  />
-                </div>
-                <button
-                  class="button-medium"
-                  data-variant="primary"
-                  data-icon="right"
-                >
-                  <i class="fa-solid fa-arrow-left"></i>Button Text
-                </button>
-              </form>
-            </div>
-          </div>
-          <div
-            class="footer__row row-fluid tablet-wrap"
-            data-footer-row="middle"
-          >
-            <div class="footer__column span3 tablet-span4">
-              <div class="footer__links gap-s flex-col-start">
-                <h4 class="label-h5 footer-links__heading">Company</h4>
-                <ul class="footer-links__list flex-col-start gap-xs">
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Contact Us</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Partners</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Our Story</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Careers</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Blog</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Newsroom</a
-                  >
-                </ul>
-              </div>
-            </div>
-            <div class="footer__column span3 tablet-span4">
-              <div class="footer__links gap-s flex-col-start">
-                <h4 class="label-h5 footer-links__heading">Features</h4>
-                <ul class="footer-links__list flex-col-start gap-xs">
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Electronic Signatures</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Proposals</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Configure Price Quote</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Analytics & tracking</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Mutual action plan</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Sales engagement</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Notifications & reminders</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Customer success</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Analytics & tracking</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Sales content management</a
-                  >
-                  <a
-                    class="button-small footer__link"
-                    data-variant="link"
-                    data-icon="left"
-                  >
-                    <i class="fa-solid fa-arrow-right"></i>Book a demo
-                  </a>
-                </ul>
-              </div>
-            </div>
-            <div class="footer__column span3 tablet-span4">
-              <div class="footer__links gap-s flex-col-start">
-                <h4 class="label-h5 footer-links__heading">Top Integrations</h4>
-                <ul class="footer-links__list flex-col-start gap-xs">
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Salesforce</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >HubSpot</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Pipedrive</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Zapier</a
-                  >
-                  <a
-                    class="button-small footer__link"
-                    data-variant="link"
-                    data-icon="left"
-                  >
-                    <i class="fa-solid fa-arrow-right"></i>500+ more
-                  </a>
-                </ul>
-              </div>
-            </div>
-            <div class="footer__column span3 tablet-span4">
-              <div class="footer__links gap-s flex-col-start">
-                <h4 class="label-h5 footer-links__heading">Security Hub</h4>
-                <ul class="footer-links__list flex-col-start gap-xs">
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Terms & conditions</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Legal aspects</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >Secure e-signatures</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >eIDAS</a
-                  >
-                  <a
-                    href="#"
-                    class="footer__link link"
-                    data-variant="footer-nav"
-                    >GDPR compliance</a
-                  >
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="divider"></div>
-          <div class="footer__row row-fluid" data-footer-row="bottom">
-            <div class="footer__column span3 flex-row-start">
-              <div class="app-stores">
-                <button class="app-store-button">
-                  <img src="./assets/App Store batch.svg" alt="" />
-                </button>
-                <button class="app-store-button">
-                  <img src="./assets/Google Play batch.svg" alt="" />
-                </button>
-              </div>
-            </div>
-            <div class="footer__column span3">
-              <div class="social-icons flex-row-start gap-xs">
-                <button class="social-icon">
-                  <img src="./assets/LI.svg" alt="" />
-                </button>
-                <button class="social-icon">
-                  <img src="./assets/Insta.svg" alt="" />
-                </button>
-                <button class="social-icon">
-                  <img src="./assets/Youtube.svg" alt="" />
-                </button>
-                <button class="social-icon">
-                  <img src="./assets/Facebook.svg" alt="" />
-                </button>
-                <button class="social-icon">
-                  <img src="./assets/Twitter.svg" alt="" />
-                </button>
-              </div>
-            </div>
-            <div class="footer__column span6 flex-row-start">
-              <p class="paragraph-small">
-                <a href="#" class="link" data-color="dark">Sitemap</a> |
-                <a href="#" class="link" data-color="dark">Terms & conditions</a
-                >|
-                <a href="#" class="link" data-color="dark">Privacy policy</a> |
-                <a href="#" class="link" data-color="dark">Cookie settings</a> |
-                <a href="#" class="link" data-color="dark">GDPR</a> | Copyright
-                © 2022 GetAccept Inc. All Rights Reserved.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </main>
-  </body>
+	<body>
+		<nav class="demo-nav">
+			<a href="/" class="button-small" data-variant="outline">Home</a>
+			<a href="/buttons.html" class="button-small" data-variant="outline">Buttons</a>
+			<a href="/forms.html" class="button-small" data-variant="outline">Forms</a>
+			<a href="/typography.html" class="button-small" data-variant="outline">Typography</a>
+			<a href="/header.html" class="button-small" data-variant="outline">Header</a>
+			<a href="/footer.html" aria-current="page" class="button-small" data-variant="outline">Footer</a>
+			<a href="/layout.html" class="button-small" data-variant="outline">Grid System</a>
+			<a href="/cards.html" class="button-small" data-variant="outline">Cards</a>
+			<a href="/miscellaneous.html" class="button-small" data-variant="outline">Miscellaneous</a>
+		</nav>
+		<main>
+			<footer class="footer__container flex-col-center">
+				<div class="section-container flex-col-start">
+					<div class="footer__row row-fluid" data-footer-row="top">
+						<div class="footer__column span5 flex-col-start">
+							<p class="paragraph-medium form-control__label">Newsletter</p>
+							<form action="" class="flex-row-start no-wrap">
+								<input type="email" class="form-control" placeholder="john@email.com" data-variant="small" />
+								<button class="button-small" data-variant="secondary">Subscribe Now</button>
+							</form>
+						</div>
+					</div>
+					<div class="footer__row row-fluid tablet-wrap" data-footer-row="middle">
+						<div class="footer__column span3 tablet-span4">
+							<div class="footer__links gap-s flex-col-start">
+								<h4 class="label-h5 footer-links__heading">Company</h4>
+								<ul class="footer-links__list flex-col-start gap-xs">
+									<a href="#" class="footer__link link" data-variant="footer-nav">Contact Us</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Partners</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Our Story</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Careers</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Blog</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Newsroom <span class="chips" data-size="mini" data-color="secondary">New!</span></a>
+								</ul>
+							</div>
+						</div>
+						<div class="footer__column span3 tablet-span4">
+							<div class="footer__links gap-s flex-col-start">
+								<h4 class="label-h5 footer-links__heading">Features</h4>
+								<ul class="footer-links__list flex-col-start gap-xs">
+									<a href="#" class="footer__link link" data-variant="footer-nav">Electronic Signatures</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Proposals</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Configure Price Quote</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Analytics & tracking</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Mutual action plan <span class="chips" data-size="mini" data-color="primary">Hot!</span></a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Sales engagement</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Notifications & reminders</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Customer success</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Analytics & tracking</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Sales content management</a>
+									<a class="button-small footer__link" data-variant="link" data-icon="left"> <i class="fa-solid fa-arrow-right"></i>Book a demo </a>
+								</ul>
+							</div>
+						</div>
+						<div class="footer__column span3 tablet-span4">
+							<div class="footer__links gap-s flex-col-start">
+								<h4 class="label-h5 footer-links__heading">Top Integrations</h4>
+								<ul class="footer-links__list flex-col-start gap-xs">
+									<a href="#" class="footer__link link" data-variant="footer-nav">Salesforce</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">HubSpot</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Pipedrive</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Zapier</a>
+									<a class="button-small footer__link" data-variant="link" data-icon="left"> <i class="fa-solid fa-arrow-right"></i>500+ more </a>
+								</ul>
+							</div>
+						</div>
+						<div class="footer__column span3 tablet-span4">
+							<div class="footer__links gap-s flex-col-start">
+								<h4 class="label-h5 footer-links__heading">Security Hub</h4>
+								<ul class="footer-links__list flex-col-start gap-xs">
+									<a href="#" class="footer__link link" data-variant="footer-nav">Terms & conditions</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Legal aspects</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">Secure e-signatures</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">eIDAS</a>
+									<a href="#" class="footer__link link" data-variant="footer-nav">GDPR compliance</a>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="divider"></div>
+					<div class="footer__row row-fluid" data-footer-row="bottom">
+						<div class="footer-column span2 flex-row-start">
+							<img src="./assets/App.svg" alt="" width="32px" height="32px" />
+						</div>
+						<div class="footer__column span4 flex-row-start">
+							<p class="paragraph-tiny">
+								<a href="#" class="link" data-color="dark">Sitemap</a> | <a href="#" class="link" data-color="dark">Terms & conditions</a>|
+								<a href="#" class="link" data-color="dark">Privacy policy</a> | <a href="#" class="link" data-color="dark">Cookie settings</a> | <a href="#" class="link" data-color="dark">GDPR</a> |
+								Copyright © 2022 GetAccept Inc. All Rights Reserved.
+							</p>
+						</div>
+						<div class="footer__column span3 flex-row-start">
+							<div class="app-stores">
+								<button class="app-store-button">
+									<img src="./assets/App Store batch.svg" alt="" />
+								</button>
+								<button class="app-store-button">
+									<img src="./assets/Google Play batch.svg" alt="" />
+								</button>
+							</div>
+						</div>
+
+						<div class="footer__column span3">
+							<div class="social-icons flex-row-end gap-xs">
+								<button class="social-icon">
+									<img src="./assets/LI.svg" alt="" />
+								</button>
+								<button class="social-icon">
+									<img src="./assets/Insta.svg" alt="" />
+								</button>
+								<button class="social-icon">
+									<img src="./assets/Youtube.svg" alt="" />
+								</button>
+								<button class="social-icon">
+									<img src="./assets/Facebook.svg" alt="" />
+								</button>
+								<button class="social-icon">
+									<img src="./assets/Twitter.svg" alt="" />
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</main>
+	</body>
 </html>

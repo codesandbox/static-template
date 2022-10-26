@@ -1,0 +1,70 @@
+.tabs__aside {
+	height: 500px;
+	position: relative;
+}
+
+.tabs__aside > * {
+	position: absolute;
+}
+
+.tabs__divider {
+	height: 2px;
+	width: 100%;
+	background-color: var(--placeholder);
+	position: relative;
+}
+
+.tabs__divider-overlay {
+	height: 2px;
+	width: 0%;
+	right: 100%;
+	background-color: var(--secondary-accent);
+	position: absolute;
+}
+
+.js-divider-overlay-animated {
+	width: 100%;
+	right: 0;
+	background-color: var(--placeholder);
+	transition: right 0.5s ease, width 1s ease, background-color 0.2s ease 1s;
+}
+
+.tabs__illustration {
+	opacity: 0;
+	transition: opacity 0.4s ease;
+}
+
+.js-tabs__illustration-active {
+	opacity: 1;
+	transition: opacity 0.4s ease;
+}
+
+.tabs__opener {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+	text-align: left;
+}
+
+.tabs__target {
+	max-height: 0px;
+	height: fit-content;
+	opacity: 0;
+	overflow: hidden;
+}
+
+.js-tab-opened {
+	max-height: 50vh;
+	opacity: 1;
+}
+
+.js-opener-icon-rotated {
+	transform: rotate(180deg);
+	transition: 0.5s ease;
+}
+
+.opener-icon {
+	transition: 0.5s ease;
+}

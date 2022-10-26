@@ -1,5 +1,5 @@
 /* Import the Google Fonts we need */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lexend:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lexend:wght@400;500;600;700&display=swap');
 
 /* 
 Set the font family and weight for each type of text
@@ -8,10 +8,10 @@ Set the font family and weight for each type of text
 h1,
 h2,
 h3 {
-  font-family: var(--display-font);
-  font-weight: var(--font-weight-3);
-  color: var(--dark);
-  margin: 0;
+	font-family: var(--display-font);
+	font-weight: var(--font-weight-3);
+	color: var(--dark);
+	margin: 0;
 }
 
 h4,
@@ -22,105 +22,124 @@ a,
 li,
 span,
 input,
+div,
 button {
-  font-family: var(--text-font);
-  margin: 0;
+	font-family: var(--text-font);
+	margin: 0;
+	color: var(--dark);
 }
 
 a,
 button {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 /* Display */
 
 .display-h1 {
-  font-size: var(--font-size-6);
-  line-height: var(--font-lineheight-0);
-  letter-spacing: var(--font-letterspacing-4);
+	font-size: var(--font-size-8);
+	line-height: 58px;
+	letter-spacing: var(--font-letterspacing-8);
+	font-weight: var(--font-weight-3);
 }
 
 .display-h2 {
-  font-size: var(--font-size-5);
-  line-height: var(--font-lineheight-2);
-  letter-spacing: var(--font-letterspacing-4);
+	font-size: var(--font-size-6);
+	line-height: 50px;
+	letter-spacing: var(--font-letterspacing-6);
+	font-weight: var(--font-weight-3);
 }
 
 .display-h3 {
-  font-size: var(--font-size-4);
-  line-height: var(--font-lineheight-2);
-  letter-spacing: var(--font-letterspacing-1);
+	font-size: var(--font-size-5);
+	line-height: 38px;
+	letter-spacing: var(--font-letterspacing-5);
+	font-weight: var(--font-weight-3);
+}
+
+.display-h4 {
+	font-size: var(--font-size-4);
+	line-height: 36px;
+	letter-spacing: var(--font-letterspacing-5);
+	font-weight: var(--font-weight-2);
 }
 
 /* Labels */
 
-.label-h4 {
-  font-size: var(--font-size-3);
-  line-height: var(--font-lineheight-2);
-  letter-spacing: var(--font-letterspacing-1);
-  font-weight: var(--font-weight-2);
+.label-big {
+	font-size: var(--font-size-3);
+	line-height: 26px;
+	letter-spacing: var(--font-letterspacing-4);
+	font-weight: var(--font-weight-2);
 }
 
-.label-h5 {
-  font-size: var(--font-size-0);
-  line-height: var(--font-lineheight-5);
-  letter-spacing: var(--font-letterspacing-5);
-  font-weight: var(--font-weight-2);
+.label-medium {
+	font-size: var(--font-size-1);
+	line-height: 22px;
+	letter-spacing: var(--font-letterspacing-2);
+	font-weight: var(--font-weight-2);
+}
+
+.label-small {
+	font-size: var(--font-size-000);
+	line-height: 16px;
+	letter-spacing: 0;
+	font-weight: var(--font-weight-1);
 }
 
 /* Paragraphs */
 .paragraph-large {
-  font-size: var(--font-size-2);
-  line-height: var(--font-lineheight-9);
-  letter-spacing: var(--font-letterspacing-8);
-  font-weight: var(--font-weight-0);
+	font-size: var(--font-size-2);
+	line-height: 28px;
+	letter-spacing: var(--font-letterspacing-0);
+	font-weight: var(--font-weight-0);
 }
 
 .paragraph-medium {
-  font-size: var(--font-size-1);
-  line-height: var(--font-lineheight-9);
-  letter-spacing: var(--font-letterspacing-7);
-  font-weight: var(--font-weight-0);
+	font-size: var(--font-size-1);
+	line-height: 26px;
+	letter-spacing: var(--font-letterspacing-0);
+	font-weight: var(--font-weight-0);
 }
 
 .paragraph-small {
-  font-size: var(--font-size-0);
-  line-height: var(--font-lineheight-10);
-  letter-spacing: var(--font-letterspacing-6);
-  font-weight: var(--font-weight-0);
+	font-size: var(--font-size-0);
+	line-height: 22px;
+	letter-spacing: var(--font-letterspacing-0);
+	font-weight: var(--font-weight-0);
 }
 
 .paragraph-tiny {
-  font-size: var(--font-size-00);
-  line-height: var(--font-lineheight-9);
-  letter-spacing: var(--font-letterspacing-6);
-  font-weight: var(--font-weight-0);
+	font-size: var(--font-size-00);
+	line-height: 20px;
+	letter-spacing: var(--font-letterspacing-0);
+	font-weight: var(--font-weight-0);
 }
 
 /* Links */
 
 .link {
-  font-size: inherit;
-  color: inherit;
-  line-height: inherit;
-  letter-spacing: inherit;
-  color: var(--primary-accent);
+	font-size: inherit;
+	color: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	color: var(--primary-accent);
 }
 
-.link[data-variant="footer-nav"] {
-  font-size: var(--font-size-00);
-  line-height: var(--font-lineheight-9);
-  letter-spacing: var(--font-letterspacing-6);
-  text-decoration: none;
-  color: inherit;
+.link[data-variant='footer-nav'] {
+	font-size: var(--font-size-00);
+	line-height: var(--font-lineheight-9);
+	letter-spacing: var(--font-letterspacing-6);
+	text-decoration: none;
+	color: inherit;
 }
 
-.link[data-variant="header-nav"] {
-  font-size: var(--font-size-0);
-  line-height: var(--font-lineheight-10);
-  letter-spacing: var(--font-letterspacing-6);
-  text-decoration: none;
-  color: inherit;
+.link[data-variant='header-nav'] {
+	font-size: var(--font-size-0);
+	line-height: var(--font-lineheight-10);
+	letter-spacing: var(--font-letterspacing-6);
+	text-decoration: none;
+	color: inherit;
 }
 
 /* 
@@ -129,24 +148,27 @@ the remaining styles for button elements can be found in /css/buttons.css
 */
 
 .button-large {
-  font-weight: var(--font-weight-1);
-  font-size: var(--font-size-2);
-  line-height: var(--font-lineheight-8);
-  letter-spacing: var(--font-letterspacing-0);
+	font-weight: var(--font-weight-3);
+	font-size: var(--font-size-2);
+	line-height: 24px;
+	letter-spacing: var(--font-letterspacing-4);
+	text-align: center;
 }
 
 .button-medium {
-  font-weight: var(--font-weight-1);
-  font-size: var(--font-size-1);
-  line-height: var(--font-lineheight-9);
-  letter-spacing: var(--font-letterspacing-2);
+	font-weight: var(--font-weight-1);
+	font-size: var(--font-size-1);
+	line-height: 22px;
+	letter-spacing: var(--font-letterspacing-3);
+	text-align: center;
 }
 
 .button-small {
-  font-weight: var(--font-weight-1);
-  font-size: var(--font-size-0);
-  line-height: var(--font-lineheight-10);
-  letter-spacing: var(--font-letterspacing-5);
+	font-weight: var(--font-weight-1);
+	font-size: var(--font-size-00);
+	line-height: 20px;
+	letter-spacing: var(--font-letterspacing-2);
+	text-align: center;
 }
 
 /* 
@@ -155,21 +177,41 @@ The below will control the automatic resizing happening when the browser shrinks
 */
 
 .h1-fluid {
-  font-size: var(--font-size-fluid-5);
+	font-size: var(--font-size-fluid-5);
 }
 
 .h2-fluid {
-  font-size: var(--font-size-fluid-4);
+	font-size: var(--font-size-fluid-4);
 }
 
 .h3-fluid {
-  font-size: var(--font-size-fluid-3);
+	font-size: var(--font-size-fluid-3);
 }
 
 .paragraph-large-fluid {
-  font-size: var(--font-size-fluid-2);
+	font-size: var(--font-size-fluid-2);
 }
 
 .paragraph-medium-fluid {
-  font-size: var(--font-size-fluid-1);
+	font-size: var(--font-size-fluid-1);
+}
+
+/* Stats */
+
+.stats-number {
+	font-family: var(--display-font);
+	font-weight: var(--font-weight-1);
+	font-size: var(--font-size-7);
+	line-height: 56px;
+	letter-spacing: var(--font-letterspacing-6);
+	color: var(--dark);
+	text-align: center;
+}
+
+.testimonial-paragraph {
+	font-family: var(--text-font);
+	font-weight: var(--font-weight-0);
+	font-size: var(--font-size-4);
+	line-height: 38px;
+	letter-spacing: var(--font-letterspacing-1);
 }

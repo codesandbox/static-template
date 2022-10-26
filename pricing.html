@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Pricing Page Demo</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./css/pricing.css" />
+  <script defer type="module" src="./script.js"></script>
+  <script defer type="module" src="./js/pricing.js"></script>
+  <script defer type="module" src="./js/accordion.js"></script>
+  <script defer src="https://kit.fontawesome.com/ae7bbcad81.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <header class="header flex-col-center">
+    <div class="header__container row-fluid never-wrap">
+      <div class="header__brand flex-row-start">
+        <img src="./assets/Main.svg" alt="" class="logo" />
+        <img src="./assets/App.svg" alt="" class="logo__mobile-nav">
+      </div>
+      <nav class="header__nav" data-variant="light">
+        <div class="nav-item__container">
+            <div class="header-nav__item">
+                <button class="header-nav__link link js-mega-menu-openers" data-opens="product">
+                  Product
+                  <i class="fa-solid fa-chevron-down header-nav__link-arrow" data-opens="product"></i>
+                </button>
+                <div class="mega-menu row-fluid flex-col-center" data-mega-menu="product">
+                  <div class="mega-menu__grid row-fluid flex-row-start">
+                    <div class="mega-menu__column flex-col-start">
+                      <p class="label-h5 mega-menu__link-list-heading">
+                        Digital Sales Room
+                      </p>
+                      <div class="mega-menu__cta-image-wrapper flex-col-center justify-center">
+                          <a href="#" class="button-small" data-variant="outline" data-icon="left" data-color="white">
+                              <i class="fa-solid fa-arrow-right"></i>
+                              Product Tour
+                          </a>
+                      </div>
+                    </div>
+                    <div class="mega-menu__column flex-col-start">
+                      <div class="mega-menu__link-list-wrapper">
+                        <p class="label-h5 mega-menu__link-list-heading">
+                          Features
+                        </p>
+                        <ul class="mega-menu__link-list">
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Electronic Signature</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Proposal & Contracts</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">CPQ - Configure, Price, Quote</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Content Tracking & Analytics</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Sales Content Management</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Mutual Action Plans</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link button-small" data-variant="link" data-icon="left">
+                              <i class="fa-solid fa-arrow-right"></i>
+                              All Features
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="mega-menu__column flex-col-start">
+                      <div class="mega-menu__link-list-wrapper">
+                        <p class="label-h5 mega-menu__link-list-heading">
+                          Integrations & API
+                        </p>
+                        <ul class="mega-menu__link-list">
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Salesforce</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">HubSpot</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Zapier</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Pipedrive</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Microsoft Dynamics</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link button-small" data-variant="link" data-icon="left">
+                              <i class="fa-solid fa-arrow-right"></i>
+                              Many more
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="header-nav__item">
+                <a href="#" class="header-nav__link link">Pricing</a>
+              </div>
+              <div class="header-nav__item">
+                <button class="header-nav__link link js-mega-menu-openers" data-opens="why-get-accept">
+                  Why Getaccept?
+                  <i class="fa-solid fa-chevron-down header-nav__link-arrow" data-opens="why-get-accept"></i>
+                </button>
+                <div class="mega-menu row-fluid flex-col-center" data-mega-menu="why-get-accept"">
+                            <div class=" mega-menu__grid row-fluid flex-row-start">
+                  <div class="mega-menu__column flex-col-start">
+                    <div class="mega-menu__link-list-wrapper">
+                      <p class="label-h5 mega-menu__link-list-heading">
+                        Use Cases
+                      </p>
+                      <ul class="mega-menu__link-list">
+                        <li class="mega_memu__link-list-item">
+                          <a href="#" class="mega-menu__link link">Account Executives</a>
+                        </li>
+                        <li class="mega_memu__link-list-item">
+                          <a href="#" class="mega-menu__link link">Sales Operations</a>
+                        </li>
+                        <li class="mega_memu__link-list-item">
+                          <a href="#" class="mega-menu__link link">Sales Leader</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="mega-menu__column flex-col-start">
+                    <div class="mega-menu__link-list-wrapper">
+                      <p class="label-h5 mega-menu__link-list-heading">
+                        Industries
+                      </p>
+                      <ul class="mega-menu__link-list">
+                        <li class="mega-menu__link-list-item">
+                          <a href="#" class="mega-menu__link link">IT & Tech</a>
+                        </li>
+                        <li class="mega-menu__link-list-item">
+                          <a href="#" class="mega-menu__link link">Profesional Services</a>
+                        </li>
+                        <li class="mega-menu__link-list-item">
+                          <a href="#" class="mega-menu__link link">Wholesale & Retail</a>
+                        </li>
+                        <li class="mega-menu__link-list-item">
+                          <a href="#" class="mega-menu__link link button-small" data-variant="link" data-icon="left">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Discover More
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="mega-menu__column flex-col-start">
+                    <div class="mega-menu__link-list-wrapper">
+                      <p class="label-h5 mega-menu__link-list-heading">
+                        Customer Stories
+                      </p>
+                      <ul class="mega-menu__link-list">
+                        <li class="mega-menu__link-list-item">
+                          <a href="#" class="mega-menu__link link">Jeeng</a>
+                        </li>
+                        <li class="mega-menu__link-list-item">
+                          <a href="#" class="mega-menu__link link">Cheq</a>
+                        </li>
+                        <li class="mega-menu__link-list-item">
+                          <a href="#" class="mega-menu__link link">Chargebee</a>
+                        </li>
+                        <li class="mega-menu__link-list-item">
+                          <a href="#" class="mega-menu__link link button-small" data-variant="link" data-icon="left">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Discover more
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="header-nav__item">
+            <button class="header-nav__link link js-mega-menu-openers" data-opens="ressources">
+              Ressources
+              <i class="fa-solid fa-chevron-down header-nav__link-arrow" data-opens="ressources"></i>
+            </button>
+            <div class="mega-menu row-fluid flex-col-center" data-mega-menu="ressources">
+              <div class="mega-menu__grid row-fluid flex-row-start">
+                <div class="mega-menu__column flex-col-start">
+                  <div class="mega-menu__link-list-wrapper">
+                    <p class="label-h5 mega-menu__link-list-heading">
+                      Customer Comunity
+                    </p>
+                    <ul class="mega-menu__link-list">
+                      <li class="mega-menu__link-list-item">
+                        <a href="#" class="mega-menu__link link">Product Update</a>
+                      </li>
+                      <li class="mega-menu__link-list-item">
+                        <a href="#" class="mega-menu__link link">Help Center</a>
+                      </li>
+                      <li class="mega-menu__link-list-item">
+                        <a href="#" class="mega-menu__link link">Frequently Asked Question</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mega-menu__column flex-col-start flow-xs">
+                  <div class="mega-menu__link-list-wrapper">
+                    <p class="label-h5 mega-menu__link-list-heading">
+                      Learning Hubs
+                    </p>
+                    <ul class="mega-menu__link-list">
+                      <li class="mega-menu__link-list-item">
+                        <a href="#" class="mega-menu__link link">Digital Sales Room</a>
+                      </li>
+                      <li class="mega-menu__link-list-item">
+                        <a href="#" class="mega-menu__link link">Remote selling</a>
+                      </li>
+                      <li class="mega-menu__link-list-item">
+                        <a href="#" class="mega-menu__link link">Sales enablement</a>
+                      </li>
+                      <li class="mega-menu__link-list-item">
+                        <a href="#" class="mega-menu__link link">Electronic signature</a>
+                      </li>
+                      <li class="mega-menu__link-list-item">
+                        <a href="#" class="mega-menu__link link button-small" data-variant="link" data-icon="left">
+                          <i class="fa-solid fa-arrow-right"></i>
+                          Visit portal
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mega-menu__column flex-col-start">
+                  <div class="mega-menu__link-list-wrapper">
+                    <p class="label-h5 mega-menu__link-list-heading">
+                      Content
+                    </p>
+                    <ul class="mega-menu__link-list">
+                      <li class="mega-menu__link-list-item">
+                        <a href="#" class="mega-menu__link link">The Getaccept blog</a>
+                      </li>
+                      <li class="mega-menu__link-list-item">
+                        <a href="#" class="mega-menu__link link">Content library</a>
+                      </li>
+                      <li class="mega-menu__link-list-item">
+                        <a href="#" class="mega-menu__link link">Proposal templates</a>
+                      </li>
+                      <li class="mega-menu__link-list-item">
+                        <a href="#" class="mega-menu__link link">Events & webinars</a>
+                      </li>
+                      <li class="mega-menu__link-list-item">
+                        <a href="#" class="mega-menu__link link">The Sales Ladder podcast</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+              </div>
+              <div class="header-nav__item login">
+                  <a class="button-medium login-button__mobile-nav" data-variant="link" data-color="dark" data-icon="right">
+                      <i class="fa-solid fa-user"></i>
+                      Login
+                  </a>
+              </div>
+        </div>
+        <div class="header__cta-container" data-location="mobile-nav">
+          <a class="header__button button-medium" data-variant="outline" data-location="mobile-nav" href="#">Get Started For
+            Free</a>
+          <a href="#" class="header__button button-medium" data-variant="primary" data-location="mobile-nav">Book a Demo</a>
+        </div>
+      </nav>
+    <div class="header__cta-container flex-row-end">
+      <i class="fa-solid fa-globe language-picker"></i>
+      <a class="header__button button-small" data-variant="link" data-color="dark" href="#">Login</a>
+      <a href="#" class="header__button button-small" data-variant="primary">Book a Demo</a>
+    </div>
+    <div class="js-mobile-menu__toggle">
+      <i class="fa-solid fa-bars" data-variant="light"></i>
+    </div>
+    </div>
+  </header>
+  <section class="section-container pricing__hero flex-col-center flow-lg">
+    <div class="pricing-hero__headline row-fluid flex-col-center">
+      <h1 class="h2-fluid text-center">Choose your plan</h1>
+      <p class="paragraph-large span8 tablet-span6 text-center">Ready to amaze your prospects? Make room for deals with
+        Getaccept and take your revenue streams to the next level.</p>
+    </div>
+    <div class="row-fluid pricing__cards">
+      <div class="pricing__card span3 tablet-span4 flex-col-center flow-s">
+        <p class="label-h4 pricing-card__title">Free</p>
+        <div class="pricing-card__price">
+          <p class="pricing-card__value stats-number"><span class="pricing-card__currency">$</span>0</p>
+          <p class="pricing-card__price-label paragraph-tiny">per user/month</p>
+        </div>
+        <a href="#" class="button-medium" data-variant="outline" data-color="primary">Create free account</a>
+        <p class="pricing-card__desc paragraph-small text-center">Best for individual sales professionals looking to
+          close more deals with great sales content.</p>
+        <a href="#" class="button-medium compare-plan__button" data-variant="link" data-color="dark" data-icon="left">
+          <img src="./assets/Explore.svg" alt="">
+          Compare plans
+        </a>
+      </div>
+      <div class="pricing__card span3 tablet-span4 flex-col-center flow-s">
+        <p class="label-h4 pricing-card__title">Essential</p>
+        <div class="pricing-card__price">
+          <p class="pricing-card__value stats-number"><span class="pricing-card__currency">$</span>15</p>
+          <p class="pricing-card__price-label paragraph-tiny">per user/month</p>
+        </div>
+        <a href="#" class="button-medium" data-variant="outline" data-color="primary">Get started</a>
+        <p class="pricing-card__desc paragraph-small text-center">For small sales teams focused on closing deals in a
+          single, digital sales-oriented environment.</p>
+        <a href="#" class="button-medium compare-plan__button" data-variant="link" data-color="dark" data-icon="left">
+          <img src="./assets/Explore.svg" alt="">
+          Compare plans
+        </a>
+      </div>
+      <div class="pricing__card span3 tablet-span4 flex-col-center flow-s" data-variant="popular">
+        <p class="label-h4 pricing-card__title">Profesional</p>
+        <div class="pricing-card__price">
+          <p class="pricing-card__value stats-number"><span class="pricing-card__currency">$</span>49</p>
+          <p class="pricing-card__price-label paragraph-tiny">per user/month</p>
+        </div>
+        <a href="#" class="button-medium" data-variant="primary">Book a demo</a>
+        <p class="pricing-card__desc paragraph-small text-center">The right choice for growing companies creating and
+          sending sales collateral at xxxxxx xxxx scale.</p>
+        <a href="#" class="button-medium compare-plan__button" data-variant="link" data-color="dark" data-icon="left">
+          <img src="./assets/Explore.svg" alt="">
+          Compare plans
+        </a>
+      </div>
+      <div class="pricing__card span3 tablet-span4 flex-col-center flow-s">
+        <p class="label-h4 pricing-card__title">Enterprise +</p>
+        <div class="pricing-card__price">
+          <img class="pricing-card__value stats-number" src="./assets/Support.svg">
+          <p class="pricing-card__price-label paragraph-tiny">Let's talk</p>
+        </div>
+        <a href="#" class="button-medium" data-variant="outline" data-color="primary">Get a quote</a>
+        <p class="pricing-card__desc paragraph-small text-center">For larger teams or businesses with complex tech
+          stacks and high-level integration requirements.</p>
+        <a href="#" class="button-medium compare-plan__button" data-variant="link" data-color="dark" data-icon="left">
+          <img src="./assets/Explore.svg" alt="">
+          Compare plans
+        </a>
+      </div>
+    </div>
+
+  </section>
+  <section class="section-container pricing__compare-plan flex-col-center flow-lg">
+    <h2 class="h2-fluid text-center">Compare plans & features</h2>
+    <div class="pricing-table flex-col-center flow-m">
+      <div class="pricing-table__container">
+        <div class="pricing-table__header row-fluid">
+          <button class="pricing-table__section-opener span4 tablet-span4 text-left label-h5" data-opens="usage">
+            <i class="fa-solid fa-chevron-down js-pricing-table__opener-icon-active opener-icon" data-opens="usage"></i>
+            Usage
+          </button>
+          <div class="pricing-table__col pricing-table__label span2 tablet-span1 label-h5">Free</div>
+          <div class="pricing-table__col pricing-table__label span2 tablet-span1 label-h5">Essential</div>
+          <div class="pricing-table__col pricing-table__label span2 tablet-span1 label-h5">Professional</div>
+          <div class="pricing-table__col pricing-table__label span2 tablet-span1 label-h5">Enterprise</div>
+        </div>
+        <div class="pricing-table__rows js-pricing-table__rows-active paragraph-medium" data-openedBy='usage'>
+          <div class="pricing-table__row row-fluid">
+            <div class="table-rows__label span4 tablet-span4">Unlimited electronic signatures</div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2  tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+          </div>
+          <div class="pricing-table__row row-fluid">
+            <div class="table-rows__label span4 tablet-span4">Unlimited users <i
+                class="fa-solid fa-circle-exclamation"></i></div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+          </div>
+          <div class="pricing-table__row row-fluid">
+            <div class="table-rows__label span4 tablet-span4">Unlimited electronic signatures</div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-table__container">
+        <div class="pricing-table__header row-fluid">
+          <button class="pricing-table__section-opener span4 tablet-span4 text-left label-h5" data-opens="features">
+            <i class="fa-solid fa-chevron-down  js-pricing-table__opener-icon-active opener-icon"
+              data-opens="features"></i>
+            Features
+          </button>
+          <div class="pricing-table__col pricing-table__label span2 tablet-span1 label-h5">Free</div>
+          <div class="pricing-table__col pricing-table__label span2 tablet-span1 label-h5">Essential</div>
+          <div class="pricing-table__col pricing-table__label span2 tablet-span1 label-h5">Professional</div>
+          <div class="pricing-table__col pricing-table__label span2 tablet-span1 label-h5">Enterprise</div>
+        </div>
+        <div class="pricing-table__rows js-pricing-table__rows-active paragraph-medium" data-openedBy='features'>
+          <div class="pricing-table__row row-fluid">
+            <div class="table-rows__label span4 tablet-span4">Automated reminders <i
+                class="fa-solid fa-circle-exclamation"></i></div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+          </div>
+          <div class="pricing-table__row row-fluid">
+            <div class="table-rows__label span4 tablet-span4">Video recording <i
+                class="fa-solid fa-circle-exclamation"></i></div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+          </div>
+          <div class="pricing-table__row row-fluid">
+            <div class="table-rows__label span4 tablet-span4">Chat functionality</div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+          </div>
+          <div class="pricing-table__row row-fluid">
+            <div class="table-rows__label span4 tablet-span4">Live link send-outs for resources</div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-table__container">
+        <div class="pricing-table__header row-fluid">
+          <button class="pricing-table__section-opener span4 tablet-span4 text-left label-h5" data-opens="content">
+            <i class="fa-solid fa-chevron-down js-pricing-table__opener-icon-active opener-icon"
+              data-opens="content"></i>
+            Content & branding
+          </button>
+          <div class="pricing-table__col pricing-table__label span2 tablet-span1 label-h5">Free</div>
+          <div class="pricing-table__col pricing-table__label span2 tablet-span1 label-h5">Essential</div>
+          <div class="pricing-table__col pricing-table__label span2 tablet-span1 label-h5">Professional</div>
+          <div class="pricing-table__col pricing-table__label span2 tablet-span1 label-h5">Enterprise</div>
+        </div>
+        <div class="pricing-table__rows js-pricing-table__rows-active paragraph-medium" data-openedBy='content'>
+          <div class="pricing-table__row row-fluid">
+            <div class="table-rows__label span4 tablet-span4">In-app editior <i
+                class="fa-solid fa-circle-exclamation"></i></div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+          </div>
+          <div class="pricing-table__row row-fluid">
+            <div class="table-rows__label span4 tablet-span4">Smart templates <i
+                class="fa-solid fa-circle-exclamation"></i></div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+          </div>
+          <div class="pricing-table__row row-fluid">
+            <div class="table-rows__label span4 tablet-span4">Content library</div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="pricing-table__col span2 tablet-span1">
+              <i class="fa-solid fa-check"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+  <section class="section-container pricing__case-studies flex-col-start flow-lg">
+    <div class="pricing-case-studies__headline row-fluid flex-row-sb">
+      <h2 class="h2-fluid span7 tablet-span4">See how our customers are using Getaccept</h2>
+      <div class="customer-avatar__container flex-row-end span5 gap-s tablet-span4">
+        <img src="./assets/Base-1.jpg" alt="" class="customer-avatar">
+        <img src="./assets/Base-2.jpg" alt="" class="customer-avatar">
+        <img src="./assets/Base.jpg" alt="" class="customer-avatar">
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="card span4 tablet-span4">
+        <div class="card__image-wrapper">
+          <!-- <div class="card-image__gradient-overlay"></div> -->
+          <img src="./assets/Cool.jpg" alt="" class="card__image" />
+        </div>
+        <div class="card__body">
+          <div class="chips" data-color="pink">IT & Tech</div>
+          <h4 class="label-h4 card__title">Chargebee</h4>
+          <p class="card__text paragraph-small">
+            Hypergrowth activist investor and Healthcare platform consumers as one acquisition strategy for board
+          </p>
+          <a href="#" class="button-small" data-variant="link" data-icon="left" data-color="dark">
+            <i class="fa-solid fa-arrow-right"></i>
+            Read more</a>
+        </div>
+      </div>
+      <div class="card span4 tablet-span4">
+        <div class="card__image-wrapper">
+          <!-- <div class="card-image__gradient-overlay"></div> -->
+          <img src="./assets/Colors.jpg" alt="" class="card__image" />
+        </div>
+        <div class="card__body">
+          <div class="chips" data-color="pink">IT & Tech</div>
+          <h4 class="label-h4 card__title">
+            Samsung
+          </h4>
+          <p class="card__text paragraph-small">
+            Hypergrowth activist investor and Healthcare platform consumers as one acquisition strategy for board
+          </p>
+          <a href="#" class="button-small" data-variant="link" data-icon="left" data-color="dark">
+            <i class="fa-solid fa-arrow-right"></i>
+            Read more</a>
+        </div>
+      </div>
+      <div class="card span4 tablet-span4">
+        <div class="card__image-wrapper">
+          <!-- <div class="card-image__gradient-overlay"></div> -->
+          <img src="./assets/Lake.jpg" alt="" class="card__image" />
+        </div>
+        <div class="card__body">
+          <div class="chips" data-color="secondary">Wholesale & Retail</div>
+          <h4 class="label-h4 card__title">Puma</h4>
+          <p class="card__text paragraph-small">
+            Hypergrowth activist investor and Healthcare platform consumers as one acquisition strategy for board
+          </p>
+          <a href="#" class="button-small" data-variant="link" data-icon="left" data-color="dark">
+            <i class="fa-solid fa-arrow-right"></i>
+            Read more</a>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="button-medium" data-variant='outline' data-color='dark' data-icon='left'>
+      <i class="fa-solid fa-arrow-right"></i>
+      More cases
+    </a>
+  </section>
+  <section class="section-container pricing__faq flex-col-center flow-lg">
+    <div class="pricing-faq__headline row-fluid flex-col-center">
+      <h2 class="h2-fluid text-center">Frequently asked questions</h2>
+      <p class="paragraph-large span8 tablet-span6 text-center">Signal boosting esports legend. Nostalgic YikYaking
+        Instagram Employee. Microdosing CryptoPunk rationalist. Signal boosting esports legend.</p>
+    </div>
+    <div class="pricing-faq__container flex-col-start accordion">
+      <button class="accordion__opener flex-row-sb button-large">
+        Is Electronic Signatures legally binding?
+        <i class="fa-solid fa-chevron-down accordion__icon"></i>
+      </button>
+      <div class="accordion__target">
+        <p class="paragraph-medium">
+          Do reprehenderit officia amet officia duis consequat. Commodo est ea
+          consequat tempor et esse. Irure eiusmod esse duis reprehenderit aute
+          cillum eu voluptate laboris commodo enim irure deserunt. Voluptate
+          irure officia irure mollit duis aute occaecat sunt amet sunt ut. Id
+          Lorem sunt anim sint.
+        </p>
+      </div>
+      <button class="accordion__opener flex-row-sb button-large">
+        What document formats does GetAccept support?
+        <i class="fa-solid fa-chevron-down accordion__icon"></i>
+      </button>
+      <div class="accordion__target">
+        <p class="paragraph-medium">
+          With GetAccept's eSignature feature, you can upload documents in formats such as Microsoft Word, PDF, or other
+          common formats. You can upload documents from your computer or popular file-sharing sites like Google Drive.
+          You can upload documents from your computer or popular file-sharing sites like Google Drive.
+        </p>
+      </div>
+      <button class="accordion__opener flex-row-sb button-large">
+        How is my personal data used in GetAccept?
+        <i class="fa-solid fa-chevron-down accordion__icon"></i>
+      </button>
+      <div class="accordion__target">
+        <p class="paragraph-medium">
+          Do reprehenderit officia amet officia duis consequat. Commodo est ea
+          consequat tempor et esse. Irure eiusmod esse duis reprehenderit aute
+          cillum eu voluptate laboris commodo enim irure deserunt. Voluptate
+          irure officia irure mollit duis aute occaecat sunt amet sunt ut. Id
+          Lorem sunt anim sint.
+        </p>
+      </div>
+      <button class="accordion__opener flex-row-sb button-large">
+        How secure are my contacts with GetAccept?
+        <i class="fa-solid fa-chevron-down accordion__icon"></i>
+      </button>
+      <div class="accordion__target">
+        <p class="paragraph-medium">
+          Do reprehenderit officia amet officia duis consequat. Commodo est ea
+          consequat tempor et esse. Irure eiusmod esse duis reprehenderit aute
+          cillum eu voluptate laboris commodo enim irure deserunt. Voluptate
+          irure officia irure mollit duis aute occaecat sunt amet sunt ut. Id
+          Lorem sunt anim sint.
+        </p>
+      </div>
+      <button class="accordion__opener flex-row-sb button-large">
+        Where do I find your Terms and Conditions?
+        <i class="fa-solid fa-chevron-down accordion__icon"></i>
+      </button>
+      <div class="accordion__target">
+        <p class="paragraph-medium">
+          Do reprehenderit officia amet officia duis consequat. Commodo est ea
+          consequat tempor et esse. Irure eiusmod esse duis reprehenderit aute
+          cillum eu voluptate laboris commodo enim irure deserunt. Voluptate
+          irure officia irure mollit duis aute occaecat sunt amet sunt ut. Id
+          Lorem sunt anim sint.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="section-container pricing__cta-banner flex-col-center">
+    <div class="row-fluid flex-col-center">
+      <div class="span8 flex-col-center flow-m">
+        <h2 class="h2-fluid text-center">Start wowing buyers and hitting quotas now</h2>
+        <a href="#" class="button-large" data-variant='secondary' data-icon='left'>
+          <i class="fa-solid fa-arrow-right"></i>
+          Book a demo
+        </a>
+      </div>
+    </div>
+  </section>
+  <footer class="footer__container flex-col-center">
+    <div class="section-container flex-col-start">
+      <div class="footer__row row-fluid" data-footer-row="top">
+        <div class="footer__column span5 flex-col-start">
+          <p class="paragraph-medium form-control__label">Newsletter</p>
+          <form action="" class="flex-row-start no-wrap">
+            <input type="email" class="form-control" placeholder="john@email.com" data-variant='small' />
+            <button class="button-small" data-variant="secondary">Subscribe Now
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__row row-fluid tablet-wrap" data-footer-row="middle">
+        <div class="footer__column span3 tablet-span4">
+          <div class="footer__links gap-s flex-col-start">
+            <h4 class="label-h5 footer-links__heading">Company</h4>
+            <ul class="footer-links__list flex-col-start gap-xs">
+              <a href="#" class="footer__link link" data-variant="footer-nav">Contact Us</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Partners</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Our Story</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Careers</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Blog</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Newsroom <span class='chips'
+                  data-size='mini' data-color='secondary'>New!</span></a>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__column span3 tablet-span4">
+          <div class="footer__links gap-s flex-col-start">
+            <h4 class="label-h5 footer-links__heading">Features</h4>
+            <ul class="footer-links__list flex-col-start gap-xs">
+              <a href="#" class="footer__link link" data-variant="footer-nav">Electronic Signatures</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Proposals</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Configure Price Quote</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Analytics & tracking</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Mutual action plan <span class='chips'
+                  data-size='mini' data-color='primary'>Hot!</span></a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Sales engagement</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Notifications & reminders</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Customer success</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Analytics & tracking</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Sales content management</a>
+              <a class="button-small footer__link" data-variant="link" data-icon="left">
+                <i class="fa-solid fa-arrow-right"></i>Book a demo
+              </a>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__column span3 tablet-span4">
+          <div class="footer__links gap-s flex-col-start">
+            <h4 class="label-h5 footer-links__heading">Top Integrations</h4>
+            <ul class="footer-links__list flex-col-start gap-xs">
+              <a href="#" class="footer__link link" data-variant="footer-nav">Salesforce</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">HubSpot</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Pipedrive</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Zapier</a>
+              <a class="button-small footer__link" data-variant="link" data-icon="left">
+                <i class="fa-solid fa-arrow-right"></i>500+ more
+              </a>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__column span3 tablet-span4">
+          <div class="footer__links gap-s flex-col-start">
+            <h4 class="label-h5 footer-links__heading">Security Hub</h4>
+            <ul class="footer-links__list flex-col-start gap-xs">
+              <a href="#" class="footer__link link" data-variant="footer-nav">Terms & conditions</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Legal aspects</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">Secure e-signatures</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">eIDAS</a>
+              <a href="#" class="footer__link link" data-variant="footer-nav">GDPR compliance</a>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="footer__row row-fluid" data-footer-row="bottom">
+        <div class="footer-column span2 flex-row-start">
+          <img src="./assets/App.svg" alt="" width='32px' height='32px'>
+        </div>
+        <div class="footer__column span4 flex-row-start">
+          <p class="paragraph-tiny">
+            <a href="#" class="link" data-color="dark">Sitemap</a> |
+            <a href="#" class="link" data-color="dark">Terms & conditions</a>|
+            <a href="#" class="link" data-color="dark">Privacy policy</a> |
+            <a href="#" class="link" data-color="dark">Cookie settings</a> |
+            <a href="#" class="link" data-color="dark">GDPR</a> | Copyright
+            © 2022 GetAccept Inc. All Rights Reserved.
+          </p>
+        </div>
+        <div class="footer__column span3 flex-row-start">
+          <div class="app-stores">
+            <button class="app-store-button">
+              <img src="./assets/App Store batch.svg" alt="" />
+            </button>
+            <button class="app-store-button">
+              <img src="./assets/Google Play batch.svg" alt="" />
+            </button>
+          </div>
+        </div>
+
+        <div class="footer__column span3">
+          <div class="social-icons flex-row-end gap-xs">
+            <button class="social-icon">
+              <img src="./assets/LI.svg" alt="" />
+            </button>
+            <button class="social-icon">
+              <img src="./assets/Insta.svg" alt="" />
+            </button>
+            <button class="social-icon">
+              <img src="./assets/Youtube.svg" alt="" />
+            </button>
+            <button class="social-icon">
+              <img src="./assets/Facebook.svg" alt="" />
+            </button>
+            <button class="social-icon">
+              <img src="./assets/Twitter.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

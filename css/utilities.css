@@ -1,72 +1,143 @@
 /* Here will be all the utility classes to avoid repeating css properties */
 
 .flex-col-start {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 .flex-col-end {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 }
 
 .flex-col-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.flex-col-sb {
+	display: flex;
+	flex-direction: column;
+	align-items: space-between;
+}
+
+.flex-col-sa {
+	display: flex;
+	flex-direction: column;
+	align-items: space-around;
+}
+
+.align-center {
+	align-items: center;
+}
+
+.align-end {
+	align-items: flex-end;
+}
+
+.align-start {
+	align-items: flex-start;
+}
+
+.align-sb {
+	align-items: space-between;
+}
+.align-sa {
+	align-items: space-around;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.justify-end {
+	justify-content: flex-end;
+}
+
+.justify-start {
+	justify-content: flex-start;
+}
+
+.justify-sb {
+	justify-content: space-between;
+}
+.justify-sa {
+	justify-content: space-around;
 }
 
 .flex-row-start {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
 }
 
 .flex-row-end {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
 }
 
 .flex-row-center {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.flex-row-sb {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.flex-row-sa {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
 
 .no-wrap {
-  flex-wrap: nowrap;
+	flex-wrap: nowrap;
+}
+
+.wrap {
+	flex-wrap: wrap;
 }
 
 /* Margins */
 
 .m-top-xs {
-  margin-top: 0.5rem;
+	margin-top: 0.5rem;
 }
 .m-top-s {
-  margin-top: 1rem;
+	margin-top: 1rem;
 }
 .m-top-m {
-  margin-top: 1.5rem;
+	margin-top: 1.5rem;
 }
 .m-top-l {
-  margin-top: 2rem;
+	margin-top: 2rem;
 }
 .m-top-xl {
-  margin-top: 2.5rem;
+	margin-top: 2.5rem;
 }
 
 .m-bottom-xs {
+	margin-bottom: 0.5rem;
 }
 .m-bottom-s {
+	margin-bottom: 1rem;
 }
 .m-bottom-m {
+	margin-bottom: 1.5rem;
 }
 .m-bottom-l {
+	margin-bottom: 2rem;
 }
 .m-bottom-xl {
+	margin-bottom: 2.5rem;
 }
 
 .m-right-xs {
@@ -78,6 +149,7 @@
 .m-right-l {
 }
 .m-right-xl {
+	margin-right: var(--size-6);
 }
 
 .m-left-xs {
@@ -89,6 +161,7 @@
 .m-left-l {
 }
 .m-left-xl {
+	margin-left: var(--size-6);
 }
 
 /* Paddings */
@@ -124,6 +197,7 @@
 .p-right-l {
 }
 .p-right-xl {
+	padding-right: var(--size-6);
 }
 
 .p-left-xs {
@@ -135,4 +209,239 @@
 .p-left-l {
 }
 .p-left-xl {
+	padding-left: var(--size-6);
+}
+
+/* Handles the images in a responsive manner */
+
+.img__wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+.img__wrapper img {
+	width: 100%;
+	height: 100%;
+	/* object-fit: cover; */
+	object-position: center;
+	/* aspect-ratio: 4/5; */
+	border-radius: inherit;
+}
+
+.img__wrapper[data-crop='circle'] {
+	clip-path: circle(50% at 50% 50%);
+}
+
+.img__wrapper[data-fit='cover'] img {
+	object-fit: cover;
+}
+
+.img__wrapper[data-fit='contain'] img {
+	object-fit: contain;
+}
+
+.img__wrapper[data-position='top'] img {
+	object-position: top;
+}
+
+.img__wrapper[data-ratio='1/1'] img {
+	aspect-ratio: 1/1;
+}
+
+.img__wrapper[data-ratio='4/5'] img {
+	aspect-ratio: 4/5;
+}
+
+.img__wrapper[data-ratio='16/9'] img {
+	aspect-ratio: 16/9;
+}
+
+.img__wrapper[data-ratio='3/2'] img {
+	aspect-ratio: 3/2;
+}
+
+.img__wrapper[data-ratio='4/3'] img {
+	aspect-ratio: 4/3;
+}
+
+@media screen and (max-width: 560px) {
+	.img__wrapper[data-ratio='4/5'] img {
+		aspect-ratio: 1/1;
+	}
+}
+
+/* Story */
+
+:is([data-ratio='story']) {
+	aspect-ratio: var(--ratio-story);
+}
+
+/* Portrait */
+
+:is([data-ratio='portrait']) {
+	aspect-ratio: var(--ratio-portrait);
+}
+
+/* Rectangle */
+
+:is([data-ratio='landscape']) {
+	aspect-ratio: var(--ratio-landscape);
+}
+
+/* Square */
+
+:is([data-ratio='square']) {
+	aspect-ratio: var(--ratio-square);
+}
+
+/* Golden */
+
+:is([data-ratio='golden']) {
+	aspect-ratio: var(--ratio-golden);
+}
+
+/* Gaps */
+
+/* Disable gap */
+
+.gap-none {
+	gap: 0;
+}
+
+.gap-xs {
+	gap: 10px;
+}
+
+.gap-s {
+	gap: 15px;
+}
+
+.gap-sm {
+	gap: 20px;
+}
+
+.gap-m {
+	gap: 30px;
+}
+
+.gap-lg {
+	gap: 40px;
+}
+
+.gap-xl {
+	gap: 50px;
+}
+
+/* Mega gaps & Margin- adding gaps that are larger than a columns width */
+
+.mega-gap-0 {
+	gap: calc((5.856% * 1) + (1 * var(--default-drag-n-drop-gutter)));
+}
+
+.mega-gap-1 {
+	gap: calc((5.856% * 1) + (2 * var(--default-drag-n-drop-gutter)));
+}
+
+.mega-margin-0__left {
+	margin-left: calc((5.856% * 1) + (1 * var(--default-drag-n-drop-gutter)));
+}
+
+.mega-margin-0__right {
+	margin-right: calc((5.856% * 1) + (1 * var(--default-drag-n-drop-gutter)));
+}
+
+.mega-margin-1__left {
+	margin-left: calc((5.856% * 1) + (2 * var(--default-drag-n-drop-gutter)));
+}
+
+.mega-margin-1__right {
+	margin-right: calc((5.856% * 1) + (2 * var(--default-drag-n-drop-gutter)));
+}
+
+.mega-offset__left {
+	left: -5.5rem !important;
+}
+
+.mega-offset__right {
+	right: -5.5rem !important;
+}
+
+@media screen and (max-width: 560px) {
+	.mega-gap-0,
+	.mega-gap-1 {
+		gap: revert;
+	}
+
+	.mega-margin-0__left,
+	.mega-margin-0__right,
+	.mega-margin-1__left,
+	.mega-margin-1__right {
+		margin: revert;
+	}
+}
+
+/* Non flex gap */
+
+.flow-xs > * + * {
+	margin-top: var(--size-0);
+}
+
+.flow-s > * + * {
+	margin-top: var(--size-1);
+}
+
+.flow-sm > * + * {
+	margin-top: var(--size-2);
+}
+
+.flow-m > * + * {
+	margin-top: var(--size-3);
+}
+
+.flow-lg > * + * {
+	margin-top: var(--size-5);
+}
+
+.flow-xl > * + * {
+	margin-top: var(--size-7);
+}
+
+/* Text Alignement */
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+/* Radiuses */
+
+.radius-xs {
+	border-radius: var(--radius-00);
+}
+
+.radius-s {
+	border-radius: var(--radius-0);
+}
+
+.radius-m {
+	border-radius: var(--radius-1);
+}
+
+.radius-lg {
+	border-radius: var(--radius-2);
+}
+
+.radius-pill {
+	border-radius: var(--radius-pill);
+}
+
+.radius-circle {
+	border-radius: var(--radius-circle);
 }

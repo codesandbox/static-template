@@ -1,218 +1,182 @@
 /* CSS variables */
 
 :root {
-  --gap: 2.127659574%;
-  --gutter-0: 0.5rem;
-  --gutter-1: 1rem;
-  --gutter-2: 1.25rem;
-  --gutter-3: 1.5rem;
-  --gutter-4: 2rem;
-  --default-drag-n-drop-gutter: 1.875rem;
-  --section-horizontal-padding: 2rem;
-  --section-vertical-padding: 6.25rem;
+	--gap: 2.127659574%;
+	--default-drag-n-drop-gutter: 1.875rem;
+	--section-horizontal-padding: 1.875rem;
+	--section-vertical-padding: 6.25rem;
 }
+
+/**
+* The grid layout system is based on the 3 levels:
+ => section-container: Sets the width of the sections and the vertical padding of the sections
+ => row-fluid: Acts as a container for the grid, it takes the whole width of the section, align elements to the left, space them according to the gutter
+		and dictate the behavior on screen resizing (elements shrink on desktop and wrap on tablet/mobile)
+ => spanX: Set the width of the elements inside the grid. From span1 to span12 on desktop and tablet-span1 to tablet-span8 on tablet, 
+		 mobile-span1 set the element to 50% width on mobile. The width is calculated dynamically, a percent value representing the grid column width and the gutter width.
+		 .i.e. spanX => calc( (span1Width % * X) + (gutterWidth * (X-1)))
+**/
 
 /* Section Container */
 
 .section-container {
-  width: calc(100vw - var(--default-drag-n-drop-gutter) * 2);
-  max-width: 1110px;
-  padding-top: var(--section-vertical-padding);
-  padding-bottom: var(--section-vertical-padding);
-  gap: var(--default-drag-n-drop-gutter);
-  display: flex;
-  flex-direction: column;
+	width: calc(100vw - 3.75rem);
+	max-width: 1110px;
+	padding-top: var(--section-vertical-padding);
+	padding-bottom: var(--section-vertical-padding);
+	/* gap: var(--default-drag-n-drop-gutter); */
+	display: flex;
+	flex-direction: column;
 }
 
-.never-wrap {
-  flex-wrap: nowrap !important;
+@media screen and (max-width: 768px) {
+	.section-container {
+		padding-top: 75px;
+		padding-bottom: 75px;
+	}
 }
 
 /* The default behavior of rows is nowrap, add the below wrap class to force the wrap behavior */
 
+.never-wrap {
+	flex-wrap: nowrap !important;
+}
+
 /* Mobile layout == 2 Columns Grid*/
 
 .row-fluid {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-between;
-  gap: var(--default-drag-n-drop-gutter);
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: flex-start;
+	gap: var(--default-drag-n-drop-gutter);
 }
 
-.gap-xs {
-  gap: var(--size-2);
+.row-fluid [class*='span'] {
+	min-height: 1px;
+	width: 100%;
 }
 
-.gap-s {
-  gap: var(--gutter-3);
-}
-.gap-sm {
-  gap: var(--gutter-5);
-}
-.gap-m {
-  gap: var(--gutter-7);
-}
-.gap-lg {
-  gap: var(--gutter-9);
-}
-.gap-xl {
-  gap: var(--gutter-11);
-}
-
-.gap-xxl {
-}
-
-.row-fluid [class*="span"] {
-  min-height: 1px;
-  width: 100%;
-}
-
-.row-fluid [class*="mobile-span1"] {
-  width: calc(50% - var(--default-drag-n-drop-gutter) / 2);
-}
-
-.flow-s > * + * {
-  margin-top: var(--gutter-0);
-}
-
-.flow-sm > * + * {
-  margin-top: var(--gutter-1);
-}
-
-.flow-m > * + * {
-  margin-top: var(--gutter-2);
-}
-
-.flow-lg > * + * {
-  margin-top: var(--gutter-3);
-}
-
-.flow-xl > * + * {
-  margin-top: var(--gutter-4);
+.row-fluid [class*='mobile-span1'] {
+	width: calc(50% - var(--default-drag-n-drop-gutter) / 2);
 }
 
 /* Tablet layout == 8 Columns Grid */
 
 @media (min-width: 560px) {
-  :root {
-    --default-drag-n-drop-gutter: clamp(
-      1rem,
-      calc(1rem + ((1vw - 0.35rem) * 2.0833)),
-      1.875rem
-    );
-  }
-  .row-fluid {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: var(--default-drag-n-drop-gutter);
-  }
+	:root {
+		/* From 560px width to 992px width, the gutter will proportionaly grow from 16px to 30px */
+		--default-drag-n-drop-gutter: clamp(1rem, calc(1rem + ((1vw - 0.35rem) * 3.2407)), 1.875rem);
+	}
 
-  .row-fluid [class*="tablet-span1"] {
-    width: calc(12.5% - var(--default-drag-n-drop-gutter));
-  }
+	.row-fluid [class*='tablet-span1'] {
+		width: 9.65%;
+	}
 
-  .row-fluid [class*="tablet-span2"] {
-    width: calc(25% - var(--default-drag-n-drop-gutter));
-  }
+	.row-fluid [class*='tablet-span2'] {
+		width: calc((9.65% * 2) + (1 * var(--default-drag-n-drop-gutter)));
+	}
 
-  .row-fluid [class*="tablet-span3"] {
-    width: calc(37.5% - var(--default-drag-n-drop-gutter));
-  }
+	.row-fluid [class*='tablet-span3'] {
+		width: calc((9.65% * 3) + (2 * var(--default-drag-n-drop-gutter)));
+	}
 
-  .row-fluid [class*="tablet-span4"] {
-    width: calc(50% - var(--default-drag-n-drop-gutter) / 2);
-  }
+	.row-fluid [class*='tablet-span4'] {
+		width: calc((9.65% * 4) + (3 * var(--default-drag-n-drop-gutter)));
+	}
 
-  .row-fluid [class*="tablet-span5"] {
-    width: calc(62.5% - var(--default-drag-n-drop-gutter));
-  }
+	.row-fluid [class*='tablet-span5'] {
+		width: calc((9.65% * 5) + (4 * var(--default-drag-n-drop-gutter)));
+	}
 
-  .row-fluid [class*="tablet-span6"] {
-    width: calc(75% - var(--default-drag-n-drop-gutter));
-  }
+	.row-fluid [class*='tablet-span6'] {
+		width: calc((9.65% * 6) + (5 * var(--default-drag-n-drop-gutter)));
+	}
 
-  .row-fluid [class*="tablet-span7"] {
-    width: calc(87.5% - var(--default-drag-n-drop-gutter));
-  }
+	.row-fluid [class*='tablet-span7'] {
+		width: calc((9.65% * 7) + (6 * var(--default-drag-n-drop-gutter)));
+	}
 
-  .row-fluid [class*="tablet-span8"] {
-    width: 100%;
-  }
+	.row-fluid [class*='tablet-span8'] {
+		width: 100%;
+	}
 }
 
 /* Desktop layout == 12 Columns Grid */
 
 @media (min-width: 992px) {
-  .row-fluid {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-  }
+	:root {
+		--default-drag-n-drop-gutter: 1.875rem;
+	}
 
-  .row-fluid [class*="tablet-span"] {
-    width: unset;
-  }
+	.row-fluid {
+		flex-wrap: nowrap;
+	}
 
-  .row-fluid .span11 {
-    width: 91.66%;
-  }
+	.row-fluid [class*='tablet-span'] {
+		width: unset;
+	}
 
-  .row-fluid .span10 {
-    width: 83.33%;
-  }
+	.row-fluid .span11 {
+		width: calc((5.856% * 11) + (10 * var(--default-drag-n-drop-gutter)));
+	}
 
-  .row-fluid .span9 {
-    width: 75%;
-  }
+	.row-fluid .span10 {
+		width: calc((5.856% * 10) + (9 * var(--default-drag-n-drop-gutter)));
+	}
 
-  .row-fluid .span8 {
-    width: 66.66%;
-  }
+	.row-fluid .span9 {
+		width: calc((5.856% * 9) + (8 * var(--default-drag-n-drop-gutter)));
+	}
 
-  .row-fluid .span7 {
-    width: 58.33%;
-  }
+	.row-fluid .span8 {
+		width: calc((5.856% * 8) + (7 * var(--default-drag-n-drop-gutter)));
+	}
 
-  .row-fluid .span6 {
-    width: 50%;
-  }
+	.row-fluid .span7 {
+		width: calc((5.856% * 7) + (6 * var(--default-drag-n-drop-gutter)));
+	}
 
-  .row-fluid .span5 {
-    width: 41.66%;
-  }
+	.row-fluid .span6 {
+		width: calc((5.856% * 6) + (5 * var(--default-drag-n-drop-gutter)));
+	}
 
-  .row-fluid .span4 {
-    width: 33.33%;
-  }
+	.row-fluid .span5 {
+		width: calc((5.856% * 5) + (4 * var(--default-drag-n-drop-gutter)));
+	}
 
-  .row-fluid .span3 {
-    width: 25%;
-  }
+	.row-fluid .span4 {
+		width: calc((5.856% * 4) + (3 * var(--default-drag-n-drop-gutter)));
+	}
 
-  .row-fluid .span2 {
-    width: 16.66%;
-  }
+	.row-fluid .span3 {
+		width: calc((5.856% * 3) + (2 * var(--default-drag-n-drop-gutter)));
+	}
 
-  .row-fluid .span1 {
-    width: 8.33%;
-  }
+	.row-fluid .span2 {
+		width: calc((5.856% * 2) + (1 * var(--default-drag-n-drop-gutter)));
+	}
+
+	.row-fluid .span1 {
+		width: calc((5.856% * 1) + (0 * var(--default-drag-n-drop-gutter)));
+	}
 }
 
 /* CSS GRID LAYOUT */
 
 .grid {
-  display: grid;
+	display: grid;
 }
 
 .grid-autofill {
-  width: calc(100% - var(--section-horizontal-padding) * 2);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-flow: row dense;
+	width: calc(100% - var(--section-horizontal-padding) * 2);
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-auto-flow: row dense;
 }
 
 .grid-centered {
-  justify-content: center;
-  align-content: center;
-  align-items: center;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
 }

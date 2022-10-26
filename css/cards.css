@@ -5,12 +5,12 @@
 
 /* General Card Styles */
 .card {
-  gap: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border-radius: var(--radius-1);
-  background-color: var(--placeholder);
+	gap: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	border-radius: var(--radius-1);
+	background-color: var(--placeholder);
 }
 
 /* 
@@ -18,16 +18,26 @@ Card Image -- To Avoid Images behaving weirdly,
 we will wrap them in a div and use object-fit on the img themselves
  */
 .card__image-wrapper {
-  width: 100%;
-  border-radius: var(--radius-1);
+	width: 100%;
+	border-radius: var(--radius-1);
+	position: relative;
+}
+
+.card-image__gradient-overlay {
+	background: conic-gradient(from 180deg at 50% 50%, rgba(255, 121, 0, 0) -153.75deg, #ff7900 133.12deg, rgba(255, 121, 0, 0) 206.25deg, #ff7900 493.12deg);
+	height: 200px;
+	z-index: 10;
+	position: absolute;
+	border-radius: 8px 8px 0 0;
+	width: 100%;
 }
 
 .card__image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 8px 8px 0 0;
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 8px 8px 0 0;
 }
 
 /* 
@@ -35,12 +45,12 @@ To control more effectively the styles of the cards' content,
 we will wrap everything in a card__body container.
 */
 .card__body {
-  padding: var(--default-drag-n-drop-gutter);
-  padding-top: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
+	padding: var(--default-drag-n-drop-gutter);
+	padding-top: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
 }
 .card__title {
 }
@@ -57,28 +67,102 @@ This is a preliminary list of variant, Edu didn't decide on design
 
 /* 5 different colors */
 
-.card[data-variant="ligth"] {
+.card[data-variant='ligth'] {
 }
 
-.card[data-variant="primary"] {
+.card[data-variant='primary'] {
 }
 
-.card[data-variant="secondary"] {
+.card[data-variant='secondary'] {
 }
 
-.card[data-variant="outline"] {
+.card[data-variant='outline'] {
 }
 
-.card[data-variant="dark"] {
+.card[data-variant='dark'] {
 }
 
 /* 3 different sizes */
 
-:is([class="card"][data-size="small"]) {
+:is([class='card'][data-size='small']) {
 }
 
-:is([class="card"][data-size="medium"]) {
+:is([class='card'][data-size='medium']) {
 }
 
-:is([class="card"][data-size="large"]) {
+:is([class='card'][data-size='large']) {
 }
+
+/* Styles for interactive cards */
+
+.interactive-card {
+	position: relative;
+	border-radius: 8px;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.interactive-card[data-effect='clickUp'] {
+	justify-content: flex-end;
+}
+
+.interactive-card[data-effect='clickUp'] .card-overlay {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-end;
+	height: 70%;
+	max-height: 0px;
+	padding: 0 var(--size-2);
+	gap: var(--size-1);
+	background: var(--bg-secondary-tint-1);
+	transition: 1s ease;
+	overflow: hidden;
+	border-radius: 0px 0px 8px 8px;
+}
+
+/* .interactive-card[data-effect='clickUp'].card-overlay {
+	opacity: 0;
+	transition: opacity 0.2s ease;
+} */
+
+.interactive-card[data-effect='clickUp'] .clickUp-toggle {
+	position: absolute;
+	top: 23%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+.interactive-card[data-effect='clickUp'][data-state='opened'] .card-overlay {
+	max-height: 70%;
+	transition: 1s ease;
+	padding: var(--size-2);
+}
+
+.interactive-card[data-effect='clickUp'] .clickUp-toggle {
+	position: absolute;
+	top: 80%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	transition: top 1s ease;
+}
+
+.interactive-card[data-effect='clickUp'][data-state='opened'] .clickUp-toggle {
+	position: absolute;
+	top: 23%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	transition: top 1s ease;
+}
+
+/* Styles for slider cards */
+
+.slider-cards {
+}
+
+/* Cards Dimentions */
