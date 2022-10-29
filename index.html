@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Calcular base e expoente</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="principal">
+      <div id="divBase" class="campo">
+        <h3>Base</h3>
+        <input type="text" name="base" id="base" />
+      </div>
+
+      <div id="divExpoente" class="campo">
+        <h3>Expoente</h3>
+        <input type="text" name="expoente" id="expoente" />
+      </div>
+
+      <button id="calcular">Calcular</button>
+
+      <div id="divResultado" class="campo"></div>
+    </div>
   </body>
 </html>
