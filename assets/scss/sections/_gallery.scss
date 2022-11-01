@@ -1,0 +1,63 @@
+/*--------------------------------------------------------------
+# Pricing Section
+--------------------------------------------------------------*/
+.gallery {
+  margin-top: 40px;
+  
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    img {
+      transition: 0.3s;
+    }
+  }
+
+  .gallery-links {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: all ease-in-out 0.3s;
+    background: rgba(#000, .6);
+    z-index: 3;
+
+    .preview-link, .details-link {
+      font-size: 20px;
+      color: rgba(#fff, .5);
+      transition: 0.3s;
+      line-height: 1.2;
+      margin: 30px 8px 0 8px;
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    .details-link {
+      font-size: 30px;
+      line-height: 0;
+    }
+    
+  }
+
+  .gallery-item:hover {
+    .gallery-links {
+      opacity: 1;
+    }
+    
+    .preview-link, .details-link {
+      margin-top: 0;
+    }
+
+    img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.glightbox-clean .gslide-description {
+ background: lighten($secondary, 5);
+}
+.glightbox-clean .gslide-title {
+  color: rgba(#fff, .8);
+  margin: 0;
+}

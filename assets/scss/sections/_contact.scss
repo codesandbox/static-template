@@ -1,0 +1,135 @@
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact {
+
+  .info-item {
+
+    & + .info-item {
+      margin-top: 40px;
+    }
+
+    i {
+      font-size: 20px;
+      color: var(--color-primary);
+      float: left;
+      width: 44px;
+      height: 44px;
+      background: lighten($secondary, 5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50px;
+      transition: all 0.3s ease-in-out;
+      margin-right: 15px;
+    }
+
+    h4 {
+      padding: 0;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: rgba(#fff, .5);
+    }
+
+    p {
+      padding: 0;
+      margin-bottom: 0;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    &:hover {
+      i {
+        background: var(--color-primary);
+        color: #fff;
+      }
+    }
+  }
+
+
+  .php-email-form {
+    width: 100%;
+
+    .form-group {
+      padding-bottom: 8px;
+    }
+    
+    .error-message {
+      display: none;
+      color: #fff;
+      background: #df1529;
+      text-align: left;
+      padding: 15px;
+      font-weight: 600;
+      & br + br {
+        margin-top: 25px;
+      }
+    }
+    
+    .sent-message {
+      display: none;
+      color: #fff;
+      background: var(--color-primary);
+      text-align: center;
+      padding: 15px;
+      font-weight: 600;
+    }
+  
+    .loading {
+      display: none;
+      background:var(--color-secondary);
+      text-align: center;
+      padding: 15px;
+      color: rgba(#fff, .6);
+  
+      &:before {
+        content: "";
+        display: inline-block;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        margin: 0 10px -6px 0;
+        border: 3px solid var(--color-primary);
+        border-top-color: var(--color-secondary);
+        animation: animate-loading 1s linear infinite;
+      }
+  
+    }
+
+    input, textarea {
+      border-radius: 4px;
+      box-shadow: none;
+      font-size: 14px;
+      background-color: var(--color-secondary);
+      border: 1px solid lighten($secondary, 10);
+      color: #fff;
+    }
+
+    input {
+      height: 44px;
+    }
+
+    textarea {
+      padding: 10px 12px;
+    }
+
+    button[type="submit"] {
+      background: var(--color-primary);
+      border: 0;
+      padding: 10px 35px;
+      color: #fff;
+      transition: 0.4s;
+      border-radius: 4px;
+      &:hover {
+        background: rgba($primary, .8);
+      }
+    }
+  
+  }
+
+  @keyframes animate-loading {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}

@@ -1,0 +1,262 @@
+/*--------------------------------------------------------------
+# Set main reusable colors and fonts using CSS variables
+# Learn more about CSS variables at https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+--------------------------------------------------------------*/
+/* Fonts */
+:root {
+  --font-default: #{$font-default};
+  --font-primary: #{$font-primary};
+  --font-secondary: #{$font-secondary};
+}
+
+/* Colors */
+:root {
+  --color-default: #{$default};
+  --color-primary: #{$primary};
+  --color-secondary: #{$secondary};
+}
+
+/* Smooth scroll behavior */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: var(--font-default);
+  color: var(--color-default);
+  background-color: #000;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: lighten($primary, 10);
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+}
+
+/*--------------------------------------------------------------
+# Sections & Section Header
+--------------------------------------------------------------*/
+.section-header {
+  padding-bottom: 40px;
+  h2 {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0;
+    line-height: 1px;
+    margin: 0 0 5px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(#fff, .6);
+    font-family: var(--font-primary);
+  }
+
+  h2::after {
+    content: "";
+    width: 120px;
+    height: 1px;
+    display: inline-block;
+    background: lighten($primary, 20);
+    margin: 4px 10px;
+  }
+  
+  p {
+    margin: 0;
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: var(--font-secondary);
+    color: #fff;
+  }
+}
+
+/*--------------------------------------------------------------
+# Page Header
+--------------------------------------------------------------*/
+.page-header {
+  padding: 120px 0 60px 0;
+  min-height: 30vh;
+  position: relative;
+
+  h2 {
+    font-size: 56px;
+    font-weight: 500;
+    color: #fff;
+    font-family: var(--font-secondary);
+
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+
+  p {
+    color: rgba(#fff, .8);
+  }
+
+  .cta-btn {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 14px;
+    display: inline-block;
+    padding: 12px 40px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    color: #fff;
+    background: var(--color-primary);
+    &:hover {
+      background: lighten($primary, 5);
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# Scroll top button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right:15px;
+  bottom: -15px;
+  z-index: 99999;
+  background: var(--color-primary);
+  width: 44px;
+  height: 44px;
+  border-radius: 50px;
+  transition: all 0.4s;
+
+  i {
+    font-size: 24px;
+    color: #fff;
+    line-height: 0;
+  }
+
+  &:hover  {
+    background: rgba($primary, .8);
+    color: #fff;
+  }
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    bottom: 15px;
+  }
+
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 99999;
+
+  &:before, &:after {
+    content: '';
+    background-color: var(--color-secondary);
+    position:absolute;
+    inset: 0;
+    width: 50%;
+    height: 100%;
+    transition: all .3s ease 0s;
+    z-index: -1;
+  }
+
+  &:after {
+    left: auto;
+    right: 0
+  }
+
+  .line {
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    width: 1px;
+    height: 280px;
+    transition: all .8s ease 0s;
+
+    &:before {
+      content: "";
+      position: absolute;
+      background-color:#fff;
+      left: 0;
+      top: 50%;
+      width: 1px;
+      height: 0%;
+      transform:translateY(-50%);
+      animation:lineincrease 1000ms ease-in-out 0s forwards;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      background-color:#999;
+      left: 0;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      transform: translateY(-100%);
+      animation: linemove 1200ms linear 0s infinite;
+      animation-delay: 2000ms
+    }
+  }
+
+  &.loaded {
+    .line {
+      opacity: 0;
+      height: 100% !important;
+
+       &:after {
+        opacity: 0;
+      } 
+    }
+  
+    &:before, &:after {
+      animation: preloaderfinish 300ms ease-in-out 500ms forwards;
+    }
+  }
+  
+}
+
+@keyframes lineincrease {
+  0%{
+    height:0%
+  }
+  100%{
+    height:100%
+  }
+}
+
+@keyframes linemove {
+ 0%{
+    transform: translateY(200%)
+  }
+  100%{
+    transform: translateY(-100%)
+  }
+}
+
+@keyframes preloaderfinish {
+  0% {
+    width:5 0%
+  } 
+  100% {
+    width: 0%
+  }
+}

@@ -1,0 +1,62 @@
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.header {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 30px 0;
+  background-color: #000;
+
+  .logo {
+    transition: 0.3s;
+    img {
+      max-height: 40px;
+      margin-right: 8px;
+    }
+    
+    h1 {
+      font-size: 32px;
+      margin: 0;
+      font-weight: 400;
+      color: #fff;
+      font-family: var(--font-secondary);
+    }
+
+    i {
+      font-size: 32px;
+      margin-right: 8px;
+      line-height: 0;
+    }
+
+    @media (max-width: 575px) {
+      h1 {
+        font-size: 26px;
+      }
+      i {
+        font-size: 24px;
+      }
+    }
+
+  }
+
+  .header-social-links {
+    padding-right: 15px;
+    a {
+      color: rgba(#fff, .5);
+      padding-left: 15px;
+      display: inline-block;
+      line-height: 0px;
+      transition: 0.3s;
+      font-size: 16px;
+      &:hover {
+        color: #fff;
+      }
+
+      @media (max-width: 575px) {
+        padding-left: 5px;
+      }
+    }
+  
+  }
+  
+}
