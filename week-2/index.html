@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>My Test Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main class="container mt-3">
+      <h1>
+        My test page
+      </h1>
+      <h2>First level 2 heading</h2>
+      <p>Here is some paragraph text.</p>
+      <h2>Second level 2 heading</h2>
+      <ul>
+        <li>first list item</li>
+        <li>second list item</li>
+        <li>third list item</li>
+      </ul>
+      <h3>A level 3 heading</h3>
+      <p>
+        Here is a link that takes you to
+        <a href="https://vt.edu">Virginia Tech</a>.
+      </p>
+      <div class="mb-3">
+        <label for="firstName">First Name: </label>
+        <input type="text" id="firstName" />
+      </div>
+      <div class="mb-3">
+        <button onclick="alert('something')">do something!</button>
+      </div>
+      <div style="display: none;">
+        <p>
+          This never makes its way into the accessibility tree because its
+          parent element is styled to have <code>display: none</code>.
+        </p>
+        <div class="mb-3">
+          <label for="lastName"
+            >Last name: <input type="text" id="lastName"
+          /></label>
+        </div>
+        <div class="mb-3">
+          <button onclick="alert('something else')">Do something else</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

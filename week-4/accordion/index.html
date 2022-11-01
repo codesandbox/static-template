@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-us" class="no-js">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="utf-8" />
+    <title>
+      Accordion Demo 1
+    </title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      body,
+      html {
+        font-family: arial;
+        font-size: 1em;
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        color: #003c71;
+      }
+      a:visited {
+        color: #861f41;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin-top: 0;
+      }
+      button:focus {
+        border-color: #003c71;
+      }
+      [data-accordion-panel] > p {
+        line-height: 1.4;
+        margin: 0 0 16px;
+      }
+      .content-area {
+        padding: 2em 1.25em;
+      }
+      .content-area + .content-area {
+        padding-top: 0;
+        margin-top: -1.5em;
+      }
+      .page {
+        max-width: 700px;
+        margin: auto;
+      }
+      .mb-3 {
+        margin-bottom: 3em;
+      }
+      .mt-4 {
+        margin-top: 4em;
+      }
+    </style>
+    <script>
+      // remove no-js and add 'js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace(
+        "no-js",
+        "js"
+      );
+    </script>
+    <link rel="stylesheet" href="assets/css/accordion.broken.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="content-area">
+        <h1 class="txt-up-3">
+          Accordion Demo 1
+        </h1>
+      </header>
+      <main class="content-area">
+        <div class="mb-3">
+          <div><button>button before</button></div>
+          <p>Here is some text before the accordion</p>
+        </div>
+
+        <div
+          data-default="2"
+          data-accordion
+          data-transition
+          data-constant
+          data-fixed-height
+        >
+          <h2 data-accordion-heading>
+            These level A and AA WCAG success criteria are the most relevant
+          </h2>
+          <div data-accordion-panel>
+            <p>
+              At least
+              <a href="https://www.w3.org/WAI/WCAG21/quickref/#non-text-content"
+                >1.1.1</a
+              >,
+              <a
+                href="https://www.w3.org/WAI/WCAG21/quickref/#info-and-relationships"
+                >1.3.1</a
+              >,
+              <a
+                href="https://www.w3.org/WAI/WCAG21/quickref/#meaningful-sequence"
+                >1.3.2</a
+              >,
+              <a href="https://www.w3.org/WAI/WCAG21/quickref/#contrast-minimum"
+                >1.4.3</a
+              >,
+              <a href="https://www.w3.org/WAI/WCAG21/quickref/#resize-text"
+                >1.4.4</a
+              >,
+              <a href="https://www.w3.org/WAI/WCAG21/quickref/#reflow">1.4.10</a
+              >,
+              <a
+                href="https://www.w3.org/WAI/WCAG21/quickref/#non-text-contrast"
+                >1.4.11</a
+              >,
+              <a href="https://www.w3.org/WAI/WCAG21/quickref/#text-spacing"
+                >1.4.12</a
+              >,
+              <a
+                href="https://www.w3.org/WAI/WCAG21/quickref/#content-on-hover-or-focus"
+                >1.4.13</a
+              >,
+              <a href="https://www.w3.org/WAI/WCAG21/quickref/#keyboard"
+                >2.1.1</a
+              >,
+              <a href="https://www.w3.org/WAI/WCAG21/quickref/#no-keyboard-trap"
+                >2.1.2</a
+              >,
+              <a
+                href="https://www.w3.org/WAI/WCAG21/quickref/#character-key-shortcuts"
+                >2.1.4</a
+              >,
+              <a href="https://www.w3.org/WAI/WCAG21/quickref/#focus-order"
+                >2.4.3</a
+              >,
+              <a href="https://www.w3.org/WAI/WCAG21/quickref/#focus-visible"
+                >2.4.7</a
+              >,
+              <a href="https://www.w3.org/WAI/WCAG21/quickref/#label-in-name"
+                >2.5.3</a
+              >,
+              <a href="https://www.w3.org/WAI/WCAG21/quickref/#target-size"
+                >2.5.5</a
+              >,
+              <a href="https://www.w3.org/WAI/WCAG21/quickref/#on-focus"
+                >3.2.1</a
+              >,
+              <a href="https://www.w3.org/WAI/WCAG21/quickref/#parsing">4.1.1</a
+              >,
+              <a href="https://www.w3.org/WAI/WCAG21/quickref/#name-role-value"
+                >4.1.2</a
+              >.
+            </p>
+          </div>
+          <h2
+            data-accordion-heading
+            data-aria-label="Web Content Accessibility Guidelines"
+          >
+            WCAG
+          </h2>
+          <div data-accordion-panel>
+            <p>
+              Web Content Accessibility Guidelines, or WCAG, is considered to be
+              the benchmark for website accessibility.
+            </p>
+          </div>
+          <h2 data-accordion-heading>
+            Definition of an accordion
+          </h2>
+          <div data-accordion-panel>
+            <p>
+              An accordion is a vertically stacked set of interactive headings
+              that each contain a title, content snippet, or thumbnail
+              representing a section of content.
+            </p>
+          </div>
+        </div>
+        <div class="mt-4">
+          <p>Here is some text after the accordion</p>
+          <div><button>button after</button></div>
+        </div>
+      </main>
+      <!-- /.content-area -->
+    </div>
+    <!-- /.page -->
+
+    <!-- unminified version: aria.accordion.js -->
+    <script src="assets/js/accordion.broken.js"></script>
+  </body>
+</html>
