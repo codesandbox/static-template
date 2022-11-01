@@ -1,0 +1,24 @@
+<div class="lottie" style="margin-top: -20px;">
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+	<script defer="">
+		document.addEventListener('DOMContentLoaded', function () {
+			let elements = document.getElementsByTagName('lottie-player');
+
+			for (var i = 0; i < elements.length; i++) {
+				elements[i].addEventListener('play', (event) => {
+					// console.log(event.target.shadowRoot.querySelector('svg').style.transform);
+					event.target.shadowRoot.querySelector('svg').style.transform = '';
+				});
+				elements[i].play(); // trigger (again)
+			}
+		});
+	</script>
+	<lottie-player
+		src="https://www.getaccept.com/hubfs/Animated%20Lotties/home-hero_animation_lottie.json"
+		background="transparent"
+		speed="1"
+		style="width: 100%; height: 100%;"
+		loop=""
+		autoplay=""
+	></lottie-player>
+</div>

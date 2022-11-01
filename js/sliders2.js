@@ -1,3 +1,4 @@
+// Custom extensions
 const scaleDownInactive = function (Splide, Components, options) {
 	const Component = {
 		mount() {
@@ -76,60 +77,6 @@ const scaleUpOnHover = function (Splide, Components, options) {
 	};
 	return Component;
 };
-
-const fullWidthSlider = new Splide('.slider__full-width', {
-	type: 'loop',
-	width: '100%',
-	perMove: 3,
-	height: '650px',
-	fixedHeight: '600px',
-	rewind: true,
-	rewindByDrag: true,
-	perPage: 3,
-	drag: true,
-	gap: '30px',
-	arrows: false,
-	pagination: true,
-	accesibility: true,
-	flickPower: 1500,
-	focus: 'center',
-	classes: {
-		pagination: 'splide__pagination slider-dots',
-		page: 'splide__pagination__page slider-dot',
-		arrows: 'splide__arrows slider__arrows',
-		arrow: 'splide__arrow slider__arrow',
-		prev: 'splide__arrow--prev slider__arrow--prev',
-		next: 'splide__arrow--next slider__arrow--next'
-	},
-	breakpoints: {
-		992: {
-			// fixedWidth: '350px',
-			perPage: '2',
-			perMove: '2',
-			gap: 'clamp(16px, calc(1rem + ((1vw - 5.6px) * 3.2407)), 30px)'
-		},
-		560: {
-			// fixedWidth: '350px',
-			perPage: 1,
-			perMove: 1,
-			fixedWidth: '90%',
-			fixedHeight: '400px',
-			gap: '20px'
-		}
-	}
-}).mount({ scaleDownInactive: scaleDownInactive, scaleUpOnHover: scaleUpOnHover });
-
-const testimonialSlider = new Splide('.slider__testimonial', {
-	type: 'loop',
-	width: '100%',
-	perPage: 1,
-	perMove: 1,
-	gap: '30px',
-	drag: true,
-	arrows: true,
-	pagination: false
-}).mount();
-
 const AsNavFor = function (Splide, Components, options) {
 	const sliderPerPage = Splide.options.perPage;
 	const Component = {
@@ -178,130 +125,270 @@ const AsNavFor = function (Splide, Components, options) {
 
 	return Component;
 };
-
-const sliderAndTab = new Splide('.slider__asNavForTabs', {
-	type: 'slide',
-	width: '100%',
-	startAt: 0,
-	perPage: 2,
-	perMove: 2,
-	height: '650px',
-	rewind: true,
-	rewindByDrag: true,
-	drag: true,
-	gap: '30px',
-	arrows: false,
-	pagination: true,
-	flickPower: 1000,
-	classes: {
-		pagination: 'splide__pagination slider-dots',
-		page: 'splide__pagination__page slider-dot',
-		arrows: 'splide__arrows slider__arrows',
-		arrow: 'splide__arrow slider__arrow',
-		prev: 'splide__arrow--prev slider__arrow--prev',
-		next: 'splide__arrow--next slider__arrow--next'
-	},
-	breakpoints: {
-		992: {
-			gap: 'clamp(16px, calc(1rem + ((1vw - 5.6px) * 3.2407)), 30px)'
+const FiveStepsSliderBehavior = function (Splide, Components, options) {
+	const Component = {
+		mount() {
+			this.fiveStepsSliderBehavior();
 		},
-		560: {
-			perPage: 1,
-			perMove: 1,
-			fixedWidth: '80%',
-			height: '400px'
+		fiveStepsSliderBehavior() {
+			console.log('extension running');
+			Splide.on('moved', (newIndex) => {
+				console.log(Splide);
+				// console.log(Splide.Components.Slides.getAt(newIndex));
+				const activeSlide = Splide.Components.Slides.getAt(newIndex);
+				const activeCard = activeSlide.slide.firstElementChild;
+				activeCard.setAttribute('data-state', 'opened');
+				// Closing the other slides
+				const otherSlides = [...Splide.Components.Elements.slides].filter((slide) => {
+					return slide !== activeSlide.slide;
+				});
+				console.log(otherSlides);
+				otherSlides.forEach((slide) => {
+					slide.firstElementChild.setAttribute('data-state', 'closed');
+				});
+			});
+			const cardToggles = [...Splide.Components.Elements.list.children].map((slide) => {
+				return slide.querySelector('.clickUp-toggle');
+			});
+			const slideNumberWithoutClones = Splide.Components.Elements.slides.length;
+			// console.log(slideNumberWithoutClones)
+			// const index = [...Array(slideNumberWithoutClones).keys()]
+			cardToggles.forEach((cardToggle, index) => {
+				console.log(cardToggle);
+				cardToggle.addEventListener('click', () => {
+					Splide.go(index);
+				});
+			});
+			const sliderArrows = [...Splide.Components.Elements.list.children].map((slide) => {
+				return slide.querySelector('.slider-arrows');
+			});
+			sliderArrows.forEach((arrow) => {
+				arrow.addEventListener('click', () => {
+					Splide.go('>');
+				});
+			});
 		}
-	}
-}).mount({ AsNavFor: AsNavFor, scaleDownInactive: scaleDownInactive, scaleUpOnHover: scaleUpOnHover });
+	};
+	return Component;
+};
 
-// console.log(fullWidthSlider);
-
-// console.log(sliderAndTab);
-
-const sliderVertical = new Splide('.slider__vertical', {
-	type: 'loop',
-	direction: 'ttb',
-	paginationDirection: 'ttb',
-	heightRatio: 1,
-	perPage: 1,
-	perMove: 1,
-	width: '100%',
-	gap: '30px',
-	drag: true,
-	arrows: false,
-	pagination: true,
-	classes: {
-		pagination: 'splide__pagination slider-dots--vertical mega-offset__left',
-		page: 'splide__pagination__page slider-dot',
-		arrows: 'splide__arrows slider__arrows',
-		arrow: 'splide__arrow slider__arrow',
-		prev: 'splide__arrow--prev slider__arrow--prev',
-		next: 'splide__arrow--next slider__arrow--next'
-	},
-	breakpoints: {
-		560: {
-			gap: '30px',
-			paginationDirection: 'ltr',
-			direction: 'ltr'
-		}
-	}
-}).mount({ AsNavFor: AsNavFor });
-
-const sliderTestimonialCentered = new Splide('.slider__testimonial-center', {
-	type: 'loop',
-	width: '100%',
-	perPage: 1,
-	perMove: 1,
-	gap: '30px',
-	drag: true,
-	arrows: true,
-	pagination: false
-}).mount();
-
-const sliderTestimonialLong = new Splide('.slider__testimonial-long', {
-	type: 'loop',
-	width: '100%',
-	perPage: 1,
-	perMove: 1,
-	gap: '30px',
-	drag: true,
-	arrows: true,
-	pagination: false
-}).mount();
-
-const sliderTestimonialLong2 = new Splide('#slider7', {
-	type: 'loop',
-	width: '100%',
-	perPage: 1,
-	perMove: 1,
-	gap: '30px',
-	drag: true,
-	arrows: true,
-	pagination: false
-}).mount();
-
-const sliderThreeCards = new Splide('#slider8', {
-	type: 'loop',
-	width: '100%',
-	perPage: 3,
-	perMove: 3,
-	gap: '30px',
-	drag: true,
-	arrows: true,
-	pagination: false,
-	breakpoints: {
-		992: {
-			// fixedWidth: '350px',
-			perPage: '2',
-			perMove: '2',
-			gap: 'clamp(16px, calc(1rem + ((1vw - 5.6px) * 3.2407)), 30px)'
+// Slider instances
+if (document.querySelector('.slider__full-width')) {
+	const fullWidthSlider = new Splide('.slider__full-width', {
+		type: 'loop',
+		width: '100%',
+		perMove: 3,
+		height: '650px',
+		fixedHeight: '600px',
+		rewind: true,
+		rewindByDrag: true,
+		perPage: 3,
+		drag: true,
+		gap: '30px',
+		arrows: false,
+		pagination: true,
+		accesibility: true,
+		flickPower: 1500,
+		focus: 'center',
+		classes: {
+			pagination: 'splide__pagination slider-dots',
+			page: 'splide__pagination__page slider-dot',
+			arrows: 'splide__arrows slider__arrows',
+			arrow: 'splide__arrow slider__arrow',
+			prev: 'splide__arrow--prev slider__arrow--prev',
+			next: 'splide__arrow--next slider__arrow--next'
 		},
-		560: {
-			// fixedWidth: '350px',
-			perPage: 1,
-			perMove: 1,
-			fixedWidth: '90%',
-			gap: '20px'
+		breakpoints: {
+			992: {
+				// fixedWidth: '350px',
+				perPage: '2',
+				perMove: '2',
+				gap: 'clamp(16px, calc(1rem + ((1vw - 5.6px) * 3.2407)), 30px)'
+			},
+			560: {
+				// fixedWidth: '350px',
+				perPage: 1,
+				perMove: 1,
+				fixedWidth: '90%',
+				fixedHeight: '400px',
+				gap: '20px'
+			}
 		}
-	}
-}).mount();
+	}).mount({ scaleDownInactive: scaleDownInactive, scaleUpOnHover: scaleUpOnHover });
+}
+if (document.querySelector('.slider__testimonial')) {
+	const testimonialSlider = new Splide('.slider__testimonial', {
+		type: 'loop',
+		width: '100%',
+		perPage: 1,
+		perMove: 1,
+		gap: '30px',
+		drag: true,
+		arrows: true,
+		pagination: false
+	}).mount();
+}
+if (document.querySelector('.slider__asNavForTabs')) {
+	const sliderAndTab = new Splide('.slider__asNavForTabs', {
+		type: 'slide',
+		width: '100%',
+		startAt: 0,
+		perPage: 2,
+		perMove: 2,
+		height: '650px',
+		rewind: true,
+		rewindByDrag: true,
+		drag: true,
+		gap: '30px',
+		arrows: false,
+		pagination: true,
+		flickPower: 1000,
+		classes: {
+			pagination: 'splide__pagination slider-dots',
+			page: 'splide__pagination__page slider-dot',
+			arrows: 'splide__arrows slider__arrows',
+			arrow: 'splide__arrow slider__arrow',
+			prev: 'splide__arrow--prev slider__arrow--prev',
+			next: 'splide__arrow--next slider__arrow--next'
+		},
+		breakpoints: {
+			992: {
+				gap: 'clamp(16px, calc(1rem + ((1vw - 5.6px) * 3.2407)), 30px)'
+			},
+			560: {
+				perPage: 1,
+				perMove: 1,
+				fixedWidth: '80%',
+				height: '400px'
+			}
+		}
+	}).mount({ AsNavFor: AsNavFor, scaleDownInactive: scaleDownInactive, scaleUpOnHover: scaleUpOnHover });
+}
+if (document.querySelector('.slider__vertical')) {
+	const sliderVertical = new Splide('.slider__vertical', {
+		type: 'loop',
+		direction: 'ttb',
+		paginationDirection: 'ttb',
+		heightRatio: 1,
+		perPage: 1,
+		perMove: 1,
+		width: '100%',
+		gap: '30px',
+		drag: true,
+		arrows: false,
+		pagination: true,
+		classes: {
+			pagination: 'splide__pagination slider-dots--vertical mega-offset__left',
+			page: 'splide__pagination__page slider-dot',
+			arrows: 'splide__arrows slider__arrows',
+			arrow: 'splide__arrow slider__arrow',
+			prev: 'splide__arrow--prev slider__arrow--prev',
+			next: 'splide__arrow--next slider__arrow--next'
+		},
+		breakpoints: {
+			560: {
+				gap: '30px',
+				paginationDirection: 'ltr',
+				direction: 'ltr'
+			}
+		}
+	}).mount({ AsNavFor: AsNavFor });
+}
+if (document.querySelector('.slider__testimonial-center')) {
+	const sliderTestimonialCentered = new Splide('.slider__testimonial-center', {
+		type: 'loop',
+		width: '100%',
+		perPage: 1,
+		perMove: 1,
+		gap: '30px',
+		drag: true,
+		arrows: true,
+		pagination: false
+	}).mount();
+}
+if (document.querySelector('.slider__testimonial-long')) {
+	const sliderTestimonialLong = new Splide('.slider__testimonial-long', {
+		type: 'loop',
+		width: '100%',
+		perPage: 1,
+		perMove: 1,
+		gap: '30px',
+		drag: true,
+		arrows: true,
+		pagination: false
+	}).mount();
+}
+if (document.querySelector('#slider7')) {
+	const sliderTestimonialLong2 = new Splide('#slider7', {
+		type: 'loop',
+		width: '100%',
+		perPage: 1,
+		perMove: 1,
+		gap: '30px',
+		drag: true,
+		arrows: true,
+		pagination: false
+	}).mount();
+}
+if (document.querySelector('#slider8')) {
+	const sliderThreeCards = new Splide('#slider8', {
+		type: 'loop',
+		width: '100%',
+		perPage: 3,
+		perMove: 3,
+		gap: '30px',
+		drag: true,
+		arrows: true,
+		pagination: false,
+		breakpoints: {
+			992: {
+				// fixedWidth: '350px',
+				perPage: '2',
+				perMove: '2',
+				gap: 'clamp(16px, calc(1rem + ((1vw - 5.6px) * 3.2407)), 30px)'
+			},
+			560: {
+				// fixedWidth: '350px',
+				perPage: 1,
+				perMove: 1,
+				fixedWidth: '90%',
+				gap: '20px'
+			}
+		}
+	}).mount();
+}
+if (document.querySelector('.fiveStepsSlider')) {
+	const fiveStepsSlider = new Splide('.fiveStepsSlider', {
+		type: 'slide',
+		width: '100%',
+		startAt: 0,
+		perPage: 2,
+		perMove: 1,
+		rewind: true,
+		rewindByDrag: true,
+		flickMaxPages: 1,
+		drag: true,
+		gap: '30px',
+		arrows: false,
+		pagination: true,
+		classes: {
+			pagination: 'splide__pagination slider-dots',
+			page: 'splide__pagination__page slider-dot',
+			arrows: 'splide__arrows slider__arrows',
+			arrow: 'splide__arrow slider__arrow',
+			prev: 'splide__arrow--prev slider__arrow--prev',
+			next: 'splide__arrow--next slider__arrow--next'
+		},
+		breakpoints: {
+			992: {
+				gap: 'clamp(16px, calc(1rem + ((1vw - 5.6px) * 3.2407)), 30px)'
+			},
+			560: {
+				perPage: 1,
+				perMove: 1,
+				fixedWidth: '80%',
+				height: '400px'
+			}
+		}
+	}).mount({ FiveStepsSliderBehavior: FiveStepsSliderBehavior });
+}

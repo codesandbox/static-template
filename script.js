@@ -18,4 +18,26 @@ const interactiveCardsClickUp = () => {
 	});
 };
 
+const forcedAutoHeight = () => {
+	const adjustHeight = (element) => {
+		console.log('adjusting');
+		const firstElementChild = element.firstElementChild;
+		console.log('child', firstElementChild);
+		const computedHeight = window.getComputedStyle(firstElementChild).height;
+		console.log(computedHeight);
+		console.log(element.style);
+		element.style.minHeight = `${computedHeight}`;
+	};
+	const elementsToAdjust = document.querySelectorAll('.js-calculate-height');
+	elementsToAdjust.forEach((element) => adjustHeight(element));
+	window.addEventListener('resize', () => {
+		console.log('resize');
+		elementsToAdjust.forEach((element) => {
+			adjustHeight(element);
+		});
+	});
+};
+
+forcedAutoHeight();
+
 interactiveCardsClickUp();

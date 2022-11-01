@@ -123,6 +123,20 @@ This is a preliminary list of variant, Edu didn't decide on design
 	border-radius: 0px 0px 8px 8px;
 }
 
+.interactive-card[data-effect='clickUp'] .card-overlay > * {
+	opacity: 0;
+	transition: 0.7s ease;
+}
+
+.interactive-card[data-effect='clickUp'][data-state='opened'] .card-overlay > * {
+	opacity: 1;
+	transition: 1.3s ease;
+}
+
+.interactive-card[data-effect='clickUp'][data-variant='full-height'] .card-overlay {
+	height: 100%;
+}
+
 /* .interactive-card[data-effect='clickUp'].card-overlay {
 	opacity: 0;
 	transition: opacity 0.2s ease;
@@ -142,6 +156,12 @@ This is a preliminary list of variant, Edu didn't decide on design
 	padding: var(--size-2);
 }
 
+.interactive-card[data-effect='clickUp'][data-state='opened'][data-variant='full-height'] .card-overlay {
+	max-height: 100%;
+	transition: 1s ease;
+	padding: var(--size-2);
+}
+
 .interactive-card[data-effect='clickUp'] .clickUp-toggle {
 	position: absolute;
 	top: 80%;
@@ -149,11 +169,21 @@ This is a preliminary list of variant, Edu didn't decide on design
 	right: 0;
 	margin: 0 auto;
 	transition: top 1s ease;
+	z-index: 2;
 }
 
 .interactive-card[data-effect='clickUp'][data-state='opened'] .clickUp-toggle {
 	position: absolute;
 	top: 23%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	transition: top 1s ease;
+}
+
+.interactive-card[data-effect='clickUp'][data-state='opened'][data-variant='full-height'] .clickUp-toggle {
+	position: absolute;
+	top: -4%;
 	left: 0;
 	right: 0;
 	margin: 0 auto;

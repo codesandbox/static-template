@@ -1,212 +1,1137 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Home</title>
-		<link rel="stylesheet" href="styles.css" />
-		<script defer type="module" src="script.js"></script>
-		<script defer src="https://kit.fontawesome.com/ae7bbcad81.js" crossorigin="anonymous"></script>
-	</head>
-	<body>
-		<section class="section flex-col-center">
-			<div class="section-container flex-col-center flow-lg">
-				<div class="row-fluid features__headline flex-col-start">
-					<div class="span6 flex-col-start gap-m">
-						<h2 class="h2-fluid">Main Features</h2>
-						<p class="paragraph-large">Miami-based VC scout. Roam Research girlfriend Medium blogger. Branding thought-leader angel investor.</p>
-					</div>
-				</div>
-				<div class="features-tab-container row-fluid flex-row-start">
-					<div class="tabs span4 flex-col-start gap-m">
-						<button class="feature-tab__opener js-tab-opener-active display-h4" data-opens="1">E-Signature</button>
-						<button class="feature-tab__opener display-h4" data-opens="2">Proposals</button>
-						<button class="feature-tab__opener display-h4" data-opens="3">CPQ</button>
-						<button class="feature-tab__opener display-h4" data-opens="4">Analytics</button>
-						<button class="feature-tab__opener display-h4" data-opens="5">Mutual Action Plan</button>
-						<button class="feature-tab__opener display-h4" data-opens="6">Sales CM</button>
-						<a href="#" class="button-medium" data-variant="link" data-color="dark" data-icon="left">
-							<div class="icon-button slider-arrows" data-shape="circle" data-size="medium" data-direction="left" data-color="grey">
-								<i class="fa-solid fa-arrow-right"></i>
-							</div>
-							More Features
-						</a>
-					</div>
-					<!-- Tab content 1 -->
-					<div class="features-tab__content js-tab-content-active flex-row-start justify-start gap-m span8" data-openedBy="1">
-						<div class="feature-tab__col flex-col-start justify-end gap-m">
-							<div id="feature1" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait" data-state="opened">
-								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
-									<i class="fa-solid fa-xmark"></i>
-								</button>
-								<div class="card-overlay">
-									<h4 class="label-big">Account executives</h4>
-									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused, overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Home</title>
+	<link rel="stylesheet" href="styles.css" />
+	<script defer type="module" src="script.js"></script>
+	<script defer type="module" src="./js/tabs.js"></script>
+	<script defer type="module" src="./js/beforeAfter.js"></script>
+	<script defer type="module" src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide-core.min.css">
+	<script defer type="module" src="./js/sliders2.js"></script>
+	<script defer src="https://kit.fontawesome.com/ae7bbcad81.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<!-- Header -->
+	<header class="header flex-col-center">
+		<div class="header__container row-fluid never-wrap">
+			<div class="header__brand flex-row-start">
+				<img src="./assets/Main.svg" alt="" class="logo" />
+				<img src="./assets/App.svg" alt="" class="logo__mobile-nav">
+			</div>
+			<nav class="header__nav" data-variant="light">
+				<div class="nav-item__container">
+					<div class="header-nav__item">
+						<button class="header-nav__link link js-mega-menu-openers" data-opens="product">
+							Product
+							<i class="fa-solid fa-chevron-down header-nav__link-arrow" data-opens="product"></i>
+						</button>
+						<div class="mega-menu row-fluid flex-col-center" data-mega-menu="product">
+							<div class="mega-menu__grid row-fluid flex-row-start">
+								<div class="mega-menu__column flex-col-start">
+									<p class="label-h5 mega-menu__link-list-heading">
+										Digital Sales Room
+									</p>
+									<div class="mega-menu__cta-image-wrapper flex-col-center justify-center">
+										<a href="#" class="button-small" data-variant="outline" data-icon="left" data-color="white">
+											<i class="fa-solid fa-arrow-right"></i>
+											Product Tour
+										</a>
+									</div>
+								</div>
+								<div class="mega-menu__column flex-col-start">
+									<div class="mega-menu__link-list-wrapper">
+										<p class="label-h5 mega-menu__link-list-heading">
+											Features
+										</p>
+										<ul class="mega-menu__link-list">
+											<li class="mega-menu__link-list-item">
+												<a href="#" class="mega-menu__link link">Electronic Signature</a>
+											</li>
+											<li class="mega-menu__link-list-item">
+												<a href="#" class="mega-menu__link link">Proposal & Contracts</a>
+											</li>
+											<li class="mega-menu__link-list-item">
+												<a href="#" class="mega-menu__link link">CPQ - Configure, Price, Quote</a>
+											</li>
+											<li class="mega-menu__link-list-item">
+												<a href="#" class="mega-menu__link link">Content Tracking & Analytics</a>
+											</li>
+											<li class="mega-menu__link-list-item">
+												<a href="#" class="mega-menu__link link">Sales Content Management</a>
+											</li>
+											<li class="mega-menu__link-list-item">
+												<a href="#" class="mega-menu__link link">Mutual Action Plans</a>
+											</li>
+											<li class="mega-menu__link-list-item">
+												<a href="#" class="mega-menu__link link button-small" data-variant="link" data-icon="left">
+													<i class="fa-solid fa-arrow-right"></i>
+													All Features
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="mega-menu__column flex-col-start">
+									<div class="mega-menu__link-list-wrapper">
+										<p class="label-h5 mega-menu__link-list-heading">
+											Integrations & API
+										</p>
+										<ul class="mega-menu__link-list">
+											<li class="mega-menu__link-list-item">
+												<a href="#" class="mega-menu__link link">Salesforce</a>
+											</li>
+											<li class="mega-menu__link-list-item">
+												<a href="#" class="mega-menu__link link">HubSpot</a>
+											</li>
+											<li class="mega-menu__link-list-item">
+												<a href="#" class="mega-menu__link link">Zapier</a>
+											</li>
+											<li class="mega-menu__link-list-item">
+												<a href="#" class="mega-menu__link link">Pipedrive</a>
+											</li>
+											<li class="mega-menu__link-list-item">
+												<a href="#" class="mega-menu__link link">Microsoft Dynamics</a>
+											</li>
+											<li class="mega-menu__link-list-item">
+												<a href="#" class="mega-menu__link link button-small" data-variant="link" data-icon="left">
+													<i class="fa-solid fa-arrow-right"></i>
+													Many more
+												</a>
+											</li>
+										</ul>
+									</div>
 								</div>
 							</div>
-							<div id="feature3" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait" data-state="opened">
+						</div>
+					</div>
+					<div class="header-nav__item">
+						<a href="#" class="header-nav__link link">Pricing</a>
+					</div>
+					<div class="header-nav__item">
+						<button class="header-nav__link link js-mega-menu-openers" data-opens="why-get-accept">
+							Why Getaccept?
+							<i class="fa-solid fa-chevron-down header-nav__link-arrow" data-opens="why-get-accept"></i>
+						</button>
+						<div class="mega-menu row-fluid flex-col-center" data-mega-menu="why-get-accept"">
+																	<div class=" mega-menu__grid row-fluid flex-row-start">
+							<div class="mega-menu__column flex-col-start">
+								<div class="mega-menu__link-list-wrapper">
+									<p class="label-h5 mega-menu__link-list-heading">
+										Use Cases
+									</p>
+									<ul class="mega-menu__link-list">
+										<li class="mega_memu__link-list-item">
+											<a href="#" class="mega-menu__link link">Account Executives</a>
+										</li>
+										<li class="mega_memu__link-list-item">
+											<a href="#" class="mega-menu__link link">Sales Operations</a>
+										</li>
+										<li class="mega_memu__link-list-item">
+											<a href="#" class="mega-menu__link link">Sales Leader</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="mega-menu__column flex-col-start">
+								<div class="mega-menu__link-list-wrapper">
+									<p class="label-h5 mega-menu__link-list-heading">
+										Industries
+									</p>
+									<ul class="mega-menu__link-list">
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">IT & Tech</a>
+										</li>
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">Profesional Services</a>
+										</li>
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">Wholesale & Retail</a>
+										</li>
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link button-small" data-variant="link" data-icon="left">
+												<i class="fa-solid fa-arrow-right"></i>
+												Discover More
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="mega-menu__column flex-col-start">
+								<div class="mega-menu__link-list-wrapper">
+									<p class="label-h5 mega-menu__link-list-heading">
+										Customer Stories
+									</p>
+									<ul class="mega-menu__link-list">
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">Jeeng</a>
+										</li>
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">Cheq</a>
+										</li>
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">Chargebee</a>
+										</li>
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link button-small" data-variant="link" data-icon="left">
+												<i class="fa-solid fa-arrow-right"></i>
+												Discover more
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="header-nav__item">
+					<button class="header-nav__link link js-mega-menu-openers" data-opens="ressources">
+						Ressources
+						<i class="fa-solid fa-chevron-down header-nav__link-arrow" data-opens="ressources"></i>
+					</button>
+					<div class="mega-menu row-fluid flex-col-center" data-mega-menu="ressources">
+						<div class="mega-menu__grid row-fluid flex-row-start">
+							<div class="mega-menu__column flex-col-start">
+								<div class="mega-menu__link-list-wrapper">
+									<p class="label-h5 mega-menu__link-list-heading">
+										Customer Comunity
+									</p>
+									<ul class="mega-menu__link-list">
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">Product Update</a>
+										</li>
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">Help Center</a>
+										</li>
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">Frequently Asked Question</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="mega-menu__column flex-col-start flow-xs">
+								<div class="mega-menu__link-list-wrapper">
+									<p class="label-h5 mega-menu__link-list-heading">
+										Learning Hubs
+									</p>
+									<ul class="mega-menu__link-list">
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">Digital Sales Room</a>
+										</li>
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">Remote selling</a>
+										</li>
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">Sales enablement</a>
+										</li>
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">Electronic signature</a>
+										</li>
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link button-small" data-variant="link" data-icon="left">
+												<i class="fa-solid fa-arrow-right"></i>
+												Visit portal
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="mega-menu__column flex-col-start">
+								<div class="mega-menu__link-list-wrapper">
+									<p class="label-h5 mega-menu__link-list-heading">
+										Content
+									</p>
+									<ul class="mega-menu__link-list">
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">The Getaccept blog</a>
+										</li>
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">Content library</a>
+										</li>
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">Proposal templates</a>
+										</li>
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">Events & webinars</a>
+										</li>
+										<li class="mega-menu__link-list-item">
+											<a href="#" class="mega-menu__link link">The Sales Ladder podcast</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="header-nav__item login">
+					<a class="button-medium login-button__mobile-nav" data-variant="link" data-color="dark" data-icon="right">
+						<i class="fa-solid fa-user"></i>
+						Login
+					</a>
+				</div>
+		</div>
+		<div class="header__cta-container" data-location="mobile-nav">
+			<a class="header__button button-medium" data-variant="outline" data-location="mobile-nav" href="#">Get Started For
+				Free</a>
+			<a href="#" class="header__button button-medium" data-variant="primary" data-location="mobile-nav">Book a Demo</a>
+		</div>
+		</nav>
+		<div class="header__cta-container flex-row-end">
+			<i class="fa-solid fa-globe language-picker"></i>
+			<a class="header__button button-small" data-variant="link" data-color="dark" href="#">Login</a>
+			<a href="#" class="header__button button-small" data-variant="primary">Book a Demo</a>
+		</div>
+		<div class="js-mobile-menu__toggle">
+			<i class="fa-solid fa-bars" data-variant="light"></i>
+		</div>
+		</div>
+	</header>
+	<!-- End of Header -->
+	<!-- Hero -->
+	<section class="section" data-color="">
+		<div class="section-container hero">
+			<div class="row-fluid">
+				<div class="hero__content span6 tablet-span6 flex-col-start flow-lg">
+					<h1 class="display-h1">The leading digital sales room</h1>
+					<p class="paragraph-large">Create a secure shared space for your business dialogues.
+						Share content, collaborate and negotiate with relevant stakeholders for a more engaging and personalized
+						digital selling experience.
+					</p>
+					<div class="hero__cta-container flex-row-start gap-s">
+						<a href="#" class="button-medium" data-variant="secondary">Free account</a>
+						<img src="./assets/G2 logo + stars + reviews.svg" alt="">
+					</div>
+				</div>
+				<div class="hero__image span6" style="overflow: visible;">
+					<div class="img__wrapper mega-margin-0__left" data-fit="contain" data-position="center" style="">
+						<img src="./assets/Group 63398.svg" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End of Hero -->
+	<!-- Before After Slider -->
+	<section class="section">
+      <div class="section-container flex-col-start">
+          <div class="row-fluid">
+              <div class="wrapper span6 tablet-span4">
+                  <div class="before-after gap-s flex-col-start">
+                      <div class='before-after__container'>
+                          <div class='img background-img'></div>
+                          <div class='img foreground-img'></div>
+                          <input type="range" min="1" max="100" value="50" class="before-after__slider" name='before-after__slider' id="before-after__slider">
+                          <div class='before-after__slider-button'></div>
+                        </div>
+                        <div class="pain-vs-gain flex-row-start gap-s align-center">
+                          <p class="paragraph-tiny">Gain</p>
+                            <div class="progress-bar__container">
+                                <div class="progress-bar"></div>
+                            </div>
+                            <p class="paragraph-tiny">Pain</p>
+                        </div>
+                  </div>
+              </div>
+                <div class="before-after__content span6 tablet-span4 p-left-xl flex-col-start flow-s">
+                    <h2 class="display-h2">Don't get stuck in your tech stack</h2>
+                    <p class="paragrahp-medium">
+                        PMF-focused, overfunded LIDAR startup. Ethereum ecosystem-based cloud hosting. College Dropout, overenthusiastic founder. Protocol writing, inflated B2B SaaS series B. Yield farming, Elon-led fearless Martian Pioneer. MVP finishing tech-bro.
+                    </p>
+                </div>
+      
+            </div>
+      </div>
+      
+    </section> 
+	<!-- 5 Steps Slider -->
+	<section class="section" data-background='primary'>
+		<div class="section-container flex-col-start flow-xl">
+			<div class="row-fluid flex-col-center">
+				<div class="span8 flex-col-center text-center gap-s">
+					<p class="label-medium">A unique buyer experience</p>
+					<h2 class="display-h2">The 5 steps.. A Digital Sales Room supports your entire sales cycle</h2>
+				</div>
+			</div>
+			<div class="row-fluid flex-row-start">
+				<div class="span4 flex-col-end justify-sa sales-steps__arrows">
+					<img src="./assets/foryou.svg" alt="" width="60%" data-ratio="square">
+					<img src="./assets/foryourcustomer.svg" alt="" width="60%" data-ratio="square">
+				</div>
+				<div class="span8">
+					<div class="splide fiveStepsSlider custom-slider" data-overflow="visible" data-clip="left">
+						<div class="splide__track">
+							<ul class="splide__list">
+								<li class="splide__slide">
+									<div id="step1" class="sales-steps interactive-card flex-col-center justify-start" data-ratio="story"
+										data-effect="clickUp" data-state="closed" data-variant="full-height">
+										<div class="sales-steps__content flex-col-start gap-m">
+												<div class="sales-steps__navigation flex-row-sb align-center">
+														<span class="display-h3">1</span>
+														<button class="icon-button slider-arrows" data-shape="circle" data-size="small"
+															data-direction="right" data-color="grey">
+															<i class="fa-solid fa-arrow-right"></i>
+														</button>
+													</div>
+												<h3 class="sales-steps__headline display-h3">Open an opportunity</h3>
+										</div>
+										<div class="sales-steps__overlay card-overlay flex-col-center">
+											<div class="point-of-view seller flow-xs">
+												<div class="seller-headline flex-row-start gap-xs align-center">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+														class="face">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M9 11.75C8.31 11.75 7.75 12.31 7.75 13C7.75 13.69 8.31 14.25 9 14.25C9.69 14.25 10.25 13.69 10.25 13C10.25 12.31 9.69 11.75 9 11.75ZM15 11.75C14.31 11.75 13.75 12.31 13.75 13C13.75 13.69 14.31 14.25 15 14.25C15.69 14.25 16.25 13.69 16.25 13C16.25 12.31 15.69 11.75 15 11.75ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 11.71 4.02 11.42 4.05 11.14C6.41 10.09 8.28 8.16 9.26 5.77C11.07 8.33 14.05 10 17.42 10C18.2 10 18.95 9.91 19.67 9.74C19.88 10.45 20 11.21 20 12C20 16.41 16.41 20 12 20Z" />
+													</svg>
+													<p class="label-medium">Seller</p>
+												</div>
+												<img src="./assets/seller visual.png" alt="" data-ratio="golden">
+												<p class="paragraph-small">Creates a personalised digital sales room and two three more words
+												</p>
+											</div>
+											<div class="point-of-view buyer flow-xs">
+												<div class="buyer-headline flex-row-start gap-xs align-center">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+														class="face">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M9 11.75C8.31 11.75 7.75 12.31 7.75 13C7.75 13.69 8.31 14.25 9 14.25C9.69 14.25 10.25 13.69 10.25 13C10.25 12.31 9.69 11.75 9 11.75ZM15 11.75C14.31 11.75 13.75 12.31 13.75 13C13.75 13.69 14.31 14.25 15 14.25C15.69 14.25 16.25 13.69 16.25 13C16.25 12.31 15.69 11.75 15 11.75ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 11.71 4.02 11.42 4.05 11.14C6.41 10.09 8.28 8.16 9.26 5.77C11.07 8.33 14.05 10 17.42 10C18.2 10 18.95 9.91 19.67 9.74C19.88 10.45 20 11.21 20 12C20 16.41 16.41 20 12 20Z" />
+													</svg>
+													<p class="label-medium">Buyer</p>
+												</div>
+												<img src="./assets/buyer visual.png" alt="" data-ratio="golden">
+												<p class="paragraph-small">Prospect gets a link via email or SMS to join your Digital Sales Room
+												</p>
+											</div>
+										</div>
+										<button class="icon-button clickUp-toggle" data-color="primary" data-shape="circle"
+											data-size="large">
+											<i class="fa-solid fa-xmark"></i>
+										</button>
+									</div>
+								</li>
+								<li class="splide__slide">
+									<div id="step2" class="sales-steps interactive-card flex-col-center" data-ratio="story"
+										data-effect="clickUp" data-state="closed" data-variant="full-height">
+										<div class="sales-steps__content flex-col-start gap-m">
+												<div class="sales-steps__navigation flex-row-sb align-center">
+														<span class="display-h3">2</span>
+														<button class="icon-button slider-arrows" data-shape="circle" data-size="small"
+															data-direction="right" data-color="grey">
+															<i class="fa-solid fa-arrow-right"></i>
+														</button>
+													</div>
+												<h3 class="sales-steps__headline display-h3">Follow up on the discovery</h3>
+										</div>
+										<div class="sales-steps__overlay card-overlay flex-col-center">
+											<div class="point-of-view seller flow-xs">
+												<div class="seller-headline flex-row-start gap-xs align-center">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+														class="face">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M9 11.75C8.31 11.75 7.75 12.31 7.75 13C7.75 13.69 8.31 14.25 9 14.25C9.69 14.25 10.25 13.69 10.25 13C10.25 12.31 9.69 11.75 9 11.75ZM15 11.75C14.31 11.75 13.75 12.31 13.75 13C13.75 13.69 14.31 14.25 15 14.25C15.69 14.25 16.25 13.69 16.25 13C16.25 12.31 15.69 11.75 15 11.75ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 11.71 4.02 11.42 4.05 11.14C6.41 10.09 8.28 8.16 9.26 5.77C11.07 8.33 14.05 10 17.42 10C18.2 10 18.95 9.91 19.67 9.74C19.88 10.45 20 11.21 20 12C20 16.41 16.41 20 12 20Z" />
+													</svg>
+													<p class="label-medium">Seller</p>
+												</div>
+												<img src="./assets/seller visual.png" alt="" data-ratio="golden">
+												<p class="paragraph-small">Creates a personalised digital sales room and two three more words
+												</p>
+											</div>
+											<div class="point-of-view buyer flow-xs">
+												<div class="buyer-headline flex-row-start gap-xs align-center">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+														class="face">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M9 11.75C8.31 11.75 7.75 12.31 7.75 13C7.75 13.69 8.31 14.25 9 14.25C9.69 14.25 10.25 13.69 10.25 13C10.25 12.31 9.69 11.75 9 11.75ZM15 11.75C14.31 11.75 13.75 12.31 13.75 13C13.75 13.69 14.31 14.25 15 14.25C15.69 14.25 16.25 13.69 16.25 13C16.25 12.31 15.69 11.75 15 11.75ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 11.71 4.02 11.42 4.05 11.14C6.41 10.09 8.28 8.16 9.26 5.77C11.07 8.33 14.05 10 17.42 10C18.2 10 18.95 9.91 19.67 9.74C19.88 10.45 20 11.21 20 12C20 16.41 16.41 20 12 20Z" />
+													</svg>
+													<p class="label-medium">Buyer</p>
+												</div>
+												<img src="./assets/buyer visual.png" alt="" data-ratio="golden">
+												<p class="paragraph-small">Prospect gets a link via email or SMS to join your Digital Sales Room
+												</p>
+											</div>
+										</div>
+										<button class="icon-button clickUp-toggle" data-color="primary" data-shape="circle"
+											data-size="large">
+											<i class="fa-solid fa-xmark"></i>
+										</button>
+									</div>
+								</li>
+								<li class="splide__slide">
+									<div id="step3" class="sales-steps interactive-card flex-col-center" data-ratio="story"
+										data-effect="clickUp" data-state="closed" data-variant="full-height">
+										<div class="sales-steps__content flex-col-start gap-m">
+												<div class="sales-steps__navigation flex-row-sb align-center">
+														<span class="display-h3">3</span>
+														<button class="icon-button slider-arrows" data-shape="circle" data-size="small"
+															data-direction="right" data-color="grey">
+															<i class="fa-solid fa-arrow-right"></i>
+														</button>
+													</div>
+												<h3 class="sales-steps__headline display-h3">Build the proposal</h3>
+										</div>
+										<div class="sales-steps__overlay card-overlay flex-col-center">
+											<div class="point-of-view seller flow-xs">
+												<div class="seller-headline flex-row-start gap-xs align-center">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+														class="face">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M9 11.75C8.31 11.75 7.75 12.31 7.75 13C7.75 13.69 8.31 14.25 9 14.25C9.69 14.25 10.25 13.69 10.25 13C10.25 12.31 9.69 11.75 9 11.75ZM15 11.75C14.31 11.75 13.75 12.31 13.75 13C13.75 13.69 14.31 14.25 15 14.25C15.69 14.25 16.25 13.69 16.25 13C16.25 12.31 15.69 11.75 15 11.75ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 11.71 4.02 11.42 4.05 11.14C6.41 10.09 8.28 8.16 9.26 5.77C11.07 8.33 14.05 10 17.42 10C18.2 10 18.95 9.91 19.67 9.74C19.88 10.45 20 11.21 20 12C20 16.41 16.41 20 12 20Z" />
+													</svg>
+													<p class="label-medium">Seller</p>
+												</div>
+												<img src="./assets/seller visual.png" alt="" data-ratio="golden">
+												<p class="paragraph-small">Creates a personalised digital sales room and two three more words
+												</p>
+											</div>
+											<div class="point-of-view buyer flow-xs">
+												<div class="buyer-headline flex-row-start gap-xs align-center">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+														class="face">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M9 11.75C8.31 11.75 7.75 12.31 7.75 13C7.75 13.69 8.31 14.25 9 14.25C9.69 14.25 10.25 13.69 10.25 13C10.25 12.31 9.69 11.75 9 11.75ZM15 11.75C14.31 11.75 13.75 12.31 13.75 13C13.75 13.69 14.31 14.25 15 14.25C15.69 14.25 16.25 13.69 16.25 13C16.25 12.31 15.69 11.75 15 11.75ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 11.71 4.02 11.42 4.05 11.14C6.41 10.09 8.28 8.16 9.26 5.77C11.07 8.33 14.05 10 17.42 10C18.2 10 18.95 9.91 19.67 9.74C19.88 10.45 20 11.21 20 12C20 16.41 16.41 20 12 20Z" />
+													</svg>
+													<p class="label-medium">Buyer</p>
+												</div>
+												<img src="./assets/buyer visual.png" alt="" data-ratio="golden">
+												<p class="paragraph-small">Prospect gets a link via email or SMS to join your Digital Sales Room
+												</p>
+											</div>
+										</div>
+										<button class="icon-button clickUp-toggle" data-color="primary" data-shape="circle"
+											data-size="large">
+											<i class="fa-solid fa-xmark"></i>
+										</button>
+									</div>
+								</li>
+								<li class="splide__slide">
+									<div id="step4" class="sales-steps interactive-card flex-col-center" data-ratio="story"
+										data-effect="clickUp" data-state="closed" data-variant="full-height">
+										<div class="sales-steps__content flex-col-start gap-m">
+												<div class="sales-steps__navigation flex-row-sb align-center">
+														<span class="display-h3">4</span>
+														<button class="icon-button slider-arrows" data-shape="circle" data-size="small"
+															data-direction="right" data-color="grey">
+															<i class="fa-solid fa-arrow-right"></i>
+														</button>
+													</div>
+												<h3 class="sales-steps__headline display-h3">Negotiate the best price</h3>
+										</div>
+										<div class="sales-steps__overlay card-overlay flex-col-center">
+											<div class="point-of-view seller flow-xs">
+												<div class="seller-headline flex-row-start gap-xs align-center">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+														class="face">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M9 11.75C8.31 11.75 7.75 12.31 7.75 13C7.75 13.69 8.31 14.25 9 14.25C9.69 14.25 10.25 13.69 10.25 13C10.25 12.31 9.69 11.75 9 11.75ZM15 11.75C14.31 11.75 13.75 12.31 13.75 13C13.75 13.69 14.31 14.25 15 14.25C15.69 14.25 16.25 13.69 16.25 13C16.25 12.31 15.69 11.75 15 11.75ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 11.71 4.02 11.42 4.05 11.14C6.41 10.09 8.28 8.16 9.26 5.77C11.07 8.33 14.05 10 17.42 10C18.2 10 18.95 9.91 19.67 9.74C19.88 10.45 20 11.21 20 12C20 16.41 16.41 20 12 20Z" />
+													</svg>
+													<p class="label-medium">Seller</p>
+												</div>
+												<img src="./assets/seller visual.png" alt="" data-ratio="golden">
+												<p class="paragraph-small">Creates a personalised digital sales room and two three more words
+												</p>
+											</div>
+											<div class="point-of-view buyer flow-xs">
+												<div class="buyer-headline flex-row-start gap-xs align-center">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+														class="face">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M9 11.75C8.31 11.75 7.75 12.31 7.75 13C7.75 13.69 8.31 14.25 9 14.25C9.69 14.25 10.25 13.69 10.25 13C10.25 12.31 9.69 11.75 9 11.75ZM15 11.75C14.31 11.75 13.75 12.31 13.75 13C13.75 13.69 14.31 14.25 15 14.25C15.69 14.25 16.25 13.69 16.25 13C16.25 12.31 15.69 11.75 15 11.75ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 11.71 4.02 11.42 4.05 11.14C6.41 10.09 8.28 8.16 9.26 5.77C11.07 8.33 14.05 10 17.42 10C18.2 10 18.95 9.91 19.67 9.74C19.88 10.45 20 11.21 20 12C20 16.41 16.41 20 12 20Z" />
+													</svg>
+													<p class="label-medium">Buyer</p>
+												</div>
+												<img src="./assets/buyer visual.png" alt="" data-ratio="golden">
+												<p class="paragraph-small">Prospect gets a link via email or SMS to join your Digital Sales Room
+												</p>
+											</div>
+										</div>
+										<button class="icon-button clickUp-toggle" data-color="primary" data-shape="circle"
+											data-size="large">
+											<i class="fa-solid fa-xmark"></i>
+										</button>
+									</div>
+								</li>
+								<li class="splide__slide">
+									<div id="step5" class="sales-steps interactive-card flex-col-center" data-ratio="story"
+										data-effect="clickUp" data-state="closed" data-variant="full-height">
+										<div class="sales-steps__content flex-col-start gap-m">
+												<div class="sales-steps__navigation flex-row-sb align-center">
+														<span class="display-h3">5</span>
+														<button class="icon-button slider-arrows" data-shape="circle" data-size="small"
+															data-direction="right" data-color="grey">
+															<i class="fa-solid fa-arrow-right"></i>
+														</button>
+													</div>
+												<h3 class="sales-steps__headline display-h3">Close the deal</h3>
+										</div>
+										<div class="sales-steps__overlay card-overlay flex-col-center">
+											<div class="point-of-view seller flow-xs">
+												<div class="seller-headline flex-row-start gap-xs align-center">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+														class="face">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M9 11.75C8.31 11.75 7.75 12.31 7.75 13C7.75 13.69 8.31 14.25 9 14.25C9.69 14.25 10.25 13.69 10.25 13C10.25 12.31 9.69 11.75 9 11.75ZM15 11.75C14.31 11.75 13.75 12.31 13.75 13C13.75 13.69 14.31 14.25 15 14.25C15.69 14.25 16.25 13.69 16.25 13C16.25 12.31 15.69 11.75 15 11.75ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 11.71 4.02 11.42 4.05 11.14C6.41 10.09 8.28 8.16 9.26 5.77C11.07 8.33 14.05 10 17.42 10C18.2 10 18.95 9.91 19.67 9.74C19.88 10.45 20 11.21 20 12C20 16.41 16.41 20 12 20Z" />
+													</svg>
+													<p class="label-medium">Seller</p>
+												</div>
+												<img src="./assets/seller visual.png" alt="" data-ratio="golden">
+												<p class="paragraph-small">Creates a personalised digital sales room and two three more words
+												</p>
+											</div>
+											<div class="point-of-view buyer flow-xs">
+												<div class="buyer-headline flex-row-start gap-xs align-center">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+														class="face">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M9 11.75C8.31 11.75 7.75 12.31 7.75 13C7.75 13.69 8.31 14.25 9 14.25C9.69 14.25 10.25 13.69 10.25 13C10.25 12.31 9.69 11.75 9 11.75ZM15 11.75C14.31 11.75 13.75 12.31 13.75 13C13.75 13.69 14.31 14.25 15 14.25C15.69 14.25 16.25 13.69 16.25 13C16.25 12.31 15.69 11.75 15 11.75ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 11.71 4.02 11.42 4.05 11.14C6.41 10.09 8.28 8.16 9.26 5.77C11.07 8.33 14.05 10 17.42 10C18.2 10 18.95 9.91 19.67 9.74C19.88 10.45 20 11.21 20 12C20 16.41 16.41 20 12 20Z" />
+													</svg>
+													<p class="label-medium">Buyer</p>
+												</div>
+												<img src="./assets/buyer visual.png" alt="" data-ratio="golden">
+												<p class="paragraph-small">Prospect gets a link via email or SMS to join your Digital Sales Room
+												</p>
+											</div>
+										</div>
+										<button class="icon-button clickUp-toggle" data-color="primary" data-shape="circle"
+											data-size="large">
+											<i class="fa-solid fa-xmark"></i>
+										</button>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- End of 5 Steps Slider -->
+	<section class="section flex-col-center">
+		<div class="section-container flex-col-center flow-lg">
+			<div class="row-fluid features__headline flex-col-start">
+				<div class="span6 flex-col-start gap-m">
+					<h2 class="h2-fluid">Main Features</h2>
+					<p class="paragraph-large">Miami-based VC scout. Roam Research girlfriend Medium blogger. Branding
+						thought-leader angel investor.</p>
+				</div>
+			</div>
+			<div class="features-tab-container row-fluid flex-row-start">
+				<div class="tab-openers span4 flex-col-start gap-m">
+					<button class="feature-tab__opener tab-opener js-tab-opener-active display-h4"
+						data-opens="1">E-Signature</button>
+					<button class="feature-tab__opener tab-opener display-h4" data-opens="2">Proposals</button>
+					<button class="feature-tab__opener tab-opener display-h4" data-opens="3">CPQ</button>
+					<button class="feature-tab__opener tab-opener display-h4" data-opens="4">Analytics</button>
+					<button class="feature-tab__opener tab-opener display-h4" data-opens="5">Mutual Action Plan</button>
+					<button class="feature-tab__opener tab-opener display-h4" data-opens="6">Sales CM</button>
+					<a href="#" class="button-medium" data-variant="link" data-color="dark" data-icon="left">
+						<div class="icon-button slider-arrows" data-shape="circle" data-size="medium" data-direction="left"
+							data-color="grey">
+							<i class="fa-solid fa-arrow-right"></i>
+						</div>
+						More Features
+					</a>
+				</div>
+				<div class="tabs__aside js-calculate-height span8 tablet-span8">
+					<!-- Tab content 1 -->
+					<div class="features-tab__content tab-content js-tab-content-active flex-row-start justify-start gap-m"
+						data-openedBy="1">
+						<div class="feature-tab__col flex-col-start justify-end gap-m">
+							<div id="feature1" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
 								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
 									<i class="fa-solid fa-xmark"></i>
 								</button>
 								<div class="card-overlay">
 									<h4 class="label-big">Account executives</h4>
-									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused, overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+								</div>
+							</div>
+							<div id="feature3" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
+								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
+									<i class="fa-solid fa-xmark"></i>
+								</button>
+								<div class="card-overlay">
+									<h4 class="label-big">Account executives</h4>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
 								</div>
 							</div>
 						</div>
 						<div class="feature-tab__col flex-col-start justify-start gap-m" data-transform="up">
-							<div id="feature2" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait" data-state="opened">
+							<div id="feature2" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
 								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
 									<i class="fa-solid fa-xmark"></i>
 								</button>
 								<div class="card-overlay">
 									<h4 class="label-big">Account executives</h4>
-									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused, overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
 								</div>
 							</div>
-							<div id="feature4" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait" data-state="opened">
+							<div id="feature4" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
 								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
 									<i class="fa-solid fa-xmark"></i>
 								</button>
 								<div class="card-overlay">
 									<h4 class="label-big">Account executives</h4>
-									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused, overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!-- Tab content 2 -->
-					<div class="features-tab__content flex-row-start justify-start gap-m span8" data-openedBy="2">
-						<div class="feature-tab__col flex-col-start gap-m">
-							<div id="feature1" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait" data-state="opened">
+					<div class="features-tab__content tab-content flex-row-start justify-start gap-m" data-openedBy="2">
+						<div class="feature-tab__col flex-col-start justify-end gap-m">
+							<div id="feature1" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
 								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
 									<i class="fa-solid fa-xmark"></i>
 								</button>
 								<div class="card-overlay">
 									<h4 class="label-big">Account executives</h4>
-									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused, overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
 								</div>
 							</div>
-							<div id="feature3" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait" data-state="opened">
+							<div id="feature3" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
 								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
 									<i class="fa-solid fa-xmark"></i>
 								</button>
 								<div class="card-overlay">
 									<h4 class="label-big">Account executives</h4>
-									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused, overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
 								</div>
 							</div>
 						</div>
-						<div class="feature-tab__col flex-col-start justify-end gap-m" data-transform="up">
-							<div id="feature2" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait" data-state="opened">
+						<div class="feature-tab__col flex-col-start justify-start gap-m" data-transform="up">
+							<div id="feature2" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
 								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
 									<i class="fa-solid fa-xmark"></i>
 								</button>
 								<div class="card-overlay">
 									<h4 class="label-big">Account executives</h4>
-									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused, overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
 								</div>
 							</div>
-							<div id="feature4" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait" data-state="opened">
+							<div id="feature4" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
 								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
 									<i class="fa-solid fa-xmark"></i>
 								</button>
 								<div class="card-overlay">
 									<h4 class="label-big">Account executives</h4>
-									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused, overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!-- Tab content 3 -->
-					<div class="features-tab__content flex-row-start justify-start gap-m span8" data-openedBy="3">
+					<div class="features-tab__content tab-content flex-row-start justify-start gap-m" data-openedBy="3">
 						<div class="feature-tab__col flex-col-start gap-m">
-							<div id="feature1" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait" data-state="opened">
+							<div id="feature1" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
 								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
 									<i class="fa-solid fa-xmark"></i>
 								</button>
 								<div class="card-overlay">
 									<h4 class="label-big">Account executives</h4>
-									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused, overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
 								</div>
 							</div>
-							<div id="feature3" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait" data-state="opened">
+							<div id="feature3" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
 								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
 									<i class="fa-solid fa-xmark"></i>
 								</button>
 								<div class="card-overlay">
 									<h4 class="label-big">Account executives</h4>
-									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused, overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
 								</div>
 							</div>
 						</div>
-						<div class="feature-tab__col flex-col-start justify-end gap-m">
-							<div id="feature2" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait" data-state="opened">
+						<div class="feature-tab__col flex-col-start justify-end gap-m" data-transform="up">
+							<div id="feature2" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
 								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
 									<i class="fa-solid fa-xmark"></i>
 								</button>
 								<div class="card-overlay">
 									<h4 class="label-big">Account executives</h4>
-									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused, overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
 								</div>
 							</div>
-							<div id="feature4" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait" data-state="opened">
+							<div id="feature4" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
 								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
 									<i class="fa-solid fa-xmark"></i>
 								</button>
 								<div class="card-overlay">
 									<h4 class="label-big">Account executives</h4>
-									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused, overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!-- Tab content 4 -->
-					<div class="features-tab__content flex-row-start justify-start gap-m span8" data-openedBy="4">
+					<div class="features-tab__content tab-content flex-row-start justify-start gap-m" data-openedBy="4">
 						<div class="feature-tab__col flex-col-start gap-m">
-							<div id="feature1" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait" data-state="opened">
+							<div id="feature1" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
 								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
 									<i class="fa-solid fa-xmark"></i>
 								</button>
 								<div class="card-overlay">
 									<h4 class="label-big">Account executives</h4>
-									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused, overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
 								</div>
 							</div>
-							<div id="feature3" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait" data-state="opened">
+							<div id="feature3" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
 								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
 									<i class="fa-solid fa-xmark"></i>
 								</button>
 								<div class="card-overlay">
 									<h4 class="label-big">Account executives</h4>
-									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused, overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
 								</div>
 							</div>
 						</div>
-						<div class="feature-tab__col flex-col-start justify-end gap-m">
-							<div id="feature2" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait" data-state="opened">
+						<div class="feature-tab__col flex-col-start justify-end gap-m" data-transform="up">
+							<div id="feature2" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
 								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
 									<i class="fa-solid fa-xmark"></i>
 								</button>
 								<div class="card-overlay">
 									<h4 class="label-big">Account executives</h4>
-									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused, overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
 								</div>
 							</div>
-							<div id="feature4" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait" data-state="opened">
+							<div id="feature4" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
 								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
 									<i class="fa-solid fa-xmark"></i>
 								</button>
 								<div class="card-overlay">
 									<h4 class="label-big">Account executives</h4>
-									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused, overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Tab content 5 -->
+					<div class="features-tab__content tab-content flex-row-start justify-start gap-m" data-openedBy="5">
+						<div class="feature-tab__col flex-col-start gap-m">
+							<div id="feature1" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
+								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
+									<i class="fa-solid fa-xmark"></i>
+								</button>
+								<div class="card-overlay">
+									<h4 class="label-big">Account executives</h4>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+								</div>
+							</div>
+							<div id="feature3" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
+								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
+									<i class="fa-solid fa-xmark"></i>
+								</button>
+								<div class="card-overlay">
+									<h4 class="label-big">Account executives</h4>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+								</div>
+							</div>
+						</div>
+						<div class="feature-tab__col flex-col-start justify-end gap-m" data-transform="up">
+							<div id="feature2" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
+								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
+									<i class="fa-solid fa-xmark"></i>
+								</button>
+								<div class="card-overlay">
+									<h4 class="label-big">Account executives</h4>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+								</div>
+							</div>
+							<div id="feature4" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
+								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
+									<i class="fa-solid fa-xmark"></i>
+								</button>
+								<div class="card-overlay">
+									<h4 class="label-big">Account executives</h4>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Tab content 6 -->
+					<div class="features-tab__content tab-content flex-row-start justify-start gap-m" data-openedBy="6">
+						<div class="feature-tab__col flex-col-start gap-m">
+							<div id="feature1" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
+								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
+									<i class="fa-solid fa-xmark"></i>
+								</button>
+								<div class="card-overlay">
+									<h4 class="label-big">Account executives</h4>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+								</div>
+							</div>
+							<div id="feature3" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
+								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
+									<i class="fa-solid fa-xmark"></i>
+								</button>
+								<div class="card-overlay">
+									<h4 class="label-big">Account executives</h4>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+								</div>
+							</div>
+						</div>
+						<div class="feature-tab__col flex-col-start justify-end gap-m" data-transform="up">
+							<div id="feature2" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
+								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
+									<i class="fa-solid fa-xmark"></i>
+								</button>
+								<div class="card-overlay">
+									<h4 class="label-big">Account executives</h4>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
+								</div>
+							</div>
+							<div id="feature4" class="feature-tab__card interactive-card" data-effect="clickUp" data-ratio="portrait"
+								data-state="opened">
+								<button class="icon-button clickUp-toggle" data-color="secondary" data-shape="circle" data-size="large">
+									<i class="fa-solid fa-xmark"></i>
+								</button>
+								<div class="card-overlay">
+									<h4 class="label-big">Account executives</h4>
+									<p class="paragraph-medium">ADA-buying dropshipping guru. Miami-based VC scout. PMF-focused,
+										overfunded LIDAR startup. Protocol writing, inflated B2C SaaS series B.</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+	</section>
+	<!-- Testimonial -->
+	<section class="section">
+			<div class="section-container">
+				<div class="row-fluid flex-row-sb">
+					<div class="span3 flow-s">
+						<img src="./assets/chargebee.svg" alt="" />
+						<div class="favorite-function__divider" style="height: 1px; width: 30%; background-color: black;"></div>
+						<div class="favorite-function">
+							<p class="label-medium">Favorite functions</p>
+							<p class="paragraph-medium">
+								Integration with CRM Personal video and chat Automated reminders
+							</p>
+						</div>
+					</div>
+					<div class="span8 flow-m">
+						<p class="testimonial-paragraph">
+							“Hacker News addicted Austin tech-worker. Hypergrowth activist investor. Cap table joining consumer social app. Techno-king ride sharing app design, Metaverse-based clout-chasing
+							influencer. VR headset wearable network.”
+						</p>
+						<div class="testimonial__info flex-row-sb align-center">
+							<div class="author-container flex-row-start gap-s align-center">
+								<div class="author-avatar img__wrapper" data-crop="circle" data-fit="contain" data-ratio="square">
+									<img src="./assets/Base-2.jpg" alt="" />
+								</div>
+								<div class="author-info">
+									<p class="author-name label-medium">Lisa Sparas</p>
+									<p class="author-role paragraph-medium">VP Sales at Chargebee</p>
+								</div>
+							</div>
+							<a href="#" class="button-medium" data-variant="link" data-color="dark" data-icon="left">
+								<i class="fa-solid fa-arrow-right"></i>
+								Customer case
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
-	</body>
+		<!-- Social Proof - DONE --> 
+		<section class="section">
+			<div class="section-container">
+					<div class="row-fluid flex-row-sb align-center social-proof-banner">
+						<div class="social-proof-banner__body flow-m span5">
+							<h2 class="display-h2">Category leaders and creators</h2>
+							<p class="paragraph-medium">We're proud to be the OG's of the Digital Sales Room category.</p>
+							<a href="#" class="button-medium" data-variant="outline" data-color="dark" data-icon="left">
+								<i class="fa-solid fa-arrow-right"></i>
+								Get Started
+							</a>
+						</div>
+						<div class="social-proof-banner__G2-widgets flex-col-center gap-m span6">
+							<div class="g2-badges flex-row-start gap-xs">
+									<img src="./assets/DSR_page/g2badge-bestROI.png" alt="" width="100px" height="auto">
+									<img src="./assets/DSR_page/g2badge-highperf.png" alt="" width="100px" height="auto">
+									<img src="./assets/DSR_page/g2badge-highadop.png" alt="" width="100px" height="auto">
+									<img src="./assets/DSR_page/g2badge-leader.png" alt="" width="100px" height="auto">
+							</div>
+							<div class="g2-rating">
+									<img src="./assets/DSR_page/G2 review stars with number.svg" alt="">
+							</div>
+						</div>
+					</div>
+			</div>
+		</section>
+		<!-- Integrations -->
+		<section class="section">
+			<div class="section-container">
+				<div class="integration row-fluid flex-row-sb align-center">
+					<div class="span6 integrations-grid__container flex-row-center gap-m">
+						<div id="first" class="integrations-grid__column flex-col-center gap-m">
+							<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+							<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+							<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+							<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+							<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+							<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+							<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+							<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+						</div>
+						<div id="middle" class="integrations-grid__column flex-col-center gap-m">
+								<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+								<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+								<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+								<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+								<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+								<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+								<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+								<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+							</div>
+							<div id="last" class="integrations-grid__column flex-col-center gap-m">
+									<div id="" class="integration-grid__item  img__wrapper" data-fit="contain" data-position="center" data-ratio="square">
+										<img src="https://s3-alpha-sig.figma.com/img/c220/7339/f33195de573f93c5c306df921bae353e?Expires=1668384000&Signature=hGTZ-B5pXT-27iVMoBlDq0ONPB1qDEvYSSgOqYbpBgBsNMiCsDhcDJVjU0cCTZIlODlprkFl0jsDzeEQmNzJLdA8brCMIaZIRSytGHqrlWkmZfK50WzDcm6XRc90QO0JRqamuEQERYyKInItGnlfiZdkCOaIK5fFndHXdLsleykYa9CcBtjcTXB-E7wNRLgP~MJfAcTrAAS2sCEnhOtjj04XQSJh9xtXzUqPx2wbCZDO8liaquCgMvRog5DYPw3MQjtasJrbUfxLR7rJYiKC6Z0pwQSxf-X8NIUf0nD69YDTA14sMusxCir9txZYmh3Z2D0-8ZXmyjg8xK0jMbB74A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" alt="">
+									</div>
+									<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+									<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+									<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+									<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+									<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+									<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+									<div id="" class="integration-grid__item img__wrapper" data-fit="contain" data-position="center" data-ratio="square"></div>
+								</div>
+					</div>
+					<div class="span5 flex-col-start gap-m">
+						<p class="label-medium">500+ Integrations</p>
+						<h2 class="display-h2">Getaccept integrates with your CRM</h2>
+						<p class="paragraph-medium">Former Hedgefund worker girlboss. Ex-Uber resume flexing, FAANG worker. LTV/CAC focused mentally exhausted startup founders. TikToking, Secondary Market buyer.</p>
+						<a href="#" class="button-medium" data-variant="outline" data-color="dark" data-icon="left">
+							<i class="fa-solid fa-arrow-right"></i>
+							Find your integration
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Learn more -->
+		<section class="section">
+			<div class="section-container flex-col-start flow-lg"">
+					<div class="row-fluid flex-row-sb">
+							<h2 class="h2-fluid span7 tablet-span4">See how our customers are using Getaccept</h2>
+							<a href="#" class="button-medium" data-variant='outline' data-color='dark' data-icon='left'>
+									<i class="fa-solid fa-arrow-right"></i>
+									More cases
+								</a>
+						</div>
+						<div class="row-fluid">
+							<div class="card span4 tablet-span4">
+								<div class="card__image-wrapper">
+									<img src="./assets/Cool.jpg" alt="" class="card__image"/>
+								</div>
+								<div class="card__body">
+									<div class="chips" data-color="pink">Digital Sales Room</div>
+									<h4 class="label-h4 card__title">What’s a Digital Sales Room</h4>
+									<p class="card__text paragraph-small">
+										Hypergrowth activist investor and Healthcare platform consumers as one acquisition strategy for board
+									</p>
+									<a href="#" class="button-small" data-variant="link" data-icon="left" data-color="dark">
+										<i class="fa-solid fa-arrow-right"></i>
+										Read more</a>
+								</div>
+							</div>
+							<div class="card span4 tablet-span4">
+								<div class="card__image-wrapper">
+									<img src="./assets/Colors.jpg" alt="" class="card__image" />
+								</div>
+								<div class="card__body">
+									<div class="chips" data-color="pink">Digital Sales Room</div>
+									<h4 class="label-h4 card__title">
+											The benefits of a DSR
+									</h4>
+									<p class="card__text paragraph-small">
+										Hypergrowth activist investor and Healthcare platform consumers as one acquisition strategy for board
+									</p>
+									<a href="#" class="button-small" data-variant="link" data-icon="left" data-color="dark">
+										<i class="fa-solid fa-arrow-right"></i>
+										Read more</a>
+								</div>
+							</div>
+							<div class="card span4 tablet-span4">
+								<div class="card__image-wrapper">
+									<img src="./assets/Lake.jpg" alt="" class="card__image" />
+								</div>
+								<div class="card__body">
+									<div class="chips" data-color="secondary">Digital Sales Room</div>
+									<h4 class="label-h4 card__title">Why you need a DSR</h4>
+									<p class="card__text paragraph-small">
+										Hypergrowth activist investor and Healthcare platform consumers as one acquisition strategy for board
+									</p>
+									<a href="#" class="button-small" data-variant="link" data-icon="left" data-color="dark">
+										<i class="fa-solid fa-arrow-right"></i>
+										Read more</a>
+								</div>
+							</div>
+						</div>
+						<div class="row-fluid">
+							<div class="span6">
+								<h2 class="display-h2 text-center">Start wowing buyers and hitting quotas now</h2>
+								<a href="#" class="button-large" data-variant="primary" data-icon="left">
+									<i class="fa-solid fa-arrow-right"></i>
+									Get pricing
+								</a>
+							</div>
+						</div>
+			</div>
+			</section>
+</body>
+
 </html>

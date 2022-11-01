@@ -66,4 +66,29 @@ import gaTabs from './tabClass.js';
 // 	});
 // });
 
-const tab = new gaTabs('.tabs', { tabToggle: true, closeWhenOpen: true }).init();
+const dividerBehavior = (tab) => {
+	const tabOpeners = tab.querySelectorAll('.tab-opener');
+	const animateTabDivider = (tabOpener) => {
+		const tabDividerOverlay = tab.querySelector(`.tab__divider-overlay[data-tab="${tabOpener.dataset.opens}"`);
+		const otherTabDividerOverlays = tab.querySelectorAll(`.tab__divider-overlay:not([data-tab="${tabOpener.dataset.opens}"])`);
+		otherTabDividerOverlays.forEach((tabDividerOverlay) => {
+			tabDividerOverlay.classList.remove('js-divider-overlay-animated');
+		});
+		tabDividerOverlay.classList.toggle('js-divider-overlay-animated');
+	};
+	tabOpeners.forEach((tabOpener) => {
+		tabOpener.addEventListener('click', () => {
+			animateTabDivider(tabOpener);
+		});
+	});
+};
+
+const tab = new gaTabs(
+	'.tabs',
+	{ tabToggle: false, closeWhenOpen: true },
+	{
+		dividerBehavior: dividerBehavior
+	}
+).init();
+
+const featureTab = new gaTabs('.features-tab-container', { tabToggle: false, closeWhenOpen: true }).init();

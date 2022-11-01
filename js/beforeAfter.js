@@ -33,7 +33,7 @@ inputRange.addEventListener('input', (event) => {
 	// Update the clipping value with the input value
 	document.querySelector('.foreground-img').style.clipPath = `inset(0 ${clipValue}% 0 0 )`;
 	// Update the position of the slider button
-	document.querySelector('.before-after__slider-button').style.left = `calc(${inputRangeValue}% - 16px)`;
+	document.querySelector('.before-after__slider-button').style.left = `calc(${inputRangeValue}% - 26px)`;
 	//Update the progress bar width, and add a minimum value of 1rem so the bar never disapears
 	progressBar.style.width = `calc(${inputRangeValue}% + 1rem)`;
 });

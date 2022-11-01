@@ -165,7 +165,9 @@
 }
 
 /* Paddings */
-
+.p-top-none {
+	padding-top: 0 !important;
+}
 .p-top-xs {
 }
 .p-top-s {
@@ -177,6 +179,9 @@
 .p-top-xl {
 }
 
+.p-bottom-none {
+	padding-bottom: 0 !important;
+}
 .p-bottom-xs {
 }
 .p-bottom-s {
@@ -366,17 +371,17 @@
 	right: -5.5rem !important;
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 992px) {
 	.mega-gap-0,
 	.mega-gap-1 {
-		gap: revert;
+		gap: unset;
 	}
 
 	.mega-margin-0__left,
 	.mega-margin-0__right,
 	.mega-margin-1__left,
 	.mega-margin-1__right {
-		margin: revert;
+		margin: unset;
 	}
 }
 
@@ -444,4 +449,8 @@
 
 .radius-circle {
 	border-radius: var(--radius-circle);
+}
+
+.border-top-divider {
+	border-top: 1px solid var(--placeholder);
 }

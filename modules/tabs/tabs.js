@@ -1,5 +1,4 @@
 //We want to create a class for building tabs
-
 export default class gaTabs {
 	constructor(selector, options = {}, addOns = {}) {
 		this.selector = selector;
