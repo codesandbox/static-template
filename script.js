@@ -20,12 +20,8 @@ const interactiveCardsClickUp = () => {
 
 const forcedAutoHeight = () => {
 	const adjustHeight = (element) => {
-		console.log('adjusting');
 		const firstElementChild = element.firstElementChild;
-		console.log('child', firstElementChild);
 		const computedHeight = window.getComputedStyle(firstElementChild).height;
-		console.log(computedHeight);
-		console.log(element.style);
 		element.style.minHeight = `${computedHeight}`;
 	};
 	const elementsToAdjust = document.querySelectorAll('.js-calculate-height');
@@ -41,3 +37,55 @@ const forcedAutoHeight = () => {
 forcedAutoHeight();
 
 interactiveCardsClickUp();
+
+//Force aspect ratio for compaitbility with safari < 15
+
+const forceAspectRatio = (element, ratio) => {
+	let width = window.getComputedStyle(element).width;
+	let height = window.getComputedStyle(element).height;
+
+	if (ratio == 'square') {
+		height = width;
+	}
+
+	if (ratio == 'widescreen') {
+		height = (width * 9) / 16;
+	}
+
+	if (ratio == 'ultrawide') {
+		height = (width * 5) / 18;
+	}
+
+	if (ratio == 'portrait') {
+		height = (width * 4) / 3;
+	}
+
+	if (ratio == 'story') {
+		height = (width * 16) / 9;
+	}
+
+	if (ratio == 'landscape') {
+		height = (width * 3) / 4;
+	}
+
+	if (ratio == 'golden') {
+		height = (width * 1) / 1.618;
+	}
+};
+
+const setAspectRatio = () => {
+	const elements = document.querySelectorAll('[data-ratio]');
+	elements.forEach((element) => {
+		const ratio = element.getAttribute('data-ratio');
+		let dataRatioAvailable = false;
+		if (window.getComputedStyle(element).aspectRatio) {
+			dataRatioAvailable = true;
+			console.log(dataRatioAvailable, window.getComputedStyle(element).aspectRatio);
+			return;
+		} else {
+			forceAspectRatio(element, ratio);
+		}
+	});
+};
+
+setAspectRatio();

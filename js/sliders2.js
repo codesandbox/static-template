@@ -131,30 +131,15 @@ const FiveStepsSliderBehavior = function (Splide, Components, options) {
 			this.fiveStepsSliderBehavior();
 		},
 		fiveStepsSliderBehavior() {
-			console.log('extension running');
-			Splide.on('moved', (newIndex) => {
-				console.log(Splide);
-				// console.log(Splide.Components.Slides.getAt(newIndex));
-				const activeSlide = Splide.Components.Slides.getAt(newIndex);
-				const activeCard = activeSlide.slide.firstElementChild;
-				activeCard.setAttribute('data-state', 'opened');
-				// Closing the other slides
-				const otherSlides = [...Splide.Components.Elements.slides].filter((slide) => {
-					return slide !== activeSlide.slide;
-				});
-				console.log(otherSlides);
-				otherSlides.forEach((slide) => {
-					slide.firstElementChild.setAttribute('data-state', 'closed');
-				});
-			});
 			const cardToggles = [...Splide.Components.Elements.list.children].map((slide) => {
 				return slide.querySelector('.clickUp-toggle');
 			});
-			const slideNumberWithoutClones = Splide.Components.Elements.slides.length;
-			// console.log(slideNumberWithoutClones)
-			// const index = [...Array(slideNumberWithoutClones).keys()]
+			const cards = [...Splide.Components.Elements.list.children];
+			const isHovered = (element) => {
+				return element.parentElement.querySelector(':hover') === element;
+			};
+
 			cardToggles.forEach((cardToggle, index) => {
-				console.log(cardToggle);
 				cardToggle.addEventListener('click', () => {
 					Splide.go(index);
 				});
@@ -165,6 +150,39 @@ const FiveStepsSliderBehavior = function (Splide, Components, options) {
 			sliderArrows.forEach((arrow) => {
 				arrow.addEventListener('click', () => {
 					Splide.go('>');
+					Splide.on('moved', (newIndex) => {
+						console.log(Splide);
+						// console.log(Splide.Components.Slides.getAt(newIndex));
+						const activeSlide = Splide.Components.Slides.getAt(newIndex);
+						const activeCard = activeSlide.slide.firstElementChild;
+						activeCard.setAttribute('data-state', 'opened');
+						// Closing the other slides
+						const otherSlides = [...Splide.Components.Elements.slides].filter((slide) => {
+							return slide !== activeSlide.slide;
+						});
+						console.log(otherSlides);
+						otherSlides.forEach((slide) => {
+							slide.firstElementChild.setAttribute('data-state', 'closed');
+						});
+					});
+				});
+			});
+			cards.forEach((card, index) => {
+				card.addEventListener('click', () => {
+					if (!isHovered(card.querySelector('.slider-arrows')) && !isHovered(card.querySelector('.clickUp-toggle'))) {
+						Splide.go(index);
+						const activeSlide = Splide.Components.Slides.getAt(index);
+						const activeCard = activeSlide.slide.firstElementChild;
+						activeCard.setAttribute('data-state', 'opened');
+						// Closing the other slides
+						const otherSlides = [...Splide.Components.Elements.slides].filter((slide) => {
+							return slide !== activeSlide.slide;
+						});
+						console.log(otherSlides);
+						otherSlides.forEach((slide) => {
+							slide.firstElementChild.setAttribute('data-state', 'closed');
+						});
+					}
 				});
 			});
 		}
@@ -367,6 +385,7 @@ if (document.querySelector('.fiveStepsSlider')) {
 		rewind: true,
 		rewindByDrag: true,
 		flickMaxPages: 1,
+		flickPower: 50,
 		drag: true,
 		gap: '30px',
 		arrows: false,
@@ -386,9 +405,37 @@ if (document.querySelector('.fiveStepsSlider')) {
 			560: {
 				perPage: 1,
 				perMove: 1,
-				fixedWidth: '80%',
-				height: '400px'
+				fixedWidth: '80%'
+			},
+			360: {
+				perPage: 1,
+				perMove: 1,
+				fixedWidth: '100%'
 			}
 		}
 	}).mount({ FiveStepsSliderBehavior: FiveStepsSliderBehavior });
 }
+
+const featuresSliders = () => {
+	if (document.querySelector('.feature__slider')) {
+		const sliders = document.querySelectorAll('.feature__slider');
+		sliders.forEach((slider) => {
+			const featureSlider = new Splide(slider, {
+				type: 'loop',
+				width: '100%',
+				perPage: 1,
+				perMove: 1,
+				gap: '30px',
+				drag: true,
+				arrows: false,
+				pagination: true,
+				classes: {
+					pagination: 'splide__pagination slider-dots',
+					page: 'splide__pagination__page slider-dot'
+				}
+			}).mount();
+		});
+	}
+};
+
+featuresSliders();
