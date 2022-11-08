@@ -1,12 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="port-br">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="formexemple" content="form-html" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Registration Form</title>
+
+    <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>Registration Form</h1>
+    <p>Please fill out this form with the required information</p>
+    <form action="https://register-demo.freecodecamp.org"></form>
+
+    <fieldset>
+      <label for="first-name"
+        >Enter Your First Name: <input id="first-name" type="text" required
+      /></label>
+      <label for="last-name"
+        >Enter Your Last Name: <input id="last-name" type="text" required
+      /></label>
+      <label for="email"
+        >Enter Your Email: <input id="email" type="email" required
+      /></label>
+      <label for="new-password"
+        >Create a New Password:
+        <input
+          id="new-password"
+          type="password"
+          required
+          pattern="[a-z0-5]{8,}"
+      /></label>
+    </fieldset>
+    <fieldset>
+      <label for="personal-account"
+        ><input type="radio" name="account-type" id="personal-account" />
+        Personal Account</label
+      >
+      <label for="business-account"
+        ><input type="radio" name="account-type" id="business-account" />
+        Business Account</label
+      >
+      <label for="terms-and-conditions"
+        ><input id="terms-and-conditions" type="checkbox" required /> I accept
+        the
+        <a href="https://www.freecodecamp.org/news/terms-of-service/"
+          >terms and conditions</a
+        ></label
+      >
+    </fieldset>
+    <fieldset>
+      <label for="profile-picture"
+        >Upload a profile picture: <input id="profile-picture" type="file"
+      /></label>
+      <label for="age"
+        >Input your age (years):
+        <input id="age" type="number" min="13" max="120"
+      /></label>
+      <label for="referrer"
+        >How did you hear about us?
+        <select id="referrer">
+          <option value="">(select one)</option>
+          <option value="1">freeCodeCamp News</option>
+          <option value="2">freeCodeCamp YouTube Channel</option>
+          <option value="3">freeCodeCamp Forum</option>
+          <option value="4">Other</option>
+        </select>
+      </label>
+      <label for="bio"
+        >Provide a bio:
+        <textarea id="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+      </label>
+    </fieldset>
+    <input type="submit" value="Submit" />
   </body>
 </html>
