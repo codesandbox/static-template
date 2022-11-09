@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Week 6 UmF1bCBHb256YWxleiAtIDA5LTIzLTIwMjIgNjozNiBBTQ==-->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Perfumami</title>
+
+    <!-- jQuery CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"
+      integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Google Icons CDN-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Bootstrap CDN CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap CDN JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- FancyApp CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+    />
+
+    <!-- FancyApp JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    <!-- AOS CSS CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- AOS JS CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- local scripts -->
+    <script src="/js/scripts.js"></script>
+
+    <!-- local styles -->
+    <link rel="stylesheet" href="/css/table.css" />
+  </head>
+  <body>
+    <!-- BEGIN HEADER -->
+    <header>
+      <!-- begin Google Icons -->
+      <div class="container top-logo text-center">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <span class="material-symbols-outlined">
+              <a class="sidebar-icon" href="gallery.html">camera_enhance</a>
+            </span>
+
+            <span class="material-symbols-outlined">
+              <a
+                data-bs-toggle="offcanvas"
+                href="#offcanvasExample"
+                role="button"
+                aria-controls="offcanvasExample"
+                class="sidebar-icon"
+              >
+                menu
+              </a>
+            </span>
+          </div>
+          <div class="col-12 col-md-6">Perfumami</div>
+        </div>
+      </div>
+      <!-- end Google Icons -->
+
+      <!-- Begin Left Offcanvas -->
+      <div
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Perfumami</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="text-center">
+            <div class="spokesperson">
+              <img
+                alt="Spokesperson"
+                class="cropped-offcanvas"
+                src="/images/general/spokesperson.jpg"
+              />
+            </div>
+            <br />
+            <blockquote>
+              Thanks you Melinda for going out of your way to help me understand
+              the different types of fragrances!
+              <cite>Rossie Williams</cite>
+            </blockquote>
+
+            <a
+              class="btn btn-outline-primary btn-offcanvas-left"
+              href="gallery.html"
+              >Gallery</a
+            >
+            <a
+              class="btn btn-outline-primary btn-offcanvas-left"
+              href="form.html"
+              >Volunteer Form</a
+            >
+            <a
+              class="btn btn-outline-primary btn-offcanvas-left"
+              href="table.html"
+              >Schedule</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- End Left Offcanvas -->
+
+      <!--- begin top nav bar -->
+      <nav class="navbar navbar-expand-lg bg-light sticky-top">
+        <div class="container-fluid">
+          <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+          <button
+            class="navbar-toggler custom-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="gallery.html">Gallery</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="form.html">Volunteer Form</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="table.html">Schedule</a>
+              </li>
+
+              <!--
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+              -->
+
+              <!--
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+              -->
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success btn-search" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!-- end top nav bar -->
+    </header>
+    <!--END HEADER-->
+
+    <!--BEGIN MAIN TAG-->
+    <main>
+      <!-- schedule -->
+      <div class="wrapper-body">
+        <div class="wrapper-main">
+          <!--begin top list-->
+          <div class="wrapper-content">
+            <h1>Showcase Schedule</h1>
+            <p>
+              Plese keep in mind that events may change based on wether, models
+              availability, and other unforseen circustances.
+            </p>
+
+            <h2>Are you looking to volunteer as a beauty products model?</h2>
+            <p>Reasons for volunteering</p>
+
+            <ul>
+              <li>Industry Experience</li>
+              <li>Sense of Community</li>
+              <li>Make a Difference</li>
+              <ul>
+                <li>Contribute to the home-made fragrances community</li>
+                <li>Improve your portfolio</li>
+                <li>Teach others how to improve their self esteem</li>
+              </ul>
+            </ul>
+          </div>
+
+          <!--end top list-->
+
+          <!-- table -->
+          <div class="table-responsive">
+            <table class="content-table table">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Monday</th>
+                  <th>Tuesday</th>
+                  <th>Wednesday</th>
+                  <th>Thursday</th>
+                  <th>Friday</th>
+                  <th>Saturday</th>
+                  <th>Sunday</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Morning<br />9am-10am</td>
+                  <td>Skin Care</td>
+                  <td>Creating Perfumes</td>
+                  <td>Applying Creams</td>
+                  <td>About Essensial Oils</td>
+                  <td>Scents and Aromas</td>
+                  <td>Dealing with Odors</td>
+                  <td>Q&A</td>
+                </tr>
+
+                <tr>
+                  <td>Afternoon<br />1pm-3pm</td>
+                  <td>Creating Perfumes</td>
+                  <td>Skin Care</td>
+                  <td>Applying Creams</td>
+                  <td>About Essensial Oils</td>
+                  <td>Dealing with Odors</td>
+                  <td>Scents and Aromas</td>
+                  <td>Q&A</td>
+                </tr>
+
+                <tr>
+                  <td>Evening<br />5pm-7pm</td>
+                  <td>Creating Perfumes</td>
+                  <td>Skin Care</td>
+                  <td>Dealing with Odors</td>
+                  <td>Applying Creams</td>
+                  <td>About Essensial Oils</td>
+                  <td>Scents and Aromas</td>
+                  <td>Q&A</td>
+                </tr>
+
+                <tr>
+                  <td>Private Lessons<br />12noon-2pm</td>
+                  <td>Creating Perfumes</td>
+                  <td>Skin Care</td>
+                  <td>Q&A</td>
+                  <td>Dealing with Odors</td>
+                  <td>About Essensial Oils</td>
+                  <td>Scents and Aromas</td>
+                  <td>Applying Creams</td>
+                </tr>
+
+                <tr>
+                  <td>Registration Sessions</td>
+                  <td>Q&A</td>
+                  <td>Dealing with Odors</td>
+                  <td>About Essensial Oils</td>
+                  <td>Scents and Aromas</td>
+                  <td>Applying Creams</td>
+                  <td>Creating Perfumes</td>
+                  <td>Skin Care</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- end table -->
+
+          <!--begin bottom list-->
+          <div class="wrapper-content">
+            <
+            <h2>Steps to Volunteer</h2>
+            <ol type="1">
+              <li>Go to our volunteer form</li>
+              <li>Verify that you qualify for volunteering</li>
+              <li>
+                When ready, fill out and submit our
+                <a href="form.html" target="_blank">volunteer form</a>
+              </li>
+            </ol>
+          </div>
+          <!--end bottom list-->
+        </div>
+      </div>
+    </main>
+
+    <!--END MAIN TAG-->
+
+    <!-- BEGIN FOOTER TAG-->
+    <footer>
+      <!-- begin footer -->
+      <div class="container-fluid text-center footer-row" id="footerInfo">
+        <div class="row">
+          <div class="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+            <a href="#">Lotions</a>
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+            <a href="#">Liquid Soaps</a>
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+            <a href="#">Bath Products</a>
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+            <a href="#">Shampoos and Conditioners</a>
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+            <a href="#">Fragrances and Perfumes</a>
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+            <a href="#">Cologne</a>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+          <div class="col-12">
+            <a href="https://www.facebook.com" target="_blank">
+              <i class="fa-brands fa-facebook fa-social-media"></i
+            ></a>
+            <a href="https://www.instagram.com" target="_blank">
+              <i class="fa-brands fa-instagram fa-social-media"></i
+            ></a>
+            <a href="https://www.twitter.com" target="_blank"
+              ><i class="fa-brands fa-twitter fa-social-media"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <!-- end footer -->
+    </footer>
+    <!--END FOOTER TAG-->
+  </body>
+</html>
