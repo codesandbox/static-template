@@ -1,0 +1,217 @@
+body {
+  background-color: black;
+  color: ivory;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.container {
+  position: relative;
+  max-width: 760px;
+  height: 100vh;
+  width: 70vw;
+}
+
+nav .nav-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav .nav-container .left-side {
+  display: flex;
+  justify-content: space-around;
+  max-width: 200px;
+  padding: 2%;
+  flex: 1 1 auto;
+}
+
+nav a {
+  text-decoration: none;
+  margin: 5%;
+  font-weight: Bold;
+}
+
+nav .nav-link {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex: 1 1 auto;
+}
+
+nav .nav-link a:hover {
+  transform: scale(1.5);
+  color: turquoise;
+}
+
+nav .nav-name {
+  font-size: 1.5em;
+  flex: 1 1 auto;
+  margin-right: 7%;
+  font-weight: Bold;
+}
+
+nav .right-side {
+  display: flex;
+  justify-content: end;
+  flex: 1 1 auto;
+  align-items: safe center;
+}
+
+nav .dark-mode-button {
+  width: 20px;
+  height: 20px;
+}
+
+nav .dark-mode-icon {
+  width: 16px;
+  height: 16px;
+  align-items: center;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  height: 90vh;
+}
+
+.canvas {
+  background-color: rgba(245, 245, 245, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  height: 60%;
+  border-radius: 5%;
+  margin-top: 10%;
+  box-shadow: rgba(245, 245, 245, 0.2) 0px 7px 29px 0px;
+}
+
+.canvas .image {
+  width: 100%;
+  height: 80%;
+  background-image: url("../assets/ethan-hoover-eIVJAkj1uCs-unsplash.jpg");
+  background-size: cover;
+  border-radius: 5%;
+  box-shadow: 30px 30px 40px rgba(0, 0, 0, 0.4);
+  flex-shrink: 1;
+  margin-right: 10%;
+  margin-top: -5%;
+
+  /* position: absolute;
+  right: 5%;
+  top: -5%; */
+}
+
+.canvas .name {
+  font-size: 1.5em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: bold;
+}
+
+.dark-mode-button:hover {
+  background-color: burlywood;
+  transform: translateY(4px);
+}
+
+.dark-mode-button:active {
+  box-shadow: -200px 200px 30px 200px rgba(255, 255, 255, 0.5);
+  z-index: -1;
+}
+
+.profile {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profile .leftside {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin: 10%;
+  align-items: end;
+  flex: 1 1 auto;
+  font-family: "Arial Narrow Bold";
+}
+
+.profile .title {
+  text-align: right;
+}
+
+.profile-picture {
+  background-image: url("../assets/Profile Pic Icon.png");
+  width: 40%;
+  height: 35%;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 30px 30px 40px rgba(0, 0, 0, 0.4);
+  flex: 1 1 auto;
+  align-self: center;
+}
+
+.intro {
+  padding: 5% 10%;
+}
+
+.intro p {
+  font-family: "Arial Narrow Bold";
+}
+
+.contact {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  width: 80%;
+}
+
+.contact .item {
+  text-decoration: none;
+}
+
+.contact .item:hover {
+  color: wheat;
+  text-decoration: none;
+  transform: translateY(10px);
+  transform: scale(1.5) translateY(3px);
+}
+
+.profile .profile-picture:hover {
+  transform: scale(2) translateX(5px);
+  box-shadow: 10px 10px 10px black;
+}
+
+@media only screen and (min-width: 500px) {
+  nav .dark-mode-button {
+    width: 38px;
+    height: 38px;
+    vertical-align: middle;
+  }
+  nav .dark-mode-icon {
+    width: 20px;
+    height: 20px;
+    align-items: center;
+  }
+  .profile .profile-picture {
+    transform: scale(2) translateX(15%);
+  }
+  nav .nav-link {
+    font-size: 1.3em;
+    margin-left: 20%;
+  }
+
+  nav .nav-link a {
+    margin-left: 12%;
+  }
+
+  .canvas {
+    transform: scale(1.1);
+  }
+
+  .contact .item {
+    transform: scale(1.2);
+  }
+}
