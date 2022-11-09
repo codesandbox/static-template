@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      charset="utf-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>ABC Racers</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/site.webmanifest" />
+    <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="/css/root.css" />
+    <link rel="stylesheet" href="/abcracers/css/abcracers.css" />
+  </head>
+  <body class="preinit">
+    <div class="logoContainer">
+      <img
+        class="logo"
+        src="/abcracers/assets/ABCRacers - logo.png"
+        title="ABC Racers"
+        alt="ABC Racers"
+        width="175"
+      />
+      <a class="button buttonSecondary" href=".">Exit game</a>
+    </div>
+    <div id="character" class="">
+      <span id="userNameContainer"
+        ><span id="userName"></span> (<span id="timer">0</span>)</span
+      >
+    </div>
+    <div id="finish"></div>
+    <div class="modal won">
+      <h2>Winner!</h2>
+      <p>Your score: <span id="finalTime"></span> seconds.</p>
+      <button id="retryButton">Try again</button>
+    </div>
+    <div class="modal start">
+      <h3>
+        Get ready to type the ABCs as fast as you can!
+      </h3>
+      <div class="formRow">
+        <label for="userNameInput">Enter your nickname:</label>
+        <input id="userNameInput" type="text" />
+      </div>
+      <form id="characterForm" class="formRow">
+        <label for="characterRadio">Select your character:</label>
+        <input
+          type="radio"
+          name="characterSelect"
+          value="girl"
+          class="character girl"
+          checked
+        />
+        <input
+          type="radio"
+          name="characterSelect"
+          value="boy"
+          class="character boy"
+        />
+        <input
+          type="radio"
+          name="characterSelect"
+          value="dog"
+          class="character dog"
+        />
+        <input
+          type="radio"
+          name="characterSelect"
+          value="cat"
+          class="character cat"
+        />
+      </form>
+      <button id="startButton">Start the game!</button>
+    </div>
+    <h3 id="alphabetTitle" class="bounceUp">
+      ⬇ Type the alphabet on your keyboard!
+    </h3>
+    <div id="alphabet">
+      <span id="a-a" class="next">A</span>
+      <span id="a-b">B</span>
+      <span id="a-c">C</span>
+      <span id="a-d">D</span>
+      <span id="a-e">E</span>
+      <span id="a-f">F</span>
+      <span id="a-g">G</span>
+      <span id="a-h">H</span>
+      <span id="a-i">I</span>
+      <span id="a-j">J</span>
+      <span id="a-k">K</span>
+      <span id="a-l">L</span>
+      <span id="a-m">M</span>
+      <span id="a-n">N</span>
+      <span id="a-o">O</span>
+      <span id="a-p">P</span>
+      <span id="a-q">Q</span>
+      <span id="a-r">R</span>
+      <span id="a-s">S</span>
+      <span id="a-t">T</span>
+      <span id="a-u">U</span>
+      <span id="a-v">V</span>
+      <span id="a-w">W</span>
+      <span id="a-x">X</span>
+      <span id="a-y">Y</span>
+      <span id="a-z">Z</span>
+    </div>
+  </body>
+  <script type="module" src="/abcracers/js/abcracers.js"></script>
+</html>

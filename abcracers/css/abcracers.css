@@ -1,0 +1,154 @@
+.character,
+#character {
+  display: block;
+  width: 100px;
+  height: 150px;
+}
+
+.girl {
+  background: url("../assets/girl.png") top left no-repeat;
+  background-size: 100px 150px;
+}
+
+.boy {
+  background: url("../assets/boy.png") top left no-repeat;
+  background-size: 100px 150px;
+}
+
+.dog {
+  background: url("../assets/dog.png") top left no-repeat;
+  background-size: 100px 150px;
+}
+
+.cat {
+  background: url("../assets/cat.png") top left no-repeat;
+  background-size: 100px 150px;
+}
+
+input[type="radio"].character {
+  display: inline-block;
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0 5px 0 0;
+  border-radius: 12px;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+input[type="radio"].character:hover {
+  border-color: lightblue;
+}
+
+input[type="radio"].character:checked {
+  border-color: blue;
+}
+
+#character {
+  text-align: center;
+  position: absolute;
+  bottom: 47%;
+  left: 0;
+  z-index: 1;
+  transition: left 1s;
+}
+
+#alphabet {
+  position: absolute;
+  bottom: 80px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  gap: 12px;
+}
+
+#alphabet > span {
+  width: 4%;
+  border: 1px solid gray;
+  border-radius: 6px;
+  padding: 16px 0;
+  text-align: center;
+  flex-grow: 1;
+  opacity: 0.25;
+}
+
+#alphabet .complete {
+  background: green;
+  border-color: darkgreen;
+  color: white;
+  opacity: 1;
+}
+
+#alphabet .next {
+  opacity: 1;
+}
+
+#alphabetTitle {
+  position: absolute;
+  left: 24px;
+  bottom: 140px;
+}
+
+#answerInput:focus {
+  outline: none;
+}
+
+.winner {
+  background: lightgreen;
+}
+
+#question {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#finish {
+  position: absolute;
+  top: 48px;
+  bottom: 170px;
+  right: 24px;
+  z-index: 0;
+  width: 80px;
+  border: 1px solid #b5b5b5;
+  background-image: linear-gradient(45deg, #b5b5b5 25%, transparent 25%),
+    linear-gradient(-45deg, #b5b5b5 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #b5b5b5 75%),
+    linear-gradient(-45deg, transparent 75%, #b5b5b5 75%);
+  background-size: 80px 80px;
+  background-position: 0 0, 0 40px, 40px -40px, -40px 0px;
+  background-color: white;
+}
+
+#userNameContainer {
+  display: inline-block;
+  bottom: -150px;
+  position: relative;
+  z-index: 1;
+  border: 1px solid black;
+  padding: 4px;
+  background: white;
+}
+
+.preinit > *,
+.preinit #alphabet,
+.preinit #character,
+.winner #finish,
+.winner #question,
+.activePlay #alphabetTitle {
+  display: none;
+}
+
+.preinit > .logoContainer {
+  display: block;
+}
+
+.winner .modal.won,
+.preinit .modal.start {
+  display: block;
+}

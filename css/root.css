@@ -1,0 +1,222 @@
+body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: #222222;
+  overflow: hidden;
+}
+
+body,
+a,
+button,
+input,
+select {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+.logoContainer {
+  position: relative;
+}
+
+.logo {
+  display: inline-block;
+  margin: 16px;
+}
+
+.logoContainer > a {
+  position: absolute;
+  top: 25%;
+  left: 245px;
+}
+
+h2,
+h3 {
+  margin: 0 0 24px;
+}
+
+.titlePanel {
+  width: 550px;
+  margin: 48px auto;
+  text-align: center;
+}
+
+.titlePanel h2 {
+  margin: 12px 0;
+}
+
+.modal,
+.gameTile {
+  padding: 24px;
+  border: 2px solid black;
+  background: white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  display: none;
+  max-width: 450px;
+  min-width: 300px;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal .logo {
+  display: block;
+  margin: 0 0 24px;
+}
+
+.gameTile {
+  display: block;
+  position: relative;
+  width: 325px;
+  padding-right: 145px;
+  margin: 0 auto 24px;
+}
+
+.gameTile img {
+  width: 90px;
+  position: absolute;
+  top: 30px;
+  left: 25px;
+}
+
+.gameTile .button {
+  position: absolute;
+  top: 35%;
+  right: 35px;
+}
+
+.gameTile h3 {
+  margin: 0 0 16px;
+}
+
+.gameTile p {
+  margin: 0;
+}
+
+.gameTile em {
+  display: block;
+  margin-top: 16px;
+  color: #aaaaaa;
+}
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+  color: blue;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.gameTile,
+.gameTile:visited {
+  color: #222222;
+}
+
+.gameTile:hover {
+  color: #222222;
+  background: lightblue;
+  text-decoration: none;
+}
+
+button,
+.button,
+.button:visited {
+  border: solid black;
+  border-radius: 89px;
+  padding: 8px 14px;
+  background: blue;
+  color: white;
+}
+
+button:hover,
+.button:hover {
+  background: darkblue;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.buttonSecondary,
+.buttonSecondary:visited {
+  border-color: #222222;
+  background: white;
+  color: #222222;
+}
+
+.buttonSecondary:hover {
+  background: lightblue;
+}
+
+.formRow {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.formRow label {
+  display: block;
+  margin: 0 0 5px;
+  font-weight: 700;
+}
+
+input,
+select {
+  border: 1px solid #222222;
+  border-radius: 2px;
+  padding: 6px;
+}
+
+#exitGameLink {
+  position: absolute;
+  z-index: 8;
+  left: 24px;
+  bottom: 40px;
+}
+
+/* Borrowed from https://codepen.io/nelledejones/pen/gOOPWrK */
+.bounceUp {
+  animation: bounceUp 2s ease infinite;
+}
+@keyframes bounceUp {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.bounceDown {
+  animation: bounceDown 2s ease infinite;
+}
+@keyframes bounceDown {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(30px);
+  }
+  60% {
+    transform: translateY(15px);
+  }
+}
