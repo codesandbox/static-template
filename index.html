@@ -1,12 +1,444 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tennis</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!-- Sprite -->
+    <svg style="display: none;">
+      <symbol id="link-logo" viewBox="0 0 21 20">
+        <g>
+          <path
+            d="M16.2515 20H2.50146C1.83842 20 1.20254 19.7366 
+            0.733698 19.2678C0.264857 18.7989 0.00146484 18.163
+             0.00146484 17.5V3.75C0.00146484 3.08696 0.264857 
+             2.45107 0.733698 1.98223C1.20254 1.51339 1.83842 
+             1.25 2.50146 1.25H7.50147V3.75H2.50146V17.5H16.2515V12.5H18.7515V17.5C18.7515 18.163 18.4881 18.7989 18.0192 19.2678C17.5504 19.7366 16.9145 20 16.2515 20ZM9.62646 12.1337L7.86397 10.3663L15.7302 2.5H11.2515V0H20.0015V8.75H17.5015V4.26875L9.62646 12.1337Z"
+          />
+        </g>
+      </symbol>
+
+      <symbol id="youtube-logo" viewBox="0 0 30 20">
+        <g>
+          <path
+            d="M28.797 3.40986C28.634 2.82827 28.3164 2.30172 27.878 1.8862C27.4273 1.4579 26.8748 1.15153 26.2728 0.995997C24.0197 0.402128 14.9929 0.402129 14.9929 0.402129C11.2297 0.359313 7.46748 0.547626 3.72739 0.966004C3.12535 1.13302 2.57392 1.44624 2.12214 1.8778C1.67824 2.30491 1.35671 2.83159 1.18875 3.40866C0.785271 5.58228 0.589233 7.78931 0.60328 10C0.588883 12.2087 0.784439 14.415 1.18875 16.5913C1.35311 17.166 1.67344 17.6903 2.11854 18.1138C2.56365 18.5373 3.11792 18.8433 3.72739 19.0052C6.01048 19.5979 14.9929 19.5979 14.9929 19.5979C18.7609 19.6408 22.5279 19.4524 26.2728 19.034C26.8748 18.8785 27.4273 18.5721 27.878 18.1438C28.3219 17.7203 28.6375 17.1936 28.7958 16.6201C29.2099 14.4474 29.4112 12.2394 29.3969 10.0276C29.428 7.80642 29.227 5.58806 28.797 3.40866V3.40986ZM12.1231 14.1079V5.89331L19.6335 10.0012L12.1231 14.1079Z"
+          />
+        </g>
+      </symbol>
+
+      <symbol id="vk-logo" viewBox="0 0 24 14">
+        <g>
+          <path
+            d="M23.9624 1.03253C24.1665 1.56866 23.5397 2.81961 22.0821 4.78539C21.8781 5.05345 21.6157 5.41087 21.2951 5.85764C20.6246 6.69161 20.2456 7.24262 20.1582 7.51068C20.0124 7.8681 20.0707 8.21062 20.3331 8.53825C20.4788 8.71696 20.8141 9.07437 21.3388 9.6105H21.3825V9.65517C22.5777 10.7572 23.3794 11.6954 23.7875 12.4698L23.875 12.6485L23.9624 12.9836V13.408L23.6563 13.7431L22.913 13.8995L19.7209 13.9888C19.5168 14.0186 19.2763 13.9888 18.9994 13.8995C18.7225 13.8101 18.5111 13.7208 18.3654 13.6314L18.103 13.4527C17.8406 13.274 17.5491 13.0059 17.2284 12.6485C16.9078 12.2911 16.6236 11.9635 16.3758 11.6656C16.128 11.3678 15.8729 11.1221 15.6105 10.9285C15.3482 10.7349 15.115 10.6678 14.9109 10.7274C14.8818 10.7274 14.8453 10.7423 14.8016 10.7721C14.7579 10.8019 14.685 10.8689 14.583 10.9731C14.4809 11.0774 14.3935 11.204 14.3206 11.3529C14.2477 11.5018 14.1821 11.7178 14.1238 12.0007C14.0655 12.2837 14.0364 12.6187 14.0364 13.0059C14.0364 13.1251 14.0218 13.2368 13.9926 13.341C13.9635 13.4453 13.9343 13.5272 13.9052 13.5867L13.8615 13.6314C13.6866 13.8101 13.4533 13.8995 13.1618 13.8995H11.7626C11.1504 13.959 10.5309 13.8995 9.90417 13.7208C9.27742 13.5421 8.73083 13.3112 8.26441 13.0283C7.79799 12.7453 7.37529 12.4624 6.99632 12.1794C6.61736 11.8965 6.32584 11.6507 6.12178 11.4422L5.81569 11.1295C5.72824 11.0699 5.61163 10.9508 5.46588 10.7721C5.32012 10.5934 5.02132 10.2062 4.56947 9.6105C4.11763 9.0148 3.67307 8.37443 3.2358 7.68939C2.79853 7.00434 2.28838 6.10336 1.70535 4.98644C1.12233 3.86952 0.583027 2.71536 0.0874541 1.52398C0.0291513 1.37506 0 1.25592 0 1.16656C0 1.07721 0.0145757 1.00275 0.043727 0.943179L0.0874541 0.898502C0.204059 0.719794 0.43727 0.63044 0.787086 0.63044H4.24152C4.32898 0.63044 4.41643 0.652779 4.50388 0.697456L4.72252 0.809148L4.76625 0.853825C4.912 0.943179 5.01403 1.07721 5.07233 1.25592C5.24724 1.6729 5.44401 2.11222 5.66265 2.57389C5.88128 3.03555 6.0489 3.38552 6.16551 3.62379L6.34042 3.98121C6.60278 4.48755 6.84328 4.92687 7.06191 5.29918C7.28055 5.67148 7.47732 5.96188 7.65223 6.17037C7.82714 6.37887 8.00205 6.54268 8.17695 6.66182C8.35186 6.78096 8.49762 6.84053 8.61422 6.84053C8.73083 6.84053 8.84743 6.82564 8.96404 6.79585L9.00777 6.72884L9.16081 6.43844L9.33572 5.85764L9.44504 4.83007V3.2217C9.41589 2.89407 9.37216 2.58878 9.31386 2.30582C9.25555 2.02287 9.19725 1.82182 9.13895 1.70269L9.09522 1.56866C8.89116 1.27081 8.52677 1.07721 8.00205 0.987856C7.91459 0.987856 7.94374 0.88361 8.0895 0.675117C8.23526 0.526194 8.39559 0.407056 8.5705 0.317702C9.00777 0.0794256 9.99891 -0.0248205 11.5439 0.0049641C12.2144 0.0049641 12.7829 0.0645333 13.2493 0.183672C13.395 0.213456 13.5262 0.265579 13.6428 0.340041C13.7594 0.414502 13.8469 0.518748 13.9052 0.652779C13.9635 0.78681 14.0072 0.92084 14.0364 1.05487C14.0655 1.1889 14.0801 1.3825 14.0801 1.63567V2.32816C14.051 2.56644 14.0364 2.86429 14.0364 3.2217V4.29395C14.0364 4.3833 14.0291 4.56201 14.0145 4.83007C13.9999 5.09813 13.9926 5.30662 13.9926 5.45554C13.9926 5.60447 14.0072 5.77573 14.0364 5.96933C14.0655 6.16293 14.1165 6.32674 14.1894 6.46077C14.2623 6.59481 14.357 6.69161 14.4736 6.75117C14.5319 6.78096 14.5975 6.8033 14.6704 6.81819C14.7433 6.83308 14.8526 6.78841 14.9984 6.68416C15.1441 6.57991 15.3045 6.43099 15.4794 6.23739C15.6543 6.04379 15.8729 5.75339 16.1353 5.36619C16.3976 4.97899 16.6746 4.53222 16.9661 4.02588C17.4617 3.13235 17.9135 2.16435 18.3216 1.12189C18.3508 1.06232 18.3872 0.995302 18.4309 0.92084C18.4747 0.846379 18.5257 0.794256 18.584 0.764471H18.6277L18.6714 0.719794L18.8463 0.675117H19.1087L22.6943 0.63044C23.015 0.600656 23.2846 0.615548 23.5033 0.675117C23.7219 0.734687 23.8458 0.809148 23.875 0.898502L23.9624 1.03253Z"
+          />
+        </g>
+      </symbol>
+
+      <symbol id="tg-logo" viewBox="0 0 20 16">
+        <g>
+          <path
+            d="M18.65 0.105204L0.933877 6.62189C-0.275178 7.08512 -0.268184 7.7285 0.71205 8.0154L5.2605 9.36887L15.7843 3.03519C16.2819 2.74638 16.7365 2.90175 16.3628 3.21819L7.83648 10.5584H7.83448L7.83648 10.5594L7.52273 15.0315C7.98237 15.0315 8.18521 14.8304 8.44301 14.5931L10.6523 12.5438L15.2477 15.7817C16.095 16.2268 16.7036 15.998 16.9144 15.0334L19.931 1.47202C20.2398 0.291068 19.4584 -0.243649 18.65 0.105204Z"
+          />
+        </g>
+      </symbol>
+
+      <symbol id="arrow" viewBox="0 0 17 15">
+        <g>
+          <path
+            d="M16.2498 7.5C16.2498 7.75693 16.1477 8.00334 15.966 8.18501C15.7844 8.36669 15.538 8.46875 15.281 8.46875L4.05709 8.46875L8.2169 12.6266C8.30698 12.7167 8.37842 12.8236 8.42717 12.9413C8.47591 13.059 8.501 13.1851 8.501 13.3125C8.501 13.4399 8.47591 13.566 8.42717 13.6837C8.37842 13.8014 8.30698 13.9083 8.2169 13.9984C8.12683 14.0884 8.01991 14.1599 7.90222 14.2086C7.78454 14.2574 7.65841 14.2825 7.53103 14.2825C7.40365 14.2825 7.27752 14.2574 7.15984 14.2086C7.04215 14.1599 6.93522 14.0884 6.84515 13.9984L1.03265 8.18588C0.942438 8.09589 0.870861 7.98899 0.822023 7.87129C0.773186 7.7536 0.748047 7.62743 0.748047 7.5C0.748047 7.37258 0.773185 7.24641 0.822023 7.12871C0.87086 7.01102 0.942438 6.90412 1.03265 6.81413L6.84515 1.00163C7.02706 0.819723 7.27378 0.717529 7.53103 0.717529C7.78828 0.717529 8.035 0.819723 8.2169 1.00163C8.39881 1.18353 8.501 1.43025 8.501 1.6875C8.501 1.94476 8.39881 2.19147 8.2169 2.37338L4.05709 6.53125L15.281 6.53125C15.538 6.53125 15.7844 6.63332 15.966 6.81499C16.1477 6.99667 16.2498 7.24307 16.2498 7.5Z"
+          />
+        </g>
+      </symbol>
+    </svg>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <div class="header__logo">
+            <img src="img/tennis-logo.svg" alt="logo" />
+          </div>
+
+          <nav class="nav">
+            <a class="nav__link" href="#">Главная</a>
+            <a class="nav__link" href="#">О клубе</a>
+            <a class="nav__link" href="#">Турниры</a>
+            <a class="nav__link" href="#">Услуги</a>
+            <a class="nav__link" href="#">Детский теннис</a>
+            <a class="nav__link" href="#">Галерея</a>
+            <a class="nav__link" href="#">Цены</a>
+            <a class="nav__link" href="#">Контакты</a>
+          </nav>
+
+          <div class="social">
+            <a class="social__item" href="#" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#youtube-logo "></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#vk-logo "></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- /.header__inner -->
+      </div>
+      <!-- /.container -->
+    </header>
+
+    <!-- Intro -->
+    <section class="intro">
+      <div class="container">
+        <h1 class="intro__title">
+          Петербургский<br />теннисный клуб<br />имени М.А. Пасечникова
+        </h1>
+
+        <div class="playbox">
+          <a href="#" class="playbox__btn">
+            <img src="img/view_btn.svg" alt="ViewBtn" />
+          </a>
+          <span class="playbox__text">Посмотрите видео<br />о нашем клубе</span>
+        </div>
+        <!-- /.playbox -->
+
+        <!-- Linkbox -->
+        <div class="linkbox">
+          <a class="linkbox__item" href="#">
+            <h3 class="linkbox__title">Услуги</h3>
+            <h4 class="linkbox__subtitle">Аренда корта</h4>
+            <svg class="linkbox__link">
+              <use xlink:href="#link-logo "></use>
+            </svg>
+          </a>
+          <!-- /.linkbox__item -->
+          <a class="linkbox__item" href="#">
+            <h3 class="linkbox__title">Услуги</h3>
+            <h4 class="linkbox__subtitle">Аренда корта</h4>
+            <svg class="linkbox__link">
+              <use xlink:href="#link-logo "></use>
+            </svg>
+          </a>
+          <!-- /.linkbox__item -->
+          <a class="linkbox__item" href="#">
+            <h3 class="linkbox__title">Услуги</h3>
+            <h4 class="linkbox__subtitle">Аренда корта</h4>
+            <svg class="linkbox__link">
+              <use xlink:href="#link-logo "></use>
+            </svg>
+          </a>
+          <!-- /.linkbox__item -->
+          <a class="linkbox__item" href="#">
+            <h3 class="linkbox__title">Услуги</h3>
+            <h4 class="linkbox__subtitle">Аренда корта</h4>
+            <svg class="linkbox__link">
+              <use xlink:href="#link-logo "></use>
+            </svg>
+          </a>
+          <!-- /.linkbox__item -->
+        </div>
+        <!-- /.linkbox -->
+      </div>
+      <!-- /.container -->
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+      <div class="container">
+        <div class="benefits__inner">
+          <div class="benefits__item">
+            <div class="benefits__box">
+              <h3 class="benefits__title">5 летних<br />грунтовых кортов</h3>
+              <img
+                class="benefits__img"
+                src="img/benefits/benefits_1.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <!-- /.benefits__item -->
+          <div class="benefits__item">
+            <div class="benefits__box">
+              <h3 class="benefits__title">
+                Зал с покрытием<br />“Искусственная трава”
+              </h3>
+              <img
+                class="benefits__img"
+                src="img/benefits/benefits_2.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <!-- /.benefits__item -->
+          <div class="benefits__item">
+            <div class="benefits__box">
+              <h3 class="benefits__title">Зал с покрытием<br />“Хард”</h3>
+              <img
+                class="benefits__img"
+                src="img/benefits/benefits_3.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <!-- /.benefits__item -->
+        </div>
+        <!-- /.benefits__inner -->
+      </div>
+    </section>
+
+    <!-- Card -->
+    <section class="card">
+      <div class="container">
+        <div class="card__inner">
+          <div class="card__img">
+            <img src="img/img_1.jpg" alt="Tennis player" />
+          </div>
+          <div class="card__textblock">
+            <h2 class="textblock_title">Спортивный клуб</h2>
+            <div class="textblock__text">
+              <p>
+                Imperdiet lorem ipsum, pulvinar aliquet sit ultricies in sit
+                turpis. Ultricies erat pretium risus quam tincidunt non viverra
+                porttitor. Sollicitudin enim nunc in nisi donec vel. Blandit
+                mauris vitae amet aliquet ultrices mauris pellentesque. Non
+                ipsum commodo, sit mi sit netus aenean nisl. ]Donec sit
+                pellentesque enim, vestibulum.
+              </p>
+              <p>
+                Condimentum hac adipiscing purus in augue nisi. Convallis ut
+                nisi.
+              </p>
+            </div>
+            <h3 class="textblock__subtitle">
+              Ornare orci ut dictum nulla fames.
+            </h3>
+            <ul class="textblock__list">
+              <li>
+                Euismod diam, vel venenatis bibendum sodales sem hendrerit
+                vulputate sagittis.
+              </li>
+              <li>
+                Nisl senectus sed malesuada donec. Interdum malesuada bibendum
+                imperdiet elementum auctor vitae in.
+              </li>
+              <li>
+                Quam purus ornare dictum pharetra. Sed viverra tellus
+                sollicitudin urna, sagittis.
+              </li>
+              <li>
+                Scelerisque urna senectus commodo, nam. Donec nibh tempus
+                imperdiet nisi, tincidunt mus egestas nisl nullam.
+              </li>
+            </ul>
+            <!-- /.textblock__text -->
+          </div>
+          <!-- /.card__textblock -->
+        </div>
+        <!-- /.card__inner -->
+      </div>
+      <!-- /.container -->
+    </section>
+
+    <!-- Team -->
+    <section class="team">
+      <div class="container">
+        <div class="team__header">
+          <h2 class="team__title">Тренерский состав</h2>
+          <div class="scrollbox">
+            <button type="button" class="btn btn--scroll">
+              <svg class="arrow">
+                <use xlink:href="#arrow"></use>
+              </svg>
+            </button>
+            <button type="button" class="btn btn--scroll">
+              <svg class="arrow arrow--right">
+                <use xlink:href="#arrow"></use>
+              </svg>
+            </button>
+          </div>
+          <!-- /.scrollbox -->
+        </div>
+        <!-- /.team__header -->
+
+        <div class="team__inner">
+          <div class="team__item">
+            <div class="photo-box">
+              <img class="teammate" src="img/team/team-1.png" alt="" />
+            </div>
+
+            <h3 class="teammate__name">Pulvinar aliquam</h3>
+
+            <div class="teammate__discription">
+              <p>Arcu elit massa amet turpis vel consequat pellentesque sit.</p>
+            </div>
+          </div>
+          <!-- /.team__item -->
+          <div class="team__item">
+            <div class="photo-box">
+              <img class="teammate" src="img/team/team-2.png" alt="" />
+            </div>
+
+            <h3 class="teammate__name">Pulvinar aliquam</h3>
+
+            <div class="teammate__discription">
+              <p>Arcu elit massa amet turpis vel consequat pellentesque sit.</p>
+            </div>
+          </div>
+          <!-- /.team__item -->
+          <div class="team__item">
+            <div class="photo-box">
+              <img class="teammate" src="img/team/team-3.png" alt="" />
+            </div>
+
+            <h3 class="teammate__name">Pulvinar aliquam</h3>
+
+            <div class="teammate__discription">
+              <p>Arcu elit massa amet turpis vel consequat pellentesque sit.</p>
+            </div>
+          </div>
+          <!-- /.team__item -->
+          <div class="team__item">
+            <div class="photo-box">
+              <img class="teammate" src="img/team/team-4.png" alt="" />
+            </div>
+
+            <h3 class="teammate__name">Pulvinar aliquam</h3>
+
+            <div class="teammate__discription">
+              <p>Arcu elit massa amet turpis vel consequat pellentesque sit.</p>
+            </div>
+          </div>
+          <!-- /.team__item -->
+          <div class="team__item">
+            <div class="photo-box">
+              <img class="teammate" src="img/team/team-5.png" alt="" />
+            </div>
+
+            <h3 class="teammate__name">Pulvinar aliquam</h3>
+
+            <div class="teammate__discription">
+              <p>Arcu elit massa amet turpis vel consequat pellentesque sit.</p>
+            </div>
+          </div>
+          <!-- /.team__item -->
+          <div class="team__item">
+            <div class="photo-box">
+              <img class="teammate" src="img/team/team-6.png" alt="" />
+            </div>
+
+            <h3 class="teammate__name">Pulvinar aliquam</h3>
+
+            <div class="teammate__discription">
+              <p>Arcu elit massa amet turpis vel consequat pellentesque sit.</p>
+            </div>
+          </div>
+          <!-- /.team__item -->
+        </div>
+      </div>
+      <!-- /.container -->
+    </section>
+
+    <!-- Price and Services -->
+    <section class="price-services">
+      <div class="container">
+        <!-- Price -->
+        <div class="price">
+          <h2 class="price__title">Цены и абонементы</h2>
+          <div class="price__inner">
+            <button type="button" class="btn btn--price">
+              Зимний сезон 2021-2022
+              <svg class="arrow arrow--size">
+                <use xlink:href="#arrow"></use>
+              </svg>
+            </button>
+            <button type="button" class="btn btn--price">
+              Абонементы
+              <svg class="arrow arrow--size">
+                <use xlink:href="#arrow"></use>
+              </svg>
+            </button>
+            <button type="button" class="btn btn--price">
+              Скидки
+              <svg class="arrow arrow--size">
+                <use xlink:href="#arrow"></use>
+              </svg>
+            </button>
+            <button type="button" class="btn btn--price">
+              Дополнительные услуги
+              <svg class="arrow arrow--size">
+                <use xlink:href="#arrow"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="services">
+          <div class="services__titlebox">
+            <h2 class="services__title">Услуги</h2>
+            <div class="scrollbox">
+              <button type="button" class="btn btn--scroll">
+                <svg class="arrow">
+                  <use xlink:href="#arrow"></use>
+                </svg>
+              </button>
+              <button type="button" class="btn btn--scroll">
+                <svg class="arrow arrow--right">
+                  <use xlink:href="#arrow"></use>
+                </svg>
+              </button>
+            </div>
+            <!-- /.scrollbox -->
+          </div>
+          <!-- /.services__titlebox -->
+          <div class="services__imgframe">
+            <div class="services__imgbox">
+              <img src="img/cafe.png" alt="" class="service__img" />
+              <span class="services__text">Уютное кафе</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <span class="copyright">2022 © Все права защищены.</span>
+          <nav class="nav">
+            <a class="nav__link nav--black" href="#">Главная</a>
+            <a class="nav__link nav--black" href="#">О клубе</a>
+            <a class="nav__link nav--black" href="#">Турниры</a>
+            <a class="nav__link nav--black" href="#">Услуги</a>
+            <a class="nav__link nav--black" href="#">Детский теннис</a>
+            <a class="nav__link nav--black" href="#">Галерея</a>
+            <a class="nav__link nav--black" href="#">Цены</a>
+            <a class="nav__link nav--black" href="#">Контакты</a>
+          </nav>
+          <div class="social">
+            <a class="social__item" href="#" target="_blank">
+              <svg class="social__icon social--purple">
+                <use xlink:href="#youtube-logo "></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="_blank">
+              <svg class="social__icon social--purple">
+                <use xlink:href="#vk-logo "></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="_blank">
+              <svg class="social__icon social--purple">
+                <use xlink:href="#tg-logo "></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
