@@ -1,12 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Coffee Masters</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <img
+        class="logo"
+        src="https://btholt.github.io/complete-intro-to-web-dev-v3/images/coffee_masters_logo.png"
+      />
+      <h1 class="header-text">Coffee Masters</h1>
+    </header>
+    <main>
+      <section class="order box">
+        <h2 class="box-title">ITEMS</h2>
+        <ul class="items">
+          <li class="item">
+            <p class="item-quantity">1x</p>
+            <p class="item-title">Cappucino</p>
+            <p class="item-price">$3.35</p>
+            <ul class="item-options-list">
+              <li class="item-option">Lite foam</li>
+            </ul>
+          </li>
+
+          <li class="item">
+            <p class="item-quantity">1x</p>
+            <p class="item-title">Cappucino</p>
+            <p class="item-price">$3.85</p>
+            <ul class="item-options-list">
+              <li class="item-option">Lite milk</li>
+              <li class="item-option">Double espresso</li>
+            </ul>
+          </li>
+          <li class="item">
+            <p class="item-quantity">1x</p>
+            <p class="item-title">Croissant</p>
+            <p class="item-price">$2.45</p>
+            <ul class="item-options-list">
+              <li class="item-option">Butter</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section class="payment">
+        <div class="name-box box">
+          <h2 class="box-title">NAME</h2>
+          <div class="input-group">
+            <label class="user-input-label" for="name">Name for order</label>
+            <input class="user-input" "name" type="text" />
+          </div>
+        </div>
+        <div class="cvv-box box">
+          <h2 class="box-title">PAYMENT</h2>
+          <div class="input-group">
+            <label class="user-input-label" for="card-number"
+              >Card number</label
+            >
+            <input
+              class="user-input"
+              id="card-numer"
+              type="number"
+              placeholder="1234 5678 9012 3456"
+            />
+          </div>
+          <div class="input-group">
+            <label class="user-input-label" for="cvv-number">CVV number</label>
+            <input
+              class="user-input short-input"
+              id="cvv-number"
+              type="number"
+              placeholder="001"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="total">
+        <table class="totals-table">
+          <tr>
+            <td>Subtotal</td>
+            <td>$9.65</td>
+          </tr>
+          <tr>
+            <td>Tax</td>
+            <td>$0.82</td>
+          </tr>
+          <tr class="final-totals">
+            <td>Total</td>
+            <td>$10.47</td>
+          </tr>
+        </table>
+        <button class="checkout">Place order</button>
+      </section>
+    </main>
   </body>
 </html>
