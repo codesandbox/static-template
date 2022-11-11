@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <div id="root"></div>
+    <!--   <script>
+      const rootElement = document.getElementById("root");
+
+      function random() {
+        const number = Math.floor(Math.random() * (10 - 1) + 1);
+
+        const element = `
+      <button>${number}</button>`;
+
+        rootElement.innerHTML = element;
+      } 
+
+      setInterval(random, 1000); -->
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      function random() {
+        const number = Math.floor(Math.random() * (10 - 1) + 1);
+
+        const element = <button>{number}</button>;
+
+        ReactDOM.render(element, rootElement);
+      }
+
+      setInterval(random, 1000);
+    </script>
   </body>
 </html>
