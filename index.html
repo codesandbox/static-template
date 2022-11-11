@@ -1,12 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+
+    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet" />
+    <title>Women Digipreneur Festival webapp</title>
+    <style>
+      html,
+      body {
+        background-color: #ffffff !important;
+        background-color: #f4f4f4 !important;
+      }
+      body * {
+        font-family: "Poppins", sans-serif !important;
+      }
+      .hide {
+        display: none;
+      }
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      #zoom-link {
+        display: inline-block;
+        pointer-events: none;
+      }
+    </style>
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <body data-new-gr-c-s-check-loaded="14.1085.0" data-gr-ext-installed="">
+    <main>
+      <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+          <a
+            href="/"
+            class="d-flex align-items-center text-dark text-decoration-none"
+          >
+            <span class="fs-4">Women Digipreneur Festival</span>
+          </a>
+        </header>
+
+        <!-- Start * Check Number -->
+        <div class="p-1 mb-4 bg-light rounded-3 check-user">
+          <div class="container-fluid py-5">
+            <p class="col-md-8 fs-4">
+              បញ្ជក់លេខទូរស័ព្ទរបស់អ្នក <br />
+              លេខទូរស័ព្ទដែលបានប្រើពេលចុះឈ្មោះដំបូង
+            </p>
+
+            <input
+              type="number"
+              name="phonenumber"
+              class="form-control"
+              placeholder="18 912 3456"
+              value=""
+            />
+            <br />
+            <button
+              class="btn btn-secondary btn-lg"
+              type="button"
+              id="liveToastBtn"
+              onclick="checkNumber()"
+              style="background-color: #f44835;"
+            >
+              រួចរាល់
+            </button>
+          </div>
+        </div>
+        <!-- End * Check Number -->
+
+        <!-- Start * Pass User -->
+        <div class="p-1 mb-4 bg-light rounded-3 pass-user hide">
+          <div class="container-fluid py-5">
+            <h2 class="col-md-8" id="session-title">
+              How to define your business
+            </h2>
+            <label class="fs-6" id="session-date"
+              >Sunday, November 27, 2022 at 9:00 AM</label
+            >
+            <br />
+            <br />
+            <a href="" class="btn btn-primary btn-lg" id="zoom-link" disabled>
+              Join Zoom
+            </a>
+            <a href="" class="btn btn-secondary btn-lg">
+              Go Back
+            </a>
+          </div>
+        </div>
+        <!-- End * Pass User -->
+
+        <!-- Start * Alert Box -->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+          <div
+            class="toast"
+            id="liveToast"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+          >
+            <div class="d-flex">
+              <div class="toast-body">
+                This is a toast message.
+              </div>
+              <button
+                type="button"
+                class="btn-close btn-close-white me-2 m-auto"
+                data-bs-dismiss="toast"
+                aria-label="Close"
+              ></button>
+            </div>
+          </div>
+        </div>
+        <!-- End * Alert Box -->
+      </div>
+    </main>
+    <script>
+      const toastTrigger = document.getElementById("liveToastBtn");
+      const toastLiveExample = document.getElementById("liveToast");
+      if (toastTrigger) {
+        toastTrigger.addEventListener("click", () => {
+          const toast = new bootstrap.Toast(toastLiveExample);
+
+          toast.show();
+        });
+      }
+      var sessionTitle = (sessionDate = zoomID = "");
+
+      var tableData;
+      $(document).ready(async function () {
+        tableData = await $.get(
+          "https://docs.google.com/spreadsheets/d/e/2PACX-1vQdbjTWWEUr4ahWJCzCNx8yXefcIMjUyzkbZeLjoRKxLCkW_9UpmeiXJAJMdQ5nj_p-wZ8D-8_o8B_i/pubhtml?gid=799741779&amp;single=true&amp;widget=true&amp;headers=false"
+        );
+
+        sessionTitle = getUrlParameter("title");
+        sessionDate = getUrlParameter("time");
+        zoomID = "https://us06web.zoom.us/j/" + getUrlParameter("zoom");
+
+        $("#session-title").html(sessionTitle);
+        $("#session-date").html(sessionDate);
+        $("#zoom-link").attr("href", zoomID);
+      });
+
+      function checkNumber() {
+        var num = $('[name="phonenumber"]').val();
+
+        if (tableData.indexOf(num) > 0) {
+          $("#liveToast")
+            .removeClass("text-bg-danger")
+            .addClass("text-bg-primary");
+          $(".toast-body").html("ជោគជ័យ");
+          showDetail();
+          // window.location = "https://us06web.zoom.us/j/85340563706";
+        } else {
+          $("#liveToast")
+            .addClass("text-bg-danger")
+            .removeClass("text-bg-primary");
+          $(".toast-body").html("មិនត្រឹមត្រូវ");
+        }
+      }
+
+      function showDetail() {
+        $(".check-user").addClass("hide");
+        $(".pass-user").removeClass("hide");
+      }
+
+      function getUrlParameter(sParam) {
+        var sPageURL = window.location.search.substring(1),
+          sURLVariables = sPageURL.split("&"),
+          sParameterName,
+          i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+          sParameterName = sURLVariables[i].split("=");
+
+          if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined
+              ? true
+              : decodeURIComponent(sParameterName[1]);
+          }
+        }
+        return false;
+      }
+    </script>
   </body>
 </html>
