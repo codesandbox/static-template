@@ -1,12 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <style>
+      .hero {
+        background-image: url("./img/Imagem.jpeg");
+        height: 100vh;
+        background-size: cover;
+        position: relative;
+      }
+
+      .hero_title {
+        font-size: 4.5rem;
+      }
+      .hero_desc {
+        font-size: 2rem;
+      }
+
+      .hero_text {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+      }
+    </style>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Eliane</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Portfólio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="hero">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 hero_text">
+            <h2 class="hero_title">Hello, I'm Eliane</h2>
+            <p class="hero_desc">I'm a webdesigner</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+       <h1 class="text-center">Sobre mim</h1>
+         <div class="row">
+           <div class="col-lg-4">
+             <img class="img-fluid"
+              src="https://i.ytimg.com/vi/fnadhlsEqeU/maxresdefault.jpg"/>
+          </div>
+        <div class="col-lg-8">
+          <p>From its medieval origins to the digital era, learn everything there is to know about the ubiquitous lorem ipsum passage.</p>
+            <div class="row my-3">
+               <div class="col-6">
+                <ul>
+                  <li>Nome: Eliane</li>
+                  <li>Idade: 46</li>
+                  <li>Profissão: Teacher</li>
+                </ul>
+               </div>
+             </div>
+              <div class="col-6">
+                <ul>
+                    <li>Javascript: Junior</li>
+                    <li>HTML: Junior</li>
+                    <li>CSS: Junior</li>
+                </ul>
+             <p>From its medieval origins to the digital era, learn everything there is to know about the ubiquitous lorem ipsum passage.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h1 class="text-center">
+            Serviços
+         </h1>
+          <div class="row">
+            <div class="col-lg-4 mt-4">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title mt-3">
+                    Webdesign
+                  </h4>
+                  <p class="card-text">
+                      Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with:
+                  </p>
+              </div>
+            </div>
+          </div>
+        <div class="col-lg-4 mt-4">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title mt-3">
+                    Webdesign
+                  </h4>
+                   <p class="card-text">
+                      Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with:
+                   </p>
+              </div>
+            </div>
+          </div>
+        <div class="col-lg-4 mt-4">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title mt-3">
+                    Webdesign
+                  </h4>
+                  <p class="card-text">
+                      Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with:
+                  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfólio">
+      <div class="container">
+        <h1 class="text-center">
+          Portfólio
+        </h1>
+        <div class="row">
+          <div class="col-lg-4 mt-4">
+            <!-- Grid bootstrap card -->
+            <div class="card">
+              <!--Card image-->
+              <img class="card-img-top" src="https://www.picpedia.org/chalkboard/images/web-design.jpg"/>
+              <!--Card body-->
+              <div class="card-body">
+               <h4>Web Design</h4>
+                 <p class="card-text">
+                  Lorem ipsum
+                 </p>
+                <div class="mt-1 text-center">
+                  <a href="#" class="btn btn-success">
+                    Link 
+                  </a> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mt-4">
+              <div class="card">
+                <img class="card-img-top" src="https://www.picpedia.org/chalkboard/images/business-management.jpg"/>
+                  <div class="card-body">
+                   <h4>Business Management</h4>
+                     <p class="card-text">
+                      Lorem ipsum
+                     </p>
+                    <div class="mt-1 text-center">
+                      <a href="#" class="btn btn-success">
+                        Link 
+                      </a> 
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 mt-4">
+              <div class="card">
+                <img class="card-img-top" src="https://www.picpedia.org/chalkboard/images/business-ideas.jpg"/>
+                  <div class="card-body">
+                    <h4>Business Ideas</h4>
+                      <p class="card-text">
+                      Lorem ipsum
+                      </p>
+                    <div class="mt-1 text-center">
+                      <a href="#" class="btn btn-success">
+                        Link 
+                      </a> 
+                    </div>       
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ <section id="contact">
+  <div class="container mt-3">
+    <h1 class="text-center">
+      Contato
+    </h1>
+
+    <div class="row mt-4">
+      <div class="col-lg-6">
+        <!--Mapa https://embed-map.com-->
+        <div style="
+          max-width:100%;
+          overflow:hidden;
+          color:red;
+          width:500px;
+          height:500px;">
+        <div id="display-google-map" 
+         style="
+          height:100%; 
+          width:100%;
+          max-width:100%;">
+         <iframe style="
+        height:100%;
+        width:100%;
+        border:0;" 
+        frameborder="0" 
+        src="https://www.google.com/maps/embed/v1/place?q=Instituto+Espírita+de+Educação+-+Rua+Professor+Atílio+Innocenti+-+Vila+Nova+Conceição,+São+Paulo+-+SP,+Brasil&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="google-map-html" href="https://www.bootstrapskins.com/themes" id="grab-maps-authorization">premium bootstrap themes</a><style>#display-google-map{} .text-marker{}.map-generator{max-width: 100%; max-height: 100%; background: none;}
+         </style>
+        </div>
+      </div>
+    </div>
+      <div class="col-lg-6">
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container mt-3">
+  <h2>Formulário</h2>
+  <form action="/action_page.php">
+    <div class="mb-3 mt-3">
+            <label for="name">Nome:</label>
+            <input type="name" class="form-control" id="name" placeholder="Enter name" name="nome">
+      </div>
+      <div class="mb-3">
+           <label for="email">Email:</label>
+           <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+     </div>
+          <label for="comment">Digite sua mensagem:</label>
+          <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+          <p></p>
+         <button type="submit" class="btn btn-primary">Enviar</button>
+   </form>
+ </div>
+
+   <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous">
+    </script>
   </body>
 </html>
