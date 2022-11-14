@@ -55,6 +55,7 @@ body {
 .dice,
 .confirm-move,
 .avail-confirm-move,
+.avail-deny-move,
 #reset,
 .cnf-portal-btn {
   width: 100px;
@@ -83,6 +84,7 @@ body {
 .dice:hover,
 .confirm-move:hover,
 .avail-confirm-move:hover,
+.avail-deny-move:hover,
 #reset:hover,
 .cnf-portal-btn:hover {
   box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
@@ -470,4 +472,100 @@ body {
   align-items: center;
   margin-left: 70px;
   border-color: yellow;
+}
+
+.avail-option-container {
+  background-color: #74bbad;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.avail-options input {
+  width: 30px;
+  height: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 4px 8px;
+  background: #454857;
+  color: #bdbdbdbd;
+  font-size: 14px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  transition: all 100ms linear;
+}
+.avail-options input:checked {
+  background-image: linear-gradient(180deg, #95d891, #74bbad) !important;
+  color: #fff !important;
+  box-shadow: 0 1px 1px #0000002e !important;
+  text-shadow: 0 1px 0px #79485f7a !important;
+}
+
+.avail-options input:before {
+  content: attr(label);
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+.avail-confirm-move {
+  width: 77px;
+  height: 30px;
+  visibility: hidden;
+}
+
+.avail-name {
+  width: 225px;
+  height: 20px;
+  text-align: center;
+  line-height: 10px;
+}
+
+.avail-options {
+  width: 225px;
+  height: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  /* border: 1px solid black; */
+}
+
+.time-stone,
+.space-stone,
+.memory-stone,
+.soul-stone,
+.reality-stone,
+.power-stone {
+  width: 33px;
+  height: 250px;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.p1,
+.p2,
+.p3,
+.p4,
+.plus,
+.minus {
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+}
+.time,
+.space,
+.memory,
+.soul,
+.reality,
+.power {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
 }

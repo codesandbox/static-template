@@ -356,18 +356,38 @@ function put_enemy() {
     "beforeend",
     `<img src="Ulron_0-3.png" alt="oops" width="30px" height="30px" >`
   );
-  let apocalypse1 = document.getElementById(`grid${enemy_loc[2]}`);
+  let ultron3 = document.getElementById(`grid${enemy_loc[2]}`);
+  ultron3.insertAdjacentHTML(
+    "beforeend",
+    `<img src="Ulron_0-3.png" alt="oops" width="30px" height="30px" >`
+  );
+  let apocalypse1 = document.getElementById(`grid${enemy_loc[3]}`);
   apocalypse1.insertAdjacentHTML(
     "beforeend",
     `<img src="Apocalypse_0-0.png" alt="oops" width="30px" height="30px" >`
   );
-  let apocalypse2 = document.getElementById(`grid${enemy_loc[3]}`);
+  let apocalypse2 = document.getElementById(`grid${enemy_loc[4]}`);
   apocalypse2.insertAdjacentHTML(
     "beforeend",
     `<img src="Apocalypse_0-0.png" alt="oops" width="30px" height="30px" >`
   );
-  let loki = document.getElementById(`grid${enemy_loc[4]}`);
-  loki.insertAdjacentHTML(
+  let apocalypse3 = document.getElementById(`grid${enemy_loc[5]}`);
+  apocalypse3.insertAdjacentHTML(
+    "beforeend",
+    `<img src="Apocalypse_0-0.png" alt="oops" width="30px" height="30px" >`
+  );
+  let apocalypse4 = document.getElementById(`grid${enemy_loc[6]}`);
+  apocalypse4.insertAdjacentHTML(
+    "beforeend",
+    `<img src="Apocalypse_0-0.png" alt="oops" width="30px" height="30px" >`
+  );
+  let loki1 = document.getElementById(`grid${enemy_loc[7]}`);
+  loki1.insertAdjacentHTML(
+    "beforeend",
+    `<img src="Loki_10-0.png" alt="oops" width="30px" height="30px" >`
+  );
+  let loki2 = document.getElementById(`grid${enemy_loc[8]}`);
+  loki2.insertAdjacentHTML(
     "beforeend",
     `<img src="Loki_10-0.png" alt="oops" width="30px" height="30px" >`
   );
@@ -400,6 +420,16 @@ function put_portal() {
 
   let portal5 = document.getElementById(`grid${portal_loc[4]}`);
   portal5.insertAdjacentHTML(
+    "beforeend",
+    `<img src="portal2-removebg-preview.png" alt="oops" width="30px" height="30px" >`
+  );
+  let portal6 = document.getElementById(`grid${portal_loc[5]}`);
+  portal6.insertAdjacentHTML(
+    "beforeend",
+    `<img src="portal2-removebg-preview.png" alt="oops" width="30px" height="30px" >`
+  );
+  let portal7 = document.getElementById(`grid${portal_loc[6]}`);
+  portal7.insertAdjacentHTML(
     "beforeend",
     `<img src="portal2-removebg-preview.png" alt="oops" width="30px" height="30px" >`
   );
@@ -457,7 +487,13 @@ var player1_data = [
   { memorystone: false },
   { position: 1 },
   { isStones: false },
-  { stonecount: 0 }
+  { stonecount: 0 },
+  {
+    ultronattack: 0
+  },
+  {
+    memoryerase: 0
+  }
 ];
 var player2_data = [
   { timestone: false },
@@ -468,7 +504,13 @@ var player2_data = [
   { memorystone: false },
   { position: 1 },
   { isStones: false },
-  { stonecount: 0 }
+  { stonecount: 0 },
+  {
+    ultronattack: 0
+  },
+  {
+    memoryerase: 0
+  }
 ];
 var player3_data = [
   { timestone: false },
@@ -479,7 +521,13 @@ var player3_data = [
   { memorystone: false },
   { position: 1 },
   { isStones: false },
-  { stonecount: 0 }
+  { stonecount: 0 },
+  {
+    ultronattack: 0
+  },
+  {
+    memoryerase: 0
+  }
 ];
 var player4_data = [
   { timestone: false },
@@ -490,12 +538,18 @@ var player4_data = [
   { memorystone: false },
   { position: 1 },
   { isStones: false },
-  { stonecount: 0 }
+  { stonecount: 0 },
+  {
+    ultronattack: 0
+  },
+  {
+    memoryerase: 0
+  }
 ];
-
+var time_sliding_window = [];
 function initial_players_data() {
   active_player_count = 1;
-
+  time_sliding_window = [];
   portal_storage = [
     { timestone: true },
     { spacestone: true },
@@ -515,7 +569,13 @@ function initial_players_data() {
     { memorystone: false },
     { position: 1 },
     { isStones: false },
-    { stonecount: 0 }
+    { stonecount: 0 },
+    {
+      ultronattack: 0
+    },
+    {
+      memoryerase: 0
+    }
   ];
   player2_data = [
     { timestone: false },
@@ -526,7 +586,13 @@ function initial_players_data() {
     { memorystone: false },
     { position: 1 },
     { isStones: false },
-    { stonecount: 0 }
+    { stonecount: 0 },
+    {
+      ultronattack: 0
+    },
+    {
+      memoryerase: 0
+    }
   ];
   player3_data = [
     { timestone: false },
@@ -537,7 +603,13 @@ function initial_players_data() {
     { memorystone: false },
     { position: 1 },
     { isStones: false },
-    { stonecount: 0 }
+    { stonecount: 0 },
+    {
+      ultronattack: 0
+    },
+    {
+      memoryerase: 0
+    }
   ];
   player4_data = [
     { timestone: false },
@@ -548,7 +620,13 @@ function initial_players_data() {
     { memorystone: false },
     { position: 1 },
     { isStones: false },
-    { stonecount: 0 }
+    { stonecount: 0 },
+    {
+      ultronattack: 0
+    },
+    {
+      memoryerase: 0
+    }
   ];
 
   active_player = player1_data;
@@ -566,57 +644,79 @@ function random() {
 }
 
 function portal_generator() {
-  let loc1 = 1;
-  let loc2 = 1;
-  let loc3 = 1;
-  let loc4 = 1;
-  let loc5 = 1;
-  while (
-    loc1 == loc2 ||
-    loc1 == loc3 ||
-    loc1 == loc4 ||
-    loc1 == loc5 ||
-    loc2 == loc3 ||
-    loc2 == loc4 ||
-    loc2 == loc5 ||
-    loc3 == loc4 ||
-    loc3 == loc5 ||
-    loc4 == loc5
-  ) {
-    loc1 = random();
-    loc2 = random();
-    loc3 = random();
-    loc4 = random();
-    loc5 = random();
-  }
-  return [loc1, loc2, loc3, loc4, loc5];
+  let arr = [1];
+  console.log(arr);
+  let loc1;
+  loc1 = getRandomIntExcludingExistingNumbers(20, 5, arr);
+  let loc2;
+  arr.push(loc1);
+  loc2 = getRandomIntExcludingExistingNumbers(35, 15, arr);
+  let loc3;
+  arr.push(loc2);
+  loc3 = getRandomIntExcludingExistingNumbers(55, 35, arr);
+  let loc4;
+  arr.push(loc3);
+  loc4 = getRandomIntExcludingExistingNumbers(75, 55, arr);
+  let loc5;
+  arr.push(loc4);
+  loc5 = getRandomIntExcludingExistingNumbers(95, 75, arr);
+  let loc6;
+  arr.push(loc5);
+  loc6 = getRandomIntExcludingExistingNumbers(95, 75, arr);
+  let loc7;
+  arr.push(loc6);
+  loc7 = getRandomIntExcludingExistingNumbers(10, 3, arr);
+  return [loc1, loc2, loc3, loc4, loc5, loc6, loc7];
 }
 
-function enemy_generator(portal_loc) {
-  let loc1 = 1;
-  let loc2 = 1;
-  let loc3 = 1;
-  let loc4 = 1;
-  let loc5 = 1;
-  while (
-    loc1 == loc2 ||
-    loc1 == loc3 ||
-    loc1 == loc4 ||
-    loc1 == loc5 ||
-    loc2 == loc3 ||
-    loc2 == loc4 ||
-    loc2 == loc5 ||
-    loc3 == loc4 ||
-    loc3 == loc5 ||
-    loc4 == loc5
-  ) {
-    loc1 = getRandomIntExcludingExistingNumbers(95, 5, portal_loc);
-    loc2 = getRandomIntExcludingExistingNumbers(95, 5, portal_loc);
-    loc3 = getRandomIntExcludingExistingNumbers(95, 5, portal_loc);
-    loc4 = getRandomIntExcludingExistingNumbers(95, 5, portal_loc);
-    loc5 = getRandomIntExcludingExistingNumbers(95, 5, portal_loc);
-  }
-  return [loc1, loc2, loc3, loc4, loc5];
+function enemy_generator() {
+  let arr = portal_loc;
+  console.log(arr);
+  let loc1;
+  loc1 = getRandomIntExcludingExistingNumbers(20, 5, arr);
+  let loc2;
+  arr.push(loc1);
+  loc2 = getRandomIntExcludingExistingNumbers(35, 15, arr);
+  let loc3;
+  arr.push(loc2);
+  loc3 = getRandomIntExcludingExistingNumbers(95, 25, arr);
+  let loc4;
+  arr.push(loc3);
+  loc4 = getRandomIntExcludingExistingNumbers(45, 25, arr);
+  let loc5;
+  arr.push(loc4);
+  loc5 = getRandomIntExcludingExistingNumbers(70, 40, arr);
+  let loc6;
+  arr.push(loc5);
+  loc6 = getRandomIntExcludingExistingNumbers(97, 65, arr);
+  let loc7;
+  arr.push(loc6);
+  loc7 = getRandomIntExcludingExistingNumbers(99, 90, arr);
+  let loc8;
+  arr.push(loc7);
+  loc8 = getRandomIntExcludingExistingNumbers(75, 60, arr);
+  let loc9;
+  arr.push(loc8);
+  loc9 = getRandomIntExcludingExistingNumbers(89, 70, arr);
+  // while (
+  //   loc1 == loc2 ||
+  //   loc1 == loc3 ||
+  //   loc1 == loc4 ||
+  //   loc1 == loc5 ||
+  //   loc2 == loc3 ||
+  //   loc2 == loc4 ||
+  //   loc2 == loc5 ||
+  //   loc3 == loc4 ||
+  //   loc3 == loc5 ||
+  //   loc4 == loc5
+  // ) {
+  //   loc1 = getRandomIntExcludingExistingNumbers(95, 5, portal_loc);
+  //   loc2 = getRandomIntExcludingExistingNumbers(95, 5, portal_loc);
+  //   loc3 = getRandomIntExcludingExistingNumbers(95, 5, portal_loc);
+  //   loc4 = getRandomIntExcludingExistingNumbers(95, 5, portal_loc);
+  //   loc5 = getRandomIntExcludingExistingNumbers(95, 5, portal_loc);
+  // }
+  return [loc1, loc2, loc3, loc4, loc5, loc6, loc7, loc8, loc9];
 }
 
 function getRandomInt(min, max) {
@@ -675,70 +775,167 @@ var portal_dialogue = `
     </div>
 `;
 
+// var powers_dialogue = `
+// <div class="avail-option-container">
+
+// <div class="avail-name">Available Powers</div>
+
+// <div class="avail-options">
+
+// <div class="time-stone">
+// <div class="time">T</div>
+// <div class="p1">P1</div>
+// <div class="p2">P2</div>
+// <div class="p3">P3</div>
+// <div class="p4">P4</div>
+// </div>
+
+// <div class="memory-stone">
+// <div class="memory">M</div>
+// <div class="p1">P1</div>
+// <div class="p2">P2</div>
+// <div class="p3">P3</div>
+// <div class="p4">P4</div>
+// </div>
+
+// <div class="reality-stone">
+// <div class="reality">R</div>
+// <div class="p1">P1</div>
+// <div class="p2">P2</div>
+// <div class="p3">P3</div>
+// <div class="p4">P4</div>
+// </div>
+
+// <div class="space-stone">
+// <div class="space">Sp</div>
+// <div class="p1">P1</div>
+// <div class="p2">P2</div>
+// <div class="p3">P3</div>
+// <div class="p4">P4</div>
+// <div class="plus">+</div>
+// <div class="minus">-</div>
+// </div>
+
+// <div class="power-stone">
+// <div class="power">P</div>
+// <div class="p1">P1</div>
+// <div class="p2">P2</div>
+// <div class="p3">P3</div>
+// <div class="p4">P4</div>
+// </div>
+
+// <div class="soul-stone">
+// <div class="soul">So</div>
+// <div class="p1">P1</div>
+// <div class="p2">P2</div>
+// <div class="p3">P3</div>
+// <div class="p4">P4</div>
+// </div>
+
+// </div>
+
+// <div class="avail-confirm-move-container">
+//   <button class="avail-confirm-move">Confirm</button>
+//   </div>
+// </div>
+// `;
 var powers_dialogue = `
 <div class="avail-option-container">
+      <div class="avail-name">Available Powers</div>
 
-<div class="avail-name">Available Powers</div>
+      <div class="avail-options">
+        <div class="time-stone">
+          <input
+            label="T"
+            type="radio"
+            class="time"
+            name="stone"
+            value="time"
+          />
+          <input label="p1" type="radio" class="p1" name="tp" value="tp1" />
+          <input label="p2" type="radio" class="p2" name="tp" value="tp2" />
+          <input label="p3" type="radio" class="p3" name="tp" value="tp3" />
+          <input label="p4" type="radio" class="p4" name="tp" value="tp4" />
+        </div>
 
-<div class="avail-options">
+        <div class="memory-stone">
+          <input
+            label="M"
+            type="radio"
+            class="memory"
+            name="stone"
+            value="memory"
+          />
+          <input label="p1" type="radio" class="p1" name="mp" value="mp1" />
+          <input label="p2" type="radio" class="p2" name="mp" value="mp2" />
+          <input label="p3" type="radio" class="p3" name="mp" value="mp3" />
+          <input label="p4" type="radio" class="p4" name="mp" value="mp4" />
+        </div>
 
-<div class="time-stone">
-<div class="time">T</div>
-<div class="p1">P1</div>
-<div class="p2">P2</div>
-<div class="p3">P3</div>
-<div class="p4">P4</div>
-</div>
+        <div class="reality-stone">
+          <input
+            label="R"
+            type="radio"
+            class="reality"
+            name="stone"
+            value="reality"
+          />
+          <input label="p1" type="radio" class="p1" name="rp" value="rp1" />
+          <input label="p2" type="radio" class="p2" name="rp" value="rp2" />
+          <input label="p3" type="radio" class="p3" name="rp" value="rp3" />
+          <input label="p4" type="radio" class="p4" name="rp" value="rp4" />
+        </div>
 
-<div class="memory-stone">
-<div class="memory">M</div>
-<div class="p1">P1</div>
-<div class="p2">P2</div>
-<div class="p3">P3</div>
-<div class="p4">P4</div>
-</div>
+        <div class="space-stone">
+          <input
+            label="Sp"
+            type="radio"
+            class="space"
+            name="stone"
+            value="space"
+          />
+          <input label="p1" type="radio" class="p1" name="spp" value="spp1" />
+          <input label="p2" type="radio" class="p2" name="spp" value="spp2" />
+          <input label="p3" type="radio" class="p3" name="spp" value="spp3" />
+          <input label="p4" type="radio" class="p4" name="spp" value="spp4" />
+          <input label="+" type="radio" class="plus" name="dir" value="+" />
+          <input label="-" type="radio" class="minus" name="dir" value="-" />
+        </div>
 
-<div class="reality-stone">
-<div class="reality">R</div>
-<div class="p1">P1</div>
-<div class="p2">P2</div>
-<div class="p3">P3</div>
-<div class="p4">P4</div>
-</div>
+        <div class="power-stone">
+          <input
+            label="P"
+            type="radio"
+            class="power"
+            name="stone"
+            value="power"
+          />
+          <input label="p1" type="radio" class="p1" name="pp" value="pp1" />
+          <input label="p2" type="radio" class="p2" name="pp" value="pp2" />
+          <input label="p3" type="radio" class="p3" name="pp" value="pp3" />
+          <input label="p4" type="radio" class="p4" name="pp" value="pp4" />
+        </div>
 
-<div class="space-stone">
-<div class="space">Sp</div>
-<div class="p1">P1</div>
-<div class="p2">P2</div>
-<div class="p3">P3</div>
-<div class="p4">P4</div>
-<div class="plus">+</div>
-<div class="minus">-</div>
-</div>
+        <div class="soul-stone">
+          <input
+            label="So"
+            type="radio"
+            class="soul"
+            name="stone"
+            value="soul"
+          />
+          <input label="p1" type="radio" class="p1" name="sop" value="sop1" />
+          <input label="p2" type="radio" class="p2" name="sop" value="sop2" />
+          <input label="p3" type="radio" class="p3" name="sop" value="sop3" />
+          <input label="p4" type="radio" class="p4" name="sop" value="sop4" />
+        </div>
+      </div>
 
-<div class="power-stone">
-<div class="power">P</div>
-<div class="p1">P1</div>
-<div class="p2">P2</div>
-<div class="p3">P3</div>
-<div class="p4">P4</div>
-</div>
-
-
-<div class="soul-stone">
-<div class="soul">So</div>
-<div class="p1">P1</div>
-<div class="p2">P2</div>
-<div class="p3">P3</div>
-<div class="p4">P4</div>
-</div>
-
-</div>
-
-<div class="avail-confirm-move-container">
-  <button class="avail-confirm-move">Confirm</button>
-  </div>
-</div>
+      <div class="avail-confirm-move-container">
+        <button class="avail-confirm-move">Yes</button>
+        <button class="avail-deny-move">No</button>
+      </div>
+    </div>
 `;
 
 var confirm_dialogue = `<div class="confirm-move-container">
@@ -749,19 +946,52 @@ function confirm_move() {
   deactive_confirm();
 
   // console.log("ok");
+  let curr_player_on_ult_loc = false;
+  if (active_player[9].ultronattack == 0) {
+    move_player();
+  } else {
+    if (number != 6) {
+      curr_player_on_ult_loc = true;
+      if (active_player_count == 1) {
+        player1_data[9].ultronattack--;
+      } else if (active_player_count == 2) {
+        player2_data[9].ultronattack--;
+      } else if (active_player_count == 3) {
+        player3_data[9].ultronattack--;
+      } else if (active_player_count == 4) {
+        player4_data[9].ultronattack--;
+      }
+    } else {
+      if (active_player_count == 1) {
+        player1_data[9].ultronattack = 0;
+      } else if (active_player_count == 2) {
+        player2_data[9].ultronattack = 0;
+      } else if (active_player_count == 3) {
+        player3_data[9].ultronattack = 0;
+      } else if (active_player_count == 4) {
+        player4_data[9].ultronattack = 0;
+      }
 
-  move_player();
+      move_player();
+    }
+  }
 
+  enemy_effect(curr_player_on_ult_loc);
   let nextindex = active_player[6].position;
-
   if (
     nextindex == portal_loc[0] ||
     nextindex == portal_loc[1] ||
     nextindex == portal_loc[2] ||
     nextindex == portal_loc[3] ||
-    nextindex == portal_loc[4]
+    nextindex == portal_loc[4] ||
+    nextindex == portal_loc[5] ||
+    nextindex == portal_loc[6]
   ) {
-    check_portal();
+    if (check_portal_storage()) {
+      check_portal();
+    } else {
+      move_frame();
+    }
   } else {
     move_frame();
   }
@@ -785,6 +1015,28 @@ function move_frame() {
     active_player = player3_data;
   } else if (active_player_count == 4) {
     active_player = player4_data;
+  }
+
+  if (active_player_count == 1) {
+    time_sliding_window.push({
+      player1: player1_data,
+      player2: player2_data,
+      player3: player3_data,
+      player4: player4_data
+    });
+    if (time_sliding_window.length > 4) {
+      time_sliding_window.shift();
+    }
+    console.log(time_sliding_window);
+  }
+
+  while (1) {
+    if (active_player[10].memoryerase != 0) {
+      active_player[10].memoryerase--;
+      move_frame();
+    } else {
+      break;
+    }
   }
 }
 
@@ -891,6 +1143,217 @@ function check_portal() {
   }
 }
 
+function check_enemy() {
+  let nextindex = active_player[6].position;
+
+  if (
+    nextindex == enemy_loc[0] ||
+    nextindex == enemy_loc[1] ||
+    nextindex == enemy_loc[2] ||
+    nextindex == enemy_loc[3] ||
+    nextindex == enemy_loc[4] ||
+    nextindex == enemy_loc[5] ||
+    nextindex == enemy_loc[6] ||
+    nextindex == enemy_loc[7] ||
+    nextindex == enemy_loc[8]
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function enemy_effect(curr_player_on_ult_loc) {
+  let nextindex = active_player[6].position;
+  if (check_enemy()) {
+    if (
+      nextindex == enemy_loc[3] ||
+      nextindex == enemy_loc[4] ||
+      nextindex == enemy_loc[5] ||
+      nextindex == enemy_loc[6]
+    ) {
+      console.log("apocalypse");
+      apocalypse_effect();
+      enemy_effect(curr_player_on_ult_loc);
+    }
+    if (active_player[9].ultronattack == 0 && curr_player_on_ult_loc == false) {
+      if (
+        nextindex == enemy_loc[0] ||
+        nextindex == enemy_loc[1] ||
+        nextindex == enemy_loc[2]
+      ) {
+        console.log("Ultron");
+        if (active_player == player1_data) {
+          player1_data[9].ultronattack = 3;
+        } else if (active_player == player2_data) {
+          player2_data[9].ultronattack = 3;
+        } else if (active_player == player3_data) {
+          player3_data[9].ultronattack = 3;
+        } else if (active_player == player4_data) {
+          player4_data[9].ultronattack = 3;
+        }
+      }
+    }
+
+    if (nextindex == enemy_loc[7] || nextindex == enemy_loc[8]) {
+      console.log("Loki");
+      loki_effect();
+    }
+  }
+}
+
+function loki_effect() {
+  if (active_player[7].isStones) {
+    if (active_player[0].timestone) {
+      portal_storage[0].timestone = true;
+    }
+    if (active_player[1].spacestone) {
+      portal_storage[1].spacestone = true;
+    }
+    if (active_player[2].powerstone) {
+      portal_storage[2].powerstone = true;
+    }
+    if (active_player[3].realitystone) {
+      portal_storage[3].realitystone = true;
+    }
+    if (active_player[4].soulstone) {
+      portal_storage[4].soulstone = true;
+    }
+    if (active_player[5].memorystone) {
+      portal_storage[5].memorystone = true;
+    }
+    if (active_player == player1_data) {
+      player1_data[0].timestone = false;
+      player1_data[1].spacestone = false;
+      player1_data[2].powerstone = false;
+      player1_data[3].realitystone = false;
+      player1_data[4].soulstone = false;
+      player1_data[5].memorystone = false;
+      player1_data[8].stonecount = 0;
+      player1_data[7].isStones = false;
+    } else if (active_player == player2_data) {
+      player2_data[0].timestone = false;
+      player2_data[1].spacestone = false;
+      player2_data[2].powerstone = false;
+      player2_data[3].realitystone = false;
+      player2_data[4].soulstone = false;
+      player2_data[5].memorystone = false;
+      player2_data[8].stonecount = 0;
+      player2_data[7].isStones = false;
+    } else if (active_player == player3_data) {
+      player3_data[0].timestone = false;
+      player3_data[1].spacestone = false;
+      player3_data[2].powerstone = false;
+      player3_data[3].realitystone = false;
+      player3_data[4].soulstone = false;
+      player3_data[5].memorystone = false;
+      player3_data[8].stonecount = 0;
+      player3_data[7].isStones = false;
+    } else if (active_player == player4_data) {
+      player4_data[0].timestone = false;
+      player4_data[1].spacestone = false;
+      player4_data[2].powerstone = false;
+      player4_data[3].realitystone = false;
+      player4_data[4].soulstone = false;
+      player4_data[5].memorystone = false;
+      player4_data[8].stonecount = 0;
+      player4_data[7].isStones = false;
+    }
+  }
+}
+
+function apocalypse_effect() {
+  if (active_player == player1_data) {
+    let index = player1_data[6].position;
+    let currgrid = document.getElementById(`grid${index}`);
+    let notes = null;
+    for (let i = 0; i < currgrid.childNodes.length; i++) {
+      if (currgrid.childNodes[i].className == "1") {
+        // console.log(currgrid.childNodes[i]);
+        notes = currgrid.childNodes[i];
+        currgrid.removeChild(notes);
+        break;
+      }
+    }
+    let gridno;
+    gridno = player1_data[6].position - 20;
+    let selgrid = document.getElementById(`grid${gridno}`);
+    // console.log(selgrid);
+    selgrid.insertAdjacentHTML(
+      "beforeend",
+      `<img src="IronMan_0-100.png" alt="oops" class="1" width="30px",height="30px">`
+    );
+    player1_data[6].position = gridno;
+    // console.log(player1_data);
+  }
+  if (active_player == player2_data) {
+    let index = player2_data[6].position;
+    let currgrid = document.getElementById(`grid${index}`);
+    let notes = null;
+    for (let i = 0; i < currgrid.childNodes.length; i++) {
+      if (currgrid.childNodes[i].className == "2") {
+        // console.log(currgrid.childNodes[i]);
+        notes = currgrid.childNodes[i];
+        currgrid.removeChild(notes);
+        break;
+      }
+    }
+
+    let gridno;
+    gridno = player2_data[6].position - 20;
+    let selgrid = document.getElementById(`grid${gridno}`);
+    selgrid.insertAdjacentHTML(
+      "beforeend",
+      `<img src="Thor22_182-0.png" class="2" alt="oops" width="30px",height="30px">`
+    );
+    player2_data[6].position = gridno;
+  }
+  if (active_player == player3_data) {
+    let index = player3_data[6].position;
+    let currgrid = document.getElementById(`grid${index}`);
+    let notes = null;
+    for (let i = 0; i < currgrid.childNodes.length; i++) {
+      if (currgrid.childNodes[i].className == "3") {
+        // console.log(currgrid.childNodes[i]);
+        notes = currgrid.childNodes[i];
+        currgrid.removeChild(notes);
+        break;
+      }
+    }
+
+    let gridno;
+    gridno = player3_data[6].position - 20;
+    let selgrid = document.getElementById(`grid${gridno}`);
+    selgrid.insertAdjacentHTML(
+      "beforeend",
+      `<img src="Captain America_20-5.png" class="3" alt="oops" width="30px",height="30px">`
+    );
+    player3_data[6].position = gridno;
+  }
+  if (active_player == player4_data) {
+    let index = player4_data[6].position;
+    let currgrid = document.getElementById(`grid${index}`);
+    let notes = null;
+    for (let i = 0; i < currgrid.childNodes.length; i++) {
+      if (currgrid.childNodes[i].className == "4") {
+        // console.log(currgrid.childNodes[i]);
+        notes = currgrid.childNodes[i];
+        currgrid.removeChild(notes);
+        break;
+      }
+    }
+
+    let gridno;
+    gridno = player4_data[6].position - 20;
+    let selgrid = document.getElementById(`grid${gridno}`);
+    selgrid.insertAdjacentHTML(
+      "beforeend",
+      `<img src="DoctorStrange1_182-1.png"class="4" alt="oops" width="30px",height="30px">`
+    );
+    player4_data[6].position = gridno;
+  }
+}
+
 function move_player() {
   if (active_player_count == 1) {
     let index = player1_data[6].position;
@@ -990,30 +1453,116 @@ function active_avail_confirm() {
 }
 function deactive_avail_confirm() {
   document
-    .getElementsByClassName("confirm-move")[0]
+    .getElementsByClassName("avail-confirm-move")[0]
     .addEventListener("click", avail_confirm_move);
 }
 
-function avail_confirm_move() {
+function active_avail_deny() {
+  document
+    .getElementsByClassName("avail-deny-move")[0]
+    .addEventListener("click", avail_deny_move);
+}
+
+function deactive_avail_deny() {
+  document
+    .getElementsByClassName("avail-deny-move")[0]
+    .removeEventListener("click", avail_deny_move);
+}
+
+function avail_deny_move() {
+  deactive_avail_deny();
   document.getElementsByClassName(
     "play-box-lower"
   )[0].innerHTML = `${confirm_dialogue}`;
   deactive_confirm();
-  move_player();
+  let curr_player_on_ult_loc = false;
+  if (active_player[9].ultronattack == 0) {
+    move_player();
+  } else {
+    if (number != 6) {
+      curr_player_on_ult_loc = true;
+      if (active_player_count == 1) {
+        player1_data[9].ultronattack--;
+      } else if (active_player_count == 2) {
+        player2_data[9].ultronattack--;
+      } else if (active_player_count == 3) {
+        player3_data[9].ultronattack--;
+      } else if (active_player_count == 4) {
+        player4_data[9].ultronattack--;
+      }
+    } else {
+      if (active_player_count == 1) {
+        player1_data[9].ultronattack = 0;
+      } else if (active_player_count == 2) {
+        player2_data[9].ultronattack = 0;
+      } else if (active_player_count == 3) {
+        player3_data[9].ultronattack = 0;
+      } else if (active_player_count == 4) {
+        player4_data[9].ultronattack = 0;
+      }
+
+      move_player();
+    }
+  }
   let nextindex = active_player[6].position;
+  enemy_effect(curr_player_on_ult_loc);
   if (
     nextindex == portal_loc[0] ||
     nextindex == portal_loc[1] ||
     nextindex == portal_loc[2] ||
     nextindex == portal_loc[3] ||
-    nextindex == portal_loc[4]
+    nextindex == portal_loc[4] ||
+    nextindex == portal_loc[5] ||
+    nextindex == portal_loc[6]
   ) {
-    check_portal();
+    if (check_portal_storage()) {
+      check_portal();
+    } else {
+      move_frame();
+    }
   } else {
     move_frame();
   }
 
   active_dice();
+}
+
+function check_portal_storage() {
+  if (
+    portal_storage[0].timestone == true ||
+    portal_storage[1].spacestone == true ||
+    portal_storage[2].powerstone == true ||
+    portal_storage[3].realitystone == true ||
+    portal_storage[4].soulstone == true ||
+    portal_storage[5].memorystone == true
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function avail_confirm_move() {
+  console.log("nothing");
+  // document.getElementsByClassName(
+  //   "play-box-lower"
+  // )[0].innerHTML = `${confirm_dialogue}`;
+  // deactive_confirm();
+  // move_player();
+  // let nextindex = active_player[6].position;
+  // if (
+  //   nextindex == portal_loc[0] ||
+  //   nextindex == portal_loc[1] ||
+  //   nextindex == portal_loc[2] ||
+  //   nextindex == portal_loc[3] ||
+  //   nextindex == portal_loc[4]
+  // ) {
+  //   check_portal();
+  // } else {
+  //   move_frame();
+  // }
+
+  // active_dice();
 }
 
 function active_confirm() {
@@ -1058,45 +1607,43 @@ function avail_options() {
     document.getElementsByClassName(
       "play-box-lower"
     )[0].innerHTML = `${powers_dialogue}`;
-    active_avail_confirm();
-    if (active_player[0].timestone) {
-      console.log("time");
 
-      let timeblock = document.getElementsByClassName("time")[0];
-      timeblock.style.backgroundColor = "white";
+    let portal_arr = [];
+    // let time_arr = ["tp1", "tp2", "tp3", "tp4"];
+    let memory_arr = [];
+    // let reality_arr = ["rp1", "rp2", "rp3", "rp4"];
+    let space_arr = ["spp1", "spp2", "spp3", "spp4"];
+    // let power_arr = ["pp1", "pp2", "pp3", "pp4"];
+    let soul_arr = [];
+
+    if (active_player[0].timestone) {
+      portal_arr.push("time");
     }
     if (active_player[1].spacestone) {
-      console.log("space");
-      let spaceblock = document.getElementsByClassName("space-stone")[0];
-      let space = spaceblock.querySelector(".space");
-      space.style.backgroundColor = "white";
-      let p1 = spaceblock.querySelector(".p1");
-      p1.style.backgroundColor = "white";
-      let p2 = spaceblock.querySelector(".p2");
-      p2.style.backgroundColor = "white";
-      let p3 = spaceblock.querySelector(".p3");
-      p3.style.backgroundColor = "white";
-      let p4 = spaceblock.querySelector(".p4");
-      p4.style.backgroundColor = "white";
-      let plus = spaceblock.querySelector(".plus");
-      plus.style.backgroundColor = "white";
-      let minus = spaceblock.querySelector(".minus");
-      minus.style.backgroundColor = "white";
+      portal_arr.push("space");
     }
     if (active_player[2].powerstone) {
-      console.log("power");
+      let nextindex = active_player[6].position + number;
+      if (
+        nextindex == enemy_loc[0] ||
+        nextindex == enemy_loc[1] ||
+        nextindex == enemy_loc[2] ||
+        nextindex == enemy_loc[3] ||
+        nextindex == enemy_loc[4] ||
+        nextindex == enemy_loc[5] ||
+        nextindex == enemy_loc[6] ||
+        nextindex == enemy_loc[7] ||
+        nextindex == enemy_loc[8]
+      ) {
+        portal_arr.push("power");
+      }
     }
     if (active_player[3].realitystone) {
-      console.log("reality");
-      let realityblock = document.getElementsByClassName("reality-stone")[0];
-      realityblock.querySelector(".reality").style.backgroundColor = "white";
+      portal_arr.push("reality");
     }
     if (active_player[4].soulstone && active_player[8].stonecount >= 2) {
       let flag = false;
-      console.log("soul");
       if (active_player != player1_data) {
-        console.log(active_player);
-        console.log(player1_data);
         if (
           player1_data[0].timestone ||
           player1_data[1].spacestone ||
@@ -1105,9 +1652,7 @@ function avail_options() {
           player1_data[5].memorystone
         ) {
           flag = true;
-          let soulblock = document.getElementsByClassName("soul-stone")[0];
-          let p = soulblock.querySelector(".p1");
-          p.style.backgroundColor = "white";
+          soul_arr.push("sop1");
         }
       }
 
@@ -1120,9 +1665,7 @@ function avail_options() {
           player2_data[5].memorystone
         ) {
           flag = true;
-          let soulblock = document.getElementsByClassName("soul-stone")[0];
-          let p = soulblock.querySelector(".p2");
-          p.style.backgroundColor = "white";
+          soul_arr.push("sop2");
         }
       }
 
@@ -1135,9 +1678,7 @@ function avail_options() {
           player3_data[5].memorystone
         ) {
           flag = true;
-          let soulblock = document.getElementsByClassName("soul-stone")[0];
-          let p = soulblock.querySelector(".p3");
-          p.style.backgroundColor = "white";
+          soul_arr.push("sop3");
         }
       }
 
@@ -1150,53 +1691,773 @@ function avail_options() {
           player4_data[5].memorystone
         ) {
           flag = true;
-          let soulblock = document.getElementsByClassName("soul-stone")[0];
-          let p = soulblock.querySelector(".p4");
-          p.style.backgroundColor = "white";
+          soul_arr.push("sop4");
         }
       }
       if (flag) {
-        document.getElementsByClassName("soul")[0].style.backgroundColor =
-          "white";
+        portal_arr.push("soul");
       }
     }
+
     if (active_player[5].memorystone) {
-      console.log("memory");
       let flag = false;
       if (active_player != player1_data) {
-        console.log("player1");
         flag = true;
-        let memoryblock = document.getElementsByClassName("memory-stone")[0];
-        let p = memoryblock.querySelector(".p1");
-        p.style.backgroundColor = "white";
+        memory_arr.push("mp1");
       }
 
       if (active_player != player2_data) {
-        console.log("player2");
         flag = true;
-        let memoryblock = document.getElementsByClassName("memory-stone")[0];
-        let p = memoryblock.querySelector(".p2");
-        p.style.backgroundColor = "white";
+        memory_arr.push("mp2");
       }
 
       if (active_player != player3_data) {
         flag = true;
-        let memoryblock = document.getElementsByClassName("memory-stone")[0];
-        let p = memoryblock.querySelector(".p3");
-        p.style.backgroundColor = "white";
+        memory_arr.push("mp3");
       }
 
       if (active_player != player4_data) {
         flag = true;
-        let memoryblock = document.getElementsByClassName("memory-stone")[0];
-        let p = memoryblock.querySelector(".p4");
-        p.style.backgroundColor = "white";
+        memory_arr.push("mp4");
       }
       if (flag) {
-        document.getElementsByClassName("memory")[0].style.backgroundColor =
-          "white";
+        portal_arr.push("memory");
       }
     }
+
+    let avail_option_input = document.querySelectorAll(".avail-options input");
+    let portal = document.getElementsByName("stone");
+    let time_players = document.getElementsByName("tp");
+    let memory_players = document.getElementsByName("mp");
+    let reality_players = document.getElementsByName("rp");
+    let space_players = document.getElementsByName("spp");
+    let power_players = document.getElementsByName("pp");
+    let soul_players = document.getElementsByName("sop");
+
+    for (var i = 0; i < portal.length; i++) {
+      portal[i].addEventListener("change", check);
+      portal[i].disabled = true;
+    }
+    for (var i = 0; i < portal.length; i++) {
+      if (portal_arr.includes(portal[i].value)) {
+        portal[i].style.backgroundColor = "white";
+        portal[i].disabled = false;
+      }
+    }
+    for (var i = 0; i < avail_option_input.length; i++) {
+      avail_option_input[i].addEventListener(
+        "change",
+        avail_option_input_check
+      );
+    }
+
+    for (var i = 0; i < time_players.length; i++) {
+      time_players[i].addEventListener("change", time_check);
+      time_players[i].disabled = true;
+    }
+    function time_check(e) {
+      if (this.checked) {
+        console.log(this.value);
+      }
+    }
+
+    for (var i = 0; i < memory_players.length; i++) {
+      memory_players[i].addEventListener("change", memory_check);
+      memory_players[i].disabled = true;
+    }
+
+    function memory_check(e) {
+      if (this.checked) {
+        console.log(this.value);
+      }
+    }
+
+    for (var i = 0; i < reality_players.length; i++) {
+      reality_players[i].addEventListener("change", reality_check);
+      reality_players[i].disabled = true;
+    }
+    function reality_check(e) {
+      if (this.checked) {
+        console.log(this.value);
+      }
+    }
+
+    for (var i = 0; i < space_players.length; i++) {
+      space_players[i].addEventListener("change", space_check);
+      space_players[i].disabled = true;
+    }
+
+    function space_check(e) {
+      if (this.checked) {
+        console.log(this.value);
+      }
+    }
+
+    for (var i = 0; i < power_players.length; i++) {
+      power_players[i].addEventListener("change", power_check);
+      power_players[i].disabled = true;
+    }
+
+    function power_check(e) {
+      if (this.checked) {
+        console.log(this.value);
+      }
+    }
+
+    for (var i = 0; i < soul_players.length; i++) {
+      soul_players[i].addEventListener("change", soul_check);
+      soul_players[i].disabled = true;
+    }
+
+    function soul_check(e) {
+      if (this.checked) {
+        console.log(this.value);
+      }
+    }
+
+    let space_dir = document.getElementsByName("dir");
+    for (var i = 0; i < space_dir.length; i++) {
+      space_dir[i].addEventListener("change", space_dir_check);
+      space_dir[i].disabled = true;
+    }
+    function space_dir_check(e) {
+      if (this.checked) {
+        console.log(this.value);
+      }
+    }
+
+    function check(e) {
+      if (this.checked) {
+        console.log(this.value);
+
+        for (var i = 0; i < time_players.length; i++) {
+          time_players[i].disabled = true;
+          time_players[i].checked = false;
+          time_players[i].style.color = "#bdbdbdbd";
+          time_players[i].style.backgroundColor = "#454857";
+          time_players[i].style.backgroundImage = "none";
+        }
+
+        for (var i = 0; i < memory_players.length; i++) {
+          memory_players[i].disabled = true;
+          memory_players[i].checked = false;
+          memory_players[i].style.color = "#bdbdbdbd";
+          memory_players[i].style.backgroundColor = "#454857";
+          memory_players[i].style.backgroundImage = "none";
+        }
+
+        for (var i = 0; i < reality_players.length; i++) {
+          reality_players[i].disabled = true;
+          reality_players[i].checked = false;
+          reality_players[i].style.color = "#bdbdbdbd";
+          reality_players[i].style.backgroundColor = "#454857";
+          reality_players[i].style.backgroundImage = "none";
+        }
+
+        for (var i = 0; i < space_players.length; i++) {
+          space_players[i].disabled = true;
+          space_players[i].checked = false;
+          space_players[i].style.color = "#bdbdbdbd";
+          space_players[i].style.backgroundColor = "#454857";
+          space_players[i].style.backgroundImage = "none";
+        }
+
+        for (var i = 0; i < power_players.length; i++) {
+          power_players[i].disabled = true;
+          power_players[i].checked = false;
+          power_players[i].style.color = "#bdbdbdbd";
+          power_players[i].style.backgroundColor = "#454857";
+          power_players[i].style.backgroundImage = "none";
+        }
+
+        for (var i = 0; i < soul_players.length; i++) {
+          soul_players[i].disabled = true;
+          soul_players[i].checked = false;
+          soul_players[i].style.color = "#bdbdbdbd";
+          soul_players[i].style.backgroundColor = "#454857";
+          soul_players[i].style.backgroundImage = "none";
+        }
+
+        for (var i = 0; i < space_dir.length; i++) {
+          space_dir[i].disabled = true;
+          space_dir[i].checked = false;
+          space_dir[i].style.color = "#bdbdbdbd";
+          space_dir[i].style.backgroundColor = "#454857";
+          space_dir[i].style.backgroundImage = "none";
+        }
+
+        if (this.value == "time") {
+          console.log(this.value);
+
+          // for (var i = 0; i < time_players.length; i++) {
+          //     if (time_arr.includes(time_players[i].value)) {
+          //         time_players[i].style.backgroundColor = "white";
+          //         time_players[i].disabled = false;
+          //     }
+          // }
+        }
+
+        if (this.value == "memory") {
+          for (var i = 0; i < memory_players.length; i++) {
+            if (memory_arr.includes(memory_players[i].value)) {
+              memory_players[i].style.backgroundColor = "white";
+              memory_players[i].disabled = false;
+            }
+          }
+        }
+
+        if (this.value == "reality") {
+          // for (var i = 0; i < reality_players.length; i++) {
+          //     if (reality_arr.includes(reality_players[i].value)) {
+          //         reality_players[i].style.backgroundColor = "white";
+          //         reality_players[i].disabled = false;
+          //     }
+          // }
+        }
+
+        if (this.value == "space") {
+          for (var i = 0; i < space_players.length; i++) {
+            if (space_arr.includes(space_players[i].value)) {
+              space_players[i].style.backgroundColor = "white";
+              space_players[i].disabled = false;
+            }
+          }
+          for (var i = 0; i < space_dir.length; i++) {
+            space_dir[i].style.backgroundColor = "white";
+            space_dir[i].disabled = false;
+          }
+        }
+
+        if (this.value == "power") {
+          // for (var i = 0; i < power_players.length; i++) {
+          //     if (power_arr.includes(power_players[i].value)) {
+          //         power_players[i].style.backgroundColor = "white";
+          //         power_players[i].disabled = false;
+          //     }
+          // }
+        }
+
+        if (this.value == "soul") {
+          for (var i = 0; i < soul_players.length; i++) {
+            if (soul_arr.includes(soul_players[i].value)) {
+              soul_players[i].style.backgroundColor = "white";
+              soul_players[i].disabled = false;
+            }
+          }
+        }
+      }
+    }
+
+    function avail_option_input_check(e) {
+      let selected_power = {
+        stone: "null",
+        player: "null",
+        direction: "null",
+        exchange_stone1: "null",
+        exchange_stone2: "null"
+      };
+      for (var i = 0; i < avail_option_input.length; i++) {
+        if (avail_option_input[i].checked) {
+          if (avail_option_input[i].name == "stone") {
+            selected_power.stone = avail_option_input[i].value;
+          } else if (
+            avail_option_input[i].name == "tp" ||
+            avail_option_input[i].name == "mp" ||
+            avail_option_input[i].name == "rp" ||
+            avail_option_input[i].name == "spp" ||
+            avail_option_input[i].name == "pp" ||
+            avail_option_input[i].name == "sop"
+          ) {
+            selected_power.player = avail_option_input[i].value;
+          } else if (avail_option_input[i].name == "dir") {
+            selected_power.direction = avail_option_input[i].value;
+          }
+        }
+      }
+      if (
+        selected_power.stone == "time" ||
+        selected_power.stone == "reality" ||
+        selected_power.stone == "power"
+      ) {
+        let avail_cnf_btn = document.getElementsByClassName(
+          "avail-confirm-move"
+        )[0];
+        avail_cnf_btn.style.visibility = "visible";
+      } else if (
+        selected_power.stone == "space" &&
+        selected_power.player != "null" &&
+        selected_power.direction != "null"
+      ) {
+        let avail_cnf_btn = document.getElementsByClassName(
+          "avail-confirm-move"
+        )[0];
+        avail_cnf_btn.style.visibility = "visible";
+      } else if (
+        (selected_power.stone == "memory" && selected_power.player != "null") ||
+        (selected_power.stone == "soul" && selected_power.player != "null")
+      ) {
+        let avail_cnf_btn = document.getElementsByClassName(
+          "avail-confirm-move"
+        )[0];
+        avail_cnf_btn.style.visibility = "visible";
+      } else {
+        let avail_cnf_btn = document.getElementsByClassName(
+          "avail-confirm-move"
+        )[0];
+        avail_cnf_btn.style.visibility = "hidden";
+      }
+      console.log(selected_power);
+    }
+
+    let avail_cnf_btn = document.getElementsByClassName(
+      "avail-confirm-move"
+    )[0];
+    avail_cnf_btn.addEventListener("click", cnf_fun);
+    // active_avail_confirm();
+    active_avail_deny();
+    function cnf_fun() {
+      let selected_power = {
+        stone: "null",
+        player: "null",
+        direction: "null",
+        exchange_stone1: "null",
+        exchange_stone2: "null"
+      };
+      for (var i = 0; i < avail_option_input.length; i++) {
+        if (avail_option_input[i].checked) {
+          if (avail_option_input[i].name == "stone") {
+            selected_power.stone = avail_option_input[i].value;
+          } else if (
+            avail_option_input[i].name == "tp" ||
+            avail_option_input[i].name == "mp" ||
+            avail_option_input[i].name == "rp" ||
+            avail_option_input[i].name == "spp" ||
+            avail_option_input[i].name == "pp" ||
+            avail_option_input[i].name == "sop"
+          ) {
+            selected_power.player = avail_option_input[i].value;
+          } else if (avail_option_input[i].name == "dir") {
+            selected_power.direction = avail_option_input[i].value;
+          }
+        }
+      }
+      avail_cnf_btn.removeEventListener("click", cnf_fun);
+      console.log(selected_power);
+
+      /*
+     memory stone power effect;
+     */
+
+      if (selected_power.stone == "memory") {
+        document.getElementsByClassName(
+          "play-box-lower"
+        )[0].innerHTML = `${confirm_dialogue}`;
+        deactive_confirm();
+        if (selected_power.player == "mp1") {
+          player1_data[10].memoryerase = 2;
+        }
+        if (selected_power.player == "mp2") {
+          player2_data[10].memoryerase = 2;
+        }
+        if (selected_power.player == "mp3") {
+          player3_data[10].memoryerase = 2;
+        }
+        if (selected_power.player == "mp4") {
+          player4_data[10].memoryerase = 2;
+        }
+        active_player[5].memorystone = false;
+        active_player[8].stonecount--;
+        if (active_player[8].stonecount == 0) {
+          active_player[7].isStones = false;
+        }
+        portal_storage[5].memorystone = true;
+        console.log("memory stone worked");
+        confirm_move();
+      }
+
+      /*
+     memory stone power effect;
+     */
+
+      /*
+     power stone power effect;
+     */
+
+      if (selected_power.stone == "power") {
+        document.getElementsByClassName(
+          "play-box-lower"
+        )[0].innerHTML = `${confirm_dialogue}`;
+        deactive_confirm();
+        active_player[2].powerstone = false;
+        active_player[8].stonecount--;
+        if (active_player[8].stonecount == 0) {
+          active_player[7].isStones = false;
+        }
+        portal_storage[2].powerstone = true;
+        move_player();
+        move_frame();
+        active_dice();
+
+        console.log("power stone worked");
+      }
+
+      /*
+     power stone power effect;
+     */
+
+      /*
+space stone power effect;
+
+*/
+      if (selected_power.stone == "space") {
+        let attacked_player;
+
+        document.getElementsByClassName(
+          "play-box-lower"
+        )[0].innerHTML = `${confirm_dialogue}`;
+        deactive_confirm();
+
+        if (selected_power.player == "spp1") {
+          let index = player1_data[6].position;
+          let currgrid = document.getElementById(`grid${index}`);
+          let notes = null;
+          for (let i = 0; i < currgrid.childNodes.length; i++) {
+            if (currgrid.childNodes[i].className == "1") {
+              // console.log(currgrid.childNodes[i]);
+              notes = currgrid.childNodes[i];
+              currgrid.removeChild(notes);
+              break;
+            }
+          }
+          let gridno;
+          if (selected_power.direction == "+") {
+            gridno = player1_data[6].position + number;
+          } else {
+            gridno = player1_data[6].position - number;
+          }
+          let selgrid = document.getElementById(`grid${gridno}`);
+          // console.log(selgrid);
+          selgrid.insertAdjacentHTML(
+            "beforeend",
+            `<img src="IronMan_0-100.png" alt="oops" class="1" width="30px",height="30px">`
+          );
+          player1_data[6].position = gridno;
+          player1_data[9].ultronattack = 0;
+          attacked_player = player1_data;
+          // console.log(player1_data);
+        }
+        if (selected_power.player == "spp2") {
+          let index = player2_data[6].position;
+          let currgrid = document.getElementById(`grid${index}`);
+          let notes = null;
+          for (let i = 0; i < currgrid.childNodes.length; i++) {
+            if (currgrid.childNodes[i].className == "2") {
+              // console.log(currgrid.childNodes[i]);
+              notes = currgrid.childNodes[i];
+              currgrid.removeChild(notes);
+              break;
+            }
+          }
+
+          let gridno;
+          if (selected_power.direction == "+") {
+            gridno = player2_data[6].position + number;
+          } else {
+            gridno = player2_data[6].position - number;
+          }
+          let selgrid = document.getElementById(`grid${gridno}`);
+          selgrid.insertAdjacentHTML(
+            "beforeend",
+            `<img src="Thor22_182-0.png" class="2" alt="oops" width="30px",height="30px">`
+          );
+          player2_data[6].position = gridno;
+          player2_data[9].ultronattack = 0;
+          attacked_player = player2_data;
+        }
+        if (selected_power.player == "spp3") {
+          let index = player3_data[6].position;
+          let currgrid = document.getElementById(`grid${index}`);
+          let notes = null;
+          for (let i = 0; i < currgrid.childNodes.length; i++) {
+            if (currgrid.childNodes[i].className == "3") {
+              // console.log(currgrid.childNodes[i]);
+              notes = currgrid.childNodes[i];
+              currgrid.removeChild(notes);
+              break;
+            }
+          }
+
+          let gridno;
+          if (selected_power.direction == "+") {
+            gridno = player3_data[6].position + number;
+          } else {
+            gridno = player3_data[6].position - number;
+          }
+          let selgrid = document.getElementById(`grid${gridno}`);
+          selgrid.insertAdjacentHTML(
+            "beforeend",
+            `<img src="Captain America_20-5.png" class="3" alt="oops" width="30px",height="30px">`
+          );
+          player3_data[6].position = gridno;
+          player3_data[9].ultronattack = 0;
+          attacked_player = player3_data;
+        }
+        if (selected_power.player == "spp4") {
+          let index = player4_data[6].position;
+          let currgrid = document.getElementById(`grid${index}`);
+          let notes = null;
+          for (let i = 0; i < currgrid.childNodes.length; i++) {
+            if (currgrid.childNodes[i].className == "4") {
+              // console.log(currgrid.childNodes[i]);
+              notes = currgrid.childNodes[i];
+              currgrid.removeChild(notes);
+              break;
+            }
+          }
+
+          let gridno;
+          if (selected_power.direction == "+") {
+            gridno = player4_data[6].position + number;
+          } else {
+            gridno = player4_data[6].position - number;
+          }
+          let selgrid = document.getElementById(`grid${gridno}`);
+          selgrid.insertAdjacentHTML(
+            "beforeend",
+            `<img src="DoctorStrange1_182-1.png"class="4" alt="oops" width="30px",height="30px">`
+          );
+          player4_data[6].position = gridno;
+          player4_data[9].ultronattack = 0;
+          attacked_player = player4_data;
+        }
+        let current_player = active_player;
+        active_player = attacked_player;
+
+        if (check_enemy()) {
+          enemy_effect(false);
+        }
+        if (attacked_player != current_player) {
+          console.log("hi");
+
+          let nextindex = active_player[6].position;
+          if (
+            nextindex == portal_loc[0] ||
+            nextindex == portal_loc[1] ||
+            nextindex == portal_loc[2] ||
+            nextindex == portal_loc[3] ||
+            nextindex == portal_loc[4] ||
+            nextindex == portal_loc[5] ||
+            nextindex == portal_loc[6]
+          ) {
+            if (check_portal_storage()) {
+              console.log("hiiii");
+              check_portal();
+            }
+          }
+        }
+
+        active_player = current_player;
+        if (active_player == player1_data && active_player[7].isStones) {
+          player1_data[1].spacestone = false;
+          player1_data[8].stonecount--;
+          if (player1_data[8].stonecount == 0) {
+            player1_data[7].isStones = false;
+          }
+          portal_storage[1].spacestone = true;
+        }
+
+        if (active_player == player2_data && active_player[7].isStones) {
+          player2_data[1].spacestone = false;
+          player2_data[8].stonecount--;
+          if (player2_data[8].stonecount == 0) {
+            player2_data[7].isStones = false;
+          }
+          portal_storage[1].spacestone = true;
+        }
+        if (active_player == player3_data && active_player[7].isStones) {
+          player3_data[1].spacestone = false;
+          player3_data[8].stonecount--;
+          if (player3_data[8].stonecount == 0) {
+            player3_data[7].isStones = false;
+          }
+          portal_storage[1].spacestone = true;
+        }
+
+        if (active_player == player4_data && active_player[7].isStones) {
+          player4_data[1].spacestone = false;
+          player4_data[8].stonecount--;
+          if (player4_data[8].stonecount == 0) {
+            player4_data[7].isStones = false;
+          }
+          portal_storage[1].spacestone = true;
+        }
+
+        let nextindex = active_player[6].position;
+        if (
+          nextindex == portal_loc[0] ||
+          nextindex == portal_loc[1] ||
+          nextindex == portal_loc[2] ||
+          nextindex == portal_loc[3] ||
+          nextindex == portal_loc[4] ||
+          nextindex == portal_loc[5] ||
+          nextindex == portal_loc[6]
+        ) {
+          if (check_portal_storage()) {
+            check_portal();
+          } else {
+            move_frame();
+          }
+        } else {
+          move_frame();
+        }
+
+        active_dice();
+      }
+      /*
+space stone power effect;
+
+*/
+    }
+
+    // active_avail_confirm();
+    // if (active_player[0].timestone) {
+    //   console.log("time");
+
+    //   let timeblock = document.getElementsByClassName("time")[0];
+    //   timeblock.style.backgroundColor = "white";
+    // }
+    // if (active_player[1].spacestone) {
+    //   console.log("space");
+    //   let spaceblock = document.getElementsByClassName("space-stone")[0];
+    //   let space = spaceblock.querySelector(".space");
+    //   space.style.backgroundColor = "white";
+    //   let p1 = spaceblock.querySelector(".p1");
+    //   p1.style.backgroundColor = "white";
+    //   let p2 = spaceblock.querySelector(".p2");
+    //   p2.style.backgroundColor = "white";
+    //   let p3 = spaceblock.querySelector(".p3");
+    //   p3.style.backgroundColor = "white";
+    //   let p4 = spaceblock.querySelector(".p4");
+    //   p4.style.backgroundColor = "white";
+    //   let plus = spaceblock.querySelector(".plus");
+    //   plus.style.backgroundColor = "white";
+    //   let minus = spaceblock.querySelector(".minus");
+    //   minus.style.backgroundColor = "white";
+    // }
+    // if (active_player[2].powerstone) {
+    //   console.log("power");
+    // }
+    // if (active_player[3].realitystone) {
+    //   console.log("reality");
+    //   let realityblock = document.getElementsByClassName("reality-stone")[0];
+    //   realityblock.querySelector(".reality").style.backgroundColor = "white";
+    // }
+    // if (active_player[4].soulstone && active_player[8].stonecount >= 2) {
+    //   let flag = false;
+    //   console.log("soul");
+    //   if (active_player != player1_data) {
+    //     console.log(active_player);
+    //     console.log(player1_data);
+    //     if (
+    //       player1_data[0].timestone ||
+    //       player1_data[1].spacestone ||
+    //       player1_data[2].powerstone ||
+    //       player1_data[3].realitystone ||
+    //       player1_data[5].memorystone
+    //     ) {
+    //       flag = true;
+    //       let soulblock = document.getElementsByClassName("soul-stone")[0];
+    //       let p = soulblock.querySelector(".p1");
+    //       p.style.backgroundColor = "white";
+    //     }
+    //   }
+
+    //   if (active_player != player2_data) {
+    //     if (
+    //       player2_data[0].timestone ||
+    //       player2_data[1].spacestone ||
+    //       player2_data[2].powerstone ||
+    //       player2_data[3].realitystone ||
+    //       player2_data[5].memorystone
+    //     ) {
+    //       flag = true;
+    //       let soulblock = document.getElementsByClassName("soul-stone")[0];
+    //       let p = soulblock.querySelector(".p2");
+    //       p.style.backgroundColor = "white";
+    //     }
+    //   }
+
+    //   if (active_player != player3_data) {
+    //     if (
+    //       player3_data[0].timestone ||
+    //       player3_data[1].spacestone ||
+    //       player3_data[2].powerstone ||
+    //       player3_data[3].realitystone ||
+    //       player3_data[5].memorystone
+    //     ) {
+    //       flag = true;
+    //       let soulblock = document.getElementsByClassName("soul-stone")[0];
+    //       let p = soulblock.querySelector(".p3");
+    //       p.style.backgroundColor = "white";
+    //     }
+    //   }
+
+    //   if (active_player != player4_data) {
+    //     if (
+    //       player4_data[0].timestone ||
+    //       player4_data[1].spacestone ||
+    //       player4_data[2].powerstone ||
+    //       player4_data[3].realitystone ||
+    //       player4_data[5].memorystone
+    //     ) {
+    //       flag = true;
+    //       let soulblock = document.getElementsByClassName("soul-stone")[0];
+    //       let p = soulblock.querySelector(".p4");
+    //       p.style.backgroundColor = "white";
+    //     }
+    //   }
+    //   if (flag) {
+    //     document.getElementsByClassName("soul")[0].style.backgroundColor =
+    //       "white";
+    //   }
+    // }
+    // if (active_player[5].memorystone) {
+    //   console.log("memory");
+    //   let flag = false;
+    //   if (active_player != player1_data) {
+    //     console.log("player1");
+    //     flag = true;
+    //     let memoryblock = document.getElementsByClassName("memory-stone")[0];
+    //     let p = memoryblock.querySelector(".p1");
+    //     p.style.backgroundColor = "white";
+    //   }
+
+    //   if (active_player != player2_data) {
+    //     console.log("player2");
+    //     flag = true;
+    //     let memoryblock = document.getElementsByClassName("memory-stone")[0];
+    //     let p = memoryblock.querySelector(".p2");
+    //     p.style.backgroundColor = "white";
+    //   }
+
+    //   if (active_player != player3_data) {
+    //     flag = true;
+    //     let memoryblock = document.getElementsByClassName("memory-stone")[0];
+    //     let p = memoryblock.querySelector(".p3");
+    //     p.style.backgroundColor = "white";
+    //   }
+
+    //   if (active_player != player4_data) {
+    //     flag = true;
+    //     let memoryblock = document.getElementsByClassName("memory-stone")[0];
+    //     let p = memoryblock.querySelector(".p4");
+    //     p.style.backgroundColor = "white";
+    //   }
+    //   if (flag) {
+    //     document.getElementsByClassName("memory")[0].style.backgroundColor =
+    //       "white";
+    //   }
+    // }
   } else {
     console.log("nooption");
   }
@@ -1212,7 +2473,20 @@ function isaavailoption() {
     return true;
   }
   if (active_player[2].powerstone) {
-    console.log("power");
+    let nextindex = active_player[6].position + number;
+    if (
+      nextindex == enemy_loc[0] ||
+      nextindex == enemy_loc[1] ||
+      nextindex == enemy_loc[2] ||
+      nextindex == enemy_loc[3] ||
+      nextindex == enemy_loc[4] ||
+      nextindex == enemy_loc[5] ||
+      nextindex == enemy_loc[6] ||
+      nextindex == enemy_loc[7] ||
+      nextindex == enemy_loc[8]
+    ) {
+      return true;
+    }
   }
   if (active_player[3].realitystone) {
     return true;
