@@ -476,158 +476,148 @@ function Sahil() {
   // document.getElementsByTagName("body")[0].style.backgroundSize = "cover";
 }
 
+// {
+//   timestone: false;
+//   spacestone: false;
+//   powerstone: false;
+//   realitystone: false;
+//   soulstone: false;
+//   memorystone: false;
+//   position: 1;
+//   isStones: false;
+//   stonecount: 0;
+//   ultronattack: 0;
+//   memoryerase: 0;
+// }
+// {
+//   timestone: false;
+//   spacestone: false;
+//   powerstone: false;
+//   realitystone: false;
+//   soulstone: false;
+//   memorystone: false;
+// }
+
 var players = ["player1_data", "player2_data", "player3_data", "player4_data"];
 
-var player1_data = [
-  { timestone: false },
-  { spacestone: false },
-  { powerstone: false },
-  { realitystone: false },
-  { soulstone: false },
-  { memorystone: false },
-  { position: 1 },
-  { isStones: false },
-  { stonecount: 0 },
-  {
-    ultronattack: 0
-  },
-  {
-    memoryerase: 0
-  }
-];
-var player2_data = [
-  { timestone: false },
-  { spacestone: false },
-  { powerstone: false },
-  { realitystone: false },
-  { soulstone: false },
-  { memorystone: false },
-  { position: 1 },
-  { isStones: false },
-  { stonecount: 0 },
-  {
-    ultronattack: 0
-  },
-  {
-    memoryerase: 0
-  }
-];
-var player3_data = [
-  { timestone: false },
-  { spacestone: false },
-  { powerstone: false },
-  { realitystone: false },
-  { soulstone: false },
-  { memorystone: false },
-  { position: 1 },
-  { isStones: false },
-  { stonecount: 0 },
-  {
-    ultronattack: 0
-  },
-  {
-    memoryerase: 0
-  }
-];
-var player4_data = [
-  { timestone: false },
-  { spacestone: false },
-  { powerstone: false },
-  { realitystone: false },
-  { soulstone: false },
-  { memorystone: false },
-  { position: 1 },
-  { isStones: false },
-  { stonecount: 0 },
-  {
-    ultronattack: 0
-  },
-  {
-    memoryerase: 0
-  }
-];
+var player1_data = {
+  timestone: false,
+  spacestone: false,
+  powerstone: false,
+  realitystone: false,
+  soulstone: false,
+  memorystone: false,
+  position: 1,
+  isStones: false,
+  stonecount: 0,
+  ultronattack: 0,
+  memoryerase: 0
+};
+var player2_data = {
+  timestone: false,
+  spacestone: false,
+  powerstone: false,
+  realitystone: false,
+  soulstone: false,
+  memorystone: false,
+  position: 1,
+  isStones: false,
+  stonecount: 0,
+  ultronattack: 0,
+  memoryerase: 0
+};
+var player3_data = {
+  timestone: false,
+  spacestone: false,
+  powerstone: false,
+  realitystone: false,
+  soulstone: false,
+  memorystone: false,
+  position: 1,
+  isStones: false,
+  stonecount: 0,
+  ultronattack: 0,
+  memoryerase: 0
+};
+var player4_data = {
+  timestone: false,
+  spacestone: false,
+  powerstone: false,
+  realitystone: false,
+  soulstone: false,
+  memorystone: false,
+  position: 1,
+  isStones: false,
+  stonecount: 0,
+  ultronattack: 0,
+  memoryerase: 0
+};
 var time_sliding_window = [];
 function initial_players_data() {
   active_player_count = 1;
   time_sliding_window = [];
-  portal_storage = [
-    { timestone: true },
-    { spacestone: true },
-    { powerstone: true },
-    { realitystone: true },
-    { soulstone: true },
-    { memorystone: true }
-  ];
+  portal_storage = {
+    timestone: true,
+    spacestone: true,
+    powerstone: true,
+    realitystone: true,
+    soulstone: true,
+    memorystone: true
+  };
   number = 6;
   players = ["player1_data", "player2_data", "player3_data", "player4_data"];
-  player1_data = [
-    { timestone: false },
-    { spacestone: false },
-    { powerstone: false },
-    { realitystone: false },
-    { soulstone: false },
-    { memorystone: false },
-    { position: 1 },
-    { isStones: false },
-    { stonecount: 0 },
-    {
-      ultronattack: 0
-    },
-    {
-      memoryerase: 0
-    }
-  ];
-  player2_data = [
-    { timestone: false },
-    { spacestone: false },
-    { powerstone: false },
-    { realitystone: false },
-    { soulstone: false },
-    { memorystone: false },
-    { position: 1 },
-    { isStones: false },
-    { stonecount: 0 },
-    {
-      ultronattack: 0
-    },
-    {
-      memoryerase: 0
-    }
-  ];
-  player3_data = [
-    { timestone: false },
-    { spacestone: false },
-    { powerstone: false },
-    { realitystone: false },
-    { soulstone: false },
-    { memorystone: false },
-    { position: 1 },
-    { isStones: false },
-    { stonecount: 0 },
-    {
-      ultronattack: 0
-    },
-    {
-      memoryerase: 0
-    }
-  ];
-  player4_data = [
-    { timestone: false },
-    { spacestone: false },
-    { powerstone: false },
-    { realitystone: false },
-    { soulstone: false },
-    { memorystone: false },
-    { position: 1 },
-    { isStones: false },
-    { stonecount: 0 },
-    {
-      ultronattack: 0
-    },
-    {
-      memoryerase: 0
-    }
-  ];
+  player1_data = {
+    timestone: false,
+    spacestone: false,
+    powerstone: false,
+    realitystone: false,
+    soulstone: false,
+    memorystone: false,
+    position: 1,
+    isStones: false,
+    stonecount: 0,
+    ultronattack: 0,
+    memoryerase: 0
+  };
+  player2_data = {
+    timestone: false,
+    spacestone: false,
+    powerstone: false,
+    realitystone: false,
+    soulstone: false,
+    memorystone: false,
+    position: 1,
+    isStones: false,
+    stonecount: 0,
+    ultronattack: 0,
+    memoryerase: 0
+  };
+  player3_data = {
+    timestone: false,
+    spacestone: false,
+    powerstone: false,
+    realitystone: false,
+    soulstone: false,
+    memorystone: false,
+    position: 1,
+    isStones: false,
+    stonecount: 0,
+    ultronattack: 0,
+    memoryerase: 0
+  };
+  player4_data = {
+    timestone: false,
+    spacestone: false,
+    powerstone: false,
+    realitystone: false,
+    soulstone: false,
+    memorystone: false,
+    position: 1,
+    isStones: false,
+    stonecount: 0,
+    ultronattack: 0,
+    memoryerase: 0
+  };
 
   active_player = player1_data;
 }
@@ -752,14 +742,14 @@ function dice_roll() {
   avail_options();
 }
 
-var portal_storage = [
-  { timestone: true },
-  { spacestone: true },
-  { powerstone: true },
-  { realitystone: true },
-  { soulstone: true },
-  { memorystone: true }
-];
+var portal_storage = {
+  timestone: true,
+  spacestone: true,
+  powerstone: true,
+  realitystone: true,
+  soulstone: true,
+  memorystone: true
+};
 
 var portal_dialogue = `
 <div class="portal-dialogue">
@@ -947,29 +937,29 @@ function confirm_move() {
 
   // console.log("ok");
   let curr_player_on_ult_loc = false;
-  if (active_player[9].ultronattack == 0) {
+  if (active_player.ultronattack == 0) {
     move_player();
   } else {
     if (number != 6) {
       curr_player_on_ult_loc = true;
       if (active_player_count == 1) {
-        player1_data[9].ultronattack--;
+        player1_data.ultronattack--;
       } else if (active_player_count == 2) {
-        player2_data[9].ultronattack--;
+        player2_data.ultronattack--;
       } else if (active_player_count == 3) {
-        player3_data[9].ultronattack--;
+        player3_data.ultronattack--;
       } else if (active_player_count == 4) {
-        player4_data[9].ultronattack--;
+        player4_data.ultronattack--;
       }
     } else {
       if (active_player_count == 1) {
-        player1_data[9].ultronattack = 0;
+        player1_data.ultronattack = 0;
       } else if (active_player_count == 2) {
-        player2_data[9].ultronattack = 0;
+        player2_data.ultronattack = 0;
       } else if (active_player_count == 3) {
-        player3_data[9].ultronattack = 0;
+        player3_data.ultronattack = 0;
       } else if (active_player_count == 4) {
-        player4_data[9].ultronattack = 0;
+        player4_data.ultronattack = 0;
       }
 
       move_player();
@@ -977,7 +967,7 @@ function confirm_move() {
   }
 
   enemy_effect(curr_player_on_ult_loc);
-  let nextindex = active_player[6].position;
+  let nextindex = active_player.position;
   if (
     nextindex == portal_loc[0] ||
     nextindex == portal_loc[1] ||
@@ -1031,8 +1021,8 @@ function move_frame() {
   }
 
   while (1) {
-    if (active_player[10].memoryerase != 0) {
-      active_player[10].memoryerase--;
+    if (active_player.memoryerase != 0) {
+      active_player.memoryerase--;
       move_frame();
     } else {
       break;
@@ -1041,6 +1031,7 @@ function move_frame() {
 }
 
 function check_portal() {
+  console.log("check portal");
   document.getElementsByClassName(
     "play-box-lower"
   )[0].innerHTML = `${portal_dialogue}`;
@@ -1051,22 +1042,22 @@ function check_portal() {
   let portal = document.getElementsByName("stone");
   let arr = [];
 
-  if (portal_storage[0].timestone) {
+  if (portal_storage.timestone) {
     arr.push("time");
   }
-  if (portal_storage[1].spacestone) {
+  if (portal_storage.spacestone) {
     arr.push("space");
   }
-  if (portal_storage[2].powerstone) {
+  if (portal_storage.powerstone) {
     arr.push("power");
   }
-  if (portal_storage[3].realitystone) {
+  if (portal_storage.realitystone) {
     arr.push("reality");
   }
-  if (portal_storage[4].soulstone) {
+  if (portal_storage.soulstone) {
     arr.push("soul");
   }
-  if (portal_storage[5].memorystone) {
+  if (portal_storage.memorystone) {
     arr.push("memory");
   }
 
@@ -1097,40 +1088,40 @@ function check_portal() {
     }
 
     if (stonevalue == "time") {
-      portal_storage[0].timestone = false;
-      active_player[0].timestone = true;
-      active_player[7].isStones = true;
-      active_player[8].stonecount++;
+      portal_storage.timestone = false;
+      active_player.timestone = true;
+      active_player.isStones = true;
+      active_player.stonecount++;
     }
     if (stonevalue == "space") {
-      portal_storage[1].spacestone = false;
-      active_player[1].spacestone = true;
-      active_player[7].isStones = true;
-      active_player[8].stonecount++;
+      portal_storage.spacestone = false;
+      active_player.spacestone = true;
+      active_player.isStones = true;
+      active_player.stonecount++;
     }
     if (stonevalue == "power") {
-      portal_storage[2].powerstone = false;
-      active_player[2].powerstone = true;
-      active_player[7].isStones = true;
-      active_player[8].stonecount++;
+      portal_storage.powerstone = false;
+      active_player.powerstone = true;
+      active_player.isStones = true;
+      active_player.stonecount++;
     }
     if (stonevalue == "reality") {
-      portal_storage[3].realitystone = false;
-      active_player[3].realitystone = true;
-      active_player[7].isStones = true;
-      active_player[8].stonecount++;
+      portal_storage.realitystone = false;
+      active_player.realitystone = true;
+      active_player.isStones = true;
+      active_player.stonecount++;
     }
     if (stonevalue == "soul") {
-      portal_storage[4].soulstone = false;
-      active_player[4].soulstone = true;
-      active_player[7].isStones = true;
-      active_player[8].stonecount++;
+      portal_storage.soulstone = false;
+      active_player.soulstone = true;
+      active_player.isStones = true;
+      active_player.stonecount++;
     }
     if (stonevalue == "memory") {
-      portal_storage[5].memorystone = false;
-      active_player[5].memorystone = true;
-      active_player[7].isStones = true;
-      active_player[8].stonecount++;
+      portal_storage.memorystone = false;
+      active_player.memorystone = true;
+      active_player.isStones = true;
+      active_player.stonecount++;
     }
     console.log(portal_storage);
     console.log(active_player);
@@ -1144,7 +1135,7 @@ function check_portal() {
 }
 
 function check_enemy() {
-  let nextindex = active_player[6].position;
+  let nextindex = active_player.position;
 
   if (
     nextindex == enemy_loc[0] ||
@@ -1164,7 +1155,7 @@ function check_enemy() {
 }
 
 function enemy_effect(curr_player_on_ult_loc) {
-  let nextindex = active_player[6].position;
+  let nextindex = active_player.position;
   if (check_enemy()) {
     if (
       nextindex == enemy_loc[3] ||
@@ -1176,7 +1167,7 @@ function enemy_effect(curr_player_on_ult_loc) {
       apocalypse_effect();
       enemy_effect(curr_player_on_ult_loc);
     }
-    if (active_player[9].ultronattack == 0 && curr_player_on_ult_loc == false) {
+    if (active_player.ultronattack == 0 && curr_player_on_ult_loc == false) {
       if (
         nextindex == enemy_loc[0] ||
         nextindex == enemy_loc[1] ||
@@ -1184,13 +1175,13 @@ function enemy_effect(curr_player_on_ult_loc) {
       ) {
         console.log("Ultron");
         if (active_player == player1_data) {
-          player1_data[9].ultronattack = 3;
+          player1_data.ultronattack = 3;
         } else if (active_player == player2_data) {
-          player2_data[9].ultronattack = 3;
+          player2_data.ultronattack = 3;
         } else if (active_player == player3_data) {
-          player3_data[9].ultronattack = 3;
+          player3_data.ultronattack = 3;
         } else if (active_player == player4_data) {
-          player4_data[9].ultronattack = 3;
+          player4_data.ultronattack = 3;
         }
       }
     }
@@ -1203,68 +1194,68 @@ function enemy_effect(curr_player_on_ult_loc) {
 }
 
 function loki_effect() {
-  if (active_player[7].isStones) {
-    if (active_player[0].timestone) {
-      portal_storage[0].timestone = true;
+  if (active_player.isStones) {
+    if (active_player.timestone) {
+      portal_storage.timestone = true;
     }
-    if (active_player[1].spacestone) {
-      portal_storage[1].spacestone = true;
+    if (active_player.spacestone) {
+      portal_storage.spacestone = true;
     }
-    if (active_player[2].powerstone) {
-      portal_storage[2].powerstone = true;
+    if (active_player.powerstone) {
+      portal_storage.powerstone = true;
     }
-    if (active_player[3].realitystone) {
-      portal_storage[3].realitystone = true;
+    if (active_player.realitystone) {
+      portal_storage.realitystone = true;
     }
-    if (active_player[4].soulstone) {
-      portal_storage[4].soulstone = true;
+    if (active_player.soulstone) {
+      portal_storage.soulstone = true;
     }
-    if (active_player[5].memorystone) {
-      portal_storage[5].memorystone = true;
+    if (active_player.memorystone) {
+      portal_storage.memorystone = true;
     }
     if (active_player == player1_data) {
-      player1_data[0].timestone = false;
-      player1_data[1].spacestone = false;
-      player1_data[2].powerstone = false;
-      player1_data[3].realitystone = false;
-      player1_data[4].soulstone = false;
-      player1_data[5].memorystone = false;
-      player1_data[8].stonecount = 0;
-      player1_data[7].isStones = false;
+      player1_data.timestone = false;
+      player1_data.spacestone = false;
+      player1_data.powerstone = false;
+      player1_data.realitystone = false;
+      player1_data.soulstone = false;
+      player1_data.memorystone = false;
+      player1_data.stonecount = 0;
+      player1_data.isStones = false;
     } else if (active_player == player2_data) {
-      player2_data[0].timestone = false;
-      player2_data[1].spacestone = false;
-      player2_data[2].powerstone = false;
-      player2_data[3].realitystone = false;
-      player2_data[4].soulstone = false;
-      player2_data[5].memorystone = false;
-      player2_data[8].stonecount = 0;
-      player2_data[7].isStones = false;
+      player2_data.timestone = false;
+      player2_data.spacestone = false;
+      player2_data.powerstone = false;
+      player2_data.realitystone = false;
+      player2_data.soulstone = false;
+      player2_data.memorystone = false;
+      player2_data.stonecount = 0;
+      player2_data.isStones = false;
     } else if (active_player == player3_data) {
-      player3_data[0].timestone = false;
-      player3_data[1].spacestone = false;
-      player3_data[2].powerstone = false;
-      player3_data[3].realitystone = false;
-      player3_data[4].soulstone = false;
-      player3_data[5].memorystone = false;
-      player3_data[8].stonecount = 0;
-      player3_data[7].isStones = false;
+      player3_data.timestone = false;
+      player3_data.spacestone = false;
+      player3_data.powerstone = false;
+      player3_data.realitystone = false;
+      player3_data.soulstone = false;
+      player3_data.memorystone = false;
+      player3_data.stonecount = 0;
+      player3_data.isStones = false;
     } else if (active_player == player4_data) {
-      player4_data[0].timestone = false;
-      player4_data[1].spacestone = false;
-      player4_data[2].powerstone = false;
-      player4_data[3].realitystone = false;
-      player4_data[4].soulstone = false;
-      player4_data[5].memorystone = false;
-      player4_data[8].stonecount = 0;
-      player4_data[7].isStones = false;
+      player4_data.timestone = false;
+      player4_data.spacestone = false;
+      player4_data.powerstone = false;
+      player4_data.realitystone = false;
+      player4_data.soulstone = false;
+      player4_data.memorystone = false;
+      player4_data.stonecount = 0;
+      player4_data.isStones = false;
     }
   }
 }
 
 function apocalypse_effect() {
   if (active_player == player1_data) {
-    let index = player1_data[6].position;
+    let index = player1_data.position;
     let currgrid = document.getElementById(`grid${index}`);
     let notes = null;
     for (let i = 0; i < currgrid.childNodes.length; i++) {
@@ -1276,18 +1267,18 @@ function apocalypse_effect() {
       }
     }
     let gridno;
-    gridno = player1_data[6].position - 20;
+    gridno = player1_data.position - 20;
     let selgrid = document.getElementById(`grid${gridno}`);
     // console.log(selgrid);
     selgrid.insertAdjacentHTML(
       "beforeend",
       `<img src="IronMan_0-100.png" alt="oops" class="1" width="30px",height="30px">`
     );
-    player1_data[6].position = gridno;
+    player1_data.position = gridno;
     // console.log(player1_data);
   }
   if (active_player == player2_data) {
-    let index = player2_data[6].position;
+    let index = player2_data.position;
     let currgrid = document.getElementById(`grid${index}`);
     let notes = null;
     for (let i = 0; i < currgrid.childNodes.length; i++) {
@@ -1300,16 +1291,16 @@ function apocalypse_effect() {
     }
 
     let gridno;
-    gridno = player2_data[6].position - 20;
+    gridno = player2_data.position - 20;
     let selgrid = document.getElementById(`grid${gridno}`);
     selgrid.insertAdjacentHTML(
       "beforeend",
       `<img src="Thor22_182-0.png" class="2" alt="oops" width="30px",height="30px">`
     );
-    player2_data[6].position = gridno;
+    player2_data.position = gridno;
   }
   if (active_player == player3_data) {
-    let index = player3_data[6].position;
+    let index = player3_data.position;
     let currgrid = document.getElementById(`grid${index}`);
     let notes = null;
     for (let i = 0; i < currgrid.childNodes.length; i++) {
@@ -1322,16 +1313,16 @@ function apocalypse_effect() {
     }
 
     let gridno;
-    gridno = player3_data[6].position - 20;
+    gridno = player3_data.position - 20;
     let selgrid = document.getElementById(`grid${gridno}`);
     selgrid.insertAdjacentHTML(
       "beforeend",
       `<img src="Captain America_20-5.png" class="3" alt="oops" width="30px",height="30px">`
     );
-    player3_data[6].position = gridno;
+    player3_data.position = gridno;
   }
   if (active_player == player4_data) {
-    let index = player4_data[6].position;
+    let index = player4_data.position;
     let currgrid = document.getElementById(`grid${index}`);
     let notes = null;
     for (let i = 0; i < currgrid.childNodes.length; i++) {
@@ -1344,19 +1335,19 @@ function apocalypse_effect() {
     }
 
     let gridno;
-    gridno = player4_data[6].position - 20;
+    gridno = player4_data.position - 20;
     let selgrid = document.getElementById(`grid${gridno}`);
     selgrid.insertAdjacentHTML(
       "beforeend",
       `<img src="DoctorStrange1_182-1.png"class="4" alt="oops" width="30px",height="30px">`
     );
-    player4_data[6].position = gridno;
+    player4_data.position = gridno;
   }
 }
 
 function move_player() {
   if (active_player_count == 1) {
-    let index = player1_data[6].position;
+    let index = player1_data.position;
     let currgrid = document.getElementById(`grid${index}`);
     let notes = null;
     for (let i = 0; i < currgrid.childNodes.length; i++) {
@@ -1368,18 +1359,18 @@ function move_player() {
       }
     }
     let gridno;
-    gridno = player1_data[6].position + number;
+    gridno = player1_data.position + number;
     let selgrid = document.getElementById(`grid${gridno}`);
     // console.log(selgrid);
     selgrid.insertAdjacentHTML(
       "beforeend",
       `<img src="IronMan_0-100.png" alt="oops" class="1" width="30px",height="30px">`
     );
-    player1_data[6].position = gridno;
+    player1_data.position = gridno;
     // console.log(player1_data);
   }
   if (active_player_count == 2) {
-    let index = player2_data[6].position;
+    let index = player2_data.position;
     let currgrid = document.getElementById(`grid${index}`);
     let notes = null;
     for (let i = 0; i < currgrid.childNodes.length; i++) {
@@ -1392,16 +1383,16 @@ function move_player() {
     }
 
     let gridno;
-    gridno = player2_data[6].position + number;
+    gridno = player2_data.position + number;
     let selgrid = document.getElementById(`grid${gridno}`);
     selgrid.insertAdjacentHTML(
       "beforeend",
       `<img src="Thor22_182-0.png" class="2" alt="oops" width="30px",height="30px">`
     );
-    player2_data[6].position = gridno;
+    player2_data.position = gridno;
   }
   if (active_player_count == 3) {
-    let index = player3_data[6].position;
+    let index = player3_data.position;
     let currgrid = document.getElementById(`grid${index}`);
     let notes = null;
     for (let i = 0; i < currgrid.childNodes.length; i++) {
@@ -1414,16 +1405,16 @@ function move_player() {
     }
 
     let gridno;
-    gridno = player3_data[6].position + number;
+    gridno = player3_data.position + number;
     let selgrid = document.getElementById(`grid${gridno}`);
     selgrid.insertAdjacentHTML(
       "beforeend",
       `<img src="Captain America_20-5.png" class="3" alt="oops" width="30px",height="30px">`
     );
-    player3_data[6].position = gridno;
+    player3_data.position = gridno;
   }
   if (active_player_count == 4) {
-    let index = player4_data[6].position;
+    let index = player4_data.position;
     let currgrid = document.getElementById(`grid${index}`);
     let notes = null;
     for (let i = 0; i < currgrid.childNodes.length; i++) {
@@ -1436,13 +1427,13 @@ function move_player() {
     }
 
     let gridno;
-    gridno = player4_data[6].position + number;
+    gridno = player4_data.position + number;
     let selgrid = document.getElementById(`grid${gridno}`);
     selgrid.insertAdjacentHTML(
       "beforeend",
       `<img src="DoctorStrange1_182-1.png"class="4" alt="oops" width="30px",height="30px">`
     );
-    player4_data[6].position = gridno;
+    player4_data.position = gridno;
   }
 }
 
@@ -1476,35 +1467,35 @@ function avail_deny_move() {
   )[0].innerHTML = `${confirm_dialogue}`;
   deactive_confirm();
   let curr_player_on_ult_loc = false;
-  if (active_player[9].ultronattack == 0) {
+  if (active_player.ultronattack == 0) {
     move_player();
   } else {
     if (number != 6) {
       curr_player_on_ult_loc = true;
       if (active_player_count == 1) {
-        player1_data[9].ultronattack--;
+        player1_data.ultronattack--;
       } else if (active_player_count == 2) {
-        player2_data[9].ultronattack--;
+        player2_data.ultronattack--;
       } else if (active_player_count == 3) {
-        player3_data[9].ultronattack--;
+        player3_data.ultronattack--;
       } else if (active_player_count == 4) {
-        player4_data[9].ultronattack--;
+        player4_data.ultronattack--;
       }
     } else {
       if (active_player_count == 1) {
-        player1_data[9].ultronattack = 0;
+        player1_data.ultronattack = 0;
       } else if (active_player_count == 2) {
-        player2_data[9].ultronattack = 0;
+        player2_data.ultronattack = 0;
       } else if (active_player_count == 3) {
-        player3_data[9].ultronattack = 0;
+        player3_data.ultronattack = 0;
       } else if (active_player_count == 4) {
-        player4_data[9].ultronattack = 0;
+        player4_data.ultronattack = 0;
       }
 
       move_player();
     }
   }
-  let nextindex = active_player[6].position;
+  let nextindex = active_player.position;
   enemy_effect(curr_player_on_ult_loc);
   if (
     nextindex == portal_loc[0] ||
@@ -1529,12 +1520,12 @@ function avail_deny_move() {
 
 function check_portal_storage() {
   if (
-    portal_storage[0].timestone == true ||
-    portal_storage[1].spacestone == true ||
-    portal_storage[2].powerstone == true ||
-    portal_storage[3].realitystone == true ||
-    portal_storage[4].soulstone == true ||
-    portal_storage[5].memorystone == true
+    portal_storage.timestone == true ||
+    portal_storage.spacestone == true ||
+    portal_storage.powerstone == true ||
+    portal_storage.realitystone == true ||
+    portal_storage.soulstone == true ||
+    portal_storage.memorystone == true
   ) {
     return true;
   } else {
@@ -1549,7 +1540,7 @@ function avail_confirm_move() {
   // )[0].innerHTML = `${confirm_dialogue}`;
   // deactive_confirm();
   // move_player();
-  // let nextindex = active_player[6].position;
+  // let nextindex = active_player.position;
   // if (
   //   nextindex == portal_loc[0] ||
   //   nextindex == portal_loc[1] ||
@@ -1616,14 +1607,14 @@ function avail_options() {
     // let power_arr = ["pp1", "pp2", "pp3", "pp4"];
     let soul_arr = [];
 
-    if (active_player[0].timestone) {
+    if (active_player.timestone) {
       portal_arr.push("time");
     }
-    if (active_player[1].spacestone) {
+    if (active_player.spacestone) {
       portal_arr.push("space");
     }
-    if (active_player[2].powerstone) {
-      let nextindex = active_player[6].position + number;
+    if (active_player.powerstone) {
+      let nextindex = active_player.position + number;
       if (
         nextindex == enemy_loc[0] ||
         nextindex == enemy_loc[1] ||
@@ -1638,18 +1629,18 @@ function avail_options() {
         portal_arr.push("power");
       }
     }
-    if (active_player[3].realitystone) {
+    if (active_player.realitystone) {
       portal_arr.push("reality");
     }
-    if (active_player[4].soulstone && active_player[8].stonecount >= 2) {
+    if (active_player.soulstone && active_player.stonecount >= 2) {
       let flag = false;
       if (active_player != player1_data) {
         if (
-          player1_data[0].timestone ||
-          player1_data[1].spacestone ||
-          player1_data[2].powerstone ||
-          player1_data[3].realitystone ||
-          player1_data[5].memorystone
+          player1_data.timestone ||
+          player1_data.spacestone ||
+          player1_data.powerstone ||
+          player1_data.realitystone ||
+          player1_data.memorystone
         ) {
           flag = true;
           soul_arr.push("sop1");
@@ -1658,11 +1649,11 @@ function avail_options() {
 
       if (active_player != player2_data) {
         if (
-          player2_data[0].timestone ||
-          player2_data[1].spacestone ||
-          player2_data[2].powerstone ||
-          player2_data[3].realitystone ||
-          player2_data[5].memorystone
+          player2_data.timestone ||
+          player2_data.spacestone ||
+          player2_data.powerstone ||
+          player2_data.realitystone ||
+          player2_data.memorystone
         ) {
           flag = true;
           soul_arr.push("sop2");
@@ -1671,11 +1662,11 @@ function avail_options() {
 
       if (active_player != player3_data) {
         if (
-          player3_data[0].timestone ||
-          player3_data[1].spacestone ||
-          player3_data[2].powerstone ||
-          player3_data[3].realitystone ||
-          player3_data[5].memorystone
+          player3_data.timestone ||
+          player3_data.spacestone ||
+          player3_data.powerstone ||
+          player3_data.realitystone ||
+          player3_data.memorystone
         ) {
           flag = true;
           soul_arr.push("sop3");
@@ -1684,11 +1675,11 @@ function avail_options() {
 
       if (active_player != player4_data) {
         if (
-          player4_data[0].timestone ||
-          player4_data[1].spacestone ||
-          player4_data[2].powerstone ||
-          player4_data[3].realitystone ||
-          player4_data[5].memorystone
+          player4_data.timestone ||
+          player4_data.spacestone ||
+          player4_data.powerstone ||
+          player4_data.realitystone ||
+          player4_data.memorystone
         ) {
           flag = true;
           soul_arr.push("sop4");
@@ -1699,7 +1690,7 @@ function avail_options() {
       }
     }
 
-    if (active_player[5].memorystone) {
+    if (active_player.memorystone) {
       let flag = false;
       if (active_player != player1_data) {
         flag = true;
@@ -2054,23 +2045,23 @@ function avail_options() {
         )[0].innerHTML = `${confirm_dialogue}`;
         deactive_confirm();
         if (selected_power.player == "mp1") {
-          player1_data[10].memoryerase = 2;
+          player1_data.memoryerase = 2;
         }
         if (selected_power.player == "mp2") {
-          player2_data[10].memoryerase = 2;
+          player2_data.memoryerase = 2;
         }
         if (selected_power.player == "mp3") {
-          player3_data[10].memoryerase = 2;
+          player3_data.memoryerase = 2;
         }
         if (selected_power.player == "mp4") {
-          player4_data[10].memoryerase = 2;
+          player4_data.memoryerase = 2;
         }
-        active_player[5].memorystone = false;
-        active_player[8].stonecount--;
-        if (active_player[8].stonecount == 0) {
-          active_player[7].isStones = false;
+        active_player.memorystone = false;
+        active_player.stonecount--;
+        if (active_player.stonecount == 0) {
+          active_player.isStones = false;
         }
-        portal_storage[5].memorystone = true;
+        portal_storage.memorystone = true;
         console.log("memory stone worked");
         confirm_move();
       }
@@ -2088,12 +2079,12 @@ function avail_options() {
           "play-box-lower"
         )[0].innerHTML = `${confirm_dialogue}`;
         deactive_confirm();
-        active_player[2].powerstone = false;
-        active_player[8].stonecount--;
-        if (active_player[8].stonecount == 0) {
-          active_player[7].isStones = false;
+        active_player.powerstone = false;
+        active_player.stonecount--;
+        if (active_player.stonecount == 0) {
+          active_player.isStones = false;
         }
-        portal_storage[2].powerstone = true;
+        portal_storage.powerstone = true;
         move_player();
         move_frame();
         active_dice();
@@ -2118,7 +2109,7 @@ space stone power effect;
         deactive_confirm();
 
         if (selected_power.player == "spp1") {
-          let index = player1_data[6].position;
+          let index = player1_data.position;
           let currgrid = document.getElementById(`grid${index}`);
           let notes = null;
           for (let i = 0; i < currgrid.childNodes.length; i++) {
@@ -2131,9 +2122,9 @@ space stone power effect;
           }
           let gridno;
           if (selected_power.direction == "+") {
-            gridno = player1_data[6].position + number;
+            gridno = player1_data.position + number;
           } else {
-            gridno = player1_data[6].position - number;
+            gridno = player1_data.position - number;
           }
           let selgrid = document.getElementById(`grid${gridno}`);
           // console.log(selgrid);
@@ -2141,13 +2132,13 @@ space stone power effect;
             "beforeend",
             `<img src="IronMan_0-100.png" alt="oops" class="1" width="30px",height="30px">`
           );
-          player1_data[6].position = gridno;
-          player1_data[9].ultronattack = 0;
+          player1_data.position = gridno;
+          player1_data.ultronattack = 0;
           attacked_player = player1_data;
           // console.log(player1_data);
         }
         if (selected_power.player == "spp2") {
-          let index = player2_data[6].position;
+          let index = player2_data.position;
           let currgrid = document.getElementById(`grid${index}`);
           let notes = null;
           for (let i = 0; i < currgrid.childNodes.length; i++) {
@@ -2161,21 +2152,21 @@ space stone power effect;
 
           let gridno;
           if (selected_power.direction == "+") {
-            gridno = player2_data[6].position + number;
+            gridno = player2_data.position + number;
           } else {
-            gridno = player2_data[6].position - number;
+            gridno = player2_data.position - number;
           }
           let selgrid = document.getElementById(`grid${gridno}`);
           selgrid.insertAdjacentHTML(
             "beforeend",
             `<img src="Thor22_182-0.png" class="2" alt="oops" width="30px",height="30px">`
           );
-          player2_data[6].position = gridno;
-          player2_data[9].ultronattack = 0;
+          player2_data.position = gridno;
+          player2_data.ultronattack = 0;
           attacked_player = player2_data;
         }
         if (selected_power.player == "spp3") {
-          let index = player3_data[6].position;
+          let index = player3_data.position;
           let currgrid = document.getElementById(`grid${index}`);
           let notes = null;
           for (let i = 0; i < currgrid.childNodes.length; i++) {
@@ -2189,21 +2180,21 @@ space stone power effect;
 
           let gridno;
           if (selected_power.direction == "+") {
-            gridno = player3_data[6].position + number;
+            gridno = player3_data.position + number;
           } else {
-            gridno = player3_data[6].position - number;
+            gridno = player3_data.position - number;
           }
           let selgrid = document.getElementById(`grid${gridno}`);
           selgrid.insertAdjacentHTML(
             "beforeend",
             `<img src="Captain America_20-5.png" class="3" alt="oops" width="30px",height="30px">`
           );
-          player3_data[6].position = gridno;
-          player3_data[9].ultronattack = 0;
+          player3_data.position = gridno;
+          player3_data.ultronattack = 0;
           attacked_player = player3_data;
         }
         if (selected_power.player == "spp4") {
-          let index = player4_data[6].position;
+          let index = player4_data.position;
           let currgrid = document.getElementById(`grid${index}`);
           let notes = null;
           for (let i = 0; i < currgrid.childNodes.length; i++) {
@@ -2217,17 +2208,17 @@ space stone power effect;
 
           let gridno;
           if (selected_power.direction == "+") {
-            gridno = player4_data[6].position + number;
+            gridno = player4_data.position + number;
           } else {
-            gridno = player4_data[6].position - number;
+            gridno = player4_data.position - number;
           }
           let selgrid = document.getElementById(`grid${gridno}`);
           selgrid.insertAdjacentHTML(
             "beforeend",
             `<img src="DoctorStrange1_182-1.png"class="4" alt="oops" width="30px",height="30px">`
           );
-          player4_data[6].position = gridno;
-          player4_data[9].ultronattack = 0;
+          player4_data.position = gridno;
+          player4_data.ultronattack = 0;
           attacked_player = player4_data;
         }
         let current_player = active_player;
@@ -2239,7 +2230,7 @@ space stone power effect;
         if (attacked_player != current_player) {
           console.log("hi");
 
-          let nextindex = active_player[6].position;
+          let nextindex = active_player.position;
           if (
             nextindex == portal_loc[0] ||
             nextindex == portal_loc[1] ||
@@ -2257,42 +2248,42 @@ space stone power effect;
         }
 
         active_player = current_player;
-        if (active_player == player1_data && active_player[7].isStones) {
-          player1_data[1].spacestone = false;
-          player1_data[8].stonecount--;
-          if (player1_data[8].stonecount == 0) {
-            player1_data[7].isStones = false;
+        if (active_player == player1_data && active_player.isStones) {
+          player1_data.spacestone = false;
+          player1_data.stonecount--;
+          if (player1_data.stonecount == 0) {
+            player1_data.isStones = false;
           }
-          portal_storage[1].spacestone = true;
+          portal_storage.spacestone = true;
         }
 
-        if (active_player == player2_data && active_player[7].isStones) {
-          player2_data[1].spacestone = false;
-          player2_data[8].stonecount--;
-          if (player2_data[8].stonecount == 0) {
-            player2_data[7].isStones = false;
+        if (active_player == player2_data && active_player.isStones) {
+          player2_data.spacestone = false;
+          player2_data.stonecount--;
+          if (player2_data.stonecount == 0) {
+            player2_data.isStones = false;
           }
-          portal_storage[1].spacestone = true;
+          portal_storage.spacestone = true;
         }
-        if (active_player == player3_data && active_player[7].isStones) {
-          player3_data[1].spacestone = false;
-          player3_data[8].stonecount--;
-          if (player3_data[8].stonecount == 0) {
-            player3_data[7].isStones = false;
+        if (active_player == player3_data && active_player.isStones) {
+          player3_data.spacestone = false;
+          player3_data.stonecount--;
+          if (player3_data.stonecount == 0) {
+            player3_data.isStones = false;
           }
-          portal_storage[1].spacestone = true;
-        }
-
-        if (active_player == player4_data && active_player[7].isStones) {
-          player4_data[1].spacestone = false;
-          player4_data[8].stonecount--;
-          if (player4_data[8].stonecount == 0) {
-            player4_data[7].isStones = false;
-          }
-          portal_storage[1].spacestone = true;
+          portal_storage.spacestone = true;
         }
 
-        let nextindex = active_player[6].position;
+        if (active_player == player4_data && active_player.isStones) {
+          player4_data.spacestone = false;
+          player4_data.stonecount--;
+          if (player4_data.stonecount == 0) {
+            player4_data.isStones = false;
+          }
+          portal_storage.spacestone = true;
+        }
+
+        let nextindex = active_player.position;
         if (
           nextindex == portal_loc[0] ||
           nextindex == portal_loc[1] ||
@@ -2320,13 +2311,13 @@ space stone power effect;
     }
 
     // active_avail_confirm();
-    // if (active_player[0].timestone) {
+    // if (active_player.timestone) {
     //   console.log("time");
 
     //   let timeblock = document.getElementsByClassName("time")[0];
     //   timeblock.style.backgroundColor = "white";
     // }
-    // if (active_player[1].spacestone) {
+    // if (active_player.spacestone) {
     //   console.log("space");
     //   let spaceblock = document.getElementsByClassName("space-stone")[0];
     //   let space = spaceblock.querySelector(".space");
@@ -2344,26 +2335,26 @@ space stone power effect;
     //   let minus = spaceblock.querySelector(".minus");
     //   minus.style.backgroundColor = "white";
     // }
-    // if (active_player[2].powerstone) {
+    // if (active_player.powerstone) {
     //   console.log("power");
     // }
-    // if (active_player[3].realitystone) {
+    // if (active_player.realitystone) {
     //   console.log("reality");
     //   let realityblock = document.getElementsByClassName("reality-stone")[0];
     //   realityblock.querySelector(".reality").style.backgroundColor = "white";
     // }
-    // if (active_player[4].soulstone && active_player[8].stonecount >= 2) {
+    // if (active_player.soulstone && active_player.stonecount >= 2) {
     //   let flag = false;
     //   console.log("soul");
     //   if (active_player != player1_data) {
     //     console.log(active_player);
     //     console.log(player1_data);
     //     if (
-    //       player1_data[0].timestone ||
-    //       player1_data[1].spacestone ||
-    //       player1_data[2].powerstone ||
-    //       player1_data[3].realitystone ||
-    //       player1_data[5].memorystone
+    //       player1_data.timestone ||
+    //       player1_data.spacestone ||
+    //       player1_data.powerstone ||
+    //       player1_data.realitystone ||
+    //       player1_data.memorystone
     //     ) {
     //       flag = true;
     //       let soulblock = document.getElementsByClassName("soul-stone")[0];
@@ -2374,11 +2365,11 @@ space stone power effect;
 
     //   if (active_player != player2_data) {
     //     if (
-    //       player2_data[0].timestone ||
-    //       player2_data[1].spacestone ||
-    //       player2_data[2].powerstone ||
-    //       player2_data[3].realitystone ||
-    //       player2_data[5].memorystone
+    //       player2_data.timestone ||
+    //       player2_data.spacestone ||
+    //       player2_data.powerstone ||
+    //       player2_data.realitystone ||
+    //       player2_data.memorystone
     //     ) {
     //       flag = true;
     //       let soulblock = document.getElementsByClassName("soul-stone")[0];
@@ -2389,11 +2380,11 @@ space stone power effect;
 
     //   if (active_player != player3_data) {
     //     if (
-    //       player3_data[0].timestone ||
-    //       player3_data[1].spacestone ||
-    //       player3_data[2].powerstone ||
-    //       player3_data[3].realitystone ||
-    //       player3_data[5].memorystone
+    //       player3_data.timestone ||
+    //       player3_data.spacestone ||
+    //       player3_data.powerstone ||
+    //       player3_data.realitystone ||
+    //       player3_data.memorystone
     //     ) {
     //       flag = true;
     //       let soulblock = document.getElementsByClassName("soul-stone")[0];
@@ -2404,11 +2395,11 @@ space stone power effect;
 
     //   if (active_player != player4_data) {
     //     if (
-    //       player4_data[0].timestone ||
-    //       player4_data[1].spacestone ||
-    //       player4_data[2].powerstone ||
-    //       player4_data[3].realitystone ||
-    //       player4_data[5].memorystone
+    //       player4_data.timestone ||
+    //       player4_data.spacestone ||
+    //       player4_data.powerstone ||
+    //       player4_data.realitystone ||
+    //       player4_data.memorystone
     //     ) {
     //       flag = true;
     //       let soulblock = document.getElementsByClassName("soul-stone")[0];
@@ -2421,7 +2412,7 @@ space stone power effect;
     //       "white";
     //   }
     // }
-    // if (active_player[5].memorystone) {
+    // if (active_player.memorystone) {
     //   console.log("memory");
     //   let flag = false;
     //   if (active_player != player1_data) {
@@ -2464,16 +2455,16 @@ space stone power effect;
 }
 
 function isaavailoption() {
-  if (active_player[7].isStones) {
+  if (active_player.isStones) {
   }
-  if (active_player[0].timestone) {
+  if (active_player.timestone) {
     return true;
   }
-  if (active_player[1].spacestone) {
+  if (active_player.spacestone) {
     return true;
   }
-  if (active_player[2].powerstone) {
-    let nextindex = active_player[6].position + number;
+  if (active_player.powerstone) {
+    let nextindex = active_player.position + number;
     if (
       nextindex == enemy_loc[0] ||
       nextindex == enemy_loc[1] ||
@@ -2488,17 +2479,17 @@ function isaavailoption() {
       return true;
     }
   }
-  if (active_player[3].realitystone) {
+  if (active_player.realitystone) {
     return true;
   }
-  if (active_player[4].soulstone && active_player[8].stonecount >= 2) {
+  if (active_player.soulstone && active_player.stonecount >= 2) {
     if (active_player != player1_data) {
       if (
-        player1_data[0].timestone ||
-        player1_data[1].space ||
-        player1_data[2].powerstone ||
-        player1_data[3].realitystone ||
-        player1_data[5].memorystone
+        player1_data.timestone ||
+        player1_data.space ||
+        player1_data.powerstone ||
+        player1_data.realitystone ||
+        player1_data.memorystone
       ) {
         return true;
       }
@@ -2506,11 +2497,11 @@ function isaavailoption() {
 
     if (active_player != player2_data) {
       if (
-        player2_data[0].timestone ||
-        player2_data[1].space ||
-        player2_data[2].powerstone ||
-        player2_data[3].realitystone ||
-        player2_data[5].memorystone
+        player2_data.timestone ||
+        player2_data.space ||
+        player2_data.powerstone ||
+        player2_data.realitystone ||
+        player2_data.memorystone
       ) {
         return true;
       }
@@ -2518,11 +2509,11 @@ function isaavailoption() {
 
     if (active_player != player3_data) {
       if (
-        player3_data[0].timestone ||
-        player3_data[1].space ||
-        player3_data[2].powerstone ||
-        player3_data[3].realitystone ||
-        player3_data[5].memorystone
+        player3_data.timestone ||
+        player3_data.space ||
+        player3_data.powerstone ||
+        player3_data.realitystone ||
+        player3_data.memorystone
       ) {
         return true;
       }
@@ -2530,17 +2521,17 @@ function isaavailoption() {
 
     if (active_player != player4_data) {
       if (
-        player4_data[0].timestone ||
-        player4_data[1].space ||
-        player4_data[2].powerstone ||
-        player4_data[3].realitystone ||
-        player4_data[5].memorystone
+        player4_data.timestone ||
+        player4_data.space ||
+        player4_data.powerstone ||
+        player4_data.realitystone ||
+        player4_data.memorystone
       ) {
         return true;
       }
     }
   }
-  if (active_player[5].memorystone) {
+  if (active_player.memorystone) {
     return true;
   }
   return false;
