@@ -1,0 +1,89 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(17, 19, 26);
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+/*este selector indica que elegimos, de la clase
+.nav-links los items de lista que tengan un enlace a*/
+.nav-links li a {
+  /*Podemos agregar a un elemento una transicion
+  indicando a que atributo hacerlo: Puede ser color, font-style, etc o all
+  la duracion de la transición en segundos
+  dejamos ease por defecto 
+  y el delay de la animación en segundos*/
+  transition: all 0.3s ease 0.1s;
+}
+
+/*La propiedad hover, indica que algo va a ocurrir
+cuando pasemos el mouse sobre el elemento mencionado*/
+.nav-links li a:hover {
+  color: rgb(0, 255, 200);
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(17, 19, 26);
+  font-family: "Lato", sans-serif;
+  text-align: justify;
+  color: #fff;
+}
+
+button {
+  border: white;
+  border-radius: 5%;
+}
+
+li,
+a,
+button {
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+button {
+  padding: 9px 25px;
+  /* sirve para redondear las esquinas de los bordes */
+  border-radius: 50px;
+  background-color: rgb(34, 44, 180);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: rgba(111, 167, 182, 0.8);
+}
+
+header,
+ul,
+li,
+a,
+img {
+  font-weight: bold;
+}
+
+.hero {
+  /* Arriba | Derecha | Abajo | Izquierda */
+  margin: 0 15% 0 15%;
+  background-color: rgba(56, 77, 172, 0.13);
+  padding: 2em;
+}
