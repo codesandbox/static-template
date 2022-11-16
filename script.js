@@ -1632,7 +1632,7 @@ function avail_options() {
     if (active_player.realitystone) {
       portal_arr.push("reality");
     }
-    if (active_player.soulstone && active_player.stonecount >= 2) {
+    if (active_player.soulstone) {
       let flag = false;
       if (active_player != player1_data) {
         if (
@@ -1644,6 +1644,7 @@ function avail_options() {
         ) {
           flag = true;
           soul_arr.push("sop1");
+          console.log("Exchange stone with p1");
         }
       }
 
@@ -1657,6 +1658,7 @@ function avail_options() {
         ) {
           flag = true;
           soul_arr.push("sop2");
+          console.log("Exchange stone with p2");
         }
       }
 
@@ -1670,6 +1672,7 @@ function avail_options() {
         ) {
           flag = true;
           soul_arr.push("sop3");
+          console.log("Exchange stone with p3");
         }
       }
 
@@ -1683,6 +1686,7 @@ function avail_options() {
         ) {
           flag = true;
           soul_arr.push("sop4");
+          console.log("Exchange stone with p4");
         }
       }
       if (flag) {
@@ -2034,6 +2038,425 @@ function avail_options() {
       }
       avail_cnf_btn.removeEventListener("click", cnf_fun);
       console.log(selected_power);
+
+      /*
+     soul stone power effect;
+     */
+      if (selected_power.stone == "soul") {
+        document.getElementsByClassName(
+          "play-box-lower"
+        )[0].innerHTML = `${confirm_dialogue}`;
+        deactive_confirm();
+
+        if (selected_power.player == "sop1") {
+          let temparr = [];
+          Object.entries(player1_data).map((entry) => {
+            let key = entry[0];
+            let value = entry[1];
+
+            if (key == "timestone" && value == true) {
+              temparr.push("timestone");
+              player1_data.timestone = false;
+              player1_data.stonecount--;
+              active_player.timestone = true;
+              active_player.stonecount++;
+            }
+            if (key == "spacestone" && value == true) {
+              temparr.push("spacestone");
+              player1_data.spacestone = false;
+              player1_data.stonecount--;
+              active_player.spacestone = true;
+              active_player.stonecount++;
+            }
+            if (key == "powerstone" && value == true) {
+              temparr.push("powerstone");
+              player1_data.powerstone = false;
+              player1_data.stonecount--;
+              active_player.powerstone = true;
+              active_player.stonecount++;
+            }
+            if (key == "realitystone" && value == true) {
+              temparr.push("realitystone");
+              player1_data.realitystone = false;
+              player1_data.stonecount--;
+              active_player.realitystone = true;
+              active_player.stonecount++;
+            }
+            if (key == "memorystone" && value == true) {
+              temparr.push("memorystone");
+              player1_data.memorystone = false;
+              player1_data.stonecount--;
+              active_player.memorystone = true;
+              active_player.stonecount++;
+            }
+          });
+
+          Object.entries(active_player).map((entry) => {
+            let key = entry[0];
+            let value = entry[1];
+            if (key == "timestone" && value == true && !temparr.includes(key)) {
+              player1_data.timestone = true;
+              player1_data.stonecount++;
+              active_player.timestone = false;
+              active_player.stonecount--;
+            }
+            if (
+              key == "spacestone" &&
+              value == true &&
+              !temparr.includes(key)
+            ) {
+              player1_data.spacestone = true;
+              player1_data.stonecount++;
+              active_player.spacestone = false;
+              active_player.stonecount++;
+            }
+            if (
+              key == "powerstone" &&
+              value == true &&
+              !temparr.includes(key)
+            ) {
+              player1_data.powerstone = true;
+              player1_data.stonecount++;
+              active_player.powerstone = false;
+              active_player.stonecount--;
+            }
+            if (
+              key == "realitystone" &&
+              value == true &&
+              !temparr.includes(key)
+            ) {
+              player1_data.realitystone = true;
+              player1_data.stonecount++;
+              active_player.realitystone = false;
+              active_player.stonecount--;
+            }
+            if (
+              key == "memorystone" &&
+              value == true &&
+              !temparr.includes(key)
+            ) {
+              player1_data.memorystone = true;
+              player1_data.stonecount++;
+              active_player.memorystone = false;
+              active_player.stonecount--;
+            }
+          });
+
+          if (player1_data.stonecount == 0) {
+            player1_data.isStones = false;
+          }
+          active_player.soulstone = false;
+          active_player.stonecount--;
+          portal_storage.soulstone = true;
+        }
+        if (selected_power.player == "sop2") {
+          let temparr = [];
+          Object.entries(player2_data).map((entry) => {
+            let key = entry[0];
+            let value = entry[1];
+            if (key == "timestone" && value == true) {
+              temparr.push("timestone");
+              player2_data.timestone = false;
+              player2_data.stonecount--;
+              active_player.timestone = true;
+              active_player.stonecount++;
+            }
+            if (key == "spacestone" && value == true) {
+              temparr.push("spacestone");
+              player2_data.spacestone = false;
+              player2_data.stonecount--;
+              active_player.spacestone = true;
+              active_player.stonecount++;
+            }
+            if (key == "powerstone" && value == true) {
+              temparr.push("spacestone");
+              player2_data.powerstone = false;
+              player2_data.stonecount--;
+              active_player.powerstone = true;
+              active_player.stonecount++;
+            }
+            if (key == "realitystone" && value == true) {
+              temparr.push("realitystone");
+              player2_data.realitystone = false;
+              player2_data.stonecount--;
+              active_player.realitystone = true;
+              active_player.stonecount++;
+            }
+            if (key == "memorystone" && value == true) {
+              temparr.push("memorystone");
+              player2_data.memorystone = false;
+              player2_data.stonecount--;
+              active_player.memorystone = true;
+              active_player.stonecount++;
+            }
+          });
+
+          Object.entries(active_player).map((entry) => {
+            let key = entry[0];
+            let value = entry[1];
+            if (key == "timestone" && value == true && !temparr.includes(key)) {
+              player2_data.timestone = true;
+              player2_data.stonecount++;
+              active_player.timestone = false;
+              active_player.stonecount--;
+            }
+            if (
+              key == "spacestone" &&
+              value == true &&
+              !temparr.includes(key)
+            ) {
+              player2_data.spacestone = true;
+              player2_data.stonecount++;
+              active_player.spacestone = false;
+              active_player.stonecount++;
+            }
+            if (
+              key == "powerstone" &&
+              value == true &&
+              !temparr.includes(key)
+            ) {
+              player2_data.powerstone = true;
+              player2_data.stonecount++;
+              active_player.powerstone = false;
+              active_player.stonecount--;
+            }
+            if (
+              key == "realitystone" &&
+              value == true &&
+              !temparr.includes(key)
+            ) {
+              player2_data.realitystone = true;
+              player2_data.stonecount++;
+              active_player.realitystone = false;
+              active_player.stonecount--;
+            }
+            if (
+              key == "memorystone" &&
+              value == true &&
+              !temparr.includes(key)
+            ) {
+              player2_data.memorystone = true;
+              player2_data.stonecount++;
+              active_player.memorystone = false;
+              active_player.stonecount--;
+            }
+          });
+
+          if (player2_data.stonecount == 0) {
+            player2_data.isStones = false;
+          }
+          active_player.soulstone = false;
+          active_player.stonecount--;
+          portal_storage.soulstone = true;
+        }
+        if (selected_power.player == "sop3") {
+          let temparr = [];
+          Object.entries(player3_data).map((entry) => {
+            let key = entry[0];
+            let value = entry[1];
+            if (key == "timestone" && value == true) {
+              temparr.push("timestone");
+              player3_data.timestone = false;
+              player3_data.stonecount--;
+              active_player.timestone = true;
+              active_player.stonecount++;
+            }
+            if (key == "spacestone" && value == true) {
+              temparr.push("spacestone");
+              player3_data.spacestone = false;
+              player3_data.stonecount--;
+              active_player.spacestone = true;
+              active_player.stonecount++;
+            }
+            if (key == "powerstone" && value == true) {
+              temparr.push("powerstone");
+              player3_data.powerstone = false;
+              player3_data.stonecount--;
+              active_player.powerstone = true;
+              active_player.stonecount++;
+            }
+            if (key == "realitystone" && value == true) {
+              temparr.push("realitystone");
+              player3_data.realitystone = false;
+              player3_data.stonecount--;
+              active_player.realitystone = true;
+              active_player.stonecount++;
+            }
+            if (key == "memorystone" && value == true) {
+              temparr.push("memorystone");
+              player3_data.memorystone = false;
+              player3_data.stonecount--;
+              active_player.memorystone = true;
+              active_player.stonecount++;
+            }
+          });
+
+          Object.entries(active_player).map((entry) => {
+            let key = entry[0];
+            let value = entry[1];
+            if (key == "timestone" && value == true && !temparr.includes(key)) {
+              player3_data.timestone = true;
+              player3_data.stonecount++;
+              active_player.timestone = false;
+              active_player.stonecount--;
+            }
+            if (
+              key == "spacestone" &&
+              value == true &&
+              !temparr.includes(key)
+            ) {
+              player3_data.spacestone = true;
+              player3_data.stonecount++;
+              active_player.spacestone = false;
+              active_player.stonecount++;
+            }
+            if (
+              key == "powerstone" &&
+              value == true &&
+              !temparr.includes(key)
+            ) {
+              player3_data.powerstone = true;
+              player3_data.stonecount++;
+              active_player.powerstone = false;
+              active_player.stonecount--;
+            }
+            if (
+              key == "realitystone" &&
+              value == true &&
+              !temparr.includes(key)
+            ) {
+              player3_data.realitystone = true;
+              player3_data.stonecount++;
+              active_player.realitystone = false;
+              active_player.stonecount--;
+            }
+            if (
+              key == "memorystone" &&
+              value == true &&
+              !temparr.includes(key)
+            ) {
+              player3_data.memorystone = true;
+              player3_data.stonecount++;
+              active_player.memorystone = false;
+              active_player.stonecount--;
+            }
+          });
+
+          if (player3_data.stonecount == 0) {
+            player3_data.isStones = false;
+          }
+          active_player.soulstone = false;
+          active_player.stonecount--;
+          portal_storage.soulstone = true;
+        }
+        if (selected_power.player == "sop4") {
+          let temparr = [];
+          Object.entries(player4_data).map((entry) => {
+            let key = entry[0];
+            let value = entry[1];
+            if (key == "timestone" && value == true) {
+              temparr.push("timestone");
+              player4_data.timestone = false;
+              player4_data.stonecount--;
+              active_player.timestone = true;
+              active_player.stonecount++;
+            }
+            if (key == "spacestone" && value == true) {
+              temparr.push("spacestone");
+              player4_data.spacestone = false;
+              player4_data.stonecount--;
+              active_player.spacestone = true;
+              active_player.stonecount++;
+            }
+            if (key == "powerstone" && value == true) {
+              temparr.push("powerstone");
+              player4_data.powerstone = false;
+              player4_data.stonecount--;
+              active_player.powerstone = true;
+              active_player.stonecount++;
+            }
+            if (key == "realitystone" && value == true) {
+              temparr.push("realitystone");
+              player4_data.realitystone = false;
+              player4_data.stonecount--;
+              active_player.realitystone = true;
+              active_player.stonecount++;
+            }
+            if (key == "memorystone" && value == true) {
+              temparr.push("memorystone");
+              player4_data.memorystone = false;
+              player4_data.stonecount--;
+              active_player.memorystone = true;
+              active_player.stonecount++;
+            }
+          });
+
+          Object.entries(active_player).map((entry) => {
+            let key = entry[0];
+            let value = entry[1];
+            if (key == "timestone" && value == true && !temparr.includes(key)) {
+              player4_data.timestone = true;
+              player4_data.stonecount++;
+              active_player.timestone = false;
+              active_player.stonecount--;
+            }
+            if (
+              key == "spacestone" &&
+              value == true &&
+              !temparr.includes(key)
+            ) {
+              player4_data.spacestone = true;
+              player4_data.stonecount++;
+              active_player.spacestone = false;
+              active_player.stonecount++;
+            }
+            if (
+              key == "powerstone" &&
+              value == true &&
+              !temparr.includes(key)
+            ) {
+              player4_data.powerstone = true;
+              player4_data.stonecount++;
+              active_player.powerstone = false;
+              active_player.stonecount--;
+            }
+            if (
+              key == "realitystone" &&
+              value == true &&
+              !temparr.includes(key)
+            ) {
+              player4_data.realitystone = true;
+              player4_data.stonecount++;
+              active_player.realitystone = false;
+              active_player.stonecount--;
+            }
+            if (
+              key == "memorystone" &&
+              value == true &&
+              !temparr.includes(key)
+            ) {
+              player4_data.memorystone = true;
+              player4_data.stonecount++;
+              active_player.memorystone = false;
+              active_player.stonecount--;
+            }
+          });
+
+          if (player4_data.stonecount == 0) {
+            player4_data.isStones = false;
+          }
+          active_player.soulstone = false;
+          active_player.stonecount--;
+          portal_storage.soulstone = true;
+        }
+        confirm_move();
+
+        console.log("soul stone worked");
+      }
+
+      /*
+     soul stone power effect;
+     */
 
       /*
      memory stone power effect;
@@ -2482,7 +2905,7 @@ function isaavailoption() {
   if (active_player.realitystone) {
     return true;
   }
-  if (active_player.soulstone && active_player.stonecount >= 2) {
+  if (active_player.soulstone) {
     if (active_player != player1_data) {
       if (
         player1_data.timestone ||
