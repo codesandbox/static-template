@@ -1,12 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <main class="contenedor">
+      <section class="section1">
+        <header class="section1__header">
+          <h1>Happy Kidss</h1>
+          <nav class="section1__header__nav">
+            <div class="section1__header__anburger">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="section1__header__nav__busqueda">
+              <li><i class="fa-solid fa-magnifying-glass"></i> Shear</li>
+            </div>
+            <ul>
+              <li>Home</li>
+              <li>Shop colection</li>
+              <li>Our Stary</li>
+              <li>Contacts</li>
+            </ul>
+            <div class="section1__header__nav__login--shop">
+              <li>
+                <i class="fa-solid fa-circle-user"></i><a href=""> Log In</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-cart-arrow-down"></i>
+                <!-- <i class="fa-solid fa-circle"></i> -->
+              </li>
+            </div>
+          </nav>
+        </header>
+        <div class="section1__home">
+          <div class="section1__home__redees__sociales">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-pinterest"></i>
+            <i class="fa-brands fa-google-plus"></i>
+          </div>
+          <div class="section1__home__chat">
+            <i class="fa-solid fa-face-laugh-beam"></i> les´t chat
+          </div>
+        </div>
+      </section>
+      <section class="section2">
+        <h2>New Arrivals</h2>
+        <div class="section2__products">
+          <div class="section2__products--card">
+            <img src="img/product1.webp" alt="" />
+            <p>Im a product</p>
+            <p><span>$19.99</span></p>
+            <div class="section2__products--card__btn">
+              Add to card
+            </div>
+          </div>
+          <div class="section2__products--card">
+            <img src="img/product2.webp" alt="" />
+            <p>Im a product</p>
+            <p><span>$19.99</span></p>
+            <div class="section2__products--card__btn">
+              Add to card
+            </div>
+          </div>
+          <div class="section2__products--card">
+            <img src="img/product3.webp" alt="" />
+            <p>Im a product</p>
+            <p><span>$19.99</span></p>
+            <div class="section2__products--card__btn">
+              Add to card
+            </div>
+          </div>
+          <div class="section2__products--card">
+            <img src="img/product4.webp" alt="" />
+            <p>Im a product</p>
+            <p><span>$19.99</span></p>
+            <div class="section2__products--card__btn">
+              Add to card
+            </div>
+          </div>
+        </div>
+        <div class="section2__btnshop" onclick="modalcard()">
+          Shop All
+        </div>
+      </section>
+      <hr />
+      <footer class="footer">
+        <h2>Happy Kidss</h2>
+        <div class="footer__info">
+          <div class="footer__info__nav">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Shop collection</a></li>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Contacts</a></li>
+            </ul>
+          </div>
+          <div class="footer__info__nav__socials">
+            <a class="redes" href="">
+              <i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a class="redes" href="">
+              <i class="fa-brands fa-pinterest-p"></i
+            ></a>
+            <a class="redes" href=""> <i class="fa-brands fa-google"></i></a>
+          </div>
+          <div class="footer__info__nav__politicas">
+            <ul>
+              <li><a href="">Shopping & Return</a></li>
+              <li><a href="">Share policy</a></li>
+              <li><a href="">Payment methods</a></li>
+              <li><a href="">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__busqueda">
+          <p>Join Our Mailing List</p>
+          <div class="footer__busqueda__box">
+            <input type="text" />
+            <button>Suscribe Now</button>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <p>
+      ©Copyright 2022
+      <a class="target_blanck" href="http://jroque.herokuapp.com/">jroque</a>
+    </p>
   </body>
+  <script
+    src="https://kit.fontawesome.com/3f757404e4.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="js/main.js"></script>
 </html>
