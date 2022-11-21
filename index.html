@@ -1,12 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ADNA Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/color.css" />
   </head>
+  <script src="assets/js/chart.js"></script>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header class="header">
+
+      <div class="logo">
+        <img src="assets/img/ArtifactDNA-System.jpg" width="150" height="50" />
+      </div>
+      <div class="logo">
+        <a href="artifactDashboard.html">ArtifactDNA</a>
+      </div>
+    </header>
+
+    <aside class="sidebar sidebar"></aside>
+    
+    <div class="container-fluid pt-5">
+
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 p-5 my-5 border">
+          <div class="panel panel-inverse">
+            <div class="panel-heading">
+              <h4 class="panel-title">Data Table 1</h4>
+            </div>
+            <div class="panel-body">
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+            <div class="panel panel-inverse">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Data Table 2</h4>
+                </div>
+                <div class="panel-body">
+                    <canvas id="myChart2"></canvas>
+                </div>
+              </div>
+        <div>
+        <div class="col-sm-1"></div>
+      </div>
+
+    </div>
+    
+    <script>
+
+    var xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+    var yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+    new Chart("myChart", {
+      type: "line",
+      data: {
+        labels: xValues,
+        datasets: [
+          {
+            fill: false,
+            lineTension: 0,
+            backgroundColor: "rgba(0,0,255,1.0)",
+            borderColor: "rgba(0,0,255,0.1)",
+            data: yValues
+          }
+        ]
+      },
+      options: {
+        legend: { display: false },
+        scales: {
+          yAxes: [{ ticks: { min: 6, max: 16 } }]
+        }
+      }
+    });
+    new Chart("myChart2", {
+      type: "bar",
+      data: {
+        labels: xValues,
+        datasets: [
+          {
+            fill: false,
+            lineTension: 0,
+            backgroundColor: "rgba(0,0,255,1.0)",
+            borderColor: "rgba(0,0,255,0.1)",
+            data: yValues
+          }
+        ]
+      },
+      options: {
+        legend: { display: false },
+        scales: {
+          yAxes: [{ ticks: { min: 6, max: 16 } }]
+        }
+      }
+    });
+
+    </script>
   </body>
 </html>
