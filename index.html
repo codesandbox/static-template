@@ -1,12 +1,271 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dunkel Lanches</title>
+    <link rel="stylesheet" href="./menu/menu.css">
+    
+  <style>
+      body {
+        background: black;
+      }
+      .tt {
+        background: black;
+        color: orangered;
+        padding: 15px;
+        border-radius: 10px;
+      }
+      h1 {
+        margin: 0;
+      }
+      h2 {
+        margin: 50px;
+      }
+
+      h3 {
+        background: black;
+        color: white;
+        font-size: 30px;
+        margin: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+      }
+      
+      .comida {
+        background-color: lightgrey;
+        color: black;
+        margin-top: 1;
+        font-size: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        border: 5px solid white;
+      }
+
+      .comida img {
+        width: 140px;
+        height: 120px;
+        border-radius: 10px;
+        float: right;
+      }
+      .bebida img {
+        width: 140px;
+        height: 120px;
+        border-radius: 10px;
+        float: right;
+        
+      }
+
+      .bebida {
+        background-color: lightgrey;
+        color: black;
+        margin-top: 1;
+        font-size: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        border: 5px solid white;
+      }
+
+      h2 {
+        
+        color: white;
+        font-size: 30px;
+        margin: 10px;
+        margin-top: 50px;
+        margin-bottom: 15px;
+      }
+
+      .ir {
+        background-color: green;
+        color:white;
+        margin-top: 1;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 25px;
+        margin-bottom: 15px;
+        text-align: center;
+
+      }
+    </style>
+
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+
+  <script>
+    let comida;
+      function escolherb(){
+document.getElementById("BURGER").style.borderColor = "green";
+    
+document.getElementById("SMASH BURGER").style.borderColor = "white";
+
+comida= "BURGER";
+
+      }
+      
+
+      function escolhers(){
+      document.getElementById("SMASH BURGER").style.borderColor = "green";
+      document.getElementById("BURGER").style.borderColor = "white";
+     comida= "SMASH BURGER";
+      }
+
+      let bebida
+      function escolhercl(){
+document.getElementById("Coca-Cola lata").style.borderColor = "green";
+    
+    
+document.getElementById("Coca-Cola Litro").style.borderColor = "white";
+     bebida="Coca-Cola lata";
+      }
+
+      function escolherccl(){
+document.getElementById("Coca-Cola lata").style.borderColor = "white";
+    
+document.getElementById("Coca-Cola Litro").style.borderColor = "green";
+bebida= "Coca-Cola Litro";
+      }
+
+function finalizarpedido(){
+let mensagem;
+mensagem=
+"Gostaria de pedir: "+ comida +" e " + bebida ;
+
+window.open ("https://wa.me/45998384983?text="+ mensagem);
+}
+</script>
+
+  
+<div class="menu">
+      <input type="checkbox" id="chec" />
+      <label for="chec">
+        <img src="./imagens/menu.png" />
+      </label>
+      <nav>
+        <a href= ""></a>
+        <ul>
+          <li><a href="/LogCad/login.html">Fazer Login</a></li>
+          <li><a href="/LogCad/cadastro.html">Cadastrar-se</a></li>
+          <li><a href="#anterior">Visualizar pedidos anteriores</a></li>
+
+        </ul>
+      </nav>    
+    </div>
+    <div class="tt">
+      
+        <img src="/imagens/logodunkel.png.jpg" width="350" height="300" />
+      
+        <h1>
+
+          <p></p>
+        </h1>
+        <h2></h2>
+      </div>
+  
+      <h3>Primeiro, escolha seu Hamburguer e seus adicionais!</h3>
+  
+      <div id="BURGER" class="comida" onclick="escolherb()">
+          
+        <h4><strong>BURGER</strong></h4>
+
+          <img src="imagens/h5.jpg" />
+          <p>
+            Pão brioche, molho especial, hamburguer (140g) e queijo cheddar.
+          </p>
+          <p><strong> R$16,00</strong></p>
+        </div>
+
+        <div  id="SMASH BURGER" class="comida" onclick="escolhers()">
+          <h5><strong>SMASH BURGER</strong></h5>
+          <img src="imagens/h5.jpg" />
+          <p>
+            Pão brioche, molho especial, 2 hamburgueres samsh (70g), queijo
+            cheddar, alface e tomate.
+          </p>
+          <p><strong>19,00</strong></p>
+        </div>
+        <div id= "TRIPLE SMASH" class="comida" onclick="escolhert()">
+          <h6><strong>TRIPLE SMASH</strong></h6>
+          <img src="imagens/h6.jpg" />
+          <p>
+            Pão brioche, molho especial, 3 hamburgueres smash(70g) queijo
+            cheddar e bacon.
+          </p>
+          <p><strong> R$26,00</strong></p>
+        </div>
+        <div id= "BACON BURGER" class="comida" onclick="escolherbb()">
+          <h7><strong> BACON BURGER</strong></h7>
+          <img src="imagens/h4.jpg" />
+          <p>
+            Pão brioche, molgo especial, 1 hamburguer (140g), queijo mussarela,
+            bacon em tiras, molho barbecue, alface e tomate.
+          </p>
+          <p><strong>R$21,00</strong></p>
+        </div>
+        <div id= "SALAD BURGER" class="comida" onclick="escolherSB()">
+          <h8><strong> SALAD BURGER</strong></h8>
+          <img src="imagens/h4.jpg" />
+          <p>
+            Pão brioche, molho especial, 1 hamburguer (140g), queijo mussarela,
+            alface, tomate e cebola roxa.
+          </p>
+          <p><strong> R$17,00</strong></p>
+        </div>
+        <div id= "VEGETARIAN BURGER" class="comida" onclick="escolherVB()">
+          <h9> <strong>VEGETARIAN BURGER</strong></h9>
+          <img src="imagens/h6.jpg" />
+          <p>
+            Pão brioche, molho especial, 1 hamburguer vegetal, queijo
+            mussarela,cabola caramelizada, alface e tomate.
+          </p>
+          <p><strong> R$28,00</strong></p>
+        </div>
+        <div id= "DUNKEL BURGER" class="comida" onclick="escolherDB()">
+          <h10><strong> DUNKEL BURGER</strong></h10>
+          <img src="imagens/h6.jpg" />
+          <p>
+            Pão brioche, molho especial, 2 hamburgueres(120g cada), queijo
+            mussarela bacon em tiras, cabola caramelizada, alface e tomate.
+          </p>
+          <p><strong> R$28,00</strong></p>
+        </div>
+        <div id= "COMBO KIDS" class="comida" onclick="escolherCK()">
+          <h11><strong>COMBO KIDS</strong></h11>
+          <img src="imagens/h3.png.jpg" />
+          <p>1 burguer + refri mini + 1 brinquedo sortudo</p>
+          <p><strong> R$20,00</strong></p>
+        </div>
+<p> <h2>Agora, escolha sua bebida.</h2></p>
+
+<div id= "Coca-Cola lata" class="bebida" onclick="escolhercl()">
+          <h13><strong>Coca Cola lata</strong></h13>
+
+          <img src="imagens/coca.jpeg" />
+          <p>
+            Coca-Cola 350ml.
+          </p>
+          <p><strong> R$4,50</strong></p>
+        </div>
+
+        <div id= "Coca-Cola Litro" class="bebida" onclick="escolherccl()">
+            <h14><strong>Coca Cola Litro </strong></h14>
+  
+            <img src="imagens/cocaL.JPEG" />
+            <p>
+              Coca-Cola 2 Litros.
+            </p>
+            <p><strong> R$7,50</strong></p>
+          </div>
+         
+        <div class="ir" onclick="finalizarpedido()">
+       Próximo
+        </div>
+
+
+      
+
+    </html>
   </body>
 </html>
