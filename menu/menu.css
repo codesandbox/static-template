@@ -1,0 +1,48 @@
+.menu a {
+  text-decoration: none;
+  color: black;
+}
+body {
+  font-family: arial;
+}
+.menu ul {
+  list-style: none;
+}
+.menu img {
+  width: 50px;
+  cursor: pointer;
+}
+.menu input[type="checkbox"] {
+  display: none;
+}
+.menu nav {
+  background-color: lightgray;
+  width: 150px;
+  height: 60%;
+  left: -350px;
+  position: absolute;
+  transition: all.5;
+}
+.menu ul {
+  background-color: gray;
+  top: 50px;
+  position: absolute;
+  width: 73%;
+}
+.menu input[type="checkbox"]:checked ~ nav {
+  transform: translateX(350px);
+}
+.menu a {
+  display: block;
+  padding: 20px 5px;
+  color: white;
+}
+.menu a:hover {
+  background-color: lightsalmon;
+  color: balck;
+}
+.menu label {
+  padding: 15px;
+  position: absolute;
+  z-index: 1;
+}
