@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- <script defer type="module" src="script.js"></script> -->
+  <script defer type="module" src="./js/layouts.js"></script>
+  <script defer type="module" src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide-core.min.css">
+  <script defer src="./js/sliders2.js"></script>
+  <script defer src="https://kit.fontawesome.com/ae7bbcad81.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="body-container">
+  <button class="button-small grid-toggle" data-variant="secondary" data-color="dark" data-icon="right">
+    <i class="fa-solid fa-grip-vertical"></i>
+    Hide/Show Grid
+  </button>
+  <p class="paragraph-small instructions">
+    Now resize the browser window to see the grid changing
+  </p>
+  <div class="grid-overlay section-container">
+    <div class="row-fluid grid-row-demo">
+      <div class="span1 grid-column-demo tablet-span1 mobile-span1"></div>
+      <div class="span1 grid-column-demo tablet-span1 mobile-span1"></div>
+      <div class="span1 grid-column-demo tablet-span1"></div>
+      <div class="span1 grid-column-demo tablet-span1"></div>
+      <div class="span1 grid-column-demo tablet-span1"></div>
+      <div class="span1 grid-column-demo tablet-span1"></div>
+      <div class="span1 grid-column-demo tablet-span1"></div>
+      <div class="span1 grid-column-demo tablet-span1"></div>
+      <div class="span1 grid-column-demo"></div>
+      <div class="span1 grid-column-demo"></div>
+      <div class="span1 grid-column-demo"></div>
+      <div class="span1 grid-column-demo"></div>
+    </div>
+  </div>
+  <nav class='demo-nav'>
+    <a href="/" aria-current="page" class="button-small" data-variant="outline">Home</a>
+    <a href="/buttons.html" class="button-small" data-variant="outline">Buttons</a>
+    <a href="/forms.html" class="button-small" data-variant="outline">Forms</a>
+    <a href="/typography.html" class="button-small" data-variant="outline">Typography</a>
+    <a href="/header.html" class="button-small" data-variant="outline">Header</a>
+    <a href="/footer.html" class="button-small" data-variant="outline">Footer</a>
+    <a href="/layout.html" class="button-small" data-variant="outline">Grid System</a>
+    <a href="/cards.html" class="button-small" data-variant="outline">Cards</a>
+    <a href="/miscellaneous.html" class="button-small" data-variant="outline">Miscellaneous</a>
+  </nav>
+  <main>
+    <!-- This document is a collection of sliders built with the Splide JS library but with a number of customisation: 
+      
+      => AsNavFor: Allows the slider to trigger a changes on a connected 'aside' container.
+        To enable this option in the HTML document: 
+        1) On the aside container
+          a) Add a unique id to the targetted container
+          b) Inside the targetted container add the data-triggeredBy attribute to the desired element with a value corresponding to the slide number. 
+            .i.e <div id="slider1-aside">
+                    <div class="target-element" data-triggeredBy = '1'>
+                      This content will be shown when the slide 1 is visible
+                    </div>
+                    <div class="target-element" data-triggeredBy = '2'>
+                      This content will be shown when the slide 2 is visible
+                    </div>
+                  </div>
+        2) On the slider itself
+          a) Add the attribute data-asnavfor with the unique id of the aside element as value
+          b) Add the attribute data-triggers with the same value than the aside element we want to show 
+            .i.e <div class="splide slider1" data-asnavfor = 'slider1-aside'>
+                  <div class="splide-track">
+                    <ul class="splide__list">
+                      <li class="splide__slide" data-triggers='1'>
+                        When this slide is in view it will triggers the element with data-triggeredBy = '1' in the aside container with id '#slider1-aside' to be visible
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+    -->
+    <div class="row">
+      <span class="demoLabel">
+        Slider full width with overflow on both side
+        <div class="demoUnderline"></div>
+      </span>
+    </div>
+    <section id="slider1" class="section-container flex-col-center flow-lg">
+      <div class="row-fluid flex-col-center">
+        <div class="span8 tablet-span6 flex-col-center flow-m text-center">
+          <p class="label-big">Hit your quotas on the go</p>
+          <h2 class="h2-fluid">Take actions and engage with your buyer wherever you are</h2>
+        </div>
+      </div>
+      <div class="splide slider__full-width custom-slider" data-clip="none" data-overflow="visible">
+        <div class="splide__arrows slider__arrows">
+          <button class="splide__arrow splide__arrow--prev slider__arrow slider__arrow--prev">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="splide__arrow splide__arrow--next slider__arrow slider__arrow--next">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide custom__slide" data-effect="scaleUpHover" data-inactive="opacity">
+              <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                <img src="./assets/River.jpg" alt="">
+              </div>
+            </li>
+            <li class="splide__slide custom__slide" data-effect="scaleUpHover" data-inactive="opacity">
+              <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                <img src="./assets/Ballons.jpg" alt="">
+              </div>
+            </li>
+            <li class="splide__slide custom__slide" data-effect="scaleUpHover" data-inactive="opacity">
+              <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                <img src="./assets/Beach.jpg" alt="">
+              </div>
+            </li>
+            <li class="splide__slide custom__slide" data-effect="scaleUpHover" data-inactive="opacity">
+              <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                <img src="./assets/Cool.jpg" alt="">
+              </div>
+            </li>
+            <li class="splide__slide custom__slide" data-effect="scaleUpHover" data-inactive="opacity">
+              <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                <img src="./assets/Mountain.jpg" alt="">
+              </div>
+            </li>
+            <li class="splide__slide custom__slide" data-effect="scaleUpHover" data-inactive="opacity">
+              <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                <img src="./assets/Lake.jpg" alt="">
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <div class="row">
+      <span class="demoLabel">
+        Testimonial Slider -- Big Image
+        <div class="demoUnderline"></div>
+      </span>
+    </div>
+    <section id="slider2" class="section-container flex-col-center">
+      <div class="splide slider__testimonial flow-m">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <div class="testimonial__container row-fluid flex-row-center">
+                <div class="img__wrapper span4 radius-m tablet-span4" data-fit="cover" data-ratio="4/5">
+                  <img src="./assets/Cool.jpg" alt="">
+                </div>
+                <div class="testimonial__content span6 tablet-span4 flex-col-start justify-sb flow-m">
+                  <img src="./assets/Vector (1).svg" alt="">
+                  <p class="display-h3">By a mile, the best Digital Sales Room platform out there. Taiyaki whatever lomo
+                    hoodie organic cray beard.</p>
+                  <div class="testimonial__author">
+                    <p class="label-big">John Doe</p>
+                    <p class="paragraph-small">Head of Sales</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="testimonial__container row-fluid flex-row-center">
+                <div class="img__wrapper radius-m span4 tablet-span4" data-fit="cover" data-ratio="4/5">
+                  <img src="./assets/Cool.jpg" alt="">
+                </div>
+                <div class="testimonial__content span6 tablet-span4 flex-col-start justify-sb flow-m">
+                  <img src="./assets/Vector (1).svg" alt="">
+                  <p class="display-h3">By a mile, the best Digital Sales Room platform out there. Taiyaki whatever lomo
+                    hoodie organic cray beard.</p>
+                  <div class="testimonial__author">
+                    <p class="label-big">John Doe</p>
+                    <p class="paragraph-small">Head of Sales</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="splide__arrows slider__arrows flex-row-start gap-s">
+          <button class="splide__arrow slider__arrow--prev splide__arrow--prev slider__arrow"><i
+              class="fa-solid fa-chevron-left"></i></button>
+          <button class="splide__arrow slider__arrow--next splide__arrow--next slider__arrow"><i
+              class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+    <div class="row">
+      <span class="demoLabel">
+        Slider as tabs for some content -- Overflow on the right
+        <div class="demoUnderline"></div>
+      </span>
+    </div>
+    <section id="slider3" class="section-container">
+      <div class="row-fluid flow-m slider-overflow__container">
+        <div id="slider3-aside" class="aside-content span4 tablet-span3 justify-center flex-col-start">
+          <div class="content__container flex-col-start gap-s" data-illustration="1">
+            <h3 class="h3-fluid">Open an opportunity</h3>
+            <p class="paragraph-medium">TikToking, Secondary Market buyer. Tragically market capped Bitcoin miner.
+              Chamath-like, sketchy venture capitalist. Direct delivery food buyer frictionless plugin. Addicted Austin
+              tech-worker, elon-led.</p>
+          </div>
+          <div class="content__container flex-col-start gap-s" data-illustration="2">
+            <h3 class="h3-fluid">Chicken teriyaki for everybody</h3>
+            <p class="paragraph-medium">Now every time the class is changed on the button the callback function will
+              run.
+              From that point, you can handle the event as you need to.</p>
+          </div>
+          <div class="content__container flex-col-start gap-s" data-illustration="3">
+            <h3 class="h3-fluid">Let's go the moon together</h3>
+            <p class="paragraph-medium">A type enforcer e.g the typescript compiler, if a function is expecting a string
+              and you pass a number it yells at you</p>
+          </div>
+          <div class="content__container flex-col-start gap-s" data-illustration="4">
+            <h3 class="h3-fluid">Your choice is your destiny</h3>
+            <p class="paragraph-medium">Front-end & Mobile App developer I create amazing experiences for all platforms
+              and devices with JavaScript</p>
+          </div>
+        </div>
+        <div class="slider-overflow__right span8 tablet-span5">
+          <div class="splide slider__asNavForTabs custom-slider flow-m" data-overflow="visible" data-clip="left"
+            data-asnavfor="slider3-aside">
+            <div class="splide__track">
+              <ul class="splide__list fullwidth">
+                <li class="splide__slide custom__slide" data-inactive="opacity" data-illustration='1'>
+                  <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                    <img src="./assets/River.jpg" alt="">
+                  </div>
+                </li>
+                <li class="splide__slide custom__slide" data-inactive="opacity" data-illustration='1'>
+                  <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                    <img src="./assets/Lake.jpg" alt="">
+                  </div>
+                </li>
+                <li class="splide__slide custom__slide" data-inactive="opacity" data-illustration='2'>
+                  <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                    <img src="./assets/Colors.jpg" alt="">
+                  </div>
+                </li>
+                <li class="splide__slide custom__slide" data-inactive="opacity" data-illustration='2'>
+                  <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                    <img src="./assets/Ballons.jpg" alt="">
+                  </div>
+                </li>
+                <li class="splide__slide custom__slide" data-inactive="opacity" data-illustration='3'>
+                  <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                    <img src="./assets/Mountain.jpg" alt="">
+                  </div>
+                </li>
+                <li class="splide__slide custom__slide" data-inactive="opacity" data-illustration='3'>
+                  <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                    <img src="./assets/Beach.jpg" alt="">
+                  </div>
+                </li>
+                <li class="splide__slide custom__slide" data-inactive="opacity" data-illustration='4'>
+                  <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                    <img src="./assets/Cool.jpg" alt="">
+                  </div>
+                <li class="splide__slide custom__slide" data-inactive="opacity" data-illustration='4'>
+                  <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                    <img src="./assets/smash_that_quota_webpage.webp" alt="">
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="row">
+      <span class="demoLabel">
+        Slider as tabs for some content -- Vertical variant
+        <div class="demoUnderline"></div>
+      </span>
+    </div>
+    <section id="slider4" class="section-container flex-col-center">
+      <div class="row-fluid flow-m slider-overflow__container flex-row-center mega-gap-1">
+        <div class="span4 tablet-span3">
+          <div class="splide slider__vertical custom-slider flow-m" data-direction="vertical" data-clip="none"
+            data-overflow="visible" data-asnavfor="slider4-aside">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide custom__slide" data-inactive="opacity" data-illustration='1'>
+                  <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                    <img src="./assets/Lake.jpg" alt="">
+                  </div>
+                </li>
+                <li class="splide__slide custom__slide" data-inactive="opacity" data-illustration='2'>
+                  <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                    <img src="./assets/Colors.jpg" alt="">
+                  </div>
+                </li>
+                <li class="splide__slide custom__slide" data-inactive="opacity" data-illustration='3'>
+                  <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                    <img src="./assets/Mountain.jpg" alt="">
+                  </div>
+                </li>
+                <li class="splide__slide custom__slide" data-inactive="opacity" data-illustration='4'>
+                  <div class="img__wrapper" data-fit="cover" data-ratio="4/5">
+                    <img src="./assets/Cool.jpg" alt="">
+                  </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="slider4-aside" class="aside-content span5 tablet-span4 justify-center flex-col-start">
+          <div class="content__container flex-col-start gap-s" data-illustration="1">
+            <h3 class="h3-fluid">The definitive tool for Account executives, Operation Managers and Sales Leaders</h3>
+            <p class="paragraph-medium">Deal and pipeline insights, custom sales collateral and seamless integrations.
+            </p>
+            <div class="divider m-top-xs m-bottom-xs"></div>
+            <div class="call-to-action flex-row-start align-center gap-xs">
+              <button class="icon-button" data-color="primary" data-size="medium" data-shape="circle">
+                <i class="fa-solid fa-play"></i>
+              </button>
+              <div class="flex-col-start">
+                <p class="paragraph-tiny">See how it works</p>
+                <p class="label-medium">Watch Video</p>
+              </div>
+            </div>
+          </div>
+          <div class="content__container flex-col-start gap-s" data-illustration="2">
+            <h3 class="h3-fluid">Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit</h3>
+            <p class="paragraph-medium">Lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at
+              tempor commodo</p>
+            <div class="divider m-top-xs m-bottom-xs"></div>
+            <div class="call-to-action flex-row-start align-center gap-xs">
+              <button class="icon-button" data-color="primary" data-size="medium" data-shape="circle">
+                <i class="fa-solid fa-play"></i>
+              </button>
+              <div class="flex-col-start">
+                <p class="paragraph-tiny">See how it works</p>
+                <p class="label-medium">Watch Video</p>
+              </div>
+            </div>
+          </div>
+          <div class="content__container flex-col-start gap-s" data-illustration="3">
+            <h3 class="h3-fluid">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt.</h3>
+            <p class="paragraph-medium">Habitant morbi tristique senectus et netus et malesuada fames ac</p>
+            <div class="divider m-top-xs m-bottom-xs"></div>
+            <div class="call-to-action flex-row-start align-center gap-xs">
+              <button class="icon-button" data-color="primary" data-size="medium" data-shape="circle">
+                <i class="fa-solid fa-play"></i>
+              </button>
+              <div class="flex-col-start">
+                <p class="paragraph-tiny">See how it works</p>
+                <p class="label-medium">Watch Video</p>
+              </div>
+            </div>
+          </div>
+          <div class="content__container flex-col-start gap-s" data-illustration="4">
+            <h3 class="h3-fluid">Suspendisse sed nisi lacus sed viverra tellus in hac habitasse</h3>
+            <p class="paragraph-medium">Eget aliquet nibh praesent tristique magna sit amet purus gravida quis blandit
+              turpis cursus in</p>
+            <div class="divider m-top-xs m-bottom-xs"></div>
+            <div class="call-to-action flex-row-start align-center gap-xs">
+              <button class="icon-button" data-color="primary" data-size="medium" data-shape="circle">
+                <i class="fa-solid fa-play"></i>
+              </button>
+              <div class="flex-col-start">
+                <p class="paragraph-tiny">See how it works</p>
+                <p class="label-medium">Watch Video</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="row">
+      <span class="demoLabel">
+        Testimonial slider -- Centered
+        <div class="demoUnderline"></div>
+      </span>
+    </div>
+    <section id="slider5" class="section-container flex-col-center">
+      <div class="splide slider__testimonial-center flow-m flex-col-center">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide slider__slide">
+              <div class="row-fluid flex-col-center">
+                <div class="span8 flex-col-center align-center gap-m">
+                  <div class="review__stars flex-row-center">
+                    <i class="fa-solid fa-star review__star"></i>
+                    <i class="fa-solid fa-star review__star"></i>
+                    <i class="fa-solid fa-star review__star"></i>
+                    <i class="fa-solid fa-star review__star"></i>
+                    <i class="fa-solid fa-star review__star empty"></i>
+                  </div>
+                  <h3 class="review__title display-h3 text-center">Getting deals quicker and easier!</h3>
+                  <div class="review__body flex-col-center gap-m">
+                    <p class="paragraph-large text-center">Cras quis nulla commodo, aliquam lectus sed, blandit augue.
+                      Cras ullamcorper bibendum bibendum.
+                      Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at
+                      semper turpis. Nunc eu tellus tortor.
+                    </p>
+                    <div class="review-author flex-col-center gap-s">
+                      <div class="author-avatar img__wrapper" data-fit="contain" data-crop="circle" data-ratio="1/1">
+                        <img src="./assets/Base-1.jpg" alt="">
+                      </div>
+                      <p class="author-name text-center label-big">Bakhtiyara Sattarov</p>
+                      <p class="author-role text-center paragaph-large">Account Executive</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="splide__arrows slider__arrows flex-row-start gap-s">
+            <button class="splide__arrow slider__arrow--prev splide__arrow--prev slider__arrow"><i
+                class="fa-solid fa-chevron-left"></i></button>
+            <button class="splide__arrow slider__arrow--next splide__arrow--next slider__arrow"><i
+                class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="row">
+      <span class="demoLabel">
+        Testimonial slider -- Centered
+        <div class="demoUnderline"></div>
+      </span>
+    </div>
+    <section id="slider6" class="section-container flex-col-center">
+      <div class="row-fluid">
+          <div class="splide slider__testimonial-long flow-m">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <div class="testimonial__container row-fluid flex-row-center">
+                      <div class="span2 flex-col-center">
+                        <div class=" author-picture img__wrapper" data-fit="contain" data-ratio="1/1" data-crop="circle">
+                          <img src="./assets/Base.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="span8 flex-col-start gap-sm">
+                        <p class="paragraph-large">Hacker News addicted Austin tech-worker. Hypergrowth activist investor. Cap
+                          table joining consumer social app.
+                          Techno-king ride sharing app design, Metaverse-based clout-chasing influencer. VR headset wearable
+                          network.</p>
+                        <div class="author-info flex-row-start gap-s">
+                          <p class="author-name label-big">Lisa Parsas, Samsung</p>
+                          <a href="#" class="button-medium label-big" data-variant="link" data-color="dark" data-icon="left">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Customer cases
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="splide__slide">
+                    <div class="testimonial__container row-fluid flex-row-center">
+                      <div class="span2 flex-col-center">
+                        <div class=" author-picture img__wrapper" data-fit="contain" data-ratio="1/1" data-crop="circle">
+                          <img src="./assets/Base.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="span8 flex-col-start gap-sm">
+                        <p class="paragraph-large">Hacker News addicted Austin tech-worker. Hypergrowth activist investor. Cap
+                          table joining consumer social app.
+                          Techno-king ride sharing app design, Metaverse-based clout-chasing influencer. VR headset wearable
+                          network.</p>
+                        <div class="author-info flex-row-start gap-s">
+                          <p class="author-name label-big">Lisa Parsas, Samsung</p>
+                          <a href="#" class="button-medium label-big" data-variant="link" data-color="dark" data-icon="left">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Customer cases
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="splide__arrows slider__arrows flex-row-start gap-s">
+                <button class="splide__arrow slider__arrow--prev splide__arrow--prev slider__arrow"><i
+                    class="fa-solid fa-chevron-left"></i></button>
+                <button class="splide__arrow slider__arrow--next splide__arrow--next slider__arrow"><i
+                    class="fa-solid fa-chevron-right"></i></button>
+              </div>
+            </div>
+
+      </div>
+    </section>
+    <div class="row">
+      <span class="demoLabel">
+        Testimonial slider -- With content above
+        <div class="demoUnderline"></div>
+      </span>
+    </div>
+    <section class="section-container flex-col-center flow-m">
+      <div class="row-fluid flex-col-center flow-lg gap-none">
+        <h3 class="display-h3 text-center">Our customers love us</h3>
+        <div class="customer-logos span8 flex-row-sb gap-s">
+          <img src="./assets/samsung.svg" alt="">
+          <img src="./assets/jeeng.svg" alt="">
+          <img src="./assets/puma.svg" alt="">
+          <img src="./assets/CHEQ.svg" alt="">
+          <img src="./assets/chargebee.svg" alt="">
+          <img src="./assets/SATS.svg" alt="">
+        </div>
+        <div id="slider7" class="splide slider__testimonial-long flow-m">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <div class="testimonial__container row-fluid flex-row-center">
+                  <div class="span2 flex-col-center">
+                    <div class="author-picture img__wrapper" data-fit="contain" data-ratio="1/1" data-crop="circle">
+                      <img src="./assets/Base.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="span8 flex-col-start gap-sm">
+                    <p class="paragraph-large">Hacker News addicted Austin tech-worker. Hypergrowth activist investor.
+                      Cap
+                      table joining consumer social app.
+                      Techno-king ride sharing app design, Metaverse-based clout-chasing influencer. VR headset wearable
+                      network.</p>
+                    <div class="author-info flex-row-start gap-s">
+                      <p class="author-name label-big">Lisa Parsas, Samsung</p>
+                      <a href="#" class="button-medium label-big" data-variant="link" data-color="dark" data-icon="left">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        Customer cases
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="testimonial__container row-fluid flex-row-center">
+                  <div class="span2 flex-col-center">
+                    <div class="author-picture img__wrapper" data-fit="contain" data-ratio="1/1" data-crop="circle">
+                      <img src="./assets/Base.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="span8 flex-col-start gap-sm">
+                    <p class="paragraph-large">Hacker News addicted Austin tech-worker. Hypergrowth activist investor.
+                      Cap
+                      table joining consumer social app.
+                      Techno-king ride sharing app design, Metaverse-based clout-chasing influencer. VR headset wearable
+                      network.</p>
+                    <div class="author-info flex-row-start gap-s">
+                      <p class="author-name label-big">Lisa Parsas, Samsung</p>
+                      <a href="#" class="button-medium label-big" data-variant="link" data-color="dark" data-icon="left">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        Customer cases
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="splide__arrows slider__arrows flex-row-start gap-s">
+            <button class="splide__arrow slider__arrow--prev splide__arrow--prev slider__arrow"><i
+                class="fa-solid fa-chevron-left"></i></button>
+            <button class="splide__arrow slider__arrow--next splide__arrow--next slider__arrow"><i
+                class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-container flex-col-center flow-m">
+      <div class="row-fluid flex-row-sb align-end">
+        <h2 class="display-h3 span5">Want to know more? Head to our blog</h2>
+        <a href="#" class="button-medium" data-variant="outline" data-icon="left" data-color="dark">
+          <i class="fa-solid fa-arrow-right"></i>
+          Getaccept Blog
+        </a>
+      </div>
+      <div class="splide slider__three-cards" id="slider8">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+                <div class="card span4 tablet-span4">
+                  <div class="card__image-wrapper">
+                    <div class="card-image__gradient-overlay"></div>
+                    <img src="./assets/Cool.jpg" alt="" class="card__image" />
+                  </div>
+                  <div class="card__body">
+                    <div class="chips" data-color="pink">IT & Tech</div>
+                    <h4 class="label-big card__title">Chargebee</h4>
+                    <p class="card__text paragraph-small">
+                      Hypergrowth activist investor and Healthcare platform consumers as one acquisition strategy for
+                      board
+                    </p>
+                    <a href="#" class="button-small" data-variant="link" data-icon="left" data-color="dark">
+                      <i class="fa-solid fa-arrow-right"></i>
+                      Read more</a>
+                  </div>
+                </div>
+            </li>
+            <li class="splide__slide">
+                <div class="card span4 tablet-span4">
+                  <div class="card__image-wrapper">
+                    <div class="card-image__gradient-overlay"></div>
+                    <img src="./assets/Cool.jpg" alt="" class="card__image" />
+                  </div>
+                  <div class="card__body">
+                    <div class="chips" data-color="pink">IT & Tech</div>
+                    <h4 class="label-big card__title">Chargebee</h4>
+                    <p class="card__text paragraph-small">
+                      Hypergrowth activist investor and Healthcare platform consumers as one acquisition strategy for
+                      board
+                    </p>
+                    <a href="#" class="button-small" data-variant="link" data-icon="left" data-color="dark">
+                      <i class="fa-solid fa-arrow-right"></i>
+                      Read more</a>
+                  </div>
+                </div>
+            </li>
+            <li class="splide__slide">
+                <div class="card span4 tablet-span4">
+                  <div class="card__image-wrapper">
+                    <div class="card-image__gradient-overlay"></div>
+                    <img src="./assets/Cool.jpg" alt="" class="card__image" />
+                  </div>
+                  <div class="card__body">
+                    <div class="chips" data-color="pink">IT & Tech</div>
+                    <h4 class="label-big card__title">Chargebee</h4>
+                    <p class="card__text paragraph-small">
+                      Hypergrowth activist investor and Healthcare platform consumers as one acquisition strategy for
+                      board
+                    </p>
+                    <a href="#" class="button-small" data-variant="link" data-icon="left" data-color="dark">
+                      <i class="fa-solid fa-arrow-right"></i>
+                      Read more</a>
+                  </div>
+                </div>
+            </li>
+          </ul>
+        </div>
+        <div class="splide__arrows slider__arrows flex-row-start gap-s">
+            <button class="splide__arrow slider__arrow--prev splide__arrow--prev slider__arrow outside"><i
+                class="fa-solid fa-chevron-left"></i></button>
+            <button class="splide__arrow slider__arrow--next splide__arrow--next slider__arrow outside"><i
+                class="fa-solid fa-chevron-right"></i></button>
+          </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <body>
+
+</html>

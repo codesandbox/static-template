@@ -1,0 +1,140 @@
+:root {
+	--hero-visual-height: 645px;
+}
+
+.hero-image {
+	bottom: 0;
+	min-height: var(--hero-visual-height);
+	width: 900px;
+	z-index: 10;
+	border-radius: 8px;
+}
+
+.hero-parralax {
+	padding-top: var(--size-5);
+	position: relative;
+	min-height: 100vh;
+	height: fit-content;
+	/* min-height: 100vh; */
+	/* height: 130vh; */
+	/* max-width: 100vw; */
+	padding-bottom: 0;
+	overflow: visible;
+}
+
+.hero-container {
+	padding-top: var(--size-5);
+	position: relative;
+	max-height: 800px;
+}
+
+@media screen and (min-height: 1000px) {
+	.hero-parralax {
+		min-height: 85vh;
+		max-height: 85vh;
+	}
+}
+
+.hero__headline {
+	max-width: 1110px;
+}
+
+.parralax-image {
+	max-width: min(1130px, calc(100vw - 3.75rem));
+	width: 1130px;
+	z-index: 10;
+	/* transform: scale(0.7); */
+	border-radius: 8px;
+	position: absolute;
+	bottom: 0;
+	height: 40%;
+	/* max-height: min(645px, calc(calc(100vw - 3.75rem) / 1.75)); */
+}
+.parralax-image img {
+	height: auto;
+}
+
+.overlay-image {
+	position: relative;
+	overflow: visible;
+	min-height: 30vh;
+}
+
+.animated-image--left {
+	position: absolute;
+	left: -10%;
+	top: 50%;
+	z-index: 5;
+	width: 300px;
+	height: auto;
+	border-radius: 8px;
+}
+.animated-image--right {
+	position: absolute;
+	right: -20%;
+	bottom: 0;
+	z-index: 5;
+	width: 300px;
+	height: auto;
+	border-radius: 8px;
+}
+
+@media screen and (max-width: 992px) {
+	.hero-parralax {
+		min-height: unset;
+		height: fit-content;
+	}
+	.parralax-image {
+		position: static;
+		height: auto;
+		width: 100vw;
+		border-radius: 4px;
+	}
+
+	.parralax-image img {
+		object-fit: contain !important;
+	}
+	.animated-image--left {
+		left: -20%;
+		top: 50%;
+		width: 300px;
+	}
+	.animated-image--right {
+		right: -30%;
+		width: 300px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.animated-image--left {
+		left: -20%;
+		top: 70%;
+		width: 150px;
+	}
+	.animated-image--right {
+		right: -30%;
+		width: 150px;
+	}
+}
+
+/* This is to preview the parallax */
+
+.demo-section {
+	/* height: 100vh; */
+}
+
+.feature-card {
+	background-color: var(--placeholder);
+	height: 300px;
+	width: 100%;
+	border-radius: 8px;
+}
+
+.homepage__feature-container {
+	height: 700px;
+}
+
+.features-col {
+	width: 50%;
+	height: 100%;
+}

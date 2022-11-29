@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./css/heroDemo.css" />
+  <script defer type="module" src="script.js"></script>
+  <script defer src="https://kit.fontawesome.com/ae7bbcad81.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js"></script>
+  <script defer type="module" src="./js/gsapDemo.js"></script>
+  <script defer type="module" src="./js/tabs.js"></script>
+</head>
+<body>
+    <header class="header flex-col-center" data-color="placeholder">
+        <div class="header__container row-fluid never-wrap">
+          <div class="header__brand flex-row-start">
+            <img src="./assets/Main.svg" alt="" class="logo" />
+            <img src="./assets/App.svg" alt="" class="logo__mobile-nav">
+          </div>
+          <nav class="header__nav" data-variant="light">
+            <div class="nav-item__container">
+                <div class="header-nav__item">
+                    <button class="header-nav__link link js-mega-menu-openers" data-opens="product">
+                      Product
+                      <i class="fa-solid fa-chevron-down header-nav__link-arrow" data-opens="product"></i>
+                    </button>
+                    <div class="mega-menu row-fluid flex-col-center" data-mega-menu="product">
+                      <div class="mega-menu__grid row-fluid flex-row-start">
+                        <div class="mega-menu__column flex-col-start">
+                          <p class="label-h5 mega-menu__link-list-heading">
+                            Digital Sales Room
+                          </p>
+                          <div class="mega-menu__cta-image-wrapper flex-col-center justify-center">
+                              <a href="#" class="button-small" data-variant="outline" data-icon="left" data-color="white">
+                                  <i class="fa-solid fa-arrow-right"></i>
+                                  Product Tour
+                              </a>
+                          </div>
+                        </div>
+                        <div class="mega-menu__column flex-col-start">
+                          <div class="mega-menu__link-list-wrapper">
+                            <p class="label-h5 mega-menu__link-list-heading">
+                              Features
+                            </p>
+                            <ul class="mega-menu__link-list">
+                              <li class="mega-menu__link-list-item">
+                                <a href="#" class="mega-menu__link link">Electronic Signature</a>
+                              </li>
+                              <li class="mega-menu__link-list-item">
+                                <a href="#" class="mega-menu__link link">Proposal & Contracts</a>
+                              </li>
+                              <li class="mega-menu__link-list-item">
+                                <a href="#" class="mega-menu__link link">CPQ - Configure, Price, Quote</a>
+                              </li>
+                              <li class="mega-menu__link-list-item">
+                                <a href="#" class="mega-menu__link link">Content Tracking & Analytics</a>
+                              </li>
+                              <li class="mega-menu__link-list-item">
+                                <a href="#" class="mega-menu__link link">Sales Content Management</a>
+                              </li>
+                              <li class="mega-menu__link-list-item">
+                                <a href="#" class="mega-menu__link link">Mutual Action Plans</a>
+                              </li>
+                              <li class="mega-menu__link-list-item">
+                                <a href="#" class="mega-menu__link link button-small" data-variant="link" data-icon="left">
+                                  <i class="fa-solid fa-arrow-right"></i>
+                                  All Features
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="mega-menu__column flex-col-start">
+                          <div class="mega-menu__link-list-wrapper">
+                            <p class="label-h5 mega-menu__link-list-heading">
+                              Integrations & API
+                            </p>
+                            <ul class="mega-menu__link-list">
+                              <li class="mega-menu__link-list-item">
+                                <a href="#" class="mega-menu__link link">Salesforce</a>
+                              </li>
+                              <li class="mega-menu__link-list-item">
+                                <a href="#" class="mega-menu__link link">HubSpot</a>
+                              </li>
+                              <li class="mega-menu__link-list-item">
+                                <a href="#" class="mega-menu__link link">Zapier</a>
+                              </li>
+                              <li class="mega-menu__link-list-item">
+                                <a href="#" class="mega-menu__link link">Pipedrive</a>
+                              </li>
+                              <li class="mega-menu__link-list-item">
+                                <a href="#" class="mega-menu__link link">Microsoft Dynamics</a>
+                              </li>
+                              <li class="mega-menu__link-list-item">
+                                <a href="#" class="mega-menu__link link button-small" data-variant="link" data-icon="left">
+                                  <i class="fa-solid fa-arrow-right"></i>
+                                  Many more
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header-nav__item">
+                    <a href="#" class="header-nav__link link">Pricing</a>
+                  </div>
+                  <div class="header-nav__item">
+                    <button class="header-nav__link link js-mega-menu-openers" data-opens="why-get-accept">
+                      Why Getaccept?
+                      <i class="fa-solid fa-chevron-down header-nav__link-arrow" data-opens="why-get-accept"></i>
+                    </button>
+                    <div class="mega-menu row-fluid flex-col-center" data-mega-menu="why-get-accept"">
+                                <div class=" mega-menu__grid row-fluid flex-row-start">
+                      <div class="mega-menu__column flex-col-start">
+                        <div class="mega-menu__link-list-wrapper">
+                          <p class="label-h5 mega-menu__link-list-heading">
+                            Use Cases
+                          </p>
+                          <ul class="mega-menu__link-list">
+                            <li class="mega_memu__link-list-item">
+                              <a href="#" class="mega-menu__link link">Account Executives</a>
+                            </li>
+                            <li class="mega_memu__link-list-item">
+                              <a href="#" class="mega-menu__link link">Sales Operations</a>
+                            </li>
+                            <li class="mega_memu__link-list-item">
+                              <a href="#" class="mega-menu__link link">Sales Leader</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="mega-menu__column flex-col-start">
+                        <div class="mega-menu__link-list-wrapper">
+                          <p class="label-h5 mega-menu__link-list-heading">
+                            Industries
+                          </p>
+                          <ul class="mega-menu__link-list">
+                            <li class="mega-menu__link-list-item">
+                              <a href="#" class="mega-menu__link link">IT & Tech</a>
+                            </li>
+                            <li class="mega-menu__link-list-item">
+                              <a href="#" class="mega-menu__link link">Profesional Services</a>
+                            </li>
+                            <li class="mega-menu__link-list-item">
+                              <a href="#" class="mega-menu__link link">Wholesale & Retail</a>
+                            </li>
+                            <li class="mega-menu__link-list-item">
+                              <a href="#" class="mega-menu__link link button-small" data-variant="link" data-icon="left">
+                                <i class="fa-solid fa-arrow-right"></i>
+                                Discover More
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="mega-menu__column flex-col-start">
+                        <div class="mega-menu__link-list-wrapper">
+                          <p class="label-h5 mega-menu__link-list-heading">
+                            Customer Stories
+                          </p>
+                          <ul class="mega-menu__link-list">
+                            <li class="mega-menu__link-list-item">
+                              <a href="#" class="mega-menu__link link">Jeeng</a>
+                            </li>
+                            <li class="mega-menu__link-list-item">
+                              <a href="#" class="mega-menu__link link">Cheq</a>
+                            </li>
+                            <li class="mega-menu__link-list-item">
+                              <a href="#" class="mega-menu__link link">Chargebee</a>
+                            </li>
+                            <li class="mega-menu__link-list-item">
+                              <a href="#" class="mega-menu__link link button-small" data-variant="link" data-icon="left">
+                                <i class="fa-solid fa-arrow-right"></i>
+                                Discover more
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="header-nav__item">
+                <button class="header-nav__link link js-mega-menu-openers" data-opens="ressources">
+                  Ressources
+                  <i class="fa-solid fa-chevron-down header-nav__link-arrow" data-opens="ressources"></i>
+                </button>
+                <div class="mega-menu row-fluid flex-col-center" data-mega-menu="ressources">
+                  <div class="mega-menu__grid row-fluid flex-row-start">
+                    <div class="mega-menu__column flex-col-start">
+                      <div class="mega-menu__link-list-wrapper">
+                        <p class="label-h5 mega-menu__link-list-heading">
+                          Customer Comunity
+                        </p>
+                        <ul class="mega-menu__link-list">
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Product Update</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Help Center</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Frequently Asked Question</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="mega-menu__column flex-col-start flow-xs">
+                      <div class="mega-menu__link-list-wrapper">
+                        <p class="label-h5 mega-menu__link-list-heading">
+                          Learning Hubs
+                        </p>
+                        <ul class="mega-menu__link-list">
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Digital Sales Room</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Remote selling</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Sales enablement</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Electronic signature</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link button-small" data-variant="link" data-icon="left">
+                              <i class="fa-solid fa-arrow-right"></i>
+                              Visit portal
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="mega-menu__column flex-col-start">
+                      <div class="mega-menu__link-list-wrapper">
+                        <p class="label-h5 mega-menu__link-list-heading">
+                          Content
+                        </p>
+                        <ul class="mega-menu__link-list">
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">The Getaccept blog</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Content library</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Proposal templates</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">Events & webinars</a>
+                          </li>
+                          <li class="mega-menu__link-list-item">
+                            <a href="#" class="mega-menu__link link">The Sales Ladder podcast</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  </div>
+                  <div class="header-nav__item login">
+                      <a class="button-medium login-button__mobile-nav" data-variant="link" data-color="dark" data-icon="right">
+                          <i class="fa-solid fa-user"></i>
+                          Login
+                      </a>
+                  </div>
+            </div>
+            <div class="header__cta-container" data-location="mobile-nav">
+              <a class="header__button button-medium" data-variant="outline" data-location="mobile-nav" href="#">Get Started For
+                Free</a>
+              <a href="#" class="header__button button-medium" data-variant="primary" data-location="mobile-nav">Book a Demo</a>
+            </div>
+          </nav>
+        <div class="header__cta-container flex-row-end">
+          <i class="fa-solid fa-globe language-picker"></i>
+          <a class="header__button button-small" data-variant="link" data-color="dark" href="#">Login</a>
+          <a href="#" class="header__button button-small" data-variant="primary">Book a Demo</a>
+        </div>
+        <div class="js-mobile-menu__toggle">
+          <i class="fa-solid fa-bars" data-variant="light"></i>
+        </div>
+        </div>
+      </header>
+      <section class="section" data-color="placeholder">
+        <div class="section-container hero-parralax flex-col-center flow-m">
+            <div class="row-fluid hero__headline flex-col-center gap-m">
+                <h1 class="h1-fluid animated-h1 span6 text-center">Make room for deals</h1>
+                <p class="paragraph-large span8 text-center">Our digital sales room empowers revenue teams to increase win rates by engaging and understanding buyers from opportunity to signed deal. Ready to amaze your prospects?</p>
+                <div class="hero__cta-container flex-row-center gap-sm wrap">
+                  <a href="#" class="button-medium" data-variant="secondary">Book a demo</a>
+                  <img src="./assets/G2 logo + stars + reviews.svg" alt="">
+                </div>
+              </div>
+              <div class="img__wrapper parralax-image" data-fit="cover" data-position="top">
+                  <img src="./assets/DSR - EAS.jpg" alt="" class="">
+              </div>
+              <div class="img__wrapper animated-image--left" data-fit="cover" data-ratio="1/1">
+                  <img src="./assets/Colors.jpg" alt="">
+              </div>
+              <div class="img__wrapper animated-image--right" data-fit="cover" data-ratio="16/9">
+                  <img src="./assets/Lake.jpg" alt="">
+              </div>
+        </div>
+      </section>
+      <section class="demo-section section-container flow-lg">
+        <div class="row-fluid flex-col-center">
+            <div class="customer-logos span8 flex-row-sb gap-s">
+                <img src="./assets/samsung.svg" alt="">
+                <img src="./assets/jeeng.svg" alt="">
+                <img src="./assets/puma.svg" alt="">
+                <img src="./assets/CHEQ.svg" alt="">
+                <img src="./assets/chargebee.svg" alt="">
+                <img src="./assets/SATS.svg" alt="">
+              </div>
+        </div>
+        <div class="row-fluid flex-row-sb align-center">
+            <div class="span5 flex-col-start gap-s">
+                <h3 class="h3-fluid">The definitive tool for Account executives, Operation Managers and Sales Leaders</h3>
+                <p class="paragraph-medium">Deal and pipeline insights, custom sales collateral and seamless integrations.
+                </p>
+                <div class="divider m-top-xs m-bottom-xs"></div>
+                <div class="call-to-action flex-row-start align-center gap-xs">
+                  <button class="icon-button" data-color="primary" data-size="medium" data-shape="circle">
+                    <i class="fa-solid fa-play"></i>
+                  </button>
+                  <div class="flex-col-start">
+                    <p class="paragraph-tiny">See how it works</p>
+                    <p class="label-medium">Watch Video</p>
+                  </div>
+                </div>
+              </div>
+              <div class="homepage__feature-container flex-row-start justify-start gap-m span6">
+                <div class="features-col flex-col-start gap-m">
+                    <div id="feature1" class="feature-card img__wrapper" data-fit="cover" data-ratio="4/5">
+                      <img src="./assets/Colors.jpg" alt="">
+                    </div>
+                    <div id="feature3" class="feature-card img__wrapper" data-fit="cover" data-ratio="4/5">
+                      <img src="./assets/Mountain.jpg" alt="">
+                    </div>
+                </div>
+                <div class="features-col flex-col-start justify-end gap-m">
+                    <div id="feature2" class="feature-card img__wrapper" data-fit="cover" data-ratio="4/5">
+                      <img src="./assets/Lake.jpg" alt="">
+                    </div>
+                    <div id="feature4" class="feature-card img__wrapper" data-fit="cover" data-ratio="4/5">
+                      <img src="./assets/Cool.jpg" alt="">
+                    </div>
+                </div>
+              </div>
+        </div>
+      </section>
+</body>
+</html>

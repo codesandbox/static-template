@@ -1,0 +1,308 @@
+.features-tab__content {
+	height: fit-content;
+	overflow: visible;
+}
+
+.js-tab-content-active {
+	display: flex;
+}
+
+.features__sliders {
+	display: none;
+	max-width: 100%;
+}
+
+.feature-tab__opener {
+	color: var(--bg-primary-tint-2);
+}
+
+.js-tab-opener-active {
+	color: var(--dark);
+}
+
+.feature-tab__card {
+	width: 100%;
+	max-height: 450px;
+}
+
+.feature-tab__col {
+	height: auto;
+	width: 50%;
+}
+
+.feature-tab__col[data-transform='up'] {
+	transform: translateY(-5%);
+}
+
+/* Feature tab cards */
+
+.feature-tab__card {
+	border-radius: var(--radius-1);
+	background-size: cover;
+	background-position: center;
+}
+
+.feature-tab__card .card-overlay {
+	min-height: 50%;
+	padding: var(--size-1);
+	border-radius: 0 0 var(--radius-1) var(--radius-1);
+}
+
+.feature-tab__card .card-overlay[data-color='primary'] {
+	background: var(--bg-primary-tint-1);
+}
+
+.feature-tab__card .card-overlay[data-color='secondary'] {
+	background: var(--bg-secondary-tint-1);
+}
+
+.card-overlay__icons {
+	font-size: 2rem;
+	width: 100%;
+	padding: var(--size-0) 0;
+}
+
+@media screen and (max-width: 560px) {
+	.feature-tab__col {
+		width: 100%;
+	}
+	.features-tab__content {
+		flex-wrap: wrap;
+	}
+	.feature-tab__col[data-transform='up'] {
+		transform: translateY(0);
+	}
+	.features-tab-container {
+		display: none;
+	}
+	.features__sliders {
+		display: flex;
+	}
+}
+
+#salesrep {
+	background-image: url('../assets/DSR_page/salesrep.webp');
+}
+
+#tabletinteraction {
+	background-image: url('../assets/DSR_page/tabletinteraction.webp');
+}
+
+#phoneinteraction {
+	background-image: url('../assets/DSR_page/phoneinteraction.webp');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: top;
+}
+
+#feature4 {
+	background-image: url('../assets/DSR_page/stats.webp');
+}
+
+/* 5 steps slider */
+
+.sales-steps {
+	background-color: var(--dark-opacity-06);
+	background-blend-mode: multiply;
+}
+
+.sales-steps__arrows {
+	padding-right: 30px;
+}
+
+@media screen and (max-width: 992px) {
+	.sales-steps__arrows {
+		display: none;
+	}
+}
+
+.sales-steps__content {
+	padding: var(--size-2);
+	width: 100%;
+	position: absolute;
+	top: 0;
+}
+
+.sales-steps__content .display-h3 {
+	color: var(--white);
+}
+
+.sales-steps__navigation {
+	width: 100%;
+}
+
+.sales-steps__overlay {
+	padding: 0 !important;
+	gap: 0 !important;
+	border-radius: var(--radius-1) !important;
+	z-index: 1;
+}
+
+.point-of-view {
+	min-height: 50%;
+	height: fit-content;
+	width: 100%;
+	padding: var(--size-2);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.point-of-view img {
+	max-width: 95%;
+	/* min-width: 80%; */
+	margin: 0 auto;
+	max-height: 60%;
+}
+
+.seller-headline .label-medium {
+	color: var(--secondary-accent);
+}
+
+.buyer-headline .label-medium {
+	color: var(--primary-accent);
+}
+
+@media screen and (max-width: 500px) {
+	.point-of-view {
+		padding: var(--size-1);
+	}
+	.point-of-view img {
+		max-height: 45%;
+	}
+
+	.seller-headline .label-medium,
+	.buyer-headline .label-medium {
+		font-size: var(--font-size-0);
+	}
+}
+
+.seller-headline,
+.buyer-headline {
+	width: 100%;
+}
+
+.seller {
+	background: var(--bg-secondary-tint-0);
+	border-radius: var(--radius-1) var(--radius-1) 0 0;
+}
+
+.seller .face {
+	fill: var(--secondary-accent);
+}
+
+.buyer {
+	background: var(--bg-grey-tint-0);
+	border-radius: 0 0 var(--radius-1) var(--radius-1);
+}
+
+.buyer .face {
+	fill: var(--primary-accent);
+}
+
+#step1 {
+	background-image: url('https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#step2 {
+	background-image: url('https://images.unsplash.com/photo-1499914567823-c240485cb7d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#step3 {
+	background-image: url('https://images.unsplash.com/photo-1546979859-b7d45d499dd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#step4 {
+	background-image: url('https://images.unsplash.com/photo-1507206130118-b5907f817163?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#step5 {
+	background-image: url('https://images.unsplash.com/photo-1610702874824-3d16dfe9aadd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+/* Social Proof */
+
+.social-proof-banner {
+	background-color: var(--placeholder);
+	padding: 5.856%;
+	border-radius: var(--radius-1);
+}
+
+/* Integrations */
+
+.integration {
+	max-height: 670px;
+	overflow: hidden;
+}
+
+.integrations-grid__container {
+	min-height: 100%;
+	padding-left: 0.5rem;
+}
+
+.integration-grid__item {
+	border-radius: 30px;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	width: 160px;
+	background: var(--white);
+}
+
+#first {
+	transform: translateY(-2rem);
+}
+
+#middle {
+	transform: translateY(4rem);
+}
+
+#last {
+	transform: translateY(-2rem);
+}
+
+@media screen and (max-width: 992px) {
+	.integration {
+		max-height: none;
+		height: auto;
+	}
+	.integrations-grid__container {
+		flex-direction: column !important;
+		width: 80%;
+		justify-content: center;
+	}
+	.integrations-grid__column {
+		flex-direction: row !important;
+		align-items: center;
+		justify-content: center;
+	}
+	#first {
+		transform: translateX(-1rem);
+	}
+
+	#middle {
+		transform: translateX(2rem);
+	}
+
+	#last {
+		transform: translateX(-1.5rem);
+	}
+	.integration-grid__item {
+		max-width: 120px;
+		min-width: 120px;
+		border-radius: 20px;
+	}
+}

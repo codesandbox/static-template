@@ -1,0 +1,118 @@
+.before-after {
+	height: 100%;
+	width: 100%;
+}
+
+.before-after__container {
+	position: relative;
+	width: 100%;
+	border: 2px solid white;
+	overflow: hidden;
+	aspect-ratio: var(--ratio-widescreen);
+}
+.before-after__container .img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: left;
+}
+.before-after__container .background-img {
+	background-image: url('../assets/DSR pain.jpg');
+}
+.before-after__container .foreground-img {
+	background-image: url('../assets/DSR gain.jpg');
+	clip-path: inset(0 99% 0 0);
+}
+.before-after__container .before-after__slider {
+	position: absolute;
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 100%;
+	background: none;
+	outline: none;
+	margin: 0;
+	transition: all 0.2s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.before-after__container .before-after__slider:hover {
+	/* background: rgba(242, 242, 242, 0.1); */
+}
+.before-after__container .before-after__slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 0.4rem;
+	height: 1000px;
+	background: var(--secondary-accent);
+	cursor: pointer;
+}
+.before-after__container .before-after__slider::-moz-range-thumb {
+	width: 0.2rem;
+	height: 100%;
+	background: var(--secondary-accent);
+	cursor: pointer;
+}
+.before-after__container .before-after__slider-button {
+	pointer-events: none;
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background-color: var(--secondary-accent);
+	left: calc(1% - 26px);
+	top: calc(50% - 26px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.before-after__container .before-after__slider-button:after {
+	content: '';
+	padding: 3px;
+	display: inline-block;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	transform: rotate(-45deg);
+}
+.before-after__container .before-after__slider-button:before {
+	content: '';
+	padding: 3px;
+	display: inline-block;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	transform: rotate(135deg);
+}
+
+.progress-bar {
+	width: 100%;
+	height: 4px;
+	border-radius: var(--radius-2);
+	background: linear-gradient(90deg, rgba(87, 61, 220, 1) 85%, rgba(255, 0, 0, 0.5) 100%);
+	margin-right: -1rem;
+}
+
+.progress-bar__container {
+	width: 100%;
+	height: 4px;
+	border-radius: var(--radius-2);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background: red;
+	overflow: hidden;
+}
+
+.pain-vs-gain {
+	width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+	.before-after__content {
+		padding-left: 0px !important;
+	}
+}

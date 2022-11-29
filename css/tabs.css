@@ -1,0 +1,64 @@
+.tabs__aside {
+	height: fit-content;
+	position: relative;
+}
+
+.tabs__aside > * {
+	position: absolute;
+}
+
+.tabs__divider {
+	height: 4px;
+	width: 100%;
+	background-color: var(--placeholder);
+	position: relative;
+}
+
+.tab__divider-overlay {
+	height: 4px;
+	width: 0%;
+	right: 100%;
+	background-color: var(--secondary-accent);
+	position: absolute;
+}
+
+.js-divider-overlay-animated {
+	width: 100%;
+	right: 0;
+	background-color: var(--placeholder);
+	transition: right 0.5s ease, width 1s ease, background-color 0.2s ease 1s;
+}
+
+.tab-content {
+	opacity: 0;
+	transition: opacity 0.4s ease;
+}
+
+.js-tab-content-active {
+	opacity: 1;
+	z-index: 5;
+	transition: opacity 1s ease;
+}
+
+.tabs__opener {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+	text-align: left;
+}
+
+.js-tab-opened {
+	max-height: 50vh;
+	opacity: 1;
+}
+
+.js-opener-icon-rotated {
+	transform: rotate(180deg);
+	transition: 0.5s ease;
+}
+
+.opener-icon {
+	transition: 0.5s ease;
+}

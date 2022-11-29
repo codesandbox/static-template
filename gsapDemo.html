@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cards</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer type="module" src="script.js"></script>
+    <script defer src="./js/layouts.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"
+      integrity="sha512-gsEItzcNkWxfxHjr4BaEZAd9YuRWYjxnj7c/yukcZ0/nWehUb5TjJNyyv1ApCU2DFH/qgw+stFZHPOKnoQnIuQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="./js/gsapDemo.js"></script>
+    <script defer src="https://kit.fontawesome.com/ae7bbcad81.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <button class="button-small grid-toggle" data-variant="secondary" data-color="dark" data-icon="right">
+      <i class="fa-solid fa-grip-vertical"></i>
+      Hide/Show Grid
+    </button>
+    <p class="paragraph-small instructions">
+      Now resize the browser window to see the grid changing
+    </p>
+    <div class="grid-overlay section-container">
+      <div class="row-fluid grid-row-demo">
+        <div class="span1 grid-column-demo tablet-span1 mobile-span1"></div>
+        <div class="span1 grid-column-demo tablet-span1 mobile-span1"></div>
+        <div class="span1 grid-column-demo tablet-span1"></div>
+        <div class="span1 grid-column-demo tablet-span1"></div>
+        <div class="span1 grid-column-demo tablet-span1"></div>
+        <div class="span1 grid-column-demo tablet-span1"></div>
+        <div class="span1 grid-column-demo tablet-span1"></div>
+        <div class="span1 grid-column-demo tablet-span1"></div>
+        <div class="span1 grid-column-demo"></div>
+        <div class="span1 grid-column-demo"></div>
+        <div class="span1 grid-column-demo"></div>
+        <div class="span1 grid-column-demo"></div>
+      </div>
+    </div>
+    <nav class="demo-nav">
+      <a href="/" class="button-small" data-variant="outline">Home</a>
+      <a href="/buttons.html" class="button-small" data-variant="outline">Buttons</a>
+      <a href="/forms.html" class="button-small" data-variant="outline">Forms</a>
+      <a href="/typography.html" class="button-small" data-variant="outline">Typography</a>
+      <a href="/header.html" class="button-small" data-variant="outline">Header</a>
+      <a href="/footer.html" class="button-small" data-variant="outline">Footer</a>
+      <a href="/layout.html" class="button-small" data-variant="outline">Grid System</a>
+      <a href="/cards.html" aria-current="page" class="button-small" data-variant="outline">Cards</a>
+      <a href="/gsapDemo.html" aria-current="page" class="button-small" data-variant="outline">GSAP Demo</a>
+    </nav>
+    <main>
+      <div class="section-container">
+        <div class="row-fluid">
+          <div class="hero__content span6 flex-col-start gap-s">
+            <h1 class="display-h1 animated-headline">
+              This is some animated headline
+            </h1>
+            <p class="paragraph-medium animated-paragraph">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <button class="button-medium animated-button" data-variant="primary">
+              Button Tex
+            </button>
+          </div>
+          <div class="hero__graphic span6 flex-col-end">
+            <div class="img__wrapper">
+              <img class="img-fitted"
+                src="https://images.unsplash.com/photo-1664489716181-617fd8bb1321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80"
+                alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+
+</html>

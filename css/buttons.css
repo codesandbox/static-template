@@ -1,0 +1,131 @@
+/* 
+/*  We have 3 kinds of button:
+  ➡️ Large, Medium and Small. 
+    ➡️ Then we have 4 variants: Primary, Secondary, Outline, Link
+      ➡️ For each variant we have 3 options: No Icon, Icon on the Right, Icon on the Left
+  We will follow the logic of CUBE CSS, using attributes instead of classes to add variations. 
+  Design wise, we want buttons with a fixed height and font, there shouldn't be a need for fluid font and size changes. 
+  To be as DRY as possible we can make uses of CSS Variables, and the :is() function to apply styles to mulitple variants and calculate values.
+
+*/
+
+/* CSS Variables the buttons */
+:root {
+  --large-button-height: 3.75rem;
+  --medium-button-height: 3.25rem;
+  --small-button-height: 2.5rem;
+  --large-button-padding-h: 1.2em;
+  --medium-button-padding-h: 1em;
+  --small-button-padding-h: 1em;
+}
+
+/* General Styles for all the Buttons */
+
+:is([class*="button-medium"], [class*="button-large"], [class*="button-small"]) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--radius-0);
+  font-family: var(--text-font);
+  text-decoration: none;
+  width: fit-content;
+  flex-shrink: 0;
+}
+
+:is([class*="button-medium"], [class*="button-large"], [class*="button-small"]):focus-visible {
+  outline: none;
+  border: none;
+  transform: scale(1.05);
+}
+
+/* We have 3 different button sizes */
+
+.button-large {
+  height: var(--large-button-height);
+  padding-left: var(--large-button-padding-h);
+  padding-right: var(--large-button-padding-h);
+  gap: 0.5rem;
+}
+
+.button-medium {
+  height: var(--medium-button-height);
+  padding-left: var(--medium-button-padding-h);
+  padding-right: var(--medium-button-padding-h);
+  gap: 0.375rem;
+}
+
+.button-small {
+  height: var(--small-button-height);
+  padding-left: var(--small-button-padding-h);
+  padding-right: var(--small-button-padding-h);
+  gap: 0.25rem;
+}
+
+/* 4 Button Variants - Primary, Secondary, Outline, Link */
+
+/* Primary Variant */
+:is([class*="button-medium"], [class*="button-large"], [class*="button-small"])[data-variant="primary"] {
+  background-color: var(--primary-accent);
+  color: var(--white);
+  fill: var(--white);
+}
+
+/* Secondary Variant */
+:is([class*="button-medium"], [class*="button-large"], [class*="button-small"])[data-variant="secondary"] {
+  background-color: var(--dark);
+  color: var(--white);
+  fill: var(--white);
+}
+
+/* Outline Variant */
+:is([class*="button-medium"], [class*="button-large"], [class*="button-small"])[data-variant="outline"] {
+  border: 2px solid var(--dark);
+  background-color: transparent;
+  color: var(--dark);
+}
+
+:is([class*="button-medium"], [class*="button-large"], [class*="button-small"])[data-variant="outline"][data-color="primary"] {
+  border: 2px solid var(--primary-accent);
+  background-color: transparent;
+  color: var(--primary-accent);
+}
+
+:is([class*="button-medium"], [class*="button-large"], [class*="button-small"])[data-variant="outline"][data-color="white"] {
+  border: 2px solid var(--white);
+  background-color: transparent;
+  color: var(--white);
+}
+
+/* Link Variant */
+:is([class*="button-medium"], [class*="button-large"], [class*="button-small"])[data-variant="link"] {
+  height: auto;
+  padding: 0 0;
+  border: none;
+  background-color: transparent;
+  color: var(--primary-accent);
+  justify-content: space-between;
+}
+
+:is([class*="button-medium"], [class*="button-large"], [class*="button-small"])[data-variant="link"][data-color="light"] {
+  color: var(--white);
+}
+
+:is([class*="button-medium"], [class*="button-large"], [class*="button-small"])[data-variant="link"][data-color="dark"] {
+  color: var(--dark);
+}
+
+/* Can have an Icon on the -- Right or Left */
+
+/* Right */
+:is([class*="button-medium"], [class*="button-large"], [class*="button-small"])[data-icon="right"] {
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* Left */
+:is([class*="button-medium"], [class*="button-large"], [class*="button-small"])[data-icon="left"] {
+  flex-direction: row-reverse;
+  justify-content: center;
+}

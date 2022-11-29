@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home</title>
+		<link rel="stylesheet" href="styles.css" />
+		<script defer type="module" src="script.js"></script>
+		<script defer src="https://kit.fontawesome.com/ae7bbcad81.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<link rel="stylesheet" href="styles.css" />
+		<section class="section flex-col-center flow-m" style="min-height: 100vh; margin-top: 200px;">
+			<div class="div" style="width: 400px; aspect-ratio: var(--ratio-landscape); background: url('./assets/Colors.jpg') center no-repeat; background-size: cover;"></div>
+
+			<div class="container-input flex-row-center gap-m">
+				<div class="input-group flex-col-start">
+					<label>Width</label>
+					<input class="form-control width" data-size="small" type="number" value="0" readonly />
+				</div>
+				<div class="input-group flex-col-start">
+					<label>Height</label>
+					<input class="form-control height" data-size="small" type="number" value="0" readonly />
+				</div>
+			</div>
+
+			<div class="selector-container flex-row-center gap-s m-top-m">
+				<button class="button-small golden" data-variant="outline">Golden Ratio</button>
+				<button class="button-small portrait" data-variant="outline">Portait</button>
+				<button class="button-small story" data-variant="outline">Story</button>
+				<button class="button-small widescreen" data-variant="outline">Widescreen</button>
+				<button class="button-small ultrawide" data-variant="outline">Ultrawide</button>
+				<button class="button-small landscape" data-variant="outline">Landscape</button>
+			</div>
+
+			<script>
+				const div = document.querySelector('.div');
+				const adjustValues = () => {
+					let currentWidth = parseInt(window.getComputedStyle(div).width);
+					let currentHeight = parseInt(window.getComputedStyle(div).height);
+
+					document.querySelector('.width').setAttribute('value', currentWidth);
+					document.querySelector('.height').setAttribute('value', currentHeight);
+				};
+
+				document.querySelector('.golden').addEventListener('click', () => {
+					div.style.aspectRatio = 'var(--ratio-golden)';
+					adjustValues();
+				});
+				document.querySelector('.portrait').addEventListener('click', () => {
+					div.style.aspectRatio = 'var(--ratio-portrait)';
+					adjustValues();
+				});
+				document.querySelector('.story').addEventListener('click', () => {
+					div.style.aspectRatio = 'var(--ratio-story)';
+					adjustValues();
+				});
+				document.querySelector('.widescreen').addEventListener('click', () => {
+					div.style.aspectRatio = 'var(--ratio-widescreen)';
+					adjustValues();
+				});
+				document.querySelector('.ultrawide').addEventListener('click', () => {
+					div.style.aspectRatio = 'var(--ratio-ultrawide)';
+					adjustValues();
+				});
+				document.querySelector('.landscape').addEventListener('click', () => {
+					div.style.aspectRatio = 'var(--ratio-landscape)';
+					adjustValues();
+				});
+
+				window.addEventListener('resize', () => {
+					adjustValues();
+				});
+
+				adjustValues();
+			</script>
+		</section>
+	</body>
+</html>
+<!-- <a title="GetAccept is a leader in Sales Enablement on G2" href="https://www.g2.com/products/getaccept/reviews?utm_source=rewards-badge"
+	><img style="width: 125px;" alt="GetAccept is a leader in Sales Enablement on G2" src="https://images.g2crowd.com/uploads/report_medal/image/1003352/medal.svg"
+/></a>
+<script>
+	(function (a, b, c, d) {
+		window
+			.fetch('https://www.g2.com/products/getaccept/rating_schema.json')
+			.then((e) => e.json())
+			.then((f) => {
+				c = a.createElement(b);
+				c.type = 'application/ld+json';
+				c.text = JSON.stringify(f);
+				d = a.getElementsByTagName(b)[0];
+				d.parentNode.insertBefore(c, d);
+			});
+	})(document, 'script');
+</script> -->
