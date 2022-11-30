@@ -1,12 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Order Summary Component</title>
+    <style>
+      body {
+        background-color: #d6e1ff;
+      }
+      .needConteiner h2 {
+        color: #ffffff;
+        text-align: center;
+        transform: translateY(10px);
+      }
+      .needConteiner {
+        background-color: #382ae1;
+        width: 279px;
+        height: 50px;
+        transform: translateX(30px);
+        border-radius: 11px;
+      }
+      .lineNeedConteiner {
+        transform: translateY(-50px);
+      }
+      .lineNeed {
+        border-bottom: 2px solid #382ae1;
+        width: 50px;
+        color: #382ae1;
+
+        transform: translateX(200px);
+      }
+      .mainConteiner {
+        margin-left: 500px;
+        transform: translateY(-100px);
+        width: 327px;
+        background-color: white;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .heroStyle {
+        max-width: 100%;
+      }
+      .mainText {
+        color: #1f2e55;
+        text-align: center;
+      }
+      .secondText {
+        color: #717fa6;
+        text-align: center;
+        margin: 5px;
+      }
+      .textConteiner {
+        display: flex;
+        flex-direction: column;
+        margin-left: 70px;
+      }
+      .textConteiner h3 {
+        transform: translateY(30px);
+      }
+      .textConteiner p {
+        transform: translateY(15px);
+      }
+      .musicIcon {
+        /*display: inline;*/
+
+        transform: translateY(95px);
+        margin-left: 5px;
+      }
+      .textConteiner h3 {
+        display: inline;
+        color: #1f2e55;
+        font-size: 14px;
+      }
+      .textConteiner p {
+        display: inline;
+        color: #717fa6;
+        font-size: 14px;
+      }
+      .im{
+        color: #717FA6;
+        text-align: center;
+
+      }
+      .forNoBigSpace{
+
+        margin-left: 30px;
+        transform: translateY(-50px);
+      }
+      .forNoBigSpace2{
+        transform: translateY(-50px);
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <img src="pattern-background-mobile.svg" />
+    <div class="mainConteiner">
+      <img class="heroStyle" src="illustration-hero.svg" />
+      <h1 class="mainText">Order Summary</h1>
+      <p class="secondText">
+        You can now listen to millions of songs, audiobooks, and podcasts on any
+        device anywhere you like!
+      </p>
+      <div class="forNoBigSpace"><img class="musicIcon" src="icon-music.svg" />
+      <div class="textConteiner">
+        <h3>Annual Plan</h3>
+        <p>$59.99/year</p>
+      </div>
+      <div class="lineNeedConteiner"><h4 class="lineNeed">Change</h4></div>
+    </div>
+    <div class="forNoBigSpace2"> <div class="needConteiner">
+        <h2>Proceed to Payment</h2>
+      </div class="lastItem">
+      <h2 class="im">Cancel Order</h2>
+    </div></div>
   </body>
 </html>
