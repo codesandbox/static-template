@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <div class="menu">
+        <!--  -->
+        <div class="menu-group">
+          <div class="menu-title">
+            <p>Favourites</p>
+          </div>
+          <div id="favourites" class="menu-content row"></div>
+        </div>
+        <!--  -->
+        <div class="menu-group">
+          <div class="menu-title">
+            <p>Search</p>
+          </div>
+          <div class="menu-content column">
+            <div class="menu-item">
+              <input id="stonk-search" placeholder="Search for stonks" />
+            </div>
+            <div id="results" class="menu-item results"></div>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+
+      <div class="content">
+        <p>content</p>
+      </div>
+    </div>
+    <script src="scripts/index.js"></script>
   </body>
 </html>

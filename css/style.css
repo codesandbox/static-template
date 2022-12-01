@@ -1,0 +1,67 @@
+:root {
+  --clr-primary: #999999;
+  --clr-dark: #333;
+  --clr-light: #ffffff;
+  --clr-warning: rgb(99, 33, 33);
+}
+
+body {
+  margin: 0;
+  background-color: var(--clr-primary);
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.menu {
+  width: 30%;
+}
+.menu-group {
+  background-color: red;
+}
+.menu-title {
+  background-color: green;
+}
+.menu-content {
+  background-color: yellow;
+  display: flex;
+  flex-wrap: wrap;
+}
+.menu-content.row {
+  flex-direction: row;
+}
+.menu-content.column {
+  flex-direction: column;
+}
+.menu-item {
+  display: flex;
+}
+
+.menu-item p {
+  background-color: blue;
+  margin: 10px;
+  cursor: pointer;
+}
+.menu-item p:hover {
+  background-color: blueviolet;
+}
+
+.menu-item input {
+  flex: 1;
+  padding: 10px 20px;
+}
+.results {
+  flex-direction: column;
+}
+.results ul {
+  cursor: pointer;
+}
+.results ul:hover {
+  color: gray;
+}
+
+.content {
+  width: 70%;
+}
