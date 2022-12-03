@@ -1,0 +1,39 @@
+.menu{
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px;
+    text-align: center;
+}
+.menu .submenu{
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .89 ease-out;
+}
+.menu .submenu a{
+    display: block;
+    padding: 1rem;
+    position: relative;
+}
+.menu .submenu a::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background: #e43f5a;
+    opacity: 0;
+    transition: all .5s;
+}
+.menu .submenu a:hover{
+    padding-left: calc(1rem +5px);
+}
+.menu .submenu a:hover::before{
+    opacity: 1;
+}
+.item:target .submenu{
+    max-height: 20rem;
+}

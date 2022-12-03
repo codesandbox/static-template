@@ -1,0 +1,556 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #ffe77aff;
+}
+.warning_box,
+.login_box,
+.start_btn,
+.info_box,
+.quiz_box,
+.code_box,
+.result_box,
+.certificate_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 4px 8px 0 rgba(0, 0,0, 0.2),
+                0px 6px 20px 0 rgba(0, 0,0, 0.19);
+    transition:all 0.3s ease;
+}
+.login_box.deactivateLogin{
+    display: none;
+}
+.login_box.activateLogin{
+    display: block;
+}
+.warning_box.activateWarning,
+.info_box.activeInfo,
+.quiz_box.activeQuiz,
+.result_box.activeResult,
+.certificate_box.activeCertificate{
+    z-index: 5;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%) scale(1);
+}
+.warning_box{
+    background-color: #fff;
+    width: 450px;
+    padding: 25px 30px ;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.9);
+}
+.warning_box button{
+    margin: 5px;
+    height: 30px;
+    width: 100px;
+    /* background-color: #aef3b8; */
+    border: 1px solid #6fc27c;
+    border-radius: 5px;
+    outline: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;   
+    transition: all 0.3 ease;
+}
+.warning_box button:hover{
+    background-color: #6fc27c;
+    color: white;
+}
+.login_box{
+    background-color: #fff;
+    width: 450px;
+    padding: 25px 30px ;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    /* opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.9); */
+}
+.login_box nav{
+    position: relative;
+    z-index: 99;
+    height: 70px;
+    padding: 0 30px;
+    background: #fff;
+    margin-bottom: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 3px 5px 1px rgb(0, 0, 0,0.1);
+}
+.login_box nav .title{
+    font-size: 20px;
+    font-weight: 500;
+}
+.login_box nav a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50%;
+    color: #6fc27c;
+    border: 1px solid #aef3b8;
+    border-radius: 5px;
+    padding: 0 8px;
+    margin-left: 50px;
+}
+.login_box .account_info{
+    padding: 25px 30px 20px 30px;
+}
+.login_box .account_info .heading{
+    font-size: 25px;
+    font-weight: 600;
+    padding: 10px;
+}
+.login_box .input_field label{
+    font-size: 15px;
+    font-weight: 600;
+}
+.login_box .input_field input{
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #aef3b8;
+}
+.login_box .input_field a{
+    color: #6fc27c;
+}
+.login_box .emailmessage{
+    font-size: 17px;
+    font-weight: 600;
+    display: none;
+}
+.login_box .passwordmessage{
+    font-size: 17px;
+    font-weight: 600;
+    color: #2c5f2dff;
+    display: none;
+}
+.login_box .message{
+    font-size: 17px;
+    font-weight: 600;
+    color: red;
+    display: none;
+}
+.login_box .buttons button{
+    margin: 5px;
+    height: 30px;
+    width: 100px;
+    border: 1px solid #6fc27c;
+    border-radius: 5px;
+    outline: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;   
+    transition: all 0.3 ease;
+}
+.login_box button:hover{
+    color: #2c5f2dff;
+    background-color: #aef3b8;
+}
+.info_box{
+    width: 540px;
+    background: #fff;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.9);
+}
+.info_box .info_title{
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.info_box .info_list{
+    padding: 15px 35px;
+}
+.info_box .info_list .info{
+    margin: 5px 0;
+    font-size: 17px;
+}
+.info_box .info_list .info span{
+    font-weight: 600;
+    color: #2c5f2dff;
+
+}
+.info_box .buttons{
+    height: 60px;
+    display: flex;
+    align-items:center;
+    justify-content:flex-end;
+    padding: 0 35px;
+    border-top: 1px solid lightgrey;
+}
+.info_box .buttons button{
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;   
+    transition: all 0.3 ease;
+}
+.buttons button .quit{
+    color: #2c5f2dff;
+    border-color: #2c5f2dff;
+}
+.buttons button .restart{
+    color: #fff;
+    border-color:#007bff;
+}
+.buttons button .restart:hover{
+    background: #0263ca;
+}
+.buttons button .quit:hover{
+    color: #fff;
+    background-color: #007bff;
+}
+.quiz_box{
+    width: 550px;
+    background-color: #fff;
+    /* padding: 20px; */
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.9);
+}
+.quiz_box header{
+    position: relative;
+    z-index: 99;
+    height: 70px;
+    padding: 0 30px;
+    background: #fff;
+    margin-bottom: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 3px 5px 1px rgb(0, 0, 0,0.1);
+}
+.quiz_box header .title{
+    font-size: 20px ;
+    font-weight: 600;
+}
+.quiz_box header .timer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 145px;
+    height: 45px;
+    background: #6fc27c;
+    border: 1px solid #aef3b8;
+    border-radius: 5px;
+    padding: 0 8px;
+}
+.quiz_box header .timer .time_text{
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+}
+.quiz_box header .timer .time_sec{
+    font-size: 18px;
+    font-weight: 500;
+    background: #343a40;
+    height: 30px;
+    width: 45px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    border: 1px solid #343a40;
+    user-select: none;
+}
+.quiz_box .time_line
+{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background: #2c5f2dff;
+    height: 3px;
+}
+.quiz_box .section{
+    padding: 25px 30px 20px 30px;
+}
+.quiz_box section .que_text{
+    font-size: 25px;
+    font-weight: 600;
+    padding: 10px;
+}
+.quiz_box section .option_list{
+    padding: 20px 0;
+    display: block;
+}
+.quiz_box section .option_list .option{
+    background: aliceblue;
+    border: 1px solid #aef3b8;
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+section .option_list .option:hover{
+    color: #009416;
+    background: #bbddc1;
+    border-color: #b8daff;
+}
+.option_list .option:last-child{
+    margin-bottom: 0px;
+}
+.option_list .option .icon{
+    height: 26px;
+    width: 26px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 13px;
+    line-height: 24px;
+    pointer-events: none;
+}
+.option_list .option .icon.tick{
+    color: #239023;
+    border-radius: #230;
+    background: #d4edda;
+}
+.option_list .option .icon.cross{
+    color: #a42834;
+    background: #f8d7da;
+    border-color: #a42834;
+}
+.quiz_box section .option_list .option.correct{
+    color: #2c5f2dff;
+    background-color: lightgreen;
+    border-color: #c3e6cb;
+}
+.quiz_box section .option_list .option.incorrect{
+    color: black;
+    background-color: #a42834;
+    border-color: #c3e6cb;
+}
+.option_list .option.disabled{
+    pointer-events: none;
+}
+.quiz_box footer{
+    height: 60px;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.quiz_box footer .total_que span{
+    display: flex;
+    user-select: none;
+}
+.quiz_box footer .total_que span p{
+    font-weight: 500;
+    padding: 0 5px;
+}
+.total_que span p:first-child{
+    padding-left: 0px;
+}
+footer .next_btn{
+    display: none;
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #2c5f2dff;
+    border-radius: 5px;
+    border: 1px solid #2c5f2dff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+footer .next_btn:hover{
+    background: #aef3b8;
+    color: #2c5f2dff;
+}
+.code_box{
+    background-color: #fff;
+    width: 450px;
+    padding: 25px 30px ;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+.code_box .codeQuestiontext{
+    position: relative;
+    z-index: 99;
+    height: 70px;
+    padding: 0 30px;
+    background: #fff;
+    margin-bottom: 7px;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 3px 5px 1px rgb(0, 0, 0,0.1);
+}
+.code_box .formCode textarea{
+    border: 2px solid #2c5f2dff;
+    border-radius: 5px;
+}
+.code_box .formCode .radioButtonbox span{
+    font-size: 17px;
+    font-weight: 600;
+}
+.code_box .formCode .submitCode{
+    margin: 5px;
+    height: 30px;
+    width: 100px;
+    /* background-color: #aef3b8; */
+    border: 1px solid #6fc27c;
+    border-radius: 5px;
+    outline: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;   
+    transition: all 0.3 ease;
+}
+.code_box .formCode .submitCode:hover{
+    background: #aef3b8;
+    color: #2c5f2dff;
+}
+.result_box
+{
+    background-color: #fff;
+    width: 450px;
+    padding: 25px 30px ;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.9);
+}
+.result_box .icon{
+    font-size: 100px;
+    color: #2c5f2dff;
+    margin-bottom: 10px;
+}
+.result_box .complete_text{
+    font-size: 20px;
+    font-weight: 500;
+}
+.result_box .score_text span{
+    display: flex;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+.result_box .score_text span{
+    font-weight: 600;
+    padding: 0 4px;
+}
+.result_box .button{
+    display: flex;
+    margin: 20px 0;
+}
+.result_box .buttons button{
+    margin: 0 10px;
+    height: 40px;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 1px solid #2c5f2dff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.result_box .buttons button:hover{
+    background: #aef3b8;
+    color: #2c5f2dff;
+}
+.certificate_box
+{
+    background-color: #fff;
+    padding:30px ;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0,0, 0.2),
+                0px 6px 20px 0 rgba(0, 0,0, 0.19);
+    transform: translate(-50%,-50%) scale(0.9);
+}
+.certificate_box label{
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 5px;
+}
+.certificate_box input{
+    padding: 5px;
+    border: 2px solid #2c5f2dff;
+}
+.certificate_box .buttons button{
+    padding: 15px;
+    background: #2c5f2dff;
+    border: 2px solid #2c5f2dff;
+    border-radius: 5px;
+    margin-top: 2px;
+    transition: all 0.3s ease;
+}
+.certificate_box .buttons button:hover{
+    background: #aef3b8;
+    color: #2c5f2dff;
+}
+.certificate_box .buttons label{
+    font-size: 25px;
+    font-weight: 700;
+}
+.certificate_box iframe{
+    width: 400px;
+    height: 400px;
+    display: none;
+    top: 50%;
+    right: 50%;
+}
