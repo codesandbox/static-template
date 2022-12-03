@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++: Test</title>
+    <link rel="stylesheet" href="test.css">
+    <script src="https://kit.fontawesome.com/8f9eb736b1.js" crossorigin="anonymous"></script>
+</head> 
+<body>
+    <div class="warning_box">
+        <span>Please do not switch tabs</span>
+        <br>
+        <button class="continue">Continue</button>
+    </div>
+    <div class="login_box">
+        <nav>
+            <h2 class="title">The Course Master</h2>
+            <a href="C:\Users\Richa\Desktop\webdevelopment\minor project 3rd year\homepage/home.html">Home</a>
+        </nav>
+        <div class="account_info">
+        <h2 class="heading">Login Into Your Account</h2>
+        </div>
+        <div class="input_field">
+            <label>First Name:*</label>
+            <input type="text" placeholder="First Name" required class="first_name"> <br>
+            <label>Last Name:*</label>
+            <input type="text" class="last_name" placeholder="Last Name" required> <br>
+            <label>Email:*</label>
+            <input type="email" class="email_address" placeholder="Email" required><br>
+            <span class="emailmessage">
+                Please Enter a valid email.
+            </span>
+            <label>Password:*</label>
+            <input type="password" class="passWord" placeholder="Password" required><br>
+            <span class="passwordmessage">
+                Password must contain:
+                <ul>
+                    <li>A LowerCase letter.</li>
+                    <li>A Capital Letter</li>
+                    <li>A number</li>
+                    <li>Minimum 8 digits</li>
+                </ul>
+            </span>
+            <a href="Myaccountrelated/forgotpassword.html">Forgotten Password??</a>
+            <br>
+            <span class="message">
+                Please fill Out the Details First.
+            </span>
+        </div>
+        <div class="buttons">
+            <button class="loginBtn">Login</button>
+        </div>
+    </div>
+    <div class="info_box">
+        <div class="info_title">
+            <span>Some Rules of this Quiz</span>
+        </div>
+        <div class="info_list">
+            <div class="info">1.You will have only <span>30 seconds</span> per each question.</div>
+            <div class="info">2.Once you select your answer, you cant reselect.</div>
+            <div class="info">3.You cant select any option once time goes off.</div>
+            <div class="info">4.You cant exit from the quiz while you are in it.</div>
+            <div class="info">5.You will get points on the basis of your correct answers.</div>
+        </div>
+        <div class="buttons">
+            <button class="quit">Exit Quiz</button>
+            <button class="restart">Continue</button>
+        </div>
+    </div>
+    <div class="quiz_box">
+        <header>
+        <div class="title">C++:Quiz</div>
+        <div class="timer">
+            <div class="time_left">Time left</div>
+            <div class="time_sec">30</div>
+        </div>
+        <div class="time_line"></div>
+        </header>
+        <section>
+        <div class="que_text">
+            <!-- <span></span> -->
+        </div>
+        <div class="option_list">
+            <!-- <div class="option">
+                <span>Hyper Text Preprocessor</span>
+                <div class="icon tick"><i class="fa-solid fa-check"></i></div>
+
+            </div>
+            <div class="option">
+                <span>Hyper Text Preprocessor</span>
+                <div class="icon cross"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div class="option">
+                <span>Hyper Text Preprocessor</span>
+            </div>
+            <div class="option">
+                <span>Hyper Text Preprocessor</span>
+            </div> -->
+        </div>
+    </section>
+    <footer>
+        <div class="total_que">
+            <!-- <span><p>2</p>of<p>5</p>Questions</span> -->
+        </div>
+        <button class="next_btn">Next Question</button>
+    </footer>
+    </div>
+    
+    <div class="result_box">
+        <div class="icon">
+            <i class="fa-solid fa-crown"></i>
+        </div>
+        <div class="complete_text">You have completed the Quiz!</div>
+        <div class="score_text">
+            <!-- <span>and sorry, You got only <p>2 </p> out of  <p>5 </p></span> -->
+        </div>
+        <div class="buttons">
+            <div class="tryHarder">
+            <!-- <span class="again">Try Harder!!</span> -->
+            </div>
+            <button class="quit">
+                Get Your Certificate
+            </button>
+        </div>
+    </div>
+    <div class="certificate_box">
+        <div class="certificate_text">
+            <!-- <label for="name"><b>Type Your Name</b></label> -->
+    <!-- <input type="text" name="Name" id="name" placeholder="Enter your name" required> -->
+    <div class="buttons">
+        <label>Tap on the button to get your certificate:</label> <br>
+    <button id="certification">Get Certificate</button>
+    </div>
+    <iframe src="" id="mypdf" frameborder="0"></iframe>
+        </div>
+    </div>
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
+    <script src="certificate generator/certificate-gen.js"></script>
+    <script src="testjavaScript/test.js"></script>
+    <script src="testjavaScript/questions.js"></script>
+</body>
+</html>
