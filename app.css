@@ -1,0 +1,78 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+h1 {
+  text-align: center;
+}
+#container {
+  background-color: #003049;
+  width: 90%;
+  height: 500px;
+  margin: 0 auto;
+  border: 5px solid #003049;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+}
+#container div {
+  width: 200px;
+  height: 200px;
+}
+
+#container_b {
+  background-color: black;
+  width: 90%;
+  height: 500px;
+  margin: 0 auto;
+  border: 5px solid #003049;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+#container_b div {
+  width: 200px;
+  height: 200px;
+}
+#container p {
+  /* text-align: center; */
+  /* margin-top: 0 auto; */
+  /* padding-top: 2.7em; */
+  /* height: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+div:nth-of-type(2) {
+  align-self: center;
+}
+
+div:nth-of-type(3) {
+  align-self: flex-end;
+}
+
+h2 {
+  text-align: center;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  border: 5px solid black;
+  height: 500px;
+  display: flex;
+}
+
+main .sidebar {
+  background-color: #6930c3;
+  border: 2px solid wheat;
+  flex: 1 300px;
+}
+
+main .maincontent {
+  background-color: #80ffdb;
+  flex: 1 600px;
+}
