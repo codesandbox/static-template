@@ -1,0 +1,499 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Rampart+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Nunito:ital,wght@0,200;0,400;0,600;0,700;0,800;1,200;1,300;1,400;1,600;1,700;1,800&family=Rampart+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Indie+Flower&family=Irish+Grover&family=Nunito:ital,wght@0,200;0,400;0,600;0,700;0,800;1,200;1,300;1,400;1,600;1,700;1,800&family=Rampart+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Courgette&family=Inconsolata&family=Indie+Flower&family=Inter:wght@400;500;600;700&family=Irish+Grover&family=Lobster&family=Nunito:ital,wght@0,200;0,400;0,600;0,700;0,800;1,200;1,300;1,400;1,600;1,700;1,800&family=Pacifico&family=Rampart+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+body {
+  background-image: url("https://img4.goodfon.com/wallpaper/nbig/a/53/game-background-gory-les-idoly-cherep-kuvshin-noch.jpg");
+}
+.game-name-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-name {
+  font-family: "Rampart One", cursive;
+  /* background-color: #e4ece7; */
+  padding: 2px 15px;
+  font-size: 50px;
+  border-radius: 39px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: aquamarine;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  visibility: visible;
+}
+
+#back,
+.dice,
+.confirm-move,
+.avail-confirm-move,
+.avail-deny-move,
+#reset,
+.cnf-portal-btn {
+  width: 100px;
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
+    rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
+    rgba(44, 187, 99, 0.15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#back:hover,
+.dice:hover,
+.confirm-move:hover,
+.avail-confirm-move:hover,
+.avail-deny-move:hover,
+#reset:hover,
+.cnf-portal-btn:hover {
+  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
+    rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
+    rgba(44, 187, 99, 0.25) 0 16px 32px;
+  transform: scale(1.2); /* rotate(-360deg)*/
+}
+
+.avail-confirm-move-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#reset {
+  margin: 0px 20px;
+}
+
+.btn,
+#game-name {
+  background-image: url("https://icon2.cleanpng.com/20180309/xxq/kisspng-wood-grain-texture-mapping-wood-texture-5aa25755b35817.9985423015205886297346.jpg");
+
+  background-size: 200px 100px;
+  width: 200px;
+  height: 60px;
+
+  border-radius: 20px;
+  text-align: center;
+  font-size: 30px;
+
+  font-family: Fantasy;
+  color: #80440b;
+  text-shadow: 2px 2px 2px #efefef;
+  opacity: 0.9;
+
+  transition: all 250ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn:hover {
+  transform: scale(1.2) /* rotate(-360deg)*/;
+
+  opacity: 1;
+}
+#game-name {
+  background-image: url("kisspng-stock-photography-chain-wood-metal-board-5abbbe2e3b0f76.9694256415222533582419-removebg-preview (1).png");
+  background-size: 100% 100%;
+  width: 375px;
+  height: 86px;
+  font-size: 45px;
+  color: #5e290c;
+  text-shadow: 2px 3px 1px black;
+  margin: 20px;
+}
+
+.play-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100vw;
+  flex-wrap: wrap;
+}
+.player-container {
+  width: 24%;
+  height: 400px;
+  background-color: #aa8876;
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.player {
+  padding: 0px 0px 0px 3px;
+  text-align: center;
+  width: 125px;
+  height: 190px;
+  border: 2px solid black;
+}
+.profile {
+  width: 125px;
+  height: 100px;
+}
+.profile-pic {
+  width: 120px;
+  height: 85px;
+  border: 1px solid black;
+}
+.profile-pic img {
+  width: 100px;
+  height: 70px;
+}
+.profile-name {
+  width: 120px;
+  height: 15px;
+  /* border: 1px solid black; */
+  text-align: center;
+}
+.stones-container {
+  padding: 5px 0px 0px 0px;
+  width: 120px;
+  height: 80px;
+  display: flex;
+  /* border: 1px solid black; */
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.stone1,
+.stone2,
+.stone3,
+.stone4 {
+  width: 35px;
+  height: 35px;
+  border: 1px solid black;
+}
+.play-ground-container {
+  width: 50%;
+  height: 400px;
+  /* background-color: #872724;
+  border: 2px solid black; */
+  display: flex;
+  justify-content: center;
+}
+.play-ground {
+  position: relative;
+  width: 500px;
+  height: 400px;
+  /* background-color: #87915d;
+  border: 2px solid black; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.play-box-container {
+  width: 24%;
+  height: 400px;
+  background-color: #007c76;
+  border: 2px solid black;
+}
+.play-box {
+  width: 300px;
+  height: 400px;
+  /* border: 2px solid black; */
+  border-radius: 50px;
+  box-shadow: 1px 1px 9px 4px hsl(240deg 80% 90%);
+  /* background-color: #87456d; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.play-box-upper {
+  width: 250px;
+  height: 55px;
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid black;
+}
+.play-box-lower {
+  width: 250px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  flex-direction: column;
+}
+
+.avail-name {
+  width: 225px;
+  height: 20px;
+  text-align: center;
+  line-height: 10px;
+}
+
+.avail-options {
+  width: 225px;
+  height: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  /* border: 1px solid black; */
+}
+
+.portal-dialogue {
+  background-color: #74bbad;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 100px;
+}
+.portal-container {
+  background: #454857;
+  padding: 4px;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 3px rgba(35, 33, 45, 0.3),
+    0 0 0 3px rgba(185, 185, 185, 0.3);
+  position: relative;
+  user-select: none;
+}
+
+.portal-container input {
+  width: auto;
+  height: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 4px 8px;
+  background: #454857;
+  color: #bdbdbdbd;
+  font-size: 14px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  transition: all 100ms linear;
+}
+
+.portal-container input:checked {
+  background-image: linear-gradient(180deg, #95d891, #74bbad);
+  color: #fff;
+  box-shadow: 0 1px 1px #0000002e;
+  text-shadow: 0 1px 0px #79485f7a;
+}
+
+.portal-container input:before {
+  content: attr(label);
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+.cnf-portal-btn {
+  width: 69px;
+  height: 33px;
+  visibility: hidden;
+  /* margin: 0px; */
+  transform: scale(0.9);
+}
+
+.dice-container {
+  width: 50px;
+  height: 50px;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-move-container {
+  width: 225px;
+  height: 30px;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .dice {
+  width: 30px;
+  height: 30px;
+} */
+.dice-number-container {
+  width: 50px;
+  height: 50px;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grids {
+  width: 48px;
+  height: 38px;
+  /* background-image: url("Screenshot (41).png"); */
+  /* border: 2px solid transparent; */
+  /* border-image: url("Screenshot (49).png") 30 round; */
+  /* background-color: #db8549; */
+  /* border: 1px solid black; */
+}
+
+.avail-option-container {
+  background-color: #74bbad;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.avail-options input {
+  width: 30px;
+  height: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 4px 8px;
+  background: #454857;
+  color: #bdbdbdbd;
+  font-size: 14px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  transition: all 100ms linear;
+}
+.avail-options input:checked {
+  background-image: linear-gradient(180deg, #95d891, #74bbad) !important;
+  color: #fff !important;
+  box-shadow: 0 1px 1px #0000002e !important;
+  text-shadow: 0 1px 0px #79485f7a !important;
+}
+
+.avail-options input:before {
+  content: attr(label);
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+.avail-confirm-move {
+  width: 77px;
+  height: 30px;
+  visibility: hidden;
+}
+
+.avail-name {
+  width: 225px;
+  height: 20px;
+  text-align: center;
+  line-height: 10px;
+}
+
+.avail-options {
+  width: 225px;
+  height: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  /* border: 1px solid black; */
+}
+
+.time-stone,
+.space-stone,
+.memory-stone,
+.soul-stone,
+.reality-stone,
+.power-stone {
+  width: 33px;
+  height: 250px;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.p1,
+.p2,
+.p3,
+.p4,
+.plus,
+.minus {
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+}
+.time,
+.space,
+.memory,
+.soul,
+.reality,
+.power {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+}
+
+.stones-container img {
+  width: 30px;
+  height: 30px;
+  filter: grayscale(100%);
+}
+/* .player {
+  position: relative;
+  background: linear-gradient(0deg, #000, #272727);
+}
+.player:before,
+.player:after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    45deg,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000
+  );
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+}
+.player:after {
+  filter: blur(6px);
+} */
+
+#brick {
+  position: absolute;
+  width: 500px;
+  height: 400px;
+  z-index: -1;
+  /* top: 132px;
+  left: 375px; */
+}
