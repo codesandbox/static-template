@@ -1,0 +1,73 @@
+#contact {
+    background-color: white;
+    position: relative;
+    * {
+        color: white;
+    }
+    width: 100%;
+    height: 100vh;
+
+    background-image: url("../assets/images/contact-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+
+    .wrapper {
+        display: flex;
+    }
+
+    .container {
+        padding: 200px;
+        height: fill;
+        justify-content: center;
+
+        img {
+            width: 30px;
+            margin-right: 18px;
+            filter: invert(1);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+    }
+
+    .contact-card {
+        line-height: 2;
+        z-index: 99999;
+    }
+
+    li {
+        font-weight: bold;
+        gap: 10px;
+
+        span {
+            font-weight: lighter;
+            width: 100%;
+
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1900px) {
+    #contact {
+        font-size: 18px;
+
+        .container {
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 20px;
+                margin-right: 10px !important;
+            }
+        }
+    }
+
+    h3 {
+        font-size: 70px !important;
+    }
+}
