@@ -1,12 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Art gallery website</title>
+    <style>
+      h1 {
+        font-family: "Big Shoulders Display";
+        font-style: normal;
+        font-weight: 900;
+        font-size: 96px;
+        line-height: 88px;
+      }
+      .black {
+        height: 799px;
+        width: 450px;
+        left: 0px;
+        top: 0px;
+        border-radius: 0px;
+        background-color: black;
+      }
+      img {
+        position: absolute;
+        left: 35.29%;
+        right: 22.35%;
+        top: 0%;
+        bottom: 0%;
+        height: 800px;
+        width: 540px;
+        left: 450px;
+        top: 8px;
+        border-radius: 0px;
+      }
+      h1 {
+        font-size: 96px;
+      }
+      p {
+        font-family: "Outfit";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 32px;
+        color: #444444;
+        position: relative;
+        left: 925px;
+        bottom: 950px;
+      }
+      .button {
+        width: 250px;
+        height: 72px;
+
+        cursor: pointer;
+        background-color: black;
+        position: relative;
+        left: 925px;
+        bottom: 900px;
+      }
+      .button:hover {
+        background: #d5966c;
+      }
+
+      a {
+        font-family: "Big Shoulders Display";
+        font-style: normal;
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 24px;
+        width: 137px;
+
+        letter-spacing: 3.63636px;
+        text-decoration: none;
+        color: white;
+        position: relative;
+        top: 24px;
+      }
+      .arrow {
+        height: 72px;
+        width: 56px;
+
+        border-radius: 0px;
+        background-color: #d5966c;
+        position: relative;
+        left: 1119px;
+        bottom: 972px;
+      }
+      .arrow1 {
+        border: 1px solid #ffffff;
+        height: 24px;
+        width: 8px;
+        position: static;
+        padding-top: 24px;
+        padding-left: 24px;
+        border: hidden;
+      }
+
+      .arrow:hover {
+        background-color: black;
+      }
+      .text {
+        font-family: "Big Shoulders Display";
+        font-style: normal;
+        font-weight: 900;
+        font-size: 60px;
+        line-height: 60px;
+        text-transform: uppercase;
+        color: #151515;
+        position: relative;
+        bottom: 200px;
+        left: 165px;
+      }
+
+      h4 {
+        font-family: "Outfit";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 32px;
+        color: #444444;
+        position: relative;
+        left: 165px;
+        bottom: 190px;
+      }
+      .img1 {
+        height: 400px;
+        width: 635px;
+        left: 640px;
+        top: 980px;
+        border-radius: 0px;
+        margin-top: 250px;
+      }
+      .img2 {
+        margin-top: 1650px;
+        width: 635px;
+        height: 720px;
+        left: 165px;
+      }
+      .img3 {
+        height: 313px;
+        width: 445px;
+        left: 830px;
+        top: 1650px;
+      }
+      .text2 {
+        font-family: "Big Shoulders Display";
+        font-style: normal;
+        font-weight: 900;
+        font-size: 60px;
+        line-height: 60px;
+        text-transform: uppercase;
+        color: #ffffff;
+        padding-top: 65px;
+        padding-left: 48px;
+      }
+      .black2 {
+        position: relative;
+        top: 200px;
+        height: 377px;
+        width: 445px;
+        left: 830px;
+        background-color: black;
+      }
+      .content {
+        font-family: "Outfit";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 32px;
+
+        color: #ffffff;
+        padding-left: 48px;
+      }
+      .mask {
+        position: relative;
+        height: 244px;
+        width: 1440px;
+        left: 0px;
+        top: 231px;
+        border-radius: 0px;
+        background-color: black;
+      }
+      .logo {
+        position: relative;
+
+        height: 58px;
+        width: 159.57235717773438px;
+        left: 165px;
+        top: 80px;
+      }
+      .content2 {
+        font-family: "Outfit";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 28px;
+
+        color: #ffffff;
+        position: relative;
+        top: 1px;
+        left: 540px;
+      }
+      svg {
+        position: relative;
+        left: 1175px;
+        bottom: 144px;
+      }
+      svg:hover {
+        cursor: pointer;
+        background-color: #d5966c;
+      }
+      .insta {
+        border-radius: 5px;
+        left: 1215px;
+      }
+      .intsta:hover {
+        background-color: #d5966c;
+      }
+      .tweet {
+        left: 1255px;
+        border-radius: 10px;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="black"></div>
+    <h1>
+      <strong
+        style="
+          position: relative;
+          bottom: 700px;
+          left: 30px;
+          color: white;
+          z-index: 1;
+          mix-blend-mode: difference;
+        "
+      >
+        MODERN<br />
+        ART GALLERY</strong
+      >
+    </h1>
+    <img src="image-hero.jpg" alt="" />
+    <p>
+      The arts in the collection of the <br />
+      Modern Art Gallery all started from <br />
+      a spark of inspiration. Will these <br />
+      pieces inspire you? Visit us and find <br />
+      out.
+    </p>
+
+    <div class="button">
+      <a href="https://d4m7tv.csb.app/">OUR LOCATION</a>
+    </div>
+    <div class="arrow">
+      <img class="arrow1" src="icon-arrow-right.png" />
+    </div>
+
+    <h1 class="text">
+      <strong>
+        Your Day at <br />
+        The Gallery</strong
+      >
+    </h1>
+
+    <h4>
+      <strong>
+        Wander through our distinct <br />
+        collections and find new insights <br />
+        about our artists. Dive into the <br />
+        details of their creative process.
+      </strong>
+    </h4>
+    <img class="img1" src="image-grid-1.jpg" />
+    <img class="img2" src="image-grid-2.jpg" alt="" />
+    <img class="img3" src="image-grid-3.jpg" />
+    <div class="black2">
+      <h1 class="text2">
+        <strong>
+          COME & BE INSPIRED
+        </strong>
+      </h1>
+      <h3 class="content">
+        <strong
+          >We’re excited to welcome you to our <br />
+          gallery and see how our collections <br />
+          influence you.</strong
+        >
+      </h3>
+    </div>
+    <div class="mask">
+      <img class="logo" src="logo-light.png" />
+      <p class="content2">
+        The Modern Art Gallery is free to all <br />
+        visitors and open seven days a week <br />
+        from 8am to 9pm. Find us at 99 King <br />
+        Street, Newport, USA.
+      </p>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+        <path
+          d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0Z"
+          fill="#FFF"
+        />
+      </svg>
+      <svg
+        class="insta"
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+      >
+        <path
+          d="M10 1.802c2.67 0 2.987.01 4.042.059 2.71.123 3.975 1.409 4.099 4.099.048 1.054.057 1.37.057 4.04 0 2.672-.01 2.988-.057 4.042-.124 2.687-1.387 3.975-4.1 4.099-1.054.048-1.37.058-4.041.058-2.67 0-2.987-.01-4.04-.058-2.718-.124-3.977-1.416-4.1-4.1-.048-1.054-.058-1.37-.058-4.041 0-2.67.01-2.986.058-4.04.124-2.69 1.387-3.977 4.1-4.1 1.054-.048 1.37-.058 4.04-.058ZM10 0C7.284 0 6.944.012 5.877.06 2.246.227.227 2.242.061 5.877.01 6.944 0 7.284 0 10s.012 3.057.06 4.123c.167 3.632 2.182 5.65 5.817 5.817 1.067.048 1.407.06 4.123.06s3.057-.012 4.123-.06c3.629-.167 5.652-2.182 5.816-5.817.05-1.066.061-1.407.061-4.123s-.012-3.056-.06-4.122C19.777 2.249 17.76.228 14.124.06 13.057.01 12.716 0 10 0Zm0 4.865a5.135 5.135 0 1 0 0 10.27 5.135 5.135 0 0 0 0-10.27Zm0 8.468a3.333 3.333 0 1 1 0-6.666 3.333 3.333 0 0 1 0 6.666Zm5.338-9.87a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z"
+          fill="#FFF"
+        />
+      </svg>
+      <svg
+        class="tweet"
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="17"
+      >
+        <path
+          d="M20 2.172a8.192 8.192 0 0 1-2.357.646 4.11 4.11 0 0 0 1.805-2.27 8.22 8.22 0 0 1-2.606.996A4.096 4.096 0 0 0 13.847.248c-2.65 0-4.596 2.472-3.998 5.037A11.648 11.648 0 0 1 1.392 1a4.109 4.109 0 0 0 1.27 5.478 4.086 4.086 0 0 1-1.858-.513c-.045 1.9 1.318 3.679 3.291 4.075a4.113 4.113 0 0 1-1.853.07 4.106 4.106 0 0 0 3.833 2.849A8.25 8.25 0 0 1 0 14.658a11.616 11.616 0 0 0 6.29 1.843c7.618 0 11.923-6.434 11.663-12.205A8.354 8.354 0 0 0 20 2.172Z"
+          fill="#FFF"
+        />
+      </svg>
+    </div>
   </body>
 </html>
