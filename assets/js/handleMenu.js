@@ -3,12 +3,11 @@ import songs0 from "./songs.js";
 import songs1 from "./songs1.js";
 import songs2 from "./songs2.js";
 import { onPauseHandle } from "./handleEvent.js";
-// import { setSettings } from "./actions.js";
 
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-const infoHtml =  `<div class="info-header">
+const infoHtml = `<div class="info-header">
 <button class="menu-back-btn">
   <i class="fa-solid fa-chevron-left"></i>
 </button>
@@ -18,54 +17,38 @@ const infoHtml =  `<div class="info-header">
 <div class="user-img">
   <img src="./assets/images/avatar.jpg" alt="" />
 </div>
-<div class="user-info">
-
+<p class="user-name">Nguyen Huu Dat</p>
+<p class="user-jobs">Font-End dev</p>
+<span class="user-graduate">Can Tho University</span>
+<div class="user-contact">
+  <i class="fa-brands fa-facebook"></i>
+  <i class="fa-brands fa-github"></i>
+  <i class="fa-solid fa-envelope"></i>
 </div>
-</div>
-`
+</div>`;
 const menuList = $(".menu-list");
 const stockMenuList = menuList.innerHTML;
 
-const handleLoadImg = () => {
-  const avatar = $('.user-img img');
-  const userInfo = $('.user-info')
-  avatar.onload = () => {
-    console.log('img loaded');
-    userInfo.innerHTML = `
-    <p class="user-name">Nguyen Huu Dat</p>
-    <p class="user-jobs">Font-End dev</p>
-    <span class="user-graduate">Can Tho University</span>
-    <div class="user-contact">
-      <i class="fa-brands fa-facebook"></i>
-      <i class="fa-brands fa-github"></i>
-      <i class="fa-solid fa-envelope"></i>
-    </div>`
-  }
-}
-
 export const HandleGoBack = (_this) => {
   let goBackBtn = $(".menu-back-btn");
-  // console.log("handle go back");
+  console.log("handle go back");
 
   goBackBtn.onclick = () => {
     menuList.innerHTML = stockMenuList;
     handleCLick(_this);
+    _this.setSettings();
   };
 };
 const handleCLick = (_this) => {
-  // console.log('handle menu');
+  console.log("handleMenu");
+  // console.log(_this);
   const switchBtn = $(".switch");
   const songListSelect = $("#songListSelect");
-  const toggleInfoBtn = $(".toggle-info")
+  const toggleInfoBtn = $(".toggle-info");
   const player = $(".player");
-  _this.setSettings();
-
-
-  // info
   toggleInfoBtn.onclick = (e) => {
     menuList.innerHTML = infoHtml;
-  HandleGoBack(_this);
-  handleLoadImg ()
+    HandleGoBack(_this);
   };
 
   // dark mode
@@ -86,7 +69,7 @@ const handleCLick = (_this) => {
     };
     switch (e.target.value) {
       case "pmq":
-      _this.songs = songs1;
+        _this.songs = songs1;
         _this.setConfig("lastPlayList", "songs1");
 
         break;
@@ -100,9 +83,7 @@ const handleCLick = (_this) => {
         break;
     }
     loadSongs();
-};
-
-
+  };
 };
 const handleMenu = function () {
   const _this = this;

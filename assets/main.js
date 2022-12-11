@@ -29,6 +29,7 @@ const app = {
   songs: songs,
   setConfig: function (key, value) {
     this.config[key] = value;
+
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(this.config));
   },
   // defineProperties: function () {
@@ -57,7 +58,7 @@ const app = {
   setSettings,
   handleMenu,
   HandleGoBack,
-  handlEvents,
+  handlEvents: handlEvents,
 
   start: function () {
     this.loadConfig();
@@ -74,6 +75,8 @@ const app = {
     this.handlEvents();
 
     this.handleMenu();
+
+    this.setSettings();
   }
 };
 
