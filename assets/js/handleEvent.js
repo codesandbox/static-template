@@ -19,13 +19,12 @@ import {
   songListSelect
 } from "./constant.js";
 import { subMenu } from "./menu.js";
-import songs0 from "./songs.js";
-import songs1 from "./songs1.js";
-import songs2 from "./songs2.js";
 
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 const cdWidth = cd.offsetWidth;
+
+
 
 const onPauseHandle = function (_this) {
   playBtn.classList.remove("playing");
@@ -38,7 +37,7 @@ const handlEvents = function () {
   const songs = $$(".song-item");
   const audio = $(".audio");
   const isDesktop = window.innerWidth >= 724;
-  console.log(isDesktop);
+  // console.log(isDesktop);
 
   if (!isDesktop) musicVolume.remove();
 
@@ -113,8 +112,11 @@ const handlEvents = function () {
   }
 
   // xử lí khi nhạc ngừng (default)
-
-  audio.onpause = onPauseHandle;
+ 
+  audio.onpause = () => {
+    onPauseHandle(_this)
+  };
+  // or audio.onpause = onPauhandle;
 
   //xử lí khi nhạc được phát
   const onPlayHandle = function () {
@@ -172,6 +174,7 @@ const handlEvents = function () {
 
   // play button
   playBtn.onclick = function () {
+    console.log("click", _this.isPlaying);
     if (_this.isPlaying) {
       audio.pause(); // (default)
     } else {
@@ -204,13 +207,7 @@ const handlEvents = function () {
     rePeatBtn.classList.toggle("active", _this.isRepeat);
   };
 
-  // dark mode
-  switchBtn.onclick = () => {
-    _this.isDark = !_this.isDark;
-    _this.setConfig("isDark", _this.isDark);
-    switchBtn.classList.toggle("dark", _this.isDark);
-    player.classList.toggle("dark", _this.isDark);
-  };
+  
 
   // goto top
   gotopBtn.onclick = () => scrollToActive(0);
@@ -230,61 +227,10 @@ const handlEvents = function () {
       }
     };
   });
-  songListSelect.onchange = (e) => {
-    const loadSongs = () => {
-      onPauseHandle();
-      _this.updatePath();
-      _this.render();
-      _this.loadCurrentSong();
-      _this.handlEvents();
-    };
-    switch (e.target.value) {
-      case "pmq":
-        _this.songs = songs1;
-        _this.setConfig("lastPlayList", "songs1");
 
-        break;
-      case "ngocmai":
-        _this.songs = songs2;
-        _this.setConfig("lastPlayList", "songs2");
-        break;
-      default:
-        _this.songs = songs0;
-        _this.setConfig("lastPlayList", "songs0");
-        break;
-    }
-    loadSongs();
-  };
-  // let menuList = $(".menu-list");
-  // let menuItem = $$(".list-item");
-  // let stockMenuList = menuList.innerHTML;
-  // console.log(menuList.innerHTML);
+  // menu --->
 
-  // // const handleMenu = () => {
-  // menuItem.forEach((item) => {
-  //   console.log(item);
-
-  //   item.onclick = (e) => {
-  //     if (item.classList.contains("hasChild")) {
-  //       // item.innerMenuList
-  //       menuList.innerHTML = `<li class="list-item"><span>Home<n/span></li> <button class='go-back'>back</button>`;
-  //       HandleGoBack();
-  //       // _this.renderMenu();
-  //       // _this.handlEvents();
-  //     }
-  //   };
-  // });
-  // // };
-  // const HandleGoBack = () => {
-  //   let goBackBtn = $(".go-back");
-  //   goBackBtn.onclick = () => {
-  //     _this.renderMenu();
-  //     _this.handlEvents();
-
-  //     // handleMenu();
-  //   };
-  // };
-  // handleMenu();
+  
 };
-export { onPauseHandle };
+export {onPauseHandle};
 export default handlEvents;
