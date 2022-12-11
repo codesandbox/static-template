@@ -1,2 +1,0 @@
-# HDPlayer
-Created with CodeSandbox
