@@ -1,0 +1,58 @@
+.switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  height: 26px;
+  width: 50px;
+  border-radius: 20px;
+  background: #e1e1e1;
+}
+.switch.dark {
+  background-color: #555;
+}
+.switch::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 22px;
+  background-color: #fff;
+  width: 22px;
+  border-radius: 50%;
+  right: 2px;
+  transition: transform 0.2s linear;
+}
+.switch.dark::before {
+  right: unset;
+  transform: translateX(-12px);
+}
+.theme-icon {
+  font-size: 1.5rem;
+}
+.sun {
+  color: #f39c12;
+}
+
+.moon {
+  color: #f1c40f;
+}
+.go-top-btn {
+  display: none;
+  position: fixed;
+  height: 35px;
+  width: 35px;
+  background-color: #ccc;
+  border-radius: 50%;
+  bottom: 10px;
+  right: 50%;
+  transform: translateX(50%);
+  text-align: center;
+  opacity: 0.6;
+}
+.go-top-btn.show {
+  display: block;
+}
+.gt-btn {
+  line-height: 35px;
+  font-size: 1.5rem;
+}

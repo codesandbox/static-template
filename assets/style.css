@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 16px 14px 16px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 4px solid #e1e1e1;
+}
+.dashboard h4 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgb(243, 88, 88);
+}
+.dashboard h2 {
+  width: 80%;
+  font-size: 2.5rem;
+  /* height: 2.5rem; */
+  font-weight: 300;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.cd {
+  width: 200px;
+  display: flex;
+  margin: 10px 0;
+}
+.cd-img {
+  padding-top: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  width: 100%;
+  animation: spin 12s linear infinite paused;
+}
+.control {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+.btn {
+  font-size: 1.6rem;
+  color: #666;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+}
+.btn:active {
+  opacity: 0.6;
+}
+.play-btn {
+  color: #fff;
+  border-radius: 50%;
+  background-color: rgb(243, 88, 88);
+}
+.pause-icon {
+  display: none;
+}
+.play-btn.playing .pause-icon {
+  display: block;
+}
+.play-btn.playing .play-icon {
+  display: none;
+}
+.icon {
+  line-height: 40px;
+}
+.btn.active {
+  color: rgb(243, 88, 88);
+}
+
+.duration {
+  -webkit-appearance: none;
+  background-color: #e1e1e1;
+  height: 9px;
+  outline: none;
+  border: none;
+  margin-top: 15px;
+  width: 100%;
+  border-radius: unset;
+}
+.duration::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: rgb(243, 88, 88);
+  border: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.duration::-moz-range-thumb {
+  /* box-shadow: -200px 0 0 200px rgb(243, 88, 88); */
+  background-color: #999;
+  border: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.playlist {
+  /* height: 100vh; */
+  background-color: #e1e1e1;
+  padding-top: 360px;
+}
+.song-list {
+  padding: 10px 7px 10px;
+  /* height: 200px;
+  overflow: auto; */
+}
+.song-item {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  height: 90px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+}
+.song-item + .song-item {
+  margin-top: 8px;
+}
+.song-item:active {
+  opacity: 0.6;
+}
+.song-item.active {
+  background-color: rgb(243, 88, 88) !important;
+}
+.song-item.active h2 {
+  color: #fff;
+}
+.song-item.active h4 {
+  color: #fff;
+}
+.song-item.active i {
+  color: #fff;
+}
+.song-frame {
+  width: 75px;
+  height: 75px;
+  background-position: center;
+  background-size: contain;
+  padding: 5px;
+  margin-right: 10px;
+  overflow: hidden;
+  /* margin: 5px; */
+}
+/* Làm ảnh vuông */
+/* cách 1: dùng object-fit */
+.song-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+/* cách 2: dùng div rồi dùng padding top */
+.song-img {
+  padding-top: 100%;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+.song-info h2 {
+  /* color: #444; */
+  font-size: 1.8rem;
+  font-weight: 550;
+}
+.song-info h4 {
+  /* color: #666; */
+  font-size: 1.2rem;
+  margin-top: 5px;
+  font-weight: 350;
+}
+.song-detail {
+  color: #666;
+  font-size: 1.6rem;
+  margin-left: auto;
+  margin-right: 10px;
+}
+.song-detail i {
+  padding: 10px;
+}
+.song-detail i:active {
+  color: rgb(243, 88, 88) !important;
+}
+.volume-cotrol {
+  display: flex;
+}
+.hide {
+  margin: 0;
+}
+.show {
+  display: block;
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
