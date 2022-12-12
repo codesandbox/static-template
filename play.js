@@ -4,7 +4,7 @@ var players = ["player1_data", "player2_data", "player3_data", "player4_data"];
 prompt_fun();
 function prompt_fun() {
   no_of_players = parseInt(
-    prompt("Please Enter The Number Of Players (1-4) !!", "4")
+    prompt("Please Enter The Number Of Players (1-4) !!!", "4")
   );
   if (no_of_players === 1) {
     players = ["player1_data"];
@@ -166,6 +166,107 @@ function create_profile() {
       "grayscale(1%)";
   }
 }
+
+var arr1 = arr1_generator();
+var arr2 = arr2_generator();
+var arr3 = arr3_generator();
+
+function arr1_generator() {
+  let arr = [];
+  let loc1;
+  loc1 = getRandomIntExcludingExistingNumbers(20, 5, arr);
+  let loc2;
+  arr.push(loc1);
+  loc2 = getRandomIntExcludingExistingNumbers(35, 1, arr);
+  let loc3;
+  arr.push(loc2);
+  loc3 = getRandomIntExcludingExistingNumbers(95, 25, arr);
+  let loc4;
+  arr.push(loc3);
+  loc4 = getRandomIntExcludingExistingNumbers(45, 25, arr);
+  let loc5;
+  arr.push(loc4);
+  loc5 = getRandomIntExcludingExistingNumbers(70, 40, arr);
+  let loc6;
+  arr.push(loc5);
+  loc6 = getRandomIntExcludingExistingNumbers(100, 65, arr);
+  let loc7;
+  arr.push(loc6);
+  loc7 = getRandomIntExcludingExistingNumbers(35, 1, arr);
+  let loc8;
+  arr.push(loc7);
+  loc8 = getRandomIntExcludingExistingNumbers(75, 60, arr);
+  return [loc1, loc2, loc3, loc4, loc5, loc6, loc7, loc8];
+}
+
+function arr2_generator() {
+  let arr = [...arr1];
+  let loc1;
+  loc1 = getRandomIntExcludingExistingNumbers(100, 1, arr);
+  let loc2;
+  arr.push(loc1);
+  loc2 = getRandomIntExcludingExistingNumbers(100, 1, arr);
+  let loc3;
+  arr.push(loc2);
+  loc3 = getRandomIntExcludingExistingNumbers(100, 1, arr);
+  let loc4;
+  arr.push(loc3);
+  loc4 = getRandomIntExcludingExistingNumbers(100, 1, arr);
+  let loc5;
+  arr.push(loc4);
+  loc5 = getRandomIntExcludingExistingNumbers(100, 1, arr);
+  let loc6;
+  arr.push(loc5);
+  loc6 = getRandomIntExcludingExistingNumbers(100, 1, arr);
+  let loc7;
+  arr.push(loc6);
+  loc7 = getRandomIntExcludingExistingNumbers(100, 1, arr);
+  let loc8;
+  arr.push(loc7);
+  loc8 = getRandomIntExcludingExistingNumbers(100, 1, arr);
+  let loc9;
+  arr.push(loc8);
+  loc9 = getRandomIntExcludingExistingNumbers(100, 1, arr);
+  let loc10;
+  arr.push(loc9);
+  loc10 = getRandomIntExcludingExistingNumbers(100, 1, arr);
+
+  return [loc1, loc2, loc3, loc4, loc5, loc6, loc7, loc8, loc9, loc10];
+}
+function arr3_generator() {
+  let arr = [];
+  for (let i = 1; i <= 100; i++) {
+    if (arr1.includes(i)) {
+    } else if (arr2.includes(i)) {
+    } else {
+      arr.push(i);
+    }
+  }
+  return arr;
+}
+
+var img1 = "gridimg1.png";
+var img2 = "gridimg2.png";
+var img3 = "gridimg3.png";
+function put_grid_image() {
+  for (let i = 0; i < arr1.length; i++) {
+    document.getElementById(
+      `grid${arr1[i]}`
+    ).style.backgroundImage = `url("${img3}")`;
+  }
+  for (let i = 0; i < arr2.length; i++) {
+    document.getElementById(
+      `grid${arr2[i]}`
+    ).style.backgroundImage = `url("${img2}")`;
+  }
+  for (let i = 0; i < arr3.length; i++) {
+    document.getElementById(
+      `grid${arr3[i]}`
+    ).style.backgroundImage = `url("${img1}")`;
+  }
+}
+
+put_grid_image();
 
 function put_enemy() {
   let ultron1 = document.getElementById(`grid${enemy_loc[0]}`);
@@ -363,7 +464,7 @@ function portal_generator() {
 }
 
 function enemy_generator() {
-  let arr = portal_loc;
+  let arr = [...portal_loc];
   console.log(arr);
   let loc1;
   loc1 = getRandomIntExcludingExistingNumbers(20, 5, arr);
@@ -710,7 +811,7 @@ var powers_dialogue = `
         </div>
       </div>
   `;
-var confirm_dialogue = `<img src="https://media.tenor.com/MBldOpK_w6wAAAAC/emoji-smile.gif">`;
+var confirm_dialogue = `<img class="gif" src="https://media.tenor.com/MBldOpK_w6wAAAAC/emoji-smile.gif">`;
 
 function confirm_move() {
   // console.log("ok");
@@ -2305,7 +2406,7 @@ function avail_options() {
               active_player.stonecount++;
             }
             if (key == "powerstone" && value == true) {
-              temparr.push("spacestone");
+              temparr.push("powerstone");
               player2_data.powerstone = false;
               player2_data.stonecount--;
               active_player.powerstone = true;
