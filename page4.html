@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;700&family=Charm&family=Bilbo+Swash+Caps&family=Redressed&family=Trirong:wght@200&family=Mali:ital@1&family=Homemade+Apple:wght@400&family=Nanum+Brush+Script&family=Thasadith&family=Roboto+Mono:wght@300&family=Sriracha&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="OIP.jpg" />
+    <title>WhenIamBlue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer base {
+        body {
+          margin: 0%;
+          background: black;
+          background-image: linear-gradient(#000000df, #000000df),
+            url("giphy.gif");
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-position: center;
+          background-size: cover;
+        }
+        h1,
+        h2 {
+          font-weight: bold;
+        }
+        h1 {
+          font-size: 40px;
+        }
+        h2 {
+          font-size: 25px;
+        }
+        header {
+          background: #034c80;
+        }
+      }
+      @layer component {
+        .font-thai {
+          font-family: "Bai Jamjuree", sans-serif;
+        }
+        .write-eng {
+          font-family: "Redressed", cursive;
+        }
+        .talk-thai {
+          font-family: "Trirong", serif;
+        }
+        .thai {
+          font-family: "Thasadith", sans-serif;
+        }
+      }
+
+      /* #region text-talk */
+      .text-talk {
+        @apply px-10 text-[16px];
+        font-family: "Trirong", serif;
+      }
+
+      /* #region t: left-right */
+      .text-talk .t-left {
+        @apply block text-left mt-5;
+      }
+      .text-talk .t-right {
+        @apply block text-right mt-5;
+      }
+      .text-talk .t-left::before {
+        content: "T: ";
+        color: #315695;
+      }
+      .text-talk .t-right::before {
+        content: "N: ";
+        color: #7560ae;
+      }
+      .text-talk .t-left::before,
+      .text-talk .t-right::before {
+        font-size: 1.5em;
+        font-weight: bold;
+        font-family: "Redressed", cursive;
+      }
+      /* #endregion */
+
+      /* t: quote */
+      .text-talk .t-quote {
+        @apply block text-center py-10 text-3xl font-thai;
+      }
+      /* t: button */
+      .text-talk .t-button {
+        @apply px-5 py-2 rounded-xl bg-[#344a5a] hover:bg-[#79afd6];
+      }
+
+      /* #endregion */
+    </style>
+    <audio loop id="audio-sad" src="sadpiano.mp3" autoplay></audio>
+    <audio loop id="audio-sad" src="rain.mp3" autoplay></audio>
+    <header class="text-center thai py-10">
+      <h1 style="color:white;">ขอขอบคุณที่อ่านมาถึงตรงนี้</h1>
+      <h2 style="color:white;">ขอให้แสดงความคิดเห็นเล็กๆให้เราได้รู้</h2>
+    </header>
+    <body>
+      <form >
+        <p class="text-center py-10 rounded-xl block text-xl" style="color:black;">
+          <input type="text" value="">
+          <div class="text-center thai text-3xl">
+            <label style="color:white;">บอกความรู้สึกกับเราหน่อย</label></p>
+          </div>
+          <div class="grid place-content-center img-[2rem]">
+            <img class="pt-10 pb-10" src="insta.png" alt="instagram" />
+          </div>
+      <div class="text-center py-10 text-2xl" style="color:white;">
+        <button class="px-5 py-2 rounded-xl bg-[#344a5a] hover:bg-[#79afd6]">
+          <a href="https://www.instagram.com/tantasins/">instagram</a>
+        </button>
+      </div>
+      <div class="grid place-content-center img-[2rem]">
+        <img class="pt-10" src="mail.png" alt="instagram" />
+      </div>
+      <div class="text-center py-10 text-2xl" style="color:white;">
+        <button class="px-5 py-2 rounded-xl bg-[#344a5a] hover:bg-[#79afd6]">
+          <a href="https://mail.google.com/mail/u/2/#inbox">Email</a>
+        </button>
+      </div>
+      <div class="text-center thai py-10 bg-[#034c80]">
+        <h1 style="color:white;">ขอบคุณครับ</h1>
+      </div>
+    </body>
+  </head>
+</html>

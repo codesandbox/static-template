@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;700&family=Charm&family=Bilbo+Swash+Caps&family=Redressed&family=Trirong:wght@200&family=Mali:ital@1&family=Homemade+Apple:wght@400&family=Nanum+Brush+Script&family=Thasadith&family=Roboto+Mono:wght@300&family=Sriracha&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="OIP.jpg" />
+    <title>WhenIamBlue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer base {
+        body {
+          margin: 0%;
+          color: white;
+          background: black;
+          background-image: linear-gradient(#000000df, #000000df),
+            url("giphy.gif");
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-position: center;
+          background-size: cover;
+        }
+        h1,
+        h2 {
+          font-weight: bold;
+        }
+        h1 {
+          font-size: 40px;
+        }
+        h2 {
+          font-size: 25px;
+        }
+        header {
+          background: #034c80;
+        }
+      }
+      @layer component {
+        .font-thai {
+          font-family: "Bai Jamjuree", sans-serif;
+        }
+        .write-eng {
+          font-family: "Redressed", cursive;
+        }
+        .talk-thai {
+          font-family: "Trirong", serif;
+        }
+      }
+
+      /* #region text-talk */
+      .text-talk {
+        @apply px-10 text-[16px];
+        font-family: "Trirong", serif;
+      }
+
+      /* #region t: left-right */
+      .text-talk .t-left {
+        @apply block text-left mt-5;
+      }
+      .text-talk .t-right {
+        @apply block text-right mt-5;
+      }
+      .text-talk .t-left::before {
+        content: "T: ";
+        color: #315695;
+      }
+      .text-talk .t-right::before {
+        content: "N: ";
+        color: #7560ae;
+      }
+      .text-talk .t-left::before,
+      .text-talk .t-right::before {
+        font-size: 1.5em;
+        font-weight: bold;
+        font-family: "Redressed", cursive;
+      }
+      /* #endregion */
+
+      /* t: quote */
+      .text-talk .t-quote {
+        @apply block text-center py-10 text-3xl font-thai;
+      }
+      /* t: button */
+      .text-talk .t-button {
+        @apply px-5 py-2 rounded-xl bg-[#344a5a] hover:bg-[#79afd6];
+      }
+
+      /* #endregion */
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="write-eng text-center pb-5 pt-10">
+        When I am Blue
+      </h1>
+      <h2 class="write-eng text-center pb-10">
+        Blue 1 <span class="font-thai">ทฤษฎีการลืม</span>
+      </h2>
+    </header>
+    <div id="play-sound" class="text-center text-xl pt-10">
+      <audio loop id="audio-sad" src="sadpiano.mp3"></audio>
+      <audio loop id="audio-sad" src="rain.mp3" autoplay></audio>
+      <button
+        class="px-5 py-2 rounded-xl bg-[#344a5a] hover:bg-[#79afd6]"
+        onclick="document.getElementById('audio-sad').play()"
+      >
+        เล่น
+      </button>
+    </div>
+    <p class="text-center pt-10 font-thai" style="font-size: 20px;">
+      ณ ระเบียงเล็กๆแห่งหนึ่ง
+    </p>
+    <div class="grid place-content-center">
+      <img class="pt-10 pb-10" src="balcony.jpg" alt="balcony" />
+    </div>
+
+    <div class="text-talk">
+      <p class="t-left">อีกแล้วสินะ</p>
+      <p class="t-right">อีกแล้วอะไรอย่างงั้นหรอ</p>
+      <p class="t-left">คนที่ผมรู้จักหน่ะสิเขาเสียอีกแล้ว</p>
+      <p class="t-right">
+        แบบนี้เธอก็ต้องไปงานศพอีกแล้วหน่ะสิ<br />ให้ฉันไปด้วยนะครั้งนี้
+      </p>
+      <p class="t-quote">"เธอพูดออกมาด้วยน้ำเสียงที่สื่อว่าเสียใจด้วยนะ"</p>
+      <p class="t-left">
+        อื้ม...แต่ผมว่าครั้งนี้ผมคงไม่ไปหรอก<br />ผมชินกับเรื่องแบบนี้แล้วน่ะ
+      </p>
+      <p class="t-quote">"ผมทำหน้าเศร้าพร้อมกับฝนที่กำลังจะตก"</p>
+
+      <p class="t-right">แต่เธอรู้จักเขาเลยนะ<br />จะไม่ไปจริงๆหรอ!</p>
+      <p class="t-quote">"เธอถามกลับด้วยสีหน้าจริงจัง"</p>
+      <p class="t-left">
+        ไม่รู้สิ...ผมว่าความตายมันเป็น<br />เรื่องปกติสำหรับผมแล้วหน่ะ
+      </p>
+      <p class="t-quote">ผมยิ้มอ่อนๆแล้วหันหน้ามองเธอ</p>
+      <p class="t-left">เธอรู้ทฤษฎีของการลืมมั้ยหล่ะ?</p>
+      <p class="t-right">N: มันคืออะไรหรอ...?</p>
+      <p class="t-left">งั้น เดี๋ยวผมจะเล่ามันให้คุณฟัง...</p>
+
+      <div id="next-page" class="text-center py-10">
+        <a class="t-button" href="/page2.html">
+          ต่อ
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
