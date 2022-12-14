@@ -1,12 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>artum.</title>
+    <!--bootstrap css goes here-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <!--custom css goes here-->
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!---navigation bar goes here-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-#f2e5e5 top_nav">
+      <a class="navbar-brand title-name" href="#">artum.</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="form-inline my-2 search-area">
+          <input
+            class="form-control mr-lg-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="signin.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="shadow p-3 mb-5 bg-white rounded">
+      <!--image section goes-->
+      <img
+        src="src/db/img1.jpg"
+        alt="illustration"
+        class="image shadow p-3 mb-5 bg-white rounded"
+      />
+
+      <!--here goes the card-->
+      <div class="card quote shadow p-3 mb-5 bg-white rounded">
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>
+              Painting is poetry that is seen rather than felt, and poetry is
+              painting that is felt rather than seen.
+            </p>
+            <footer class="blockquote-footer">
+              <cite title="Source Title">Leonardo da Vinci</cite>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!--floating navigation goes here-->
+
+    <nav
+      class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark bottom_nav"
+    >
+      <a class="navbar-brand floatingnavhome" href="#">Home</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" href="#"
+            >Collections <span class="sr-only">(current)</span></a
+          >
+
+          <a class="nav-link btn-outline-dark" href="#">Artists</a>
+          <a class="nav-link" href="#">Arts</a>
+          <a class="nav-link">Bid</a>
+          <a class="nav-link">Contact us</a>
+          <a class="nav-link">About us</a>
+        </div>
+      </div>
+    </nav>
+
+    <h2>Latest collection</h2>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam aliquid
+      consequuntur delectus beatae saepe amet commodi maiores ex, dolores ab
+      eligendi alias id error accusamus modi, at veritatis optio eum. Molestiae
+      omnis fugit, illo labore placeat corrupti alias asperiores id,
+      consequuntur enim accusamus odio praesentium iste, sequi facilis tempore
+      qui? Ducimus provident quod eos sunt pariatur, vel blanditiis doloribus
+      nam est possimus enim mollitia ratione autem quibusdam amet deserunt.
+      Totam animi illo modi eligendi, odio laudantium omnis ad nihil saepe ab
+      quas ex illum molestiae nulla similique dolores delectus qui aspernatur
+      excepturi possimus optio magnam perferendis? Est, facere rerum! Expedita,
+      ab natus quo deserunt minus rerum sint nulla placeat magnam quasi iste
+      aliquid maxime enim eius, numquam consequuntur ipsa nam inventore debitis
+      in blanditiis hic minima vel deleniti! Nisi recusandae id laboriosam,
+      maiores deleniti illum adipisci cupiditate odit quibusdam officiis cum
+      porro, nihil tempore fuga distinctio sunt, impedit exercitationem
+      asperiores? Nesciunt deserunt delectus eum veritatis accusamus,
+      exercitationem itaque earum in ut aliquam, cumque quam ullam quidem
+      eligendi facilis architecto culpa tenetur dolorem animi nisi pariatur
+      nobis. Exercitationem minima temporibus blanditiis, deserunt hic quis
+      deleniti magni? Nulla voluptates ut, laborum laboriosam neque possimus
+      nesciunt quas voluptate, dolores voluptatibus, quae fugit natus?
+    </p>
+    <h2>how it works</h2>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur
+      cumque ipsam unde iusto voluptatum repudiandae, temporibus illo nihil
+      illum asperiores ea quam quasi rerum at fuga delectus soluta suscipit id.
+      Expedita ducimus consequuntur provident culpa deleniti? Sapiente tenetur
+      perspiciatis fugiat quod quas expedita porro quibusdam hic temporibus.
+      Perferendis dicta repellendus, distinctio architecto dolores eos modi
+      fugiat optio vero quaerat amet tempore quos nostrum. Asperiores
+      repudiandae a autem? Voluptas qui consectetur, itaque non, explicabo
+      dolore aliquam blanditiis aperiam vitae dolores cupiditate nostrum ipsa!
+      Veniam culpa, nulla maxime laboriosam quis sequi, inventore dicta laborum
+      voluptatibus, velit incidunt sint at iste! Officiis, similique. Mollitia
+      repellendus at consectetur molestias libero illum nemo error, sint itaque
+      cumque eius maiores voluptatum aperiam quasi, incidunt esse molestiae,
+      dolorem nulla alias fugiat et obcaecati dicta inventore! Unde ut nihil
+      aliquid quae dolores explicabo corrupti vero, odit omnis, aliquam,
+      corporis soluta fuga architecto commodi error eos beatae repellendus.
+      Animi, ullam culpa! Sed natus optio facere iste facilis, harum pariatur
+      adipisci neque quisquam praesentium cum unde, ex minima. Nulla vero
+      temporibus quis nisi vel fugit id corrupti deleniti! Ex dolore possimus
+      officia voluptates laudantium! Laudantium necessitatibus maxime facere
+      natus error in explicabo! Laborum neque, animi asperiores inventore in quo
+      dolorem?
+    </p>
+    <h2>famous artists</h2>
+    <h2>available for bids</h2>
+    <h3>about us</h3>
+
+    <!--here goes the placeholding para-->
+
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque magnam ab
+      porro tenetur eaque. Numquam vel sed eaque placeat debitis? Fuga numquam
+      natus doloremque architecto aspernatur ipsa veritatis, modi vero ab alias
+      illum eligendi eos totam deserunt laborum quas fugiat, voluptas ducimus,
+      ipsam doloribus inventore impedit est! Praesentium debitis commodi
+      voluptatem cum doloribus beatae reiciendis labore hic veniam. Ipsum veniam
+      volu
+    </p>
+
+    <!--testing parts-->
+    <footer class="end-footer">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro officia
+        dolores rerum nulla illum alias illo, quia aperiam. Excepturi maxime
+        doloribus alias ea magni veritatis officiis est dicta aut architecto,
+        sequi accusantium sint quis molestiae fugiat, provident unde deserunt
+        et, tempora facilis. Ipsa error recusandae voluptatem vitae tempore
+        adipisci soluta. Maxime quasi enim voluptatibus fugit vitae velit
+        quaerat officia similique hic deleniti cum obcaecati culpa, sunt
+        necessitatibus temporibus facere! Ratione in porro culpa iusto
+        molestias. Minima eos, voluptas nostrum, voluptatum repellat nemo
+        voluptate sint, dolorum provident recusandae placeat. Soluta velit
+        expedita aliquam, ducimus deleniti magnam aperiam distinctio veritatis
+        minus molestiae ratione, quam nihil consequuntur nam laboriosam ipsum
+        repellat vel iusto quae, aliquid aut consectetur quibusdam veniam! Ut
+        soluta debitis consequuntur. Beatae voluptatem eos et aperiam aspernatur
+        provident officiis quod voluptatum placeat itaque autem alias earum ad,
+        illo atque, sequi consectetur? Porro voluptatibus quaerat iusto.
+        Eveniet, corporis. Quos tempore odit consectetur asperiores distinctio,
+        ad accusantium cumque cum, ipsa sunt, eaque quidem? Earum maxime sed
+        nemo odio obcaecati ut incidunt cum quasi, iusto praesentium voluptate
+        alias suscipit, dolores voluptates quas velit magni voluptas? Qui, vero!
+        Odio sint eaque delectus! Earum cumque fugit quam aut eius facere rerum
+        possimus cupiditate! Eius, porro cupiditate!
+      </p>
+    </footer>
+
+    <!---js for bs components goes here-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
