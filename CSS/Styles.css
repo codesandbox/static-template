@@ -1,0 +1,385 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap");
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: #00131d;
+}
+
+.Nav_Bar {
+  width: 100%;
+  height: fit-content;
+  min-height: 60px;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  padding: 0 36px;
+  background: linear-gradient(to right, #00e4e7, #0045ff);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.Menu_Nav {
+  width: 10%;
+  min-width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Fin de NavBar 1 y Principio de NavBar2*/
+
+.NavBar_2 {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  background-color: #009bff;
+}
+
+.Menu_Nav2 {
+  width: 508px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Item_container_Nav2 {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button_nav li {
+  list-style: none;
+}
+
+.button_nav a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.button_nav a:hover {
+  background-color: #0067ff;
+}
+/* Fin de NavBar2*/
+
+/* Principio del Body*/
+
+.Main_cointainer {
+  /* COntiene todo el Body*/
+  width: 70%;
+  margin: 0 auto;
+  padding: 15px 5px;
+}
+
+.Title {
+  color: white;
+  text-align: center;
+  padding-block: 25px 10px;
+}
+
+.separador {
+  border-radius: 25px;
+  background: #ff9f00;
+  height: 5px;
+  border-radius: 50px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.Content_Cointainer {
+  margin: 0 auto;
+  padding: 15px 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0px 50px 0px 50px;
+}
+
+.search-container {
+  padding-block: 40px 13px;
+}
+
+.search {
+  position: relative;
+  width: 25%;
+  min-width: 250px;
+  height: fit-content;
+}
+.round {
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid white;
+  padding-block: 8px 8px;
+  padding-inline-start: 15px;
+}
+
+.corner_image {
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  border-radius: 10px;
+  border: none;
+  width: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url("/Icons/Search.svg");
+  background-repeat: no-repeat;
+}
+/*  Fin del Area del Titulo */
+
+.Just_Article_Section {
+  width: 70%;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.Article_Container {
+  margin-bottom: 50px;
+  height: 50%;
+  min-height: 200px;
+}
+
+.Article_IMG {
+  background-color: crimson;
+  height: 60%;
+  object-fit: contain;
+}
+
+.Article_TEXT {
+  height: 40%;
+  color: white;
+  padding-left: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.text_item {
+  padding-top: 5px;
+}
+
+.SideBar {
+  width: 30%;
+}
+
+.SideBar_Text {
+  font-weight: bold;
+  color: #ff9f00;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.Top-list {
+  color: white;
+  font-weight: bold;
+}
+
+.SideBar article {
+  padding-bottom: 25px;
+}
+
+/* Fin Body   */
+
+/*  Footer   */
+
+.footer {
+  padding: 30px 30px 20px 30px;
+  background-color: #009bff;
+  border-top: 1px solid #e5e5e5;
+}
+
+.cointainer_footer {
+  width: 95%;
+  height: fit-content;
+  margin: 0 auto;
+}
+
+.A {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Name_Slogan {
+  color: white;
+}
+
+.Menu_Nav_f {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav__items_f {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  padding: 5px 5px;
+}
+
+.legal {
+  padding-top: 10px;
+  display: flex;
+  color: rgb(95, 95, 95);
+}
+
+/* Responsiveness */
+
+@media only screen and (max-width: 600px) {
+  .Menu_Nav {
+    display: none;
+  }
+
+  .NavBar_2 {
+    display: none;
+  }
+
+  .SideBar {
+    display: none;
+  }
+
+  .Article_Container {
+    margin-bottom: 50px;
+    background-color: #009bff;
+  }
+
+  .Article_TEXT {
+    width: 50px;
+    color: white;
+    background-color: teal;
+    padding-left: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .Article_IMG {
+    max-width: 160px;
+    max-height: 160px;
+    object-fit: contain;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .SideMenu {
+    display: none;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+label .menu {
+  position: absolute;
+  right: -100px;
+  top: -100px;
+  z-index: 100;
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  border-radius: 50% 50% 50% 50%;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 0 #fff;
+  cursor: pointer;
+}
+
+label .hamburger {
+  /* rayiya de medio de iconito de hamburguesa y aqui se define la ubicacion */
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  width: 30px;
+  height: 3px;
+  background: white;
+  display: block;
+  border-radius: 1px;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+label .hamburger:after,
+label .hamburger:before {
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 1px;
+}
+
+label .hamburger:before {
+  top: -10px;
+}
+
+label .hamburger:after {
+  bottom: -10px;
+}
+
+label input {
+  display: none;
+}
+
+label input:checked + .menu {
+  box-shadow: 0 0 0 100vw #fff, 0 0 0 100vh #fff;
+  border-radius: 0;
+}
+
+label input:checked + .menu .hamburger {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+label input:checked + .menu .hamburger:after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  bottom: 0;
+}
+
+label input:checked + .menu .hamburger:before {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: 0;
+}
+
+label input:checked + .menu + ul {
+  opacity: 1;
+}
+
+label ul {
+  z-index: 200;
+  position: absolute;
+  top: 23.5%;
+  left: 10%;
+
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: 0.25s 0s ease-in-out;
+  transition: 0.25s 0s ease-in-out;
+  background-color: #009bff;
+  list-style: none;
+}
+
+label li {
+  padding: 5px;
+}
+
+label a {
+  margin-bottom: 1em;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
