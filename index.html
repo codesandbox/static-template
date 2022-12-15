@@ -1,12 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>art-gallery-website</title>
   </head>
+  <style>
+    .card {
+    }
+    .modern {
+      font-size: 55px;
+      color: #151515;
+    }
+    .the-arts-in {
+      font-size: 18px;
+      color: #444444;
+    }
+    .our-location {
+      display: flex;
+      padding-bottom: 120px;
+    }
+    .our-loc {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 204px;
+      height: 72px;
+      background-color: #151515;
+    }
+    .r-location {
+      font-size: 20px;
+      color: white;
+    }
+    .r-arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #d5966c;
+      height: 72px;
+      width: 56px;
+    }
+    .br-point-1step-box {
+      padding-left: 5%;
+    }
+    .grids-box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+    .your-day {
+      width: 343px;
+      color: #151515;
+    }
+    .the-arts-in {
+      width: 343px;
+      font-size: 18px;
+      color: #444444;
+    }
+    .come {
+      font-size: 45px;
+      color: white;
+    }
+    .we-are {
+      color: white;
+      font-size: 18px;
+    }
+    .black-box1 {
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      padding-left: 5%;
+      margin-right: 5%;
+      justify-content: flex-start;
+      margin-bottom: 120px;
+      width: 343px;
+    }
+    .the-mod {
+      font-size: 16px;
+      color: white;
+    }
+    .icons {
+      display: flex;
+      width: 122px;
+      height: 38px;
+      justify-content: space-between;
+    }
+    .black-box2 {
+      padding-left: 5%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: black;
+      height: 336px;
+    }
+
+    .mod {
+      max-width: 100%;
+    }
+    .logo-light {
+      display: flex;
+      justify-content: center;
+      width: 122px;
+      height: 38px;
+    }
+    .the-arts {
+      width: 311px;
+      height: 104px;
+    }
+    .fb-icon {
+      width: 20px;
+      height: 20px;
+    }
+    .inst-icon {
+      width: 20px;
+      height: 20px;
+    }
+    .twit-icon {
+      width: 20px;
+      height: 20px;
+    }
+    .back-to {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 208px;
+      height: 72px;
+      background-color: black;
+    }
+    .inside {
+      color: white;
+      font-size: 20px;
+    }
+    .l-arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 56px;
+      height: 72px;
+      background-color: #d5966c;
+    }
+    .back-to-home {
+      display: flex;
+      margin-top: -555px;
+      margin-bottom: 555px;
+    }
+    .m {
+      margin-top: 100px;
+    }
+    .line-1 {
+      font-size: 50px;
+      color: white;
+    }
+    .king-st {
+      font-size: 32px;
+      color: #d5966c;
+    }
+    .adres-font {
+      font-size: 18px;
+      color: white;
+    }
+    .black-box3 {
+      display: flex;
+      flex-direction: column;
+      background-color: black;
+      padding-left: 5%;
+    }
+    .for-visitors {
+      font-size: 16px;
+      color: #151515;
+    }
+    .last-box {
+      background-color: #d5966c;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      height: 375px;
+      padding-left: 5%;
+    }
+    .icons-2 {
+      display: flex;
+      width: 122px;
+      height: 38px;
+      justify-content: space-around;
+    }
+
+    .hero-tablet {
+      display: none;
+    }
+    .grid-1-tab {
+      display: none;
+    }
+    .image-grid-tab2 {
+      display: none;
+    }
+    .grid-3-tab {
+      display: none;
+    }
+    .map-tab {
+      display: none;
+    }
+    .hero-des {
+      display: none;
+    }
+    .black-box-des{
+      display: none;
+    }
+    .lin{
+      display:none;
+    }
+    .grid1-des{
+    display: none;
+    }
+    .grid2-des{
+    display: none;
+    }
+    .grid3-tab{
+      display: none;
+    }
+    .map-des{
+      display: none;
+    }
+    @media screen and (min-width: 768px) {
+    
+      .back-to-home {
+        margin-top: -610px;
+        margin-bottom: 610px;
+      }
+      .map {
+        display: none;
+      }
+      .map-tab {
+        display: inline;
+      }
+      .last-box {
+        justify-content: space-around;
+        height: 213px;
+      }
+      .black-box2 {
+        justify-content: space-around;
+        height: 216px;
+      }
+      .grid-3 {
+        display: none;
+      }
+      .grid-3-tab {
+        padding-top: 5%;
+        padding-left: 5%;
+        display: inline;
+      }
+      .grid-2 {
+        display: none;
+      }
+      .image-grid-tab2 {
+        display: inline;
+        width: 40%;
+      }
+      .hero {
+        display: none;
+      }
+      .grid-1-tab {
+        display: inline;
+      }
+      .hero-tablet {
+        display: inline;
+        margin-right: -10%;
+      }
+      .hero-break1 {
+        display: flex;
+      }
+      .grid-1 {
+        display: none;
+      }
+      .grids-box {
+        max-width: 1154px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .for-grid-van {
+        display: flex;
+        flex-direction: column;
+        
+      }
+      .text {
+        display: flex;
+        flex-direction: column;
+      }
+      .your-day {
+        padding-left: 5%;
+      }
+      .the-arts-in {
+        padding-left: 5%;
+      }
+      .black-box1 {
+        margin: 5%;
+        height: 396px;
+        width: 280px;
+        justify-content: space-evenly;
+      }
+      .black-box3 {
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+    }
+    @media screen and (min-width: 1440px) {
+      .map-des{
+        display: inline;
+      }
+       .black-box1{
+         width: 100%;
+       }
+      .grids-box{
+        padding-top: 5%;
+        padding-left: 10%;
+      }
+      .text{
+        width: 400px;
+      }
+      .grid1-des{
+        display: inline;
+        padding-left: 5%;
+      }
+      .grid3-tab{
+      display: inline;
+      margin-left: 5%;
+    }
+      .grid2-des{
+        display: inline;
+      }
+      .hero-tablet {
+        display: none;
+      }
+      .hero-des {
+        display: inline;
+        margin-right: -10%;
+      }
+      .modern {
+        display: none;
+      }
+      .br-point-1step-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+      .black-box-des {
+        display:block;
+        width: 450px;
+        height: 799px;
+        background-color: #151515;
+       
+      }
+      .lin{
+        display: flex;
+        width: 700px;
+        height: 500px;
+        
+        margin-left: -740px;
+        margin-top:150px;
+       
+       
+      }
+      .lin1
+      {
+        
+    font-size:80px;
+-webkit-background-clip: text;
+color: transparent;
+background-image: linear-gradient(270deg, black 100px, white 50%);
+}  
+.image-g-3-t{
+  display: none;
+}
+ .map-tab{
+   display: none;
+ }
+     
+     
+     
+     
+    
+    .grid-1-tab{
+      display: none;
+    }
+    .image-grid-tab2{
+      display: none;
+
+    }
+    }
+  </style>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+      
+    
+
+    <div class="card">
+      
+      <div class="hero-break1">
+          <div class="black-box-des"></div>
+        <img class="hero-des" src="./image-hero-des.jpg" />
+        <div class="lin">
+            <h1 class="lin1">
+              MODERN<br>
+              ART GALLERY </h1>
+            </div>
+        
+        <div class="hero">
+          <img clss="image-hero" src="./image-hero.jpg" />
+        </div>
+        <div class="hero-tablet">
+          <img class="image-hero-tablet" src="./image-hero-tablet.jpg" />
+        </div>
+        <div class="br-point-1step-box">
+          <div class="modern-art">
+            <h1 class="modern">
+              MODERN<br />
+              ART GALLERY
+            </h1>
+          </div>
+          <div class="the-arts">
+            <p class="the-arts-in">
+              the arts in the collection of the Modern Art<br />
+              Galeery all started from a speak of<br />
+              inspiration. Will this price inspire you?<br />
+              Visit and find out.
+            </p>
+          </div>
+          <div class="our-location">
+            <div class="our-loc">
+              <h1 class="r-location">
+                OUR LOCATION
+              </h1>
+            </div>
+            <div class="r-arrow">
+              <img class="right" src="./icon-arrow-right.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grids-box">
+        <div class="grid-1">
+          <img class="image-grid-1" src="./image-grid-1.jpg" />
+        </div>
+        <div class="text">
+          <h1 class="your-day">
+            YOUR DAY<br />
+            AT THE GALLERY
+          </h1>
+          <p class="the-arts-in">
+            Wonder though ouar distinct collections<br />
+            and find new insights about ouar artist.<br />
+            Dive into the details of thear creative<br />
+            process.
+          </p>
+        </div>
+        <div class="grid-1-tab">
+          <img class="grid-1-tablet" src="./image-grid-1-tab.jpg" />
+          
+        </div>
+        <img class="grid1-des" src="./image-grid-1-des.jpg">
+        
+        <div class="grid-2">
+          <img class="image-grid-2" src="./image-grid-2.jpg" />
+        </div>
+        <img class="grid2-des" src="./image-grid-2-des.jpg"/>
+        <div class="image-grid-tab2">
+          <img class="image-grid2-tablet" src="./image-grid-2-tab.jpg" />
+        </div>
+        <div class="for-grid-van">
+          <div class="grid-3-tab">
+            <img class="image-g-3-t" src="./image-grid-3-tab.jpg" />
+          </div>
+          <div class="grid-3">
+            <img class="image-grid-3" src="./image-grid-3.jpg" />
+          </div>
+          <img class="grid3-tab" src="./image-grid-3-des.jpg"/>
+
+          <div class="black-box1">
+            <h1 class="come">
+              COME & BE<br />
+              INSPIRED
+            </h1>
+            <p class="we-are">
+              We'are excited to welcome you to our<br />
+              gallery and see how our collections<br />
+              influence you.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="black-box2">
+        <div class="logo-light">
+          <img class="mod" src="./logo-light.svg" />
+        </div>
+
+        <p class="the-mod">
+          The modern art gallery is free to all visitors<br />
+          and open seven days a week from 8am to<br />
+          9pm. Find us at 99 King street, Newport,<br />
+          USA.
+        </p>
+        <div class="icons">
+          <img class="fb-icon" src="./icon-facebook.svg" />
+          <img class="inst-icon" src="./icon-instagram.svg" />
+          <img class="twit-icon" src="./icon-twitter.svg" />
+        </div>
+      </div>
+      <div class="map">
+        <img class="m" src="./image-map.png" />
+      </div>
+      <div class="map-tab">
+        <img class="map-tablet" src="./image-map-tab.png" />
+      </div>
+      <img class="map-des" src="./image-map-des.png">
+      <div class="back-to-home">
+        <div class="l-arrow">
+          <img class="left" src="./icon-arrow-left.svg" />
+        </div>
+        <div class="back-to">
+          <h1 class="inside">BACK TO HOME</h1>
+        </div>
+      </div>
+      <div class="black-box3">
+        <div class="black-box3-child">
+          <h1 class="line-1">OUR LOCATION</h1>
+        </div>
+        <div class="child-2">
+          <h2 class="king-st">99 KING STREET</h2>
+          <h3 class="adres-font">
+            Newport<br />
+            RI 02840<br />
+            United States of America
+          </h3>
+          <p class="adres-font">
+            Our newly opened gallery is located near<br />
+            the Edword King House on 99 King Street,<br />
+            the Modern Art Gallery is free to visitors<br />
+            and open seven days a week from 8am to<br />
+            9pm.
+          </p>
+        </div>
+      </div>
+      <div class="last-box">
+        <div class="d.logo">
+          <img class="logo-dark" src="./logo-dark.svg" />
+        </div>
+        <div>
+          <p class="for-visitors">
+            The Modern Art Gallery is free to all visitors<br />
+            and open seven days a week from 8am to<br />
+            9pm. Find us at 99 King Street, Newport,<br />
+            USA.
+          </p>
+        </div>
+        <div class="icons-2">
+          <img class="fb-icon" src="./icon-facebook.svg" />
+          <img class="inst-icon" src="./icon-instagram.svg" />
+          <img class="twit-icon" src="./icon-twitter.svg" />
+        </div>
+      </div>
+    
   </body>
 </html>
