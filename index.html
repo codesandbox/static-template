@@ -1,12 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>equalizer-landing-page</title>
   </head>
+  <style>
+    .logo {
+      padding-left: 5%;
+    }
+    .heading {
+      margin-bottom: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 10%;
+    }
+    .head {
+      font-size: 40px;
+      color: #191826;
+    }
+    .system-oudio {
+      font-size: 16px;
+      color: #191826;
+    }
+    .tele {
+      width: 209px;
+      height: 430px;
+    }
+    .main {
+      max-width: 100%;
+      margin-top: -130px;
+    }
+    .bg-patern {
+      margin-bottom: -400px;
+    }
+    .ilustration {
+      background-color: #191826;
+
+      padding-bottom: 200px;
+      border-radius: 12px;
+    }
+    .ilust-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .orang-card {
+      background-color: #fa7453;
+      border-radius: 12px;
+      margin-top: -250px;
+    }
+    .p-eq {
+      font-size: 32px;
+      color: #fcfaf9;
+    }
+    .get-eqspert {
+      font-size: 18px;
+      color: #fcfaf9;
+    }
+    .month {
+      display: flex;
+      align-items: center;
+    }
+    .price {
+      font-size: 65px;
+      color: #fcfaf9;
+    }
+    .mon {
+      font-size: 20px;
+      color: #fcfaf9;
+    }
+    .ios {
+      font-size: 18px;
+      color: #fcfaf9;
+    }
+    .for-ipon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #191826;
+      width: 296px;
+      height: 61px;
+      border-radius: 12px;
+    }
+    .ipon-logo {
+      max-width: 100%;
+    }
+    .andr {
+      font-size: 18px;
+      color: #191826;
+    }
+    .for-android {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 296px;
+      height: 61px;
+      border-radius: 12px;
+      background-color: #fcfaf9;
+      margin-bottom: 5%;
+      margin-top: 16px;
+    }
+    .orang-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 375px;
+      z-index: 1;
+      position: relative;
+    }
+    .all-rights {
+      font-size: 16px;
+      color: #191826;
+    }
+    .last-card {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 5%;
+    }
+    .bg-pat1 {
+      display: none;
+    }
+    @media screen and (min-width: 768px) {
+      .bg-pat1 {
+        display: inline;
+      }
+      .logo1 {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+      .logo {
+        padding-top: 5%;
+      }
+      .head {
+        font-size: 64px;
+      }
+      .system-oudio {
+        font-size: 18px;
+      }
+      .orang-card {
+        width: 400px;
+        margin-left: 40%;
+        margin-top: -500px;
+      }
+      .tele {
+        padding-right: 300px;
+      }
+      .last-card {
+        justify-content: space-around;
+      }
+    }
+    @media screen and (min-width: 1440px) {
+      .orang-card {
+        margin-left: 55%;
+      }
+      .tele {
+        padding-right: 360px;
+      }
+      .main {
+        max-width: 100%;
+        margin-top: -180px;
+      }
+      .head {
+        font-size: 88px;
+      }
+      .system-oudio {
+        font-size: 20px;
+      }
+    }
+  </style>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="logo1">
+      <img class="logo" src="./logo.svg" />
+
+      <div class="heading">
+        <h1 class="head">
+          We make your <br />
+          music sound<br />
+          extraordinary.
+        </h1>
+        <p class="system-oudio">
+          A system audio equalizer specifically<br />
+          designed for Android and iOS. Freely tune the <br />
+          way your music sounds with a professional<br />
+          grade parametric EQ & volume mixer. Control<br />
+          bass, mids, treble, gain control, reverb, and<br />
+          more!
+        </p>
+      </div>
+      <img class="bg-pat1" src="bg-pattern-1.svg" />
+    </div>
+
+    <div class="ilustration">
+      <div class="ilust-child">
+        <img class="bg-patern" src="./bg-pattern-2.svg" />
+        <div class="tele">
+          <img class="main" src="./illustration-app.png" />
+        </div>
+      </div>
+    </div>
+    <div class="orang-card">
+      <h1 class="p-eq">Premium EQ</h1>
+      <p class="get-eqspert">
+        Get expert-level control with a robust<br />
+        equalizer, volume mixer, and spatial<br />
+        audio. Take your listening experience<br />
+        to a whole new level and access all<br />
+        our incredible features!
+      </p>
+      <div class="month">
+        <h2 class="price">$4</h2>
+        <h3 class="mon">/month</h3>
+      </div>
+
+      <div class="for-ipon">
+        <img class="ipon-logo" src="./icon-apple.svg" />
+        <h3 class="ios">iOS Download</h3>
+      </div>
+      <div class="for-android">
+        <img class="android-logo" src="./icon-android.svg" />
+        <h3 class="andr">Android Dowonload</h3>
+      </div>
+    </div>
+
+    <div class="last-card">
+      <div class="equalizer">
+        <img class="logo" src="./logo.svg" />
+      </div>
+      <p class="all-rights">
+        All rights reserved © Equalizer 2021<br />
+        Have any problems? Contact us via social media or<br />
+        email us at equalizer@example.com
+      </p>
+
+      <div class="icons">
+        <img class="fb" src="./icon-facebook.svg" />
+        <img class="inst" src="./icon-instagram.svg" />
+        <img class="twit" src="./icon-twitter.svg" />
+      </div>
+    </div>
   </body>
 </html>
