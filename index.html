@@ -1,12 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exámen</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hurricane&family=Lato:wght@300&family=Mukta:wght@200&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <nav class="navbar">
+        <img src="logo2.png" alt="" width="50px" />
+
+        <ul class="nav-links">
+          <li>
+            <a href="#Inicio">Inicio</a>
+          </li>
+          <li>
+            <a href="#tituloPractico">Teórico</a>
+          </li>
+          <li>
+            <a href="#tituloTeorico">Práctico</a>
+          </li>
+        </ul>
+      </nav>
+    </header> 
+    <h1 class="title" id="Inicio">
+      Integrador Programación II
+    </h1>
+    <div class="hero">
+      <p>
+        El siguiente exámen integrador, tendrá por objetivo poder utilizar las
+        herramientas aprendidas a lo largo del año en Programación. Aunque cabe
+        destacar que estas mismas herramientas las utilizamos siempre en nuestra
+        práctica, hablamos de <b> HTML, CSS y JavaScript. </b>
+        <br />
+        De todas formas, acá podemos ver un listado mas detallado:  
+        <ul>
+          <li>Estructura documento HTML</li>
+          <li>CSS: Selectores y edición de estilos</li>
+          <li>JavaScript: Variables, Condicionales, Repetición y DOM</li>
+        </ul>
+        El exámen sólo será práctico, en este punto nos vamos a enfocar 
+        en poder utilizar bien las herramientas vistas en clase.
+      </p>
+      <div class="examen">
+        <h1 id="tituloPractico">Práctico</h1>
+      </div>
+      <div id="consignasExamen">  
+        <p><b>El problema es el siguiente, tenemos un sitio web de una famosa 
+            pizzeria de santa rosa, pero los estilos no cargan y no funciona
+          algunas de las opciones básicas, tendremos que arreglar el sitio
+        para que funcione correctamente</b></p>
+          <ol>
+            <li>Corregir el documento html para que puedan cargar los estilos 
+              y el script de JavaScript </li>
+            <li>A los estilos agregar:  </li>
+            <ol  type="a">
+                <li>Nombre de la empresa.</li>
+                <li>Menu seleccionado.</li>
+                <li>Foto de las variedades de pizza junto a su descripción</li>
+                <li>Editar el documento con css. </li>
+            </ol>
+            <li>Agregar botones que cambien las opciones del menu, mostrando otros tipos de pizza junto a su descripción</li>
+            <li>Agregar un boton, donde muestre el costo de las pizzas en un alert() o console.log(). </li>
+            <li>Siguiendo el ejercicio anterior, vamos a mejorarlo. El usuario debe ingresar el nombre de la variedad que quiere, y mostrar el precio en un alert() o console.log().</li>
+            <li>Crear una función que cargue distintos sabores de pizza en un arreglo, y que el usuario decida cuando deja de cargar o no.</li>
+        </ol>  
+      <!-- Esto es un comentario en HTML
+        <div class="examen">
+          <h1 id="tituloTeorico">Teórico</h1>
+        </div>
+        <div class="examen">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdcl2H-utV3c08E-AlodbTsKfQ-V6dKtWpb9EWH2QLXBP_npQ/viewform?embedded=true" width="640" height="720" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+        </div>
+      -->
+      </div>  
+      <div class="botones">
+        <button>Mostrar reglas para entregar
+
+        </button>         
+      </div>
+      <p id="normas">
+
+      </p>
+      </div>
   </body>
+  <script src="script.js"></script>
 </html>
