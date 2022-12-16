@@ -1,13 +1,24 @@
-let teorico = document.querySelector("#botonTeorico");
-let formulario = document.querySelector("#formu");
-let consignas = document.querySelector("#parrafoConsignas");
-
-teorico.onclick = function () {
-  formulario.src = " ";
-  formulario.width = "0px";
-  formulario.height = "0px";
-  consignas.textContent = " ";
+let flag = true;
+console.log(!flag);
+let boton = document.querySelector("button");
+let parrafo = document.querySelector("#normas");
+boton.onclick = function () {
+  if (flag) {
+    parrafo.textContent =
+      "Recuerden que, tienen que utilizar nombres de elementos SIGNIFICATIVOS de forma obligatoria. Entregar un archivo .zip que de nombre tenga su apellido (Ej: Rojas.zip), en la tarea de classroom, el cual contenga los documentos HTML, CSS Y JS. Pueden utilizar los videos subidos a classroom en el caso que necesiten ayuda. ";
+    flag = false;
+    boton.textContent = "Ocultar reglas para entregar";
+  } else {
+    parrafo.textContent = "";
+    flag = true;
+    boton.textContent = "Mostrar reglas para entregar";
+  }
 };
+
+let c = 0;
+while (c < 10) {
+  c++;
+}
 
 /* 
 1) Diseñar un sitio web que muestre información acerca de un auto en particular: 
