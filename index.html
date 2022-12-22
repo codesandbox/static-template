@@ -1,12 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <style>
+      body {
+        background-color: #0d192c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .div1 {
+        width: 350px;
+        background-color: #15263f;
+        border-radius: 20px;
+        padding: 15px;
+      }
+      .image {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .text1 {
+        font-family: "outfit";
+        line-height: 28px;
+        color: #ffffff;
+      }
+      .paragrap {
+        color: #8bacd9;
+      }
+      .price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .eth {
+        display: flex;
+        align-items: center;
+        color: #8bacd9;
+      }
+      .day {
+        display: flex;
+        align-items: center;
+        color: #8bacd9;
+      }
+      hr {
+        width: 302px;
+        height: 1px;
+        border: 0;
+        background-color: #2e405a;
+      }
+      .avatar-text {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-family: "Outfit";
+        font-size: 16px;
+      }
+      .avatar-image {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+      }
+      .saxeli {
+        display: inline;
+        margin-left: 10px;
+        color: #8bacd9;
+      }
+      .saxeli2 {
+        display: inline;
+        margin-left: 5px;
+        color: white;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="div1">
+      <img class="image" src="image-equilibrium.jpg" />
+      <h1 class="text1">
+        Equilibrium #3429
+      </h1>
+      <p class="paragrap">
+        Our Equilibrium collection promotes balance and calm.
+      </p>
+      <div class="price">
+        <div class="eth">
+          <img src="icon-ethereum.svg" alt="ethereum icone" />
+
+          <h2>
+            0.041 ETH
+          </h2>
+        </div>
+        <div class="day">
+          <img src="icon-clock.svg" alt="clock" />
+          <h2>
+            3 days left
+          </h2>
+        </div>
+      </div>
+      <hr />
+      <div class="avatar-text">
+        <img class="avatar-image" src="image-avatar.png" alt="photo" />
+        <p class="saxeli">Creation of</p>
+        <p class="saxeli2">Jules Wyvern</p>
+      </div>
+    </div>
   </body>
 </html>
