@@ -1,12 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    
+    <form action="">
+    <div class="topic">
+    <div class="input_box">
+    <span class="name">Full Name</span>
+    <input type="text" placeholder="Enter your name" required>
+    </div>
+    <div class="input_box">
+    <span class="name">Username</span>
+    <input type="text" placeholder="Enter your username" required>
+    </div>
+    <div class="input_box">
+    <span class="name">Email</span>
+    <input type="text" placeholder="Enter your email" required>
+    </div>
+    <div class="input_box">
+    <span class="name">Phone Number</span>
+    <input type="text" placeholder="Enter your phone number" required>
+    </div>
+    <div class="input_box">
+    <span class="name">Password</span>
+    <input type="text" placeholder="Enter your password" required>
+    </div>
+    <div class="input_box">
+    <span class="name">Confirm Password</span>
+    <input type="text" placeholder="Confirm password" required>
+    </div>
+    </div>
+    <div class="gender">
+      <span class="gender-head">Gender</span>
+      <input type="radio" name="category" id="dot-1">
+      <input type="radio" name="category" id="dot-2">
+      <input type="radio" name="category" id="dot-3">
+      <div class="gender_detail">
+        <label for="dot-1">
+          <span class="dot one"></span>
+          <span class="category">Male</span>
+        </label>
+        <label for="dot-2">
+          <span class="dot two"></span>
+          <span class="category">Female</span>
+        </label>
+        <label for="dot-3">
+          <span class="dot three"></span>
+          <span class="category">Prefer not to say</span>
+        </label>
+      </div>
+    </div>
+    <div class="button">
+      <input type="submit" value="Register">
+    </div>
+  </form>
+  </div>
+</body>
 </html>

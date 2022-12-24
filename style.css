@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #72a6b8, #940781);
+}
+
+.container {
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px 30px;
+  max-width: 700px;
+  width: 100%;
+}
+.container .title {
+  font-size: 24px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #72a6b8, #940781);
+}
+.container .topic {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+form .topic .input_box {
+  width: calc(100% / 2 - 20px);
+}
+.topic .input_box input {
+  height: 45px;
+  width: 100%;
+  margin: 5px 0;
+  padding-left: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.topic .input_box input:focus,
+.topic .input_box input:valid {
+  border-color: #72a6b8;
+}
+
+.gender-head {
+  font-size: 24;
+  font-weight: 500;
+}
+form .gender .gender_detail {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+form .gender .gender_detail label {
+  display: flex;
+}
+.gender .gender_detail label .dot {
+  height: 18px;
+  width: 18px;
+  margin: 0 5px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  border: 5px solid transparent;
+}
+#dot-1:checked ~ .gender_detail label .one,
+#dot-2:checked ~ .gender_detail label .two,
+#dot-3:checked ~ .gender_detail label .three {
+  border-color: #d9d9d9;
+  background: #940781;
+}
+form input[type="radio"] {
+  display: none;
+}
+
+form .button input {
+  height: 45px;
+  margin: 20px 0;
+}
+
+form .button input {
+  width: 100%;
+  color: white;
+  outline: none;
+  font-size: 22px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: none;
+  background: linear-gradient(-135deg, #72a6b8, #940781);
+}
+form .button input:hover {
+  background: linear-gradient(135deg, #72a6b8, #940781);
+}
