@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>highlight.js</title>
+
+    <!-- highlight 파일 불러오기-->
+    <link
+      rel="stylesheet"
+      href="src/highlight/styles/tokyo-night-dark.min.css"
+    />
+    <script src="src/highlight/highlight.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("pre code").forEach((block) => {
+          hljs.highlightBlock(block);
+        });
+      });
+    </script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>JavaScript</h1>
+    <pre><code lang="javascript">const num = 10; 
+console.log(num);
+</code></pre>
+
+    <h1>Java</h1>
+    <pre><code lang="java">public static void main(String[] args) {
+  System.out.println("Hello, Java!");
+}
+</code></pre>
   </body>
 </html>
