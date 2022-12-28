@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap");
+/* || RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/* End */
+
+/* || UTILITY CLASSES */
+.offscreen {
+  position: absolute;
+  left: 100000px;
+}
+.nowrap {
+  white-space: nowrap;
+}
+
+/*End  */
+
+/* || Varaibles */
+:root {
+  /* Color */
+  --BTN--HOVER: hsl(209, 33%, 12%);
+  --BTN--COLOR: hsl(223, 87%, 63%);
+  --BTN--SHADOW: hsl(223, 100%, 88%);
+  --ERROR--COLOR: hsl(354, 100%, 66%);
+  --HIGHLIGHT-COLOR: hsl(0, 0%, 59%);
+
+  /*Font */
+  --FS: 20px;
+  --FF: Libre Franklin;
+}
+/* End */
+
+/* || GENERAL STYLES */
+html,
+body {
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+body {
+  font-family: var(--FF);
+  font-size: var(--FS);
+}
+header {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin-top: 50px;
+  padding: 25px;
+  text-align: center;
+}
+header figure img {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+header figcaption {
+  display: none;
+}
+header h1 {
+  font-size: 26px;
+  font-weight: bolder;
+  margin: 15px;
+}
+header h1 span {
+  color: var(--HIGHLIGHT-COLOR);
+  font-weight: lighter;
+}
+header p {
+  color: rgba(0, 0, 0, 0.849);
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+header form label {
+  display: none;
+}
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+
+input {
+  border-radius: 30px;
+  border: 0.1px solid var(--BTN--COLOR);
+  cursor: pointer;
+  margin-left: 25px;
+  margin: 30px;
+  padding: 14px;
+  width: 280px;
+}
+
+input::placeholder {
+  color: var(--BTN--SHADOW);
+  padding: 10px;
+}
+
+button {
+  background: var(--BTN--COLOR);
+  border-color: transparent;
+  border-radius: 30px;
+  box-shadow: 0.1px 8px 0 var(--BTN--SHADOW);
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  margin-left: 30px;
+  padding: 14px;
+  width: 280px;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+main {
+  margin-bottom: 90px;
+  margin-top: 30px;
+}
+
+main h2 {
+  display: none;
+}
+
+main figcaption {
+  display: none;
+}
+main figure {
+  margin: 1.5em 1.5em;
+}
+footer figure {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+footer img {
+  background-color: #fff;
+  border-radius: 50%;
+  border: 0.1px #fff ridge;
+  padding-bottom: 4.5px;
+  padding-left: 4.5px;
+  padding-right: 4.5px;
+  padding-top: 4.5px;
+}
+
+footer figcaption {
+  display: none;
+}
+
+footer section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 25px;
+  margin-left: 6.3em;
+  margin-right: 6.3em;
+}
+
+footer p {
+  color: var(--HIGHLIGHT-COLOR);
+  font-size: 12px;
+  margin-bottom: 5px;
+  padding: 2px;
+  text-align: center;
+}
+/* // BLOCK */
+
+/* Footer */
+.footer__img {
+  background-color: var(--BTN--COLOR);
+  padding: 0.5px 0.3px 0.5px 0.5px;
+}
+
+.footer__img:hover {
+  background-color: var(--BTN--COLOR);
+  border-radius: 50%;
+}
+
+/* End */
+
+/* Error & Validation Message Style */
+.error {
+  color: var(--ERROR--COLOR);
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 500;
+  margin-top: -20px;
+}
+.error input {
+  border-color: var(--ERROR--COLOR);
+  margin-bottom: 30px;
+  margin-left: 25px;
+  margin-top: 45px;
+  outline: var(--ERROR--COLOR) 0.1px;
+}
+
+.error.header__div {
+  margin-bottom: 22px;
+}
+.success input {
+  border-color: var(--BTN--COLOR);
+  outline: var(--BTN--COLOR) 0.1px;
+}
+/* End */
+
+/* // MEDIA QUARY FOR DESKTOP */
+@media screen and (min-width: 1200px) {
+  form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  header form input {
+    margin-right: -130px;
+    width: 460px;
+  }
+  button {
+    box-shadow: 0.1px 5px 0 var(--BTN--SHADOW);
+    height: 45px;
+    margin-left: 140px;
+    margin-top: 25px;
+    width: 180px;
+  }
+  button:hover {
+    background-color: hsla(223, 87%, 63%, 0.733);
+  }
+  header h1 {
+    font-size: 56px;
+  }
+
+  main figure {
+    margin-left: 17em;
+    margin-right: 17em;
+    margin-top: 45px;
+  }
+  footer {
+    margin-top: -35px;
+  }
+  footer section {
+    margin-left: 29em;
+    margin-right: 29em;
+  }
+  footer img:hover {
+    background-color: papayawhip;
+    border-radius: 50%;
+    filter: invert(1);
+  }
+
+  /* Error & Validation Message Style for Desktop */
+
+  .error {
+    color: var(--ERROR--COLOR);
+    font-size: 16px;
+    font-style: italic;
+    margin-top: -25px;
+    white-space: nowrap;
+  }
+  .error input {
+    border-color: var(--ERROR--COLOR);
+    margin-right: -130px;
+    margin-top: 50px;
+    outline: var(--ERROR--COLOR) 0.1px;
+    width: 455px;
+  }
+  /* End */
+  .attribution a:hover {
+    color: var(--BTN--HOVER);
+  }
+}
+
+/* END */
