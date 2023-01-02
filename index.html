@@ -1,12 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+    <title>Instagram Clone Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- sidebar -->
+    <div class="sidebar">
+        <a href="#" class="logo">
+            <img src="img/logo.png" alt="logo">
+        </a>
+        <!-- profile Image -->
+        <div class="profile">
+            <div class="profile-img">
+                <img src="img/profile.jpg" alt="profile">
+            </div>
+            <div class="name">
+                <h1>Sergio Lissanou</h1>
+                <img src="img/verify.png" alt="verify">
+            </div>
+            <span>@lissanou</span>
+        </div>
+
+        <!-- About -->
+        <div class="about">
+            <!-- Box 1-->
+            <div class="box">
+                <h3>54</h3>
+                <span>Posts</span>
+            </div>
+            <!-- Box 2-->
+            <div class="box">
+                <h3>14.4k</h3>
+                <span>Followers</span>
+            </div>
+            <!-- Box 1-->
+            <div class="box">
+                <h3>13</h3>
+                <span>Following</span>
+            </div>
+        </div>
+
+        <!-- Menu -->
+        <div class="menu">
+            <a href="#" class="active">
+                <span class="icon">
+                    <i class="fa-solid fa-rss"></i>
+                </span>
+                Feed
+            </a>
+            <a href="#">
+                <span class="icon">
+                    <i class="fa-regular fa-bell"></i>
+                </span>
+                Notification
+            </a>
+            <a href="#">
+                <span class="icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                Explore
+            </a>
+            <a href="#">
+                <span class="icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </span>
+                Message
+            </a>
+            <a href="#">
+                <span class="icon">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </span>
+                Direct
+            </a>
+            <a href="#">
+                <span class="icon">
+                    <i class="fa-solid fa-chart-simple"></i>
+                </span>
+                Stats
+            </a>
+            <a href="#">
+                <span class="icon">
+                    <i class="fa-solid fa-gear"></i>
+                </span>
+                Settings
+            </a>
+            <a href="#">
+                <span class="icon">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </span>
+                Logout
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Home -->
+    <div class="main-home">
+        <div class="header">
+            <!-- Search -->
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" name="" id="" placeholder="Search">
+            </div>
+            <div class="header-content">
+                <i class="fa-regular fa-bell"></i>
+                <i class="fa-solid fa-envelope"></i>
+                <!-- Button -->
+                <a href="#" class="btn">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <div class="btn-text">
+                        Add Photos
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="stories-title">
+            <h1>Stories</h1>
+            <a href="#" class="btn">
+                <i class="fa-regular fa-circle-play"></i>
+                <div class="text">
+                    Watch all
+                </div>
+            </a>
+        </div>
+        <div class="stories">
+            <!-- Stories 1-->
+            <div class="stories-img color">
+                <img src="img/profile.jpg" alt="profile">
+                <div class="add">+</div>
+            </div>
+            <!-- Stories 2-->
+            <div class="stories-img">
+                <img src="img/profile2.jpg" alt="profile">
+            </div>
+            <!-- Stories 3-->
+            <div class="stories-img">
+                <img src="img/profile3.jpg" alt="profile">
+            </div>
+            <!-- Stories 4-->
+            <div class="stories-img">
+                <img src="img/profile4.jpg" alt="profile">
+            </div>
+            <!-- Stories 5-->
+            <div class="stories-img">
+                <img src="img/profile5.jpg" alt="profile">
+            </div>
+            <!-- Stories 6-->
+            <div class="stories-img">
+                <img src="img/profile6.jpg" alt="profile">
+            </div>
+            <!-- Stories 7-->
+            <div class="stories-img">
+                <img src="img/profile7.jpg" alt="profile">
+            </div>
+            <!-- Stories 8-->
+            <div class="stories-img">
+                <img src="img/profile8.jpg" alt="profile">
+            </div>
+            <!-- Stories 9-->
+            <div class="stories-img">
+                <img src="img/profile9.jpg" alt="profile">
+            </div>
+            <!-- Stories 10-->
+            <div class="stories-img">
+                <img src="img/profile10.jpg" alt="profile">
+            </div>
+        </div>
+        <div class="feed">
+            <h1>Feed</h1>
+            <div class="feed-text">
+                <h2>Latest</h2>
+                <span>Popular</span>
+            </div>
+        </div>
+        <div class="main-post">
+            <!-- Box 1-->
+            <div class="post-box">
+                <img src="img/post1.jpg" alt="post">
+                <div class="post-info">
+                    <div class="post-profile">
+                        <div class="post-img">
+                            <img src="img/profile10.jpg" alt="profile">
+                        </div>
+                        <h3>Marquee B</h3>
+                    </div>
+                    <div class="likes">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>14.4k</span>
+                        <i class="fa-regular fa-comment"></i>
+                        <span>80</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Box 2-->
+            <div class="post-box">
+                <img src="img/post2.jpg" alt="post">
+                <div class="post-info">
+                    <div class="post-profile">
+                        <div class="post-img">
+                            <img src="img/profile8.jpg" alt="profile">
+                        </div>
+                        <h3>Reny Spark</h3>
+                    </div>
+                    <div class="likes">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>20.10k</span>
+                        <i class="fa-regular fa-comment"></i>
+                        <span>200</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Box 3-->
+            <div class="post-box">
+                <img src="img/post3.jpg" alt="post">
+                <div class="post-info">
+                    <div class="post-profile">
+                        <div class="post-img">
+                            <img src="img/profile4.jpg" alt="profile">
+                        </div>
+                        <h3>Stan Kilan</h3>
+                    </div>
+                    <div class="likes">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>5.4k</span>
+                        <i class="fa-regular fa-comment"></i>
+                        <span>20</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Box 4-->
+            <div class="post-box">
+                <img src="img/profile3.jpg" alt="post">
+                <div class="post-info">
+                    <div class="post-profile">
+                        <div class="post-img">
+                            <img src="img/profile2.jpg" alt="profile">
+                        </div>
+                        <h3>Cary Gen</h3>
+                    </div>
+                    <div class="likes">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>8.4k</span>
+                        <i class="fa-regular fa-comment"></i>
+                        <span>150</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Box 5-->
+            <div class="post-box">
+                <img src="img/profile7.jpg" alt="post">
+                <div class="post-info">
+                    <div class="post-profile">
+                        <div class="post-img">
+                            <img src="img/profile3.jpg" alt="profile">
+                        </div>
+                        <h3>Len Kargard</h3>
+                    </div>
+                    <div class="likes">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>111.4k</span>
+                        <i class="fa-regular fa-comment"></i>
+                        <span>400</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Box 6-->
+            <div class="post-box">
+                <img src="img/profile9.jpg" alt="post">
+                <div class="post-info">
+                    <div class="post-profile">
+                        <div class="post-img">
+                            <img src="img/profile6.jpg" alt="profile">
+                        </div>
+                        <h3>Maki Pay</h3>
+                    </div>
+                    <div class="likes">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>47.4k</span>
+                        <i class="fa-regular fa-comment"></i>
+                        <span>90</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
