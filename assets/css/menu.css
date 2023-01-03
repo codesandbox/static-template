@@ -1,0 +1,179 @@
+.openMenu {
+  position: absolute;
+  color: #333;
+  top: 7px;
+  left: 5px;
+  font-size: 2rem;
+  padding: 5px;
+}
+
+#input:checked ~ .modal_overplay {
+  display: block;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 55%;
+  max-width: 300px;
+  opacity: 0.5;
+  transform: translateX(-100%);
+  transition: transform linear 0.15s, opacity linear 0.15s;
+  /* animation: 0.3s linear forwards slideIn; */
+  background: #ffffff;
+  z-index: 2;
+}
+#input:checked ~ .menu {
+  transition: transform linear 0.3s, opacity linear 0.3s;
+  transform: translateX(0%);
+  opacity: 1;
+  /* background-color: #333333; */
+}
+.menu-header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+.menu-header-user {
+  display: flex;
+  align-items: center;
+}
+.menu-header-user h2 {
+  margin-left: 8px;
+}
+.crown-icon {
+  display: none;
+  font-size: 1.4rem;
+  color: #f1c40f;
+  margin-left: 5px;
+}
+.isVip .crown-icon {
+  display: block;
+}
+.image-frame {
+  height: 45px;
+  width: 45px;
+  margin-left: 10px;
+}
+.image-frame img {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.closeMenu {
+  color: #000;
+  font-size: 2rem;
+  padding: 5px;
+  margin-right: 10px;
+}
+.menu-body {
+  position: relative;
+  height: calc(100% - 50px);
+  padding: 15px 13px;
+}
+/* .menu-list {
+  height: 0;
+  opacity: 0;
+} */
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 40px;
+
+  list-style-type: none;
+  font-size: 1.6rem;
+  font-weight: 500;
+  /* padding: 8px 0; */
+}
+/* .list-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  right: 8px;
+  height: 1px;
+  background-color: #999;
+} */
+.list-item a {
+  text-decoration: none;
+  color: #333;
+  /* margin-left: 15px; */
+}
+#songListSelect {
+  display: inline-block;
+  padding: 5px 0;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 50px;
+  margin-left: auto;
+}
+.menu-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 13px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+@keyframes slideIn {
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* info */
+.info-header {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+.menu-back-btn {
+  border: none;
+  background-color: transparent;
+  padding: 8px;
+}
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+.user-img {
+  width: 150px;
+  height: 150px;
+}
+.user-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+.user-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000;
+}
+.user-jobs {
+  font-size: 1.6rem;
+  color: #333;
+}
+.user-graduate {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+.user-contact {
+  margin-top: 20px;
+  font-size: 2rem;
+}

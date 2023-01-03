@@ -1,12 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HD Player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="stylesheet" href="/assets/css/timeSlider.css" />
+    <link rel="stylesheet" href="/assets/css/switch.css" />
+    <link rel="stylesheet" href="./assets/css/darktheme.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+    <link rel="stylesheet" href="./assets//css/modal.css" />
+    <link rel="stylesheet" href="./assets//css/menu.css" />
+    <script type="module" src="/assets/main.js" defer></script>
+    <!-- <script src="/assets/js/handleMenu.js" defer></script> -->
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="player">
+      <div class="dashboard">
+        <!-- header -->
+        <h4></h4>
+        <h2></h2>
+        <label class="openMenu" for="input">
+          <span><i class="fa-solid fa-bars"></i></span>
+        </label>
+
+        <!-- CD -->
+        <div class="cd">
+          <div
+            class="cd-img"
+            style="background-image: url(assets/images/cd-thumb.jpg);"
+          ></div>
+        </div>
+
+        <!--Control -->
+        <div class="control">
+          <div class="repeat-btn btn">
+            <i class="fa-solid icon fa-repeat"></i>
+          </div>
+          <div class="prev-btn btn">
+            <i class="fa-solid icon fa-backward-step"></i>
+          </div>
+          <div class="play-btn btn">
+            <i class="fa-solid icon fa-play play-icon"></i>
+            <i class="fa-solid icon fa-pause pause-icon"></i>
+          </div>
+          <div class="next-btn btn">
+            <i class="fa-solid icon fa-forward-step"></i>
+          </div>
+          <div class="random-btn btn">
+            <i class="fa-solid icon fa-shuffle"></i>
+          </div>
+        </div>
+        <div class="volumeSlider Slider">
+          <div class="volumeSliderCurrent"></div>
+          <i class="volumeSliderHolder fa-solid fa-heart"></i>
+        </div>
+        <div class="timeSlider Slider">
+          <div class="timeSliderCurrent"></div>
+          <i class="timeSliderHolder fa-solid fa-heart"></i>
+        </div>
+        <audio class="audio" src=""></audio>
+      </div>
+
+      <div class="playlist">
+        <ul class="song-list"></ul>
+      </div>
+      <div class="go-top-btn">
+        <i class="fa-solid fa-arrow-up gt-btn"></i>
+      </div>
+    </div>
+
+    <input id="input" type="checkbox" style="display: none;" />
+
+    <label for="input" class="modal_overplay"></label>
+    <nav class="menu">
+      <div class="menu-header">
+        <div class="menu-header-user isVip">
+          <div class="image-frame">
+            <img src="./assets/images/avatar.jpg" alt="" />
+          </div>
+          <h2>datnh</h2>
+          <span class="crown-icon"><i class="fa-solid fa-crown"></i></span>
+        </div>
+        <label for="input">
+          <span><i class="fa-solid fa-xmark closeMenu"></i></span>
+        </label>
+      </div>
+      <div class="menu-body">
+        <ul class="menu-list">
+          <li class="list-item">
+            <a href="#">Darkmode</a>
+            <div class="switch">
+              <i class="fa-solid sun theme-icon fa-sun"></i>
+              <i class="fa-solid moon theme-icon fa-moon"></i>
+            </div>
+          </li>
+          <li class="list-item">
+            <a href="#">PlayList</a>
+            <select name="" id="songListSelect">
+              <option value="">Default</option>
+              <option value="pmq">PMQ Music</option>
+              <option value="ngocmai">Ngọc Mai's</option>
+            </select>
+          </li>
+          <li class="list-item"><a href="#">Home</a></li>
+          <li class="list-item toggle-info"><span href="#">Info</span></li>
+        </ul>
+
+        <div class="menu-footer">
+          <p>nguyenhuudat &copy</p>
+        </div>
+      </div>
+    </nav>
+
+    <div class="modal">
+      <div class="modal_body"></div>
+    </div>
   </body>
 </html>
