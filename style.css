@@ -1,0 +1,114 @@
+body {
+  background-color: hsl(30, 38%, 92%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-family: fraunces, sans-serif;
+  margin: 0;
+}
+
+/* main tag CSS */
+main {
+  background-color: white;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  margin: 1rem;
+}
+
+/* images CSS */
+.images {
+  max-width: 100%;
+}
+
+.mb_img {
+  max-width: 100%;
+}
+
+.ds_img {
+  display: none;
+}
+
+/* text CSS */
+.texts {
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  font-family: Montserrat, sans-serif;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.texts > p {
+  color: hsl(228, 12%, 48%);
+  font-family: Montserrat, sans-serif;
+  font-size: 0.85rem;
+}
+
+/* price CSS */
+.price {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.actual {
+  color: hsl(158, 36%, 37%);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.old {
+  color: hsl(228, 12%, 48%);
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+/* button CSS */
+button {
+  width: 100%;
+  background-color: hsl(158, 36%, 37%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.6rem;
+  border-radius: 0.6rem;
+  color: white;
+  font-weight: 700;
+  border: none;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: hsl(158, 36%, 20%);
+}
+
+/* CSS for desktop version */
+@media (min-width: 600px) {
+  .mb_img {
+    display: none;
+  }
+  .ds_img {
+    display: inline-block;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  main {
+    width: 580px;
+    display: flex;
+  }
+}
