@@ -1,12 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>AR</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <script src="./js/aframe.min.js"></script>
+
+    <script src="./js/aframe-ar-nft.js"></script>
+    <script src="./js/gesture-detector.js"></script>
+    <script src="./js/gesture-handler.js"></script>
+
+    <style>
+      #tip {
+        z-index: 9999999999999;
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        color: red;
+        font-size: 18px;
+        padding: 10px;
+      }
+      #tip.found {
+        color: green;
+      }
+    </style>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <a-scene
+      vr-mode-ui="enabled: false;"
+      renderer="logarithmicDepthBuffer: true; precision: medium;"
+      embedded
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+      gesture-detector
+      id="scene"
+    >
+      <a-assets>
+        <a-asset-item id="cat" src="./model/toon_cat_free.glb"></a-asset-item>
+      </a-assets>
+      <a-nft
+        type="nft"
+        url="./data/ramian/ramen-1000px"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5"
+        id="container"
+      >
+        <!-- gltf-model="#none" -->
+        <!-- <a-entity
+          id="bowser-model"
+          position="10 -50 0"
+          scale="0.5 0.5 0.5"
+          class="clickable"
+          gesture-handler
+        >
+        </a-entity> -->
+      </a-nft>
+      <!-- <a-entity
+        id="bowser-model"
+        gltf-model="#cat"
+        position="5 -25 -170"
+        scale="0.2 0.2 0.2"
+        class="clickable"
+        gesture-handler
+      >
+      </a-entity> -->
+
+      <a-entity camera id="carmera"></a-entity>
+      <!-- <a-text value="lost" id="tip"></a-text> -->
+    </a-scene>
+    <div id="tip">lost</div>
+    <script>
+      const model = document.getElementById("container");
+      const tip = document.getElementById("tip");
+      const camera = document.getElementById("camera");
+      const scene = document.getElementById("scene");
+      let hasFound = false;
+
+      model?.addEventListener("markerFound", function () {
+        if (!hasFound) {
+          scene.insertAdjacentHTML(
+            "beforeend",
+            `<a-entity
+        id="bowser-model"
+        gltf-model="#cat"
+        position="5 -25 -170"
+        scale="0.2 0.2 0.2"
+        class="clickable"
+        gesture-handler
+      >
+      </a-entity>`
+          );
+          hasFound = true;
+        }
+        tip.classList.add("found");
+        tip.innerHTML = "found";
+        // tip.setAttribute("value", found);
+        // model.insertAdjacentHTML("beforeend", bola(0));
+      });
+      model?.addEventListener("markerLost", function () {
+        tip.classList.remove("found");
+        tip.innerHTML = "lost";
+        // tip.setAttribute("value", found);
+        // camera.remove();
+        // scene.insertAdjacentHTML("beforeend", bola(-5));
+      });
+      function bola(zaxis) {
+        // if bola exist, remove
+        if (document.querySelector("a-sphere")) {
+          let bol = document.querySelector("a-sphere");
+          bol.parentNode.removeChild(bol);
+        }
+        // template literal to create object, z axis for marker = 0, for scene = -5
+        // var bola = `<a-sphere position="0 0 ${zaxis}" color="red" radius="0.5"></a-sphere>`;
+        // var bola = `<a-gltf-model src="#cat"></a-gltf-model>`;
+        var bola = `<a-entity
+        id="bowser-model"
+        gltf-model="#cat"
+        position="5 -25 -170"
+        scale="0.2 0.2 0.2"
+        class="clickable"
+        gesture-handler
+      >
+      </a-entity>`;
+        return bola;
+      }
+    </script>
   </body>
 </html>
