@@ -1,12 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Youtube Downloader</title>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/thelevicole/youtube-to-html5-loader@2.0.0/dist/YouTubeToHtml5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <div class="logo">
+        Youtube downloader
+        <span
+          class="fa-stack fa-3x"
+          style="font-family: FontAwesome; font-size: 150%;"
+          ><span class="fa-stack-1x" style="color: red;">&#xf16a;</span
+          ><span class="fa-stack-2x" style="font-size: 75%;"
+            >&#xf019;</span
+          ></span
+        >
+      </div>
+      <div class="input-group mb-3">
+        <input
+          class="form-control"
+          id="video_url"
+          placeholder="Enter video url"
+          type="text"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-success" id="download_btn" type="submit">
+            Download <span style="font-family: FontAwesome;">&#xf019;</span>
+          </button>
+        </div>
+      </div>
+      <div class="alert alert-warning alert-dismissible fade show">
+        <button class="close" data-dismiss="alert" type="button">
+          &times;
+        </button>
+        <strong>Warning:</strong> You CANT download Songs
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        id="error01"
+        style="display: none;"
+      >
+        <button
+          class="close"
+          onclick="$('#error01').css({'opacity':'0'});setTimeout(function(){$('#error01').css({'display':'none'});$('#error01').css({'opacity':'1'});}, 150)"
+          type="button"
+        >
+          &times;
+        </button>
+        <strong>Error:</strong> Invaild Url.
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        id="error02"
+        style="display: none;"
+      >
+        <button
+          class="close"
+          onclick="$('#error02').css({'opacity':'0'});setTimeout(function(){$('#error02').css({'display':'none'});$('#error02').css({'opacity':'1'});}, 150)"
+          type="button"
+        >
+          &times;
+        </button>
+        <strong>Error:</strong> Can't connect to server or video does not exist.
+      </div>
+      <div class="card" id="video_details" style="display: none;">
+        <div class="card-header" id="video_title"></div>
+        <div class="card-body" id="vid_dt">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg">
+          <img alt="" id="video_thumbnail" src="" style="width: 300px;" />
+        </div>
+
+        <div class="col-sm">
+          <div id="video_channel"></div>
+          <br />
+          <div
+            id="video_description"
+            style="
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              width: 600px;
+            "
+          ></div>
+          <div id="video_tags"></div>
+        </div>
+      </div>
+      <div style="text-align: center;">
+        <button class="btn btn-success" id="play">
+          Play <span style="font-family: FontAwesome;">&#xf04b;</span>
+        </button>
+        <button class="btn btn-success" id="download">
+          Download <span style="font-family: FontAwesome;">&#xf019;</span>
+        </button>
+      </div>
+    </div>
+    <video
+      controls=""
+      id="player"
+      onload="alert()"
+      style="display: none;"
+    ></video>
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Download</h4>
+            <button class="close" data-dismiss="modal" type="button">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            Your download link has been created.<br />
+            <br />
+            Click <a id="hyperlink">here</a> to download.<br />
+            <div class="card bg-warning">
+              <div class="card-header"></div>
+              <div class="card-body">
+                <ol></ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function isOverflown(element) {
+        return $(element)[0].scrollHeight > $(element)[0].clientHeight;
+      }
+      $("#video_url").focus();
+      $("#video_url").on("keyup", function (evnt) {
+        if (evnt.key == "Enter") {
+          $("#download_btn").focus();
+          $("#download_btn").click();
+        }
+      });
+      $("#download_btn").on("click", function () {
+        var vid_id = /v=([^&]+)/.exec($("#video_url").val());
+        console.log(vid_id);
+        if (vid_id == undefined || null) {
+          $("#error01").css({
+            display: "block"
+          });
+        } else {
+          var req = fetch(
+            "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=" +
+              vid_id +
+              "&key=AIzaSyC3yvmDMF8ItLKrNJzFWWmjLNuBq63yH8Y"
+          );
+          req
+            .then(function (e) {
+              return e.text();
+            })
+            .then(function (text) {
+              var json = JSON.parse(text);
+              var vid_title = json.items[0].snippet.title;
+              $("#video_details").css({
+                display: "block"
+              });
+              $("#loading").css({
+                display: "block"
+              });
+              $("#video_title").html(vid_title);
+              var vid_thumb = json.items[0].snippet.thumbnails.medium.url;
+              $("#video_thumbnail").attr("src", vid_thumb);
+              var vid_chan = json.items[0].snippet.channelTitle;
+              $("#video_channel").html("<b>Channel:<\/b> " + vid_chan);
+              var vid_des = json.items[0].snippet.description;
+              $("#video_description").html("<b>Description:<\/b> " + vid_des);
+              var vid_tags = json.items[0].snippet.tags;
+              $("#video_tags").html("");
+              $("#video_tags").append("<b>Tags:<\/b> ");
+              for (var i = 0; i < vid_tags.length; i++)
+                $("#video_tags").append(
+                  '<a target="_blank" href="https://www.youtube.com/results?search_query=' +
+                    encodeURIComponent(vid_tags[i]) +
+                    '"><span class="badge badge-info">' +
+                    vid_tags[i] +
+                    "<\/span><\/a> "
+                );
+              $("#player").attr("data-yt2html5", $("#video_url").val());
+              $("#play").attr("disabled", false);
+              $("#download").attr("disabled", false);
+              new YouTubeToHtml5();
+              var vid = document.querySelector("#player"),
+                observer = new MutationObserver((changes) => {
+                  changes.forEach((change) => {
+                    if (change.attributeName.includes("src")) {
+                      $("#loading").css({
+                        display: "none"
+                      });
+                      $("#play").attr("disabled", false);
+                      $("#download").attr("disabled", false);
+                      $("#play").on("click", function () {
+                        window.open(vid.src);
+                      });
+                      $("#download").on("click", function () {
+                        $("#myModal").modal("show");
+                        $("#hyperlink").attr("href", vid.src);
+                        $("#hyperlink").attr("download", vid_title + ".mp4");
+                        $("#hyperlink").attr("title", vid_title + ".mp4");
+                        $("#hyperlink").attr("target", "_blank");
+                      });
+                    }
+                  });
+                });
+              observer.observe(vid, { attributes: true });
+            })
+            .catch(function (e) {
+              $("#error02").css({
+                display: "block"
+              });
+            });
+        }
+      });
+    </script>
   </body>
 </html>
