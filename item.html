@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
+  </head>
+  <body>
+    <div class="box">
+      <div class="box-name">Name product</div>
+
+      <div class="box-screen">
+        <div class="box-info">
+          <div class="box-desc">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
+            incidunt totam eum maxime illum rerum veniam tenetur ullam quas
+            dolores!
+          </div>
+          <div class="box-address">Holon, abarbanel 12</div>
+          <div class="box-salary">12000$</div>
+        </div>
+        <div class="box-map">
+          <div id="map"></div>
+        </div>
+    </div>
+
+
+    <script>
+      mapboxgl.accessToken =
+        "pk.eyJ1Ijoiam9uYXNzY2htZWR0bWFubiIsImEiOiJjam54ZmM5N3gwNjAzM3dtZDNxYTVlMnd2In0.ytpI7V7w7cyT1Kq5rT9Z1A";
+      const map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/mapbox/streets-v12",
+        center: [12.550343, 55.665957],
+        zoom: 8
+      });
+
+      const popup = new mapboxgl.Popup({
+        offset: 30,
+      }).setText('hello')
+
+      const el = document.createElement('div');
+      el.classname = 'marker';
+      el.style.width = '40px';
+      el.style.height = '40px';
+      el.style.borderRadius = '50%';
+      el.style.backgroundImage = `url(https://picsum.photos/seed/picsum/40/40)`
+
+      const marker = new mapboxgl.Marker(el)
+        .setLngLat([12.550343, 55.665957])
+        .setPopup(popup)
+        .addTo(map);
+    </script>
+  </body>
+</html>
+
+<style>
+  #map {
+    width: 100%;
+    height: 400px;
+  }
+
+  .mapboxgl-popup-content{
+    font-size: 20px;
+    padding: 20px;
+    color: green
+  }
+</style>
