@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <style>
+      .container {
+        height: 100px;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .item {
+        border: 1px solid blue;
+      }
+      .item:last-child {
+        margin-bottom: 0;
+      }
+      .input-container {
+        width: 500px;
+        height: 80px;
+      }
+      .rldnrl {
+        width: 100px;
+        height: 100px;
+      }
+      input {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <div class="item">item1</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+    </div>
+    <!-- Inline -->
+    <div class="input-container">
+      <input type="text" />
+    </div>
+    <div class="rldnrl">
+      <input type="button" value="testbutton" />
+    </div>
+    <span>Contents1</span>
+    <span>Contents2</span>
+    <span>Contents3</span>
   </body>
 </html>
