@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Talking Duck</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <header>
+        <img src="talking-duck/Duck-img/logo.png" />
+      </header>
+      <main>
+        <textarea placeholder="Write something here..."></textarea>
+
+        <div class="controls">
+          <button>
+            <img src="talking-duck/Duck-img/play.png" />
+          </button>
+          <div class="pitch-controls">
+            <label>Pitch</label>
+            <input id="pitch-range" type="range" />
+          </div>
+        </div>
+        <figure>
+          <img src="talking-duck/Duck-img/talking-duck-static.png" />
+          <img src="talking-duck/Duck-img/talking-duck-animated.gif" />
+        </figure>
+      </main>
+    </div>
   </body>
 </html>
