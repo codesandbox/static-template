@@ -1,0 +1,80 @@
+:root {
+  --font: Lora, sans-serif;
+  --pink: #f71469;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  color: white;
+  background-image: linear-gradient(to top, var(--pink) -40%, #3535ec 85%);
+  background-attachment: fixed;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  display: grid;
+  padding: 16px;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+header img {
+  margin-bottom: 32px;
+  width: 56px;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  border-radius: 16px;
+  padding: 20px;
+  font-size: 20px;
+  font-family: var(--font);
+  border: none;
+  resize: none;
+  margin-bottom: 32px;
+}
+
+textarea:focus-within {
+  outline: 1px auto var(--pink);
+}
+
+.controls {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 4fr;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  height: 56px;
+  width: 64px;
+  background-color: var(--pink);
+}
+button img {
+  vertical-align: middle;
+}
+
+label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.pitch-controls {
+  margin-bottom: 32px;
+}
+
+#pitch-range {
+  width: 100%;
+  accent-color: white;
+}
