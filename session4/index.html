@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    Session 4
+    <!-- <script src="./script.js"></script> -->
+    <h1>
+      Hey there ....
+    </h1>
+
+    <ul id="name">
+      <li>Utkarsh</li>
+      <li>akash</li>
+      <li>jatin</li>
+      <li>riya</li>
+    </ul>
+
+    <div class="introduction">
+      Hey i am akash student of 5th class I study in kiit world.
+    </div>
+
+    <p id="paragraph">
+      This is a beautiful paragraph
+    </p>
+
+    <p>
+      Thisw is another paragraph
+    </p>
+
+    <script>
+      console.log("Hey there utkarsh");
+
+      // ---------  Element getters ------------
+
+      // // 1. getElementById // 1 element
+
+      // let nameListElement = document.getElementById("name");
+      // console.log(nameListElement);
+      // console.dir(nameListElement);
+
+      // // 4. getElementsByClassName
+      // let introClas = document.getElementsByClassName("introduction");
+      // console.log(introClas);
+
+      // // 2. getElementsByTagName // array like HTML collection
+
+      // const paragraphList = document.getElementsByTagName("p");
+      // const paragraphListArray = Array.from(paragraphList);
+      // console.log(paragraphList);
+      // console.log(paragraphListArray);
+
+      // // 3. QuerySelector
+      // const introduction = document.querySelector(".introduction");
+      // console.log(introduction);
+
+      // const name = document.querySelector("#name");
+      // console.log(name);
+
+      // ---------- ELEMENT editing (Text inside it) -------------
+      // let paragraph = document.getElementById("paragraph");
+      // console.log(paragraph);
+      // console.dir(paragraph);
+      // paragraph.innerHTML = ` <div> this is a basic <b>Paragraph</b> </div> <h1> hey there </h1>`;
+      // dagerous why bec it is used for hacking Xss- scripts
+
+      // let paragraph = document.getElementById("paragraph");
+      // paragraph.textContent = ` this is a basic <b>Paragraph</b> </div> <h1> hey there </h1>
+      // asdamsjdajsdasjdg
+      // asdgsadgasdg
+      // asdgsag
+      // sdg
+      // sdg
+      // asgas
+      // dg
+      // `;
+
+      // let paragraph = document.getElementById("paragraph");
+      // paragraph.innerText = ` this is a basic <b>Paragraph</b> </div> <h1> hey there </h1>
+      // asdamsjdajsdasjdg
+      // asdgsadgasdg
+      // asdgsag
+      // sdg
+      // sdg
+      // asgas
+      // dg
+      // `;
+
+      // ---------- ELEMENT editing (Adding element in the screen) -------------
+      const name = document.querySelector("#name"); // ul
+      const yatinElement = document.createElement("li");
+      yatinElement.innerText = "Yatin";
+
+      console.dir(name);
+
+      // add element
+
+      // way 1 -> innerHTML
+      // name.innerHTML = name.innerHTML + "<li>Yatin</li>";
+
+      // way 2 -> append
+
+      name.append(yatinElement);
+
+      // Activity -1
+
+      // function init() {
+      //   console.log("page loaded");
+      // }
+
+      /// ACTIVITY -2
+
+      function searchPerson(elementId, name) {
+        const listNames = document.getElementById(elementId); // ul
+        const childrens = listNames.children; // HTML COLLECTION [li li li li ]
+        const childrensArr = Array.from(childrens); //[li li li li ]
+
+        for (let i = 0; i < childrensArr.length; i++) {
+          if (childrensArr[i].innerText == name) {
+            console.log("found");
+            return;
+          }
+        }
+
+        console.log("not able to find  out ");
+
+        // console.log(listNames);
+        // console.dir(childrensArr);
+      }
+
+      searchPerson("name", "Utkarshasdasdasdasdsa");
+
+      // init();
+    </script>
+  </body>
+</html>
