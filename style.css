@@ -1,0 +1,274 @@
+body {
+  background-color: white;
+  margin: 0;
+}
+header {
+  width: 100%;
+  height: 15vh;
+  position: fixed; /* sers a fixed la position de la nav*/
+  box-shadow: 0px 5px 5px grey; /* ombre*/
+}
+
+nav {
+  background-color: blueviolet;
+  width: 100%;
+  height: 100%;
+  display: flex; /* les flex box permettent de deplacer le contenant d'une div*/
+  justify-content: space-around;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+
+li {
+  padding-left: 50px; /* le padding est une marge intérieur */
+  padding-right: 50px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 2.25rem; /* pour utiliser les rem on prend la taille de police qu'on
+   veut et on divise par 16*/
+  font-family: Itim, cursive;
+}
+
+.boiteaccueil {
+  display: flex;
+  justify-content: center;
+  column-gap: 100px; /* permet de mettre en colonne et d'espacer*/
+  padding-top: 15vh;
+}
+.texte1 {
+  font-family: Itim, cursive;
+  color: blueviolet;
+  margin-top: 100px; /* le margin entour le padding c'est une sorte de marge aussi */
+  margin-left: 50px;
+}
+
+.fotomoi {
+  border: blueviolet solid 5px;
+  width: 450px;
+  height: 250px;
+  justify-content: flex-end;
+  margin-right: 50px;
+  margin-top: 180px;
+}
+
+.mono {
+  margin-top: 50px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.sous-titre {
+  font-size: 2rem;
+  color: blueviolet;
+  font-family: Itim, cursive;
+}
+
+p {
+  font-size: 1.25;
+}
+
+.comp {
+  height: 85vh;
+}
+.stylcomp {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.titre {
+  text-align: center;
+  color: blueviolet;
+  font-size: 4rem;
+  font-family: Itim, cursive;
+  text-shadow: 1px 2px 2px lightgray;
+}
+.cv {
+  color: blueviolet;
+  font-size: 1.5rem;
+  font-family: Itim, cursive;
+  width: 300px;
+}
+
+.folio {
+  height: 85vh;
+}
+.square {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  color: blueviolet;
+  font-size: 1.5rem;
+  font-family: Itim, cursive;
+}
+.align {
+  padding-top: 20px;
+  text-align: center;
+}
+.align1 {
+  padding-top: 40px;
+  text-align: center;
+}
+.c1 {
+  border: blueviolet solid 5px;
+  height: 170px;
+  width: 170px;
+}
+.c2 {
+  border: blueviolet solid 5px;
+  height: 170px;
+  width: 170px;
+}
+.square1 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  color: blueviolet;
+  font-size: 1.5rem;
+  font-family: Itim, cursive;
+}
+.c3 {
+  border: blueviolet solid 5px;
+  height: 170px;
+  width: 170px;
+}
+.c4 {
+  border: blueviolet solid 5px;
+  height: 170px;
+  width: 170px;
+}
+
+.contact {
+  height: 85vh;
+}
+.form {
+  border: blueviolet solid 5px;
+  color: blueviolet;
+  font-family: Itim, cursive;
+  font-size: 1.5rem;
+  width: 200px;
+  height: 300px;
+  padding-left: 25px;
+}
+.animform:focus {
+  background: blueviolet;
+  color: white;
+}
+/*/ animation simple /*/
+.buton {
+  background-color: blueviolet;
+  color: white;
+  font-size: 1rem;
+  font-family: Itim, cursive;
+  border: none;
+  margin-left: 5px;
+}
+
+.textcontact {
+  color: blueviolet;
+  font-family: Itim, cursive;
+  font-size: 1.5rem;
+  width: 300px;
+}
+.wrapper2 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.foot {
+  background-color: blueviolet;
+  height: 100px;
+  width: 100%;
+  color: white;
+  font-size: 1.5rem;
+  font-family: Itim, cursive;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.textfoot {
+  font-family: Itim, cursive;
+  font-size: 2.5rem;
+}
+
+@keyframes animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: translateX(0px) rotate(180deg);
+  }
+
+  100% {
+    transform: translateX(0px) rotate(360deg);
+  }
+}
+.textcontact {
+  color: blueviolet;
+  font-family: Itim, cursive;
+  font-size: 1.5rem;
+  width: 300px;
+}
+.textcontact:hover {
+  -webkit-animation: animation 2s;
+  animation: animation 2s;
+}
+
+.c1:hover,
+.c2:hover,
+.c3:hover,
+.c4:hover {
+  background-color: blueviolet;
+  color: white;
+}
+/*/ animation complexe/*/
+
+/*/ responsive /*/
+@media (min-width: 200px) and (max-width: 500px) {
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+    font-size: 1rem;
+  }
+  nav {
+    height: fit-content;
+  }
+
+  li {
+    padding: 1vh;
+  }
+  .boiteaccueil {
+    padding-top: 40vh;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+  img {
+    visibility: hidden;
+  }
+  .fotomoi {
+    border: hidden;
+  }
+  .cv {
+    margin-right: 400px;
+  }
+  .textcontact {
+    width: 200px;
+  }
+}
