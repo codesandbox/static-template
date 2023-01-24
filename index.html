@@ -1,12 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      .hr{
+        width: 100%;
+        height: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #000000;
+        border: 0 none;
+      }
+      .hr1{
+        width: 100%;
+        height: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #000000;
+        border: 0 none;
+      }
+    </style>
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>&Uuml;bung -HTML</h1>
+    <h2>Hallo Wetter-App</h2>
+    <h3>Meine Wetterdaten auf einen Blick!</h3>
+    <img
+      src="https://www.umweltbildung.at/wp-content/uploads/2021/02/Die-Sonne-hat-viel-Energie--1024x871.png"
+      alt="die Sonne"
+      width="200"
+      height="200"
+    />
+
+    <p>
+      Willkommen beim Wetterdienst!
+    </p>
+    <p>
+      mehr über das Wetter einer Stadt erfahren möchtet, führe bitte die
+      nachstehenden Schritte aus:
+    </p>
+    <ol>
+      <li>
+        <p>Tragen den Namen der Stadt in das Eingabefeld ein.</p>
+      </li>
+      <li><p>W&auml;hle aus, welche Daten die angezeigt werden sollen.</p></li>
+      <li>
+        <p>W&auml;hle eine <b>Farbe</b> aus (optional).</p>
+      </li>
+    </ol>
+    <p>
+      Wenn du nicht weißt, welche St&auml;dte du hinzuf&uuml;gten k&ouml;nntest,
+      besuche folgende Seite:
+      <a href="https://de.wikipedia.org/wiki/Liste_der_Millionenst%C3%A4dte"
+        >Liste der Millionenst&auml;dte auf Wikipedia</a
+      >
+    </p>
+    <form>
+      <label for<"city">Stadt: </label>
+      <input name="Stadt"></input><br />
+      <label for<"unit">Einheit: </label>
+      <input name"unit" type="radio">Fahrenheit</input>
+      <input name="unit" type="radio">Celsius</input><br />
+      <label for<"time">Ortzeit</label>
+      <input name="time" type="checkbox"></input><br />
+      <label for<"color">Farbe: </label>
+      <select name="color">
+        <option value=""></option>
+        <option value="red">Rot</option>
+        <option value="green">Gr&uuml;n</option>
+        <option value="blue">Blau</option>
+      </select><br />
+      <button type="reset">Reset</button>
+      <button type="submit">Best&auml;tigen</button><br />
+    </form>
+    <hr class="hr"/>
+
+    <table border="1">
+      <tr>
+        <th>Stadt</th>
+        <th>Temparatur</th>
+        <th>Uhrzeit</th>
+      </tr>
+      <tr>
+        <td>Berlin</td>
+        <td>20&#8451</td>
+        <td>12:00 Uhr</td>
+      </tr>
+      <tr>
+        <td>London</td>
+        <td>15&#x2109</td>
+        <td>11:00 Uhr</td>
+      </tr>
+    </table>
   </body>
+  <hr class="hr1" />
 </html>
