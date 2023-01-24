@@ -1,0 +1,222 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  background-color: #f4f4f4;
+}
+/* Mouse */
+#Mouse {
+  position: relative;
+  margin: auto;
+  width: 218px;
+  height: 330px;
+  /*   background-color: #f2f2f2; */
+}
+
+/* MouseBody */
+#MouseBody {
+  box-sizing: border-box;
+  position: absolute;
+  width: 212px;
+  height: 330px;
+  left: 6px;
+  top: 0px;
+  background: radial-gradient(
+        155.56% 155.56% at 20.17% -16.67%,
+        rgba(255, 255, 255, 0.3) 8.96%,
+        rgba(255, 255, 255, 0.14) 33.03%,
+        rgba(255, 255, 255, 0) 58.9%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    radial-gradient(
+        65.77% 65.77% at 42.05% 34.23%,
+        rgba(0, 0, 0, 0) 76.56%,
+        rgba(0, 0, 0, 0.34) 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    linear-gradient(90.42deg, #545454 0.35%, #000000 105.72%);
+  box-shadow: 5px 5px 14px rgba(0, 0, 0, 0.47),
+    17px 25px 22px rgba(0, 0, 0, 0.34);
+  border-radius: 100px;
+}
+
+#MouseBodyTexture {
+  position: absolute;
+  width: 212px;
+  height: 324px;
+  left: 6px;
+  top: 0px;
+
+  background: repeating-radial-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 0/1000px
+      1000px,
+    repeating-conic-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 50%/1000px
+      1000px;
+  background-blend-mode: difference;
+  mix-blend-mode: lighten;
+  opacity: 0.05;
+  border-radius: 100px;
+}
+
+/* MouseSplit */
+#MouseSplit {
+  position: absolute;
+  width: 4px;
+  height: 150px;
+  left: 110px;
+  top: 0px;
+
+  background: #000000;
+  border-radius: 0px 0px 2.4px 2.4px;
+}
+
+/* MouseWheelBack */
+#MouseWheelBack {
+  position: absolute;
+  width: 28px;
+  height: 68px;
+  left: 98px;
+  top: 34px;
+
+  background: #000000;
+  border-radius: 14px;
+}
+
+/* MouseWheel */
+#MouseWheel,
+#MouseWheel2 {
+  position: absolute;
+  width: 22px;
+  height: 58px;
+  left: 101px;
+  top: 39px;
+
+  /* background: radial-gradient(
+    54% 54% at 50% 50%,
+    #7c7c7c 0%,
+    #555555 54.31%,
+    #2e2e2e 100%
+  ); */
+  background: radial-gradient(
+    54% 54% at 50% 50%,
+    rgba(0, 0, 0, 0) 0%,
+    #333 100%
+  );
+  border-radius: 12px;
+  z-index: 2;
+}
+
+#MouseWheel2 {
+  background: repeating-linear-gradient(
+    0deg,
+    rgb(90, 90, 90) 0px,
+    rgb(30, 30, 30) 4px
+  );
+  z-index: 1;
+}
+
+/* MouseWheelTran */
+#MouseWheelTran {
+  position: absolute;
+  width: 22px;
+  height: 58px;
+  left: 101px;
+  top: 39px;
+  border-radius: 12px;
+  z-index: 3;
+}
+
+#MouseWheel.down {
+  background: linear-gradient(
+      0deg,
+      rgba(60, 176, 184, 0.56),
+      rgba(60, 176, 184, 0.56)
+    ),
+    radial-gradient(
+      54% 54% at 50% 50%,
+      #7c7c7c 0%,
+      #555555 54.31%,
+      #2e2e2e 100%
+    );
+}
+
+#MouseWheelTran.front {
+  background: linear-gradient(
+    360deg,
+    #00ffcf 0%,
+    rgba(100, 171, 158, 0) 42.24%
+  );
+}
+
+#MouseWheelTran.back {
+  background: linear-gradient(
+    180deg,
+    #00ffcf 0%,
+    rgba(100, 171, 158, 0) 43.97%
+  );
+}
+
+/* MouseLeft */
+#MouseLeft {
+  position: absolute;
+  opacity: 0;
+  width: 106px;
+  height: 162px;
+  left: 6px;
+  top: 0px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 209, 255, 0.39) 22.84%,
+    rgba(122, 231, 255, 0) 94.44%
+  );
+  border-radius: 100px 0px 0px 0px;
+}
+
+/* MouseRight */
+#MouseRight {
+  position: absolute;
+  opacity: 0;
+  width: 106px;
+  height: 162px;
+  left: 112px;
+  top: 0px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 209, 255, 0.39) 22.84%,
+    rgba(122, 231, 255, 0) 94.44%
+  );
+  border-radius: 0px 100px 0px 0px;
+}
+
+/* MouseX1 */
+#MouseX1 {
+  position: absolute;
+  width: 20px;
+  height: 32px;
+  left: 2px;
+  top: 174px;
+
+  background: linear-gradient(90deg, #a0a0a0 -14.29%, #363636 14.51%);
+  border-radius: 3px 0px 0px 3px;
+}
+
+/* MouseX2 */
+#MouseX2 {
+  position: absolute;
+  width: 20px;
+  height: 32px;
+  left: 2px;
+  top: 210px;
+
+  background: linear-gradient(90deg, #a0a0a0 -14.29%, #363636 14.51%);
+  border-radius: 3px 0px 0px 3px;
+}
+
+#MouseX1.down,
+#MouseX2.down {
+  left: 3px;
+  background: linear-gradient(90deg, #68e1fc -1.56%, #2b4e56 26.23%);
+}
