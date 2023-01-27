@@ -1,12 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<meta charset="utf-8" />
+
+<title>Coding Practicum</title>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SpotBlock" />
+<meta property="og:site_name" content="SpotBlock" />
+<meta property="og:url" content="https://spotblock.exotek.co" />
+<meta property="og:description" content="Easily learn programing by dragging blocks that code a real walking robot!" />
+<meta property="og:image" content="" />
+
+<meta name="description" content="Easily learn programing by dragging blocks that code a real walking robot!" />
+<meta name="author" content="CodingPracticumTeam" />
+<link rel="shortcut icon" href="" type="image/x-icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="theme-color" content="#fff" />
+
+<link rel="icon" href="" />
+<link rel="apple-touch-icon" href="" />
+
+<link rel="manifest" href="./manifest.json" />
+
+<meta http-equiv="Cache-control" content="public, max-age=1800" />
+<meta http-equiv="Content-Type" content="text/html; charset= ISO-8859-1" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+  /* Font Start */
+  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,600,700,800&display=swap');
+  /* Font End */
+</style>
+<link rel="stylesheet" href="main.css" />
+</head>
+
+<body class="body">
+  <noscript>Please enable JavaScript to use this app.</noscript>
+
+  <div class="app">
+    <div class="pageHolder"></div>
+  </div>
+
+  <script async>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/serviceworker.js");
+      });
+    }
+    /*
+    let head  = document.getElementsByTagName('head')[0];
+    let font  = document.createElement('link');
+    font.onload = function() {
+      window.fontLoaded = true;
+      if (window.editorLoad) {
+        window.editorLoad();
+      }
+    }
+    font.rel  = 'stylesheet';
+    font.type = 'text/css';
+    font.href = 'https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800&display=swap';
+    font.media = 'all';
+    head.appendChild(font);
+    */
+  </script>
+
+  <script src="https://simplesocket.net/static/v2/simplesocket.js"></script>
+  <script src="crucial.js"></script>
+</body>
 </html>
