@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap");
+  </style>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+  </style>
+
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Build QR code component</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow-y: hidden;
+      }
+      div {
+        width: 320px;
+        height: 497px;
+        background-color: white;
+        border-radius: 20px;
+        overflow: hidden;
+        padding: 16px;
+        box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.0476518);
+      }
+      img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+      h1 {
+        font-size: 23px;
+        line-height: 28px;
+        text-align: center;
+        font-family: "Outfit", sans-serif;
+        height: 56px;
+        color: #1f314f;
+        gap: 25px;
+      }
+      p {
+        color: #7d889e;
+        font-size: 15px;
+        line-height: 19px;
+        text-align: center;
+        font-family: "Outfit", sans-serif;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div>
+      <img src="./image-qr-code.png" />
+      <h1>
+        Improve your Front-end<br />
+        skills by building projects
+      </h1>
+      <p>
+        Scan the QR code to visit Frontend<br />
+        Mentor and take your coding skills to<br />
+        the next level
+      </p>
+    </div>
   </body>
 </html>
