@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@400;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+body {
+  background-color: #edf2f5;
+  color: #161c6d;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.container small {
+  margin-top: 2rem;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.container .content {
+  padding: 2rem 0.5rem;
+  width: 90%;
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 660px) {
+  .container .content {
+    width: 70%;
+    padding: 2rem;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .container .content {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container .content {
+    width: 40%;
+  }
+}
+
+.container .content .title {
+  padding: 10px 0;
+  font-size: 25px;
+  text-align: center;
+}
+
+@media screen and (min-width: 660px) {
+  .container .content .title {
+    font-size: 35px;
+  }
+}
+
+.container .content .message {
+  padding: 5px;
+  display: inline-block;
+  margin: 10px;
+  display: none;
+  text-align: center;
+}
+
+.container .content .message.active {
+  display: block;
+  background: red;
+  color: whitesmoke;
+}
+
+.container .content .nameDiv,
+.container .content .numberDiv {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.container .content label {
+  font-size: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+@media screen and (min-width: 768px) {
+  .container .content label {
+    margin-bottom: 0;
+  }
+}
+
+.container .content input {
+  padding: 15px;
+  background: #eeeded;
+  border: 2px solid transparent;
+  outline: none;
+  border-radius: 3rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+  .container .content input {
+    width: 250px;
+  }
+}
+
+.container .content button {
+  display: block;
+  margin: auto;
+  padding: 15px;
+  margin-bottom: 10px;
+  background: #161c6d;
+  color: whitesmoke;
+  font-size: 20px;
+  width: 100%;
+  border-radius: 3rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.container .content button:hover {
+  background: #0c0e2c;
+}
+
+@media screen and (min-width: 768px) {
+  .container .content button {
+    width: 80%;
+  }
+}
+
+.container .content .friendList {
+  margin-top: 1rem;
+  padding: 10px;
+}
+
+.container .content .friendList .friendListTitle {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+.container .content .friendList .friendNumber {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container .content .friendList .friend {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  margin: 10px 0;
+  padding: 10px 0;
+  background: #eeeded;
+}
+
+.container .content .friendList .friend:hover {
+  background: #e2e2e2;
+}
+
+.container .content .friendList .friend .deleteFriend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  background: #c50606;
+  padding: 5px 5px;
+  color: whitesmoke;
+  right: -15px;
+  cursor: pointer;
+}
+
+.container .content .friendList .friend .deleteFriend .bx {
+  font-size: 20px;
+}
+
+.container .content .friendList .friend .deleteFriend:hover {
+  background: #a80505;
+}
+
+.container .welcomePage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: rgba(12, 14, 44, 0.698);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+.container .welcomePage .pageInfo {
+  background: whitesmoke;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+}
+
+@media screen and (min-width: 660px) {
+  .container .welcomePage .pageInfo {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+}
+
+.container .welcomePage .pageInfo h2 {
+  font-size: 25px;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.container .welcomePage .pageInfo .welcomeNote {
+  text-align: center;
+  display: block;
+  padding-bottom: 2rem;
+  color: rgba(12, 14, 44, 0.589);
+}
+
+.container .welcomePage .pageInfo .welcomeField input {
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .container .welcomePage .pageInfo button {
+    width: 100%;
+  }
+}
+
+.fall {
+  -webkit-transform: translateY(80rem) rotateZ(40deg);
+  transform: translateY(80rem) rotateZ(40deg);
+  opacity: 0.5;
+}
+
+::-moz-selection {
+  background-color: #161c6d;
+  color: #f0f0f0;
+}
+
+::selection {
+  background-color: #161c6d;
+  color: #f0f0f0;
+}
+/*# sourceMappingURL=main.css.map */
