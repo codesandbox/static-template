@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <div id="root"></div>
+    <script>
+      const rootElement = document.getElementById("root");
+      const element = React.createElement("h1", { children: "Hello, world!" });
+      // const element = React.createElement("h1", null, "Hello, world!");
+      // const element = document.createElement("h1");
+      // element.textContent = "Hello, world!";
+      ReactDOM.render(element, rootElement);
+      // rootElement.appendChild(element);
+      console.log(element);
+    </script>
   </body>
 </html>
