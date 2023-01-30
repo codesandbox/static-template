@@ -1,12 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <title>演示</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      #video {
+        width: 100%;
+        height: 600px;
+        /*    height: 100vh;
+        background: red; */
+      }
+      .abc {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 9;
+        width: 200px;
+        height: 100px;
+        background: rgba(0, 0, 0, 0.4);
+        transform: translate(-50%, -50%);
+      }
+      .abc::before {
+        content: "我是遮罩图";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: #fff;
+        transform: translate(-50%, -50%);
+      }
+
+      .container {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        min-height: 100vh;
+        background: #000;
+      }
+
+      .container .back {
+        position: absolute;
+        top: 0.53333rem;
+        left: 0.4rem;
+        color: #fff;
+        font-weight: bold;
+        z-index: 100;
+      }
+
+      .container .shadow-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 600px;
+        z-index: 1;
+
+        overflow: hidden;
+      }
+
+      .container .shadow-layer .capture-rectangle {
+        /*  position: relative;
+        margin: 2.66667rem auto 0;
+        width: 300px;
+        height: 200px;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        z-index: 2;
+        box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.8); */
+      }
+
+      .container .shadow-layer .hold-tips {
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #e1e1e1;
+        font-size: 0.32rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4rem;
+        margin: 0.4rem auto 0;
+        border-radius: 0.26667rem;
+      }
+
+      .container .tips {
+        background-color: #333;
+        color: #fff;
+        font-size: 0.32rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 6.66667rem;
+        margin: 0.4rem auto 0;
+        border-radius: 0.26667rem;
+      }
+
+      .container .gallery-container {
+        position: relative;
+      }
+
+      .container .gallery-container .input {
+        position: absolute;
+        top: 0.88rem;
+        left: 0.53333rem;
+        width: 1.33333rem;
+        height: 1.33333rem;
+        opacity: 0;
+        z-index: 2;
+      }
+
+      .container .gallery-container .icon {
+        margin-top: 1.33333rem;
+        margin-left: 0.53333rem;
+        color: #fff;
+        width: 1.33333rem;
+        height: 1.33333rem;
+        font-size: 0.53333rem;
+      }
+    </style>
+
+    <script src="https://static.car-me.cn/weixin_static/assets/js/eruda.js"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <video id="video" autoplay muted playsinline></video>
+
+      <div class="shadow-layer">
+        <div class="capture-rectangle" id="capture-rectangle">
+          <div class="abc"></div>
+        </div>
+      </div>
+
+      <img src="" id="img" style="width: 100px; height: 100px;" />
+    </div>
+
+    <script>
+      eruda.init();
+
+      const v = document.getElementById("video");
+
+      const rectangle = document.getElementById("capture-rectangle");
+      const _canvas = document.createElement("canvas");
+      _canvas.style.display = "block";
+
+      const video = v;
+
+      getUserMediaStream(video)
+        .then(() => {
+          // setVideoHeight(video.offsetHeight);
+          startCapture();
+        })
+        .catch(() => {
+          /*     showFail({
+            text: "无法调起后置摄像头，请点击相册，手动上传身份证",
+            duration: 6
+          }); */
+        });
+
+      /**
+       * 获取video中对应的真实size
+       */
+      function getRealSize() {
+        const {
+          videoHeight: vh,
+          videoWidth: vw,
+          offsetHeight: oh,
+          offsetWidth: ow
+        } = video;
+
+        return {
+          getHeight: (height) => {
+            return (vh / oh) * height;
+          },
+          getWidth: (width) => {
+            return (vw / ow) * width;
+          }
+        };
+      }
+
+      function isChildOf(child, parent) {
+        var parentNode;
+        if (child && parent) {
+          parentNode = child.parentNode;
+          while (parentNode) {
+            if (parent === parentNode) {
+              return true;
+            }
+            parentNode = parentNode.parentNode;
+          }
+        }
+        return false;
+      }
+
+      function startCapture() {
+        setInterval(() => {
+          const { getHeight, getWidth } = getRealSize();
+
+          if (!rectangle) {
+            return;
+          }
+          /** 获取框的位置 */
+          const { left, top, width, height } = video.getBoundingClientRect();
+
+          console.log(video.getBoundingClientRect());
+
+          /** 测试时预览 */
+          // if (isChildOf(_canvas, container)) {
+          //     container.removeChild(_canvas);
+          // }
+          // container.appendChild(_canvas);
+
+          const context = _canvas.getContext("2d");
+          _canvas.width = width;
+          _canvas.height = height;
+
+          context.drawImage(
+            video,
+            getWidth(left + window.scrollX),
+            getHeight(top + window.scrollY),
+            getWidth(width),
+            getHeight(height),
+            0,
+            0,
+            width,
+            height
+          );
+
+          const base64 = _canvas.toDataURL("image/jpeg");
+          console.log(base64);
+
+          document.getElementById("img").src = base64;
+
+          // TODO 此处可以根据需要调用OCR识别接口
+        }, 200);
+      }
+
+      const onChangeFile = (event) => {
+        const files = event.target.files;
+        if (files?.[0]) {
+          __formatUploadFile2base64AndCompress(files[0]);
+        }
+      };
+
+      /*       const customUploadProps = {
+        onChange: onChangeFile,
+        accept: "image/jpeg,image/jpg,image/png",
+        files: fileList
+      }; */
+
+      /** 只支持1张图片 */
+      function updateUploadFiles(url = "") {
+        let files = [];
+        if (url) {
+          files = [{ url }];
+        }
+
+        setFileList(files);
+      }
+
+      const __formatUploadFile2base64AndCompress = (file) => {
+        const handleImgFileBase64 = (file) => {
+          return new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+
+            reader.onloadend = function () {
+              resolve(reader.result);
+            };
+          });
+        };
+
+        showLoading();
+        handleImgFileBase64(file)
+          .then((res) => {
+            if (file.size > 750 * 1334) {
+              showLoading("图片压缩中...");
+              return startCompress(res);
+            } else {
+              return res;
+            }
+          })
+          .then((res) => {
+            hideLoading();
+            updateUploadFiles();
+            // TODO 上传
+            showSuccess({
+              text: "上传成功!"
+            });
+          })
+          .catch((err) => {
+            console.error(err);
+            hideLoading();
+            /*        showFail({
+              text: "上传失败"
+            }); */
+          });
+      };
+
+      /**
+       * 从本地上传
+       */
+      // const CustomUpload = customUploadProps => <input className={styles['input']} type="file" {...customUploadProps} />
+
+      //访问用户媒体设备的兼容方法
+      function getUserMedia(constrains) {
+        const navigator = window.navigator;
+        if (navigator.mediaDevices.getUserMedia) {
+          //最新标准API
+          return navigator.mediaDevices.getUserMedia(constrains);
+        } else if (navigator.webkitGetUserMedia) {
+          //webkit内核浏览器
+          return navigator.webkitGetUserMedia(constrains);
+        } else if (navigator.mozGetUserMedia) {
+          //Firefox浏览器
+          return navigator.mozGetUserMedia(constrains);
+        } else if (navigator.getUserMedia) {
+          //旧版API
+          return navigator.getUserMedia(constrains);
+        }
+      }
+
+      //成功的回调函数
+      function success(stream, video) {
+        return new Promise((resolve, reject) => {
+          video.srcObject = stream;
+
+          //播放视频
+          video.onloadedmetadata = function (e) {
+            video.play();
+            resolve();
+          };
+        });
+      }
+
+      function getUserMediaStream(videoNode) {
+        //调用用户媒体设备，访问摄像头
+
+        return getUserMedia({
+          audio: false,
+          video: { facingMode: { exact: "environment" } }
+        })
+          .then((res) => {
+            return success(res, videoNode);
+          })
+          .catch((error) => {
+            console.log("访问用户媒体设备失败：", error.name, error.message);
+            return Promise.reject();
+          });
+      }
+    </script>
   </body>
 </html>
