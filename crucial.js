@@ -394,6 +394,9 @@ async function init() {
 }
 socket.onopen = function () {
   init();
+  if (currentPage != "") {
+    refreshPage();
+  }
 };
 
 function editorLoad() {
