@@ -1,12 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <title>수진이 바보</title>
+    <link rel="stylesheet" href="main.css" />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="alert-box" id="alert">
+      <p>Alert 박스</p>
+      <button
+        onclick="document.getElementById('alert').style.display = 'none'; "
+      >
+        delete
+      </button>
+    </div>
+    <button
+      onclick="document.getElementById('alert').style.display = 'block'; "
+    >
+      button
+    </button>
+    <script></script>
   </body>
 </html>
+<!-- Alert Box 버튼으로 띄우고 버튼으로 지우기 -->
