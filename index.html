@@ -10,22 +10,20 @@
       crossorigin
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
     ></script>
+    <!-- Babel CDN -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <div id="root"></div>
 
-    <script>
+    <script type="text/babel">
       const rootElement = document.getElementById("root");
 
-      // Vanilla
-      const elementV = document.createElement("h1");
-      elementV.textContent = "Hello, Vanilla!";
-      rootElement.appendChild(elementV);
-      console.log(elementV);
-
-      // React
-      const elementR = React.createElement("h1", null, "Hello, React!");
-      ReactDOM.render(elementR, rootElement);
-      console.log(elementR);
+      const text = "Hello, world!";
+      const titleClassName = "title";
+      const props = { className: titleClassName, children: text };
+      const customH1 = <h1 {...props} />;
+      ReactDOM.render(customH1, rootElement);
+      console.log(customH1);
     </script>
   </body>
 </html>
