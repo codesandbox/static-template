@@ -1,0 +1,48 @@
+let direction = "";
+let avanzarX = 8;
+let avanzarY = 8;
+document.querySelector(".pared").style =
+  "display: block; position: absolute; left: -8px; top: 558px; width: calc(100% + 8px); height: 3px; background: #000";
+function gusano() {
+  document.getElementById("gusano").style.top = `${avanzarY}px`;
+  document.getElementById("gusano").style.left = `${avanzarX}px`;
+}
+function mover() {
+  if (direction === "right") {
+    avanzarX += 20;
+    gusano();
+  } else if (direction === "left") {
+    avanzarX -= 20;
+    gusano();
+  } else if (direction === "top") {
+    avanzarY -= 20;
+    gusano();
+  } else if (direction === "bottom") {
+    avanzarY += 20;
+    gusano();
+  }
+}
+let interval = setInterval(() => {
+  if (
+    avanzarY <= 0 ||
+    avanzarX <= 0 ||
+    avanzarX >= screen.width - 58 ||
+    avanzarY >= 500
+  ) {
+    clearInterval(interval);
+  }
+  mover();
+}, 400);
+function event(E) {
+  let tecla = E.keyCode;
+  if (tecla === 39) {
+    direction = "right";
+  } else if (tecla === 37) {
+    direction = "left";
+  } else if (tecla === 38) {
+    direction = "top";
+  } else if (tecla === 40) {
+    direction = "bottom";
+  }
+}
+window.onkeydown = event;

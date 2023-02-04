@@ -1,0 +1,572 @@
+body, html {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#gusano {
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 100;
+}
+#bullet {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px dashed #fff;
+  background: #0000;
+  z-index: 10;
+}
+p {
+  z-index: 550;
+}
+* {
+  user-select: none;
+}
+#portrait {
+  display: none;
+}
+@media screen and (orientation: portrait) {
+  div, button, span {
+    display: none;
+  } 
+  #portrait {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    z-index: 999999;
+  }
+  .fa-mobile-screen-button {
+    display: block;
+    position: absolute;
+    left: calc((100% - 100px) / 2);
+    top: calc((100% - 100px) / 2 - 20px);
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-name: rotate;
+  }
+  strong {
+    display: block;
+    position: absolute;
+    left: calc((100% - 210.65px) / 2 - 25px);
+    top: calc((100% - 18px) / 2 + 60px);
+    margin: 0;
+    padding: 0;
+  }
+}
+@keyframes rotate {
+  from {
+    rotate: 0;
+  }
+  10% {
+    rotate: 0;
+  }
+  50% {
+    rotate: -90deg;
+  }
+  100% {
+    rotate: 0;
+  }
+}
+#game_over {
+  display: none;
+  position: absolute;
+  width: 250px;
+  height: 125px;
+  left: calc((100% - 250px) / 2);
+  top: calc((100% - 125px) / 2 + 30px);
+  border-radius: 20px;
+  background: #07f;
+  z-index: 99999;
+}
+#retry {
+  display: block;
+  position: absolute;
+  top: calc((100% - 50px) / 2 + 15px);
+  left: calc((100% - 100px) / 2);
+  width: 100px;
+  height: 50px;
+  border-radius: 15px;
+  background: #004;
+}
+#h3 {
+  margin-left: calc((100% - 82.5667px) / 2);
+}
+@media screen and (max-width: 1000px) {
+  #contain {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #006;
+  }
+  #manzana {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    z-index: 10000;
+  }
+  .zombie2 {
+    border-radius: 50%;
+    border: 3px dashed #fff;
+    display: none;
+    position: absolute;
+    background: #777;
+    width: 50px;
+    height: 50px;
+    transition: left 2s linear, top 2s linear;
+    z-index: 50;
+  }
+  .zombie {
+    border-radius: 50%;
+    border: 3px dashed #fff;
+    display: none;
+    position: absolute;
+    background: #0f0;
+    width: 50px;
+    height: 50px;
+    transition: left 2s linear, top 2s linear;
+    z-index: 50;
+  }
+  .barr {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    background: #f00;
+    top: -12px;
+    left: 3px;
+  }
+  .border-barr {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    border: 3px solid #000;
+    top: -15px;
+  }
+  h2 {
+    margin-left: 10px;
+  }
+  button {
+    border: 3px solid #999;
+  }
+  .header {
+    display: block;
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    background: #f70;
+    z-index: 900;
+  }
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  #reanudar {
+    display: flex;
+    position: absolute;
+    width: 250px;
+    height: 200px;
+    left: calc((100% - 250px) / 2);
+    top: calc((100% - 200px) / 2 + 30px);
+    border-radius: 20px;
+    background: #07f;
+    z-index: 99999;
+  }
+  #restart {
+    display: block;
+    position: absolute;
+    top: calc((100% - 130px) / 2 + 15px);
+    left: calc((100% - 100px) / 2);
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    background: #004;
+  }
+  #h20 {
+    display: block;
+    position: absolute;
+    margin-top: 110px;
+    margin-left: calc((100% - 56.1833px) / 2);
+  }
+  #option1,
+  #option2 {
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    background: #0000;
+    border: 3px solid #00f;
+    top: calc((100% + 50px) / 2 + 15px);
+    left: 10px;
+  }
+  #option2 {
+    left: 140px;
+    border-color: #000;
+  }
+  .game {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #004b;
+    top: 0;
+    left: 20px;
+  }
+  .borde {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #aaab;
+    border: 3px solid #000;
+  }
+  h3 {
+    margin-left: calc((100% - 56.1833px) / 2);
+  }
+  #pause {
+    display: flex;
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin: 6px;
+    border-radius: 50%;
+    background: #004;
+    z-index: 500;
+    padding: 0;
+  }
+  #control {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #000044bf;
+    border-radius: 50%;
+    left: calc((100% - 50px) / 2);
+    top: calc((100% - 50px) / 2);
+  }
+  #border {
+    display: none;
+    position: relative;
+    background: #aaa8;
+    top: calc(100vh - 140px);
+    left: 40px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #000;
+    z-index: 600;
+  }
+  #control_left {
+    display: flex;
+    position: fixed;
+    top: calc(100vh - 120px);
+    left: 0;
+    width: 70px;
+    height: 50px;
+    background: #004;
+    z-index: 500;
+  }
+  #control_right {
+    display: flex;
+    position: fixed;
+    top: calc(100vh - 120px);
+    left: 120px;
+    width: 70px;
+    height: 50px;
+    background: #004;
+    z-index: 500;
+  }
+  #control_top {
+    display: flex;
+    position: fixed;
+    top: calc(100vh - 190px);
+    left: 70px;
+    width: 50px;
+    height: 70px;
+    background: #004;
+    z-index: 500;
+  }
+  #control_bottom {
+    display: flex;
+    position: fixed;
+    top: calc(100vh - 70px);
+    left: 70px;
+    width: 50px;
+    height: 70px;
+    background: #004;
+    z-index: 500;
+  }
+  #border-attack {
+    display: none;
+    position: fixed;
+    background: #aaa8;
+    top: calc(100vh - 150px);
+    left: 75vw;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #000;
+    z-index: 600;
+  }
+  #linea {
+    display: none;
+    z-index: 700;
+  }
+  #replace {
+    display: flex;
+    position: fixed;
+    top: calc(100vh - 180px);
+    left: 90vw;
+    border: none;
+    border-radius: 50%;
+    border: 2px solid #aaa;
+    z-index: 10;
+  }
+  #repeat {
+    color: #000;
+    font-size: 25px;
+  }
+  #control-attack {
+    display: flex;
+    position: relative;    
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    left: calc((100% - 50px) / 2);
+    top: calc((100% - 50px) / 2);
+    background: #7f0000bf;
+  }
+  #control_attack {
+    display: flex;
+    position: fixed;
+    top: calc(100vh - 150px);
+    left: 80vw;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #004;
+    z-index: 500;
+  }
+  i {
+    display: block;
+    color: #fff;
+    font-size: 40px;
+    margin: auto;
+  }
+  b {
+    color: #fff;
+    font-size: 20px;
+  }
+  #gusano {
+    background: #00f;
+    left: calc((100% - 50px) / 2);
+    top: calc((100% - 50px) / 2);
+  }
+  .life {
+    display: block;
+    position: absolute;
+    background: #f00;
+    width: 50px;
+    height: 5px;
+  }
+  .borderLife {
+    display: inline-block;
+    position: absolute;
+    top: -16px;
+    background: #0000;
+    width: 44px;
+    height: 5px;
+    border: 3px solid #000;
+  }
+  span {
+    display: inline-block;
+    position: absolute;
+    top: -25px;
+    left: 50px;
+    margin: 3px;
+  }
+}
+@media screen and (min-width: 1001px) {
+  #manzana {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    z-index: 10000;
+  }
+  .zombie2 {
+    border-radius: 50%;
+    border: 3px dashed #fff;
+    display: none;
+    position: absolute;
+    background: #777;
+    width: 50px;
+    height: 50px;
+    transition: left 2s linear, top 2s linear;
+    z-index: 50;
+  }
+  .zombie {
+    border-radius: 50%;
+    border: 3px dashed #fff;
+    display: none;
+    position: absolute;
+    background: #0f0;
+    width: 50px;
+    height: 50px;
+    transition: left 2s linear, top 2s linear;
+    z-index: 50;
+  }
+  .barr {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    background: #f00;
+    top: -12px;
+    left: 3px;
+  }
+  .border-barr {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    border: 3px solid #000;
+    top: -15px;
+  }
+  h2 {
+    margin-left: 10px;
+  }
+  button {
+    border: 3px solid #999;
+  }
+  .header {
+    display: block;
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    background: #f70;
+    z-index: 900;
+  }
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    width: screen;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  #control_left,
+  #control_right,
+  #control_top,
+  #control_bottom,
+  #control_attack,
+  #pause,
+  #option1,
+  #option2,
+  #h20, #border-attack,
+  #replace {
+    display: none;
+  }
+  i {
+    display: block;
+    color: #fff;
+    font-size: 40px;
+    margin: auto;
+  }
+  b {
+    color: #fff;
+    font-size: 20px;
+  }
+  button {
+    border: 3px solid #999;
+  }
+  #reanudar {
+    display: flex;
+    position: absolute;
+    width: 250px;
+    height: 125px;
+    left: calc((100% - 250px) / 2);
+    top: calc((100% - 125px) / 2 + 30px);
+    border-radius: 20px;
+    background: #07f;
+    z-index: 99999;
+  }
+  #restart {
+    display: block;
+    position: absolute;
+    top: calc((100% - 50px) / 2 + 15px);
+    left: calc((100% - 100px) / 2);
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    background: #004;
+  }
+  h3 {
+    margin-left: calc((100% - 56.1833px) / 2);
+  }
+  #pause {
+    display: flex;
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin: 6px;
+    border-radius: 50%;
+    background: #004;
+    z-index: 500;
+    padding: 0;
+  }
+  #gusano {
+    background: #00f;
+    left: calc((100% - 50px) / 2);
+    top: calc((100% - 50px) / 2);
+  }
+  .life {
+    display: block;
+    position: absolute;
+    background: #f00;
+    width: 50px;
+    height: 5px;
+  }
+  .borderLife {
+    display: inline-block;
+    position: absolute;
+    top: -16px;
+    background: #0000;
+    width: 44px;
+    height: 5px;
+    border: 3px solid #000;
+  }
+  span {
+    display: inline-block;
+    position: absolute;
+    top: -25px;
+    left: 50px;
+    margin: 3px;
+  }
+}

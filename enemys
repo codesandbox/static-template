@@ -1,0 +1,160 @@
+document.querySelector(".pared").style =
+  "position: absolute; width: 20px; height: 300px; background: #780; left: 508px; top: calc((100% - 300px)/2)";
+let paredY = document.querySelector(".pared").offsetTop;
+let paredX = document.querySelector(".pared").offsetLeft;
+function pared(Y, X) {
+  return !(
+    Y >= paredY - 20 &&
+    Y <= paredY + 300 &&
+    X >= paredX - 38 &&
+    X <= paredX + 32
+  );
+}
+var dist = 0;
+var interval = 99;
+function timings(x1, y1, x2, y2, velocidad) {
+  let X = Math.max(x1, x2) - Math.min(x1, x2);
+  let Y = Math.max(y1, y2) - Math.min(y1, y2);
+  let distancia = Math.sqrt(Math.pow(X, 2) + Math.pow(Y, 2));
+  dist = distancia;
+  return Math.trunc(velocidad * distancia * 10000) / 10000;
+}
+function time(x1, y1, x2, y2, velocidad) {
+  let X = Math.max(x1, x2) - Math.min(x1, x2);
+  let Y = Math.max(y1, y2) - Math.min(y1, y2);
+  dist = Math.max(X, Y);
+  return dist * velocidad;
+}
+function timing(x1, y1, x2, y2) {
+  let X = Math.max(x1, x2) - Math.min(x1, x2);
+  let Y = Math.max(y1, y2) - Math.min(y1, y2);
+  let distancia = (X + Y) / 2;
+  return 0.02 * distancia;
+}
+function timingOptimo(x1, x2, velocidad) {
+  let distancia = Math.max(x1, x2) - Math.min(x1, x2);
+  return velocidad * distancia;
+}
+var avansarX = 8;
+var avansarY = 8;
+var posicionX = 0;
+var posicionY = 0;
+var velocidad = 0;
+let x = Math.round(Math.random() * 100) * 10 + 8;
+let y = Math.round(Math.random() * 70) * 10 + 8;
+document.querySelector("#manzana").style.top = `${y}px`;
+document.querySelector("#manzana").style.left = `${x}px`;
+
+let condicional = true;
+function zombie() {
+  let X = document.querySelector("#manzana").offsetLeft;
+  let Y = document.querySelector("#manzana").offsetTop;
+  if (pared(Y, X) && condicional) {
+    document.querySelector("#manzana").style.left = `${avansarX}px`;
+    document.querySelector("#manzana").style.top = `${avansarY}px`;
+    document.querySelector("#manzana").style.transition = `all ${time(
+      X,
+      Y,
+      avansarX,
+      avansarY,
+      0.01
+    )}s linear`;
+    interval = (time(X, Y, avansarX, avansarY, 0.01) / dist) * 10000;
+    //if (X > 8) {
+    //  console.log(interval + " cgi");
+    //}
+  } else {
+    let dis = Math.min(
+      timing(X, Y, paredX, paredY, 1),
+      timing(X, Y, paredX, paredY + 300, 1)
+    );
+    let x = 0;
+    let y = 0;
+    if (timing(X, Y, paredX, paredY, 1) === dis) {
+      x = paredX;
+      y = paredY - 25;
+    } else {
+      x = paredX;
+      y = paredY + 305;
+    }
+    document.querySelector("#manzana").style.left = `${X}px`;
+    document.querySelector("#manzana").style.top = `${y}px`;
+    document.querySelector("#manzana").style.transition = `all ${timing(
+      X,
+      Y,
+      x,
+      y
+    )}s linear`;
+    condicional = Y === y;
+  }
+}
+let f = 0;
+let xx = 0;
+let yy = 0;
+let xs = 0;
+let ys = 0;
+setInterval(() => {
+  f++;
+  if (f === 2) {
+    xs = document.querySelector("#manzana").offsetLeft;
+    ys = document.querySelector("#manzana").offsetTop;
+    console.log(timings(xx, yy, xs, ys, 1));
+  } else if (f === 1) {
+    xx = document.querySelector("#manzana").offsetLeft;
+    yy = document.querySelector("#manzana").offsetTop;
+  }
+  zombie();
+}, 100);
+
+function gusano() {
+  document.getElementById("gusano").style.top = `${avansarY}px`;
+  document.getElementById("gusano").style.left = `${avansarX}px`;
+}
+let direction = "";
+function mover(direccion) {
+  if (direccion !== "") {
+    direction += direccion;
+  }
+  if (direction.endsWith("rigth")) {
+    avansarX += 10;
+    gusano();
+  } else if (direction.endsWith("left")) {
+    avansarX -= 10;
+    gusano();
+  } else if (direction.endsWith("bottom")) {
+    avansarY += 10;
+    gusano();
+  } else if (direction.endsWith("top")) {
+    avansarY -= 10;
+    gusano();
+  }
+  if (
+    (posicionX === velocidad + 5 &&
+      posicionY <= avansarY + 50 &&
+      posicionY + 20 >= avansarY) ||
+    (posicionX + 20 === velocidad &&
+      posicionY + 20 >= avansarY &&
+      posicionY <= avansarY + 50) ||
+    (posicionY === avansarY + 50 &&
+      posicionX <= velocidad + 5 &&
+      posicionX + 20 >= velocidad) ||
+    (posicionY + 20 === avansarY &&
+      posicionX + 20 >= velocidad &&
+      posicionX <= velocidad + 5)
+  ) {
+  }
+}
+
+function tecla(e) {
+  let teclas = e.keyCode;
+  if (teclas === 39) {
+    mover("rigth");
+  } else if (teclas === 37) {
+    mover("left");
+  } else if (teclas === 40) {
+    mover("bottom");
+  } else if (teclas === 38) {
+    mover("top");
+  }
+}
+window.onkeydown = tecla;
