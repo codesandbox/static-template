@@ -1,0 +1,208 @@
+var avansarX = 8;
+var avansarY = 8;
+var posicionX = 0;
+var posicionY = 0;
+var velocidad = 0;
+/*function mansana() {
+  posicionX = Math.round(Math.random() * 100) * 10 + 28;
+  posicionY = Math.round(Math.random() * 10) * 50 + 8;
+  document.getElementById("manzana").style.top = `${posicionY}px`;
+  document.getElementById("manzana").style.left = `${posicionX}px`;
+}
+mansana();*/
+function gusano() {
+  document.getElementById("gusano").style.top = `${avansarY}px`;
+  document.getElementById("gusano").style.left = `${avansarX}px`;
+}
+let direction = "";
+function mover(direccion) {
+  if (direccion !== "") {
+    direction += direccion;
+  }
+  if (direction.endsWith("rigth")) {
+    avansarX += 10;
+    gusano();
+  } else if (direction.endsWith("left")) {
+    avansarX -= 10;
+    gusano();
+  } else if (direction.endsWith("bottom")) {
+    avansarY += 10;
+    gusano();
+  } else if (direction.endsWith("top")) {
+    avansarY -= 10;
+    gusano();
+  }
+  if (
+    (posicionX === velocidad + 5 &&
+      posicionY <= avansarY + 50 &&
+      posicionY + 20 >= avansarY) ||
+    (posicionX + 20 === velocidad &&
+      posicionY + 20 >= avansarY &&
+      posicionY <= avansarY + 50) ||
+    (posicionY === avansarY + 50 &&
+      posicionX <= velocidad + 5 &&
+      posicionX + 20 >= velocidad) ||
+    (posicionY + 20 === avansarY &&
+      posicionX + 20 >= velocidad &&
+      posicionX <= velocidad + 5)
+  ) {
+    //mansana();
+  }
+}
+var tiempo = "";
+function balas() {
+  if (direction.endsWith("rigth")) {
+    document.body.innerHTML += `<div class="balas" style="position:absolute; width: 30px; height: 30px; top: ${
+      avansarY + 15
+    }px; left: ${avansarX + 50}px"></div>`;
+  } else if (direction.endsWith("left")) {
+    document.body.innerHTML += `<div class="balas" style="position:absolute; width: 30px; height: 30px; top: ${
+      avansarY + 15
+    }px; left: ${avansarX}px"></div>`;
+  } else if (direction.endsWith("bottom")) {
+    document.body.innerHTML += `<div class="balas" style="position:absolute; width: 30px; height: 30px; top: ${
+      avansarY + 50
+    }px; left: ${avansarX + 15}px"></div>`;
+  } else if (direction.endsWith("top")) {
+    document.body.innerHTML += `<div class="balas" style="position:absolute; width: 30px; height: 30px; top: ${avansarY}px; left: ${
+      avansarX + 15
+    }px"></div>`;
+  }
+
+  velocidad = avansarX + 50;
+  let i = 0;
+  if (tiempo !== "") {
+    clearInterval(tiempo);
+  }
+  tiempo = setInterval((e) => {
+    i++;
+    velocidad += 10;
+    if (document.querySelector(".balas")) {
+      if (direction.endsWith("rigth")) {
+        document.querySelector(
+          ".balas:last-child"
+        ).style.left = `${velocidad}px`;
+      } else if (direction.endsWith("left")) {
+        document.querySelector(
+          ".balas:last-child"
+        ).style.rigth = `${velocidad}px`;
+      } else if (direction.endsWith("bottom")) {
+        document.querySelector(
+          ".balas:last-child"
+        ).style.top = `${velocidad}px`;
+      } else if (direction.endsWith("top")) {
+        document.querySelector(".balas:last-child").style.bottom = `${
+          document.querySelector(".balas").offsetTop - velocidad
+        }px`;
+      }
+    }
+    if (
+      (posicionX === velocidad + 20 &&
+        posicionY <= avansarY + 22.5 &&
+        posicionY + 20 >= avansarY + 22.5) ||
+      (posicionX + 20 === velocidad &&
+        posicionY + 20 >= avansarY + 22.5 &&
+        posicionY <= avansarY + 22.5) ||
+      (posicionY === avansarY + 22.5 &&
+        posicionX <= velocidad + 5 &&
+        posicionX + 20 >= velocidad) ||
+      (posicionY + 20 === avansarY &&
+        posicionX + 20 >= velocidad &&
+        posicionX <= velocidad + 5)
+    ) {
+      let bullet = document.querySelector(".balas");
+      document.body.removeChild(bullet);
+     // mansana();
+    }
+    if (i === 30) {
+      clearInterval(tiempo);
+      if (document.querySelector(".balas") !== null) {
+        let bullet = document.querySelector(".balas");
+        document.body.removeChild(bullet);
+      }
+    }
+  }, 100);
+}
+function tecla(e) {
+  let teclas = e.keyCode;
+  if (teclas === 39) {
+    mover("rigth");
+  } else if (teclas === 37) {
+    mover("left");
+  } else if (teclas === 40) {
+    mover("bottom");
+  } else if (teclas === 38) {
+    mover("top");
+  } else if (teclas === 32) {
+    balas();
+  }
+}
+window.onkeydown = tecla;
+const generateRandomString = (num) => {
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  let result1 = " ";
+  const charactersLength = characters.length;
+  for (let i = 0; i < num; i++) {
+    result1 += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+
+  return result1;
+};
+let IDs = [];
+function zombies(id) {
+  let positionR = Math.round(Math.random() * 1000);
+  let positionRY = Math.round(Math.random() * 500);
+  if (IDs.length <= 3) {
+    IDs.push(id);
+    document.body.innerHTML += `<div id="${id}" style="display: block; position: absolute; width: 50px; height: 50px; top: ${positionRY}px; left: ${positionR}px; background: green; transition: left .4s"></div>`;
+  }
+  for (let objeto of IDs) {
+    if (document.getElementById(objeto) !== null) {
+      var X = document.getElementById(objeto).offsetLeft;
+      var Y = document.getElementById(objeto).offsetTop;
+      if (avansarX < X) {
+        document.getElementById(objeto).style.left = `${X - 10}px`;
+      } else if (avansarX > X) {
+        document.getElementById(objeto).style.left = `${X + 10}px`;
+      }
+      if (avansarY < Y) {
+        document.getElementById(objeto).style.top = `${Y - 10}px`;
+      } else if (avansarY > Y) {
+        document.getElementById(objeto).style.top = `${Y + 10}px`;
+      }
+      if (
+        X + 70 >= velocidad + 40 &&
+        X <= velocidad + 50 &&
+        Y + 70 >= avansarY + 22.5 &&
+        Y <= avansarY + 22.5
+      ) {
+        let zombie = document.getElementById(objeto);
+        document.getElementById(
+          objeto
+        ).innerHTML += `<img style="height: 70px" src="ex.png" alt="">`;
+        document.getElementById(objeto).style.background = "#0000";
+        setTimeout(() => {
+          document.body.removeChild(zombie);
+        }, 400);
+        IDs = IDs.replace(objeto, "");
+      }
+      if (
+        X + 70 >= avansarX &&
+        X <= avansarX + 70 &&
+        Y + 70 >= avansarY &&
+        Y <= avansarY + 70
+      ) {
+        alert("you died");
+        clearInterval(hola);
+      }
+    }
+  }
+}
+let t = 0;
+var hola = setInterval(() => {
+  zombies(generateRandomString(10));
+  t++;
+  /*if (t === 15) {
+    clearInterval(hola);
+  }*/
+}, 500);

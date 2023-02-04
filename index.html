@@ -1,12 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="thumbnail" content="./icon.jpeg" />
+    <link rel="manifest" href="./manifiesto.json">
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="ios/16.png" type="image/png">
+    <script
+      src="https://kit.fontawesome.com/392d4ec2d4.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>game</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+      <div class="zombie2" id='tirador' style="display: block">
+        <div class="barr" id='Life'></div>
+        <div class="border-barr" id='Life2'></div>
+      </div>
+      <div id="container">
+        <div id="bullet"></div>
+      </div>
+    <div class="header">
+      <h2>score: 0 &nbsp &nbsp &nbsp hi-score: 0</h2>
+      <button id="pause"><i class="fa-regular fa-circle-pause"></i></button>
+      <p>has doble click para ver en pantalla completa</p>
+    </div>
+    <div id="portrait">
+      <i
+        style="color: #000; font-size: 100px;"
+        class="fa-solid fa-mobile-screen-button"
+      ></i
+      ><br /><br />
+      <strong>coloca el telefono en horizontal</strong>
+    </div>
+    <div id="reanudar">
+      <h3>paused</h3>
+      <button id="restart" class="settings">
+        <b>restart</b>
+      </button>
+      <h3 id="h20">settings</h3>
+      <button id="option1"><i class="fa-solid fa-gamepad"></i></button
+      ><button id="option2">
+        <i class="borde"></i>
+        <i class="game"></i>
+      </button>
+    </div>
+    <div id="game_over">
+      <h3 id="h3">game over</h3>
+      <button id="retry">
+        <b>retry</b>
+      </button>
+    </div>
+    <button id="replace"><i id="repeat" class="fa-solid fa-repeat"></i></button>
+    <div id="border-attack" style="display: none"><div id="control-attack"><i id="fire" class="fa-solid fa-fire"></i></div></div>
+    <button id="control_attack">
+      <i id="fire" class="fa-solid fa-fire"></i>
+    </button>
+    <div id="border"><div id="control"></div></div>
+    <button id="control_left" onclick="()=>{mobile('left')}">
+      <i class="fa-solid fa-left-long"></i>
+    </button>
+    <button id="control_right"><i class="fa-solid fa-right-long"></i></button>
+    <button id="control_top"><i class="fa-solid fa-up-long"></i></button>
+    <button id="control_bottom"><i class="fa-solid fa-down-long"></i></button>
+    <div id="atack"></div>
+    <div id="contain"></div>
+    <div id="gusano">
+      <div class="borderLife">
+        <div class="life"></div>
+      </div>
+      <span>100%</span>
+    </div>
+    <div id="manzana"></div>
+    <svg id="svg" width="" height="" style="display: block; position: fixed; z-index: 1; top: 0; left: 0;">
+      <line id="linea" x1="" y1="" x2="" y2="" style="stroke: #bbbb; stroke-width: 20px;"/>
+    </svg>
+    <script type="module" src="enemy.js"></script>
+    <script type="module" src="game.js"></script>
+    <script type="module" src="control.js"></script>
+    <script type="module" src="ntf.js"></script>
   </body>
 </html>
