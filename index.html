@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Qr-Code</title>
   </head>
+
+  <style>
+    body {
+      background: #d5e1ef;
+    }
+    div {
+      width: 320px;
+      background-color: white;
+      border-radius: 20px;
+      overflow: hidden;
+      padding: 16px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      align-items: center;
+      text-align: center;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    h1 {
+      font-size: 23px;
+      line-height: 28px;
+      font-family: "Outfit", sans-serif;
+      height: 56px;
+      color: #1f314f;
+    }
+    p {
+      color: #7d889e;
+      font-size: 15px;
+      line-height: 19px;
+      font-family: "Outfit", sans-serif;
+    }
+  </style>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div>
+      <img src='/qr-code.png'/;>
+      <h1>improve you front-end skills by building projects</h1>
+      <p>
+        Scan the QR code to visit Frontend Mentor and take your coding skills to
+        the next level
+      </p>
+    </div>
   </body>
 </html>
