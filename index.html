@@ -16,33 +16,17 @@
     <div id="root"></div>
 
     <script type="text/babel">
-      const rootElement = document.getElementById("root");
-
-      const Text = ({ text }) => {
-        // text가 대문자로 시작하면 h1, 소문자로 시작하면 h3
-        if (text.charAt(0) === text.charAt(0).toUpperCase()) {
-          return <h1>{text}</h1>;
-        } else {
-          return <h3>{text}</h3>;
-        }
-      };
-
-      function Number({ number, selected }) {
-        return selected ? <h1>{number}</h1> : <h3>{number}</h3>;
+      function tick() {
+        const element = (
+          <div>
+            <h1>Hello, world!</h1>
+            <h2>It is {new Date().toLocaleTimeString()}.</h2>
+          </div>
+        );
+        ReactDOM.render(element, document.getElementById("root"));
       }
 
-      const element = (
-        <>
-          <Text text="Text" />
-          <Text text="text" />
-          <Number number={3} selected />
-          {[1, 2, 3, 4, 5, 6].map((number) => (
-            <Number number={number} selected={number % 2 === 0} />
-          ))}
-        </>
-      );
-
-      ReactDOM.render(element, rootElement);
+      setInterval(tick, 1000);
     </script>
   </body>
 </html>
