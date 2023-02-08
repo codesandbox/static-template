@@ -18,12 +18,28 @@
     <script type="text/babel">
       const rootElement = document.getElementById("root");
 
-      const text = "Hello, world!";
-      const titleClassName = "title";
-      const props = { className: titleClassName, children: text };
-      const customH1 = <h1 {...props} />;
-      ReactDOM.render(customH1, rootElement);
-      console.log(customH1);
+      const paint = (title, description) => (
+        <React.Fragment>
+          <h1>{title}</h1>
+          <h3>{description}</h3>
+        </React.Fragment>
+      );
+
+      const Paint = ({ title, description }) => (
+        <>
+          <h1>{title}</h1>
+          <h3>{description}</h3>
+        </>
+      );
+
+      const element = (
+        <>
+          <Paint title="Good" description="good" />
+          {paint("Bad", "bad")}
+          {paint("So so", "so so")}
+        </>
+      );
+      ReactDOM.render(element, rootElement);
     </script>
   </body>
 </html>
