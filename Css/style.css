@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+/* ||RESET */
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* End */
+
+/* || UTILITIES CLASSES */
+.offscreen {
+  position: absolute;
+  left: -10000000px;
+}
+.nowrap {
+  white-space: nowrap;
+}
+
+/* End */
+
+/* || VARIABLES */
+
+:root {
+  /* COLOR */
+  --COLOR: hsl(0, 36%, 70%);
+  --BUTTON-COLOR: hsl(0, 74%, 74%);
+  --ERROR-COLOR: hsl(0, 93%, 68%);
+
+  /* FONT */
+  --FF: Josefin Sans, sans-serif;
+  --FS: 16px;
+}
+
+/* || GENERAL STYLES */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+}
+body {
+  font-family: var(--FF);
+  font-size: var(--FS);
+  line-height: 1.5;
+  background-image: linear-gradient(
+    135deg,
+    hsl(0, 0%, 100%),
+    hsla(0, 74%, 74%, 0.157)
+  );
+}
+header {
+  display: grid;
+  place-content: center;
+}
+
+header section img {
+  margin-top: 40px;
+  object-fit: fill;
+}
+
+header figcaption {
+  display: none;
+}
+
+main {
+  padding: 10px;
+  margin-top: 25px;
+  color: var(--COLOR);
+}
+
+main h2 {
+  padding: 10px;
+  line-height: 4.5rem;
+  padding: 7px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 4em;
+  font-weight: lighter;
+}
+main h2 span {
+  color: hsl(0, 6%, 24%);
+  font-weight: bolder;
+}
+main p {
+  margin-top: -8px;
+  text-align: center;
+  padding: 8px;
+}
+
+form fieldset {
+  border: transparent;
+  outline: transparent;
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: 10px;
+}
+article form input {
+  margin-top: 6px;
+  outline: transparent;
+  padding: 16px;
+  width: 260px;
+  height: 45px;
+  border-radius: 35px;
+  cursor: pointer;
+  border: hsl(0, 36%, 70%) 2.5px groove;
+}
+article form input::placeholder {
+  color: var(--COLOR);
+}
+
+button:focus {
+  outline: none;
+}
+article form button {
+  background-color: var(--BUTTON-COLOR);
+  border-radius: 50px;
+  box-shadow: 0 18px 17px -2px hsl(0, 80%, 86%);
+  padding: 15px 10px 15px 18px;
+  margin-top: -5px;
+  width: 72px;
+  height: 52px;
+  outline: transparent;
+}
+
+article form button img {
+  margin-left: 12px;
+}
+article figcaption,
+main section img,
+main section figcaption {
+  display: none;
+}
+
+/* BLOCK */
+/* Header */
+.header__img {
+  transform: translateX(30px) translateY(10px);
+  margin-top: 10px;
+}
+
+/* || Style For Error Mesessage & Validation  */
+.error {
+  color: var(--ERROR-COLOR);
+  white-space: nowrap;
+  transform: translateY(8px);
+}
+.error input {
+  margin-top: 2px;
+  margin-left: 16px;
+  border: 2px var(--ERROR-COLOR) groove;
+  width: 230px;
+  height: 42px;
+}
+.error input::placeholder {
+  background-image: url(../images/icon-error.svg);
+  background-repeat: no-repeat;
+  background-position: 67% 50%;
+  background-size: contain;
+  padding: 4px;
+}
+.article__botton {
+  margin-top: 3px;
+  z-index: 1;
+  display: block;
+  margin-left: -69px;
+}
+.error input:focus {
+  background-image: url(../images/icon-error.svg);
+  background-repeat: no-repeat;
+  background-position: 67% 48%;
+  padding: 4px;
+  height: 44px;
+  object-fit: fill;
+}
+.success input {
+  border: hsl(0, 36%, 70%) 2px groove;
+}
+
+.attribution,
+.attribution a {
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--COLOR);
+}
+
+.attribution a:hover {
+  text-decoration: underline hsl(0, 80%, 86%);
+  cursor: pointer;
+}
+
+/* end */
+
+/* Media Queries */
+
+/* Medium(Ipad view)   */
+@media screen and (min-width: 768px) {
+  /* General Styles */
+  main h2 {
+    font-size: 5.4em;
+    line-height: 1.1;
+  }
+  main p {
+    font-size: 18px;
+  }
+
+  article form fieldset {
+    margin-left: 200px;
+  }
+
+  article form input {
+    width: 350px;
+  }
+
+  .error input {
+    margin-top: 2px;
+    margin-left: 16px;
+    border: 3px var(--ERROR-COLOR) groove;
+    width: 350px;
+    height: 42px;
+  }
+
+  .article__botton {
+    margin-top: 3px;
+    z-index: 1;
+    display: block;
+    margin-left: -70px;
+  }
+}
+
+/* end */
+
+/* XL(Desktop view) */
+@media screen and (min-width: 1200px) {
+  /* General Styles */
+  body {
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    object-fit: fill;
+  }
+  header section img {
+    display: none;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main article {
+    margin: 75px;
+    padding-left: 55px;
+  }
+  main article h2 {
+    margin-top: 40px;
+    text-align: left;
+    font-size: 3.8rem;
+    line-height: 1.1;
+  }
+
+  main article p {
+    margin-top: 5px;
+    text-align: left;
+    font-size: 16px;
+  }
+  main article form {
+    margin-top: 20px;
+    margin-left: -202px;
+    text-align: left;
+  }
+  main section img {
+    display: block;
+    transform: translateX(72px) translateY(-90px);
+  }
+
+  article form input {
+    width: 350px;
+    cursor: pointer;
+  }
+
+  article form button:hover {
+    background-color: hsl(0, 80%, 86%);
+    cursor: pointer;
+  }
+
+  /* BLOCK */
+  /* header */
+
+  .header__img {
+    transform: translateX(-284%) translateY(45px);
+  }
+
+  /* Error validation */
+
+  .error {
+    color: var(--ERROR-COLOR);
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: bold;
+    transform: translateX(-1px);
+  }
+  .error input {
+    border: 3px var(--ERROR-COLOR) groove;
+    transform: translateY(5px);
+    margin-left: -4px;
+    width: 300px;
+    /* end */
+  }
+
+  /* END */
+}
