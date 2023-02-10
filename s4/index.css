@@ -1,0 +1,78 @@
+/* <!--  Element selector eg. ,applied to all h1 elements  --> */
+/* <style> */
+h1 {
+  color: rebeccapurple;
+}
+/* </style> */
+
+/* <!-- class selector eg .below, here mystyles is a class,used by .mystyles,dot use kare --> */
+/* <style> */
+.myStyles {
+  color: green;
+}
+.fontBold {
+  font-weight: bold;
+  color: lawngreen;
+}
+/* jo bad class likha gya wohi jyada prior h like color ,it choose lawgreen not the green. */
+.bgcolor {
+  background-color: goldenrod;
+}
+/* </style> */
+/* <!-- ID selector --> */
+/* <style> */
+#mybike {
+  font-weight: bolder;
+  color: maroon;
+  font-size: 40px;
+}
+.fontNormal {
+  font-weight: normal;
+  color: mediumblue;
+  background-color: blueviolet;
+}
+/* </style> */
+
+/* <!-- testing priority  line no.82--> */
+/* <style> */
+.FontBold {
+  color: darkslategray;
+  font-size: 35px;
+  font-weight: bolder;
+}
+div {
+  color: darkorange;
+  font-size: 45px;
+  font-weight: normal;
+  background-color: lightsalmon;
+}
+/* what u think should be the color(in above),as per priority it will prefer class selector than element selector. 
+      since background color is only given in one of following it will not have to choose in that case.*/
+.textRed {
+  color: red;
+}
+/* here deadpoolprinted in red because .textRed is writtern in last or lower than .FontBold thus it will implemented in last top to low ,both are class,so see top to bottom in style sectoin , */
+/* </style> */
+
+/* <!-- !important --> */
+/* <style> */
+h3 {
+  color: orangered !important ;
+}
+.over {
+  color: mediumseagreen;
+  font-style: italic;
+}
+#override2 {
+  color: mediumvioletred;
+  font-size: 35px;
+}
+/* </style> */
+/* <!-- inline styles vs internal styles --> */
+/* <style> */
+h4 {
+  color: red;
+  font-weight: normal;
+  background-color: khaki !important;
+}
+/* </style> */

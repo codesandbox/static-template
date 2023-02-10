@@ -1,0 +1,132 @@
+.inline {
+  /* width: 4rem;
+  height: 4rem; */
+  padding: 1rem;
+  background-color: rebeccapurple;
+  margin: 1rem;
+  display: inline;
+}
+/* 	INLINE: Displays an element as an inline element (like <span>). 
+    Any height and width properties will have no effect*/
+
+/* //---------------- */
+/* BLOCK: Displays an element as a block element (like <p>). 
+  It starts on a new line, and takes up the whole width. 
+  */
+.block {
+  width: 4rem;
+  height: 4rem;
+  background-color: red;
+  margin-top: 1rem;
+  margin: 1.5rem;
+  display: block;
+}
+
+/* INLINE Block:Displays an element as an inline-level block container. 
+The element itself is formatted as an inline element,
+ but you can apply height and width values	.  */
+.inline_block {
+  width: 4rem;
+  height: 4rem;
+  background-color: royalblue;
+  margin-top: 2rem;
+  display: inline-block;
+}
+
+.container {
+  margin-top: 3rem;
+  margin-left: 3rem;
+  display: grid;
+  grid-template-rows: 3rem 3rem 3rem 3rem;
+  /* grid-template-columns: 33vw 33vw 33vw; */
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-columns: 8rem 8rem 8rem; */
+  column-gap: 0rem;
+  row-gap: 0rem;
+}
+.grid {
+  border-radius: 1%;
+  /* width: 8rem; */
+  /* height: 4rem; */
+}
+.child1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background-color: #ff9933;
+}
+.child2 {
+  grid-row-start: 1;
+  grid-row-end: 4;
+  grid-column-start: -1;
+  grid-column-end: 3;
+  background-color: #facc15;
+}
+.child3 {
+  grid-row: 2 /5;
+  background-color: #06b6d4;
+}
+.child4 {
+  background-color: #ffffff;
+}
+.child5 {
+  grid-column: 2 /3;
+  background-color: #138808;
+}
+.child6 {
+  grid-column: 2 /4;
+  background-color: #e11d48;
+}
+img {
+  margin-top: 4px;
+}
+body {
+  margin: 0;
+}
+
+/* nav {
+  display: flex;
+  justify-content: space-between;
+} */
+.parent_flex {
+  display: flex;
+  flex-direction: column;
+  /* this above comand felx-direction :column ;will interchange 
+  the main axis and the cross axis.
+  as a result the effect of justify-content and align-items will 
+  also be interchanged.    */
+  /* by default row set hota h */
+
+  /* flex-wrap: wrap; */
+
+  justify-content: flex-end;
+  /* this above comand felx-direction :column ;will interchange 
+  the main axis and the cross axis.
+  as a result the effect of justify-content and align-items will 
+  also be interchanged.    */
+  align-items: flex-end;
+  background-color: antiquewhite;
+  height: 600px;
+}
+
+.child {
+  width: 100px;
+  height: 100px;
+}
+.c1 {
+  background-color: red;
+}
+.c2 {
+  background-color: blueviolet;
+}
+.c3 {
+  background-color: orange;
+}
+.c4 {
+  background-color: yellow;
+}
+.c5 {
+  background-color: lightgreen;
+}
+.c6 {
+  background-color: green;
+}
