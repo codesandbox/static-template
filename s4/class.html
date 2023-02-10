@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>css</title>
+
+    <!-- Element selector eg. ,applied to all h1 elements  -->
+    <style>
+      h1 {
+        color: rebeccapurple;
+      }
+    </style>
+
+    <!-- class selector eg .below, here mystyles is a class,used by .mystyles,dot use kare-->
+    <style>
+      .myStyles {
+        color: green;
+      }
+      .fontBold {
+        font-weight: bold;
+        color: lawngreen;
+      }
+      /* jo bad class likha gya wohi jyada prior h like color ,it choose lawgreen not the green. */
+      .bgcolor {
+        background-color: goldenrod;
+      }
+    </style>
+    <!-- ID selector -->
+    <style>
+      #mybike {
+        font-weight: bolder;
+        color: maroon;
+        font-size: 40px;
+      }
+      .fontNormal {
+        font-weight: normal;
+        color: mediumblue;
+        background-color: blueviolet;
+      }
+    </style>
+
+    <!-- testing priority  line no.82-->
+    <style>
+      .FontBold {
+        color: darkslategray;
+        font-size: 35px;
+        font-weight: bolder;
+      }
+      div {
+        color: darkorange;
+        font-size: 45px;
+        font-weight: normal;
+        background-color: lightsalmon;
+      }
+      /* what u think should be the color(in above),as per priority it will prefer class selector than element selector. 
+      since background color is only given in one of following it will not have to choose in that case.*/
+      .textRed {
+        color: red;
+      }
+      /* here deadpoolprinted in red because .textRed is writtern in last or lower than .FontBold thus it will implemented in last top to low ,both are class,so see top to bottom in style sectoin , */
+    </style>
+
+    <!-- !important -->
+    <style>
+      h3 {
+        color: orangered !important ;
+      }
+      .over {
+        color: mediumseagreen;
+        font-style: italic;
+      }
+      #override2 {
+        color: mediumvioletred;
+        font-size: 35px;
+      }
+    </style>
+    <!-- inline styles vs internal styles -->
+    <style>
+      h4 {
+        color: red;
+        font-weight: normal;
+        background-color: khaki !important;
+      }
+    </style>
+    <!-- pseudo selector: hover -->
+    <style>
+      .mouse {
+        color: #c6533a;
+        font-size: 34px;
+        font-weight: normal;
+        font-family: "Times New Roman";
+        background-color: rgba(0, 0, 0, 1);
+      }
+      .mouse:hover {
+        color: rgb(0, 0, 0);
+        font-size: 38px;
+        font-weight: bolder;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Element selector -->
+    <h1>hELLO wORLD</h1>
+    <h1>NamasTE</h1>
+
+    <!-- Class selector ----,apply style only to line no. 25, h1 tag-->
+
+    <h1 class="myStyles fontBold bgcolor">class</h1>
+
+    <h1>selector</h1>
+    <!-- //this h1 tag ,not included in class -->
+
+    <p class="myStyles bgcolor">Samjhe</p>
+
+    <!-- ID selector -->
+
+    <p id="mybike" class="fontNormal">Best of luck</p>
+
+    <!-- testing priority ################# -->
+
+    <div class="FontBold">HELLO</div>
+    <div class="FontBold textRed">DEADPOOL</div>
+    <div class="textRed FontBold">wolverine</div>
+
+    <!-- no matter how u write the class here ,it just matter as writtern in style section of css.  -->
+
+    <!--   ( !important ) -->
+    <h3 class="over" id="override2">
+      hi this is overriding all law because it is using !important
+    </h3>
+
+    <!--inline styles have higher priority than internal styles.  -->
+
+    <h4 style="color: orchid; font-size: 34px; background-color: lawngreen;">
+      inline style have higher priority than internal styles.
+    </h4>
+
+    <!-- pseudo selector -->
+    <!-- 1.hovering -->
+    <header class="mouse">mouse over me</header>
+  </body>
+</html>
+
+<!-- to apply css we need to tell the css which element do we need to apply the particular styles.
+   > how we tell that ,by using selectors,what are selectors: selector are ways in which we pick the elements.
+   Types of selector ,( to select the element )
+
+1.Element selector: The element selector selects HTML elements based on the element name.
+-------------------picking element using element name.
+eg 1. we select paragraph - p
+p {
+  text-align: center;
+  color: red;
+},
+  for h1= h1{ : }
+  hence directly by name;
+
+
+2.CLASS selector: The class selector selects HTML elements with a specific class attribute.
+-------------------picking element using class name.
+To select elements with a specific class, write a period (.) character, followed by the class name
+we can also use multiple class for anyelement.
+
+
+3.Id selector: id selector uses the id attribute of an HTML element to select a specific element.
+----------------picking element using id name.
+The id of an element is unique within a page, so the id selector is used to select one unique element! 
+To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+                                       -------------------
+Q.))in line no. 59 using both id and class ,since we have writtern class-fontNormal below id #mybike ,therefore color should be applied as given in class-fontNormal that is blue,but color is maroon given in id#,therfore why this is happening ?
+ans.))
+
+
+4#) PrioritY of selectors;
+  1.1st  !important 
+
+  1st    inline styles 
+
+  2nd    ID selector 
+  3rd    Class selector 
+  4th    Element selector.
+  ------
+ 
+> top to bottom applied.
+>if using same selector than bottom to top,giving bottom most ,most priority.
+
+
+!important : this should be use for giving highest priority.no matter comparison is with anyone.used to overwrite the given styling.
+
+5#)Pseudo selector :  A pseudo-class is used to define a special state of an element.
+
+For example, it can be used to:
+
+hover state, blur state,focus state;
+
+Style an element when a user mouses over it(hover)
+Style visited and unvisited links differently
+Style an element when it gets focus.
+
+6#)
+read specifity operators.
+https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity#:~:text=Specificity%20is%20an%20algorithm%20that,(or%20pseudo%2Delement).
+
+
+7#)how to give colors
+  1.(hex representation) hex code-eg. #c6533a ,https://htmlcolorcodes.com/,used above
+  2.rbg- rgb(198, 83, 58) ,range 0-255, rgb() is a function that generate color
+  3.rgba-rgb alpha,it add transparency for the color.
+    rgba(0,0,0,0.5) ,opacity 0.5 
+    
+    AGAR ALAG se opacity jodni h 
+    div {
+     opacity: 0.5;
+    }
+-->
