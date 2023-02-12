@@ -1,0 +1,231 @@
+body {
+  background-color: #e0e8ff;
+  margin: 0;
+  font-family: "Red Hat Display", sans-serif;
+  }
+
+#mobile-pattern {
+  height: 194px;
+  position: absolute;
+  background-color: #d6e1ff;
+  margin: 0;
+  width: 100%;
+}
+
+#desktop-pattern {
+  display: none;
+}
+
+.container {
+  width: 327px;
+  background-color: white;
+  border-radius: 20px;
+
+  box-shadow: 0px 40px 40px -20px rgba(13, 48, 189, 0.151826);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#hero {
+  max-width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#name {
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 29.11px;
+  margin: 32px 32px 16px 32px;
+  color: #1f2e55;
+}
+
+#text {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
+  margin: 0px 32px 24px 32px;
+  color: #717fa6;
+}
+
+#two {
+  margin-left: 19px;
+}
+
+#three {
+  margin-left: 45px;
+}
+
+.plan {
+  width: 279px;
+  height: 81px;
+  background-color: #f7f9ff;
+  border-radius: 11px;
+  margin: 0px;
+  font-size: 14px;
+}
+
+#music {
+  margin: 0px 0px 16px 16px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#annual {
+  font-size: 14px;
+  font-weight: 900;
+  color: #1f2e55;
+  line-height: 18.52px;
+
+  margin: 21px 42.34px 41px 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#price {
+  font-weight: 500;
+  color: #717fa6;
+}
+
+#change {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 31px;
+  color: #382ae1;
+  text-decoration: underline;
+  font-size: 13px;
+  font-weight: 700;
+}
+#change:hover {
+  color: #766cf1;
+}
+
+.payment {
+  width: 279px;
+  height: 50px;
+  background-color: #382ae1;
+  border-radius: 11px;
+  text-align: center;
+  margin: 24px;
+  box-shadow: 0px 20px 20px rgba(56, 42, 225, 0.190291);
+}
+
+.payment:hover {
+  background-color: #766cf1;
+}
+
+#paytext {
+  font-size: 15px;
+  line-height: 19.85px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+#cancel {
+  font-size: 15px;
+  line-height: 19.85px;
+  font-weight: 900;
+  color: #717fa6;
+  margin: 0px 116px 32px 115px;
+}
+
+#cancel:hover {
+  color: #1f2e55;
+}
+
+/*responsive for desktop*/
+@media (min-width: 750px) {
+  #mobile-pattern {
+    display: none;
+  }
+
+  #desktop-pattern {
+    display: block;
+    max-width: 100%;
+    height: 437px;
+    margin: 0;
+    position: absolute;
+  }
+  .container {
+    width: 450px;
+    }
+
+  #name {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 37px;
+    margin: 45px 48px 17px 48px;
+    color: #1f2e55;
+  }
+
+  #text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    color: #717fa6;
+    text-align: center;
+    margin: 0px 48px 20px 48px;
+    width:354px;
+  }
+
+
+  #two{
+    margin-left: 0px;
+  }
+  #three{
+    margin-left:0px;
+  }
+
+
+
+  .plan {
+    width:354px;
+    height: 98px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #music {
+    margin: 25px 20px 25px 24px;
+  }
+  
+  #annual{
+    margin:25px 94px 25px 0px;
+    font-size:16px;
+    
+  }
+
+  #price{
+    display:block;
+    margin-top:6px;
+  }
+
+  #change{
+    margin: 40px 24px 39px 0px;
+    font-size:14px;
+  }
+
+  .payment{
+    width:354px;
+    margin: 32px 48px 32px 48px;
+  }
+
+  #cancel{
+     margin-right:178px;
+     margin-left:176px ;
+  }
+  
+
+  @media (min-height: 900px){
+    #cancel{
+      margin: 0px 178px 48px 176px;
+    }
+  }
