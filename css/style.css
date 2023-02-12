@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Trebuchet MS";
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.header {
+  position: auto;
+  z-index: 111;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: white;
+}
+.header ul {
+  list-style: none;
+  overflow: auto;
+}
+.logo {
+  padding: 10px;
+  display: flex;
+  justify-content: start;
+  width: 250px;
+  height: 200px;
+  background-image: url("/images/WebsiteLogo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.header .menu a {
+  padding: 30px 30px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  color: rgb(0, 175, 131);
+}
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height;
+}
+
+.header .menu a:hover {
+  background: rgb(0, 175, 131);
+  color: white;
+}
+.header .menu-icon {
+  position: relative;
+  float: right;
+  padding: 30px 30px;
+  cursor: pointer;
+}
+.header .nav-icon {
+  position: relative;
+  display: grid;
+  grid-row: end;
+  height: 2px;
+  width: 80px;
+  background: rgb(0, 175, 131);
+}
+.header .menu-icon .nav-icon::before {
+  position: absolute;
+  content: "";
+
+  height: 100%;
+  width: 100%;
+  min-width: 30px;
+  background: rgb(0, 175, 131);
+  top: 10px;
+  transition: all 0.2s ease-out;
+}
+.header .menu-icon .nav-icon::after {
+  content: "";
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  min-width: 30px;
+  background: rgb(0, 175, 131);
+  bottom: 10px;
+}
+
+.header .menu-btn {
+  display: none;
+}
+.header .menu-btn:checked ~ .menu {
+  max-height: 400px;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center center;
+  margin-top: 0.1em;
+  content: static;
+  min-height: 25rem;
+}
+.content h2 {
+  padding-top: 4rem;
+  color: white;
+  font-size: 45px;
+}
+.content h2 span {
+  color: rgb(0, 175, 131);
+}
+.content p {
+  color: white;
+  font-weight: 500;
+}
+.content a {
+  background: rgb(0, 175, 131);
+  text-decoration: none;
+  color: #fff;
+  padding: 20px 30px;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+@media (max-width: 600px) and (max-height: 800px) {
+  .banner {
+    background-position: 65%;
+    margin-top: 9rem;
+    transition: ease-out 2s;
+    transition: ease-in 2s;
+  }
+  .content {
+    text-align: left;
+    padding-left: 5%;
+  }
+}
+/* News letter signup on services page */
+.newsletter-container {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+}
+
+#newsletter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+.submit-btn,
+.clear-btn {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: rgb(0, 175, 131);
+  color: white;
+  cursor: pointer;
+}
+
+.submit-btn:hover,
+.clear-btn:hover {
+  background-color: white;
+  color: rgb(0, 175, 131);
+}
+span {
+  color: rgb(0, 175, 131);
+}
+h2 {
+  padding-bottom: 1rem;
+}
+/* .FAQ-grid {
+  display: grid;
+  gap: 0.2rem;
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "one"
+    "two";
+  padding-block: 2rem;
+  width: min(95%, 70rem);
+  margin-inline: auto;
+}
+.FAQ-grid:nth-child(1) {
+  grid-area: one;
+}
+.FAQ-grid:nth-child(2) {
+  grid-area: two;
+}
+.FAQ-text {
+  background-color: rgb(0, 175, 131);
+  font-size: 20px;
+  border-radius: 150%;
+  border-radius: 0.2rem;
+  border-style: block;
+}
+.FAQ-text h3 {
+  padding-bottom: 1rem;
+  padding: center;
+  text-decoration: underline;
+  text-decoration-color: rgb(75, 75, 75);
+}
+ul {
+  padding-left: 0;
+}
+ul li {
+  list-style-position: inside;
+} */

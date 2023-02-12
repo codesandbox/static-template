@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Jesse Hardy Life Coaching home page</title>
+    <link rel="stylesheet" href="/css/style.css"
   </head>
+  <!----------------------------------------------------------------------------------------------------------------
+--
+#Original Author:Jesse Hardy #
+#Date Created:Jan 23, 2023 #
+#Version: 1.0 #
+#Date Last Modified:2/8/23 #
+#Modified by:Jesse Hardy  #
+#Modification log:
+
+Version 0.0 - 1/23/23 - Created index page and CSS
+Version 0.25 - 1/24/23 - Created about, service,  and contact pages applied CSS
+Version 0.5 - 1/29/23 - Added JavaScript to calculate pricing for customer
+Version 0.75 - 2/6/23 - Added a Contact form with Javascript to validate entries and then if entries all
+                        are filled the register button will take you to a page confirming your entry (confirm.html)
+                        and can take you back to index page.
+Version 1.0 - 2/7/23 2/8/23 - Moved the error message from the UL list it was attached to in the navagation
+                              to the main page and above the form you fill out so the navigation wasnt bugged.
+                              Also made it look nicer with added css for it.
+Version 1.25 - 2/9/23 - edited contact page to have more text. edited code to make more responsive.
+Version 1.5 - 2/10/23 - remoced contact page and add the FAQ Page and styling
+ --
+------------------------------------------------------------------------------------------------------------------>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header class="header">
+      <a class="logo" href="index.html"></a>
+      <input type="checkbox" id="menu-btn" class="menu-btn" />
+      <label class="menu-icon" for="menu-btn">
+        <span class="nav-icon"></span>
+      </label>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="html/faq.html">FAQ</a></li>
+        <li><a href="html/service.html">Services</a></li>
+        <li><a href="html/contact.html">Contact</a></li>
+      </ul>
+    </header>
+    <div class="banner">
+      <div class="content">
+        <h2>Life <span>Coaching</span></h2>
+        <br />
+        <p>
+          Life coaching - a safe place in a unsafe world<br /><br />
+          We here believe in <br />
+          Encouraging, Counceling, Guiding, and Achieving
+        </p>
+        <a id="calculate-cost-link">Calculate pricing for sessions</a>
+      </div>
+    </div>
+    <script src="JS/calculatePrice.js"></script>
   </body>
 </html>

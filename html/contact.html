@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Contact page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo" href="/index.html"></a>
+      <input type="checkbox" id="menu-btn" class="menu-btn" />
+      <label class="menu-icon" for="menu-btn">
+        <span class="nav-icon"></span>
+      </label>
+      <ul class="menu">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </header>
+    <div class="banner">
+      <div class="content">
+        <h2>Contact <span>Info</span></h2>
+        <br />
+        <p class="info">E-mail: **********@gmail.com</p>
+        <p class="info">Office Number: 000-000-0000</p>
+        <p class="info">Addess: 12345 ********* ******** **</p>
+        <br />
+        <h2>Want us to contact<span> you?</span></h2>
+        <form action="confirm.html" method="get">
+          <div>
+            <label for="email_address">E-Mail:</label>
+            <input type="text" name="email_address" id="email_address" />
+            <span>*</span>
+          </div>
+          <div>
+            <label for="phone">Mobile Phone:</label>
+            <input type="text" name="phone" id="phone" />
+            <span>*</span>
+          </div>
+          <div>
+            <label>Contact me by:</label>
+            <input
+              type="radio"
+              name="contact"
+              id="text"
+              value="text"
+              checked
+            />Text
+            <input type="radio" name="contact" id="mobile" value="none" />Mobile
+            Phone
+            <input type="radio" name="contact" id="email" value="email" />Email
+          </div>
+          <div>
+            <label>Terms of Service:</label>
+            <input type="checkbox" name="terms" id="terms" value="yes" />I
+            accept
+            <span>*</span>
+          </div>
+          <div>
+            <label for="comments">Comments:</label>
+            <textarea
+              name="comments"
+              id="comments"
+              value="none"
+              rows="5"
+            ></textarea>
+          </div>
+          <div>
+            <label>&nbsp;</label>
+            <input type="button" id="register" value="Register" />
+            <input type="button" id="reset_form" value="Reset" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="/JS/contact.js"></script>
+  </body>
+</html>
