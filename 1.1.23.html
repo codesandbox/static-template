@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- React CDN -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <!-- Babel CDN -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      class ErrorBoundary extends React.Component {
+        state = { error: null };
+        static getDerivedStateFromError(error) {
+          return { error };
+        }
+
+        render() {
+          const { error } = this.state;
+          if (error) {
+            return <this.props.fallback error={error} />;
+          }
+          return this.props.children;
+        }
+      }
+
+      const Child = () => {
+        throw new Error("Something wrong...");
+        return <p>Child...</p>;
+      };
+
+      const Fallback = ({ error }) => {
+        console.log(error);
+        return <p>THERE IS SOME ERROR...</p>;
+      };
+
+      const App = () => {
+        return (
+          <>
+            <p>App</p>
+            <ErrorBoundary fallback={Fallback}>
+              <Child />
+            </ErrorBoundary>
+          </>
+        );
+      };
+
+      ReactDOM.render(<App />, rootElement);
+    </script>
+  </body>
+</html>

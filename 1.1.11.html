@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- React CDN -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <!-- Babel CDN -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      const state = { keyword: "", typing: false, result: "" };
+
+      const App = () => {
+        function handleChange(event) {
+          setState({ typing: true, keyword: event.target.value });
+        }
+
+        function handleClick(event) {
+          setState({
+            typing: false,
+            result: `We find results of ${state.keyword}`
+          });
+        }
+        return (
+          <>
+            <input onChange={handleChange} />
+            <button onClick={handleClick}>search</button>
+            <p>
+              {state.typing ? `Looking for ${state.keyword}...` : state.result}
+            </p>
+          </>
+        );
+      };
+
+      function setState(newState) {
+        Object.assign(state, newState);
+        render();
+      }
+
+      function render() {
+        ReactDOM.render(<App />, rootElement);
+      }
+      render();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- React CDN -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <!-- Babel CDN -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      const handleClick = () => alert("pressed");
+      const handleMouseOut = () => alert("bye");
+
+      const element = (
+        <button onClick={handleClick} onMouseOut={handleMouseOut}>
+          Press
+        </button>
+      );
+      ReactDOM.render(element, rootElement);
+    </script>
+  </body>
+</html>

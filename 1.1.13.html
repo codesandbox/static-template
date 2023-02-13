@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- React CDN -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <!-- Babel CDN -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      const App = () => {
+        const [keyword, setKeyword] = React.useState("");
+        const [result, setResult] = React.useState("");
+        const [typing, setTyping] = React.useState(false);
+
+        function handleChange(event) {
+          setKeyword(event.target.value);
+          setTyping(true);
+        }
+
+        function handleClick(event) {
+          setTyping(false);
+          setResult(`We find results of ${keyword}`);
+        }
+
+        return (
+          <>
+            <input onChange={handleChange} />
+            <button onClick={handleClick}>search</button>
+            <p>{typing ? `Looking at ${keyword}...` : result}</p>
+          </>
+        );
+      };
+
+      ReactDOM.render(<App />, rootElement);
+    </script>
+  </body>
+</html>
