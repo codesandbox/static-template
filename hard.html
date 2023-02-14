@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hard Mode</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+            * {
+              margin: 0px;
+              padding: 0px;
+              box-sizing: border-box;
+            }
+
+            body {
+              overflow: hidden;
+            }
+
+            .main-container-easy {
+              height: 100vh;
+              width: 100vw;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: rgb(118, 24, 205);
+            }
+            .container-easy {
+              height: 50vh;
+              width: 30vw;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              flex-direction: column;
+              background-color: rgb(164, 203, 214);
+              border-radius: 15px;
+            }
+
+            .head {
+              font-size: 20px;
+              font-weight: 500;
+              font-style: bold;
+              font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            .text {
+              font-size: 20px;
+              font-weight: 500;
+              font-style: bold;
+              font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            .flex {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              font-size: 18px;
+              font-weight: 500;
+              font-style: bold;
+              font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            .btn3 {
+              margin: -20px;
+              font-size: 15px;
+              font-family: sans-serif;
+              width: 120px;
+              height: 50px;
+              border-width: 1px;
+              color: #fff;
+              border-color: #7aab18;
+              font-weight: bold;
+              border-top-left-radius: 28px;
+              border-top-right-radius: 28px;
+              border-bottom-left-radius: 28px;
+              border-bottom-right-radius: 28px;
+              text-shadow: 1px 1px 0px #2f6627;
+              background: #0de1a5;
+            }
+
+            .btn3:hover {
+              cursor: pointer;
+            }
+            .flexbox {
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              row-gap: 5px;
+              column-gap: 5px;
+            }
+            input {
+              padding: 10px;
+            }
+            .text {
+              color: red;
+              font-weight: 500;
+              font-style: bold;
+              font-size: 22.5px;
+            }
+            #text2 {
+              color: rgb(92, 114, 89);
+            }
+            .red {
+              color: red;
+            }
+            .yellow {
+              color: yellow;
+            }
+            .green {
+              color: greenyellow;
+              background-color: black;
+            }
+            .zmore {
+              z-index: 100;
+            }
+            .zmoreplus {
+              /* z-index: 200; */
+              background-color: red;
+            }
+            .zless {
+              z-index: -100;
+            }
+            #newgame {
+              display: none;
+              background-color: red;
+            }
+
+      @media only screen and (max-width: 1096px) and (min-width: 350px) {
+        .container-easy {
+          height: 68vh;
+          width: 75vw;
+        }
+        input {
+          width: 150px;
+          height: 40px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="main-container-easy">
+      <div class="container-easy">
+        <p class="head" id="head">Your Guess</p>
+        <p class="head1" id="head1">SCORE : 0</p>
+        <input
+          onkeypress="if(this.keyCode == 13){work()}"
+          id="val"
+          type="number"
+          placeholder="Enter Your Guess"
+        />
+        <button type="button" class="btn3">ENTER</button>
+        <button type="button" class="btn3" id="newgame">NEW GAME</button>
+
+        <div class="flexbox">
+          <div class="flex">
+            <span id="span1">Number of Attempts Left : &nbsp;</span
+            ><span id="text1" class="text">5</span>
+          </div>
+          <br />
+          <div class="flex">
+            <span id="span2">You have tried the following : &nbsp;&nbsp; </span
+            ><span class="text" id="text2">&nbsp; _</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="script.js"></script> -->
+
+    <script>
+      //GLOBAL VARIABLE
+      const randomNum = Math.floor(1 + Math.random() * 100);
+      console.log(randomNum);
+      let btn3 = document.querySelector(".btn3");
+      btn3.addEventListener("click", work);
+      let guess = 5;
+      let clickmusic = new Audio("clickmus.wav");
+      let wronginput = new Audio("error.mp3");
+      let gameover = new Audio("gameover.wav");
+      let array = [];
+
+      //GLOBAL VARIABLE
+
+      function newGame() {
+        gameover.play();
+        document.querySelector(
+          ".head"
+        ).innerHTML = `You Loose ! Correct ans is ${randomNum}`;
+        let colours = document.querySelector(".head");
+        colours.classList.add("zmoreplus");
+        colours.classList.add("green");
+
+        let bot = document.querySelector("#newgame");
+        document.querySelector(".btn3").style.display = "none";
+        bot.style.display = "block";
+        bot.addEventListener("click", () => {
+          window.location.reload();
+        });
+      }
+
+      function work() {
+        value = document.getElementById("val").value;
+        let finVal = +value;
+
+        if (finVal < 0 || finVal > 100 || finVal == "" || finVal % 1 != 0) {
+          head = document.getElementById("head");
+          head.innerHTML = `INVALID NUMBER !`;
+          head.classList.add("red");
+          wronginput.play();
+        } else {
+          //  console.log("correct")
+          clickmusic.play();
+          array.push(finVal);
+          document.querySelector("#text2").innerHTML = `&nbsp; ${array}`;
+          if (array.length > 4) {
+            document.querySelector("#text2").style.fontSize = "16px";
+            document.querySelector("#span2").style.fontSize = "16px";
+            //  document.querySelector('#text1').style.fontSize = "20px";
+            document.querySelector("#span1").style.fontSize = "16px";
+          }
+
+          if (array.includes(finVal) === true) {
+            document.querySelector(
+              ".head"
+            ).innerHTML = `You have already used that number`;
+          }
+          // else{
+
+          guess--;
+          document.getElementById("text1").innerHTML = `${guess}`;
+          document.querySelector("#val").value = "";
+
+          if (guess <= 0) {
+            newGame();
+          }
+          if (guess == 0 && finVal == randomNum) {
+            document.querySelector(".head").innerHTML = `CONGRATS ! YOU WON `;
+            document.querySelector(".head1").innerHTML = `SCORE : ${
+              (guess + 1) * 20
+            } `;
+            clickmusic.pause();
+            gameover.play();
+            color.classList.add("green");
+            let bot = document.querySelector("#newgame");
+            document.querySelector(".btn3").style.display = "none";
+            bot.style.display = "block";
+            bot.addEventListener("click", () => {
+              window.location.reload();
+            });
+          }
+          if (guess == 0 && finVal != randomNum) {
+            newGame();
+          } else {
+            const color = document.querySelector(".head");
+            if (finVal < randomNum) {
+              document.querySelector(
+                ".head"
+              ).innerHTML = `Try a greater number`;
+              color.classList.add("yellow");
+            } else if (finVal > randomNum) {
+              document.querySelector(".head").innerHTML = `Try a lesser number`;
+              color.classList.add("yellow");
+            } else {
+              document.querySelector(".head").innerHTML = `CONGRATS ! YOU WON `;
+              // document.querySelector('.head1').innerHTML = `SCORE : ${(guess+1)*10} `;
+              document.querySelector(".head1").innerHTML = `SCORE : ${
+                (guess + 1) * 20
+              } `;
+              clickmusic.pause();
+              gameover.play();
+              color.classList.add("green");
+              let bot = document.querySelector("#newgame");
+              document.querySelector(".btn3").style.display = "none";
+              bot.style.display = "block";
+              bot.addEventListener("click", () => {
+                window.location.reload();
+              });
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
