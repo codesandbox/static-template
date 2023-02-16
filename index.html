@@ -1,12 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Flex</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://images.vexels.com/media/users/3/137617/isolated/preview/c45afb857e72b86e87baaf255f71ff37-geometric-logo-abstract.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/login.css" id="login-css" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="css/panel.css" />
+    <script src="js/panel.js" defer></script>
+    <link rel="stylesheet" href="css/font.css" />
+    <script src="js/window.js"></script>
+    <link rel="stylesheet" href="css/window.css" />
+    <link rel="stylesheet" href="css/dock.css" />
+    <script src="js/app-menu.js"></script>
+    <link rel="stylesheet" href="css/app-menu.css" />
+    <link rel="stylesheet" href="css/desktop.css" />
+    <link rel="stylesheet" href="css/brightness.css" />
+    <script src="js/activities.js"></script>
+    <link rel="stylesheet" href="css/activities.css" />
+    <script src="js/localStorage.js" defer></script>
+    <script src="js/workspace.js"></script>
+    <link rel="stylesheet" href="css/workspace.css" />
+    <script src="js/dialogs.js"></script>
+    <link rel="stylesheet" href="css/dialog.css" />
+    <script src="js/notify.js"></script>
+    <link rel="stylesheet" href="css/notify.css" />
+    <script src="js/app-manager.js"></script>
+    <script src="js/login.js"></script>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <script src="js/pwa.js"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="550055" />
+    <meta name="apple-mobile-web-app-title" content="Ubuntu" />
+    <meta name="msapplication-TileImage" content="assets/144.png" />
+    <meta name="msapplication-TileColor" content="#550055" />
+    <link rel="apple-touch-icon" href="assets/144.png" />
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <body oncontextmenu="return false;">
+    <img src="" draggable="false" class="wallpaper" />
+    <div class="panel">
+      <div class="panel-activities" onclick="showHideActivities();">
+        Activities
+      </div>
+      <div class="panel-active-app">
+        <img
+          draggable="false"
+          src="https://malisipi.github.io/ubuntu-tour/icons/null.svg"
+          class="panel-active-app-icon"
+        />
+        <div class="panel-active-app-name"></div>
+      </div>
+      <div class="panel-notification" onclick="showNotificationAbout();"></div>
+      <div class="panel-status" onclick="showStatusAbout();">
+        <img
+          class="panel-status-icon"
+          draggable="false"
+          id="wifi"
+          src="icons/Suru/Suru/scalable/status/network-wireless-connected-symbolic.svg"
+        />
+        <img
+          class="panel-status-icon"
+          draggable="false"
+          id="sound"
+          src="icons/Suru/Suru/scalable/status/audio-volume-high-symbolic.svg"
+        />
+        <img
+          class="panel-status-icon"
+          draggable="false"
+          id="battery"
+          src="icons/Suru/Suru/scalable/status/battery-level-100-charging-symbolic.svg"
+        />
+      </div>
+      <iframe class="status-about" src="status.html" hidden></iframe>
+      <iframe
+        class="notification-about"
+        src="notification.html"
+        hidden
+      ></iframe>
+    </div>
+    <div
+      class="desktop"
+      onclick="changePanelActiveAppIcon('icons/null.svg','');"
+    >
+      <div class="desktop-item" ondblclick="start_app('nautilus');">
+        <img
+          draggable="false"
+          class="item-icon"
+          src="icons/Suru/Suru/48x48/places/user-home.png"
+        /><br />
+        Home
+      </div>
+    </div>
+    <div class="dock-app-menu" onmousewheel="changeWorkspace();">
+      <img
+        onclick="showHideAppMenu();"
+        draggable="false"
+        src="icons/Suru/Suru/scalable/categories/preferences-desktop-apps-symbolic.svg"
+        class="dock-app-menu-icon"
+      />
+    </div>
+    <div class="dock">
+      <div id="dock"></div>
+      <div class="dock-app-container">
+        <img
+          class="dock-app"
+          onclick="start_app('nautilus','open=Trash');"
+          draggable="false"
+          src="icons/Suru/Suru/48x48/places/user-trash.png"
+        />
+      </div>
+    </div>
+    <div class="workspaces" hidden><div class="workspace-now"></div></div>
+    <div class="app-menu" style="visibility: hidden;">
+      <div class="menu-searchbox">
+        <img
+          src="https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-2.png"
+          draggable="false"
+        /><input
+          type="text"
+          placeholder="Search"
+          onfocus="this.parentNode.style.border='2px #f7b33f solid'; this.parentNode.style.transform='translate(-1px,-1px)';"
+          onfocusout="this.parentNode.style.border=''; this.parentNode.style.transform='';this.value='';"
+        />
+      </div>
+      <img onclick="showHideAppMenu();" class="app-menu-container-wallpaper" />
+      <div class="app-menu-container"></div>
+    </div>
+    <div class="activities" style="visibility: hidden;">
+      <div class="menu-searchbox">
+        <img
+          src="https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-2.png"
+          draggable="false"
+        /><input
+          type="text"
+          placeholder="Search"
+          onfocus="this.parentNode.style.border='2px #f7b33f solid'; this.parentNode.style.transform='translate(-1px,-1px)';"
+          onfocusout="this.parentNode.style.border=''; this.parentNode.style.transform='';this.value='';"
+        />
+      </div>
+      <img onclick="showHideActivities();" class="activities-wallpaper" />
+    </div>
+    <div class="context-menu-container" onclick="showHideContextMenu();" hidden>
+      <iframe class="context-menu" src="contextmenu.html"></iframe>
+    </div>
+    <div id="dialog-box-container" hidden>
+      <div id="dialog-box">
+        <div id="dialog-title"></div>
+        <div id="dialog-text"></div>
+        <div
+          id="dialog-option-1"
+          onclick="document.querySelector('#dialog-box-container').hidden=true;new Function(__dialog_opt1)();"
+        >
+          Cancel
+        </div>
+        <div
+          id="dialog-option-2"
+          onclick="document.querySelector('#dialog-box-container').hidden=true;new Function(__dialog_opt2)();"
+        >
+          OK
+        </div>
+      </div>
+    </div>
+    <div
+      id="notify-box"
+      onclick="if(window.event.target.id!='notify-close'){new Function(__notify_action)();};document.querySelector('#notify-box').hidden=true;"
+      hidden
+    >
+      <div id="notify-title">Title</div>
+      <div id="notify-text">Text</div>
+      <img
+        id="notify-close"
+        src="icons/Suru/Suru/scalable/ui/window-close-symbolic.svg"
+      />
+    </div>
+    <div class="login-user" style="display: none;" onclick="loginSession();">
+      <img src="https://openclipart.org/image/2000px/247320" />
+      <div>User</div>
+    </div>
+    <div class="login-ubuntu" style="display: none;">flexOS</div>
+    <div class="brightness" id="brightness"></div>
   </body>
 </html>
