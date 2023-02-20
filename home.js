@@ -1,4 +1,5 @@
 // Projects Slider
+// Another comment
 document.addEventListener("DOMContentLoaded", function () {
   var splide = new Splide("#projects-slider", {
     type: "slide",
