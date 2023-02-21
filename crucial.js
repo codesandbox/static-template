@@ -1,5 +1,5 @@
 let serverURL = "https://blockify.exotek.co/api/";
-//let serverURL = "http://localhost:3000/";
+//let serverURL = "http://localhost:3000/api/";
 //let assetURL = "https://practicum.s3.amazonaws.com/";
 
 const socket = new SimpleSocket({
@@ -56,6 +56,7 @@ async function setPage(name) {
     subscribes[i].close();
   }
   subscribes = [];
+  window.newRealtime = null;
   if (wireframes[name] == null) {
     if (currentlyLoadingPages[name] != null) {
       return;
@@ -70,7 +71,7 @@ async function setPage(name) {
     await pages[name]();
     let title = name;
     title = name.charAt(0).toUpperCase() + name.slice(1);
-    document.title = title + " | Practicum";
+    document.title = title + " | Blockify";
   }
 }
 function goBack() {
@@ -79,10 +80,6 @@ function goBack() {
 window.addEventListener("hashchange", function () {
   let pageName = window.location.hash.substring(1);
   if (currentPage == pageName.replace(/\./g, "")) {
-    return;
-  }
-  if (pageName[pageName.length - 1] == ".") {
-    history.back();
     return;
   }
   setPage(pageName);
@@ -198,22 +195,55 @@ function firstDigit(n) {
 
   return Math.floor(n);
 }
+function hashDigit(text) {
+  let hash = 0;
+  for (let i = 0; i < text.length; i++) {
+    let char = text.charCodeAt(i);
+    hash = (hash << 5) - hash + char;
+    hash = hash & hash;
+  }
+  return Math.ceil(firstDigit(Math.abs(hash)) / 2) + 1;
+}
 function profilePic(user) {
   user = user || account;
   if (user.image) {
     return user.image;
   }
   user.user = user.user || "";
-  let hash = 0;
-  for (let i = 0; i < user.user.length; i++) {
-    let char = user.user.charCodeAt(i);
-    hash = (hash << 5) - hash + char;
-    hash = hash & hash;
+  return "./images/profileimages/" + hashDigit(user.user) + ".svg";
+}
+function profileColor(user) {
+  switch (hashDigit((user || {}).user || "")) {
+    case 1:
+      return "#4CC9FF";
+    case 2:
+      return "#4CFF73";
+    case 3:
+      return "#FF4CA2";
+    case 4:
+      return "#4E5EF2";
+    case 5:
+      return "#FF4C6C";
+    case 6:
+      return "#FFCD4C";
+    default:
   }
-  return (
-    "./images/profileimages/" +
-    (Math.ceil(firstDigit(Math.abs(hash)) / 2) + 1) +
-    ".svg"
+}
+
+function openWindow(url, width, height) {
+  width = width || 1000;
+  height = height || 650;
+  return window.open(
+    url,
+    "exotek_window_prompt",
+    "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=" +
+      width +
+      ", height=" +
+      height +
+      ", top=" +
+      (screen.height / 2 - height / 2 - 100) +
+      ", left=" +
+      (screen.width / 2 - width / 2)
   );
 }
 
@@ -221,16 +251,30 @@ let epochOffset = 0;
 function getEpoch() {
   return Date.now() + epochOffset;
 }
-function promptlogin() {
+function randomString(l) {
+  var s = "";
+  var randomchar = function () {
+    var n = Math.floor(Math.random() * 62);
+    if (n < 10) return n; //1-10
+    if (n < 36) return String.fromCharCode(n + 55); //A-Z
+    return String.fromCharCode(n + 61); //a-z
+  };
+  while (s.length < l) s += randomchar();
+  return s;
+}
+function promptLogin() {
+  let randomStr = randomString(20);
+  setLocalStore("state", randomStr);
   window.location =
     "https://exotek.co/login?client_id=63175aa927db32e6903b636f&redirect_uri=" +
     encodeURIComponent(window.location.href) +
-    "&response_type=code&scope=userinfo";
+    "&response_type=code&scope=userinfo&state=" +
+    randomStr;
 }
 function ensureLogin() {
   let token = getLocalStore("token");
   if (token == null) {
-    promptlogin();
+    promptLogin();
     return;
   }
   return token;
@@ -254,10 +298,10 @@ async function renewToken() {
     setLocalStore("token", JSON.stringify(refreshData.token));
     account.Realtime = refreshData.realtime;
     return refreshData.token;
-  } else if (refreshToken.status == 404) {
+  } else {
     removeLocalStore("userID");
     removeLocalStore("token");
-    promptlogin();
+    promptLogin();
   }
 }
 async function sendRequest(method, path, body, noFileType) {
@@ -345,6 +389,9 @@ function accountSub() {
 
           if (data.data.realtime) {
             accountSub();
+            if (window.newRealtime) {
+              window.newRealtime();
+            }
           }
           if (data.data.user || data.data.hasOwnProperty("image")) {
             pageHolder.querySelector(".signedInPicture").src = profilePic();
@@ -359,11 +406,11 @@ function accountSub() {
 
 function updateToSignedIn(data) {
   account = data;
-  userID = account._id;
+  userID = account.id;
   accountSub();
 }
 async function auth() {
-  let [code, response] = await sendRequest("GET", "me?ss=" + socket.secureID);
+  let [code, response] = await sendRequest("GET", "me");
   if (code != 200) {
     return;
   }
@@ -372,30 +419,36 @@ async function auth() {
 async function init() {
   let paramAuthCode = getParam("code");
   if (paramAuthCode) {
+    if (getParam("state") != getLocalStore("state")) {
+      promptLogin();
+      return;
+    }
+    removeLocalStore("state");
+    modifyParams("state");
     let [code, response] = await sendRequest("POST", "auth", {
       code: paramAuthCode
     });
     modifyParams("code");
     if (code === 200) {
       let data = JSON.parse(response);
-      setLocalStore("userID", data.user._id);
+      setLocalStore("userID", data.user.id);
       setLocalStore("token", JSON.stringify(data.token));
       updateToSignedIn(data.user);
     }
   } else if (getLocalStore("token") != null) {
     await auth();
   }
-  if (window.location.hash.includes("#files")) {
-    setPage("files");
+  if (window.location.hash.includes("#editor")) {
+    setPage("editor");
   } else {
     // if (window.fontLoaded) {
-    setPage("editor");
+    setPage("files");
   }
 }
 socket.onopen = function () {
   init();
   if (currentPage != "") {
-    refreshPage();
+    setPage(currentPage || "editor");
   }
 };
 

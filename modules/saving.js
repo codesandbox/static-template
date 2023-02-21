@@ -1,96 +1,143 @@
-const cursorIcon = `<svg viewBox="0 0 158 204" fill="none" xmlns="http://www.w3.org/2000/svg"> <mask id="mask0_1246_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="158" height="204"> <rect width="158" height="204" fill="#C4C4C4"/> </mask> <g mask="url(#mask0_1246_2)"> <path d="M88.6882 119.764L65.5221 131.568C57.6486 135.58 54.5181 145.215 58.5298 153.088L75.9217 187.222C79.9334 195.095 89.5682 198.226 97.4417 194.214L120.608 182.41C128.481 178.398 131.612 168.764 127.6 160.89L110.208 126.757C106.196 118.883 96.5616 115.753 88.6882 119.764Z" fill="REPLACECOLOR" stroke="black" stroke-width="12"/> <path d="M143.355 90.0789L32.4076 9.87985C21.8414 2.24204 7.06594 9.77055 7.03442 22.8081L6.70347 159.706C6.67454 171.671 19.3071 179.433 29.9673 174.001L141.246 117.302C151.906 111.87 153.051 97.0878 143.355 90.0789Z" fill="REPLACECOLOR" stroke="black" stroke-width="12"/> <path d="M59.3521 141.446L100.325 120.569L119.16 157.535L78.1871 178.412L59.3521 141.446Z" fill="REPLACECOLOR"/> </g> </svg>`;
-
 modules.saving = {
   draggingCallback: null, // Updates for a block being dragged (short-poll update)
   saveCallback: null, // Updates for a block being changed (number change, etc) (short-poll and long-poll updates)
+  joinCallback: null,
+  leaveCallback: null,
 
   projectID: null,
   lastPublish: 0,
   collaborators: {},
 
-  constructor: function (projectID) {
+  constructor: async function (projectID) {
+    let [code, response] = await sendRequest(
+      "GET",
+      "project/load?projectid=" + projectID + "&ss=" + socket.secureID
+    );
+    if (code != 200) {
+      setPage("home");
+    }
+    let projectData = JSON.parse(response);
+    function appendUser(newUser) {
+      if (modules.saving.collaborators[newUser._id] == null) {
+        modules.saving.collaborators[newUser._id] = { user: newUser };
+      } else {
+        modules.saving.collaborators[newUser._id].user = newUser;
+      }
+      if (modules.saving.joinCallback) {
+        modules.saving.joinCallback(newUser);
+      }
+    }
+    for (let i = 0; i < projectData.users.length; i++) {
+      appendUser(projectData.users[i]);
+    }
     modules.saving.projectID = projectID;
     subscribes.push(
-      socket.subscribe(projectID + "_member", function (receive) {
-        // Member join / leave / update
-        console.log(receive);
-        if (receive[0] == "leave") {
-          let userData = modules.saving.collaborators[receive[2]];
-          if (userData != null) {
-            let elem = userData.element;
-            if (elem != null) {
-              elem.remove();
-            }
-            delete modules.saving.collaborators[receive[2]];
+      socket.subscribe(
+        {
+          type: "project",
+          id: userID,
+          token: account.realtime,
+          project: projectID
+        },
+        function (data) {
+          console.log(data);
+          switch (data.task) {
+            case "join":
+              appendUser(data.user);
+              break;
+            case "leave":
+              let userData = modules.saving.collaborators[data.userID];
+              if (userData != null) {
+                let elem = userData.element;
+                if (elem != null) {
+                  elem.remove();
+                }
+                delete modules.saving.collaborators[data.userID];
+              }
+              if (modules.saving.leaveCallback) {
+                modules.saving.leaveCallback(data.userID);
+              }
+              break;
+            case "set":
+              let keys = Object.keys(data.data);
+              for (let i = 0; i < keys.length; i++) {
+                projectData.info[keys[i]] = data.data[keys[i]];
+              }
+              if (data.data.name) {
+                let projNameTx = pageHolder.querySelector(".projectNameProj");
+                projNameTx.value = data.data.name;
+                projNameTx.placeholder = data.data.name;
+              }
+            default:
           }
         }
-      })
+      )
     );
-    subscribes.push(
-      socket.subscribe(projectID + "_short", function (receive) {
-        // Short-poll Update
-        let [task, multiID, data] = receive;
-        if (task === "move") {
-          // Update Cursor
-          if (modules.saving.collaborators[multiID] == null) {
-            let newCursorElem = createElement("cursor", "div", "codeContainer");
-            newCursorElem.id = "moveCursor_" + multiID;
-            let cursorColor =
-              "#" + Math.floor(Math.random() * 16777215).toString(16);
-            newCursorElem.innerHTML = cursorIcon.replace(
-              /REPLACECOLOR/g,
-              cursorColor
-            );
-            modules.saving.collaborators[multiID] = {
-              color: cursorColor,
-              element: newCursorElem
-            };
-          }
-          let cursorData = modules.saving.collaborators[multiID];
-          cursorData.x = data[0];
-          cursorData.y = data[1];
-          cursorData.element.style.left = cursorData.x + "px";
-          cursorData.element.style.top = cursorData.y + "px";
+    socket.remotes.fast = function (receive) {
+      // Short-poll Update
+      let [task, userID, data] = receive;
+      if (task === "move") {
+        // Update Cursor
+        let collabUser = modules.saving.collaborators[userID];
+        if (collabUser == null) {
+          return;
         }
-        if (modules.saving.draggingCallback) {
-          modules.saving.draggingCallback(task, multiID, data);
+        if (collabUser.element == null) {
+          let newCursorElem = createElement("cursor", "div", "codeContainer");
+          newCursorElem.id = "moveCursor_" + userID;
+          newCursorElem.style.background = profileColor(collabUser.user);
+          modules.saving.collaborators[userID].element = newCursorElem;
         }
-      })
-    );
-    subscribes.push(
-      socket.subscribe(projectID + "_long", function (receive) {
-        // Short-poll Update
-        let [task, data] = receive;
-        if (modules.saving.saveCallback) {
-          modules.saving.saveCallback(task, data);
-        }
-      })
-    );
-    socket.setDisconnectEvent(projectID + "_member", [
-      "leave",
-      null,
-      socket.clientID
-    ]);
+        let cursorData = modules.saving.collaborators[userID];
+        cursorData.x = data[0];
+        cursorData.y = data[1];
+        cursorData.element.style.left = cursorData.x + "px";
+        cursorData.element.style.top = cursorData.y + "px";
+      }
+      if (modules.saving.draggingCallback) {
+        modules.saving.draggingCallback(task, userID, data);
+      }
+    };
+    socket.remotes.long = function (receive) {
+      // Long-poll Update
+      let [task, data] = receive;
+      if (modules.saving.saveCallback) {
+        modules.saving.saveCallback(task, data);
+      }
+    };
+    return projectData;
   },
   mouseMove: function (data) {
     // Sends a block update WHILE DRAGING
     // mouse - { x: 0, y: 0 }
     // block - Block object containing the name and data of the block
 
+    if (userID == null) {
+      return;
+    }
+    if (Object.keys(modules.saving.collaborators).length < 2) {
+      //return;
+    }
     if (modules.saving.lastPublish < Date.now() - 80) {
       modules.saving.lastPublish = Date.now();
-      socket.publish(modules.saving.projectID + "_short", [
+      socket.publish("fast_" + modules.saving.projectID, [
         "move",
-        socket.clientID,
+        userID,
         data
       ]);
     }
   },
-  saveBlock: function (block) {
+  saveBlock: async function (block) {
     // Saves a block - call for deleting or updating
     // block - Block object containing the name and data of the block
 
     // saveBlock
-    socket.publish(modules.saving.projectID + "_long", ["place", block]);
+    socket.publish("long_" + modules.saving.projectID, ["preview", block]);
+
+    let [code, response] = await sendRequest(
+      "POST",
+      "project/save/block?projectid=" + modules.saving.projectID,
+      block
+    );
   }
 };

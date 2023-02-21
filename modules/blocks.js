@@ -167,7 +167,7 @@ modules.blocks = {
       <div class="notch" back></div>
     </div>
     <div class="blockHolder">
-      <div class="blockContent" back><div>if <span class="input" type="boolean" contenteditable>true</span> then</div></div>
+      <div class="blockContent" back><div>if <span class="input" type="boolean">true</span> then</div></div>
       <div class="blockIfContainer">
         <div class="notch" back></div>
         <div class="blockClose" back></div>
@@ -187,7 +187,7 @@ modules.blocks = {
       <div class="notch" back></div>
     </div>
     <div class="blockHolder">
-      <div class="blockContent" back><div>if <span class="input" type="boolean" contenteditable>true</span> then</div></div>
+      <div class="blockContent" back><div>if <span class="input" type="boolean">true</span> then</div></div>
       <div class="blockIfContainer">
         <div class="notch" back></div>
       </div>
@@ -230,7 +230,7 @@ modules.blocks = {
       <div class="notch" back></div>
     </div>
     <div class="blockHolder">
-      <div class="blockContent" back><div>repeat until <span class="input" type="boolean" contenteditable>true</div></div>
+      <div class="blockContent" back><div>repeat until <span class="input" type="boolean">true</div></div>
       <div class="blockIfContainer">
         <div class="notch" back></div>
         <div class="blockClose" back></div>
@@ -264,7 +264,7 @@ modules.blocks = {
       <div class="notch" back></div>
     </div>
     <div class="blockHolder">
-      <div class="blockContent" back><div>wait until <span class="input" type="boolean" contenteditable>true</div></div>
+      <div class="blockContent" back><div>wait until <span class="input" type="boolean">true</div></div>
     </div>`,
     run: function () {}
   },
@@ -358,21 +358,21 @@ modules.blocks = {
     type: "boolean",
     color: "#FF571F",
     format: ["boolean", "and", "boolean"],
-    html: `<div contenteditable="false"><span class="input" type="boolean" contenteditable>true</span> and <span class="input" type="boolean" contenteditable>true</span></div>`
+    html: `<div contenteditable="false"><span class="input" type="boolean">true</span> and <span class="input" type="boolean">true</span></div>`
   },
   // X or Y
   28: {
     type: "boolean",
     color: "#FF571F",
     format: ["boolean", "or", "boolean"],
-    html: `<div contenteditable="false"><span class="input" type="boolean" contenteditable>true</span> or <span class="input" type="boolean" contenteditable>true</span></div>`
+    html: `<div contenteditable="false"><span class="input" type="boolean">true</span> or <span class="input" type="boolean">true</span></div>`
   },
   // not X
   29: {
     type: "boolean",
     color: "#FF571F",
     format: ["not", "boolean"],
-    html: `<div contenteditable="false">not <span class="input" type="boolean" contenteditable>true</span></div>`
+    html: `<div contenteditable="false">not <span class="input" type="boolean">true</span></div>`
   },
   // set var to X
   30: {

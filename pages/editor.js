@@ -6,8 +6,8 @@ wireframes.editor = `
       <div class="projectInfo">
         <div class="projNameHolder">
           <img class="projNameLogo" src="./images/projectname.svg">
-          <input class="projectName" placeholder="Project Name" value="My Project">
-        </div>
+          <input class="projectNameProj">
+        </div> 
         <div class="projInteract">
           <div class="editorButton" id="dropdownButtonFile">
             <img class="dropdownBIcon" src="./images/dropdown.svg">
@@ -17,12 +17,7 @@ wireframes.editor = `
             <img class="dropdownBIcon" src="./images/plus.svg">
             <span>Invite</span>
           </div>
-          <div class="activeUsersHolder">
-            <img class="activeUser" src="https://exotek.co/images/favicon.png" style="border-color: red">
-            <img class="activeUser" src="https://exotek.co/images/photop.png" style="border-color: yellow">
-            <img class="activeUser" src="https://exotek.co/images/simplesocket.png" style="border-color: green">
-            <img class="activeUser" src="https://exotek.co/images/markify.png" style="border-color: blue">
-          </div>
+          <div class="activeUsersHolder"></div>
         </div>  
       </div>
       <div class="blockStorageContainer">
@@ -38,12 +33,149 @@ wireframes.editor = `
   </svg>
 `;
 
+//height of blocks is slightly off
+// flash red border when typing letters into a number block or dragging a boolean block into a numerical input
+//iff statement previws off
+
+//credit: https://www.geeksforgeeks.org/how-to-force-input-field-to-enter-numbers-only-using-javascript/
+
 pages.editor = async function () {
   let blocks = await getModule("blocks");
   let saving = await getModule("saving");
-  saving.constructor("123");
+
+  let projectID = getParam("project");
+  if (projectID == null) {
+    setPage("home");
+    return;
+  }
+
+  let collabHolder = pageHolder.querySelector(".activeUsersHolder");
+
+  // Join / Leave callbacks MUST go before constructor!
+  saving.joinCallback = function (newUser) {
+    let existingCollabTile = collabHolder.querySelector(
+      ".activeUser[userid='" + newUser._id + "']"
+    );
+    if (existingCollabTile == null) {
+      let newUserIndicator = createElement("activeUser", "img", collabHolder);
+      newUserIndicator.setAttribute("userid", newUser._id);
+      newUserIndicator.src = profilePic(newUser);
+      newUserIndicator.title = newUser.user;
+      newUserIndicator.style.borderColor = profileColor(newUser);
+    }
+  };
+  saving.leaveCallback = function (userid) {
+    let existingCollabTile = collabHolder.querySelector(
+      ".activeUser[userid='" + userid + "']"
+    );
+    if (existingCollabTile) {
+      existingCollabTile.remove();
+    }
+  };
+
+  let projLoad = await saving.constructor(projectID);
+  console.log(projLoad);
+
+  let projectName = pageHolder.querySelector(".projectNameProj");
+  projectName.value = projLoad.info.name;
+  projectName.placeholder = projLoad.info.name;
+  projectName.addEventListener("click", function () {
+    projectName.value = "";
+  });
+  projectName.addEventListener("blur", function () {
+    if (projectName.value == "") {
+      projectName.value = projLoad.info.name;
+    }
+  });
+  projectName.addEventListener("change", async function () {
+    if (projectName.value == "" || projectName.value == projLoad.info.name) {
+      return;
+    }
+    let [code] = await sendRequest(
+      "POST",
+      "project/save/name?projectid=" + modules.saving.projectID,
+      projectName.value
+    );
+    if (code != 200) {
+      projectName.value = projLoad.info.name;
+    }
+  });
+  let hoveredCursor;
+  pageHolder.addEventListener("mouseover", async function (e) {
+    if (e.target.className == "cursorName") {
+      return;
+    }
+    if (hoveredCursor) {
+      async function hideCursor() {
+        if (hoveredCursor.hasAttribute("closing") == false) {
+          let revertCursor = hoveredCursor.querySelector(".cursorName");
+          hoveredCursor = null;
+          revertCursor.setAttribute("closing", "");
+          revertCursor.parentNode.style.width = "22px";
+          revertCursor.style.opacity = 0;
+          await sleep(300);
+          revertCursor.remove();
+        }
+      }
+      hideCursor();
+    }
+    let cursor = e.target.closest(".cursor");
+    if (cursor) {
+      hoveredCursor = cursor;
+      if (hoveredCursor.querySelector(".cursorName")) {
+        return;
+      }
+      let user =
+        saving.collaborators[
+          hoveredCursor.id.substring(hoveredCursor.id.indexOf("_") + 1)
+        ];
+      if (user) {
+        let usernameDetail = createElement("cursorName", "div", hoveredCursor);
+        usernameDetail.textContent = user.user.user;
+        hoveredCursor.style.width = usernameDetail.clientWidth + "px";
+        //await sleep(1);
+        usernameDetail.style.opacity = 1;
+      }
+    }
+  });
+  /*
+  pageHolder
+    .querySelector(".codeContainer")
+    .addEventListener("mouseout", async function (e) {
+      if (
+        e.target.className == "cursorName" &&
+        e.target.hasAttribute("closing") == false
+      ) {
+        e.target.setAttribute("closing", "");
+        e.target.parentNode.style.width = "22px";
+        e.target.style.opacity = 0;
+        await sleep(300);
+        e.target.remove();
+      }
+    });
+  */
+
   //variables
   let snapThreshold = 20;
+
+  tempListen(window, "keypress", function (e) {
+    //console.log(e);
+    //prevent non-numerical values in the inputs, ALL inputs for now (change in the future though);
+    //not all inputs
+    if (!e.target.closest(".block")) return; //if this isn't in a block, return (so we can name the project to be something not a number)
+    var ASCIICode = e.which ? e.which : e.keyCode;
+    let decimalAlreadyThere = e.target
+      ? e.target.innerHTML
+        ? e.target.innerHTML.includes(".")
+        : false
+      : false; //get whether or not a decimal point is already in the input. If there's not already one, then the user can type one
+    if (
+      ASCIICode > 31 &&
+      (ASCIICode < 48 || ASCIICode > 57) &&
+      (decimalAlreadyThere || ASCIICode != 46)
+    )
+      e.preventDefault(); //prevent non-numbers
+  });
 
   const fileDropdown = `<div class="dropdownItem">
       <img class="dropdownButtonImg" src="./images/undo.svg">
@@ -87,7 +219,6 @@ pages.editor = async function () {
     openDropdown("file", fileDropdown);
   });
 
-  let projectID = "123";
   let placedBlocks = {
     /*
     this defines the format for a placed block
@@ -97,6 +228,7 @@ pages.editor = async function () {
     the x and y properties specify the positions of the blocks relative to the viewport
     the "in" property is the id of the block that is inside of this block
     the "on" property is an array of the id of the blocks that are "on" this block (think walk (5 + 6) steps, where the block (5 + 6) is on the walk X steps block)
+    for "on", "#2554756756768" indicates a block id and "254345" indicates a numerical value
     "top" is true if and only if the block is not a child of any other block
     "382373827327": {
       //Saved ID
@@ -205,7 +337,7 @@ pages.editor = async function () {
     let blockData = blocks[id];
     let block = createElement("block", "div", blockStorage);
     block.id = "source-block-" + id;
-    block.setAttribute("blockid", id); 
+    block.setAttribute("blockid", id);
 
     if (blockData.type === "number" || blockData.type === "boolean") {
       block.innerHTML =
@@ -214,13 +346,6 @@ pages.editor = async function () {
       block.style.padding = "4px";
       block.style.borderRadius = "20px";
       block.style["box-shadow"] = "0px 0px 0px 2px white"; //UNDO (just for testing)
-
-
-      //stop users from entering letters into the number input
-      //hereoninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
-      //credit: https://stackoverflow.com/a/28838789
-      if (blockData.type == "number") block.firstElementChild.firstElementChild.firstElementChild.setAttribute("oninput", "console.log(this.innerHTML);");
-      if (blockData.type == "number") block.firstElementChild.firstElementChild.firstElementChild.setAttribute("oninput", "this.innerHTML = this.innerHTML.replace(/[^0-9.]/g, '').replace(/(\\..*?)\\..*/g, '$1')");
     } else {
       block.innerHTML = `<div class="blockCover">` + blockData.html + "</div>";
     }
@@ -260,9 +385,7 @@ pages.editor = async function () {
   let prevSnapPoint; //keep track of the last snap Point
   let notchHeight = 6; //keep track of the height of the notch in the blocks, used to get actual height of a block
   let parentHorizontalOffset = 31.7; //the horizontal offset of an if or repeat block
-  let verticalBlockMargin = 2.5;
-  let reboundElement; //keep track of the element that we move down temporarily to display the dragPreview between blocks
-  let reboundPos = 0; //keep track of this element's previous position.
+  let verticalBlockMargin = 2;
   let scrollOffset = { x: 0, y: 0 }; //keep track of the scroll offset
 
   tempListen(
@@ -274,7 +397,6 @@ pages.editor = async function () {
     },
     { passive: true }
   );
-
 
   /*
   ____  _      ____   _____ _  __ _____ 
@@ -288,7 +410,8 @@ pages.editor = async function () {
 
   tempListen(pageHolder, "mousedown", async (e) => {
     if (e.target.closest(".block") == null) return; //did we click on a block?
-    if (e.target.hasAttribute("contenteditable") && e.target.nodeName != "DIV") return; //did we click on a block but are editing it so this function is not necessary?
+    if (e.target.hasAttribute("contenteditable") && e.target.nodeName != "DIV")
+      return; //did we click on a block but are editing it so this function is not necessary?
 
     //when we click on a block, set the dragging variable to reflect that and get the mouse offset from the top left corner of the block
     dragging = e.target.closest(".block");
@@ -331,13 +454,19 @@ pages.editor = async function () {
             } else {
               if (placedBlocks[parentID].on) {
                 if (placedBlocks[parentID].on.length == 2) {
-                  if (placedBlocks[parentID].on[0] == dragging.id) {
+                  if (
+                    placedBlocks[parentID].on[0].substring(1) == dragging.id
+                  ) {
                     placedBlocks[parentID].on[0] = "";
-                  } else if (placedBlocks[parentID].on[1] == dragging.id) {
+                  } else if (
+                    placedBlocks[parentID].on[1].substring(1) == dragging.id
+                  ) {
                     placedBlocks[parentID].on[1] = "";
                   }
                 } else if (placedBlocks[parentID].on.length == 1) {
-                  if (placedBlocks[parentID].on[0] == dragging.id) {
+                  if (
+                    placedBlocks[parentID].on[0].substring(1) == dragging.id
+                  ) {
                     placedBlocks[parentID].on[0] = "";
                   }
                 }
@@ -421,7 +550,6 @@ pages.editor = async function () {
 
       if (dragPreview) {
         //if we changed the snapPoint since last time, reflect that
-        //here
         if (dragPreview.snapID != snapPoint.id) {
           updateBlockPreview(prevSnapPoint, true);
           updateBlockPreview(snapPoint, false);
@@ -441,6 +569,7 @@ pages.editor = async function () {
         dragPreview.style.top = snapPoint.y - scrollOffset.y + "px";
         dragPreview.style.position = "absolute";
         dragPreview.style.zIndex = 100;
+        dragPreview.style.transform = "rotate(0deg)"; //fixed the issue where the preview got rotated
         findC("codeContainer").appendChild(dragPreview);
         //convertBlock(dragPreview, snapPoint);
         //placeBlock(dragPreview, snapPoint, true);
@@ -464,25 +593,29 @@ pages.editor = async function () {
     if (!dragging) return; //make sure we have a current block selected
 
     let snapPoint = findSnapPoint(dragging); //get the snap point
-    convertBlock(dragging, snapPoint);
-    setBlockDown(dragging, snapPoint);
+    convertBlock(dragging, snapPoint, null);
+    setBlockDown(dragging, snapPoint, false);
     updateBlockPreview(prevSnapPoint, true);
 
     dragging.style.cursor = "grab";
     dragging = null;
-    //console.log(placedBlocks);
+    console.log(placedBlocks);
+    convertBlockData();
   });
 
   function updateBlockPreview(snapPoint, reset) {
     if (!snapPoint) return; //get rid of an error
+    if (!placedBlocks[snapPoint.id]) return; //get rid of another error
     //take in a snapPoint and make space for the preview after that snapPoint
     //reset is true if the space should be reset.
-    let margin = reset
-      ? 0
-      : verticalBlockMargin * (snapPoint.pos == "a" ? 2 : 1) +
-        dragging.clientHeight +
-        "px";
-    console.log(margin);
+    let margin =
+      (reset
+        ? 0
+        : dragging.clientHeight +
+          verticalBlockMargin * (snapPoint.pos == "a" ? 2 : 1)) + "px";
+    //account for the bug where if statements resize under the preview too short
+    if (!placedBlocks[snapPoint.id][snapPoint.pos] && !reset)
+      margin = removePX(margin) + 6.5 + "px";
     if (snapPoint.pos == "a")
       findI(snapPoint.id).firstElementChild.style.marginBottom = margin;
     if (snapPoint.pos == "in")
@@ -500,25 +633,37 @@ pages.editor = async function () {
     return parseInt(string.substring(0, string.length - 2), 10);
   }
 
-  function convertBlock(block, snapPoint) {
+  function convertBlock(block, snapPoint, newID) {
     //given a block, check if it is a source block and convert it to a normal block if it is, updating the placedBlocks array as necessary
     //now go ahead and give the block it's new id, date.now
     //but only do this if it is a source block
-    if (block && block.id.includes("source-block-")) {
+    //newID is null most of the time, but is the proper id when loading blocks in
+    if (block && (block.id.includes("source-block-") || newID != null)) {
       //parse the id of this block from the html element id before we change the id
       let tempID = parseInt(block.id.substring(13, block.id.length), 10);
 
       //now change the id
-      block.id = Date.now() + Math.round(Math.random() * 1000).toString(); //date.now and a little random variation to avoid collisions
+      if (newID) {
+        block.id = newID; //date.now and a little random variation to avoid collisions
+      } else {
+        block.id = Date.now() + Math.round(Math.random() * 1000).toString(); //date.now and a little random variation to avoid collisions
+      }
 
       //lets also create the new block in the array
       placedBlocks[block.id] = {};
       placedBlocks[block.id].x = block.style.left;
       placedBlocks[block.id].y = block.style.top;
-      placedBlocks[block.id].id = tempID;
+      placedBlocks[block.id].id = newID ? block.blockType : tempID;
+
+      console.log(placedBlocks);
 
       //go through the format array of each block and add a snap point to each number slot
-      let format = blocks[tempID].format;
+      let format = null;
+      if (newID) {
+        format = blocks[block.blockType].format;
+      } else {
+        format = blocks[tempID].format;
+      }
       placedBlocks[block.id].on = []; //keep track of the position of the input. 0 is the first numerical spot, 1 is the second, and so on. The result is stored in the spot variable in the snappoints
       for (let i = 0; i < format.length; i++) {
         if (format[i] == "number") {
@@ -527,7 +672,6 @@ pages.editor = async function () {
           placedBlocks[block.id].on.push("");
         }
       }
-
 
       //publish that the block is placed
       socket.publish([
@@ -575,21 +719,22 @@ pages.editor = async function () {
     findI(id).remove(); //deleting the parent block should delete all of the children html elements too
   }
 
-  async function setBlockDown(block, snapPoint) {
+  async function setBlockDown(block, snapPoint, isLoading) {
     //this function is called whenever we set a block down
     //snap block if it is close enough to a snap point
     //delete block if it was dragged into the side bar
+    //isLoading is whether or not the block is being loaded in
 
     //get rid of dragging previews
     if (dragPreview) dragPreview.remove();
     dragPreview = null;
 
     if (!block) return; //return if there is no block element
-    dragging.style.zIndex = 99; //reset z-index
+    block.style.zIndex = 1; //reset z-index
 
     //delete the block if it was draged into the side bar
     let rect = block.getBoundingClientRect();
-    if (rect.left < 300) {
+    if (rect.left < 300 && !isLoading) {
       //side bar is 300px wide
       block.style.transform = "rotate(20deg) scale(0)";
       await sleep(150);
@@ -603,40 +748,42 @@ pages.editor = async function () {
     //first check if we need to snap the block's position to another block
     if (snapPoint) {
       //update the html to match the new block structure
-      placeBlock(block, snapPoint, false);
+      placeBlock(block, snapPoint, false, isLoading);
 
       //update the placedBlocks array to reflect the new block structure
-      if (snapPoint.pos == "a") {
-        placedBlocks[snapPoint.id].a = block.id;
-      } else if (snapPoint.pos == "in") {
-        placedBlocks[snapPoint.id].in = block.id;
-      } else if (snapPoint.pos == "else") {
-        placedBlocks[snapPoint.id].else = block.id;
-      } else if (snapPoint.pos == "number") {
-        placedBlocks[snapPoint.id].on[snapPoint.spot] = block.id; //change this in the future
-      } else if (snapPoint.pos == "boolean") {
-        placedBlocks[snapPoint.id].on[snapPoint.spot] = block.id; //change this in the future
-      } else if (snapPoint.pos == "before") {
-        placedBlocks[getLastBlock(block.id)].a = snapPoint.id;
-      }
+      if (!isLoading) {
+        if (snapPoint.pos == "a") {
+          placedBlocks[snapPoint.id].a = block.id;
+        } else if (snapPoint.pos == "in") {
+          placedBlocks[snapPoint.id].in = block.id;
+        } else if (snapPoint.pos == "else") {
+          placedBlocks[snapPoint.id].else = block.id;
+        } else if (snapPoint.pos == "number") {
+          placedBlocks[snapPoint.id].on[snapPoint.spot] = "#" + block.id; //change this in the future
+        } else if (snapPoint.pos == "boolean") {
+          placedBlocks[snapPoint.id].on[snapPoint.spot] = "#" + block.id; //change this in the future
+        } else if (snapPoint.pos == "before") {
+          placedBlocks[getLastBlock(block.id)].a = snapPoint.id;
+        }
 
-      //update the top variable for all of the blocks in the new block structure
-      if (snapPoint.pos != "before") {
-        placedBlocks[block.id].top = false; //this block is no longer at the top
-      } else {
-        placedBlocks[block.id].top = true; //the block is at the top because it snapped to the top
-        placedBlocks[snapPoint.id].top = false; //the old top is no longer at the top
+        //update the top variable for all of the blocks in the new block structure
+        if (snapPoint.pos != "before") {
+          placedBlocks[block.id].top = false; //this block is no longer at the top
+        } else {
+          placedBlocks[block.id].top = true; //the block is at the top because it snapped to the top
+          placedBlocks[snapPoint.id].top = false; //the old top is no longer at the top
+        }
       }
     } else {
       //if we didn't snap to anything, then this block is at the top of it's chain; the alpha male; the emperor; the king
-      dragging.style.position = "absolute";
+      block.style.position = "absolute";
       placedBlocks[block.id].top = true; //this block is now at the top of it's own block chain
       block.style.left = placedBlocks[block.id].x + "px";
       block.style.top = placedBlocks[block.id].y + "px";
     }
   }
 
-  function placeBlock(block, snapPoint, isPreview) {
+  function placeBlock(block, snapPoint, isPreview, isLoading) {
     //given a block, and a snapPoint, position the html of the block correctly
     //this function does NOT update the placedBlocks array at all--it only deals with the HTML
     //the isPreview is true if this block is a preview
@@ -654,7 +801,7 @@ pages.editor = async function () {
       //we have to move the block already here down a little
       if (placedBlocks[snapPoint.id]) {
         //prevent null errors
-        if (placedBlocks[snapPoint.id].a) {
+        if (placedBlocks[snapPoint.id].a && !isLoading) {
           //find the last block at the end of the block chain we are block in
           let currentEnd = block.id;
           while (placedBlocks[currentEnd].a) {
@@ -678,7 +825,7 @@ pages.editor = async function () {
 
       //SUPRISE (again): we also have to account for when there is already a block here;
       //we have to move the block already here down a little
-      if (placedBlocks[snapPoint.id].in) {
+      if (placedBlocks[snapPoint.id].in && !isLoading) {
         //find the last block at the end of the block chain we are block in
         let currentEnd = block.id;
         while (placedBlocks[currentEnd].a) {
@@ -714,7 +861,7 @@ pages.editor = async function () {
 
       //SUPRISE (again again): we also have to account for when there is already a block here;
       //we have to move the block already here down a little
-      if (placedBlocks[snapPoint.id].else) {
+      if (placedBlocks[snapPoint.id].else && !isLoading) {
         //find the last block at the end of the block chain we are block in
         let currentEnd = block.id;
         while (placedBlocks[currentEnd].a) {
@@ -830,198 +977,209 @@ pages.editor = async function () {
     let array = [];
 
     for (let i = 0; i < Object.keys(placedBlocks).length; i++) {
-      let block = Object.keys(placedBlocks)[i];
-      if (!findI(block)) continue;
-      //if (!block) continue;
-      let rect = findI(block).getBoundingClientRect();
-      if (!rect) continue;
-
-      if (
-        type == "simple" ||
-        type == "parent" ||
-        type == "if-else" ||
-        type == "event"
-      ) {
-        if (
-          (blocks[placedBlocks[block].id].type == "event" ||
-            blocks[placedBlocks[block].id].type == "simple" ||
-            blocks[placedBlocks[block].id].type == "parent" ||
-            blocks[placedBlocks[block].id].type == "if-else") &&
-          type != "event"
-        ) {
-          array.push({
-            id: Object.keys(placedBlocks)[i],
-            pos: "a",
-            x: rect.left,
-            y:
-              findI(block).firstChild.getBoundingClientRect().bottom +
-              verticalBlockMargin //this may have to change, the block itself includes blocks below it, so get the y position of the blockcover element
-          });
-        }
-
-        //snap to the inside of the block if it's a parent
-        if (
-          (blocks[placedBlocks[block].id].type == "parent" ||
-            blocks[placedBlocks[block].id].type == "if-else") &&
-          type != "event"
-        ) {
-          array.push({
-            id: Object.keys(placedBlocks)[i],
-            pos: "in",
-            x: rect.left + parentHorizontalOffset,
-            y:
-              rect.top +
-              findI(block).querySelector(".blockContent").clientHeight +
-              verticalBlockMargin //the 2 is extra spacing to make the notch line up
-          });
-        }
-
-        if (
-          blocks[placedBlocks[block].id].type == "if-else" &&
-          type != "event"
-        ) {
-          array.push({
-            id: Object.keys(placedBlocks)[i],
-            pos: "else",
-            x: rect.left + parentHorizontalOffset,
-            y:
-              findI(
-                block
-              ).firstElementChild.lastElementChild.lastElementChild.previousElementSibling.getBoundingClientRect()
-                .bottom + verticalBlockMargin //the 64 will have to change, it's the height of the top and middle sections of the if-else block
-          });
-        }
-
-        //snap to the top
-        if (
-          blocks[placedBlocks[block].id].type == "simple" ||
-          blocks[placedBlocks[block].id].type == "parent" ||
-          blocks[placedBlocks[block].id].type == "if-else"
-        ) {
-          if (placedBlocks[block].top == true) {
-            array.push({
-              id: Object.keys(placedBlocks)[i],
-              pos: "before",
-              x: rect.left,
-              y:
-                findI(block).getBoundingClientRect().top -
-                dragging.clientHeight -
-                verticalBlockMargin //this may have to change, the block itself includes blocks below it, so get the y position of the blockcover element
-            });
-          }
-        }
-      } else if (type == "number") {
-        //go through the format array of each block and add a snap point to each number slot
-        // format: ["walk", "number", "steps"],
-        let format = blocks[placedBlocks[block].id].format;
-        let count = 0; //keep track of the position of the input. 0 is the first numerical spot, 1 is the second, and so on. The result is stored in the spot variable in the snappoints
-        for (let i = 0; i < format.length; i++) {
-          if (format[i] == "number") {
-            //if there is already a block in this numerical slot, then don't let other blocks snap to this block
-            if (placedBlocks[block].on[count] != "") {
-              count++;
-              continue;
-            }
-
-            if (count == 0) {
-              //if it's in the first spot, then get the right element
-              array.push({
-                id: block,
-                pos: "number",
-                x: findI(block)
-                  .querySelectorAll(".input")[0]
-                  .getBoundingClientRect().left,
-                y:
-                  findI(block)
-                    .querySelectorAll(".input")[0]
-                    .getBoundingClientRect().top -
-                  dragging.clientHeight / 2.1 +
-                  10,
-                spot: count
-              });
-            } else if (count == 1) {
-              //since there are blocks inside blocks we have to find the second input differently
-              array.push({
-                id: block,
-                pos: "number",
-                x: findI(
-                  block
-                ).firstChild.firstChild.lastElementChild.getBoundingClientRect()
-                  .left,
-                //DANGER; we subtract half of the height of the current block (dragging) from y to make it line up, but this assumes that is the block that is being snapped
-                y:
-                  findI(
-                    block
-                  ).firstChild.firstChild.lastElementChild.getBoundingClientRect()
-                    .top -
-                  dragging.clientHeight / 2.1 +
-                  10,
-                spot: count
-              });
-            } else {
-            }
-
-            count++;
-          }
-        }
-      } else if (type == "boolean") {
-        //go through the format array of each block and add a snap point to each number slot
-        // format: ["walk", "number", "steps"],
-        let format = blocks[placedBlocks[block].id].format;
-        let count = 0; //keep track of the position of the input. 0 is the first numerical spot, 1 is the second, and so on. The result is stored in the spot variable in the snappoints
-        for (let i = 0; i < format.length; i++) {
-          if (format[i] == "boolean") {
-            //if there is already a block in this numerical slot, then don't let other blocks snap to this block
-            if (placedBlocks[block].on[count] != "") {
-              count++;
-              continue;
-            }
-
-            if (count == 0) {
-              //if it's in the first spot, then get the right element
-              array.push({
-                id: block,
-                pos: "boolean",
-                x: findI(block)
-                  .querySelectorAll(".input")[0]
-                  .getBoundingClientRect().left,
-                y:
-                  findI(block)
-                    .querySelectorAll(".input")[0]
-                    .getBoundingClientRect().top -
-                  dragging.clientHeight / 2.1 +
-                  10,
-                spot: count
-              });
-            } else if (count == 1) {
-              //since there are blocks inside blocks we have to find the second input differently
-              array.push({
-                id: block,
-                pos: "boolean",
-                x: findI(
-                  block
-                ).firstChild.firstChild.lastElementChild.getBoundingClientRect()
-                  .left,
-                //DANGER; we subtract half of the height of the current block (dragging) from y to make it line up, but this assumes that is the block that is being snapped
-                y:
-                  findI(
-                    block
-                  ).firstChild.firstChild.lastElementChild.getBoundingClientRect()
-                    .top -
-                  dragging.clientHeight / 2.1 +
-                  10,
-                spot: count
-              });
-            } else {
-            }
-
-            count++;
-          }
-        }
-      }
+      getSnapPoint(type, i, array, dragging.clientHeight);
     }
     //console.log(array);
     return array;
+  }
+
+  function getSnapPoint(type, i, array, height) {
+    //given a type of snapPoint, i (the Object.keys() indexed position of the block; in the placedBlock array), and an array, add the list of potential snap points to the array
+    //also given a height of the block that is dragging out
+    let block = Object.keys(placedBlocks)[i];
+    if (!findI(block)) return;
+    //if (!block) continue;
+    let rect = findI(block).getBoundingClientRect();
+    if (!rect) return;
+
+    if (
+      type == "simple" ||
+      type == "parent" ||
+      type == "if-else" ||
+      type == "event"
+    ) {
+      if (
+        (blocks[placedBlocks[block].id].type == "event" ||
+          blocks[placedBlocks[block].id].type == "simple" ||
+          blocks[placedBlocks[block].id].type == "parent" ||
+          blocks[placedBlocks[block].id].type == "if-else") &&
+        type != "event"
+      ) {
+        array.push({
+          id: Object.keys(placedBlocks)[i],
+          pos: "a",
+          x: rect.left,
+          y:
+            findI(block).firstChild.getBoundingClientRect().bottom +
+            verticalBlockMargin //this may have to change, the block itself includes blocks below it, so get the y position of the blockcover element
+        });
+      }
+
+      //snap to the inside of the block if it's a parent
+      if (
+        (blocks[placedBlocks[block].id].type == "parent" ||
+          blocks[placedBlocks[block].id].type == "if-else") &&
+        type != "event"
+      ) {
+        array.push({
+          id: Object.keys(placedBlocks)[i],
+          pos: "in",
+          x: rect.left + parentHorizontalOffset,
+          y:
+            rect.top +
+            findI(block).querySelector(".blockContent").clientHeight +
+            verticalBlockMargin //the 2 is extra spacing to make the notch line up
+        });
+      }
+
+      if (blocks[placedBlocks[block].id].type == "if-else" && type != "event") {
+        array.push({
+          id: Object.keys(placedBlocks)[i],
+          pos: "else",
+          x: rect.left + parentHorizontalOffset,
+          y:
+            findI(
+              block
+            ).firstElementChild.lastElementChild.lastElementChild.previousElementSibling.getBoundingClientRect()
+              .bottom + verticalBlockMargin //the 64 will have to change, it's the height of the top and middle sections of the if-else block
+        });
+      }
+
+      //snap to the top
+      if (
+        blocks[placedBlocks[block].id].type == "simple" ||
+        blocks[placedBlocks[block].id].type == "parent" ||
+        blocks[placedBlocks[block].id].type == "if-else"
+      ) {
+        if (placedBlocks[block].top == true) {
+          array.push({
+            id: Object.keys(placedBlocks)[i],
+            pos: "before",
+            x: rect.left,
+            y:
+              findI(block).getBoundingClientRect().top -
+              height -
+              verticalBlockMargin //this may have to change, the block itself includes blocks below it, so get the y position of the blockcover element
+          });
+        }
+      }
+    } else if (type == "number") {
+      //go through the format array of each block and add a snap point to each number slot
+      // format: ["walk", "number", "steps"],
+      let format = blocks[placedBlocks[block].id].format;
+      let count = 0; //keep track of the position of the input. 0 is the first numerical spot, 1 is the second, and so on. The result is stored in the spot variable in the snappoints
+      for (let i = 0; i < format.length; i++) {
+        if (format[i] == "number") {
+          //if there is already a block in this numerical slot, then don't let other blocks snap to this block
+          if (
+            placedBlocks[block].on[count] != "" &&
+            placedBlocks[block].on[count].charAt(0) == "#"
+          ) {
+            count++;
+            continue;
+          }
+
+          if (count == 0) {
+            //if it's in the first spot, then get the right element
+            array.push({
+              id: block,
+              pos: "number",
+              x: findI(block)
+                .querySelectorAll(".input")[0]
+                .getBoundingClientRect().left,
+              y:
+                findI(block)
+                  .querySelectorAll(".input")[0]
+                  .getBoundingClientRect().top -
+                height / 2.1 +
+                10,
+              spot: count
+            });
+          } else if (count == 1) {
+            //since there are blocks inside blocks we have to find the second input differently
+            array.push({
+              id: block,
+              pos: "number",
+              x: findI(
+                block
+              ).firstChild.firstChild.lastElementChild.getBoundingClientRect()
+                .left,
+              //DANGER; we subtract half of the height of the current block (dragging) from y to make it line up, but this assumes that is the block that is being snapped
+              y:
+                findI(
+                  block
+                ).firstChild.firstChild.lastElementChild.getBoundingClientRect()
+                  .top -
+                height / 2.1 +
+                10,
+              spot: count
+            });
+          } else {
+          }
+
+          count++;
+        }
+      }
+    } else if (type == "boolean") {
+      //go through the format array of each block and add a snap point to each number slot
+      // format: ["walk", "number", "steps"],
+      let format = blocks[placedBlocks[block].id].format;
+      let count = 0; //keep track of the position of the input. 0 is the first numerical spot, 1 is the second, and so on. The result is stored in the spot variable in the snappoints
+      for (let i = 0; i < format.length; i++) {
+        if (format[i] == "boolean") {
+          //if there is already a block in this numerical slot, then don't let other blocks snap to this block
+          if (
+            placedBlocks[block].on[count] != "" &&
+            placedBlocks[block].on[count].charAt(0) == "#"
+          ) {
+            count++;
+            continue;
+          }
+
+          if (count == 0) {
+            //if it's in the first spot, then get the right element
+            array.push({
+              id: block,
+              pos: "boolean",
+              x: findI(block)
+                .querySelectorAll(".input")[0]
+                .getBoundingClientRect().left,
+              y:
+                findI(block)
+                  .querySelectorAll(".input")[0]
+                  .getBoundingClientRect().top -
+                height / 2.1 +
+                10,
+              spot: count
+            });
+          } else if (count == 1) {
+            //since there are blocks inside blocks we have to find the second input differently
+            array.push({
+              id: block,
+              pos: "boolean",
+              x: findI(
+                block
+              ).firstChild.firstChild.lastElementChild.getBoundingClientRect()
+                .left,
+              //DANGER; we subtract half of the height of the current block (dragging) from y to make it line up, but this assumes that is the block that is being snapped
+              y:
+                findI(
+                  block
+                ).firstChild.firstChild.lastElementChild.getBoundingClientRect()
+                  .top -
+                height / 2.1 +
+                10,
+              spot: count
+            });
+          } else {
+          }
+
+          count++;
+        }
+      }
+    }
+
+    return;
   }
 
   /*
@@ -1110,9 +1268,15 @@ pages.editor = async function () {
       array.concat(getAllChildren(placedBlocks[id].else, array));
     }
     if (placedBlocks[id].on) {
-      array.concat(getAllChildren(placedBlocks[id].on[0], array));
+      if (placedBlocks[id].on[0])
+        array.concat(
+          getAllChildren(placedBlocks[id].on[0].substring(1), array)
+        );
       if (placedBlocks[id].on.length > 1) {
-        array.concat(getAllChildren(placedBlocks[id].on[1], array));
+        if (placedBlocks[id].on[1])
+          array.concat(
+            getAllChildren(placedBlocks[id].on[1].substring(1), array)
+          );
       }
     }
 
@@ -1147,6 +1311,256 @@ pages.editor = async function () {
         saving.collaborators[multiID].y;
     }
   };
+
+  //port block data over to a structure
+  function convertBlockData() {
+    //convert the block data to a more slim format that we can send to the robot
+    let data = {};
+    for (let i = 0; i < Object.keys(placedBlocks).length; i++) {
+      let block = placedBlocks[Object.keys(placedBlocks)[i]];
+      //console.log(block);
+
+      //every block has this
+      data[Object.keys(placedBlocks)[i]] = {};
+      data[Object.keys(placedBlocks)[i]].id = block.id;
+      data[Object.keys(placedBlocks)[i]].top = block.top;
+
+      //only save position if it is the top block
+      if (block.top) {
+        data[Object.keys(placedBlocks)[i]].x = removePX(
+          findI(Object.keys(placedBlocks)[i]).style.left
+        );
+        data[Object.keys(placedBlocks)[i]].y = removePX(
+          findI(Object.keys(placedBlocks)[i]).style.top
+        );
+      }
+
+      //add positions if the block has them
+      if (block.a) data[Object.keys(placedBlocks)[i]].a = block.a;
+      if (block.in) data[Object.keys(placedBlocks)[i]].in = block.in;
+      if (block.else) data[Object.keys(placedBlocks)[i]].else = block.else;
+
+      //now go through and parse numerical / boolean values from the blocks
+      data[Object.keys(placedBlocks)[i]].on = block.on.slice();
+
+      if (block.on.length > 0) {
+        if (block.on[0] == "" || block.on[0].charAt(0) != "#") {
+          //this works with any block type; simple, boolean, numerical
+          data[Object.keys(placedBlocks)[i]].on[0] = findI(
+            Object.keys(placedBlocks)[i]
+          ).querySelectorAll(".input")[0].innerHTML; //copy numerical value
+        }
+      }
+      if (block.on.length > 1) {
+        if (block.on[1] == "" || block.on[1].charAt(0) != "#") {
+          //this works with just boolean, numerical blocks, because only those ones can have two inputs
+          data[Object.keys(placedBlocks)[i]].on[1] = findI(
+            Object.keys(placedBlocks)[i]
+          ).firstChild.firstChild.lastElementChild.innerHTML; //copy numerical value
+        }
+      }
+    }
+
+    console.log(data);
+    //loadBlocks(data);
+  }
+
+  function loadBlocks(data) {
+    //given block data in format output by the function above, load the actual blocks into the code container.
+    for (let i = 0; i < Object.keys(data).length; i++) {
+      let block = data[Object.keys(data)[i]];
+      if (block.top) {
+        loadBlockRecursive(data, Object.keys(data)[i]);
+      }
+    }
+  }
+
+  function loadBlockRecursive(data, id) {
+    //given the full list of blocks (data) and the id of a specific block, load in the html of that block and all of its children
+    //we can use this recursively by calling the top block first to then load in every block
+
+    //first, get the html of the source block of this type
+    let block = findC("blockStorage").querySelector(
+      '[blockid="' + data[id].id + '"]'
+    );
+    //console.log(block);
+
+    //then, replenish the source block if it was a source block that was dragged
+    let i0 = parseInt(block.id.substring(13, block.id.length), 10); //get id of block
+    generateBlock(i0);
+
+    //these lines set the initial position to where it already is lol
+    if (data[id].top) {
+      block.style.position = "absolute";
+      block.style.top = data[id].y + "px";
+      block.style.left = data[id].x + "px";
+    }
+
+    //then move the dragging element to the codecontainer
+    findC("codeContainer").appendChild(block);
+    block.style.display = "none"; //redraw block
+    block.style.display = "block";
+    block.id = id;
+    block.blockType = data[id].id; //save this for the convertBlock function
+
+    //if this isn't the top block, get the snap point that it needs to snap to
+    if (!data[id].top) {
+      //go through each block already in the placedBlocks array, see if it's the direct parent of this block
+      //then get the list of snapPoints and use that to snap to the block
+
+      let parentPos = null;
+      let index = -1;
+      //console.log("placed blocks");
+      //console.log(placedBlocks);
+
+      for (let i = 0; i < Object.keys(placedBlocks).length; i++) {
+        let testBlock = placedBlocks[Object.keys(placedBlocks)[i]];
+        //console.log("testBlock");
+        //console.log(testBlock);
+
+        parentPos = null; //store whether or not this block is the direct parent of the block we are currently adding; UPDATE; store the position instead
+
+        for (let k = 0; k < Object.keys(testBlock).length; k++) {
+          if (testBlock[Object.keys(testBlock)[k]] == id)
+            parentPos = Object.keys(testBlock)[k];
+          if (testBlock.on) {
+            if (testBlock.on[0] == id) parentPos = "on0"; //shows that this is on the block, in the first spot
+            if (testBlock.on.length > 1) {
+              if (testBlock.on[1] == id) parentPos = "on1"; //shows that this is on the block, in the second spot
+            }
+          }
+        }
+
+        if (parentPos != null) {
+          index = i;
+          break; //exit now if this is the parent block
+        }
+      }
+
+      console.log(parentPos);
+
+      if (parentPos != null && index != -1) {
+        let potentialSnapPoints = [];
+
+        getSnapPoint(blocks[data[id].id].type, index, potentialSnapPoints, 0);
+
+        //console.log("snap points:");
+        //console.log(potentialSnapPoints);
+
+        //now snap the block to the snap point
+        //now put the block in the array and update html and the placedBlocks array
+        let snapPoint = null;
+        for (let k = 0; k < potentialSnapPoints.length; k++) {
+          if (potentialSnapPoints[k].pos == parentPos) {
+            snapPoint = potentialSnapPoints[k];
+          }
+          if (potentialSnapPoints[k].pos == "on") {
+            if (parentPos == "on0" && potentialSnapPoints[k].spot == 0) {
+              snapPoint = potentialSnapPoints[k];
+            }
+            if (parentPos == "on1" && potentialSnapPoints[k].spot == 1) {
+              snapPoint = potentialSnapPoints[k];
+            }
+          }
+        }
+
+        console.log("snapPoint");
+        //console.log(snapPoint);
+        console.log(JSON.stringify(placedBlocks));
+        convertBlock(block, snapPoint, id);
+        setBlockDown(block, snapPoint, true);
+        console.log(JSON.stringify(placedBlocks));
+      }
+    } else {
+      block.style.top = data[id].y + "px";
+      block.style.left = data[id].x + "px";
+
+      convertBlock(block, null, id);
+      setBlockDown(block, null, true);
+    }
+
+    //now load in the children blocks of this one
+
+    //console.log("barrr");
+    //console.log(data[id]);
+    console.log(JSON.stringify(placedBlocks));
+
+    if (data[id].a) {
+      placedBlocks[id].a = data[id].a;
+      loadBlockRecursive(data, data[id].a);
+    }
+    if (data[id].in) {
+      placedBlocks[id].in = data[id].in;
+      loadBlockRecursive(data, data[id].in);
+    }
+    if (data[id].else) {
+      placedBlocks[id].else = data[id].else;
+      loadBlockRecursive(data, data[id].else);
+    }
+    if (data[id].on) {
+      if (data[id].on[0] && data[id].on[0].charAt(0) == "#") {
+        placedBlocks[id].on[0] = data[id].on[0];
+        loadBlockRecursive(data, data[id].on[0]); //make sure its an id and not just a number
+      }
+
+      if (data[id].on.length > 1) {
+        if (data[id].on[1] && data[id].on[1].charAt(0) == "#") {
+          placedBlocks[id].on[1] = data[id].on[1];
+          loadBlockRecursive(data, data[id].on[1]);
+        }
+      }
+
+      if (data[id].on[0] && data[id].on[0].charAt(0) != "#") {
+        block.querySelectorAll(".input")[0].innerHTML = data[id].on[0]; //copy numerical value
+      }
+      if (data[id].on.length > 1) {
+        if (data[id].on[1] && data[id].on[1].charAt(0) != "#") {
+          block.firstChild.firstChild.lastElementChild.innerHTML =
+            data[id].on[1]; //copy numerical value
+        }
+      }
+    }
+  }
+
+  loadBlocks({
+    "1676907967282670": {
+      id: 0,
+      top: true,
+      x: 353,
+      y: 99,
+      a: "1676907965780462",
+      on: []
+    },
+    "1676907965780462": {
+      id: 2,
+      a: "1676907970284323",
+      on: ["60"]
+    },
+    "1676907970284323": {
+      id: 10,
+      a: "1676907968599891",
+      in: "1676908293067426",
+      on: ["true"]
+    },
+    "1676907968599891": {
+      id: 3,
+      on: ["32.5"]
+    },
+    "1676908293067426": {
+      id: 10,
+      in: "1676908295736537",
+      on: ["true"]
+    },
+    "1676908295736537": {
+      id: 11,
+      else: "1676908297637897",
+      on: ["true"]
+    },
+    "1676908297637897": {
+      id: 9,
+      on: []
+    }
+  });
 };
 
 //findC("block").innerHTML = blocks["0"].html;
