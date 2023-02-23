@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="utf-8" />
+    <title>Object Viewer and Editor</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <br />
+    <label>X: <input type="number" id="x" value="400" /></label>
+    <label>Y: <input type="number" id="y" value="300" /></label>
+    <label>Width: <input type="number" id="width" value="100" /></label>
+    <label>Height: <input type="number" id="height" value="100" /></label>
+    <label>Color: <input type="color" id="color" value="#FF0000" /></label>
+    <script src="index.js"></script>
   </body>
 </html>
