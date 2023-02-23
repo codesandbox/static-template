@@ -1,12 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/nav.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <script src="/nav_handler.js"></script>
+    <title>Prathamesh Kulkarni</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="main">
+      <div class="nav">
+      <a href="/index.html" class="logo">Prathamesh</a>
+        <div style=""class="nav-link-container">
+          <ul class="navlinks">
+            <a href="/work.html" class="links"> Work</a>
+            <a href="/about.html" class="links">About</a>
+            <a href="/blog.html" class="links">Blog</a>
+            <a href="/contacts.html" class="links">Contact</a>
+          </ul>
+        </div>
+
+        <!-- Side Nav For Mobile -->
+        <div  style=""id="menu"class=" nav-link-container">
+          <a style="" class="icon" onclick="openNav()">
+            <i class="fa fa-bars"></i>
+          </a>
+    </div>
+      <div style="transform: translate(100%);display: block;position:fixed;background-color: white;top: 0;right: 0;width: 70%;height: 100vh;" id="mobile_nav">
+        <h2 id="close"style="background-color:seagreen;color:seashell;padding: 16px;width: 23px;height: 23px;border-radius: 50%;text-align: center;float: right;margin: 10px "onclick="closeNav()">X<h2>
+        <div  style="margin:auto;flex-direction:column;color:black;height: 100%" class="">
+          <ul style="align-items: center;justify-content: center;margin-top: 200px"class="navlink">
+            <a style="font-size: 24px;display: inline;display: flex; color: black; text-align: center;margin: 15px 80px "href="/work.html" class="links"> Work</a>
+            <hr>
+            <a style=" font-size: 24px;display: flex; color: black; text-align: center;margin: 15px 80px "href="/about.html" class="links">About</a>
+            <hr>
+            <a style="font-size: 24px;display: flex; color: black; text-align: center;margin: 15px 80px "href="/blog.html" class="links">Blog</a>
+            <hr>
+            <a style="font-size: 24px;display: flex; color: black; text-align: center;margin: 15px 80px "href="/contacts.html" class="links">Contact</a>
+          </ul>
+        </div>
+      </div>
+      </div>
+      <div class="page_body">
+        <div class="image_wrapper">
+          <div class="image_holder">
+            <img alt="Profile",width="150px" height="150px" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Circle-icons-profile.svg" class="profile image">
+  
+          </img>
+        </div>
+        </div>
+            <h1 class="name">Hi! I am Prathamesh !</h1>
+            <p class="about">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              placeat possimus error accusamus? Ullam magni nesciunt voluptas
+              animi ducimus ea voluptates explicabo autem ipsam mollitia saepe,
+              molestiae quis natus placeat!
+            </p>
+            <br>
+            <p class="about">
+              Lorem, ipsum dolor sit <span>amet consectetur</span> adipisicing elit. Laborum
+              placeat possimus error accusamus? Ullam magni nesciunt voluptas
+              animi ducimus ea voluptates explicabo autem ipsam mollitia saepe,
+              molestiae quis natus placeat!
+            </p>
+            <div  style="display: flex"class="icon-holder">
+              <a href="#" style="background-color:rgb(4, 150, 118);padding: 8px;border-radius: 50px;color: white;font-size: 20px;margin: 10px" class="fa fa-facebook"></a>
+<a href="#" style="background-color:rgb(4, 150, 118);padding: 8px;border-radius: 50px;color: white;font-size: 20px;margin: 10px" class="fa fa-twitter"></a>
+<a href="#" style="background-color:rgb(4, 150, 118);padding: 8px;border-radius: 50px;color: white;font-size: 20px;margin: 10px"class="fa fa-linkedin"></a>
+<a href="#" style="background-color:rgb(4, 150, 118);padding: 8px;border-radius: 50px;color: white;font-size: 20px;margin: 10px" class="fa fa-youtube"></a>
+            </div>
+      </div>
+    </div>
   </body>
 </html>
