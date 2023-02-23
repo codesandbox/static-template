@@ -1,14 +1,750 @@
+<!-- This code is written by Madhav K -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Static Template</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Chirag Ninja Studio</title>
+    <link rel="icon" type="image/x-icon" href="Asset_image/music logo.jpeg" />
+    <!-- fontawesome link -->
+    <script
+      src="https://kit.fontawesome.com/691d3ab680.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
+
   <body>
-    <h1>
-      This is a static template, there is no bundler or bundling involved!
-    </h1>
+    <div id="container">
+      <!-- header -->
+      <header id="header">
+        <div id="logo">
+          <img src="Asset_image/logo.png" alt="Logo_not_showing" />
+          <p>Favourites</p>
+        </div>
+        <div id="second-page">
+          <a href="Single_Playlist_Screen.html">Go to Second page</a>
+        </div>
+
+        <div id="search">
+          <i id="lens" class="fa-solid fa-magnifying-glass"></i>
+          <input id="input" placeholder="Search" type="search" />
+          <i id="mic" class="fa-solid fa-microphone"></i>
+        </div>
+
+        <div id="user">
+          <i id="bell" class="fa-solid fa-bell"></i>
+          <i id="dot" class="fa-solid fa-circle"></i>
+          <img src="https://i.pinimg.com/474x/37/db/db/37dbdbe074a18b454139afe348192707--icons-tumblr.jpg" alt="user logo error" />
+        </div>
+      </header>
+
+      <!-- main start -->
+      <div id="main_aside_container">
+        <main>
+          <!-- carousel start -->
+          <div
+            id="carouselExampleIndicators"
+            class="carousel slide"
+            data-ride="carousel"
+          >
+            <ol class="carousel-indicators">
+              <li
+                data-target="#carouselExampleIndicators"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li
+                data-target="#carouselExampleIndicators"
+                data-slide-to="1"
+              ></li>
+              <li
+                data-target="#carouselExampleIndicators"
+                data-slide-to="2"
+              ></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  class="d-block w-100"
+                  src="Asset_image/img1.jpg"
+                  alt="First slide"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="d-block w-100"
+                  src="Asset_image/img2.jpg"
+                  alt="Second slide"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="d-block w-100"
+                  src="Asset_image/img3.jpg"
+                  alt="Third slide"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="d-block w-100"
+                  src="Asset_image/img4.webp"
+                  alt="Fourth slide"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="d-block w-100"
+                  src="Asset_image/img5.png"
+                  alt="Fifth slide"
+                />
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#carouselExampleIndicators"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carouselExampleIndicators"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <!-- carousel end -->
+          <!-- latest release -->
+          <div id="latest_release">
+            <h4 class="white">Latest Release</h4>
+            <div class="box1">
+              <div class="boxa">
+                <img src="Asset_image/asset 13.jpeg" alt="error" />
+                <div class="TEXT">
+                  <p class="white">Chirag Raj</p>
+                  <p class="grey">Jan 2023</p>
+                </div>
+                <div class="drp_btn">
+                  <!-- bootstrap button start -->
+                  <!-- Default dropleft button -->
+                  <div class="btn-group dropleft">
+                    <button
+                      type="button"
+                      class="btn btn-secondary dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                      <!-- Dropdown menu links -->
+                      <ul type="none">
+                        <li><i class="fa-solid fa-play"></i> &nbsp Play Now</li>
+                        <li>
+                          <i class="fa-solid fa-plus"></i> &nbsp Add To Queue
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-bars"></i> &nbsp Add To Fav.
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-circle-info"></i> &nbsp Get Info
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- bootstrap button end -->
+                  <p class="grey">4.44</p>
+                </div>
+              </div>
+              <div class="boxa">
+                <img src="Asset_image/asset 9.jpeg" alt="error" />
+                <div class="TEXT">
+                  <p class="white">Mirage</p>
+                  <p class="grey">Rock Lipa</p>
+                </div>
+                <div class="drp_btn">
+                  <!-- bootstrap button start -->
+                  <!-- Default dropleft button -->
+                  <div class="btn-group dropleft">
+                    <button
+                      type="button"
+                      class="btn btn-secondary dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                      <!-- Dropdown menu links -->
+                      <ul type="none">
+                        <li><i class="fa-solid fa-play"></i> &nbsp Play Now</li>
+                        <li>
+                          <i class="fa-solid fa-plus"></i> &nbsp Add To Queue
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-bars"></i> &nbsp Add To Fav.
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-circle-info"></i> &nbsp Get Info
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- bootstrap button end -->
+                  <p class="grey">4.44</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="box1">
+              <div class="boxa">
+                <img src="Asset_image/asset 14.jpeg" alt="error" />
+                <div class="TEXT">
+                  <p class="white">Star Boy</p>
+                  <p class="grey">Doja Cat</p>
+                </div>
+                <div class="drp_btn">
+                  <!-- bootstrap button start -->
+                  <!-- Default dropleft button -->
+                  <div class="btn-group dropleft">
+                    <button
+                      type="button"
+                      class="btn btn-secondary dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                      <!-- Dropdown menu links -->
+                      <ul type="none">
+                        <li><i class="fa-solid fa-play"></i> &nbsp Play Now</li>
+                        <li>
+                          <i class="fa-solid fa-plus"></i> &nbsp Add To Queue
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-bars"></i> &nbsp Add To Fav.
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-circle-info"></i> &nbsp Get Info
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- bootstrap button end -->
+                  <p class="grey">4.44</p>
+                </div>
+              </div>
+              <div class="boxa">
+                <img src="Asset_image/asset 6.jpeg" alt="error" />
+                <div class="TEXT">
+                  <p class="white">Attention</p>
+                  <p class="grey">Charlie Puth</p>
+                </div>
+                <div class="drp_btn">
+                  <!-- bootstrap button start -->
+                  <!-- Default dropleft button -->
+                  <div class="btn-group dropleft">
+                    <button
+                      type="button"
+                      class="btn btn-secondary dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                      <!-- Dropdown menu links -->
+                      <ul type="none">
+                        <li><i class="fa-solid fa-play"></i> &nbsp Play Now</li>
+                        <li>
+                          <i class="fa-solid fa-plus"></i> &nbsp Add To Queue
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-bars"></i> &nbsp Add To Fav.
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-circle-info"></i> &nbsp Get Info
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- bootstrap button end -->
+                  <p class="grey">4.44</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Popular artist start -->
+          <h4 class="white">Popular Artists</h4>
+          <div id="popular-artist">
+            <div class="artist-img">
+              <a href="Single_Playlist_Screen.html"
+                ><img src="Asset_image/i1.jpg" alt="Error" />
+                <i class="white play fa-solid fa-play"></i>
+              </a>
+              <p class="white">Charlie Puth</p>
+            </div>
+            <div class="artist-img">
+              <a href="Single_Playlist_Screen.html"
+                ><img src="Asset_image/i2.jpg" alt="Error" /><i
+                  class="white play fa-solid fa-play"
+                ></i
+              ></a>
+              <p class="white">Cold Play</p>
+            </div>
+            <div class="artist-img">
+              <a href="Single_Playlist_Screen.html"
+                ><img src="Asset_image/i3.jpg" alt="Error" /><i
+                  class="white play fa-solid fa-play"
+                ></i
+              ></a>
+              <p class="white">Bruno Mars</p>
+            </div>
+            <div class="artist-img">
+              <a href="Single_Playlist_Screen.html"
+                ><img src="Asset_image/i4.jpg" alt="Error" /><i
+                  class="white play fa-solid fa-play"
+                ></i
+              ></a>
+              <p class="white">Ed Sheeran</p>
+            </div>
+            <div class="artist-img">
+              <a href="Single_Playlist_Screen.html"
+                ><img src="Asset_image/i5.jpg" alt="Error" /><i
+                  class="white play fa-solid fa-play"
+                ></i
+              ></a>
+              <p class="white">Imagine</p>
+            </div>
+            <div class="artist-img">
+              <a href="Single_Playlist_Screen.html"
+                ><img src="Asset_image/i6.jpg" alt="Error" /><i
+                  class="white play fa-solid fa-play"
+                ></i
+              ></a>
+              <p class="white">Zayn Malik</p>
+            </div>
+          </div>
+
+          <!-- music by type -->
+          <div id="Type-artist">
+            <div class="type-img">
+              <img id="sq" src="Asset_image/type_1.png" alt="Error" />
+            </div>
+            <div class="type-img">
+              <p class="blur">Work</p>
+              <img src="Asset_image/t2.jpg" alt="Error" />
+            </div>
+            <div class="type-img">
+              <p class="blur">Rock</p>
+              <img src="Asset_image/t3.jpg" alt="Error" />
+            </div>
+            <div class="type-img">
+              <p class="blur">Chill</p>
+              <img src="Asset_image/t4.jpg" alt="Error" />
+            </div>
+            <div class="type-img">
+              <p class="blur">Love</p>
+              <img src="Asset_image/t5.jpg" alt="Error" />
+            </div>
+            <div class="type-img">
+              <p class="blur">Pop</p>
+              <img src="Asset_image/t6.jpg" alt="Error" />
+            </div>
+            <div class="type-img">
+              <p class="blur">Retro</p>
+              <img src="Asset_image/t7.png" alt="Error" />
+            </div>
+          </div>
+
+          <!-- animation start -->
+
+          <!-- animation end -->
+          <div id="animation">
+            <div class="ani">
+              <img src="Asset_image/ani1.jpg" alt="" />
+              <p>Party</p>
+            </div>
+            <div class="ani">
+              <img src="Asset_image/ani2.jpg" alt="" />
+              <p>Road Trip</p>
+            </div>
+            <div class="ani">
+              <img src="Asset_image/ani3.jpg" alt="" />
+              <p>Electronic</p>
+            </div>
+          </div>
+
+          <!-- latest hindi -->
+          <h4 class="white">Latest Hindi</h4>
+          <div id="latest-hindi">
+            <div class="song-img">
+              <img src="Asset_image/h1.jpeg" alt="Error" />
+              <p class="white">Udit Ji</p>
+              <p class="white">JAN 06,2023</p>
+            </div>
+            <div class="song-img">
+              <img src="Asset_image/h2.jpeg" alt="Error" />
+              <p class="white">Lata Ji</p>
+              <p class="white">JAN 06,2023</p>
+            </div>
+            <div class="song-img">
+              <img src="Asset_image/h3.jpeg" alt="Error" />
+              <p class="white">Shreya Ghosal</p>
+              <p class="white">JAN 06,2023</p>
+            </div>
+            <div class="song-img">
+              <img src="Asset_image/h4.jpeg" alt="Error" />
+              <p class="white">AR Rahman</p>
+              <p class="white">JAN 06,2023</p>
+            </div>
+            <div class="song-img">
+              <img src="Asset_image/h6.jpeg" alt="Error" />
+              <p class="white">Arjit Singh</p>
+              <p class="white">JAN 06,2023</p>
+            </div>
+            <div class="song-img">
+              <img src="Asset_image/h7.webp" alt="Error" />
+              <p class="white">Badshah</p>
+              <p class="white">JAN 06,2023</p>
+            </div>
+          </div>
+
+          <!-- latest english -->
+          <h4 class="white">Latest English</h4>
+          <div id="latest-hindi">
+            <div class="song-img">
+              <img src="Asset_image/h1.jpeg" alt="Error" />
+              <p class="white">Udit Ji</p>
+              <p class="white">JAN 06,2023</p>
+            </div>
+            <div class="song-img">
+              <img src="Asset_image/h2.jpeg" alt="Error" />
+              <p class="white">Lata Ji</p>
+              <p class="white">JAN 06,2023</p>
+            </div>
+            <div class="song-img">
+              <img src="Asset_image/h3.jpeg" alt="Error" />
+              <p class="white">Shreya Ghosal</p>
+              <p class="white">JAN 06,2023</p>
+            </div>
+            <div class="song-img">
+              <img src="Asset_image/h4.jpeg" alt="Error" />
+              <p class="white">AR Rahman</p>
+              <p class="white">JAN 06,2023</p>
+            </div>
+            <div class="song-img">
+              <img src="Asset_image/h6.jpeg" alt="Error" />
+              <p class="white">Arjit Singh</p>
+              <p class="white">JAN 06,2023</p>
+            </div>
+            <div class="song-img">
+              <img src="Asset_image/h7.webp" alt="Error" />
+              <p class="white">Badshah</p>
+              <p class="white">JAN 06,2023</p>
+            </div>
+          </div>
+        </main>
+        <!-- aside start -->
+        <aside>
+          <div id="aside-top">
+            <h5 class="white">Queue</h5>
+            <div class="drp_btn">
+              <!-- bootstrap button start -->
+              <!-- Default dropleft button -->
+              <div class="btn-group dropleft">
+                <button
+                  type="button"
+                  class="btn btn-secondary dropdown-toggle"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <p id="sort">
+                    Sort By
+                  </p>
+                </button>
+                <div class="dropdown-menu">
+                  <!-- Dropdown menu links -->
+                  <ul type="none">
+                    <li>Playlists</li>
+                    <li>Favourite Song</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- bootstrap button end -->
+            </div>
+          </div>
+
+          <div id="aside-queue">
+            <div class="list-song">
+              <p class="grey">01</p>
+              <img src="Asset_image/asset 10.jpeg" alt="Error" />
+              <div>
+                <p class="white">Mirage</p>
+                <p class="grey">Else</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">02</p>
+              <img src="Asset_image/asset 11.jpeg" alt="Error" />
+              <div>
+                <p class="white">Worry Bout Us</p>
+                <p class="grey">Rosie Lobe</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">03</p>
+              <img src="Asset_image/asset 12.jpeg" alt="Error" />
+              <div>
+                <p class="white">New Skin</p>
+                <p class="grey">Flume</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">04</p>
+              <img src="Asset_image/asset 13.jpeg" alt="Error" />
+              <div>
+                <p class="white">Orism</p>
+                <p class="grey">Dua Lipa</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">05</p>
+              <img src="Asset_image/asset 14.jpeg" alt="Error" />
+              <div>
+                <p class="white">Sorry</p>
+                <p class="grey">Justin Bieber</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">06</p>
+              <img src="Asset_image/asset 3.jpeg" alt="Error" />
+              <div>
+                <p class="white">Kis Me More</p>
+                <p class="grey">Doja Cat</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">07</p>
+              <img src="Asset_image/asset 4.jpeg" alt="Error" />
+              <div>
+                <p class="white">Peaches</p>
+                <p class="grey">Maroon Five</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">08</p>
+              <img src="Asset_image/asset 5.jpeg" alt="Error" />
+              <div>
+                <p class="white">Seven Rings</p>
+                <p class="grey">Ariana Grande</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">09</p>
+              <img src="Asset_image/asset 6.jpeg" alt="Error" />
+              <div>
+                <p class="white">Attention</p>
+                <p class="grey">Charlie Puth</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">10</p>
+              <img src="Asset_image/asset 7.jpeg" alt="Error" />
+              <div>
+                <p class="white">Sugar</p>
+                <p class="grey">Olivia</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">01</p>
+              <img src="Asset_image/asset 10.jpeg" alt="Error" />
+              <div>
+                <p class="white">Mirage</p>
+                <p class="grey">Else</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">02</p>
+              <img src="Asset_image/asset 11.jpeg" alt="Error" />
+              <div>
+                <p class="white">Worry Bout Us</p>
+                <p class="grey">Rosie Lobe</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">03</p>
+              <img src="Asset_image/asset 12.jpeg" alt="Error" />
+              <div>
+                <p class="white">New Skin</p>
+                <p class="grey">Flume</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">04</p>
+              <img src="Asset_image/asset 13.jpeg" alt="Error" />
+              <div>
+                <p class="white">Orism</p>
+                <p class="grey">Dua Lipa</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">05</p>
+              <img src="Asset_image/asset 14.jpeg" alt="Error" />
+              <div>
+                <p class="white">Sorry</p>
+                <p class="grey">Justin Bieber</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">06</p>
+              <img src="Asset_image/asset 3.jpeg" alt="Error" />
+              <div>
+                <p class="white">Kis Me More</p>
+                <p class="grey">Doja Cat</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">07</p>
+              <img src="Asset_image/asset 4.jpeg" alt="Error" />
+              <div>
+                <p class="white">Peaches</p>
+                <p class="grey">Maroon Five</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">08</p>
+              <img src="Asset_image/asset 5.jpeg" alt="Error" />
+              <div>
+                <p class="white">Seven Rings</p>
+                <p class="grey">Ariana Grande</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">09</p>
+              <img src="Asset_image/asset 6.jpeg" alt="Error" />
+              <div>
+                <p class="white">Attention</p>
+                <p class="grey">Charlie Puth</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+            <div class="list-song">
+              <p class="grey">10</p>
+              <img src="Asset_image/asset 7.jpeg" alt="Error" />
+              <div>
+                <p class="white">Sugar</p>
+                <p class="grey">Olivia</p>
+              </div>
+              <i class="heartred fa-solid fa-heart"></i>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <!-- main asid end -->
+      <!-- design the play pause bar -->
+      <div id="play-bar">
+        <div id="c1">
+          <img src="Asset_image/music logo.jpeg" alt="Error" />
+          <div>
+            <p class="white">Raanjhanaa</p>
+            <p class="white">Hindi</p>
+          </div>
+          <i class="heartgreen fa-solid fa-heart"></i>
+          <i class="white fa-solid fa-ban"></i>
+        </div>
+        <div id="c2">
+          <audio controls>
+            <source src="Asset_image/song.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+<!--           <div id="play-pause">
+            <i class="white fa-solid fa-shuffle"></i>
+            <i class="white fa-solid fa-backward-step"></i>
+            <i class="white fa-regular fa-circle-pause"></i>
+            <i class="white fa-solid fa-forward-step"></i>
+            <i class="white fa-solid fa-repeat"></i>
+          </div>
+          <div id="BAR">
+            <div id="Bar1">
+              <p class="white">0:00</p>
+              <input id="barsize" type="range" value="30" />
+              <p class="white">4:44</p>
+            </div>
+          </div> -->
+        </div>
+        <div id="c3">
+          <i class="fa-solid fa-list"></i>
+          <i class="fa-solid fa-desktop"></i>
+          <i class="fa-solid fa-volume-high"></i>
+          <input type="range" value="35" />
+          <i class="fa-solid fa-expand"></i>
+        </div>
+      </div>
+    </div>
+    <!-- container close -->
   </body>
+  <!-- code end -->
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+  <script src="script.js"></script>
 </html>
+<!-- html end -->
