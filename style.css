@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+
+:root {
+  --white: #fff;
+  --black: #1c2b2d;
+  --blue: #31326f;
+  --light-blue: #005490;
+  --color-primary: #9d0191;
+  --color-sec: #db6400;
+  --color-grey: #eee;
+  --color-dark-grey: #222831;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 1rem 0;
+  color: var(--color-primary);
+}
+
+.according {
+  background-color: var(--color-grey);
+  color: var(--black);
+  cursor: pointer;
+  padding: 1.6rem;
+  width: 100%;
+  border-bottom: 1px solid var(--color-primary);
+  font-size: 1.5rem;
+  transition: all 0.4s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.active,
+.according:hover {
+  background-color: #d5d5d5;
+}
+
+.according::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f067";
+  color: var(--color-primary);
+}
+
+.active::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f068";
+  color: var(--color-primary);
+}
+
+.desc {
+  padding: 0 1rem;
+  background-color: var(--white);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+}
