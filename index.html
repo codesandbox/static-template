@@ -1,12 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="utf-8" />
+    <title>ChickCoin</title>
+    <style>
+      body {
+        background-color: #FFDAB9;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 5px solid #FFA500;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .balance {
+        font-size: 24px;
+        font-weight: bold;
+        color: #FFA500;
+      }
+      .button {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #FFA500;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+        font-size: 18px;
+      }
+      .button:hover {
+        background-color: #FF8C00;
+        cursor: pointer;
+      }
+      .chicken {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+      }
+      .chicken-name {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #FFA500;
+      }
+      .chicken-attribute {
+        font-size: 18px;
+        margin: 5px;
+        color: #666;
+      }
+      .power-up {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #FF69B4;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+        font-size: 18px;
+      }
+      .power-up:hover {
+        background-color: #FF1493;
+        cursor: pointer;
+      }
+      .transfer {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #1E90FF;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+        font-size: 18px;
+      }
+      .transfer:hover {
+        background-color: #007FFF;
+        cursor: pointer;
+      }
+      .top-chickens {
+        .top-chickens {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+            font-size: 18px;
+            max-width: 500px;
+            text-align: left;
+          }
+          .top-chickens ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+          }
+          .top-chickens li {
+            margin: 10px 0;
+          }
+          .top-chickens .owner {
+            font-weight: bold;
+            color: #FFA500;
+          }
+          .top-chickens .chickens {
+            font-weight: normal;
+            color: #666;
+          }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <h1>ChickCoin</h1>
+      <div class="header">
+        <div class="balance">Balance: 0 ChickCoins</div>
+        <a href="#" class="button">Get a Chicken!</a>
+      </div>
+      <div class="chicken">
+        <div class="chicken-name">Macho Rooster</div>
+        <div class="chicken-attribute">Rarity: Epic</div>
+        <div class="chicken-attribute">Health: 100/100</div>
+      </div>
+      <div class="chicken">
+        <div class="chicken-name">Psychedelic Hen</div>
+        <div class="chicken-attribute">Rarity: Rare</div>
+        <div class="chicken-attribute">Health: 75/100</div>
+      </div>
+      <div class="chicken">
+        <div class="chicken-name">Kung Fu Chicken</div>
+        <div class="chicken-attribute">Rarity: Common</div>
+        <div class="chicken-attribute">Health: 50/100</div>
+      </div>
+      <a href="#" class="power-up">Use Power-Up</a>
+      <a href="#" class="transfer">Transfer Chicken</a>
+      <a href="#" class="button">Get Top Chicken Owners</a>
+      <div class="top-chickens">
+        <h2>Top Chicken Owners</h2>
+        <ul>
+          <li>
+            <span class="owner">John Doe</span> -
+            <span class="chickens">10 Chickens</span>
+          </li>
+          <li>
+            <span class="owner">Jane Doe</span> -
+            <span class="chickens">8 Chickens</span>
+          </li>
+          <li>
+            <span class="owner">Bob Smith</span> -
+            <span class="chickens">5 Chickens</span>
+          </li>
+          <li>
+            <span class="owner">Mary Johnson</span> -
+            <span class="chickens">3 Chickens</span>
+          </li>
+          <li>
+            <span class="owner">Alex Rodriguez</span> -
+            <span class="chickens">2 Chickens</span>
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
