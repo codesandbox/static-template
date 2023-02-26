@@ -35,4 +35,8 @@ modules.modal = function (title, content, buttons) {
   return modalID;
 };
 
-// (await getModule("modal"))("Coming Soon", "We're working on implementing this feature. Thanks!", [["Close", "var(--themeColor)", function(a) { console.log(a); }],["Test", "var(--themeColor)", function(a) { console.log(a); }]])
+// 1 Button
+// (await getModule("modal"))("Coming Soon", "We're working on implementing this feature. Thanks!", [["Close", "var(--themeColor)", function(a) { console.log(a); }]]);
+
+// 2 Buttons
+// (await getModule("modal"))("Coming Soon", "We're working on implementing this feature. Thanks!", [["Button 1", "var(--themeColor)", function(a) { console.log(a); }],["Button 2", "var(--themeColor)", function(a) { console.log(a); }]])

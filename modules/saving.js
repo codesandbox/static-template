@@ -9,6 +9,7 @@ modules.saving = {
   collaborators: {},
 
   constructor: async function (projectID) {
+    modules.saving.collaborators = {};
     let [code, response] = await sendRequest(
       "GET",
       "project/load?projectid=" + projectID + "&ss=" + socket.secureID
@@ -83,10 +84,17 @@ modules.saving = {
           return;
         }
         if (collabUser.element == null) {
-          let newCursorElem = createElement("cursor", "div", "codeContainer");
+          let newCursorElem = createElement("cursor", "div", "cursorContainer");
           newCursorElem.id = "moveCursor_" + userID;
+          collabUser.element = newCursorElem;
           newCursorElem.style.background = profileColor(collabUser.user);
-          modules.saving.collaborators[userID].element = newCursorElem;
+          let userDetail = createElement("cursorName", "div", newCursorElem);
+          userDetail.textContent = collabUser.user.user;
+          newCursorElem.style.setProperty(
+            "--fullyExtendedWidth",
+            userDetail.clientWidth + "px"
+          );
+          userDetail.style.width = "100%";
         }
         let cursorData = modules.saving.collaborators[userID];
         cursorData.x = data[0];
@@ -95,7 +103,7 @@ modules.saving = {
         cursorData.element.style.top = cursorData.y + "px";
       }
       if (modules.saving.draggingCallback) {
-        modules.saving.draggingCallback(task, userID, data);
+        modules.saving.draggingCallback(task, userID, data || {});
       }
     };
     socket.remotes.long = function (receive) {

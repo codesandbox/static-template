@@ -25,6 +25,7 @@ wireframes.editor = `
       </div>
     </div> 
   </div>
+  <div class="cursorContainer"></div>
   <div class="codeContainer"></div>
   <svg width="0" height="0">
     <clipPath id="notchClip">
@@ -73,8 +74,8 @@ pages.editor = async function () {
     }
   };
 
-  let projLoad = await saving.constructor(projectID);
-  console.log(projLoad);
+  let projLoad = await saving.constructor(projectID); // projLoad.blocks gives a list of all of the blocks
+  //console.log(projLoad);
 
   let projectName = pageHolder.querySelector(".projectNameProj");
   projectName.value = projLoad.info.name;
@@ -100,44 +101,42 @@ pages.editor = async function () {
       projectName.value = projLoad.info.name;
     }
   });
+  /*
   let hoveredCursor;
   pageHolder.addEventListener("mouseover", async function (e) {
     if (e.target.className == "cursorName") {
       return;
     }
-    if (hoveredCursor) {
-      async function hideCursor() {
-        if (hoveredCursor.hasAttribute("closing") == false) {
-          let revertCursor = hoveredCursor.querySelector(".cursorName");
-          hoveredCursor = null;
-          revertCursor.setAttribute("closing", "");
-          revertCursor.parentNode.style.width = "22px";
-          revertCursor.style.opacity = 0;
-          await sleep(300);
-          revertCursor.remove();
-        }
-      }
-      hideCursor();
-    }
     let cursor = e.target.closest(".cursor");
-    if (cursor) {
-      hoveredCursor = cursor;
-      if (hoveredCursor.querySelector(".cursorName")) {
+    if (hoveredCursor) {
+      if (hoveredCursor == cursor) {
         return;
       }
+      let revertCursor = hoveredCursor.querySelector(".cursorName");
+      hoveredCursor = null;
+      revertCursor.parentNode.style.width = "22px";
+      revertCursor.parentNode.style.zIndex = 9;
+      revertCursor.style.opacity = 0;
+    }
+    if (cursor) {
+      hoveredCursor = cursor;
       let user =
         saving.collaborators[
           hoveredCursor.id.substring(hoveredCursor.id.indexOf("_") + 1)
         ];
       if (user) {
-        let usernameDetail = createElement("cursorName", "div", hoveredCursor);
+        let usernameDetail = hoveredCursor.querySelector(".cursorName");
+        if (usernameDetail == null) {
+          usernameDetail = createElement("cursorName", "div", hoveredCursor);
+        }
         usernameDetail.textContent = user.user.user;
         hoveredCursor.style.width = usernameDetail.clientWidth + "px";
-        //await sleep(1);
+        hoveredCursor.style.zIndex = 10;
         usernameDetail.style.opacity = 1;
       }
     }
   });
+  */
   /*
   pageHolder
     .querySelector(".codeContainer")
@@ -170,9 +169,10 @@ pages.editor = async function () {
         : false
       : false; //get whether or not a decimal point is already in the input. If there's not already one, then the user can type one
     if (
-      ASCIICode > 31 &&
-      (ASCIICode < 48 || ASCIICode > 57) &&
-      (decimalAlreadyThere || ASCIICode != 46)
+      (ASCIICode > 31 &&
+        (ASCIICode < 48 || ASCIICode > 57) &&
+        (decimalAlreadyThere || ASCIICode != 46)) ||
+      ASCIICode == 13 //13 is the enter key
     )
       e.preventDefault(); //prevent non-numbers
   });
@@ -247,71 +247,6 @@ pages.editor = async function () {
     findC("projectName").value = s;
   }
 
-  //subscribes
-  const cursorImg = `<svg viewBox="0 0 158 204" fill="none" xmlns="http://www.w3.org/2000/svg"> <mask id="mask0_1246_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="158" height="204"> <rect width="158" height="204" fill="#C4C4C4"/> </mask> <g mask="url(#mask0_1246_2)"> <path d="M88.6882 119.764L65.5221 131.568C57.6486 135.58 54.5181 145.215 58.5298 153.088L75.9217 187.222C79.9334 195.095 89.5682 198.226 97.4417 194.214L120.608 182.41C128.481 178.398 131.612 168.764 127.6 160.89L110.208 126.757C106.196 118.883 96.5616 115.753 88.6882 119.764Z" fill="white" stroke="black" stroke-width="12"/> <path d="M143.355 90.0789L32.4076 9.87985C21.8414 2.24204 7.06594 9.77055 7.03442 22.8081L6.70347 159.706C6.67454 171.671 19.3071 179.433 29.9673 174.001L141.246 117.302C151.906 111.87 153.051 97.0878 143.355 90.0789Z" fill="white" stroke="black" stroke-width="12"/> <path d="M59.3521 141.446L100.325 120.569L119.16 157.535L78.1871 178.412L59.3521 141.446Z" fill="white"/> </g> </svg>`;
-  let cursorPos = [0, 0];
-  let attachedBlock;
-  /*
-  socket.subscribe(projectID + "cursors", function (data, config) {
-    let cursor = findI("moveCursor" + config.publisherID);
-    switch (data[0]) {
-      case "move":
-        if (cursor == null) {
-          cursor = createElement("cursor", "div", "codeContainer");
-          cursor.id = "moveCursor" + config.publisherID;
-          cursor.innerHTML = cursorImg;
-        }
-        cursor.style.left = data[1][0] + "px";
-        cursor.style.top = data[1][1] + "px";
-        let multiblock = data[3];
-        if (multiblock != null) {
-          let blockObj = cursor.querySelector(
-            "[blockid='" + multiblock.b + "']"
-          );
-          if (blockObj == null) {
-            if (cursor.querySelector(".block")) {
-              cursor.querySelector(".block").remove();
-            }
-            blockObj = generateBlock(multiblock.b);
-            blockObj.style.position = "absolute";
-            blockObj.style.zIndex = -1;
-            cursor.appendChild(blockObj);
-          }
-          blockObj.style.left = -multiblock.x + "px";
-          blockObj.style.top = -multiblock.y + "px";
-        }
-        break;
-      case "place":
-        setBlockDown(data[1][0], data[1][1]);
-        break;
-      case "leave":
-        if (cursor != null) {
-          cursor.remove();
-        }
-        break;
-      default:
-        break;
-    }
-  });
-  let lastSendCursor = [0, 0];
-  setInterval(function () {
-    if (
-      cursorPos[0] != lastSendCursor[0] ||
-      cursorPos[1] != lastSendCursor[1]
-    ) {
-      let sendData = ["move", cursorPos, getEpoch()];
-      if (attachedBlock != null) {
-        sendData.push(attachedBlock);
-      }
-      socket.publish(projectID + "cursors", sendData);
-      lastSendCursor = cursorPos;
-    }
-  }, 80);*/
-  tempListen(window, "mousemove", function (e) {
-    cursorPos = [e.x, e.y];
-  });
-  //socket.setDisconnectEvent(projectID + "cursors", ["leave"]);
-
   //code to make blocks appear in the side bar
   let blockStorage = findC("blockStorage");
 
@@ -344,7 +279,11 @@ pages.editor = async function () {
         `<div class="blockCoverInput">` + blockData.html + "</div>";
       block.style.background = blockData.color;
       block.style.padding = "4px";
-      block.style.borderRadius = "20px";
+      if (blockData.type === "number") {
+        block.style.borderRadius = "20px";
+      } else {
+        block.style.borderRadius = "6px";
+      }
       block.style["box-shadow"] = "0px 0px 0px 2px white"; //UNDO (just for testing)
     } else {
       block.innerHTML = `<div class="blockCover">` + blockData.html + "</div>";
@@ -375,6 +314,7 @@ pages.editor = async function () {
         findC("blockStorage").querySelectorAll(".block")[id]
       );
     }
+    return block;
   }
 
   //drag and drop code
@@ -515,16 +455,22 @@ pages.editor = async function () {
     let block = [e.clientX, e.clientY];
     if (dragging) {
       //send extra data if the block is new
+      /*
       if (dragging.id.includes("source-block-")) {
         block.push(placedBlocks[dragging.id]);
       } else {
         block.push(dragging.id);
-      }
+      }*/
+      //nevermind, just save the html of the block
+      block.push(dragging.outerHTML);
 
       block.push(dragOffset.x);
       block.push(dragOffset.y);
+      //block.push(dragging.outerHTML);
     }
+
     saving.mouseMove(block);
+
     if (!dragging) return;
     //if we are currently dragging a block, set that block's position to the cursor minus the offset
     //but it's different for source blocks because they have an offset
@@ -599,8 +545,9 @@ pages.editor = async function () {
 
     dragging.style.cursor = "grab";
     dragging = null;
-    console.log(placedBlocks);
-    convertBlockData();
+    //console.log(placedBlocks);
+    //convertBlockData();
+    //saving.save(data);
   });
 
   function updateBlockPreview(snapPoint, reset) {
@@ -1302,13 +1249,51 @@ pages.editor = async function () {
   \_____\____/|______|______/_/    \_\____/ \____/|_|  \_\/_/    \_\_|  |_____\____/|_| \_|
   */
 
-  saving.draggingCallback = function (task, multiID, data) {
-    if (data) {
-      //check and make sure the block data is there
-      findI(saving.collaborators[multiID].element.id).style.left =
-        saving.collaborators[multiID].x;
-      findI(saving.collaborators[multiID].element.id).style.top =
-        saving.collaborators[multiID].y;
+  let lastDraggingData = null;
+
+  saving.draggingCallback = function (task, userid, data) {
+    //This data is the same as what is sent from the block dragging function
+    switch (task) {
+      case "move":
+        console.log(data);
+        // Mouse movement, includes block if one is being dragged
+        if (data && data[2]) {
+          // Block is being dragged
+          let cursorObj = pageHolder.querySelector("#moveCursor_" + userid);
+          let currentDraggingBlock = cursorObj.querySelector(".block");
+          if (currentDraggingBlock) {
+            // Block is already attached to cursor
+          } else {
+            // Get a new block
+            //let foundBlock = pageHolder.querySelector(
+            //  ".block[blockid='" + data[2]._id + "']"
+            //);
+            // if (foundBlock) {
+            // Block already exists - then parent block to cursor
+            //} else {
+            // Create a new block - then parent block to cursor
+            //}
+            //block is not already attached to cursor, so make the element with the HTML and attach it
+            var div = document.createElement("DIV");
+            div.innerHTML = data[2];
+            div.firstChild.style.left = data[3] * -1 + "px";
+            div.firstChild.style.top = data[4] * -1 + "px";
+            div.firstChild.style.zIndex = -3;
+            cursorObj.style.zIndex = "unset";
+            cursorObj.appendChild(div.firstChild);
+          }
+
+          lastDraggingData = data;
+        } else {
+          if (data && data.length < 3 && lastDraggingData) {
+            //they are no longer dragging a block, delete it
+            let cursorObj = pageHolder.querySelector("#moveCursor_" + userid);
+            cursorObj.lastElementChild.remove();
+          }
+          lastDraggingData = null;
+        }
+        break;
+      default:
     }
   };
 
@@ -1361,7 +1346,7 @@ pages.editor = async function () {
       }
     }
 
-    console.log(data);
+    return data;
     //loadBlocks(data);
   }
 
@@ -1378,7 +1363,9 @@ pages.editor = async function () {
   function loadBlockRecursive(data, id) {
     //given the full list of blocks (data) and the id of a specific block, load in the html of that block and all of its children
     //we can use this recursively by calling the top block first to then load in every block
-
+    console.log(id);
+    if (!data[id]) return;
+    console.log(data);
     //first, get the html of the source block of this type
     let block = findC("blockStorage").querySelector(
       '[blockid="' + data[id].id + '"]'
@@ -1437,15 +1424,15 @@ pages.editor = async function () {
         }
       }
 
-      console.log(parentPos);
+      //console.log(parentPos);
 
       if (parentPos != null && index != -1) {
         let potentialSnapPoints = [];
 
         getSnapPoint(blocks[data[id].id].type, index, potentialSnapPoints, 0);
 
-        //console.log("snap points:");
-        //console.log(potentialSnapPoints);
+        console.log("snap points:");
+        console.log(potentialSnapPoints);
 
         //now snap the block to the snap point
         //now put the block in the array and update html and the placedBlocks array
@@ -1457,6 +1444,7 @@ pages.editor = async function () {
           if (potentialSnapPoints[k].pos == "on") {
             if (parentPos == "on0" && potentialSnapPoints[k].spot == 0) {
               snapPoint = potentialSnapPoints[k];
+              console.log(snapPoint);
             }
             if (parentPos == "on1" && potentialSnapPoints[k].spot == 1) {
               snapPoint = potentialSnapPoints[k];
@@ -1464,12 +1452,8 @@ pages.editor = async function () {
           }
         }
 
-        console.log("snapPoint");
-        //console.log(snapPoint);
-        console.log(JSON.stringify(placedBlocks));
         convertBlock(block, snapPoint, id);
         setBlockDown(block, snapPoint, true);
-        console.log(JSON.stringify(placedBlocks));
       }
     } else {
       block.style.top = data[id].y + "px";
@@ -1480,10 +1464,6 @@ pages.editor = async function () {
     }
 
     //now load in the children blocks of this one
-
-    //console.log("barrr");
-    //console.log(data[id]);
-    console.log(JSON.stringify(placedBlocks));
 
     if (data[id].a) {
       placedBlocks[id].a = data[id].a;
@@ -1500,13 +1480,13 @@ pages.editor = async function () {
     if (data[id].on) {
       if (data[id].on[0] && data[id].on[0].charAt(0) == "#") {
         placedBlocks[id].on[0] = data[id].on[0];
-        loadBlockRecursive(data, data[id].on[0]); //make sure its an id and not just a number
+        loadBlockRecursive(data, data[id].on[0].substring(1)); //make sure its an id and not just a number
       }
 
       if (data[id].on.length > 1) {
         if (data[id].on[1] && data[id].on[1].charAt(0) == "#") {
           placedBlocks[id].on[1] = data[id].on[1];
-          loadBlockRecursive(data, data[id].on[1]);
+          loadBlockRecursive(data, data[id].on[1].substring(1));
         }
       }
 
@@ -1522,45 +1502,22 @@ pages.editor = async function () {
     }
   }
 
-  loadBlocks({
-    "1676907967282670": {
-      id: 0,
-      top: true,
-      x: 353,
-      y: 99,
-      a: "1676907965780462",
-      on: []
+  /*loadBlocks({
+    "1677078223702903": {
+      x: "626px",
+      y: "687.333px",
+      id: 1,
+      on: ["#167707822628621"],
+      top: true
     },
-    "1676907965780462": {
-      id: 2,
-      a: "1676907970284323",
-      on: ["60"]
-    },
-    "1676907970284323": {
-      id: 10,
-      a: "1676907968599891",
-      in: "1676908293067426",
-      on: ["true"]
-    },
-    "1676907968599891": {
-      id: 3,
-      on: ["32.5"]
-    },
-    "1676908293067426": {
-      id: 10,
-      in: "1676908295736537",
-      on: ["true"]
-    },
-    "1676908295736537": {
-      id: 11,
-      else: "1676908297637897",
-      on: ["true"]
-    },
-    "1676908297637897": {
-      id: 9,
-      on: []
+    "167707822628621": {
+      x: "704px",
+      y: "688.083px",
+      id: 19,
+      on: ["", ""],
+      top: false
     }
-  });
+  });*/
 };
 
 //findC("block").innerHTML = blocks["0"].html;

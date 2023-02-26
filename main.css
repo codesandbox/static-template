@@ -376,6 +376,9 @@ input {
   display: flex;
   padding-left: 30px;
 }
+.input[type="boolean"] {
+  border-radius: 6px;
+}
 
 .notchHolder {
   position: absolute;
@@ -431,27 +434,38 @@ input {
   color: #000;
 }
 
+.cursorContainer {
+  z-index: 10;
+}
 .cursor {
   position: absolute;
   width: 22px;
   height: 22px;
   border: solid 3px #fff;
   border-radius: 6px 14px 14px 14px;
-  z-index: 9;
-  overflow: hidden;
+  box-shadow: 0 0 6px rgb(0 0 0 / 50%);
   transition: 0.3s;
 }
 .cursorName {
+  box-sizing: border-box;
   display: flex;
   width: fit-content;
   height: 100%;
   padding: 0px 6px;
   border-radius: 14px;
+  overflow: hidden;
   opacity: 0;
   font-size: 14px;
   font-weight: 600;
+  white-space: nowrap;
   align-items: center;
   transition: 0.15s;
+}
+.cursor:hover {
+  width: var(--fullyExtendedWidth);
+}
+.cursor:hover .cursorName {
+  opacity: 1;
 }
 
 .homeContentHolder {
