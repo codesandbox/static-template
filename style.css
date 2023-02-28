@@ -1,0 +1,385 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+.text-formats {
+  font-size: 24px;
+  line-height: 1.5em;
+}
+/* html {
+  --primary-color: #6bb4ac;
+  --text-paddings: 130px 400px;
+} */
+/* HEADER STYLES */
+header {
+  color: #eaffff;
+  background-color: #6bb4ac;
+
+  height: 100vh;
+  width: 100vw;
+
+  border-top: 10px solid #222f39;
+  border-bottom: 10px solid #222f39;
+
+  /* padding: 15px 30px; */
+}
+
+/* header nav */
+nav {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  /* grid-template-columns: 150px 400px; */
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 30px;
+}
+.logo {
+  font-size: 30px;
+  font-weight: bolder;
+
+  width: 240px;
+
+  cursor: pointer;
+}
+.logo:hover {
+  /* background-color: white;
+  color: #6bb4ac; */
+  text-shadow: 5px 5px 3px #365c57;
+
+  transform: translateY(-3px);
+  transition: 0.5s;
+}
+nav ul {
+  list-style-type: none;
+  white-space: nowrap;
+
+  text-align: right;
+}
+nav ul li {
+  display: inline-block;
+
+  color: #6bb4ac;
+  background-color: #eaffff;
+
+  font-size: 18px;
+
+  padding: 10px 20px;
+  margin-left: 20px;
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+nav ul li:hover {
+  box-shadow: 1px 1px 5px 1px #365c57;
+
+  transform: translateY(-3px);
+  transition: 0.5s;
+}
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* header main */
+main {
+  padding: 130px 400px;
+  font-size: 20px;
+}
+main h1 {
+  font-size: 100px;
+
+  max-width: 600px;
+  /* white-space: nowrap; */
+}
+main strong {
+  color: #222f39;
+  font-size: 1.1em;
+}
+main em {
+  text-decoration: underline;
+  text-decoration-color: #222f39;
+}
+
+/* ARTICLE STYLES */
+article {
+  height: auto;
+  width: 100vw;
+
+  /* border-top: 10px solid #222f39; */
+  /* border-bottom: 10px solid #222f39; */
+
+  padding: 40px 400px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.8em;
+
+  color: #222f39;
+
+  padding-bottom: 40px;
+}
+article h3 {
+  font-size: 20px;
+  font-weight: 600;
+
+  padding-bottom: 15px;
+
+  color: #222f39;
+}
+article p {
+  padding-bottom: 15px;
+}
+.skills ul {
+  padding-left: 40px;
+  column-count: 2;
+}
+
+/* PORTFOLIO SECTION STYLES */
+.portfolio {
+  width: 100vw;
+  height: auto;
+
+  border-top: 10px solid #222f39;
+  border-bottom: 10px solid #222f39;
+  /* padding: 50px 40px 20px 40px; */
+  padding: 40px;
+
+  background-color: #ffd4dcc8;
+  text-align: center;
+
+  /* URGENT ATTENTION */
+  /* overflow: scroll; */
+}
+aside {
+  display: inline-block;
+  /* text-align: left; */
+
+  padding: 40px 30px;
+  /* margin-top: 30px; */
+  /* margin-left: 30px; */
+
+  border: 10px solid #9f2756;
+  border-radius: 8px;
+
+  width: 400px;
+  height: auto;
+
+  background-color: white;
+  box-shadow: 1px 1px 10px 0px #551f34;
+
+  display: grid;
+  grid-template-rows: 50px 1fr 80px 40px;
+}
+.portfolio-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  justify-items: center;
+
+  gap: 30px;
+}
+
+aside h3 {
+  font-size: 1.5em;
+  padding-bottom: 15px;
+
+  text-align: left;
+}
+aside p {
+  text-align: left;
+}
+aside button {
+  font-size: 20px;
+  font-weight: bolder;
+
+  color: white;
+  background-color: #9f2756;
+
+  width: 300px;
+  height: 45px;
+
+  border: none;
+  border-radius: 6px;
+
+  margin: 30px 0px 10px 0px;
+
+  justify-self: center;
+
+  cursor: pointer;
+}
+aside button:hover {
+  transform: translateY(-3px);
+  transition: 0.5s;
+
+  color: #9f2756;
+  background-color: #ffd4dcc8;
+}
+aside a {
+  color: #9f2756;
+
+  font-size: 16px;
+  font-weight: bolder;
+
+  display: flex;
+  justify-content: center;
+
+  width: 100px;
+  margin: auto;
+}
+aside a:hover {
+  /* color: white; */
+  /* background-color: #9f2756; */
+  text-shadow: 5px 5px 3px #c39babb5;
+}
+#myBtn {
+  padding: 10px 20px;
+  margin-top: 20px;
+
+  border: 5px solid #9f2756;
+  border-radius: 20px;
+
+  box-shadow: 1px 1px 5px 0px #551f34;
+  background-color: white;
+
+  font-size: 16px;
+  font-weight: bolder;
+}
+#myBtn:hover {
+  box-shadow: 1px 1px 10px 0px #c39babb5;
+}
+
+/* ATRCILE 2 STYLEs */
+
+/* FOOTER  STYLES*/
+footer {
+  background-color: #222f39;
+  color: #eaffff;
+
+  height: 5vh;
+  width: 100vw;
+
+  padding: 2px 30px;
+
+  text-align: center;
+}
+
+/* MEDIA QUERIES */
+/* @media screen and (max-width: 1384px) {
+  .portfolio {
+    width: 100vw;
+    height: auto;
+  }
+
+  article {
+    height: auto;
+  }
+} */
+/* @media screen and (max-width: 1200px) {
+  main {
+    padding: 130px 250px;
+  }
+  article {
+    padding: 60px 250px;
+  }
+} */
+@media screen and (max-width: 1200px) {
+  main {
+    padding: 130px 200px;
+  }
+  article {
+    padding: 60px 200px;
+  }
+}
+@media screen and (max-width: 879px) {
+  main h1 {
+    font-size: 60px;
+  }
+  article {
+    padding: 60px 130px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  /* header {
+    height: auto;
+  } */
+  nav {
+    display: block;
+    text-align: center;
+  }
+  nav ul {
+    text-align: center;
+  }
+  .logo {
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  main {
+    padding: 130px 120px;
+  }
+  main h1 {
+    font-size: 50px;
+  }
+  article {
+    padding: 60px 100px;
+  }
+}
+@media screen and (max-width: 475px) {
+  /* nav bar styles */
+  nav ul li {
+    margin-left: 5px;
+    font-size: 12px;
+  }
+
+  header {
+    height: auto;
+  }
+  /* header main  */
+  main {
+    padding: 110px 50px;
+    font-size: 20px;
+  }
+  main h1 {
+    font-size: 40px;
+  }
+
+  /* articles styles */
+  article {
+    height: auto;
+    width: 100vw;
+
+    padding: 60px 50px;
+  }
+
+  .text-formats {
+    font-size: 20px;
+    line-height: 1.5em;
+  }
+
+  /* portfolio styles */
+  .portfolio {
+    padding: 50px 10px 20px 10px;
+  }
+  .portfolio-cards {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  /* aside styles */
+  aside {
+    margin-left: 0;
+    max-width: 340px;
+    font-size: 16px;
+  }
+  aside button {
+    max-width: 250px;
+  }
+}
+
+/* SHOW MORE DESIGN */
+.dis {
+  display: none;
+}

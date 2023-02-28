@@ -1,12 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <link rel="icon" href="img/icon.png" />
+    <title>My First Portfolio</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <!-- HEADER -->
+      <header>
+        <nav>
+          <div class="logo">Falade Ebenezer</div>
+          <ul>
+            <li><a href="#about-me"> About Me</a></li>
+            <li><a href="#portfolio"> Portfolio</a></li>
+            <li><a href="#experience"> Experience</a></li>
+          </ul>
+        </nav>
+        <main>
+          <h1>Hiring A Full-Stack Developer?</h1>
+          <p class="text-formats">
+            I have experience with <strong> Html</strong> ,
+            <strong> Css</strong>, <strong>TailwindCss</strong>,
+            <strong>Javascript</strong> and <strong>React</strong>. I would love
+            to work at an <em>innovative</em> and
+            <em>eco-friendly </em> start-up in the
+            <strong> sustainable energy sector</strong>.
+          </p>
+        </main>
+      </header>
+
+      <!-- ABOUT ME ARTICLE -->
+      <article class="text-formats" id="about-me">
+        <h2>ABOUT ME</h2>
+        <div class="introduction">
+          <h3>Introduction</h3>
+          <p>
+            Detail-oriented front-end developer with knowledge of methods
+            design, process Development, coding and prototyping. Frequently
+            praised as diligent by my peers, I can be relied upon to help your
+            company achieve its goals. Dedicated worker with excellent
+            communication, time management and computer skills. Results-oriented
+            professional with 3 years of experience and a proven knowledge of VS
+            code, figma, photoshop and Microsoft suit. Aiming to leverage my
+            abilities to successfully fill the position as a
+            <em><strong> FRONTEND developer</strong></em>
+            in your company.
+          </p>
+        </div>
+        <div class="skills">
+          <h3>Technical Skills</h3>
+
+          <ul>
+            <li>HTML & CSS</li>
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>Redux</li>
+            <li>NodeJS</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- PORTFOLIO SECTION -->
+      <section class="portfolio text-formats" id="portfolio">
+        <h2>PORTFOLIO</h2>
+        <div class="portfolio-cards">
+          <aside>
+            <h3>JDB Website</h3>
+            <p>
+              With the indepth knowledge of Html, Css and Javascript i was able
+              to create a responsive and practical template website displaying
+              its features, characteristics and a few reviews.
+            </p>
+            <button>READ MORE</button>
+            <a href="#" target="_blank">GitHub Repo</a>
+          </aside>
+          <aside>
+            <h3>Gmail Copy</h3>
+            <p>
+              In this project i was able to replicate the gmail inbox design
+              taking note of key features like: the pseudo classes which I used
+              to add more interaction and media queries to make it more
+              responsive.
+            </p>
+            <button>READ MORE</button>
+            <a href="#" target="_blank">GitHub Repo</a>
+          </aside>
+          <aside>
+            <h3>Weather App</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptates enim ea sapiente dolore earum, quis cupiditate magni
+              blanditiis facere nisi ipsum animi voluptate eveniet. Error
+              voluptatem aperiam dignissimos suscipit ullam?
+            </p>
+            <button>READ MORE</button>
+            <a href="#" target="_blank">GitHub Repo</a>
+          </aside>
+          <!-- <span class="dots">...</span> -->
+          <span class="more-cards dis">
+            <aside>
+              <h3>Talking Duck</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Voluptates enim ea sapiente dolore earum, quis cupiditate magni
+                blanditiis facere nisi ipsum animi voluptate eveniet. Error
+                voluptatem aperiam dignissimos suscipit ullam?
+              </p>
+              <button>READ MORE</button>
+              <a href="#" target="_blank">GitHub Repo</a>
+            </aside>
+          </span>
+        </div>
+        <button id="myBtn">Show more...</button>
+      </section>
+
+      <!-- EXPERIENCE ARTICLE -->
+      <article class="text-formats" id="experience">
+        <h2>EXPERIENCE</h2>
+        <h3>Job Title</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis
+          amet eaque magni eveniet ducimus iste sint alias atque quis rem error
+          adipisci molestias, minus voluptatum ad, quisquam sapiente odio porro.
+        </p>
+        <h3>Job Title</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis
+          amet eaque magni eveniet ducimus iste sint alias atque quis rem error
+          adipisci molestias, minus voluptatum ad, quisquam sapiente odio porro.
+        </p>
+      </article>
+
+      <!-- FOOTER -->
+      <footer class="text-formats">
+        <p>&#169; Fejozzz</p>
+      </footer>
+    </div>
   </body>
 </html>
