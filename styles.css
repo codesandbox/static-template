@@ -2,6 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: #e0e0e0;
 }
 
 nav {
@@ -30,12 +31,24 @@ li {
 
 section {
   width: 100%;
-  height: 100px;
-  /* background-color: blue; */
-  background-image: linear-gradient(red, yellow);
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 40px 0 0 0;
+}
+
+.about-me {
+  width: 300px;
+  margin: 30px;
   display: flex;
   justify-content: space-evenly;
-  flex-wrap: wrap;
+}
+
+.info {
+  max-width: 300px;
+  margin: 30px;
 }
 
 #main {
@@ -49,14 +62,41 @@ section {
   margin: 5px;
 }
 
-.about-me {
+.hero {
   width: 100%;
-  height: 260px;
-  background-color: brown;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 10px solid black;
-  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hero-info {
+  margin: 30px;
+  max-width: 300px;
+}
+
+.hero-image {
+  width: 300px;
+  height: 300px;
+  margin: 30px;
+}
+
+@media only screen and (max-width: 700px) {
+  .hero-info {
+    max-width: 700px;
+  }
+
+  .hero-image {
+    visibility: hidden;
+    height: 0px;
+  }
+}
+
+.styled-info {
+  width: 30px;
+  height: 5px;
+  background-color: #a17;
+  border-radius: 2.5px;
+  margin: 30px 0 30px 0;
 }
 
 .avatar {
@@ -65,34 +105,65 @@ section {
 }
 
 #name {
-  color: white;
+  color: black;
+  font-size: 45px;
 }
 
 .button {
   border: 0;
-  padding: 0 20px;
-  width: 150px;
-  text-align: center;
-  color: rgba(255, 255, 255);
-  text-shadow: 1px 1px 1px #000;
-  line-height: 2.5;
+  padding: 10px 20px;
   font-size: 20px;
-  background-color: rgba(220, 0, 0, 1);
-  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2)),
-    rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0);
-  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
+  background-color: #ef866c;
+  width: 80px;
+  border-radius: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: center;
 }
 
 .button:hover {
-  background-color: rgba(255, 0, 0, 1);
+  background-color: #ef744b;
 }
 
 .button:active {
   box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6);
 }
 
+form {
+  margin: 0 0 40px 0;
+}
+
+.input-section {
+  margin: 10px 0;
+  display: flex;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px 0 0;
+}
+
+footer {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.fa-regular fa-bell {
+  margin: 3px;
+}
+
 a {
   text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: orangered;
+}
+
+a:active {
+  color: purple;
 }
