@@ -1,12 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <style>
+      /* card */
+
+      /* card-image */
+
+      /* card-text */
+
+      .card {
+        position: relative;
+        width: 200px;
+        height: 301.62px;
+      }
+
+      .card-text {
+        position: absolute;
+        width: 187px;
+        height: 17px;
+        left: 6px;
+        top: 178px;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        /* identical to box height */
+
+        color: #d16464;
+
+        border: 1px solid #efecec;
+      }
+
+      .card-image {
+        position: absolute;
+        width: 200px;
+        height: 301.62px;
+        left: 0px;
+        top: 0px;
+
+        background: url(card-image.png);
+      }
+    </style>
+    <div class="card">
+      <div class="card-image"></div>
+      <div class="card-text">
+        What!!! Even you graduated.
+      </div>
+    </div>
   </body>
 </html>
