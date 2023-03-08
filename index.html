@@ -1,12 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link rel="stylesheet" href="cursor.css" />
+    <link rel="stylesheet" href="utils.css" />
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+        padding: 5px;
+        margin: 20px;
+      }
+      h1 {
+        font-size: 4em;
+      }
+
+      .card {
+        background: #fff;
+        padding-top: 2em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border: 1px solid #bbbbbb;
+        border-radius: 10px;
+        overflow: none;
+        flex-wrap: wrap;
+        box-shadow: 0px 4px 16px rgba(17, 17, 26, 0.05),
+          0px 8px 32px rgba(17, 17, 26, 0.05);
+      }
+      .card img {
+        min-width: 0px;
+        max-height: 200px;
+        display: contain;
+      }
+      .desc {
+      }
+
+      .max {
+        max-width: 29em;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="card">
+      <div class="desc">
+        <a href="#"><h1>Art School</h1></a>
+        <p class="max">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+          repudiandae animi esse numquam. Explicabo perferendis ab dolores eum,
+          quia est dolore in atque? Obcaecati, doloremque ad quam quidem
+          voluptas dolores!
+        </p>
+      </div>
+      <img src="images/art1.png" />
+    </div>
+    <div class="card">
+      <div class="desc">
+        <a href="#">
+          <h1>Design School</h1>
+        </a>
+        <p class="max">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+          repudiandae animi esse numquam. Explicabo perferendis ab dolores eum,
+          quia est dolore in atque? Obcaecati, doloremque ad quam quidem
+          voluptas dolores!
+        </p>
+      </div>
+      <img src="images/design-1.png" />
+    </div>
+    <div class="card">
+      <div class="desc">
+        <a href="">
+          <h1>Code Academy</h1>
+        </a>
+        <p class="max">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+          repudiandae animi esse numquam. Explicabo perferendis ab dolores eum,
+          quia est dolore in atque? Obcaecati, doloremque ad quam quidem
+          voluptas dolores!
+        </p>
+      </div>
+      <a href="#">
+        <img src="images/N.png" />
+      </a>
+    </div>
+    <!--hover cursor html-->
+    <svg class="cursor" width="120" height="120" viewBox="0 0 120 120">
+      <defs>
+        <filter
+          id="cursor-filter"
+          x="-50%"
+          y="-50%"
+          width="200%"
+          height="200%"
+          filterUnits="objectBoundingBox"
+        >
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0"
+            numOctaves="1"
+            result="warp"
+          />
+          <feDisplacementMap
+            xChannelSelector="R"
+            yChannelSelector="G"
+            scale="30"
+            in="SourceGraphic"
+          />
+        </filter>
+      </defs>
+      <circle class="cursor__inner" cx="60" cy="60" r="20" />
+    </svg>
+    <svg
+      class="cursor"
+      width="120"
+      height="120"
+      viewBox="0 0 120 120"
+      data-amt="0.1"
+    >
+      <circle class="cursor__inner" cx="60" cy="60" r="20" />
+    </svg>
+    <script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="cursor.js"></script>
+    <!--/hover cursor html-->
   </body>
 </html>
