@@ -1,12 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloock&family=Poppins:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Pet Shop</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <nav>
+      <div class="Head">
+        <h1>Paw Life</h1>
+        <h3>One stop place to get all your pets needs</h3>
+      </div>
+    </nav>
+    <div class="pets">
+      <ul>
+        <li>
+          <a href="cat.html"
+            ><img
+              src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg"
+              alt=""
+          /></a>
+        </li>
+        <li>
+          <a href=""
+            ><img
+              src="https://cdn.pixabay.com/photo/2017/03/29/10/17/labrador-2184709__340.jpg"
+              alt=""
+          /></a>
+        </li>
+        <li>
+          <img
+            src="data:image/jpeg;base64,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"
+            alt=""
+          />
+        </li>
+      </ul>
+    </div>
+    <section id="about2"></section>
+    <div class="abt-container">
+      <h4 class="center">Give your pet the best amenities which are out there<br> Shop Paw Lifes Pet Food collection which are certified and meet highest standards .</h4>
+      
+          </div>
+       </div>
+    </section>
+    <section id="products1">
+      <div class="center"><h1>Products</h1></div>
+      <div class="item-cards">
+        <div class="card">
+          <div class="item-img">
+            <img src="https://cdn.shopify.com/s/files/1/0312/8826/2795/products/Untitleddesign-2020-10-16T121135.232.png?v=1602831068" alt="">
+          </div>
+          <div class="item-des">
+            <h1>Pedigree Nuggets</h1>
+            <p>Gravy Puppy Chicken Chunks dog food (70g) consists of high-quality ingredients, with the essential nutrition required to keep your pet happy.</p>
+          </div>
+          <div class="item-links">
+            <a href="#">Buy now</a>
+            <a href="#">Add to cart</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="item-img">
+            <img src="https://www.bigbasket.com/media/uploads/p/xxl/40235050_1-whiskas-wet-cat-food-adult-1-year-chicken-in-gravy-balanced-nutrition-shiny-coat.jpg" alt="">
+          </div>
+          <div class="item-des">
+            <h1>Whiskas Gravy</h1>
+            <p>Complete and balanced nutrition
+              Wet cat food recipe provides moisture and nourishment.Backed by research done by the Waltham Centre for Pet Nutrition.</p>
+          </div>
+          <div class="item-links">
+            <a href="#">Buy now</a>
+            <a href="#">Add to cart</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="item-img">
+            <img src="https://pawrulz.com/wp-content/uploads/2022/04/Me-O-Creamy-Cat-Treats-Salmon-%E2%80%93-60-Gms.webp" alt="">
+          </div>
+          <div class="item-des">
+            <h1>Me-O Treats</h1>
+            <p>Snack for playing with your cats.  Healthy digestive system. Taurine: Improves eyesight. Omega 6, Zinc & Healthy skin and coat.</p>
+          </div>
+          <div class="item-links">
+            <a href="#">Buy now</a>
+            <a href="#">Add to cart</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="item-img">
+            <img src="https://www.taiyogroup.in/wp-content/uploads/2021/01/Untitled-design-5.jpg" alt="">
+          </div>
+          <div class="item-des">
+            <h1>Petlife's Hamster Bits</h1>
+            <p>Fresh (rinsed with water) veggies are good, and examples include carrots, squash, broccoli, cauliflower, cucumber, romaine lettuce, spinach and other greens.</p>
+          </div>
+          <div class="item-links">
+            <a href="#">Buy now</a>
+            <a href="#">Add to cart</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br><br>
+    <div class="headings"><h2>Our Store Locations</h2></div>
+   <br><br>
+    <div class="cards">
+      <div class="card-1">
+        <h3>Aves Plaza</h2>
+        <h5>Panjim, Goa</h5>
+      </div>
+      <div class="card-1">
+        <h3>Ralphs Circle</h2>
+        <h5>Lower Parel, Mumbai</h5>
+      </div>
+      <div class="card-1">
+        <h3>Shanti Nagar</h2>
+        <h5>Rajkot, Delhi</h5>
+      </div>
+    </div>
+    <br><br><br>
   </body>
 </html>
