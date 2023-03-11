@@ -1,12 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Portfolio Page</title>
+    <link href="styles.css" rel="stylesheet" />
   </head>
+  <header>
+    <ul id="menu">
+      <h2 class="title">KAREN NGO</h2>
+      <li><a class="sectionlinks" href="#sectionprojects">PROJECTS</a></li>
+      <li><a class="sectionlinks" href="#sectionsocials">SOCIALS</a></li>
+      <li><a class="sectionlinks" href="#sectionaboutme">ABOUT ME</a></li>
+    </ul>
+  </header>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <article>
+      <p class="ps">WELCOME TO MY PORTFOLIO</p>
+      <div class="psline"></div>
+    </article>
+    <article>
+      <section id="sectionprojects" class="target"></section>
+      <h2 class="subject">PROJECTS</h2>
+      <div class="line"></div>
+      <article class="display">
+        <div class="box"></div>
+        <img class="img" src="https://letterboxd.samlearner.com/images/preview_image.png"></img>
+      </article>
+      <article class="description">  
+        <h4 class="projectname">Movie Recommendation Application</h4>
+        <div class="line"></div>
+        <p>Created a Movie Recommendation Application using database management skills including Python and mySQL. Allows the user to input their preferences and the app would output movies based on these preferences.</p>
+      </article>
+      <article class="display">
+          <div class="box"></div>
+          <img class="gs" src="genki-spark-linkedin-cover-photo.png"></img>
+      </article>
+      <article class="description">  
+          <h4 class="projectname">GenkiSpark</h4>
+          <div class="line"></div>
+          <p>Taking lead as Head of Design and Analyst and part of the Engineer team to create a ML/AI powered predictive diagnostic software to provide users with risk factors based on geographical location and past medical records.</p>
+      </article>
+      <article class="display">
+          <div class="box"></div>
+          <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT83N464Ff-WREhmntz6RcX4E_QuKScmESM4TJfrmtdZZQSI89doObqfcVQsVtZJe3WhjA&usqp=CAU"></img>
+      </article>
+      <article class="description">  
+          <h4 class="projectname">Database Creation</h4>
+          <div class="line"></div>
+          <p>Implemented a database system that allows users to insert, delete, and query data. Concentrated on utilizing efficient data structures, primarily binary search trees and stacks in C++.</p>
+      </article>
+    </article>
+    <article>
+      <section id="sectionsocials" class="target"></section>
+      <h2 class="subject">SOCIALS</h2>
+      <div class="line"></div>
+      <div class="socials">
+        <img class="icon" src="https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU"></img>
+        <a href="https://github.com/kango20">GitHub</a>
+      </div>
+      <div class="socials">
+        <img class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAllBMVEUMZMX///8AYcQAWcFDf8nL3PIAWrzQ3vMAYcI0eclZjtAucslAgsz6/v3x9/sgbclOhM8AX8QAYsAAX70AV70AWMLm7vgAXb4sdsw5fsoRbsVmltK6z+iUt+AMZcGDrN3c6fNvnddiltWqwuPA0+r0+vyOrt+lweR9pduuyueUst9Lh81pldd1mtYdbcunxOXO4u7Z4fGRyVlRAAAEKUlEQVR4nO3ce1faMBzG8SblEpSCiUUuQrkMhsCc+v7f3Ko4KjW/yLY0WXOez9mf4Ml3vSW1NYoAAAAAAAAAAAAAAAAAAAAAAAAAAADgYiriIsqU72FURcapGnXHk5aMue+xVCCT6n56x960Z2OpMt8jsozz+Xve0Xqc+h6SXbKzYOeSfex7UBap+J591lThHI3awPxw5KGcVFUj0RayaRrI6UaUj8GTpfA9NivknApkvTC2YdwjC9lc+h6dBWpFB7JFCIXx1FDIRr6HZ0Fq2EkZewjgXNMnLhVH34a+x/fPeMdYOK3/gchvTIFsXf/ZKR+bC+u/DcW1cS/d1f84jFobU+H3ANYXadNU2PU9PAvkd0Ngz/forMgMhU/1P5Xm4h0ZmHQCOAzz68WEPNdsg9iE+ZH4QATeBTApPYqf9PvoKIh99E2qOxQ3jVvf47JHDT5fMl5GAQW+3tNvnF/4N3shwrhJc8Ljw/Q0Q13MJ4GcRc8IORjP99vZfpWlQe2gH3EZx7Gs/4IJAADqQ3DJX/+FM38vqHyKlA5Hhx+Pj49X43468P34CheEiz9Z+pTMlrvFaQ6YbNrblRpKf6vNbHRNKX2yT/kwSVd5XluzGGs//Ew9NfIGS/RYs3X2yUGzp7dpnMYu+zPql1mbp46f+XxeSCkVxrpt8+bmWJgJOTPeYP7m5QkWi4Wye0d94t3m3sNmtFao5OyLvle7zPnRaKlQCb6+IDBfXvddJ1oq5BH5WE7JXd/xwWilUKnJpYGM9a7dPk5mpfCWP18cmO+okdOtaKVwYHxm5ZP1wOWNPBuFneUfBTK2dHkzyEbhwfirco3NxOF+aqPw8rPMbzuHV34bhX+h4e6q6KnQ4ZM6ngrZyNlG9FXo7hfMvgp7zt7o8FXIDq52U2+FznbTKgovmgAsalq4mB0mQqjJYfvler98o6sWhevuYPh2C5jz4WD1ReMPR4soi4W91dmtXy7MK469o7mpvcLn8nRaSWPi9PzH/++FCXvW3LuXpoXxi6MllK1tqHtGLBMd0zccLYNtFR60W8T0wkqv7yTQVuGTfpfLuvRXkms3sxo7hQlx/yy7NayOO3Uq3MXExY148PFY6OZyYafwihqsXNJfGteoMCGXQoYfzxo1KmxSO2kkJvTLcXUq3BreraFnp3UqNLwT3aJPpnUqPNBjTV+CKDScFVv0t+pUaLiytegXq1BoCQoLKNRDYfVQWEChHgqrh8ICCvVQWD0UFlCoh8LqobCAQj0UVg+FBRTqobB6KCygUA+F1UNhAYV6KKweCgso1ENh9VBYQKEeCquHwkKAhe1SIf2UoaFwSP+/dB29FtTvUsbnH+Q3VxTDmxOq+zffskqJiOtFpZda+OV/M6uQKepLof0NWAAAAAAAAAAAAAAAAAAAAAAAAAAAgAr8Aj5RWY0PDbn2AAAAAElFTkSuQmCC"></img>
+        <a href="https://www.linkedin.com/in/karen-ngo-kango/">LinkedIn</a>
+      </div>
+      <div class="socials">
+        <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg"></img>
+        <a href="https://www.instagram.com/karen.ngoo/">Instagram</a>
+      </div>
+      </article>
+    <article>
+      <section id="sectionaboutme" class="target"></section>
+      <h2 class="subject">ABOUT ME</h2>
+      <div class="line"></div>
+      <img class="pfp" src="seniorpics_70.JPEG"></img>
+      <p>Hi! My name is Karen Ngo and I am currently a junior at Chapman University. I am pursuing a degree in Computer Science and a minor in Analytics. My Portfolio Site is to showcase some of the projects I have worked on and to demonstrate my skills. </p>
+    </article>
   </body>
 </html>
