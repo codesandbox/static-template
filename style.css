@@ -1,0 +1,328 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  font-family: "Poppins";
+}
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.logo {
+  width: 110px;
+  transition: width 0.3s;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  margin: 4em;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 4.1em;
+  margin: none;
+}
+
+nav ul li a {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  position: relative;
+}
+
+nav ul li a.Active:before {
+  position: absolute;
+  content: "";
+  width: 35%;
+  height: 1px;
+  border-bottom: 2px solid black;
+  bottom: -6px;
+}
+
+nav ul li a:before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 1px;
+  border-bottom: 2px solid black;
+  bottom: -6px;
+  transition: width 0.3s;
+}
+
+main {
+  display: flex;
+  gap: 8em;
+  margin-top: 8em;
+}
+
+.left-col {
+  width: 45%;
+}
+.right-col {
+  flex-grow: 1;
+}
+h1 {
+  font-size: 5.2rem;
+  font-family: "PlayFair Display";
+  font-weight: normal;
+  margin: 0;
+}
+
+.subhead {
+  font-size: 1.8rem;
+}
+.left-col-btn {
+  margin: 5em 0;
+  display: flex;
+  gap: 6em;
+}
+.left-btn {
+  background: #eeebc9;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  border-radius: 1.9em;
+  padding: 1em 2em;
+}
+
+.right-btn {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  gap: 0.4em;
+}
+.right-btn svg {
+  margin-top: 0.15em;
+  width: 20px;
+  transition: transform 0.3s;
+}
+
+.lower-col {
+  display: flex;
+  gap: 3em;
+  padding: 5em;
+  border: 1px solid black;
+  border-radius: 0.8em;
+  position: relative;
+}
+
+.lower-col:before {
+  position: absolute;
+  content: "";
+  background: url("../images/confetti.svg");
+  width: 100px;
+  height: 100px;
+  top: -20px;
+  left: -20px;
+  z-index: 2;
+}
+
+.number {
+  font-size: 3.3rem;
+  margin: 0;
+  font-weight: 200;
+  line-height: 100%;
+  transition: font-size 0.5s;
+}
+.celebrate {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.right-col {
+  display: grid;
+  gap: 5em;
+  grid-template-columns: repeat(2, auto);
+  grid-template-areas:
+    "left right"
+    "left bottom";
+}
+
+.card1 {
+  grid-area: left;
+  background-color: grey;
+  border-radius: 0.8em;
+  padding: 1.6em;
+  background-size: 150%;
+  display: flex;
+  align-items: end;
+  background-image: url("https://assets.codepen.io/2621168/clothing1.jpg");
+  transition: background-size 0.5s;
+}
+.card2 {
+  background-color: grey;
+  border-radius: 0.8em;
+  padding: 1.6em;
+  background-size: 150%;
+  display: flex;
+  align-items: end;
+  background-image: url("https://assets.codepen.io/2621168/clothing2.jpg");
+  transition: background-size 0.5s;
+}
+.card3 {
+  background-color: grey;
+  border-radius: 0.8em;
+  padding: 1.6em;
+  background-size: 150%;
+  display: flex;
+  align-items: end;
+  background-image: url("https://assets.codepen.io/2621168/clothing3.jpg");
+  transition: background-size 0.5s;
+}
+
+.card-details1 {
+  background: white;
+  border-radius: 0.6em;
+  padding: 1.5em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.5s;
+}
+.card-details2 {
+  background: white;
+  border-radius: 0.6em;
+  padding: 1.5em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.5s;
+}
+
+.card-details3 {
+  background: white;
+  border-radius: 0.6em;
+  padding: 1.5em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.5s;
+}
+
+.card-details1 a {
+  color: black;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.card-details2 a {
+  color: black;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.card-details3 a {
+  color: black;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.card-details1 p {
+  font-size: 1.4rem;
+  margin: 0;
+}
+.card-details2 p {
+  font-size: 1.4rem;
+  margin: 0;
+}
+.card-details3 p {
+  font-size: 1.4rem;
+  margin: 0;
+}
+.price1 {
+  font-size: 1.8rem;
+}
+.price2 {
+  font-size: 1.8rem;
+}
+.price3 {
+  font-size: 1.8rem;
+}
+/* Animations*/
+
+nav ul li a:hover:before {
+  width: 35%;
+}
+.left-btn:hover {
+  background: #f0e795;
+}
+.right-btn:hover svg {
+  transform: translateX(10px);
+}
+
+.right-btn:hover {
+  text-decoration: underline;
+}
+.card1:hover {
+  background-size: 160%;
+}
+.card1:hover .card-details1 {
+  transform: translateY(-20px);
+}
+
+.card2:hover {
+  background-size: 160%;
+}
+.card2:hover .card-details2 {
+  transform: translateY(-20px);
+}
+
+.card3:hover {
+  background-size: 160%;
+}
+.card3:hover .card-details3 {
+  transform: translateY(-20px);
+}
+
+.number:hover {
+  font-size: 4.3em;
+}
+
+.logo:hover {
+  width: 120px;
+}
+
+/* overlay animation 
+
+.overlay {
+  position: absolute;
+  z-index: 999;
+  background: white;
+  width: 100%;
+  height: 100%;
+  animation: reveal 1s ease-in forwards;
+  transform-origin: bottom;
+}
+
+@keyframes reveal {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+*/
+.wrapper {
+  animation: growIn 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+  transform: scale(0.7);
+}
+
+@keyframes growIn {
+  to {
+    transform: scale(1);
+  }
+}
