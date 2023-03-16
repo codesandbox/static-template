@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+body {
+  background-color: #131316;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+/* h1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+} */
+section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 70vh;
+}
+
+.chart {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.chart.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text {
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 1s;
+}
+.text.show {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* div.tooltip {
+  position: absolute;
+  padding: 10px;
+  font: 12px Arial;
+  background-color: cream;
+  border: 0px;
+  border-radius: 2px;
+  opacity: 1;
+} */
