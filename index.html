@@ -1,12 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="mainpage.css" />
+    <script defer src ="animations.js"></script>
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+        <title>Static Template</title>    
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+      <body>
+        <section class="text">
+            <h1>COVID-19</h1>
+              <h1> The biggest hoax in human history?</h1>
+        </section>
+        <section class="text">
+          <p> The Coronavirus, COVID-19, COVID, Corona </p>
+          <p> Those words leaves you with a shudder (expect if you've been living under a happy rock) </p>
+          <p> The virus that stopped the world in its tracks. At this point everyone and their mother's dog has heard about
+            the coronavirus but not everyone actually believes that this illness really affected the world. So lets investigate, 
+           Was the coronavirus real or is the biggest hoax in human history? </p>
+           <svg class="chart" id="map" width="630" height="350"></svg> 
+          <script src="map.js"></script>
+          </section>
+          <section class="text">
+          <p> So we can see on the map that the virus touched most places on the map (embarassing that a virus has seen more places than I have)</p>
+          <p> but I suppose you're not convinced, these countries could have just claimed they got it. Okay, I see your point </p> 
+          <p> Let's see if we notice anything strange happening 2020-2022, the COVID years, that should atleast give us some form of starting point </p> 
+           <svg class="chart" id="bargraph" width="630" height="350"></svg> 
+          <script src="deathchart.js"></script>
+          </section>
+         <section class="text">
+          <p> Nothing gives us a better place to start like death.. </p>
+            <p> (that got morbid very fast..) </p> 
+           <p> It seems as though there generally was an increase in deaths from 2020-2022 corresponding
+            with the covid years. </p>
+            <p> But I hear you, people die all the time, especially if they're old.
+          Okay, fine, lets see if we can find anything about the death rate across the ages during those covid years </p>
+            </section>
+            <section class="text">
+            <div class="chart" id="stackedchart" width="630" height="350"></div>
+            <script src="stackedchart.js"></script>
+            </section>
+            <section class="text">
+            <p> Okay, so I guess that doesnt really tell us much. Sure, more older people died during the covid years than usual, big whoop, doesnt that happen every year? </p>
+            <p> So you remain unconvinced, no worries. </p>
+            <p> Let's try something else then, let's see how many people tested positive for COVID in 2020 across a couple of countries. Surely they cant all be lying...</p> 
+            </section>
+            <section class="text">
+            <div class="chart" id="circlegraph" width="630" height="850"></div>
+            <script src="circlechart.js"></script>
+            <p> Alright, so looking at the countries with the highest amount of people that tested positive for COVID in 2020, the United States is leading by far and we know how the Americans feel about #FakeNews </p> 
+            </section>
+            <section class="text">
+            <p> Okay but maybe the PCR tests were inaccurate and we cant trust that, let's go where we can trust, not because we want to but because life and death stand toe to toe </p>
+            </section>
+            <section class="text">
+            <p> the hospital</p> 
+            </section>
+            <section class="text">
+            <p> Let's see what hospital patients with COVID19 in relation with GDP and population can tell us.....maybe the rich had something to do with it </p> 
+            <div class="chart" id ="bubblechart"></div>
+            <script src="bubblechart.js"></script>
+            <p> Okay, so that was a bit of a fail. The hospital patients column in the data had too many NAN values (weird bad data thing) </p>
+            <p> All you need to know is that those NAN values got converted to 0 which is bad for us because it means we dont get to have a complete picture </p>
+            <p> hm.. maybe they ARE trying to hide something... </p>
+            <p> Let's try something else </p> 
+            </section>
+            <section class ="text">
+            <p> when life hands you a failed bubble chart, make a ...scatterplot </p> 
+            </section>
+            <section class ="text">
+                <script src ="scatterchart.js"></script>
+            <div class="chart" id= "scatterplot"></div>
+             <!-- <div class ="scatterchild chart" id ="scatterplot"> </div> -->
+            <script> chart([0,100000],[0,15000000]); </script> 
+             <!---- <div class ="scatterchild chart" id="scatterplot"></div> -->
+            <script> chart([0,50000],[0,4000000]); </script> 
+            <p> Okay so the outliers wasnt letting us get a clearer picture, so I  just took them out. </p>
+            <p> if only I could treat all my problems that way...</p>
+            <p> I suppose thats what Jesus and therapy are for....okay..lets go back to COVID-19 </p>
+            <p> Looking at the scatter plot, it seems there is no real correlation between GDP and cases, so I guess it wasnt something the rich invented </p> 
+            </section> 
+            <section class ="text"> 
+                <div class="chart" id ="weather"></div>
+              <script src="weather.js"></script>
+              <script> newChart("norway.csv",[4000, 2000000],"Norway"); </script> 
+              <script> newChart("brazil.csv",[800000, 15000000],"Brazil"); </script>
+            </section>
+            <section class ="text"> 
+              <p> huh </p>
+            </section>
+              </body>
+  </head>
 </html>
