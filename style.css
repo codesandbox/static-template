@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap");
+
+body {
+  background-image: url(./background.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 5.625rem;
+  width: 100%;
+  text-align: center;
+  font-family: "GFS Didot", serif;
+  color: white;
+  margin: 0;
+  margin-top: 2rem;
+  padding: 0;
+}
+
+.social-links {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 2.25rem;
+    margin-bottom: 18px;
+  }
+  body {
+    height: 100vh;
+  }
+
+  .social-links {
+    position: unset;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    left: 0;
+  }
+
+  .social-links img {
+    height: 40px;
+  }
+}
