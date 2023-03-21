@@ -1,0 +1,45 @@
+/* Navs */
+
+.top-nav {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#nav-menu {
+  height: 300px;
+  width: 100%;
+  background: #161616;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 100px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#nav-menu {
+  display: none;
+  border-top: rgb(37, 37, 37) 1px solid;
+}
+
+@media (min-width: 900px) {
+  #nav-menu {
+    display: none;
+  }
+}
+
+.top-nav a,
+#nav-menu a {
+  color: white;
+  text-decoration: none;
+  margin: auto;
+  transition: 0.3s;
+  border-radius: 20px;
+}
