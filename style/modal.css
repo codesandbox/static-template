@@ -1,0 +1,55 @@
+/* Modal */
+
+body.modal-open {
+  height: 100vh;
+  overflow-y: hidden;
+  padding-right: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 4; /* Sit on top */
+  left: 100;
+  right: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  overflow-y: hidden;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+@media (pointer: fine) {
+  .modal {
+    opacity: 0;
+  }
+}
+
+/* Modal Content/Box */
+.modal-content {
+  padding: 20px;
+  height: 100vh;
+}
+
+.modal::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* The Close Button */
+.close {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 50px;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(182, 182, 182);
+  text-decoration: none;
+  cursor: pointer;
+}

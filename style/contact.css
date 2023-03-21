@@ -1,0 +1,99 @@
+/* Contact */
+
+.contact {
+  width: 90%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+  height: 70vh;
+}
+
+.contact-container {
+  width: 100%;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.name-input,
+.email-input,
+.subject-input,
+.message-input {
+  font-family: "Poppins", sans-serif;
+  border: none;
+  border-bottom: solid 4px white;
+  border-radius: 3px;
+  color: white;
+  letter-spacing: 0.4px;
+  outline: none;
+  font-size: 16px;
+  cursor: text;
+  text-overflow: ellipsis;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+  margin-top: 50px;
+  width: 100%;
+  text-shadow: none;
+}
+
+.name-input::placeholder,
+.email-input::placeholder,
+.subject-input::placeholder,
+.message-input::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+@media (min-width: 950px) {
+  .name-input,
+  .email-input {
+    width: 50%;
+  }
+  .email-input {
+    margin-left: 45px;
+  }
+}
+
+@media (max-width: 950px) {
+  .contact-wrapper {
+    display: block;
+  }
+}
+
+.contact-button {
+  font-family: "Poppins", sans-serif;
+  height: 42px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: none;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 0px;
+  font-size: 16px;
+  border-bottom: solid 4px white;
+  border-radius: 3px;
+}
+
+.contact-button,
+.name-input,
+.email-input,
+.subject-input,
+.message-input {
+  transition: 0.3s;
+}
+
+.contact-button:hover,
+.name-input:hover,
+.email-input:hover,
+.subject-input:hover,
+.message-input:hover {
+  border-bottom: solid 4px rgb(182, 182, 182);
+  font-weight: 900;
+}
