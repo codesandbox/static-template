@@ -1,12 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Browser_Example_Tab_1</title>
   </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    #tabs {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: #000000;
+    }
+    .tab {
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      display: inline-block;
+      padding: 10px 60px;
+      background-color: #579dfc;
+      border: 1px solid #579dfc;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      cursor: pointer;
+      margin-right: -1px;
+      font-size: 16px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+      white-space: nowrap;
+    }
+    .tab:not(.active)::before {
+      content: "";
+      position: absolute;
+      border-right: 1px solid black;
+      height: 25px;
+      width: 0;
+      margin-left: -1px;
+      top: 56%;
+      transform: translateY(-50%);
+      left: 0%;
+    }
+    .tab:first-child::before {
+      content: none;
+    }
+    .tab.active + .tab:not(.active)::before {
+      display: none;
+    }
+    .tab.active + .tab:not(.active)::after {
+      display: none;
+    }
+    .tab.active {
+      background-color: #fcdc2f;
+      border-bottom-color: #fcdc2f;
+      border: 1px solid #fcdc2f;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .tab-content {
+      display: none;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-top: none;
+      animation: fadeEffect 1s;
+    }
+    @keyframes fadeEffect {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .tab-content.active {
+      display: block;
+    }
+  </style>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="tabs">
+      <div class="tab active" data-tab="tab1">Tab 1</div>
+      <div class="tab" data-tab="tab2">Tab 2</div>
+      <div class="tab" data-tab="tab3">Tab 3</div>
+    </div>
+    <div id="tab-content">
+      <div id="tab1" class="tab-content active">
+        <p>This is the content of Tab 1</p>
+      </div>
+      <div id="tab2" class="tab-content">
+        <p>This is the content of Tab 2</p>
+      </div>
+      <div id="tab3" class="tab-content">
+        <p>This is the content of Tab 3</p>
+      </div>
+    </div>
+    <script>
+      var tabs = document.querySelectorAll(".tab");
+      var tabContents = document.querySelectorAll(".tab-content");
+      function openTab(tab) {
+        tabContents.forEach(function (tabContent) {
+          tabContent.classList.remove("active");
+        });
+        tabs.forEach(function (tab) {
+          tab.classList.remove("active");
+        });
+        tab.classList.add("active");
+        var tabId = tab.getAttribute("data-tab");
+        document.getElementById(tabId).classList.add("active");
+      }
+      openTab(tabs[0]);
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          openTab(tab);
+        });
+      });
+    </script>
   </body>
 </html>
+
+<!--Change of background colour of the tab bar is already implemented in 'background-color: ##dee1e6;' in '#tabs' tag-->
+<!--Change the rounded corner of tab to smoothe straight corners-->
+<!--Make the separator go more left and both the separator should dissappear when a tab is selected-->
