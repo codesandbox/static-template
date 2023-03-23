@@ -1,0 +1,295 @@
+:root {
+  --dark-blue: #363f5f;
+  --green: #49aa26;
+  --light-green: #3dd705;
+  --red: #e92929;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 93.75%;
+}
+
+body {
+  background: #e6eee5;
+  font-family: "Poppins", sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.container {
+  width: min(90vw, 800px);
+  margin: auto;
+}
+/* Links & Buttons -----------------------------------*/
+
+a {
+  color: var(--green);
+  width: ;
+  /*tira o underline*/
+  text-decoration: none;
+}
+
+button {
+  width: 100%;
+  height: 50px;
+
+  border: none;
+  color: white;
+  background: var(--green);
+
+  padding: 0;
+
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--light-green);
+}
+
+a:hover {
+  color: var(--light-green);
+}
+.button.new {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+
+.button.cancel {
+  color: var(--red);
+  border: 2px var(--red) solid;
+  border-radius: 0.25rem;
+
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0.6;
+}
+
+.button.cancel:hover {
+  opacity: 1;
+}
+
+/* titles -----------------------------------*/
+h2 {
+  margin-top: 3.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--dark-blue);
+
+  font-weight: normal;
+}
+/* header -----------------------------------*/
+header {
+  background: #2d4a22;
+  padding: 2rem 0 10rem;
+  text-align: center;
+}
+
+#logo {
+  color: #fff;
+  font-weight: 100;
+}
+/* Balance -----------------------------------*/
+#balance {
+  margin-top: -8rem;
+}
+#balance h2 {
+  color: white;
+  margin-top: 0%;
+}
+/* Cards -----------------------------------*/
+.card {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+
+  color: var(--dark-blue);
+}
+
+.card h3 {
+  font-weight: normal;
+  font-size: 1rem;
+
+  /* flex muda o comportamento dentro da caixa h3*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card p {
+  font-size: 2rem;
+  line-height: 3rem;
+
+  margin-top: 1rem;
+}
+
+.card.total {
+  background: var(--green);
+  color: white;
+}
+/* table -----------------------------------*/
+#transaction {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+}
+
+#data-table {
+  width: 100%;
+  border-spacing: 0rem 0.5rem;
+  color: #969cb3;
+}
+
+/* parte que adiciona borda somente do lado esquerdo */
+table thead tr th:first-child,
+tbody tr td:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+table thead tr th:last-child,
+tbody tr td:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+/* é a parte dos itens , o cabeçalho da table */
+table thead th {
+  background: white;
+  opacity: 0.6;
+  font-weight: normal;
+  padding: 1rem 2rem;
+  text-align: left;
+}
+
+table tbody tr {
+  opacity: 0.7;
+}
+table tbody tr:hover {
+  opacity: 1;
+}
+
+table tbody td {
+  background: white;
+  padding: 1rem 2rem;
+}
+
+td.description {
+  color: var(--dark-blue);
+}
+
+td.income {
+  color: #12a454;
+}
+
+td.expense {
+  color: #e92929;
+}
+
+td.date {
+  color: #12a;
+}
+/* Modal -----------------------------------*/
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.7);
+
+  position: fixed;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+
+  z-index: 999;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: #f0f2f5;
+  padding: 2.4rem;
+
+  position: relative;
+  z-index: 1;
+}
+/* Form -----------------------------------*/
+#form {
+  max-width: 500px;
+}
+#form h2 {
+  margin-top: 0;
+}
+
+input {
+  border: none;
+  border-radius: 0.2rem;
+
+  padding: 0.8rem;
+
+  width: 100%;
+}
+
+.input-group {
+  margin-top: 0.8rem;
+}
+
+.input-group .help {
+  opacity: 0.4;
+}
+
+.input-group.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+  width: 48%;
+}
+
+/* Footer -----------------------------------*/
+footer {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  color: var(--dark-blue);
+  opacity: 0.6;
+}
+/* Responsive -----------------------------------*/
+
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%;
+  }
+  #balance {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+}
