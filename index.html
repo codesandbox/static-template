@@ -1,12 +1,125 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mon portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Itim&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <nav>
+        <ul>
+          <li class="case"><a href="#accueil">Accueil</a></li>
+          <!-- vous pouvez remarquer un essaie d'ancre pour faire 
+            en sorte que ma barre de navigation fonctionne -->
+        <li class="case"><a href="#competences">Compétences</a></li>
+          <li class="case"><a href="#portfolio">Portfolio </a></li>
+          <li class="case"><a href="#contact">Contactez-moi</a></li>
+        </ul>
+      </nav>
+    </header>
+<!-- barre de navigation -->
+    <main>
+      <section class="boiteaccueil" id="accueil">
+        <div class="texte1">
+          <h1>Paulyne HANOUILLE</h1>
+          <h2 class="sous-titre">
+            BUT Métiers du Multimédia et de l'Internet (MMI)
+          </h2>
+          <p>"La vie, c'est comme une boîte de chocolats. On ne sait jamais sur quoi on va tomber."</p>
+          <p class="mono"><img src="monogramme.JPG" width="300" alt="" /></p>
+        </div>
+
+        <div class="fotomoi"><img class="imagemoi" src="photositeweb.jpg" width="400" height="250" /></div>
+      </section>
+
+      <section class="comp" id="competences">
+        
+        <h3 class="titre"> Compétences </h3>
+
+        <div class="stylcomp">
+          <div> <img src="competence.png"width="400" alt=""> </div>
+
+          <div>
+            <p class="cv">
+             Actuellement en BUT MMI à l'IUT de Corte. J'y apprend l'utilisation de la suite adobe, la communication, 
+             le marketing, la photographie et à me servir des outils audiovisuels. J'ai appris à ne pas abandonner face à un échec et à repousser mes limites.
+             Dû à mon passé dans l'eSport je suis un très bon atout pour le travail d'équipe.
+             
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="folio" id="portfolio">
+        <h3 class="titre">Portfolio</h3>
+       <div class="square">
+       <div class="c1"><p class="align">projet graphique scolaire</p> </div>
+        <div class="c2"><p class="align1"> photos </p> </div>
+       </div>
+       <div class="square1">
+       <div class="c3"><p class="align1">audit</p></div>
+       <div class="c4"><p class="align">créations personelles</p></div>
+       </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <h3 class="titre">Contactez-moi</h3>
+        <div class="wrapper2">
+          <div>
+            <p class="textcontact">
+              Je reste à votre disposition pour toutes autres informations ou
+              demande. N’hésitez pas à me contacter vie le formulaire ou par mes
+              réseaux sociaux.
+            </p>
+          </div>
+
+          <div class="form">
+            <form action="/ma-page-de-traitement" method="post">
+              <div>
+                  <label for="name">Nom :</label>
+                  <input class="animform"type="text" id="nom" name="user_nom">
+              </div>
+              <div>
+              <label for="name">Prénom :</label>
+              <input class="animform" type="text" id="prenom" name="user_prenom">
+          </div>
+              <div>
+                  <label for="mail">e-mail&nbsp;:</label>
+                  <input class="animform"type="email" id="mail" name="user_mail">
+              </div>
+              <div>
+                  <label for="msg">Message :</label>
+                  <textarea class="animform" id="msg" name="user_message"></textarea>
+              </div>
+              <input class="buton" type="submit" value="Envoyer le formulaire">
+          </form>
+          
+          </div>
+        </div>
+         
+        
+      </section>
+    </main>
+    <footer class="foot">
+  
+   <li> <a href="https://twitter.com/YellowVLR"><img src="logotwitter.png" width="45%" title="comptetwitter" alt="lien au compte twitter"></a> </li>
+      <li> <a  href="instagram.com"><img src="logoinstagram.png" width="25%" title="compteinstagram" alt="lien au compte instagram"></a> </a></li> 
+           <li> <a href="https://discord.gg/Djcr6VZaRn"><img src="logodiscord.png" width="40%" title="serveurdiscord" alt="lien au serveur discord"></a></li>
+            <li> <a href="linkedin.com"><img src="LinkedIn.png" width="10%" title="comptelikedin" alt="lien au compte linkedin"></a></a></li> 
+  
+           </footer>
   </body>
+  
 </html>
