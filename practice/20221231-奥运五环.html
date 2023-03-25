@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20221231-奥运五环</title>
+    <style>
+      .olympic {
+        --olympic-blue: #006bb0;
+        --olympic-yellow: #efa90d;
+        --olympic-black: #1d1815;
+        --olympic-green: #059341;
+        --olympic-rad: #dc2f1f;
+        --size: 100px;
+        --thickness: 10px;
+      }
+
+      /* 布局 */
+      .olympic,
+      .olympic * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .olympic {
+        width: calc(var(--size) * 3.5);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      .olympic .ring {
+        position: relative;
+        margin-right: calc(var(--size) * 0.06);
+        width: var(--size);
+        height: var(--size);
+        border: var(--thickness) solid #ddd;
+        border-radius: 50%;
+      }
+      .olympic .ring:nth-child(n + 4) {
+        /* transform: translateY(calc(var(--size) * -0.5)); */
+        top: calc(var(--size) * -0.5);
+      }
+
+      /* 上色 */
+      .olympic .ring:nth-child(1) {
+        border-color: var(--olympic-blue);
+      }
+      .olympic .ring:nth-child(2) {
+        border-color: var(--olympic-black);
+      }
+      .olympic .ring:nth-child(3) {
+        border-color: var(--olympic-rad);
+      }
+      .olympic .ring:nth-child(4) {
+        border-color: var(--olympic-yellow);
+      }
+      .olympic .ring:nth-child(5) {
+        border-color: var(--olympic-green);
+      }
+
+      /* 层叠 */
+      .olympic .ring:nth-child(n)::before {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        inset: calc(var(--thickness) * -1);
+        border: var(--thickness) solid transparent;
+        border-radius: 50%;
+      }
+      .olympic .ring:nth-child(1)::before {
+        border-right-color: var(--olympic-blue);
+      }
+      .olympic .ring:nth-child(2)::before {
+        border-right-color: var(--olympic-black);
+        border-bottom-color: var(--olympic-black);
+      }
+      .olympic .ring:nth-child(3)::before {
+        border-bottom-color: var(--olympic-rad);
+      }
+      .olympic .ring:nth-child(5)::before {
+        border-left-color: var(--olympic-green);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="olympic">
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring"></div>
+    </div>
+  </body>
+</html>

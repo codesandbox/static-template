@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20230325-粘性定位吸底</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        --main-bottom-height: 100px;
+        min-height: 100vh;
+      }
+
+      .main {
+        position: relative;
+        min-height: calc(100vh - var(--footer-height));
+      }
+      .main .section {
+        position: relative;
+        top: calc(var(--main-bottom-height) * -1);
+        z-index: 1;
+        height: 300vh;
+        background-color: #0ff;
+      }
+      .main .section span {
+        position: absolute;
+      }
+      .main .section span:last-child {
+        bottom: 0;
+      }
+      .main .main-bottom {
+        position: sticky;
+        top: calc(100% - var(--main-bottom-height));
+        z-index: 2;
+        height: 100px;
+        background-color: #fafafa;
+      }
+
+      .footer {
+        height: 200px;
+        background-color: #f00;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <div class="main-bottom">主体吸底</div>
+        <div class="section">
+          <span>顶部内容</span>
+          <span>底部内容</span>
+        </div>
+      </div>
+      <div class="footer">footer</div>
+    </div>
+  </body>
+</html>
