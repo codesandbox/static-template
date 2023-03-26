@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.p-10 {
+  padding-inline: 1rem;
+}
+
+body {
+  background-color: #fafafa;
+  font-size: 1.4rem;
+  font-family: "roboto";
+}
+
+.m-10 {
+  margin-left: 1rem;
+}
+
+.m-inline-10 {
+  margin-inline: 1rem;
+}
+
+ion-icon {
+  height: 2.2rem;
+  width: 2.2rem;
+  color: black;
+}
+
+span {
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-and-direct {
+  width: 100%;
+  height: 5.4rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: white;
+  border-bottom: 0.1rem solid #dbdbdb;
+}
+
+.logo-and-direct img {
+  width: 9rem;
+  height: 2.9rem;
+}
+
+.stories {
+  height: 11rem;
+  margin-top: 5.4rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.scroll-h-stories {
+  height: 100%;
+  overflow: overlay;
+  scroll-behavior: smooth;
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.story {
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.9rem;
+
+  cursor: pointer;
+}
+
+.story p {
+  width: 6.4rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+}
+
+.story img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 100%;
+  border: 0.2rem solid white;
+}
+
+.profile-img {
+  width: 6.6rem;
+  height: 6.6rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.profile-img ion-icon {
+  position: absolute;
+  color: blue;
+  right: 0;
+  bottom: 0;
+}
+
+.border-img {
+  width: 6.4rem;
+  height: 6.4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    207deg,
+    #405de6,
+    #5851d8,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d,
+    #f56040,
+    #f77737,
+    #fcaf45,
+    #ffdc80,
+    #ffffff
+  );
+  border-radius: 100%;
+}
+
+.posts {
+  background-color: white;
+  margin-bottom: 6rem;
+  border-block: 0.1rem solid #dbdbdb;
+}
+
+.header-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 1rem;
+  padding-block: 1.4rem;
+}
+
+#user p {
+  font-weight: 700;
+}
+
+#user img {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.header-post ion-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+#picture-post {
+  width: 100%;
+}
+
+.image-post {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-post #user {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 1rem;
+}
+
+.icons-like-comment {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.comments {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin-block: 1rem;
+}
+
+@media (min-width: 614px) and (max-width: 935px) {
+  .stories {
+    margin: 8.8rem 14rem 2.5rem;
+    border: 0.1rem solid #dbdbdb;
+  }
+
+  .posts {
+    margin-inline: 14rem;
+    border: 0.1rem solid #dbdbdb;
+  }
+}
+
+@media (min-width: 935px) {
+  body {
+    background-color: blue;
+  }
+}
