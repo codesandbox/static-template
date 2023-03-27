@@ -1,12 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="./img/img1.jpeg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap" rel="stylesheet">
+    <title>Static Page Foundations Nature</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!-- Section Principal -->
+    <header id="Home">
+      <div class="header">
+        <h1>Fundación Animalitho´s</h1>
+        <p>Llevamos a tu mascota a las estrellas y transformamos para una Tenencia Responsable en la Luna</p>
+      </div>
+      <img
+        src="./img/img1.jpeg"
+        alt="Imagen Animales Salvajes"
+        class="img_header"
+      />
+    </header>
+
+
+    <!-- Section Menu -->
+    <nav class="navbar">
+      <ul>
+        <li>
+          <a href="#Home" class="active">Home</a>
+        </li>
+        <li>
+          <a href="#Events">Events</a>
+        </li>
+        <li>
+          <a href="#Donations">Donations</a>
+        </li>
+        <li>
+          <a href="#AboutUs">About Us</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- Section Events -->
+      <section id="Events" class="events">
+        <div class="img_events">
+          <img
+            src="./img/img2.jpeg"
+            alt="Imagen Animales en Jaula"
+            class="img_animal1"
+          />
+          <div class="text_img_events">
+            <h2>Salvemos a los Animales</h2>
+            <p>
+              Estamos trabajando en colaboración con organizaciones locales para proteger a los elefantes y reducir la caza furtiva en las regiones donde habitan. De tal manera gestionamos su recolocación en la Instalación Lunar para repoblación de las especies
+            </p>
+            <p><strong>Lugar:</strong>San Antonio, Valpo</p>
+            <p><strong>Hora:</strong>00H00 UTC</p>
+            <p><strong>Date:</strong>30 Feb 2024</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="Events" class="events">
+          <div class="img_events">
+            
+            <div class="text_img_events">
+              <h2>Bailando con 'Tiguecito'</h2>
+              <p>
+                Juntémonos todos para el gran baile con el Tigre Regalón...hasta el infinito y mas alla !!
+              </p>
+              <p><strong>Lugar:</strong>La Corredera, Llolleo</p>
+              <p><strong>Hora:</strong>18H00 UTC</p>
+              <p><strong>Date:</strong>40 Jul 2024</p>
+            </div>
+            <img
+              src="./img/img3.jpeg"
+              alt="Imagen Animales en Jaula"
+              class="img_animal1"
+            />
+          </div>
+        </section>
+
+      <section id="Donations" class="Donations">
+        <h2 class="title_donations">Do you want make a donation??</h2>
+        <h4>(Complete the Form)</h4>
+        <form action="/action_page.php">
+          <fieldset>
+            <legend>Pay sure via WEBPay</legend>
+            <label for="fname">First name:</label><br />
+            <input type="text" id="fname" name="fname" value="Name" /><br />
+            <label for="lname">Last name:</label><br />
+            <input type="text" id="lname" name="lname" value="Lastname" /><br />
+            <label for="email" >Enter your email:</label><br />
+            <input type="email" id="email" name="email" value="name@example.com"/>
+            <br /><br />
+            <label for="email">Select currency to donate: </label><br />
+            <span class="span_quantity">
+            <input type="number" name="quantity" id="quantity">
+            <input list="currency" name="browser" />
+            </span>
+            <datalist id="currency">
+              <option value="US Dollar"> </option>
+              <option value="CLP Peso Chileno"> </option>
+              <option value="BTC BitCoin"> </option>
+              <option value="MNI Maní"> </option>
+              <option value="BSS Besos"> </option>
+            </datalist>
+            <input type="Submit" value="SUBMIT" class="btn_submit"/>
+            <br /><br />
+          
+            
+          </fieldset>
+        </form>
+      </section>
+
+      <section id="AboutUs" class="AboutUs">
+        <div class="card">
+          <div class="card_element1">
+            <img
+              src="./img/img3.jpeg"
+              alt="imagen de Fundacion Animalitho´s"
+              class="img_card"
+            />
+          </div>
+          <div class="card_element2">
+            <h3 class="title_AboutUs">About Us</h3>
+            <p class="paragraph_AboutUs">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              velit eos quasi dolor sunt. Ut, eaque cumque. Voluptate facere
+              autem earum recusandae atque. Aut, harum nulla blanditiis sed est
+              reprehenderit?
+            </p>
+            <p class="paragraph_AboutUs">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+              numquam officiis perspiciatis odit expedita necessitatibus
+              inventore velit excepturi suscipit quisquam nostrum vero a
+              obcaecati accusantium, eveniet nisi, maiores architecto molestiae!
+            </p>
+            <p class="paragraph_AboutUs">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+              numquam officiis perspiciatis odit expedita necessitatibus
+              inventore velit excepturi suscipit quisquam nostrum vero a
+              obcaecati accusantium, eveniet nisi, maiores architecto molestiae!
+            </p>
+            
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+        <p>Copyright 2023 &#169 EquatorStudios</p><br>
+      <div class="icons">
+        <i><img src="./img/img.webp" alt="" style="color:white" width="40px"></i>
+        <i><img src="./img/Midjourney.webp" alt="" style="color:white" width="40px"></i>
+        <i><img src="./img/CodeSandbox.webp" alt="" style="color:white" width="40px"></i>
+      </div>
+      
+      <p><small>Design by FranchuDev</small></p>
+      <p><small>Support Chat-GTPT, MidJourney, and CodeSandbox</small></p>
+    </footer>
   </body>
 </html>
