@@ -1,0 +1,20 @@
+-> user selects a particular industry, funding round, and then the revenue
+-> we call the API and the API returns to us all the products for that industry
+    -> for example, if you call "cryto", or "3" in the case of the API attribute
+    -> then you will receive a response "data" = { do: {do_data}, cgl: {cgl_data}, cyber: {cyber_data}}
+-> from here, we then convert this json resposne into an array and interate through it using forEach
+-> the first operation we do is check for which products have a "must_have" recommendation
+    -> we push products that are recommeded into an array called "recommendedPlans"
+        -> why store this data in a variable is to have a feature called "reset to recommendations" so that the user can return to the initial reccomendations
+-> we then iterate through this "recommendedPlans" array and search the main "data" array for the products
+    -> once we find the product we then send it to a findTheLargestSumInsured()
+-> the findTheLargestSumInsured() will need 
+
+
+-> when looping through the entire response, when you find that a product is recommended, add it to the array and call the findTheLargestSumInsured() right there, 
+instead of waiting for the entire array getting populated 
+
+
+What is the recommendation engine?
+-> based on the users industry, funding, and revenue we will recommend them some products
+

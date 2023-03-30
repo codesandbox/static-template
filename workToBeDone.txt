@@ -1,0 +1,84 @@
+Reccomendation engine 
+User choices 
+    - user choosing products
+    - user changing the SI for those products
+Asset insurance
+OTP
+Sharing URL
+
+What have I acheieved so far?
+1. Built the database for industry and products
+2. Built the recommendation engine that:
+  - if a product on an industry's list is a "must-have" 
+  - then we call a function called findTheLargestSumInsured() and return the largest sum insured for each of the recommended products
+  - we will need to rename this functinon, since it's not just finding the largest sum insured but will also be executing the logic for recommended plans
+  
+Things that need to be built:
+1. Receiving user input from differernt points:
+  1. From industry, funding, revenue input fields
+    - once I've done this I should test if the above recommendation engine works properly
+  2. Selections for the final estimate page
+    - Product radio button selections
+    - Changing of SI
+
+What should happen when I add a product?
+1. The selection's UI should reflect the change
+2. Find the largest SI for that 
+  
+
+Set the status of all the select fields to null when its not selected
+
+
+Things that you need to do when a product is chosen:
+1. checkTheCheckbox() - will tick the checkbox and add the selectedClass (1)
+2. setSumInsuredFieldStatus(selectedProduct, selectStatus, largestSI) - if(select field is true) -> onSelection will activate the select field (3)
+3. calculation() - if(select field is true) -> will do the calculation for the price and add it to the UI (4)
+4. findTheLargestSumInsured() - will find the largest SI for the selected product (2)
+
+
+
+
+Points of logic:
+1. When the fourth continue button is clicked:
+if(recommendation=no)
+Hide the product
+
+if(recommendedPlan is empty) -> case when user goes back and changes some field
+- findRecommendedProducts(entireproducts array)
+else()
+- findTheLargestSumInsured(entireproducts array, fundingRound, revenueAmount)
+
+2. When a product is chosen on the final estimate page
+- checkTheBox()
+Running a loop to find out the selected product element (HTML element) -> stored in specificProductElement
+- findTheLargestSumInsured()
+
+- setSumInsuredFieldStatus()
+- calculation()
+
+
+
+function setSumInsuredFieldStatus(selectedProduct, selectStatus, largestSI) {
+  if (selectStatus) {
+    var siField = $(`[data-si='${selectedProduct}']`);
+    siField[0].value = largestSI; //replace with data-variable
+    siField.prop("disabled", false);
+  } else $(`[data-si='${selectedProduct}']`).prop("disabled", true);
+}
+
+
+
+
+
+Features:
+- will select the recommended products
+- will select the recommended SI
+- will not show products that aren't recommended 
+- will calculate the largest SI based on revenue and funding round
+- database of products and their relevant values 
+
+
+
+
+
+
