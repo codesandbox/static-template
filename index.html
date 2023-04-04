@@ -1,12 +1,419 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Responsive Divs Example</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background: #333333;
+        height: 100vh;
+        font-family: "Inter", sans-serif;
+      }
+      nav {
+        background-color: #333;
+        color: white;
+        display: flex;
+        margin: 18px 19px;
+        justify-content: space-between;
+        border-radius: 50px;
+        border: 1px solid #b1a592;
+        box-sizing: border-box;
+        height: 63px;
+        align-items: center;
+        padding: 10px;
+      }
+      nav div {
+        width: 100%;
+        height: 50px;
+        overflow: hidden;
+      }
+      nav button {
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 282px;
+        height: 50px;
+        left: 26px;
+        background: #323025;
+        border-radius: 50px;
+      }
+      nav div button:hover {
+        width: 285px;
+        background-color: #b1a592;
+        color: #333333;
+        font-weight: 550;
+        height: 53px;
+      }
+      nav button:last-child {
+        margin-right: 0;
+      }
+      nav div button:nth-child(2) {
+        color: #333333;
+        background-color: #b1a592;
+      }
+
+      .wrapper {
+        display: flex;
+        margin: 5px 18px;
+        flex-wrap: wrap;
+      }
+
+      .left-div {
+        width: 667px;
+        background-color: #eee;
+        max-height: 981px;
+        margin: 0px 9px;
+        max-width: 667px;
+        left: 35px;
+        top: 99px;
+        padding: 18px;
+        display: flex;
+        overflow: hidden;
+        flex-direction: column;
+        background: #dfd6c5;
+        border-radius: 30px;
+      }
+
+      .left-div .leftImg {
+        object-fit: cover;
+        height: 713px;
+      }
+      .leftTopBtn {
+        width: 207px;
+        height: 34px;
+        margin-top: 20px;
+        background-color: transparent;
+        border: 1px solid #323025;
+        border-radius: 50px;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 24px;
+        color: #323025;
+      }
+      .leftTopBtn:hover {
+        width: 212px;
+        background-color: #323025;
+        color: white;
+        height: 40px;
+      }
+      .leftTopText {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        margin: 14px 8px;
+        text-decoration-line: underline;
+        color: #333333;
+      }
+      .right-div {
+        flex-grow: 1;
+        width: 40%;
+        position: relative;
+        overflow: hidden;
+        padding: 15px;
+      }
+
+      .top-div {
+        margin-bottom: 10px;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        position: relative;
+        background: #8e886d;
+        border-radius: 30px;
+        overflow: hidden;
+      }
+      .top-div .top {
+        display: flex;
+        padding: 12px;
+        flex-wrap: wrap;
+        position: relative;
+        width: 100%;
+      }
+
+      .LeftTopBgDiv {
+        min-width: 35%;
+        display: flex;
+        flex-direction: column;
+      }
+      .rightTopBgDiv {
+        flex-basis: 60%;
+      }
+      .rightTopBgDiv img {
+        width: 90%;
+        height: 280px;
+        margin: 30px;
+      }
+      .right-small-text {
+        font-style: normal;
+        margin: 4px 10px;
+        font-weight: 400;
+        font-size: 20px;
+        padding: 0px;
+      }
+      .getStartedWrapper {
+        display: flex;
+        padding: 10px;
+        border-top: 1px solid #333333;
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .getStartedWrapper span {
+        font-style: normal;
+        font-weight: 400;
+        margin: 10px;
+        padding: 2px 10px;
+        font-size: 24px;
+      }
+      .bottom-div {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+      }
+
+      .bottom-div div {
+        padding: 10px;
+        margin-right: 10px;
+        flex: wrap;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+      .bottomLeft {
+        width: 40%;
+        background: #916e58;
+        position: relative;
+        border-radius: 30px;
+      }
+      .contentHolder {
+        margin: 0px 10px;
+        padding: 0px;
+        margin-top: -20px;
+      }
+
+      .bottomLeftImg {
+        width: 100%;
+      }
+      .bottomLeftImg img {
+        width: 100%;
+      }
+      h2 {
+        font-weight: 700;
+        font-size: 36px;
+        margin: 15px 10px;
+        line-height: 40px;
+        text-decoration-line: underline;
+      }
+
+      .bottomRight {
+        width: 50%;
+        background: #b1a48e;
+        position: relative;
+        border-radius: 30px;
+      }
+      .bottomRight .leftTopBtn {
+        margin: 50px 10px 10px 10px;
+      }
+      .bottomRight .contentHolder {
+        margin-top: 38px;
+      }
+      .lastImg {
+        position: absolute;
+        width: 113px;
+        height: 113px;
+        border-radius: 50%;
+        right: 60px;
+        top: 70px;
+      }
+
+      @media only screen and (max-width: 1124px) {
+        /* Mobile and Tablet view */
+        .wrapper {
+          flex-direction: column;
+        }
+
+        .left-div {
+          min-width: 90vw;
+        }
+
+        .right-div {
+          flex-grow: 0;
+          min-width: 90vw;
+        }
+
+        .bottom-div div {
+          flex-basis: calc(49% - 5px);
+        }
+        nav button {
+          display: none;
+        }
+        nav div {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          text-align: center;
+        }
+        nav button:first-child {
+          display: block;
+          min-width: 80%;
+        }
+
+        nav button:nth-child(3) {
+          display: block;
+          min-width: 20%;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        .bottom-div {
+          flex-direction: column;
+        }
+        .wrapper {
+          margin: 0;
+          width: 90vw;
+          padding: 0;
+        }
+        .left-div {
+          max-width: 75vw;
+        }
+        .right-div {
+          position: relative;
+          max-width: 90%;
+        }
+        .bottomRight {
+          position: relative;
+          min-width: 100%;
+        }
+        .bottomLeft {
+          min-width: 100%;
+        }
+        .rightTopBgDiv {
+          flex-basis: 100%;
+          margin-left: -10px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <nav>
+      <div>
+        <button>Company</button>
+        <button>Collections</button>
+        <button>Menu</button>
+        <button>Events</button>
+      </div>
+      <button>Contact</button>
+    </nav>
+    <div class="wrapper">
+      <div class="left-div">
+        <button class="leftTopBtn">LOREUMIPSUM</button>
+        <p class="leftTopText">Loreum Ipsum Heading</p>
+        <img class="leftImg" src="./assets/leftbg.png" />
+      </div>
+      <div class="right-div">
+        <div class="top-div">
+          <div class="top">
+            <div class="LeftTopBgDiv">
+              <button class="leftTopBtn">LOREUMIPSUM</button>
+              <p class="leftTopText">Loreum Ipsum Heading</p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+            </div>
+            <div class="rightTopBgDiv">
+              <img src="./assets/rightTopbg.png" />
+            </div>
+          </div>
+
+          <div class="getStartedWrapper">
+            <span>Get Started</span>
+            <span>---></span>
+          </div>
+        </div>
+        <div class="bottom-div">
+          <div class="bottomLeft">
+            <div class="bottomLeftImg">
+              <img src="./assets/bottomLeftbg.png" />
+            </div>
+            <div class="contentHolder">
+              <h2>Portrait</h2>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+            </div>
+            <div class="getStartedWrapper">
+              <span>Get Started</span>
+              <span>---></span>
+            </div>
+          </div>
+
+          <div class="bottomRight">
+            <img class="lastImg" src="./assets/lastbg.png" />
+            <button class="leftTopBtn">LOREUMIPSUM</button>
+            <div class="contentHolder">
+              <h2>Portrait</h2>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+              <p class="right-small-text">
+                Loreum Ipsum Text Loreum Ipsum Text
+              </p>
+            </div>
+            <div class="getStartedWrapper">
+              <span>Get Started</span>
+              <span>---></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
