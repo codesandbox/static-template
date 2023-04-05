@@ -1,0 +1,258 @@
+.container {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: calc(50% - 140px);
+  left: calc(50% - 150px);
+  border: 1px solid;
+  border-color: darkblue;
+}
+.cof_head {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ddcfcc;
+  border-radius: 11px;
+}
+.cof_head_buttons {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 25px;
+  background-color: #282323;
+  border-radius: 50%;
+}
+.cof_head_buttons::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 8px;
+  bottom: -8px;
+  background-color: #615e5e;
+}
+.cof_head_button-1 {
+  left: 5px;
+}
+.cof_head_button-2 {
+  left: 40px;
+}
+.cof_head_display {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(50% - 20px);
+  border-radius: 50%;
+  background-color: skyblue;
+  border: 5px solid #43beae;
+}
+.cof_head-details {
+  width: 8px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: grey;
+  box-shadow: -12px 0 0 grey, -24px 0 0 grey;
+}
+.cof_body {
+  width: 90%;
+  height: 200px;
+  position: absolute;
+  left: calc(50% - 45%);
+  top: 80px;
+  background-color: #bcb0af;
+}
+.cof_body::before {
+  content: "";
+  width: 90%;
+  height: 100px;
+  position: absolute;
+  left: calc(50% - 45%);
+  bottom: 0;
+  background-color: gray;
+  border-radius: 20px 20px 0 0;
+}
+.cof-body-exit {
+  width: 60px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 30px);
+  background-color: black;
+}
+.cof-body-exit::before {
+  content: "";
+  width: 50px;
+  height: 20px;
+  border-radius: 0 0 50% 50%;
+  position: absolute;
+  left: calc(50% - 25px);
+  bottom: -20px;
+  background-color: black;
+}
+.cof-body-exit::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: calc(50% - 5px);
+  bottom: -30px;
+  background-color: black;
+}
+.cof-body-arm {
+  width: 70px;
+  height: 20px;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  background-color: black;
+}
+.cof-body-arm::after {
+  content: "";
+  width: 15px;
+  height: 5px;
+  position: absolute;
+  top: 7px;
+  left: -15px;
+  background-color: lightskyblue;
+}
+.cof-body-cup {
+  width: 80px;
+  height: 47px;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 40px);
+  background-color: white;
+  border-radius: 0 0 70px 70px/ 0 0 110px 110px;
+}
+.cof-body-cup::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 6px;
+  right: -13px;
+  border: 5px solid white;
+  border-radius: 50%;
+}
+@keyframes liquid {
+  0% {
+    height: 0px;
+    opacity: 1;
+  }
+  5% {
+    height: 0px;
+    opacity: 1px;
+  }
+  20% {
+    height: 105px;
+    opacity: 1;
+  }
+  95% {
+    height: 105px;
+    opacity: 1;
+  }
+  100% {
+    height: 105px;
+    opacity: 1;
+  }
+}
+.cof-body-liquid {
+  width: 6px;
+  height: 105px;
+  opacity: 0;
+  position: absolute;
+  top: 50px;
+  left: calc(50% - 3px);
+  background-color: brown;
+  animation: liquid 4s 4s linear infinite;
+}
+.cof-body-smoke {
+  width: 8px;
+  height: 20px;
+  position: absolute;
+  background-color: #b3aeae;
+  border-radius: 5px;
+}
+@keyframes smokeone {
+  0% {
+    bottom: 20px;
+    opacity: 0;
+  }
+  40% {
+    bottom: 50px;
+    opacity: 5;
+  }
+  80% {
+    bottom: 80px;
+    opacity: 3;
+  }
+  100% {
+    bottom: 80px;
+    opacity: 0;
+  }
+}
+@keyframes smoketwo {
+  0% {
+    bottom: 40px;
+    opacity: 0;
+  }
+  40% {
+    bottom: 70px;
+    opacity: 5;
+  }
+  80% {
+    bottom: 80px;
+    opacity: 3;
+  }
+  100% {
+    bottom: 80px;
+    opacity: 0;
+  }
+}
+.cof-body-smoke-one {
+  opacity: 0;
+  bottom: 50px;
+  left: 102px;
+  animation: smokeone 3s 4s linear infinite;
+}
+.cof-body-smoke-two {
+  opacity: 0;
+  bottom: 70px;
+  left: 118px;
+  animation: smoketwo 3s 4s linear infinite;
+}
+.cof-body-smoke-three {
+  opacity: 0;
+  bottom: 50px;
+  right: 118px;
+  animation: smokeone 3s 4s linear infinite;
+}
+.cof-body-smoke-four {
+  opacity: 0;
+  bottom: 50px;
+  right: 102px;
+  animation: smoketwo 3s 4s linear infinite;
+}
+.cof_base {
+  height: 20px;
+  width: 95%;
+  position: absolute;
+  bottom: 0px;
+  left: calc(50% - 47.5%);
+  background-color: #41bdad;
+  border: radius 10px;
+}
+.cof_base::after {
+  content: "";
+  height: 10px;
+  width: 300px;
+  position: absolute;
+  bottom: 0px;
+  left: -8px;
+  background-color: #000;
+}
