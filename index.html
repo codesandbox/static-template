@@ -1,12 +1,526 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Launchpad</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        line-height: 1.25;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", sans-serif;
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.25;
+        color: #fff;
+        background: #111111;
+        text-align: left;
+      }
+      svg:not(:root) {
+        overflow: hidden;
+      }
+
+      svg:not(:root).svg-inline--fa {
+        overflow: visible;
+      }
+
+      .svg-inline--fa {
+        display: block;
+        font-size: inherit;
+        height: 1em;
+        overflow: visible;
+        cursor: pointer;
+        z-index: 2;
+      }
+
+      .svg-owl {
+        display: block;
+        width: 100%;
+        height: 320px;
+        overflow: visible;
+        cursor: pointer;
+        z-index: 2;
+      }
+
+      @keyframes eyes {
+        0% {
+          fill: #ffe471;
+        }
+        100% {
+          fill: #300434;
+        }
+      }
+
+      .flay {
+        fill: #421d49;
+      }
+
+      .eyes {
+        fill: #ffe471;
+        animation: eyes 0.1s ease-out 2s infinite;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div>
+      <svg
+        id="owl"
+        class="svg-owl"
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        width="21px"
+        height="21px"
+        viewBox="0 0 21 21"
+      >
+        <path
+          class="flay"
+          d="M10.5,8.2c-4.4,0-8.1-2.7-9.7-6.5C0.3,3,0,4.3,0,5.8c0,5.8,4.7,10.5,10.5,10.5S21,11.6,21,5.8c0-1.4-0.3-2.8-0.8-4C18.6,5.5,14.9,8.2,10.5,8.2z"
+        />
+        <path
+          fill="#300434"
+          d="M12.7,4.5c0.2,0.4,0.3,0.7,0.3,1.2c0,1.4-1.1,2.5-2.4,2.5C9.2,8.1,8.1,7,8.1,5.7c0-0.4,0.1-0.8,0.3-1.2c-2.4,4.4-1.4,9.8,2.2,13C14.1,14.3,15.1,8.9,12.7,4.5z"
+        />
+        <path
+          class="eyes"
+          d="M9.5,10.5C9.2,10.5,9,10.3,9,10c0-0.1,0-0.1,0-0.2L8.6,9.5C8.6,9.7,8.5,9.8,8.5,10c0,0.6,0.4,1,1,1c0.3,0,0.5-0.1,0.7-0.3l-0.4-0.3C9.7,10.5,9.6,10.5,9.5,10.5z"
+        />
+        <path
+          class="eyes"
+          d="M12,9.8c0,0.1,0,0.1,0,0.2c0,0.3-0.2,0.5-0.5,0.5c-0.1,0-0.2,0-0.3-0.1l-0.4,0.3c0.2,0.2,0.4,0.3,0.7,0.3c0.6,0,1-0.4,1-1c0-0.2-0.1-0.3-0.1-0.5L12,9.8z"
+        />
+        <polygon fill="#FFE471" points="10,10.6 10.5,11.1 11,10.6 " />
+        <animateTransform
+          attributeType="xml"
+          attributeName="transform"
+          type="translate"
+          values="0 0; 0 20; 0 0"
+          begin="0.4s"
+          dur="1s"
+          repeatCount="indefinite"
+        ></animateTransform>
+      </svg>
+    </div>
+    <!-- 1 -->
+    <div class="svg-inline--fa" title="0">
+      <svg
+        class="svg-circle-1"
+        x="0px"
+        y="0px"
+        width="40px"
+        height="40px"
+        viewBox="0 0 40 40"
+      >
+        <circle
+          opacity="0.2"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-miterlimit="10"
+          cx="20"
+          cy="20"
+          r="13"
+        />
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-miterlimit="10"
+          d="M20,7c7,0,13,7,13,13"
+        />
+        <animateTransform
+          attributeType="xml"
+          attributeName="transform"
+          type="rotate"
+          from="0 0 0"
+          to="360 0 0"
+          dur="0.6s"
+          repeatCount="indefinite"
+        />
+      </svg>
+    </div>
+
+    <!-- 2 -->
+    <div class="svg-inline--fa" title="1">
+      <svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="40px"
+        height="40px"
+        viewBox="0 0 50 50"
+      >
+        <path
+          fill="#000"
+          d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z"
+        >
+          <animateTransform
+            attributeType="xml"
+            attributeName="transform"
+            type="rotate"
+            from="0 25 25"
+            to="360 25 25"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </path>
+      </svg>
+    </div>
+
+    <!-- 3  -->
+    <div class="svg-inline--fa" title="2">
+      <svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="40px"
+        height="40px"
+        viewBox="0 0 50 50"
+      >
+        <path
+          fill="#000"
+          d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z"
+        >
+          <animateTransform
+            attributeType="xml"
+            attributeName="transform"
+            type="rotate"
+            from="0 25 25"
+            to="360 25 25"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </path>
+      </svg>
+    </div>
+
+    <!-- 4 -->
+    <div class="svg-inline--fa" title="3">
+      <svg
+        version="1.1"
+        id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="24px"
+        height="24px"
+        viewBox="0 0 24 24"
+      >
+        <rect x="0" y="0" width="4" height="7" fill="#333">
+          <animateTransform
+            attributeType="xml"
+            attributeName="transform"
+            type="scale"
+            values="1,1; 1,3; 1,1"
+            begin="0s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </rect>
+
+        <rect x="10" y="0" width="4" height="7" fill="#333">
+          <animateTransform
+            attributeType="xml"
+            attributeName="transform"
+            type="scale"
+            values="1,1; 1,3; 1,1"
+            begin="0.2s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </rect>
+        <rect x="20" y="0" width="4" height="7" fill="#333">
+          <animateTransform
+            attributeType="xml"
+            attributeName="transform"
+            type="scale"
+            values="1,1; 1,3; 1,1"
+            begin="0.4s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </rect>
+      </svg>
+    </div>
+
+    <!-- 5 -->
+    <div class="svg-inline--fa" title="4">
+      <svg
+        version="1.1"
+        id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="24px"
+        height="30px"
+        viewBox="0 0 24 30"
+      >
+        <rect x="0" y="0" width="4" height="10" fill="#333">
+          <animateTransform
+            attributeType="xml"
+            attributeName="transform"
+            type="translate"
+            values="0 0; 0 20; 0 0"
+            begin="0"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </rect>
+        <rect x="10" y="0" width="4" height="10" fill="#333">
+          <animateTransform
+            attributeType="xml"
+            attributeName="transform"
+            type="translate"
+            values="0 0; 0 20; 0 0"
+            begin="0.2s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </rect>
+        <rect x="20" y="0" width="4" height="10" fill="#333">
+          <animateTransform
+            attributeType="xml"
+            attributeName="transform"
+            type="translate"
+            values="0 0; 0 20; 0 0"
+            begin="0.4s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </rect>
+      </svg>
+    </div>
+
+    <!-- 6 -->
+    <div class="svg-inline--fa" title="5">
+      <svg
+        version="1.1"
+        id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="24px"
+        height="30px"
+        viewBox="0 0 24 30"
+      >
+        <rect x="0" y="13" width="4" height="5" fill="#333">
+          <animate
+            attributeName="height"
+            attributeType="XML"
+            values="5;21;5"
+            begin="0s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="y"
+            attributeType="XML"
+            values="13; 5; 13"
+            begin="0s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </rect>
+        <rect x="10" y="13" width="4" height="5" fill="#333">
+          <animate
+            attributeName="height"
+            attributeType="XML"
+            values="5;21;5"
+            begin="0.15s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="y"
+            attributeType="XML"
+            values="13; 5; 13"
+            begin="0.15s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </rect>
+        <rect x="20" y="13" width="4" height="5" fill="#333">
+          <animate
+            attributeName="height"
+            attributeType="XML"
+            values="5;21;5"
+            begin="0.3s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="y"
+            attributeType="XML"
+            values="13; 5; 13"
+            begin="0.3s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </rect>
+      </svg>
+    </div>
+
+    <!-- 7 -->
+    <div class="svg-inline--fa" title="6">
+      <svg
+        version="1.1"
+        id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="24px"
+        height="30px"
+        viewBox="0 0 24 30"
+      >
+        <rect x="0" y="0" width="4" height="20" fill="#333">
+          <animate
+            attributeName="opacity"
+            attributeType="XML"
+            values="1; .2; 1"
+            begin="0s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </rect>
+        <rect x="7" y="0" width="4" height="20" fill="#333">
+          <animate
+            attributeName="opacity"
+            attributeType="XML"
+            values="1; .2; 1"
+            begin="0.2s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </rect>
+        <rect x="14" y="0" width="4" height="20" fill="#333">
+          <animate
+            attributeName="opacity"
+            attributeType="XML"
+            values="1; .2; 1"
+            begin="0.4s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </rect>
+      </svg>
+    </div>
+
+    <!-- 8 -->
+    <div class="svg-inline--fa" title="7">
+      <svg
+        version="1.1"
+        id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="24px"
+        height="30px"
+        viewBox="0 0 24 30"
+      >
+        <rect x="0" y="10" width="4" height="10" fill="#333" opacity="0.2">
+          <animate
+            attributeName="opacity"
+            attributeType="XML"
+            values="0.2; 1; .2"
+            begin="0s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="height"
+            attributeType="XML"
+            values="10; 20; 10"
+            begin="0s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="y"
+            attributeType="XML"
+            values="10; 5; 10"
+            begin="0s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </rect>
+        <rect x="8" y="10" width="4" height="10" fill="#333" opacity="0.2">
+          <animate
+            attributeName="opacity"
+            attributeType="XML"
+            values="0.2; 1; .2"
+            begin="0.15s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="height"
+            attributeType="XML"
+            values="10; 20; 10"
+            begin="0.15s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="y"
+            attributeType="XML"
+            values="10; 5; 10"
+            begin="0.15s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </rect>
+        <rect x="16" y="10" width="4" height="10" fill="#333" opacity="0.2">
+          <animate
+            attributeName="opacity"
+            attributeType="XML"
+            values="0.2; 1; .2"
+            begin="0.3s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="height"
+            attributeType="XML"
+            values="10; 20; 10"
+            begin="0.3s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="y"
+            attributeType="XML"
+            values="10; 5; 10"
+            begin="0.3s"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </rect>
+      </svg>
+    </div>
   </body>
 </html>
