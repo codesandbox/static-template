@@ -1,12 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <title>Curso Básico Back-End</Back-End></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="conteudo">
+      <div class="formulario">
+        <form method="" action="">
+          <div>
+            <h2 class="cabecalho">
+              Calculadora
+            </h2>
+            <div class="campo">
+              <label>Valor 1</label>
+              <input type="text" id="txtValor1" />
+            </div>
+            <div class="campo">
+              <label>Valor 2</label>
+              <input type="text" id="txtValor2" />
+            </div>
+            <div class="campo">
+              <label>Operação</label>
+              <select name="cbxOperacao" id="cbxOperacao">
+                <option value="+">Adição</option>
+                <option value="-">Subtração</option>
+                <option value="/">Divisão</option>
+                <option value="*">Multiplicação</option>
+              </select>
+            </div>
+            <div class="botao">
+              <button type="button" onclick="calcularValores()">
+                Calcular
+              </button>
+            </div>
+            <div class="campo">
+              <label>Resultado</label>
+              <span class="resultado" id="txtResultado">-</span>
+            </div>
+        </form>
+      </div>
   </body>
 </html>
