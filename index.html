@@ -1,12 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+      integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+
+    <title>Document</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <img class="logo" src="./img/logo.jpg" alt="logo" />
+      <nav>
+        <ul class="nav_links">
+          <li class="nav_links"><a href="#">HOME</a></li>
+          <li class="nav_links"><a href="#">ABOUT US</a></li>
+          <li class="nav_links"><a href="#">SERVICES</a></li>
+          <li class="nav_links"><a href="#">CONTACT</a></li>
+        </ul>
+      </nav>
+      <button class="request-appointment">
+        <a class="CTA" href="#">REQUEST APPOINTMENT</a>
+      </button>
+    </header>
+    <div class="bg-image"></div>
+
+    <div class="text-1">We take care</div>
+    <div class="text-2">of your smile</div>
+
+    <a
+      class="schedule-appointment"
+      href="https://dentalclinic-project.com/schedule-appointment/"
+    >
+      <span class="material-symbols-outlined"> calendar_today </span>
+      <span>REQUEST APPOINTMENT</span>
+    </a>
+
+    <section class="welcome-section">
+      <div class="welcome">
+        <h2 class="welcome-text-1">WELCOME</h2>
+        <h2 class="welcome-text-2">WELCOME</h2>
+        <br />
+        <p>
+          Our mission is simple. Hildreth Dental enhances the health and
+          well-being of our patients with exceptional care, compassionate
+          people, and a welcoming environment. As Kennesaw dentists, we're proud
+          to make a positive impact on our community by:
+        </p>
+        <ul class="welcome_list">
+          <li class="welcome_list">
+            Helping patients be their healthiest self
+          </li>
+          <li class="welcome_list">
+            Fixing dental concerns and alleviating pain
+          </li>
+          <li class="welcome_list">
+            Treating others the way we'd like to be treated
+          </li>
+        </ul>
+        <br />
+        <p>At our practice, <b>you</b> always come first.</p>
+      </div>
+
+      <div class="image-welcome-team">
+        <div class="container-image">
+          <img
+            src="https://hildrethdental.com/wp-content/uploads/2020/05/hildreth-dental-team-photo.jpg"
+            alt="team photo"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="container about-us">
+      <img class="image" src="./img/cabinet1.jpg" alt="" srcset="" />
+
+      <div class="container-wrapper">
+        <h2 class="about-us-h2">Enjoy Your Time at the Dentist</h2>
+
+        <p class="about-us-description">
+          We’ve designed a patient experience that stands out from other
+          Kennesaw dentists. Here you’ll find top-rated service, a team who
+          remembers your name, and empathetic support when you’re feeling
+          anxious. Don’t worry about brushing up on oral health trivia or
+          deciphering treatment costs — we’ll clearly explain everything so you
+          know exactly what to expect.
+        </p>
+        <button class="more-about-us">Get to know us</button>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="text">
+        <h2 class="services-header">SERVICES</h2>
+        <h2 class="services-header-2">
+          Everthing you Need for Happy, Healthy Teeth
+        </h2>
+      </div>
+
+      <div class="container-wrapper health">
+        <div>
+          <h2 class="about-us-h2 health">HEALTH</h2>
+          <h3 class="about-us-h3">General Dentistry</h3>
+          <ul class="general-dentistry">
+            <li>Routine Cleaning</li>
+            <li>Cavity Filings</li>
+            <li>Root Canals for Severe Decay</li>
+          </ul>
+        </div>
+
+        <div class="image-health">
+          <img
+            class="image-health"
+            src="https://i.pinimg.com/564x/1b/ec/63/1bec636d85e45747fe20f1681d8dc5c9.jpg"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </div>
+
+      <div class="container-wrapper health">
+        <div class="image-health">
+          <img
+            class="image-health"
+            src="https://i.pinimg.com/564x/2a/24/d5/2a24d5b16ee2cab66316df8207c4d6b9.jpg"
+            alt=""
+            srcset=""
+          />
+        </div>
+        <div>
+          <h2 class="about-us-h2 health">BEAUTY</h2>
+          <h3 class="about-us-h3">Cosmetic Dentistry</h3>
+          <ul class="general-dentistry">
+            <li>Cosmetic Veneers</li>
+            <li>Professional Teeth Whitening</li>
+            <li>Invisalign for Adults and Teens</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container-wrapper health">
+        <div>
+          <h2 class="about-us-h2 health">RESTORATION</h2>
+          <h3 class="about-us-h3">Restorative Dentistry</h3>
+          <ul class="general-dentistry">
+            <li>Crowns to Protect Weak Teeth</li>
+            <li>Dental Implants for Missing Teeth</li>
+            <li>Modern Dental Bridges</li>
+          </ul>
+        </div>
+
+        <div class="image-health">
+          <img
+            class="image-health"
+            src="https://i.pinimg.com/564x/60/43/8e/60438ec6e083b5d9f2217da9d18c7fe3.jpg"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="final-section">
+      <h3 class="final-text">See you soon!</h3>
+    </section>
+
+    <section class="">
+      <div class="container_details">
+        <div class="box_details">
+          <div class="icon">
+            <span class="material-symbols-outlined icons"> map </span>
+            <p class="contact-menu">Address</p>
+            <p>2430 Powell Place NW</p>
+            <p>Kennesaw, GA 30144</p>
+          </div>
+        </div>
+
+        <div class="box_details">
+          <div class="icon">
+            <span class="material-symbols-outlined icons"> call </span>
+            <p class="contact-menu">Phone</p>
+            <p>(770) 424-1705</p>
+          </div>
+        </div>
+        <div class="box_details">
+          <div class="icon">
+            <span class="material-symbols-outlined icons"> schedule </span>
+            <p class="contact-menu">Hours</p>
+            <p>Mon-Thur: 8am - 5pm</p>
+            <p>Friday: 8am - 2pm</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="footer">
+        <div class="div first">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="">General</a></li>
+            <li><a href="">Cosmetic</a></li>
+            <li><a href="">Restorative</a></li>
+            <li><a href="">Dental Problems</a></li>
+            <li><a href="">TMJ</a></li>
+            <li><a href="">Chips & Cracks</a></li>
+            <li><a href="">Gum Recession</a></li>
+            <li><a href="">Cavities</a></li>
+          </ul>
+        </div>
+        <div class="div second">
+          <h4>Office</h4>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">New Patients</a></li>
+            <li><a href="">Request Appointment</a></li>
+          </ul>
+        </div>
+        <div class="div third">
+          <h4>Phone</h4>
+          <ul>
+            <li>(770) 424-1705</li>
+            <li>Appointments available</li>
+            <li>Monday-Friday</li>
+          </ul>
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon-Thur: 8am - 5pm</li>
+            <li>Friday: 8am - 2pm</li>
+          </ul>
+        </div>
+        <div class="div fourth">
+          <h4>Address</h4>
+          <ul>
+            <li>2430 Powell Place NW</li>
+            <li>Kennesaw, GA 30144</li>
+            <li>Monday-Friday</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
