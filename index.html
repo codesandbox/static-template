@@ -1,12 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Disney+ Clone</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!----------- Navbar ---------->
+    <nav class="navbar">
+      <img src="images/logo.png" class="brand-logo" alt="logo" />
+      <ul class="nav-links">
+        <li class="nav-items"><a href="#">TV</a></li>
+        <li class="nav-items"><a href="#">Movies</a></li>
+        <li class="nav-items"><a href="#">Sports</a></li>
+        <li class="nav-items"><a href="#">Premium</a></li>
+      </ul>
+      <div class="right-container">
+        <input type="text" class="search-box" placeholder="search" />
+        <button class="sub-btn">subscribe</button>
+        <a href="#" class="login-link">Login</a>
+      </div>
+    </nav>
+    <!----------- Navbar ---------->
+
+    <!----------- Carousel -------->
+    <div class="carousel-container">
+      <div class="carousel">
+        <!-- <div class="slider">
+          <div class="slide-content">
+            <h1 class="movie-title">Loki</h1>
+            <p class="movie-des">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+              adipisci dicta excepturi veritatis amet soluta optio ab
+              repudiandae voluptas architecto, vitae voluptatibus doloribus
+              illum, atque perspiciatis nobis consectetur, reiciendis fugit.
+            </p>
+          </div>
+          <img src="images/slider1.png" alt="movie-image" />
+        </div> -->
+      </div>
+    </div>
+    <!----------- Carousel -------->
+
+    <!----------- Video Cards ----->
+    <div class="video-card-container">
+      <div class="video-card">
+        <img src="images/disney.png" class="video-card-image" alt="" />
+        <video
+          src="videos/disney.mp4" muted loop autoplay class="card-video"></video>
+      </div>
+      <div class="video-card">
+        <img src="images/pixar.png" class="video-card-image" alt="" />
+        <video
+          src="videos/pixar.mp4" muted loop autoplay class="card-video"></video>
+      </div>
+      <div class="video-card">
+        <img src="images/marvel.png" class="video-card-image" alt="" />
+        <video
+          src="videos/marvel.mp4" muted loop autoplay class="card-video"></video>
+      </div>
+      <div class="video-card">
+        <img src="images/star-wars.png" class="video-card-image" alt="" />
+        <video
+          src="videos/star-war.mp4" muted loop autoplay class="card-video"></video>
+      </div>
+      <div class="video-card">
+        <img src="images/geographic.png" class="video-card-image" alt="" />
+        <video src="videos/geographic.mp4" muted loop autoplay class="card-video" ><video>
+      </div>
+    </div>
+    <!----------- Video Cards ----->
+
+    <h1 class="title">Recommended For You</h1>
+
+    <!----------- Recommendations ---->
+    <div class="movies-list">
+      <button class="pre-btn" title="btn">
+        <img src="images/pre.png" alt="" />
+      </button>
+      <button class="nxt-btn" title="btn">
+        <img src="images/nxt.png" alt="" />
+      </button>
+      <div class="card-container">
+        <div class="card">
+          <img src="images/Rec1.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Major</h2>
+            <h6 class="des">
+              This biopic follows the life of Indian Army officer Major Sandeep
+              Unnikrishnan
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec5.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Dumdaar Khiladi</h2>
+            <h6 class="des">
+              the film revolves around Anu and Sanju, who develop a great bond
+              after the latter arrives in Hyderabad
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec2.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Fidaa</h2>
+            <h6 class="des">
+              Love story of an NRI doctor, Varun from USA who meets a BSc (Agri)
+              girl, Bhanumati from Bansuwada (Telangana)
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec3.webp" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Taqdeer</h2>
+            <h6 class="des">
+              Avinash gets separated from his childhood love Priya. Will fate
+              bring the two estranged lovers together as grown-ups?
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec4.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Bajrangi Bhaijaan</h2>
+            <h6 class="des">
+              Pawan Kumar Chaturvedi takes it upon himself to help a lost; mute
+              girl, reach her home in Pakistan!
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec6.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Train to Busan</h2>
+            <h6 class="des">
+              Zombie virus breaks out in South Korea, passengers struggle to
+              survive on the train from Seoul to Busan.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec7.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Drishyam 2</h2>
+            <h6 class="des">
+              A gripping tale of an investigation and a family which is
+              threatened by it.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec8.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Hungama</h2>
+            <h6 class="des">
+              Lives ofstrangers get entwined due to mistaken identities landing
+              them in chaotic and hilarious situations.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec9.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Home Alone</h2>
+            <h6 class="des">
+              When Kevin is home while his family goes on a Christmas trip, he
+              must defend his home from burglars.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec10.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Hulchul</h2>
+            <h6 class="des">
+              A war emerges between two families when two young people (Jai and
+              Anjali) fall in love.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec11.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Mr. Majnu</h2>
+            <h6 class="des">
+              A charming playboy who has never had a serious relationship,
+              finally meets the right girl.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec12.avif" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Nikka Zaildar</h2>
+            <h6 class="des">
+              A young man concocts a scheme to marry a reluctant fellow student.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec13.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Dil Diyan Gallan</h2>
+            <h6 class="des">
+              Punjabi love story between Natasha, an internet celebrity and
+              Laddi, her photographer.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec14.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Sargi</h2>
+            <h6 class="des">
+              A young woman far from her home country is spoiled for choice when
+              it comes to suitors.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec2q.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">MS Dhoni: The Untold Story</h2>
+            <h6 class="des">
+              Based on the life of former captain of the Indian national cricket
+              team, MS Dhoni.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec15.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Jab We Met</h2>
+            <h6 class="des">
+              Aditya meets Geet, a bubbly Punjabi girl, and gets pulled into her
+              crazy life.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec16.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Chup Chup Ke</h2>
+            <h6 class="des">
+              A debt-ridden young man attempts suicide, but is rescued only to
+              find that his luck is finally turning.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec17.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Singham</h2>
+            <h6 class="des">
+              A truly honest police officer is transferred to a town controlled
+              by a gangster he has humiliated.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec18.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Phir Hera Pheri</h2>
+            <h6 class="des">
+              A twist of fate changes the lives of Raju, Shyam and Baburao when
+              they get cheated by a fraudster.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec19.webp" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Dhamaal</h2>
+            <h6 class="des">
+              Four slack and vagabond conmen learn about a hidden treasure and
+              race against time to claim it
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!----------- Recommendations ---->
+
+    <h1 class="title">Popular Shows</h1>
+
+    <!----------- Popular Shows ---->
+    <div class="movies-list">
+      <button class="pre-btn" title="btn">
+        <img src="images/pre.png" alt="" />
+      </button>
+      <button class="nxt-btn" title="btn">
+        <img src="images/nxt.png" alt="" />
+      </button>
+      <div class="card-container">
+        <div class="card">
+          <img src="images/Rec1p.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Dance Dewaane</h2>
+            <h6 class="des">
+              Contestants, belonging to different generations, showcase their
+              dancing skills to win the coveted title.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec2p.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">MTV Roadies</h2>
+            <h6 class="des">
+              MTV Roadies is a youth-based reality show. It was launched in 2003
+              and airs on MTV India.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec3p.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Shark Tank India</h2>
+            <h6 class="des">
+              Aspiring entrepreneurs pitch their business models to investors
+              and persuade them to invest money in their idea.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec4p.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Fear Factor: Khatron Ke Khiladi</h2>
+            <h6 class="des">
+              contestants face their worst fears and perform stunts to win the
+              coveted title.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec5p.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Big Boss</h2>
+            <h6 class="des">
+              Salman Khan returns to turn the tables on the housemates in their
+              own game
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec6p.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Khatra Khatra Khatra</h2>
+            <h6 class="des">
+              Interactive comedy game show, jahan celebrities phasenge aur aap
+              hasenge!
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec7p.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">The Kapil Sharma Show</h2>
+            <h6 class="des">
+              Kapil Sharma and his friends and neighbours chat with celebrities
+              and get them laughing.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec8p.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Indian Idol</h2>
+            <h6 class="des">
+              Talented people from across India participate in this music
+              reality show
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec9p.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Dance +</h2>
+            <h6 class="des">
+              Contestants showcase their dancing skills and compete against each
+              other to win the prestigious title.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec10p.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">MasterChef India</h2>
+            <h6 class="des">
+              Aspiring chefs showcase their culinary skills to win the title and
+              grand prize money.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec11p.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">India's Best Dramebaaz</h2>
+            <h6 class="des">
+              A talent show for children where they are judged for their acting
+              capabilities.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec12p.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">India's Best Dancer</h2>
+            <h6 class="des">
+              Professional and amateur dancers showcase their talent in a series
+              of rounds to win the title.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec13p.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">India's Raw Star</h2>
+            <h6 class="des">
+              Yo Yo Honey Singh guides contestants to perform their own
+              compositions in this singing reality show.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/Rec14p.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">India's Got Talent</h2>
+            <h6 class="des">
+              Amateur performers present unique acts in order to win a huge
+              prize.
+            </h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!----------- Popular Shows ---->
+
+    <script src="main.js" async></script>
   </body>
 </html>
