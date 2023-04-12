@@ -1,0 +1,132 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fdcd9d;
+}
+.desk {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #07090d;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.desk button {
+  width: 150px;
+  height: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgb(48, 48, 48);
+  font-family: sans-serif;
+  background-color: #fdcd9d;
+  border-radius: 6px;
+  border: none;
+  transition: 0.5s ease;
+}
+.desk button:hover {
+  background-color: #8c3232;
+  color: #ffffff;
+  cursor: pointer;
+}
+.article {
+  position: relative;
+  width: 320px;
+  height: 500px;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 20px rgb(126, 126, 126);
+}
+.article:hover .desk {
+  height: 20%;
+}
+.img {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  justify-content: center;
+}
+img {
+  position: absolute;
+  top: -80px;
+  width: 120px;
+  height: auto;
+  object-fit: cover;
+}
+.wish {
+  position: absolute;
+  left: 315px;
+  top: 60px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0px 0px 10px rgb(202, 202, 202);
+}
+.activeWish {
+  transition: 0.5s ease;
+  background-color: rgb(255, 240, 240);
+}
+.inactiveWish {
+  transition: 0.5s ease;
+  background-color: none;
+}
+.wish img {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+  width: 30px;
+  opacity: 50%;
+}
+.wish img:hover {
+  transition: 0.5s ease;
+  opacity: 100%;
+  cursor: pointer;
+}
+.inactive {
+  transition: 0.5s ease;
+  display: none;
+}
+.active {
+  transition: 0.5s ease;
+  display: block;
+}
+.head {
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 600;
+  color: rgb(80, 80, 80);
+  font-family: sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
+}
+p {
+  width: 100%;
+  font-size: 1.2rem;
+  color: rgb(49, 49, 49);
+  font-family: "Segoe UI";
+  text-align: center;
+  margin-bottom: 40px;
+}
+.price {
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: rgb(87, 87, 87);
+  font-family: sans-serif;
+  text-align: center;
+}
