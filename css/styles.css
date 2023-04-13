@@ -1,0 +1,88 @@
+/*Utilizando variables dentro de tu prollecto*/
+:root {
+  --orange: #e77b77;
+  --lightOrange: #f1a3a0;
+  --veryLightOrange: #f5cdc5;
+  --gray: #d9d9f1;
+  --white: #fff;
+}
+* {
+  margin: o;
+  padding: 0;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: var(--orange);
+}
+h1 {
+  margin-top: 200px;
+  color: var(--white);
+  text-align: center;
+  font-size: 50px;
+}
+form {
+  width: 400px;
+  margin: 45px auto;
+  text-align: center;
+}
+form input[type="text"] {
+  width: 310px;
+  background-color: var(--orange);
+  color: var(--white);
+  border-style: none; /*hacemos nulo el borde que viene por defecto*/
+  font-size: 1.5em;
+}
+form input[type="text"]::placeholder {
+  /*es el texto que se muestra en el displai de tareas*/
+  /*selecciona el text dentro del input*/
+  color: var(--veryLightOrange); /*cambiar el color del las letras*/
+}
+form input[type="text"]::placeholder {
+  /*es el texto que se muestra en el displai de tareas*/
+  /*selecciona el text dentro del input*/
+  color: var(--veryLightOrange); /*cambiar el color del las letras*/
+}
+form input[type="submit"] {
+  font-size: 2em;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /*50 para que se haga un circulo*/
+  border-style: none; /*hacemos nulo el borde por defecto*/
+  color: var(--orange);
+}
+form input[type="submit"]:hover {
+  background-color: var(--veryLightOrange);
+  cursor: pointer;
+  color: var(--white);
+}
+.list-container {
+  width: 400px;
+  margin: 0 auto;
+}
+.task-container {
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  padding: 16px;
+  border-radius: 4px;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: var(--gray);
+}
+.closeBtn {
+  width: 35px;
+  height: 35px;
+}
+.closeBtn:hover {
+  cursor: pointer;
+}
+.tareaTerminada:hover {
+  cursor: pointer;
+}
+footer {
+  height: 20px;
+  width: 100vh;
+  margin-top: 70%;
+  background-color: var(--veryLightOrange);
+}
