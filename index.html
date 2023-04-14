@@ -1,12 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Todo App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-qITdRfHlQoGzBbYIyV7eK3uiXhtp/V1e5ppf0G0cuxOxLjV7ICahMT0Yz5M5JtKwm9gZlTKnZ/XCwvNl+yW8FA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <h1>Todo App</h1>
+      <div class="form-container">
+        <form>
+          <input
+            type="text"
+            id="task-input"
+            placeholder="Enter a new task..."
+          />
+          <button type="button" id="add-task-btn">Add Task</button>
+        </form>
+      </div>
+      <div class="task-container">
+        <div class="task-header">
+          <button type="button" id="all-tasks-btn">All Tasks</button>
+          <button type="button" id="not-completed-btn">Not Completed</button>
+        </div>
+        <ul id="task-list"></ul>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
   </body>
 </html>
