@@ -1,12 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Google Drive</title>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="navbar">
+      <nav class="nav-extended white">
+        <div class="nav-wrapper white">
+          <ul>
+            <li>
+              <a href="#!" class="title grey-text text-darken-1"
+                >Google Drive</a
+              >
+            </li>
+          </ul>
+          <div class="search-wrapper">
+            <i class="material-icons">search</i>
+            <input type="search" name="Search" placeholder="Search Drive" />
+          </div>
+          <ul class="right">
+            <li>
+              <a href="#!"
+                ><i class="material-icons grey-text text-darken-1">apps</i></a
+              >
+            </li>
+            <li>
+              <a href="#!"
+                ><i class="material-icons grey-text text-darken-1"
+                  >notifications</i
+                ></a
+              >
+            </li>
+            <li>
+              <a href="#!"
+                ><img
+                  src="images/Google-Drive-logo.png"
+                  alt="profile-pic"
+                  class="circle"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <!--end navbar-->
+
+        <div class="nav-wrapper nav-2">
+          <ul>
+            <li>
+              <a
+                href="#!"
+                class="waves-effect waves-light btn btn-flat white-text"
+                >New</a
+              >
+            </li>
+          </ul>
+
+          <ul class="right">
+            <li>
+              <a href="#!"
+                ><i class="material-icons grey-text text-darken-1">info</i
+                >Info</a
+              >
+            </li>
+            <li>
+              <a href="#!"
+                ><i class="material-icons grey-text text-darken-1">info</i
+                >Info</a
+              >
+            </li>
+            <li>
+              <a href="#!"
+                ><i class="material-icons grey-text text-darken-1">settings</i
+                >Settings</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!--end nav-2-->
+
+    <ul class="side-nav responsive floating transparent z-depth-0">
+      <li class="active">
+        <a href="#"
+          ><i class="material-icons blue-text text-darken-1">dashboard</i> My
+          Drive</a
+        >
+      </li>
+      <li>
+        <a href="#"><i class="material-icons">devices</i> Computers</a>
+      </li>
+      <li>
+        <a href="#"><i class="material-icons">people</i> Shared with me</a>
+      </li>
+      <li>
+        <a href="#"><i class="material-icons">access_time</i> Recent</a>
+      </li>
+      <li>
+        <a href="#"><i class="material-icons">camera</i> Google Photos</a>
+      </li>
+      <li>
+        <a href="#"><i class="material-icons">star</i> Starred</a>
+      </li>
+      <li>
+        <a href="#"><i class="material-icons">delete</i> Trash</a>
+      </li>
+      <li>
+        <div class="divider"></div>
+      </li>
+      <li>
+        <a href="#"><i class="material-icons">cloud</i> Backup</a>
+      </li>
+      <li>
+        <div class="divider"></div>
+      </li>
+      <li>
+        <a href="#"><i class="material-icons">storage</i> Upgrade Storage</a>
+      </li>
+    </ul>
+    <!--end side-nav-->
+
+    <div class="main responsive">
+      <div class="container-fluid responsive">
+        <p class="subheader">Folders</p>
+        <div class="card-panel folder">
+          <i class="material-icons left">folder</i>Folder
+        </div>
+        <div class="card-panel folder">
+          <i class="material-icons left">folder</i>Folder
+        </div>
+        <div class="card-panel folder">
+          <i class="material-icons left">folder</i>Folder
+        </div>
+        <div class="card-panel folder">
+          <i class="material-icons left">folder</i>Folder
+        </div>
+        <div class="card-panel folder">
+          <i class="material-icons left">folder</i>Folder
+        </div>
+      </div>
+    </div>
+    <!--end main-->
+
+    <footer class="page-footer grey lighten-2">
+      <div class="row grey lighten-2">
+        <div class="col s8 center">
+          <h5 class="footer-heading black-text text-darken-4">Google Drive</h5>
+          <p class="z-depth-0 grey-text text-darken-2">
+            Your own personal online drive. Easy and secure access to your
+            content
+          </p>
+        </div>
+        <div class="col s3">
+          <h5 class="black-text text-darken-4">Useful Links</h5>
+          <ul>
+            <li><a class="grey-text text-darken-3" href="#!">Contacts</a></li>
+            <li>
+              <a class="grey-text text-darken-3" href="#!">Privacy Policy</a>
+            </li>
+            <li>
+              <a class="grey-text text-darken-3" href="#!">Terms of Service</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--end row-->
+
+      <div class="footer-copyright grey-text text-darken-2 grey lighten-4">
+        <div class="container center">
+          Copyright © 2023. All Rights Reserved
+        </div>
+      </div>
+      <!--end footer-copyright-->
+    </footer>
+    <!--end page-footer-->
   </body>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </html>
