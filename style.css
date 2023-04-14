@@ -1,0 +1,142 @@
+/* Default styles for all devices */
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #181818;
+  color: #fff;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-content: conter;
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+#task-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px 0 0 5px;
+  border: 2px solid #ccc;
+}
+
+#add-task-btn {
+  background-color: #7289da;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.task-container {
+  margin-top: 50px;
+}
+
+.task-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #7289da;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+button.active {
+  background-color: #fff;
+  color: #7289da;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+li.completed {
+  background-color: rgb(100, 100, 100);
+  color: #fff;
+}
+
+li.completed .task-text {
+  color: #fff;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 18px;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+}
+
+.task-actions button {
+  margin-left: 10px;
+  background-color: #7289da;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+.task-actions button:hover {
+  background-color: #7289da;
+  color: #fff;
+}
+
+/* Styles for devices with width less than or equal to 600px */
+@media screen and (max-width: 600px) {
+  .container {
+    /* width: 90%; Reduce the width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+
+  #task-input {
+    font-size: 16px; /* Reduce the font size of the input */
+  }
+
+  #add-task-btn {
+    font-size: 16px; /* Reduce the font size of the button */
+  }
+
+  li {
+    font-size: 16px; /* Reduce the font size of the list items */
+  }
+}
