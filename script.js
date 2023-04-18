@@ -43,3 +43,52 @@ console.log(lista);
 
 let numbers = [7, 5, 6, 3, 8, 9, 2, 1, 4];
 console.log(numbers.sort());
+
+let pessoa = {
+  nome: "jefferson",
+  pai: "José",
+  mae: "Flavia"
+};
+
+pessoa.irmao = "felipe";
+
+delete pessoa.nome;
+
+console.log(pessoa);
+
+let cadastro = [
+  {
+    nome: "jefferson",
+    idade: 17,
+    telefone: 988417657,
+    amigos: ["Juan", "Isaac", "Valeria", "Felipe"]
+  },
+
+  {
+    nome: "kaio",
+    idade: 18,
+    telefone: 988417659,
+    amigos: ["carlos", "jean", "filipe", "anderson"]
+  },
+
+  {
+    nome: "silva",
+    idade: 19,
+    telefone: 988417658,
+    amigos: ["anselmo", "kauan", "jonathan", "gustavo"]
+  },
+  {
+    nome: "vieira",
+    idade: 20,
+    telefone: 988417656,
+    amigos: ["mateus", "joão", "joy", "leandro"]
+  }
+];
+
+console.log(cadastro[0].amigos[2]);
+
+console.log(cadastro[1].amigos[0]);
+
+console.log(cadastro[2].amigos[3]);
+
+console.log(cadastro[3].amigos[1]);
