@@ -1,0 +1,148 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2eae2;
+}
+.container {
+  margin: 2.8rem 1.6rem;
+  border-radius: 1rem;
+  background-color: white;
+}
+
+.image {
+  max-width: 100%;
+  border-radius: 1rem 1rem 0 0;
+}
+.image-two {
+  display: none;
+}
+
+.content {
+  font-family: "Fraunces", sans-serif;
+  margin: auto 2.4rem;
+}
+.title {
+  font-family: "Montserrat", sans-serif;
+  color: #6c7289;
+  letter-spacing: 0.5rem;
+  margin: 1.2rem auto;
+}
+
+.description {
+  color: #1c232b;
+  font-size: 3.2rem;
+  line-height: 3.2rem;
+  margin-bottom: 1.6rem;
+  font-weight: 700;
+}
+
+.main-text {
+  font-size: 1.4rem;
+  line-height: 2.3rem;
+  color: #6c7289;
+  margin-bottom: 2.4rem;
+}
+
+.prices {
+  display: flex;
+  align-items: center;
+  gap: 1.9rem;
+  margin-bottom: 2rem;
+}
+
+.new-price {
+  color: #3d8168;
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.old-price {
+  color: #6c7289;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-decoration: line-through;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 29.5rem;
+  height: 4.8rem;
+  margin: auto;
+  background-color: #3d8168;
+  border: none;
+  color: White;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 1.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.button img {
+  margin-right: 1.216rem;
+}
+
+button:hover {
+  background-color: hsl(158, 36%, 23%);
+}
+
+/* @media only screen and (min-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .image {
+    width: 100%;
+
+    object-fit: cover;
+  }
+} */
+@media only screen and (min-width: 768px) {
+  .container {
+    margin: 17.5rem 42rem;
+  }
+
+  .image {
+    display: none;
+  }
+
+  .image-two {
+    display: block;
+    object-fit: cover;
+    width: 29.7rem;
+    border-radius: 1.4rem 0 0 1.4rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+  .description {
+    width: 23.6rem;
+    line-height: 3.3.2rem;
+  }
+  .main-text {
+    height: 9.2rem;
+    font-size: 1.4rem;
+    width: 23.7rem;
+  }
+  .button {
+    width: 23.6rem;
+  }
+
+  .new-price {
+    width: 12.7rem;
+  }
+}
