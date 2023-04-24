@@ -1,0 +1,204 @@
+html {
+  scroll-behavior: smooth;
+}
+preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add smooth scrolling to all links */
+a {
+  scroll-behavior: smooth;
+  color: black;
+  text-decoration: none;
+}
+
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-timing-function: ease-out;
+}
+/* Add a smooth transition for the box-shadow effect */
+.card-custom {
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+/* Animate.css class for a more subtle fade-in effect */
+.animate__fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode .navbar-custom {
+  background-color: #121212;
+}
+.dark-mode .navbar-custom .nav-link {
+  color: #ffffff;
+}
+
+.dark-mode .navbar-custom .nav-link:hover {
+  color: #64cea5;
+}
+
+.logo-dark {
+  display: none;
+}
+
+.dark-mode .logo {
+  display: none;
+}
+
+.dark-mode .logo-dark {
+  display: inline-block;
+}
+
+.dark-mode .footer-custom {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode .container-custom {
+  background-color: #3c3c3c;
+}
+
+.dark-mode .btn-custom {
+  background-color: #64cea5;
+  color: #121212;
+}
+
+.dark-mode .footer-custom a {
+  color: #ffffff;
+}
+
+.dark-mode .footer-custom a:hover {
+  color: #64cea5;
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo {
+    color: white;
+  }
+
+  a {
+    color: white;
+  }
+}
+
+.dark-mode-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode-btn:hover {
+  background-color: #444;
+}
+
+.dark-mode-btn.dark {
+  background-color: #ddd;
+  color: #333;
+}
+
+.dark-mode-btn.dark:hover {
+  background-color: #ccc;
+}
+
+.logo {
+  color: black;
+}
+
+:root {
+  --primary-color: #0a0a0a;
+  --secondary-color: #5d3bba;
+  --success-color: #64cea5;
+  --danger-color: #afb0c0;
+  --white-color: #ffffff;
+  --hover-color: #64cea5;
+}
+.rounded-container {
+  border-radius: 15px;
+}
+
+.navbar-custom {
+  background-color: var(--white-color);
+}
+
+.navbar-custom .nav-link {
+  color: var(--primary-color);
+}
+
+.navbar-custom .nav-link:hover {
+  color: var(--success-color);
+}
+
+.header-custom {
+  background-color: var(--success-color);
+  padding: 4rem 0;
+}
+.container-custom {
+  background-color: var(--secondary-color);
+}
+.btn-custom {
+  background-color: var(--success-color);
+  color: var(--primary-color);
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: var(--hover-color);
+  color: var(--primary-color);
+}
+
+.footer-custom {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+}
+
+.footer-custom a {
+  color: var(--primary-color);
+}
+
+.footer-custom a:hover {
+  color: var(--success-color);
+}
+
+.rounded-avatar {
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+.card-custom {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card-custom:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  color: var(--white-color);
+}
