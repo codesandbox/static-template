@@ -1,12 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG Round Progress Bar Loader</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+
+        border: 1px solid red;
+        background-color: #f0f0f0;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      .loader {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        margin: auto;
+      }
+
+      .progress-ring__background {
+        stroke: #dfe2e5;
+      }
+
+      .progress-ring__value {
+        stroke-dasharray: 340;
+        stroke-dashoffset: 340;
+        stroke-linecap: round;
+        stroke: #007bff;
+        transform-origin: center;
+        animation: rotate 5s linear infinite, colorChange 5s linear infinite;
+      }
+      .logo {
+        animation: animloader 0.9s infinite cubic-bezier(0.075, 0.82, 0.165, 1)
+          both;
+      }
+      .svg-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 36px;
+        height: 31px;
+      }
+
+      svg {
+        overflow: visible;
+      }
+
+      .fact-display {
+        font-family: "Lilita One", cursive;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+        color: #8b8e91;
+        margin-top: 15px;
+      }
+
+      @keyframes animloader {
+        0% {
+          transform: translateY(-15px);
+        }
+        50% {
+          transform: translateY(0px);
+        }
+        100% {
+          transform: translateY(-15px);
+        }
+      }
+
+      @keyframes rotate {
+        0% {
+          stroke-dashoffset: 340;
+          transform: rotate(-90deg);
+        }
+        100% {
+          stroke-dashoffset: 0;
+          transform: rotate(270deg);
+        }
+      }
+
+      @keyframes colorChange {
+        0% {
+          stroke: #007bff;
+        }
+        10% {
+          stroke: #28a745;
+        }
+        20% {
+          stroke: #ffc107;
+        }
+        30% {
+          stroke: #dc3545;
+        }
+        40% {
+          stroke: #17a2b8;
+        }
+        50% {
+          stroke: #6610f2;
+        }
+        60% {
+          stroke: #fd7e14;
+        }
+        70% {
+          stroke: #6c757d;
+        }
+        80% {
+          stroke: #e83e8c;
+        }
+        90% {
+          stroke: #20c997;
+        }
+        100% {
+          stroke: #007bff;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="loader-main-outer">
+      <div class="loader">
+        <svg class="progress-ring" width="120" height="120">
+          <circle
+            class="progress-ring__background"
+            stroke-width="6"
+            fill="transparent"
+            r="54"
+            cx="60"
+            cy="60"
+          />
+          <circle
+            class="progress-ring__value"
+            stroke-width="6"
+            fill="transparent"
+            r="54"
+            cx="60"
+            cy="60"
+          />
+        </svg>
+        <div class="svg-logo">
+          <svg
+            width="36"
+            height="31"
+            viewBox="0 0 36 31"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.6434 13.2444L11.5344 7.12488C11.4722 7.06265 11.3715 7.06265 11.3094 7.12488L0.199876 18.2536C0.137754 18.3158 0.137756 18.4167 0.199877 18.4789L6.3089 24.5985C6.37102 24.6607 6.47174 24.6607 6.53386 24.5985L17.6434 13.4698C17.7055 13.4076 17.7055 13.3067 17.6434 13.2444Z"
+              fill="#2F80ED"
+            />
+            <path
+              d="M29.7159 24.567L35.7627 18.5098C35.842 18.4304 35.842 18.3016 35.7627 18.2221L24.7154 7.15579C24.6361 7.07635 24.5075 7.07635 24.4282 7.15579L18.3814 13.213C18.3021 13.2925 18.3021 13.4213 18.3814 13.5007L29.4287 24.567C29.508 24.6465 29.6365 24.6465 29.7159 24.567Z"
+              fill="#2F80ED"
+            />
+
+            <path
+              d="M24.0576 24.1774L18.0913 18.2008C18.0409 18.1503 17.9591 18.1503 17.9087 18.2008L11.9424 24.1774C11.892 24.2279 11.892 24.3098 11.9424 24.3603L17.9087 30.3368C17.9591 30.3874 18.0409 30.3874 18.0913 30.3368L24.0576 24.3603C24.108 24.3098 24.108 24.2279 24.0576 24.1774Z"
+              fill="#012555"
+            />
+            <path
+              class="logo"
+              d="M24.0576 6.67446L18.0913 0.697904C18.0409 0.647393 17.9591 0.647393 17.9087 0.697904L11.9424 6.67446C11.892 6.72497 11.892 6.80687 11.9424 6.85738L17.9087 12.8339C17.9591 12.8844 18.0409 12.8844 18.0913 12.8339L24.0576 6.85738C24.108 6.80687 24.108 6.72497 24.0576 6.67446Z"
+              fill="#012555"
+            />
+          </svg>
+        </div>
+      </div>
+      <p id="fact-display" class="fact-display"></p>
+    </div>
+    <script>
+      const programmingFacts = [
+        "The first computer programmer was a woman named Ada Lovelace, who wrote the world's first algorithm in 1843.",
+        "The first computer virus was created in 1986 and was called the 'Brain' virus.",
+        "The world's first website was launched in 1991 by Tim Berners-Lee, the inventor of the World Wide Web.",
+        "The first programming language was Fortran, created in 1957.",
+        "The term 'bug' was first used by computer scientist Grace Hopper in 1947 to describe a malfunction in a computer caused by a moth.",
+        "The average salary for a software developer in the United States is around $106,000 per year.",
+        "The first computer game, called 'Spacewar!', was created in 1962 by MIT students.",
+        "The world's first computer, called the 'Electronic Numerical Integrator and Computer' (ENIAC), weighed 30 tons and was the size of a room.",
+        "The first Apple computer, the Apple I, was sold for $666.66 in 1976.",
+        "The programming language Python was named after the comedy group Monty Python, not the reptile.",
+        "In the early days of computing, programmers had to manually input machine code into computers using punch cards.",
+        "In Japan, there is a programming language called 'Brainfuck' which is known for its extreme minimalism and difficulty to understand.",
+        "The first high-level programming language, COBOL, was designed primarily by a woman, Grace Hopper.",
+        "The first computer mouse was invented by Douglas Engelbart in 1963 and was made out of wood.",
+        "The first email was sent by Ray Tomlinson in 1971, and the @ symbol was used to separate the user and the computer name.",
+        "The first version of the Windows operating system was released by Microsoft in 1985.",
+        "The first social media site, SixDegrees.com, was launched in 1997.",
+        "Alan Turing, a British mathematician, is considered the father of computer science and artificial intelligence.",
+        "The first search engine, called 'Archie', was created in 1990 by Alan Emtage.",
+        "Over 4 billion people, more than half of the world's population, use the internet.",
+        "Facebook was founded by Mark Zuckerberg in 2004, originally as a social network for Harvard students.",
+        "The first smartphone, the IBM Simon, was released in 1994 and had a touchscreen and email capabilities.",
+        "The first video uploaded to YouTube was titled 'Me at the zoo' and was uploaded by co-founder Jawed Karim in 2005.",
+        "The first computer password was developed in 1961 at MIT for use on the Compatible Time-Sharing System (CTSS).",
+        "Google was founded by Larry Page and Sergey Brin while they were students at Stanford University in 1998.",
+        "The first ever domain name registered was Symbolics.com on March 15, 1985.",
+        "The first version of the Linux operating system was released by Linus Torvalds in 1991.",
+        "The first successful message sent over ARPANET, the precursor to the internet, was 'lo', as the system crashed before the full message 'login' could be sent.",
+        "The first commercially available cell phone was the Motorola DynaTAC 8000X, released in 1983 and priced at $3,995.",
+        "Napster, the first widely-used file-sharing platform, was launched in 1999 by Shawn Fanning and Sean Parker.",
+        "The first version of the popular web browser, Mozilla Firefox, was released in 2002 as 'Phoenix' before changing its name several times due to trademark disputes."
+      ];
+
+      function getRandomFact() {
+        const randomIndex = Math.floor(Math.random() * programmingFacts.length);
+        return programmingFacts[randomIndex];
+      }
+
+      function displayRandomFact() {
+        const factDisplay = document.getElementById("fact-display");
+        factDisplay.innerText = getRandomFact();
+      }
+
+      // Display the first random fact immediately
+      displayRandomFact();
+
+      // Update the displayed fact every 3 seconds
+      // setInterval(displayRandomFact, 3000);
+    </script>
   </body>
 </html>
