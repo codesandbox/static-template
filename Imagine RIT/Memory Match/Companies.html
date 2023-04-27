@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<head>
+  <meta charset="UTF-8">
+
+  <title>Company Memory Game</title>
+  
+  <link rel="stylesheet" href="./Memory.css">
+</head>
+<body>
+    <section class="memory-game">
+  <div class="memory-card" data-framework="microsoft">
+    <img class="front-face" src="Microsoft.png" alt="microsoft">
+    <img class="back-face" src="btp transparent.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="microsoft">
+    <img class="front-face" src="Microsoft.png" alt="microsoft">
+    <img class="back-face" src="btp transparent.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="apple">
+    <img class="front-face" src="apple.png" alt="apple">
+    <img class="back-face" src="btp transparent.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="apple">
+    <img class="front-face" src="apple.png" alt="apple">
+    <img class="back-face" src="btp transparent.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="amazon">
+    <img class="front-face" src="amazon.png" alt="amazon">
+    <img class="back-face" src="btp transparent.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="amazon">
+    <img class="front-face" src="amazon.png" alt="amazon">
+    <img class="back-face" src="btp transparent.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="walmart">
+    <img class="front-face" src="walmart.png" alt="walmart">
+    <img class="back-face" src="btp transparent.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="walmart">
+    <img class="front-face" src="walmart.png" alt="walmart">
+    <img class="back-face" src="btp transparent.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="tesla">
+    <img class="front-face" src="tesla.png" alt="tesla">
+    <img class="back-face" src="btp transparent.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="tesla">
+    <img class="front-face" src="tesla.png" alt="tesla">
+    <img class="back-face" src="btp transparent.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="disney">
+    <img class="front-face" src="disney.jpg" alt="disney">
+    <img class="back-face" src="btp transparent.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="disney">
+    <img class="front-face" src="disney.jpg" alt="disney">
+    <img class="back-face" src="btp transparent.png" alt="Memory Card">
+  </div>
+</section>
+<script>
+  const cards = document.querySelectorAll('.memory-card');
+  const totalPairs = 6;
+  let hasFlippedCard = false;
+  let lockBoard = false;
+  let firstCard, secondCard;
+  let pairsMatched = 0;
+
+  function flipCard() {
+    if (lockBoard) return;
+    if (this === firstCard) return;
+    this.classList.add('flip');
+    if (!hasFlippedCard) {
+      hasFlippedCard = true;
+      firstCard = this;
+      return;
+    }
+    secondCard = this;
+    lockBoard = true;
+    checkForMatch();
+  }
+
+  function checkForMatch() {
+    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+    isMatch ? disableCards() : unflipCards();
+  }
+
+  function disableCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+    pairsMatched++;
+    resetBoard();
+    if (pairsMatched === totalPairs) {
+      setTimeout(() => {
+        alert('Congratulations, you have completed the game!');
+      }, 500);
+    }
+  }
+
+  function unflipCards() {
+    setTimeout(() => {
+      firstCard.classList.remove('flip');
+      secondCard.classList.remove('flip');
+      resetBoard();
+    }, 1500);
+  }
+
+  function resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+  }
+
+  (function shuffle() {
+    cards.forEach(card => {
+      let randomPos = Math.floor(Math.random() * 12);
+      card.style.order = randomPos;
+    });
+  })();
+
+  cards.forEach(card => card.addEventListener('click', flipCard));
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BTP Imagine Home</title>
+    <link rel="stylesheet" href="C:\Users\twini\Downloads\Imagine RIT\Home\Home.css">
+  </head>
+  <body>
+    <header>
+      <h1>Business And Technology Professionals
+        <br>Memory Match Games</h1>
+      <nav>
+        <ul>
+          <li><a href="C:\Users\twini\Downloads\Imagine RIT\Memory Match - yes\Companies.html">Company Match</a></li>
+          <li><a href="C:\Users\twini\Downloads\Imagine RIT\Memory Match - yes\Characters.html">Character Match</a></li>
+          <li><a href="#">Third Game</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Welcome to Business and Technology Professionals' ImagineRIT Exhibit!</h2>
+      <p>Choose a memory match game above!</p>
+      <button id="Random">Random Memory Match Game</button>
+    </main>
+    <script>
+        // Define an array of links
+const filePaths = [
+  "C:/Users/twini/Downloads/Imagine RIT/Memory Match - yes/Characters.html",
+  "C:/Users/twini/Downloads/Imagine RIT/Memory Match - yes/Companies.html",
+  
+];
+
+// Get a reference to the button element
+const button = document.getElementById("Random");
+
+// Add a click event listener to the button
+button.addEventListener('click', () => {
+  // Get a random index from the links array
+  const randomIndex = Math.floor(Math.random() * filePaths.length);
+  
+  // Get the link at the random index
+  const randomfilePath = filePaths[randomIndex];
+  
+  // Navigate to the random link
+  window.location.href = randomfilePath;
+});
+
+    </script>
+
+  </body>
+</html>
