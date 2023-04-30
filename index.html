@@ -1,12 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Котодім</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header class="page-header container">
+      <a href="./" class="site-logo"
+        ><img
+          src="./img/cat-logo.svg"
+          alt="логотип сайту"
+          width="24"
+          height="24"
+        />Котодім</a
+      >
+      <nav class="page-nav">
+        <a class="page-nav__link" href="">Обрати котика</a>
+        <a class="page-nav__link" href="">Задонатити котикам</a>
+        <a class="page-nav__link" href="">Контакти</a>
+      </nav>
+    </header>
+    <main>
+      <div class="hero container">
+        <section class="greetings">
+          <h1 class="greetings-title">Привіт, людино</h1>
+          <p class="greetings-text">
+            Бракує в житті шовкових лапок, м’якенького пухнастого животика,
+            теплого муррркотіння й веселого розгардіяшу?<br />
+            Візьми собі котика.
+          </p>
+        </section>
+      </div>
+      <section class="section container">
+        <!--  -->
+      </section>
+      <section class="section container">
+        <h2 class="section-title">
+          Ці друзяки готові приймати твою любов і піклування
+        </h2>
+        <ul class="cat-list">
+          <li class="cat-list__item">
+            <img src="./img/cat-1.jpg" alt="" />
+            <div class="cat-content__wrapper">
+              <h3 class="cat-content__title">Барбарис</h3>
+              <p class="cat-content__text">
+                Хижий для ворогів, ласкавий та м’якесенький до своїх.
+              </p>
+            </div>
+          </li>
+          <li class="cat-list__item">
+            <img src="./img/cat-2.jpg" alt="" />
+            <div class="cat-content__wrapper">
+              <h3 class="cat-content__title">Мишка</h3>
+              <p class="cat-content__text">
+                Киця з роду котів-талісманів. Несе удачу та затишок в дім.
+              </p>
+            </div>
+          </li>
+          <li class="cat-list__item">
+            <img src="./img/cat-3.jpg" alt="" />
+            <div class="cat-content__wrapper">
+              <h3 class="cat-content__title">Капітан</h3>
+              <p class="cat-content__text">
+                Всюди головний. Підкорить тебе, але ти будеш щасливий.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="section container">
+        <h2 class="section-title">
+          Котики, які вже знайшли сім’ю
+        </h2>
+        <p class="section-text">
+          Ти тільки поглянь, скільки ніжності!<br />
+          На місці цих задоволених людей можеш бути ти.
+        </p>
+        <ul class="gallery">
+          <li class="gallery-item"><img src="./img/1.jpg" alt="" /></li>
+          <li class="gallery-item"><img src="./img/2.jpg" alt="" /></li>
+          <li class="gallery-item"><img src="./img/3.jpg" alt="" /></li>
+          <li class="gallery-item"><img src="./img/4.jpg" alt="" /></li>
+          <li class="gallery-item"><img src="./img/5.jpg" alt="" /></li>
+          <li class="gallery-item"><img src="./img/6.jpg" alt="" /></li>
+          <li class="gallery-item"><img src="./img/7.jpg" alt="" /></li>
+          <li class="gallery-item"><img src="./img/8.jpg" alt="" /></li>
+          <li class="gallery-item"><img src="./img/9.jpg" alt="" /></li>
+          <li class="gallery-item"><img src="./img/10.jpg" alt="" /></li>
+          <li class="gallery-item"><img src="./img/11.jpg" alt="" /></li>
+          <li class="gallery-item"><img src="./img/12.jpg" alt="" /></li>
+        </ul>
+      </section>
+    </main>
+    <footer class="section page-footer">
+      <div class="container footer-container">
+        <div class="slogan-wrapper">
+          <img
+            src="./img/cat-logo.svg"
+            alt="логотип сайту"
+            width="24"
+            height="24"
+          />
+          <p class="footer-text">
+            Котики — то щастя.<br />
+            Забирай, люби й ставай щасливішим.
+          </p>
+        </div>
+        <section class="social">
+          <p class="social-text">Соцмережі</p>
+          <ul class="social-links">
+            <li class="social-links__item">
+              <a class="social-links__link" href="">
+                <svg class="social-links__img">
+                  <use href="./img/icons.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-links__item">
+              <a href="" class="social-links__link">
+                <svg class="social-links__img">
+                  <use href="./img/icons.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-links__item">
+              <a href="" class="social-links__link">
+                <svg class="social-links__img">
+                  <use href="./img/icons.svg#icon-youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-links__item">
+              <a href="" class="social-links__link">
+                <svg class="social-links__img">
+                  <use href="./img/icons.svg#icon-tiktok"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </footer>
   </body>
 </html>
