@@ -1,1 +1,1 @@
-![Primeng](primeng.png);
+![Primeng](/primeng.png);
