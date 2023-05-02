@@ -1,12 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      const Child = () => {
+        console.log("   Child render start");
+        const [text, setText] = React.useState(() => {
+          console.log("   Child useState");
+          return "";
+        });
+
+        // useEffect는 render가 끝난 뒤 실행
+        // useEffect도 Child의 useEffect가 먼저 실행
+        React.useEffect(() => {
+          console.log("   Child useEffect, empty deps");
+        });
+
+        React.useEffect(() => {
+          console.log("   Child useEffect, no deps");
+        }, []);
+
+        React.useEffect(() => {
+          console.log("   Child useEffect, [text]");
+        }, [text]);
+
+        function handleChange(event) {
+          setText(event.target.value);
+        }
+
+        const element = (
+          <>
+            <input onChange={handleChange} />
+            <p>{text}</p>
+          </>
+        );
+        console.log("   Child render end");
+        return element;
+      };
+
+      // child안의 useEffect까지 완료가된 후 App이 동작
+      const App = () => {
+        console.log("App render start");
+        const [show, setShow] = React.useState(() => {
+          console.log("App useState");
+          return false;
+        });
+
+        // 선언 위치에 따라서 호출의 순서가 바뀔 수 있다.
+        React.useEffect(() => {
+          console.log("App useEffect, no deps");
+          return () => {
+            console.log("App useEffect [CleanUp], no deps");
+          };
+        });
+
+        React.useEffect(() => {
+          console.log("App useEffect, empty deps");
+          return () => {
+            console.log("App useEffect [CleanUp], empty deps");
+          };
+        }, []);
+
+        React.useEffect(() => {
+          console.log("App useEffect, [show]");
+          return () => {
+            console.log("App useEffect [CleanUp], [show]");
+          };
+        }, [show]);
+
+        // useState로 만들어진 set함수는 처음부터 이전값이 들어온다(prev 주입 가능)
+        function handleClick() {
+          setShow((prev) => !prev);
+        }
+
+        console.log("App render end");
+
+        return (
+          <>
+            <button onClick={handleClick}>Search</button>
+            {show ? <Child /> : null}
+          </>
+        );
+      };
+
+      ReactDOM.render(<App />, rootElement);
+    </script>
   </body>
 </html>
