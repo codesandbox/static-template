@@ -1,0 +1,78 @@
+:root {
+  --ff-primary: "Calibri", sans-serif;
+  --bg-primary: rgb(143, 190, 48);
+  --bg-accent: rgb(203, 226, 162);
+  --bg-btn: rgb(197, 195, 195);
+  --text-info: rgb(40, 165, 123);
+  --text-btn: gray;
+  --fs-small: 12px;
+  --question-border-radius: 10px;
+}
+
+.qa-container {
+  font-family: var(--ff-primary);
+  font-style: normal;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.question-columns {
+  display: grid;
+}
+
+.question-no {
+  background-color: var(--bg-primary);
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 1rem;
+}
+
+.question {
+  padding: 1px 1px 1px 5px;
+  font-size: var(--fs-small);
+  background-color: var(--bg-accent);
+  border-bottom-left-radius: var(--question-border-radius);
+  border-bottom-right-radius: var(--question-border-radius);
+}
+
+.question-info {
+  font-size: var(--fs-small);
+  font-weight: bold;
+  padding-left: 5px;
+  color: var(--text-info);
+  font-style: italic;
+}
+
+.answer-card {
+  background-color: var(--bg-accent);
+  border-radius: 5px;
+}
+
+.submit-btn .btn-secondary {
+  background: var(--bg-btn);
+  color: var(--text-btn);
+  border-radius: 5px;
+}
+
+.submit-btn .btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:focus,
+.btn-secondary.active {
+  background: var(--bg-btn);
+  color: var(--text-btn);
+}
+
+@media (min-width: 62em) {
+  .question-columns {
+    width: 100%;
+    grid-template-columns: min-content 1fr;
+    gap: 1rem;
+  }
+  .question-no {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom-left-radius: var(--question-border-radius);
+    border-bottom-right-radius: var(--question-border-radius);
+  }
+}
