@@ -1,12 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.23.0/dist/phaser-arcade-physics.min.js"></script>
+    <script src="./Scene.js"></script>
+    <!-- <script src="./Scene2.js"></script> -->
+    <script src="./Player.js"></script>
+    <script src="./Player2.js"></script>
+    <script src="./player2die.js"></script>
+    <script src="./player3die.js"></script>
+    <script src="./player4die.js"></script>
+    <!--     <script src="./Star.js"></script> -->
+    <!-- <script src="./Bomb.js"></script> -->
+    <script src="./Skill.js"></script>
+    <script src="./Skill2.js"></script>
+    <script src="./Skill3.js"></script>
+    <script src="./Skill4.js"></script>
+    <script src="./Skill5.js"></script>
+    <script src="./Skill6.js"></script>
+
+    <script src="./Stair1.js"></script>
+    <script src="./Stair2.js"></script>
+    <script src="./Stair3.js"></script>
+    <script src="./Stair4.js"></script>
+    <script src="./Bomb.js"></script>
+    <script src="./Bomb2.js"></script>
+    <script src="./Bomb3.js"></script>
+    <script src="./Player3.js"></script>
+    <script src="./Player4.js"></script>
+    <script src="./hp1.js"></script>
+    <script src="./hp2.js"></script>
+    <script src="./hp3.js"></script>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <script>
+      var config = {
+        type: Phaser.AUTO,
+        width: 956,
+        height: 600,
+        physics: {
+          default: "arcade",
+          arcade: {
+            // gravity: { y: 300 },
+            debug: false
+          }
+        },
+        // var newScene= scene.scene.add(a, Scene, true, Scene.settings.data);
+        //  if (scene.scene.remove()){
+        scene: [first, second, SceneA, SceneB, SceneC]
+        // new SceneB() new SceneC()
+
+        //  }
+
+        // scene: new Scene()
+      };
+      var game = new Phaser.Game(config);
+    </script>
   </body>
 </html>
