@@ -1,0 +1,249 @@
+* {
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  font-family: mulish, sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+header {
+  display: grid;
+  align-self: center;
+  justify-self: center;
+  background: rgba(249, 244, 251, 1);
+
+  width: 100%;
+}
+
+header .astro {
+  justify-self: center;
+}
+
+header .astro img {
+  width: 36.4rem;
+  height: 37rem;
+  transition: scale 3s;
+}
+
+header .astro img:hover {
+  scale: 1.2;
+}
+
+header .head {
+  align-self: center;
+  justify-self: center;
+  margin: 1.7rem 0 3.5rem;
+}
+
+header h1 {
+  font-size: 3.2rem;
+  color: #b52184;
+}
+
+header p {
+  font-size: 2rem;
+  color: #312d64;
+}
+
+header .arrow-down {
+  align-self: center;
+  justify-self: center;
+  margin-bottom: 9.3rem;
+  cursor: pointer;
+}
+
+header .arrow-down img {
+  width: 5.9rem;
+  height: 10.5rem;
+  transition: scale 2s;
+}
+
+header .arrow-down img:hover {
+  scale: 1.2;
+}
+
+main {
+  padding: 5.3rem 3.9rem;
+  display: grid;
+  gap: 5rem;
+  height: 124.2rem;
+  background: linear-gradient(96.21deg, #343193 0%, #302c63 99.68%);
+}
+
+main .box-b,
+main .box-y,
+main .box-p {
+  background: rgba(249, 244, 251, 1);
+  border-radius: 2rem;
+  height: 33.8rem;
+  width: 35.2rem;
+  align-self: center;
+  margin: auto;
+  padding: 2.6rem 2rem 2.6rem 2.6rem;
+  overflow: hidden;
+}
+
+main h2 {
+  font-size: 2.9rem;
+  color: #b52184;
+}
+
+main p {
+  font-size: 1.6rem;
+}
+
+.contact {
+  display: grid;
+  background: rgba(249, 244, 251, 1);
+}
+
+.message {
+  display: grid;
+}
+
+.contact fieldset {
+  align-self: center;
+  justify-self: center;
+  padding: 3rem 4rem 6.5rem;
+  margin-top: 7.8rem;
+}
+
+.contact fieldset legend {
+  font-size: 3.2rem;
+  font-weight: 900;
+}
+
+.contact input,
+.contact button,
+.contact textarea {
+  border: black solid 2px;
+  border-radius: 8px;
+  margin-bottom: 2.5rem;
+  padding: 1rem;
+  width: 28.2rem;
+}
+
+.contact button {
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(96.21deg, #343193 0%, #302c63 99.68%);
+  cursor: pointer;
+}
+
+.contact button:hover {
+  scale: 1.05;
+  background: linear-gradient(96.21deg, #444197 0%, #7771c0 99.68%);
+}
+
+.contact .points {
+  display: none;
+}
+
+footer {
+  width: 100vw;
+  background: linear-gradient(96.21deg, #343193 0%, #302c63 99.68%);
+  display: grid;
+}
+
+footer p {
+  align-self: center;
+  justify-self: center;
+  color: white;
+  font-size: 1.9rem;
+}
+
+/*  ====== width > 800px ========= */
+
+@media (min-width: 700px) {
+  header .astro img {
+    width: 71.9rem;
+    height: 73.2rem;
+  }
+
+  header {
+    height: 83.6rem;
+    grid-template-areas: "a b" "c b";
+  }
+
+  header .astro {
+    grid-area: b;
+  }
+
+  header .head {
+    grid-area: a;
+    justify-self: unset;
+    padding-left: 10.9rem;
+  }
+
+  header .head h1 {
+    font-size: clamp(3.2rem, 1vw, 5.8rem);
+    font-size: 8rem; /* analisr o clamp */
+    margin-top: 31.2rem;
+  }
+
+  header .head p {
+    font-size: 3.2rem;
+  }
+
+  header .arrow-down {
+    justify-self: unset;
+    padding-left: 10.9rem;
+    grid-area: c;
+  }
+
+  main {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    height: 57.6rem;
+    gap: 6rem;
+  }
+
+  main h2 {
+    font-size: 3.5rem;
+  }
+
+  main p {
+    font-size: 1.9rem;
+    font-size: clamp(1.6rem, 1vw, 1.9rem);
+  }
+
+  main .box-b,
+  main .box-y,
+  main .box-p {
+    height: 44.8rem;
+    width: 36.6rem;
+    margin: auto 0;
+  }
+
+  .contact {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .contact .points {
+    display: contents;
+  }
+
+  .contact fieldset {
+    padding-left: 10.9rem;
+  }
+
+  .contact legend {
+    font-size: 4.2rem;
+  }
+
+  .contact input,
+  .contact button,
+  .contact textarea {
+    width: 52.6rem;
+  }
+}
