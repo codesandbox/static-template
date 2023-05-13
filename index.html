@@ -1,12 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Static Template</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <div class="astro">
+        <img src="./image/astro.svg" alt="" />
+      </div>
+      <div class="head">
+        <h1>
+          Explore sem limites
+        </h1>
+        <p>porque o aprendizado é continuo</p>
+      </div>
+      <div class="arrow-down">
+        <img src="./image/arrow-down.svg" alt="" />
+      </div>
+    </header>
+    <main>
+      <div class="box-y">
+        <img src="./image/y-ball.svg" alt="" />
+        <h2>Não pare nunca</h2>
+        <p>
+          Se você deseja ter sucesso nos estudos, é fundamental que você adote
+          uma mentalidade de "não pare nunca". Estudar de forma consistente e
+          contínua é a chave para o progresso e a conquista de seus objetivos.
+        </p>
+      </div>
+      <div class="box-b">
+        <img src="./image/b-ball.svg" alt="" />
+        <h2>Só volta</h2>
+        <p>
+          Se você parou ou perdeu o ritmo em alguma atividade ou projeto, saiba
+          que nunca é tarde para recomeçar. Às vezes, as circunstâncias podem
+          mudar, ou podemos nos sentir desmotivados ou sobrecarregados.
+        </p>
+      </div>
+      <div class="box-p">
+        <img src="./image/p-ball.svg" alt="" />
+        <h2>Siga seu ritmo</h2>
+        <p>
+          Avançar pouco a pouco mantém progresso constante em objetivos,
+          evitando parar ou desistir. Mesmo pequenos passos nos aproximam do
+          destino e motivam a continuidade. Não subestime o poder de cada ação
+          rumo ao objetivo final.
+        </p>
+      </div>
+    </main>
+    <div class="contact">
+      <div class="message">
+        <fieldset>
+          <legend>Entre em contato</legend>
+          <form action="enviar.php" method="post">
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              required
+              placeholder=" Seu nome"
+            /><br />
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Seu email"
+            /><br />
+
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              rows="4"
+              cols="50"
+              required
+              placeholder="Deixe aqui sua mensagem..."
+            ></textarea
+            ><br />
+
+            <button>enviar mensagem</button>
+          </form>
+        </fieldset>
+      </div>
+      <div class="points"><img src="./image//points.svg" alt="" /></div>
+    </div>
+    <footer>
+      <p>
+        © 2023 - Rocketseat Explorer
+      </p>
+    </footer>
   </body>
 </html>
