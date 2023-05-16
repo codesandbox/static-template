@@ -1,0 +1,189 @@
+:root {
+  --main-font-color: rgb(204, 204, 204);
+  --main-page-max-width: 1200px;
+  --main-input-color: rgb(136, 84, 208);
+  --hover-input-color: rgb(164, 124, 219);
+}
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--main-font-color);
+  background-color: rgb(5, 5, 5);
+  text-rendering: optimizeLegibility;
+}
+.container img {
+  height: 200px;
+  margin: 0, 5 rem 0;
+}
+/*All sections*/
+section {
+  max-width: var(--main-page-max-width);
+  margin: 0 auto;
+}
+section h2 {
+  margin: 2rem 0 1rem;
+
+}
+/*Header Stilusok*/
+header {
+  font-size: 2rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../images/night1.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center, bottom;
+  min-width: var(--main-page-max-width);
+  padding-top: 2rem;
+  position: relative;
+}
+.logo {
+  font-size: 3rem;
+}
+h1 {
+  font-size: 5rem;
+  font-weight: 200;
+  letter-spacing: 1px;
+  word-spacing: 4px;
+}
+.header-nav {
+  max-width: var(--main-page-max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+
+
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--main-font-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 0 1rem;
+  font-weight: 600;
+}
+.nav-links a:hover {
+  color: var(--main-font-hover-color);
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7);
+  border-bottom: 2px solid var(--main-font-hover-color);
+  transition: border-bottom, 0.2s;
+}
+.tagline {
+width: var(--main-page-max-width);
+position: absolute;
+top: 50%;
+left: 50% ;
+transform: translate(-50%, -50%);
+}
+.btn {
+  padding: 1rem 2rem;
+  color: var(--main-input-color);
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid var(--hover-input-color);
+  box-shadow: 2px 2px 6px rgba(106, 54, 158, 0.9);
+  margin: 0.5rem;
+}
+.btn.btn-full {
+  color: var(--main-font-color);
+  background-color: var(--main-input-color);
+}
+.btn:hover,
+.btn.btn-full:hover {
+  background-color: var(--hover-input-color);
+  border: 2px solid var(--hover-input-color);
+  color: var(--main-font-color);
+  box-shadow: 2px 2px 6px rgba(106, 54, 158, 0.9);
+  transition: background-color 1.25s, border 0.25s, color 0, box-shadow 0.25s;
+}
+/*Tapasztalat stilusok*/
+.container {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+}
+.container > div {
+  width: 270px;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+/*Prject list styles*/
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.project-container {
+  width: 33%;
+  margin 50px 2%;
+  
+}
+.project_img{
+  width: 100%;
+
+}
+/*form stilusok*/
+.kapcsolat {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/contact.png);
+  background-size: cover;
+  background-position: center center;
+  box-shadow:0 0 100px 100px black inset ;
+}
+form {
+  width: 50%;
+  margin: 0 auto;
+}
+.form_input {
+  border: none;
+  background: none;
+  color:var(--main-input-color);
+  border-bottom: 1px solid var(--main-input-color);
+  width: 100%;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+textarea.form_input{
+  border: 1px solid var(--main-input-color);
+  height: 225px;
+  overflow: hidden;
+}
+.form_submit {
+  background: none;
+  margin: 12px o;
+}
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center ;
+}
+.footer-links a {
+  color: var(--main-font-color);
+  text-decoration: none;
+  margin: 0 1rem;
+}
+.footer-links a:hover {
+  color:var(--hover-input-color);
+
+}
