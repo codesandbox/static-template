@@ -1,12 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link rel="stylesheet" href="./css/normalize.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header id="home">
+      <nav class="header-nav">
+        <div class="logo">
+          Portfo lia
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#xp">Tapasztalat</a></li>
+          <li><a href="#portfolio">Portfólió</a></li>
+          <li><a href="#kapcsolat">Kapcsolat</a></li>
+        </ul>
+      </nav>
+      <div class="tagline">
+        <h1>Portfólió oldal</h1>
+        <a href="#" class="btn btn-full">Önéletrajz</a>
+        <a href="#" class="btn">Kapcsolat</a>
+      </div>
+    </header>
+    <section class="tapasztalat" id="xp">
+      <h2>Tapasztalat</h2>
+      <div class="container">
+        <div>
+          <img src="./images/imagesHTML51.png" alt="HTML" />
+          <h3>HTML5</h3>
+          <p>
+            Szemantikus markup, profi weboldalak készítése, akadálymentesítés,
+            SEO-barátságos szerkezet.
+          </p>
+        </div>
+        <div>
+          <img src="./images/css3.webp" alt="CSS3" />
+          <h3>CSS3</h3>
+          <p>
+            Profi megjelenés, modern, reszponzív stílus, karbantartható
+            architektúra, Flexbox, Grid.
+          </p>
+        </div>
+        <div>
+          <img src="./images/imagesJS1.png" alt="JS" />
+          <h3>JavaScript</h3>
+          <p>​Modern, 2020-as JavaScript, tiszta kód.</p>
+        </div>
+        <div>
+          <img src="./images/imagesReact.png" alt="REACT 17" />
+          <h3>REACT</h3>
+          <p>Modern React, hooks, komplex webalkalmazások fejlesztése.</p>
+        </div>
+      </div>
+    </<section>
+    <section class="projektek" id="portfolio">
+      <h2>Projektek</h2>
+     <div class="project-list">
+       <div class="project-container">
+            <h3>Project 1</h3>
+      <a href="#">
+        <img
+        src="./images/imagesProjekt2.jpg"
+        alt="Project 1"
+        class="project_img"/>
+      </a>
+
+
+       </div>
+       <div class="project-container">
+         <h3>Project 2</h3>
+         <a href="#">
+            <img
+            src="./images/imagesProjekt2.jpg"
+            alt="Project 1"
+            class="project_img"/>
+          </a>
+       </div>
+       <div class="project-container">
+         <h3>Project 3</h3>
+         <a href="#">
+            <img
+            src="./images/imagesProjekt2.jpg"
+            alt="Project 1"
+            class="project_img"/>
+          </a>
+
+       </div>
+       <div class="project-container">
+         <h3>Projekt 4</h3>
+         <a href="#">
+            <img
+            src="./images/imagesProjekt2.jpg"
+            alt="Project 1"
+            class="project_img"/>
+          </a>
+
+       </div>
+       <div class="project-container">
+         <h3>Project 5</h3>
+         <a href="#">
+            <img
+            src="./images/imagesProjekt2.jpg"
+            alt="Project 1"
+            class="project_img"/>
+          </a>
+       </div>
+       <div class="project-container">
+         <h3>Project 6</h3>
+         <a href="#">
+            <img
+            src="./images/imagesProjekt2.jpg"
+            alt="Project 1"
+            class="project_img"/>
+          </a>
+       </div>
+     </div>
+    </section>
+
+    <section class="kapcsolat" id="kapcsolat">
+    
+    <h2>Kapcsolat</h2>
+    <form action="https://formspree.io/f/xbjpknvr" method="POST">
+          <input
+          type="text"
+          class="form_input"
+          name="facebook_nev"
+          placeholder="Facebook név"
+          type="text"
+          class="form_input"
+          name="facebook_nev"
+          placeholder="Facebook név"
+          />
+          <input
+            type="email"
+            class="form_input"
+            name="email"
+            placeholder="Email"
+          />
+          <textarea
+            placeholder="Üzenet"
+            name="uzenet"
+            class="form_input">
+          </textarea>
+          <button type="submit class="btn form_submit">Elküld</button>
+        </form>
+      </section>
+
+    
+
+
+    <footer>
+        <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#xp">Tapasztalat</a></li>
+            <li><a href="#portfolio">Portfólió</a></li>
+            <li><a href="#kapcsolat">Kapcsolat</a></li>
+          </ul>
+      Copyright ​&copy;​ 2020 Programozás Karrier
+    </footer>
   </body>
 </html>
