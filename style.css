@@ -1,0 +1,155 @@
+:root {
+  box-sizing: border-box;
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+nav {
+  text-align: right;
+  padding: 20px 10px;
+}
+
+nav .nav-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  border-radius: 50%;
+  outline: none;
+  padding: 8px;
+}
+
+nav .nav-icon:hover {
+  background-color: rgba(60, 64, 67, 0.08);
+}
+nav .nav-link {
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 0.075 rem;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+nav .nav-button {
+  background: #1a73e8;
+  border: 1px solid transparent;
+  color: white;
+  margin-left: 8px;
+  padding: 9px 23px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+nav .nav-button:hover {
+  background-color: #2b7de9;
+  box-shadow: 0 1px 3px 1px rgba(66, 64, 67, 0.15),
+    0 1px 2px 0 rgba(60, 64, 67, 0.3);
+}
+
+/* Main */
+.google-logo {
+  padding: 10px 0;
+  height: 92px;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+  justify-content: space-around;
+}
+
+.search-box {
+  width: 60vw;
+  height: 45px;
+  border: 1px solid lightgray;
+  border-radius: 23px;
+  display: flex;
+  align-items: stretch;
+}
+
+.search-input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  flex-grow: 1;
+}
+.search-icon {
+  width: 20px;
+  height: 20px;
+  color: #9aa0a6;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.search-by-scan {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  margin-top: 8px;
+}
+
+.google-mic {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  margin-top: 8px;
+}
+
+.button {
+  width: 150px;
+  height: 36px;
+  border: none;
+  margin: 11px 4px;
+  padding: 0 16px;
+  background-color: #f8f9fa;
+  font-size: 0.875rem;
+  color: #3c4043;
+}
+.language {
+  font-size: 0.85rem;
+  color: #3c4043;
+}
+
+.service-item {
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+/* Footer */
+footer .row {
+  color: #70757a;
+  background: #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  line-height: 40px;
+  padding: 0 30px;
+  bottom: 0;
+  border-bottom: 1px solid #dadce0;
+}
+
+footer .row a {
+  text-decoration: none;
+  margin-right: 10px;
+  color: #70757a;
+}
+@media screen and (max-width: 650px) {
+  footer .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
