@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Please fill out this survey to help us improve our services</p>
+  </header>
+  <main>
+    <form id="survey-form" action="#" method="post">
+
+<label for="number">Enter a number between 1 and 10:</label>
+<input type="number" id="number" name="number" min="1" max="10" placeholder="Enter your number">
+
+      <label for="name" id="name-label">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="email" id="email-label">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="number" id="number-label">Age:</label>
+      <input type="number" id="number" name="age" placeholder="Enter your age" required>
+
+      <label for="option" id="option-label">What's your gender?
+      <label for="man">
+      <input type="radio" id="option1" name="options"   value="option1">Man
+      </label>
+      <label for="woman">
+      <input type="radio" id="option2" name="options"     value="option2">Woman
+      </label>
+
+
+      <label for="dropdown">Occupation:</label>
+      <select id="dropdown" name="occupation">
+                <option value="" disabled selected>Select your occupation</option>
+                <option value="Student">Student</option>
+                <option value="Employed">Employed</option>
+                <option value="Self-employed">Self-employed</option>
+                <option value="Retired">Retired</option>
+                <option value="Other">Other</option>
+            
+            </select>
+
+      <fieldset>
+        <legend>What services are you interested in?</legend>
+        <label><input type="checkbox" name="services" value="Consulting">Consulting</label>
+        <label><input type="checkbox" name="services" value="Training">Training</label>
+        <label><input type="checkbox" name="services" value="Design">Design</label>
+        <label><input type="checkbox" name="services" value="Development">Development</label>
+      </fieldset>
+
+      <label for="comments">Comments:</label>
+      <textarea name="comments" id="comments" cols="50" rows="5" placeholder="Enter your comments"></textarea>
+
+      <button type="submit" id="submit">Submit</button>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+
 </html>
