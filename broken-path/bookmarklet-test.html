@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Preview Script</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* flex: 0 1 auto; */
+      background: #3d3d3d;
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin-top: 20px;
+    }
+    .wrapper {
+      width: 960px;
+      color: #fff;
+    }
+  </style>
+  <body>
+    <div class="wrapper">
+      <h1>Preview Script</h1>
+      <button onclick="executeScript()">Run Script</button>
+      <div>
+        <h2>Working Image</h2>
+        <img
+          width="300"
+          height="300"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Gamecube-console.jpg/1280px-Gamecube-console.jpg"
+        />
+      </div>
+      <div>
+        <h2>Broken Image</h2>
+        <ul>
+          <li>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Gamecube-ole.jpg/1280px-Gamecube-console.jpg"
+            />
+          </li>
+          <li>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/thumb/a/ae/Gamecube-console.jpg/1280px-Gamecube-console.jpg"
+            />
+          </li>
+          <li>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/Gamecube-console.jpg/1280px-Gamecube-console.jpg"
+            />
+          </li>
+          <li>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/thumb/a/ae/Gamecube-console.jpg/1280px-Gamecube-console.jpg"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      function executeScript() {
+        var script = `(function(){
+            var images = document.getElementsByTagName('img');
+            var brokenImages = [];
+    
+            for(var i = 0; i < images.length; i++) {
+              if(!images[i].complete || images[i].naturalWidth === 0) {
+                brokenImages.push(images[i].src);
+              }
+            }
+    
+            if(brokenImages.length > 0) {
+              var popupContainer = document.createElement('div');
+              popupContainer.style.position = 'fixed';
+              popupContainer.style.top = '20px';
+              popupContainer.style.left = '20px';
+              popupContainer.style.zIndex = '9999';
+              popupContainer.style.background = '#fff';
+              popupContainer.style.padding = '10px';
+              popupContainer.style.border = '1px solid #ccc';
+              popupContainer.style.fontFamily = 'Arial, sans-serif';
+    
+              var heading = document.createElement('h3');
+              heading.innerHTML = 'Broken Images:';
+              popupContainer.appendChild(heading);
+    
+              var textarea = document.createElement('textarea');
+              textarea.style.width = '50vw';
+              textarea.style.minHeight = '200px';
+              textarea.style.resize = 'none';
+              textarea.value = brokenImages.join('\\n');
+              popupContainer.appendChild(textarea);
+    
+              var closeBtn = document.createElement('button');
+              closeBtn.innerHTML = 'Close';
+              closeBtn.addEventListener('click', function() {
+                popupContainer.remove();
+              });
+    
+              popupContainer.appendChild(closeBtn);
+    
+              document.body.appendChild(popupContainer);
+            } else {
+              alert('No broken images found!');
+            }
+          })();`;
+
+        var scriptElement = document.createElement("script");
+        scriptElement.innerHTML = script;
+        document.body.appendChild(scriptElement);
+      }
+    </script>
+  </body>
+</html>
