@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+header,
+section,
+footer {
+  width: 1400px;
+  padding: 50px 120px;
+  margin: 0 auto;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.img-wrapper {
+  background-image: url("img/header-bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.logo img {
+  width: 148px;
+}
+
+.header-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.btn {
+  font-weight: 300;
+  font-size: 1rem;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.btn-1 {
+  color: #fff;
+  background: none;
+  border: 0.5px solid #cccccc;
+}
+
+.btn-2 {
+  border: 0.5px solid #e50914;
+  background: #e50914;
+  color: #fff;
+  cursor: pointer;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding-top: 190px;
+}
+
+:root {
+  --heading: 3rem;
+  --sub-heading: 1.5rem;
+  --main-text: 1.3rem;
+  --sub-text: 1rem;
+}
+
+.heading {
+  font-size: var(--heading);
+}
+
+.sub-heading {
+  font-size: var(--sub-heading);
+}
+
+.main-text {
+  font-size: var(--main-text);
+}
+
+.sub-text {
+  font-size: var(--sub-text);
+  color: #908585;
+}
+
+.text-container .heading {
+  margin-bottom: 20px;
+}
+
+.email-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+  width: 100%;
+}
+
+.email-wrapper input,
+.email-wrapper button {
+  height: 60px;
+  border-radius: 5px;
+}
+
+.email-wrapper input {
+  width: 30%;
+  background: none;
+  color: #908585;
+  border: 0.5px solid #cccccc;
+  padding: 20px;
+  font-size: 1rem;
+}
+
+.email-wrapper button {
+  width: 20%;
+  background: #e50914;
+  border: #e50914;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.img-wrapper,
+.section-border {
+  border-bottom: 9px solid #232323;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  min-height: 80vh;
+}
+
+section img {
+  width: 550px;
+}
+
+.section-6 {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.faq-heading {
+  margin-bottom: 40px;
+}
+
+.faq {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2d2d2d;
+  padding: 30px;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.answer.active {
+  min-height: 300px;
+  background: #2d2d2d;
+  padding: 30px;
+  border-top: 1.5px solid #000;
+}
+
+.footer-bottom-p {
+  margin-top: 50px;
+}
+.footer-bottom-i {
+  margin-bottom: 35px;
+}
+
+.footer-links-wrapper {
+  display: flex;
+  margin-top: 30px;
+}
+
+.link-wrapper {
+  width: 35%;
+}
+
+.link-wrapper ul li {
+  list-style: none;
+  /* margin: 13px 0; */
+  padding: 8px 0;
+}
+
+.link-wrapper ul li a {
+  font-size: 1rem;
+  color: #908585;
+}
+
+.footer-accessibility {
+  margin-top: 30px;
+}
+
+.footer-accessibility .btn-1 {
+  margin-bottom: 15px;
+}
+
+.footer-accessibility .sub-text {
+  text-decoration: underline;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --heading: 2.1rem;
+    --sub-heading: 1.3rem;
+    --main-text: 1.5rem;
+    --sub-text: 1rem;
+  }
+
+  section img {
+    width: 100%;
+  }
+
+  header,
+  section,
+  footer {
+    width: 100%;
+    padding: 0 5%;
+    margin: 0 auto;
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 30px 0 30px;
+  }
+
+  .sec-img-wrapper {
+    order: 2;
+  }
+
+  .header-wrapper {
+    padding-top: 15px;
+  }
+
+  .logo img {
+    width: 100px;
+  }
+
+  .header-btn {
+    gap: 10px;
+  }
+
+  .text-container {
+    text-align: center;
+  }
+
+  .img-wrapper {
+    height: auto;
+  }
+
+  .email-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+
+  .email-wrapper input {
+    width: 100%;
+  }
+
+  .email-wrapper button {
+    width: 40%;
+    font-size: 1.1rem;
+    font-weight: 200;
+    margin-top: 5px;
+  }
+
+  .header-content {
+    padding-top: 100px;
+  }
+
+  .faq-heading {
+    text-align: center;
+  }
+  .footer-bottom-p {
+    text-align: center;
+  }
+
+  footer {
+    margin: 30px auto;
+  }
+  .footer-links-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .link-wrapper {
+    width: 100%;
+  }
+}
