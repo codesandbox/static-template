@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <script src="color-modes.js"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.111.3" />
+    <title>Carousel Template · Bootstrap v5.3</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/carousel/"
+    />
+
+    <link href="bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet" />
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        />
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+        />
+        <path
+          d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+        />
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path
+          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+        />
+      </symbol>
+    </svg>
+
+    <div
+      class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+    >
+      <button
+        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        aria-label="Toggle theme (auto)"
+      >
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+          <use href="#circle-half"></use>
+        </svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul
+        class="dropdown-menu dropdown-menu-end shadow"
+        aria-labelledby="bd-theme-text"
+      >
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="light"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+              <use href="#sun-fill"></use>
+            </svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="dark"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+              <use href="#moon-stars-fill"></use>
+            </svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center active"
+            data-bs-theme-value="auto"
+            aria-pressed="true"
+          >
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+              <use href="#circle-half"></use>
+            </svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <header data-bs-theme="dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">PCS ENL</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="news.html">News</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="mem.html">Members</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="nav-scroller py-1 mb-0"></div>
+
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">
+        All news in ENL Class
+      </h1>
+      <p class="lead my-3">
+        You can find all kinds of news about ENL Class here, including but not
+        limited to our past/planned activities, personnel flow, lost and found,
+        etc.
+      </p>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div
+        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+      >
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">News</strong>
+          <h3 class="mb-0">Next Week is the Review Week!</h3>
+          <div class="mb-1 text-body-secondary">May 24</div>
+          <p class="card-text mb-auto">
+            After this week is over, there is only one week until final
+            exams, and we have to enter the review week to prepare for our final
+            exams.
+          </p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+
+          <!-- <svg
+            class="bd-placeholder-img"
+            width="200"
+            height="250"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Placeholder: Thumbnail"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+          > -->
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div
+        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+      >
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Activity</strong>
+          <h3 class="mb-0">ENL Will Hang Out!</h3>
+          <div class="mb-1 text-body-secondary">May 23</div>
+          <p class="mb-auto">
+            Students in the ENL program will be heading to the New York
+            Historical Society on the penultimate Thursday of May!
+          </p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+        <img src="hissoc.png" 
+        class="bd-placeholder-img"
+        width="200"
+        height="250" alt="">
+          <!-- <svg
+            class="bd-placeholder-img"
+            width="200"
+            height="250"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Placeholder: Thumbnail"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+          >
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#55595c" />
+            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        
+      </h3>
+
+      <article class="blog-post">
+        <h2 class="blog-post-title mb-1">Latest News</h2>
+        <p class="blog-post-meta">May 25 by <a href="#">Alex</a></p>
+
+        <p>
+          This blog post shows a few different types of content that’s supported
+          and styled with Bootstrap. Basic typography, lists, tables, images,
+          code, and more are all supported as expected.
+        </p>
+<!-- Add a new blog in here -->
+        <hr />
+        <h2 class="blog-post-title mb-1">The Trip is finish!</h2>
+        <p class="blog-post-meta">May 26 by <a href="#">Alex</a></p>
+        <p>
+        <li><a href="nym.html">Learn More</a></li>
+        </p>
+        <hr />
+        <h2>The earliest news on this webpage!</h2>
+        <blockquote class="blockquote">
+          <p>Congratulations, my friend from the future.</p>
+        </blockquote>
+        <p>
+          You found the oldest article on this site! This article commemorates the establishment of the PCS ENL website.
+        </p>
+        <p>
+          I have been waiting for you here for a long time, my friend.
+        </p>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Archives</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">May 2023</a></li>
+          </ol>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Connect Alex</h4>
+          <ol class="list-unstyled">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ol>
+        </div>
+ 
+</main>
+<script src="bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+
