@@ -1,12 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style type="text/css" media="all"></style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <div class="container">
+        <div class="brand">
+          <img src="img/myLogo.jpg" alt="" />
+          <a href="#" class="logo"
+            >Ayoung<span style="color: aqua;">Kes</span></a
+          >
+          <i class="fa fa-bars"></i>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#">home</a>
+            </li>
+            <li>
+              <a href="#">class</a>
+            </li>
+            <li>
+              <a href="#">content</a>
+            </li>
+            <li>
+              <a class="dropdown-menu" href="#" id="menu">learning</a>
+            </li>
+            <li>
+              <a href="#">FAQ</a>
+            </li>
+            <li>
+              <a href="#">About me</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="nav-btn">
+          <a href="#">Log in</a>
+          <a href="#">Sign in</a>
+          <i style="color: white; display: none;" class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <div class="bx" id="dropdownMenu">
+      <div class="box" id="menu">
+        <a href="#search"><i class="fa fa-search"></i><span>Search</span></a>
+        <a href="#"><i class="fa-solid fa-clock"></i><span>clock</span></a>
+        <a href="#"
+          ><i class="fa-brands fa-facebook"></i><span>Facebook</span></a
+        >
+        <a href="#"
+          ><i class="fa-brands fa-instagram"></i><span>instagram</span></a
+        >
+        <a href="#"><i class="fa-brands fa-twitter"></i><span>Twitter</span></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i><span>youtube</span></a>
+        <a href="#"><i class="fa-brands fa-github"></i><span>Git hub</span></a>
+      </div>
+    </div>
+    <div class="bx2">
+      <div class="box-search">
+        <input
+          type="search"
+          name="src"
+          id="src"
+          value=""
+          placeholder="Pencarian..."
+        />
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+
+    <section>
+      <div class="kotak">
+        <form action="">
+          <div class="kotak-inp">
+            <label for="fullName">Nama Lengkap</label>
+            <input type="text" name="txt" id="txt" maxlength="26" />
+            <i class="fa fa-user"></i>
+          </div>
+          <div class="kotak-inp">
+            <label for="email">Masukan Email</label>
+            <input type="email" name="email" id="email" />
+            <i class="fa fa-envelope"></i>
+          </div>
+          <dic class="kotak-inp">
+            <label for="passp">Password</label>
+            <input type="password" name="pass" id="pw" />
+            <i class="fa fa-eye"></i>
+          </dic>
+        </form>
+      </div>
+    </section>
+
+    <script src="script.js" type="text/javascript" charset="utf-8"></script>
   </body>
 </html>

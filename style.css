@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2? family=Poppins:wght@100;200;300;400;500 & family= Roboto:wght@100;300;400 &display= menukar");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Popins", sans-serif;
+  text-decoration: none;
+}
+body {
+  background-color: whitesmoke;
+}
+header {
+  position: static;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 0;
+  background-color: #080202;
+}
+header .container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .brand a {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+.container nav {
+}
+.container nav ul {
+  list-style-type: none;
+  display: flex;
+}
+nav ul li a {
+  color: white;
+  padding: 10px 15px;
+  font-size: 20px;
+  text-transform: capitalize;
+  text-align: center;
+}
+nav ul li a:hover {
+  color: aqua;
+}
+.container .nav-btn {
+  display: flex;
+  align-items: center;
+}
+.container .nav-btn a {
+  display: block;
+  padding: 10px 15px;
+  background-color: aqua;
+  color: black;
+  border-radius: 13px;
+  margin: 0 8px;
+  font-weight: bold;
+}
+.container .nav-btn a:hover {
+  outline: 2px solid gold;
+  outline-offset: -4.5px;
+  border: 1px solid aqua;
+  color: aqua;
+  background-color: #000;
+}
+.bx {
+  width: 100%;
+  z-index: 88;
+  display: none;
+  animation: anim 0.5s ease-out;
+  background-color: #000;
+  margin: 19px auto;
+  padding: 10px;
+  border: 2px solid aqua;
+  position: relative;
+  border-radius: 10px;
+  max-width: 650px;
+}
+.bx .box {
+  display: flex;
+  width: 95%;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
+  flex-basis: 1;
+}
+.bx .box a {
+  color: white;
+  display: flex;
+  text-transform: capitalize;
+  font-size: 1.1em;
+  padding: 5px;
+  flex-direction: column;
+}
+.bx .box a:hover {
+  color: aqua;
+}
+.bx .box a i {
+  margin: 4px auto;
+  line-height: -4px;
+}
+.bx2 {
+  width: 100%;
+  max-width: 750px;
+  height: 45px;
+  background-color: red;
+  margin: 10px auto;
+  position: relative;
+  padding: 9px;
+  border-radius: 6px;
+  display: none;
+}
+.bx2 .box-search {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.bx2 .box-search input[type="search"] {
+  height: 100%;
+  width: 100%;
+  padding: 0 45px 0 9px;
+  outline: none;
+}
+.box-search button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 45px;
+  border: none;
+}
+@keyframes anim {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes animreverse {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-40px);
+  }
+}
+section {
+  background-image: url(https://divedigital.id/wp-content/uploads/2020/06/polynesia-3021072_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.kotak {
+  background-color: red;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  padding: 28px;
+}
