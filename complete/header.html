@@ -1,987 +1,1046 @@
-<style>
-  /*****  상단 레이아웃 *****/
-  #max_header {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 85px;
-    font-size: 0;
-    line-height: 1;
-    z-index: 5;
-    transition: all 0.3s;
-    /*  animation:headani 1s ease; */
-  }
-
-  #max_header .inner {
-    max-width: 1750px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  #max_header #logo {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-  }
-
-  #max_header #logo a {
-    display: block;
-    width: 14.2rem;
-    height: 2.9rem;
-    background: url(../image/common/logo.png) no-repeat 50% 50%;
-    background-size: cover;
-    font-size: 0;
-    text-indent: -99999px;
-  }
-
-  #max_header.fixed {
-    position: fixed;
-    top: 0;
-    background: #fff;
-    border-bottom: 1px solid #d6d6d6;
-  }
-
-  #max_header.fixed #logo a {
-    background: url(../image/common/logo_ov.png) no-repeat 50% 50%;
-  }
-
-  @-webkit-keyframes headani {
-    0% {
-      margin-top: -85px;
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-      margin-top: 0;
-    }
-  }
-
-  /*****  메인메뉴 *****/
-  #max_header #gnb {
-    position: relative;
-    width: 100%;
-    /*background:#fff;*/
-    display: flex;
-  }
-
-  #max_header #gnb > h2 {
-    position: absolute;
-    font-size: 0;
-    line-height: 0;
-    overflow: hidden;
-  }
-
-  #max_header #gnb .gnb_wrap {
-    margin: 0 auto;
-    position: relative;
-  }
-
-  #max_header #gnb .gnb_wrap:hover,
-  #max_header #gnb .gnb_wrap:focus,
-  #max_header #gnb .gnb_wrap:active {
-    z-index: 3;
-  }
-
-  #max_header #gnb #gnb_1dul {
-    font-size: 1.8rem;
-    padding: 0;
-    /*border-bottom:1px solid #e0e2e5;zoom:1*/
-  }
-
-  #max_header #gnb ul:after {
-    display: block;
-    visibility: hidden;
-    clear: both;
-    content: "";
-  }
-
-  #max_header #gnb .gnb_1dli {
-    display: inline-block;
-    line-height: 85px;
-    padding: 0px;
-    position: relative;
-  }
-
-  #max_header #gnb .gnb_1dli:hover > a {
-    color: var(--main-color1);
-    -webkit-transition: background-color 2s ease-out;
-    -moz-transition: background-color 0.3s ease-out;
-    -o-transition: background-color 0.3s ease-out;
-    transition: background-color 0.3s ease-out;
-  }
-
-  #max_header #gnb .gnb_1dli .bg {
-    position: absolute;
-    top: 24px;
-    right: 8px;
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    overflow: hidden;
-    /*background:url('../img/gnb_bg2.gif') no-repeat 50% 50%;*/
-    text-indent: -999px;
-  }
-
-  #max_header #gnb .gnb_1dli .gnb_1da {
-    overflow: hidden;
-    position: relative;
-    display: block;
-    font-weight: 600;
-    padding: 0 50px;
-    color: #080808;
-    text-decoration: none;
-  }
-
-  #max_header #gnb .gnb_1dli .gnb_1da {
-    overflow: hidden;
-  }
-
-  #max_header #gnb .gnb_1dli .gnb_1da:before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 3px;
-    background: var(--main-color1);
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    -webkit-transform: translateX(-150%);
-    -ms-transform: translateX(-150%);
-    transform: translateX(-150%);
-    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.5, 0.7, 0.4, 1),
-      opacity 0.1s ease 0.3s;
-    transition: transform 0.3s cubic-bezier(0.5, 0.7, 0.4, 1),
-      opacity 0.1s ease 0.3s;
-    z-index: 2;
-  }
-
-  #max_header #gnb #gnb_1dul > li a:before {
-    content: "";
-    display: block;
-    width: 0px;
-    height: 3px;
-    position: absolute;
-    right: 0px;
-    top: -3px;
-    background-color: #e0002a;
-    transition: all 0.8s cubic-bezier(0.46, 0.87, 0.18, 1.01);
-  }
-
-  #max_header #gnb #gnb_1dul > li:hover a:before {
-    left: 0;
-    width: 100%;
-  }
-
-  #max_header #gnb .gnb_1dli_over .gnb_1da:hover:before {
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
-  }
-
-  #max_header #gnb .gnb_1dli.out .gnb_1da:before {
-    -webkit-transform: translateX(101%);
-    -ms-transform: translateX(101%);
-    transform: translateX(101%);
-    opacity: 0;
-  }
-
-  /*#max_header #gnb .gnb_1dli .gnb_1da:hover:before {position:absolute; bottom:1.8rem; left:50%; transform:translateX(-50%); content:''; width:6px; height:6px; border-radius:1rem;
-background: var(--main-color1);}*/
-  #max_header #gnb .gnb_1dli .gnb_2dli:first-child {
-    border: 0;
-  }
-
-  .gnb_2dul {
-    /*display:none;*/
-    position: absolute;
-    top: 86px;
-    min-width: 100%;
-  }
-
-  .gnb_2dul .gnb_2dul_box {
-    visibility: hidden;
-    max-height: 0;
-    border-top: 0;
-    padding: 1rem 0;
-    background: #fff;
-    box-shadow: 0px 22px 22px 0px rgb(0, 0, 0, 0.5);
-  }
-
-  #max_header #gnb .gnb_1dli:hover .gnb_2dul_box {
-    visibility: visible;
-    max-height: 300px;
-    overflow: hidden;
-    -webkit-transition: max-height 0.5s ease;
-    transition: max-height 0.5s ease;
-  }
-
-  #max_header.fixed #gnb .gnb_1dli:hover .gnb_2dul_box {
-    box-shadow: 0px 5px 5px 0 rgba(0, 0, 0, 0.2);
-  }
-
-  .gnb_2da {
-    font-size: 1.6rem;
-    display: block;
-    padding: 1rem 2rem;
-    line-height: 1.5;
-    color: #4a4a4a;
-    text-align: left;
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  a.gnb_2da:hover {
-    color: var(--main-color1);
-    -moz-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-  }
-
-  .gnb_2da:focus,
-  .gnb_2da:hover {
-    color: #fff;
-  }
-
-  .gnb_1dli_over .gnb_2dul {
-    display: block;
-    left: 0;
-  }
-
-  .gnb_1dli_over2 .gnb_2dul {
-    display: block;
-    right: 0;
-  }
-
-  .gnb_wrap .gnb_empty {
-    padding: 10px 0;
-    width: 100%;
-    text-align: center;
-    line-height: 2.7em;
-    color: #080808;
-  }
-
-  .gnb_wrap .gnb_empty a {
-    color: var(--main-color1);
-    text-decoration: underline;
-  }
-
-  .gnb_wrap .gnb_al_ul .gnb_empty,
-  .gnb_wrap .gnb_al_ul .gnb_empty a {
-    color: #555;
-  }
-
-  /***** 로그인 *****/
-  #max_header .utill {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-  }
-
-  #max_header .utill li {
-    width: 8.5rem;
-    height: 8.5rem;
-    border-left: 1px solid #d6d6d6;
-  }
-
-  #max_header .utill li a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 2.2rem;
-  }
-
-  #max_header .utill li a.login {
-    background-image: url(../image/common/ico_login.png);
-  }
-
-  #max_header .utill li a.logout {
-    background-image: url(../image/common/ico_logout.png);
-  }
-
-  /***** fullmenu_btn *****/
-  #max_header .gnb_menu_btn {
-    position: relative;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--main-color1);
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0;
-  }
-
-  #max_header .gnb_menu_btn div {
-    position: relative;
-    width: 20px;
-    height: 20px;
-  }
-
-  #max_header .gnb_menu_btn div > span {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    transition-duration: 0.5s;
-    -webkit-transition-duration: 0.5s;
-    border: 1px solid #fff;
-    border-radius: 2px;
-  }
-
-  #max_header .gnb_menu_btn span:nth-child(1) {
-    top: 0;
-    left: 0;
-  }
-
-  #max_header .gnb_menu_btn span:nth-child(2) {
-    top: 0;
-    left: 12px;
-  }
-
-  #max_header .gnb_menu_btn span:nth-child(3) {
-    top: 12px;
-    left: 0;
-  }
-
-  #max_header .gnb_menu_btn span:nth-child(4) {
-    top: 12px;
-    left: 12px;
-  }
-
-  #max_header .gnb_menu_btn:hover div > span {
-    animation: dot 0.6s forwards;
-    -webkit-animation: dot 0.6s forwards;
-  }
-
-  @keyframes dot {
-    50% {
-      top: 8px;
-      left: 8px;
-    }
-  }
-
-  @-webkit-keyframes dot {
-    50% {
-      top: 8px;
-      left: 8px;
-    }
-  }
-
-  #gnb_all {
-    /*display:none;*/
-    position: fixed;
-    visibility: hidden;
-    left: 100%;
-    transition: all 0.5s;
-    transform-origin: 100% 50%;
-    width: 100vh;
-    height: 100vh;
-    background: #f5f5f5;
-    z-index: 1000;
-    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-
-  #gnb_all.open {
-    width: 100%;
-    left: 0;
-    visibility: visible;
-    z-index: 999;
-  }
-
-  .gnb_close_btn {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 8.5rem;
-    height: 8.5rem;
-    background: none;
-    border: 0;
-  }
-
-  .gnb_close_btn i {
-    font-size: 3.5rem;
-  }
-
-  #gnb_all h2 {
-    font-size: 0;
-    line-height: 1;
-  }
-
-  #gnb_all > a {
-    display: inline-block;
-    padding: 3rem 4.5rem;
-  }
-
-  #gnb_all .gnb_in {
-    position: relative;
-    width: 100%;
-    max-width: 1480px;
-    padding-top: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-  }
-
-  #gnb_all .gnb_in:before {
-    position: absolute;
-    bottom: -40rem;
-    right: -25rem;
-    content: "KNU IR";
-    font-size: 40rem;
-    color: #ebebeb;
-    font-weight: 900;
-  }
-
-  #gnb_all .gnb_in .title {
-    width: 20%;
-    font-size: 4.6rem;
-    color: #000;
-    font-weight: 600;
-  }
-
-  #gnb_all .gnb_al_ul:after {
-    display: block;
-    visibility: hidden;
-    clear: both;
-    content: "";
-  }
-
-  #gnb_all .gnb_al_ul > li:nth-child(5n + 1) {
-    border-left: 0;
-  }
-
-  #gnb_all .gnb_al_ul {
-    display: flex;
-    width: calc(100% - 20%);
-  }
-
-  #gnb_all .gnb_al_li {
-    width: 25%;
-    min-height: 45rem;
-    padding: 0 4rem;
-    border-left: 1px solid #ddd;
-    letter-spacing: -0.025em;
-  }
-
-  #gnb_all .gnb_al_li ul {
-    /*display:none;*/
-    padding: 2rem 0 0 0;
-  }
-
-  #gnb_all .gnb_al_li .gnb_al_a {
-    font-size: 1.5em;
-    display: block;
-    position: relative;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    color: var(--main-color2);
-  }
-
-  #gnb_all .gnb_al_li li {
-    line-height: 2em;
-  }
-
-  #gnb_all .gnb_al_li li a {
-    position: relative;
-    color: #555;
-    display: block;
-    padding: 0 0 0 1.6rem;
-  }
-
-  #gnb_all .gnb_al_li li a:before {
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 8px;
-    height: 1px;
-    content: "";
-    background: #222;
-  }
-
-  #gnb_all_bg {
-    display: none;
-    background: rgba(0, 0, 0, 0.1);
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 999;
-  }
-
-  #gnb_all .gnb_al_li .gnb_al_a i {
-    display: none;
-  }
-
-  /******************************1750******************************/
-  @media all and (max-width: 1750px) {
-    #max_header .inner {
-      max-width: 100%;
-      padding-left: 5%;
-    }
-  }
-  /******************************1400******************************/
-
-  @media all and (max-width: 1400px) {
-    #max_header {
-      height: 7rem;
-    }
-
-    #max_header #logo a,
-    #max_header.fixed #logo a {
-      width: 12rem;
-      height: auto;
-      background-size: contain;
-    }
-
-    #max_header #gnb .gnb_1dli {
-      line-height: 7rem;
-    }
-
-    #max_header #gnb .gnb_1dli .gnb_1da {
-      font-size: 1.6rem;
-      padding: 0 3rem;
-    } /***** 로그인 *****/
-
-    #max_header .utill li {
-      width: 7rem;
-      height: 7rem;
-    } /***** fullmenu_btn *****/
-
-    .gnb_close_btn {
-      width: 7rem;
-      height: 7rem;
-    }
-
-    .gnb_close_btn i {
-      font-size: 3rem;
-    }
-
-    #gnb_all > a {
-      padding: 2.5rem 5rem;
-    }
-
-    #gnb_all .gnb_in {
-      max-width: 100%;
-      padding: 5rem;
-    }
-
-    #gnb_all .gnb_in:before {
-      font-size: 25rem;
-      right: 0;
-      bottom: -32rem;
-    }
-
-    #gnb_all .gnb_in .title {
-      font-size: 3.8rem;
-    }
-
-    #gnb_all .gnb_al_li {
-      min-height: 40rem;
-      padding: 0 3rem;
-    }
-
-    #gnb_all .gnb_al_li ul {
-      padding: 2rem 0 0 0;
-    }
-
-    #gnb_all .gnb_al_li .gnb_al_a {
-      font-size: 1.4em;
-      margin-bottom: 0.5rem;
-    }
-  }
-  /******************************1200******************************/
-
-  @media all and (max-width: 1200px) {
-    #max_header #logo a,
-    #max_header.fixed #logo a {
-      width: 10rem;
-    }
-  }
-  /******************************1023******************************/
-
-  @media all and (max-width: 1023px) {
-    #max_header {
-      height: 6rem;
-    }
-
-    #max_header #gnb {
-      display: none;
-    } /***** 로그인 *****/
-
-    #max_header .utill li {
-      width: 6rem;
-      height: 6rem;
-    }
-
-    #max_header .utill li a {
-      background-size: 1.9rem;
-    } /***** fullmenu_btn *****/
-
-    #gnb_all {
-      background: #fff;
-    }
-
-    #gnb_all > a {
-      padding: 2rem;
-    }
-
-    #gnb_all > a img {
-      max-width: 10rem;
-    }
-
-    .gnb_close_btn {
-      width: 6rem;
-      height: 6rem;
-    }
-
-    .gnb_close_btn i {
-      font-size: 2.5rem;
-    }
-
-    #gnb_all .gnb_in {
-      flex-direction: column;
-      padding: 0 5%;
-    }
-
-    #gnb_all .gnb_in:before {
-      display: none;
-    }
-
-    #gnb_all .gnb_in .title {
-      display: none;
-    }
-
-    #gnb_all .gnb_al_ul {
-      width: 100%;
-      flex-wrap: wrap;
-      padding: 3rem 0;
-    }
-
-    #gnb_all .gnb_al_li {
-      min-height: auto;
-      padding: 0;
-      width: 100%;
-      border-left: 0;
-      border-bottom: 1px solid #e1e1e1;
-      opacity: 0;
-      filter: Alpha(opacity=0);
-      -webkit-transform: translateY(-20px);
-      transform: translateY(-20px);
-      -webkit-transition: all 0s 0s;
-      transition: all 0s 0s;
-    }
-
-    #gnb_all .gnb_al_li ul {
-      padding: 1rem 1.6rem;
-      display: none;
-      border-top: 1px solid #e1e1e1;
-      background-color: #f8f8f8;
-    }
-
-    #gnb_all .gnb_al_li .gnb_al_a {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      margin-bottom: 0;
-      padding: 1.5rem 1rem;
-      font-size: 1.2em;
-    }
-
-    #gnb_all .gnb_al_li .gnb_al_a i {
-      display: inline-block;
-    }
-
-    #gnb_all .gnb_al_li .gnb_al_a.on i {
-      transform: rotate(-180deg);
-    }
-
-    #gnb_all.open .gnb_al_li {
-      opacity: 1;
-      filter: Alpha(opacity=100);
-      -webkit-transform: translateY(0px);
-      transform: translateY(0px);
-      -webkit-transition: transform 0.5s, opacity 0.5s;
-      transition: transform 0.5s, opacity 0.5s;
-    }
-
-    #gnb_all.open .gnb_al_li:nth-child(1) {
-      transition-delay: 0.5s;
-    }
-
-    #gnb_all.open .gnb_al_li:nth-child(2) {
-      transition-delay: 0.65s;
-    }
-
-    #gnb_all.open .gnb_al_li:nth-child(3) {
-      transition-delay: 0.8s;
-    }
-
-    #gnb_all.open .gnb_al_li:nth-child(4) {
-      transition-delay: 0.95s;
-    }
-
-    #gnb_all.open .gnb_al_li:nth-child(5) {
-      transition-delay: 1.1s;
-    }
-
-    #gnb_all.open .gnb_al_li:nth-child(6) {
-      transition-delay: 1.25s;
-    }
-  }
-  /******************************767******************************/
-
-  @media all and (max-width: 767px) {
-    #max_header #logo a {
-      background-image: url(../image/common/logo_ov.png);
-    }
-
-    #gnb_all .gnb_al_li .gnb_al_a {
-      font-size: 1.4em;
-    }
-
-    #gnb_all .gnb_al_li li a {
-      font-size: 1.15em;
-      padding: 0.5rem 0 0.5rem 1.6rem;
-    }
-  }
-</style>
-<!-- max_header -->
-<div id="max_header">
-  <div class="inner">
-    <div id="logo">
-      <a href="https://ir.knu.ac.kr"
-        ><img src="https://ir.knu.ac.kr/img/logo.png" alt="경북대학교 IR센터"
-      /></a>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>경북대학교 IR센터</title>
+    <link rel="stylesheet" href="../css/default.css" />
+    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
+    <script>
+      // 자바스크립트에서 사용하는 전역변수 선언
+      var g5_url = "https://ir.knu.ac.kr";
+      var g5_bbs_url = "https://ir.knu.ac.kr/bbs";
+    </script>
+    <script src="../js/jquery-1.12.4.min.js?ver=220620"></script>
+    <script src="../js/jquery-migrate-1.4.1.min.js?ver=220620"></script>
+    <script src="../js/jquery.menu.js?ver=220620"></script>
+    <script src="../js/common.js?ver=220620"></script>
+    <script src="../js/knuir.js?ver=220620"></script>
+    <script src="../js/wrest.js?ver=220620"></script>
+    <script src="../js/placeholders.min.js?ver=220620"></script>
+    <script src="../js/swiper/swiper.min.js?ver=220620"></script>
+  </head>
+  <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <!-- max_wrap -->
+    <div id="max_wrap"></div>
+    <!--// max_wrap -->
+
+    <!-- 편집영역 -->
+    <style>
+      /*****  상단 레이아웃 *****/
+      #max_header {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 85px;
+        font-size: 0;
+        line-height: 1;
+        z-index: 5;
+        transition: all 0.3s;
+        /*  animation:headani 1s ease; */
+      }
+
+      #max_header .inner {
+        max-width: 1750px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      #max_header #logo {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+      }
+
+      #max_header #logo a {
+        display: block;
+        width: 14.2rem;
+        height: 2.9rem;
+        background: url(../image/common/logo.png) no-repeat 50% 50%;
+        background-size: cover;
+        font-size: 0;
+        text-indent: -99999px;
+      }
+
+      #max_header.fixed {
+        position: fixed;
+        top: 0;
+        background: #fff;
+        border-bottom: 1px solid #d6d6d6;
+      }
+
+      #max_header.fixed #logo a {
+        background: url(../image/common/logo_ov.png) no-repeat 50% 50%;
+      }
+
+      @-webkit-keyframes headani {
+        0% {
+          margin-top: -85px;
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+          margin-top: 0;
+        }
+      }
+
+      /*****  메인메뉴 *****/
+      #max_header #gnb {
+        position: relative;
+        width: 100%;
+        /*background:#fff;*/
+        display: flex;
+      }
+
+      #max_header #gnb > h2 {
+        position: absolute;
+        font-size: 0;
+        line-height: 0;
+        overflow: hidden;
+      }
+
+      #max_header #gnb .gnb_wrap {
+        margin: 0 auto;
+        position: relative;
+      }
+
+      #max_header #gnb .gnb_wrap:hover,
+      #max_header #gnb .gnb_wrap:focus,
+      #max_header #gnb .gnb_wrap:active {
+        z-index: 3;
+      }
+
+      #max_header #gnb #gnb_1dul {
+        font-size: 1.8rem;
+        padding: 0;
+        /*border-bottom:1px solid #e0e2e5;zoom:1*/
+      }
+
+      #max_header #gnb ul:after {
+        display: block;
+        visibility: hidden;
+        clear: both;
+        content: "";
+      }
+
+      #max_header #gnb .gnb_1dli {
+        display: inline-block;
+        line-height: 85px;
+        padding: 0px;
+        position: relative;
+      }
+
+      #max_header #gnb .gnb_1dli:hover > a {
+        color: var(--main-color1);
+        -webkit-transition: background-color 2s ease-out;
+        -moz-transition: background-color 0.3s ease-out;
+        -o-transition: background-color 0.3s ease-out;
+        transition: background-color 0.3s ease-out;
+      }
+
+      #max_header #gnb .gnb_1dli .bg {
+        position: absolute;
+        top: 24px;
+        right: 8px;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        overflow: hidden;
+        /*background:url('../img/gnb_bg2.gif') no-repeat 50% 50%;*/
+        text-indent: -999px;
+      }
+
+      #max_header #gnb .gnb_1dli .gnb_1da {
+        overflow: hidden;
+        position: relative;
+        display: block;
+        font-weight: 600;
+        padding: 0 50px;
+        color: #080808;
+        text-decoration: none;
+      }
+
+      #max_header #gnb .gnb_1dli .gnb_1da {
+        overflow: hidden;
+      }
+
+      #max_header #gnb .gnb_1dli .gnb_1da:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: var(--main-color1);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        -webkit-transform: translateX(-150%);
+        -ms-transform: translateX(-150%);
+        transform: translateX(-150%);
+        -webkit-transition: -webkit-transform 0.3s
+            cubic-bezier(0.5, 0.7, 0.4, 1),
+          opacity 0.1s ease 0.3s;
+        transition: transform 0.3s cubic-bezier(0.5, 0.7, 0.4, 1),
+          opacity 0.1s ease 0.3s;
+        z-index: 2;
+      }
+
+      #max_header #gnb #gnb_1dul > li a:before {
+        content: "";
+        display: block;
+        width: 0px;
+        height: 3px;
+        position: absolute;
+        right: 0px;
+        top: -3px;
+        background-color: #e0002a;
+        transition: all 0.8s cubic-bezier(0.46, 0.87, 0.18, 1.01);
+      }
+
+      #max_header #gnb #gnb_1dul > li:hover a:before {
+        left: 0;
+        width: 100%;
+      }
+
+      #max_header #gnb .gnb_1dli_over .gnb_1da:hover:before {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+      }
+
+      #max_header #gnb .gnb_1dli.out .gnb_1da:before {
+        -webkit-transform: translateX(101%);
+        -ms-transform: translateX(101%);
+        transform: translateX(101%);
+        opacity: 0;
+      }
+
+      /*#max_header #gnb .gnb_1dli .gnb_1da:hover:before {position:absolute; bottom:1.8rem; left:50%; transform:translateX(-50%); content:''; width:6px; height:6px; border-radius:1rem;
+    background: var(--main-color1);}*/
+      #max_header #gnb .gnb_1dli .gnb_2dli:first-child {
+        border: 0;
+      }
+
+      .gnb_2dul {
+        /*display:none;*/
+        position: absolute;
+        top: 86px;
+        min-width: 100%;
+      }
+
+      .gnb_2dul .gnb_2dul_box {
+        visibility: hidden;
+        max-height: 0;
+        border-top: 0;
+        padding: 1rem 0;
+        background: #fff;
+        box-shadow: 0px 22px 22px 0px rgb(0, 0, 0, 0.5);
+      }
+
+      #max_header #gnb .gnb_1dli:hover .gnb_2dul_box {
+        visibility: visible;
+        max-height: 300px;
+        overflow: hidden;
+        -webkit-transition: max-height 0.5s ease;
+        transition: max-height 0.5s ease;
+      }
+
+      #max_header.fixed #gnb .gnb_1dli:hover .gnb_2dul_box {
+        box-shadow: 0px 5px 5px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .gnb_2da {
+        font-size: 1.6rem;
+        display: block;
+        padding: 1rem 2rem;
+        line-height: 1.5;
+        color: #4a4a4a;
+        text-align: left;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      a.gnb_2da:hover {
+        color: var(--main-color1);
+        -moz-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
+
+      .gnb_2da:focus,
+      .gnb_2da:hover {
+        color: #fff;
+      }
+
+      .gnb_1dli_over .gnb_2dul {
+        display: block;
+        left: 0;
+      }
+
+      .gnb_1dli_over2 .gnb_2dul {
+        display: block;
+        right: 0;
+      }
+
+      .gnb_wrap .gnb_empty {
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+        line-height: 2.7em;
+        color: #080808;
+      }
+
+      .gnb_wrap .gnb_empty a {
+        color: var(--main-color1);
+        text-decoration: underline;
+      }
+
+      .gnb_wrap .gnb_al_ul .gnb_empty,
+      .gnb_wrap .gnb_al_ul .gnb_empty a {
+        color: #555;
+      }
+
+      /***** 로그인 *****/
+      #max_header .utill {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+      }
+
+      #max_header .utill li {
+        width: 8.5rem;
+        height: 8.5rem;
+        border-left: 1px solid #d6d6d6;
+      }
+
+      #max_header .utill li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 2.2rem;
+      }
+
+      #max_header .utill li a.login {
+        background-image: url(../image/common/ico_login.png);
+      }
+
+      #max_header .utill li a.logout {
+        background-image: url(../image/common/ico_logout.png);
+      }
+
+      /***** fullmenu_btn *****/
+      #max_header .gnb_menu_btn {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--main-color1);
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0;
+      }
+
+      #max_header .gnb_menu_btn div {
+        position: relative;
+        width: 20px;
+        height: 20px;
+      }
+
+      #max_header .gnb_menu_btn div > span {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        transition-duration: 0.5s;
+        -webkit-transition-duration: 0.5s;
+        border: 1px solid #fff;
+        border-radius: 2px;
+      }
+
+      #max_header .gnb_menu_btn span:nth-child(1) {
+        top: 0;
+        left: 0;
+      }
+
+      #max_header .gnb_menu_btn span:nth-child(2) {
+        top: 0;
+        left: 12px;
+      }
+
+      #max_header .gnb_menu_btn span:nth-child(3) {
+        top: 12px;
+        left: 0;
+      }
+
+      #max_header .gnb_menu_btn span:nth-child(4) {
+        top: 12px;
+        left: 12px;
+      }
+
+      #max_header .gnb_menu_btn:hover div > span {
+        animation: dot 0.6s forwards;
+        -webkit-animation: dot 0.6s forwards;
+      }
+
+      @keyframes dot {
+        50% {
+          top: 8px;
+          left: 8px;
+        }
+      }
+
+      @-webkit-keyframes dot {
+        50% {
+          top: 8px;
+          left: 8px;
+        }
+      }
+
+      #gnb_all {
+        /*display:none;*/
+        position: fixed;
+        visibility: hidden;
+        left: 100%;
+        transition: all 0.5s;
+        transform-origin: 100% 50%;
+        width: 100vh;
+        height: 100vh;
+        background: #f5f5f5;
+        z-index: 1000;
+        -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      #gnb_all.open {
+        width: 100%;
+        left: 0;
+        visibility: visible;
+        z-index: 999;
+      }
+
+      .gnb_close_btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 8.5rem;
+        height: 8.5rem;
+        background: none;
+        border: 0;
+      }
+
+      .gnb_close_btn i {
+        font-size: 3.5rem;
+      }
+
+      #gnb_all h2 {
+        font-size: 0;
+        line-height: 1;
+      }
+
+      #gnb_all > a {
+        display: inline-block;
+        padding: 3rem 4.5rem;
+      }
+
+      #gnb_all .gnb_in {
+        position: relative;
+        width: 100%;
+        max-width: 1480px;
+        padding-top: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+      }
+
+      #gnb_all .gnb_in:before {
+        position: absolute;
+        bottom: -40rem;
+        right: -25rem;
+        content: "KNU IR";
+        font-size: 40rem;
+        color: #ebebeb;
+        font-weight: 900;
+      }
+
+      #gnb_all .gnb_in .title {
+        width: 20%;
+        font-size: 4.6rem;
+        color: #000;
+        font-weight: 600;
+      }
+
+      #gnb_all .gnb_al_ul:after {
+        display: block;
+        visibility: hidden;
+        clear: both;
+        content: "";
+      }
+
+      #gnb_all .gnb_al_ul > li:nth-child(5n + 1) {
+        border-left: 0;
+      }
+
+      #gnb_all .gnb_al_ul {
+        display: flex;
+        width: calc(100% - 20%);
+      }
+
+      #gnb_all .gnb_al_li {
+        width: 25%;
+        min-height: 45rem;
+        padding: 0 4rem;
+        border-left: 1px solid #ddd;
+        letter-spacing: -0.025em;
+      }
+
+      #gnb_all .gnb_al_li ul {
+        /*display:none;*/
+        padding: 2rem 0 0 0;
+      }
+
+      #gnb_all .gnb_al_li .gnb_al_a {
+        font-size: 1.5em;
+        display: block;
+        position: relative;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        color: var(--main-color2);
+      }
+
+      #gnb_all .gnb_al_li li {
+        line-height: 2em;
+      }
+
+      #gnb_all .gnb_al_li li a {
+        position: relative;
+        color: #555;
+        display: block;
+        padding: 0 0 0 1.6rem;
+      }
+
+      #gnb_all .gnb_al_li li a:before {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 8px;
+        height: 1px;
+        content: "";
+        background: #222;
+      }
+
+      #gnb_all_bg {
+        display: none;
+        background: rgba(0, 0, 0, 0.1);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 999;
+      }
+
+      #gnb_all .gnb_al_li .gnb_al_a i {
+        display: none;
+      }
+
+      /******************************1750******************************/
+      @media all and (max-width: 1750px) {
+        #max_header .inner {
+          max-width: 100%;
+          padding-left: 5%;
+        }
+      }
+      /******************************1400******************************/
+
+      @media all and (max-width: 1400px) {
+        #max_header {
+          height: 7rem;
+        }
+
+        #max_header #logo a,
+        #max_header.fixed #logo a {
+          width: 12rem;
+          height: auto;
+          background-size: contain;
+        }
+
+        #max_header #gnb .gnb_1dli {
+          line-height: 7rem;
+        }
+
+        #max_header #gnb .gnb_1dli .gnb_1da {
+          font-size: 1.6rem;
+          padding: 0 3rem;
+        } /***** 로그인 *****/
+
+        #max_header .utill li {
+          width: 7rem;
+          height: 7rem;
+        } /***** fullmenu_btn *****/
+
+        .gnb_close_btn {
+          width: 7rem;
+          height: 7rem;
+        }
+
+        .gnb_close_btn i {
+          font-size: 3rem;
+        }
+
+        #gnb_all > a {
+          padding: 2.5rem 5rem;
+        }
+
+        #gnb_all .gnb_in {
+          max-width: 100%;
+          padding: 5rem;
+        }
+
+        #gnb_all .gnb_in:before {
+          font-size: 25rem;
+          right: 0;
+          bottom: -32rem;
+        }
+
+        #gnb_all .gnb_in .title {
+          font-size: 3.8rem;
+        }
+
+        #gnb_all .gnb_al_li {
+          min-height: 40rem;
+          padding: 0 3rem;
+        }
+
+        #gnb_all .gnb_al_li ul {
+          padding: 2rem 0 0 0;
+        }
+
+        #gnb_all .gnb_al_li .gnb_al_a {
+          font-size: 1.4em;
+          margin-bottom: 0.5rem;
+        }
+      }
+      /******************************1200******************************/
+
+      @media all and (max-width: 1200px) {
+        #max_header #logo a,
+        #max_header.fixed #logo a {
+          width: 10rem;
+        }
+      }
+      /******************************1023******************************/
+
+      @media all and (max-width: 1023px) {
+        #max_header {
+          height: 6rem;
+        }
+
+        #max_header #gnb {
+          display: none;
+        } /***** 로그인 *****/
+
+        #max_header .utill li {
+          width: 6rem;
+          height: 6rem;
+        }
+
+        #max_header .utill li a {
+          background-size: 1.9rem;
+        } /***** fullmenu_btn *****/
+
+        #gnb_all {
+          background: #fff;
+        }
+
+        #gnb_all > a {
+          padding: 2rem;
+        }
+
+        #gnb_all > a img {
+          max-width: 10rem;
+        }
+
+        .gnb_close_btn {
+          width: 6rem;
+          height: 6rem;
+        }
+
+        .gnb_close_btn i {
+          font-size: 2.5rem;
+        }
+
+        #gnb_all .gnb_in {
+          flex-direction: column;
+          padding: 0 5%;
+        }
+
+        #gnb_all .gnb_in:before {
+          display: none;
+        }
+
+        #gnb_all .gnb_in .title {
+          display: none;
+        }
+
+        #gnb_all .gnb_al_ul {
+          width: 100%;
+          flex-wrap: wrap;
+          padding: 3rem 0;
+        }
+
+        #gnb_all .gnb_al_li {
+          min-height: auto;
+          padding: 0;
+          width: 100%;
+          border-left: 0;
+          border-bottom: 1px solid #e1e1e1;
+          opacity: 0;
+          filter: Alpha(opacity=0);
+          -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+          -webkit-transition: all 0s 0s;
+          transition: all 0s 0s;
+        }
+
+        #gnb_all .gnb_al_li ul {
+          padding: 1rem 1.6rem;
+          display: none;
+          border-top: 1px solid #e1e1e1;
+          background-color: #f8f8f8;
+        }
+
+        #gnb_all .gnb_al_li .gnb_al_a {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          margin-bottom: 0;
+          padding: 1.5rem 1rem;
+          font-size: 1.2em;
+        }
+
+        #gnb_all .gnb_al_li .gnb_al_a i {
+          display: inline-block;
+        }
+
+        #gnb_all .gnb_al_li .gnb_al_a.on i {
+          transform: rotate(-180deg);
+        }
+
+        #gnb_all.open .gnb_al_li {
+          opacity: 1;
+          filter: Alpha(opacity=100);
+          -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+          -webkit-transition: transform 0.5s, opacity 0.5s;
+          transition: transform 0.5s, opacity 0.5s;
+        }
+
+        #gnb_all.open .gnb_al_li:nth-child(1) {
+          transition-delay: 0.5s;
+        }
+
+        #gnb_all.open .gnb_al_li:nth-child(2) {
+          transition-delay: 0.65s;
+        }
+
+        #gnb_all.open .gnb_al_li:nth-child(3) {
+          transition-delay: 0.8s;
+        }
+
+        #gnb_all.open .gnb_al_li:nth-child(4) {
+          transition-delay: 0.95s;
+        }
+
+        #gnb_all.open .gnb_al_li:nth-child(5) {
+          transition-delay: 1.1s;
+        }
+
+        #gnb_all.open .gnb_al_li:nth-child(6) {
+          transition-delay: 1.25s;
+        }
+      }
+      /******************************767******************************/
+
+      @media all and (max-width: 767px) {
+        #max_header #logo a {
+          background-image: url(../image/common/logo_ov.png);
+        }
+
+        #gnb_all .gnb_al_li .gnb_al_a {
+          font-size: 1.4em;
+        }
+
+        #gnb_all .gnb_al_li li a {
+          font-size: 1.15em;
+          padding: 0.5rem 0 0.5rem 1.6rem;
+        }
+      }
+    </style>
+    <!-- max_header -->
+    <div id="max_header">
+      <div class="inner">
+        <div id="logo">
+          <a href="https://ir.knu.ac.kr"
+            ><img
+              src="https://ir.knu.ac.kr/img/logo.png"
+              alt="경북대학교 IR센터"
+          /></a>
+        </div>
+        <nav id="gnb">
+          <h2>메인메뉴</h2>
+          <div class="gnb_wrap">
+            <ul id="gnb_1dul">
+              <li class="gnb_1dli gnb_al_li_plus" style="z-index: 999;">
+                <a href="/intro/greeting.php" target="_self" class="gnb_1da"
+                  >센터소개</a
+                >
+                <span class="bg">하위분류</span>
+                <div class="gnb_2dul">
+                  <ul class="gnb_2dul_box">
+                    <li class="gnb_2dli">
+                      <a
+                        href="/intro/greeting.php"
+                        target="_self"
+                        class="gnb_2da"
+                        >인사말</a
+                      >
+                    </li>
+                    <li class="gnb_2dli">
+                      <a href="/intro/goal.php" target="_self" class="gnb_2da"
+                        >설립목적</a
+                      >
+                    </li>
+                    <li class="gnb_2dli">
+                      <a href="/intro/core.php" target="_self" class="gnb_2da"
+                        >주요사업</a
+                      >
+                    </li>
+                    <li class="gnb_2dli">
+                      <a
+                        href="/intro/organization.php"
+                        target="_self"
+                        class="gnb_2da"
+                        >조직도</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="gnb_1dli gnb_al_li_plus" style="z-index: 998;">
+                <a href="/state/report.php" target="_self" class="gnb_1da"
+                  >대학현황</a
+                >
+                <span class="bg">하위분류</span>
+                <div class="gnb_2dul">
+                  <ul class="gnb_2dul_box">
+                    <li class="gnb_2dli">
+                      <a href="/state/report.php" target="_self" class="gnb_2da"
+                        >통계연보</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="gnb_1dli gnb_al_li_plus" style="z-index: 997;">
+                <a
+                  href="/bbs/board.php?bo_table=recruit"
+                  target="_self"
+                  class="gnb_1da"
+                  >KNU 교육패널</a
+                >
+                <span class="bg">하위분류</span>
+                <div class="gnb_2dul">
+                  <ul class="gnb_2dul_box">
+                    <li class="gnb_2dli">
+                      <a
+                        href="/bbs/board.php?bo_table=report"
+                        target="_self"
+                        class="gnb_2da"
+                        >분석보고서</a
+                      >
+                    </li>
+                    <li class="gnb_2dli">
+                      <a
+                        href="/bbs/board.php?bo_table=recruit"
+                        target="_self"
+                        class="gnb_2da"
+                        >공지사항</a
+                      >
+                    </li>
+                    <li class="gnb_2dli">
+                      <a href="/panel/agree.php" target="_self" class="gnb_2da"
+                        >패널신청</a
+                      >
+                    </li>
+                    <li class="gnb_2dli">
+                      <a
+                        href="/panel/participation.php"
+                        target="_self"
+                        class="gnb_2da"
+                        >조사참여</a
+                      >
+                    </li>
+                    <li class="gnb_2dli">
+                      <a
+                        href="/bbs/board.php?bo_table=mypage"
+                        target="_self"
+                        class="gnb_2da"
+                        >나의활동</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="gnb_1dli gnb_al_li_plus" style="z-index: 996;">
+                <a
+                  href="/bbs/board.php?bo_table=family_site"
+                  target="_self"
+                  class="gnb_1da"
+                  >관련사이트</a
+                >
+                <span class="bg">하위분류</span>
+                <div class="gnb_2dul">
+                  <ul class="gnb_2dul_box">
+                    <li class="gnb_2dli">
+                      <a
+                        href="/bbs/board.php?bo_table=family_site"
+                        target="_self"
+                        class="gnb_2da"
+                        >관련사이트</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <ul class="utill">
+        <li><a href="/bbs/login.php" class="login">로그인</a></li>
+        <li>
+          <button type="button" class="gnb_menu_btn" title="전체메뉴">
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </li>
+      </ul>
     </div>
-    <nav id="gnb">
-      <h2>메인메뉴</h2>
-      <div class="gnb_wrap">
-        <ul id="gnb_1dul">
-          <li class="gnb_1dli gnb_al_li_plus" style="z-index: 999;">
-            <a href="/intro/greeting.php" target="_self" class="gnb_1da"
-              >센터소개</a
-            >
-            <span class="bg">하위분류</span>
-            <div class="gnb_2dul">
-              <ul class="gnb_2dul_box">
-                <li class="gnb_2dli">
-                  <a href="/intro/greeting.php" target="_self" class="gnb_2da"
-                    >인사말</a
-                  >
-                </li>
-                <li class="gnb_2dli">
-                  <a href="/intro/goal.php" target="_self" class="gnb_2da"
-                    >설립목적</a
-                  >
-                </li>
-                <li class="gnb_2dli">
-                  <a href="/intro/core.php" target="_self" class="gnb_2da"
-                    >주요사업</a
-                  >
-                </li>
-                <li class="gnb_2dli">
-                  <a
-                    href="/intro/organization.php"
-                    target="_self"
-                    class="gnb_2da"
-                    >조직도</a
-                  >
-                </li>
-              </ul>
-            </div>
+    <!--// max_header -->
+    <!-- full_menu -->
+    <div id="gnb_all">
+      <h2>전체메뉴</h2>
+      <a href="https://ir.knu.ac.kr"
+        ><img
+          src="https://ir.knu.ac.kr/theme/knuir/image/common/logo_ov.png"
+          alt=""
+      /></a>
+      <div class="gnb_in">
+        <div class="title">KNU IR<br />Center</div>
+        <ul class="gnb_al_ul">
+          <li class="gnb_al_li">
+            <a href="javascript:;" target="_self" class="gnb_al_a"
+              >센터소개 <i class="xi-angle-down-thin"></i
+            ></a>
+            <ul class="sub_menu">
+              <li><a href="/intro/greeting.php" target="_self">인사말</a></li>
+              <li><a href="/intro/goal.php" target="_self">설립목적</a></li>
+              <li><a href="/intro/core.php" target="_self">주요사업</a></li>
+              <li>
+                <a href="/intro/organization.php" target="_self">조직도</a>
+              </li>
+            </ul>
           </li>
-          <li class="gnb_1dli gnb_al_li_plus" style="z-index: 998;">
-            <a href="/state/report.php" target="_self" class="gnb_1da"
-              >대학현황</a
-            >
-            <span class="bg">하위분류</span>
-            <div class="gnb_2dul">
-              <ul class="gnb_2dul_box">
-                <li class="gnb_2dli">
-                  <a href="/state/report.php" target="_self" class="gnb_2da"
-                    >통계연보</a
-                  >
-                </li>
-              </ul>
-            </div>
+          <li class="gnb_al_li">
+            <a href="javascript:;" target="_self" class="gnb_al_a"
+              >대학현황 <i class="xi-angle-down-thin"></i
+            ></a>
+            <ul class="sub_menu">
+              <li><a href="/state/report.php" target="_self">통계연보</a></li>
+            </ul>
           </li>
-          <li class="gnb_1dli gnb_al_li_plus" style="z-index: 997;">
-            <a
-              href="/bbs/board.php?bo_table=recruit"
-              target="_self"
-              class="gnb_1da"
-              >KNU 교육패널</a
-            >
-            <span class="bg">하위분류</span>
-            <div class="gnb_2dul">
-              <ul class="gnb_2dul_box">
-                <li class="gnb_2dli">
-                  <a
-                    href="/bbs/board.php?bo_table=report"
-                    target="_self"
-                    class="gnb_2da"
-                    >분석보고서</a
-                  >
-                </li>
-                <li class="gnb_2dli">
-                  <a
-                    href="/bbs/board.php?bo_table=recruit"
-                    target="_self"
-                    class="gnb_2da"
-                    >공지사항</a
-                  >
-                </li>
-                <li class="gnb_2dli">
-                  <a href="/panel/agree.php" target="_self" class="gnb_2da"
-                    >패널신청</a
-                  >
-                </li>
-                <li class="gnb_2dli">
-                  <a
-                    href="/panel/participation.php"
-                    target="_self"
-                    class="gnb_2da"
-                    >조사참여</a
-                  >
-                </li>
-                <li class="gnb_2dli">
-                  <a
-                    href="/bbs/board.php?bo_table=mypage"
-                    target="_self"
-                    class="gnb_2da"
-                    >나의활동</a
-                  >
-                </li>
-              </ul>
-            </div>
+          <li class="gnb_al_li">
+            <a href="javascript:;" target="_self" class="gnb_al_a"
+              >KNU 교육패널 <i class="xi-angle-down-thin"></i
+            ></a>
+            <ul class="sub_menu">
+              <li>
+                <a href="/bbs/board.php?bo_table=report" target="_self"
+                  >분석보고서</a
+                >
+              </li>
+              <li>
+                <a href="/bbs/board.php?bo_table=recruit" target="_self"
+                  >공지사항</a
+                >
+              </li>
+              <li><a href="/panel/agree.php" target="_self">패널신청</a></li>
+              <li>
+                <a href="/panel/participation.php" target="_self">조사참여</a>
+              </li>
+              <li>
+                <a href="/bbs/board.php?bo_table=mypage" target="_self"
+                  >나의활동</a
+                >
+              </li>
+            </ul>
           </li>
-          <li class="gnb_1dli gnb_al_li_plus" style="z-index: 996;">
-            <a
-              href="/bbs/board.php?bo_table=family_site"
-              target="_self"
-              class="gnb_1da"
-              >관련사이트</a
-            >
-            <span class="bg">하위분류</span>
-            <div class="gnb_2dul">
-              <ul class="gnb_2dul_box">
-                <li class="gnb_2dli">
-                  <a
-                    href="/bbs/board.php?bo_table=family_site"
-                    target="_self"
-                    class="gnb_2da"
-                    >관련사이트</a
-                  >
-                </li>
-              </ul>
-            </div>
+          <li class="gnb_al_li">
+            <a href="javascript:;" target="_self" class="gnb_al_a"
+              >관련사이트 <i class="xi-angle-down-thin"></i
+            ></a>
+            <ul class="sub_menu">
+              <li>
+                <a href="/bbs/board.php?bo_table=family_site" target="_self"
+                  >관련사이트</a
+                >
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
-    </nav>
-  </div>
-  <ul class="utill">
-    <li><a href="/bbs/login.php" class="login">로그인</a></li>
-    <li>
-      <button type="button" class="gnb_menu_btn" title="전체메뉴">
-        <div>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+      <button type="button" class="gnb_close_btn">
+        <i class="xi-close" aria-hidden="true"></i>
       </button>
-    </li>
-  </ul>
-</div>
-<!--// max_header -->
+    </div>
+    <div id="gnb_all_bg"></div>
+    <!--// full_menu -->
+    <!-- //편집영역 -->
 
-<!-- full_menu -->
-<div id="gnb_all">
-  <h2>전체메뉴</h2>
-  <a href="https://ir.knu.ac.kr"
-    ><img
-      src="https://ir.knu.ac.kr/theme/knuir/image/common/logo_ov.png"
-      alt=""
-  /></a>
-  <div class="gnb_in">
-    <div class="title">KNU IR<br />Center</div>
-    <ul class="gnb_al_ul">
-      <li class="gnb_al_li">
-        <a href="javascript:;" target="_self" class="gnb_al_a"
-          >센터소개 <i class="xi-angle-down-thin"></i
-        ></a>
-        <ul class="sub_menu">
-          <li><a href="/intro/greeting.php" target="_self">인사말</a></li>
-          <li><a href="/intro/goal.php" target="_self">설립목적</a></li>
-          <li><a href="/intro/core.php" target="_self">주요사업</a></li>
-          <li><a href="/intro/organization.php" target="_self">조직도</a></li>
-        </ul>
-      </li>
-      <li class="gnb_al_li">
-        <a href="javascript:;" target="_self" class="gnb_al_a"
-          >대학현황 <i class="xi-angle-down-thin"></i
-        ></a>
-        <ul class="sub_menu">
-          <li><a href="/state/report.php" target="_self">통계연보</a></li>
-        </ul>
-      </li>
-      <li class="gnb_al_li">
-        <a href="javascript:;" target="_self" class="gnb_al_a"
-          >KNU 교육패널 <i class="xi-angle-down-thin"></i
-        ></a>
-        <ul class="sub_menu">
-          <li>
-            <a href="/bbs/board.php?bo_table=report" target="_self"
-              >분석보고서</a
-            >
-          </li>
-          <li>
-            <a href="/bbs/board.php?bo_table=recruit" target="_self"
-              >공지사항</a
-            >
-          </li>
-          <li><a href="/panel/agree.php" target="_self">패널신청</a></li>
-          <li>
-            <a href="/panel/participation.php" target="_self">조사참여</a>
-          </li>
-          <li>
-            <a href="/bbs/board.php?bo_table=mypage" target="_self">나의활동</a>
-          </li>
-        </ul>
-      </li>
-      <li class="gnb_al_li">
-        <a href="javascript:;" target="_self" class="gnb_al_a"
-          >관련사이트 <i class="xi-angle-down-thin"></i
-        ></a>
-        <ul class="sub_menu">
-          <li>
-            <a href="/bbs/board.php?bo_table=family_site" target="_self"
-              >관련사이트</a
-            >
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  <button type="button" class="gnb_close_btn">
-    <i class="xi-close" aria-hidden="true"></i>
-  </button>
-</div>
-<div id="gnb_all_bg"></div>
-<!--// full_menu -->
+    <script>
+      $(function () {
+        // 폰트 리사이즈 쿠키있으면 실행
+        font_resize(
+          "container",
+          get_cookie("ck_font_resize_rmv_class"),
+          get_cookie("ck_font_resize_add_class")
+        );
+
+        AOS.init();
+      });
+    </script>
+  </body>
+</html>
