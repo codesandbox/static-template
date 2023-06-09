@@ -96,6 +96,22 @@
         </div>
       </div>
     </div>
+    <script>
+      $(function () {
+        $(".ico_mainmenu").mouseover(function () {
+          $(".ico_mainmenu").children(".loc_layer").show();
+        });
+        $(".ico_mainmenu").mouseleave(function () {
+          $(".ico_mainmenu").children(".loc_layer").hide();
+        });
+        $(".ico_submenu").mouseover(function () {
+          $(".ico_submenu").children(".loc_layer").show();
+        });
+        $(".ico_submenu").mouseleave(function () {
+          $(".ico_submenu").children(".loc_layer").hide();
+        });
+      });
+    </script>
     <!-- //편집영역 (편집할 경우 여기 안에서만 편집 다른페이지도 편집영역이라 써있는 곳 안에서 편집) -->
   </body>
 </html>
