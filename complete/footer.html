@@ -1,0 +1,451 @@
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>경북대학교 IR센터</title>
+    <link rel="stylesheet" href="../css/default.css" />
+    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
+    <script>
+      // 자바스크립트에서 사용하는 전역변수 선언
+      var g5_url = "https://ir.knu.ac.kr";
+      var g5_bbs_url = "https://ir.knu.ac.kr/bbs";
+    </script>
+    <script src="https://ir.knu.ac.kr/js/jquery-1.12.4.min.js?ver=220620"></script>
+    <script src="https://ir.knu.ac.kr/js/jquery-migrate-1.4.1.min.js?ver=220620"></script>
+    <script src="https://ir.knu.ac.kr/js/jquery.menu.js?ver=220620"></script>
+    <script src="https://ir.knu.ac.kr/js/common.js?ver=220620"></script>
+    <script src="https://ir.knu.ac.kr/js/knuir.js?ver=220620"></script>
+    <script src="https://ir.knu.ac.kr/js/wrest.js?ver=220620"></script>
+    <script src="https://ir.knu.ac.kr/js/placeholders.min.js?ver=220620"></script>
+    <script src="https://ir.knu.ac.kr/js/swiper/swiper.min.js?ver=220620"></script>
+  </head>
+  <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <!-- max_wrap -->
+    <div id="max_wrap"></div>
+    <!--// max_wrap -->
+
+    <!-- 편집영역 -->
+    <style>
+      /******************************480******************************/
+      @media all and (max-width: 480px) {
+        #gnb_all .gnb_al_ul {
+          padding: 2rem 0;
+        }
+
+        #gnb_all .gnb_al_li .gnb_al_a {
+          font-size: 1.15em;
+        }
+
+        #gnb_all .gnb_al_li li a {
+          font-size: 0.95em;
+          padding: 0 0 0 1.6rem;
+        }
+      }
+      /***** footer *****/
+
+      #max_footer {
+        background: #1d1d1d;
+        font-size: 0;
+        line-height: 1;
+      }
+
+      #max_footer .top_info {
+        background: #141414;
+        border-bottom: 1px solid #222;
+      }
+
+      #max_footer .top_info ul {
+        max-width: 1400px;
+        height: 55px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+      }
+
+      #max_footer .top_info ul li {
+        position: relative;
+        padding-left: 4rem;
+      }
+
+      #max_footer .top_info ul li:before {
+        position: absolute;
+        top: 0.8rem;
+        left: 2rem;
+        width: 4px;
+        height: 4px;
+        content: "";
+        background: #707070;
+        border-radius: 5px;
+      }
+
+      #max_footer .top_info ul li:first-child {
+        padding-left: 0;
+      }
+
+      #max_footer .top_info ul li:first-child:before {
+        display: none;
+      }
+
+      #max_footer .top_info ul li a {
+        font-size: 1.6rem;
+        color: #ababab;
+        line-height: 1.3;
+      }
+
+      #max_footer .top_info ul li:first-child a {
+        color: #fff;
+      }
+
+      #max_footer .info {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.6rem;
+        padding: 4.5rem 0;
+      }
+
+      #max_footer .info > ul {
+      }
+
+      #max_footer .info > ul > li {
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        padding-left: 4rem;
+      }
+
+      #max_footer .info > ul > li > a {
+        color: #7e7e7e;
+      }
+
+      #max_footer .info > ul > li strong {
+        color: #b7b7b7;
+        display: inline-block;
+        margin-right: 1.5rem;
+        font-weight: 500;
+      }
+
+      #max_footer .info ul li:first-child {
+        padding-left: 0;
+      }
+
+      #max_footer .info ul li.w100 {
+        display: block;
+        padding-left: 0;
+        margin-bottom: 0;
+      }
+
+      #max_footer .info cite {
+        color: #626262;
+        font-size: 1.3rem;
+        font-style: normal;
+      }
+
+      .family_box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .family_site {
+        position: relative;
+        max-width: 20rem;
+        margin-bottom: 1rem;
+      }
+
+      .family_site button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: 0;
+        border: 1px solid #404040;
+        border-radius: 6px;
+        position: relative;
+        width: 20rem;
+        height: 48px;
+        padding: 0 22px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #b4b4b4;
+        transition: background-color 0.3s;
+      }
+
+      .family_site button::after {
+        content: "\e945";
+        font-family: xeicon !important;
+        font-style: normal;
+        line-height: 1;
+        font-variant: normal;
+        text-transform: none;
+        speek: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transition: transform 0.3s;
+      }
+
+      .family_site.open button::after {
+        transform: rotate(-180deg);
+      }
+
+      .family_list {
+        display: none;
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        border-bottom: 1px solid #757575;
+        background-color: #3b3b3b;
+        z-index: 1;
+      }
+
+      .family_list a {
+        color: #9b9b9b;
+        padding: 0.8rem 2rem;
+        display: inline-block;
+        word-break: keep-all;
+        line-height: 1.3;
+        font-size: 1.5rem;
+      }
+
+      /******************************1400******************************/
+      @media all and (max-width: 1400px) {
+        #max_footer .top_info ul {
+          max-width: 100%;
+          padding: 0 5%;
+        }
+
+        #max_footer .top_info ul li a {
+          font-size: 1.5rem;
+        }
+
+        #max_footer .info {
+          max-width: 100%;
+          padding: 4.5rem 5%;
+        }
+
+        #max_footer .info > ul > li {
+          font-size: 1.5rem;
+          padding-left: 3rem;
+        }
+      }
+      /******************************1200******************************/
+
+      @media all and (max-width: 1200px) {
+        #max_footer .top_info ul li a {
+          font-size: 1.4rem;
+        }
+
+        #max_footer .info {
+          padding: 3.5rem 5%;
+        }
+
+        #max_footer .info > ul > li {
+          font-size: 1.4rem;
+          padding-left: 2rem;
+        }
+
+        .family_site button {
+          font-size: 1.4rem;
+        }
+      }
+      /******************************1023******************************/
+
+      @media all and (max-width: 1023px) {
+        #max_footer .top_info ul {
+          height: 5rem;
+        }
+
+        #max_footer .top_info ul li {
+          padding-left: 3.5rem;
+        }
+
+        #max_footer .top_info ul li:before {
+          left: 1.7rem;
+        }
+
+        #max_footer .info {
+          padding: 3rem 5%;
+          flex-wrap: wrap;
+          flex-direction: column;
+        }
+
+        #max_footer .info cite {
+          font-size: 1.2rem;
+        }
+
+        #max_footer .info > ul > li {
+          margin-bottom: 1rem;
+        }
+
+        .family_site {
+          margin-top: 2rem;
+        }
+
+        .family_site,
+        .family_box {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .family_box {
+          align-items: flex-start;
+        }
+
+        .family_site button {
+          width: 100%;
+          font-size: 1.3rem;
+          height: 4rem;
+        }
+
+        .family_list {
+          padding: 1rem 0;
+        }
+
+        .family_list a {
+          font-size: 1.4rem;
+        }
+      }
+      /******************************767******************************/
+
+      @media all and (max-width: 767px) {
+        #max_footer .top_info ul {
+          height: 4.2rem;
+          padding: 0;
+        }
+
+        #max_footer .top_info ul li {
+          width: 50%;
+          text-align: center;
+          padding-left: 0;
+          border-left: 1px solid #3a3a3a;
+        }
+
+        #max_footer .top_info ul li:first-child {
+          border-left: 0;
+        }
+
+        #max_footer .top_info ul li:before {
+          display: none;
+        }
+
+        #max_footer .top_info ul li a {
+          font-size: 1.3rem;
+        }
+
+        #max_footer .info {
+          padding: 2rem 5%;
+        }
+
+        #max_footer .info cite {
+          font-size: 1rem;
+          line-height: 1.4;
+          text-align: center;
+        }
+
+        #max_footer .info > ul {
+          text-align: center;
+        }
+
+        #max_footer .info > ul > li {
+          display: block;
+          font-size: 1.3rem;
+          margin-bottom: 0.6rem;
+          padding-left: 0;
+          line-height: 1.3;
+          word-break: keep-all;
+        }
+
+        .family_box {
+          align-items: center;
+        }
+      }
+    </style>
+
+    <div id="max_footer">
+      <div class="top_info">
+        <ul>
+          <li>
+            <a href="#" onclick="alert('준비중입니다');return false;"
+              >개인정보처리방침</a
+            >
+          </li>
+          <li><a href="/bbs/board.php?bo_table=report">분석보고서</a></li>
+        </ul>
+      </div>
+      <div class="info">
+        <ul>
+          <li><strong>TEL</strong> 053-950-2965</li>
+          <li><strong>FAX</strong> 053-950-2969</li>
+          <li><strong>IR 센터장</strong> 정우식</li>
+          <li class="w100">대구광역시 북구 대학로 80 (산격동, 경북대학교)</li>
+        </ul>
+        <div class="family_box">
+          <div class="family_site">
+            <button>Family Site</button>
+            <ul class="family_list">
+              <li>
+                <a href="https://www.knu.ac.kr/" target="_blank">경북대학교</a>
+              </li>
+              <li>
+                <a href="http://kair.kr/" target="_blank"
+                  >한국대학IR협의회(KAIR)</a
+                >
+              </li>
+              <li>
+                <a href="https://kess.kedi.re.kr/index" target="_blank"
+                  >교육통계서비스</a
+                >
+              </li>
+              <li>
+                <a href="https://www.academyinfo.go.kr/index.do" target="_blank"
+                  >대학정보공시(대학알리미)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.adiga.kr/EgovPageLink.do?link=EipMain"
+                  target="_blank"
+                  >대입정보포털(대학어디가)</a
+                >
+              </li>
+              <li>
+                <a href="https://swiss.kedi.re.kr/" target="_blank"
+                  >한국교육개발원 취업통계시스템</a
+                >
+              </li>
+              <li>
+                <a href="https://hi.kedi.re.kr/home/" target="_blank"
+                  >고등교육기관 교육기본통계조사</a
+                >
+              </li>
+            </ul>
+          </div>
+          <cite>ⓒCopyright KNU IRCENTER. All rights reserved</cite>
+        </div>
+      </div>
+    </div>
+
+    <!-- //편집영역 -->
+
+    <script>
+      $(function () {
+        // 폰트 리사이즈 쿠키있으면 실행
+        font_resize(
+          "container",
+          get_cookie("ck_font_resize_rmv_class"),
+          get_cookie("ck_font_resize_add_class")
+        );
+
+        AOS.init();
+      });
+    </script>
+  </body>
+</html>

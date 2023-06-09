@@ -1,12 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>경북대학교 IR센터</title>
+    <link rel="stylesheet" href="../css/default.css" />
+    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
+    <script>
+      // 자바스크립트에서 사용하는 전역변수 선언
+      var g5_url = "https://ir.knu.ac.kr";
+      var g5_bbs_url = "https://ir.knu.ac.kr/bbs";
+    </script>
+    <script src="https://ir.knu.ac.kr/js/jquery-1.12.4.min.js?ver=220620"></script>
+    <script src="https://ir.knu.ac.kr/js/jquery-migrate-1.4.1.min.js?ver=220620"></script>
+    <script src="https://ir.knu.ac.kr/js/jquery.menu.js?ver=220620"></script>
+    <script src="https://ir.knu.ac.kr/js/common.js?ver=220620"></script>
+    <script src="https://ir.knu.ac.kr/js/knuir.js?ver=220620"></script>
+    <script src="https://ir.knu.ac.kr/js/wrest.js?ver=220620"></script>
+    <script src="https://ir.knu.ac.kr/js/placeholders.min.js?ver=220620"></script>
+    <script src="https://ir.knu.ac.kr/js/swiper/swiper.min.js?ver=220620"></script>
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <!-- max_wrap -->
+    <div id="max_wrap"></div>
+    <!--// max_wrap -->
+
+    <!-- 편집영역 -->
+    <a href="./complete/banner.html">banner</a>
+    <a href="./complete/footer.html">footer</a>
+    <a href="./complete/header.html">header</a>
+    <!-- //편집영역 -->
+
+    <script>
+      $(function () {
+        // 폰트 리사이즈 쿠키있으면 실행
+        font_resize(
+          "container",
+          get_cookie("ck_font_resize_rmv_class"),
+          get_cookie("ck_font_resize_add_class")
+        );
+
+        AOS.init();
+      });
+    </script>
   </body>
 </html>
