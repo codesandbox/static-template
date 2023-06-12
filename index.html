@@ -1,12 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Gerador de Senha</title>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <div class="app-container">
+        <div class="app-top-bar">
+          <h1 class="app-heading">Gerador de Senha</h1>
+        </div>
+        <div class="button-block">
+          <label for="password-length">Tamanho:</label>
+          <input
+            type="number"
+            id="password-length"
+            min="8"
+            max="20"
+            value="8"
+          />
+        </div>
+        <div class="button-block">
+          <label for="include-uppercase">Incluir letras maiúsculas:</label>
+          <input type="checkbox" id="include-uppercase" checked />
+        </div>
+        <div class="button-block">
+          <label for="include-lowercase">Incluir letras minúsculas:</label>
+          <input type="checkbox" id="include-lowercase" checked />
+        </div>
+        <div class="button-block">
+          <label for="include-numbers">Incluir números:</label>
+          <input type="checkbox" id="include-numbers" checked />
+        </div>
+        <div class="button-block">
+          <label for="include-symbols">Incluir símbolos:</label>
+          <input type="checkbox" id="include-symbols" checked />
+        </div>
+        <div class="button-block">
+          <button
+            class="button"
+            id="generate-button"
+            onclick="generatePassword()"
+          >
+            Gerar Senha
+          </button>
+          <button
+            class="button"
+            id="copy-button"
+            onclick="copyPassword()"
+            disabled
+          >
+            Copiar Senha
+          </button>
+        </div>
+        <div class="button-block">
+          <form>
+            <input type="text" id="generated-password" readonly />
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
