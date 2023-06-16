@@ -1,12 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JOGO PPT</title>
+
+    <style>
+      h1,
+      p {
+        text-align: center;
+        font-family: Mrs Eaves;
+      }
+
+      h1 {
+        margin-top: 24px;
+        margin-bottom: 26px;
+      }
+
+      p {
+        font-size: 24px;
+      }
+
+      div {
+        margin: 0 auto;
+        margin-bottom: 60px;
+        width: fit-content;
+      }
+
+      button {
+        font-size: 72px;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>Pedra, Papel e Tesoura</h1>
+    <div>
+      <button onclick="jogar('Pedra')">✊</button>
+      <button onclick="jogar('Papel')">🖐</button>
+      <button onclick="jogar('Tesoura')">✌</button>
+    </div>
+
+    <p>Jogador: <span id="pontuacaoDoUsuario">0</span></p>
+    <p>Computador: <span id="pontuacaoDoComputador">0</span></p>
+
+    <script>
+      const jogadasDisponiveis = ["Pedra", "Papel", "Tesoura"];
+      let pontosUsuario = 0;
+      let pontosComputador = 0;
+
+      function jogar(jogadaDoUsuario) {
+        //1. Saber o que o usuario jogou *
+        //2.fazer o computador ter uma jogada *
+        //3.saber quem ganhou *
+        //4.atualizar pontuaçõeS
+        const jogadaAleatoria = Math.floor(Math.random() * 3);
+        const jogadaDoComputador = jogadasDisponiveis[jogadaAleatoria];
+
+        if (jogadaDoComputador === jogadaDoUsuario) {
+          alert("EMPATE, COMPUTADOR JOGOU O MESMO QUE VOCÊ");
+        } else if (jogadaDoComputador === "Pedra") {
+          if (jogadaDoUsuario === "Papel") {
+            alert("GANHOU, COMPUTADOR JOGOU PEDRA");
+            pontosUsuario = pontosUsuario + 1;
+          } else {
+            alert("PERDEU, COMPUTADOR JOGOU PEDRA");
+            pontosComputador = pontosComputador + 1;
+          }
+        } else if (jogadaDoComputador === "Papel") {
+          if (jogadaDoUsuario === "Pedra") {
+            alert("PERDEU, COMPUTADOR JOGOU PAPEL");
+            pontosComputador = pontosComputador + 1;
+          } else {
+            alert("GANHOU, COMPUTADOR JOGOU PAPEL");
+            pontosUsuario = pontosUsuario + 1;
+          }
+        } else {
+          if (jogadaDoUsuario === "Pedra") {
+            alert("GANHOU, COMPUTADOR JOGOU TESOURA");
+            pontosUsuario = pontosUsuario + 1;
+          } else {
+            alert("PERDEU, COMPUTADOR JOGOU TESOURA");
+            pontosComputador = pontosComputador + 1;
+          }
+        }
+        document.querySelector("#pontuacaoDoUsuario").innerText = pontosUsuario;
+        document.querySelector(
+          "#pontuacaoDoComputador"
+        ).innerText = pontosComputador;
+      }
+    </script>
   </body>
 </html>
