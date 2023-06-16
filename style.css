@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+  background-color: gray;
+  color: white;
+}
+#data {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 2%;
+}
+.realizadas,
+.pendentes,
+.tempo,
+.motos {
+  padding: 2%;
+  font-size: 1.3em;
+  font-weight: bold;
+  border-bottom: 1px solid gray;
+}
+input {
+  border: none;
+  box-shadow: 1px 1px 3px gray;
+  height: 25px;
+  width: 50px;
+  margin-left: 2%;
+  margin-right: 2%;
+  font-size: 1.3em;
+}
+
+.incidentes {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2%;
+  font-weight: 500;
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
+.incidentes p {
+  font-size: 1em;
+  font-weight: bold;
+}
+.incidentes label {
+  padding: 2%;
+  display: flex;
+  align-items: center;
+}
+
+.incidentes input {
+  box-shadow: none;
+  width: 15%;
+  margin: 5%;
+}
+.inputCheck {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+}
+.semIncidente {
+  margin-bottom: 2%;
+  border-bottom: 1px solid gray;
+}
+.feedback,
+.observacao {
+  padding: 2%;
+  font-size: 1.5em;
+  font-weight: bold;
+
+  border-bottom: 1px solid gray;
+}
+.feedback textarea,
+.observacao textarea {
+  width: 100%;
+  margin: 1%;
+  font-size: 1em;
+}
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
+  font-weight: bold;
+  color: #fff;
+  background-color: cornflowerblue;
+  margin: auto;
+  height: 35px;
+  border: none;
+}
+span {
+  font-size: 0.6em;
+}
+@media print {
+  body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 20mm;
+  }
+  input {
+    box-shadow: none;
+  }
+  button {
+    display: none;
+  }
+  .feedback textarea,
+  .observacao textarea {
+    font-size: 0.8em;
+  }
+
+  /* Estilos adicionais para o cabeçalho e rodapé, se necessário */
+
+  /* Exemplo de estilo para a div de conteúdo */
+  #conteudo {
+    /* Estilos para ajustar o conteúdo dentro da folha A4 */
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Estilos adicionais para outros elementos dentro da div de conteúdo */
+  /* Adicione as regras CSS para ajustar o layout de acordo com suas necessidades */
+}
