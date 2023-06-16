@@ -1,12 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Teste</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="conteudo">
+      <header>
+        <div class="titulo">
+          <h1>Relatório Diário</h1>
+        </div>
+        <div class="date">
+          <p id="data">02/01/2023</p>
+          <p id="hora">12:45</p>
+        </div>
+      </header>
+
+      <main>
+        <div class="realizadas">
+          <label for="corridaRealizada">
+            Total das corridas realizadas:
+          </label>
+          <input type="number" id="corridaRealizada" />
+        </div>
+
+        <div class="pendentes">
+          <label for="corridaPendente">
+            Total das corridas realizadas:
+          </label>
+          <input type="number" id="corridaPendente" />
+        </div>
+
+        <div class="tempo">
+          <label for="tempoMedio">
+            Tempo medio gasto <span>(entregas)</span>:
+          </label>
+          <input type="number" id="tempoMedio" /><span>min.</span>
+        </div>
+
+        <div class="motos">
+          <label for="totalMotos">
+            Quantas motos em serviço:
+          </label>
+          <input type="number" id="totalMotos" />
+        </div>
+
+        <div class="incidentes">
+          <div class="tituloIncidentes">
+            <p>
+              Houve incidentes:
+            </p>
+          </div>
+
+          <div class="inputCheck">
+            <label for="semIncidente" class="semIncidente">
+              <input type="checkbox" id="semIncidente" />
+              Não</label
+            >
+
+            <label for="comIncidente" class="comIncidente">
+              <input type="checkbox" id="comIncidente" />
+              Sim, quais?</label
+            >
+          </div>
+
+          <textarea id="textIncidente" cols="30" rows="5"></textarea>
+        </div>
+
+        <div class="feedback">
+          <p>
+            Feedback
+          </p>
+          <textarea id="feedbackClientes" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="observacao">
+          <p>
+            Observações
+          </p>
+          <textarea id="observacoes" cols="30" rows="10"></textarea>
+
+          <button id="imprimirButton">Imprimir <img src="print.png" /></button>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      document
+        .getElementById("imprimirButton")
+        .addEventListener("click", function () {
+          window.print();
+        });
+
+      function autoResize(textarea) {
+        textarea.style.height = "auto";
+        textarea.style.height = textarea.scrollHeight + "px";
+      }
+
+      function atualizarDataHora() {
+        const dataElemento = document.getElementById("data");
+        const horaElemento = document.getElementById("hora");
+
+        const dataAtual = new Date();
+        const optionsData = {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric"
+        };
+        const optionsHora = {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false
+        };
+
+        const dataFormatada = dataAtual.toLocaleDateString(
+          "pt-BR",
+          optionsData
+        );
+        const horaFormatada = dataAtual.toLocaleTimeString(
+          "pt-BR",
+          optionsHora
+        );
+
+        dataElemento.textContent = dataFormatada;
+        horaElemento.textContent = horaFormatada;
+      }
+
+      atualizarDataHora();
+      setInterval(atualizarDataHora, 1000);
+    </script>
   </body>
 </html>
