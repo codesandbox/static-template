@@ -1,12 +1,35 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
+    <title>RGB to HEX / HEX to RGB converter</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <div class="wrapper">
+        <label for="rgb">RGB</label>
+        <input
+          type="text"
+          id="rgb"
+          spellcheck="false"
+          placeholder="Enter"
+          oninput="toHex()"
+        />
+      </div>
+      <div class="wrapper">
+        <label for="Pixel">HEX</label>
+        <input
+          type="text"
+          id="hex"
+          spellcheck="false"
+          placeholder="Enter"
+          oninput="toRgb()"
+        />
+      </div>
+    </div>
   </body>
 </html>
