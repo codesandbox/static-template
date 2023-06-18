@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Base64 Encoder/Decoder</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <div class="app-container">
+        <div class="app-top-bar">
+          <h1 class="app-heading">Base64 Encoder/Decoder</h1>
+        </div>
+        <div class="text-input-container">
+          <textarea id="inputText" class="text-input"></textarea>
+        </div>
+        <div class="button-block">
+          <button id="encodeButton" class="button button-large">Encode</button>
+          <button id="decodeButton" class="button button-large">Decode</button>
+        </div>
+        <div class="text-input-container">
+          <textarea id="outputText" class="text-input"></textarea>
+        </div>
+        <button id="copyButton" class="button copy-button" disabled>
+          Copy
+        </button>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>

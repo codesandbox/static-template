@@ -1,0 +1,136 @@
+:root {
+  --font-color: #222;
+  --bg-color: #f2f3f7;
+  --button-bg-color: #f2f3f7;
+  --button-shadow: -6px -6px 8px rgba(255, 255, 255, 0.9),
+    5px 5px 8px rgba(0, 0, 0, 0.07);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  color: var(--font-color);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app-container {
+  background-color: var(--bg-color);
+  border-radius: 40px;
+  box-shadow: -2px -2px 4px 0px #ffffff, 50px 50px 50px 0px rgba(0, 0, 0, 0.25);
+  display: block;
+  min-height: 500px;
+  max-width: 350px;
+  overflow: hidden;
+  padding: 30px;
+}
+
+.app-top-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.app-heading {
+  color: var(--font-color);
+  display: block;
+  flex: 1;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+  text-align: center;
+}
+
+.button {
+  color: var(--font-color);
+  position: relative;
+  border-radius: 15px;
+  background: var(--button-bg-color);
+  font-weight: 700;
+  transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: var(--button-shadow);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.button-link {
+  color: #067cf8;
+  display: block;
+  font-size: 17px;
+  margin: 30px 0 0;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.button-small {
+  color: #6d6e74;
+  font-size: 22px;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+.button-large {
+  display: flex;
+  font-size: 20px;
+  flex-direction: column;
+  padding: 15px;
+  text-align: left;
+  width: 45%;
+}
+
+.button-large svg {
+  margin-bottom: 10px;
+  width: 30px;
+}
+
+.button-block {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 24px;
+  width: 100%;
+}
+
+.subtle {
+  color: #6d6e74;
+}
+
+.text-input-container {
+  margin-bottom: 20px;
+}
+
+.text-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.copy-button {
+  padding: 5px 10px;
+  position: relative;
+}
