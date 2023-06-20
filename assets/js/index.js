@@ -52,17 +52,16 @@ window.addEventListener("DOMContentLoaded", function () {
   for (let categorie of categories) {
     categorie.addEventListener("click", function (event) {
       let filters = event.target.textContent;
+      event.target.classList.toggle("selected");
       // console.log(filters);
       // let bookList = library.findBookByCategory(filters);
       // console.log(bookList);
 
       for (let book of bookByCat) {
         let bookCategory = book.querySelector("p.category").textContent;
-        let section = document.getElementById("list-of-books");
 
         if (bookCategory === filters) {
-          book.style.display = "block";
-          event.target.classList.toggle("selected");
+          book.classList.toggle("active");
         } else if (bookCategory !== filters) {
           book.classList.toggle("inactive");
         }
