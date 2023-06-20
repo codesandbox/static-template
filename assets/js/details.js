@@ -1,5 +1,5 @@
 // import { bookTitle } from "index.js";
-import { bookTitle } from "./catalog.js";
+import { bookTitle } from "./index.js";
 import { Library } from "./classes/library.js";
 import { books } from "./data/data-books.js";
 
