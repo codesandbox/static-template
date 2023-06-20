@@ -1,23 +1,41 @@
 /*VARIABLES*/
 :root {
-    --bright-pink-crayola: rgba(239, 71, 111, 1);  
-    --sunglow: rgba(255, 209, 102, 1);  
-    --emerald: rgba(6, 214, 160, 1);  
-    --blue-ncs: rgba(17, 138, 178, 1);  
-    --midnight-green: rgba(7, 59, 76, 1);
+  --bright-pink-crayola: rgba(239, 71, 111, 1);
+  --sunglow: rgba(255, 209, 102, 1);
+  --emerald: rgba(6, 214, 160, 1);
+  --blue-ncs: rgba(17, 138, 178, 1);
+  --midnight-green: rgba(7, 59, 76, 1);
 }
 
 /*HEADER*/
 .actions h2 {
-    color: var(--sunglow);
+  color: var(--sunglow);
 }
 
 /*BOOK DETAILS*/
 #book-details {
-    display:flex;
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.infos {
+  text-align: justify;
 }
 
 /*OTHER BOOKS*/
-.other-books span {
-    border-bottom : 5px solid var(--emerald);
+main h2:nth-of-type(2) span {
+  border-bottom: 5px solid var(--emerald);
+}
+.other-books {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+}
+.other-books article {
+  width: calc(100% / 3);
+  margin-bottom: 1em;
+}
+.other-books img {
+  width: 100%;
 }

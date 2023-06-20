@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   function booksSuggestions() {
     let category = book.category;
-    let catTitle = document.querySelector(".other-books h2 span");
+    let catTitle = document.querySelector("main h2:nth-of-type(2) span");
     catTitle.textContent = category;
     let sameCat = library.findBooksByCategory(category);
     console.log(sameCat);
