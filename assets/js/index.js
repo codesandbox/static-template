@@ -46,9 +46,14 @@ window.addEventListener("DOMContentLoaded", function () {
       discoverBtn[i].addEventListener("click", function () {
         let bookTitle = library.shelf[i].title;
         sessionStorage.setItem("bookTitle", bookTitle);
-        console.log(bookTitle);
+        window.location.assign("https://j62k78.csb.app/livres/details.html");
       });
     }
   }
   getBookTitle();
 });
+
+let bookTitle = sessionStorage.getItem("bookTitle");
+console.log(bookTitle);
+
+export { bookTitle };

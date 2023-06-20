@@ -72,21 +72,21 @@ window.addEventListener("DOMContentLoaded", function () {
 
   function getBookTitle() {
     let discoverBtn = document.getElementsByClassName("discover");
-    let bookTitle;
 
     for (let i = 0; i < library.shelf.length; i++) {
       discoverBtn[i].addEventListener("click", function () {
-        bookTitle = library.shelf[i].title;
+        let bookTitle = library.shelf[i].title;
         sessionStorage.setItem("bookTitle", bookTitle);
+        window.location.assign("https://j62k78.csb.app/livres/details.html");
       });
     }
-    //console.log(sessionStorage.getItem("bookTitle"));
-    return sessionStorage.getItem("bookTitle");
   }
   createFilters();
   booksByCategory();
-  let bookTitle = getBookTitle();
-  console.log(bookTitle);
+  getBookTitle();
 });
 
-// export { bookTitle };
+let bookTitle = sessionStorage.getItem("bookTitle");
+console.log(bookTitle);
+
+export { bookTitle };
