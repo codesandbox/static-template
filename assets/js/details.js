@@ -43,12 +43,12 @@ window.addEventListener("DOMContentLoaded", function () {
     catTitle.textContent = category;
     let sameCat = library.findBooksByCategory(category);
     console.log(sameCat);
-    let otherBooks = document.getElementsByClassName("other-books");
+    let otherBooks = document.querySelector(".other-books");
 
-    if (sameCat.length > 0) {
+    if (sameCat.length > 1) {
       let suggestions = [];
       for (let suggestion of sameCat) {
-        if (suggestion.title !== book.title) {
+        if (suggestion.title !== book.title && suggestions.length < 3) {
           let article = document.createElement("article");
           let figure = document.createElement("figure");
           let h2 = document.createElement("h2");
@@ -71,6 +71,8 @@ window.addEventListener("DOMContentLoaded", function () {
           article.appendChild(cat);
           article.appendChild(author);
           article.appendChild(discoverBtn);
+
+          suggestions.push(suggestion);
         }
       }
     } else {

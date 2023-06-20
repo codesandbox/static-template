@@ -37,12 +37,57 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  displayBooks(library.shelf, 5, "");
+  if (window.location.pathname === "/index.html") {
+    displayBooks(library.shelf, 5, "");
+  } else if (window.location.pathname === "/livres/index.html") {
+    displayBooks(library.shelf, library.shelf.length, "../");
+  }
+
+  function createFilters() {
+    let categories = library.getCategories();
+    console.log(categories);
+
+    let filters = document.getElementById("filters");
+
+    for (let cat of categories) {
+      let li = document.createElement("li");
+      let link = document.createElement("a");
+      // link.setAttribute("href","#");
+      let aText = document.createTextNode(cat);
+      link.appendChild(aText);
+      li.appendChild(link);
+      filters.appendChild(li);
+    }
+  }
+
+  function booksByCategory() {
+    let filters = document.querySelectorAll("#filters li a");
+    for (let filter of filters) {
+      filter.addEventListener("click", function (event) {
+        let clicked = event.target;
+        for (let i = 0; i < filters.length; i++) {
+          filters[i].classList.remove("active");
+        }
+        clicked.classList.toggle("active");
+        let librarySection = document.querySelector(".library");
+        if (clicked.classList.contains("active")) {
+          let category = clicked.textContent;
+          let bookList = library.findBooksByCategory(category);
+          //   console.log(bookList);
+          librarySection.innerHTML = "";
+          displayBooks(bookList, bookList.length, "../");
+        } else {
+          librarySection.innerHtml = "";
+          displayBooks(library.shelf, library.shelf.length, "../");
+        }
+      });
+    }
+  }
 
   function getBookTitle() {
-    let discoverBtn = document.getElementsByClassName("discover");
+    let discoverBtn = document.querySelectorAll(".library article button");
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < discoverBtn.length; i++) {
       discoverBtn[i].addEventListener("click", function () {
         let bookTitle = library.shelf[i].title;
         sessionStorage.setItem("bookTitle", bookTitle);
@@ -50,6 +95,8 @@ window.addEventListener("DOMContentLoaded", function () {
       });
     }
   }
+  createFilters();
+  booksByCategory();
   getBookTitle();
 });
 
