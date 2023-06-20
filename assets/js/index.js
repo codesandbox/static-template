@@ -58,11 +58,13 @@ window.addEventListener("DOMContentLoaded", function () {
 
       for (let book of bookByCat) {
         let bookCategory = book.querySelector("p.category").textContent;
+        let section = document.getElementById("list-of-books");
 
         if (bookCategory === filters) {
           book.style.display = "block";
-        } else {
-          book.style.display = "none";
+          event.target.classList.toggle("selected");
+        } else if (bookCategory !== filters) {
+          book.classList.toggle("inactive");
         }
       }
     });

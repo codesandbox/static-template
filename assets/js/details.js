@@ -36,35 +36,38 @@ window.addEventListener("DOMContentLoaded", function () {
   function displayBooks() {
     let listOfCat = newBook.category;
     let otherBooks = library.findBookByCategory(listOfCat);
+    console.log(otherBooks);
     let section = document.getElementById("list-of-books");
 
-    if (otherBooks.length > 0) {
+    if (otherBooks.length > 1) {
       for (let i = 0; i < 3; i++) {
-        let article = document.createElement("article");
-        let cover = document.createElement("img");
-        cover.setAttribute("src", "../" + library.shelf[i].image);
-        // cover.src = library.shelf[i].image;
+        if (otherBooks[i].title !== newBook.title) {
+          let article = document.createElement("article");
+          let cover = document.createElement("img");
+          cover.setAttribute("src", "../" + otherBooks[i].image);
+          // cover.src = library.shelf[i].image;
 
-        let title = document.createElement("h4");
-        title.textContent = library.shelf[i].title;
+          let title = document.createElement("h4");
+          title.textContent = otherBooks[i].title;
 
-        let catagory = document.createElement("p");
-        catagory.classList.add("category");
-        catagory.textContent = library.shelf[i].category;
+          let catagory = document.createElement("p");
+          catagory.classList.add("category");
+          catagory.textContent = otherBooks[i].category;
 
-        let author = document.createElement("p");
-        author.textContent = library.shelf[i].author;
+          let author = document.createElement("p");
+          author.textContent = otherBooks[i].author;
 
-        let btn = document.createElement("button");
-        btn.innerHTML = "Découvrir le livre";
+          let btn = document.createElement("button");
+          btn.innerHTML = "Découvrir le livre";
 
-        article.appendChild(cover);
-        article.appendChild(title);
-        article.appendChild(catagory);
-        article.appendChild(author);
-        article.appendChild(btn);
+          article.appendChild(cover);
+          article.appendChild(title);
+          article.appendChild(catagory);
+          article.appendChild(author);
+          article.appendChild(btn);
 
-        section.appendChild(article);
+          section.appendChild(article);
+        }
       }
     } else {
       section.style.display = "none";
