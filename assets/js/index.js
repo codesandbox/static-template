@@ -76,14 +76,17 @@ window.addEventListener("DOMContentLoaded", function () {
     for (let i = 0; i < discoverBtn.length; i++) {
       discoverBtn[i].addEventListener("click", function (event) {
         let title = library.shelf[i].title;
-        // console.log(title);
         sessionStorage.setItem("title", title);
+        // let newTitle = sessionStorage.getItem("title");
+        // console.log(newTitle);
+        window.location.assign("https://lncd2j.csb.app/livre/details.html");
       });
     }
-
-    let newTitle = sessionStorage.getItem("title");
-    console.log(newTitle);
   }
 
   getBookTitle();
 });
+
+let newTitle = sessionStorage.getItem("title");
+console.log(newTitle);
+export { newTitle };
