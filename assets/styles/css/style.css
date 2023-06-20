@@ -1,0 +1,238 @@
+:root {
+  --bright-pink-crayola: rgba(239, 71, 111, 1);
+  --sunglow: rgba(255, 209, 102, 1);
+  --emerald: rgba(6, 214, 160, 1);
+  --blue-ncs: rgba(17, 138, 178, 1);
+  --midnight-green: rgba(7, 59, 76, 1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+header section:first-of-type {
+  display: flex;
+  background-color: var(--midnight-green);
+}
+header section:first-of-type img {
+  width: 12%;
+}
+header section:first-of-type nav {
+  display: flex;
+  align-items: center;
+}
+header section:first-of-type nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+header section:first-of-type nav ul li a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 2rem;
+  font-weight: 600;
+}
+header section:first-of-type nav ul li a.actual {
+  color: var(--sunglow);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+header section:nth-of-type(2) {
+  background-image: url("home-books.png");
+  background-size: cover;
+  background-position: center 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0;
+}
+header section:nth-of-type(2) h1 {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  font-weight: 400;
+  font-size: 3rem;
+  color: white;
+}
+header section:nth-of-type(2) h1 span {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+header section:nth-of-type(2) h2 {
+  margin: 0;
+  color: white;
+  font-size: 1.5rem;
+}
+header section:nth-of-type(2) div {
+  margin: 1rem 0;
+}
+header section:nth-of-type(2) div button {
+  border: none;
+  border-radius: 5px;
+  color: white;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+header section:nth-of-type(2) div button:first-of-type {
+  background-color: var(--bright-pink-crayola);
+  border: 1px solid var(--bright-pink-crayola);
+}
+header section:nth-of-type(2) div button:first-of-type:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--bright-pink-crayola);
+}
+header section:nth-of-type(2) div button:nth-of-type(2) {
+  background-color: var(--emerald);
+  border: 1px solid var(--emerald);
+  color: var(--midnight-green);
+}
+header section:nth-of-type(2) div button:nth-of-type(2):hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/**** MAIN ****/
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main h3 {
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 1.3rem;
+}
+main h3 span {
+  border-bottom: 4px solid var(--bright-pink-crayola);
+}
+
+main section {
+  display: flex;
+  width: 60%;
+  flex-wrap: wrap;
+  align-items: center;
+}
+main section article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: calc(100% / 3);
+  height: 30rem;
+  margin-bottom: 1.6rem;
+  padding: 0.3rem 0;
+}
+main section article img {
+  width: 55%;
+}
+main section article h4 {
+  text-align: center;
+  margin: 0.3rem;
+}
+main section article .category {
+  color: var(--blue-ncs);
+  text-transform: uppercase;
+  margin: 0.2rem;
+  font-weight: 600;
+}
+main section article button {
+  border: 1px solid var(--blue-ncs);
+  border-radius: 5px;
+  background-color: var(--blue-ncs);
+  color: white;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+main section article button:hover {
+  background-color: #fff;
+  color: var(--blue-ncs);
+}
+
+main > button {
+  margin: 1.6rem 0;
+  border: 1px solid var(--bright-pink-crayola);
+  border-radius: 5px;
+  background-color: var(--bright-pink-crayola);
+  color: white;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+main > button a {
+  text-decoration: none;
+  color: #fff;
+}
+main > button a:hover {
+  color: var(--bright-pink-crayola);
+}
+main > button:hover {
+  background-color: #fff;
+  color: var(--bright-pink-crayola);
+}
+
+/**** PAGE CATALOGUE ****/
+header section:nth-of-type(2) .title {
+  color: var(--emerald);
+}
+
+main .catalog {
+  border-bottom: 4px solid var(--emerald);
+}
+
+main article {
+  display: flex;
+  width: 100%;
+}
+main article aside {
+  align-self: flex-start;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+main article aside h3 {
+  margin: 0;
+  text-transform: uppercase;
+  text-align: left;
+}
+main article aside ul {
+  padding: 0;
+  list-style: none;
+}
+main article aside ul li {
+  line-height: 1.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+main article .list-of-books {
+  border-left: 1px solid black;
+  width: 80%;
+}
+main article .list-of-books article {
+  width: calc(100% / 4);
+}
+
+.inactive {
+  display: none;
+}
+
+.selected {
+  font-weight: 600;
+}
+
+.active {
+  display: flex;
+}
+
+.animate article {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+.animate article.animate {
+  opacity: 1;
+}
