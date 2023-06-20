@@ -38,6 +38,7 @@ window.addEventListener("DOMContentLoaded", function () {
     let otherBooks = library.findBookByCategory(listOfCat);
     console.log(otherBooks);
     let section = document.getElementById("list-of-books");
+    let suggestions = document.getElementById("suggestions");
 
     if (otherBooks.length > 1) {
       for (let i = 0; i < 3; i++) {
@@ -66,7 +67,8 @@ window.addEventListener("DOMContentLoaded", function () {
           article.appendChild(author);
           article.appendChild(btn);
 
-          section.appendChild(article);
+          suggestions.appendChild(article);
+          // section.appendChild(article);
         }
       }
     } else {

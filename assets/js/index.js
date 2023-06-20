@@ -40,6 +40,7 @@ window.addEventListener("DOMContentLoaded", function () {
     // console.log(library.getCategories());
   }
 
+  //Attention, cette condition peut générer des bugs
   if (window.location.pathname === "/index.html") {
     dynamicList(5, "");
   } else if (window.location.pathname === "/livre/index.html") {
@@ -86,8 +87,29 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 
   getBookTitle();
+
+  function animateBooks() {
+    let books = document.querySelectorAll(".list-of-books article");
+
+    function animateOnScroll() {
+      for (let i = 0; i < books.length; i++) {
+        let position = books[i].getBoundingClientRect();
+
+        if (position.top <= window.innerHeight && position.bottom >= 0) {
+          books[i].classList.add("animate");
+        }
+      }
+    }
+    animateOnScroll();
+
+    window.addEventListener("scroll", animateOnScroll);
+  }
+
+  let section = document.getElementById("list-of-books");
+  section.classList.add("animate");
+  animateBooks();
 });
 
 let newTitle = sessionStorage.getItem("title");
-console.log(newTitle);
+// console.log(newTitle);
 export { newTitle };
