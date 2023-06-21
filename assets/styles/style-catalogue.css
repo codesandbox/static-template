@@ -1,0 +1,68 @@
+/*VARIABLES*/
+:root {
+  --bright-pink-crayola: rgba(239, 71, 111, 1);
+  --sunglow: rgba(255, 209, 102, 1);
+  --emerald: rgba(6, 214, 160, 1);
+  --blue-ncs: rgba(17, 138, 178, 1);
+  --midnight-green: rgba(7, 59, 76, 1);
+}
+
+/*HEADER*/
+.actions h2 {
+  color: var(--emerald);
+}
+
+/*MAIN*/
+h2 span {
+  /*display: inline-block;*/
+  /*padding-bottom:.3em;*/
+  border-bottom: 5px solid var(--emerald);
+}
+
+/*CATALOGUE*/
+.catalogue {
+  display: grid;
+  grid-template-areas: "aside library";
+  grid-template-columns: 20% 80%;
+}
+aside {
+  grid-area: aside;
+  padding: 0 1em 1em 1em;
+  text-align: left;
+  border-right: 2px solid rgba(0, 0, 0, 0.5);
+}
+aside h2 {
+  text-transform: uppercase;
+  margin: 0;
+}
+aside h3 {
+  margin: 2em 0;
+}
+aside ul {
+  padding-left: 0;
+}
+aside li {
+  list-style: none;
+  margin: 0.8em 0;
+}
+aside a {
+  color: black;
+  text-decoration: none;
+}
+aside a:hover {
+  text-decoration: underline;
+}
+aside .active {
+  font-weight: bold;
+}
+.library {
+  grid-area: library;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+}
+.library article {
+  width: 100%;
+}
+.library article img {
+  width: 100%;
+}
