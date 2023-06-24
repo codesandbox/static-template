@@ -1,0 +1,116 @@
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>경북대학교 IR센터</title>
+    <link rel="stylesheet" href="../../css/default.css" />
+    <link rel="stylesheet" href="../../css/swiper.min.css" />
+    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+    <script src="../../js/jquery-1.12.4.min.js?ver=220620"></script>
+    <script src="../../js/jquery-migrate-1.4.1.min.js?ver=220620"></script>
+    <script src="../../js/jquery.menu.js?ver=220620"></script>
+    <script src="../../js/common.js?ver=220620"></script>
+    <script src="../../js/knuir.js?ver=220620"></script>
+    <script src="../../js/wrest.js?ver=220620"></script>
+    <script src="../../js/placeholders.min.js?ver=220620"></script>
+    <script src="../../js/swiper/swiper.min.js?ver=220620"></script>
+  </head>
+  <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <!-- max_wrap -->
+    <div id="max_wrap"></div>
+    <!--// max_wrap -->
+
+    <!-- 편집영역 (편집할 경우 여기 안에서만 편집 다른페이지도 편집영역이라 써있는 곳 안에서 편집) -->
+    <div id="contents" class="state_wp inner">
+      <div class="annal_box inner">
+        <ul class="">
+          <li>
+            <p>
+              해당년대의<br />
+              <strong>연도를 선택</strong> 하세요
+            </p>
+          </li>
+          <li>
+            <strong class="year">
+              2020년대
+            </strong>
+            <div class="select_box">
+              <a href="#year"><span>2020년대</span>연도를 선택해 주세요.</a>
+              <ul>
+                <li><a href="./report.php?isg_no=40">2021</a></li>
+                <li><a href="./report.php?isg_no=26">2022</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <strong class="year">
+              2010년대
+            </strong>
+            <div class="select_box">
+              <a href="#year"><span>2010년대</span>연도를 선택해 주세요.</a>
+              <ul>
+                <li><a href="/state/report2011.php">2011</a></li>
+                <li><a href="/state/report2012.php">2012</a></li>
+                <li><a href="/state/report2013.php">2013</a></li>
+                <li><a href="/state/report2014.php">2014</a></li>
+                <li><a href="/state/report2015.php">2015</a></li>
+                <li><a href="/state/report2016.php">2016</a></li>
+                <li><a href="/state/report2017.php">2017</a></li>
+                <li><a href="/state/report2018.php">2018</a></li>
+                <li><a href="/state/report2019.php">2019</a></li>
+                <li><a href="/state/report2020.php">2020</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <strong class="year">
+              2000년대
+            </strong>
+            <div class="select_box">
+              <a href="#year"><span>2000년대</span>연도를 선택해 주세요.</a>
+              <ul style="display: none;">
+                <li><a href="/state/report2003.php">2003</a></li>
+                <li><a href="/state/report2004.php">2004</a></li>
+                <li><a href="/state/report2005.php">2005</a></li>
+                <li><a href="/state/report2006.php">2006</a></li>
+                <li><a href="/state/report2007.php">2007</a></li>
+                <li><a href="/state/report2008.php">2008</a></li>
+                <li><a href="/state/report2009.php">2009</a></li>
+                <li><a href="/state/report2010.php">2010</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      $("div.select_box").hover(
+        function () {
+          $(this).find("ul").show();
+          $(this).addClass("open");
+        },
+        function () {
+          $(this).find("ul").hide();
+          $(this).removeClass("open");
+        }
+      );
+
+      $("div.select_box > ul > li").click(function () {
+        $(this)
+          .parent()
+          .hide()
+          .parent(".select_box")
+          .children("a")
+          .text($(this).text());
+        $(this).prependTo($(this).parent());
+      });
+    </script>
+    <!-- //편집영역 (편집할 경우 여기 안에서만 편집 다른페이지도 편집영역이라 써있는 곳 안에서 편집) -->
+  </body>
+</html>

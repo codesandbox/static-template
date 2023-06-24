@@ -1,0 +1,117 @@
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>경북대학교 IR센터</title>
+    <link rel="stylesheet" href="../../css/default.css" />
+    <link rel="stylesheet" href="../../css/swiper.min.css" />
+    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+    <script src="../../js/jquery-1.12.4.min.js?ver=220620"></script>
+    <script src="../../js/jquery-migrate-1.4.1.min.js?ver=220620"></script>
+    <script src="../../js/jquery.menu.js?ver=220620"></script>
+    <script src="../../js/common.js?ver=220620"></script>
+    <script src="../../js/knuir.js?ver=220620"></script>
+    <script src="../../js/wrest.js?ver=220620"></script>
+    <script src="../../js/placeholders.min.js?ver=220620"></script>
+    <script src="../../js/swiper/swiper.min.js?ver=220620"></script>
+  </head>
+  <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <!-- max_wrap -->
+    <div id="max_wrap"></div>
+    <!--// max_wrap -->
+
+    <!-- 편집영역 (편집할 경우 여기 안에서만 편집 다른페이지도 편집영역이라 써있는 곳 안에서 편집) -->
+    <div id="contents" class="intro_wp">
+      <div id="sub_visual">
+        <div class="bg bg1">
+          <div class="inner">
+            <div id="location">
+              <ul>
+                <li class="ico_home"><a href="/" class="ico_home">HOME</a></li>
+                <li class="ico_mainmenu">
+                  <a href="#none" target="_self"
+                    ><span>센</span><span>터</span><span>소</span
+                    ><span>개</span></a
+                  >
+                  <div class="loc_layer" style="display: none;">
+                    <ul>
+                      <li>
+                        <a href="/intro/greeting.php" target="_self"
+                          >센터소개</a
+                        >
+                      </li>
+                      <li>
+                        <a href="/state/report.php" target="_self">대학현황</a>
+                      </li>
+                      <li>
+                        <a href="/bbs/board.php?bo_table=recruit" target="_self"
+                          >KNU 교육패널</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="/bbs/board.php?bo_table=family_site"
+                          target="_self"
+                          >관련사이트</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="ico_submenu">
+                  <a href="#none">인사말</a>
+                  <div class="loc_layer" style="display: none;">
+                    <ul>
+                      <li>
+                        <a href="/intro/greeting.php" target="_self">인사말</a>
+                      </li>
+                      <li>
+                        <a href="/intro/goal.php" target="_self">설립목적</a>
+                      </li>
+                      <li>
+                        <a href="/intro/core.php" target="_self">주요사업</a>
+                      </li>
+                      <li>
+                        <a href="/intro/organization.php" target="_self"
+                          >조직도</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <h2>
+              <p>
+                <span>센</span><span>터</span><span>소</span><span>개</span>
+              </p>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(function () {
+        $(".ico_mainmenu").mouseover(function () {
+          $(".ico_mainmenu").children(".loc_layer").show();
+        });
+        $(".ico_mainmenu").mouseleave(function () {
+          $(".ico_mainmenu").children(".loc_layer").hide();
+        });
+        $(".ico_submenu").mouseover(function () {
+          $(".ico_submenu").children(".loc_layer").show();
+        });
+        $(".ico_submenu").mouseleave(function () {
+          $(".ico_submenu").children(".loc_layer").hide();
+        });
+      });
+    </script>
+    <!-- //편집영역 (편집할 경우 여기 안에서만 편집 다른페이지도 편집영역이라 써있는 곳 안에서 편집) -->
+  </body>
+</html>

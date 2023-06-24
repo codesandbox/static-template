@@ -1,0 +1,1502 @@
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>경북대학교 IR센터</title>
+    <link rel="stylesheet" href="../../css/default.css" />
+    <link rel="stylesheet" href="../../css/swiper.min.css" />
+    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+    <script src="../../js/jquery-1.12.4.min.js?ver=220620"></script>
+    <script src="../../js/jquery-migrate-1.4.1.min.js?ver=220620"></script>
+    <script src="../../js/jquery.menu.js?ver=220620"></script>
+    <script src="../../js/common.js?ver=220620"></script>
+    <script src="../../js/knuir.js?ver=220620"></script>
+    <script src="../../js/wrest.js?ver=220620"></script>
+    <script src="../../js/placeholders.min.js?ver=220620"></script>
+    <script src="../../js/swiper/swiper.min.js?ver=220620"></script>
+  </head>
+  <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <!-- max_wrap -->
+    <div id="max_wrap"></div>
+    <!--// max_wrap -->
+
+    <!-- 편집영역 -->
+    <style>
+      .mbg {
+        position: absolute;
+        width: 19.5rem;
+        height: 43rem;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+      }
+
+      .mbg.bg1 {
+        top: 50%;
+        left: 0;
+        margin-top: 60rem;
+        background-image: url(../image/main/bg_line1.png);
+      }
+
+      .mbg.bg2 {
+        top: 50%;
+        right: 0;
+        width: 10rem;
+        margin-top: 75rem;
+        background-image: url(../image/main/bg_line2.png);
+      }
+
+      /***** main_visual *****/
+      #mvisual {
+        position: relative;
+        width: 100%;
+        height: 85rem;
+        background: #fff;
+        overflow: hidden;
+        padding: 8.5rem 8.5rem 0 8.5rem;
+        font-size: 0;
+        line-height: 1;
+      }
+
+      #mvisual:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 32rem;
+        height: 100%;
+        content: "";
+        background: url(../image/common/bg_visual.png) repeat-x 0 0;
+      }
+
+      #mvisual .mvisual_swiper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin: 0 auto;
+        background: #000;
+        border-radius: 12rem 0 0 0;
+        z-index: 2;
+      }
+
+      #mvisual .mvisual_swiper .swiper-slide {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      #mvisual .mvisual_swiper .swiper-slide .txt_box {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 1;
+        text-align: left;
+        color: var(--sub-color1);
+        padding-left: 17.5rem;
+      }
+
+      #mvisual .mvisual_swiper .swiper-slide .txt_box p strong {
+        display: block;
+        overflow: hidden;
+      }
+
+      #mvisual .mvisual_swiper .swiper-slide-active .txt_box p span {
+        display: inline-block;
+        animation: maintxt 1s ease-in-out both;
+      }
+
+      #mvisual .mvisual_swiper .swiper-slide .txt_box p .ani01 span {
+        animation-delay: 0.2s;
+      }
+
+      #mvisual .mvisual_swiper .swiper-slide .txt_box p .ani02 span {
+        animation-delay: 0.4s;
+      }
+
+      #mvisual .mvisual_swiper .swiper-slide .txt_box p .ani03 span {
+        animation-delay: 0.6s;
+      }
+
+      #mvisual .mvisual_swiper .swiper-slide .txt_box p .ani04 span {
+        animation-delay: 0.8s;
+      }
+
+      #mvisual .mvisual_swiper .swiper-slide .txt_box .txt1 {
+        font-size: 4.5rem;
+        line-height: 1.1;
+        word-break: keep-all;
+        color: var(--sub-color1);
+        margin-bottom: 3.5rem;
+        font-weight: 700;
+      }
+
+      #mvisual .mvisual_swiper .swiper-slide .txt_box .txt1 strong.ani01 {
+        display: block;
+        font-size: 9rem;
+      }
+
+      #mvisual .mvisual_swiper .swiper-slide .txt_box .txt2 {
+        font-size: 1.8rem;
+        line-height: 1.6;
+        opacity: 0.7;
+      }
+
+      #mvisual .mvisual_swiper .swiper-slide .txt_box .txt2 strong {
+        font-weight: 200;
+        letter-spacing: -0.03em;
+      }
+
+      #mvisual .mvisual_swiper .swiper-slide .img {
+        width: 100%;
+        height: 100%;
+      }
+
+      #mvisual .mvisual_swiper .swiper-slide .img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      #mvisual .mvisual_swiper .swiper-slide-active .img img {
+        -webkit-animation-name: zoom;
+        animation-iteration-count: infinite;
+        animation-name: zoom;
+        -webkit-animation-duration: 16s;
+        animation-duration: 16s;
+      }
+
+      @keyframes maintxt {
+        0% {
+          transform: translateY(100%);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      @-webkit-keyframes zoom {
+        0% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+
+        50% {
+          -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+        }
+
+        100% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+
+      @keyframes zoom {
+        0% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+
+        50% {
+          -webkit-transform: scale(1.035);
+          transform: scale(1.035);
+        }
+
+        100% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+
+      #mvisual .btns {
+        font-size: 1.6rem;
+        line-height: 1;
+        position: absolute;
+        bottom: 16rem;
+        left: 17.5rem;
+        z-index: 2;
+      }
+
+      #mvisual .btns button {
+        border: 0;
+        width: 7rem;
+        height: 7rem;
+        background: url(../image/main/ico_stop.png) no-repeat 50% 50%;
+        font-size: 0;
+        border-radius: 10rem;
+        border: 3px solid rgba(255, 255, 255, 0.4);
+      }
+
+      #mvisual .btns button.stop {
+        background: url(../image/main/ico_stop.png) no-repeat 50% 50% / 13px;
+      }
+
+      #mvisual .btns button.play {
+        background: url(../image/main/ico_mplay.png) no-repeat 45% 50% / 15px;
+      }
+
+      .scroll_down {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 140px;
+        z-index: 2;
+      }
+
+      .scroll_down_text {
+        color: var(--sub-color2);
+        font-size: 1rem;
+        display: inline-block;
+        transform: rotate(90deg);
+        font-weight: 500;
+      }
+
+      .scroll_down_bar {
+        position: absolute;
+        width: 1px;
+        height: 80px;
+        background: #d6d8d6;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: inline-block;
+        margin: 0 auto;
+      }
+
+      .scroll_down_bar::before {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        top: 0;
+        left: -2px;
+        background: var(--sub-color2);
+        content: "";
+        display: inline-block;
+        z-index: 1;
+        animation: scrollDown 2s infinite;
+        border-radius: 10px;
+      }
+
+      @keyframes scrollDown {
+        0% {
+          transform: translate3d(0, 0px, 0);
+        }
+
+        100% {
+          animation-timing-function: ease-in;
+          transform: translate3d(0, 170px, 0);
+        }
+      }
+
+      /******************************1400******************************/
+      @media all and (max-width: 1400px) {
+        #mvisual {
+          height: 70rem;
+          padding: 7rem 7rem 0 7rem;
+        }
+
+        #mvisual .mvisual_swiper .swiper-slide .txt_box {
+          padding-left: 6%;
+        }
+
+        #mvisual .mvisual_swiper .swiper-slide .txt_box .txt1 {
+          font-size: 3.5rem;
+          margin-bottom: 2.8rem;
+        }
+
+        #mvisual .mvisual_swiper .swiper-slide .txt_box .txt1 strong.ani01 {
+          font-size: 6.5rem;
+        }
+
+        #mvisual .mvisual_swiper .swiper-slide .txt_box .txt2 {
+          font-size: 1.6rem;
+        }
+
+        #mvisual .btns {
+          bottom: 15%;
+          left: 6%;
+        }
+
+        #mvisual .btns button {
+          width: 6rem;
+          height: 6rem;
+          background-size: 15px;
+        }
+      }
+      /******************************1200******************************/
+
+      @media all and (max-width: 1200px) {
+      }
+      /******************************1023******************************/
+
+      @media all and (max-width: 1023px) {
+        .scroll_down {
+          display: none;
+        }
+
+        #mvisual {
+          height: 55rem;
+          padding: 6rem 0 0 6rem;
+        }
+
+        #mvisual .mvisual_swiper .swiper-slide .txt_box .txt1 {
+          font-size: 3rem;
+          margin-bottom: 2rem;
+        }
+
+        #mvisual .mvisual_swiper .swiper-slide .txt_box .txt1 strong.ani01 {
+          font-size: 5rem;
+        }
+
+        #mvisual .mvisual_swiper .swiper-slide .txt_box .txt2 {
+          font-size: 1.5rem;
+        }
+
+        #mvisual .btns button {
+          width: 5rem;
+          height: 5rem;
+          border-width: 2px;
+        }
+      }
+      /******************************768******************************/
+
+      @media all and (max-width: 768px) {
+        #mvisual {
+          height: 33rem;
+          padding: 6rem 0 0 0rem;
+        }
+
+        #mvisual:before {
+          display: none;
+        }
+
+        #mvisual .mvisual_swiper {
+          border-radius: 0;
+        }
+
+        #mvisual .mvisual_swiper .swiper-slide .txt_box {
+          width: 70%;
+          padding: 0 5%;
+        }
+
+        #mvisual .mvisual_swiper .swiper-slide .txt_box .txt1 {
+          font-size: 2.2rem;
+        }
+
+        #mvisual .mvisual_swiper .swiper-slide .txt_box .txt1 strong.ani01 {
+          font-size: 3rem;
+        }
+
+        #mvisual .mvisual_swiper .swiper-slide .txt_box .txt2 {
+          font-size: 1.3rem;
+          display: none;
+        }
+
+        #mvisual .btns {
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 6%;
+        }
+
+        #mvisual .btns button {
+          width: 4rem;
+          height: 4rem;
+        }
+
+        #mvisual .btns button.stop {
+          background-size: 10px;
+        }
+
+        #mvisual .btns button.play {
+          background-size: 12px;
+        }
+      }
+
+      /***** 바로가기센터 *****/
+      .msect1 {
+        position: relative;
+        max-width: 140rem;
+        margin: 0 auto;
+        display: flex;
+        overflow: hidden;
+        padding: 10rem 0;
+      }
+
+      .msect1 > .tit {
+        position: absolute;
+        left: 0;
+        width: 31rem;
+      }
+
+      .msect1 > .tit h3 {
+        margin-bottom: 3rem;
+      }
+
+      .msect1 > .tit p {
+        font-size: 1.7rem;
+        color: #929292;
+      }
+
+      .msect1 > .con {
+        position: relative;
+        width: 100%;
+      }
+
+      .msect1 .guide_swiper {
+        margin-left: 31rem;
+        overflow: hidden;
+        padding: 2rem 2rem 7rem 2rem;
+        margin-top: -2rem;
+      }
+
+      .msect1 .guide_swiper .swiper-slide a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 25rem;
+        border: 1px solid #dedede;
+        border-radius: 0 0 30px 0;
+        padding: 3rem;
+        font-size: 0;
+        box-shadow: 0 5px 6px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        transition: all 0.3s;
+      }
+
+      .msect1 .guide_swiper .swiper-slide a:hover {
+        box-shadow: 0 15px 18px rgba(0, 0, 0, 0.2);
+        margin-top: -2rem;
+      }
+
+      .msect1 .guide_swiper .swiper-slide a:hover:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        border: 2px solid #ff0000;
+        border-radius: 0 0 30px 0;
+      }
+
+      .msect1 .guide_swiper .swiper-slide a .tit {
+        font-size: 2.1rem;
+        font-weight: 600;
+        padding-top: 5rem;
+        margin-bottom: 2rem;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+      }
+
+      .msect1 .guide_swiper .swiper-slide a.box1 .tit {
+        background-image: url(../image/main/ico_guide1.png);
+      }
+
+      .msect1 .guide_swiper .swiper-slide a.box2 .tit {
+        background-image: url(../image/main/ico_guide2.png);
+      }
+
+      .msect1 .guide_swiper .swiper-slide a.box3 .tit {
+        background-image: url(../image/main/ico_guide3.png);
+      }
+
+      .msect1 .guide_swiper .swiper-slide a.box4 .tit {
+        background-image: url(../image/main/ico_guide4.png);
+      }
+
+      .msect1 .guide_swiper .swiper-slide a .con {
+        font-size: 1.5rem;
+        color: #929292;
+        margin-bottom: 3.5rem;
+        line-height: 1.45;
+        word-break: keep-all;
+      }
+
+      .msect1 .guide_swiper .swiper-slide a .arr {
+        font-size: 1.4rem;
+        color: #606060;
+        display: inline-block;
+        font-weight: 500;
+        padding-right: 2rem;
+        background: url(../image/common/ico_arr.png) no-repeat 100% 50%;
+      }
+
+      .msect1 .guide_swiper .swiper-pagination-progressbar {
+        height: 3px;
+        bottom: 0;
+        top: auto;
+        left: auto;
+        right: 0;
+        width: calc(100% - 32rem);
+        background: #e9e9e9;
+        z-index: 1;
+      }
+
+      .msect1
+        .guide_swiper
+        .swiper-pagination-progressbar
+        .swiper-pagination-progressbar-fill {
+        background: var(--sub-color2);
+      }
+
+      .msect1 .guide_swiper .ctrol_btn {
+        position: absolute;
+        left: 0;
+        top: 21rem;
+        width: 10.5rem;
+        height: 5rem;
+        z-index: 1;
+      }
+
+      .msect1 .guide_swiper .ctrol_btn div {
+        width: 5rem;
+        height: 5rem;
+        background-position: 50% 50%;
+        -webkit-background-size: 50px;
+        background-size: 50px;
+      }
+
+      .msect1 .guide_swiper .ctrol_btn div.swiper-button-prev {
+        left: 0;
+        background-image: url(../image/main/g_prev_btn.png);
+      }
+
+      .msect1 .guide_swiper .ctrol_btn div.swiper-button-next {
+        right: 0;
+        background-image: url(../image/main/g_next_btn.png);
+      }
+
+      /******************************1400******************************/
+      @media all and (max-width: 1400px) {
+        .mbg {
+          width: 10rem;
+          height: 30rem;
+          background-size: cover;
+        }
+
+        .mbg.bg1 {
+          top: 50%;
+          margin-top: 50rem;
+        }
+
+        .mbg.bg2 {
+          top: 50%;
+          width: 8rem;
+          height: 20rem;
+          margin-top: 55rem;
+          background-size: cover;
+        }
+
+        .msect1 {
+          max-width: 100%;
+          padding: 8rem 5%;
+        }
+
+        .msect1 > .tit {
+          left: 5%;
+          width: 31rem;
+        }
+
+        .msect1 > .tit h3 {
+          margin-bottom: 2rem;
+        }
+
+        .msect1 > .tit p {
+          font-size: 1.5rem;
+        }
+
+        .msect1 .guide_swiper {
+          padding: 2rem 2rem 5rem 2rem;
+          margin-left: 25rem;
+        }
+
+        .msect1 .guide_swiper .swiper-slide a .tit {
+          font-size: 1.9rem;
+          margin-bottom: 1rem;
+        }
+
+        .msect1 .guide_swiper .swiper-slide a .con {
+          font-size: 1.4rem;
+          margin-bottom: 3rem;
+        }
+
+        .msect1 .guide_swiper .swiper-slide a .arr {
+          font-size: 1.3rem;
+        }
+
+        .msect1 .guide_swiper .swiper-pagination-progressbar {
+          width: calc(100% - 25rem);
+        }
+
+        .msect1 .guide_swiper .ctrol_btn {
+          top: 19rem;
+          width: 8.5rem;
+          height: 5rem;
+        }
+
+        .msect1 .guide_swiper .ctrol_btn div {
+          width: 4rem;
+          height: 4rem;
+          -webkit-background-size: 4rem;
+          background-size: 4rem;
+        }
+      }
+      /******************************1200******************************/
+
+      @media all and (max-width: 1200px) {
+      }
+      /******************************1023******************************/
+
+      @media all and (max-width: 1023px) {
+        .msect1 {
+          max-width: 100%;
+          padding: 6rem 5%;
+          flex-direction: column;
+        }
+
+        .msect1 > .tit {
+          position: static;
+          left: 0;
+          width: 100%;
+          margin-bottom: 2.5rem;
+        }
+
+        .msect1 > .tit h3 {
+          margin-bottom: 1.5rem;
+        }
+
+        .msect1 > .tit p {
+          font-size: 1.4rem;
+        }
+
+        .msect1 .guide_swiper {
+          padding: 2rem 2rem 4rem 2rem;
+          margin-left: 0;
+        }
+
+        .msect1 .guide_swiper .swiper-slide a {
+          padding: 2.5rem;
+          height: auto;
+        }
+
+        .msect1 .guide_swiper .swiper-slide a .tit {
+          font-size: 1.8rem;
+          background-size: 3.2rem;
+          padding-top: 4.5rem;
+        }
+
+        .msect1 .guide_swiper .swiper-slide a .con {
+          font-size: 1.3rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .msect1 .guide_swiper .swiper-pagination-progressbar {
+          width: 100%;
+        }
+
+        .msect1 .guide_swiper .ctrol_btn {
+          top: -10rem;
+          left: auto;
+          right: 0;
+        }
+      }
+      /******************************768******************************/
+
+      @media all and (max-width: 768px) {
+        .mbg {
+          display: none;
+        }
+
+        .msect1 {
+          padding: 5rem 5%;
+        }
+
+        .msect1 > .tit {
+          margin-bottom: 2rem;
+        }
+
+        .msect1 > .tit h3 {
+          margin-bottom: 1rem;
+        }
+
+        .msect1 .guide_swiper .swiper-slide a {
+          padding: 2rem;
+          min-height: 16rem;
+        }
+
+        .msect1 .guide_swiper .swiper-slide a .tit {
+          font-size: 1.6rem;
+          background-size: 2.8rem;
+          padding-top: 3.8rem;
+        }
+
+        .msect1 .guide_swiper .swiper-slide a .con {
+          margin-bottom: 0;
+          word-break: break-all;
+          line-height: 1.3;
+        }
+
+        .msect1 .guide_swiper .swiper-slide a .arr {
+          display: none;
+        }
+
+        .msect1 .guide_swiper .swiper-slide a:hover {
+          margin-top: 0;
+        }
+
+        .msect1 .guide_swiper .ctrol_btn {
+          top: -7rem;
+        }
+      }
+
+      /***** Core work *****/
+      .msect2 {
+        max-width: 160rem;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 2rem 0;
+      }
+
+      .msect2 .inner h3 {
+        margin-bottom: 1rem;
+        line-height: 1;
+      }
+
+      .msect2 .inner p {
+        font-size: 1.8rem;
+        color: #666;
+      }
+
+      .msect2 .core_swiper {
+        position: relative;
+        width: 100%;
+        margin: -7rem 0 10rem 0;
+        z-index: 0;
+      }
+
+      .msect2 .core_swiper .swiper-wrapper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .msect2 .core_swiper .swiper-slide {
+        position: relative;
+      }
+
+      .msect2 .core_swiper .swiper-slide .bg {
+        width: 100%;
+        padding: 11% 0 10% 0;
+        background-repeat: no-repeat;
+        background-position: 100% 0%;
+        background-size: cover;
+      }
+
+      .msect2 .core_swiper .swiper-slide .bg.bg1 {
+        background-image: url(../image/main/img_core1.png);
+      }
+
+      .msect2 .core_swiper .swiper-slide .bg.bg2 {
+        background-image: url(../image/main/img_core2.png);
+      }
+
+      .msect2 .core_swiper .swiper-slide .bg.bg3 {
+        background-image: url(../image/main/img_core3.png);
+      }
+
+      .msect2 .core_swiper .swiper-slide .bg.bg4 {
+        background-image: url(../image/main/img_core4.png);
+      }
+
+      .msect2 .core_swiper .swiper-slide .txt_box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      .msect2 .core_swiper .swiper-slide .txt_box .num {
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        background: #ef2323;
+        font-size: 1.4rem;
+        color: #fff;
+        border-radius: 2rem 2rem 2rem 0;
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+
+      .msect2 .core_swiper .swiper-slide .txt_box .tit {
+        font-size: 3.8rem;
+        color: #fff;
+        letter-spacing: -0.03em;
+        font-weight: 600;
+        text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+        margin-bottom: 3rem;
+      }
+
+      .msect2 .core_swiper .swiper-slide .txt_box ul {
+        display: inline-block;
+      }
+
+      .msect2 .core_swiper .swiper-slide .txt_box ul li {
+        position: relative;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.8rem;
+        padding: 0.6rem 0 0.6rem 2rem;
+        letter-spacing: -0.04em;
+        font-weight: 200;
+      }
+
+      .msect2 .core_swiper .swiper-slide .txt_box ul li:before {
+        position: absolute;
+        left: 0;
+        top: 1.3rem;
+        content: "";
+        border-radius: 1rem;
+        width: 6px;
+        height: 6px;
+        background: #fff;
+      }
+
+      .msect2 .core_swiper .swiper-pagination {
+        width: 98rem;
+        bottom: 4rem;
+      }
+
+      .msect2
+        .core_swiper
+        .swiper-container-horizontal
+        > .swiper-pagination-bullets
+        .swiper-pagination-bullet {
+        margin: 0;
+        margin-right: 20px;
+      }
+
+      .msect2 .core_swiper .swiper-pagination-bullet {
+        position: relative;
+        width: 20%;
+        height: auto;
+        text-align: left;
+        border-radius: 0;
+        opacity: 1;
+        margin-right: 20px;
+        background-color: transparent;
+      }
+
+      .msect2 .core_swiper .swiper-pagination-bullet em {
+        font-size: 1.6rem;
+        font-style: normal;
+        line-height: 1.4;
+        font-weight: 300;
+        color: #fff;
+        padding-top: 2rem;
+        display: inline-block;
+        letter-spacing: -0.025em;
+        opacity: 0.7;
+      }
+
+      .msect2 .core_swiper .swiper-pagination-bullet i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 5px;
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .msect2 .core_swiper .swiper-pagination-bullet b {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 0%;
+        height: 5px;
+        background-color: #fff;
+      }
+
+      .msect2 .core_swiper .swiper-pagination-bullet-active {
+        background-color: transparent;
+      }
+
+      .msect2 .core_swiper .swiper-pagination-bullet-active b {
+        animation-name: countingBar;
+        animation-duration: 5s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: 1;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+      }
+
+      .msect2 .core_swiper .swiper-pagination-bullet-active em {
+        opacity: 1;
+      }
+
+      @keyframes countingBar {
+        0% {
+          width: 0;
+        }
+
+        100% {
+          width: 100%;
+        }
+      }
+
+      /******************************1600******************************/
+      @media all and (max-width: 1600px) {
+        .msect2 {
+          max-width: 100%;
+          padding: 0 5%;
+        }
+
+        .msect2 .inner {
+          width: 100%;
+        }
+
+        .msect2 .core_swiper {
+          margin: -4rem 0 10rem 0;
+        }
+
+        .msect2 .core_swiper .swiper-slide .txt_box {
+          max-width: 140rem;
+          width: 100%;
+          padding: 0 7%;
+        }
+      }
+      /******************************1400******************************/
+
+      @media all and (max-width: 1400px) {
+        .msect2 .inner p {
+          font-size: 1.6rem;
+        }
+
+        .msect2 .core_swiper {
+          margin: -2rem 0 10rem 0;
+        }
+
+        .msect2 .core_swiper .swiper-slide .txt_box {
+          max-width: 100%;
+          padding: 0 5%;
+        }
+
+        .msect2 .core_swiper .swiper-slide .txt_box .num {
+          font-size: 1.4rem;
+        }
+
+        .msect2 .core_swiper .swiper-slide .txt_box .tit {
+          font-size: 2.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .msect2 .core_swiper .swiper-slide .txt_box ul li {
+          font-size: 1.5rem;
+          padding: 0.4rem 0 0.4rem 1.5rem;
+        }
+
+        .msect2 .core_swiper .swiper-slide .txt_box ul li:before {
+          top: 1.1rem;
+          width: 5px;
+          height: 5px;
+        }
+
+        .msect2 .core_swiper .swiper-pagination {
+          width: 100%;
+          bottom: 2rem;
+        }
+
+        .msect2 .core_swiper .swiper-pagination-bullet em {
+          font-size: 1.5rem;
+          padding-top: 1.5rem;
+        }
+      }
+      /******************************1023******************************/
+
+      @media all and (max-width: 1023px) {
+        .msect2 .inner p {
+          font-size: 1.5rem;
+        }
+
+        .msect2 .core_swiper {
+          margin: -2rem 0 8rem 0;
+        }
+
+        .msect2 .core_swiper .swiper-slide .txt_box .inner {
+          padding-top: 4rem;
+        }
+
+        .msect2 .core_swiper .swiper-slide .txt_box .num {
+          font-size: 1.3rem;
+        }
+
+        .msect2 .core_swiper .swiper-slide .txt_box .tit {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+        }
+
+        .msect2 .core_swiper .swiper-slide .txt_box ul li {
+          font-size: 1.4rem;
+          padding: 0.2rem 0 0.2rem 1.5rem;
+        }
+
+        .msect2 .core_swiper .swiper-slide .txt_box ul li:before {
+          top: 1.1rem;
+          width: 5px;
+          height: 5px;
+        }
+
+        .msect2 .core_swiper .swiper-pagination {
+          width: 100%;
+          bottom: auto;
+          position: relative;
+          display: flex;
+        }
+
+        .msect2 .core_swiper .swiper-pagination .swiper-pagination-bullet {
+          width: 25%;
+          height: 4.5rem;
+          margin: 0;
+          padding: 0 1rem;
+          text-align: center;
+          vertical-align: top;
+          background: #f5f4f4;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .msect2
+          .core_swiper
+          .swiper-pagination-bullet.swiper-pagination-bullet-active {
+          background: var(--main-color2);
+        }
+
+        .msect2
+          .core_swiper
+          .swiper-pagination-bullet.swiper-pagination-bullet-active
+          em {
+          color: #fff;
+        }
+
+        .msect2 .core_swiper .swiper-pagination-bullet em {
+          font-size: 1.3rem;
+          padding-top: 0;
+          color: #222;
+          display: flex;
+          word-break: keep-all;
+          font-weight: 400;
+        }
+
+        .msect2 .core_swiper .swiper-pagination-bullet i {
+          height: 3px;
+          display: none;
+        }
+
+        .msect2 .core_swiper .swiper-pagination-bullet b {
+          height: 3px;
+          display: none;
+        }
+      }
+      /******************************768******************************/
+
+      @media all and (max-width: 768px) {
+        .msect2 .inner p {
+          font-size: 1.4rem;
+        }
+
+        .msect2 .core_swiper {
+          margin: 0rem 0 6rem 0;
+        }
+
+        .msect2 .core_swiper .swiper-slide .bg {
+          background-position: 80% 0;
+        }
+
+        .msect2 .core_swiper .swiper-slide .txt_box {
+          max-width: 60%;
+        }
+
+        .msect2 .core_swiper .swiper-slide .txt_box .num {
+          font-size: 1.2rem;
+          display: none;
+        }
+
+        .msect2 .core_swiper .swiper-slide .txt_box .tit {
+          font-size: 1.6rem;
+          word-break: keep-all;
+        }
+
+        .msect2 .core_swiper .swiper-slide .txt_box ul li {
+          font-size: 1.3rem;
+          font-weight: 300;
+          padding: 0.2rem 0 0.2rem 1rem;
+          word-break: keep-all;
+        }
+
+        .msect2 .core_swiper .swiper-slide .txt_box ul li:before {
+          width: 4px;
+          height: 4px;
+          top: 0.8rem;
+        }
+
+        .msect2 .core_swiper .swiper-pagination {
+          flex-wrap: wrap;
+        }
+
+        .msect2 .core_swiper .swiper-pagination .swiper-pagination-bullet {
+          width: 50%;
+          height: 4rem;
+        }
+      }
+
+      /***** banner *****/
+      .msect3 {
+        position: relative;
+        border-top: 1px solid #e2e2e2;
+        padding: 1.2rem 0;
+      }
+
+      .msect3 .ban_swiper {
+        margin-left: 22rem;
+        overflow: hidden;
+      }
+
+      .msect3 .ban_swiper .swiper-slide {
+        text-align: center;
+      }
+
+      .msect3 .ctrol_wp {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 1rem 0;
+      }
+
+      .msect3 .ctrol_wp .ctrol_btn {
+        position: relative;
+        width: 10.5rem;
+        height: 3.5rem;
+        border: 1px solid #ddd;
+        z-index: 2;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      .msect3 .ctrol_wp .ctrol_btn div {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-left: 1px solid #ddd;
+        opacity: 1;
+        background-size: 4px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        margin-top: 0;
+        top: 0;
+        cursor: pointer;
+      }
+
+      .msect3 .ctrol_wp .ctrol_btn div.swiper-button-prev {
+        left: 0;
+        background-image: url(../image/main/b_prev_btn.png);
+        border-left: 0;
+      }
+
+      .msect3 .ctrol_wp .ctrol_btn div.swiper-button-next {
+        left: 3.5rem;
+        background-image: url(../image/main/b_next_btn.png);
+        border-right: 1px solid #ddd;
+      }
+
+      .msect3 .ctrol_wp .ctrol_btn button {
+        position: absolute;
+        right: 0;
+        width: 3.5rem;
+        height: 3.5rem;
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        font-size: 0;
+        border: 0;
+      }
+
+      .msect3 .ctrol_wp .ctrol_btn button.stop {
+        background-image: url(../image/main/icon_bstop.png);
+      }
+
+      .msect3 .ctrol_wp .ctrol_btn button.play {
+        background-image: url(../image/main/icon_bplay.png);
+      }
+
+      /******************************1400******************************/
+      @media all and (max-width: 1400px) {
+        .msect3 .inner {
+          position: relative;
+          padding: 0 5%;
+        }
+
+        .msect3 .ban_swiper {
+          margin-left: 10rem;
+        }
+
+        .msect3 .ban_swiper .swiper-slide a img {
+          max-width: 100%;
+        }
+
+        .msect3 .ctrol_wp {
+          left: 5%;
+          padding: 0.3% 0;
+        }
+      }
+      /******************************768******************************/
+
+      @media all and (max-width: 768px) {
+        .msect3 {
+          display: none;
+        }
+      }
+    </style>
+
+    <div id="mvisual">
+      <div
+        class="swiper mvisual_swiper swiper-container-fade swiper-container-horizontal"
+        style="position: relative;"
+      >
+        <!-- 파티클 -->
+        <div
+          id="particles-js"
+          style="width: 100%; height: 100%; position: absolute; z-index: 2;"
+        >
+          <canvas
+            class="particles-js-canvas-el"
+            width="2390"
+            height="765"
+            style="width: 100%; height: 100%;"
+          ></canvas>
+        </div>
+        <script src="./js/particles/particles.js"></script>
+        <script src="./js/particles/js/app.js"></script>
+        <!--// 파티클 -->
+        <div class="swiper-wrapper" style="transition-duration: 0ms;">
+          <div
+            class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
+            data-swiper-slide-index="1"
+            style="
+              width: 2390px;
+              opacity: 0;
+              transform: translate3d(0px, 0px, 0px);
+              transition-duration: 0ms;
+            "
+          >
+            <div class="txt_box">
+              <p class="txt1">
+                <strong class="ani01"><span>KNU</span></strong>
+                <strong class="ani02"
+                  ><span>Institutional Research Center</span></strong
+                >
+              </p>
+              <p class="txt2">
+                <strong class="ani03"
+                  ><span
+                    >경북대학교 IR센터는 대학 운영에 필수적인 대내·외 주요
+                    데이터를 체계적으로</span
+                  ></strong
+                >
+                <strong class="ani04"
+                  ><span
+                    >수집하여 관리하고 모든 데이터 사용자의 합리적인 의사결정을
+                    지원합니다.</span
+                  ></strong
+                >
+              </p>
+            </div>
+            <div class="img">
+              <img
+                src="https://ir.knu.ac.kr/theme/knuir/image/main/mvisual2.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div
+            class="swiper-slide swiper-slide-prev swiper-slide-duplicate-next"
+            data-swiper-slide-index="0"
+            style="
+              width: 2390px;
+              opacity: 0;
+              transform: translate3d(-2390px, 0px, 0px);
+              transition-duration: 0ms;
+            "
+          >
+            <div class="txt_box">
+              <p class="txt1">
+                <strong class="ani01"><span>KNU</span></strong>
+                <strong class="ani02"
+                  ><span>Institutional Research Center</span></strong
+                >
+              </p>
+              <p class="txt2">
+                <strong class="ani03"
+                  ><span
+                    >경북대학교 IR센터는 대학 운영에 필수적인 대내·외 주요
+                    데이터를 체계적으로</span
+                  ></strong
+                >
+                <strong class="ani04"
+                  ><span
+                    >수집하여 관리하고 모든 데이터 사용자의 합리적인 의사결정을
+                    지원합니다.</span
+                  ></strong
+                >
+              </p>
+            </div>
+            <div class="img">
+              <img
+                src="https://ir.knu.ac.kr/theme/knuir/image/main/mvisual1.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div
+            class="swiper-slide swiper-slide-active"
+            data-swiper-slide-index="1"
+            style="
+              width: 2390px;
+              opacity: 1;
+              transform: translate3d(-4780px, 0px, 0px);
+              transition-duration: 0ms;
+            "
+          >
+            <div class="txt_box">
+              <p class="txt1">
+                <strong class="ani01"><span>KNU</span></strong>
+                <strong class="ani02"
+                  ><span>Institutional Research Center</span></strong
+                >
+              </p>
+              <p class="txt2">
+                <strong class="ani03"
+                  ><span
+                    >경북대학교 IR센터는 대학 운영에 필수적인 대내·외 주요
+                    데이터를 체계적으로</span
+                  ></strong
+                >
+                <strong class="ani04"
+                  ><span
+                    >수집하여 관리하고 모든 데이터 사용자의 합리적인 의사결정을
+                    지원합니다.</span
+                  ></strong
+                >
+              </p>
+            </div>
+            <div class="img">
+              <img
+                src="https://ir.knu.ac.kr/theme/knuir/image/main/mvisual2.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div
+            class="swiper-slide swiper-slide-duplicate swiper-slide-next swiper-slide-duplicate-prev"
+            data-swiper-slide-index="0"
+            style="
+              width: 2390px;
+              opacity: 0;
+              transform: translate3d(-7170px, 0px, 0px);
+              transition-duration: 0ms;
+            "
+          >
+            <div class="txt_box">
+              <p class="txt1">
+                <strong class="ani01"><span>KNU</span></strong>
+                <strong class="ani02"
+                  ><span>Institutional Research Center</span></strong
+                >
+              </p>
+              <p class="txt2">
+                <strong class="ani03"
+                  ><span
+                    >경북대학교 IR센터는 대학 운영에 필수적인 대내·외 주요
+                    데이터를 체계적으로</span
+                  ></strong
+                >
+                <strong class="ani04"
+                  ><span
+                    >수집하여 관리하고 모든 데이터 사용자의 합리적인 의사결정을
+                    지원합니다.</span
+                  ></strong
+                >
+              </p>
+            </div>
+            <div class="img">
+              <img
+                src="https://ir.knu.ac.kr/theme/knuir/image/main/mvisual1.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="btns">
+          <button class="play" style="display: none;">
+            <a href="javascript:;">시작</a>
+          </button>
+          <button class="stop">
+            <a href="javascript:;">멈춤</a>
+          </button>
+        </div>
+      </div>
+      <script>
+        var mvisual_swiper = new Swiper(".mvisual_swiper", {
+          //speed: 5000,
+          loop: true,
+          effect: "fade",
+          fadeEffect: {
+            crossFade: true
+          },
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+          }
+        });
+        $(".btns .play").click(function (e) {
+          mvisual_swiper.autoplay.start();
+          $(".btns .stop").css("display", "inline-block");
+          $(".btns .play").css("display", "none");
+        });
+        $(".btns .stop").click(function (e) {
+          mvisual_swiper.autoplay.stop();
+          $(".btns .stop").css("display", "none");
+          $(".btns .play").css("display", "inline-block");
+        });
+      </script>
+
+      <div class="scroll_down">
+        <div class="scroll_down_text">SCROLL DOWN</div>
+        <div class="scroll_down_bar"></div>
+      </div>
+    </div>
+
+    <!-- //편집영역 -->
+
+    <script>
+      $(function () {
+        // 폰트 리사이즈 쿠키있으면 실행
+        font_resize(
+          "container",
+          get_cookie("ck_font_resize_rmv_class"),
+          get_cookie("ck_font_resize_add_class")
+        );
+
+        AOS.init();
+      });
+    </script>
+  </body>
+</html>
