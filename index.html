@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          var jsonData = {
+            operation: "checkStatus",
+            payload: {
+              id: "sdfgsdfgsdfgsdg345"
+            }
+          };
+
+          $.ajax({
+            type: "POST",
+            url:
+              "https://cgs9q8biil.execute-api.eu-central-1.amazonaws.com/test/roomie/checkstatus",
+            data: JSON.stringify(jsonData),
+            contentType: "application/json",
+            success: function (response) {
+              $("p").hide();
+            },
+            error: function (xhr, status, error) {
+              console.log("Fehler beim Senden der Anfrage:");
+              console.log(error);
+            }
+          });
+        });
+      });
+    </script>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <button>Button</button>
+    <p>Test</p>
   </body>
 </html>
