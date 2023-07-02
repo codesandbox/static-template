@@ -1,0 +1,422 @@
+/*************************************** Common CSS ***********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+p {
+  font-size: 0.9 rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+i {
+  color: #0047ae;
+}
+.three-cards-div h2,
+.offer-service-div h2 {
+  font-size: 1.2rem;
+  margin: 20px 0 15px 0;
+  font-weight: bold;
+  line-height: 1.1;
+  word-spacing: 4px;
+}
+
+/*************************************** Header CSS ***********************/
+.header {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+      rgba(0, 71, 174, 0.4),
+      rgba(0, 71, 174, 0.4)
+    ),
+    url("../images/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(100% 0%, 100% 75%, 50% 100%, 0% 75%, 0 0);
+  /* clockwise from top right */
+  position: relative;
+}
+.navbar-brand img {
+  height: 20%;
+  width: 20%;
+}
+@media (max-width: 700px) {
+  .navbar-brand img {
+    height: 40%;
+    width: 40%;
+  }
+}
+.navbar:before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  opacity: 0.4;
+  z-index: -1;
+  background: linear-gradient(
+    rgba(37, 153, 207, 0.651),
+    rgba(37, 153, 207, 0.651)
+  );
+}
+.nav-item {
+  padding: 0px 5px;
+  border-bottom: 3px solid transparent;
+}
+.nav-item a:hover {
+  font-weight: bold;
+  color: #fecc4e;
+  border-bottom: 3px solid #fecc4e;
+}
+.nav-item a {
+  color: #fff !important;
+  font-weight: 400;
+  border-bottom: 3px solid transparent;
+}
+.header-image {
+  width: 100%;
+  height: inherit;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+.header-image-text {
+  width: 80%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+.header-image-text p {
+  font-size: 1.2rem;
+  padding: 10px 20px 20px 20px;
+  color: white;
+}
+.header-image-buttons a {
+  border: 1px solid #fff;
+  border-radius: 100px;
+  margin: 0 5px;
+  padding: 12px 35px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+}
+.header-image-buttons a:hover {
+  color: #0047ae;
+  font-weight: bold;
+  background-color: #fecc4e;
+  text-decoration: none;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+/*************************************** Three Cards CSS ***********************/
+.three-cards {
+  width: 100%;
+  height: auto;
+  margin: 100px 0;
+  text-align: center;
+}
+.three-cards-div {
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+.three-cards-div-inside {
+  border-radius: 5px;
+  background-color: #fecc4e;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.3);
+}
+.three-cards-div-inside:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  transform: translateY(-40px);
+  cursor: pointer;
+}
+
+/*************************************** Offer CSS ***********************/
+.offer {
+  background-color: #f7f7f9;
+  padding: 60px 0px;
+  min-height: 100vh;
+}
+.offer-headings h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.progress-names h1 {
+  color: #2e2e2e;
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin-top: 40px;
+  font-weight: bold;
+}
+.progress {
+  height: 0.8rem;
+  background: #c4c3c3;
+}
+.offer-service-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.offer-service-div div div h2 {
+  color: #0047ae;
+}
+
+/*************************************** Projects Done CSS ***********************/
+.project-done {
+  padding: 100px 0;
+  min-height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  background-image: linear-gradient(
+      rgba(34, 34, 34, 0.8),
+      rgba(34, 34, 34, 0.8)
+    ),
+    url("../images/tests.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.project-done-data div h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+}
+.project-done-data div p {
+  color: #fecc4e;
+}
+.project-done div h5 {
+  color: #fff;
+}
+.project-done-data div h1 {
+  color: #fff;
+}
+
+/*************************************** Pricing CSS ***********************/
+.pricing {
+  width: 100%;
+  height: 100vh;
+  padding: 50px;
+  position: relative;
+}
+.pricing h1 {
+  font-size: 1.5rem;
+}
+.pricing:before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  z-index: -1;
+  background: linear-gradient(160deg, #0047ae 55%, #fff 0%);
+}
+.money {
+  font-size: 40px;
+  line-height: 1;
+  color: black;
+}
+.card {
+  transition: 0.4s ease;
+}
+.card:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+}
+.card-header {
+  font-size: 1.2rem;
+  background: #fff !important;
+  padding: 30px 5px !important;
+}
+.card-body {
+  padding: 30px 0px;
+}
+.card-body li {
+  margin: 10px 0;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #606060;
+}
+.card-footer {
+  background: white !important;
+  padding: 30px 0px !important;
+}
+.card-footer a {
+  border: 1px solid #0047ae;
+  border-radius: 100px;
+  margin: 0 5px;
+  padding: 12px 35px;
+  color: #0047ae;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.4;
+  text-align: center;
+  transition: 0.5s;
+}
+.card:hover .card-footer a {
+  color: white;
+  font-weight: bold;
+  background-color: #0047ae;
+  text-decoration: none;
+}
+.card:hover .card-header,
+.card:hover .money {
+  color: #0047ae;
+}
+.card-second {
+  transform: translateY(-20px);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+}
+/*************************************** Clients CSS ***********************/
+.clients {
+  width: 100%;
+  height: 100vh;
+  padding: 80px 0;
+}
+.client-box {
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  margin: 10px 0;
+  transition: 0.3s ease;
+}
+.client-box:hover {
+  background-color: #0047ae;
+  cursor: pointer;
+}
+.client-box:hover p {
+  color: white;
+}
+.client-box a {
+  position: relative;
+}
+.client-box a img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+.client-box a:after {
+  content: "\f10d";
+  font-family: FontAwesome;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #1e5799 0%, #3ccdbb 0%, #0047ae 100%);
+  color: white;
+  position: absolute;
+  top: 120%;
+  left: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.client-box h1 {
+  font-size: 18px;
+  font-size: 700;
+  color: #000;
+  margin-bottom: 10px;
+}
+.client-box h2 {
+  font-size: 13px;
+  font-weight: 400px;
+  color: black;
+  margin-bottom: 20px;
+}
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: -60px !important;
+}
+.carousel-indicators li {
+  background-color: #95b7e9 !important;
+  cursor: pointer;
+}
+.carousel-indicators .active {
+  background-color: #0047ae !important;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  padding: 0;
+  margin: 0;
+}
+/*************************************** Contact CSS ***********************/
+.contact {
+  width: 100%;
+  height: 100vh;
+  padding: 80px 0;
+  position: relative;
+}
+.contact:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(338deg, #0047ae 55%, #fff 0%);
+  z-index: -1;
+}
+.contact-form-button button {
+  border: 0px solid #0047ae;
+  border-radius: 200px;
+  margin: 20px 0;
+  padding: 12px 35px;
+  outline: none;
+  color: #0047ae;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.4;
+  text-align: center;
+  transition: 0.5s;
+  background: transparent;
+}
+form:hover .contact-form-button button {
+  background: white;
+  color: #0047ae;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+}
+::placeholder {
+  font-size: 0.9rem;
+}
+/*************************************** Subscribe CSS ***********************/
+.subscribe {
+  width: 100%;
+  height: auto;
+  margin: 80px auto;
+}
+.subscribe-input {
+  border-radius: 100px 0 0 100px !important;
+  min-width: 150px;
+  min-height: 45px;
+}
+.input-group-text {
+  color: white !important;
+  background: #0047ae !important;
+  border-radius: 0 100px 100px 0;
+  cursor: pointer;
+}

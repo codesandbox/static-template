@@ -1,12 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dr. Lal Path</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+      integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm"
+      crossorigin="anonymous"
+    />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!-- Header part including front image starts here -->
+    <header class="header">
+      <nav class="navbar navbar-dark  bg-inverse navbar-expand-lg p-0">
+        <div class="container text-uppercase p-2">
+          <a class="navbar-brand font-weight-bold text-white inline-block" style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" href="#">
+            Lal Path
+          </a>          
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto text-uppercase">
+              <li class="nav-item active">
+                <a class="nav-link" href="#"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#offer">Service</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#price">Price</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section class="header-image">
+        <div class="header-image-text">
+          <h1 class="font-weight-bold">Dr. Lal Path Labs</h1>
+          <p>
+            An Indian service provider of diagnostic and related healthcare
+            tests.
+          </p>
+          <div class="header-image-buttons">
+            <a href="#">Book a test &nbsp;<i class="text-white fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </section>
+    </header>
+    <!-- Header part including front image ends here -->
+
+    <!-- Three cards section starts here  -->
+    <section class="three-cards">
+      <div class="container">
+        <div class="row">
+          <div class="three-cards-div col-md-4 col-lg-4 col-sm-12">
+            <div class="col-md-12 three-cards-div-inside p-4">
+              <a href="#"
+                ><i class="fa fa-3x fa-check-square" aria-hidden="true"></i
+              ></a>
+              <h2>REAL TIME MONITORING</h2>
+              <p>
+                  Real-time monitoring provides instant insights, ensuring prompt actions, effective decision-making, and proactive responses to changing situations.
+              </p>
+            </div>
+          </div>
+          <div class="three-cards-div col-md-4 col-lg-4 col-sm-12">
+            <div class="col-md-12 three-cards-div-inside p-4">
+                <a href="#"><i class="fa fa-3x fa-inr" aria-hidden="true"></i></a>
+                <h2>COST SAVINGS</h2>
+                <p>
+                    Effective cost monitoring helps businesses track expenses, identify cost-saving opportunities & financial decisions for long-term success.
+                </p>
+              </div>
+            </div>
+          <div class="three-cards-div col-md-4 col-lg-4 col-sm-12">
+            <div class="col-md-12 three-cards-div-inside p-4">
+                <a href="#"
+                ><i class="fa fa-3x fa-thermometer-full" aria-hidden="true"></i
+              ></a>
+              <h2>DIAGNOSIS & Detection</h2>
+              <p>
+                  Accurate diagnosis is crucial process for effective treatment and patient care, enabling targeted interventions and better health outcomes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Three cards section ends here  -->
+
+    <!-- Offer section starts here  -->
+    <section class="offer" id="offer">
+      <div class="container mb-5 offer-headings text-center">
+        <h1 class="px-2">Diagnostic tests commonly selected by individuals</h1>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 col-10 align offset-1 offset-lg-0 al">
+            <div class="progress-names my-3">
+              <h1>Complete Blood Count (CBC)</h1>
+              <div class="progress w-100">
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated"
+                  role="progressbar"
+                  aria-valuenow="75"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style="width: 90%;"
+                >
+                  90% 
+                </div>
+              </div>
+            </div>
+            <div class="progress-names my-3">
+              <h1>Lipid Profile</h1>
+              <div class="progress w-100">
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                  role="progressbar"
+                  aria-valuenow="75"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style="width: 85%;"
+                >
+                  85%
+                </div>
+              </div>
+            </div>
+            <div class="progress-names my-3">
+              <h1>Liver Function Test (LFT)</h1>
+              <div class="progress w-100">
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated bg-dark"
+                  role="progressbar"
+                  aria-valuenow="75"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style="width: 50%;"
+                >
+                  50%
+                </div>
+              </div>
+            </div>
+            <div class="progress-names my-3">
+              <h1>Thyroid Function Test (TFT)</h1>
+              <div class="progress w-100">
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                  role="progressbar"
+                  aria-valuenow="75"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style="width: 70%;"
+                >
+                  70%
+                </div>
+              </div>
+            </div>
+            <div class="progress-names my-3">
+              <h1>Renal Function Test (RFT)</h1>
+              <div class="progress w-100">
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                  role="progressbar"
+                  aria-valuenow="75"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style="width: 75%;"
+                >
+                  75%
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-12 px-4 mt-4 offer-service-div">
+            <div class="row">
+              <div class="col-lg-12 col-12">
+                <h2>Imaging tests</h2>
+                <p>
+                    Common imaging tests include X-rays, MRI (Magnetic Resonance Imaging), CT scan (Computed Tomography).
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 col-12">
+                <h2>Laboratory tests</h2>
+                <p>
+                    These tests involve analyzing samples of blood, urine, or other bodily fluids to assess various aspects of overall health.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 col-12">
+                <h2>Biopsy tests</h2>
+                <p>
+                    Include needle biopsies to collect cells, and surgical biopsies, which involve the removal of a larger tissue sample during a surgical procedure.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Offer section ends here  -->
+
+    <!-- Projects Done section starts here  -->
+    <section class="project-done">
+      <div class="container offer-headings text-center">
+        <h5 class="text-center font-weight-bold mb-5">
+          MORE THAN 1,000 DIAGNOSTIC TESTS PERFORMED
+        </h5>
+        <div class="row project-done-data text-center text-white">
+          <div class="col-lg-3 col-12">
+            <h1 class="count">750</h1>+
+            <p>Complete Blood Count</p>
+          </div>
+          <div class="col-lg-3 col-12">
+            <h1 class="count">200</h1>+
+            <p>Lipid Profile</p>
+          </div>
+          <div class="col-lg-3 col-12">
+            <h1 class="count">150</h1>+
+            <p>LFT/KFT</p>
+          </div>
+          <div class="col-lg-3 col-12">
+            <h1 class="count">80</h1>+
+            <p>Renal Function Test</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Projects Done section ends here  -->
+
+    <!-- Pricing section starts here  -->
+    <section class="pricing" id="price">
+      <div class="container mb-5 offer-headings text-center text-white">
+        <h1>OUR BEST PRICING</h1>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-12 mb-5">
+            <div class="card text-center">
+              <div class="card-header">BASIC</div>
+              <div class="card-body">
+                <li>$<span class="money">20</span>/Package</li>
+                <li>Imaging Services</li>
+                <li>ECG and Cardiac Services</li>
+                <li>Pulmonary Function Testing</li>
+                <li>Endoscopy Services</li>
+                <li>Home Sample Collection</li>
+              </div>
+              <div class="card-footer">
+                <a href="#">Purchase</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-12 mb-5">
+            <div class="card text-center card-second">
+              <div class="card-header">STANDARD</div>
+              <div class="card-body">
+                <li>$<span class="money">40</span>/Package</li>
+                <li>Pathology Services</li>
+                <li>ECG and Cardiac Services</li>
+                <li>Pulmonary Function Testing</li>
+                <li>Endoscopy Services</li>
+                <li>Home Sample Collection</li>
+              </div>
+              <div class="card-footer">
+                <a href="#">Purchase</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-12 mb-5">
+            <div class="card text-center">
+              <div class="card-header">PREMIUM</div>
+              <div class="card-body">
+                <li>$<span class="money">60</span>/Package</li>
+                <li>Health Check-up Packages</li>
+                <li>Vaccination and Immunization</li>
+                <li>Pulmonary Function Testing</li>
+                <li>Online Reporting</li>
+                <li>Home Sample Collection</li>
+              </div>
+              <div class="card-footer">
+                <a href="#">Purchase</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pricing section ends here  -->
+
+    <!-- Clients section starts here  -->
+    <section class="clients">
+      <div class="container offer-headings text-center">
+        <h1 class="text-center font-weight-bold text-gray mb-5">
+          OUR HAPPY CLIENTS
+        </h1>
+        <!-- Carousel -->
+        <div id="demo" class="carousel slide container" data-ride="carousel">
+
+          <!-- Indicators -->
+          <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+          </ul>
+        
+          <!-- The slideshow -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-12">
+                  <div class="client-box">
+                    <a href="#">
+                      <img src="images/girl1.jpeg" class="img-fluid img-thumbnail" alt="">
+                    </a>
+                    <p class="m-4">Accurate, prompt results and their excellent & exceptional service. Lal Path Labs is my go-to for all diagnostic needs.</p>
+                    <h1>Sarah</h1>
+                    <h2>Udaipur</h2>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                  <div class="client-box">
+                    <a href="#">
+                      <img src="images/girl2.png" class="img-fluid img-thumbnail" alt="">
+                    </a>
+                    <p class="m-4">Professional staff, state-of-the-art technology, and reliable reports. Lal Path Labs exceeded my expectations.</p>
+                    <h1>Ifla Mushtaq</h1>
+                    <h2>Kashmir</h2>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                  <div class="client-box">
+                    <a href="#">
+                      <img src="images/girl3.jpeg" class="img-fluid img-thumbnail" alt="">
+                    </a>
+                    <p class="m-4">Efficient and friendly staff, quick turnaround time, and accurate results. Lal Path Labs is my trusted partner in healthcare.</p>
+                    <h1>Maria</h1>
+                    <h2>Kanpur</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-12">
+                  <div class="client-box">
+                    <a href="#">
+                      <img src="images/boy1.png" class="img-fluid img-thumbnail" alt="">
+                    </a>
+                    <p class="m-4">Exceptional quality and comprehensive testing options. Lal Path Labs is the best in the field of diagnostic labs in India.</p>
+                    <h1>Jain</h1>
+                    <h2>Ropar</h2>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                  <div class="client-box">
+                    <a href="#">
+                      <img src="images/boy2.png" class="img-fluid img-thumbnail" alt="">
+                    </a>
+                    <p class="m-4">Prompt service, hassle-free experience, and accurate reports. Lal Path Labs delivers excellence every time.</p>
+                    <h1>Mohsin</h1>
+                    <h2>Noida</h2>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                  <div class="client-box">
+                    <a href="#">
+                      <img src="images/girl4.jpeg" class="img-fluid img-thumbnail" alt="">
+                    </a>
+                    <p class="m-4">Highly satisfied with their professionalism, precision, and attention to detail. Lal Path Labs sets the benchmark for diagnostics.</p>
+                    <h1>Falak</h1>
+                    <h2>Chandigarh</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-12">
+                  <div class="client-box">
+                    <a href="#">
+                      <img src="images/girl5.png" class="img-fluid img-thumbnail" alt="">
+                    </a>
+                    <p class="m-4">Convenient home sample collection reliable results, and excellent customer support that ensures a seamless experience.</p>
+                    <h1>Muneeba</h1>
+                    <h2>Kerala</h2>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                  <div class="client-box">
+                    <a href="#">
+                      <img src="images/boy4.jpeg" class="img-fluid img-thumbnail" alt="">
+                    </a>
+                    <p class="m-4">Expert team, advanced technology, and efficient processes. Lal Path Labs is the epitome of reliability and accuracy.</p>
+                    <h1>Vinod</h1>
+                    <h2>Raipur</h2>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                  <div class="client-box">
+                    <a href="#">
+                      <img src="images/girl6.jpeg" class="img-fluid img-thumbnail" alt="">
+                    </a>
+                    <p class="m-4">Top-notch facilities, reliable results, and exceptional customer service. Lal Path Labs is my preferred choice for diagnostics.</p>
+                    <h1>Veronica</h1>
+                    <h2>Madhya Pradesh</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+          </a>
+        
+        </div>
+    </section>
+    <!-- Clients section ends here  -->
+
+    <!-- Contact section starts here  -->
+    <section class="contact" id="contact">
+      <div class="container offer-headings text-center">
+        <h1 class="text-center font-weight-bold text-gray">
+          Contact Us
+        </h1>
+        <p class="mb-5">You can reach out to us anytime!</p>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-10 offset-lg-2 offset-lg-2 offset-md-2 offset-1">
+            <form action="#">
+              <div class="form-group">
+                <input type="text" class="form-control" autocomplete="off" required placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" autocomplete="off" required placeholder="Enter your email">
+              </div>
+              <div class="form-group">
+                <input type="mobile" class="form-control" autocomplete="off"  required placeholder="Enter your mobile number">
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" rows="7" autocomplete="off" required placeholder="Your message ..."></textarea>
+              </div>
+              <div class="d-flex justify-content-center contact-form-button">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact section ends here  -->
+
+    <!-- Subscribe section starts here  -->
+    <section class="subscribe">
+      <div class="container offer-headings text-center mb-4">
+        <h1 class="text-center">
+          SUBSCRIBE TO OUR NEWSLETTER
+        </h1>
+      </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-12">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control subscribe-input" placeholder="Your Email">
+                <div class="input-group-append">
+                  <span class="input-group-text">Subscribe</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Subscribe section ends here  -->
+
+    <!-- Footer section starts here  -->
+    <footer class="footer-section" id="about">
+      <div class="container  px-4">
+        <div class="row">
+          <div class="col-lg-5 col-md-6 col-12 mb-3">
+              <div>
+                <h4 class="mb-4">About Lal Path Labs</h4>
+                <p>
+                  Dr Lal PathLabs Limited is an Indian service provider of diagnostic and related healthcare tests. Based in New Delhi, the company offers tests on blood, urine and other human body viscera.
+                </p>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-12 links_footer mb-3">
+              <h4 class="mb-4">Navigation Links</h4>
+              <li><a href="#">Home</a></li>
+              <li><a href="#offer">Service</a></li>
+              <li><a href="#price">Price</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#about">About</a></li>
+        </div>
+        <div class="col-lg-4 col-md-12 col-12">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/oociKQH84CA" allowfullscreen></iframe>
+            </div>
+        </div>
+        </div>
+        
+      </div>
+      <div class="text-center font-weight-bold mt-5 copyright">
+        <p class="mt-3">
+          Made with <i class="fa-solid fa-heart" style="color: red;"></i> by
+          Ifla Mushtaq
+        </p>
+      </div>
+    </footer>
+    <!-- Footer section ends here  -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
+      integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"
+      integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+      $(".count").counterUp({
+        delay: 10,
+        time: 2000
+      });
+    </script>
   </body>
 </html>
