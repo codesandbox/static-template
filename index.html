@@ -1,12 +1,510 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
   </head>
+  <!-- https://www.figma.com/file/6l7xEWh5vOwSLGXUXtlYQv/MINIMAL?node-id=1%3A2 -->
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+      <div id='modal' class='modal'>
+                <div class="modal-content">
+                    <button class='hide'>&times;</button>
+            <div class="title">Осталось до конца 2023 года:</div>
+            <div class="timer">
+                <div class="timer-block">
+                    <span id="days">00</span>
+                    <br>
+                    дней
+                </div>
+                <div class="timer-block">
+                    <span id="hours">00</span>
+                    <br>
+                    часов
+                </div>
+                <div class="timer-block">
+                    <span id="minutes">00</span>
+                    <br>
+                    минут
+                </div>
+                <div class="timer-block">
+                    <span id="seconds">00</span>
+                    <br>
+                    секунд
+                </div>
+            </div>
+        </div>
+
+      </div>
+    <div class="page">
+
+      <header class="header">
+        <div data-item="85" class="menu-logo">
+          <div class="logo header-logo">
+            <img class="header-image" src="icon/logo.png" alt="minimal" />
+          </div>
+          <div class="logo-text">
+            <span class="minimal">Minimal</span>
+          </div>
+          <div class="burger">
+            <span class="nav-burger"></span>
+          </div>
+          <nav class="navigation">
+            <ul class="header-menu">
+              <li class="list">
+                <a class="menu-link" href="#0">process</a>
+              </li>
+              <li class="list"><a class="menu-link" href="#0">projects</a></li>
+              <li class="list"><a class="menu-link" href="#0">team</a></li>
+              <li class="list">
+                <a class="menu-link contact" href="#0">contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-content">
+          <h1 class="header-title">
+            <a class="link header-link" href="#0"
+              >Making brands stand out is our obsession</a
+            >
+          </h1>
+          <div class="header-subtitle">Let us help your brand stand out.</div>
+          <!-- КОМЕНТАРИЙ -->
+        </div>
+      </header>
+      <div id="button-X" class="button-description" type="submit">
+        <img
+          class="image-description"
+          src="icon/button__close.png"
+          alt="РєР°РєРѕР№-С‚Рѕ РєСЂРµСЃС‚"
+        />
+      </div>
+      <section class="description">
+        <div class="description-content">
+          <span class="description-text"
+            >Copy Minimalist is a full-service digital creative agency located
+            in Ontario Canada. We focus on design, consulting, technology, and
+            photography. WeвЂ™ve been building unique digital products,
+            platforms, and experiences for the past 6 years. Let us help your
+            company grow.</span
+          >
+        </div>
+        <button class="description-button" type="submit">Get in Touch</button>
+      </section>
+      <div class="main-content">
+        <div class="content how-we-make">
+          <h2 class="title how-we-make-title">how we make brands thrive</h2>
+          <div class="how-we-make-container">
+            <!-- <div class="how-we-make-box">
+              <img class="box-img" src="icon/target.png" alt="target icon" />
+              <h3 class="title box-title">SET a target</h3>
+              <span class="box-text"
+                >Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse varius enim in eros elementum tristique.</span
+              >
+            </div>
+            <div class="how-we-make-box">
+              <img
+                class="box-img"
+                src="icon/design.png"
+                alt="design icon"
+              />
+              <h3 class="title box-title">design a solution</h3>
+              <span class="box-text"
+                >Duis cursus, mi quis viverra ornare, eros dolor interdum nulla,
+                ut commodo diam libero vitae erat.</span
+              >
+            </div>
+            <div class="how-we-make-box">
+              <img
+                class="box-img"
+                src="icon/track.png"
+                alt="track icon"
+              />
+              <h3 class="title box-title">track the progress</h3>
+              <span class="box-text"
+                >Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet.
+                Nunc ut sem vitae risus tristique posuere.</span
+              >
+            </div> -->
+          </div>
+        </div>
+        <div class="content projects">
+          <h2 class="title projects-title">Recent projects</h2>
+          <div class="projects-container">
+            <div class="project-box">
+              <img
+                class="project-img"
+                id="img1"
+                src="image/woods.jpg"
+                alt="С„РѕС‚Рѕ Р»РµСЃРЅРѕР№ С‚СЂРѕРїС‹"
+              />
+              <h3 class="title project-title">woods</h3>
+              <span class="project-text">Photography</span>
+            </div>
+            <div class="project-box">
+              <img
+                class="project-img"
+                src="image/path.jpg"
+                alt="С„РѕС‚Рѕ РіРѕСЂРЅРѕР№ С‚СЂРѕРїС‹"
+              />
+              <h3 class="title project-title">path</h3>
+              <span class="project-text">Website вЂў Photography </span>
+            </div>
+            <div class="project-box">
+              <img
+                class="project-img"
+                src="image/darkness.jpg"
+                alt="С„РѕС‚Рѕ РїСѓСЃС‚С‹РЅРё РЅРѕС‡СЊСЋ"
+              />
+              <h3 class="title project-title">darkness</h3>
+              <span class="project-text">Website</span>
+            </div>
+            <div class="project-box">
+              <img
+                class="project-img"
+                src="image/waves.jpg"
+                alt="С„РѕС‚Рѕ СЃРєР°Р» РЅР° Р±РµСЂРµРіСѓ"
+              />
+              <h3 class="title project-title">waves</h3>
+              <span class="project-text">Photography</span>
+            </div>
+            <div class="project-box">
+              <img
+                class="project-img"
+                src="image/drops.jpg"
+                alt="С„РѕС‚Рѕ РєР°РїРµР»СЊ РґРѕР¶РґСЏ РЅР° СЃС‚РµРєР»Рµ"
+              />
+              <h3 class="title project-title">drops</h3>
+              <span class="project-text">Website</span>
+            </div>
+            <div class="project-box">
+              <img
+                class="project-img"
+                src="image/ocean.jpg"
+                alt="С„РѕС‚Рѕ Р»РѕРґРєРё РІ РѕРєРµР°РЅРµ"
+              />
+              <h3 class="title project-title">ocean</h3>
+              <span class="project-text">Website</span>
+            </div>
+            <div class="project-box">
+              <img
+                class="project-img"
+                src="image/town.jpg"
+                alt="С„РѕС‚Рѕ РєСЂС‹С€Рё РіРѕСЂРѕРґР°"
+              />
+              <h3 class="title project-title">town</h3>
+              <span class="project-text">Website</span>
+            </div>
+            <div class="project-box">
+              <img
+                class="project-img"
+                src="image/mountain.jpg"
+                alt="С„РѕС‚Рѕ РіРѕСЂС‹"
+              />
+              <h3 class="title project-title">mountain</h3>
+              <span class="project-text">Website</span>
+            </div>
+            <div class="project-box">
+              <img
+                class="project-img"
+                src="image/camera.jpg"
+                alt="С„РѕС‚Рѕ С„РѕС‚РѕР°РїРїР°СЂР°С‚Р°"
+              />
+              <h3 class="title project-title">camera</h3>
+              <span class="project-text">Website</span>
+            </div>
+          </div>
+        </div>
+        <div class="content team">
+          <h3 class="title team-title">our team</h3>
+          <div class="team-container">
+            <div class="team-box">
+              <img
+                class="team-img"
+                src="image/ron.jpg"
+                alt="Р¤РѕС‚Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°"
+              />
+              <h3 class="title team-box-title">Ron Swanson</h3>
+              <span class="team-text">Founder</span>
+              <ul class="team-social">
+                <li class="team__box_social-link">
+                  <a href="#0"
+                    ><img
+                      class="social-link"
+                      src="icon/twitter.png"
+                      alt="Twitter"
+                  /></a>
+                </li>
+                <li class="team__box_social-link">
+                  <a href="#0"
+                    ><img class="social-link" src="icon/in.png" alt="LinkedIn"
+                  /></a>
+                </li>
+                <li class="team__box_social-link">
+                  <a href="#0"
+                    ><img class="social-link" src="icon/Mail.png" alt="Mail"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+            <div class="team-box">
+              <img
+                class="team-img"
+                src="image/julia.jpg"
+                alt="Р¤РѕС‚Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°"
+              />
+              <h3 class="title team-box-title">Julia Depish</h3>
+              <span class="team-text">Marketing</span>
+              <ul class="team-social">
+                <li class="team-link">
+                  <a href="#0"
+                    ><img
+                      class="social-link"
+                      src="icon/twitter.png"
+                      alt="Twitter"
+                  /></a>
+                </li>
+                <li class="team-link">
+                  <a href="#0"
+                    ><img class="social-link" src="icon/in.png" alt="LinkedIn"
+                  /></a>
+                </li>
+                <li class="team-link">
+                  <a href="#0"
+                    ><img class="social-link" src="icon/Mail.png" alt="Mail"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+            <div class="team-box">
+              <img
+                class="team-img"
+                src="image/danny.jpg"
+                alt="Р¤РѕС‚Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°"
+              />
+              <h3 class="title team-box-title">Danny Devry</h3>
+              <span class="team-text">Designer </span>
+              <ul class="team-social">
+                <li class="team-link">
+                  <a href="#0"
+                    ><img
+                      class="social-link"
+                      src="icon/instagram.png"
+                      alt="Instagram"
+                  /></a>
+                </li>
+                <li class="team-link">
+                  <a href="#0"
+                    ><img
+                      class="social-link"
+                      src="icon/twitter.png"
+                      alt="Twitter"
+                  /></a>
+                </li>
+                <li class="team-link">
+                  <a href="#0"
+                    ><img class="social-link" src="icon/be.png" alt="Be"
+                  /></a>
+                </li>
+                <li class="team-link">
+                  <a href="#0"
+                    ><img
+                      class="social-link"
+                      src="icon/ring.png"
+                      alt="Dribbble"
+                  /></a>
+                </li>
+                <li class="team-link">
+                  <a href="#0"
+                    ><img class="social-link" src="icon/Mail.png" alt="Mail"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+            <div class="team-box">
+              <img
+                class="team-img"
+                src="image/lisa.jpg"
+                alt="Р¤РѕС‚Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°"
+              />
+              <h3 class="title team-box-title">Lisa Smith</h3>
+              <span class="team-text">Developer</span>
+              <ul class="team-social">
+                <li class="team-link">
+                  <a href="#0"
+                    ><img
+                      class="social-link"
+                      src="icon/facebook.png"
+                      alt="Facebook"
+                  /></a>
+                </li>
+                <li class="team-link">
+                  <a href="#0"
+                    ><img
+                      class="social-link"
+                      src="icon/twitter.png"
+                      alt="Twitter"
+                  /></a>
+                </li>
+                <li class="team-link">
+                  <a href="#0"
+                    ><img class="social-link" src="icon/Mail.png" alt="Mail"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="content reviews">
+          <div class="reviews-image">
+            <img src="icon/comment.png" alt="РљР°РІС‹С‡РєРё" />
+          </div>
+          <div class="reviews-container">
+            <div class="reviews-box">
+              <span class="reviews-text"
+                >вЂњI love these guys! They did a great job. I would recommend
+                them to anyone.вЂќ</span
+              >
+              <img
+                class="reviews-img"
+                src="image/julius.jpg"
+                alt="Р¤РѕС‚Рѕ РєРѕРјРµРЅС‚Р°С‚РѕСЂР°"
+              />
+              <h4 class="title reviews-title">Julius Von Uberstien</h4>
+            </div>
+            <div class="reviews-box">
+              <span class="reviews-text"
+                >вЂњElexis Corp. has grown immensely with the help of
+                Minimal.вЂќ</span
+              >
+              <img
+                class="reviews-img"
+                src="image/rachel.jpg"
+                alt="Р¤РѕС‚Рѕ РєРѕРјРµРЅС‚Р°С‚РѕСЂР°"
+              />
+              <h4 class="title reviews-title">Rachel Stamos</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <address class="contacts">
+          <h2 class="title contact-title">LETвЂ™s Get in touch</h2>
+          <div class="contact-container">
+            <div class="contact-box">
+              <img
+                class="contact-img"
+                src="icon/loc.png"
+                alt="Р—РЅР°С‡РµРє РіРµРѕР»РѕРєР°С†РёСЏ"
+                width="44px"
+              />
+              <h3 class="title contact-box-title">MEET US IN PERSON</h3>
+              <span class="contact-text"
+                >8776 Juniper Street <br />
+                Unit #204 <br />
+                Merriweather, Ontorio <br />
+                Canada</span
+              >
+            </div>
+            <div class="contact-box">
+              <img
+                class="contact-img"
+                src="icon/mails.png"
+                alt="Р—РЅР°С‡РµРє РїРёСЃСЊРјР°"
+                width="70px"
+              />
+              <h3 class="title contact-box-title">The traditional way</h3>
+              <span class="contact-text"
+                >Email us <br />
+                contact@minimal.com <br />
+                <br />Contact form <br />
+                Scroll down
+              </span>
+            </div>
+            <div class="contact-box">
+              <img
+                class="contact-img"
+                src="icon/like.png"
+                alt="Р—РЅР°С‡РµРє Like"
+                width="68px"
+              />
+              <h3 class="title contact-box-title">LetвЂ™s get social</h3>
+              <ul class="contact-social">
+                <li class="contact-link">
+                  <a href="#0"
+                    ><img
+                      class="social-link"
+                      src="icon/facebook.png"
+                      alt="Facebook"
+                    /><span class="social-link-text">Facebook</span></a
+                  >
+                </li>
+                <li class="contact-link">
+                  <a href="#0"
+                    ><img
+                      class="social-link"
+                      src="icon/twitter.png"
+                      alt="Twitter"
+                    /><span class="social-link-text">Twitter</span></a
+                  >
+                </li>
+                <li class="contact-link">
+                  <a href="#0"
+                    ><img
+                      class="social-link"
+                      src="icon/in.png"
+                      alt="LinkedIn"
+                    /><span class="social-link-text">LinkedIn</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </address>
+        <div class="feedback">
+          <form action="#0" class="feedback-field">
+            <input
+              class="field"
+              type="text"
+              placeholder="Name"
+              name="name"
+              required
+            />
+            <input
+              class="field"
+              type="email"
+              placeholder="Email"
+              name="name"
+              required
+            />
+            <input class="field" type="text" placeholder="Budget" required />
+            <input
+              class="field"
+              type="text"
+              placeholder="Describe youre project..."
+              required
+            />
+            <button type="submit" class="feedback-button">Send Message</button>
+          </form>
+          <img class="footer-logo" src="icon/logo2.png" alt="Р›РѕРіРѕС‚РёРї" />
+          <div class="right">
+            <span class="right-text"
+              >Minimal Template made in Webflow. All rights reserved.</span
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src='js/script.js'></script>
+    <!-- <script src="JS/script.js"></script> -->
+    <!-- <script src="JS/getting_and_changing.js"></script> -->
+    <!-- <script src="JS/css_stile_and_classes.js"></script> -->
+    <!-- <script src="JS/link_and_input.js"></script> -->
+    <!-- <script src="JS/1.js"></script> -->
+    <!-- <script src="JS/2.js"></script> -->
   </body>
 </html>
