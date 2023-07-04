@@ -1,0 +1,423 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* box-sizing: border-box; */
+}
+
+body {
+  width: 100%;
+  background: #fafafa;
+  /* background: green; */
+  position: relative;
+  font-family: "roboto", sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #dfdfdf;
+  width: 100%;
+  height: 70px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0px;
+}
+
+.navresponse {
+  width: 70%;
+  max-width: 1000px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.instagram {
+  width: 15%;
+  cursor: pointer;
+}
+
+.instalogo {
+  height: 10%;
+  margin-top: 5px;
+}
+
+.searchbar {
+  width: 250px;
+  height: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #dfdfdf;
+  border-radius: 22px;
+  background: #fafafa;
+  color: black;
+  text-transform: capitalize;
+}
+
+.searchbar::placeholder {
+  color: black;
+}
+
+.navbar li {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.navbar li img {
+  height: 35px;
+  width: 35px;
+}
+
+.navicons {
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0px 10px;
+}
+.profilephoto {
+  height: 55px;
+  width: 55px;
+  cursor: pointer;
+}
+
+.story {
+  display: flex;
+  width: 100%;
+  padding: 40px 0px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.storyresponse {
+  width: 70%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-gap: 30px;
+}
+
+.leftcolumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.statuswrapper {
+  width: 100%;
+  height: 120px;
+  background: #fff;
+  border-radius: #dfdfdf;
+  border-radius: 2px;
+  padding: 10px;
+  padding-right: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.statuswrapper ::-webkit-scrollbar {
+  display: none;
+}
+
+.statuscard {
+  flex: 0 0 auto;
+  width: 80px;
+  max-width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 15px;
+}
+.profile-pic {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  /* overflow: hidden; */
+  padding: 3px;
+  background: linear-gradient(45deg, rgb(255, 230, 0), rgb(255, 0, 128), 80%);
+}
+.profile-pic img {
+  margin-left: 15px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.username {
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 5px;
+  color: rgba(0, 0, 2, 1);
+}
+
+.post {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+
+  background: #fff;
+  border: 1px solid #dfdfdf;
+  margin-top: 40px;
+}
+
+.info {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* justify-content: center; */
+  padding: 9px 0;
+}
+
+.info .username {
+  display: flex;
+  width: max-content;
+  font-weight: bold;
+  color: black;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.info .option {
+  height: 10px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.info .user .username {
+  display: flex;
+  align-items: center;
+}
+
+.info .profile-pic {
+  background: none;
+  height: 50px;
+  width: 50px;
+}
+
+.post-image {
+  margin-top: 30px;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.postcontent {
+  width: 100%;
+  padding: 10px;
+}
+
+.likes {
+  font-weight: bold;
+}
+.description {
+  margin: 5px 3px;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.description span {
+  font-weight: bold;
+}
+
+.read-comments {
+  color: rgba(0, 0, 0, 0.5);
+  /* margin: 5px; */
+  margin-bottom: 9px;
+  margin-left: 0px;
+  font-size: 14px;
+}
+.post-time {
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.reaction-response {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.reaction-response .icon {
+  margin: o;
+  height: 20px;
+
+  margin-right: 20px;
+}
+.reaction-response .save-icon {
+  margin-left: auto;
+  margin-right: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.reaction-response .icon:hover {
+  background-color: rgb(247, 186, 186);
+  cursor: pointer;
+}
+
+.comment-response {
+  width: 100%;
+  height: 40px;
+  border-radius: 1px solid #dfdfdf;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-response .icon {
+  height: 28px;
+  width: 28px;
+  margin-left: 15px;
+}
+
+.comment-response .comment-box {
+  width: 40%;
+  height: 100%;
+
+  outline: none;
+  border: none;
+}
+
+.comment-btn {
+  width: 40%;
+  height: 100px;
+  background: none;
+  border: none;
+  outline: none;
+  text-transform: capitalize;
+  font-size: 16px;
+  cursor: pointer;
+  color: rgb(0, 162, 252);
+  opacity: 0.5;
+}
+
+.rightcolumn section {
+  /* display: flex; */
+  margin-top: 70px;
+  width: 100%;
+  height: 100px;
+  /* border: 3px solid red; */
+}
+
+.profilearea {
+  display: flex;
+  margin-top: 20px;
+  padding-top: 20px;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+.profilearea img {
+  padding-left: 20px;
+  border: none;
+  background: none;
+  height: 80px;
+  width: 80px;
+}
+
+.profilearea .instaid {
+  margin: 9px;
+  padding-top: 9px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+
+  font-weight: 800;
+  text-decoration: capitalize;
+}
+.profilearea .instaname {
+  padding-left: 5px;
+  padding-top: 5px;
+  color: rgb(112, 54, 54);
+  position: object-fit;
+}
+
+.profilearea .switchbtn {
+  width: 100%;
+
+  cursor: pointer;
+  background: none;
+  margin-left: 87px;
+  font-weight: bold;
+  color: rgb(37, 121, 204);
+  border: none;
+  outline: none;
+}
+
+.suggestionarea {
+  width: 100%;
+  padding-left: 10px;
+  padding-top: 20px;
+  display: flex;
+}
+
+.suggestionarea .reccomendations {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700px;
+  color: rgb(99, 86, 86);
+}
+
+.reccomendations .first {
+  font-weight: 700;
+  font-style: sans-serif;
+}
+.reccomendations .second {
+  font-weight: 700;
+  color: black;
+}
+
+.profilesuggestion .prof1 .profile1 {
+  margin-left: 25px;
+  margin-right: 10px;
+
+  height: 50px;
+  width: 50px;
+}
+
+.profilesuggestion .prof1 {
+  margin-top: 40px;
+
+  width: 100%;
+  display: flex;
+}
+
+.profilesuggestion .prof1 .profid1 {
+  margin-top: 15px;
+  margin-right: 200px;
+}
+
+.profilesuggestion .prof1 .followme {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+  margin-left: auto;
+  font-weight: bold;
+  margin-right: 5px;
+  color: rgb(37, 121, 204);
+}
+
+.lastline .bye {
+  margin-top: 25px;
+  margin-left: 30px;
+  color: rgb(99, 86, 86);
+  padding: 25px;
+
+  font-weight: bold;
+  text-decoration: capitalize;
+}
