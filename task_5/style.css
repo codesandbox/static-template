@@ -1,0 +1,46 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins";
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  margin: 4em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 4.1em;
+  margin: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  position: relative;
+}
+nav ul li a.active::before {
+  position: absolute;
+  content: "";
+  width: 35%;
+  height: 1px;
+  border-bottom: 2px solid black;
+  bottom: -6px;
+}
