@@ -1,12 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sacred Balance</title>
+
+    <!-- SWIPER CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    <!-- BOXICONS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!-- HEADER SECTION -->
+    <header class="header">
+      <a href="#" class="logo">Sacred Balance</a>
+
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#testimonial">Testimonial</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="bx bx-moon" id="darkMode-icon"></div>
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+    <!-- HOME SECTION -->
+    <section class="home" id="home">
+      <div class="home-content">
+        <h3>Sacred Balance</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quam
+          odio laudantium impedit dolores labore dolorem delectus animi.
+        </p>
+
+        <div class="social-media">
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class="bx bxl-twitter"></i></a>
+          <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+          <a href="#"><i class="bx bxl-linkedin"></i></a>
+        </div>
+        <a href="#contact" class="btn">Contact</a>
+      </div>
+
+      <div class="profession-container">
+        <div class="profession-box">
+          <div class="profession" style="--i: 0;">
+            <i class="bx bxs-hand"></i>
+            <h3>Traditional Reiki</h3>
+          </div>
+          <div class="profession" style="--i: 1;">
+            <i class="bx bx-body"></i>
+            <h3>Human Design</h3>
+          </div>
+          <div class="profession" style="--i: 2;">
+            <i class="bx bxs-bowl-hot"></i>
+            <h3>Personal Chef</h3>
+          </div>
+          <div class="profession" style="--i: 3;">
+            <i class="bx bx-body"></i>
+            <h3>Human Design</h3>
+          </div>
+
+          <div class="circle"></div>
+        </div>
+
+        <div class="overlay"></div>
+
+        <div class="home-img">
+          <img src="https://i.postimg.cc/TPMZbdgt/home.webp" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="https://i.postimg.cc/Vv0N6sjz/about.png" alt="" />
+      </div>
+
+      <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut
+          dignissimos itaque rem totam. Eaque labore sit natus, nostrum illo
+          vitae numquam. Impedit amet debitis, cum harum laboriosam asperiores,
+          facere corrupti quibusdam dolorum ipsum beatae consequuntur aliquid
+          adipisci nisi labore explicabo!
+        </p>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+      <h2 class="heading">My <span>Services</span></h2>
+
+      <div class="services-container">
+        <div class="services-box">
+          <i class="bx bxs-hand"></i>
+          <h3>Traditional Reiki</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+            dolorum molestias cupiditate labore! Quisquam amet hic veritatis
+            voluptas! Provident aliquid totam asperiores.
+          </p>
+          <a href="#reiki" class="btn">More information</a>
+        </div>
+
+        <div class="services-box">
+          <i class="bx bx-body"></i>
+          <h3>Human Design</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+            dolorum molestias cupiditate labore! Quisquam amet hic veritatis
+            voluptas! Provident aliquid totam asperiores.
+          </p>
+          <a href="#human" class="btn">More information</a>
+        </div>
+
+        <div class="services-box">
+          <i class="bx bxs-bowl-hot"></i>
+          <h3>Plant-Based Personal Chef</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+            dolorum molestias cupiditate labore! Quisquam amet hic veritatis
+            voluptas! Provident aliquid totam asperiores.
+          </p>
+          <a href="#personal" class="btn">More information</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- REIKI SECTION -->
+    <section class="reiki" id="reiki">
+      <div class="reiki-img">
+        <img src="https://i.postimg.cc/RVL3ZTzk/reiki.png" alt="" />
+      </div>
+
+      <div class="reiki-content">
+        <h2 class="heading">Traditional <span>Reiki</span></h2>
+        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut
+          dignissimos itaque rem totam. Eaque labore sit natus, nostrum illo
+          vitae numquam. Impedit amet debitis, cum harum laboriosam asperiores,
+          facere corrupti quibusdam dolorum ipsum beatae consequuntur aliquid
+          adipisci nisi labore explicabo!
+        </p>
+
+        <form
+          action="https://www.paypal.com/cgi-bin/webscr"
+          method="post"
+          target="_blank"
+        >
+          <input type="hidden" name="cmd" value="_s-xclick" />
+          <input type="hidden" name="hosted_button_id" value="4SXDWGF524Y5L" />
+          <input type="hidden" name="currency_code" value="USD" />
+          <input
+            type="image"
+            src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
+            border="0"
+            name="submit"
+            title="PayPal - The safer, easier way to pay online!"
+            alt="Buy Now"
+          />
+        </form>
+      </div>
+    </section>
+
+    <!-- HUMAN DESIGN SECTION -->
+    <section class="human" id="human">
+      <div class="human-img">
+        <img
+          src="https://i.postimg.cc/Zn1DcM9J/pexels-mikhail-nilov-6932081-removebg-preview.png"
+          alt=""
+        />
+      </div>
+
+      <div class="reiki-content">
+        <h2 class="heading">Human <span>Design</span></h2>
+        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut
+          dignissimos itaque rem totam. Eaque labore sit natus, nostrum illo
+          vitae numquam. Impedit amet debitis, cum harum laboriosam asperiores,
+          facere corrupti quibusdam dolorum ipsum beatae consequuntur aliquid
+          adipisci nisi labore explicabo!
+        </p>
+
+        <form
+          action="https://www.paypal.com/cgi-bin/webscr"
+          method="post"
+          target="_blank"
+        >
+          <input type="hidden" name="cmd" value="_s-xclick" />
+          <input type="hidden" name="hosted_button_id" value="6ERU64VW4U3FL" />
+          <input type="hidden" name="currency_code" value="USD" />
+          <input
+            type="image"
+            src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
+            border="0"
+            name="submit"
+            title="PayPal - The safer, easier way to pay online!"
+            alt="Buy Now"
+          />
+        </form>
+      </div>
+    </section>
+
+    <!-- PERSONAL CHEF SECTION -->
+    <section class="personal" id="personal">
+      <div class="personal-img">
+        <img
+          src="https://i.postimg.cc/qqwfFpVk/pexels-kei-scampa-4770328-removebg-preview.png"
+          alt=""
+        />
+      </div>
+
+      <div class="reiki-content">
+        <h2 class="heading">Plant-Based <span>Personal Chef</span></h2>
+        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut
+          dignissimos itaque rem totam. Eaque labore sit natus, nostrum illo
+          vitae numquam. Impedit amet debitis, cum harum laboriosam asperiores,
+          facere corrupti quibusdam dolorum ipsum beatae consequuntur aliquid
+          adipisci nisi labore explicabo!
+        </p>
+
+        <form
+          action="https://www.paypal.com/cgi-bin/webscr"
+          method="post"
+          target="_blank"
+        >
+          <input type="hidden" name="cmd" value="_s-xclick" />
+          <input type="hidden" name="hosted_button_id" value="ZKTTE6WFRCNZL" />
+          <input type="hidden" name="currency_code" value="USD" />
+          <input
+            type="image"
+            src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
+            border="0"
+            name="submit"
+            title="PayPal - The safer, easier way to pay online!"
+            alt="Buy Now"
+          />
+        </form>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL SECTION -->
+    <div class="testimonial-container" id="testimonial">
+      <h2 class="heading">Valuable <span>Testimonial</span></h2>
+
+      <div class="testimonial-wrapper">
+        <div class="testimonial-box mySwiper">
+          <div class="testimonial-content swiper-wrapper">
+            <div class="testimonial-slide swiper-slide">
+              <img src="https://i.postimg.cc/25qkKdzT/1.png" alt="" />
+              <h3>Jackson Levi</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Aliquam reprehenderit doloremque id voluptate culpa non illum
+                accusantium nam eius sapiente veritatis, commodi et, pariatur
+                voluptatibus excepturi voluptatum molestiae maxime ea suscipit?
+                Deleniti, ab! Quia, fugit? Cupiditate praesentium in esse
+                quidem, distinctio odio, velit illo non delectus saepe, ea
+                dolorem eos. Aspernatur nemo voluptates hic obcaecati deleniti
+                odio a sapiente dicta!
+              </p>
+            </div>
+
+            <div class="testimonial-slide swiper-slide">
+              <img src="https://i.postimg.cc/d0zsP73F/2.png" alt="" />
+              <h3>Julia Grayson</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Aliquam reprehenderit doloremque id voluptate culpa non illum
+                accusantium nam eius sapiente veritatis, commodi et, pariatur
+                voluptatibus excepturi voluptatum molestiae maxime ea suscipit?
+                Deleniti, ab! Quia, fugit? Cupiditate praesentium in esse
+                quidem, distinctio odio, velit illo non delectus saepe, ea
+                dolorem eos. Aspernatur nemo voluptates hic obcaecati deleniti
+                odio a sapiente dicta!
+              </p>
+            </div>
+
+            <div class="testimonial-slide swiper-slide">
+              <img src="https://i.postimg.cc/mDCbbb1H/4.png" alt="" />
+              <h3>Flora Ocean</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Aliquam reprehenderit doloremque id voluptate culpa non illum
+                accusantium nam eius sapiente veritatis, commodi et, pariatur
+                voluptatibus excepturi voluptatum molestiae maxime ea suscipit?
+                Deleniti, ab! Quia, fugit? Cupiditate praesentium in esse
+                quidem, distinctio odio, velit illo non delectus saepe, ea
+                dolorem eos. Aspernatur nemo voluptates hic obcaecati deleniti
+                odio a sapiente dicta!
+              </p>
+            </div>
+          </div>
+
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Me</span></h2>
+
+      <form action="#">
+        <div class="input-box">
+          <input type="text" placeholder="Full Name" />
+          <input type="email" placeholder="Email Adress" />
+        </div>
+
+        <div class="input-box">
+          <input type="number" placeholder="Mobile Number" />
+          <input type="text" placeholder="Email Subject" />
+        </div>
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Your Message"
+        ></textarea>
+
+        <input type="submit" value="Send Message" class="btn" />
+      </form>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2023 by Attila Kiss | All Rights Reserved.</p>
+      </div>
+
+      <div class="footer-iconTop">
+        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+      </div>
+    </footer>
+
+    <!-- SCROLL REVEAL -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- SWIPER JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- JS -->
+    <script src="main.js"></script>
   </body>
 </html>
