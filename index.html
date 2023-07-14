@@ -1,12 +1,838 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>MOXIELASH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @font-face {
+            font-family: futura;
+            src: url("../fonts/futur.ttf");
+        }
+
+        @font-face {
+            font-family: Futura;
+            src: url("../fonts/futur.ttf");
+        }
+
+        @font-face {
+            font-family: futura-pt-bold;
+            src: url("../fonts/Futura\ PT\ Bold.ttf");
+        }
+
+        @font-face {
+            font-family: futura-pt;
+            src: url("../fonts/FuturaPTLight.otf")
+        }
+
+        @font-face {
+            font-family: Brandon;
+            src: url('../fonts/Brandon.ttf');
+        }
+
+        .__left_side_icons_wrap .mb_fix_moxie {
+            max-width: 20px;
+        }
+
+        .mb_fix_moxie {
+            width: 100%;
+            max-width: 65px;
+        }
+
+        .moxiehamburger .line {
+            height: 2px;
+            width: 25px;
+            background: #000;
+            margin: 5px auto;
+            display: block;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .futura {
+            font-family: Futura !important;
+        }
+
+        .futura-bold {
+            font-family: futura-pt-bold !important;
+        }
+
+        .brandon {
+            font-family: Brandon !important;
+        }
+
+        .new_beauty_tag {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="">
+        <nav class="sticky top-0 bg-white z-[999]">
+            <div class="bg-[#FED8BF] text-center py-3 lg:py-2">
+                <div class="">Free Shipping when you spend $75+</div>
+            </div>
+            <nav class="hidden lg:block">
+                <div class=" px-4 py-3 flex flex-row justify-between items-center">
+                    <ul class="flex flex-row justify-between gap-7 font-[14px] font-[futura-pt-bold]">
+                        <li class="cursor-pointer hover:underline">
+                            SHOP
+                        </li>
+                        <li class="cursor-pointer hover:underline">
+                            ABOUT
+                        </li>
+                        <li class="cursor-pointer hover:underline">
+                            LEARN
+                        </li>
+                        <li class="cursor-pointer hover:underline">
+                            REWARDS
+                        </li>
+                    </ul>
+                    <div class="pl-[120px]">
+                        <img class=" max-w-[235px] h-[400]"
+                            src="https://cdn.shopify.com/s/files/1/2569/3918/files/logo-black.png?v=1680684639" />
+                    </div>
+
+                    <div class="flex flex-row justify-evenly gap-6 items-center float-right">
+                        <div><input type="search" autocomplete="off" results="0" autofill="none" name="q"
+                                id="default-search"
+                                class="block border moxie-search-input p-2 pl-10 text-gray-900 text-sm lg:h-[34px] xl:w-[300px] lg:w-[300px] w-full"
+                                placeholder="Looking For...">
+                        </div>
+                        <div> <img class="w-[23px]"
+                                src="https://cdn.shopify.com/s/files/1/2569/3918/files/account-icon-black.png?v=1680685034" />
+                        </div>
+                        <div><img class="w-[23px]"
+                                src="https://cdn.shopify.com/s/files/1/2569/3918/files/cart-icon-black.png?v=1680685034" />
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="flex lg:hidden justify-around items-center gap-5 px-2 py-6">
+                <div class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </div>
+                <div>
+                    <img class="w-[23px] pt-0 "
+                        src="https://cdn.shopify.com/s/files/1/2569/3918/files/search-icon-black.png?v=1680687418" />
+                </div>
+                <div>
+                    <img class="max-w-[175px] h-auto"
+                        src="https://cdn.shopify.com/s/files/1/2569/3918/files/logo-black.png?v=1680684639" />
+                </div>
+                <div>
+                    <img class="w-[23px]"
+                        src="https://cdn.shopify.com/s/files/1/2569/3918/files/account-icon-black.png?v=1680685034" />
+                </div>
+                <div>
+                    <img class="w-[23px]"
+                        src="https://cdn.shopify.com/s/files/1/2569/3918/files/cart-icon-black.png?v=1680685034" />
+                </div>
+            </div>
+        </nav>
+        <div class="">
+            <div class="lg:flex px-2">
+                <div
+                    class="lg:hidden bg-[url('https://cdn.shopify.com/s/files/1/2569/3918/t/15/assets/1687340104760-Rectangle-1163-(1).png?v=1687340105')] bg-cover bg-left bg-no-repeat min-h-[50vh]">
+                </div>
+                <div class="py-5 bg-slate-50 flex flex-col justify-center">
+                    <h1
+                        class="text-center font-[futura-pt-bold] text-[33px] font-bold leading-[37px] tracking-[0.66px] md:tracking-[0.96px] md:text-[48px] md:leading-[52px] uppercase">
+                        UNLOCK THE POWER OF YOUR GAZE
+                    </h1>
+                    <p
+                        class="font-[futura-pt] font-normal text-[18px] leading-[24px] md:text-[20px] md:leading-[28px] text-[#000] md:text-[#000] text-center">
+                        Let your eyes be a statement with ultra-hold lashes</p>
+
+                    <div class="flex lg:flex-row justify-center items-center flex-col gap-5 bg-slate-50 pb-4">
+                        <a class="w-[304px] md:w-[308px] lg:w-[240px] xl:w-[280px] 2xl:w-[308px] font-[futura-pt,sans-serif] h-[55px] bg-[#000] md:bg-[#000] flex justify-center items-center text-[16px] leading-[21px] tracking-[1.28px] font-[600] text-[#fff] md:text-[#fff] uppercase "
+                            href="#">SHOP NANO-GRIP</a>
+                        <div class="">
+                            <a class="w-[304px] md:w-[308px] lg:w-[240px] xl:w-[280px] 2xl:w-[308px] font-[futura-pt,sans-serif] h-[55px] bg-[#000] md:bg-[#000] flex justify-center items-center text-[16px] leading-[21px] tracking-[1.28px] font-[600] text-[#fff] md:text-[#fff] uppercase"
+                                href="#">SHOP Magnetic</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden lg:block w-[65%]">
+                    <img class=" object-cover min-h-[50vh]"
+                        src="https://cdn.shopify.com/s/files/1/2569/3918/t/15/assets/1687340104760-Rectangle-1163-(1).png?v=1687340105">
+                </div>
+            </div>
+            <div>
+                <section>
+                    <div class="flex flex-row justify-between justify-center items-center px-2 lg:py-8 lg:px-8 py-4">
+                        <img class="max-w-[40%] md:max-w-[12%] lg:max-w-[10%]"
+                            src="https://cdn.shopify.com/s/files/1/2569/3918/t/15/assets/1676391574720-image-5-(1).png?v=1676391575">
+                        <img class="max-w-[40%] md:max-w-[12%] lg:max-w-[12%]"
+                            src="https://cdn.shopify.com/s/files/1/2569/3918/t/15/assets/1676391550901-image-1-(2).png?v=1676391551">
+                        <img class="hidden lg:block  max-w-[40%] md:max-w-[12%] lg:max-w-[12%]"
+                            src="https://cdn.shopify.com/s/files/1/2569/3918/t/15/assets/1676391550442-image-2-(1).png?v=1676391551">
+                        <img class="hidden lg:block max-w-[40%] md:max-w-[12%] lg:max-w-[12%]"
+                            src="https://cdn.shopify.com/s/files/1/2569/3918/t/15/assets/1676391560884-image-3-(1).png?v=1676391561">
+                        <img class="hidden lg:block max-w-[40%] md:max-w-[12%] lg:max-w-[12%]"
+                            src="https://cdn.shopify.com/s/files/1/2569/3918/t/15/assets/1676391567166-image-4-(1).png?v=1676391567">
+                        <img class="hidden lg:block max-w-[40%] md:max-w-[12%] lg:max-w-[12%]"
+                            src="https://cdn.shopify.com/s/files/1/2569/3918/t/15/assets/1676391582309-image-6-(1).png?v=1676391582">
+                    </div>
+                </section>
+                <section>
+                    <div
+                        class="w-full mb-[40px] md:mb-[0px] mt-[25px] md:mt-[0px] md:pb-[40px] px-[10px] md:px-[20px] max-w-[1700px] !grid grid-cols-2 md:grid-cols-4 mx-auto">
+                        <a class="shrink-0 w-full max-w-[296px] md:max-w-[320px] pb-[8px] md:pb-[0px] px-[8px] cursor-pointer mx-auto"
+                            href="#">
+                            <img class="object-cover w-full max-w-[280px] max-h-[230px] md:max-w-[320px] md:max-h-[248px]"
+                                src="https://cdn.shopify.com/s/files/1/2569/3918/t/15/assets/1676451528205-image_400x.jpg?v=1676451528">
+                            <div class="flex items-center justify-start w-full pt-[20px]">
+                                <p
+                                    class="inline-block text-center md:text-left uppercase !font-[futura-pt-bold,sans-serif] font-[600] text-[16px] leading-[22px] tracking-[0.84px] pr-[4px] md:pr-[8px]">
+                                    SHOP MAGNETIC LASHES</p>
+                                <img class="block w-[15px]"
+                                    src="https://cdn.shopify.com/s/files/1/2569/3918/files/icon-next.png?v=1675885709">
+                            </div>
+                        </a>
+                        <a class="shrink-0 w-full max-w-[296px] md:max-w-[320px] pb-[8px] md:pb-[0px] px-[8px] cursor-pointer mx-auto"
+                            href="#">
+                            <img class="object-cover w-full max-w-[280px] max-h-[230px] md:max-w-[320px] md:max-h-[248px]"
+                                src="https://cdn.shopify.com/s/files/1/2569/3918/files/image_1_4583fc8b-7e3a-4d1b-b937-a2d0078cd9b9_400x.jpg?v=1676455506">
+                            <div class="flex items-center justify-start w-full pt-[20px]">
+                                <p
+                                    class="inline-block text-center md:text-left uppercase !font-[futura-pt-bold,sans-serif] font-[600] text-[16px] leading-[22px] tracking-[0.84px] pr-[4px] md:pr-[8px]">
+                                    SHOP NANO-GRIP LASHES
+                                </p>
+                                <img class="block w-[15px]"
+                                    src="https://cdn.shopify.com/s/files/1/2569/3918/files/icon-next.png?v=1675885709">
+                            </div>
+                        </a>
+                        <a class="shrink-0 w-full max-w-[296px] md:max-w-[320px] pb-[8px] md:pb-[0px] px-[8px] cursor-pointer mx-auto"
+                            href="#">
+                            <img class="object-cover w-full max-w-[280px] max-h-[230px] md:max-w-[320px] md:max-h-[248px]"
+                                src="https://cdn.shopify.com/s/files/1/2569/3918/t/15/assets/1687806384495-Rectangle-1162-(1).png?v=1687806385">
+                            <div class="flex items-center justify-start w-full pt-[20px]">
+                                <p
+                                    class="inline-block text-center md:text-left uppercase !font-[futura-pt-bold,sans-serif] font-[600] text-[16px] leading-[22px] tracking-[0.84px] pr-[4px] md:pr-[8px]">
+                                    Black Friday in July</p>
+                                <img class="block w-[15px]"
+                                    src="https://cdn.shopify.com/s/files/1/2569/3918/files/icon-next.png?v=1675885709">
+                            </div>
+                        </a>
+                        <a class="shrink-0 w-full max-w-[296px] md:max-w-[320px] pb-[8px] md:pb-[0px] px-[8px] cursor-pointer mx-auto"
+                            href="#">
+                            <img class="object-cover w-full max-w-[280px] max-h-[230px] md:max-w-[320px] md:max-h-[248px]"
+                                src="https://cdn.shopify.com/s/files/1/2569/3918/t/15/assets/1688129872514-image-(1).jpg?v=1688129873">
+                            <div class="flex items-center justify-start w-full pt-[50px] md:pt-[40px] lg:pt-[20px]">
+                                <p
+                                    class="inline-block text-center md:text-left uppercase !font-[futura-pt-bold,sans-serif] font-[600] text-[16px] leading-[22px] tracking-[0.84px] pr-[4px] md:pr-[8px]">
+                                    Complete Your Lashes</p>
+                                <img class="block w-[15px]"
+                                    src="https://cdn.shopify.com/s/files/1/2569/3918/files/icon-next.png?v=1675885709">
+                            </div>
+                        </a>
+                    </div>
+                </section>
+                <section>
+                    <div class="text-center">
+                        <a class="font-bold text-black font-[futura-pt-bold,sans-serif] tracking-[.02em] text-[33px] !leading-[37px] lg:!text-[40px] lg:!leading-[42px] "
+                            href="#">OUR BESTSELLERS</a>
+                    </div>
+                    <div
+                        class=" w-full mb-[40px] md:mb-[0px] mt-[25px] md:mt-[0px] md:pb-[40px] px-[10px] md:px-[20px] max-w-[1700px] !grid grid-cols-2 md:grid-cols-4 items-stretch mx-auto ">
+                        <div
+                            class="single-product-card nanogrip-eyelashes-starter-bundle   md:!px-[15px] !px-[15px] testedHere relative">
+                            <div
+                                class="absolute z-[1] right-[0px] md:right-[15px] top-[5px] md:top-[5px] flex justify-center items-center w-full md:w-auto md:block">
+                                <div class="flex justify-center items-center min-h-[24px] py-1 px-2 bg-[#F4F4F4]
+                            min-w-[100px]">
+                                    <span
+                                        class="tracking-[0.08em] text-black !font-[futura-pt,sans-serif] text-[11px] font-[600] uppercase leading-[14px]">SAVE
+                                        37% </span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <img class="object-cover w-full max-w-[280px] max-h-[230px] md:max-w-[320px] md:max-h-[248px]"
+                                    src="//www.moxielash.com/cdn/shop/products/lashies-starter-bundle-bundle-lab9-852006_large.png?v=1688707707">
+                            </a>
+                            <div class="">
+                                <div class="flex items-center justify-center pb-1">
+                                    <img class="w-[14px] pb-1"
+                                        src="https://cdn.shopify.com/s/files/1/2569/3918/files/Icons_Nano-Grip-updated.jpg">
+                                    <p
+                                        class="pl-[4px] text-[12px] font-[400] leading-[16px] tracking-[0.6px] font-futura_pt uppercase text-[#767676]">
+                                        NANO-GRIP</p>
+                                </div>
+                            </div>
+                            <div class="lg:flex lg:items-start">
+                                <h3
+                                    class="uppercase font-[futura-pt-bold] pb-1 text-center text-[14px] product-title !my-0 !mx-0 !tracking-[1px] md:!text-left">
+                                    Lashies™ Starter bundle</span>
+                                </h3>
+                                <div class="flex items-center justify-center lg:min-w-[90px]">
+                                    <ul class="list-inline flex flex-row items-center ">
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <i class="fas fa-startext-black fa-xs"></i>
+                                        </li>
+                                    </ul>
+                                    <p
+                                        class="!text-black pl-[4px] text-[10px] leading-[20px] md:text-[12px] font-[400] md:leading-[16px] tracking-[0.6px] font-futura_pt uppercase">
+                                        (77)</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-center p-card-desc md:!justify-start pt-3 pb-2">
+                                <p class="tracking-[0.08em] text-black !font-[futura-pt,sans-serif] text-[14px] font-[400] uppercase leading-[14px]
+                        ">Natural Mix</p>
+                            </div>
+                            <div
+                                class="flex flex-row gap-2 justify-center product-price-wrapper !tracking-[0px] md:!tracking-[1px] !pt-[0] !pb-[0px] !flex md:!hidden">
+                                <span class="regular-price font-[futura-pt-bold] text-[16px]">$74</span>
+                                <s class="crossed-out-price font-[futura-pt] font-bold text-[14px]">$119</s>
+
+                            </div>
+                            <div
+                                class="add-to-cart mt-2 loader-right-side  ajax-variant-add-to-cart mb-[21px] !bg-white !border !border-solid !border-[#E2E2E2] !text-black">
+                                <div
+                                    class="flex items-center justify-center h-[30px] w-full md:justify-between md:px-[10px]">
+                                    <p class="inline-block font-[futura] font-bold text-[14px]">ADD TO CART
+                                    </p>
+
+                                    <div
+                                        class="flex flex-row gap-2 justify-center product-price-wrapper !tracking-[0px] md:!tracking-[1px] !pt-[0] !pb-[0px] portrait:!hidden hidden lg:block">
+                                        <span class="regular-price font-[futura-pt-bold] text-[16px]">$74</span>
+                                        <s class="crossed-out-price font-[futura-pt] font-bold text-[14px]">$119</s>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="single-product-card nanogrip-eyelashes-starter-bundle   md:!px-[15px] !px-[15px] testedHere relative">
+                            <div
+                                class="absolute z-[1] right-[0px] md:right-[15px] top-[5px] md:top-[5px] flex justify-center items-center w-full md:w-auto md:block">
+                                <div class="flex justify-center items-center min-h-[24px] py-1 px-2 bg-[#F4F4F4]
+                            min-w-[100px]">
+                                    <span
+                                        class="tracking-[0.08em] text-black !font-[futura-pt,sans-serif] text-[11px] font-[600] uppercase leading-[14px]">SAVE
+                                        37% </span>
+                                </div>
+                            </div>
+                            <a class="" href="#">
+                                <img class="object-cover w-full max-w-[280px] max-h-[230px] md:max-w-[320px] md:max-h-[248px]"
+                                    src="//www.moxielash.com/cdn/shop/products/the-best-sellers-bundle-bundle-lbsb4-267652_large.png?v=1687547986">
+                            </a>
+                            <div class="">
+                                <div class="flex items-center justify-center pb-1">
+                                    <img class="w-[14px] pb-1"
+                                        src="https://cdn.shopify.com/s/files/1/2569/3918/files/Icons_Nano-Grip-updated.jpg">
+                                    <p
+                                        class="pl-[4px] text-[12px] font-[400] leading-[16px] tracking-[0.6px] font-futura_pt uppercase text-[#767676]">
+                                        NANO-GRIP</p>
+                                </div>
+                            </div>
+                            <div class="lg:flex lg:items-start lg:justify-between">
+                                <h3
+                                    class="uppercase text-center font-[futura-pt-bold] text-[14px] text-[14px] product-title !my-0 !mx-0 !tracking-[1px] md:!text-left">
+                                    THE BEST-SELLERS BUNDLE</span>
+                                </h3>
+                                <div class="flex items-center justify-center lg:min-w-[90px]">
+                                    <ul class="list-inline flex flex-row items-center ">
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <i class="fas fa-startext-black fa-xs"></i>
+                                        </li>
+                                    </ul>
+                                    <p
+                                        class="!text-black pl-[4px] text-[10px] leading-[20px] md:text-[12px] font-[400] md:leading-[16px] tracking-[0.6px] font-futura_pt uppercase">
+                                        (129)</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-center p-card-desc md:!justify-start pt-3 pb-2">
+                                <p class="tracking-[0.08em] text-black !font-[futura-pt,sans-serif] text-[14px] font-[400] uppercase leading-[14px]
+                        ">Natural Mix</p>
+                            </div>
+                            <div
+                                class="flex flex-row gap-2 justify-center product-price-wrapper !tracking-[0px] md:!tracking-[1px] !pt-[0] !pb-[0px] !flex md:!hidden">
+                                <span class="regular-price font-[futura-pt-bold] text-[16px]">$74</span>
+                                <s class="crossed-out-price font-[futura-pt] font-bold text-[14px]">$119</s>
+
+                            </div>
+                            <div
+                                class="add-to-cart mt-2 loader-right-side  ajax-variant-add-to-cart mb-[21px]   !bg-white !border !border-solid !border-[#E2E2E2] !text-black">
+                                <div
+                                    class="flex items-center justify-center h-[30px] w-full md:justify-between md:px-[10px]">
+                                    <p class="inline-block font-[futura] font-bold text-[14px]">ADD TO CART
+                                    </p>
+                                    <div
+                                        class="flex flex-row gap-2 justify-center product-price-wrapper !tracking-[0px] md:!tracking-[1px] !pt-[0] !pb-[0px] portrait:!hidden hidden lg:block">
+                                        <span class="regular-price font-[futura-pt-bold] text-[16px]">$74</span>
+                                        <s class="crossed-out-price font-[futura-pt] font-bold text-[14px]">$119</s>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="single-product-card nanogrip-eyelashes-starter-bundle   md:!px-[15px] !px-[15px] testedHere relative">
+                            <div
+                                class="absolute z-[1] right-[0px] md:right-[15px] top-[5px] md:top-[5px] flex justify-center items-center w-full md:w-auto md:block">
+                                <div class="flex justify-center items-center min-h-[24px] py-1 px-2 bg-[#F4F4F4]
+                            min-w-[100px]">
+                                    <span
+                                        class="tracking-[0.08em] text-black !font-[futura-pt,sans-serif] text-[11px] font-[600] uppercase leading-[14px]">SAVE
+                                        37% </span>
+                                </div>
+                            </div>
+                            <a class="relative" href="#">
+                                <img class="object-cover w-full  max-w-[280px] max-h-[230px] md:max-w-[320px] md:max-h-[248px]"
+                                    src="//www.moxielash.com/cdn/shop/products/love-kit-kit-sk2-rt-1-388170_large.jpg?v=1686936836">
+
+
+                                <img class="absolute w-[40%] right-[8px] bottom-[5px] lg:right-[8px] lg:-bottom-[9px] lg:w-[29%]"
+                                    src="https://cdn.shopify.com/s/files/1/2569/3918/files/NB_AwardSeal2022_200x.png?v=1650191524">
+
+                            </a>
+
+
+                            <div class="">
+                                <div class="flex items-center justify-center pb-1">
+                                    <img class="w-[14px] pb-1"
+                                        src="https://cdn.shopify.com/s/files/1/2569/3918/files/Icons_Nano-Grip-updated.jpg">
+                                    <p
+                                        class="pl-[4px] text-[12px] font-[400] leading-[16px] tracking-[0.6px] font-futura_pt uppercase text-[#767676]">
+                                        NANO-GRIP</p>
+                                </div>
+                            </div>
+                            <div class="lg:flex lg:items-start lg:justify-between">
+                                <h3
+                                    class="uppercase text-center font-[futura-pt-bold] text-[14px] text-[14px] product-title !my-0 !mx-0 !tracking-[1px] md:!text-left">
+                                    Love Kit</span>
+                                </h3>
+
+                                <div class="flex items-center justify-center lg:min-w-[90px]">
+                                    <ul class="list-inline flex flex-row items-center ">
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <i class="fas fa-startext-black fa-xs"></i>
+                                        </li>
+                                    </ul>
+                                    <p
+                                        class="!text-black pl-[4px] text-[10px] leading-[20px] md:text-[12px] font-[400] md:leading-[16px] tracking-[0.6px] font-futura_pt uppercase">
+                                        (1261)</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-center p-card-desc md:!justify-start pt-3 pb-2">
+                                <p class="tracking-[0.08em] lg:pt-[17px] text-black !font-[futura-pt,sans-serif] text-[14px] font-[400] uppercase leading-[14px]
+                        ">Natural Mix</p>
+                            </div>
+                            <div
+                                class="flex flex-row gap-2 justify-center product-price-wrapper !tracking-[0px] md:!tracking-[1px] !pt-[0] !pb-[0px] !flex md:!hidden">
+                                <span class="regular-price font-[futura-pt-bold] text-[16px]">$74</span>
+                                <s class="crossed-out-price font-[futura-pt] font-bold text-[14px]">$119</s>
+
+                            </div>
+                            <div
+                                class="add-to-cart mt-2 loader-right-side  ajax-variant-add-to-cart mb-[21px]  !bg-white !border !border-solid !border-[#E2E2E2] !text-black">
+                                <div
+                                    class="flex items-center justify-center h-[30px] w-full md:justify-between md:px-[10px]">
+                                    <p class="inline-block font-[futura] font-bold text-[14px]">ADD TO CART
+                                    </p>
+                                    <div
+                                        class="flex flex-row gap-2 justify-center product-price-wrapper !tracking-[0px] md:!tracking-[1px] !pt-[0] !pb-[0px] portrait:!hidden hidden lg:block">
+                                        <span class="regular-price font-[futura-pt-bold] text-[16px]">$74</span>
+                                        <s class="crossed-out-price font-[futura-pt] font-bold text-[14px]">$119</s>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="single-product-card nanogrip-eyelashes-starter-bundle   md:!px-[15px] !px-[15px] testedHere relative">
+                            <!-- <div
+                                class="hidden absolute z-[1] right-[0px] md:right-[15px] top-[5px] md:top-[5px] flex justify-center items-center w-full md:w-auto md:block">
+                                <div class="flex justify-center items-center min-h-[24px] py-1 px-2 bg-[#F4F4F4]
+                            min-w-[100px]">
+                                    <span
+                                        class="tracking-[0.08em] text-black !font-[futura-pt,sans-serif] text-[11px] font-[600] uppercase leading-[14px]">SAVE
+                                        37% </span>
+                                </div>
+                            </div> -->
+                            <a class="" href="#">
+                                <img class="object-cover w-full max-w-[280px] max-h-[230px] md:max-w-[320px] md:max-h-[248px]"
+                                    src="//www.moxielash.com/cdn/shop/products/day-2-night-eyeshadow-es1-185482_large.jpg?v=1686936806">
+                            </a>
+                            <div class="">
+                                <div class="flex items-center justify-center pb-1">
+                                    <img class="w-[14px] pb-1"
+                                        src="https://cdn.shopify.com/s/files/1/2569/3918/files/Icons_Nano-Grip-updated.jpg">
+                                    <p
+                                        class="pl-[4px] text-[12px] font-[400] leading-[16px] tracking-[0.6px] font-futura_pt uppercase text-[#767676]">
+                                        NANO-GRIP</p>
+                                </div>
+                            </div>
+                            <div class="lg:flex lg:items-start lg:justify-between">
+                                <h3
+                                    class="uppercase font-[futura-pt-bold] text-center text-[14px] text-[14px] product-title !my-0 !mx-0 !tracking-[1px] md:!text-left">
+                                    DAY 2 Night</span>
+                                </h3>
+                                <div class="flex items-center justify-center lg:min-w-[90px]">
+                                    <ul class="list-inline flex flex-row items-center ">
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item ">
+                                            <i class="fas fa-star text-black fa-xs"></i>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <i class="fas fa-startext-black fa-xs"></i>
+                                        </li>
+                                    </ul>
+                                    <p
+                                        class="!text-black pl-[4px] text-[10px] leading-[20px] md:text-[12px] font-[400] md:leading-[16px] tracking-[0.6px] font-futura_pt uppercase">
+                                        (2)</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-center p-card-desc md:!justify-start pt-3 pb-2">
+                                <p class="tracking-[0.08em] lg:pt-[17px] text-black !font-[futura-pt,sans-serif] text-[14px] font-[400] uppercase leading-[14px]
+                        ">Natural Mix</p>
+                            </div>
+                            <div
+                                class="flex flex-row gap-2 justify-center product-price-wrapper !tracking-[0px] md:!tracking-[1px] !pt-[0] !pb-[0px] !flex md:!hidden">
+                                <span class="regular-price font-[futura-pt-bold] text-[16px]">$74</span>
+                                <s class="crossed-out-price font-[futura-pt] font-bold text-[14px]">$119</s>
+
+                            </div>
+                            <div
+                                class="add-to-cart mt-2 loader-right-side  ajax-variant-add-to-cart mb-[21px]  !bg-white !border !border-solid !border-[#E2E2E2] !text-black">
+                                <div
+                                    class="flex items-center justify-center h-[30px] w-full md:justify-between md:px-[10px]">
+                                    <p class="inline-block font-[futura] font-bold text-[14px]">ADD TO CART
+                                    </p>
+                                    <div
+                                        class="flex flex-row gap-2 justify-center product-price-wrapper !tracking-[0px] md:!tracking-[1px] !pt-[0] !pb-[0px] portrait:!hidden hidden lg:block">
+                                        <span class="regular-price font-[futura-pt-bold] text-[16px]">$74</span>
+                                        <s class="crossed-out-price font-[futura-pt] font-bold text-[14px]">$119</s>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='w-full mx-auto mt-[36px] mb-[95px] flex justify-center items-center'>
+                        <a href='/collections/best-sellers'
+                            class='flex justify-center items-center w-[305px] h-[55px] bg-black !font-[futura-pt,sans-serif] !font-[600] !text-[16px] !leading-[21px] !tracking-[1.28px] text-white'>
+                            SHOP BEST SELLERS
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+            <!-- output ->6home-banner-feb-2023-->
+            <div class="single-schema-section" data-page-id="104" data-section-id="1027" data-schema-id="1026">
+
+                <link rel="preload" as="image"
+                    href='https://cdn.shopify.com/s/files/1/2569/3918/t/15/assets/1684918163882-updated2_700x.png?v=1684918164' />
+
+                <link rel="preload" as="image"
+                    href='https://cdn.shopify.com/s/files/1/2569/3918/t/15/assets/1684918163882-updated2_700x.png?v=1684918164' />
+
+                <div
+                    class='flex items-stretch justify-center w-full bg-[#F4F4F4] md:bg-[#F4F4F4] md:max-h-[640px] flex-col-reverse md:flex-row '>
+                    <div class='flex items-center justify-center w-full md:w-1/2 min-h-[300px] md:min-h-auto   '>
+                        <div class='flex flex-col items-center justify-center pt-[24px] md:pt-0'>
+                            <h1
+                                class='mx-auto text-center font-bold font-[futura-pt-bold,sans-serif] text-[#000] md:text-[#000] text-[33px] leading-[37px] tracking-[0.66px] md:tracking-[0.96px] md:text-[48px] md:leading-[52px] uppercase'>
+                                <span class="text-[24] md:text-[32px]">NEW & LIMITED</span><br /> Day 2 Night
+                                <br />Eyeshadow Palettes
+                            </h1>
+                            <p
+                                class='pt-[8px] md:pt-[20px] mx-auto text-center font-[futura-pt,sans-serif] text-[18px] leading-[24px] md:text-[20px] md:leading-[28px] text-[#000] md:text-[#000]'>
+                                <span class="block px-[20px] md:px-[45px]">Play up your eyes with our pigment-packed
+                                    Rose
+                                    and Warm tone eyeshadow palettes— 6 lasting shades that won’t fade, smudge, or
+                                    fallout.</span>
+                            </p>
+                            <div
+                                class='flex justify-center items-center flex-col lg:flex-row gap-[16px] mb-[35px] md:mb-0 mt-[20px] md:mt-[32px]'>
+
+                                <a class='w-[304px] md:w-[308px] lg:w-[240px] xl:w-[280px] 2xl:w-[308px] font-[futura-pt,sans-serif] h-[55px] bg-[#000] md:bg-[#000] flex justify-center items-center text-[16px] leading-[21px] tracking-[1.28px] font-[600] text-[#fff] md:text-[#fff] uppercase'
+                                    href='/products/day-2-night-eyeshadow'>Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='w-full md:w-1/2'>
+
+                        <img class='hidden object-cover object-top w-full h-full md:!block min-h-[600px] !object-contain !bg-white'
+                            src='https://cdn.shopify.com/s/files/1/2569/3918/t/15/assets/1684918163882-updated2_700x.png?v=1684918164'
+                            fetchpriority="high">
+                        <img class='block object-cover object-top w-full h-full md:hidden min-h-[350px] !object-contain !bg-white'
+                            src='https://cdn.shopify.com/s/files/1/2569/3918/t/15/assets/1684918163882-updated2_700x.png?v=1684918164'
+                            fetchpriority="high">
+                    </div>
+                </div>
+                <section class="video-section">
+                    <div>
+                        <div class="flex lg:grid lg:grid-cols-5 gap-4 overflow-x-scroll">
+                            <video class="cursor-pointer relative" width="320" height="240" controls>
+                                <source
+                                    class="h-full max-h-[400px] md:max-h-[550px] min-w-[250px] object-cover overflow-hidden w-full"
+                                    src="https://cdn.shopify.com/videos/c/o/v/6861a753883a4a6eac316473aef33557.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <video class="cursor-pointer relative" width="320" height="240" controls>
+                                <source
+                                    class="h-full max-h-[400px] md:max-h-[550px] min-w-[250px] object-cover overflow-hidden w-full"
+                                    src="https://cdn.shopify.com/videos/c/o/v/04e6c3acc5544ed0bf525476e3b511d1.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <video class="cursor-pointer relative" width="320" height="240" controls>
+                                <source
+                                    class="h-full max-h-[400px] md:max-h-[550px] min-w-[250px] object-cover overflow-hidden w-full"
+                                    src="https://cdn.shopify.com/videos/c/o/v/9600bc1dbf654fca93c73a848139ffdc.mov"
+                                    type="video/mp4">
+                            </video>
+                            <video class="cursor-pointer relative" width="320" height="240" controls>
+                                <source
+                                    class="h-full max-h-[400px] md:max-h-[550px] min-w-[250px] object-cover overflow-hidden w-full"
+                                    src="https://cdn.shopify.com/videos/c/o/v/6ee8cc6b9c1142d28fc54f41cb676333.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <video class="cursor-pointer relative" width="320" height="240" controls>
+                                <source
+                                    class="h-full max-h-[400px] md:max-h-[550px] min-w-[250px] object-cover overflow-hidden w-full"
+                                    src="https://cdn.shopify.com/videos/c/o/v/3a4faa335887410996c6aec284dfd620.mp4"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </section>
+                <section class="bottom-video-section">
+                    <div class="w-full max-w-[1700px] mx-auto">
+                        <div
+                            class="flex items-center text-center md:justify-between w-full pt-[50px] md:pt-[78px] px-[20px] md:px-[64px] flex-col md:flex-row ">
+                            <h2
+                                class="font-bold text-center text-black font-[futura-pt-bold,sans-serif] tracking-[0.8px] text-[33px] !leading-[37px] lg:!text-[40px] lg:!leading-[42px] uppercase">
+                                #MOXIELASH
+                            </h2>
+                            <a class="hidden md:flex mt-[15px] md:mt-[10px] !font-[futura-pt,sans-serif] !font-[600] !text-[16px] !leading-[21px] !tracking-[-0.4px] cursor-pointer text-black  justify-center items-center uppercase border-b border-[#000] pb-[1px]"
+                                href="https://www.instagram.com/moxielash/">
+                                Follow us on instagram
+                            </a>
+                        </div>
+                        <div
+                            class="flex flex-wrap lg:flex-nowrap overflow-x-scroll no-wrap pt-[24px] md:pt-[42px] mb-[36px] md:mb-[100px]">
+                            <a class="block w-[50%] max-h-[17px] lg:max-h-[410px] overflow-hidden mb-[10px] z-10"
+                                href="#">
+                                <div class="p-0 overflow-hidden h-[100%] w-[100%] pt-[100]">
+                                    <img class="w-[95%] h-[95%] object-cover"
+                                        src="https://scontent.cdninstagram.com/v/t51.29350-15/358074802_1282466302386851_1309413168418593850_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=9H3GfPmWVngAX9rbxWs&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfB5gKw7sY2sMTKGqb06GCdQQVV9qjnZ6m-svYOTCuBJzQ&oe=64B2D545">
+                                </div>
+                            </a>
+                            <a class="block w-[50%] max-h-[170px] lg:max-h-[410px] overflow-hidden mb-[10px] z-10"
+                                href="#">
+                                <div class="p-0 overflow-hidden h-[100%] w-[100%] pt-[100]">
+                                    <img class="w-[95%] h-[95%] object-cover"
+                                        src="https://scontent.cdninstagram.com/v/t51.29350-15/355432395_708083977692607_902260617007062884_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=0SBh_4dE_A4AX9NkJ0i&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfAYVdrwzSWQp5H8K6G2DbW3zQTk7NkH0JZAf4OEP24I5Q&oe=64B12F61">
+                                </div>
+                            </a>
+                            <a class="block w-[50%] max-h-[170px] lg:max-h-[410px] overflow-hidden mb-[10px] z-10"
+                                href="#">
+                                <div class="p-0 overflow-hidden h-[100%] w-[100%] pt-[100]">
+                                    <img class="w-[95%] h-[95%] object-cover"
+                                        src="https://scontent.cdninstagram.com/v/t51.29350-15/344829556_1593229894494935_4686234324594037422_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=m2J63mZOUvsAX-VCW8Z&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfBx6uxPJ-GXdD9Ni2pNclKq0Pni3sU6z17Z3ChUvrynOA&oe=64B214F3">
+                                </div>
+                            </a>
+                            <a class="block w-[50%] max-h-[170px] lg:max-h-[410px] overflow-hidden mb-[10px] z-10"
+                                href="#">
+                                <div class="p-0 overflow-hidden h-[100%] w-[100%] pt-[100]">
+                                    <img class="w-[95%] h-[95%] object-cover"
+                                        src="https://scontent.cdninstagram.com/v/t51.29350-15/344791083_3565955710317809_591057848403932366_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=ye-wTteGzXUAX-ChXrr&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfBLVYls4HDQ5dEH2aKlj5_zvGO6NRJQ1FxLvlQQuv2KVA&oe=64B23447">
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a class="md:hidden mt-[15px] md:mt-[10px] !font-[futura-pt,sans-serif] !font-[600] !text-[14px] !leading-[18px] !tracking-[0.5px] cursor-pointer text-black flex justify-center items-center uppercase border-b border-[#000] pb-[1px] mb-[50px] w-max mx-auto"
+                                href="">
+                                Follow us on instagram
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <footer class="bg-black text-white">
+                    <div class=" lg:max-w-2xl">
+                        <div class="container mx-auto py-8 px-4">
+                            <h1 class="text-2xl font-bold mb-4 text-center">VIP SIGNUP</h1>
+                            <h3 class="lg:text-lg mb-4 text-center brandon text-[#e2a998]">Be the first to know about
+                                exclusive deals,
+                                launches &amp;
+                                more!</h3>
+                            <div class="flex flex-col lg:gap-2 mb-4 text-black">
+
+                                <div class="flex flex-col lg:flex-row lg:gap-4">
+
+                                    <div class="w-full">
+                                        <input type="text" placeholder="First Name"
+                                            class="mb-2 sm:mr-2 py-2 px-4 border border-gray-300 rounded w-full">
+                                    </div>
+                                    <div class="w-full">
+                                        <input type="text" placeholder="Email Address"
+                                            class="mb-2 sm:mr-2 py-2 pl-4 border border-gray-300 rounded w-full">
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col lg:flex-row lg:gap-4">
+                                    <div class="relative cursor-pointer w-full mb-4">
+                                        <span class="absolute inset-y-0 left-0 px-3 flex items-center">
+                                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.4/flags/4x3/us.svg"
+                                                alt="US Flag" class="object-cover h-6 w-[40px]">
+                                        </span>
+                                        <input type="tel" placeholder="Enter your mobile number"
+                                            class="pl-14  pr-10 py-2 w-full border border-gray-300 rounded">
+                                    </div>
+
+                                    <div class="w-full">
+                                        <button class="bg-gray-800 text-white py-2 lg:py-2.5 px-4 rounded w-full">SIGN
+                                            UP</button>
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                            <p class="text-sm mt-4">By submitting this form, you agree to receive recurring automated
+                                promotional and personalized marketing text messages from MoxieLash. Consent is not a
+                                condition of any purchase. Reply HELP for help and STOP to cancel. Msg frequency varies.
+                                Msg
+                                and data rates may apply. View <a href="#" target="_blank"
+                                    class="text-white font-normal underline">Terms &amp; Privacy</a></p>
+                            <div class="flex justify-center mt-4">
+                                <a href="http://www.instagram.com/moxielash" target="_blank" rel="noopener"
+                                    class="mr-4">
+                                    <svg aria-hidden="true" focusable="false" role="presentation"
+                                        class="h-6 w-6 text-white" viewBox="0 0 448 512">
+                                        <path fill="currentColor"
+                                            d="M224 0C100.29 0 0 100.29 0 224c0 123.71 100.29 224 224 224s224-100.29 224-224C448 100.29 347.71 0 224 0zm135.46 320c-.65 3.63-3.07 6.53-6.52 7.66-25.94 7.38-51.43 7.19-77.17 0-4.37-1.13-5.92-4.07-6.53-8.15-1.65-11.33-2.65-22.68-2.65-34.36 0-36.02 1.83-54.07-9.17-14.8-8.19-30.09-22.57-38.29-37.91C166.16 243.95 161.35 224 168 224c8.67 0 18.47 8.46 23.53 13.38 14.75 12.91 16.97 35.44 16.97 54.24 0 11.49 2.3 18.17 3.83 26.32 1.36 7.03-.1 9.22-6.83 14.04-7.3 5.12-16.38 7.18-25.65 7.18-23.43 0-42.41-18.98-42.41-42.41 0-23.43 18.98-42.41 42.41-42.41 23.43 0 42.41 18.98 42.41 42.41 0 7.14-1.7 15.46-7.3 22.68-7.57 10.63-24.33 16.47-34.45 10.92-9.59-5.11-11.21-18.18-11.21-27.61 0-16.63.35-33.32.35-49.95 0-1.9.28-3.8.71-5.67-7.14-.38-14.38-.56-21.53-.56-123.71 0-224 100.29-224 224s100.29 224 224 224 224-100.29 224-224c0-2.79-.05-5.58-.17-8.37 3.92-2.56 7.3-5.83 9.91-9.56 4.19-5.73 7.64-13.73 7.11-22.08z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <a href="https://www.facebook.com/MOXIELASHCOM/" target="_blank" rel="noopener"
+                                    class="mr-4">
+                                    <svg aria-hidden="true" focusable="false" role="presentation"
+                                        class="h-6 w-6 text-white" viewBox="0 0 320 512">
+                                        <path fill="currentColor"
+                                            d="M320 32.09V480c0 17.67-14.33 32-32 32H32c-17.67 0-32-14.33-32-32V32.09C0 14.43 14.33 0 32 0h256c17.67 0 32 14.43 32 32.09zM96 64h-64v64h64V64zm0 96h-64v64h64v-64zm0 96h-64v64h64v-64zm0 96h-64v64h64v-64zm160-224h-64v64h64v-64zm0 96h-64v64h64v-64zm0 96h-64v64h64v-64z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <a href="https://www.youtube.com/moxielash" target="_blank" rel="noopener" class="mr-4">
+                                    <svg aria-hidden="true" focusable="false" role="presentation"
+                                        class="h-6 w-6 text-white" viewBox="0 0 576 512">
+                                        <path fill="currentColor"
+                                            d="M567.9 141.3c-6.4-24-24.7-42.2-48.7-48.7C456.6 85 288 85 288 85S119.4 85 57.8 92.6C33.8 99.1 15.5 117.3 9.1 141.3 1.7 168.3 0 208 0 208s1.7 39.7 9.1 66.7c6.4 24 24.7 42.2 48.7 48.7C119.4 427 288 427 288 427s168.6 0 230.2-7.6c24-6.4 42.3-24.7 48.7-48.7C574.3 247.7 576 208 576 208s-1.7-39.7-9.1-66.7zM230.4 338.6V173.3l150.6 82.7-150.6 82.6z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <a href="https://twitter.com/moxielash" target="_blank" rel="noopener" class="mr-4">
+                                    <svg aria-hidden="true" focusable="false" role="presentation"
+                                        class="h-6 w-6 text-white" viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M492.5 109.9c-17.8 7.9-36.9 13.3-57 15.8 20.5-12.3 36.3-31.8 43.7-55.1-19.2 11.4-40.6 19.6-63.3 24.1C396.7 75 372.4 64 345 64c-45.4 0-82.1 36.7-82.1 82.1 0 6.4.7 12.7 2.1 18.8-68.3-3.4-128.9-36.1-169.6-85.9-7.1 12.3-11.2 26.5-11.2 41.8 0 28.8 14.7 54.2 37 69.1-13.6-.4-26.4-4.2-37.6-10.4v1.1c0 40.2 28.6 73.7 66.7 81.2-7 1.9-14.4 2.9-22 2.9-5.4 0-10.6-.5-15.7-1.5 10.6 33.2 41.3 57.4 77.6 58.2-28.4 22.3-64.3 35.6-103.4 35.6-6.7 0-13.3-.4-19.8-1.5 36.8 23.6 80.7 37.4 127.7 37.4 153.2 0 237.5-127 237.5-237.5v-10.8c16.3-11.7 30.4-26.3 41.6-43z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <a href="https://www.pinterest.com/moxiebabes/" target="_blank" rel="noopener"
+                                    class="mr-4">
+                                    <svg aria-hidden="true" focusable="false" role="presentation"
+                                        class="h-6 w-6 text-white" viewBox="0 0 384 512">
+                                        <path fill="currentColor"
+                                            d="M192 0C86 0 0 86 0 192c0 77.5 46 144 112.5 172.5-1.5-12.5-2.5-31.5 0-44.5l8.5-36.5c9.6 38 6.5 66-2 96.5-5.8 23.6 12.3 43.3 35.8 43.3 42.5 0 63-53.5 63-106 0-31.8-20.5-58.8-48.8-58.8-36.4 0-60.6 40.2-60.6 80.2 0 29.3 9.6 48.7 9.6 48.7l-36.4 152.7c-8.4 35.2-1 78.3-1 78.3 1 6.2 8 8 11 3.3l34.8-41.6c5.7-6.8 20-26.8 27-37.6 1.7-2.9 1-6.9-1.8-8.8-9.6-6.2-26.3-18.8-26.3-53.8 0-64.2 47-116.8 133-116.8 70.5 0 120 51.5 120 120 0 73.5-45 130.5-109.5 130.5-21.5 0-41.7-11-48.4-23.3 0 0-11 43.7-13 52.7-4 13.7-11.7 27.8-18.5 38.5 16.3 4.7 33.7 7.3 51.7 7.3 106 0 192-86 192-192S298 0 192 0">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <a href="https://www.tiktok.com/@moxie" target="_blank" rel="noopener" class="mr-4">
+                                    <svg aria-hidden="true" focusable="false" role="presentation"
+                                        class="h-6 w-6 text-white" viewBox="0 0 576 512">
+                                        <path fill="currentColor"
+                                            d="M285.6 9.6C150.8 9.6 38.4 112 38.4 248v16c0 135.2 112.4 238.4 247.2 238.4h16C420.4 502.4 532.8 399.2 532.8 264V248C532.8 112 420.4 9.6 285.6 9.6zm83.2 232a92 92 0 1 1-92-92 92 92 0 0 1 92 92zm22.4-92.8c0-41-35.2-76.8-76.8-76.8s-76.8 35.2-76.8 76.8v22.4c0 41 35.2 76.8 76.8 76.8s76.8-35.2 76.8-76.8v-22.4z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <span>©️ 2023 MoxieLash, Inc. | MoxieLash and MoxieLash
+                                Lashies are trademarked. Multi-Patent Pending.</span>
+                            <div>
+                                <div>
+                                    <a href="/pages/terms-conditions" class="atri_margin">Terms of Service</a>
+                                    <a href="/pages/privacy-policy" class="atri_margin">Privacy Policy</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </main>
+</body>
+
 </html>
