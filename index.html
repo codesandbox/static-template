@@ -1,12 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>4hours</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment.min.js"></script>
+
+    <script src="goals.js"></script>
+    <script src="tasks.js"></script>
+    <script src="main.js"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <div id="nav" class="column column0">
+        <div class="rectangle">
+          <i class="material-icons-outlined large-icon">checklist_outline</i>
+        </div>
+        <br />
+        <div class="rectangle">
+          <i class="material-icons-outlined large-icon">calendar_view_week</i>
+        </div>
+        <br />
+
+        <div class="rectangle settings">
+          <i class="material-icons-outlined large-icon">settings_outline</i>
+        </div>
+        <div class="rectangle profile">
+          <i class="material-icons-outlined large-icon">person_outline</i>
+        </div>
+      </div>
+      <div id="goals" class="column column1"></div>
+      <div id="tasks" class="column column2"></div>
+      <div id="upcoming" class="column column3"></div>
+      <div id="toast" class="toast"></div>
+    </div>
   </body>
 </html>
