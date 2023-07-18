@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
       default:
         pistasContainer.innerHTML = " No hay pistas para ti \n";
     }
-  } //Funcion swicht
+  }
 
   function bonus() {
     const randomChance = Math.random();
