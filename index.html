@@ -1,12 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      &amp;gt;
+    />
+    <title>DIPLIGame</title>
+    <link rel="stylesheet" type="text/css" href="styleResponsive.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto+Mono:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <ul class="header">
+        <li>
+          <a href="#"><img src="/imagenes/004-usuario.png" alt="header" /></a>
+          <a href="/container"><img src="/imagenes/001-houzz.png" alt="" /></a>
+        </li>
+      </ul>
+    </header>
+    <main>
+      <div class="container">
+        <img
+          id="raindropImage"
+          src="/imagenes/logo-diplo.png"
+          style="display: none;"
+        />
+        <h1 class="titulo">
+          DIPLIGame
+        </h1>
+        <button id="comenzar">Comenzar el juego</button>
+
+        <div id="gameContainer" style="display: none;">
+          <h2 id="bienvenida"></h2>
+
+          <!--Nombre-->
+          <div class="pregNombre">
+            <label for="nombreJugador"> Ingresa tu nombre </label>
+            <input type="text" id="playerName" />
+            <button id="guardarNombre">Aceptar</button>
+          </div>
+
+          <!--Reglas-->
+          <div id="reglas" style="display: none;">
+            <h3>Reglas del juego:</h3>
+            <p>
+              El objetivo del juego es adivinar el número que eligio DIPLI.
+            </p>
+            <p>
+              Recibirás una pista para acercarte al número correcto. Pero ten
+              cuidado que en cada intento fallido incrementa el nivel de
+              radioactividad, si acumulas 1500 REM ¡EXPLOTARAS!. Mientras mas
+              cerca del número estes, menos REM sumaras.
+            </p>
+            <p>¡Evita que dipli explote!</p>
+            <p>¡Buena suerte!</p>
+            <button id="comenzarJuego">Comenzar el juego</button>
+          </div>
+
+          <!--Rango númerico-->
+          <div id="rangoNumerico" style="display: none;">
+            <p>Ingrese el rango en que desea jugar</p>
+            <label>Ingrese el valor mínimo:</label>
+            <input type="number" id="rangoNumericoMin" />
+            <label>Ingrese el valor máximo:</label>
+            <input type="number" id="rangoNumericoMax" />
+            <button id="btonRango">Ingresar rango</button>
+          </div>
+
+          <!--Adivinar el número-->
+          <div id="gamePlayContainer" style="display: none;">
+            <h4>Tu nivel de radioactividad:</h4>
+            <div id="barraRadiactividad"></div>
+            <label for="intento"> Tu intento: </label>
+            <input type="number" id="intentoNumero" />
+            <button id="intentoNumeroBton">Adivinar</button>
+            <p id="felicitacion" style="display: none;">
+              ¡Felicidades! ¡Adivinaste el número!
+            </p>
+
+            <div id="pistasContainer"></div>
+
+            <div id="preguntaContainer" style="display: none;">
+              <p id="preguntaTexto"></p>
+              <input
+                type="text"
+                id="respuestaInput"
+                placeholder="Ingresa tu respuesta"
+              />
+              <button id="respuestaBtn">Responder</button>
+            </div>
+            <p id="hint"></p>
+            <p id="result"></p>
+            <button id="reiniciar" style="display: none;">
+              Reiniciar juego
+            </button>
+
+            <button id="open" style="display: none;">
+              Resultados
+            </button>
+
+            <div id="modal_container" class="modal-container">
+              <div class="modal">
+                <h3>Resultados de los intentos:</h3>
+                <ul id="resultadosLista"></ul>
+                <button id="close">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="app.js"></script>
+    </main>
+    <footer>
+      <ul class="redes">
+        <li>
+          <a href="https://github.com/quinamiri"
+            ><img src="/imagenes/002-github.png" alt="github"
+          /></a>
+          <a href="www.linkedin.com/in/quina-galindez"
+            ><img src="/imagenes/003-linkedin.png" alt="linkeding"
+          /></a>
+        </li>
+      </ul>
+      <p>Copyright 2023©</p>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,325 @@
+body {
+  text-align: center;
+  background: grey;
+  background-size: cover;
+  animation: bg-color 15s infinite;
+  padding-bottom: 50px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.titulo {
+  margin: 10px;
+  font-size: 80px;
+  font-family: "Righteous", cursive;
+  text-shadow: -3px -3px 3px #c77df3, 3px -3px 3px #8a2be2, -3px 3px 3px #0000ff,
+    3px 3px 3px #00ff00;
+}
+
+h2,
+h3,
+h4 {
+  font-size: 30px;
+  color: #000000;
+  font-family: "Righteous", cursive;
+  text-shadow: -2px -2px 2px rgba(0, 0, 0, 0.5);
+}
+
+p,
+#rangoNumerico,
+#gamePlayContainer,
+#gameContainer {
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  margin: 3px;
+  text-align: center;
+  align-items: center;
+}
+
+button {
+  display: flex;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 40px;
+  font-weight: bold;
+  font-family: "Roboto Mono", monospace;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+  color: white;
+  background-color: black;
+}
+
+input[type="number"],
+input[type="text"] {
+  width: 60px;
+  padding: 10px 20px;
+  border-radius: 40px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+#gameContainer {
+  display: none;
+}
+
+.pregNombre,
+.rangoNumerico {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pregNombre label,
+.rangoNumerico label {
+  margin-bottom: 10px;
+}
+
+.pregNombre button,
+.rangoNumerico button,
+.respuestaBtn button,
+.comenzarJuego button,
+.open button,
+#close.button {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+}
+
+button#comenzar,
+button#btonRango,
+button#intentoNumeroBton,
+button#respuestaBtn,
+button#comenzarJuego,
+button#reiniciar,
+button#open,
+button#close {
+  margin: 10px auto;
+}
+
+#pistasContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.rem-texto {
+  text-align: center;
+  line-height: 1;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.barraRadiactividad {
+  display: flex;
+  align-items: center;
+}
+
+#barraRadiactividad {
+  width: 100%;
+  height: 20px;
+  background-color: #f2f2f2;
+  margin-bottom: 10px;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+#barraRadiactividad .nivel {
+  align-items: center;
+  width: 100%;
+  height: 20px;
+  background-color: green;
+  transition: width 0.3s;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  border-radius: 40px;
+  transition: width 0.3s ease-in-out;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+ul.redes,
+.header {
+  list-style: none;
+  padding-left: 0;
+}
+
+.header {
+  text-align: right;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+#redes {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+  flex-grow: 1;
+}
+
+.raindrop-container {
+  position: absolute;
+  top: 100%;
+}
+
+#container,
+.raindrop {
+  width: 20px;
+  height: 20px;
+  background-image: url("/imagenes/logo-diplo.png");
+  background-size: cover;
+  animation: raindrop-fall 10s;
+  filter: brightness(0%);
+}
+
+.large {
+  width: 70px;
+  height: 70px;
+}
+
+.modal-container {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: opacity 0.3s ease;
+  align-items: center;
+  justify-content: center;
+}
+
+.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal {
+  background-color: rgba(255, 255, 255, 0.896);
+  width: 600px;
+  max-width: 100%;
+  padding: 30px 50px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.modal h3 {
+  margin: 0;
+}
+
+.modal ul {
+  font-size: 14px;
+  list-style: none;
+  padding-left: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    padding-bottom: 20px;
+  }
+
+  #gameContainer {
+    display: none;
+  }
+
+  .container {
+    min-height: 50vh;
+  }
+
+  .titulo {
+    font-size: 40px;
+    margin: 20px;
+  }
+
+  h2,
+  h3,
+  h4 {
+    font-size: 24px;
+  }
+
+  input[type="number"],
+  input[type="text"] {
+    width: 70%;
+  }
+
+  #barraRadiactividad {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .pregNombre label,
+  .rangoNumerico label {
+    margin-bottom: 10px;
+    margin: 10px auto;
+  }
+
+  .modal {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+@keyframes raindrop-fall {
+  0% {
+    transform: translateY(-100vh);
+  }
+  50% {
+    transform: translateY(50vh);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes bg-color {
+  0%,
+  14.3%,
+  100% {
+    background-color: #c77df3;
+  }
+  14.3%,
+  28.6% {
+    background-color: #8a2be2;
+  }
+  28.6%,
+  42.9% {
+    background-color: #0000ff;
+  }
+  42.9%,
+  57.2% {
+    background-color: #00ff00;
+  }
+  57.2%,
+  71.5% {
+    background-color: #ffdd00;
+  }
+  71.5%,
+  85.8% {
+    background-color: #ff7700;
+  }
+}
