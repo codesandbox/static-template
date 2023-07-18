@@ -83,3 +83,5 @@ ScrollReveal().reveal(
     origin: "left"
   }
 );
+
+/* EMAIL JS */
