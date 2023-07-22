@@ -1,12 +1,323 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
-</html>
+<script src="https://unpkg.com/phosphor-icons"></script>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="earmark-app">
+    <header class="header">
+      <h1 class="header-logo">Goa Trip.</h1>
+      <div class="header-content">
+        <div class="header-search">
+          <input type="text" class="search-field" placeholder="Search..." />
+          <button type="submit" class="search-btn">
+            <i class="ph-magnifying-glass-bold"></i>
+          </button>
+        </div>
+        <button class="header-avatar">
+          <span class="header-avatar-img"></span>
+          <span class="header-avatar-name">Developer Rahul</span>
+        </button>
+      </div>
+    </header>
+    <main class="main">
+      <nav class="nav">
+        <ul class="tabs">
+          <li class="tab">
+            <button class="tab-btn tab-btn--active">
+              <i class="ph-lightbulb-bold"></i>
+              <span class="tab-btn-title">Overview</span>
+            </button>
+          </li>
+          <li class="tab">
+            <button class="tab-btn">
+              <i class="ph-arrows-left-right-bold"></i>
+              <span class="tab-btn-title">Transactions</span>
+            </button>
+          </li>
+          <li class="tab">
+            <button class="tab-btn">
+              <i class="ph-credit-card-bold"></i>
+              <span class="tab-btn-title">Bugdets</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <div class="content">
+        <div class="content-header">
+          <div class="content-header-inner">
+            <h1 class="content-header-title">
+              So far we have collected, <br />
+              <small>₹65,000.00</small>
+            </h1>
+            <div class="content-header-info">
+              Click below to pay ⬇️
+              <a href="#" style="margin-top: 10%;" class="link"
+                ><form>
+                  <script
+                    src="https://checkout.razorpay.com/v1/payment-button.js"
+                    data-payment_button_id="pl_Lelv6FgWV3qIN2"
+                    async
+                  ></script></form
+              ></a>
+            </div>
+          </div>
+          <div class="content-header-illustration">
+            <img
+              style="border-radius: 10%;"
+              src="https://iili.io/HvUdRtI.png"
+            />
+          </div>
+        </div>
+
+        <div class="content-body" style="margin-top: 10px;">
+          <section class="overview">
+            <header class="overview-header">
+              <h2 class="overview-header-title">
+                Friends who have not paid <span>7</span>
+              </h2>
+              <a href="#" class="link">View all</a>
+            </header>
+            <div class="overview-body">
+              <div class="summary">
+                <h3 class="summary-date">April 18, 2023</h3>
+                <span class="summary-amount" style="color: red;"
+                  >-₹21,000.00</span
+                >
+              </div>
+              <div class="list">
+                <div class="list-item">
+                  <div class="list-item-company">
+                    <figure class="list-item-company-logo">
+                      <img src="https://iili.io/HvUdz8v.jpg" />
+                    </figure>
+                    <div class="list-item-company-info">
+                      <h4 class="list-item-company-name">Tej</h4>
+                      <a href="#" class="list-item-company-hashtag">#NonVeg</a>
+                    </div>
+                  </div>
+                  <div class="list-item-transaction">
+                    <div class="list-item-transaction-values">
+                      <span
+                        class="list-item-transaction-value"
+                        style="color: red;"
+                      >
+                        <i class="ph-arrows-clockwise-bold"></i>-₹20,000.00
+                      </span>
+                      <time
+                        class="list-item-transaction-time"
+                        datetime="17:00"
+                      ></time>
+                    </div>
+                    <button class="list-item-transaction-action">
+                      <i class="ph-caret-down-bold"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="list-item">
+                  <div class="list-item-company">
+                    <figure class="list-item-company-logo">
+                      <img src="https://iili.io/HvUduup.png" />
+                    </figure>
+                    <div class="list-item-company-info">
+                      <h4 class="list-item-company-name">Pankaj</h4>
+                      <a href="#" class="list-item-company-hashtag"
+                        >#NonVegwithDrinks</a
+                      >
+                    </div>
+                  </div>
+                  <div class="list-item-transaction">
+                    <div class="list-item-transaction-values">
+                      <span
+                        class="list-item-transaction-value list-item-transaction-value--positive"
+                        style="color: red;"
+                      >
+                        -₹25000.00
+                      </span>
+                      <time class="list-item-transaction-time" datetime="11:30"
+                        >11:30am</time
+                      >
+                    </div>
+                    <button class="list-item-transaction-action">
+                      <i class="ph-caret-down-bold"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="list-item">
+                  <div class="list-item-company">
+                    <figure class="list-item-company-logo">
+                      <img src="https://iili.io/HvUdAwN.png" />
+                    </figure>
+                    <div class="list-item-company-info">
+                      <h4 class="list-item-company-name">Rajesh</h4>
+                      <a href="#" class="list-item-company-hashtag">#NonVeg</a>
+                      <a href="#" class="list-item-company-hashtag"></a>
+                    </div>
+                  </div>
+                  <div class="list-item-transaction">
+                    <div class="list-item-transaction-values">
+                      <span
+                        class="list-item-transaction-value"
+                        style="color: red;"
+                      >
+                        -₹20000.00
+                      </span>
+                      <time class="list-item-transaction-time" datetime="11:23"
+                        >11:23am</time
+                      >
+                    </div>
+                    <button class="list-item-transaction-action">
+                      <i class="ph-caret-down-bold"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="list-item">
+                  <div class="list-item-company">
+                    <figure class="list-item-company-logo">
+                      <img src="https://iili.io/HvUdoFa.jpg" />
+                    </figure>
+                    <div class="list-item-company-info">
+                      <h4 class="list-item-company-name">Gagan</h4>
+                      <a href="#" class="list-item-company-hashtag"
+                        >#NonVegwithDrinks</a
+                      >
+                    </div>
+                  </div>
+                  <div class="list-item-transaction">
+                    <div class="list-item-transaction-values">
+                      <span
+                        class="list-item-transaction-value"
+                        style="color: red;"
+                      >
+                        -₹25000.00
+                      </span>
+                      <time class="list-item-transaction-time" datetime="10:00"
+                        >10:00am</time
+                      >
+                    </div>
+                    <button class="list-item-transaction-action">
+                      <i class="ph-caret-down-bold"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <footer class="overview-footer">
+              <a href="#" class="link"
+                >View all transactions<i class="ph-arrow-right-bold"></i
+              ></a>
+            </footer>
+          </section>
+          <section class="overview">
+            <header class="overview-header">
+              <h2 class="overview-header-title">
+                Friends who paid<span>3</span>
+              </h2>
+              <a href="#" class="link">View all</a>
+            </header>
+            <div class="overview-body">
+              <div class="list">
+                <div class="list-item">
+                  <div class="list-item-company">
+                    <figure
+                      class="list-item-company-logo list-item-company-logo--square"
+                    >
+                      <img src="https://iili.io/HvU2oW7.png" />
+                    </figure>
+                    <div class="list-item-company-info">
+                      <h4 class="list-item-company-name">Rahul Sahni</h4>
+                      <a href="#" class="list-item-company-hashtag">#Veg</a>
+                    </div>
+                  </div>
+                  <div class="list-item-transaction">
+                    <div class="list-item-transaction-values">
+                      <span
+                        class="list-item-transaction-value"
+                        style="color: green;"
+                      >
+                        <i class="ph-arrows-clockwise-bold"></i>+₹20,000.00
+                      </span>
+                      <time
+                        class="list-item-transaction-time"
+                        datetime="2020-09-23T16:00:00"
+                        >April 18, 2023 at 4:00pm</time
+                      >
+                    </div>
+                    <button class="list-item-transaction-action">
+                      <i class="ph-caret-down-bold"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="list-item">
+                  <div class="list-item-company">
+                    <figure
+                      class="list-item-company-logo list-item-company-logo--square"
+                    >
+                      <img src="https://iili.io/HvUdxcJ.png" />
+                    </figure>
+                    <div class="list-item-company-info">
+                      <h4 class="list-item-company-name">Dinesh</h4>
+                      <a href="#" class="list-item-company-hashtag">#Veg</a>
+                    </div>
+                  </div>
+                  <div class="list-item-transaction">
+                    <div class="list-item-transaction-values">
+                      <span
+                        class="list-item-transaction-value"
+                        style="color: green;"
+                        ><i class="ph-arrows-clockwise-bold"></i> +₹20,000.00
+                      </span>
+                      <time
+                        class="list-item-transaction-time"
+                        datetime="2020-09-26T17:00:00"
+                        >April 17, 2023 at 5:00pm</time
+                      >
+                    </div>
+                    <button class="list-item-transaction-action">
+                      <i class="ph-caret-down-bold"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="list-item">
+                  <div class="list-item-company">
+                    <figure
+                      class="list-item-company-logo list-item-company-logo--square"
+                    >
+                      <img src="https://iili.io/HvUdT9R.jpg" />
+                    </figure>
+                    <div class="list-item-company-info">
+                      <h4 class="list-item-company-name">Vivek</h4>
+                      <a href="#" class="list-item-company-hashtag">#NonVeg</a>
+                    </div>
+                  </div>
+                  <div class="list-item-transaction">
+                    <div class="list-item-transaction-values">
+                      <span
+                        class="list-item-transaction-value"
+                        style="color: green;"
+                        ><i class="ph-arrows-clockwise-bold"></i>
+                        +₹25,000.00
+                      </span>
+                      <time
+                        class="list-item-transaction-time"
+                        datetime="2020-09-27T21:00:00"
+                        >April 17, 2023 at 9:00pm</time
+                      >
+                    </div>
+                    <button class="list-item-transaction-action">
+                      <i class="ph-caret-down-bold"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <footer class="overview-footer">
+              <a href="#" class="link"
+                >View all upcoming payments<i class="ph-arrow-right-bold"></i
+              ></a>
+            </footer>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- partial -->
+</body>
