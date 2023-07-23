@@ -1,12 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Disney+ clone</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <nav class="navbar">
+      <img src="./images/logo.png" class="brand-logo" alt="Logo" />
+      <ul class="nav-links">
+        <li class="nav-items"><a href="#">TV</a></li>
+        <li class="nav-items"><a href="#">Movies</a></li>
+        <li class="nav-items"><a href="#">Sports</a></li>
+        <li class="nav-items"><a href="#">Premium</a></li>
+      </ul>
+      <div class="right-container">
+        <input type="text" class="search-box" placeholder="Search" />
+        <button class="sub-btn">Subscribe</button>
+        <a href="#" class="login-link">Login</a>
+      </div>
+    </nav>
+    <div class="carousel-container">
+      <div class="carousel"></div>
+    </div>
+    <div class="video-card-container">
+      <div class="video-card">
+        <img src="./images/disney.png" class="video-card" alt="disney logo" />
+        <video src="./video/disney.mp4" muted loop class="card-video"></video>
+      </div>
+      <div class="video-card">
+        <img src="./images/pixar.png" class="video-card" alt="pixar" />
+        <video src="./video/pixar.mp4" muted loop class="card-video"></video>
+      </div>
+      <div class="video-card">
+        <img src="./images/marvel.png" class="video-card" alt="marvel" />
+        <video src="./video/marvel.mp4" muted loop class="card-video"></video>
+      </div>
+      <div class="video-card">
+        <img src="./images/star-wars.png" class="video-card" alt="star-wars" />
+        <video
+          src="./video/star-wars.mp4"
+          muted
+          loop
+          class="card-video"
+        ></video>
+      </div>
+      <div class="video-card">
+        <img
+          src="./images/geographic.png"
+          class="video-card"
+          alt="geographic"
+        />
+        <video
+          src="./video/geographic.mp4"
+          muted
+          loop
+          class="card-video"
+        ></video>
+      </div>
+    </div>
+    <h1 class="title">Recommended For You</h1>
+    <div class="movies-list">
+      <button class="pre-btn" title="btn">
+        <img src="./images/pre.png" alt="pre btn" />
+      </button>
+      <button class="nxt-btn" title="btn">
+        <img src="./images/nxt.png" alt="next btn" />
+      </button>
+      <div class="card-container">
+        <div class="card">
+          <img src="./images/poster1.png" alt="p1" />
+          <div class="card-body">
+            <h2 class="name">Loki</h2>
+            <h6 class="des">This is the best marvel show</h6>
+            <button class="watchlist-btn">add to watch</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/poster2.png" alt="p2" />
+          <div class="card-body">
+            <h2 class="name">Loki</h2>
+            <h6 class="des">This is the best marvel show</h6>
+            <button class="watchlist-btn">add to watch</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/poster3.png" alt="p3" />
+          <div class="card-body">
+            <h2 class="name">Loki</h2>
+            <h6 class="des">This is the best marvel show</h6>
+            <button class="watchlist-btn">add to watch</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/poster4.png" alt="p4" />
+          <div class="card-body">
+            <h2 class="name">Loki</h2>
+            <h6 class="des">This is the best marvel show</h6>
+            <button class="watchlist-btn">add to watch</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/poster5.png" alt="p5" />
+          <div class="card-body">
+            <h2 class="name">Loki</h2>
+            <h6 class="des">This is the best marvel show</h6>
+            <button class="watchlist-btn">add to watch</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
