@@ -46,17 +46,21 @@
     <!-- AOS CSS CDN -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <!--nanogallery CSS CDN-->
-    >
-
+    <!-- Add the slick-theme.css if you want default styling -->
     <link
-      href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css"
       rel="stylesheet"
       type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
     />
 
     <!-- Local CSS-->
-    <link rel="stylesheet" href="/css/gallery.css" />
+    <link rel="stylesheet" href="/css/form.css" />
   </head>
 
   <body>
@@ -175,58 +179,238 @@
     </header>
 
     <main>
-      <div id="imed1316-gallery">
-        <a
-          href="/images/gallery/photos/photo-1.jpg"
-          data-ngthumb="/images/gallery/thumbs/thumb-1.jpg"
-          data-ngdesc=""
-        ></a>
-        <a
-          href="/images/gallery/photos/photo-2.jpg"
-          data-ngthumb="/images/gallery/thumbs/thumb-2.jpg"
-          data-ngdesc="Image One"
-          title="Image One"
-        ></a>
-        <a
-          href="/images/gallery/photos/photo-3.jpg"
-          data-ngthumb="/images/gallery/thumbs/thumb-3.jpg"
-          data-ngdesc=""
-        ></a>
-        <a
-          href="/images/gallery/photos/photo-4.jpg"
-          data-ngthumb="/images/gallery/thumbs/thumb-4.jpg"
-          data-ngdesc=""
-        ></a>
-        <a
-          href="/images/gallery/photos/photo-5.jpg"
-          data-ngthumb="/images/gallery/thumbs/thumb-5.jpg"
-          data-ngdesc=""
-        ></a>
-        <a
-          href="/images/gallery/photos/photo-6.jpg"
-          data-ngthumb="/images/gallery/thumbs/thumb-6.jpg"
-          data-ngdesc=""
-        ></a>
-        <a
-          href="/images/gallery/photos/photo-7.jpg"
-          data-ngthumb="/images/gallery/thumbs/thumb-7.jpg"
-          data-ngdesc=""
-        ></a>
-        <a
-          href="/images/gallery/photos/photo-8.jpg"
-          data-ngthumb="/images/gallery/thumbs/thumb-8.jpg"
-          data-ngdesc=""
-        ></a>
-        <a
-          href="/images/gallery/photos/photo-9.jpg"
-          data-ngthumb="/images/gallery/thumbs/thumb-9.jpg"
-          data-ngdesc=""
-        ></a>
-        <a
-          href="/images/gallery/photos/photo-10.jpg"
-          data-ngthumb="/images/gallery/thumbs/thumb-10.jpg"
-          data-ngdesc=""
-        ></a>
+      <div class="web-form">
+        <h1>Form Title Goes Here</h1>
+
+        <form>
+          <div class="row">
+            <!-- Full Name - Text Field-->
+            <div
+              class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
+            >
+              <label for="full-name">Full Name</label>
+              <input
+                type="text"
+                name="full_name"
+                id="full-name"
+                required
+                class="form-control"
+              />
+            </div>
+
+            <!-- Age - Number Field-->
+            <div
+              class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
+            >
+              <label for="age">Age</label>
+              <input
+                type="number"
+                name="age"
+                id="age"
+                required
+                min="16"
+                max="120"
+                class="form-control"
+              />
+            </div>
+
+            <!-- t-shirt - drop-down (select) field -->
+            <div
+              class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
+            >
+              <label for="t-shirt">T-Shirt Size</label>
+              <select name="t_shirt" id="t-shirt" required class="form-select">
+                <option value="">SELECT SIZE</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+                <option value="CUSTOM">CUSTOM</option>
+              </select>
+              <input
+                type="text"
+                name="custom"
+                placeholder="Please type custom size"
+                required
+                disabled
+                id="custom"
+                class="form-control"
+              />
+            </div>
+            <!--email - email field-->
+            <div
+              class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
+            >
+              <label for="email">Email</label>
+              <input
+                type="email"
+                name="your_email"
+                id="email"
+                required
+                class="form-control"
+              />
+            </div>
+            <!-- phone - tel field -->
+            <div
+              class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
+            >
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" name="phone" id="phone" class="form-control" />
+            </div>
+
+            <!-- social media - url field-->
+            <div
+              class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
+            >
+              <label for="url">Social Media URL (optional)</label>
+              <input type="url" name="url" id="url" class="form-control" />
+            </div>
+
+            <!-- start date - date field-->
+            <div
+              class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
+            >
+              <label for="date">Start Date</label>
+              <input
+                type="date"
+                name="start_date"
+                id="date"
+                required
+                class="form-control"
+              />
+            </div>
+
+            <!-- t-shirt color - color field-->
+            <div
+              class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
+            >
+              <label for="color">T-Shirt Color</label>
+              <input
+                type="color"
+                name="color"
+                id="color"
+                required
+                class="form-control form-control-color"
+              />
+            </div>
+
+            <!-- vetern -radio field-->
+            <div
+              class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
+            >
+              <strong>Are you a US Veteran?</strong><br />
+              <input
+                type="radio"
+                name="veteran"
+                id="veteran-yes"
+                value="Yes"
+                required
+                class="form-check-input radio"
+              />
+              <label for="veteran-yes">Yes</label>
+
+              <input
+                type="radio"
+                name="veteran"
+                id="veteran-no"
+                value="No"
+                required
+                class="form-check-input radio"
+              />
+              <label for="veteran-no">No</label>
+            </div>
+
+            <!-- time of day - checkbox field-->
+            <div
+              class="col-12 col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6"
+            >
+              <strong>Preferred Time of Day</strong><br />
+              <input
+                type="checkbox"
+                name="time_of_day"
+                id="time-of-day-morning"
+                value="Morning"
+                required
+                class="form-check-input checkbox"
+              />
+              <label for="time-of-day-morning">Morning</label>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+
+              <input
+                type="checkbox"
+                name="time_of_day"
+                id="time-of-day-afternoon"
+                value="afternoon"
+                required
+                class="form-check-input checkbox"
+              />
+              <label for="time-of-day-afternoon">Afternoon</label>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+
+              <input
+                type="checkbox"
+                name="time_of_day"
+                id="time-of-day-evening"
+                value="Evening"
+                required
+                class="form-check-input checkbox"
+              />
+              <label for="time-of-day-evening">Evening</label>
+              
+            </div>
+
+            <!-- background check - file (upload) field-->
+            <div class="col-12 col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6>
+              <label for="file">Upload Requied Documents</label>
+              <input
+                type="file"
+                name="file"
+                id="file"
+                required
+                accept=".pdf"
+                class="form-control"
+              />
+            </div>
+
+            <!-- comments - textarea (multi-line) field-->
+            <div class="col-12">
+            <label for="about-you">Tell us about you (optional)</label>
+            <textarea
+              name="about_you"
+              id="about-you"
+              cols="50%"
+              row="7"
+              class="form-control"
+            ></textarea>
+            </div>
+
+            <!-- terms and contitions - checkbox (switch) field -->
+            <div class="col-12 form-check form-switch">
+              <input
+                type="checkbox"
+                id="terms-and-conditions"
+                name="terms"
+                value="Yes"
+                required
+                class="form-check-input"
+              />
+              <label for="terms-and-conditions"
+                >I accept the terms and conditions</label
+              >
+            </div>
+
+            <div class="col-12">
+              <input
+                type="submit"
+                name="submit"
+                value="Submit Now"
+                class="submit btn btn-outline-primary"
+              />
+            </div>
+          </div>
+        </form>
       </div>
     </main>
 
@@ -323,15 +507,14 @@
       <!-- Isotope JS CDN-->
       <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
 
-      <!-- Nanogallery JS CDN-->
-
+      <!-- Slick Slider-->
       <script
         type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"
+        src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
       ></script>
 
       <!-- Local Javascript -->
-      <script src="/js/gallery.js"></script>
+      <script src="/js/scripts.js"></script>
     </section>
     <!-- End JS Section -->
   </body>
