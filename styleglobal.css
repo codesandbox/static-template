@@ -1,0 +1,354 @@
+/* Fuild Code, Plese refer finsweet client first fuild responsive code generator*/
+html {
+  font-size: 1.125rem;
+}
+@media screen and (max-width: 1920px) {
+  html {
+    font-size: calc(0.625rem + 0.41666666666666674vw);
+  }
+}
+@media screen and (max-width: 1440px) {
+  html {
+    font-size: calc(0.8126951092611863rem + 0.20811654526534862vw);
+  }
+}
+@media screen and (max-width: 479px) {
+  html {
+    font-size: calc(0.7497384937238494rem + 0.41841004184100417vw);
+  }
+}
+
+/* Make text look crisper and more legible in all browsers */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Focus state style for keyboard navigation for the focusable elements */
+*[tabindex]:focus-visible,
+input[type="file"]:focus-visible {
+  outline: 0.125rem solid #4d65ff;
+  outline-offset: 0.125rem;
+}
+
+/* Get rid of top margin on first element in any rich text element */
+.w-richtext > :not(div):first-child,
+.w-richtext > div:first-child > :first-child {
+  margin-top: 0 !important;
+}
+
+/* Get rid of bottom margin on last element in any rich text element */
+.w-richtext > :last-child,
+.w-richtext ol li:last-child,
+.w-richtext ul li:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Prevent all click and hover interaction with an element */
+.pointer-events-off {
+  pointer-events: none;
+}
+
+/* Enables all click and hover interaction with an element */
+.pointer-events-on {
+  pointer-events: auto;
+}
+
+/* Create a class of .div-square which maintains a 1:1 dimension of a div */
+.div-square::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+/* Make sure containers never lose their center alignment */
+.container-medium,
+.container-small,
+.container-large {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+/* 
+Make the following elements inherit typography styles from the parent and not have hardcoded values. 
+Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
+Uncomment this CSS to use it in the project. Leave this message for future hand-off.
+*/
+/*
+a,
+.w-input,
+.w-select,
+.w-tab-link,
+.w-nav-link,
+.w-dropdown-btn,
+.w-dropdown-toggle,
+.w-dropdown-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+*/
+
+/* Apply "..." after 3 lines of text */
+.text-style-3lines {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* Apply "..." after 2 lines of text */
+.text-style-2lines {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Adds inline flex display */
+.display-inlineflex {
+  display: inline-flex;
+}
+
+/* These classes are never overwritten */
+.hide {
+  display: none !important;
+}
+
+@media screen and (max-width: 991px) {
+  .hide,
+  .hide-tablet {
+    display: none !important;
+  }
+  .nav--menu {
+    height: calc(100vh - 56px);
+  }
+}
+@media screen and (max-width: 767px) {
+  .hide-mobile-landscape {
+    display: none !important;
+  }
+
+  .dream-cards-wrapper--box.three > .dream-card {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .splide__slide {
+    width: calc(((300px + 1rem) / 1) - 1rem) !important;
+  }
+}
+@media screen and (max-width: 479px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+.margin-0 {
+  margin: 0rem !important;
+}
+
+.padding-0 {
+  padding: 0rem !important;
+}
+
+.spacing-clean {
+  padding: 0rem !important;
+  margin: 0rem !important;
+}
+
+.margin-top {
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-top {
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+.margin-right {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-right {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+.margin-bottom {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-bottom {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+.margin-left {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+
+.padding-left {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+
+.margin-horizontal {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+
+.padding-horizontal {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+
+.margin-vertical {
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-vertical {
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+</style>
+<style>
+
+/* Testimonials Alternate Cards*/
+/* First Child */
+.testimonials-list [role='listitem']:nth-child(3n-2) .quote--embed {
+  color: #a3d40f;
+}
+
+.testimonials-list
+  [role="listitem"]:nth-child(3n-2)
+  .testimonial--card--bottomt-text {
+  background: #e7fbad;
+}
+
+/* Second Child */
+.testimonials-list [role="listitem"]:nth-child(3n-1) .quote--embed {
+  color: #e960be;
+}
+
+.testimonials-list
+  [role="listitem"]:nth-child(3n-1)
+  .testimonial--card--bottomt-text {
+  background: #ffeaf8;
+}
+
+/* Third Child */
+.testimonials-list [role="listitem"]:nth-child(3n) .quote--embed {
+  color: #008fde;
+}
+
+.testimonials-list
+  [role="listitem"]:nth-child(3n)
+  .testimonial--card--bottomt-text {
+  background: #cdedff;
+}
+
+.faq--accordion.active {
+  pointer-events: none;
+}
+
+#greenlightbg {
+  background: #94c00e;
+}
+
+#card-pink {
+  background: #d056aa;
+}
+
+#card-blue {
+  background: #007ec3;
+}
+
+.w--current.blue {
+  background: #ebf8ff;
+}
+.w--current.yellow {
+  background: #fff7d9;
+}
+
+/* CSS For Sub custom Styling*/
+
+.circle--text-bg.blue {
+  background: white;
+  color: #949494 !important;
+  border: 1px solid #949494;
+}
+
+.w--current.blue .circle--text-bg.blue {
+  background: #008fde !important;
+  color: white !important;
+  border: 1px solid white;
+}
+
+.circle--text-bg.yellow {
+  background: white;
+  color: #949494 !important;
+  border: 1px solid #949494;
+}
+
+.w--current.yellow .circle--text-bg.yellow {
+  background: #eec632 !important;
+  color: white !important;
+  border: 1px solid white;
+}
+
+[linkhover="animation"] {
+  display: inline-block !important;
+  text-decoration: none;
+}
+
+[linkhover="animation"]::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s;
+}
+
+[linkhover="animation"].w--current::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: white;
+  transition: width 0.3s;
+}
+[linkhover="animation"]:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+#max-width-470 {
+  max-width: 470px;
+}
+
+#green--chiplet-bg {
+  background-color: #94c00e;
+}
+
+[RelatedBlogCard="bg"] {
+  background: linear-gradient(180deg, #eae7e7 0%, rgba(247, 247, 247, 0) 100%);
+}
