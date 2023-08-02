@@ -1,0 +1,223 @@
+@font-face {
+  font-family: "Mona Sans";
+  src: url("https://assets.codepen.io/64/Mona-Sans.woff2")
+      format("woff2 supports variations"),
+    url("https://assets.codepen.io/64/Mona-Sans.woff2")
+      format("woff2-variations");
+  font-weight: 100 1000;
+}
+@property --bg-1-x {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --bg-2-x {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --bg-2-y {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --bg-3-x {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --bg-3-y {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+:root {
+  --bg-color: hsl(240deg 10% 12%);
+  --bg-grain: url("https://assets.codepen.io/64/svgNoise2.svg");
+  --bg-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  --shadow-size: max(140px, 40vw);
+  --shadow-size-fallback: 40vw;
+  --shadow-blur: 60;
+  --color-1: #6328da;
+  --color-2: #ff1bf1;
+  --color-3: #008cea;
+  --bg-1-x: 0;
+  --bg-1-y: 0;
+  --bg-2-x: 0;
+  --bg-2-y: 0;
+  --bg-3-x: 0;
+  --bg-3-y: 0;
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+  :root {
+    --color-1: color(display-p3 0.36 0.17 0.82);
+    --color-2: color(display-p3 0.95 0.04 0.95);
+    --color-3: color(display-p3 0.01 0.53 0.99);
+  }
+}
+@media (min-width: 960px) {
+  :root {
+    --shadow-size: max(72px, 25vw);
+    --shadow-size-fallback: 25vw;
+    --shadow-blur: 80;
+  }
+}
+* {
+  box-sizing: border-box;
+  outline: calc(var(--debug) * 1px) dashed red;
+}
+*:before,
+*:after {
+  outline: calc(var(--debug) * 1px) dashed red;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Mona Sans", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  background: var(--bg-color);
+  z-index: 1;
+  position: relative;
+}
+body:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: radial-gradient(
+      circle var(--shadow-size, var(--shadow-size-fallback)) at 20vw 0,
+      var(--color-1, red) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle var(--shadow-size, var(--shadow-size-fallback)) at 100vw 0,
+      var(--color-2, red) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle calc(var(--shadow-size, var(--shadow-size-fallback)) * 1.2) at 50vw
+        115vh,
+      var(--color-3, red) 100%,
+      transparent 0
+    );
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  filter: blur(calc(var(--shadow-blur) * 1px));
+  mix-blend-mode: hue;
+}
+body:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  filter: contrast(145%) brightness(650%) invert(100%);
+  mix-blend-mode: screen;
+  background: var(--bg-grain);
+  background-size: 500px;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+}
+main h1 {
+  user-select: none;
+  color: white;
+  font-size: 10rem;
+  mix-blend-mode: lighten;
+  font-weight: 650;
+  font-stretch: 110%;
+  letter-spacing: -0.04em;
+  background: var(--bg-grain),
+    conic-gradient(
+      from 140deg at calc(var(--bg-1-x) * 1%) 90%,
+      #1a0d00,
+      #00011a,
+      #fffffa,
+      #15009e,
+      #d232aa,
+      #fa8c3d,
+      #fff480,
+      #fffffa,
+      #7ed4fb,
+      #040d8b,
+      #010014
+    ),
+    radial-gradient(
+      ellipse at calc(var(--bg-2-x) * 1%) calc(var(--bg-2-y) * 1%),
+      white 12%,
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at calc(var(--bg-3-x) * 1%) calc(var(--bg-3-y) * 1%),
+      #61a8fa,
+      transparent 35%
+    );
+  background-repeat: repeat;
+  background-size: 500px, cover;
+  background-blend-mode: color-burn;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 1;
+  animation: bg 15s linear infinite alternate;
+}
+
+@keyframes bg {
+  0% {
+    --bg-1-x: calc(50 / 2);
+    --bg-2-y: calc(80 / 2);
+    --bg-2-x: calc(70 / 2);
+    --bg-3-y: calc(40 / 2);
+    --bg-3-x: calc(90 / 2);
+  }
+  25% {
+    --bg-1-x: 30;
+    --bg-2-y: 50;
+    --bg-2-x: 80;
+    --bg-3-y: 20;
+    --bg-3-x: 70;
+  }
+  50% {
+    --bg-1-x: 10;
+    --bg-2-y: 40;
+    --bg-2-x: 30;
+    --bg-3-y: 80;
+    --bg-3-x: 50;
+  }
+  75% {
+    --bg-1-x: 70;
+    --bg-2-y: 10;
+    --bg-2-x: 50;
+    --bg-3-y: 30;
+    --bg-3-x: 40;
+  }
+  100% {
+    --bg-1-x: calc(50 / 2);
+    --bg-2-y: calc(80 / 2);
+    --bg-2-x: calc(70 / 2);
+    --bg-3-y: calc(40 / 2);
+    --bg-3-x: calc(90 / 2);
+  }
+}
