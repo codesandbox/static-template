@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styles */
+
+.header-container {
+  position: relative;
+  /*margin-top: 50px;*/
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.header-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 65%;
+  z-index: -1;
+}
+
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.header-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+/* Content Styles */
+
+.content-container {
+  position: relative;
+  padding-top: 35px;
+  padding-bottom: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  z-index: -2;
+  flex: 1;
+}
+
+.content-container-dark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #444444;
+  padding: 20px;
+  color: white;
+}
+
+.footer-container {
+  position: relative;
+  margin-top: 50px;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.footer-bg {
+  position: absolute;
+  width: 100%;
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 50px;
+  background-color: rgba(0, 112, 60, 1);
+}
+
+.footer-text {
+  color: white;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: black;
+  color: white;
+}
+
+.active-button > a {
+  text-decoration: none;
+  color: white;
+}
+
+.accordion-button:not(.collapsed) {
+  /* color: var(--bs-accordion-active-color); */
+  color: rgba(0, 0, 0, 1);
+  /* background-color: var(--bs-accordion-active-bg); */
+  background-color: rgba(0, 0, 0, 0);
+  /* box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color); */
+  box-shadow: none;
+}
+
+.btn-primary {
+  --bs-btn-color: black;
+  /* text color */
+  --bs-btn-bg: #fff;
+  --bs-btn-border-color: black;
+  --bs-btn-hover-color: black;
+  /* text color on hover */
+  --bs-btn-hover-bg: #fff;
+  /* bg color on hover */
+  --bs-btn-hover-border-color: #black;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: rgba(0, 112, 60, 1);
+  --bs-btn-active-border-color: black;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.btn-group {
+  border-radius: var(--bs-border-radius);
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-top: 30px;
+}
+
+.accordion {
+  position: relative;
+  width: 80%;
+  margin-top: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}

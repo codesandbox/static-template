@@ -1,12 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>
+      Department of Electronics and Computer Engineering - De La Salle
+      University
+    </title>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/De_La_Salle_University_Seal.svg/800px-De_La_Salle_University_Seal.svg.png"
+            width="30"
+            height="30"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                >Expected Lasallian Graduate Attributes</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Student Outcomes</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                More
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--header container-->
+    <div class="header-container">
+      <!--header image-->
+      <img
+        src="https://images.unsplash.com/photo-1518929298724-d38d4e506f8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=70"
+        class="header-img"
+      />
+      <!--darken image-->
+      <div class="dark-overlay"></div>
+      <!--header text-->
+      <p class="header-text">
+        Department of Electronics and Computer Engineering
+      </p>
+    </div>
+    <!--main content container-->
+    <div class="content-container">
+      <div class="row justify-content-right">
+        <h2>Vision</h2>
+        <p>
+          The Department of Electronics and Computer Engineering offers
+          Electronics Engineering (ECE) and Computer Engineering (CpE) programs.
+          The department envisions the ECE and CpE graduates as competent and
+          ethical professionals in the area they have chosen. For the ECE, the
+          areas are in Electronics, Communications, and Digital Signal
+          Processing. For the CpE, the areas are in Embedded Systems, Computer
+          Hardware Architecture, Computer Networks, Multimedia Systems and
+          Machine Learning.
+        </p>
+      </div>
+    </div>
+    <div class="content-container">
+      <div class="row justify-content-right">
+        <h2>Mission</h2>
+        <p>
+          The Mission of the Department of Electronic and Computer Engineering
+          is to mold and nurture ECE and CpE professional engineers with strong
+          sense of nationalism and who are highly competent in various field of
+          electronics, communications and computer such as telecommunications,
+          broadcasting and other communications engineering technologies;
+          industrial electronics and instrumentation; semiconductor
+          applications, manufacture and test engineering; systems analysis and
+          controls engineering, software and hardware engineering, especially
+          the students, towards becoming:
+        </p>
+        <ol style="list-style-type: decimal; padding-left: 30px;">
+          <li>
+            Professionals living the La Sallian values of Religio, Mores and
+            Cultura;
+          </li>
+          <li>
+            Professionals committed to the improvement of the Filipino’s quality
+            of life;
+          </li>
+          <li>
+            Professionals devoted to the standards and dignity of the ECE and
+            CpE professions; and
+          </li>
+          <li>
+            Professionals with a strong sense of nationalism responding to needs
+            of the country and its people.
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="content-container">
+      <div class="row justify-content-right">
+        <h2>Program History</h2>
+        <p>
+          The Department of Electronics and Computer Engineering (DECE) is one
+          of the largest departments in the Gokongwei College of Engineering at
+          De La Salle University. Currently, the department has twenty-six
+          academic personnel, one non-academic personnel, and eight support
+          personnel providing technical, professional and administrative
+          services. Different laboratories have been established for each area
+          of specialization. A number of specialized modern research equipment
+          was acquired from the Department of Science and Technology through the
+          Engineering and Science Education Program. The equipment is used by
+          the personnel and students for research and development.
+        </p>
+        <p>
+          The Research Center of the Department will also provide consultancy
+          services to industry, it also conducts industrially relevant research.
+          During the starting phase, the Center will identify research areas
+          which have elements of research, service, and development. The results
+          from the research in an identified area should be available as a
+          service to our local industry. Aside from undertaking collaborative
+          research projects with industry, the Research Center of the ECE
+          department also aims to train industry-oriented researchers and
+          engineers through seminars or short course training.
+        </p>
+      </div>
+    </div>
+    <!--header container-->
+    <div class="footer-bg">
+      <div class="footer-container">
+        <div class="footer-text">
+          <p>Test 1</p>
+          <p>Test 2</p>
+          <p>Test 3</p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
