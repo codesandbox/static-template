@@ -1,12 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <nav id="navbar" class="nav">
+      <ul class="nav-list">
+        <li>
+          <a href="#welcome-section">About</a>
+        </li>
+        <li>
+          <a href="#projects">Work</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section id="welcome-section" class="welcome-section">
+      <h1>Hey I am Bhargav Karlapudi</h1>
+      <p>a web developer</p>
+    </section>
+
+    <section id="projects" class="projects-section">
+      <h2 class="projects-section-header">My Projects</h2>
+
+      <div class="projects-grid">
+        <a
+          href="https://codesandbox.io/s/temperature-converter-jxdz2r"
+          target="_blank"
+          class="project project-tile"
+        >
+          <img
+            class="project-image"
+            src="/images/temperature.png"
+            alt="project"
+          />
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Temperature Converter
+            <span class="code">&#47;&gt;</span>
+          </p>
+        </a>
+
+        <a
+          href="https://codesandbox.io/s/landing-page-ons1qo"
+          target="_blank"
+          class="project project-tile"
+        >
+          <img class="project-image" src="/images/landing.png" alt="project" />
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Simple Landing Page
+            <span class="code">&#47;&gt;</span>
+          </p>
+        </a>
+
+        <a
+          href="https://codesandbox.io/s/icy-shadow-2f8fp3?file=/index.html"
+          target="_blank"
+          class="project project-tile"
+        >
+          <img class="project-image" src="/images/insta.png" alt="project" />
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Instagram Home Page Clone
+            <span class="code">&#47;&gt;</span>
+          </p>
+        </a>
+      </div>
+
+      <a href="#" class="btn btn-show-all"
+        >Show all<i class="fas fa-chevron-right"></i
+      ></a>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="contact-section-header">
+        <h2>Let's work together...</h2>
+        <p>Ready to learn and explore more</p>
+      </div>
+      <div class="contact-links">
+        <a
+          href="https://fb.com/bhargav26k"
+          target="_blank"
+          class="btn contact-details"
+          ><i class="fab fa-facebook-square"></i> Facebook</a
+        >
+        <a
+          id="profile-link"
+          href="https://github.com/bhargav26k"
+          target="_blank"
+          class="btn contact-details"
+          ><i class="fab fa-github"></i> GitHub</a
+        >
+        <a
+          href="https://twitter.com/bhargav26k"
+          target="_blank"
+          class="btn contact-details"
+          ><i class="fab fa-twitter"></i> Twitter</a
+        >
+        <a class="btn contact-details"
+          ><i class="fas fa-at"></i> bhargav2691@gmail.com</a
+        >
+        <a class="btn contact-details"
+          ><i class="fas fa-mobile-alt"></i> 8668572172</a
+        >
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        Bhargav Karlapudi
+      </p>
+    </footer>
   </body>
 </html>
