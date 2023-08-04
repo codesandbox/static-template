@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input[type="tel"],
+select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #fff url("arrow-down.png") no-repeat right center; /* Customize the arrow icon */
+  background-size: 20px;
+}
+
+select::-ms-expand {
+  display: none; /* Hide the default arrow icon for IE/Edge */
+}
+
+button[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Add media query for mobile devices */
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 100%;
+  }
+}

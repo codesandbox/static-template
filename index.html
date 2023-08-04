@@ -1,12 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>WhatsApp API Redirect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <form id="myForm">
+        <label for="countryCode">Country Code:</label>
+        <select id="countryCode" name="countryCode">
+          <option value="+91">+91 (India)</option>
+          <option value="+1">+1 (USA)</option>
+          <!-- Add more country code options as needed -->
+        </select>
+        <label for="phoneNumber">Phone Number:</label>
+        <input
+          type="tel"
+          id="phoneNumber"
+          name="phoneNumber"
+          required
+          pattern="^\d{10}$"
+          title="Please enter a valid 10-digit phone number (mobile number)."
+        />
+        <div class="error" id="phoneError"></div>
+        <!-- Error message container -->
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
