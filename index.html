@@ -1,12 +1,497 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="app">
+      <div class="forms__main-container">
+        <div class="forms__main-col">
+          <!-- ---- SECTION: Calculator ---- -->
+          <div class="forms__sub-container" id="netPriceCalculatorContainer">
+            <div class="container__title">
+              <p class="title__text">Net Price Calculator</p>
+            </div>
+            <div class="form__container">
+              <!-- ROW 1 -->
+              <div class="form__row" id="form1Row1">
+                <div class="form__col" id="form1Row1Col1">
+                  <label for="transactionType" class="form__label">
+                    Transaction Type
+                  </label>
+                </div>
+                <div class="form__col" id="form1Row1Col2">
+                  <select
+                    name="transactionType"
+                    id="transactionType"
+                    class="form__control"
+                  >
+                    <option value="null" disabled selected
+                      >-- Select A Transaction Type --</option
+                    >
+                    <option value="PURCHASE">Purchase</option>
+                    <option value="SALE">Sale</option>
+                  </select>
+                </div>
+              </div>
+              <!-- ROW 1 -->
+              <!-- ROW 2 -->
+              <div class="form__row hidden" id="form1Row2">
+                <div class="form__col" id="form1Row2Col1">
+                  <label for="sellerType" class="form__label"
+                    >Seller Type</label
+                  >
+                </div>
+                <div class="form__col" id="form1Row2Col2">
+                  <select
+                    name="sellerType"
+                    id="sellerType"
+                    class="form__control"
+                  >
+                    <option value="null" disabled selected
+                      >-- Select a Seller type</option
+                    >
+                    <option>Individual</option>
+                    <option>Corporate</option>
+                  </select>
+                </div>
+              </div>
+              <!-- ROW 2 -->
+              <!-- ROW 3 -->
+              <div class="form__row hidden" id="form1Row3">
+                <div class="form__col" id="form1Row3Col1">
+                  <label for="sellingPrice" class="form__label"
+                    >Selling Price</label
+                  >
+                </div>
+                <div class="form__col" id="form1Row3Col2">
+                  <input
+                    type="text"
+                    name="sellingPrice"
+                    id="sellingPrice"
+                    class="form__control"
+                  />
+                </div>
+              </div>
+              <!-- ROW 3 -->
+              <!-- ROW 4 -->
+              <div class="form__row" id="form1Row4">
+                <div class="form__col" id="form1Row4Col1">
+                  <label for="shareQuantity" class="form__label"
+                    >Share Quantity</label
+                  >
+                </div>
+                <div class="form__col" id="form1Row4Col2">
+                  <input
+                    type="text"
+                    name="shareQuantity"
+                    id="shareQuantity"
+                    class="form__control"
+                  />
+                </div>
+              </div>
+              <!-- ROW 4 -->
+              <!-- ROW 5 -->
+              <div class="form__row" id="form1Row5">
+                <div class="form__col" id="form1Row5Col1">
+                  <label for="purchasePrice" class="form__label"
+                    >Purchase Price</label
+                  >
+                </div>
+                <div class="form__col" id="form1Row5Col2">
+                  <input
+                    type="text"
+                    name="purchasePrice"
+                    id="purchasePrice"
+                    class="form__control"
+                  />
+                </div>
+              </div>
+              <!-- ROW 5 -->
+              <!-- ROW 6 -->
+              <div class="form__row" id="form1Row5">
+                <div class="form__col btn__col" id="form1Row5Col1">
+                  <button
+                    class="btn btn-primary mr"
+                    id="netPriceCalcSubmitButton"
+                  >
+                    Submit
+                  </button>
+                  <button
+                    class="btn btn-secondary"
+                    id="netPriceCalcResetButton"
+                  >
+                    Reset
+                  </button>
+                </div>
+              </div>
+              <!-- ROW 6 -->
+            </div>
+          </div>
+          <!-- ---- SECTION: RESULT ---- -->
+          <div
+            class="result__sub-container hidden"
+            id="netPriceResultContainer"
+          >
+            <!-- ROW 1 -->
+            <div class="result__row">
+              <div class="result__col">
+                <p class="result__label">Total Amount</p>
+              </div>
+              <div class="result__col">
+                <p class="result__value" id="totalAmountResult">Rs 000.00</p>
+              </div>
+            </div>
+            <!-- ROW 1 -->
+            <!-- ROW 2 -->
+            <div class="result__row">
+              <div class="result__col">
+                <p class="result__label">Broker Commission</p>
+              </div>
+              <div class="result__col">
+                <p class="result__value" id="brokerCommission">Rs 000.00</p>
+              </div>
+            </div>
+            <!-- ROW 2 -->
+            <!-- ROW 3 -->
+            <div class="result__row">
+              <div class="result__col">
+                <p class="result__label">DP Amount</p>
+              </div>
+              <div class="result__col">
+                <p class="result__value" id="dpAmount">Rs 000.00</p>
+              </div>
+            </div>
+            <!-- ROW 3 -->
+            <!-- ROW 4 -->
+            <div class="result__row">
+              <div class="result__col">
+                <p class="result__label">Sebon Fee</p>
+              </div>
+              <div class="result__col">
+                <p class="result__value" id="sebonFees">Rs 000.00</p>
+              </div>
+            </div>
+            <!-- ROW 4 -->
+            <!-- ROW 5 |=> Sale Only -->
+            <div class="result__row hidden" id="capitalGainsTaxRow">
+              <div class="result__col">
+                <p class="result__label">Capital Gains Tax</p>
+              </div>
+              <div class="result__col">
+                <p class="result__value" id="capitalGainsTax">Rs 000.00</p>
+              </div>
+            </div>
+            <!-- ROW 5 -->
+            <!-- ROW 6 |=> Purchase Only -->
+            <div class="result__row hidden" id="amountPayableRow">
+              <div class="result__col">
+                <p class="result__label">Amount Payable</p>
+              </div>
+              <div class="result__col">
+                <p class="result__value" id="amountPayable">Rs 000.00</p>
+              </div>
+            </div>
+            <!-- ROW 6 -->
+            <!-- ROW 7 |=> Sale Only -->
+            <div class="result__row hidden" id="amountReceivableRow">
+              <div class="result__col">
+                <p class="result__label">Amount Receivable</p>
+              </div>
+              <div class="result__col">
+                <p class="result__value" id="amountReceivable">Rs 000.00</p>
+              </div>
+            </div>
+            <!-- Row 7 -->
+            <!-- Row 8 |=> Purchase Only -->
+            <div class="result__row hidden" id="netPurchasePricePerShareRow">
+              <div class="result__col">
+                <p class="result__label">Net Purchase Price Per Share</p>
+              </div>
+              <div class="result__col">
+                <p class="result__value" id="netPurchasePricePerShare">
+                  Rs 000.00
+                </p>
+              </div>
+            </div>
+            <!-- Row 8 -->
+            <!-- Row 9 |=> Sale Only -->
+            <div class="result__row hidden" id="totalProfitLossRow">
+              <div class="result__col">
+                <p class="result__label">Total Profit/ Loss</p>
+              </div>
+              <div class="result__col">
+                <p class="result__value" id="totalProfitLoss">
+                  Rs 000.00
+                </p>
+              </div>
+            </div>
+            <!-- Row 9 -->
+            <!-- Row 10 |=> Sale Only -->
+            <div class="result__row hidden" id="netSalesPricePerShareRow">
+              <div class="result__col">
+                <p class="result__label">Net Sales Price Per Share</p>
+              </div>
+              <div class="result__col">
+                <p class="result__value" id="netSalesPricePerShare">
+                  Rs 000.00
+                </p>
+              </div>
+            </div>
+            <!-- ROW 10 -->
+            <!-- ROW 11 -->
+            <div class="result__row" id="netSalesPricePerShareRow">
+              <div class="result__col">
+                <button class="btn btn-secondary" id="netPriceResultCancelBtn">
+                  Cancel
+                </button>
+              </div>
+            </div>
+            <!-- ROW 11 -->
+          </div>
+        </div>
+        <div class="forms__main-col">
+          <!-- ---- SECTION: Calculator ---- -->
+          <div class="forms__sub-container" id="ipoCalculatorContainer">
+            <div class="container__title">
+              <p class="title__text">IPO Calculator</p>
+            </div>
+            <div class="form__container">
+              <!-- ROW 1 -->
+              <div class="form__row" id="form1Row1">
+                <div class="form__col" id="form1Row1Col1">
+                  <label for="applicationType" class="form__label">
+                    Application Type
+                  </label>
+                </div>
+                <div class="form__col" id="form1Row1Col2">
+                  <select
+                    name="applicationType"
+                    id="applicationType"
+                    class="form__control"
+                  >
+                    <option value="null" disabled selected
+                      >-- Select An Application Type --</option
+                    >
+                    <option value="INDIVIDUAL">Individual</option>
+                    <option value="INSTITUTIONAL">Institutional</option>
+                  </select>
+                </div>
+              </div>
+              <!-- ROW 1 -->
+              <!-- ROW 2 -->
+              <div class="form__row" id="form1Row2">
+                <div class="form__col" id="form1Row2Col1">
+                  <label for="unitsApplied" class="form__label"
+                    >Units Applied *</label
+                  >
+                </div>
+                <div class="form__col" id="form1Row2Col2">
+                  <input
+                    type="text"
+                    name="unitsApplied"
+                    id="unitsApplied"
+                    class="form__control"
+                  />
+                </div>
+              </div>
+              <!-- ROW 2 -->
+              <!-- ROW 3 -->
+              <div class="form__row hidden" id="form1Row3">
+                <div class="form__col" id="form1Row3Col1">
+                  <label for="preValue" class="form__label">Per Value *</label>
+                </div>
+                <div class="form__col" id="form1Row3Col2">
+                  <input
+                    type="text"
+                    name="preValue"
+                    id="preValue"
+                    class="form__control"
+                  />
+                </div>
+              </div>
+              <!-- ROW 3 -->
+              <!-- ROW 4 -->
+              <div class="form__row" id="form1Row4">
+                <div class="form__col" id="form1Row4Col1">
+                  <label for="interestRate" class="form__label"
+                    >Interest Rate *</label
+                  >
+                </div>
+                <div class="form__col" id="form1Row4Col2">
+                  <input
+                    type="text"
+                    name="interestRate"
+                    id="interestRate"
+                    class="form__control"
+                  />
+                </div>
+              </div>
+              <!-- ROW 4 -->
+              <!-- ROW 5 -->
+              <div class="form__row" id="form1Row5">
+                <div class="form__col" id="form1Row5Col1">
+                  <label for="allotment" class="form__label">Allotment *</label>
+                </div>
+                <div class="form__col" id="form1Row5Col2">
+                  <input
+                    type="text"
+                    name="allotment"
+                    id="allotment"
+                    class="form__control"
+                  />
+                </div>
+              </div>
+              <!-- ROW 5 -->
+              <!-- ROW 6 -->
+              <div class="form__row" id="form1Row5">
+                <div class="form__col" id="form1Row5Col1">
+                  <label for="ibdApplicationDate2RefundDate" class="form__label"
+                    >Interest Bearing Days * (Application Date to Refund Date)
+                    *</label
+                  >
+                </div>
+                <div class="form__col" id="form1Row5Col2">
+                  <input
+                    type="text"
+                    name="ibdApplicationDate2RefundDate"
+                    id="ibdApplicationDate2RefundDate"
+                    class="form__control"
+                  />
+                </div>
+              </div>
+              <!-- ROW 6 -->
+              <!-- ROW 7 -->
+              <div class="form__row" id="form1Row5">
+                <div class="form__col" id="form1Row5Col1">
+                  <label for="ibdRefundDate2ListingDate" class="form__label"
+                    >Ineterest Bearing Days * (Refund Date to Listing Date)
+                    *</label
+                  >
+                </div>
+                <div class="form__col" id="form1Row5Col2">
+                  <input
+                    type="text"
+                    name="ibdRefundDate2ListingDate"
+                    id="ibdRefundDate2ListingDate"
+                    class="form__control"
+                  />
+                </div>
+              </div>
+              <!-- ROW 7 -->
+              <!-- ROW 8 -->
+              <div class="form__row" id="form1Row5">
+                <div class="form__col" id="form1Row5Col1">
+                  <label for="expectedMarketprice" class="form__label"
+                    >Expected Market Price *</label
+                  >
+                </div>
+                <div class="form__col" id="form1Row5Col2">
+                  <input
+                    type="text"
+                    name="expectedMarketprice"
+                    id="expectedMarketprice"
+                    class="form__control"
+                  />
+                </div>
+              </div>
+              <!-- ROW 8 -->
+              <!-- ROW 9 -->
+              <div class="form__row" id="form1Row5">
+                <div class="form__col btn__col" id="form1Row5Col1">
+                  <button class="btn btn-primary mr" id="ipoCalcSubmitButton">
+                    Submit
+                  </button>
+                  <button class="btn btn-secondary" id="ipoCalcResetButton">
+                    Reset
+                  </button>
+                </div>
+              </div>
+              <!-- ROW 9 -->
+            </div>
+          </div>
+          <!-- ---- SECTION: RESULT ---- -->
+          <div class="result__sub-container hidden" id="ipoResultContainer">
+            <div class="container__title">
+              <p class="title__text">IPO Return Calculation Result</p>
+            </div>
+            <!-- ROW 1 -->
+            <div class="result__row">
+              <div class="result__col">
+                <p class="result__label">Daily Interest On Loan</p>
+              </div>
+              <div class="result__col">
+                <p class="result__value" id="dailyInterestOnLoan">Rs 000.00</p>
+              </div>
+            </div>
+            <!-- ROW 1 -->
+            <!-- ROW 2 -->
+            <div class="result__row">
+              <div class="result__col">
+                <p class="result__label">Alloted Shares</p>
+              </div>
+              <div class="result__col">
+                <p class="result__value" id="allotedShares">Rs 000.00</p>
+              </div>
+            </div>
+            <!-- ROW 2 -->
+            <!-- ROW 3 -->
+            <div class="result__row">
+              <div class="result__col">
+                <p class="result__label">Total Interest On Loan</p>
+              </div>
+              <div class="result__col">
+                <p class="result__value" id="totalInterestOnLoan">Rs 000.00</p>
+              </div>
+            </div>
+            <!-- ROW 3 -->
+            <!-- ROW 4 -->
+            <div class="result__row">
+              <div class="result__col">
+                <p class="result__label">Total Investment</p>
+              </div>
+              <div class="result__col">
+                <p class="result__value" id="totalInvestment">Rs 000.00</p>
+              </div>
+            </div>
+            <!-- ROW 4 -->
+            <!-- ROW 5 -->
+            <div class="result__row">
+              <div class="result__col">
+                <p class="result__label">Net Receivable Amount</p>
+              </div>
+              <div class="result__col">
+                <p class="result__value" id="netReceivableAmount">Rs 000.00</p>
+              </div>
+            </div>
+            <!-- ROW 5 -->
+            <!-- ROW 6 -->
+            <div class="result__row">
+              <div class="result__col">
+                <p class="result__label">Net Profit</p>
+              </div>
+              <div class="result__col">
+                <p class="result__value" id="netProfit">Rs 000.00</p>
+              </div>
+            </div>
+            <!-- ROW 6 -->
+            <!-- ROW 7 -->
+            <div class="result__row" id="netSalesPricePerShareRow">
+              <div class="result__col">
+                <button class="btn btn-secondary" id="ipoResultResetBtn">
+                  Cancel
+                </button>
+              </div>
+            </div>
+            <!-- ROW 7 -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
   </body>
 </html>
