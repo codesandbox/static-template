@@ -1,12 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./style/index.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>My Portfolio</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!-- start of sidebar -->
+    <div class="sidebar">
+      <button class="btn close-btn">
+        <i class="fa fa-close" style="font-size: 48px; color: red;"></i>
+      </button>
+      <ul class="pagelist">
+        <li><a href="index.html"> Home</a></li>
+        <li><a href="about.html"> About</a></li>
+        <li><a href="project.html"> Project</a></li>
+        <li><a href="contact.html"> Contact</a></li>
+      </ul>
+      <ul class="sidebar-socials-list">
+        <li>
+          <a href="https://www.linkedin.com/in/md-nasar-896095221/">
+            <i class="fa fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#"> <i class="fa fa-facebook"></i> </a>
+        </li>
+        <li>
+          <a href="https://instagram.com/nasar_iqbal17?igshid=ZDc4ODBmNjlmNQ==">
+            <i class="fa fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Nasar1996">
+            <i class="fa fa-github"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- end of sidebar -->
+
+    <!-- Start of Navbar -->
+
+    <section class="navbar">
+      <div class="navbar-container section-center">
+        <div class="logo">
+          <h1>Md<span> Nasar.</span></h1>
+        </div>
+        <div class="nav-btn">
+          <i class="fa fa-bars"></i>
+        </div>
+        <div class="expand-container">
+          <div>
+            <a href="index.html"> Home</a>
+          </div>
+          <div>
+            <a href="about.html"> About</a>
+          </div>
+          <div>
+            <a href="project.html"> Project</a>
+          </div>
+          <div>
+            <a href="contact.html"> Contact</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End of Navbar -->
+
+    <!-- Start Of Hero Section -->
+
+    <section class="hero">
+      <div class="hero-container section-center">
+        <div class="hero-content">
+          <h1><span>I'm </span> Nasar</h1>
+          <p>Web Developer and Computer Science Engineer</p>
+          <a href="#" class="link-btn">HIRE ME</a>
+          <div class="links-container">
+            <ul class="socials-list">
+              <li>
+                <a href="https://www.linkedin.com/in/md-nasar-896095221/">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-facebook"></i> </a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/nasar_iqbal17?igshid=ZDc4ODBmNjlmNQ=="
+                >
+                  <i class="fa fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Nasar1996">
+                  <i class="fa fa-github"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="./hero.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- End of Hero Section -->
+
+    <!-- Start of Skills Section -->
+
+    <section class="skills">
+      <div class="skills-content section-center">
+        <h1 class="section-heading">Skills</h1>
+        <div class="underline"></div>
+
+        <div class="skills-container">
+          <div class="skill-card">
+            <div class="skill-logo">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/240px-ISO_C%2B%2B_Logo.svg.png"
+                style="width: 50px;"
+                alt=""
+              />
+            </div>
+
+            <div class="skill-name">C++</div>
+
+            <div class="skill-text">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
+              quia aut delectus rerum esse. Dicta!
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-logo">
+              <img src="./images/python.jpg" style="width: 75px;" alt="" />
+            </div>
+
+            <div class="skill-name">Python</div>
+
+            <div class="skill-text">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
+              quia aut delectus rerum esse. Dicta!
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-logo">
+              <img style="width: 60px;" src="./images/java.jpg" alt="" />
+            </div>
+
+            <div class="skill-name">Java</div>
+
+            <div class="skill-text">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
+              quia aut delectus rerum esse. Dicta!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End of Skills Section -->
+
+    <!-- Start of Timeline Section -->
+
+    <section class="timeline">
+      <div class="timeline-container section-center">
+        <h1 class="section-heading">Timeline</h1>
+        <div class="underline"></div>
+        <div class="timeline-cards">
+          <div class="timeline-card time-right-border remove-top-border">
+            <span class="card-number card-number-right">1</span>
+            <h3 class="time">2023</h3>
+            <p class="time-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Consequuntur, modi? Et quis eum repellendus totam voluptatem
+              asperiores minus corrupti
+            </p>
+          </div>
+          <div class="timeline-card time-left-border">
+            <span class="card-number card-number-left">2</span>
+
+            <h3 class="time">2022</h3>
+            <p class="time-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Consequuntur, modi? Et quis eum repellendus totam voluptatem
+              asperiores minus corrupti
+            </p>
+          </div>
+          <div class="timeline-card time-right-border">
+            <span class="card-number card-number-right">3</span>
+
+            <h3 class="time">2021</h3>
+            <p class="time-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Consequuntur, modi? Et quis eum repellendus totam voluptatem
+              asperiores minus corrupti
+            </p>
+          </div>
+          <div class="timeline-card time-left-border">
+            <span class="card-number card-number-left">4</span>
+
+            <h3 class="time">2020</h3>
+            <p class="time-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Consequuntur, modi? Et quis eum repellendus totam voluptatem
+              asperiores minus corrupti
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End of Timeline Section -->
+
+    <!-- Start of Footer Section -->
+    <section class="footer">
+      <div class="footer-container">
+        <ul class="footer-links">
+          <li>
+            <a
+              target="blank"
+              href="https://www.linkedin.com/in/md-nasar-896095221/"
+              class="footer-link"
+              ><i class="fa fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link"><i class="fa fa-facebook"></i> </a>
+          </li>
+          <li>
+            <a
+              target="blank"
+              href="https://instagram.com/nasar_iqbal17?igshid=ZDc4ODBmNjlmNQ=="
+              class="footer-link"
+              ><i class="fa fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              target="blank"
+              href="https://github.com/Nasar1996"
+              class="footer-link"
+              ><i class="fa fa-github"></i>
+            </a>
+          </li>
+        </ul>
+        <p class="footer-text">
+          &copy; 2023 Md Nasar. All Rights Reserved
+        </p>
+      </div>
+    </section>
+    <!-- End of Footer Section -->
+    <script src="/js/app.js"></script>
   </body>
 </html>
