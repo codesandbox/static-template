@@ -1,0 +1,131 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.section-center {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Start of Navbar Styling */
+
+.navbar {
+  padding: 1rem 2.5rem;
+  /* height: 5rem; */
+  border-bottom: 5px solid #e8b949;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 500;
+}
+
+.navbar-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.logo span {
+  color: #e8b949;
+}
+
+.nav-btn {
+  justify-self: flex-end;
+  color: #e8b949;
+  cursor: pointer;
+}
+
+/* End of Navbar Styling */
+
+/* start of contact styling */
+.contact-section {
+  background: #fffaea;
+  height: calc(100vh - 5rem);
+}
+
+.contact-container {
+  width: 95vw;
+  height: calc(100vh - 5rem);
+}
+
+.content {
+  max-width: 90%;
+  /* text-align: center; */
+  position: relative;
+  top: 20%;
+  left: 5%;
+}
+.heading {
+  text-align: center;
+  font-size: 60px;
+  letter-spacing: 5px;
+  padding: 30px;
+  margin: 40px;
+}
+.content p {
+  font-size: 20px;
+  text-align: center;
+}
+
+/* end of contact styling */
+
+/* Start of Footer Section */
+.footer {
+  padding: 2rem 3rem;
+  background: #222;
+  color: #fffaea;
+  text-align: center;
+}
+
+.footer ul {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.footer ul li {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+.footer ul a {
+  color: #e8b949;
+  font-size: 1.5rem;
+}
+
+/* End of Footer Section */
+
+/* Media Queries */
+
+@media screen and (max-width: 876px) {
+  .expand-container {
+    display: none;
+  }
+}
+@media screen and (min-width: 876px) {
+  .nav-btn {
+    display: none;
+  }
+  .content {
+    left: 20%;
+    max-width: 60%;
+  }
+  .expand-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: flex-end;
+    gap: 20px;
+    font-weight: bold;
+  }
+  .expand-container a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
