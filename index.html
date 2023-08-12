@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Year calculator app</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <main class="container" role="main">
+      <div class="content">
+        <div class="input">
+          <div>
+            <h6>Day</h6>
+            <input type="text" placeholder="DD" id="dayIn" />
+            <p class="error"></p>
+          </div>
+
+          <div>
+            <h6>Month</h6>
+            <input type="text" placeholder="MM" id="monthIn" />
+            <p class="error"></p>
+          </div>
+
+          <div>
+            <h6>Year</h6>
+            <input type="text" placeholder="YYYY" id="yearIn" />
+            <p class="error"></p>
+          </div>
+        </div>
+
+        <hr />
+        <button id="calculateBtn">
+          <img src="./assets/images/icon-arrow.svg" alt="" />
+        </button>
+
+        <div class="result">
+          <h1><span id="yearOut">--</span> years</h1>
+          <h1><span id="monthOut">--</span> months</h1>
+          <h1><span id="dayOut">--</span> days</h1>
+          <h1><span id="hourOut">--</span> hours</h1>
+          <h1><span id="minuteOut">--</span> minutes</h1>
+        </div>
+      </div>
+    </main>
+
+    <footer class="attribution" role="contentinfo">
+      Coded by
+      <a href="https://github.com/developerrahulofficial">Rahul Sahni</a>.
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>
