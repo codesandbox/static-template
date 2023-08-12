@@ -1,0 +1,376 @@
+// Logo
+.logo {
+	&__icon {
+		width: 7.2rem;
+		height: 3.2rem;
+	}
+}
+
+// GAME START SECTION
+.game-start {
+	text-align: center;
+	// min-width: 40.6rem;
+	max-width: 90%;
+	animation: fadeIn 1s ease-in-out;
+
+	&__choices {
+		margin: 4rem 0;
+		background-color: $semi-dark-navy;
+		padding: 2.4rem;
+		border-radius: 1.5rem;
+		box-shadow: inset 0 -0.8rem 0 darken($color: $dark-navy, $amount: 5);
+	}
+
+	&__marks {
+		margin: 2.4rem 0 1.7rem 0;
+		padding: 0.9rem 0.8rem;
+		background-color: $dark-navy;
+		border-radius: 1rem;
+		display: flex;
+		height: 7rem;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__x-mark,
+	&__o-mark {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		border-radius: inherit;
+		transition: all 0.4s ease;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-basis: 50%;
+
+		&:hover {
+			background-color: lighten($color: $dark-navy, $amount: 2);
+			cursor: pointer;
+		}
+
+		&.selected {
+			background-color: $silver;
+
+			& > svg {
+				fill: $dark-navy;
+			}
+		}
+	}
+
+	&__x-icon,
+	&__o-icon {
+		width: 3.2rem;
+		height: 3.2rem;
+		fill: $silver;
+	}
+
+	&__footer {
+		text-transform: uppercase;
+		opacity: 0.5;
+	}
+}
+
+// BUTTONS - BUTTON STYLE
+.btn {
+	display: block;
+	width: 100%;
+	font-size: 2rem;
+	font-weight: 700;
+	color: $dark-navy;
+	text-transform: uppercase;
+	line-height: 2.5rem;
+	text-align: center;
+	padding: 2.5rem 12rem;
+	border: none;
+	border-radius: 1.5rem;
+	transition: all 0.4s ease;
+
+	@include respond(small) {
+		font-size: 1.6rem;
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&--small {
+		width: auto;
+		display: inline-block;
+		padding: 1.5rem 1.8rem;
+
+		&:last-child {
+			margin-left: 1rem;
+		}
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 1.5rem;
+	}
+
+	&--yellow {
+		background-color: $light-yellow;
+		box-shadow: inset 0 -0.8rem 0 darken($color: $light-yellow, $amount: 20);
+
+		&-small {
+			background-color: $light-yellow;
+			box-shadow: inset 0 -0.4rem 0 darken($color: $light-yellow, $amount: 20);
+
+			&:hover {
+				background-color: $light-yellow-hover;
+			}
+		}
+
+		&:hover {
+			background-color: $light-yellow-hover;
+		}
+	}
+
+	&--blue {
+		background-color: $light-blue;
+		box-shadow: inset 0 -0.8rem 0 darken($color: $light-blue, $amount: 20);
+
+		&:hover {
+			background-color: $light-blue-hover;
+		}
+	}
+
+	&--silver {
+		background-color: $silver;
+		box-shadow: inset 0 -0.8rem 0 darken($color: $silver, $amount: 20);
+
+		&-small {
+			background-color: $silver;
+			box-shadow: inset 0 -0.4rem 0 darken($color: $silver, $amount: 20);
+
+			&:hover {
+				background-color: $silver-hover;
+			}
+		}
+
+		&:hover {
+			background-color: $silver-hover;
+		}
+	}
+}
+
+// GAMEPLAY SECTION
+.gameplay {
+	display: grid;
+	margin: 5rem 0;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2rem;
+	align-items: center;
+	text-align: center;
+	animation: fadeIn 0.4s ease-in-out;
+	display: none;
+
+	&__turn {
+		width: 100%;
+		background-color: $semi-dark-navy;
+		padding: 2rem 3rem;
+		border-radius: 1rem;
+		box-shadow: inset 0 -0.4rem 0 darken($color: $semi-dark-navy, $amount: 10);
+		display: flex;
+		align-items: center;
+
+		@include respond(small) {
+			font-size: 1.4rem;
+			padding: 2rem 1.5rem;
+		}
+
+		&-icon {
+			width: 2rem;
+			height: 2rem;
+			fill: $silver;
+		}
+	}
+
+	&__restart {
+		width: 50%;
+		background-color: $silver;
+		padding: 1.6rem;
+		border-radius: 1rem;
+		box-shadow: inset 0 -0.4rem 0 darken($color: $silver, $amount: 20);
+		transition: all 0.4s ease;
+		justify-self: flex-end;
+
+		&:hover {
+			cursor: pointer;
+			background-color: $silver-hover;
+		}
+
+		&-icon {
+			width: 2rem;
+			height: 2rem;
+		}
+	}
+
+	&__board {
+		grid-column: 1 / -1;
+		display: grid;
+		grid-template-columns: repeat(3, 14rem);
+		grid-template-rows: repeat(3, 14rem);
+		grid-gap: 2rem;
+
+		@include respond(small) {
+			grid-template-columns: repeat(3, minmax(9.6rem, 1fr));
+			grid-template-rows: repeat(3, minmax(9.6rem, 1fr));
+		}
+	}
+
+	&__card {
+		padding: 3.8rem;
+		background-color: $semi-dark-navy;
+		box-shadow: inset 0 -0.8rem 0 darken($color: $semi-dark-navy, $amount: 10);
+		border-radius: 1.5rem;
+
+		@include respond(small) {
+			padding: 2.8rem;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&.x,
+		&.o {
+			cursor: not-allowed;
+			box-shadow: inset 0 -0.5rem 0 darken($color: $semi-dark-navy, $amount: 10);
+		}
+
+		&.x::before {
+			content: url('../images/SVG/icon-x.svg');
+		}
+
+		&.x.win {
+			background-color: $light-blue;
+
+			&::before {
+				content: url('../images/SVG/icon-x-win.svg');
+			}
+		}
+
+		&.o.win {
+			background-color: $light-yellow;
+
+			&::before {
+				content: url('../images/SVG/icon-o-win.svg');
+			}
+		}
+
+		&.o::before {
+			content: url('../images/SVG/icon-o.svg');
+		}
+	}
+
+	&__board.x &__card:not(.x):not(.o):hover::before {
+		content: url('../images/SVG/icon-x-outline.svg');
+	}
+
+	&__board.o &__card:not(.x):not(.o):hover::before {
+		content: url('../images/SVG/icon-o-outline.svg');
+	}
+
+	&__win,
+	&__tie,
+	&__loss {
+		color: $dark-navy;
+		text-transform: uppercase;
+		padding: 1.3rem 4rem;
+		border-radius: 1.5rem;
+
+		@include respond(small) {
+			padding: 1rem 2.3rem;
+		}
+	}
+
+	&__win {
+		background-color: $light-blue;
+	}
+
+	&__tie {
+		background-color: $silver;
+	}
+
+	&__loss {
+		background-color: $light-yellow;
+	}
+
+	&__highlight {
+		display: block;
+		font-size: 2.4rem;
+		font-weight: 700;
+		line-height: 3rem;
+
+		@include respond(small) {
+			font-size: 2rem;
+			line-height: 2.5rem;
+		}
+	}
+
+	&__opponent-message {
+		grid-column: span 3;
+
+		& > p {
+			display: inline;
+		}
+	}
+}
+
+// BACKDROP & MODEL
+.backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(#000, 0.5);
+	display: none;
+}
+
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	padding: 6.7rem 0;
+	background-color: $semi-dark-navy;
+	text-align: center;
+	transform: translateY(-50%);
+	animation: fadeIn 0.4s ease-in-out;
+	display: none;
+
+	&__result {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 3rem;
+
+		@include respond(small) {
+			margin-top: 1.5rem;
+		}
+
+		& > *:last-child {
+			margin-left: 2.5rem;
+
+			@include respond(small) {
+				margin-left: 1.5rem;
+			}
+		}
+	}
+
+	&__icon {
+		width: 6.4rem;
+		height: 6.4rem;
+
+		@include respond(small) {
+			width: 2.8rem;
+			height: 2.8rem;
+		}
+	}
+
+	&__buttons {
+		margin-top: 3rem;
+	}
+}

@@ -1,12 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="author" content="Developer Rahul" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+
+    <!-- Font Used -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+
+    <script src="./assets/scripts/app.js" defer></script>
+    <title>Tic Tac Toe</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div id="backdrop" class="backdrop d-none">&nbsp;</div>
+
+    <!-- WIN / LOSS / TIE / RESTART MODAL -->
+    <section id="modal" class="modal d-none"></section>
+
+    <!-- GAME START SECTION -->
+    <section id="game-start" class="game-start container d-block">
+      <div class="logo">
+        <a class="logo__link" href="index.html" aria-label="logo">
+          <svg class="logo__icon">
+            <use xlink:href="./assets/images/SVG/logo.svg#logo"></use>
+          </svg>
+        </a>
+      </div>
+
+      <div class="game-start__choices">
+        <header class="game-start__header">
+          <h4 class="heading-xs">Pick player 1's mark</h4>
+        </header>
+        <div id="game-start-marks" class="game-start__marks">
+          <div id="x" class="game-start__x-mark">
+            <svg class="game-start__x-icon">
+              <use
+                xlink:href="./assets/images/SVG/icon-x-default.svg#icon-x-default"
+              ></use>
+            </svg>
+          </div>
+          <div id="o" class="game-start__o-mark selected">
+            <svg class="game-start__o-icon">
+              <use
+                xlink:href="./assets/images/SVG/icon-o-default.svg#icon-o-default"
+              ></use>
+            </svg>
+          </div>
+        </div>
+        <footer class="game-start__footer">Remember: x goes first</footer>
+      </div>
+
+      <div class="game-start__buttons">
+        <button id="vs-cpu" class="btn btn--yellow">New game (vs cpu)</button>
+        <button id="vs-player" class="btn btn--blue">
+          New game (vs player)
+        </button>
+      </div>
+    </section>
+
+    <!-- GAMEPLAY SECTION -->
+    <section id="gameplay" class="gameplay container d-none">
+      <div class="gameplay__xo">
+        <div class="logo">
+          <svg class="logo__icon">
+            <use xlink:href="./assets/images/SVG/logo.svg#logo"></use>
+          </svg>
+        </div>
+      </div>
+      <div id="gameplay-turn" class="gameplay__turn heading-xs"></div>
+      <div id="restart-btn" class="gameplay__restart">
+        <svg class="gameplay__restart-icon">
+          <use
+            xlink:href="./assets/images/SVG/icon-restart.svg#icon-restart"
+          ></use>
+        </svg>
+      </div>
+      <div id="gameplay-board" class="gameplay__board">
+        <div class="gameplay__card"></div>
+        <div class="gameplay__card"></div>
+        <div class="gameplay__card"></div>
+        <div class="gameplay__card"></div>
+        <div class="gameplay__card"></div>
+        <div class="gameplay__card"></div>
+        <div class="gameplay__card"></div>
+        <div class="gameplay__card"></div>
+        <div class="gameplay__card"></div>
+      </div>
+      <div id="x-win" class="gameplay__win"></div>
+      <div id="tie" class="gameplay__tie"></div>
+      <div id="o-win" class="gameplay__loss"></div>
+      <div id="opponent-message" class="gameplay__opponent-message d-none">
+        <p>Your opponent is thinking</p>
+        <img src="./assets/images/loading.gif" alt="Your opponent message" />
+      </div>
+    </section>
   </body>
 </html>
