@@ -1,0 +1,38 @@
+.jumbotron {
+  color: #fff;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to bottom right, #3e00ce, #f0318a);
+  transition: all ease-in 0.2s;
+}
+
+h1 {
+  color: white;
+  font-family: Open Sans, sans-serif;
+  transition: transform ease 0.3s;
+  font-weight: 200;
+  font-size: 5rem;
+  transform: translate(0, -40px);
+  letter-spacing: 2rem;
+}
+
+.shade {
+  width: 60%;
+  transform: translate(0, 70px);
+  height: 10px;
+  margin: 30px auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: blur(50px);
+  transition: transform ease 0.3s;
+}
+
+.jumbotron:hover > .shade {
+  transform: translate(0, 0);
+  transition: transform ease 0.3s;
+  filter: blur(15px);
+}
+
+.jumbotron:hover > h1 {
+  transition: transform ease 0.3s;
+  transform: translate(0, 20px);
+}
