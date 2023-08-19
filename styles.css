@@ -1,0 +1,506 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 600;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+header {
+  width: 100%;
+  height: 50px;
+  background-color: #f2eee1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+main {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fff8e8;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 600px;
+  width: 100%;
+  height: 100px;
+  font-family: system-ui;
+}
+
+nav .logo {
+  font-size: 2rem;
+  background: -webkit-linear-gradient(
+    120deg,
+    hsl(318, 94%, 61%),
+    hsl(239, 69%, 51%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: system-ui;
+}
+
+ul {
+  text-transformation: uppercase;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 35px;
+  font-size: 1.2rem;
+}
+
+nav a {
+  background: -webkit-linear-gradient(
+    120deg,
+    hsl(318, 94%, 61%),
+    hsl(239, 69%, 51%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+nav a:hover {
+  border-bottom: 2px solid hsl(239, 69%, 51%);
+  transition: 1s;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px 400px;
+  font-family: system-ui;
+}
+
+.content img {
+  width: 25rem;
+  transform: translateY(0px);
+  animation: float 6s ease-in-out infinite;
+  border-radius: 50%;
+  margin-right: 200px;
+}
+.header {
+  font-family: system-ui;
+  font-weight: 600px;
+  background: -webkit-linear-gradient(
+    120deg,
+    hsl(318, 94%, 61%),
+    hsl(239, 69%, 51%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.about-img {
+  width: 25rem;
+  transform: translateY(0px);
+  animation: float 6s ease-in-out infinite;
+  border-radius: 50%;
+  margin-left: 200px;
+}
+
+.fashion-img img,
+.beauty-img img {
+  border-radius: 32px;
+  width: 350px;
+  height: 500px;
+  margin: 20px;
+}
+.fashion-vid video {
+  border-radius: 32px;
+  overflow: scroll;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+.beauty-vid video {
+  border-radius: 32px;
+  overflow: scroll;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.lifestyle video,
+.lifestyle-2 video {
+  border-radius: 32px;
+  overflow: scroll;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.subs {
+  font-family: Impact;
+  font-size: 1rem;
+  text-align: center;
+}
+.mid-sub {
+  font-family: Impact;
+  background: -webkit-linear-gradient(
+    120deg,
+    hsl(318, 94%, 61%),
+    hsl(239, 69%, 51%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+.about-col {
+  float: left;
+  width: 50%;
+  margin-bottom: 10px;
+}
+.about-text {
+  font-family: system-ui;
+  margin-right: 200px;
+  margin-left: 0;
+}
+
+.location,
+.pin {
+  display: inline-block;
+  font-family: system-ui;
+  background: -webkit-linear-gradient(
+    120deg,
+    hsl(318, 94%, 61%),
+    hsl(239, 69%, 51%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.pin {
+  float: left;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-inline-start: 0;
+  margin-block: 0;
+  height: 100%;
+}
+
+.introduction {
+  background: -webkit-linear-gradient(
+    120deg,
+    hsl(318, 94%, 61%),
+    hsl(239, 69%, 51%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 500px;
+  height: 400px;
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-top: 200px;
+  margin-left: 200px;
+  overflow: hidden;
+  position: relative;
+}
+/* Typewriter effect 1 */
+@keyframes typing {
+  0.0000%,
+  27.3488% {
+    content: "";
+  }
+  1.1395%,
+  26.2093% {
+    content: "f";
+  }
+  2.2791%,
+  25.0698% {
+    content: "fa";
+  }
+  3.4186%,
+  23.9302% {
+    content: "fas";
+  }
+  4.5581%,
+  22.7907% {
+    content: "fash";
+  }
+  5.6977%,
+  21.6512% {
+    content: "fashi";
+  }
+  6.8372%,
+  20.5116% {
+    content: "fashio";
+  }
+  7.9767%,
+  19.3721% {
+    content: "fashion";
+  }
+
+  30.7674%,
+  51.2791% {
+    content: "";
+  }
+  31.9070%,
+  50.1395% {
+    content: "b";
+  }
+  33.0465%,
+  49.0000% {
+    content: "be";
+  }
+  34.1860%,
+  47.8605% {
+    content: "bea";
+  }
+  35.3256%,
+  46.7209% {
+    content: "beau";
+  }
+  36.4651%,
+  45.5814% {
+    content: "beaut";
+  }
+  37.6047%,
+  44.4419% {
+    content: "beauty";
+  }
+
+  54.6977%,
+  75.2093% {
+    content: "";
+  }
+  55.8372%,
+  74.0698% {
+    content: "l";
+  }
+  56.9767%,
+  72.9302% {
+    content: "li";
+  }
+  58.1163%,
+  71.7907% {
+    content: "lif";
+  }
+  59.2558%,
+  70.6512% {
+    content: "life";
+  }
+  60.3953%,
+  69.5116% {
+    content: "lifes";
+  }
+  61.5349%,
+  68.3721% {
+    content: "lifest";
+  }
+  62.6745%,
+  67.2326% {
+    content: "lifesty";
+  }
+  63.8141%,
+  66.0931% {
+    content: "lifestyl";
+  }
+  64.9537%,
+  64.9536% {
+    content: "lifestyle";
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.intro-text {
+  --caret: current-color;
+}
+
+.intro-text::before {
+  content: "";
+  animation: typing 13.5s infinite;
+}
+
+.intro-text::after {
+  content: "";
+  border-right: 1px solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+
+@media (prefers-reduced-motion) {
+  .intro-text::after {
+    animation: none;
+  }
+
+  @keyframes sequencePopup {
+    0%,
+    100% {
+      content: "fashion";
+    }
+    25% {
+      content: "beauty";
+    }
+    50% {
+      content: "lifestyle";
+    }
+  }
+
+  .intro-text::before {
+    content: "fashion";
+    animation: sequencePopup 12s linear infinite;
+  }
+}
+
+.btn-about {
+  width: 165px;
+  height: 62px;
+  cursor: pointer;
+  color: #fff8e8;
+  font-size: 17px;
+  border-radius: 1rem;
+  border: none;
+  position: relative;
+  background: #989fce;
+  transition: 0.1s;
+  text-decoration: none;
+  margin: 50px;
+}
+.email-me {
+  width: 165px;
+  height: 62px;
+  cursor: pointer;
+  color: #fff8e8;
+  font-size: 17px;
+  border-radius: 1rem;
+  border: none;
+  position: relative;
+  background: #989fce;
+  transition: 0.1s;
+  text-decoration: none;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px;
+}
+
+.btn-about:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    hsl(318, 94%, 61%),
+    hsl(239, 69%, 51%) 100.2%
+  );
+  filter: blur(15px);
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.email-me:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    hsl(318, 94%, 61%),
+    hsl(239, 69%, 51%) 100.2%
+  );
+  filter: blur(15px);
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.btn-about:hover {
+  transform: scale(0.9) rotate(3deg);
+  background: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    hsl(318, 94%, 61%),
+    hsl(239, 69%, 51%) 100.2%
+  );
+  transition: 0.5s;
+}
+
+.email-me:hover {
+  transform: scale(0.9) rotate(3deg);
+  background: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    hsl(318, 94%, 61%),
+    hsl(239, 69%, 51%) 100.2%
+  );
+  transition: 0.5s;
+}
+.disclaimer {
+  color: red;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 12;
+  font-family: Arial, Helvetica;
+  font-weight: 900px;
+}
+footer {
+  width: 100%;
+  height: 100px;
+}
+.icon {
+  display: flex;
+  padding: 1.2rem;
+  justify-content: center;
+  background-color: #f2eee1;
+  align-items: center;
+  flex-direction: row;
+}
+
+.sm-icon {
+  padding: 0.5rem;
+  margin: 0;
+}
+
+.sm-icon:hover {
+  opacity: 0.8;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
