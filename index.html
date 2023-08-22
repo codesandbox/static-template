@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Management Tool</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <h1>Blog Content Management Tool</h1>
+      <label for="title">Title:</label>
+      <input type="text" id="title" placeholder="Enter title" />
+
+      <label for="content">Content:</label>
+      <textarea id="content" rows="8" placeholder="Enter content"></textarea>
+
+      <label for="image">Image URL:</label>
+      <input type="text" id="image" placeholder="Enter image URL" />
+
+      <label for="video">Video URL:</label>
+      <input type="text" id="video" placeholder="Enter video URL" />
+
+      <button onclick="addContent()">Add Content</button>
+    </div>
+    <div id="blog">
+      <!-- The added content will appear here -->
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
