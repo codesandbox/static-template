@@ -1,12 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Project Management Tool</title>
+    <style>
+      /* Basic styling for the task list */
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        margin: 5px 0;
+        padding: 5px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>Project Management Tool</h1>
+
+    <h2>Task List</h2>
+    <ul id="taskList">
+      <!-- Tasks will be added here dynamically -->
+    </ul>
+
+    <h2>Add New Task</h2>
+    <input type="text" id="taskInput" placeholder="Enter task description" />
+    <button id="addTaskBtn">Add Task</button>
+
+    <script>
+      // Get DOM elements
+      const taskInput = document.getElementById("taskInput");
+      const addTaskBtn = document.getElementById("addTaskBtn");
+      const taskList = document.getElementById("taskList");
+
+      // Add task function
+      function addTask() {
+        const taskDescription = taskInput.value;
+        if (taskDescription) {
+          const li = document.createElement("li");
+          li.textContent = taskDescription;
+          taskList.appendChild(li);
+          taskInput.value = "";
+        }
+      }
+
+      // Add task button click event
+      addTaskBtn.addEventListener("click", addTask);
+    </script>
   </body>
 </html>
