@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Temperature converter</title>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container">
+      <form id="calcTemp" onsubmit="calculateTemp(); return false">
+        <label for="temp">Enter the temperature to convert</label>
+        <br />
+        <input type="number" name="temp" id="temp" value="0" />
+        <select name="temp_diff" id="temp_diff">
+          <option value="cel">&#176;Celsius</option>
+          <option value="fah">&#176;Fahrenheit</option>
+        </select>
+        <br />
+        <input type="submit" name="temp" id="submit" />
+        <br />
+        <span id="result"></span>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
