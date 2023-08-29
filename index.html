@@ -1,12 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        padding-top: 56px;
+      }
+      .jumbotron {
+        text-shadow: #000 1px 1px;
+      }
+      .background-header {
+        background-image: url("/images/laptop.png");
+        background-color: #fafbfc;
+        height: 400px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+      .button-primer {
+        background-color: #00bd8e;
+        border: #00bd8e;
+        color: #fff;
+        text-shadow: 0px 0px;
+      }
+      .button-primer:hover {
+        background-color: #038c6a;
+        color: #fff;
+        text-shadow: 0px 0px;
+      }
+      .service-style {
+        margin-top: 15px;
+        background-color: #fafbfc;
+      }
+      .text-green {
+        color: #0b9b6b;
+      }
+      .bg-red {
+        background-color: #f25757;
+      }
+      h2:before,
+      h2:after {
+        background-color: #0b9b6b;
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 50%;
+      }
+      h2:before {
+        right: 0.5em;
+        margin-left: -50%;
+      }
+      h2:after {
+        left: 0.5em;
+        margin-right: -50%;
+      }
+      .button-sekunder {
+        background-color: transparent;
+        border-color: #dbdbdb;
+        color: #0b9b6b;
+      }
+      .button-sekunder:hover {
+        background-color: #0b9b6b;
+        border-color: #dbdbdb;
+        color: #fff;
+      }
+      .cover {
+        background: no-repeat center/cover;
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!-- Navigasi Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a href="index.html" class="navbar-brand"
+          ><img
+            src="/images/codepolitan.png"
+            alt="google"
+            style="height: 50px; width: 200px;"
+        /></a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle Navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#services" class="nav-link">Service</a>
+            </li>
+            <li class="nav-item">
+              <a href="#product" class="nav-link">Product</a>
+            </li>
+            <li class="nav-item">
+              <a href="#about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- header -->
+    <section class="jumbotron jumbotron-fluid background-header">
+      <div class="container-fluid text-center">
+        <h1 class="display-3" style="color: green;">Solusi Terbaik Belajar</h1>
+        <p class="lead" style="font-weight: bold;">
+          Kami menyediakan banyak modul yang mendukung karir anda
+        </p>
+        <p>
+          <a href="#" class="btn button-primer btn-lg" role="button"
+            >Gabung Sekarang</a
+          >
+          <a
+            href="#"
+            class="btn btn-secondary btn-lg"
+            style="text-shadow: 0px 0px;"
+            role="button"
+            >Pelajari dahulu</a
+          >
+        </p>
+      </div>
+    </section>
+    <!-- service -->
+    <section id="services" class="container service-style">
+      <div class="row text-center">
+        <div class="col-12 pb-4">
+          <h2 class="display-4">Mengapa memilih kami?</h2>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x text-green"></i>
+            <i class="fa-solid fa-list fa-stack-1x text-white"></i>
+          </span>
+          <h3 class="mt-4 text-green">Fasilitas Oke</h3>
+          <p>Fasilitas yang kami sediakan sangat lengkap dan nyaman</p>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x text-green"></i>
+            <i class="fa-solid fa-laptop-code fa-stack-1x text-white"></i>
+          </span>
+          <h3 class="mt-4 text-green">Modul Lengkap</h3>
+          <p>Lebih dari 2000 modul yang tersedia ditempat kami</p>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x text-green"></i>
+            <i class="fa-solid fa-money-bill fa-stack-1x text-white"></i>
+          </span>
+          <h3 class="mt-4 text-green">Biaya Terjangkau</h3>
+          <p>Biaya sangat terjangkau</p>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <span class="fa-stack fa-2x">
+            <i class="fas fa-circle fa-stack-2x text-green"></i>
+            <i class="fa-solid fa-chart-line fa-stack-1x text-white"></i>
+          </span>
+          <h3 class="mt-4 text-green">Terarah</h3>
+          <p>Sistem mudah dan Terarah</p>
+        </div>
+
+        <div class="col-12 pt-3 mb-5">
+          <a
+            href="#"
+            class="btn text-white bg-red btn-lg"
+            target="_blank"
+            role="button"
+            >Service Lainnya</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- produk -->
+    <section id="product" class="container">
+      <div class="row text-center">
+        <div class="col-12 pb-4">
+          <h2 class="display-4 text-center mb-5">Produk Kami</h2>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img
+              src="/images/js.jpg"
+              alt="Product 1"
+              class="card-img-top"
+              style="max-height: 400px;"
+            />
+            <div class="card-body" style="min-height: 100px;">
+              <h4 class="card-title">Cara cepat belajar pemograman JS</h4>
+              <p class="card-text">Belajar Javascript secara cepat dan mudah</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn button-sekunder">Detail & Harga</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img
+              src="/images/flutter.jpg"
+              alt="Product 2"
+              class="card-img-top"
+              style="max-height: 400px;"
+            />
+            <div class="card-body" style="min-height: 100px;">
+              <h4 class="card-title">Cara cepat belajar pemograman Flutter</h4>
+              <p class="card-text">Belajar Flutter secara cepat dan mudah</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn button-sekunder">Detail & Harga</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img
+              src="/images/java.jpg"
+              alt="Product 3"
+              class="card-img-top"
+              style="max-height: 400px;"
+            />
+            <div class="card-body" style="min-height: 100px;">
+              <h4 class="card-title">Cara cepat belajar pemograman Java</h4>
+              <p class="card-text">Belajar Java secara cepat dan mudah</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn button-sekunder">Detail & Harga</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about-->
+    <section id="about" class="bg-light">
+      <div class="container-fluid">
+        <h2 class="display-4 text-center mb-5">Tentang Kami</h2>
+        <div class="row">
+          <div class="col-12 col-md-6">Ini merupakan Sekolah</div>
+          <div class="col-12 col-md-6">
+            <div
+              class="vh-100 cover"
+              style="background-image: url('/images/java.jpg');"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contack -->
+    <section id="contact">
+      ...
+    </section>
+    <footer>
+      <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://kit.fontawesome.com/71991790e8.js"
+        crossorigin="anonymous"
+      ></script>
+    </footer>
   </body>
 </html>
