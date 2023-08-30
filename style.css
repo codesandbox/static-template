@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  font-family: "Euclid Circular A";
+  color: #1d1d1d;
+  background: #2f1b51;
+  overflow-x: hidden;
+}
+
+h2 {
+  position: relative;
+  z-index: 1;
+  margin: 20px 15%;
+}
+
+p {
+  opacity: 0.8;
+}
+
+section {
+  padding: 40px 0;
+}
+
+.image {
+  height: 380px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url("https://images.unsplash.com/photo-1682666082882-cb5d5e9fbbc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1716&q=80");
+}
+
+.text {
+  position: relative;
+}
+
+.text::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 125%;
+  background-image: linear-gradient(
+    to right,
+    rgb(240, 225, 255),
+    rgb(168, 152, 185)
+  );
+  rotate: -3deg;
+  translate: -50% -50%;
+}
