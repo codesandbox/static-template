@@ -1,0 +1,27 @@
+body {
+  background: #000;
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-container {
+  width: 80%;
+}
+
+img {
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to bottom, #000, transparent),
+    linear-gradient(to bottom, transparent, #000),
+    linear-gradient(to bottom, #000, transparent),
+    linear-gradient(to bottom, transparent, #000),
+    linear-gradient(to bottom, #000, transparent);
+  -webkit-mask-size: 18% 75%;
+  -webkit-mask-position: 0% 100%, 25% 25%, 50% 50%, 75% 0, 100% 75%;
+  -webkit-mask-repeat: no-repeat;
+}
