@@ -1,0 +1,113 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e5f5e5;
+}
+.logo {
+  display: flex;
+  float: left;
+  margin-top: 29px;
+  margin-left: 8px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem; /* Add some space between logo and text */
+}
+
+header {
+  background-color: #1d682e;
+  color: white;
+  text-align: center;
+  padding: 1rem 0; /* Increased vertical padding for more impact */
+}
+
+header h1 {
+  font-size: 48px; /* Larger font size for the main title */
+  margin-bottom: 0.5rem;
+  margin-right: 90px;
+}
+
+header p {
+  margin-right: 90px;
+  font-size: 20px; /* Slightly larger font size for the subheading */
+}
+
+.logo img {
+  max-width: 80px;
+  border-radius: 10px; /* Add rounded corners to the logo */
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 2rem;
+  color: #1d682e;
+}
+
+.vehicle-card,
+.benefit-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 2rem;
+  display: inline-block;
+  vertical-align: top;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-card:hover,
+.benefit-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.15);
+}
+
+.vehicle-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.benefit-card h3 {
+  color: #1d682e;
+  font-size: 24px;
+}
+
+.benefit-card ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+  color: #1d682e;
+  font-size: 18px;
+  text-align: left;
+}
+
+footer {
+  background-color: #1d682e;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
