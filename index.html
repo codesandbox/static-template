@@ -1,12 +1,1654 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
-</html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    html,
+    body {
+      margin: 0;
+      background-color: transparent;
+    }
+  </style>
+
+  <script src="//unpkg.com/three"></script>
+  <script src="//unpkg.com/three-spritetext"></script>
+
+  <script src="//unpkg.com/3d-force-graph"></script>
+  <!--<script src="../../dist/3d-force-graph.js"></script>-->
+</head>
+
+<body>
+  <div id="3d-graph"></div>
+
+  <script type="x-shader/x-vertex" id="vertexShader">
+
+    varying vec3 worldPosition;
+
+    void main() {
+
+      vec4 mPosition = modelMatrix * vec4( position, 1.0 );
+
+      gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+      worldPosition = mPosition.xyz;
+
+    }
+  </script>
+
+  <script type="x-shader/x-fragment" id="fragmentShader">
+
+    uniform vec3 topColor;
+    uniform vec3 bottomColor;
+    uniform float offset;
+    uniform float exponent;
+
+    varying vec3 worldPosition;
+
+    void main() {
+
+      float h = normalize( worldPosition + offset ).y;
+      gl_FragColor = vec4( mix( bottomColor, topColor, max( pow( h, exponent ), 0.0 ) ), 1.0 );
+
+    }
+  </script>
+
+  <script
+    async
+    src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"
+  ></script>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.155.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.155.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module">
+    import { UnrealBloomPass } from "//unpkg.com/three/examples/jsm/postprocessing/UnrealBloomPass.js";
+
+    import { Water } from "//unpkg.com/three@0.155.0/examples/jsm/objects/Water.js";
+    import { Sky } from "//unpkg.com/three@0.155.0/examples/jsm/objects/Sky.js";
+
+    const nodes = [
+      {
+        data: {
+          label: "Ноғай-Қазақ",
+          level: 0
+        },
+        id: "d38ddfbb-0137-4875-82dc-a214ea5bb479",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Қабақ-ноғай",
+          level: 1
+        },
+        id: "04cd9b39-ae7c-44c2-8264-67eb4930d1d8",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Мұсақай",
+          level: 2
+        },
+        id: "15782f3b-24b6-4cef-bab3-a03b06a2eae9",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Исақай",
+          level: 2
+        },
+        id: "5113bc6d-591b-4a62-aa35-bc32f6fefdca",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Қазақай",
+          level: 2
+        },
+        id: "514c5569-05b0-435d-9c29-b65bb0294871",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Мұхамбетжан-Қазы",
+          level: 3
+        },
+        id: "8f81c756-7417-4c0f-8437-02ad71bb2450",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Ахметжан-Ахмет",
+          level: 3
+        },
+        id: "943319ad-146d-47fc-b483-96f4e391d748",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Үйсін-ноғай",
+          level: 1
+        },
+        id: "1c625de1-ef38-4b31-9b62-e63435ccd4b3",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Дойнаш",
+          level: 2
+        },
+        id: "35eb2896-4dad-4f66-ba21-3ecf1f3b37ea",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Бияқай",
+          level: 3
+        },
+        id: "6e68318d-5166-42d4-b0af-892fd2e3e9a0",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Мүстафа",
+          level: 3
+        },
+        id: "fc4a5075-756e-45c5-8a7b-f68e62b9f3ee",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Бабыл",
+          level: 2
+        },
+        id: "3acb8f7d-b736-4597-be88-8d2dabed3409",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Шімген",
+          level: 3
+        },
+        id: "1140c42a-4bd8-41f1-89e0-2fb941153ee8",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Бозторғай",
+          level: 3
+        },
+        id: "22e402f1-01fc-4bcb-ad01-1247c1f8aa32",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Қазанқұлақ",
+          level: 1
+        },
+        id: "a2ebeb15-83d3-4453-90bf-1c2ae1386872",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Демет",
+          level: 2
+        },
+        id: "11b595d2-0ee2-4b35-ad8f-ed31eb415c07",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Бабат-Абат",
+          level: 3
+        },
+        id: "319ab7dc-95cd-4250-bbb8-e0f057f5c328",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Онат",
+          level: 2
+        },
+        id: "22d39e2b-77a9-4736-be61-a0c85a97e107",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Танат",
+          level: 3
+        },
+        id: "2876183d-117f-477a-ac8a-c005efe90404",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Бекбау",
+          level: 2
+        },
+        id: "6a9be21f-4af1-4cbe-a371-83900d3be23e",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Жаңабай",
+          level: 3
+        },
+        id: "d81c3bc9-f5f2-4493-94af-ca6acf7c527e",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Малай",
+          level: 2
+        },
+        id: "f2debc11-024b-4f1a-9cd7-962848986d8a",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Сапи",
+          level: 3
+        },
+        id: "01c32a34-f7e5-4d88-ba26-4dcd3fce45b1",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Дәулет",
+          level: 3
+        },
+        id: "38bb8b85-c52a-469a-982b-75e5b6c79477",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Сүйінші",
+          level: 3
+        },
+        id: "7ce71ea4-b201-4f2c-94b0-b2369d5ba103",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Қостаңбалы",
+          level: 1
+        },
+        id: "a42049df-2f97-43d1-b48d-a22eaf62638b",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Бұрқан",
+          level: 2
+        },
+        id: "0008e012-0f01-405b-9b92-f4aa9ae9eb9c",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Терме",
+          level: 2
+        },
+        id: "1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a3",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Шомбал",
+          level: 3
+        },
+        id: "22826b19-7e24-4a06-9fb3-71a1f9164ef8",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Манарбек",
+          level: 3
+        },
+        id: "5900c3bc-43da-485a-b7d3-36bbb2dc2cb9",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Еріш",
+          level: 3
+        },
+        id: "9474f450-de40-44bc-b27a-fdc0bfed99d9",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Абдол",
+          level: 3
+        },
+        id: "95aacb19-099d-4926-984e-69b63a6cd463",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Жаңгірхан",
+          level: 3
+        },
+        id: "abc91e84-3b80-439b-9846-4d9aa41762fa",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Мақсот",
+          level: 3
+        },
+        id: "d87c23ca-c9ba-42d4-b237-213d7545286a",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Төте",
+          level: 3
+        },
+        id: "e815636c-8bfb-4aff-a7e1-69f3779181b5",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Ажғали",
+          level: 3
+        },
+        id: "f56247e0-3122-4a46-bddd-850b107aa2c9",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Қояс",
+          level: 1
+        },
+        id: "ddbdf1aa-187f-4985-9dc7-47c34567a79f",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Әжі",
+          level: 2
+        },
+        id: "260fc3e1-4cc5-426d-a33d-3424da8d9453",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Дүйсәлі",
+          level: 3
+        },
+        id: "1629ce9c-cc0c-473d-b07d-1ccc1758da8d",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Бошай",
+          level: 3
+        },
+        id: "34c7c7eb-f83a-4f1a-b715-0f2edf72cf5e",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Байгелді",
+          level: 3
+        },
+        id: "5c442c2a-9bce-4971-a90e-d258cc2af595",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Сағи хазірет",
+          level: 3
+        },
+        id: "73dd2230-7b52-497f-9e90-2f3512095cfe",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Меңдіқара",
+          level: 3
+        },
+        id: "7f2d72fd-7728-43bb-8e52-fe5477a0185e",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Айтбай",
+          level: 3
+        },
+        id: "955a68a1-aa93-444d-84f5-e3526d177bda",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Әбжіл",
+          level: 3
+        },
+        id: "ead31207-7c80-413d-b03c-9dec86ef8abb",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Шалқошқар",
+          level: 3
+        },
+        id: "ed83369c-edda-4455-a384-369697cc50a0",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Оразақай",
+          level: 2
+        },
+        id: "310cc0fd-2fd5-41be-997c-ec1544e8a10f",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Бозай",
+          level: 3
+        },
+        id: "40af922c-8c7c-40a1-88a3-493c9010d333",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Жылмамбет",
+          level: 3
+        },
+        id: "9d7f7d60-4ae3-4412-b0db-f1389ac70d53",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Нияз",
+          level: 3
+        },
+        id: "d28487fe-7ffd-4f7d-ab64-59e690ff3626",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Жауар",
+          level: 2
+        },
+        id: "46fcde84-9ccf-46a8-8222-2be9b8c5aa7a",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Бөлек ата",
+          level: 3
+        },
+        id: "205692b0-f813-4af3-bba5-7a600638e57a",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Батрақай",
+          level: 2
+        },
+        id: "87ef47e1-3bf8-4a0d-afe4-6b76125cba5e",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Есқазы",
+          level: 3
+        },
+        id: "32f2a0d0-4a37-4fd9-b71d-8e96e7d6a276",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Жолай",
+          level: 2
+        },
+        id: "9a772b32-3e43-4806-b198-458d5577afc7",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Хаби",
+          level: 3
+        },
+        id: "c589ef46-6a07-4e50-98fb-07cacf7ddc17",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Ағай",
+          level: 2
+        },
+        id: "dea15035-bdbb-4e31-ba35-f4d15125f2e4",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      },
+      {
+        data: {
+          label: "Биәлі",
+          level: 3
+        },
+        id: "92dcbacb-1c5f-4ce7-ac91-c90a231b4453",
+        position: {
+          x: 0,
+          y: 0
+        },
+        type: "custom"
+      }
+    ];
+
+    const links = [
+      {
+        animated: true,
+        id:
+          "ed38ddfbb-0137-4875-82dc-a214ea5bb47904cd9b39-ae7c-44c2-8264-67eb4930d1d8",
+        source: "d38ddfbb-0137-4875-82dc-a214ea5bb479",
+        style: {
+          stroke: "#FFB347",
+          strokeWidth: 11
+        },
+        target: "04cd9b39-ae7c-44c2-8264-67eb4930d1d8",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e04cd9b39-ae7c-44c2-8264-67eb4930d1d815782f3b-24b6-4cef-bab3-a03b06a2eae9",
+        source: "04cd9b39-ae7c-44c2-8264-67eb4930d1d8",
+        style: {
+          stroke: "#FFFF66",
+          strokeWidth: 10
+        },
+        target: "15782f3b-24b6-4cef-bab3-a03b06a2eae9",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e04cd9b39-ae7c-44c2-8264-67eb4930d1d85113bc6d-591b-4a62-aa35-bc32f6fefdca",
+        source: "04cd9b39-ae7c-44c2-8264-67eb4930d1d8",
+        style: {
+          stroke: "#FFFF66",
+          strokeWidth: 10
+        },
+        target: "5113bc6d-591b-4a62-aa35-bc32f6fefdca",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e04cd9b39-ae7c-44c2-8264-67eb4930d1d8514c5569-05b0-435d-9c29-b65bb0294871",
+        source: "04cd9b39-ae7c-44c2-8264-67eb4930d1d8",
+        style: {
+          stroke: "#FFFF66",
+          strokeWidth: 10
+        },
+        target: "514c5569-05b0-435d-9c29-b65bb0294871",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e514c5569-05b0-435d-9c29-b65bb02948718f81c756-7417-4c0f-8437-02ad71bb2450",
+        source: "514c5569-05b0-435d-9c29-b65bb0294871",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "8f81c756-7417-4c0f-8437-02ad71bb2450",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e514c5569-05b0-435d-9c29-b65bb0294871943319ad-146d-47fc-b483-96f4e391d748",
+        source: "514c5569-05b0-435d-9c29-b65bb0294871",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "943319ad-146d-47fc-b483-96f4e391d748",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "ed38ddfbb-0137-4875-82dc-a214ea5bb4791c625de1-ef38-4b31-9b62-e63435ccd4b3",
+        source: "d38ddfbb-0137-4875-82dc-a214ea5bb479",
+        style: {
+          stroke: "#FFB347",
+          strokeWidth: 11
+        },
+        target: "1c625de1-ef38-4b31-9b62-e63435ccd4b3",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e1c625de1-ef38-4b31-9b62-e63435ccd4b335eb2896-4dad-4f66-ba21-3ecf1f3b37ea",
+        source: "1c625de1-ef38-4b31-9b62-e63435ccd4b3",
+        style: {
+          stroke: "#FFFF66",
+          strokeWidth: 10
+        },
+        target: "35eb2896-4dad-4f66-ba21-3ecf1f3b37ea",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e35eb2896-4dad-4f66-ba21-3ecf1f3b37ea6e68318d-5166-42d4-b0af-892fd2e3e9a0",
+        source: "35eb2896-4dad-4f66-ba21-3ecf1f3b37ea",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "6e68318d-5166-42d4-b0af-892fd2e3e9a0",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e35eb2896-4dad-4f66-ba21-3ecf1f3b37eafc4a5075-756e-45c5-8a7b-f68e62b9f3ee",
+        source: "35eb2896-4dad-4f66-ba21-3ecf1f3b37ea",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "fc4a5075-756e-45c5-8a7b-f68e62b9f3ee",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e1c625de1-ef38-4b31-9b62-e63435ccd4b33acb8f7d-b736-4597-be88-8d2dabed3409",
+        source: "1c625de1-ef38-4b31-9b62-e63435ccd4b3",
+        style: {
+          stroke: "#FFFF66",
+          strokeWidth: 10
+        },
+        target: "3acb8f7d-b736-4597-be88-8d2dabed3409",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e3acb8f7d-b736-4597-be88-8d2dabed34091140c42a-4bd8-41f1-89e0-2fb941153ee8",
+        source: "3acb8f7d-b736-4597-be88-8d2dabed3409",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "1140c42a-4bd8-41f1-89e0-2fb941153ee8",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e3acb8f7d-b736-4597-be88-8d2dabed340922e402f1-01fc-4bcb-ad01-1247c1f8aa32",
+        source: "3acb8f7d-b736-4597-be88-8d2dabed3409",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "22e402f1-01fc-4bcb-ad01-1247c1f8aa32",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "ed38ddfbb-0137-4875-82dc-a214ea5bb479a2ebeb15-83d3-4453-90bf-1c2ae1386872",
+        source: "d38ddfbb-0137-4875-82dc-a214ea5bb479",
+        style: {
+          stroke: "#FFB347",
+          strokeWidth: 11
+        },
+        target: "a2ebeb15-83d3-4453-90bf-1c2ae1386872",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "ea2ebeb15-83d3-4453-90bf-1c2ae138687211b595d2-0ee2-4b35-ad8f-ed31eb415c07",
+        source: "a2ebeb15-83d3-4453-90bf-1c2ae1386872",
+        style: {
+          stroke: "#FFFF66",
+          strokeWidth: 10
+        },
+        target: "11b595d2-0ee2-4b35-ad8f-ed31eb415c07",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e11b595d2-0ee2-4b35-ad8f-ed31eb415c07319ab7dc-95cd-4250-bbb8-e0f057f5c328",
+        source: "11b595d2-0ee2-4b35-ad8f-ed31eb415c07",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "319ab7dc-95cd-4250-bbb8-e0f057f5c328",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "ea2ebeb15-83d3-4453-90bf-1c2ae138687222d39e2b-77a9-4736-be61-a0c85a97e107",
+        source: "a2ebeb15-83d3-4453-90bf-1c2ae1386872",
+        style: {
+          stroke: "#FFFF66",
+          strokeWidth: 10
+        },
+        target: "22d39e2b-77a9-4736-be61-a0c85a97e107",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e22d39e2b-77a9-4736-be61-a0c85a97e1072876183d-117f-477a-ac8a-c005efe90404",
+        source: "22d39e2b-77a9-4736-be61-a0c85a97e107",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "2876183d-117f-477a-ac8a-c005efe90404",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "ea2ebeb15-83d3-4453-90bf-1c2ae13868726a9be21f-4af1-4cbe-a371-83900d3be23e",
+        source: "a2ebeb15-83d3-4453-90bf-1c2ae1386872",
+        style: {
+          stroke: "#FFFF66",
+          strokeWidth: 10
+        },
+        target: "6a9be21f-4af1-4cbe-a371-83900d3be23e",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e6a9be21f-4af1-4cbe-a371-83900d3be23ed81c3bc9-f5f2-4493-94af-ca6acf7c527e",
+        source: "6a9be21f-4af1-4cbe-a371-83900d3be23e",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "d81c3bc9-f5f2-4493-94af-ca6acf7c527e",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "ea2ebeb15-83d3-4453-90bf-1c2ae1386872f2debc11-024b-4f1a-9cd7-962848986d8a",
+        source: "a2ebeb15-83d3-4453-90bf-1c2ae1386872",
+        style: {
+          stroke: "#FFFF66",
+          strokeWidth: 10
+        },
+        target: "f2debc11-024b-4f1a-9cd7-962848986d8a",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "ef2debc11-024b-4f1a-9cd7-962848986d8a01c32a34-f7e5-4d88-ba26-4dcd3fce45b1",
+        source: "f2debc11-024b-4f1a-9cd7-962848986d8a",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "01c32a34-f7e5-4d88-ba26-4dcd3fce45b1",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "ef2debc11-024b-4f1a-9cd7-962848986d8a38bb8b85-c52a-469a-982b-75e5b6c79477",
+        source: "f2debc11-024b-4f1a-9cd7-962848986d8a",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "38bb8b85-c52a-469a-982b-75e5b6c79477",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "ef2debc11-024b-4f1a-9cd7-962848986d8a7ce71ea4-b201-4f2c-94b0-b2369d5ba103",
+        source: "f2debc11-024b-4f1a-9cd7-962848986d8a",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "7ce71ea4-b201-4f2c-94b0-b2369d5ba103",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "ed38ddfbb-0137-4875-82dc-a214ea5bb479a42049df-2f97-43d1-b48d-a22eaf62638b",
+        source: "d38ddfbb-0137-4875-82dc-a214ea5bb479",
+        style: {
+          stroke: "#FFB347",
+          strokeWidth: 11
+        },
+        target: "a42049df-2f97-43d1-b48d-a22eaf62638b",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "ea42049df-2f97-43d1-b48d-a22eaf62638b0008e012-0f01-405b-9b92-f4aa9ae9eb9c",
+        source: "a42049df-2f97-43d1-b48d-a22eaf62638b",
+        style: {
+          stroke: "#FFFF66",
+          strokeWidth: 10
+        },
+        target: "0008e012-0f01-405b-9b92-f4aa9ae9eb9c",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "ea42049df-2f97-43d1-b48d-a22eaf62638b1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a3",
+        source: "a42049df-2f97-43d1-b48d-a22eaf62638b",
+        style: {
+          stroke: "#FFFF66",
+          strokeWidth: 10
+        },
+        target: "1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a3",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a322826b19-7e24-4a06-9fb3-71a1f9164ef8",
+        source: "1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a3",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "22826b19-7e24-4a06-9fb3-71a1f9164ef8",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a35900c3bc-43da-485a-b7d3-36bbb2dc2cb9",
+        source: "1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a3",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "5900c3bc-43da-485a-b7d3-36bbb2dc2cb9",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a39474f450-de40-44bc-b27a-fdc0bfed99d9",
+        source: "1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a3",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "9474f450-de40-44bc-b27a-fdc0bfed99d9",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a395aacb19-099d-4926-984e-69b63a6cd463",
+        source: "1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a3",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "95aacb19-099d-4926-984e-69b63a6cd463",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a3abc91e84-3b80-439b-9846-4d9aa41762fa",
+        source: "1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a3",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "abc91e84-3b80-439b-9846-4d9aa41762fa",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a3d87c23ca-c9ba-42d4-b237-213d7545286a",
+        source: "1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a3",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "d87c23ca-c9ba-42d4-b237-213d7545286a",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a3e815636c-8bfb-4aff-a7e1-69f3779181b5",
+        source: "1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a3",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "e815636c-8bfb-4aff-a7e1-69f3779181b5",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a3f56247e0-3122-4a46-bddd-850b107aa2c9",
+        source: "1ee2bcc3-b8f9-45b2-81ff-f5a7cb4cd8a3",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "f56247e0-3122-4a46-bddd-850b107aa2c9",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "ed38ddfbb-0137-4875-82dc-a214ea5bb479ddbdf1aa-187f-4985-9dc7-47c34567a79f",
+        source: "d38ddfbb-0137-4875-82dc-a214ea5bb479",
+        style: {
+          stroke: "#FFB347",
+          strokeWidth: 11
+        },
+        target: "ddbdf1aa-187f-4985-9dc7-47c34567a79f",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "eddbdf1aa-187f-4985-9dc7-47c34567a79f260fc3e1-4cc5-426d-a33d-3424da8d9453",
+        source: "ddbdf1aa-187f-4985-9dc7-47c34567a79f",
+        style: {
+          stroke: "#FFFF66",
+          strokeWidth: 10
+        },
+        target: "260fc3e1-4cc5-426d-a33d-3424da8d9453",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e260fc3e1-4cc5-426d-a33d-3424da8d94531629ce9c-cc0c-473d-b07d-1ccc1758da8d",
+        source: "260fc3e1-4cc5-426d-a33d-3424da8d9453",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "1629ce9c-cc0c-473d-b07d-1ccc1758da8d",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e260fc3e1-4cc5-426d-a33d-3424da8d945334c7c7eb-f83a-4f1a-b715-0f2edf72cf5e",
+        source: "260fc3e1-4cc5-426d-a33d-3424da8d9453",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "34c7c7eb-f83a-4f1a-b715-0f2edf72cf5e",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e260fc3e1-4cc5-426d-a33d-3424da8d94535c442c2a-9bce-4971-a90e-d258cc2af595",
+        source: "260fc3e1-4cc5-426d-a33d-3424da8d9453",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "5c442c2a-9bce-4971-a90e-d258cc2af595",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e260fc3e1-4cc5-426d-a33d-3424da8d945373dd2230-7b52-497f-9e90-2f3512095cfe",
+        source: "260fc3e1-4cc5-426d-a33d-3424da8d9453",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "73dd2230-7b52-497f-9e90-2f3512095cfe",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e260fc3e1-4cc5-426d-a33d-3424da8d94537f2d72fd-7728-43bb-8e52-fe5477a0185e",
+        source: "260fc3e1-4cc5-426d-a33d-3424da8d9453",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "7f2d72fd-7728-43bb-8e52-fe5477a0185e",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e260fc3e1-4cc5-426d-a33d-3424da8d9453955a68a1-aa93-444d-84f5-e3526d177bda",
+        source: "260fc3e1-4cc5-426d-a33d-3424da8d9453",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "955a68a1-aa93-444d-84f5-e3526d177bda",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e260fc3e1-4cc5-426d-a33d-3424da8d9453ead31207-7c80-413d-b03c-9dec86ef8abb",
+        source: "260fc3e1-4cc5-426d-a33d-3424da8d9453",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "ead31207-7c80-413d-b03c-9dec86ef8abb",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e260fc3e1-4cc5-426d-a33d-3424da8d9453ed83369c-edda-4455-a384-369697cc50a0",
+        source: "260fc3e1-4cc5-426d-a33d-3424da8d9453",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "ed83369c-edda-4455-a384-369697cc50a0",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "eddbdf1aa-187f-4985-9dc7-47c34567a79f310cc0fd-2fd5-41be-997c-ec1544e8a10f",
+        source: "ddbdf1aa-187f-4985-9dc7-47c34567a79f",
+        style: {
+          stroke: "#FFFF66",
+          strokeWidth: 10
+        },
+        target: "310cc0fd-2fd5-41be-997c-ec1544e8a10f",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e310cc0fd-2fd5-41be-997c-ec1544e8a10f40af922c-8c7c-40a1-88a3-493c9010d333",
+        source: "310cc0fd-2fd5-41be-997c-ec1544e8a10f",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "40af922c-8c7c-40a1-88a3-493c9010d333",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e310cc0fd-2fd5-41be-997c-ec1544e8a10f9d7f7d60-4ae3-4412-b0db-f1389ac70d53",
+        source: "310cc0fd-2fd5-41be-997c-ec1544e8a10f",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "9d7f7d60-4ae3-4412-b0db-f1389ac70d53",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e310cc0fd-2fd5-41be-997c-ec1544e8a10fd28487fe-7ffd-4f7d-ab64-59e690ff3626",
+        source: "310cc0fd-2fd5-41be-997c-ec1544e8a10f",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "d28487fe-7ffd-4f7d-ab64-59e690ff3626",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "eddbdf1aa-187f-4985-9dc7-47c34567a79f46fcde84-9ccf-46a8-8222-2be9b8c5aa7a",
+        source: "ddbdf1aa-187f-4985-9dc7-47c34567a79f",
+        style: {
+          stroke: "#FFFF66",
+          strokeWidth: 10
+        },
+        target: "46fcde84-9ccf-46a8-8222-2be9b8c5aa7a",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e46fcde84-9ccf-46a8-8222-2be9b8c5aa7a205692b0-f813-4af3-bba5-7a600638e57a",
+        source: "46fcde84-9ccf-46a8-8222-2be9b8c5aa7a",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "205692b0-f813-4af3-bba5-7a600638e57a",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "eddbdf1aa-187f-4985-9dc7-47c34567a79f87ef47e1-3bf8-4a0d-afe4-6b76125cba5e",
+        source: "ddbdf1aa-187f-4985-9dc7-47c34567a79f",
+        style: {
+          stroke: "#FFFF66",
+          strokeWidth: 10
+        },
+        target: "87ef47e1-3bf8-4a0d-afe4-6b76125cba5e",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e87ef47e1-3bf8-4a0d-afe4-6b76125cba5e32f2a0d0-4a37-4fd9-b71d-8e96e7d6a276",
+        source: "87ef47e1-3bf8-4a0d-afe4-6b76125cba5e",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "32f2a0d0-4a37-4fd9-b71d-8e96e7d6a276",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "eddbdf1aa-187f-4985-9dc7-47c34567a79f9a772b32-3e43-4806-b198-458d5577afc7",
+        source: "ddbdf1aa-187f-4985-9dc7-47c34567a79f",
+        style: {
+          stroke: "#FFFF66",
+          strokeWidth: 10
+        },
+        target: "9a772b32-3e43-4806-b198-458d5577afc7",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "e9a772b32-3e43-4806-b198-458d5577afc7c589ef46-6a07-4e50-98fb-07cacf7ddc17",
+        source: "9a772b32-3e43-4806-b198-458d5577afc7",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "c589ef46-6a07-4e50-98fb-07cacf7ddc17",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "eddbdf1aa-187f-4985-9dc7-47c34567a79fdea15035-bdbb-4e31-ba35-f4d15125f2e4",
+        source: "ddbdf1aa-187f-4985-9dc7-47c34567a79f",
+        style: {
+          stroke: "#FFFF66",
+          strokeWidth: 10
+        },
+        target: "dea15035-bdbb-4e31-ba35-f4d15125f2e4",
+        type: "straight"
+      },
+      {
+        animated: true,
+        id:
+          "edea15035-bdbb-4e31-ba35-f4d15125f2e492dcbacb-1c5f-4ce7-ac91-c90a231b4453",
+        source: "dea15035-bdbb-4e31-ba35-f4d15125f2e4",
+        style: {
+          stroke: "#B5EAAA",
+          strokeWidth: 9
+        },
+        target: "92dcbacb-1c5f-4ce7-ac91-c90a231b4453",
+        type: "straight"
+      }
+    ];
+
+    const pastelColors = [
+      "#FFD1DC", // Pastel Pink
+      "#FFB347", // Pastel Orange
+      "#FFFF66", // Pastel Yellow
+      "#B5EAAA", // Pastel Green
+      "#99CCCC", // Pastel Blue
+      "#C5A3FF", // Pastel Purple
+      "#FFCC99", // Pastel Peach
+      "#FFCBDB", // Pastel Rose
+      "#D1F2EB", // Pastel Mint
+      "#D6EAF8" // Pastel Sky
+    ];
+
+    const xData = {
+      nodes: nodes.map((node) => ({
+        ...node,
+        group: node.data.level
+      })),
+      links: links.map((v) => ({
+        source: v.target,
+        target: v.source,
+        value: v.style.strokeWidth
+      }))
+    };
+
+    // camera = new THREE.PerspectiveCamera(
+    //   30,
+    //   window.innerWidth / window.innerHeight,
+    //   1,
+    //   5000
+    // );
+    // camera.position.set(0, 0, 250);
+
+    // scene = new THREE.Scene();
+
+    // scene.fog = new THREE.Fog(0xffffff, 1, 5000);
+    // scene.fog.color.setHSV(0.6, 0, 1);
+
+    /* accepts parameters
+     * h  Object = {h:x, s:y, v:z}
+     * OR
+     * h, s, v
+     */
+    function HSVtoRGB(h, s, v) {
+      var r, g, b, i, f, p, q, t;
+      if (arguments.length === 1) {
+        (s = h.s), (v = h.v), (h = h.h);
+      }
+      i = Math.floor(h * 6);
+      f = h * 6 - i;
+      p = v * (1 - s);
+      q = v * (1 - f * s);
+      t = v * (1 - (1 - f) * s);
+      switch (i % 6) {
+        case 0:
+          (r = v), (g = t), (b = p);
+          break;
+        case 1:
+          (r = q), (g = v), (b = p);
+          break;
+        case 2:
+          (r = p), (g = v), (b = t);
+          break;
+        case 3:
+          (r = p), (g = q), (b = v);
+          break;
+        case 4:
+          (r = t), (g = p), (b = v);
+          break;
+        case 5:
+          (r = v), (g = p), (b = q);
+          break;
+      }
+      return {
+        r: Math.round(r * 255),
+        g: Math.round(g * 255),
+        b: Math.round(b * 255)
+      };
+    }
+
+    const Graph = ForceGraph3D()(document.getElementById("3d-graph"))
+      .backgroundColor("#00000000")
+      .graphData(xData)
+      .nodeAutoColorBy("group")
+      .nodeRelSize(2)
+      .nodeVal((node) => node.level + 10)
+      .nodeThreeObjectExtend(true)
+      .nodeResolution(12)
+      .nodeThreeObject((node) => {
+        // var cubeGeometry = new THREE.CubeGeometry(10, 10, 10);
+        // var cubeMaterial = new THREE.MeshNormalMaterial();
+        // cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+        // // cube.position.set(0, 50.1, 0);
+        // cube.name = "Cube";
+
+        // return cube;
+
+        var group = new THREE.Group();
+
+        const sprite = new SpriteText(node.data.label);
+        sprite.material.depthWrite = false; // make sprite background transparent
+        sprite.color = node.color;
+        sprite.textHeight = Math.max(4, 8 - node.data.level * 1);
+
+        sprite.position.set(0, -15, 0);
+        group.add(sprite);
+        return group;
+      })
+      .linkAutoColorBy("value")
+      .linkDirectionalArrowLength(3.5)
+      .linkDirectionalArrowRelPos(1)
+      .linkCurvature(0.25)
+      .linkWidth((d) => d.value / 8)
+      .linkDirectionalParticles((d) => d.value)
+      .linkDirectionalParticleSpeed((d) => d.value * 0.0001);
+
+    // Spread nodes a little wider
+    Graph.d3Force("charge").strength(-20);
+
+    const renderer = Graph.renderer();
+
+    console.info("renderer1");
+
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 0.5;
+    // container.appendChild(renderer.domElement);
+
+    console.info("renderer2");
+
+    const camera = Graph.camera();
+    // camera.position.set(0, 0, 250);
+
+    // new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 1, 20000 );
+    camera.position.set(30, 30, 100);
+
+    const scene = Graph.scene();
+
+    const sky = new Sky();
+    sky.scale.setScalar(10000);
+    scene.add(sky);
+
+    console.info("sfs", sky, Sky);
+
+    const skyUniforms = sky.material.uniforms;
+
+    skyUniforms["turbidity"].value = 10;
+    skyUniforms["rayleigh"].value = 2;
+    skyUniforms["mieCoefficient"].value = 0.005;
+    skyUniforms["mieDirectionalG"].value = 0.8;
+
+    const parameters = {
+      elevation: 2,
+      azimuth: 180
+    };
+
+    const pmremGenerator = new THREE.PMREMGenerator(renderer);
+
+    // Water
+
+    const waterGeometry = new THREE.PlaneGeometry(10000, 10000);
+
+    console.info("wg");
+
+    // water = new Water(waterGeometry, {
+    //   textureWidth: 512,
+    //   textureHeight: 512,
+    //   waterNormals: new THREE.TextureLoader().load(
+    //     "textures/waternormals.jpg",
+    //     function (texture) {
+    //       texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+    //     }
+    //   ),
+    //   sunDirection: new THREE.Vector3(),
+    //   sunColor: 0xffffff,
+    //   waterColor: 0x001e0f,
+    //   distortionScale: 3.7
+    //   // fog: scene.fog !== undefined
+    // });
+
+    // console.info("wata2");
+
+    // water.rotation.x = -Math.PI / 2;
+
+    // console.info("wata", water);
+
+    // scene.add(water);
+
+    // Skybox
+
+    // const bloomPass = new UnrealBloomPass();
+    // bloomPass.strength = 3;
+    // bloomPass.radius = 0.5;
+    // bloomPass.threshold = 0.25;
+    // Graph.postProcessingComposer().addPass(bloomPass);
+  </script>
+</body>

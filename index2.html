@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>three.js webgl - shaders - ocean</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <link type="text/css" rel="stylesheet" href="main.css" />
+    <!-- <script src="//unpkg.com/three-spritetext"></script> -->
+
+    <!-- <script src="//unpkg.com/browse/three@0.155.0/build/three.js"></script> -->
+    <!-- <script src="//unpkg.com/three-spritetext@1.8.1/dist/three-spritetext.js"></script> -->
+    <script src="//unpkg.com/3d-force-graph"></script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+      }
+      #container {
+        background: radial-gradient(
+          circle farthest-corner at center top,
+          #071021,
+          #19324a
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.155.0/build/three.module.js",
+          "three/addons/": "./jsm/"
+        }
+      }
+    </script>
+
+    <script type="module">
+      import * as THREE from "three";
+      // import Stats from "https://unpkg.com/three@0.155.0/addons/libs/stats.module.js";
+
+      import { GUI } from "https://unpkg.com/three@0.155.0/examples/jsm/libs/lil-gui.module.min.js";
+      import { OrbitControls } from "https://unpkg.com/three@0.155.0/examples/jsm/controls/OrbitControls.js";
+
+      import { UnrealBloomPass } from "//unpkg.com/three/examples/jsm/postprocessing/UnrealBloomPass.js";
+
+      window.THREE = THREE;
+
+      import SpriteText from "//unpkg.com/three-spritetext@1.8.1/dist/three-spritetext.mjs";
+
+      const pastelColors = [
+        "#FFD1DC", // Pastel Pink
+        "#FFB347", // Pastel Orange
+        "#FFFF66", // Pastel Yellow
+        "#B5EAAA", // Pastel Green
+        "#99CCCC", // Pastel Blue
+        "#C5A3FF", // Pastel Purple
+        "#FFCC99", // Pastel Peach
+        "#FFCBDB", // Pastel Rose
+        "#D1F2EB", // Pastel Mint
+        "#D6EAF8" // Pastel Sky
+      ];
+
+      let container, stats;
+      let camera, scene, renderer;
+      let controls, water, sun, mesh;
+
+      setTimeout(() => {
+        init();
+      }, 1e3);
+
+      function init() {
+        const nodes = window.nodes || [];
+        const links = window.edges || [];
+
+        const xData = {
+          nodes: nodes.map((node) => ({
+            ...node,
+            group: node.data.level
+          })),
+          links: links.map((v) => ({
+            source: v.target,
+            target: v.source,
+            value: v.style.strokeWidth
+          }))
+        };
+
+        container = document.getElementById("container");
+
+        const Graph = ForceGraph3D()(container)
+          .backgroundColor("#00000000")
+          .graphData(xData)
+          .nodeColor((d) => pastelColors[d.data.level])
+          .nodeRelSize(4)
+          .nodeVal((node) => node.level + 10)
+          .nodeThreeObjectExtend(true)
+          .nodeResolution(12)
+          .nodeThreeObject((node) => {
+            var group = new THREE.Group();
+
+            const sprite = new SpriteText(node.data.label);
+            sprite.material.depthWrite = false; // make sprite background transparent
+            sprite.color = pastelColors[node.data.level];
+            sprite.textHeight = Math.max(8, 16 - node.data.level * 1);
+
+            sprite.position.set(0, -15, 0);
+            group.add(sprite);
+            return group;
+          })
+          // .linkColor((d) => pastelColors[d.data.level])
+          .linkAutoColorBy("value")
+          .linkDirectionalArrowLength(3.5)
+          .linkDirectionalArrowRelPos(1)
+          .linkCurvature(0.25)
+          .linkWidth((d) => d.value / 2)
+          .linkDirectionalParticles((d) => d.value)
+          .linkDirectionalParticleSpeed((d) => d.value * 0.0001);
+
+        const renderer = Graph.renderer();
+
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 0.5;
+        // container.appendChild(renderer.domElement);
+
+        scene = Graph.scene();
+
+        Graph.d3Force("charge").strength(-100);
+
+        camera = Graph.camera();
+        camera.position.set(30, 30, 500);
+
+        scene.fog = new THREE.Fog(0x000000, 50, 3000);
+
+        const vertices = [];
+        const SIZE = 1000;
+        const LENGTH = 5000;
+        const geometry = new THREE.BufferGeometry();
+        const material = new THREE.PointsMaterial({
+          color: 0xffffff
+        });
+
+        for (let i = 0; i < LENGTH; i++) {
+          const x = SIZE * (Math.random() - 0.5);
+          const y = SIZE * (Math.random() - 0.5);
+          const z = SIZE * (Math.random() - 0.5);
+
+          vertices.push(x, y, z);
+        }
+
+        geometry.setAttribute(
+          "position",
+          new THREE.Float32BufferAttribute(vertices, 3)
+        );
+
+        let mesh = new THREE.Points(geometry, material);
+        scene.add(mesh);
+
+        // const bloomPass = new UnrealBloomPass();
+        // bloomPass.strength = 1;
+        // bloomPass.radius = 0.5;
+        // bloomPass.threshold = 0.05;
+        // Graph.postProcessingComposer().addPass(bloomPass);
+      }
+    </script>
+  </body>
+</html>
