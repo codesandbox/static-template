@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Liga 1 Perú</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <h1 class="centered-title">Liga 1 Perú</h1>
+    </header>
+    <main>
+      <div class="team-container">
+        <div class="team">
+          <img src="alianza-lima.png" alt="Alianza Lima" />
+          <button class="team-button" onclick="redirectToTeam('alianza')">
+            Fundación: 1901
+          </button>
+        </div>
+        <div class="team">
+          <img src="universitario.png" alt="Universitario" />
+          <button class="team-button" onclick="redirectToTeam('universitario')">
+            Fundación: 1924
+          </button>
+        </div>
+      </div>
+      <div class="team-container">
+        <div class="team">
+          <img src="sporting-cristal.png" alt="Sporting Cristal" />
+          <button class="team-button" onclick="redirectToTeam('cristal')">
+            Fundación: 1955
+          </button>
+        </div>
+        <div class="team">
+          <img src="sport-boys.png" alt="Sport Boys" />
+          <button class="team-button" onclick="redirectToTeam('sport-boys')">
+            Fundación: 1927
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
   </body>
 </html>
