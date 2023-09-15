@@ -1,0 +1,204 @@
+/* CSS for a cute and soft UI */
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+body {
+  background-color: #682d23;
+  margin: 0;
+  background-image: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.432) 55%,
+    transparent 15%,
+    transparent 20%,
+    rgb(0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.925) 50%,
+    transparent 55%,
+    transparent
+  ); /* Subtle diagonal stripes for texture */
+  padding: 0;
+  font-family: "Luckiest-Guy", cursive;
+  display: flex;
+  flex-direction: column;
+  transition: background-color, 0.4s;
+  align-items: center;
+}
+
+h1 {
+  font-size: 6.5rem;
+  font-weight: bold;
+  margin-top: 1%;
+  color: #ffffff;
+  font-family: "Luckiest Guy", cursive;
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+
+p {
+  margin: 5%;
+  letter-spacing: 0.3rem;
+  font-family: "Luckiest Guy", cursive;
+  padding: 0%;
+  font-size: 4.1rem;
+  color: #ffffff;
+  text-align: center;
+  font-weight: ;
+}
+
+.progress-bar {
+  margin: 10px;
+  width: 80%;
+  animation: none;
+  border-style: none;
+  height: 4rem;
+  border-radius: 0.9rem;
+  background-color: #0000007a;
+  position: relative;
+  transition: 0.4s;
+  overflow: hidden;
+  /* hide the overflow of the progress bar */
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  animation: shake infinite;
+  border-radius: 0.9rem;
+  background-color: #bbeb97;
+  position: absolute;
+  transition: width 0.4s, background-color 2s ease;
+  /* add a transition to the width property */
+}
+
+/* Button styles */
+.button {
+  padding: 0px 10px;
+  background-color: #b66161;
+  color: rgb(90, 63, 63);
+  font-size: 1.2em;
+  text-align: center;
+  align-self: center;
+  margin: 2px;
+  font-family: "short stack", cursive;
+  transition: background-color 0.8s ease;
+}
+
+.button:hover {
+  background-color: #a89494;
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+  margin-right: 70%;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+
+  z-index: 1;
+  background-color: #f5d0d0;
+  box-shadow: 0px 0px 10x 0px rgba(255, 255, 255, 0);
+  border-radius: 20px;
+  font-size: 1.7em;
+}
+
+.dropdown-content a {
+  color: #ffffff;
+  text-align: center;
+  font-family: "short stack", cursive;
+  padding: 0px 0px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #dfc4c4;
+  border-radius: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  border-radius: 20px;
+}
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.apply-shake {
+  animation: shake infinite cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+/* Media queries */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 1px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+div#rss-container {
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(255, 246, 246, 0.1);
+  padding: 1px;
+  align-self: ;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 3.5em;
+  }
+
+  p {
+    font-size: 2.1em;
+  }
+
+  .progress-bar {
+    width: 80%;
+  }
+}
+body {
+  --s: 30px; /* control the size */
+  --c1: #772222;
+  --c2: #862621;
+
+  --_s: 37.5% 12.5% at 62.5%;
+  --_g: 34% 99%, #0000 101%;
+  --g1: radial-gradient(var(--_s) 100%, #0000 32%, var(--c1) var(--_g));
+  --g2: radial-gradient(var(--_s) 0, #0000 32%, var(--c1) var(--_g));
+  --g3: radial-gradient(var(--_s) 100%, #0000 32%, var(--c2) var(--_g));
+  --g4: radial-gradient(var(--_s) 0, #0000 32%, var(--c2) var(--_g));
+  background: var(--g1), var(--g2) 0 calc(3 * var(--s)),
+    var(--g3) var(--s) calc(3 * var(--s)), var(--g4) var(--s) calc(6 * var(--s)),
+    var(--g1) calc(2 * var(--s)) calc(6 * var(--s)),
+    var(--g2) calc(2 * var(--s)) calc(9 * var(--s)),
+    var(--g3) calc(3 * var(--s)) calc(9 * var(--s)),
+    var(--g4) calc(3 * var(--s)) 0,
+    repeating-linear-gradient(var(--c1) 0 25%, var(--c2) 0 50%);
+  background-size: calc(4 * var(--s)) calc(12 * var(--s));
+}
