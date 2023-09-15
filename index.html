@@ -1,12 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<html lang="sv">
+
+	
+<head>
+	<meta charset="UTF-8" />
+	<meta name="google-site-verification" content="dA9C0X3v1TrxBl8aYCxopYGVahFkYIKas_xL6lVaJMc" />
+	<title>Kulturalarm</title>
+	<link rel="icon" type="image/x-icon" href="schema.ico">
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
+	<script src="/path/to/cdn/jquery.slim.min.js">
+	</script>
+	<script src="/path/to/shake.js">
+	</script>
+</head>
+
+<body onload="init()">
+	<div id="page-visit-count" style="
+    position: absolute;
+    bottom: 30px;
+    align-items:center;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0px;
+    color: rgb(51, 37, 37);
+    font-size: 16px;
+  "> Du är den <span id="visit-count"></span>e besökaren! </div>
+	<h1>Kulturalarm</h1>
+	<p id="countdown"></p>
+	<div class="progress-bar" id="progress-bar">
+		<span id="progress"></span>
+	</div>
+	<div class="dropdown">
+		<button class="dropdown-button button">Byt schema</button>
+		<div class="dropdown-content">
+		</div>
+		<div> </div>
+	</div>
+</body>
+</html>
+<script src="pagevisit.js"></script>
+</body>
+
 </html>
