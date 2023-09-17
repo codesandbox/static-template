@@ -1,12 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .container {
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .bar1,
+      .bar2,
+      .bar3,
+      .bar4,
+      .bar5,
+      .bar6 {
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+      }
+
+      .change .bar1 {
+        transform: translate(0, 11px) rotate(-45deg);
+      }
+      .change .bar2 {
+        opacity: 0;
+      }
+      .change .bar3 {
+        opacity: 0;
+      }
+      .change .bar4 {
+        opacity: 0;
+      }
+      .change .bar5 {
+        opacity: 0;
+      }
+
+      .change .bar6 {
+        transform: translate(0, -11px) rotate(45deg);
+      }
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <p>Click on the Menu Icon to transform it :</p>
+    <div class="container" onclick="myFunction(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+      <div class="bar4"></div>
+      <div class="bar5"></div>
+      <div class="bar6"></div>
+    </div>
+
+    <script>
+      function myFunction(x) {
+        x.classList.toggle("change");
+      }
+    </script>
   </body>
 </html>
