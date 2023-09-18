@@ -1,12 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .container {
+        display: block;
+        cursor: pointer;
+        margin: 50px;
+      }
+      .bar1,
+      .bar2,
+      .bar3,
+      .bar4,
+      .bar5,
+      .bar6,
+      .bar7,
+      .bar8,
+      .bar9,
+      .bar10,
+      .bar11,
+      .bar12,
+      .bar13 {
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 3s;
+      }
+
+      .container.change .bar1 {
+        transform: translate(24px, 0px) rotate(45deg);
+        width: 50px; /* change the width */
+      }
+      .container.change .bar2 {
+        transform: translate(-12px, -10px) rotate(-45deg);
+        width: 50px; /* Change the width */
+      }
+      .container.change .bar3 {
+        transform: translate(0px, 0px) rotate(0deg);
+        width: 62px; /* Change the width */
+      }
+      .container.change .bar4 {
+        transform: translate(42px, 10px) rotate(90deg);
+      }
+      .container.change .bar5 {
+        transform: translate(-15px, 0px) rotate(90deg);
+      }
+      .container.change .bar6 {
+        transform: translate(0px, 10px) rotate(0deg);
+        width: 62px; box-shadow: 10px 10px 15px 12px rgb(233, 227, 227);
+      }
+      .container.change .bar7 {
+        transform: translate(20px, -32px) rotate(0deg);
+        width: 20px;
+        height: 30px; /* change the height */
+        
+      }
+      .container.change .bar8 {
+       transform: translate(-49px, -137px) rotate(0deg);
+       border-radius: 50%; width: 50px; height: 50px; background-color: yellow;
+       box-shadow:10px 10px 12px 5px rgba(255, 89, 0, 0.2);
+      }
+      .container.change .bar9 {
+       transform: translate(0px, -150px) rotate(30deg); background-color: yellow;
+      }
+      .container.change .bar10 {
+       transform: translate(-10px, -145px) rotate(50deg); background-color: yellow;
+       width: 25px;
+      }
+      .container.change .bar11 {
+        transform: translate(5px, -205px) rotate(-25deg); background-color: yellow;
+        width: 25px;
+      }
+      .container.change .bar12 {
+        transform: translate(-40px, -155px) rotate(85deg); background-color: yellow;
+      }
+      .container.change .bar13 {
+       transform: translate( 21px, -200px) rotate(85deg);
+       border-radius: 50%; width: 15px; height: 15px;
+      }
+
+
+    </style>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <div class="container" onclick="toggleMenu(this)">
+      <div id="myDIV1" class="bar1"></div>
+      <div id="myDIV2" class="bar2"></div>
+      <div id="myDIV3" class="bar3"></div>
+      <div class="bar4"></div>
+      <div class="bar5"></div>
+      <div id="myDIV4" class="bar6"></div>
+      <div id="myDIV5" class="bar7"></div>
+      <div class="bar8"></div>
+      <div class="bar9"></div>
+      <div class="bar10"></div>
+      <div class="bar11"></div>
+      <div class="bar12"></div>
+      <div class="bar13"></div>
+    </div>
+    <p>Click on the Icon to transform it :</p>
+
+    <script>
+      function toggleMenu(x) {
+        x.classList.toggle("change");
+      }
+    </script>
   </body>
 </html>
