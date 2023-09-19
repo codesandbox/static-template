@@ -1,22 +1,5 @@
-var vertexShaderSource = `#version 300 es
-
-in vec4 a_position;
-
-void main(){
-  gl_Position = a_position;
-}
-`;
-
-var fragmentShaderSource = `#version 300 es
-
-precision highp float;
-
-out vec4 outColor;
-
-void main(){
-  outColor = vec4(1, 1, 0, 1);
-}
-`;
+var vertexShaderSource;
+var fragmentShaderSource;
 
 function main() {
   var canvas = document.querySelector("#c");
@@ -37,11 +20,16 @@ function main() {
 
   var positionAttributeLocation = gl.getAttribLocation(program, "a_position");
 
+  var resolutionUniformLocation = gl.getUniformLocation(
+    program,
+    "u_resolution"
+  );
+
   var positionBuffer = gl.createBuffer();
 
   gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
 
-  var positions = [0.5, 0, 0, 0.5, 0.7, 0];
+  var positions = [10, 20, 80, 20, 10, 30, 10, 30, 80, 20, 80, 30];
 
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
 
@@ -70,11 +58,13 @@ function main() {
 
   gl.useProgram(program);
 
+  gl.uniform2f(resolutionUniformLocation, gl.canvas.width, gl.canvas.height);
+
   gl.bindVertexArray(vao);
 
   var primitiveType = gl.TRIANGLES;
   offset = 0;
-  var count = 3;
+  var count = 6;
   gl.drawArrays(primitiveType, offset, count);
 
   return;
@@ -107,4 +97,25 @@ function createProgram(gl, vertexShader, fragmentShader) {
   gl.deleteProgram(program);
 }
 
-main();
+fetch("helloWorld.vs")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
+    return response.text();
+  })
+  .then((vsSource) => {
+    vertexShaderSource = vsSource;
+
+    fetch("helloWorld.fs")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then((fsSource) => {
+        fragmentShaderSource = fsSource;
+        main();
+      });
+  });

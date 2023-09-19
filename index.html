@@ -8,14 +8,13 @@
     <link href="index.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>
+    <h1 id="h">
       This is a static template, there is no bundler or bundling involved!
     </h1>
-    <canvas id="c"></canvas>
+    <canvas id="c" height="200" width="200"></canvas>
   </body>
-  <!--
   <script src="HelloWorld.js"></script>
-  -->
+  <!--
   <script>
     var c = document.getElementById("c");
     var ctx = c.getContext("2d");
@@ -30,11 +29,12 @@
       var b = imgData.data[i + 2];
       var alpha = imgData.data[i + 3];
 
-      imgData.data[i + 0] = 128 - r;
-      imgData.data[i + 1] = 128 - g;
-      imgData.data[i + 2] = 128 - b;
-      imgData.data[i + 3] = alpha;
+      imgData.data[i + 0] = r;
+      imgData.data[i + 1] = g;
+      imgData.data[i + 2] = b;
+      imgData.data[i + 3] = 255 - alpha;
     }
     ctx.putImageData(imgData, 20, 20);
   </script>
+  -->
 </html>
