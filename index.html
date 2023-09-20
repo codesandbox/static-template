@@ -1,12 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Johnathan and Chris's Website</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header style="position: relative;">
+      <div class="w3-top header" id="home">
+        <div
+          class="w3-bar w3-card w3-left-align w3-large heeder-large-screen"
+          style="background-color: #000015;"
+        >
+          <a
+            class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large"
+            href="javascript:void(0);"
+            onclick="myFunction()"
+            title="Toggle Navigation Menu"
+            ><i class="fa fa-bars"></i
+          ></a>
+
+          <div>
+            <a
+              href="#about"
+              class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black"
+              >About</a
+            >
+            <a
+              href="#games"
+              class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black"
+            >
+              Games</a
+            >
+          </div>
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div
+          id="navDemo"
+          class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-large"
+        >
+          <a
+            href="#about"
+            class="w3-bar-item w3-button w3-padding-large"
+            onclick="myFunction()"
+          >
+            About</a
+          >
+          <a
+            href="#games"
+            class="w3-bar-item w3-button w3-padding-large"
+            onclick="myFunction()"
+          >
+            Games</a
+          >
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="hero" id="about">
+        <div class="hero-description">
+          <div class="hero-text">
+            <h1 class="hero-title">Johnathan and chris's gaming selection</h1>
+            <p>
+              Welcome to our very first gaming webiste! Make yourself at home
+              with a mass collection and selection of top tier games.Whats that
+              you say? You want more? Try clicking our links and find out
+              yourself! Want a premium selection of games? We've got the best
+              topic for you no matter your play style. We have got games for all
+              types of competitions. Want to go and see? LETS PLAY NOW!
+            </p>
+            <span class="w3-text-white social" style="margin-top: 050px;">
+              <p>Follow the fun down below!</p>
+              <div class="w3-margin-top"></div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <main style="padding-bottom: 40px;">
+      <h2 class="title" id="games">List of Reviews</h2>
+      <div class="games">
+        <div class="game-list" onClick="window.location='playstation.html';">
+          <img
+            src="https://spaces.w3schools.com/images/playstation-brands.svg"
+            alt="playstation-brands"
+            style="width: 100px; height: 100px;"
+          />
+          <a href="playstation.html"><h3 class="Play">Playstaion games?</h3></a>
+          <p></p>
+        </div>
+        <div class="game-list" onClick="window.location='community.html';">
+          <img
+            src="https://spaces.w3schools.com/images/pacman.svg"
+            alt="pacman"
+            style="width: 100px; height: 100px;"
+            a
+            href="https://www.tomsguide.com/best-picks/the-best-ps5-games"
+          />
+
+          <a href="community.html"><h3 class="Com">Community games?</h3></a>
+          <p></p>
+        </div>
+        <div class="game-list" onClick="window.location='spider.html';">
+          <img
+            src="https://spaces.w3schools.com/images/spider.svg"
+            alt="spiderman"
+            style="width: 100px; height: 100px;"
+          />
+          <a href="spider.html"><h3 class="Spider">Spiderman games?</h3></a>
+          <p></p>
+        </div>
+        <div class="game-list" onClick="window.location='advent.html';">
+          <img
+            src="https://spaces.w3schools.com/images/monster.svg"
+            alt="monster"
+            style="width: 100px; height: 100px;"
+          />
+          <a href="advent.html"><h3 class="Ad">Adventurous games?</h3></a>
+          <p></p>
+        </div>
+        <div class="game-list" onClick="window.location='laugh.html';">
+          <img
+            src="https://spaces.w3schools.com/images/joker.svg"
+            alt="joker"
+            style="width: 100px; height: 100px;"
+          />
+          <a href="laugh.html"><h3 class="Laugh">Games for laughing?</h3></a>
+          <p></p>
+        </div>
+        <div class="game-list" onClick="window.location='hollow.html';">
+          <img
+            src="https://spaces.w3schools.com/images/halloween.svg"
+            alt="halloween"
+            style="width: 100px; height: 100px;"
+          />
+          <a href="hollow.html"
+            ><h3 class="Hollow">Halloween style games?</h3></a
+          >
+        </div>
+        <script>
+          // Used to toggle the menu on small screens when clicking on the menu button
+          function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+              x.className += " w3-show";
+            } else {
+              x.className = x.className.replace(" w3-show", "");
+            }
+          }
+        </script>
+      </div>
+    </main>
   </body>
 </html>
