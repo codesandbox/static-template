@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container text-center mt-5 text-white">
+        <h1>Todo</h1>
+        <h4 id="Time"></h4>
+      </div>
+    </header>
+    <main>
+      <form id="todoForm">
+        <div class="container mb-3 d-flex border border-light p-0">
+          <input
+            type="text"
+            class="form-control"
+            id="input"
+            placeholder="New To do..."
+          />
+          <button
+            id="submit"
+            type="submit"
+            class="btn btn-secondary fs-4"
+            disabled
+          >
+            +
+          </button>
+        </div>
+      </form>
+      <div class="container d-flex justify-content-end pe-0 mb-4">
+        <button id="clear" type="button" class="btn btn-light">
+          Clear All
+        </button>
+      </div>
+      <div class="container px-0">
+        <ul id="todo-list" class="list-group">
+          <!-- <li class="list-group-item">An item</li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+          <li class="list-group-item">A fourth item</li>
+          <li class="list-group-item">And a fifth one</li> -->
+        </ul>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
