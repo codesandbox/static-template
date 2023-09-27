@@ -1,0 +1,110 @@
+/* Reset and basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Common styles for title and banner */
+.title {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px;
+  color: #dbb277;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-color: wheat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Header styles */
+.header-main {
+  width: 100%;
+  height: 100px;
+  background-color: #dbb277;
+}
+
+.header-main-logo {
+  padding: 20px;
+  height: 1px; /* This looks like it may be an issue; consider removing it */
+}
+
+/* Navigation menu */
+.navbar {
+  width: 14%;
+  /* Avoid using fixed margin-right values, use auto for centering */
+  margin: 0 auto;
+  padding: 0 95px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+/* Move navbar text to the left */
+.navbar li:first-child {
+  margin-right: auto;
+}
+
+/* Links */
+.navbar a {
+  text-decoration: none;
+  color: wheat;
+  text-transform: uppercase;
+}
+
+/* Flex container for game containers */
+.game-row {
+  display: flex;
+  justify-content: space-between; /* Distribute items in a row */
+  margin: 20px; /* Adjust margin as needed */
+}
+
+/* Game container styles (Consider using a common class for both containers) */
+.game-container,
+.game-container-2 {
+  background-color: #dbb277;
+  border-radius: 10px;
+  padding: 6px;
+  transition-duration: 0.3s;
+  transform: translate(0px, 0px);
+  width: calc(
+    225px - 25px
+  ); /* Each container takes 50% width minus some margin */
+  height: 225px;
+  cursor: pointer;
+}
+
+/* Game container image styles (Common styles for both containers) */
+.game-container img,
+.game-container-2 img {
+  border-radius: 10px;
+  width: 100%;
+  height: 175px;
+  max-height: 175px; /* Set a maximum height to avoid stretching */
+}
+
+/* Game container link styles (Common styles for both containers) */
+.game-container a,
+.game-container-2 a {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: wheat;
+  text-transform: uppercase;
+}
+
+/* Hover effect (Common styles for both containers) */
+.game-container:hover,
+.game-container-2:hover {
+  transition-duration: 0.3s;
+  transform: translate(0px, -10px);
+}
