@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+/* || RESET */
+*{
+box-sizing: border-box; 
+margin: 0;  
+padding: 0;   
+}
+img{
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+/* end */
+
+
+/* || VARIABLES */
+:root{
+/* Color */
+--BODY-COLOR:hsl(0, 0%, 94%);
+--MAIN-COLOR:hsl(0, 0%, 100%);
+--BUTTON-COLOR:hsl(259, 100%, 65%);
+--FONT-COLOR:hsl(0, 0%, 8%);
+--F-COLOR:hsl(0, 2%, 37%);
+--HIGHLIGHT-COLOR:hsl(259, 100%, 65%);
+--ERROR-COLOR:hsl(0, 100%, 67%);
+}
+
+/* || GENERAL STYLES */
+
+html, body
+{
+    
+    width: 100%;
+    height: 100%;
+    overflow-X: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+body{
+    line-height: 1.5;
+    margin: 0 -0.1em  ;
+    background-color: var(--BODY-COLOR);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+main{
+    background-color: var(--MAIN-COLOR);
+    display: grid;
+    place-content: center;
+    margin: 100px 11px 15px 13px;
+    
+    border-radius: 20px;
+    padding-bottom:30px ;
+    border-bottom-right-radius: 30%;
+}
+header{
+
+margin: 50px auto;    
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+column-gap: 4%;
+margin: 50px 0px 1px -5.5px;
+margin-bottom: 50px; 
+
+
+
+;
+}
+header p{
+    text-align: justify;
+    font-size: 14px;
+    margin-bottom: 4.3px;
+    text-transform: uppercase;
+    color: var(--F-COLOR);
+
+
+    
+}
+
+header input{
+border-radius: 10px;
+cursor: pointer;    
+width: 82px;
+height: 52px;
+border: 2px ridge;
+color: var(--FONT-COLOR);
+font-size: 1.5rem;
+text-align: justify;
+text-indent: 0.8rem;
+}
+header input::placeholder{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+header input:focus{
+    outline: transparent;
+}
+hr{
+    width: 123%;
+    margin-left: -24px;
+
+}
+
+
+section {
+    display:  grid;
+    place-content: center;
+    margin:  -29px auto;
+    margin-bottom: 20px;
+
+}
+ section button{
+    width:60px;
+    height:60px;
+    border-radius: 50%;
+    background-color: var(--BUTTON-COLOR);
+    border: transparent;
+}
+ section button img{
+    width: 50%;
+    margin:  auto;
+}
+
+p{
+    font-size: 3.5rem;
+    line-height: 0.9;
+    color: var(--FONT-COLOR);
+}
+p em{
+    font-style: normal;
+    font-weight:bold;
+    color: var(--HIGHLIGHT-COLOR);
+}
+footer {
+font-size: 0.8rem;
+color: var(--F-COLOR);
+    display: flex;
+    place-content: center;
+    }
+footer a {
+cursor: pointer;
+    color: var(--HIGHLIGHT-COLOR);
+    text-decoration: none;
+}
+/* error message */
+.error  {
+color: var(--ERROR-COLOR);
+border: var(--ERROR-COLOR) ;
+font-size: 12px;
+margin-top: 9px;
+white-space: nowrap;
+text-transform: none;
+text-align: center;
+text-indent: 2.5px;
+}
+.hero{
+position: absolute;
+margin-left: -1000000px;
+
+} 
+
+/* || BLOCK */
+/* || MEDIA QUERY */
+@media screen and (min-width: 667px){
+    main{
+    margin: 100px 9.5em 9.5em;
+}
+
+}
+@media screen and (min-width: 998px){
+    
+    body{
+        margin: 60px auto;
+        display: grid;
+        place-content: center;
+        overflow: hidden;
+        
+        
+    }
+
+    main{
+        display: grid;
+        place-content: center;
+        padding: 0px 145px 45px 35px;
+    }
+    
+    header{
+        margin: 35px 0px 25px 0px;
+        column-gap: 5%;
+         
+    }
+    input{
+        cursor: pointer;
+    }
+    header p {
+        font-size: 12px;
+
+    }
+    header input{
+        width: 98px;
+        height: 42px;
+        
+    }
+    hr{
+
+        width: 140%;
+        margin: auto;
+    }
+
+    
+    section{
+        margin: -29px 0px 8px 0px;
+        display: grid;
+        place-content: end;
+        transform: translateX(118px);
+}
+section button:hover{
+background-color: var(--FONT-COLOR);
+cursor: pointer;
+}
+footer{
+    margin-top: -130px;
+}
+}
