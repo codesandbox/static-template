@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #ece4e4;
+  transition: background-color 0.3s ease;
+}
+
+h1 {
+  font-size: 2em;
+  background: linear-gradient(45deg, #eb5a06, #d18801, #eb5a06);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+table {
+  width: 50%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff; /* Cor de fundo padrão da tabela */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+th,
+td {
+  border: 1px solid #333;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+td input {
+  width: 100%;
+  padding: 4px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.theme-toggle label {
+  margin-right: 5px;
+}
+
+.dark-theme {
+  background-color: #333;
+  color: #6e00ff;
+}
+
+.dark-theme h1 {
+  background: linear-gradient(45deg);
+}
+
+.dark-theme table {
+  background-color: #444;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme td input {
+  background-color: #555;
+  color: #fff;
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  table {
+    width: 90%;
+  }
+
+  .theme-toggle {
+    top: 5px;
+    right: 5px;
+    font-size: 16px;
+  }
+}
