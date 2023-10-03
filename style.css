@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ccdbfd;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+nav {
+  background-color: #fefee3;
+  display: flex;
+  height: 11vh;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 10px 5px 15px 1px grey;
+  padding: 0 20px;
+}
+
+.logo {
+  border-radius: 50%;
+  height: 8vh;
+  width: 8vh;
+  margin-top: 0.5vh;
+}
+
+nav img {
+  height: 8vh;
+  width: 8vh;
+  margin-right: 1.5vh;
+  cursor: pointer;
+}
+
+.containerTasks {
+  width: 80%;
+  border-radius: 30px;
+  max-height: 350px;
+  max-width: 50rem;
+  padding: 2rem;
+  margin: 60px auto 170px;
+  overflow: hidden;
+  overflow-y: scroll;
+  box-shadow: 15px 15px 20px grey;
+  background-color: #fefee3;
+}
+
+.carteUn {
+  display: flex;
+  justify-content: center;
+}
+
+.containerTasks h2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 1vh;
+  position: absolute;
+}
+
+.newTask {
+  background-color: transparent;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.folder-selector {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.folder-selector img {
+  height: 24px;
+  margin-right: 10px;
+}
+
+.folder-selector select {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+}
+
+.folder-input {
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: #fefee3;
+  border-radius: 20px;
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+.folder-input::placeholder {
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.folder-input:focus::placeholder {
+  color: #00bafa;
+}
+
+.clickable-button {
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.clickable-button:hover {
+  background-color: #0056b3;
+}
+
+ul li {
+  list-style: none;
+  font-size: 20px;
+  padding: 15px 10px 15px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-image: url(ressources/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  top: 15px;
+  left: 10px;
+}
+
+ul li.checked {
+  color: gray;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background-image: url(ressources/checked.png);
+}
+
+ul li span {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  color: blue;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50px;
+}
+
+.radial-menu {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 120px;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  color: white;
+  z-index: 1;
+}
+
+.radial-menu button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.radial-menu button:hover {
+  transform: scale(1.1);
+}
+
+/* Ajoutez ici les styles pour d'autres éléments si nécessaire */
