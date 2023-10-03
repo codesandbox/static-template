@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <style type="text/css">
+      #dialog::backdrop {
+        background: pink;
+      }
+    </style>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <button id="open-button">Open</button>
+    <dialog id="dialog">
+      <header><strong>Dialog</strong></header>
+      <main>
+        <p>abc def ghi</p>
+        <form method="dialog">
+          <button value="Button">Button</button>
+          <input type="submit" value="Submit" />
+          <input type="reset" value="Reset" />
+        </form>
+      </main>
+      <footer>
+        <div>
+          <button id="close-button">Close</button>
+        </div>
+      </footer>
+    </dialog>
+
+    <script>
+      const openButton = document.getElementById("open-button");
+      const closeButton = document.getElementById("close-button");
+      const dialog = document.getElementById("dialog");
+
+      openButton.addEventListener("click", () => {
+        dialog.showModal();
+      });
+
+      closeButton.addEventListener("click", () => {
+        dialog.close();
+      });
+
+      dialog.addEventListener("close", () => {
+        console.log(dialog.returnValue);
+      });
+    </script>
   </body>
 </html>
