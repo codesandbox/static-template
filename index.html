@@ -1,12 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adaptive Placeholder</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+  <body id="imageContact">
+    <header>
+      <nav>
+        <a href="/index.html"
+          ><img class="logo" src="/ressources/Image PNG.png" alt="Logo Done Us"
+        /></a>
+        <h1>Done Us</h1>
+        <div class="contact">
+          <a href="contactUs.html"
+            ><img src="/ressources/contactUs.png" alt=""
+          /></a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="newTask">
+      <select id="taskCardSelector">
+        <option value="carteUn">Professional</option>
+        <option value="carteDeux">Personal</option>
+        <option value="nouvelleCarte">Créer une nouvelle liste</option>
+      </select>
+      <input
+        type="text"
+        id="inputText"
+        placeholder="Please, insert a new task !"
+      />
+      <button onclick="addTask()">Add</button>
+    </div>
+
+    <section class="carteUn" id="carteUn">
+      <div class="containerTask">
+        <h2>Professional</h2>
+        <div class="titleContainerTasks">
+          <h2></h2>
+        </div>
+        <div class="tasksList">
+          <ul id="listUn"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="carteDeux" id="carteDeux">
+      <div class="containerTasks">
+        <h2>Personal</h2>
+        <div class="titleContainerTasks">
+          <h2></h2>
+        </div>
+        <div class="tasksList">
+          <ul id="listDeux"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Le menu radial -->
+    <div id="radialMenu" class="radial-menu">
+      <ul>
+        <li><a href="#" id="editTask">Éditer</a></li>
+        <li><a href="#" id="deleteTask">Supprimer</a></li>
+        <li><a href="#" id="checkTask">Cocher</a></li>
+        <li><a href="#" id="urgentTask">Mettre en urgent</a></li>
+      </ul>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
