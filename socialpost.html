@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SocialInviter Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <h1 class="title">Social Post</h1>
+
+    <div
+      class="si-socialpost"
+      taf-data="{
+      'title':'Refer & Earn',
+      'text':'Give your friends $10 off. Get $10 when they use your link to complete the purchase.',
+      'link':'https://socialinviter.com',
+      'tags': 'socialinviter',
+      'imageurl': 'https://portal.socialinviter.com/assets/img/logo.png'
+  }"
+    ></div>
+
+    <!-- Begin SocialInviter Code -->
+    <script type="text/javascript">
+      const callback = () => {
+        console.log("loaded");
+      };
+      ((e, t) => {
+        const a = "https://api.socialinviter.com/";
+        const s = document.createElement("script");
+        (s.src = a + "taf.js?license=" + e),
+          (s.id = "tafscript"),
+          (s.async = !0);
+        const c = document.getElementsByTagName("head")[0],
+          n = document.createElement("link");
+        t && s.addEventListener("load", t, !1),
+          c.appendChild(s),
+          (n.rel = "stylesheet"),
+          (n.type = "text/css"),
+          (n.href = a + "taf.css"),
+          c.appendChild(n);
+      })("lic_f348d7c0-5270-4bb1-be8a-2c745", callback);
+    </script>
+    <!-- End SocialInviter Code -->
+  </body>
+</html>
