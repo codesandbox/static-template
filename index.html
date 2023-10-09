@@ -1,12 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CRUD Application</title>
+
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/cards-area.css" />
+    <link rel="stylesheet" href="styles/new-user-form.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>CRUD Application</h1>
+
+    <div class="row">
+      <div class="column column-300px sidebar">
+        <form method="post" name="userForm" id="userForm">
+          <div class="grid-area-40-60">
+            <div>
+              <label for="name">Name:</label>
+            </div>
+            <div>
+              <input type="text" name="name" id="name" class="form-control" />
+              <p class="error-text" id="nameError"></p>
+            </div>
+          </div>
+
+          <div class="grid-area-40-60">
+            <div>
+              <label for="username">Username:</label>
+            </div>
+            <div>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                class="form-control"
+              />
+              <p class="error-text" id="usernameError"></p>
+            </div>
+          </div>
+
+          <div class="grid-area-40-60">
+            <div>
+              <label for="email">Email:</label>
+            </div>
+            <div>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="form-control"
+              />
+              <p class="error-text" id="emailError"></p>
+            </div>
+          </div>
+
+          <div class="grid-area-40-60">
+            <div>
+              <label for="city">City:</label>
+            </div>
+            <div>
+              <input type="text" name="city" id="city" class="form-control" />
+              <p class="error-text" id="cityError"></p>
+            </div>
+          </div>
+
+          <div class="grid-area-40-60">
+            <div>
+              <label for="zipcode">Zipcode:</label>
+            </div>
+            <div>
+              <input
+                type="text"
+                name="zipcode"
+                id="zipcode"
+                class="form-control"
+              />
+              <p class="error-text" id="zipcodeError"></p>
+            </div>
+          </div>
+
+          <div class="grid-area-40-60">
+            <div>
+              <label for="phone">Phone:</label>
+            </div>
+            <div>
+              <input type="tel" name="phone" id="phone" class="form-control" />
+              <p class="error-text" id="phoneError"></p>
+            </div>
+          </div>
+
+          <button type="button" id="submit-new-user-form">Save</button>
+        </form>
+      </div>
+
+      <div class="column column-100percent-300px main">
+        <div class="search-area">
+          <input
+            type="text"
+            name="search-input"
+            id="search-input"
+            class="form-control"
+          />
+          <button type="button" id="sort-btn">Sort ascending</button>
+        </div>
+
+        <div id="users-cards-area"></div>
+      </div>
+    </div>
+
+    <script type="module" src="code/users-list.mjs"></script>
+    <script type="module" src="code/new-user.mjs"></script>
+    <script type="module" src="code/search-user.mjs"></script>
+    <script type="module" src="code/sorting-users.mjs"></script>
   </body>
 </html>
