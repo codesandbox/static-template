@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --color-pink: #b52184;
+  --color-gray-background: #f9f4fb;
+  --color-purple: #312d64;
+  --color-white: #fff;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: "Mulish", sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+#home {
+  text-align: center;
+  max-width: 430px;
+  margin: 0 auto;
+  background: var(--color-gray-background);
+}
+
+#home h1 {
+  color: var(--color-pink);
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+
+  margin-block: 1.7rem 0.5rem;
+}
+
+#home p {
+  color: var(--color-purple);
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+#home button {
+  border: none;
+  margin-block: 3.5rem 9.3rem;
+  cursor: pointer;
+}
+
+#hero {
+  background: linear-gradient(96deg, #343193 0%, #302c63 99.68%);
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  max-width: 430px;
+  margin: 0 auto;
+  padding-block: 5.3rem;
+}
+
+#hero .card {
+  max-width: 352px;
+  margin: 0 auto;
+  padding: 2.65rem;
+  border-radius: 1.98rem;
+  background: var(--color-white);
+  box-shadow: 0px 3.31077px 13.24308px 0px rgba(0, 0, 0, 0.25);
+}
+
+#hero .card h5 {
+  color: var(--color-pink);
+  font-size: 2.2rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-block: 2.3rem 1.9rem;
+}
+
+#hero .card p {
+  color: var(--color-purple);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  width: 265px;
+}
+
+#contato {
+  max-width: 430px;
+  margin: 0 auto;
+  background: var(--color-gray-background);
+  padding-block: 6.5rem;
+  display: block;
+}
+
+#contato form {
+  width: 348px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+#contato form h5 {
+  color: var(--color-pink);
+  font-size: 2.2rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-bottom: 3.3rem;
+}
+
+#contato form input,
+#contato form textarea {
+  display: block;
+  width: 100%;
+  border-radius: 1.6rem;
+  border: 1.5px solid #312d64;
+  padding: 1.2rem 1.6rem 1.2rem 1.4rem;
+  background: transparent;
+}
+
+#contato form input::placeholder,
+#contato form textarea::placeholder {
+  color: var(--color-purple);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%; /* 16px */
+}
+
+#contato form #name {
+  background-image: url("./images/person.svg");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 1.3rem;
+  padding-left: 1.8rem;
+}
+
+#contato form #email {
+  background-image: url("./images/at.svg");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 1.3rem;
+  padding-left: 1.8rem;
+}
+
+#contato form textarea {
+  height: 98px;
+  color: var(--color-purple);
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 22.4px */
+}
+
+#contato form button {
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  color: var(--color-white);
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 24px; /* 171.429% */
+  text-transform: capitalize;
+  margin-top: 3rem;
+  padding: 1.4rem;
+  border-radius: 1.6rem;
+  background: linear-gradient(96deg, #343193 0%, #302c63 99.68%);
+}
+
+footer {
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 1.6rem;
+  text-align: center;
+  color: var(--color-white);
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: normal;
+  background: linear-gradient(96deg, #343193 0%, #302c63 99.68%);
+}
