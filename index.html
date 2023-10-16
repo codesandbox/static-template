@@ -1,12 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Formulario</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <fieldset>
+      <legend>Login</legend>
+      <form>
+        <label for="name"> Name: </label>
+        <input type="text" id="name" placeholder="Digite seu nome" />
+        <br />
+
+        <label for="email"> E-mail:</label>
+        <input type="email" id="email" placeholder="Digite seu email" />
+        <br />
+
+        <label for="senha"> Senha: </label>
+        <input type="password" id="senha" placeholder="Digite sua senha" />
+        <br />
+
+        <label for="number"> Idade: </label>
+        <input type="number" id="number" placeholder="Digite sua idade" />
+        <br />
+
+        <label for="">Aluno Vai na Web:</label>
+        <input id="apenasUm" name="apenasUm" type="radio" />
+        <label for="apenasUm"> Sim </label>
+
+        <input id="apenasUm" name="apenasUm" type="radio" />
+        <label for="nao"> Não </label>
+        <br />
+
+        <label for="">Tipos de batata:</label>
+        <input id="frita" type="checkbox" />
+        <label for="frita">Batata Frita</label>
+
+        <input id="assada " type="checkbox" />
+        <label for="assada">Batata Assada</label>
+        <br />
+
+        <input type="submit" />
+      </form>
+    </fieldset>
   </body>
 </html>
