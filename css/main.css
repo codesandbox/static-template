@@ -1,0 +1,120 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+h1,
+h2 {
+  color: var(--secondaryColor) !important;
+}
+
+.top-logo {
+  height: auto;
+  font-weight: bolder;
+  color: var(--dominantColor) !important;
+  font-size: 55px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #ffffff;
+  font-family: "Oxygen", sans-serif;
+}
+
+.material-symbols-outlined,
+.material-symbols-outlined a {
+  font-size: 60px;
+  color: var(--dominantColor) !important;
+  position: relative;
+  top: 0px;
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: #ffffff !important;
+}
+
+.nav-link {
+  font-size: 20px !important;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+
+.footer-row {
+  background-color: var(--dominantColor) !important;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.footer-row a {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.fa-social-media,
+.fa-social-media:hover {
+  font-size: 25px !important;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* ADD THE CLASS .custom-toggler TO THE HAMBURGUER MENU*/
+/*under main.css added*/
+
+/* Set the border color */
+.custom-toggler.navbar-toggler {
+  border-color: #ffffff;
+}
+
+/*remove outline when hamburguer menu icon is clicked*/
+.custom-toggler:focus,
+.custom-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Setting the stroke to green using rgb values (0, 128, 0) */
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+/* ADD THE CLASS .custom-toggler TO THE HAMBURGUER MENU*/
+
+blockquote {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  margin: 0.25em 0px;
+  padding: 0.35em 40px;
+  line-height: 1.45;
+  position: relative;
+  color: var(--accentColor) !important;
+}
+
+blockquote::before {
+  display: block;
+  padding-left: 10px;
+  content: "\201c";
+  font-size: 80px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  color: var(--accentColor) !important;
+}
+
+blockquote cite {
+  color: var(--accentColor) !important;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+blockquote cite:before {
+  content: "\2014 \2009";
+}

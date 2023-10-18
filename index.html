@@ -45,6 +45,28 @@
   </head>
   <body>
     <heading>
+
+
+        <!-- Begin Offcanvas -->
+
+
+          
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div>
+                Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+              </div>
+
+            </div>
+          </div>
+          <!-- End Offcanvas -->
+
+
+
         <!-- Begin Google Icons -->
         <div class="container text-center top-logo">
           <div class="row">
@@ -53,7 +75,14 @@
                   video_camera_front
                 </span>
                 <span class="material-symbols-outlined">
-                    menu_open
+                    <a 
+
+                    data-bs-toggle="offcanvas" 
+                    href="#offcanvasExample" 
+                    role="button" 
+                    aria-controls="offcanvasExample">
+                    menu
+                    </a>
                 </span>
                 </div>
               <div class="col-12 col-md 6">
@@ -66,11 +95,11 @@
         <!-- Top NavBar Begins-->
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+             <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+              <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -89,14 +118,7 @@
                       <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                  </li>
                 </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
               </div>
             </div>
         </nav>
@@ -114,21 +136,21 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="https://dummyimage.com/1900x600/ccc/fff.jpg" class="d-block w-100" alt="placeholder">
+              <img src="https://dummyimage.com/1900x1069/ccc/fff.jpg" class="d-block w-100" alt="placeholder">
               <div class="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>Some representative placeholder content for the first slide.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="https://dummyimage.com/1900x600/ccc/fff.jpg" class="d-block w-100" alt="placeholder">
+              <img src="https://dummyimage.com/1900x1069/ccc/fff.jpg" class="d-block w-100" alt="placeholder">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Second slide label</h5>
                 <p>Some representative placeholder content for the second slide.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="https://dummyimage.com/1900x600/ccc/fff.jpg" class="d-block w-100" alt="placeholder">
+              <img src="https://dummyimage.com/1900x1069/ccc/fff.jpg" class="d-block w-100" alt="placeholder">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Third slide label</h5>
                 <p>Some representative placeholder content for the third slide.</p>
@@ -147,43 +169,225 @@
       <!-- Carousel Ends -->      
 
       <!-- Font Awesome Icons -->  
-        <div class ="container-fluid text-center container-one">
+        <div class ="container-fluid text-center fa-row">
           <div class ="row">
             <div 
-              class ="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
+              class ="col-6 col-xs-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
               <i class="fa-solid fa-user-tie fa-row-icon"></i>
               <br />Suits
             </div>
             <div 
-              class ="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
+              class ="col-6 col-xs-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
               <i class="fa-solid fa-shoe-prints fa-row-icon"></i>
               <br />Shoes
             </div>
             <div 
-              class ="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
+              class ="col-6 col-xs-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
               <i class="fa-solid fa-glasses fa-row-icon"></i>
               <br />Glasses
             </div>
             <div 
-              class ="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
+              class ="col-6 col-xs-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
               <i class="fa-solid fa-shop fa-row-icon"></i>
               <br />Full Shop
             </div>
             <div 
-              class ="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
+              class ="col-6 col-xs-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
               <i class="fa-solid fa-bag-shopping fa-row-icon"></i>
               <br />Bags
             </div>
             <div 
-              class ="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
+              class ="col-6 col-xs-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
               <i class="fa-solid fa-ring fa-row-icon"></i>
               <br />Accessories
             </div>
           </div>
         </div> 
+
+
+
+<!-- begin first paragraph section -->
+<div class="container first-paragraph-div">
+  <div class="row">
+    <div class="col-12">
+      <img src="https://dummyimage.com/400x400/ccc/0011ff.jpg&text=Resizable" alt="placeholder" class="img-responsive first-paragraph-img" />
+      <h2>First Paragraph title</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut reiciendis, eum porro explicabo possimus accusantium, fuga eius doloribus eaque quam ducimus eveniet assumenda id temporibus repellat tempora. Dicta incidunt quidem nam laboriosam deserunt blanditiis ad tempore nobis, repellendus rem ea, at doloribus? Quibusdam suscipit aliquam accusamus nesciunt inventore aliquid vel, voluptatibus incidunt? Officia consectetur dolores dolorem quod non voluptas aliquid illum eum. Praesentium aut illum reprehenderit blanditiis consequatur ullam sunt atque similique soluta harum. Harum sint necessitatibus mollitia eaque magnam ducimus ipsa eveniet, labore reiciendis eius aperiam id at omnis ea beatae dignissimos odio nihil perferendis, animi provident expedita neque veniam! Sed autem, praesentium architecto a quod distinctio, modi optio nisi itaque deleniti expedita quae quisquam non nihil suscipit quos unde fugit repellat dignissimos mollitia tempore, dolores quibusdam. Ratione animi, praesentium error corrupti quae corporis dolores nobis soluta officiis tenetur optio eveniet expedita beatae a. Qui a atque tempora assumenda voluptatibus minus aliquam ad reprehenderit blanditiis, aperiam accusamus illum quam iste sint, officiis enim recusandae, quaerat quis? Praesentium libero ipsa aut, aspernatur dolorum hic non ad odio officiis quidem quasi enim sunt quos voluptatibus nostrum eaque possimus quas. Quia molestias cupiditate fuga quas doloribus perspiciatis, repellendus provident odio ipsa temporibus.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere autem nobis ratione, neque qui esse provident cum eos expedita accusamus vel rem architecto aut, ab obcaecati, aperiam placeat hic suscipit.</p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, consequatur!</p>
+    </div>
+  </div>
+</div>     
+<!-- end first paragraph section -->
+
+<!-- begin isotope and facyapp -->
+<div class="container isotope-filter">
+  <h2>Services</h2>
+
+  <!-- begin filter buttons -->
+  <div class="button-group filters-button-group">
+    <button class="button is-checked" data-filter="*">Show All</button>
+    <button class="button is-checked" data-filter=".jewlery">Jewlery</button>
+    <button class="button is-checked" data-filter=".clothing">Clothing</button>
+    <button class="button is-checked" data-filter=".events">Events</button>
+  </div>
+  <!-- end filter buttons -->
+  <div class="row">
+
+
+  <!-- grid begins-->  
+<div class="grid">
+
+    <div class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+      <!-- card -->  
+      <div class="card element-item jewlery" style="width: 18rem;">
+            <img src="https://dummyimage.com/286x180/ccc/fff.jpg" class="card-img-top" alt="placeholder" />
+            <div class="card-body">
+              <h5 class="card-title">Jewlery</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <!-- card --> 
+
+    </div>
+    <div class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+      <!-- card -->   
+      <div class="card element-item clothing" style="width: 18rem;">
+          <a 
+          href="https://dummyimage.com/200x200/0c963c/ffffff.jpg" 
+          data-fancybox="gallery"
+          data-caption="Single image"
+      
+        >    
+        <img src="https://dummyimage.com/286x180/ccc/fff.jpg" class="card-img-top" alt="placeholder" />
+          </a>
+            <div class="card-body">
+              <h5 class="card-title">Clothing</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <!-- card --> 
+    </div>
+    <div class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+      <!-- card -->   
+      <div class="card element-item events" style="width: 18rem;">
+          <a 
+          href="https://dummyimage.com/200x200/0c963c/ffffff.jpg" 
+          data-fancybox="gallery"
+          data-caption="Single image"
+      
+        >    
+        <img src="https://dummyimage.com/286x180/ccc/fff.jpg" class="card-img-top" alt="placeholder" />
+          </a>
+            <div class="card-body">
+              <h5 class="card-title">Events</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <!-- card --> 
+    </div>
+
+
+</div>
+<!-- end grid -->
+  </div>
+</div>
+<!-- end isotope and facyapp -->
+
+    <!-- begin second paragraph section -->
+    <div class="container second-paragraph-div">
+        <div class="row">
+          <div class="col-12">
+            <img src="https://dummyimage.com/400x400/ccc/0011ff.jpg&text=Resizable" alt="placeholder" class="img-responsive second-paragraph-img" />
+            <h2>First Paragraph title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut reiciendis, eum porro explicabo possimus accusantium, fuga eius doloribus eaque quam ducimus eveniet assumenda id temporibus repellat tempora. Dicta incidunt quidem nam laboriosam deserunt blanditiis ad tempore nobis, repellendus rem ea, at doloribus? Quibusdam suscipit aliquam accusamus nesciunt inventore aliquid vel, voluptatibus incidunt? Officia consectetur dolores dolorem quod non voluptas aliquid illum eum. Praesentium aut illum reprehenderit blanditiis consequatur ullam sunt atque similique soluta harum. Harum sint necessitatibus mollitia eaque magnam ducimus ipsa eveniet, labore reiciendis eius aperiam id at omnis ea beatae dignissimos odio nihil perferendis, animi provident expedita neque veniam! Sed autem, praesentium architecto a quod distinctio, modi optio nisi itaque deleniti expedita quae quisquam non nihil suscipit quos unde fugit repellat dignissimos mollitia tempore, dolores quibusdam. Ratione animi, praesentium error corrupti quae corporis dolores nobis soluta officiis tenetur optio eveniet expedita beatae a. Qui a atque tempora assumenda voluptatibus minus aliquam ad reprehenderit blanditiis, aperiam accusamus illum quam iste sint, officiis enim recusandae, quaerat quis? Praesentium libero ipsa aut, aspernatur dolorum hic non ad odio officiis quidem quasi enim sunt quos voluptatibus nostrum eaque possimus quas. Quia molestias cupiditate fuga quas doloribus perspiciatis, repellendus provident odio ipsa temporibus.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere autem nobis ratione, neque qui esse provident cum eos expedita accusamus vel rem architecto aut, ab obcaecati, aperiam placeat hic suscipit.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, consequatur!</p>
+          </div>
+        </div>
+      </div>     
+    <!-- end second paragraph section --> 
+    
+    
+
+<!-- begin headshot section-->
+<div class="container headshot text-center">
+  <div class="row">
+    <div class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+        <img src="https://dummyimage.com/250x250/ccc/fff.jpg" alt="placeholder" class="cropped" data-aos="zoom-in" />
+        <br />
+        <blockquote>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, nulla.
+          <cite>Placeholder</cite>
+        </blockquote>   
+    </div>
+    <div class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+        <img src="https://dummyimage.com/250x250/ccc/fff.jpg" alt="placeholder" class="cropped" data-aos="zoom-in" />
+        <br />
+        <blockquote>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, nulla.
+          <cite>Placeholder</cite>
+        </blockquote>   
+    </div>
+    <div class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+        <img src="https://dummyimage.com/250x250/ccc/fff.jpg" alt="placeholder" class="cropped" data-aos="zoom-in" />
+        <br />
+        <blockquote>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, nulla.
+          <cite>Placeholder</cite>
+        </blockquote>   
+    </div>
+  </div>
+</div>  
+<!-- begin headshot section-->
+
+
+
+
+
+
+
+
     </main>
     <footer>
-      Footer goes here
+      <!-- begin footer -->
+      <div class="container-fluid text-center footer-row">
+        <div class="row">
+          <div class="col">
+            Footer Item One
+          </div>
+          <div class="col">
+              Footer Item Two
+          </div>          
+          <div class="col">
+              Footer Item Three
+          </div>          
+          <div class="col">
+              Footer Item Four
+          </div>          
+          <div class="col">
+              Footer Item Five
+          </div>          
+          <div class="col">
+              Footer Item Six
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+          <div class="col-12">
+              <i class="fa-brands fa-facebook fa-social-media"></i>
+              <i class="fa-brands fa-instagram fa-social-media"></i>
+              <i class="fa-brands fa-twitter fa-social-media"></i>
+              <i class="fa-brands fa-youtube fa-social-media"></i>
+          </div>
+        </div>
+      </div>
+      <!-- end footer -->
     </footer>
 
 
@@ -219,6 +423,9 @@
       <script>
           AOS.init();
       </script>
+
+      <!-- Isotope JS CDN-->
+      <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
 
       <!--Local Javascript-->
       <script src="/js/scripts.js"></script>
