@@ -1,12 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <style>
+      body {
+        background: snow;
+      }
+      .card {
+        background-color: #dbf1d7;
+        width: 400px;
+        padding: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 3px 10px rgb(0 0 0);
+      }
+      .result {
+        font-size: 5em;
+        line-height: 1.3em;
+        text-align: center;
+      }
+      .message {
+        text-align: center;
+        font-weight: bold;
+        color: #221f1f;
+        font-size: 4.5vh;
+        line-height: 6vh;
+        min-height: 6vh;
+      }
+    </style>
+
+    <div class="card">
+      <div class="message" id="progress">
+        Calculating Speed ...
+      </div>
+      <div class="result" id="result">
+        ...
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      if (window.addEventListener) {
+        window.addEventListener("load", InitiateSpeedDetection, false);
+      } else if (window.attachEvent) {
+        window.attachEvent("onload", InitiateSpeedDetection);
+      }
+
+      var imageAddr =
+        "https://4k-uhd.nl/wp-content/uploads/2018/08/4K-3840x2160-Wallpaper-Uitzicht-5.jpg";
+      var downloadSize = 5739426; //bytes
+
+      function ShowProgressMessage(msg) {
+        var oProgress = document.getElementById("progress");
+        if (oProgress) {
+          oProgress.innerHTML = msg;
+        }
+      }
+
+      function showResultMessage(msg) {
+        document.getElementById("result").innerHTML = msg;
+        document.getElementById("progress").innerHTML =
+          "Your Internet Speed is";
+      }
+
+      function InitiateSpeedDetection() {
+        ShowProgressMessage("Calculating Speed ...");
+        window.setTimeout(MeasureConnectionSpeed, 1);
+      }
+
+      function MeasureConnectionSpeed() {
+        var startTime, endTime;
+        var download = new Image();
+        download.onload = function () {
+          endTime = new Date().getTime();
+          showResults();
+        };
+
+        download.onerror = function (err, msg) {
+          ShowProgressMessage("Invalid image, or error downloading");
+        };
+
+        startTime = new Date().getTime();
+        var cacheBuster = "?nnn=" + startTime;
+        download.src = imageAddr + cacheBuster;
+
+        function showResults() {
+          var duration = (endTime - startTime) / 1000;
+          var bitsLoaded = downloadSize * 8;
+          var speedBps = (bitsLoaded / duration).toFixed(2);
+          var speedKbps = (speedBps / 1024).toFixed(2);
+          var speedMbps = (speedKbps / 1024).toFixed(2);
+          showResultMessage(speedMbps + " Mbps");
+        }
+      }
+    </script>
   </body>
 </html>
