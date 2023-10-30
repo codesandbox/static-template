@@ -1,12 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <style>
+      h1 {
+        text-align: center;
+        font-size: 50px;
+      }
+      h3 {
+        font-size: large;
+        font-family: "Times New Roman", Times, serif;
+      }
+      p {
+        text-align: center;
+        color: blue;
+        margin-bottom: 95px;
+      }
+      form {
+        border-radius: 0 20px;
+      }
+      body {
+        background-color: rgb(236, 237, 172);
+        border-radius: 150px;
+      }
+    </style>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1>Gauteng 🌞</h1>
+
+    <h2></h2>
+
+    <form id="search-form">
+      <input
+        type="text"
+        placeholder="Search city"
+        autocomplete="off"
+        autofocus="on"
+        id="search-text-input"
+      />
+      <input type="submit" value="Search" />
+    </form>
+
+    <br />
+
+    <br />
+    <h3>
+      Sunday 30℃ ⛅
+      <br />
+      Monday 21℃ 🌧
+      <br />
+      Tuesday 19℃ ❄️
+      <br />
+      Wednesday 12℃ ☔
+      <br />
+      Thurday 20℃ 🌦
+    </h3>
+    <h4 id="temp">
+      <div class="container">
+        <div class="tempUnits">
+          30
+          <a href="#" id="to-celsius">&deg;C</a> |
+          <a href="#" id="to-fahrenheit">&deg;F</a>
+          <style ="font-size: 100px"></style>
+        </div>
+      </div>
+    </h4>
+
+    <br />
+
+    <div class="mode">
+      <ul>
+        <li>Precipitation: 0%</li>
+        <li>Humidity: 77%</li>
+        <li>Wind: 8 km/h</li>
+      </ul>
+    </div>
+
+    <script>
+      let now = new Date();
+
+      let h2 = document.querySelector("h2");
+
+      let date = now.getDate();
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      let year = now.getFullYear();
+
+      let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      let day = days[now.getDay()];
+
+      let months = [
+        "Jan",
+        "Feb",
+        "March",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ];
+      let month = months[now.getMonth()];
+
+      h2.innerHTML = `${day} ${month} ${date}, ${hours}:${minutes}, ${year}`;
+    </script>
+    <script>
+      function searchWeather(event) {
+        event.preventDefault();
+        let searchWeatherInput = document.querySelector("#search-text-input");
+
+        let h1 = document.querySelector("h1");
+        if (searchWeatherInput.value) {
+          h1.innerHTML = `${searchWeatherInput.value}`;
+        } else {
+          h1.innerHTML = null;
+        }
+      }
+      let searchForm = document.querySelector("#search-form");
+      searchForm.addEventListener("submit", searchWeather);
+    </script>
+    <script>
+      function toCelsius(event) {
+        event.preventDefault();
+        let temperature = document.querySelector("#temp");
+        temperature.innerHTML = "30";
+      }
+
+      function toFahrenheit(event) {
+        event.preventDefault();
+        let temperature = document.querySelector("#temp");
+        temperature.innerHTML = "82";
+      }
+
+      let convertToCelsius = document.querySelector("#to-celsius");
+      convertToCelsius.addEventListener("click", toCelsius);
+
+      let convertToFahrenheit = document.querySelector("#to-fahrenheit");
+      convertToFahrenheit.addEventListener("click", toFahrenheit);
+    </script>
+    <p>
+      This code was coded by : Mokgadi Mamabolo
+    </p>
   </body>
 </html>
