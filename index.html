@@ -1,12 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <title>Interactive Vertical Website</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header class="header">
+      <a href="#" class="signup-button">Sign Up</a>
+      <a href="#" class="login-button">Log in</a>
+      <img src="img.src/logo1.png" alt="Website Logo" class="logo" />
+    </header>
+
+    <main class="main-content">
+      <section id="welcome" class="section colorful-background">
+        <h1 class="section-title">Welcome to Our Website</h1>
+        <p class="section-text">
+          Welcome to our dedicated platform designed to make life easier for
+          seniors. At DailyElderMeds, we understand the importance of health and
+          safety, especially for our cherished older generation. Our mission is
+          simple yet profound: to ensure that medication management becomes
+          effortless and emergency assistance is always within reach. With a
+          user-friendly interface and a range of essential features, we aim to
+          provide peace of mind to both elderly individuals and their families.
+          Join us on this journey to prioritize well-being and independence for
+          our beloved seniors.
+        </p>
+      </section>
+
+      <section id="features" class="section">
+        <h2 class="section-title">Key Features</h2>
+        <ul class="feature-list">
+          <li>Daily Reminders</li>
+          <li>Healthy routine tips</li>
+          <li>Easy Navigation</li>
+          <li>24/7 Support</li>
+          <li>Personalized Medication Plans</li>
+        </ul>
+      </section>
+
+      <section id="services" class="section colorful-background">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-text">
+          DailyElderMeds offers a range of services to ensure the well-being of
+          seniors, including medication reminders, emergency alerts, and
+          personalized health information.
+        </p>
+      </section>
+
+      <section id="testimonials" class="section">
+        <h2 class="section-title">What Our Users Say</h2>
+        <div class="testimonial">
+          <blockquote class="testimonial-text">
+            "DailyElderMeds has been a lifesaver for my parents. It's simple to
+            use and provides me with peace of mind knowing that they're taking
+            their medications on time."
+          </blockquote>
+          <cite class="testimonial-author">- Jane Doe</cite>
+        </div>
+
+        <div class="testimonial">
+          <blockquote class="testimonial-text">
+            "I love the colorful design and user-friendly interface of this
+            platform. It's made managing my medications so much easier."
+          </blockquote>
+          <cite class="testimonial-author">- John Smith</cite>
+        </div>
+      </section>
+    </main>
+
+    <aside id="side-panel" class="sidebar">
+      <h2 class="sidebar-title">Contents</h2>
+      <ul class="sidebar-list">
+        <li><a href="#welcome">Welcome</a></li>
+        <li><a href="#features">Key Features</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+      </ul>
+    </aside>
+    <div class="chatbot">
+      <img
+        src="img.src/aichat.png"
+        alt="Chatbot"
+        class="chatbot-image"
+        id="chatbot-image"
+      />
+      <div class="chatbox" id="chatbox">
+        <p class="chat-message">Need assistance?</p>
+        <button id="yes-button" class="chat-button">Yes</button>
+        <button id="no-button" class="chat-button">No</button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <ul class="footer-menu">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <ul class="footer-social">
+            <li><a href="#" class="social-icon">Facebook</a></li>
+            <li><a href="#" class="social-icon">Twitter</a></li>
+            <li><a href="#" class="social-icon">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-credits">
+        &copy; 2023 DailyElderMeds
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
   </body>
 </html>
