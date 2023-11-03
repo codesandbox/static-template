@@ -1,0 +1,285 @@
+body {
+  background-image: url("img.src/backimg.jpg");
+  background-size: cover;
+  background-position: infinite;
+  background-attachment: fixed;
+  color: rgb(5, 3, 42);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#signup-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#side-panel {
+  width: 20%;
+  background-color: #333;
+  padding: 20px;
+  display: none;
+}
+
+#side-panel ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#side-panel li {
+  margin: 10px 0;
+}
+
+#side-panel a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.content {
+  display: none;
+}
+
+#content1.active,
+#content2.active,
+#content3.active,
+#signup-form.active {
+  display: block;
+}
+
+#panel-toggle {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+
+.signup-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #299617; 
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px; 
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.signup-button:hover {
+  background-color: #45a049;
+}
+.login-button {
+  position: absolute;
+  top: 20px;
+  right: 150px;
+  background-color: #299617; 
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px; 
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.login-button:hover {
+  background-color: #45a049; 
+}
+
+body {
+  background-image: url("img.src/Backimg1.png");
+  background-size: cover;
+  background-position: center;
+  opacity: #000;
+}
+
+.logo {
+  display: block;
+  max-width: 80px; 
+  position: absolute;
+  top: 20px; 
+  left: 20px; 
+}
+
+
+main {
+  padding: 20px;
+  margin-top: 70px; 
+}
+
+/* Styling for the side panel (unchanged) */
+#side-panel {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+  transition: left 0.3s;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:transparent; 
+  color: #000;
+  text-align: center;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 10px;
+  }
+  .section {
+    padding: 20px;
+  }
+}
+
+.chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.chatbot-image {
+  width: 60px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.chatbox {
+  display: transparent;
+  background-color: #93c0f3;
+  color: rgb(54, 0, 124);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 200px;
+}
+
+.chat-message {
+  font-size: 16px;
+  margin: 0 0 10px;
+}
+
+.chat-button {
+  background-color: #fff;
+  color: #4a90e2;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.chatbot.active .chatbot-image {
+  transform: rotate(360deg);
+}
+
+/* Media query for small screens */
+@media (max-width: 1080px) {
+  .chatbot {
+    bottom: 10px;
+    right: 10px;
+    top: 150px;
+  }
+}
+
+.main-content {
+  margin-bottom: 500px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-section.horizontal {
+  flex: 1;
+}
+
+@media screen and (min-width: 768px) {
+  nav ul {
+    justify-content: flex-start;
+  }
+
+  .footer-content {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    font-size: 18px;
+  }
+
+
+.chatbot {
+  position: fixed;
+  bottom: 20px; 
+  right: 20px; 
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.chatbot-image {
+  width: 50px; 
+  height: 50px; 
+  padding: 5px;
+}
+
+.chatbox {
+  padding: 10px;
+}
+
+.chat-message {
+  font-size: 14px;
+  margin: 0;
+}
+
+.chat-button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+
