@@ -1,12 +1,482 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+    <title>Hydra</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script defer src="./assets/scripts/view.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="header__logo">
+                        <a href="/" class="header__logo-link header__link">
+                            <img src="./assets/img/svg/logo.svg" alt="Hydra Image" class="header__logo-img">
+                            <img src="./assets/img/svg/logo2.svg" alt="Hydra" class="header__logo-img2">
+                        </a>
+                    </div>
+                    <div class="menu">
+                        <label class="menu__box" for="menu__box-input">
+                            <input class="menu__box-input" type="checkbox" id="menu__box-input" /> 
+                            <span class="menu__box-span"></span>
+                            <span class="menu__box-span"></span>
+                            <span class="menu__box-span"></span>
+                        </label>
+                        <nav class="nav">
+                            <ul class="nav__list">
+                                <li class="nav__item">
+                                    <a href="#about" class="nav__link">ABOUT</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#services" class="nav__link">SERVICES</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#technologies" class="nav__link">TECHNOLOGIES</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#howTo" class="nav__link">HOW TO</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#contactUs" class="nav__link nav__item-btn-light"> CONTACT US</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#join" class="nav__link nav__item-btn-dark">JOIN HYDRA</a>
+                                </li>
+                            </ul>                       
+                        </nav> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="intro">
+            <div class="container">
+                <div class="row">
+                    <div class="intro__descPart bg__parent col-xl-6 col-12 order-xl-1 order-2 ">
+                        <img src="/assets/img/svg/lines/line_4.svg" alt="" class="bgline bgline-line4 d-none d-xl-block">
+                            <h1>
+                                <span>Dive</span> Into The Depths </br>Of <span>Virtual Reality</span>
+                            </h1>
+                            <p class="intro__descPart-p d-none d-xl-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                sed do eiusmod tempor incididunt ut labore et dolore 
+                                nisl tincidunt eget. Lectus mauris eros in vitae .
+                            </p>
+                            <div class="d-flex align-items-center">
+                                <a href="#join">
+                                    <button class="wrapper_btn">
+                                        BUILD YOUR WORLD
+                                    </button> 
+                                </a>
+                                <img src="/assets/img/svg/arrow-small-right.svg" alt="" class="intro__descPart-arrow d-none d-xl-block">
+                            </div>                         
+                    </div>
+                    <div class="intro__imgPart bg__parent mt-4 offset-lg-1 col-xl-5 col-12 position-relative order-xl-2 order-1 ">
+                        <img src="/assets/img/svg/lines/line_1.svg" alt="" class="bgline bgline-line1">
+                        <img src="/assets/img/svg/lines/line_2.svg" alt="" class="bgline bgline-line2">
+                        <img src="/assets/img/svg/lines/line_3.svg" alt="" class="bgline bgline-line3">
+                        <img src="./assets/img/intro-img.png" alt="" class="intro__imgPart-img"> 
+                    </div>
+                </div>
+                <div class="d-flex intro__footer" id="contactUs">
+                    <div class="intro__footer_box d-none d-xl-flex" id="contactInfo_large"></div>
+                    <div class="intro__footer_box  d-xl-none" id="contactInfo_small"></div> 
+                </div>
+            </div>
+        </section>
+        <section class="about" id="about">
+            <div class="container d-flex flex-column d-xl-block align-items-center">
+                <img src="/assets/img/svg/lines/line_7.svg" alt="" class="bgline bgline-line7">
+                <img src="/assets/img/svg/lines/line_8.svg" alt="" class="bgline bgline-line8">
+                <div class="row">
+                    <div class="col d-flex flex-column d-xl-block align-items-center">
+                        <h2>INTRODUCTION</h2>
+                        <div class="d-flex align-items-center">
+                            <h3>TO HYDRA VR</h3>
+                            <img src="assets/img/svg/arrow-long.svg" alt="arrow logo" class="arrow d-none d-xl-block">
+                        </div>
+                    </div>
+                    <div class="col-6 d-none d-xl-block">
+                        <p>
+                            Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat 
+                            nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo 
+                            quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare 
+                            lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae.
+                        </p>
+                    </div>
+                </div>
+                <div class="row about__main">
+                    <div class="col">
+                        <img src="/assets/img/pexels-shvets-production.png" alt="" class="about__img">
+                    </div>
+                    <div class="about__desc col-12 col-xl-6 d-flex flex-column d-xl-block align-items-center">
+                        <h2 class="d-none d-xl-block">ABOUT</h2>
+                        <h3 class="d-none d-xl-block">HYDRA VR</h3>
+                        <p class="about__p ">Eget mi proin sed libero enim sed faucibus turpis. Nisl rhoncus mattis rhoncus 
+                            urna neque viverra justo. Vivamus at augue eget arcu dictum. Ultrices gravida 
+                            dictum fusce ut placerat orci. Aenean et tortor at risus viverra adipiscing at in. 
+                            Mattis aliquam faucibus purus in massa. Est placerat in egestas erat imperdiet 
+                            sed. Consequat semper viverra nam libero justo laoreet sit amet. Aliquam 
+                            etiam erat velit scelerisque in dictum non consectetur a. Laoreet sit amet 
+                            cursus sit amet. Vel eros donec ac odio tempor orci dapibus. Sem nulla pha
+                            retra diam sit amet nisl suscipit adipiscing bibendum. Leo a diam sollicitudi
+                            n tempor.
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <a href="#contactUs">
+                                <button class="wrapper_btn">
+                                    LET’S GET IN TOUCH
+                                </button> 
+                            </a>
+                        </div> 
+                       
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="services" id="services">
+            <div class="container d-flex flex-column d-xl-block align-items-center">
+                <img src="/assets/img/svg/lines/line_14.svg" alt="" class="bgline bgline-line14">
+                <div class="d-flex flex-column flex-xl-row align-items-center">
+                    <div class="col d-flex flex-column d-xl-block align-items-center">
+                        <h2>WHY BUILD</h2>
+                        <div class="d-flex align-items-center">
+                            <h3>WITH HYDRA?</h3>
+                            <img src="assets/img/svg/arrow-long.svg" alt="arrow logo" class="arrow d-none d-xl-block">
+                        </div>
+                    </div>
+                    <div class="col-6 d-none d-xl-block">
+                        <p>
+                            Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat 
+                            nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo 
+                            quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare 
+                            lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae.
+                        </p>
+                    </div>
+                </div>
+                <div class="services__main d-none d-xl-flex justify-content-around">
+                    <div class="services__card" id="services_simulation">
+                        <div class="services__card-img">
+                            <img src="/assets/img/pexels-shvets-production-card-1.png" alt="services card" class="services__card-logoImg">
+                            <div class="services__card-imgShadow"></div>
+                        </div>
+                        <h4 class="services__card-header">SIMULATION</h4>
+                        <img src="/assets/img/svg/horizontal-line.svg" alt="horizontal line" class="services__card-delimiter">
+
+                        <div class="services__card-desc">
+                            <p>
+                                Vitae sapien pellentesque habitant morbi
+                                nunc. Viverra aliquet  porttitor rhoncus 
+                                libero justo laoreet sit amet vitae.
+                            </p>                     
+                        </div>
+                        <div class="services__card-btn">
+                            <a href="#join" class="header__link">
+                                <button class="wrapper_btn">
+                                    TRY IT NOW
+                                </button> 
+                            </a>   
+                        </div>          
+                    </div>
+                    <div class="services__card" id="services_education">
+                        <div class="services__card-img">
+                            <img src="/assets/img/pexels-mikhail-nilov-card-2.png" alt="services card" class="services__card-logoImg">
+                            <div class="services__card-imgShadow"></div>
+                        </div>
+                        <h4 class="services__card-header">EDUCATION</h4>
+                        <img src="/assets/img/svg/horizontal-line.svg" alt="horizontal line" class="services__card-delimiter">
+                        <div class="services__card-desc">
+                            <p>
+                                Vitae sapien pellentesque habitant morbi
+                                nunc. Viverra aliquet  porttitor rhoncus 
+                                libero justo laoreet sit amet vitae.
+                            </p>                     
+                        </div>
+                        <div class="services__card-btn">
+                            <a href="#join" class="header__link">
+                                <button class="wrapper_btn">
+                                    TRY IT NOW
+                                </button> 
+                            </a>                             
+                        </div>          
+                    </div>
+                    <div class="services__card" id="services_self-care">
+                        <div class="services__card-img">
+                            <img src="/assets/img/pexels-rodnae-productions-card-3.png" alt="services card" class="services__card-logoImg">
+                            <div class="services__card-imgShadow"></div>
+                        </div>
+                        <h4 class="services__card-header">SELF-CARE</h4>
+                        <img src="/assets/img/svg/horizontal-line.svg" alt="horizontal line" class="services__card-delimiter">
+
+                        <div class="services__card-desc">
+                            <p>
+                                Vitae sapien pellentesque habitant morbi
+                                nunc. Viverra aliquet  porttitor rhoncus 
+                                libero justo laoreet sit amet vitae.
+                            </p>                     
+                        </div>
+                        <div class="services__card-btn">
+                            <a href="#join" class="header__link">
+                                <button class="wrapper_btn">
+                                    TRY IT NOW
+                                </button> 
+                            </a>   
+                        </div>          
+                    </div>
+                    <div class="services__card"  id="services_outdoor">
+                        <div class="services__card-img">
+                            <img src="/assets/img/pexels-mali-maeder-card-4.png" alt="services card" class="services__card-logoImg">
+                            <div class="services__card-imgShadow"></div>
+                        </div>
+                        <h4 class="services__card-header">OUTDOOR</h4>
+                        <img src="/assets/img/svg/horizontal-line.svg" alt="horizontal line" class="services__card-delimiter">
+
+                        <div class="services__card-desc">
+                            <p>
+                                Vitae sapien pellentesque habitant morbi
+                                nunc. Viverra aliquet  porttitor rhoncus 
+                                libero justo laoreet sit amet vitae.
+                            </p>                     
+                        </div>
+                        <div class="services__card-btn">
+                            <a href="#join" class="header__link">
+                                <button class="wrapper_btn">
+                                    TRY IT NOW
+                                </button>
+                            </a>   
+                        </div>          
+                    </div> 
+                </div>
+                <div class="mt-4 d-xl-none" id="serviceInfo_small"></div> 
+            </div>
+        </section>
+        <section class="tech" id="technologies">
+            <div class="container">
+                <div class="tech__logoBox">
+                    <img src="/assets/img/tech-logo.png" alt="" class="tech__logoBox-img">
+                    <div class="tech__logoBox-header">
+                        <h2>TECHNOLOGIES & HARDWARE</h2>
+                        <h3>USED BY HYDRA VR.</h3>
+                    </div>
+                    <div class="chevron d-none d-xl-flex">
+                        <img src="./assets/img/svg/chevron-small-down.svg" alt="" class="chevron-icon">
+                        <div class="chevron-bgc"></div>
+                        <div class="chevron-shadow"></div>
+                    </div>
+                </div>
+                <div class="d-flex tech_images align-items-center justify-content-between d-none d-xl-flex">
+                    <img src="/assets/img/Hydra-Tech1.png" alt="Unreal logo" class="tech_tech_images-item">
+                    <img src="/assets/img/Hydra-Tech2.png" alt="Unity logo" class="tech_tech_images-item">
+                    <img src="/assets/img/Hydra-Tech3.png" alt="Oculus logo" class="tech_tech_images-item">
+                    <img src="/assets/img/Hydra-Tech4.png" alt="Vive logo" class="tech_tech_images-item">
+                </div>
+                <div class="tech_images d-xl-none" id="techInfo_small">
+                </div>
+            </div>
+        </section>
+        <section class="process" id="howTo">
+            <div class="container">
+                <div class="row">
+                    <div class="col d-flex flex-column d-xl-block align-items-center">
+                        <h2>HOW WE BUILD</h2>
+                        <div class="d-flex align-items-center">
+                            <h3>WITH HYDRA VR?</h3>
+                            <img src="assets/img/svg/arrow-long.svg" alt="arrow logo" class="arrow d-none d-xl-block">
+                        </div>
+                    </div>
+                    <div class="col-6 d-none d-xl-block">
+                        <p>
+                            Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat 
+                            nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo 
+                            quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare 
+                            lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae.
+                        </p>
+                    </div>
+                </div>
+                <div class="process__cards d-none d-xl-flex flex-wrap justify-content-around" >
+                    <img src="/assets/img/svg/lines/line_15.svg" alt="" class="bgline bgline-line15 d-none d-xl-block">
+                    <div class="process__card d-flex align-items-center flex-column">
+                        <div class="process__card-img">
+                            <span class="process__card-ImgNr">01</span>
+                            <div class="process__card-iconBg"></div>
+                            <div class="process__card-iconShadow"></div>
+                        </div>
+                        <div class="process__card-headerBox d-flex align-items-end">
+                            <img src="/assets/img/svg/arrow-small-right.svg" alt="small arrow" class="process_card-headerArrow">
+                            <h4 class="process__card-header">
+                                3D Conception & Design
+                            </h4>
+                        </div>   
+                    </div>
+                    <div class="process__card d-flex align-items-center flex-column" >
+                        <div class="process__card-img">
+                            <span class="process__card-ImgNr">02</span>
+                            <div class="process__card-iconBg"></div>
+                            <div class="process__card-iconShadow"></div>
+                        </div>
+                        <div class="process__card-headerBox d-flex align-items-end">
+                            <img src="/assets/img/svg/arrow-small-right.svg" alt="small arrow" class="process_card-headerArrow">
+                            <h4 class="process__card-header">
+                                Interaction Design
+                            </h4>
+                        </div>   
+                    </div>
+                    <div class="process__card d-flex align-items-center flex-column">
+                        <div class="process__card-img">
+                            <span class="process__card-ImgNr">03</span>
+                            <div class="process__card-iconBg"></div>
+                            <div class="process__card-iconShadow"></div>
+                        </div>
+                        <div class="process__card-headerBox d-flex align-items-end">
+                            <img src="/assets/img/svg/arrow-small-right.svg" alt="small arrow" class="process_card-headerArrow">
+                            <h4 class="process__card-header">
+                                VR World User Testing
+                            </h4>
+                        </div>   
+                    </div>
+                    <div class="process__card d-flex align-items-center flex-column">
+                        <div class="process__card-img">
+                            <span class="process__card-ImgNr">04</span>
+                            <div class="process__card-iconBg"></div>
+                            <div class="process__card-iconShadow"></div>
+                        </div>
+                        <div class="process__card-headerBox d-flex align-items-end">
+                            <img src="/assets/img/svg/arrow-small-right.svg" alt="small arrow" class="process_card-headerArrow">
+                            <h4 class="process__card-header">
+                                Hydra VR Deploy
+                            </h4>
+                        </div>   
+                    </div>
+                </div>
+                <div class="process__cards mt-4 d-xl-none align-items-end" id="processInfo_small"></div>
+            </div>
+        </section>
+        <section class="join" id="join">
+            <div class="container">
+                <form action="" class="join__form-box" method="post" id="join_form">
+                    <div class="join__form-wrapper d-flex align-items-center flex-column">
+                        <h2>JOIN HYDRA</h2>
+                        <img src="/assets/img/svg/long-horizontal-line.svg" alt="horizontal line" class="join__form-delimiter">
+                        <h3  class="join__form-h3">Let&#x2019s Build Your VR Experience</h3>
+                        <div class="join__form_body d-flex flex-wrap">
+                            <div class="join__form-inputBox half">
+                                <input type="text" class="join__form-input " name="firstName" id="firstName" placeholder="First Name" autocomplete="given-name">
+                            </div>
+                            <div class="join__form-inputBox half">
+                                <input type="text" class="join__form-input" name="lastName" id="lastName"  placeholder="Last Name" autocomplete="family-name">
+                            </div>
+                            <div class="join__form-inputBox half">
+                                <input type="text" class="join__form-input" name="email" id="email" placeholder="Email" autocomplete="email">
+                            </div>
+                            <div class="join__form-inputBox half">
+                                <input type="text" class="join__form-input" name="phone" id="phone" placeholder="Phone Number" autocomplete="tel">
+                            </div>
+                            <div class="join__form-inputBox">
+                                <input type="text" class="join__form-input" name="subject" id="subject"placeholder="Subject">
+                            </div>
+                            <div class="join__form-inputBox">
+                                <textarea name="desc" id="desc" placeholder="Tell Us Something..."  class="join__form-input join__form-input-textArea join__form-input-full"></textarea>
+                            </div>
+                        </div>
+                        <button class="wrapper_btn" type="submit">
+                            SEND TO HYDRA
+                        </button> 
+                    </div>                   
+                </form>
+            </div>
+        </section> 
+    </main>
+    <footer class="footer">
+        <div class="container d-flex flex-column flex-xl-row justify-content-xl-between align-items-center">
+            <img src="/assets/img/svg/lines/line_18.svg" alt="" class="bgline bgline-line18 d-none d-xl-block">
+            <img src="/assets/img/svg/lines/line_19.svg" alt="" class="bgline bgline-line19 d-none d-xl-block">
+            <img src="./assets/img/svg/logo.svg" alt="Hydra Image" class="footer-logo">
+            <img src="./assets/img/svg/big-vertical-line.svg" alt="vertical line" class="footer-delimiter d-none d-xl-block">
+            <ul class="footer__nav d-none d-xl-block">
+                <li class="footer__item">
+                    <a href="#about" class="footer__link">ABOUT</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#services" class="footer__link">SERVICES</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#technologies" class="footer__link">TECHNOLOGIES</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#howTo" class="footer__link">HOW TO</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#join" class="footer__link">JOIN HYDRA</a>
+                </li>
+            </ul>
+            <img src="./assets/img/svg/big-vertical-line.svg" alt="vertical line" class="footer-delimiter d-none d-xl-block">
+            <ul class="footer__nav d-none d-xl-block">
+                <li class="footer__item">
+                    <a href="#about" class="footer__link">F.A.Q</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#services" class="footer__link">SITEMAP</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#technologies" class="footer__link">CONDITIONS</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#howTo" class="footer__link">LICENSES</a>
+                </li>
+            </ul>
+            <img src="./assets/img/svg/big-vertical-line.svg" alt="vertical line" class="footer-delimiter d-none d-xl-block">
+            <div class="footer__socialBox d-flex flex-column align-items-center align-items-xl-start">
+                <h5>SOCIALIZE WITH HYDRA</h5>
+                <ul class="footer__socialBox-iconsList d-flex">
+                    <li class="footer__socialBox-iconsList-item">
+                        <a href="https://www.facebook.com/" class="footer__link" target="_blank">
+                            <img src="/assets/img/svg/socialMedia/facebook.svg" alt="facebook">
+                        </a>
+                    </li>
+                    <li class="footer__socialBox-iconsList-item">
+                        <a href="https://twitter.com/" class="footer__link" target="_blank">
+                            <img src="/assets/img/svg/socialMedia/twitter.svg" alt="twitter">
+                        </a>
+                    </li>
+                    <li class="footer__socialBox-iconsList-item">
+                        <a href="https://ca.linkedin.com/" class="footer__link" target="_blank">
+                            <img src="/assets/img/svg/socialMedia/linkedin.svg" alt="linkedin">
+                        </a>
+                    </li>
+                    <li class="footer__socialBox-iconsList-item">
+                        <a href="https://www.youtube.com/" class="footer__link" target="_blank">
+                            <img src="/assets/img/svg/socialMedia/youtube.svg" alt="youtube">
+                        </a>
+                    </li>
+                    <li class="footer__socialBox-iconsList-item">
+                        <a href="https://www.instagram.com/" class="footer__link" target="_blank">
+                            <img src="/assets/img/svg/socialMedia/instagram.svg" alt="instagram">
+                        </a>
+                    </li>
+                    <li class="footer__socialBox-iconsList-item">
+                        <a href="https://www.pinterest.ca/" class="footer__link" target="_blank">
+                            <img src="/assets/img/svg/socialMedia/pinterest.svg" alt="pinterest">
+                        </a>
+                    </li>    
+                </ul>               
+                <a href="#join" class="nav__link">
+                    <button class="wrapper_btn">
+                    BUILD YOUR WORLD
+                    </button> 
+                </a>   
+              
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer__horisontalLine"></div>
+            <p class="footer__lastText">
+                2023 © HYDRA LANDING PAGE - BY ZINE. E. FALOUTI - ALL RIGHTS RESERVED 
+            </p>
+        </div>
+    </footer> 
+</body>
 </html>
