@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Canvas</title>
+  </head>
+  <body>
+    <nav>
+      <a href="main.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="about.html">Про Нас</a>
+    </nav>
+
+    <canvas id="myCanvas" width="600" height="600"></canvas>
+
+    <script>
+      const canvas = document.getElementById("myCanvas");
+      const context = canvas.getContext("2d");
+
+      context.fillStyle = "blue"; //Колір заливки
+      context.fillRect(50, 50, 100, 100); //Синій заповнений прямокутник
+
+      context.strokeStyle = "red"; //колір контура
+      context.strokeRect(150, 50, 200, 100); //малюємо контур прямокутника
+
+      context.beginPath(); //починаємо шлях малювання з компонентів
+      context.arc(250, 100, 50, 0, Math.PI * 2); //координати центра, радіус, початковий та кінцевий кути
+      context.strokeStyle = "blue";
+      context.stroke(); //відображаємо контур
+
+      context.beginPath();
+      context.strokeStyle = "black";
+      context.moveTo(170, 350); //точка початку малювання
+      context.lineTo(260, 250); //ведемо до
+      context.lineTo(350, 350);
+      context.closePath();
+      context.stroke();
+
+      context.font = "30px Arial";
+      context.fillText("Hello, Canvas!", 50, 200);
+
+      const img = new Image();
+      img.src = "images/Angel2.png";
+      img.onload = function () {
+        context.drawImage(img, 350, 50);
+      };
+
+      var grd = context.createRadialGradient(100, 350, 5, 80, 360, 100);
+      grd.addColorStop(0, "green");
+      grd.addColorStop(1, "black");
+      context.fillStyle = grd;
+      context.fillRect(30, 300, 130, 120);
+
+      context.beginPath();
+      context.strokeStyle = "black";
+      context.moveTo(285, 280);
+      context.lineTo(320, 280);
+      context.lineTo(319, 318);
+      context.closePath();
+      context.stroke();
+
+      // context.strokeStyle = "red";
+      context.strokeRect(185, 350, 150, 100);
+      context.strokeRect(210, 380, 30, 69);
+      context.strokeRect(260, 370, 45, 40);
+    </script>
+  </body>
+</html>
