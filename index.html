@@ -1,12 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather</title>
+    <style>
+      h1 {
+        text-align: center;
+        font-size: 50px;
+      }
+      h3 {
+        font-size: x-large;
+        font-family: "Times New Roman", Times, serif;
+      }
+      p {
+        text-align: center;
+        color: blue;
+        margin-bottom: 95px;
+      }
+      form {
+        border-radius: 0 20px;
+      }
+      body {
+        background-color: rgb(236, 237, 172);
+        border-radius: 150px;
+      }
+    </style>
   </head>
+
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <h1 id="current-city">Johannesburg🌞</h1>
+
+    <h2><span id="current-date"></span></h2>
+
+    <h3 id="temperature">☀️<br />28°C</h3>
+
+    <form id="search-form">
+      <input
+        type="search"
+        placeholder="Search city"
+        class="searchCity"
+        id="search-text-input"
+      />
+      <input type="submit" value="Search" class="searchCity" />
+    </form>
+
+    <br />
+    <div class="row">
+      <div class="col-2">MON</div>
+      <div class="col-2">TUE</div>
+      <div class="col-2">WED</div>
+      <div class="col-2">THU</div>
+      <div class="col-2">FRI</div>
+    </div>
+    <div class="row">
+      <div class="col-2">☀️</div>
+      <div class="col-2">🌧️</div>
+      <div class="col-2">🌦️</div>
+      <div class="col-2">⛅️</div>
+      <div class="col-2">🌩️</div>
+    </div>
+    <div class="row">
+      <div class="col-2">26°</div>
+      <div class="col-2">19°</div>
+      <div class="col-2">21°</div>
+      <div class="col-2">22°</div>
+      <div class="col-2">15°</div>
+    </div>
+    <br />
+    <p>
+      Precipitation: 0%<br />
+      Humidity: 77%<br />
+      Wind: 8 km/h
+    </p>
+
+    <script>
+      let now = new Date();
+
+      let h2 = document.querySelector("h2");
+
+      let date = now.getDate();
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      let year = now.getFullYear();
+
+      let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      let day = days[now.getDay()];
+
+      let months = [
+        "Jan",
+        "Feb",
+        "March",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ];
+      let month = months[now.getMonth()];
+
+      h2.innerHTML = `${day} ${month} ${date}, ${hours}:${minutes}, ${year}`;
+    </script>
+    <script>
+      function updateWeatherData(cityName) {
+        let apiKey = "b9ba0314a93083136d968577c718e31d";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+
+        axios
+          .get(apiUrl)
+          .then(function (response) {
+            let temperature = Math.round(response.data.main.temp);
+            let temperatureElement = document.querySelector("#temperature");
+            temperatureElement.innerHTML = `☀️<br/>${temperature}°C`;
+
+            let cityElement = document.querySelector("#current-city");
+            cityElement.innerHTML = response.data.name;
+          })
+          .catch(function (error) {
+            console.error("Error fetching weather data:", error);
+          });
+      }
+
+      function searchWeather(event) {
+        event.preventDefault();
+        let searchWeatherInput = document.querySelector("#search-text-input");
+        let cityName = searchWeatherInput.value;
+
+        if (cityName) {
+          updateWeatherData(cityName);
+        }
+      }
+
+      let searchForm = document.querySelector("#search-form");
+      searchForm.addEventListener("submit", searchWeather);
+
+      updateWeatherData("Johannesburg");
+    </script>
+    <p>This code was coded by : Mokgadi Mamabolo</p>
   </body>
 </html>
