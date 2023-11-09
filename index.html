@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
@@ -10,14 +11,14 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Weather</title>
     <style>
       h1 {
         text-align: center;
         font-size: 50px;
       }
       h3 {
-        font-size: large;
+        font-size: x-large;
         font-family: "Times New Roman", Times, serif;
       }
       p {
@@ -36,55 +37,50 @@
   </head>
 
   <body>
-    <h1>Gauteng 🌞</h1>
+    <h1 id="current-city">Johannesburg🌞</h1>
 
-    <h2></h2>
+    <h2><span id="current-date"></span></h2>
+
+    <h3 id="temperature">☀️<br />28°C</h3>
 
     <form id="search-form">
       <input
-        type="text"
+        type="search"
         placeholder="Search city"
-        autocomplete="off"
-        autofocus="on"
+        class="searchCity"
         id="search-text-input"
       />
-      <input type="submit" value="Search" />
+      <input type="submit" value="Search" class="searchCity" />
     </form>
 
     <br />
-
-    <br />
-    <h3>
-      Sunday 30℃ ⛅
-      <br />
-      Monday 21℃ 🌧
-      <br />
-      Tuesday 19℃ ❄️
-      <br />
-      Wednesday 12℃ ☔
-      <br />
-      Thurday 20℃ 🌦
-    </h3>
-    <h4 id="temp">
-      <div class="container">
-        <div class="tempUnits">
-          30
-          <a href="#" id="to-celsius">&deg;C</a> |
-          <a href="#" id="to-fahrenheit">&deg;F</a>
-          <style ="font-size: 100px"></style>
-        </div>
-      </div>
-    </h4>
-
-    <br />
-
-    <div class="mode">
-      <ul>
-        <li>Precipitation: 0%</li>
-        <li>Humidity: 77%</li>
-        <li>Wind: 8 km/h</li>
-      </ul>
+    <div class="row">
+      <div class="col-2">MON</div>
+      <div class="col-2">TUE</div>
+      <div class="col-2">WED</div>
+      <div class="col-2">THU</div>
+      <div class="col-2">FRI</div>
     </div>
+    <div class="row">
+      <div class="col-2">☀️</div>
+      <div class="col-2">🌧️</div>
+      <div class="col-2">🌦️</div>
+      <div class="col-2">⛅️</div>
+      <div class="col-2">🌩️</div>
+    </div>
+    <div class="row">
+      <div class="col-2">26°</div>
+      <div class="col-2">19°</div>
+      <div class="col-2">21°</div>
+      <div class="col-2">22°</div>
+      <div class="col-2">15°</div>
+    </div>
+    <br />
+    <p>
+      Precipitation: 0%<br />
+      Humidity: 77%<br />
+      Wind: 8 km/h
+    </p>
 
     <script>
       let now = new Date();
@@ -118,41 +114,40 @@
       h2.innerHTML = `${day} ${month} ${date}, ${hours}:${minutes}, ${year}`;
     </script>
     <script>
+      function updateWeatherData(cityName) {
+        let apiKey = "b9ba0314a93083136d968577c718e31d";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+
+        axios
+          .get(apiUrl)
+          .then(function (response) {
+            let temperature = Math.round(response.data.main.temp);
+            let temperatureElement = document.querySelector("#temperature");
+            temperatureElement.innerHTML = `☀️<br/>${temperature}°C`;
+
+            let cityElement = document.querySelector("#current-city");
+            cityElement.innerHTML = response.data.name;
+          })
+          .catch(function (error) {
+            console.error("Error fetching weather data:", error);
+          });
+      }
+
       function searchWeather(event) {
         event.preventDefault();
         let searchWeatherInput = document.querySelector("#search-text-input");
+        let cityName = searchWeatherInput.value;
 
-        let h1 = document.querySelector("h1");
-        if (searchWeatherInput.value) {
-          h1.innerHTML = `${searchWeatherInput.value}`;
-        } else {
-          h1.innerHTML = null;
+        if (cityName) {
+          updateWeatherData(cityName);
         }
       }
+
       let searchForm = document.querySelector("#search-form");
       searchForm.addEventListener("submit", searchWeather);
+
+      updateWeatherData("Johannesburg");
     </script>
-    <script>
-      function toCelsius(event) {
-        event.preventDefault();
-        let temperature = document.querySelector("#temp");
-        temperature.innerHTML = "30";
-      }
-
-      function toFahrenheit(event) {
-        event.preventDefault();
-        let temperature = document.querySelector("#temp");
-        temperature.innerHTML = "82";
-      }
-
-      let convertToCelsius = document.querySelector("#to-celsius");
-      convertToCelsius.addEventListener("click", toCelsius);
-
-      let convertToFahrenheit = document.querySelector("#to-fahrenheit");
-      convertToFahrenheit.addEventListener("click", toFahrenheit);
-    </script>
-    <p>
-      This code was coded by : Mokgadi Mamabolo
-    </p>
+    <p>This code was coded by : Mokgadi Mamabolo</p>
   </body>
 </html>
