@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Color</title>
+  </head>
+  <style>
+    select {
+      position: absolute;
+      left: 45%;
+      top: 45%;
+    }
+    p {
+      color: white;
+    }
+    a {
+      color: white;
+    }
+  </style>
+
+  <body>
+    <select onchange="color(this.value)">
+      <option value="">Choose Backgroundcolor</option>
+      <option value="blue">Blue</option>
+      <option value="red">Red</option>
+      <option value="hotpink">Hotpink</option>
+      <option value="chartreuse">Chartreuse</option>
+    </select>
+
+    <p>Surprise!</p>
+    <p>
+      if you click <a href="toggle.html">here</a> you will find another way, how
+      to hide (and then make visible) information on a site
+    </p>
+    <footer>
+      </br>
+      <a href="index.html">back</a>
+    </footer>
+    <script>
+      function color(value) {
+        document.body.style.backgroundColor = value;
+      }
+    </script>
+  </body>
+</html>

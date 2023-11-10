@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hypertextual Reading</title>
+  </head>
+  <style>
+    #myDIV {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<p>Click the "Try it" button to toggle between hiding and showing the DIV element:</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<div id="myDIV" style="display:none;">
+    <a href="imagemap.html">if you go this way, you'll find out how to hide information in an image</a>
+  </div>
+
+<p><b>Note:</b> The element will not take up any space when the display property 
+is set to "none".</p>
+
+<footer>
+  </br>
+    <a href="index.html">back</a>
+  </footer>
+<script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
