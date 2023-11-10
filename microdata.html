@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Microdata in HTML</title>
+  </head>
+  <body bgcolor="Lavender">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="about.html">About Us</a>
+      <a href="media.html">Media</a>
+      <a href="main.html">DivSpan</a>
+      <a href="lab1.html">Lab1</a>
+      <a href="lab2.html">Lab2</a>
+      <a href="lab3.html">Lab3</a>
+      <a href="lab4.html">Lab4</a>
+      <a href="lab5.html">Lab5</a>
+      <a href="meta.html">Meta</a>
+    </nav>
+
+    <div itemscope itemtype="https://schema.org/Book">
+      <img
+        src="images/The Great Gatsby.jpg"
+        alt="The Great Gatsby poster"
+        itemprop="image"
+        width="100"
+        align="right"
+      />
+      <h2 itemprop="name">The Great Gatsby</h2>
+      <span itemprop="author">F. Scott Fitzgerald</span>
+      <span itemprop="datePublished">1925</span>
+      <span
+        itemprop="reviewRating"
+        itemscope
+        itemtype="https://schema.org/Rating"
+      >
+        Rating: <span itemprop="ratingValue">5</span> stars
+      </span>
+    </div>
+    <br /><br /><br /><br />
+
+    <div
+      itemscope
+      itemtype="https://schema.org/Movie"
+      style="line-height: 95%;"
+    >
+      <img
+        src="images/Avengers.jpg"
+        alt="Avengers poster"
+        itemprop="image"
+        width="100"
+        align="right"
+      />
+      <h2 itemprop="name" style="line-height: 5%;">Avengers</h2>
+      <span
+        >Directors :
+        <span itemprop="Directors">
+          Russo Brothers
+        </span>
+      </span>
+      <br />
+      <span itemprop="dateCreated">2012</span><br />
+      <span
+        itemprop="reviewRating"
+        itemscope
+        itemtype="https://schema.org/Rating"
+      >
+        Rating: <span itemprop="ratingValue">8/10</span> </span
+      ><br />
+      <span>Genre: <span itemprop="genre">Action</span> </span>
+      <br />
+      <span itemprop="description">
+        The Avengers began as a group of extraordinary individuals who were
+        assembled to defeat Loki and his Chitauri army in New York City. Since
+        then, the team has expanded its roster and faced a host of new threats,
+        while dealing with their own turmoil.
+      </span>
+    </div>
+
+    <div itemscope itemtype="http://schema.org/Product">
+      <img
+        src="images/panasonic-fridge-60l-white.jpg"
+        alt="Panasonic Fridge 60l
+      white poster"
+        itemprop="image"
+        width="100"
+        height="150"
+        align="right"
+        border="1"
+      />
+      <h2 itemprop="name">Panasonic White 60L Refrigerator</h2>
+      <div
+        itemprop="aggregateRating"
+        itemscope
+        itemtype="http://schema.org/AggregateRating"
+      >
+        <meter itemprop="ratingValue" min="0" value="3.5" max="5">
+          Rated 3.5/5
+        </meter>
+        (based on <span itemprop="reviewCount">11</span>
+        customer reviews)
+      </div>
+    </div>
+  </body>
+</html>
