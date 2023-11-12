@@ -1,12 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <!--Navbar-->
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a class="navbar-logo-link" href="#">Navbar </a>
+      </div>
+
+      <div class="navbar-menu">
+        <div class="nav-list">
+          <ul class="nav-links">
+            <li class="nav-link"><a href="#">Link1 </a></li>
+            <li class="nav-link"><a href="#">Link2 </a></li>
+            <li class="nav-link"><a href="#">Link3 </a></li>
+          </ul>
+        </div>
+        <div class="nav-search">
+          <input class="nav-input" type="search" placeholder="Search" />
+          <button class="btn btn-primary btn-sm" type="submit">Search</button>
+        </div>
+      </div>
+    </nav>
+    <!--Cards-->
+    <div class="card-container">
+      <div class="card-image">
+        <img
+          class=""
+          src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2023/06/spider-man-across-the-spider-verse-cameo.jpg"
+          alt="Image"
+        />
+      </div>
+      <div class="card-contents">
+        <h2 class="card-title">Card Title</h2>
+        <p class="card-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+          deserunt cum velit nesciunt quod maiores numquam ipsam ipsum vero
+          inventore aliquid cumque, dolor sit et asperiores pariatur aliquam
+          distinctio sunt!
+        </p>
+        <button type="button" class="card-btn btn-primary btn-lg">Click</button>
+      </div>
+    </div>
+    <!--buttons-->
+    <button type="button" class="btn btn-primary btn-lg">Primary</button>
+    <button type="button" class="btn btn-warning btn-lg">Warning</button>
+    <button type="button" class="btn btn-link">Link</button>
   </body>
 </html>
