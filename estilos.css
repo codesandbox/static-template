@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffffff;
+  font-family: "Open Sans", sans-serif;
+}
+
+.nav-container {
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  height: 85px;
+  width: 100%;
+}
+
+nav {
+  background: #654ea3;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 10px;
+  padding: 0;
+  display: flex;
+  margin-left: auto;
+}
+
+.logo-text {
+  font-size: 24px;
+  color: #fff;
+  margin-left: 45px;
+}
+
+li {
+  display: inline;
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+a:hover {
+  color: #edd0fe;
+}
+
+.titulo {
+  font-family: "Abril Fatface", serif;
+  font-size: 60px;
+  margin-top: 20px;
+}
+
+.subtitulo {
+  margin: 5px 5px 2px 2px;
+  font-size: 40px;
+}
+
+.titulo-descuentos {
+  font-family: "Abril Fatface", serif;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.cta-button {
+  font-size: 25px;
+  background-color: #edd0fe;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #e4c1f8be;
+}
+
+.card {
+  width: 312px;
+  height: 380px;
+  background-color: #8c74d6;
+
+  border-radius: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  color: #654ea3;
+}
+
+.imagencard {
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  margin: 10 10 10 10;
+  margin-top: 20px;
+}
+
+.card h2 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.card p {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+h2 {
+}
+
+p {
+  font-size: 30px;
+}
+
+.container {
+  width: 1200px;
+  height: 600px;
+  margin: 50px;
+  padding: 50px;
+}
+
+img {
+  display: flex;
+  margin: 0 auto;
+  color: black;
+  align-content: center;
+}
+
+header article {
+  width: 540px;
+  padding: 75px 0 150px 0;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-item {
+  position: relative;
+  margin: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+  width: 80%;
+  height: auto;
+}
+
+.titulo-galeria {
+  font-family: "Abril Fatface", serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+.gallery-item:hover {
+  transform: scale(1.1);
+}
+
+.gallery-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h2 {
+  color: #fff;
+  font-size: 24px;
+  margin: 0;
+}
+
+header {
+  background-image: url(img/perrochalecoencabezado.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 50%;
+  height: 80%;
+  margin: 10% 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-container {
+  margin: 100px 0;
+  max-width: 1280px;
+  display: flex;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+  transform: scale(1.1);
+}
+
+.gallery-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h2 {
+  color: #fff;
+  font-size: 24px;
+  margin: 0;
+}
+
+.titulo-galeria {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.dflex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nosotros {
+  text-align: center;
+  font-family: "Abril Fatface", serif;
+  font-size: 30px;
+}
+
+.texto {
+  flex: 1;
+  color: black;
+  padding: 20px;
+}
+
+.descripcion {
+}
+
+.foto {
+  flex: 1;
+}
+
+.foto img {
+  width: 90%;
+  height: 450px;
+}
+
+.informacion {
+  text-align: center;
+}
+
+.visitanos {
+  text-align: center;
+  font-family: "Abril Fatface", serif;
+  font-size: 30px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #654ea3;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.boton-email {
+  width: 140px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #edd0fe;
+  color: black;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.boton-email:hover {
+  background-color: #e4c1f8be;
+}
+
+footer {
+  background: #edd0fe;
+  background: #654ea3;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  height: 150px;
+}
+
+.footer-container {
+  max-width: 1280px;
+}
+
+.redes-sociales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.redes-sociales img {
+  text-decoration: none;
+  color: #fff;
+  margin: 0 20px;
+  margin-top: 15px;
+}
+
+.copyright {
+  font-family: "Abril Fatface", serif;
+  margin-top: 30px;
+}

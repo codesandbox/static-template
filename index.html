@@ -1,12 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
-  </body>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Trabajo Final Desarrollo</title>
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+ <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comfortaa:wght@300&family=Edu+TAS+Beginner:wght@500&family=M+PLUS+Rounded+1c:wght@300&display=swap"
+      rel="stylesheet"
+    />  <link rel="stylesheet" href="estilos.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo-text">Mascotas Glam</div>
+      <ul>
+        <li class="enlace"><a href="#">Inicio</a></li>
+        <li class="enlace"><a href="">Descuentos</a></li>
+        <li class="enlace"><a href="#">Acerca de nosotros</a></li>
+        <li class="enlace"><a href="#">Galeria</a></li>
+        <li class="enlace"><a href="#">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+  <header>
+    <div class="container dflex">
+      <article>
+        <h1 class="titulo">Somos Mascotas Glam</h1>
+        <span class="subtitulo">
+          ¡Y por el dia del animal te damos estos super descuentos!
+        </span>
+
+       <div>
+        <br />
+        <br />
+         <a href="#" class="cta-button">Ver descuentos</a>
+       </div>
+        </artice>
+    </div>
+  </header>
+
+  <h2 class="titulo-descuentos">Descuentos</h2>
+  <section>
+    <div class="container dflex">
+      <div class="card">
+        <article>
+          <img class="imagencard" src="img/lentescancheros.jpg" alt="Lentes cancheros" />
+          <h2 class="h2">Lentes cancheros</h2>
+          <p>$3000</p>
+        </article>
+      </div>
+
+      <div class="card">
+        <article>
+          <img class="imagencard" src="img/disfraznavidad.jpg" alt="Disfraz navidad" />
+          <h2 class="h2">Disfraz navidad</h2>
+          <p>$8000</p>
+        </article>
+      </div>
+
+      <div class="card">
+        <article>
+          <img class="imagencard" src="img/vinchacoronaymoño.jpg" alt="Vincha y corona" />
+          <h2 class="h2">Vincha corona y moño</h2>
+          <p>$2800</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="container gallery">
+    <h2 class="titulo-galería">Galería</h2>
+    <div class="gallery-container">
+      <div class="gallery-item">
+        <img src="img/chalecomilitar.jpg" alt="Chaleco Militar" />
+        <div class="overlay">
+          <h2>Chaleco Militar</h2>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/vestidovolados.jpg" alt="Vestido volados" />
+        <div class="overlay">
+          <h2>Vestido volados</h2>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/collarbrillos.jpg" alt="Collar brillos" />
+        <div class="overlay">
+          <h2>Collar brillos</h2>
+        </div>
+      </div>
+    </div>
+    <div>
+      <a href="pagina_nueva.html" class="btn">Abrir Galería</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="container dflex">
+      <div class="texto">
+        <h2 class="nosotros">Sobre Nosotros</h2>
+        <p class="descripcion">
+          Somos un destino exclusivo para todos los amantes de las mascotas
+          que buscan lo mejor en moda para sus adorables amigos de cuatro
+          patas.
+        </p>
+      </div>
+      <div class="foto">
+        <img src="img/disfrazpreso.png" alt="Disfraz preso" />
+      </div>
+    </div>
+  </section>
+
+  <section class="veni">
+    <h2 class="visitanos">Veni a visitarnos</h2>
+    <div class="container dflex">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.8190392843385!2d-58.43665582475521!3d-34.6087371729525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca695c485b05%3A0xe7b353888816225a!2sAv.%20Patricias%20Argentinas%202584%2C%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1699626672794!5m2!1ses!2sar"
+        width="100%" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="informacion">
+      <p>Dirección: Patricias Argentinas 2584</p>
+      <p>Teléfono:444 0800</p>
+      <p>¿Tienes alguna pregunta? Envíanos un correo electrónico:</p>
+      <a href="mailto:info@tudominio.com" class="boton-email">Enviar</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="redes-sociales">
+        <a href="https://www.instagram.com/" target="_blank">
+          <img src="img/instagram.png" alt="instagram" />
+        </a>
+        <a href="https://www.facebook.com/facebookcom/" target="_blank">
+          <img src="img/facebook.png" alt="facebook" />
+        </a>
+        <a href="https://twitter.com/iniciarsesion_" target="_blank">
+          <img src="img/gorjeo.png" alt="twitter" />
+        </a>
+      </div>
+      <div class="copyright">
+        2023 MascotasGlam - Todos los derechos reservados
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
