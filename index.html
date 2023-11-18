@@ -1,12 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Template</title>
+    <meta charset="utf-8" />
+    <title>
+      Додавання аудіо та відео на веб-сторінку
+    </title>
   </head>
+  <!-- Напишіть код HTML для вбудовування відеофайлу на веб-сторінку, 
+    з альтернативними джерелами для двох різних форматів відео 
+    та субтитрами на двох різних мовах.-->
   <body>
-    <h1>This is a static template, there is no bundler or bundling involved!</h1>
+    <header>
+      <h1>Додавання аудіо та відео на веб-сторінку</h1>
+    </header>
+
+    <main>
+      <video controls width="640" height="480" poster="images/12.png">
+        <source src="media/video_file.mp4" type="video/mp4" />
+        <source src="media/video_file.webm" type="video/webm" />
+        <track
+          src="media/en.vtt"
+          kind="captions"
+          srclang="en"
+          label="English"
+        />
+        <track
+          src="media/uk.vtt"
+          kind="captions"
+          srclang="uk"
+          label="Українська"
+        />
+        Your browser does not support the video element.
+      </video>
+      <p>Знак відсотка: &#37;</p>
+      <p>Символ копірайту: &copy;</p>
+      <p>Лапки: &quot;</p>
+    </main>
+    <footer>&copy; Всі права захіщені</footer>
   </body>
 </html>
