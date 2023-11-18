@@ -1,46 +1,22 @@
 <!DOCTYPE html>
 <html lang="uk">
-  <head>
-    <meta charset="utf-8" />
-    <title>
-      Додавання аудіо та відео на веб-сторінку
-    </title>
-  </head>
-  <!-- Напишіть код HTML для вбудовування відеофайлу на веб-сторінку, 
-    з альтернативними джерелами для двох різних форматів відео 
-    та субтитрами на двох різних мовах.-->
-  <body>
-    <header>
-      <h1>Додавання аудіо та відео на веб-сторінку</h1>
-    </header>
+<head>
+    <meta charset="utf-8"/>
+    <title>Використання елемента HTML canvas для створення графіки</title>
+    <script src="scripts/canvasFigures.js" defer></script>
+</head>
+<!-- Напишіть код JavaScript, який створює елемент canvas, отримує його контекст,
+та малює на ньому червоний прямокутник і синє коло.-->
+<body>
+<header>
+    <h1>Використання елемента HTML canvas для створення графіки</h1>
+</header>
 
-    <main>
-      <audio controls>
-        <source src="media/short-circuit-154595.mp3" type="audio/mpeg">
-        <source src="media/short-circuit-154595.ogg" type="audio/ogg">
-        Your browser does not support the audio element.
-      </audio>
-      <video controls width="640" height="480" poster="images/12.png">
-        <source src="media/video_file.mp4" type="video/mp4" />
-        <source src="media/video_file.webm" type="video/webm" />
-        <track
-          src="media/en.vtt"
-          kind="captions"
-          srclang="en"
-          label="English"
-        />
-        <track
-          src="media/uk.vtt"
-          kind="captions"
-          srclang="uk"
-          label="Українська"
-        />
-        Your browser does not support the video element.
-      </video>
-      <p>Знак відсотка: &#37;</p>
-      <p>Символ копірайту: &copy;</p>
-      <p>Лапки: &quot;</p>
-    </main>
-    <footer>&copy; Всі права захіщені</footer>
-  </body>
+<main>
+   <canvas id ="myCanvas" width="500" height="500">
+
+   </canvas>
+</main>
+<footer>&copy; Всі права захіщені</footer>
+</body>
 </html>
