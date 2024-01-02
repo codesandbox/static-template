@@ -5,9 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>HTML + CSS</title>
-    <link rel="stylesheet" href="styles.css" />
+    <script>
+      function game1() {
+        confirm("寫程式快樂嗎？");
+      }
+
+      function game2() {
+        var result = prompt("1+1=?");
+        if (Number(result) === 2) {
+          alert("太棒了！");
+        } else {
+          alert("wrong~~");
+        }
+      }
+
+      function game2a() {
+        if (confirm("123您滿18歲了嗎？")) {
+          alert("太棒了！我們一起來寫程式");
+          document.location.href = "a.html";
+        } else {
+          alert("來中原大學參觀吧！");
+          document.location.href = "https://www.cycu.edu.tw/";
+        }
+      }
+      /////
+
+      function game3() {
+        var result = prompt("你晚上想吃什麼？");
+        alert("剛好我也想吃" + result + "呢！");
+      }
+
+      function game4() {
+        var result = prompt("你晚上想吃什麼？");
+        if (!result) {
+          alert("你要講啊");
+        } else {
+          alert("剛好我也想吃" + result + "呢！");
+        }
+      }
+
+      function game5() {
+        var result = prompt("你晚上想吃什麼？");
+        if (!result || result == "隨便") {
+          alert("請認真想一下好ㄇ");
+        } else {
+          alert("剛好我也想吃" + result + "呢！");
+        }
+      }
+
+      function game6() {
+        var result = "";
+
+        do {
+          result = prompt("444你晚上想吃什麼？");
+          if (!result || result == "隨便") {
+            alert("請認真想一下好ㄇ");
+          } else {
+            alert("剛好我也想吃" + result + "呢！");
+          }
+        } while (!result || result == "隨便");
+      }
+    </script>
   </head>
   <body>
-    <h1>This is a simple HTML + CSS template!</h1>
+    <h1>基礎JavaScript</h1>
+    <img src="a.png" />
+    <br />
+    <br />
+    <button onclick="alert('學寫程式最快樂！')">對話框</button>
+    <br />
+    <br />
+    <button onclick="game1()">1 對話框 (選擇)</button>
+    <br />
+    <br />
+    <button onclick="game2()">2 對話框 (選擇+判斷)</button>
+    <br />
+    <br />
+    <button onclick="game2a()">進入網站</button>
+    <br />
+    <br />
+    <button onclick="game3()">3 文字輸入對話框 (提示)</button>
+    <br />
+    <br />
+    <button onclick="game4()">4 文字輸入對話框 (提示+判斷)</button>
+    <br />
+    <br />
+    <button onclick="game5()">5 文字輸入對話框 (提示+判斷)</button>
+    <br />
+    <br />
+    <button onclick="game6()">6 文字輸入對話框 (提示+判斷)</button>
+    <br />
+    <br />
+    <br />
   </body>
 </html>
+// do { // result = prompt("你晚上想吃什麼？"); // if (!result || result ==
+"隨便") { // alert("請認真想一下好ㄇ"); // } else { // alert("剛好我也想吃 " +
+result + " 呢！"); // } // } while (!result || result == "隨便");
